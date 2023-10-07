@@ -7,9 +7,12 @@ public partial class CEntityInstance
     internal CEntityInstance(EntityContext context, SendNodeDecoder<object> decoder)
     {
         _decoder = decoder;
+        EntityIndex = context.EntityIndex;
         ServerClass = context.ServerClass;
         SerialNumber = context.SerialNumber;
     }
+
+    public CEntityIndex EntityIndex { get; }
 
     /// <summary>
     /// Is this entity within the recording player's PVS?

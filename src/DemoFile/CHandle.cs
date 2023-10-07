@@ -82,8 +82,14 @@ public class NetworkedVector<T> : IReadOnlyList<T> where T : new()
     }
 }
 
-// todo: hook into the demo itself to reference entities directly?
-public readonly record struct CHandle<T>(ulong Value) where T : CEntityInstance;
+public readonly record struct CHandle<T>(ulong Value) where T : CEntityInstance
+{
+    public CEntityIndex Index => new((uint) (Value & (DemoParser.MaxEdicts - 1)));
+    public uint SerialNum => (uint)(Value >> DemoParser.MaxEdictBits);
+
+    public static CHandle<T> FromIndexSerialNum(CEntityIndex index, uint serialNum) =>
+        new(((ulong)index.Value) | (serialNum << DemoParser.MaxEdictBits));
+}
 
 public readonly record struct QAngle(float Pitch, float Yaw, float Roll);
 

@@ -6,15 +6,16 @@ namespace DemoFile;
 
 public readonly record struct EntityContext(
     DemoParser Demo,
+    CEntityIndex EntityIndex,
     uint SerialNumber,
     ServerClass ServerClass);
 
 public partial class DemoParser
 {
     // https://github.com/dotabuff/manta/blob/master/entity.go#L186-L190
-    private const int MAX_EDICT_BITS = 14;
-    private const int MAX_EDICTS = 1 << MAX_EDICT_BITS;
-    private const int NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS = 17;
+    public const int MaxEdictBits = 14;
+    public const int MaxEdicts = 1 << MaxEdictBits;
+    public const int NumEHandleSerialNumberBits = 17;
 
     // todo(net8): use a frozen dictionary here
     private Dictionary<SerializerKey, Serializer> _serializers = new();
@@ -24,9 +25,12 @@ public partial class DemoParser
 
     public int MaxPlayers { get; private set; }
 
-    private readonly CEntityInstance?[] _entities = new CEntityInstance?[MAX_EDICTS];
+    private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
 
-    private readonly Dictionary<Type, CEntityInstance> _singletons = new();
+    private CHandle<CCSTeam> _teamTerroristHandle;
+    private CHandle<CCSTeam> _teamCounterTerroristHandle;
+    private CHandle<CCSPlayerResource> _playerResourceHandle;
+    private CHandle<CCSGameRulesProxy> _gameRulesHandle;
 
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
@@ -34,31 +38,30 @@ public partial class DemoParser
         _serverClassBits = (int)Math.Log2(msg.MaxClasses) + 1;
     }
 
-    public T GetSingletonEntity<T>(Func<T, bool> predicate)
+    private T GetCachedSingletonEntity<T>(ref CHandle<T> handle, Func<T, bool> predicate)
         where T: CEntityInstance
     {
-        if (_singletons.TryGetValue(typeof(T), out var entityInstance))
-        {
-            return (T)entityInstance;
-        }
+        if (GetEntityByHandle(handle) is { } entity)
+            return entity;
 
-        entityInstance = _entities.SingleOrDefault(x => x is T entity && predicate(entity));
-        if (entityInstance == null)
+        entity = _entities.SingleOrDefault(x => x is T entity && predicate(entity)) as T;
+        if (entity == null)
         {
             throw new InvalidOperationException($"Could not find singleton entity: {typeof(T)}");
         }
 
-        _singletons[typeof(T)] = entityInstance;
-        return (T)entityInstance;
+        Debug.Assert(entity.IsActive);
+        handle = CHandle<T>.FromIndexSerialNum(entity.EntityIndex, entity.SerialNumber);
+        return entity;
     }
 
-    public T GetSingletonEntity<T>() where T : CEntityInstance =>
-        GetSingletonEntity<T>(_ => true);
+    private T GetCachedSingletonEntity<T>(ref CHandle<T> handle) where T : CEntityInstance =>
+        GetCachedSingletonEntity<T>(ref handle, _ => true);
 
-    public CCSTeam TeamTerrorist => GetSingletonEntity<CCSTeam>(team => team.CSTeamNumber == CSTeamNumber.Terrorist);
-    public CCSTeam TeamCounterTerrorist => GetSingletonEntity<CCSTeam>(team => team.CSTeamNumber == CSTeamNumber.CounterTerrorist);
-    public CCSPlayerResource PlayerResource => GetSingletonEntity<CCSPlayerResource>();
-    public CCSGameRules GameRules => GetSingletonEntity<CCSGameRulesProxy>().m_pGameRules!;
+    public CCSTeam TeamTerrorist => GetCachedSingletonEntity(ref _teamTerroristHandle, team => team.CSTeamNumber == CSTeamNumber.Terrorist);
+    public CCSTeam TeamCounterTerrorist => GetCachedSingletonEntity(ref _teamCounterTerroristHandle, team => team.CSTeamNumber == CSTeamNumber.CounterTerrorist);
+    public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
+    public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).m_pGameRules!;
 
     public IEnumerable<CEntityInstance> Entities => _entities.Where(x => x != null)!;
 
@@ -76,10 +79,7 @@ public partial class DemoParser
 
     public T? GetEntityByHandle<T>(CHandle<T> handle) where T : CEntityInstance
     {
-        var index = handle.Value & (MAX_EDICTS - 1);
-        var serialNum = handle.Value >> MAX_EDICT_BITS;
-
-        return _entities[index] is T entity && entity.SerialNumber == serialNum
+        return _entities[(int) handle.Index.Value] is T entity && entity.SerialNumber == handle.SerialNum
             ? entity
             : null;
     }
@@ -220,14 +220,15 @@ public partial class DemoParser
                 // FHDR_ENTERPVS
 
                 var classId = entityBitBuffer.ReadUBits(_serverClassBits);
-                var serialNum = entityBitBuffer.ReadUBits(NUM_NETWORKED_EHANDLE_SERIAL_NUMBER_BITS);
+                var serialNum = entityBitBuffer.ReadUBits(NumEHandleSerialNumberBits);
 
+                // maybe spawngroup handle?
                 var _unknown = entityBitBuffer.ReadUVarInt32();
 
                 var serverClass = _serverClasses[classId];
                 Debug.Assert(serverClass != null, $"Missing server class {classId}");
 
-                var context = new EntityContext(this, serialNum, serverClass);
+                var context = new EntityContext(this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
                 var entity = serverClass.EntityFactory(context);
 
                 // Grab the server class baseline and populate the entity with it
