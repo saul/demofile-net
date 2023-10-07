@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>11</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>CS8981</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.1" />
+    <PackageReference Include="protobuf-net" Version="3.2.16" />
+    <PackageReference Include="Snappier" Version="1.1.1" />
+    <PackageReference Include="Grpc.Tools" Version="2.40.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="DemoFile.Test" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Protobuf Include="../../protos/demo.proto" />
+    <Protobuf Include="../../protos/netmessages.proto" />
+    <Protobuf Include="../../protos/networkbasetypes.proto" />
+    <Protobuf Include="../../protos/network_connection.proto" />
+    <Protobuf Include="../../protos/gameevents.proto" />
+    <Protobuf Include="../../protos/usermessages.proto" />
+  </ItemGroup>
+
+</Project>

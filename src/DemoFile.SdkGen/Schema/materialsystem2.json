@@ -1,0 +1,170 @@
+{
+  "enums": {
+    "HorizJustification_e": {
+      "align": 4,
+      "items": [
+        {
+          "name": "HORIZ_JUSTIFICATION_LEFT",
+          "value": 0
+        },
+        {
+          "name": "HORIZ_JUSTIFICATION_CENTER",
+          "value": 1
+        },
+        {
+          "name": "HORIZ_JUSTIFICATION_RIGHT",
+          "value": 2
+        },
+        {
+          "name": "HORIZ_JUSTIFICATION_NONE",
+          "value": 3
+        }
+      ]
+    },
+    "VertJustification_e": {
+      "align": 4,
+      "items": [
+        {
+          "name": "VERT_JUSTIFICATION_TOP",
+          "value": 0
+        },
+        {
+          "name": "VERT_JUSTIFICATION_CENTER",
+          "value": 1
+        },
+        {
+          "name": "VERT_JUSTIFICATION_BOTTOM",
+          "value": 2
+        },
+        {
+          "name": "VERT_JUSTIFICATION_NONE",
+          "value": 3
+        }
+      ]
+    },
+    "LayoutPositionType_e": {
+      "align": 4,
+      "items": [
+        {
+          "name": "LAYOUTPOSITIONTYPE_VIEWPORT_RELATIVE",
+          "value": 0
+        },
+        {
+          "name": "LAYOUTPOSITIONTYPE_FRACTIONAL",
+          "value": 1
+        },
+        {
+          "name": "LAYOUTPOSITIONTYPE_NONE",
+          "value": 2
+        }
+      ]
+    },
+    "BloomBlendMode_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "BLOOM_BLEND_ADD",
+          "value": 0
+        },
+        {
+          "name": "BLOOM_BLEND_SCREEN",
+          "value": 1
+        },
+        {
+          "name": "BLOOM_BLEND_BLUR",
+          "value": 2
+        }
+      ]
+    },
+    "ViewFadeMode_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "VIEW_FADE_CONSTANT_COLOR",
+          "value": 0
+        },
+        {
+          "name": "VIEW_FADE_MODULATE",
+          "value": 1
+        },
+        {
+          "name": "VIEW_FADE_MOD2X",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "classes": {
+    "MaterialParam_t": {
+      "index": 0,
+      "fields": [
+      ]
+    },
+    "MaterialParamInt_t": {
+      "index": 1,
+      "parent": "MaterialParam_t",
+      "fields": [
+      ]
+    },
+    "MaterialParamFloat_t": {
+      "index": 2,
+      "parent": "MaterialParam_t",
+      "fields": [
+      ]
+    },
+    "MaterialParamVector_t": {
+      "index": 3,
+      "parent": "MaterialParam_t",
+      "fields": [
+      ]
+    },
+    "MaterialParamTexture_t": {
+      "index": 4,
+      "parent": "MaterialParam_t",
+      "fields": [
+      ]
+    },
+    "MaterialParamString_t": {
+      "index": 5,
+      "parent": "MaterialParam_t",
+      "fields": [
+      ]
+    },
+    "MaterialParamBuffer_t": {
+      "index": 6,
+      "parent": "MaterialParam_t",
+      "fields": [
+      ]
+    },
+    "MaterialResourceData_t": {
+      "index": 7,
+      "fields": [
+      ]
+    },
+    "PostProcessingTonemapParameters_t": {
+      "index": 8,
+      "fields": [
+      ]
+    },
+    "PostProcessingBloomParameters_t": {
+      "index": 9,
+      "fields": [
+      ]
+    },
+    "PostProcessingVignetteParameters_t": {
+      "index": 10,
+      "fields": [
+      ]
+    },
+    "PostProcessingLocalContrastParameters_t": {
+      "index": 11,
+      "fields": [
+      ]
+    },
+    "PostProcessingResource_t": {
+      "index": 12,
+      "fields": [
+      ]
+    }
+  }
+}

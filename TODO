@@ -1,0 +1,6 @@
+- Snapshot testing of demo files
+- Add CI to run integration tests on PRs
+- Add CI to push NuGet package on `main` builds
+- Events for entity creation/update/deletion
+- Archive old saul/demofile repo
+- Release source2gen-json

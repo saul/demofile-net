@@ -1,0 +1,487 @@
+{
+  "enums": {
+    "JointAxis_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "JOINT_AXIS_X",
+          "value": 0
+        },
+        {
+          "name": "JOINT_AXIS_Y",
+          "value": 1
+        },
+        {
+          "name": "JOINT_AXIS_Z",
+          "value": 2
+        },
+        {
+          "name": "JOINT_AXIS_COUNT",
+          "value": 3
+        }
+      ]
+    },
+    "JointMotion_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "JOINT_MOTION_FREE",
+          "value": 0
+        },
+        {
+          "name": "JOINT_MOTION_LOCKED",
+          "value": 1
+        },
+        {
+          "name": "JOINT_MOTION_COUNT",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "classes": {
+    "constraint_breakableparams_t": {
+      "index": 0,
+      "fields": [
+      ]
+    },
+    "constraint_axislimit_t": {
+      "index": 1,
+      "fields": [
+      ]
+    },
+    "constraint_hingeparams_t": {
+      "index": 2,
+      "fields": [
+      ]
+    },
+    "IPhysicsPlayerController": {
+      "index": 3,
+      "fields": [
+      ]
+    },
+    "CFeJiggleBone": {
+      "index": 4,
+      "fields": [
+      ]
+    },
+    "CFeNamedJiggleBone": {
+      "index": 5,
+      "fields": [
+      ]
+    },
+    "CFeIndexedJiggleBone": {
+      "index": 6,
+      "fields": [
+      ]
+    },
+    "PhysFeModelDesc_t": {
+      "index": 7,
+      "fields": [
+      ]
+    },
+    "FourVectors2D": {
+      "index": 8,
+      "fields": [
+      ]
+    },
+    "FeEdgeDesc_t": {
+      "index": 9,
+      "fields": [
+      ]
+    },
+    "OldFeEdge_t": {
+      "index": 10,
+      "fields": [
+      ]
+    },
+    "FeWeightedNode_t": {
+      "index": 11,
+      "fields": [
+      ]
+    },
+    "FeKelagerBend2_t": {
+      "index": 12,
+      "fields": [
+      ]
+    },
+    "FeStiffHingeBuild_t": {
+      "index": 13,
+      "fields": [
+      ]
+    },
+    "FeTri_t": {
+      "index": 14,
+      "fields": [
+      ]
+    },
+    "FeSimdTri_t": {
+      "index": 15,
+      "fields": [
+      ]
+    },
+    "FeQuad_t": {
+      "index": 16,
+      "fields": [
+      ]
+    },
+    "FeNodeBase_t": {
+      "index": 17,
+      "fields": [
+      ]
+    },
+    "FeNodeWindBase_t": {
+      "index": 18,
+      "fields": [
+      ]
+    },
+    "FeNodeReverseOffset_t": {
+      "index": 19,
+      "fields": [
+      ]
+    },
+    "FeSimdQuad_t": {
+      "index": 20,
+      "fields": [
+      ]
+    },
+    "FeAxialEdgeBend_t": {
+      "index": 21,
+      "fields": [
+      ]
+    },
+    "FeBandBendLimit_t": {
+      "index": 22,
+      "fields": [
+      ]
+    },
+    "FeRodConstraint_t": {
+      "index": 23,
+      "fields": [
+      ]
+    },
+    "FeTwistConstraint_t": {
+      "index": 24,
+      "fields": [
+      ]
+    },
+    "FeSimdRodConstraint_t": {
+      "index": 25,
+      "fields": [
+      ]
+    },
+    "FeAnimStrayRadius_t": {
+      "index": 26,
+      "fields": [
+      ]
+    },
+    "FeSimdAnimStrayRadius_t": {
+      "index": 27,
+      "fields": [
+      ]
+    },
+    "FeSimdNodeBase_t": {
+      "index": 28,
+      "fields": [
+      ]
+    },
+    "FeNodeIntegrator_t": {
+      "index": 29,
+      "fields": [
+      ]
+    },
+    "FeSpringIntegrator_t": {
+      "index": 30,
+      "fields": [
+      ]
+    },
+    "FeSimdSpringIntegrator_t": {
+      "index": 31,
+      "fields": [
+      ]
+    },
+    "FeCtrlOffset_t": {
+      "index": 32,
+      "fields": [
+      ]
+    },
+    "FeSoftParent_t": {
+      "index": 33,
+      "fields": [
+      ]
+    },
+    "FeCtrlSoftOffset_t": {
+      "index": 34,
+      "fields": [
+      ]
+    },
+    "FeCtrlOsOffset_t": {
+      "index": 35,
+      "fields": [
+      ]
+    },
+    "FeFollowNode_t": {
+      "index": 36,
+      "fields": [
+      ]
+    },
+    "RnPlane_t": {
+      "index": 64,
+      "fields": [
+      ]
+    },
+    "FeWorldCollisionParams_t": {
+      "index": 38,
+      "fields": [
+      ]
+    },
+    "FeTreeChildren_t": {
+      "index": 39,
+      "fields": [
+      ]
+    },
+    "FeTaperedCapsuleRigid_t": {
+      "index": 40,
+      "fields": [
+      ]
+    },
+    "FeSphereRigid_t": {
+      "index": 41,
+      "fields": [
+      ]
+    },
+    "FeTaperedCapsuleStretch_t": {
+      "index": 42,
+      "fields": [
+      ]
+    },
+    "FeBoxRigid_t": {
+      "index": 43,
+      "fields": [
+      ]
+    },
+    "CovMatrix3": {
+      "index": 44,
+      "fields": [
+      ]
+    },
+    "FourCovMatrices3": {
+      "index": 45,
+      "fields": [
+      ]
+    },
+    "FeFitWeight_t": {
+      "index": 46,
+      "fields": [
+      ]
+    },
+    "FeFitInfluence_t": {
+      "index": 47,
+      "fields": [
+      ]
+    },
+    "FeFitMatrix_t": {
+      "index": 48,
+      "fields": [
+      ]
+    },
+    "FeRigidColliderIndices_t": {
+      "index": 49,
+      "fields": [
+      ]
+    },
+    "FeBuildTaperedCapsuleRigid_t": {
+      "index": 50,
+      "parent": "FeTaperedCapsuleRigid_t",
+      "fields": [
+      ]
+    },
+    "FeBuildBoxRigid_t": {
+      "index": 51,
+      "parent": "FeBoxRigid_t",
+      "fields": [
+      ]
+    },
+    "FeBuildSphereRigid_t": {
+      "index": 52,
+      "parent": "FeSphereRigid_t",
+      "fields": [
+      ]
+    },
+    "FeSourceEdge_t": {
+      "index": 53,
+      "fields": [
+      ]
+    },
+    "FeEffectDesc_t": {
+      "index": 54,
+      "fields": [
+      ]
+    },
+    "FeVertexMapBuild_t": {
+      "index": 55,
+      "fields": [
+      ]
+    },
+    "CFeVertexMapBuildArray": {
+      "index": 56,
+      "fields": [
+      ]
+    },
+    "FeProxyVertexMap_t": {
+      "index": 57,
+      "fields": [
+      ]
+    },
+    "FeVertexMapDesc_t": {
+      "index": 58,
+      "fields": [
+      ]
+    },
+    "FeMorphLayerDepr_t": {
+      "index": 59,
+      "fields": [
+      ]
+    },
+    "CFeMorphLayer": {
+      "index": 60,
+      "fields": [
+      ]
+    },
+    "Dop26_t": {
+      "index": 61,
+      "fields": [
+      ]
+    },
+    "RnSphere_t": {
+      "index": 62,
+      "fields": [
+      ]
+    },
+    "RnCapsule_t": {
+      "index": 63,
+      "fields": [
+      ]
+    },
+    "FeCollisionPlane_t": {
+      "index": 37,
+      "fields": [
+      ]
+    },
+    "RnHalfEdge_t": {
+      "index": 65,
+      "fields": [
+      ]
+    },
+    "RnFace_t": {
+      "index": 66,
+      "fields": [
+      ]
+    },
+    "CRegionSVM": {
+      "index": 67,
+      "fields": [
+      ]
+    },
+    "RnHull_t": {
+      "index": 68,
+      "fields": [
+      ]
+    },
+    "RnTriangle_t": {
+      "index": 69,
+      "fields": [
+      ]
+    },
+    "RnWing_t": {
+      "index": 70,
+      "fields": [
+      ]
+    },
+    "RnNode_t": {
+      "index": 71,
+      "fields": [
+      ]
+    },
+    "RnMesh_t": {
+      "index": 72,
+      "fields": [
+      ]
+    },
+    "RnShapeDesc_t": {
+      "index": 73,
+      "fields": [
+      ]
+    },
+    "RnSphereDesc_t": {
+      "index": 74,
+      "parent": "RnShapeDesc_t",
+      "fields": [
+      ]
+    },
+    "RnCapsuleDesc_t": {
+      "index": 75,
+      "parent": "RnShapeDesc_t",
+      "fields": [
+      ]
+    },
+    "RnHullDesc_t": {
+      "index": 76,
+      "parent": "RnShapeDesc_t",
+      "fields": [
+      ]
+    },
+    "RnMeshDesc_t": {
+      "index": 77,
+      "parent": "RnShapeDesc_t",
+      "fields": [
+      ]
+    },
+    "RnSoftbodyParticle_t": {
+      "index": 78,
+      "fields": [
+      ]
+    },
+    "RnSoftbodySpring_t": {
+      "index": 79,
+      "fields": [
+      ]
+    },
+    "RnSoftbodyCapsule_t": {
+      "index": 80,
+      "fields": [
+      ]
+    },
+    "RnBlendVertex_t": {
+      "index": 81,
+      "fields": [
+      ]
+    },
+    "CastSphereSATParams_t": {
+      "index": 82,
+      "fields": [
+      ]
+    },
+    "RnBodyDesc_t": {
+      "index": 83,
+      "fields": [
+      ]
+    },
+    "VertexPositionNormal_t": {
+      "index": 84,
+      "fields": [
+      ]
+    },
+    "VertexPositionColor_t": {
+      "index": 85,
+      "fields": [
+      ]
+    },
+    "vphysics_save_cphysicsbody_t": {
+      "index": 86,
+      "parent": "RnBodyDesc_t",
+      "fields": [
+      ]
+    }
+  }
+}

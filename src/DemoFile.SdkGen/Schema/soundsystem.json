@@ -1,0 +1,708 @@
+{
+  "enums": {
+    "soundlevel_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SNDLVL_NONE",
+          "value": 0
+        },
+        {
+          "name": "SNDLVL_20dB",
+          "value": 20
+        },
+        {
+          "name": "SNDLVL_25dB",
+          "value": 25
+        },
+        {
+          "name": "SNDLVL_30dB",
+          "value": 30
+        },
+        {
+          "name": "SNDLVL_35dB",
+          "value": 35
+        },
+        {
+          "name": "SNDLVL_40dB",
+          "value": 40
+        },
+        {
+          "name": "SNDLVL_45dB",
+          "value": 45
+        },
+        {
+          "name": "SNDLVL_50dB",
+          "value": 50
+        },
+        {
+          "name": "SNDLVL_55dB",
+          "value": 55
+        },
+        {
+          "name": "SNDLVL_IDLE",
+          "value": 60
+        },
+        {
+          "name": "SNDLVL_60dB",
+          "value": 60
+        },
+        {
+          "name": "SNDLVL_65dB",
+          "value": 65
+        },
+        {
+          "name": "SNDLVL_STATIC",
+          "value": 66
+        },
+        {
+          "name": "SNDLVL_70dB",
+          "value": 70
+        },
+        {
+          "name": "SNDLVL_NORM",
+          "value": 75
+        },
+        {
+          "name": "SNDLVL_75dB",
+          "value": 75
+        },
+        {
+          "name": "SNDLVL_80dB",
+          "value": 80
+        },
+        {
+          "name": "SNDLVL_TALKING",
+          "value": 80
+        },
+        {
+          "name": "SNDLVL_85dB",
+          "value": 85
+        },
+        {
+          "name": "SNDLVL_90dB",
+          "value": 90
+        },
+        {
+          "name": "SNDLVL_95dB",
+          "value": 95
+        },
+        {
+          "name": "SNDLVL_100dB",
+          "value": 100
+        },
+        {
+          "name": "SNDLVL_105dB",
+          "value": 105
+        },
+        {
+          "name": "SNDLVL_110dB",
+          "value": 110
+        },
+        {
+          "name": "SNDLVL_120dB",
+          "value": 120
+        },
+        {
+          "name": "SNDLVL_130dB",
+          "value": 130
+        },
+        {
+          "name": "SNDLVL_GUNFIRE",
+          "value": 140
+        },
+        {
+          "name": "SNDLVL_140dB",
+          "value": 140
+        },
+        {
+          "name": "SNDLVL_150dB",
+          "value": 150
+        },
+        {
+          "name": "SNDLVL_180dB",
+          "value": 180
+        }
+      ]
+    },
+    "ActionType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SOS_ACTION_NONE",
+          "value": 0
+        },
+        {
+          "name": "SOS_ACTION_LIMITER",
+          "value": 1
+        },
+        {
+          "name": "SOS_ACTION_TIME_LIMIT",
+          "value": 2
+        },
+        {
+          "name": "SOS_ACTION_SET_SOUNDEVENT_PARAM",
+          "value": 3
+        }
+      ]
+    },
+    "SosActionStopType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SOS_STOPTYPE_NONE",
+          "value": 0
+        },
+        {
+          "name": "SOS_STOPTYPE_TIME",
+          "value": 1
+        },
+        {
+          "name": "SOS_STOPTYPE_OPVAR",
+          "value": 2
+        }
+      ]
+    },
+    "SosActionSortType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SOS_SORTTYPE_HIGHEST",
+          "value": 0
+        },
+        {
+          "name": "SOS_SORTTYPE_LOWEST",
+          "value": 1
+        }
+      ]
+    },
+    "SosGroupType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SOS_GROUPTYPE_DYNAMIC",
+          "value": 0
+        },
+        {
+          "name": "SOS_GROUPTYPE_STATIC",
+          "value": 1
+        }
+      ]
+    },
+    "SosEditItemType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SOS_EDIT_ITEM_TYPE_SOUNDEVENTS",
+          "value": 0
+        },
+        {
+          "name": "SOS_EDIT_ITEM_TYPE_SOUNDEVENT",
+          "value": 1
+        },
+        {
+          "name": "SOS_EDIT_ITEM_TYPE_LIBRARYSTACKS",
+          "value": 2
+        },
+        {
+          "name": "SOS_EDIT_ITEM_TYPE_STACK",
+          "value": 3
+        },
+        {
+          "name": "SOS_EDIT_ITEM_TYPE_OPERATOR",
+          "value": 4
+        },
+        {
+          "name": "SOS_EDIT_ITEM_TYPE_FIELD",
+          "value": 5
+        }
+      ]
+    },
+    "VMixFilterType_t": {
+      "align": 2,
+      "items": [
+        {
+          "name": "FILTER_UNKNOWN",
+          "value": 18446744073709551615
+        },
+        {
+          "name": "FILTER_LOWPASS",
+          "value": 0
+        },
+        {
+          "name": "FILTER_HIGHPASS",
+          "value": 1
+        },
+        {
+          "name": "FILTER_BANDPASS",
+          "value": 2
+        },
+        {
+          "name": "FILTER_NOTCH",
+          "value": 3
+        },
+        {
+          "name": "FILTER_PEAKING_EQ",
+          "value": 4
+        },
+        {
+          "name": "FILTER_LOW_SHELF",
+          "value": 5
+        },
+        {
+          "name": "FILTER_HIGH_SHELF",
+          "value": 6
+        },
+        {
+          "name": "FILTER_ALLPASS",
+          "value": 7
+        },
+        {
+          "name": "FILTER_PASSTHROUGH",
+          "value": 8
+        }
+      ]
+    },
+    "VMixFilterSlope_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "FILTER_SLOPE_1POLE_6dB",
+          "value": 0
+        },
+        {
+          "name": "FILTER_SLOPE_1POLE_12dB",
+          "value": 1
+        },
+        {
+          "name": "FILTER_SLOPE_1POLE_18dB",
+          "value": 2
+        },
+        {
+          "name": "FILTER_SLOPE_1POLE_24dB",
+          "value": 3
+        },
+        {
+          "name": "FILTER_SLOPE_12dB",
+          "value": 4
+        },
+        {
+          "name": "FILTER_SLOPE_24dB",
+          "value": 5
+        },
+        {
+          "name": "FILTER_SLOPE_36dB",
+          "value": 6
+        },
+        {
+          "name": "FILTER_SLOPE_48dB",
+          "value": 7
+        },
+        {
+          "name": "FILTER_SLOPE_MAX",
+          "value": 7
+        }
+      ]
+    },
+    "VMixProcessorType_t": {
+      "align": 2,
+      "items": [
+        {
+          "name": "VPROCESSOR_UNKNOWN",
+          "value": 0
+        },
+        {
+          "name": "VPROCESSOR_STEAMAUDIO_REVERB",
+          "value": 1
+        },
+        {
+          "name": "VPROCESSOR_RT_PITCH",
+          "value": 2
+        },
+        {
+          "name": "VPROCESSOR_STEAMAUDIO_HRTF",
+          "value": 3
+        },
+        {
+          "name": "VPROCESSOR_DYNAMICS",
+          "value": 4
+        },
+        {
+          "name": "VPROCESSOR_PRESETDSP",
+          "value": 5
+        },
+        {
+          "name": "VPROCESSOR_DELAY",
+          "value": 6
+        },
+        {
+          "name": "VPROCESSOR_MOD_DELAY",
+          "value": 7
+        },
+        {
+          "name": "VPROCESSOR_DIFFUSOR",
+          "value": 8
+        },
+        {
+          "name": "VPROCESSOR_BOXVERB",
+          "value": 9
+        },
+        {
+          "name": "VPROCESSOR_FREEVERB",
+          "value": 10
+        },
+        {
+          "name": "VPROCESSOR_PLATEVERB",
+          "value": 11
+        },
+        {
+          "name": "VPROCESSOR_FULLWAVE_INTEGRATOR",
+          "value": 12
+        },
+        {
+          "name": "VPROCESSOR_FILTER",
+          "value": 13
+        },
+        {
+          "name": "VPROCESSOR_STEAMAUDIO_PATHING",
+          "value": 14
+        },
+        {
+          "name": "VPROCESSOR_EQ8",
+          "value": 15
+        },
+        {
+          "name": "VPROCESSOR_ENVELOPE",
+          "value": 16
+        },
+        {
+          "name": "VPROCESSOR_VOCODER",
+          "value": 17
+        },
+        {
+          "name": "VPROCESSOR_CONVOLUTION",
+          "value": 18
+        },
+        {
+          "name": "VPROCESSOR_DYNAMICS_3BAND",
+          "value": 19
+        },
+        {
+          "name": "VPROCESSOR_DYNAMICS_COMPRESSOR",
+          "value": 20
+        },
+        {
+          "name": "VPROCESSOR_SHAPER",
+          "value": 21
+        },
+        {
+          "name": "VPROCESSOR_PANNER",
+          "value": 22
+        },
+        {
+          "name": "VPROCESSOR_UTILITY",
+          "value": 23
+        },
+        {
+          "name": "VPROCESSOR_AUTOFILTER",
+          "value": 24
+        },
+        {
+          "name": "VPROCESSOR_OSC",
+          "value": 25
+        },
+        {
+          "name": "VPROCESSOR_STEREODELAY",
+          "value": 26
+        },
+        {
+          "name": "VPROCESSOR_EFFECT_CHAIN",
+          "value": 27
+        },
+        {
+          "name": "VPROCESSOR_SUBGRAPH_SWITCH",
+          "value": 28
+        },
+        {
+          "name": "VPROCESSOR_STEAMAUDIO_DIRECT",
+          "value": 29
+        }
+      ]
+    },
+    "VMixLFOShape_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "LFO_SHAPE_SINE",
+          "value": 0
+        },
+        {
+          "name": "LFO_SHAPE_SQUARE",
+          "value": 1
+        },
+        {
+          "name": "LFO_SHAPE_TRI",
+          "value": 2
+        },
+        {
+          "name": "LFO_SHAPE_SAW",
+          "value": 3
+        },
+        {
+          "name": "LFO_SHAPE_NOISE",
+          "value": 4
+        }
+      ]
+    },
+    "VMixPannerType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "PANNER_TYPE_LINEAR",
+          "value": 0
+        },
+        {
+          "name": "PANNER_TYPE_EQUAL_POWER",
+          "value": 1
+        }
+      ]
+    },
+    "VMixSubgraphSwitchInterpolationType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE",
+          "value": 0
+        },
+        {
+          "name": "SUBGRAPH_INTERPOLATION_TEMPORAL_FADE_OUT",
+          "value": 1
+        },
+        {
+          "name": "SUBGRAPH_INTERPOLATION_KEEP_LAST_SUBGRAPH_RUNNING",
+          "value": 2
+        }
+      ]
+    },
+    "VMixChannelOperation_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "VMIX_CHAN_STEREO",
+          "value": 0
+        },
+        {
+          "name": "VMIX_CHAN_LEFT",
+          "value": 1
+        },
+        {
+          "name": "VMIX_CHAN_RIGHT",
+          "value": 2
+        },
+        {
+          "name": "VMIX_CHAN_SWAP",
+          "value": 3
+        },
+        {
+          "name": "VMIX_CHAN_MONO",
+          "value": 4
+        },
+        {
+          "name": "VMIX_CHAN_MID_SIDE",
+          "value": 5
+        }
+      ]
+    }
+  },
+  "classes": {
+    "CSosGroupActionSchema": {
+      "index": 0,
+      "fields": [
+      ]
+    },
+    "CSosGroupActionLimitSchema": {
+      "index": 1,
+      "parent": "CSosGroupActionSchema",
+      "fields": [
+      ]
+    },
+    "CSosGroupActionTimeLimitSchema": {
+      "index": 2,
+      "parent": "CSosGroupActionSchema",
+      "fields": [
+      ]
+    },
+    "CSosGroupActionSetSoundeventParameterSchema": {
+      "index": 3,
+      "parent": "CSosGroupActionSchema",
+      "fields": [
+      ]
+    },
+    "CSosGroupBranchPattern": {
+      "index": 4,
+      "fields": [
+      ]
+    },
+    "CSosGroupMatchPattern": {
+      "index": 5,
+      "parent": "CSosGroupBranchPattern",
+      "fields": [
+      ]
+    },
+    "CSosSoundEventGroupSchema": {
+      "index": 6,
+      "fields": [
+      ]
+    },
+    "CSosSoundEventGroupListSchema": {
+      "index": 7,
+      "fields": [
+      ]
+    },
+    "SosEditItemInfo_t": {
+      "index": 8,
+      "fields": [
+      ]
+    },
+    "SelectedEditItemInfo_t": {
+      "index": 9,
+      "fields": [
+      ]
+    },
+    "CSoundEventMetaData": {
+      "index": 10,
+      "fields": [
+      ]
+    },
+    "CDSPMixgroupModifier": {
+      "index": 11,
+      "fields": [
+      ]
+    },
+    "CDspPresetModifierList": {
+      "index": 12,
+      "fields": [
+      ]
+    },
+    "CDSPPresetMixgroupModifierTable": {
+      "index": 13,
+      "fields": [
+      ]
+    },
+    "VMixFilterDesc_t": {
+      "index": 14,
+      "fields": [
+      ]
+    },
+    "VMixEQ8Desc_t": {
+      "index": 15,
+      "fields": [
+      ]
+    },
+    "VMixDelayDesc_t": {
+      "index": 16,
+      "fields": [
+      ]
+    },
+    "VMixPannerDesc_t": {
+      "index": 17,
+      "fields": [
+      ]
+    },
+    "VMixModDelayDesc_t": {
+      "index": 18,
+      "fields": [
+      ]
+    },
+    "VMixDiffusorDesc_t": {
+      "index": 19,
+      "fields": [
+      ]
+    },
+    "VMixBoxverbDesc_t": {
+      "index": 20,
+      "fields": [
+      ]
+    },
+    "VMixFreeverbDesc_t": {
+      "index": 21,
+      "fields": [
+      ]
+    },
+    "VMixPlateverbDesc_t": {
+      "index": 22,
+      "fields": [
+      ]
+    },
+    "VMixDynamicsDesc_t": {
+      "index": 23,
+      "fields": [
+      ]
+    },
+    "VMixDynamicsCompressorDesc_t": {
+      "index": 24,
+      "fields": [
+      ]
+    },
+    "VMixDynamicsBand_t": {
+      "index": 25,
+      "fields": [
+      ]
+    },
+    "VMixDynamics3BandDesc_t": {
+      "index": 26,
+      "fields": [
+      ]
+    },
+    "VMixEnvelopeDesc_t": {
+      "index": 27,
+      "fields": [
+      ]
+    },
+    "VMixPitchShiftDesc_t": {
+      "index": 28,
+      "fields": [
+      ]
+    },
+    "VMixConvolutionDesc_t": {
+      "index": 29,
+      "fields": [
+      ]
+    },
+    "VMixVocoderDesc_t": {
+      "index": 30,
+      "fields": [
+      ]
+    },
+    "VMixShaperDesc_t": {
+      "index": 31,
+      "fields": [
+      ]
+    },
+    "VMixUtilityDesc_t": {
+      "index": 32,
+      "fields": [
+      ]
+    },
+    "VMixAutoFilterDesc_t": {
+      "index": 33,
+      "fields": [
+      ]
+    },
+    "VMixOscDesc_t": {
+      "index": 34,
+      "fields": [
+      ]
+    },
+    "VMixEffectChainDesc_t": {
+      "index": 35,
+      "fields": [
+      ]
+    },
+    "VMixSubgraphSwitchDesc_t": {
+      "index": 36,
+      "fields": [
+      ]
+    }
+  }
+}

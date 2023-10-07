@@ -1,0 +1,251 @@
+{
+  "enums": {
+    "ObjectTypeFlags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "OBJECT_TYPE_NONE",
+          "value": 0
+        },
+        {
+          "name": "OBJECT_TYPE_IMAGE_LOD",
+          "value": 1
+        },
+        {
+          "name": "OBJECT_TYPE_GEOMETRY_LOD",
+          "value": 2
+        },
+        {
+          "name": "OBJECT_TYPE_DECAL",
+          "value": 4
+        },
+        {
+          "name": "OBJECT_TYPE_MODEL",
+          "value": 8
+        },
+        {
+          "name": "OBJECT_TYPE_BLOCK_LIGHT",
+          "value": 16
+        },
+        {
+          "name": "OBJECT_TYPE_NO_SHADOWS",
+          "value": 32
+        },
+        {
+          "name": "OBJECT_TYPE_WORLDSPACE_TEXURE_BLEND",
+          "value": 64
+        },
+        {
+          "name": "OBJECT_TYPE_DISABLED_IN_LOW_QUALITY",
+          "value": 128
+        },
+        {
+          "name": "OBJECT_TYPE_NO_SUN_SHADOWS",
+          "value": 256
+        },
+        {
+          "name": "OBJECT_TYPE_RENDER_WITH_DYNAMIC",
+          "value": 512
+        },
+        {
+          "name": "OBJECT_TYPE_RENDER_TO_CUBEMAPS",
+          "value": 1024
+        },
+        {
+          "name": "OBJECT_TYPE_MODEL_HAS_LODS",
+          "value": 2048
+        },
+        {
+          "name": "OBJECT_TYPE_OVERLAY",
+          "value": 8192
+        },
+        {
+          "name": "OBJECT_TYPE_PRECOMPUTED_VISMEMBERS",
+          "value": 16384
+        },
+        {
+          "name": "OBJECT_TYPE_STATIC_CUBE_MAP",
+          "value": 32768
+        }
+      ]
+    }
+  },
+  "classes": {
+    "EntityIOConnectionData_t": {
+      "index": 0,
+      "fields": [
+      ]
+    },
+    "EntityKeyValueData_t": {
+      "index": 1,
+      "fields": [
+      ]
+    },
+    "PermEntityLumpData_t": {
+      "index": 2,
+      "fields": [
+      ]
+    },
+    "SceneObject_t": {
+      "index": 3,
+      "fields": [
+      ]
+    },
+    "BaseSceneObjectOverride_t": {
+      "index": 4,
+      "fields": [
+      ]
+    },
+    "ExtraVertexStreamOverride_t": {
+      "index": 5,
+      "parent": "BaseSceneObjectOverride_t",
+      "fields": [
+      ]
+    },
+    "MaterialOverride_t": {
+      "index": 6,
+      "parent": "BaseSceneObjectOverride_t",
+      "fields": [
+      ]
+    },
+    "InfoOverlayData_t": {
+      "index": 7,
+      "fields": [
+      ]
+    },
+    "BakedLightingInfo_t": {
+      "index": 8,
+      "fields": [
+      ]
+    },
+    "WorldNodeOnDiskBufferData_t": {
+      "index": 9,
+      "fields": [
+      ]
+    },
+    "AggregateMeshInfo_t": {
+      "index": 10,
+      "fields": [
+      ]
+    },
+    "AggregateLODSetup_t": {
+      "index": 11,
+      "fields": [
+      ]
+    },
+    "AggregateSceneObject_t": {
+      "index": 12,
+      "fields": [
+      ]
+    },
+    "ClutterTile_t": {
+      "index": 13,
+      "fields": [
+      ]
+    },
+    "ClutterSceneObject_t": {
+      "index": 14,
+      "fields": [
+      ]
+    },
+    "WorldNode_t": {
+      "index": 15,
+      "fields": [
+      ]
+    },
+    "WorldBuilderParams_t": {
+      "index": 16,
+      "fields": [
+      ]
+    },
+    "NodeData_t": {
+      "index": 17,
+      "fields": [
+      ]
+    },
+    "World_t": {
+      "index": 18,
+      "fields": [
+      ]
+    },
+    "VoxelVisBlockOffset_t": {
+      "index": 19,
+      "fields": [
+      ]
+    },
+    "CVoxelVisibility": {
+      "index": 20,
+      "fields": [
+      ]
+    },
+    "VMapResourceData_t": {
+      "index": 21,
+      "fields": [
+      ]
+    },
+    "InfoForResourceTypeVMapResourceData_t": {
+      "index": 22,
+      "fields": [
+      ]
+    },
+    "CEntityComponent": {
+      "index": 23,
+      "fields": [
+      ]
+    },
+    "CEntityIdentity": {
+      "index": 24,
+      "fields": [
+        {
+          "name": "m_nameStringableIndex",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": {
+            "MNetworkChangeCallback": "entityIdentityNameChanged"
+          }
+        }
+      ]
+    },
+    "CEntityInstance": {
+      "index": 25,
+      "fields": [
+        {
+          "name": "m_pEntity",
+          "type": {
+            "name": "CEntityIdentity*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityIdentity",
+              "category": 5
+            }
+          },
+          "metadata": {
+            "MNetworkPriority": "56"
+          }
+        },
+        {
+          "name": "m_CScriptComponent",
+          "type": {
+            "name": "CScriptComponent*",
+            "category": 1,
+            "inner": {
+              "name": "CScriptComponent",
+              "category": 5
+            }
+          },
+          "metadata": {
+            "MNetworkDisable": ""
+          }
+        }
+      ]
+    },
+    "CScriptComponent": {
+      "index": 26,
+      "parent": "CEntityComponent",
+      "fields": [
+      ]
+    }
+  }
+}

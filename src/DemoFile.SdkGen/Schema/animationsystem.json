@@ -1,0 +1,3708 @@
+{
+  "enums": {
+    "MoodType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "eMoodType_Head",
+          "value": 0
+        },
+        {
+          "name": "eMoodType_Body",
+          "value": 1
+        }
+      ]
+    },
+    "AnimationProcessingType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ANIMATION_PROCESSING_SERVER_SIMULATION",
+          "value": 0
+        },
+        {
+          "name": "ANIMATION_PROCESSING_CLIENT_SIMULATION",
+          "value": 1
+        },
+        {
+          "name": "ANIMATION_PROCESSING_CLIENT_PREDICTION",
+          "value": 2
+        },
+        {
+          "name": "ANIMATION_PROCESSING_CLIENT_INTERPOLATION",
+          "value": 3
+        },
+        {
+          "name": "ANIMATION_PROCESSING_CLIENT_RENDER",
+          "value": 4
+        },
+        {
+          "name": "ANIMATION_PROCESSING_MAX",
+          "value": 5
+        }
+      ]
+    },
+    "AnimationSnapshotType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ANIMATION_SNAPSHOT_SERVER_SIMULATION",
+          "value": 0
+        },
+        {
+          "name": "ANIMATION_SNAPSHOT_CLIENT_SIMULATION",
+          "value": 1
+        },
+        {
+          "name": "ANIMATION_SNAPSHOT_CLIENT_PREDICTION",
+          "value": 2
+        },
+        {
+          "name": "ANIMATION_SNAPSHOT_CLIENT_INTERPOLATION",
+          "value": 3
+        },
+        {
+          "name": "ANIMATION_SNAPSHOT_CLIENT_RENDER",
+          "value": 4
+        },
+        {
+          "name": "ANIMATION_SNAPSHOT_FINAL_COMPOSITE",
+          "value": 5
+        },
+        {
+          "name": "ANIMATION_SNAPSHOT_MAX",
+          "value": 6
+        }
+      ]
+    },
+    "SeqCmd_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SeqCmd_Nop",
+          "value": 0
+        },
+        {
+          "name": "SeqCmd_LinearDelta",
+          "value": 1
+        },
+        {
+          "name": "SeqCmd_FetchFrameRange",
+          "value": 2
+        },
+        {
+          "name": "SeqCmd_Slerp",
+          "value": 3
+        },
+        {
+          "name": "SeqCmd_Add",
+          "value": 4
+        },
+        {
+          "name": "SeqCmd_Subtract",
+          "value": 5
+        },
+        {
+          "name": "SeqCmd_Scale",
+          "value": 6
+        },
+        {
+          "name": "SeqCmd_Copy",
+          "value": 7
+        },
+        {
+          "name": "SeqCmd_Blend",
+          "value": 8
+        },
+        {
+          "name": "SeqCmd_Worldspace",
+          "value": 9
+        },
+        {
+          "name": "SeqCmd_Sequence",
+          "value": 10
+        },
+        {
+          "name": "SeqCmd_FetchCycle",
+          "value": 11
+        },
+        {
+          "name": "SeqCmd_FetchFrame",
+          "value": 12
+        },
+        {
+          "name": "SeqCmd_IKLockInPlace",
+          "value": 13
+        },
+        {
+          "name": "SeqCmd_IKRestoreAll",
+          "value": 14
+        },
+        {
+          "name": "SeqCmd_ReverseSequence",
+          "value": 15
+        },
+        {
+          "name": "SeqCmd_Transform",
+          "value": 16
+        }
+      ]
+    },
+    "SeqPoseSetting_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SEQ_POSE_SETTING_CONSTANT",
+          "value": 0
+        },
+        {
+          "name": "SEQ_POSE_SETTING_ROTATION",
+          "value": 1
+        },
+        {
+          "name": "SEQ_POSE_SETTING_POSITION",
+          "value": 2
+        },
+        {
+          "name": "SEQ_POSE_SETTING_VELOCITY",
+          "value": 3
+        }
+      ]
+    },
+    "ParticleAttachment_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "PATTACH_INVALID",
+          "value": 18446744073709551615
+        },
+        {
+          "name": "PATTACH_ABSORIGIN",
+          "value": 0
+        },
+        {
+          "name": "PATTACH_ABSORIGIN_FOLLOW",
+          "value": 1
+        },
+        {
+          "name": "PATTACH_CUSTOMORIGIN",
+          "value": 2
+        },
+        {
+          "name": "PATTACH_CUSTOMORIGIN_FOLLOW",
+          "value": 3
+        },
+        {
+          "name": "PATTACH_POINT",
+          "value": 4
+        },
+        {
+          "name": "PATTACH_POINT_FOLLOW",
+          "value": 5
+        },
+        {
+          "name": "PATTACH_EYES_FOLLOW",
+          "value": 6
+        },
+        {
+          "name": "PATTACH_OVERHEAD_FOLLOW",
+          "value": 7
+        },
+        {
+          "name": "PATTACH_WORLDORIGIN",
+          "value": 8
+        },
+        {
+          "name": "PATTACH_ROOTBONE_FOLLOW",
+          "value": 9
+        },
+        {
+          "name": "PATTACH_RENDERORIGIN_FOLLOW",
+          "value": 10
+        },
+        {
+          "name": "PATTACH_MAIN_VIEW",
+          "value": 11
+        },
+        {
+          "name": "PATTACH_WATERWAKE",
+          "value": 12
+        },
+        {
+          "name": "PATTACH_CENTER_FOLLOW",
+          "value": 13
+        },
+        {
+          "name": "PATTACH_CUSTOM_GAME_STATE_1",
+          "value": 14
+        },
+        {
+          "name": "PATTACH_HEALTHBAR",
+          "value": 15
+        },
+        {
+          "name": "MAX_PATTACH_TYPES",
+          "value": 16
+        }
+      ]
+    },
+    "AnimParamType_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "ANIMPARAM_UNKNOWN",
+          "value": 0
+        },
+        {
+          "name": "ANIMPARAM_BOOL",
+          "value": 1
+        },
+        {
+          "name": "ANIMPARAM_ENUM",
+          "value": 2
+        },
+        {
+          "name": "ANIMPARAM_INT",
+          "value": 3
+        },
+        {
+          "name": "ANIMPARAM_FLOAT",
+          "value": 4
+        },
+        {
+          "name": "ANIMPARAM_VECTOR",
+          "value": 5
+        },
+        {
+          "name": "ANIMPARAM_QUATERNION",
+          "value": 6
+        },
+        {
+          "name": "ANIMPARAM_STRINGTOKEN",
+          "value": 7
+        },
+        {
+          "name": "ANIMPARAM_COUNT",
+          "value": 8
+        }
+      ]
+    },
+    "BoneTransformSpace_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "BoneTransformSpace_Invalid",
+          "value": 18446744073709551615
+        },
+        {
+          "name": "BoneTransformSpace_Parent",
+          "value": 0
+        },
+        {
+          "name": "BoneTransformSpace_Model",
+          "value": 1
+        },
+        {
+          "name": "BoneTransformSpace_World",
+          "value": 2
+        }
+      ]
+    },
+    "AnimParamButton_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ANIMPARAM_BUTTON_NONE",
+          "value": 0
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_DPAD_UP",
+          "value": 1
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_DPAD_RIGHT",
+          "value": 2
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_DPAD_DOWN",
+          "value": 3
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_DPAD_LEFT",
+          "value": 4
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_A",
+          "value": 5
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_B",
+          "value": 6
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_X",
+          "value": 7
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_Y",
+          "value": 8
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_LEFT_SHOULDER",
+          "value": 9
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_RIGHT_SHOULDER",
+          "value": 10
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_LTRIGGER",
+          "value": 11
+        },
+        {
+          "name": "ANIMPARAM_BUTTON_RTRIGGER",
+          "value": 12
+        }
+      ]
+    },
+    "AnimParamNetworkSetting": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "AlwaysNetwork",
+          "value": 1
+        },
+        {
+          "name": "NeverNetwork",
+          "value": 2
+        }
+      ]
+    },
+    "FootstepLandedFootSoundType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FOOTSOUND_Left",
+          "value": 0
+        },
+        {
+          "name": "FOOTSOUND_Right",
+          "value": 1
+        },
+        {
+          "name": "FOOTSOUND_UseOverrideSound",
+          "value": 2
+        }
+      ]
+    },
+    "AnimPoseControl": {
+      "align": 4,
+      "items": [
+        {
+          "name": "NoPoseControl",
+          "value": 0
+        },
+        {
+          "name": "AbsolutePoseControl",
+          "value": 1
+        },
+        {
+          "name": "RelativePoseControl",
+          "value": 2
+        }
+      ]
+    },
+    "RagdollPoseControl": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Absolute",
+          "value": 0
+        },
+        {
+          "name": "Relative",
+          "value": 1
+        }
+      ]
+    },
+    "AnimVRHandMotionRange_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MotionRange_WithController",
+          "value": 0
+        },
+        {
+          "name": "MotionRange_WithoutController",
+          "value": 1
+        }
+      ]
+    },
+    "AnimVrFingerSplay_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "AnimVrFingerSplay_Thumb_Index",
+          "value": 0
+        },
+        {
+          "name": "AnimVrFingerSplay_Index_Middle",
+          "value": 1
+        },
+        {
+          "name": "AnimVrFingerSplay_Middle_Ring",
+          "value": 2
+        },
+        {
+          "name": "AnimVrFingerSplay_Ring_Pinky",
+          "value": 3
+        }
+      ]
+    },
+    "AnimVrBoneTransformSource_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "AnimVrBoneTransformSource_LiveStream",
+          "value": 0
+        },
+        {
+          "name": "AnimVrBoneTransformSource_GripLimit",
+          "value": 1
+        }
+      ]
+    },
+    "VPhysXBodyPart_t::VPhysXFlagEnum_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FLAG_STATIC",
+          "value": 1
+        },
+        {
+          "name": "FLAG_KINEMATIC",
+          "value": 2
+        },
+        {
+          "name": "FLAG_JOINT",
+          "value": 4
+        },
+        {
+          "name": "FLAG_MASS",
+          "value": 8
+        },
+        {
+          "name": "FLAG_ALWAYS_DYNAMIC_ON_CLIENT",
+          "value": 16
+        }
+      ]
+    },
+    "VPhysXConstraintParams_t::EnumFlags0_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FLAG0_SHIFT_INTERPENETRATE",
+          "value": 0
+        },
+        {
+          "name": "FLAG0_SHIFT_CONSTRAIN",
+          "value": 1
+        },
+        {
+          "name": "FLAG0_SHIFT_BREAKABLE_FORCE",
+          "value": 2
+        },
+        {
+          "name": "FLAG0_SHIFT_BREAKABLE_TORQUE",
+          "value": 3
+        }
+      ]
+    },
+    "VPhysXJoint_t::Flags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "JOINT_FLAGS_NONE",
+          "value": 0
+        },
+        {
+          "name": "JOINT_FLAGS_BODY1_FIXED",
+          "value": 1
+        },
+        {
+          "name": "JOINT_FLAGS_USE_BLOCK_SOLVER",
+          "value": 2
+        }
+      ]
+    },
+    "VPhysXAggregateData_t::VPhysXFlagEnum_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FLAG_IS_POLYSOUP_GEOMETRY",
+          "value": 1
+        },
+        {
+          "name": "FLAG_LEVEL_COLLISION",
+          "value": 16
+        },
+        {
+          "name": "FLAG_IGNORE_SCALE_OBSOLETE_DO_NOT_USE",
+          "value": 32
+        }
+      ]
+    },
+    "MeshDrawPrimitiveFlags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MESH_DRAW_FLAGS_NONE",
+          "value": 0
+        },
+        {
+          "name": "MESH_DRAW_FLAGS_USE_SHADOW_FAST_PATH",
+          "value": 1
+        },
+        {
+          "name": "MESH_DRAW_FLAGS_USE_COMPRESSED_NORMAL_TANGENT",
+          "value": 2
+        },
+        {
+          "name": "MESH_DRAW_INPUT_LAYOUT_IS_NOT_MATCHED_TO_MATERIAL",
+          "value": 8
+        },
+        {
+          "name": "MESH_DRAW_FLAGS_USE_COMPRESSED_PER_VERTEX_LIGHTING",
+          "value": 16
+        },
+        {
+          "name": "MESH_DRAW_FLAGS_USE_UNCOMPRESSED_PER_VERTEX_LIGHTING",
+          "value": 32
+        },
+        {
+          "name": "MESH_DRAW_FLAGS_CAN_BATCH_WITH_DYNAMIC_SHADER_CONSTANTS",
+          "value": 64
+        },
+        {
+          "name": "MESH_DRAW_FLAGS_DRAW_LAST",
+          "value": 128
+        }
+      ]
+    },
+    "ModelSkeletonData_t::BoneFlags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FLAG_NO_BONE_FLAGS",
+          "value": 0
+        },
+        {
+          "name": "FLAG_BONEFLEXDRIVER",
+          "value": 4
+        },
+        {
+          "name": "FLAG_CLOTH",
+          "value": 8
+        },
+        {
+          "name": "FLAG_PHYSICS",
+          "value": 16
+        },
+        {
+          "name": "FLAG_ATTACHMENT",
+          "value": 32
+        },
+        {
+          "name": "FLAG_ANIMATION",
+          "value": 64
+        },
+        {
+          "name": "FLAG_MESH",
+          "value": 128
+        },
+        {
+          "name": "FLAG_HITBOX",
+          "value": 256
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD0",
+          "value": 1024
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD1",
+          "value": 2048
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD2",
+          "value": 4096
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD3",
+          "value": 8192
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD4",
+          "value": 16384
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD5",
+          "value": 32768
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD6",
+          "value": 65536
+        },
+        {
+          "name": "FLAG_BONE_USED_BY_VERTEX_LOD7",
+          "value": 131072
+        },
+        {
+          "name": "FLAG_BONE_MERGE_READ",
+          "value": 262144
+        },
+        {
+          "name": "FLAG_BONE_MERGE_WRITE",
+          "value": 524288
+        },
+        {
+          "name": "FLAG_ALL_BONE_FLAGS",
+          "value": 1048575
+        },
+        {
+          "name": "BLEND_PREALIGNED",
+          "value": 1048576
+        },
+        {
+          "name": "FLAG_RIGIDLENGTH",
+          "value": 2097152
+        },
+        {
+          "name": "FLAG_PROCEDURAL",
+          "value": 4194304
+        }
+      ]
+    },
+    "PermModelInfo_t::FlagEnum": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FLAG_TRANSLUCENT",
+          "value": 1
+        },
+        {
+          "name": "FLAG_TRANSLUCENT_TWO_PASS",
+          "value": 2
+        },
+        {
+          "name": "FLAG_MODEL_IS_RUNTIME_COMBINED",
+          "value": 4
+        },
+        {
+          "name": "FLAG_SOURCE1_IMPORT",
+          "value": 8
+        },
+        {
+          "name": "FLAG_MODEL_PART_CHILD",
+          "value": 16
+        },
+        {
+          "name": "FLAG_NAV_GEN_NONE",
+          "value": 32
+        },
+        {
+          "name": "FLAG_NAV_GEN_HULL",
+          "value": 64
+        },
+        {
+          "name": "FLAG_NO_FORCED_FADE",
+          "value": 2048
+        },
+        {
+          "name": "FLAG_HAS_SKINNED_MESHES",
+          "value": 1024
+        },
+        {
+          "name": "FLAG_DO_NOT_CAST_SHADOWS",
+          "value": 131072
+        },
+        {
+          "name": "FLAG_FORCE_PHONEME_CROSSFADE",
+          "value": 4096
+        },
+        {
+          "name": "FLAG_NO_ANIM_EVENTS",
+          "value": 1048576
+        },
+        {
+          "name": "FLAG_ANIMATION_DRIVEN_FLEXES",
+          "value": 2097152
+        },
+        {
+          "name": "FLAG_IMPLICIT_BIND_POSE_SEQUENCE",
+          "value": 4194304
+        },
+        {
+          "name": "FLAG_MODEL_DOC",
+          "value": 8388608
+        }
+      ]
+    },
+    "ModelBoneFlexComponent_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MODEL_BONE_FLEX_INVALID",
+          "value": 18446744073709551615
+        },
+        {
+          "name": "MODEL_BONE_FLEX_TX",
+          "value": 0
+        },
+        {
+          "name": "MODEL_BONE_FLEX_TY",
+          "value": 1
+        },
+        {
+          "name": "MODEL_BONE_FLEX_TZ",
+          "value": 2
+        }
+      ]
+    },
+    "ModelConfigAttachmentType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MODEL_CONFIG_ATTACHMENT_INVALID",
+          "value": 18446744073709551615
+        },
+        {
+          "name": "MODEL_CONFIG_ATTACHMENT_BONE_OR_ATTACHMENT",
+          "value": 0
+        },
+        {
+          "name": "MODEL_CONFIG_ATTACHMENT_ROOT_RELATIVE",
+          "value": 1
+        },
+        {
+          "name": "MODEL_CONFIG_ATTACHMENT_BONEMERGE",
+          "value": 2
+        },
+        {
+          "name": "MODEL_CONFIG_ATTACHMENT_COUNT",
+          "value": 3
+        }
+      ]
+    },
+    "FlexOpCode_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FLEX_OP_CONST",
+          "value": 1
+        },
+        {
+          "name": "FLEX_OP_FETCH1",
+          "value": 2
+        },
+        {
+          "name": "FLEX_OP_FETCH2",
+          "value": 3
+        },
+        {
+          "name": "FLEX_OP_ADD",
+          "value": 4
+        },
+        {
+          "name": "FLEX_OP_SUB",
+          "value": 5
+        },
+        {
+          "name": "FLEX_OP_MUL",
+          "value": 6
+        },
+        {
+          "name": "FLEX_OP_DIV",
+          "value": 7
+        },
+        {
+          "name": "FLEX_OP_NEG",
+          "value": 8
+        },
+        {
+          "name": "FLEX_OP_EXP",
+          "value": 9
+        },
+        {
+          "name": "FLEX_OP_OPEN",
+          "value": 10
+        },
+        {
+          "name": "FLEX_OP_CLOSE",
+          "value": 11
+        },
+        {
+          "name": "FLEX_OP_COMMA",
+          "value": 12
+        },
+        {
+          "name": "FLEX_OP_MAX",
+          "value": 13
+        },
+        {
+          "name": "FLEX_OP_MIN",
+          "value": 14
+        },
+        {
+          "name": "FLEX_OP_2WAY_0",
+          "value": 15
+        },
+        {
+          "name": "FLEX_OP_2WAY_1",
+          "value": 16
+        },
+        {
+          "name": "FLEX_OP_NWAY",
+          "value": 17
+        },
+        {
+          "name": "FLEX_OP_COMBO",
+          "value": 18
+        },
+        {
+          "name": "FLEX_OP_DOMINATE",
+          "value": 19
+        },
+        {
+          "name": "FLEX_OP_DME_LOWER_EYELID",
+          "value": 20
+        },
+        {
+          "name": "FLEX_OP_DME_UPPER_EYELID",
+          "value": 21
+        },
+        {
+          "name": "FLEX_OP_SQRT",
+          "value": 22
+        },
+        {
+          "name": "FLEX_OP_REMAPVALCLAMPED",
+          "value": 23
+        },
+        {
+          "name": "FLEX_OP_SIN",
+          "value": 24
+        },
+        {
+          "name": "FLEX_OP_COS",
+          "value": 25
+        },
+        {
+          "name": "FLEX_OP_ABS",
+          "value": 26
+        }
+      ]
+    },
+    "MorphFlexControllerRemapType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MORPH_FLEXCONTROLLER_REMAP_PASSTHRU",
+          "value": 0
+        },
+        {
+          "name": "MORPH_FLEXCONTROLLER_REMAP_2WAY",
+          "value": 1
+        },
+        {
+          "name": "MORPH_FLEXCONTROLLER_REMAP_NWAY",
+          "value": 2
+        },
+        {
+          "name": "MORPH_FLEXCONTROLLER_REMAP_EYELID",
+          "value": 3
+        }
+      ]
+    },
+    "MorphBundleType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MORPH_BUNDLE_TYPE_NONE",
+          "value": 0
+        },
+        {
+          "name": "MORPH_BUNDLE_TYPE_POSITION_SPEED",
+          "value": 1
+        },
+        {
+          "name": "MORPH_BUNDLE_TYPE_NORMAL_WRINKLE",
+          "value": 2
+        },
+        {
+          "name": "MORPH_BUNDLE_TYPE_COUNT",
+          "value": 3
+        }
+      ]
+    },
+    "AnimVRHand_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "AnimVRHand_Left",
+          "value": 0
+        },
+        {
+          "name": "AnimVRHand_Right",
+          "value": 1
+        }
+      ]
+    },
+    "AnimVRFinger_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "AnimVrFinger_Thumb",
+          "value": 0
+        },
+        {
+          "name": "AnimVrFinger_Index",
+          "value": 1
+        },
+        {
+          "name": "AnimVrFinger_Middle",
+          "value": 2
+        },
+        {
+          "name": "AnimVrFinger_Ring",
+          "value": 3
+        },
+        {
+          "name": "AnimVrFinger_Pinky",
+          "value": 4
+        }
+      ]
+    },
+    "IKChannelMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "TwoBone",
+          "value": 0
+        },
+        {
+          "name": "TwoBone_Translate",
+          "value": 1
+        },
+        {
+          "name": "OneBone",
+          "value": 2
+        },
+        {
+          "name": "OneBone_Translate",
+          "value": 3
+        }
+      ]
+    },
+    "EDemoBoneSelectionMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "CaptureAllBones",
+          "value": 0
+        },
+        {
+          "name": "CaptureSelectedBones",
+          "value": 1
+        }
+      ]
+    },
+    "AnimValueSource": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MoveHeading",
+          "value": 0
+        },
+        {
+          "name": "MoveSpeed",
+          "value": 1
+        },
+        {
+          "name": "ForwardSpeed",
+          "value": 2
+        },
+        {
+          "name": "StrafeSpeed",
+          "value": 3
+        },
+        {
+          "name": "FacingHeading",
+          "value": 4
+        },
+        {
+          "name": "ManualFacingHeading",
+          "value": 5
+        },
+        {
+          "name": "LookHeading",
+          "value": 6
+        },
+        {
+          "name": "LookPitch",
+          "value": 7
+        },
+        {
+          "name": "LookDistance",
+          "value": 8
+        },
+        {
+          "name": "Parameter",
+          "value": 9
+        },
+        {
+          "name": "WayPointHeading",
+          "value": 10
+        },
+        {
+          "name": "WayPointDistance",
+          "value": 11
+        },
+        {
+          "name": "BoundaryRadius",
+          "value": 12
+        },
+        {
+          "name": "TargetMoveHeading",
+          "value": 13
+        },
+        {
+          "name": "TargetMoveSpeed",
+          "value": 14
+        },
+        {
+          "name": "AccelerationHeading",
+          "value": 15
+        },
+        {
+          "name": "AccelerationSpeed",
+          "value": 16
+        },
+        {
+          "name": "SlopeHeading",
+          "value": 17
+        },
+        {
+          "name": "SlopeAngle",
+          "value": 18
+        },
+        {
+          "name": "SlopePitch",
+          "value": 19
+        },
+        {
+          "name": "SlopeYaw",
+          "value": 20
+        },
+        {
+          "name": "GoalDistance",
+          "value": 21
+        },
+        {
+          "name": "AccelerationLeftRight",
+          "value": 22
+        },
+        {
+          "name": "AccelerationFrontBack",
+          "value": 23
+        },
+        {
+          "name": "RootMotionSpeed",
+          "value": 24
+        },
+        {
+          "name": "RootMotionTurnSpeed",
+          "value": 25
+        },
+        {
+          "name": "MoveHeadingRelativeToLookHeading",
+          "value": 26
+        },
+        {
+          "name": "MaxMoveSpeed",
+          "value": 27
+        },
+        {
+          "name": "FingerCurl_Thumb",
+          "value": 28
+        },
+        {
+          "name": "FingerCurl_Index",
+          "value": 29
+        },
+        {
+          "name": "FingerCurl_Middle",
+          "value": 30
+        },
+        {
+          "name": "FingerCurl_Ring",
+          "value": 31
+        },
+        {
+          "name": "FingerCurl_Pinky",
+          "value": 32
+        },
+        {
+          "name": "FingerSplay_Thumb_Index",
+          "value": 33
+        },
+        {
+          "name": "FingerSplay_Index_Middle",
+          "value": 34
+        },
+        {
+          "name": "FingerSplay_Middle_Ring",
+          "value": 35
+        },
+        {
+          "name": "FingerSplay_Ring_Pinky",
+          "value": 36
+        }
+      ]
+    },
+    "AnimVectorSource": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MoveDirection",
+          "value": 0
+        },
+        {
+          "name": "FacingDirection",
+          "value": 1
+        },
+        {
+          "name": "LookDirection",
+          "value": 2
+        },
+        {
+          "name": "VectorParameter",
+          "value": 3
+        },
+        {
+          "name": "WayPointDirection",
+          "value": 4
+        },
+        {
+          "name": "Acceleration",
+          "value": 5
+        },
+        {
+          "name": "SlopeNormal",
+          "value": 6
+        },
+        {
+          "name": "SlopeNormal_WorldSpace",
+          "value": 7
+        },
+        {
+          "name": "LookTarget",
+          "value": 8
+        },
+        {
+          "name": "LookTarget_WorldSpace",
+          "value": 9
+        },
+        {
+          "name": "WayPointPosition",
+          "value": 10
+        },
+        {
+          "name": "GoalPosition",
+          "value": 11
+        },
+        {
+          "name": "RootMotionVelocity",
+          "value": 12
+        }
+      ]
+    },
+    "DampingSpeedFunction": {
+      "align": 4,
+      "items": [
+        {
+          "name": "NoDamping",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        },
+        {
+          "name": "Spring",
+          "value": 2
+        }
+      ]
+    },
+    "AnimNodeNetworkMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ServerAuthoritative",
+          "value": 0
+        },
+        {
+          "name": "ClientSimulate",
+          "value": 1
+        }
+      ]
+    },
+    "StateActionBehavior": {
+      "align": 4,
+      "items": [
+        {
+          "name": "STATETAGBEHAVIOR_ACTIVE_WHILE_CURRENT",
+          "value": 0
+        },
+        {
+          "name": "STATETAGBEHAVIOR_FIRE_ON_ENTER",
+          "value": 1
+        },
+        {
+          "name": "STATETAGBEHAVIOR_FIRE_ON_EXIT",
+          "value": 2
+        },
+        {
+          "name": "STATETAGBEHAVIOR_FIRE_ON_ENTER_AND_EXIT",
+          "value": 3
+        }
+      ]
+    },
+    "FieldNetworkOption": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "ForceEnable",
+          "value": 1
+        },
+        {
+          "name": "ForceDisable",
+          "value": 2
+        }
+      ]
+    },
+    "FootFallTagFoot_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FOOT1",
+          "value": 0
+        },
+        {
+          "name": "FOOT2",
+          "value": 1
+        },
+        {
+          "name": "FOOT3",
+          "value": 2
+        },
+        {
+          "name": "FOOT4",
+          "value": 3
+        },
+        {
+          "name": "FOOT5",
+          "value": 4
+        },
+        {
+          "name": "FOOT6",
+          "value": 5
+        },
+        {
+          "name": "FOOT7",
+          "value": 6
+        },
+        {
+          "name": "FOOT8",
+          "value": 7
+        }
+      ]
+    },
+    "MatterialAttributeTagType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MATERIAL_ATTRIBUTE_TAG_VALUE",
+          "value": 0
+        },
+        {
+          "name": "MATERIAL_ATTRIBUTE_TAG_COLOR",
+          "value": 1
+        }
+      ]
+    },
+    "VelocityMetricMode": {
+      "align": 1,
+      "items": [
+        {
+          "name": "DirectionOnly",
+          "value": 0
+        },
+        {
+          "name": "MagnitudeOnly",
+          "value": 1
+        },
+        {
+          "name": "DirectionAndMagnitude",
+          "value": 2
+        }
+      ]
+    },
+    "AimMatrixBlendMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "AimMatrixBlendMode_None",
+          "value": 0
+        },
+        {
+          "name": "AimMatrixBlendMode_Additive",
+          "value": 1
+        },
+        {
+          "name": "AimMatrixBlendMode_ModelSpaceAdditive",
+          "value": 2
+        },
+        {
+          "name": "AimMatrixBlendMode_BoneMask",
+          "value": 3
+        }
+      ]
+    },
+    "BoneMaskBlendSpace": {
+      "align": 4,
+      "items": [
+        {
+          "name": "BlendSpace_Parent",
+          "value": 0
+        },
+        {
+          "name": "BlendSpace_Model",
+          "value": 1
+        },
+        {
+          "name": "BlendSpace_Model_RotationOnly",
+          "value": 2
+        },
+        {
+          "name": "BlendSpace_Model_TranslationOnly",
+          "value": 3
+        }
+      ]
+    },
+    "JiggleBoneSimSpace": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SimSpace_Local",
+          "value": 0
+        },
+        {
+          "name": "SimSpace_Model",
+          "value": 1
+        },
+        {
+          "name": "SimSpace_World",
+          "value": 2
+        }
+      ]
+    },
+    "SolveIKChainAnimNodeDebugSetting": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_None",
+          "value": 0
+        },
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_X_Axis_Circle",
+          "value": 1
+        },
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_Y_Axis_Circle",
+          "value": 2
+        },
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_Z_Axis_Circle",
+          "value": 3
+        },
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_Forward",
+          "value": 4
+        },
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_Up",
+          "value": 5
+        },
+        {
+          "name": "SOLVEIKCHAINANIMNODEDEBUGSETTING_Left",
+          "value": 6
+        }
+      ]
+    },
+    "AnimScriptType": {
+      "align": 2,
+      "items": [
+        {
+          "name": "ANIMSCRIPT_TYPE_INVALID",
+          "value": 18446744073709551615
+        },
+        {
+          "name": "ANIMSCRIPT_FUSE_GENERAL",
+          "value": 0
+        },
+        {
+          "name": "ANIMSCRIPT_FUSE_STATEMACHINE",
+          "value": 1
+        }
+      ]
+    },
+    "BinaryNodeTiming": {
+      "align": 4,
+      "items": [
+        {
+          "name": "UseChild1",
+          "value": 0
+        },
+        {
+          "name": "UseChild2",
+          "value": 1
+        },
+        {
+          "name": "SyncChildren",
+          "value": 2
+        }
+      ]
+    },
+    "BinaryNodeChildOption": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Child1",
+          "value": 0
+        },
+        {
+          "name": "Child2",
+          "value": 1
+        }
+      ]
+    },
+    "BlendKeyType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "BlendKey_UserValue",
+          "value": 0
+        },
+        {
+          "name": "BlendKey_Velocity",
+          "value": 1
+        },
+        {
+          "name": "BlendKey_Distance",
+          "value": 2
+        },
+        {
+          "name": "BlendKey_RemainingDistance",
+          "value": 3
+        }
+      ]
+    },
+    "Blend2DMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Blend2DMode_General",
+          "value": 0
+        },
+        {
+          "name": "Blend2DMode_Directional",
+          "value": 1
+        }
+      ]
+    },
+    "ChoiceMethod": {
+      "align": 4,
+      "items": [
+        {
+          "name": "WeightedRandom",
+          "value": 0
+        },
+        {
+          "name": "WeightedRandomNoRepeat",
+          "value": 1
+        },
+        {
+          "name": "Iterate",
+          "value": 2
+        },
+        {
+          "name": "IterateRandom",
+          "value": 3
+        }
+      ]
+    },
+    "ChoiceChangeMethod": {
+      "align": 4,
+      "items": [
+        {
+          "name": "OnReset",
+          "value": 0
+        },
+        {
+          "name": "OnCycleEnd",
+          "value": 1
+        },
+        {
+          "name": "OnResetOrCycleEnd",
+          "value": 2
+        }
+      ]
+    },
+    "ChoiceBlendMethod": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SingleBlendTime",
+          "value": 0
+        },
+        {
+          "name": "PerChoiceBlendTimes",
+          "value": 1
+        }
+      ]
+    },
+    "FootLockSubVisualization": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FOOTLOCKSUBVISUALIZATION_ReachabilityAnalysis",
+          "value": 0
+        },
+        {
+          "name": "FOOTLOCKSUBVISUALIZATION_IKSolve",
+          "value": 1
+        }
+      ]
+    },
+    "FootPinningTimingSource": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FootMotion",
+          "value": 0
+        },
+        {
+          "name": "Tag",
+          "value": 1
+        },
+        {
+          "name": "Parameter",
+          "value": 2
+        }
+      ]
+    },
+    "StepPhase": {
+      "align": 4,
+      "items": [
+        {
+          "name": "StepPhase_OnGround",
+          "value": 0
+        },
+        {
+          "name": "StepPhase_InAir",
+          "value": 1
+        }
+      ]
+    },
+    "JumpCorrectionMethod": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ScaleMotion",
+          "value": 0
+        },
+        {
+          "name": "AddCorrectionDelta",
+          "value": 1
+        }
+      ]
+    },
+    "SelectorTagBehavior_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SelectorTagBehavior_OnWhileCurrent",
+          "value": 0
+        },
+        {
+          "name": "SelectorTagBehavior_OffWhenFinished",
+          "value": 1
+        },
+        {
+          "name": "SelectorTagBehavior_OffBeforeFinished",
+          "value": 2
+        }
+      ]
+    },
+    "StanceOverrideMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Sequence",
+          "value": 0
+        },
+        {
+          "name": "Node",
+          "value": 1
+        }
+      ]
+    },
+    "ResetCycleOption": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Beginning",
+          "value": 0
+        },
+        {
+          "name": "SameCycleAsSource",
+          "value": 1
+        },
+        {
+          "name": "InverseSourceCycle",
+          "value": 2
+        },
+        {
+          "name": "FixedValue",
+          "value": 3
+        },
+        {
+          "name": "SameTimeAsSource",
+          "value": 4
+        }
+      ]
+    },
+    "IkEndEffectorType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "IkEndEffector_Attachment",
+          "value": 0
+        },
+        {
+          "name": "IkEndEffector_Bone",
+          "value": 1
+        }
+      ]
+    },
+    "IkTargetType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "IkTarget_Attachment",
+          "value": 0
+        },
+        {
+          "name": "IkTarget_Bone",
+          "value": 1
+        },
+        {
+          "name": "IkTarget_Parameter_ModelSpace",
+          "value": 2
+        },
+        {
+          "name": "IkTarget_Parameter_WorldSpace",
+          "value": 3
+        }
+      ]
+    },
+    "PoseType_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "POSETYPE_STATIC",
+          "value": 0
+        },
+        {
+          "name": "POSETYPE_DYNAMIC",
+          "value": 1
+        },
+        {
+          "name": "POSETYPE_INVALID",
+          "value": 255
+        }
+      ]
+    },
+    "CAnimationGraphVisualizerPrimitiveType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text",
+          "value": 0
+        },
+        {
+          "name": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Sphere",
+          "value": 1
+        },
+        {
+          "name": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Line",
+          "value": 2
+        },
+        {
+          "name": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Pie",
+          "value": 3
+        },
+        {
+          "name": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Axis",
+          "value": 4
+        }
+      ]
+    },
+    "FacingMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "FacingMode_Manual",
+          "value": 0
+        },
+        {
+          "name": "FacingMode_Path",
+          "value": 1
+        },
+        {
+          "name": "FacingMode_LookTarget",
+          "value": 2
+        }
+      ]
+    },
+    "IKSolverType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "IKSOLVER_Perlin",
+          "value": 0
+        },
+        {
+          "name": "IKSOLVER_TwoBone",
+          "value": 1
+        },
+        {
+          "name": "IKSOLVER_Fabrik",
+          "value": 2
+        },
+        {
+          "name": "IKSOLVER_DogLeg3Bone",
+          "value": 3
+        },
+        {
+          "name": "IKSOLVER_CCD",
+          "value": 4
+        },
+        {
+          "name": "IKSOLVER_COUNT",
+          "value": 5
+        }
+      ]
+    },
+    "IKTargetSource": {
+      "align": 4,
+      "items": [
+        {
+          "name": "IKTARGETSOURCE_Bone",
+          "value": 0
+        },
+        {
+          "name": "IKTARGETSOURCE_AnimgraphParameter",
+          "value": 1
+        },
+        {
+          "name": "IKTARGETSOURCE_COUNT",
+          "value": 2
+        }
+      ]
+    },
+    "IKTargetCoordinateSystem": {
+      "align": 4,
+      "items": [
+        {
+          "name": "IKTARGETCOORDINATESYSTEM_WorldSpace",
+          "value": 0
+        },
+        {
+          "name": "IKTARGETCOORDINATESYSTEM_ModelSpace",
+          "value": 1
+        },
+        {
+          "name": "IKTARGETCOORDINATESYSTEM_COUNT",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "classes": {
+    "MoodAnimation_t": {
+      "index": 0,
+      "fields": [
+      ]
+    },
+    "MoodAnimationLayer_t": {
+      "index": 1,
+      "fields": [
+      ]
+    },
+    "CMoodVData": {
+      "index": 2,
+      "fields": [
+      ]
+    },
+    "AnimationDecodeDebugDumpElement_t": {
+      "index": 3,
+      "fields": [
+      ]
+    },
+    "AnimationDecodeDebugDump_t": {
+      "index": 4,
+      "fields": [
+      ]
+    },
+    "AnimationSnapshotBase_t": {
+      "index": 5,
+      "fields": [
+      ]
+    },
+    "AnimationSnapshot_t": {
+      "index": 6,
+      "parent": "AnimationSnapshotBase_t",
+      "fields": [
+      ]
+    },
+    "CAnimBoneDifference": {
+      "index": 7,
+      "fields": [
+      ]
+    },
+    "CAnimMorphDifference": {
+      "index": 8,
+      "fields": [
+      ]
+    },
+    "CAnimUserDifference": {
+      "index": 9,
+      "fields": [
+      ]
+    },
+    "CAnimEncodeDifference": {
+      "index": 10,
+      "fields": [
+      ]
+    },
+    "CAnimEventDefinition": {
+      "index": 11,
+      "fields": [
+      ]
+    },
+    "CAnimMovement": {
+      "index": 12,
+      "fields": [
+      ]
+    },
+    "CAnimLocalHierarchy": {
+      "index": 13,
+      "fields": [
+      ]
+    },
+    "CAnimDecoder": {
+      "index": 14,
+      "fields": [
+      ]
+    },
+    "CAnimFrameSegment": {
+      "index": 15,
+      "fields": [
+      ]
+    },
+    "CAnimFrameBlockAnim": {
+      "index": 16,
+      "fields": [
+      ]
+    },
+    "CAnimEncodedFrames": {
+      "index": 17,
+      "fields": [
+      ]
+    },
+    "CAnimDesc_Flag": {
+      "index": 18,
+      "fields": [
+      ]
+    },
+    "CAnimSequenceParams": {
+      "index": 19,
+      "fields": [
+      ]
+    },
+    "CAnimDesc": {
+      "index": 20,
+      "fields": [
+      ]
+    },
+    "CAnimActivity": {
+      "index": 21,
+      "fields": [
+      ]
+    },
+    "CAnimData": {
+      "index": 22,
+      "fields": [
+      ]
+    },
+    "CAnimBone": {
+      "index": 23,
+      "fields": [
+      ]
+    },
+    "CAnimUser": {
+      "index": 24,
+      "fields": [
+      ]
+    },
+    "CAnimDataChannelDesc": {
+      "index": 25,
+      "fields": [
+      ]
+    },
+    "CAnimKeyData": {
+      "index": 26,
+      "fields": [
+      ]
+    },
+    "CAnimationGroup": {
+      "index": 27,
+      "fields": [
+      ]
+    },
+    "CSeqAutoLayerFlag": {
+      "index": 28,
+      "fields": [
+      ]
+    },
+    "CSeqAutoLayer": {
+      "index": 29,
+      "fields": [
+      ]
+    },
+    "CSeqIKLock": {
+      "index": 30,
+      "fields": [
+      ]
+    },
+    "CSeqBoneMaskList": {
+      "index": 31,
+      "fields": [
+      ]
+    },
+    "CSeqScaleSet": {
+      "index": 32,
+      "fields": [
+      ]
+    },
+    "CSeqMultiFetchFlag": {
+      "index": 33,
+      "fields": [
+      ]
+    },
+    "CSeqMultiFetch": {
+      "index": 34,
+      "fields": [
+      ]
+    },
+    "CSeqSeqDescFlag": {
+      "index": 35,
+      "fields": [
+      ]
+    },
+    "CSeqTransition": {
+      "index": 36,
+      "fields": [
+      ]
+    },
+    "CSeqS1SeqDesc": {
+      "index": 37,
+      "fields": [
+      ]
+    },
+    "CSeqSynthAnimDesc": {
+      "index": 38,
+      "fields": [
+      ]
+    },
+    "CSeqCmdLayer": {
+      "index": 39,
+      "fields": [
+      ]
+    },
+    "CSeqPoseSetting": {
+      "index": 40,
+      "fields": [
+      ]
+    },
+    "CSeqCmdSeqDesc": {
+      "index": 41,
+      "fields": [
+      ]
+    },
+    "CSeqPoseParamDesc": {
+      "index": 42,
+      "fields": [
+      ]
+    },
+    "CSequenceGroupData": {
+      "index": 43,
+      "fields": [
+      ]
+    },
+    "CCompressorGroup": {
+      "index": 44,
+      "fields": [
+      ]
+    },
+    "HSequence": {
+      "index": 45,
+      "fields": [
+      ]
+    },
+    "CAnimEnum": {
+      "index": 46,
+      "fields": [
+      ]
+    },
+    "AnimNodeID": {
+      "index": 47,
+      "fields": [
+      ]
+    },
+    "AnimNodeOutputID": {
+      "index": 48,
+      "fields": [
+      ]
+    },
+    "AnimStateID": {
+      "index": 49,
+      "fields": [
+      ]
+    },
+    "AnimParamID": {
+      "index": 50,
+      "fields": [
+      ]
+    },
+    "AnimTagID": {
+      "index": 51,
+      "fields": [
+      ]
+    },
+    "AnimComponentID": {
+      "index": 52,
+      "fields": [
+      ]
+    },
+    "AnimScriptHandle": {
+      "index": 53,
+      "fields": [
+      ]
+    },
+    "CAnimAttachment": {
+      "index": 54,
+      "fields": [
+      ]
+    },
+    "VPhysics2ShapeDef_t": {
+      "index": 55,
+      "fields": [
+      ]
+    },
+    "VPhysXBodyPart_t": {
+      "index": 56,
+      "fields": [
+      ]
+    },
+    "VPhysXCollisionAttributes_t": {
+      "index": 57,
+      "fields": [
+      ]
+    },
+    "VPhysXRange_t": {
+      "index": 58,
+      "fields": [
+      ]
+    },
+    "VPhysXConstraintParams_t": {
+      "index": 59,
+      "fields": [
+      ]
+    },
+    "VPhysXConstraint2_t": {
+      "index": 60,
+      "fields": [
+      ]
+    },
+    "VPhysXJoint_t": {
+      "index": 61,
+      "fields": [
+      ]
+    },
+    "PhysSoftbodyDesc_t": {
+      "index": 62,
+      "fields": [
+      ]
+    },
+    "VPhysXAggregateData_t": {
+      "index": 63,
+      "fields": [
+      ]
+    },
+    "CPhysSurfacePropertiesPhysics": {
+      "index": 64,
+      "fields": [
+      ]
+    },
+    "CPhysSurfacePropertiesAudio": {
+      "index": 65,
+      "fields": [
+      ]
+    },
+    "CPhysSurfacePropertiesSoundNames": {
+      "index": 66,
+      "fields": [
+      ]
+    },
+    "CPhysSurfaceProperties": {
+      "index": 67,
+      "fields": [
+      ]
+    },
+    "CVPhysXSurfacePropertiesList": {
+      "index": 68,
+      "fields": [
+      ]
+    },
+    "MaterialGroup_t": {
+      "index": 69,
+      "fields": [
+      ]
+    },
+    "ModelSkeletonData_t": {
+      "index": 70,
+      "fields": [
+      ]
+    },
+    "PermModelInfo_t": {
+      "index": 71,
+      "fields": [
+      ]
+    },
+    "PermModelExtPart_t": {
+      "index": 72,
+      "fields": [
+      ]
+    },
+    "ModelBoneFlexDriverControl_t": {
+      "index": 73,
+      "fields": [
+      ]
+    },
+    "ModelBoneFlexDriver_t": {
+      "index": 74,
+      "fields": [
+      ]
+    },
+    "PermModelDataAnimatedMaterialAttribute_t": {
+      "index": 75,
+      "fields": [
+      ]
+    },
+    "PermModelData_t": {
+      "index": 76,
+      "fields": [
+      ]
+    },
+    "AttachmentHandle_t": {
+      "index": 77,
+      "fields": [
+      ]
+    },
+    "CModelConfigElement": {
+      "index": 78,
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_AttachedModel": {
+      "index": 79,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_UserPick": {
+      "index": 80,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_RandomPick": {
+      "index": 81,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_SetMaterialGroup": {
+      "index": 82,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_SetMaterialGroupOnAttachedModels": {
+      "index": 83,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_SetRenderColor": {
+      "index": 84,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_RandomColor": {
+      "index": 85,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_SetBodygroup": {
+      "index": 86,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_SetBodygroupOnAttachedModels": {
+      "index": 87,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfigElement_Command": {
+      "index": 88,
+      "parent": "CModelConfigElement",
+      "fields": [
+      ]
+    },
+    "CModelConfig": {
+      "index": 89,
+      "fields": [
+      ]
+    },
+    "CModelConfigList": {
+      "index": 90,
+      "fields": [
+      ]
+    },
+    "CRenderBufferBinding": {
+      "index": 91,
+      "fields": [
+      ]
+    },
+    "SkeletonBoneBounds_t": {
+      "index": 92,
+      "fields": [
+      ]
+    },
+    "RenderSkeletonBone_t": {
+      "index": 93,
+      "fields": [
+      ]
+    },
+    "CRenderSkeleton": {
+      "index": 94,
+      "fields": [
+      ]
+    },
+    "CDrawCullingData": {
+      "index": 95,
+      "fields": [
+      ]
+    },
+    "CMaterialDrawDescriptor": {
+      "index": 96,
+      "fields": [
+      ]
+    },
+    "CMeshletDescriptor": {
+      "index": 97,
+      "fields": [
+      ]
+    },
+    "CSceneObjectData": {
+      "index": 98,
+      "fields": [
+      ]
+    },
+    "CAttachment": {
+      "index": 99,
+      "fields": [
+      ]
+    },
+    "CHitBox": {
+      "index": 100,
+      "fields": [
+      ]
+    },
+    "CHitBoxSet": {
+      "index": 101,
+      "fields": [
+      ]
+    },
+    "CHitBoxSetList": {
+      "index": 102,
+      "fields": [
+      ]
+    },
+    "CRenderMesh": {
+      "index": 103,
+      "fields": [
+      ]
+    },
+    "CConstraintTarget": {
+      "index": 104,
+      "fields": [
+      ]
+    },
+    "CConstraintSlave": {
+      "index": 105,
+      "fields": [
+      ]
+    },
+    "CBoneConstraintBase": {
+      "index": 106,
+      "fields": [
+      ]
+    },
+    "CBaseConstraint": {
+      "index": 107,
+      "parent": "CBoneConstraintBase",
+      "fields": [
+      ]
+    },
+    "CPointConstraint": {
+      "index": 108,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "COrientConstraint": {
+      "index": 109,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CAimConstraint": {
+      "index": 110,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CTwistConstraint": {
+      "index": 111,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CTiltTwistConstraint": {
+      "index": 112,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CMorphConstraint": {
+      "index": 113,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CParentConstraint": {
+      "index": 114,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CBoneConstraintPoseSpaceMorph": {
+      "index": 115,
+      "parent": "CBoneConstraintBase",
+      "fields": [
+      ]
+    },
+    "CBoneConstraintPoseSpaceMorph::Input_t": {
+      "index": 116,
+      "fields": [
+      ]
+    },
+    "CBoneConstraintPoseSpaceBone": {
+      "index": 117,
+      "parent": "CBaseConstraint",
+      "fields": [
+      ]
+    },
+    "CBoneConstraintPoseSpaceBone::Input_t": {
+      "index": 118,
+      "fields": [
+      ]
+    },
+    "CBoneConstraintDotToMorph": {
+      "index": 119,
+      "parent": "CBoneConstraintBase",
+      "fields": [
+      ]
+    },
+    "CFlexOp": {
+      "index": 120,
+      "fields": [
+      ]
+    },
+    "CFlexRule": {
+      "index": 121,
+      "fields": [
+      ]
+    },
+    "CFlexDesc": {
+      "index": 122,
+      "fields": [
+      ]
+    },
+    "CFlexController": {
+      "index": 123,
+      "fields": [
+      ]
+    },
+    "CMorphBundleData": {
+      "index": 124,
+      "fields": [
+      ]
+    },
+    "CMorphRectData": {
+      "index": 125,
+      "fields": [
+      ]
+    },
+    "CMorphData": {
+      "index": 126,
+      "fields": [
+      ]
+    },
+    "CMorphSetData": {
+      "index": 127,
+      "fields": [
+      ]
+    },
+    "CAnimFoot": {
+      "index": 128,
+      "fields": [
+      ]
+    },
+    "CAnimSkeleton": {
+      "index": 129,
+      "fields": [
+      ]
+    },
+    "CFootDefinition": {
+      "index": 130,
+      "fields": [
+      ]
+    },
+    "CCycleBase": {
+      "index": 131,
+      "fields": [
+      ]
+    },
+    "CAnimCycle": {
+      "index": 132,
+      "parent": "CCycleBase",
+      "fields": [
+      ]
+    },
+    "CFootCycle": {
+      "index": 133,
+      "parent": "CCycleBase",
+      "fields": [
+      ]
+    },
+    "CFootCycleDefinition": {
+      "index": 134,
+      "fields": [
+      ]
+    },
+    "CFootTrajectory": {
+      "index": 135,
+      "fields": [
+      ]
+    },
+    "CFootTrajectories": {
+      "index": 136,
+      "fields": [
+      ]
+    },
+    "CFootStride": {
+      "index": 137,
+      "fields": [
+      ]
+    },
+    "CFootMotion": {
+      "index": 138,
+      "fields": [
+      ]
+    },
+    "CFingerSource": {
+      "index": 139,
+      "fields": [
+      ]
+    },
+    "CFingerBone": {
+      "index": 140,
+      "fields": [
+      ]
+    },
+    "CFingerChain": {
+      "index": 141,
+      "fields": [
+      ]
+    },
+    "CWristBone": {
+      "index": 142,
+      "fields": [
+      ]
+    },
+    "CVrSkeletalInputSettings": {
+      "index": 143,
+      "fields": [
+      ]
+    },
+    "BoneDemoCaptureSettings_t": {
+      "index": 144,
+      "fields": [
+      ]
+    },
+    "IKDemoCaptureSettings_t": {
+      "index": 145,
+      "fields": [
+      ]
+    },
+    "CAnimDemoCaptureSettings": {
+      "index": 146,
+      "fields": [
+      ]
+    },
+    "CAnimReplayFrame": {
+      "index": 147,
+      "fields": [
+      ]
+    },
+    "CAnimGraphDebugReplay": {
+      "index": 148,
+      "fields": [
+      ]
+    },
+    "CAnimGraphModelBinding": {
+      "index": 149,
+      "fields": [
+      ]
+    },
+    "CAnimInputDamping": {
+      "index": 150,
+      "fields": [
+      ]
+    },
+    "CAnimParamHandle": {
+      "index": 151,
+      "fields": [
+      ]
+    },
+    "CAnimParamHandleMap": {
+      "index": 152,
+      "fields": [
+      ]
+    },
+    "CAnimParameterManagerUpdater": {
+      "index": 153,
+      "fields": [
+      ]
+    },
+    "CAnimGraphSettingsManager": {
+      "index": 160,
+      "fields": [
+      ]
+    },
+    "CBlendCurve": {
+      "index": 155,
+      "fields": [
+      ]
+    },
+    "ParamSpanSample_t": {
+      "index": 156,
+      "fields": [
+      ]
+    },
+    "ParamSpan_t": {
+      "index": 157,
+      "fields": [
+      ]
+    },
+    "CParamSpanUpdater": {
+      "index": 158,
+      "fields": [
+      ]
+    },
+    "CAnimGraphSettingsGroup": {
+      "index": 159,
+      "fields": [
+      ]
+    },
+    "CAnimNodePath": {
+      "index": 294,
+      "fields": [
+      ]
+    },
+    "CCachedPose": {
+      "index": 161,
+      "fields": [
+      ]
+    },
+    "CStaticPoseCache": {
+      "index": 162,
+      "fields": [
+      ]
+    },
+    "CStaticPoseCacheBuilder": {
+      "index": 163,
+      "parent": "CStaticPoseCache",
+      "fields": [
+      ]
+    },
+    "CAnimActionUpdater": {
+      "index": 164,
+      "fields": [
+      ]
+    },
+    "CEmitTagActionUpdater": {
+      "index": 165,
+      "parent": "CAnimActionUpdater",
+      "fields": [
+      ]
+    },
+    "CSetParameterActionUpdater": {
+      "index": 166,
+      "parent": "CAnimActionUpdater",
+      "fields": [
+      ]
+    },
+    "CToggleComponentActionUpdater": {
+      "index": 167,
+      "parent": "CAnimActionUpdater",
+      "fields": [
+      ]
+    },
+    "CExpressionActionUpdater": {
+      "index": 168,
+      "parent": "CAnimActionUpdater",
+      "fields": [
+      ]
+    },
+    "CAnimTagBase": {
+      "index": 169,
+      "fields": [
+      ]
+    },
+    "CAnimTagManagerUpdater": {
+      "index": 170,
+      "fields": [
+      ]
+    },
+    "CAudioAnimTag": {
+      "index": 171,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CBodyGroupSetting": {
+      "index": 172,
+      "fields": [
+      ]
+    },
+    "CBodyGroupAnimTag": {
+      "index": 173,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CClothSettingsAnimTag": {
+      "index": 174,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CFootFallAnimTag": {
+      "index": 175,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CFootstepLandedAnimTag": {
+      "index": 176,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CMaterialAttributeAnimTag": {
+      "index": 177,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CParticleAnimTag": {
+      "index": 178,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CRagdollAnimTag": {
+      "index": 179,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CSequenceFinishedAnimTag": {
+      "index": 180,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CStringAnimTag": {
+      "index": 181,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CTaskStatusAnimTag": {
+      "index": 182,
+      "parent": "CAnimTagBase",
+      "fields": [
+      ]
+    },
+    "CAnimComponentUpdater": {
+      "index": 183,
+      "fields": [
+      ]
+    },
+    "CAnimScriptComponentUpdater": {
+      "index": 184,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CCPPScriptComponentUpdater": {
+      "index": 185,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CDampedValueUpdateItem": {
+      "index": 186,
+      "fields": [
+      ]
+    },
+    "CDampedValueComponentUpdater": {
+      "index": 187,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CDemoSettingsComponentUpdater": {
+      "index": 188,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CLODComponentUpdater": {
+      "index": 189,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CLookComponentUpdater": {
+      "index": 190,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CMovementMode": {
+      "index": 191,
+      "fields": [
+      ]
+    },
+    "CMovementComponentUpdater": {
+      "index": 192,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "WeightList": {
+      "index": 193,
+      "fields": [
+      ]
+    },
+    "CRagdollComponentUpdater": {
+      "index": 194,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CSlopeComponentUpdater": {
+      "index": 195,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CVRInputComponentUpdater": {
+      "index": 196,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CAnimStateMachineUpdater": {
+      "index": 261,
+      "fields": [
+      ]
+    },
+    "CMotionDataSet": {
+      "index": 198,
+      "fields": [
+      ]
+    },
+    "CProductQuantizer": {
+      "index": 203,
+      "fields": [
+      ]
+    },
+    "SampleCode": {
+      "index": 200,
+      "fields": [
+      ]
+    },
+    "MotionDBIndex": {
+      "index": 201,
+      "fields": [
+      ]
+    },
+    "CVectorQuantizer": {
+      "index": 202,
+      "fields": [
+      ]
+    },
+    "CMotionSearchNode": {
+      "index": 204,
+      "fields": [
+      ]
+    },
+    "CMotionSearchDB": {
+      "index": 205,
+      "fields": [
+      ]
+    },
+    "CMotionGraphGroup": {
+      "index": 199,
+      "fields": [
+      ]
+    },
+    "CMotionGraph": {
+      "index": 206,
+      "fields": [
+      ]
+    },
+    "CEditableMotionGraph": {
+      "index": 207,
+      "parent": "CMotionGraph",
+      "fields": [
+      ]
+    },
+    "CMotionNode": {
+      "index": 208,
+      "fields": [
+      ]
+    },
+    "CMotionNodeSequence": {
+      "index": 209,
+      "parent": "CMotionNode",
+      "fields": [
+      ]
+    },
+    "MotionBlendItem": {
+      "index": 210,
+      "fields": [
+      ]
+    },
+    "CMotionNodeBlend1D": {
+      "index": 211,
+      "parent": "CMotionNode",
+      "fields": [
+      ]
+    },
+    "CMotionMetricEvaluator": {
+      "index": 212,
+      "fields": [
+      ]
+    },
+    "CBlockSelectionMetricEvaluator": {
+      "index": 213,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CBonePositionMetricEvaluator": {
+      "index": 214,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CBoneVelocityMetricEvaluator": {
+      "index": 215,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CCurrentRotationVelocityMetricEvaluator": {
+      "index": 216,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CCurrentVelocityMetricEvaluator": {
+      "index": 217,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CDistanceRemainingMetricEvaluator": {
+      "index": 218,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CFootCycleMetricEvaluator": {
+      "index": 219,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CFootPositionMetricEvaluator": {
+      "index": 220,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CFutureFacingMetricEvaluator": {
+      "index": 221,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CFutureVelocityMetricEvaluator": {
+      "index": 222,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CPathMetricEvaluator": {
+      "index": 223,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CStepsRemainingMetricEvaluator": {
+      "index": 224,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CTimeRemainingMetricEvaluator": {
+      "index": 225,
+      "parent": "CMotionMetricEvaluator",
+      "fields": [
+      ]
+    },
+    "CAnimMotorUpdaterBase": {
+      "index": 226,
+      "fields": [
+      ]
+    },
+    "CPathAnimMotorUpdaterBase": {
+      "index": 227,
+      "parent": "CAnimMotorUpdaterBase",
+      "fields": [
+      ]
+    },
+    "CDampedPathAnimMotorUpdater": {
+      "index": 228,
+      "parent": "CPathAnimMotorUpdaterBase",
+      "fields": [
+      ]
+    },
+    "CPathAnimMotorUpdater": {
+      "index": 229,
+      "parent": "CPathAnimMotorUpdaterBase",
+      "fields": [
+      ]
+    },
+    "CPlayerInputAnimMotorUpdater": {
+      "index": 230,
+      "parent": "CAnimMotorUpdaterBase",
+      "fields": [
+      ]
+    },
+    "AimMatrixOpFixedSettings_t": {
+      "index": 231,
+      "fields": [
+      ]
+    },
+    "FollowAttachmentSettings_t": {
+      "index": 232,
+      "fields": [
+      ]
+    },
+    "FootLockPoseOpFixedSettings": {
+      "index": 233,
+      "fields": [
+      ]
+    },
+    "FootPinningPoseOpFixedData_t": {
+      "index": 234,
+      "fields": [
+      ]
+    },
+    "HitReactFixedSettings_t": {
+      "index": 235,
+      "fields": [
+      ]
+    },
+    "JiggleBoneSettings_t": {
+      "index": 236,
+      "fields": [
+      ]
+    },
+    "JiggleBoneSettingsList_t": {
+      "index": 237,
+      "fields": [
+      ]
+    },
+    "LookAtBone_t": {
+      "index": 238,
+      "fields": [
+      ]
+    },
+    "LookAtOpFixedSettings_t": {
+      "index": 239,
+      "fields": [
+      ]
+    },
+    "FingerSource_t": {
+      "index": 240,
+      "fields": [
+      ]
+    },
+    "FingerBone_t": {
+      "index": 241,
+      "fields": [
+      ]
+    },
+    "FingerChain_t": {
+      "index": 242,
+      "fields": [
+      ]
+    },
+    "WristBone_t": {
+      "index": 243,
+      "fields": [
+      ]
+    },
+    "SkeletalInputOpFixedSettings_t": {
+      "index": 244,
+      "fields": [
+      ]
+    },
+    "IKSolverSettings_t": {
+      "index": 306,
+      "fields": [
+      ]
+    },
+    "SolveIKChainPoseOpFixedSettings_t": {
+      "index": 246,
+      "fields": [
+      ]
+    },
+    "CAnimParameterBase": {
+      "index": 247,
+      "fields": [
+      ]
+    },
+    "CConcreteAnimParameter": {
+      "index": 248,
+      "parent": "CAnimParameterBase",
+      "fields": [
+      ]
+    },
+    "CVirtualAnimParameter": {
+      "index": 249,
+      "parent": "CAnimParameterBase",
+      "fields": [
+      ]
+    },
+    "CBoolAnimParameter": {
+      "index": 250,
+      "parent": "CConcreteAnimParameter",
+      "fields": [
+      ]
+    },
+    "CEnumAnimParameter": {
+      "index": 251,
+      "parent": "CConcreteAnimParameter",
+      "fields": [
+      ]
+    },
+    "CIntAnimParameter": {
+      "index": 252,
+      "parent": "CConcreteAnimParameter",
+      "fields": [
+      ]
+    },
+    "CFloatAnimParameter": {
+      "index": 253,
+      "parent": "CConcreteAnimParameter",
+      "fields": [
+      ]
+    },
+    "CVectorAnimParameter": {
+      "index": 254,
+      "parent": "CConcreteAnimParameter",
+      "fields": [
+      ]
+    },
+    "CQuaternionAnimParameter": {
+      "index": 255,
+      "parent": "CConcreteAnimParameter",
+      "fields": [
+      ]
+    },
+    "ScriptInfo_t": {
+      "index": 256,
+      "fields": [
+      ]
+    },
+    "CAnimScriptManager": {
+      "index": 257,
+      "fields": [
+      ]
+    },
+    "CStateActionUpdater": {
+      "index": 258,
+      "fields": [
+      ]
+    },
+    "CTransitionUpdateData": {
+      "index": 259,
+      "fields": [
+      ]
+    },
+    "CStateUpdateData": {
+      "index": 260,
+      "fields": [
+      ]
+    },
+    "CStateMachineComponentUpdater": {
+      "index": 197,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CAnimUpdateNodeRef": {
+      "index": 262,
+      "fields": [
+      ]
+    },
+    "CAnimUpdateNodeBase": {
+      "index": 263,
+      "fields": [
+      ]
+    },
+    "CBinaryUpdateNode": {
+      "index": 264,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CBlendUpdateNode": {
+      "index": 265,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "BlendItem_t": {
+      "index": 266,
+      "fields": [
+      ]
+    },
+    "CBlend2DUpdateNode": {
+      "index": 267,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CBoneMaskUpdateNode": {
+      "index": 268,
+      "parent": "CBinaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CChoiceUpdateNode": {
+      "index": 269,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CDirectPlaybackTagData": {
+      "index": 270,
+      "fields": [
+      ]
+    },
+    "FootFixedData_t": {
+      "index": 271,
+      "fields": [
+      ]
+    },
+    "TraceSettings_t": {
+      "index": 272,
+      "fields": [
+      ]
+    },
+    "FootFixedSettings": {
+      "index": 273,
+      "fields": [
+      ]
+    },
+    "FootStepTrigger": {
+      "index": 274,
+      "fields": [
+      ]
+    },
+    "CLeafUpdateNode": {
+      "index": 275,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CLeanMatrixUpdateNode": {
+      "index": 276,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CMotionGraphUpdateNode": {
+      "index": 277,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CMotionMatchingUpdateNode": {
+      "index": 278,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CSelectorUpdateNode": {
+      "index": 279,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CSequenceUpdateNode": {
+      "index": 280,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CPoseHandle": {
+      "index": 298,
+      "fields": [
+      ]
+    },
+    "CSkeletalInputUpdateNode": {
+      "index": 282,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CSolveIKTargetHandle_t": {
+      "index": 283,
+      "fields": [
+      ]
+    },
+    "StanceInfo_t": {
+      "index": 284,
+      "fields": [
+      ]
+    },
+    "CStateNodeTransitionData": {
+      "index": 285,
+      "fields": [
+      ]
+    },
+    "CStateNodeStateData": {
+      "index": 286,
+      "fields": [
+      ]
+    },
+    "CStateMachineUpdateNode": {
+      "index": 287,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CSubtractUpdateNode": {
+      "index": 288,
+      "parent": "CBinaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "TwoBoneIKSettings_t": {
+      "index": 289,
+      "fields": [
+      ]
+    },
+    "CUnaryUpdateNode": {
+      "index": 290,
+      "parent": "CAnimUpdateNodeBase",
+      "fields": [
+      ]
+    },
+    "CWayPointHelperUpdateNode": {
+      "index": 291,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CZeroPoseUpdateNode": {
+      "index": 292,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "TagSpan_t": {
+      "index": 293,
+      "fields": [
+      ]
+    },
+    "CAnimUpdateSharedData": {
+      "index": 154,
+      "fields": [
+      ]
+    },
+    "ConfigIndex": {
+      "index": 295,
+      "fields": [
+      ]
+    },
+    "MotionIndex": {
+      "index": 296,
+      "fields": [
+      ]
+    },
+    "CMotionGraphConfig": {
+      "index": 297,
+      "fields": [
+      ]
+    },
+    "CSingleFrameUpdateNode": {
+      "index": 281,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CAnimationGraphVisualizerPrimitiveBase": {
+      "index": 299,
+      "fields": [
+      ]
+    },
+    "CAnimationGraphVisualizerText": {
+      "index": 300,
+      "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "fields": [
+      ]
+    },
+    "CAnimationGraphVisualizerSphere": {
+      "index": 301,
+      "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "fields": [
+      ]
+    },
+    "CAnimationGraphVisualizerLine": {
+      "index": 302,
+      "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "fields": [
+      ]
+    },
+    "CAnimationGraphVisualizerPie": {
+      "index": 303,
+      "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "fields": [
+      ]
+    },
+    "CAnimationGraphVisualizerAxis": {
+      "index": 304,
+      "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "fields": [
+      ]
+    },
+    "IKBoneNameAndIndex_t": {
+      "index": 305,
+      "fields": [
+      ]
+    },
+    "IKTargetSettings_t": {
+      "index": 307,
+      "fields": [
+      ]
+    },
+    "ChainToSolveData_t": {
+      "index": 245,
+      "fields": [
+      ]
+    },
+    "CAnimGraphNetworkSettings": {
+      "index": 308,
+      "parent": "CAnimGraphSettingsGroup",
+      "fields": [
+      ]
+    },
+    "CActionComponentUpdater": {
+      "index": 309,
+      "parent": "CAnimComponentUpdater",
+      "fields": [
+      ]
+    },
+    "CAddUpdateNode": {
+      "index": 310,
+      "parent": "CBinaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CAimMatrixUpdateNode": {
+      "index": 311,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CBindPoseUpdateNode": {
+      "index": 312,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CChoreoUpdateNode": {
+      "index": 313,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CCycleControlUpdateNode": {
+      "index": 314,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CCycleControlClipUpdateNode": {
+      "index": 315,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CDirectionalBlendUpdateNode": {
+      "index": 316,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CDirectPlaybackUpdateNode": {
+      "index": 317,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CFollowPathUpdateNode": {
+      "index": 318,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CFollowAttachmentUpdateNode": {
+      "index": 319,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CFootAdjustmentUpdateNode": {
+      "index": 320,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CFootLockUpdateNode": {
+      "index": 321,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CFootPinningUpdateNode": {
+      "index": 322,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CFootStepTriggerUpdateNode": {
+      "index": 323,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CHitReactUpdateNode": {
+      "index": 324,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CInputStreamUpdateNode": {
+      "index": 325,
+      "parent": "CLeafUpdateNode",
+      "fields": [
+      ]
+    },
+    "CJiggleBoneUpdateNode": {
+      "index": 326,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CJumpHelperUpdateNode": {
+      "index": 327,
+      "parent": "CSequenceUpdateNode",
+      "fields": [
+      ]
+    },
+    "CLookAtUpdateNode": {
+      "index": 328,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CMoverUpdateNode": {
+      "index": 329,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CPathHelperUpdateNode": {
+      "index": 330,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CRagdollUpdateNode": {
+      "index": 331,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CRootUpdateNode": {
+      "index": 332,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CSetFacingUpdateNode": {
+      "index": 333,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CSlowDownOnSlopesUpdateNode": {
+      "index": 334,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CSolveIKChainUpdateNode": {
+      "index": 335,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CSpeedScaleUpdateNode": {
+      "index": 336,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CStanceOverrideUpdateNode": {
+      "index": 337,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CStanceScaleUpdateNode": {
+      "index": 338,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CStopAtGoalUpdateNode": {
+      "index": 339,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CTurnHelperUpdateNode": {
+      "index": 340,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    },
+    "CTwoBoneIKUpdateNode": {
+      "index": 341,
+      "parent": "CUnaryUpdateNode",
+      "fields": [
+      ]
+    }
+  }
+}
