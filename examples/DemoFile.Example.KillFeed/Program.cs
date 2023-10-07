@@ -40,7 +40,7 @@ internal class Program
                 _ => null
             };
 
-            AnsiConsole.MarkupLine($"\n[white]>>> Round end: {roundEndReason}[/]");
+            AnsiConsole.MarkupLine($"\n>>> Round end: [bold white]{roundEndReason}[/]");
             AnsiConsole.MarkupLine($"  Winner: [{TeamNumberToString((CSTeamNumber) e.Winner)}]{winningTeam?.m_szClanTeamname}[/]");
             AnsiConsole.MarkupLine($"  {demo.GameRules.m_nRoundsPlayedThisPhase} rounds played in {demo.GameRules.CSGamePhase}");
             AnsiConsole.MarkupLine($"  Scores: [red]{demo.TeamTerrorist.m_szClanTeamname}[/] {demo.TeamTerrorist.m_iScore} - {demo.TeamCounterTerrorist.m_iScore} [blue]{demo.TeamCounterTerrorist.m_szClanTeamname}[/]");
@@ -53,13 +53,13 @@ internal class Program
         sw.Stop();
 
         var ticks = demo.CurrentDemoTick.Value;
-        Console.WriteLine($"\nFinished! Parsed {ticks:N0} ticks ({demo.CurrentTime.Value:N1} game secs) in {sw.Elapsed.TotalSeconds:0.000} secs ({ticks * 1000 / sw.Elapsed.TotalMilliseconds:N1} ticks/sec)");
+        AnsiConsole.MarkupLine($"\n[bold green]Finished![/] Parsed [bold white]{ticks:N0} ticks[/] ({demo.CurrentTime.Value:N1} game secs) in [bold white]{sw.Elapsed.TotalSeconds:0.000} secs[/] ({ticks * 1000 / sw.Elapsed.TotalMilliseconds:N1} ticks/sec)");
     }
 
     private static string TeamNumberToString(CSTeamNumber? csTeamNumber) => csTeamNumber switch
     {
-        CSTeamNumber.Terrorist => "red",
-        CSTeamNumber.CounterTerrorist => "blue",
-        _ => "white",
+        CSTeamNumber.Terrorist => "bold red",
+        CSTeamNumber.CounterTerrorist => "bold blue",
+        _ => "bold white",
     };
 }

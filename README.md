@@ -3,6 +3,8 @@
 DemoFile.Net is a blazing fast demo parser library for Counter-Strike 2, written in C#. It is cross platform, and can be
 used from Windows, Mac or Linux.
 
+![Screenshot of DemoFile.Net](./assets/screenshot-2x.png)
+
 ## Features
 
 | Feature                                           | Availability      |
