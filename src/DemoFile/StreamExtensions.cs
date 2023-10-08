@@ -1,6 +1,6 @@
 ﻿namespace DemoFile;
 
-public static class StreamExtensions
+internal static class StreamExtensions
 {
     public static uint ReadUVarInt32(this Stream stream)
     {

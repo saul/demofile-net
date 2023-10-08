@@ -1,14 +1,15 @@
-﻿using System.Globalization;
-using System.Text;
+﻿using System.Text;
 using DemoFile;
 
 internal static class Program
 {
-    private static readonly TextInfo EnglishTextInfo = CultureInfo.GetCultureInfo("en-US").TextInfo;
-
     public static async Task Main(string[] args)
     {
-        var file = File.OpenRead(@"C:\Code\demofile-net\demos\space-vs-forward-m1-ancient.dem");
+        var (demoPath, outputPath) = args switch
+        {
+            [var fst, var snd] => (fst, snd),
+            _ => throw new Exception("Expected format: <path to .dem> <path to output .cs>")
+        };
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
@@ -19,18 +20,18 @@ internal static class Program
             WriteDescriptors(builder, events.Descriptors);
             cts.Cancel();
 
-            File.WriteAllText(@"C:\Code\demofile-net\DemoFile.Net\Source1GameEvents.AutoGen.cs", builder.ToString());
+            File.WriteAllText(outputPath, builder.ToString());
         };
 
-        await demo.Start(file, cts.Token);
+        await demo.Start(File.OpenRead(demoPath), cts.Token);
     }
 
     public static string SnakeCaseToPascalCase(string snakey)
     {
-        var parts = snakey.Split('_');
+        var parts = snakey.Split('_', StringSplitOptions.RemoveEmptyEntries);
         for (var i = 0; i < parts.Length; i++)
         {
-            parts[i] = EnglishTextInfo.ToTitleCase(parts[i]);
+            parts[i] = char.ToUpper(parts[i][0]) + parts[i][1..];
         }
 
         return string.Concat(parts);

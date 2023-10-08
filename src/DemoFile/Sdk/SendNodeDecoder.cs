@@ -8,5 +8,3 @@ internal delegate void SendNodeDecoder<in T>(
 internal delegate SendNodeDecoder<T> SendNodeDecoderFactory<in T>(
     SerializableField field,
     DecoderSet decoderSet);
-
-internal delegate CEntityInstance EntityFactory(EntityContext context, SendNodeDecoder<object> decoder);

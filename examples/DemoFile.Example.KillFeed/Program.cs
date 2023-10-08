@@ -17,7 +17,7 @@ internal class Program
             var victim = demo.GetEntityByIndex<CCSPlayerController>(e.Userid);
 
             // Write attacker name in the colour of their team
-            AnsiConsole.Markup($"[{TeamNumberToString(attacker?.CSTeamNumber)}]{attacker?.m_iszPlayerName}[/]");
+            AnsiConsole.Markup($"[{TeamNumberToString(attacker?.CSTeamNum)}]{attacker?.PlayerName}[/]");
 
             // Write the weapon
             AnsiConsole.Markup(" <");
@@ -27,7 +27,7 @@ internal class Program
             AnsiConsole.Markup("> ");
 
             // Write the victim's name in the colour of their team
-            AnsiConsole.MarkupLine($"[{TeamNumberToString(victim?.CSTeamNumber)}]{victim?.m_iszPlayerName}[/]");
+            AnsiConsole.MarkupLine($"[{TeamNumberToString(victim?.CSTeamNum)}]{victim?.PlayerName}[/]");
         };
 
         demo.Source1GameEvents.RoundEnd += e =>
@@ -41,9 +41,9 @@ internal class Program
             };
 
             AnsiConsole.MarkupLine($"\n>>> Round end: [bold white]{roundEndReason}[/]");
-            AnsiConsole.MarkupLine($"  Winner: [{TeamNumberToString((CSTeamNumber) e.Winner)}]{winningTeam?.m_szClanTeamname}[/]");
-            AnsiConsole.MarkupLine($"  {demo.GameRules.m_nRoundsPlayedThisPhase} rounds played in {demo.GameRules.CSGamePhase}");
-            AnsiConsole.MarkupLine($"  Scores: [red]{demo.TeamTerrorist.m_szClanTeamname}[/] {demo.TeamTerrorist.m_iScore} - {demo.TeamCounterTerrorist.m_iScore} [blue]{demo.TeamCounterTerrorist.m_szClanTeamname}[/]");
+            AnsiConsole.MarkupLine($"  Winner: [{TeamNumberToString((CSTeamNumber) e.Winner)}]{winningTeam?.ClanTeamname}[/]");
+            AnsiConsole.MarkupLine($"  {demo.GameRules.RoundsPlayedThisPhase} rounds played in {demo.GameRules.CSGamePhase}");
+            AnsiConsole.MarkupLine($"  Scores: [red]{demo.TeamTerrorist.ClanTeamname}[/] {demo.TeamTerrorist.Score} - {demo.TeamCounterTerrorist.Score} [blue]{demo.TeamCounterTerrorist.ClanTeamname}[/]");
             AnsiConsole.WriteLine("");
         };
 

@@ -27,6 +27,7 @@ public partial class DemoParser
 
     private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
 
+    private CHandle<CCSTeam> _teamSpectatorHandle;
     private CHandle<CCSTeam> _teamTerroristHandle;
     private CHandle<CCSTeam> _teamCounterTerroristHandle;
     private CHandle<CCSPlayerResource> _playerResourceHandle;
@@ -56,12 +57,13 @@ public partial class DemoParser
     }
 
     private T GetCachedSingletonEntity<T>(ref CHandle<T> handle) where T : CEntityInstance =>
-        GetCachedSingletonEntity<T>(ref handle, _ => true);
+        GetCachedSingletonEntity(ref handle, _ => true);
 
-    public CCSTeam TeamTerrorist => GetCachedSingletonEntity(ref _teamTerroristHandle, team => team.CSTeamNumber == CSTeamNumber.Terrorist);
-    public CCSTeam TeamCounterTerrorist => GetCachedSingletonEntity(ref _teamCounterTerroristHandle, team => team.CSTeamNumber == CSTeamNumber.CounterTerrorist);
+    public CCSTeam TeamSpectator => GetCachedSingletonEntity(ref _teamSpectatorHandle, team => team.CSTeamNum == CSTeamNumber.Spectator);
+    public CCSTeam TeamTerrorist => GetCachedSingletonEntity(ref _teamTerroristHandle, team => team.CSTeamNum == CSTeamNumber.Terrorist);
+    public CCSTeam TeamCounterTerrorist => GetCachedSingletonEntity(ref _teamCounterTerroristHandle, team => team.CSTeamNum == CSTeamNumber.CounterTerrorist);
     public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
-    public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).m_pGameRules!;
+    public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
 
     public IEnumerable<CEntityInstance> Entities => _entities.Where(x => x != null)!;
 
@@ -197,22 +199,18 @@ public partial class DemoParser
             {
                 Debug.Assert(msg.IsDelta, "Deletion on full update");
 
-                // entity leaving PVS
+                // FHDR_LEAVEPVS
+                var entity = _entities[entityIndex] ?? throw new Exception($"LeavePvs on non-existent entity {entityIndex}");
+                if (entity.IsActive)
+                {
+                    entity.IsActive = false;
+                    // todo: fire event: EntityLeavePvs
+                }
 
                 if (updateType == 0b11)
                 {
                     // FHDR_LEAVEPVS | FHDR_DELETE
                     _entities[entityIndex] = null;
-                }
-                else
-                {
-                    // FHDR_LEAVEPVS
-                    var entity = _entities[entityIndex] ?? throw new Exception($"LeavePvs on non-existent entity {entityIndex}");
-                    if (entity.IsActive)
-                    {
-                        entity.IsActive = false;
-                        // todo: fire event: EntityLeavePvs
-                    }
                 }
             }
             else if (updateType == 0b10)

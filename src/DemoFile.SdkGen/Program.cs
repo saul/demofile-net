@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 using QuickGraph;
 using QuickGraph.Algorithms.Search;
 
@@ -23,14 +22,20 @@ internal static partial class Program
 
     public static void Main(string[] args)
     {
+        var outputPath =
+            args.SingleOrDefault() ??
+            throw new Exception("Expected a single CLI argument: <output path .cs>");
+
         // Concat together all enums and classes
         var allEnums = new SortedDictionary<string, SchemaEnum>();
         var allClasses = new SortedDictionary<string, SchemaClass>();
 
-        foreach (var schemaPath in Directory.GetFiles(
-                     Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Schema"),
-                     "*.json"))
+        var schemaFiles = new[] {"server.json", "!GlobalTypes.json"};
+
+        foreach (var schemaFile in schemaFiles)
         {
+            var schemaPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Schema", schemaFile);
+
             var schema = JsonSerializer.Deserialize<SchemaModule>(
                 File.ReadAllText(schemaPath),
                 SerializerOptions)!;
@@ -153,7 +158,7 @@ internal static partial class Program
 
         WriteDecoderSetPartial(builder, visitedClassNames);
 
-        File.WriteAllText(@"C:\Code\demofile-net\src\DemoFile\Sdk\Schema.cs", builder.ToString());
+        File.WriteAllText(outputPath, builder.ToString());
     }
 
     private static void WriteEntityFactoriesLookup(StringBuilder builder)
@@ -224,16 +229,6 @@ internal static partial class Program
         builder.AppendLine("        }");
         builder.AppendLine("    }");
         builder.AppendLine("}");
-    }
-
-    private static string CleanFieldName(string fieldName)
-    {
-        return fieldName;
-
-        /*
-        var stripped = HungarianNotationRegex().Replace(fieldName, "$2");
-        return stripped.StartsWith("m_") ? $"{char.ToUpper(stripped[2])}{stripped[3..]}" : stripped;
-        */
     }
 
     private static void WriteClass(
@@ -332,7 +327,7 @@ internal static partial class Program
                 builder.AppendLine($"    // {metadataKey}{(value == "" ? "" : $" \"{value}\"")}");
             }
 
-            builder.AppendLine($"    public {SanitiseTypeName(field.Type.CsTypeName)} {CleanFieldName(field.Name)} {{ get; private set; }}{defaultValue}");
+            builder.AppendLine($"    public {SanitiseTypeName(field.Type.CsTypeName)} {schemaClass.CsPropertyNameForField(schemaClassName, field)} {{ get; private set; }}{defaultValue}");
             builder.AppendLine();
         }
 
@@ -343,6 +338,7 @@ internal static partial class Program
         foreach (var field in schemaClass.Fields)
         {
             var fieldCsTypeName = SanitiseTypeName(field.Type.CsTypeName);
+            var fieldCsPropertyName = schemaClass.CsPropertyNameForField(schemaClassName, field);
             
             field.TryGetMetadata("MNetworkSerializer", out var serializer);
             field.TryGetMetadata("MNetworkAlias", out var alias);
@@ -354,7 +350,7 @@ internal static partial class Program
                 builder.AppendLine($"            var innerDecoder = {fieldCsTypeName}.CreateFieldDecoder(field with {{SendNode = field.SendNode[1..]}}, decoderSet);");
                 builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                 builder.AppendLine($"            {{");
-                builder.AppendLine($"                innerDecoder(@this.{field.Name}, path, ref buffer);");
+                builder.AppendLine($"                innerDecoder(@this.{fieldCsPropertyName}, path, ref buffer);");
                 builder.AppendLine($"            }};");
                 builder.AppendLine($"        }}");
             }
@@ -376,14 +372,14 @@ internal static partial class Program
                     builder.AppendLine($"                if (path.Length == 1)");
                     builder.AppendLine($"                {{");
                     builder.AppendLine($"                    var newSize = (int)buffer.ReadUVarInt32();");
-                    builder.AppendLine($"                    @this.{field.Name}.Resize(newSize);");
+                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.Resize(newSize);");
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"                else");
                     builder.AppendLine($"                {{");
                     builder.AppendLine($"                    Debug.Assert(path.Length > 2);");
                     builder.AppendLine($"                    var index = path[1];");
-                    builder.AppendLine($"                    @this.{field.Name}.EnsureSize(index + 1);");
-                    builder.AppendLine($"                    var element = @this.{field.Name}[index] ??= new {inner.Name}();");
+                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
+                    builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[index] ??= new {inner.Name}();");
                     builder.AppendLine($"                    innerDecoder(element, path[2..], ref buffer);");
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"            }};");
@@ -406,15 +402,15 @@ internal static partial class Program
                     builder.AppendLine($"                if (path.Length == 1)");
                     builder.AppendLine($"                {{");
                     builder.AppendLine($"                    var newSize = (int)buffer.ReadUVarInt32();");
-                    builder.AppendLine($"                    @this.{field.Name}.Resize(newSize);");
+                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.Resize(newSize);");
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"                else");
                     builder.AppendLine($"                {{");
                     builder.AppendLine($"                    Debug.Assert(path.Length == 2);");
                     builder.AppendLine($"                    var index = path[1];");
-                    builder.AppendLine($"                    @this.{field.Name}.EnsureSize(index + 1);");
+                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
                     builder.AppendLine($"                    var element = decoder(ref buffer);");
-                    builder.AppendLine($"                    @this.{field.Name}[index] = element;");
+                    builder.AppendLine($"                    @this.{fieldCsPropertyName}[index] = element;");
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"            }};");
                 }
@@ -434,8 +430,8 @@ internal static partial class Program
                     builder.AppendLine($"            var decoder = FieldDecode.{decoderMethod}(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                if (@this.{field.Name}.Length == 0) @this.{field.Name} = new {elementCsTypeName}[fixedArraySize];");
-                    builder.AppendLine($"                @this.{field.Name}[path[1]] = decoder(ref buffer);");
+                    builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
+                    builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = decoder(ref buffer);");
                     builder.AppendLine($"            }};");
                 }
                 else if (field.Type.Category == SchemaTypeCategory.Ptr)
@@ -472,7 +468,7 @@ internal static partial class Program
                         builder.AppendLine($"                    if (childClassId == 0)");
                         builder.AppendLine($"                    {{");
                         builder.AppendLine($"                        innerDecoder = null;");
-                        builder.AppendLine($"                        @this.{field.Name} = null;");
+                        builder.AppendLine($"                        @this.{fieldCsPropertyName} = null;");
                         builder.AppendLine($"                    }}");
                         builder.AppendLine($"                    if (!{inner.Name}.TryCreateDowncastDecoderById(decoderSet, childClassId, out innerDecoder))");
                         builder.AppendLine($"                    {{");
@@ -481,7 +477,7 @@ internal static partial class Program
                     }
                     else
                     {
-                        builder.AppendLine($"                    @this.{field.Name} = buffer.ReadOneBit() ? factory() : null;");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName} = buffer.ReadOneBit() ? factory() : null;");
                     }
 
                     builder.AppendLine($"                }}");
@@ -491,12 +487,12 @@ internal static partial class Program
                     if (isPolymorphic)
                     {
                         builder.AppendLine($"                    Debug.Assert(innerDecoder != null);");
-                        builder.AppendLine($"                    Debug.Assert(@this.m_pGameModeRules != null);");
-                        builder.AppendLine($"                    var inner = @this.{field.Name}!;");
+                        builder.AppendLine($"                    Debug.Assert(@this.{fieldCsPropertyName} != null);");
+                        builder.AppendLine($"                    var inner = @this.{fieldCsPropertyName}!;");
                     }
                     else
                     {
-                        builder.AppendLine($"                    var inner = @this.{field.Name} ??= factory();");
+                        builder.AppendLine($"                    var inner = @this.{fieldCsPropertyName} ??= factory();");
                     }
 
                     builder.AppendLine($"                    innerDecoder(inner, path[1..], ref buffer);");
@@ -514,7 +510,7 @@ internal static partial class Program
                     builder.AppendLine($"            var decoder = {decoderMethod}(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                @this.{field.Name} = decoder(ref buffer);");
+                    builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(ref buffer);");
                     builder.AppendLine($"            }};");
                 }
 
@@ -576,7 +572,4 @@ internal static partial class Program
 
         builder.AppendLine("}");
     }
-
-    [GeneratedRegex("^m_(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|bv|e|s)([A-Z])")]
-    private static partial Regex HungarianNotationRegex();
 }

@@ -10,7 +10,10 @@ public partial class CEntityInstance
         EntityIndex = context.EntityIndex;
         ServerClass = context.ServerClass;
         SerialNumber = context.SerialNumber;
+        Demo = context.Demo;
     }
+
+    protected DemoParser Demo { get; }
 
     public CEntityIndex EntityIndex { get; }
 

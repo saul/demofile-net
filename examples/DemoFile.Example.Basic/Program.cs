@@ -13,7 +13,7 @@ internal class Program
             var attacker = demo.GetEntityByIndex<CCSPlayerController>(e.Attacker);
             var victim = demo.GetEntityByIndex<CCSPlayerController>(e.Userid);
 
-            Console.WriteLine($"{attacker?.m_iszPlayerName} [{e.Weapon}] {victim?.m_iszPlayerName}");
+            Console.WriteLine($"{attacker?.PlayerName} [{e.Weapon}] {victim?.PlayerName}");
         };
 
         await demo.Start(File.OpenRead(path));

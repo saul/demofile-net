@@ -535,7 +535,7 @@ public partial class Source1GameEvents
                         if (key.Name == "xuid")
                             return (@this, x) => @this.Xuid = x.ValUint64;
                         if (key.Name == "PlayerID")
-                            return (@this, x) => @this.Playerid = x.ValShort;
+                            return (@this, x) => @this.PlayerID = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1171,7 +1171,7 @@ public partial class Source1GameEvents
                         if (key.Name == "text")
                             return (@this, x) => @this.Text = x.ValString;
                         if (key.Name == "steamID")
-                            return (@this, x) => @this.Steamid = x.ValUint64;
+                            return (@this, x) => @this.SteamID = x.ValUint64;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1343,11 +1343,11 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DifficultyChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "newDifficulty")
-                            return (@this, x) => @this.Newdifficulty = x.ValShort;
+                            return (@this, x) => @this.NewDifficulty = x.ValShort;
                         if (key.Name == "oldDifficulty")
-                            return (@this, x) => @this.Olddifficulty = x.ValShort;
+                            return (@this, x) => @this.OldDifficulty = x.ValShort;
                         if (key.Name == "strDifficulty")
-                            return (@this, x) => @this.Strdifficulty = x.ValString;
+                            return (@this, x) => @this.StrDifficulty = x.ValString;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1883,7 +1883,7 @@ public partial class Source1GameEvents
                         if (key.Name == "vote_option5")
                             return (@this, x) => @this.VoteOption5 = x.ValByte;
                         if (key.Name == "potentialVotes")
-                            return (@this, x) => @this.Potentialvotes = x.ValByte;
+                            return (@this, x) => @this.PotentialVotes = x.ValByte;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3113,7 +3113,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ReadGameTitledataEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "controllerId")
-                            return (@this, x) => @this.Controllerid = x.ValShort;
+                            return (@this, x) => @this.ControllerId = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3135,7 +3135,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WriteGameTitledataEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "controllerId")
-                            return (@this, x) => @this.Controllerid = x.ValShort;
+                            return (@this, x) => @this.ControllerId = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3157,7 +3157,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ResetGameTitledataEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "controllerId")
-                            return (@this, x) => @this.Controllerid = x.ValShort;
+                            return (@this, x) => @this.ControllerId = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -5953,15 +5953,15 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SwitchTeamEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "numPlayers")
-                            return (@this, x) => @this.Numplayers = x.ValShort;
+                            return (@this, x) => @this.NumPlayers = x.ValShort;
                         if (key.Name == "numSpectators")
-                            return (@this, x) => @this.Numspectators = x.ValShort;
+                            return (@this, x) => @this.NumSpectators = x.ValShort;
                         if (key.Name == "avg_rank")
                             return (@this, x) => @this.AvgRank = x.ValShort;
                         if (key.Name == "numTSlotsFree")
-                            return (@this, x) => @this.Numtslotsfree = x.ValShort;
+                            return (@this, x) => @this.NumTSlotsFree = x.ValShort;
                         if (key.Name == "numCTSlotsFree")
-                            return (@this, x) => @this.Numctslotsfree = x.ValShort;
+                            return (@this, x) => @this.NumCTSlotsFree = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -7234,7 +7234,7 @@ public partial class Source1PlayerDisconnectEvent
     public string Name { get; set; } = "";
     public string Networkid { get; set; } = "";
     public ulong Xuid { get; set; }
-    public int Playerid { get; set; }
+    public int PlayerID { get; set; }
 }
 
 public partial class Source1PlayerInfoEvent
@@ -7402,7 +7402,7 @@ public partial class Source1HltvTitleEvent
 public partial class Source1HltvChatEvent
 {
     public string Text { get; set; } = "";
-    public ulong Steamid { get; set; }
+    public ulong SteamID { get; set; }
 }
 
 public partial class Source1HltvVersioninfoEvent
@@ -7440,9 +7440,9 @@ public partial class Source1HostnameChangedEvent
 
 public partial class Source1DifficultyChangedEvent
 {
-    public int Newdifficulty { get; set; }
-    public int Olddifficulty { get; set; }
-    public string Strdifficulty { get; set; } = "";
+    public int NewDifficulty { get; set; }
+    public int OldDifficulty { get; set; }
+    public string StrDifficulty { get; set; } = "";
 }
 
 public partial class Source1GameMessageEvent
@@ -7590,7 +7590,7 @@ public partial class Source1VoteChangedEvent
     public int VoteOption3 { get; set; }
     public int VoteOption4 { get; set; }
     public int VoteOption5 { get; set; }
-    public int Potentialvotes { get; set; }
+    public int PotentialVotes { get; set; }
 }
 
 public partial class Source1VoteCastYesEvent
@@ -7887,17 +7887,17 @@ public partial class Source1PlayerDecalEvent
 
 public partial class Source1ReadGameTitledataEvent
 {
-    public int Controllerid { get; set; }
+    public int ControllerId { get; set; }
 }
 
 public partial class Source1WriteGameTitledataEvent
 {
-    public int Controllerid { get; set; }
+    public int ControllerId { get; set; }
 }
 
 public partial class Source1ResetGameTitledataEvent
 {
-    public int Controllerid { get; set; }
+    public int ControllerId { get; set; }
 }
 
 public partial class Source1WeaponhudSelectionEvent
@@ -8641,11 +8641,11 @@ public partial class Source1GgKilledEnemyEvent
 
 public partial class Source1SwitchTeamEvent
 {
-    public int Numplayers { get; set; }
-    public int Numspectators { get; set; }
+    public int NumPlayers { get; set; }
+    public int NumSpectators { get; set; }
     public int AvgRank { get; set; }
-    public int Numtslotsfree { get; set; }
-    public int Numctslotsfree { get; set; }
+    public int NumTSlotsFree { get; set; }
+    public int NumCTSlotsFree { get; set; }
 }
 
 public partial class Source1WriteProfileDataEvent
