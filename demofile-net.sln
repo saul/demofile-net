@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.KillFeed",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Basic", "examples\DemoFile.Example.Basic\DemoFile.Example.Basic.csproj", "{1A0CF2C7-AE27-4BB7-8BE0-A35DDEF6CBBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Scoreboard", "examples\DemoFile.Example.Scoreboard\DemoFile.Example.Scoreboard.csproj", "{0FB0D403-E4B2-4073-B8B0-6FB296861DCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,9 +61,14 @@ Global
 		{1A0CF2C7-AE27-4BB7-8BE0-A35DDEF6CBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A0CF2C7-AE27-4BB7-8BE0-A35DDEF6CBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A0CF2C7-AE27-4BB7-8BE0-A35DDEF6CBBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB0D403-E4B2-4073-B8B0-6FB296861DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB0D403-E4B2-4073-B8B0-6FB296861DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB0D403-E4B2-4073-B8B0-6FB296861DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB0D403-E4B2-4073-B8B0-6FB296861DCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 		{1A0CF2C7-AE27-4BB7-8BE0-A35DDEF6CBBA} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
+		{0FB0D403-E4B2-4073-B8B0-6FB296861DCA} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 	EndGlobalSection
 EndGlobal
