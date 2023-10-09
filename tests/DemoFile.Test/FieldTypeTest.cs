@@ -16,7 +16,7 @@ public class FieldTypeTest
     };
 
     [TestCaseSource(nameof(ParseCases))]
-    public void Parse(string typeName, FieldType expected)
+    public void Parse(string typeName, object expected)
     {
         var fieldType = FieldType.Parse(typeName);
         Assert.That(fieldType, Is.EqualTo(expected));
