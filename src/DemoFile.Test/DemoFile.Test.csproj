@@ -4,8 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DemoFile\DemoFile.csproj" />
+    <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\demos\*.dem" CopyToOutputDirectory="PreserveNewest" LinkBase="demos" />
+  </ItemGroup>
+
 
 </Project>

@@ -32,3 +32,11 @@ jobs:
         run: ./download.sh
       - name: Test
         run: dotnet test --no-build --verbosity normal
+      - name: Testing example projects with demo
+        working-directory: examples
+        run: |
+          dirs=($(find . -type d))
+          for dir in "${dirs[@]}"; do
+            echo "Running example: $dir..."
+            dotnet run -v quiet -c Release --project "$dir" -- ../demos/space-vs-forward-m1-ancient.dem
+          done

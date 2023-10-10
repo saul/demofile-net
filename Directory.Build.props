@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NerdBank.GitVersioning" Version="3.6.133" />
+  </ItemGroup>
+</Project>

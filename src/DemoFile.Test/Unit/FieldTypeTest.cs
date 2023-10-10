@@ -1,4 +1,4 @@
-namespace DemoFile.Test;
+namespace DemoFile.Test.Unit;
 
 public class FieldTypeTest
 {

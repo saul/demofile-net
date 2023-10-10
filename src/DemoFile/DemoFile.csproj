@@ -8,7 +8,22 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>CS8981</NoWarn>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <!-- Missing XML comment for publicly visible type or member -->
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);CS1591</WarningsNotAsErrors>
   </PropertyGroup>
+
+  <!-- NuGet package settings -->
+  <PropertyGroup>
+    <Authors>Saul Rennison</Authors>
+    <Description>DemoFile.Net is a blazing fast demo parser library for Counter-Strike 2.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.22.1" />
@@ -23,7 +38,7 @@
   <ItemGroup>
     <InternalsVisibleTo Include="DemoFile.Test" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Protobuf Include="../../protos/demo.proto" />
     <Protobuf Include="../../protos/netmessages.proto" />
@@ -32,5 +47,5 @@
     <Protobuf Include="../../protos/gameevents.proto" />
     <Protobuf Include="../../protos/usermessages.proto" />
   </ItemGroup>
-
+  
 </Project>
