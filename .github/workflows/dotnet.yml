@@ -33,11 +33,11 @@ jobs:
         working-directory: ./demos
         run: ./download.sh
       - name: Test
-        run: dotnet test -v normal
+        run: dotnet test
       - name: Testing example projects with demo
         working-directory: examples
         run: |
-          dirs=($(find . -type d))
+          dirs=($(find . -mindepth 1 -maxdepth 1 -type d))
           for dir in "${dirs[@]}"; do
             echo "Running example: $dir..."
             dotnet run -v quiet -c Release --project "$dir" -- ../demos/space-vs-forward-m1-ancient.dem
