@@ -1,4 +1,6 @@
-﻿namespace DemoFile;
+﻿#pragma warning disable CS1591
+
+namespace DemoFile;
 
 public struct DemoEvents
 {
