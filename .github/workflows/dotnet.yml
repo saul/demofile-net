@@ -33,7 +33,9 @@ jobs:
         working-directory: ./demos
         run: ./download.sh
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: |
+          ls -la ./demos
+          dotnet test --no-build --verbosity normal
       - name: Testing example projects with demo
         working-directory: examples
         run: |

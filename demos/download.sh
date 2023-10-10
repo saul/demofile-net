@@ -4,8 +4,6 @@
 set -e
 pushd `dirname "$0"`
 
-sudo apt-get install unzip
-
 curl 'https://demofiledemos.blob.core.windows.net/demoblobs/space-vs-forward-m1-ancient.zip' --output test-demos.zip
 
 unzip -o test-demos.zip
