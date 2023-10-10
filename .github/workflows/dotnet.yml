@@ -5,20 +5,30 @@ name: .NET Test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
-    
+    branches: ["main"]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 7.0.x
-    - name: Build
-      run: dotnet build
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+      - name: Build
+        run: dotnet build
+      - name: Cache demos
+        id: cache-demos
+        uses: actions/cache@v3
+        with:
+          path: demos
+          key: demos-${{ hashFiles('demos/download.sh') }}
+      - name: Download demos for integration test
+        if: steps.cache-demos.outputs.cache-hit != 'true'
+        working-directory: ./demos
+        run: ./download.sh
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
