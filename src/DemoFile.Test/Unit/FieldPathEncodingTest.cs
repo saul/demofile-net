@@ -1,4 +1,6 @@
-﻿namespace DemoFile.Test.Unit;
+﻿using System.Runtime.InteropServices;
+
+namespace DemoFile.Test.Unit;
 
 [TestFixture]
 public class FieldPathEncodingTest
@@ -61,5 +63,17 @@ public class FieldPathEncodingTest
         var encodingOp = FieldPathEncoding.ReadFieldPathOp(ref buffer);
         Assert.That(buffer.RemainingBytes, Is.EqualTo(0));
         Assert.That(encodingOp.Name, Is.EqualTo(expectedName));
+    }
+
+    [TestCaseSource(nameof(DecodeCases))]
+    public void BuildLookupTable(string expectedName, byte[] encodedBytes)
+    {
+        Span<byte> temp = stackalloc byte[4];
+        encodedBytes.CopyTo(temp);
+        var encoded = MemoryMarshal.Read<uint>(temp);
+
+        var lookupTable = FieldPathEncoding.HuffmanRoot.BuildLookupTable();
+
+        Assert.That(lookupTable[encoded].Symbol.Name, Is.EqualTo(expectedName));
     }
 }

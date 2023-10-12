@@ -37,6 +37,7 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="DemoFile.Test" />
+    <InternalsVisibleTo Include="DemoFile.Benchmark" />
   </ItemGroup>
 
   <ItemGroup>

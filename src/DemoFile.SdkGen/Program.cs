@@ -463,6 +463,13 @@ internal static partial class Program
                     builder.AppendLine($"                if (path.Length == 1)");
                     builder.AppendLine($"                {{");
 
+                    // if (isPolymorphic)
+                    // {
+                    //     // todo: should be this conditional on `if (isSet)`
+                    //     builder.AppendLine($"                    var childClassId = (int) buffer.ReadUBits(6);");
+                    //     builder.AppendLine($"                    innerDecoder = {inner.Name}.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);");
+                    // }
+
                     if (isPolymorphic)
                     {
                         builder.AppendLine($"                    var childClassId = buffer.ReadUBits(7);");
@@ -471,10 +478,11 @@ internal static partial class Program
                         builder.AppendLine($"                        innerDecoder = null;");
                         builder.AppendLine($"                        @this.{fieldCsPropertyName} = null;");
                         builder.AppendLine($"                    }}");
-                        builder.AppendLine($"                    if (!{inner.Name}.TryCreateDowncastDecoderById(decoderSet, childClassId, out innerDecoder))");
+                        builder.AppendLine($"                    else if (!{inner.Name}.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))");
                         builder.AppendLine($"                    {{");
                         builder.AppendLine($"                        throw new Exception($\"Unknown polymorphic child class of {inner.Name}: {{childClassId}}\");");
                         builder.AppendLine($"                    }}");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName} = factory();");
                     }
                     else
                     {

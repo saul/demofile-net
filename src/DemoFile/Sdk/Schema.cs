@@ -5567,10 +5567,12 @@ public partial class CCSGameRules : CTeamplayRules
                         innerDecoder = null;
                         @this.GameModeRules = null;
                     }
-                    if (!CCSGameModeRules.TryCreateDowncastDecoderById(decoderSet, childClassId, out innerDecoder))
+                    else if (CCSGameModeRules.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))
                     {
-                        throw new Exception($"Unknown polymorphic child class of CCSGameModeRules: {childClassId}");
+                        @this.GameModeRules = factory();
+                        return;
                     }
+                    throw new Exception($"Unknown polymorphic child class of CCSGameModeRules: {childClassId}");
                 }
                 else
                 {

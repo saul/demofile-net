@@ -1,18 +1,24 @@
 ﻿using System.Buffers;
+using System.Runtime.InteropServices;
 using System.Text;
 using Snappier;
 
 namespace DemoFile;
 
+public readonly record struct DemoProgressEvent(float Progress);
+
 public sealed partial class DemoParser
 {
+    private readonly PriorityQueue<ITickTimer, int> _demoTickTimers = new();
     private readonly PriorityQueue<QueuedPacket, (int, int)> _packetQueue = new(128);
+    private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
     private readonly Source1GameEvents _source1GameEvents = new();
-    private readonly PriorityQueue<ITickTimer, uint> _tickTimers = new();
     private DemoEvents _demoEvents;
     private GameEvents _gameEvents;
     private PacketEvents _packetEvents;
     private UserMessageEvents _userMessageEvents;
+
+    public Action<DemoProgressEvent>? OnProgress;
 
     public DemoParser()
     {
@@ -29,6 +35,7 @@ public sealed partial class DemoParser
             ServerInfo = msg;
             OnServerInfo(msg);
         };
+        _packetEvents.NetTick += OnNetTick;
 
         _gameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
         _gameEvents.Source1LegacyGameEvent += Source1GameEvents.ParseSource1GameEvent;
@@ -42,9 +49,11 @@ public sealed partial class DemoParser
 
     public CDemoFileHeader FileHeader { get; private set; } = new();
 
-    public GameTick_t CurrentDemoTick { get; private set; }
+    public GameTick_t CurrentGameTick { get; private set; }
+    public GameTime_t CurrentGameTime => CurrentGameTick.ToGameTime();
 
-    public GameTime_t CurrentTime => CurrentDemoTick.ToGameTime();
+    public DemoTick CurrentDemoTick { get; private set; }
+    public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
 
     public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
 
@@ -87,13 +96,19 @@ public sealed partial class DemoParser
 
     public ValueTask Start(Stream stream) => Start(stream, default(CancellationToken));
 
+    private static (int SizeBytes, int Unknown) ReadDemoSizes(byte[] bytes)
+    {
+        ReadOnlySpan<int> values = MemoryMarshal.Cast<byte, int>(bytes);
+        return (values[0], values[1]);
+    }
+
     public async ValueTask Start(Stream stream, CancellationToken cancellationToken)
     {
         ValidateMagic(await ReadExactBytesAsync(stream, 8, cancellationToken));
+        var (sizeBytes, _) = ReadDemoSizes(await ReadExactBytesAsync(stream, 8, cancellationToken));
 
-        // Skip the next 8 bytes, which appear to be two int32s related to the size
-        // of the demo file. We may need them in the future, but not so far.
-        await ReadExactBytesAsync(stream, 8, cancellationToken);
+        // `sizeBytes` represents the number of bytes remaining in the demo,
+        // from this point (i.e. 16 bytes into the file).
 
         while (!cancellationToken.IsCancellationRequested)
         {
@@ -109,14 +124,14 @@ public sealed partial class DemoParser
             var isCompressed = (command & (uint)EDemoCommands.DemIsCompressed)
                                == (uint)EDemoCommands.DemIsCompressed;
 
-            var tick = stream.ReadUVarInt32();
+            var tick = (int) stream.ReadUVarInt32();
             var size = stream.ReadUVarInt32();
 
-            CurrentDemoTick = new GameTick_t(tick);
+            CurrentDemoTick = new DemoTick(tick);
 
-            while (_tickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= tick)
+            while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= tick)
             {
-                _tickTimers.Dequeue();
+                _demoTickTimers.Dequeue();
                 timer.Invoke();
             }
 
@@ -132,7 +147,11 @@ public sealed partial class DemoParser
             {
                 if (!_demoEvents.ReadDemoCommand(msgType, buf)) break;
             }
+
+            OnProgress?.Invoke(new DemoProgressEvent((float)stream.Position / (sizeBytes + 16)));
         }
+
+        cancellationToken.ThrowIfCancellationRequested();
     }
 
     private static void ValidateMagic(ReadOnlySpan<byte> magic)
@@ -168,9 +187,38 @@ public sealed partial class DemoParser
     }
 
     /// <summary>
-    /// Schedule a callback at time <paramref name="tick"/>.
-    /// The callback will be fired at the start of the tick.
-    /// If the tick is in the past, it will fire at the start of the next tick.
+    /// Schedule a callback at demo tick <paramref name="tick"/>.
+    /// The callback will be fired at the start of the demo tick.
+    /// If the tick is in the past, it will fire at the start of the next demo message.
+    /// Call <c>Dispose</c> on the returned disposable to cancel the callback.
+    /// </summary>
+    /// <param name="tick">Tick to fire the callback.</param>
+    /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
+    /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
+    public IDisposable StartTimer(DemoTick tick, Action callback) =>
+        StartTimer(tick, callback, static callback => callback());
+
+    /// <summary>
+    /// Schedule a callback at demo tick <paramref name="tick"/>.
+    /// The callback will be fired at the start of the demo tick with the state <paramref name="state"/>.
+    /// If the tick is in the past, it will fire at the start of the next demo message.
+    /// Call <c>Dispose</c> on the returned disposable to cancel the callback.
+    /// </summary>
+    /// <param name="tick">Tick to fire the callback.</param>
+    /// <param name="state">State to pass to the callback.</param>
+    /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
+    /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
+    public IDisposable StartTimer<T>(DemoTick tick, T state, Action<T> callback)
+    {
+        var timer = new TickTimer<T>(state, callback);
+        _demoTickTimers.Enqueue(timer, tick.Value);
+        return timer;
+    }
+
+    /// <summary>
+    /// Schedule a callback at game tick <paramref name="tick"/>.
+    /// The callback will be fired at the start of the game tick.
+    /// If the tick is in the past, it will fire at the start of the next <see cref="CNETMsg_Tick"/> message.
     /// Call <c>Dispose</c> on the returned disposable to cancel the callback.
     /// </summary>
     /// <param name="tick">Tick to fire the callback.</param>
@@ -180,9 +228,9 @@ public sealed partial class DemoParser
         StartTimer(tick, callback, static callback => callback());
 
     /// <summary>
-    /// Schedule a callback at time <paramref name="tick"/>.
-    /// The callback will be fired at the start of the tick with the state <paramref name="state"/>.
-    /// If the tick is in the past, it will fire at the start of the next tick.
+    /// Schedule a callback at game tick <paramref name="tick"/>.
+    /// The callback will be fired at the start of the game tick with the state <paramref name="state"/>.
+    /// If the tick is in the past, it will fire at the start of the next demo message.
     /// Call <c>Dispose</c> on the returned disposable to cancel the callback.
     /// </summary>
     /// <param name="tick">Tick to fire the callback.</param>
@@ -192,7 +240,7 @@ public sealed partial class DemoParser
     public IDisposable StartTimer<T>(GameTick_t tick, T state, Action<T> callback)
     {
         var timer = new TickTimer<T>(state, callback);
-        _tickTimers.Enqueue(timer, tick.Value);
+        _serverTickTimers.Enqueue(timer, tick.Value);
         return timer;
     }
 }
