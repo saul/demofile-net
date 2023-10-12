@@ -53,7 +53,7 @@ internal class Program
         sw.Stop();
 
         var ticks = demo.CurrentDemoTick.Value;
-        AnsiConsole.MarkupLine($"\n[bold green]Finished![/] Parsed [bold white]{ticks:N0} ticks[/] ({demo.CurrentTime.Value:N1} game secs) in [bold white]{sw.Elapsed.TotalSeconds:0.000} secs[/] ({ticks * 1000 / sw.Elapsed.TotalMilliseconds:N1} ticks/sec)");
+        AnsiConsole.MarkupLine($"\n[bold green]Finished![/] Parsed [bold white]{ticks:N0} ticks[/] ({demo.CurrentGameTime.Value:N1} game secs) in [bold white]{sw.Elapsed.TotalSeconds:0.000} secs[/] ({ticks * 1000 / sw.Elapsed.TotalMilliseconds:N1} ticks/sec)");
     }
 
     private static string TeamNumberToString(CSTeamNumber? csTeamNumber) => csTeamNumber switch
