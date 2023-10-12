@@ -56,27 +56,6 @@ internal ref struct BitBuffer
         }
     }
 
-    public readonly uint PeekUBits(int numBits)
-    {
-        uint tempBuf = 0;
-        if (numBits > _bitsAvail)
-        {
-            if (_pointer.Length < 4)
-            {
-                Span<byte> buf = stackalloc byte[4];
-                _pointer.CopyTo(buf);
-                tempBuf = MemoryMarshal.Read<uint>(buf);
-            }
-            else
-            {
-                tempBuf = MemoryMarshal.Read<uint>(_pointer[..4]);
-            }
-        }
-
-        var value = _buf | (tempBuf << _bitsAvail);
-        return (uint)(value & ((1 << numBits) - 1));
-    }
-
     public byte ReadByte() => (byte)ReadUBits(8);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

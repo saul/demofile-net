@@ -33,34 +33,4 @@ internal record HuffmanNode<T>(T? Symbol, int Frequency, HuffmanNode<T>? Left, H
 
         return queue.Dequeue();
     }
-
-    public IReadOnlyDictionary<uint, (T Symbol, int NumBits)> BuildLookupTable()
-    {
-        Debug.Assert(Symbol == null);
-        var result = new Dictionary<uint, (T, int)>();
-
-        if (Left is { } left)
-            Visit(left, 0, 1);
-        if (Right is { } right)
-            Visit(right, 1, 1);
-
-        return result;
-
-        void Visit(HuffmanNode<T> node, uint acc, int depth)
-        {
-            if (node.Symbol != null)
-            {
-                result[acc] = (node.Symbol, depth);
-            }
-
-            if (node.Left is { } left)
-            {
-                Visit(left, acc, depth + 1);
-            }
-            if (node.Right is {} right)
-            {
-                Visit(right, acc | (1u << depth), depth + 1);
-            }
-        }
-    }
 }

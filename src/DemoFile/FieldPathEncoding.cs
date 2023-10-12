@@ -12,8 +12,6 @@ internal record FieldPathEncodingOp(string Name, int Frequency, FieldPathReader?
 internal static class FieldPathEncoding
 {
     internal static readonly HuffmanNode<FieldPathEncodingOp> HuffmanRoot;
-    private static readonly int MaxEncodedBits;
-    private static readonly (FieldPathEncodingOp Symbol, int NumBits)[] HuffmanLookup;
 
     static FieldPathEncoding()
     {
@@ -234,60 +232,31 @@ internal static class FieldPathEncoding
         };
         
         HuffmanRoot = HuffmanNode<FieldPathEncodingOp>.Build(encodingOps.Select(op => new KeyValuePair<FieldPathEncodingOp, int>(op, op.Frequency)));
-
-        var table = HuffmanRoot.BuildLookupTable();
-        MaxEncodedBits = table.MaxBy(kvp => kvp.Value.NumBits).Value.NumBits;
-        HuffmanLookup = new (FieldPathEncodingOp Symbol, int NumBits)[1 << MaxEncodedBits];
-        foreach (var (encoded, value) in table)
-        {
-            if (value.NumBits == MaxEncodedBits)
-            {
-                Debug.Assert(HuffmanLookup[(int)encoded].NumBits == 0);
-                HuffmanLookup[(int)encoded] = value;
-            }
-            else
-            {
-                var lengthDiff = MaxEncodedBits - value.NumBits;
-                for (var i = 0; i < (1 << lengthDiff); ++i)
-                {
-                    var index = (int)encoded | (i << value.NumBits);
-                    Debug.Assert(HuffmanLookup[index].NumBits == 0);
-                    HuffmanLookup[index] = value;
-                }
-            }
-        }
     }
-
-    public static bool UseLookup = true;
 
     public static FieldPathEncodingOp ReadFieldPathOp(ref BitBuffer buffer)
     {
-        // todo: implement peek on BitBuffer and build a lookup table of symbols
-        if (UseLookup)
-        {
-            var symbol = buffer.PeekUBits(MaxEncodedBits);
-            var (encodingOp, length) = HuffmanLookup[symbol];
-            Debug.Assert(length > 0);
-            buffer.ReadUBits(length);
-            return encodingOp!;
-        }
-        else
-        {
-            var node = HuffmanRoot;
-            for (;;)
-            {
-                var next =
-                    (buffer.ReadOneBit()
-                        ? node.Right
-                        : node.Left)
-                    ?? throw new InvalidOperationException("Invalid field path encoding");
+        // perf: implementing peek on BitBuffer and build a lookup table of symbols
+        // was noticeably slower than reading one bit at a time
+        // | Method    | Job        | Arguments        | Mean    | Error    | StdDev   | Ratio | RatioSD | Gen0       | Gen1       | Gen2      | Allocated | Alloc Ratio |
+        // |---------- |----------- |----------------- |--------:|---------:|---------:|------:|--------:|-----------:|-----------:|----------:|----------:|------------:|
+        // | ParseDemo | Job-KLQGNY | /p:Baseline=true | 2.256 s | 0.0336 s | 0.0314 s |  1.00 |    0.00 | 73000.0000 | 17000.0000 | 2000.0000 | 671.65 MB |        1.00 |
+        // | ParseDemo | Job-LTNMPJ | Default          | 2.387 s | 0.0267 s | 0.0236 s |  1.06 |    0.02 | 75000.0000 | 17000.0000 | 3000.0000 | 683.36 MB |        1.02 |
 
-                // Is this node a leaf?
-                if (next.Symbol is { } encodingOp)
-                    return encodingOp;
+        var node = HuffmanRoot;
+        for (;;)
+        {
+            var next =
+                (buffer.ReadOneBit()
+                    ? node.Right
+                    : node.Left)
+                ?? throw new InvalidOperationException("Invalid field path encoding");
 
-                node = next;
-            }
+            // Is this node a leaf?
+            if (next.Symbol is { } encodingOp)
+                return encodingOp;
+
+            node = next;
         }
     }
 }
