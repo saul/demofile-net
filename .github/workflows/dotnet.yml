@@ -42,3 +42,8 @@ jobs:
             echo "Running example: $dir..."
             dotnet run -v quiet -c Release --project "$dir" -- ../demos/space-vs-forward-m1-ancient.dem
           done
+      - name: Publish to NuGet
+        if: github.ref == 'refs/heads/main'
+        run: |
+          dotnet pack
+          dotnet nuget push **/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_APIKEY}}
