@@ -72,129 +72,104 @@
   },
   "classes": {
     "EntityIOConnectionData_t": {
-      "index": 0,
       "fields": [
       ]
     },
     "EntityKeyValueData_t": {
-      "index": 1,
       "fields": [
       ]
     },
     "PermEntityLumpData_t": {
-      "index": 2,
       "fields": [
       ]
     },
     "SceneObject_t": {
-      "index": 3,
       "fields": [
       ]
     },
     "BaseSceneObjectOverride_t": {
-      "index": 4,
       "fields": [
       ]
     },
     "ExtraVertexStreamOverride_t": {
-      "index": 5,
       "parent": "BaseSceneObjectOverride_t",
       "fields": [
       ]
     },
     "MaterialOverride_t": {
-      "index": 6,
       "parent": "BaseSceneObjectOverride_t",
       "fields": [
       ]
     },
     "InfoOverlayData_t": {
-      "index": 7,
       "fields": [
       ]
     },
     "BakedLightingInfo_t": {
-      "index": 8,
       "fields": [
       ]
     },
     "WorldNodeOnDiskBufferData_t": {
-      "index": 9,
       "fields": [
       ]
     },
     "AggregateMeshInfo_t": {
-      "index": 10,
       "fields": [
       ]
     },
     "AggregateLODSetup_t": {
-      "index": 11,
       "fields": [
       ]
     },
     "AggregateSceneObject_t": {
-      "index": 12,
       "fields": [
       ]
     },
     "ClutterTile_t": {
-      "index": 13,
       "fields": [
       ]
     },
     "ClutterSceneObject_t": {
-      "index": 14,
       "fields": [
       ]
     },
     "WorldNode_t": {
-      "index": 15,
       "fields": [
       ]
     },
     "WorldBuilderParams_t": {
-      "index": 16,
       "fields": [
       ]
     },
     "NodeData_t": {
-      "index": 17,
       "fields": [
       ]
     },
     "World_t": {
-      "index": 18,
       "fields": [
       ]
     },
     "VoxelVisBlockOffset_t": {
-      "index": 19,
       "fields": [
       ]
     },
     "CVoxelVisibility": {
-      "index": 20,
       "fields": [
       ]
     },
     "VMapResourceData_t": {
-      "index": 21,
       "fields": [
       ]
     },
     "InfoForResourceTypeVMapResourceData_t": {
-      "index": 22,
       "fields": [
       ]
     },
     "CEntityComponent": {
-      "index": 23,
       "fields": [
       ]
     },
     "CEntityIdentity": {
-      "index": 24,
       "fields": [
         {
           "name": "m_nameStringableIndex",
@@ -209,7 +184,6 @@
       ]
     },
     "CEntityInstance": {
-      "index": 25,
       "fields": [
         {
           "name": "m_pEntity",
@@ -242,7 +216,6 @@
       ]
     },
     "CScriptComponent": {
-      "index": 26,
       "parent": "CEntityComponent",
       "fields": [
       ]

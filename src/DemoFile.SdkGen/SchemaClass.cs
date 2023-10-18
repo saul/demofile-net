@@ -3,13 +3,12 @@
 namespace DemoFile.SdkGen;
 
 public partial record SchemaClass(
-    int Index,
     string? Parent,
     IReadOnlyList<SchemaField> Fields)
 {
     private Dictionary<string, SchemaField[]>? _fieldsByCsPropertyName = null;
 
-    [GeneratedRegex("^m_(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|bv|e|s)([A-Z])")]
+    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|bv|e|s)(?<firstChar>[A-Z])")]
     private static partial Regex HungarianNotationRegex();
 
     private static string RemoveMemberPrefix(string fieldName)
@@ -34,7 +33,7 @@ public partial record SchemaClass(
         }
 
         string CleanFieldName(string fieldName) =>
-            RemoveMemberPrefix(HungarianNotationRegex().Replace(fieldName, "$2"));
+            RemoveMemberPrefix(HungarianNotationRegex().Replace(fieldName, r => r.Groups["firstChar"].Value));
 
         _fieldsByCsPropertyName ??= Fields
             .GroupBy(x => CleanFieldName(x.Name))

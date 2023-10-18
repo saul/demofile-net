@@ -83,241 +83,196 @@
   },
   "classes": {
     "EngineLoopState_t": {
-      "index": 0,
       "fields": [
       ]
     },
     "EventModInitialized_t": {
-      "index": 1,
       "fields": [
       ]
     },
     "EventFrameBoundary_t": {
-      "index": 2,
       "fields": [
       ]
     },
     "EventProfileStorageAvailable_t": {
-      "index": 3,
       "fields": [
       ]
     },
     "EventSplitScreenStateChanged_t": {
-      "index": 4,
       "fields": [
       ]
     },
     "EventSetTime_t": {
-      "index": 5,
       "fields": [
       ]
     },
     "EventClientPollInput_t": {
-      "index": 6,
       "fields": [
       ]
     },
     "EventClientProcessInput_t": {
-      "index": 7,
       "fields": [
       ]
     },
     "EventClientProcessGameInput_t": {
-      "index": 8,
       "fields": [
       ]
     },
     "EventClientPreOutput_t": {
-      "index": 9,
       "fields": [
       ]
     },
     "EventClientSceneSystemThreadStateChange_t": {
-      "index": 10,
       "fields": [
       ]
     },
     "EventClientOutput_t": {
-      "index": 11,
       "fields": [
       ]
     },
     "EventClientPostOutput_t": {
-      "index": 12,
       "fields": [
       ]
     },
     "EventClientFrameSimulate_t": {
-      "index": 13,
       "fields": [
       ]
     },
     "EventSimpleLoopFrameUpdate_t": {
-      "index": 14,
       "fields": [
       ]
     },
     "EventSimulate_t": {
-      "index": 15,
       "fields": [
       ]
     },
     "EventAdvanceTick_t": {
-      "index": 16,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventPostAdvanceTick_t": {
-      "index": 17,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventServerAdvanceTick_t": {
-      "index": 18,
       "parent": "EventAdvanceTick_t",
       "fields": [
       ]
     },
     "EventServerPostAdvanceTick_t": {
-      "index": 19,
       "parent": "EventPostAdvanceTick_t",
       "fields": [
       ]
     },
     "EventClientAdvanceTick_t": {
-      "index": 20,
       "parent": "EventAdvanceTick_t",
       "fields": [
       ]
     },
     "EventClientPostAdvanceTick_t": {
-      "index": 21,
       "parent": "EventPostAdvanceTick_t",
       "fields": [
       ]
     },
     "EventClientSendInput_t": {
-      "index": 22,
       "fields": [
       ]
     },
     "EventClientPredictionPostNetupdate_t": {
-      "index": 23,
       "fields": [
       ]
     },
     "EventClientPollNetworking_t": {
-      "index": 24,
       "fields": [
       ]
     },
     "EventClientProcessNetworking_t": {
-      "index": 25,
       "fields": [
       ]
     },
     "EventClientPreSimulate_t": {
-      "index": 26,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventClientSimulate_t": {
-      "index": 27,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventServerPollNetworking_t": {
-      "index": 28,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventServerProcessNetworking_t": {
-      "index": 29,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventServerSimulate_t": {
-      "index": 30,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventServerPostSimulate_t": {
-      "index": 31,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventClientPostSimulate_t": {
-      "index": 32,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventClientPauseSimulate_t": {
-      "index": 33,
       "parent": "EventSimulate_t",
       "fields": [
       ]
     },
     "EventPostDataUpdate_t": {
-      "index": 34,
       "fields": [
       ]
     },
     "EventPreDataUpdate_t": {
-      "index": 35,
       "fields": [
       ]
     },
     "EventAppShutdown_t": {
-      "index": 36,
       "fields": [
       ]
     },
     "CNetworkVarChainer": {
-      "index": 37,
       "fields": [
       ]
     },
     "CVariantDefaultAllocator": {
-      "index": 38,
       "fields": [
       ]
     },
     "EntOutput_t": {
-      "index": 39,
       "fields": [
       ]
     },
     "EntComponentInfo_t": {
-      "index": 40,
       "fields": [
       ]
     },
     "CEntityComponent": {
-      "index": 41,
       "fields": [
       ]
     },
     "EntInput_t": {
-      "index": 42,
       "fields": [
       ]
     },
     "CEntityComponentHelper": {
-      "index": 43,
       "fields": [
       ]
     },
     "CEntityIdentity": {
-      "index": 44,
       "fields": [
         {
           "name": "m_nameStringableIndex",
@@ -332,12 +287,10 @@
       ]
     },
     "CEmptyEntityInstance": {
-      "index": 45,
       "fields": [
       ]
     },
     "CEntityInstance": {
-      "index": 46,
       "fields": [
         {
           "name": "m_pEntity",
@@ -370,12 +323,10 @@
       ]
     },
     "CEntityIOOutput": {
-      "index": 47,
       "fields": [
       ]
     },
     "CScriptComponent": {
-      "index": 48,
       "parent": "CEntityComponent",
       "fields": [
       ]

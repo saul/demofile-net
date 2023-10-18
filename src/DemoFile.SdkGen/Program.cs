@@ -478,11 +478,12 @@ internal static partial class Program
                         builder.AppendLine($"                        innerDecoder = null;");
                         builder.AppendLine($"                        @this.{fieldCsPropertyName} = null;");
                         builder.AppendLine($"                    }}");
-                        builder.AppendLine($"                    else if (!{inner.Name}.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))");
+                        builder.AppendLine($"                    else if ({inner.Name}.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))");
                         builder.AppendLine($"                    {{");
-                        builder.AppendLine($"                        throw new Exception($\"Unknown polymorphic child class of {inner.Name}: {{childClassId}}\");");
+                        builder.AppendLine($"                        @this.{fieldCsPropertyName} = factory();");
+                        builder.AppendLine($"                        return;");
                         builder.AppendLine($"                    }}");
-                        builder.AppendLine($"                    @this.{fieldCsPropertyName} = factory();");
+                        builder.AppendLine($"                    throw new Exception($\"Unknown polymorphic child class of {inner.Name}: {{childClassId}}\");");
                     }
                     else
                     {

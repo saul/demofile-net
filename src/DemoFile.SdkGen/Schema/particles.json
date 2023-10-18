@@ -1780,2604 +1780,2165 @@
   },
   "classes": {
     "CRandomNumberGeneratorParameters": {
-      "index": 0,
       "fields": [
       ]
     },
     "ParticleAttributeIndex_t": {
-      "index": 2,
       "fields": [
       ]
     },
     "MaterialVariable_t": {
-      "index": 1,
       "fields": [
       ]
     },
     "ParticlePreviewBodyGroup_t": {
-      "index": 3,
       "fields": [
       ]
     },
     "ParticlePreviewState_t": {
-      "index": 4,
       "fields": [
       ]
     },
     "ParticleControlPointDriver_t": {
-      "index": 5,
       "fields": [
       ]
     },
     "ParticleControlPointConfiguration_t": {
-      "index": 6,
       "fields": [
       ]
     },
     "IParticleCollection": {
-      "index": 7,
       "fields": [
       ]
     },
     "IControlPointEditorData": {
-      "index": 8,
       "fields": [
       ]
     },
     "IParticleSystemDefinition": {
-      "index": 9,
       "fields": [
       ]
     },
     "CParticleVisibilityInputs": {
-      "index": 10,
       "fields": [
       ]
     },
     "CPathParameters": {
-      "index": 11,
       "fields": [
       ]
     },
     "ParticleChildrenInfo_t": {
-      "index": 12,
       "fields": [
       ]
     },
     "ControlPointReference_t": {
-      "index": 13,
       "fields": [
       ]
     },
     "ModelReference_t": {
-      "index": 14,
       "fields": [
       ]
     },
     "SequenceWeightedList_t": {
-      "index": 15,
       "fields": [
       ]
     },
     "CollisionGroupContext_t": {
-      "index": 16,
       "fields": [
       ]
     },
     "PointDefinition_t": {
-      "index": 17,
       "fields": [
       ]
     },
     "PointDefinitionWithTimeValues_t": {
-      "index": 18,
       "parent": "PointDefinition_t",
       "fields": [
       ]
     },
     "CParticleSystemDefinition": {
-      "index": 19,
       "parent": "IParticleSystemDefinition",
       "fields": [
       ]
     },
     "CParticleInput": {
-      "index": 35,
       "fields": [
       ]
     },
     "CParticleFloatInput": {
-      "index": 36,
       "parent": "CParticleInput",
       "fields": [
       ]
     },
     "CParticleCollectionFloatInput": {
-      "index": 38,
       "parent": "CParticleFloatInput",
       "fields": [
       ]
     },
     "CParticleFunction": {
-      "index": 20,
       "fields": [
       ]
     },
     "CParticleFunctionOperator": {
-      "index": 24,
       "parent": "CParticleFunction",
       "fields": [
       ]
     },
     "CParticleFunctionForce": {
-      "index": 25,
       "parent": "CParticleFunction",
       "fields": [
       ]
     },
     "CParticleFunctionPreEmission": {
-      "index": 26,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "CParticleFunctionRenderer": {
-      "index": 27,
       "parent": "CParticleFunction",
       "fields": [
       ]
     },
     "CParticleCollectionRendererFloatInput": {
-      "index": 39,
       "parent": "CParticleCollectionFloatInput",
       "fields": [
       ]
     },
     "TextureControls_t": {
-      "index": 28,
       "fields": [
       ]
     },
     "CParticleVecInput": {
-      "index": 43,
       "parent": "CParticleInput",
       "fields": [
       ]
     },
     "CParticleCollectionVecInput": {
-      "index": 45,
       "parent": "CParticleVecInput",
       "fields": [
       ]
     },
     "FloatInputMaterialVariable_t": {
-      "index": 32,
       "fields": [
       ]
     },
     "CParticleCollectionRendererVecInput": {
-      "index": 46,
       "parent": "CParticleCollectionVecInput",
       "fields": [
       ]
     },
     "CParticleFunctionConstraint": {
-      "index": 23,
       "parent": "CParticleFunction",
       "fields": [
       ]
     },
     "CParticleTransformInput": {
-      "index": 41,
       "parent": "CParticleInput",
       "fields": [
       ]
     },
     "CParticleFunctionEmitter": {
-      "index": 22,
       "parent": "CParticleFunction",
       "fields": [
       ]
     },
     "CPerParticleFloatInput": {
-      "index": 37,
       "parent": "CParticleFloatInput",
       "fields": [
       ]
     },
     "CParticleFunctionInitializer": {
-      "index": 21,
       "parent": "CParticleFunction",
       "fields": [
       ]
     },
     "TextureGroup_t": {
-      "index": 29,
       "fields": [
       ]
     },
     "CParticleRemapFloatInput": {
-      "index": 40,
       "parent": "CParticleFloatInput",
       "fields": [
       ]
     },
     "CBaseRendererSource2": {
-      "index": 30,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "CParticleModelInput": {
-      "index": 42,
       "parent": "CParticleInput",
       "fields": [
       ]
     },
     "C_OP_RenderCables": {
-      "index": 34,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "CPerParticleVecInput": {
-      "index": 44,
       "parent": "CParticleVecInput",
       "fields": [
       ]
     },
     "VecInputMaterialVariable_t": {
-      "index": 33,
       "fields": [
       ]
     },
     "C_OP_RenderSprites": {
-      "index": 31,
       "parent": "CBaseRendererSource2",
       "fields": [
       ]
     },
     "PARTICLE_EHANDLE__": {
-      "index": 47,
       "fields": [
       ]
     },
     "PARTICLE_WORLD_HANDLE__": {
-      "index": 48,
       "fields": [
       ]
     },
     "IParticleEffect": {
-      "index": 49,
       "fields": [
       ]
     },
     "CParticleCollectionBindingInstance": {
-      "index": 50,
       "parent": "CBasePulseGraphInstance",
       "fields": [
       ]
     },
     "CParticleBindingRealPulse": {
-      "index": 51,
       "parent": "CParticleCollectionBindingInstance",
       "fields": [
       ]
     },
     "ParticleNamedValueConfiguration_t": {
-      "index": 52,
       "fields": [
       ]
     },
     "ParticleNamedValueSource_t": {
-      "index": 53,
       "fields": [
       ]
     },
     "CParticleVariableRef": {
-      "index": 54,
       "fields": [
       ]
     },
     "CParticleProperty": {
-      "index": 55,
       "fields": [
       ]
     },
     "CNewParticleEffect": {
-      "index": 56,
       "parent": "IParticleEffect",
       "fields": [
       ]
     },
     "C_OP_ConstrainDistance": {
-      "index": 57,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_CollideWithSelf": {
-      "index": 58,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_CollideWithParentParticles": {
-      "index": 59,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_ConstrainDistanceToPath": {
-      "index": 60,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_ConstrainDistanceToUserSpecifiedPath": {
-      "index": 61,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_PlanarConstraint": {
-      "index": 62,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_WorldCollideConstraint": {
-      "index": 63,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_WorldTraceConstraint": {
-      "index": 64,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_BoxConstraint": {
-      "index": 65,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_ShapeMatchingConstraint": {
-      "index": 66,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_RopeSpringConstraint": {
-      "index": 67,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_SpringToVectorConstraint": {
-      "index": 68,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_ConstrainLineLength": {
-      "index": 69,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_INIT_RingWave": {
-      "index": 70,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateSpiralSphere": {
-      "index": 71,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateInEpitrochoid": {
-      "index": 72,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreatePhyllotaxis": {
-      "index": 73,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateOnModel": {
-      "index": 74,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateOnModelAtHeight": {
-      "index": 75,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_SetHitboxToClosest": {
-      "index": 76,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_SetHitboxToModel": {
-      "index": 77,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateWithinSphereTransform": {
-      "index": 78,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateWithinBox": {
-      "index": 79,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateOnGrid": {
-      "index": 80,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PositionOffset": {
-      "index": 81,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PositionOffsetToCP": {
-      "index": 82,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PositionPlaceOnGround": {
-      "index": 83,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_VelocityFromNormal": {
-      "index": 84,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_VelocityRandom": {
-      "index": 85,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitialVelocityNoise": {
-      "index": 86,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitialVelocityFromHitbox": {
-      "index": 87,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_VelocityRadialRandom": {
-      "index": 88,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomLifeTime": {
-      "index": 89,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomScalar": {
-      "index": 90,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomVector": {
-      "index": 91,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomVectorComponent": {
-      "index": 92,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_AddVectorToVector": {
-      "index": 93,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomAlphaWindowThreshold": {
-      "index": 94,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomRadius": {
-      "index": 95,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomAlpha": {
-      "index": 96,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "CGeneralRandomRotation": {
-      "index": 97,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomRotation": {
-      "index": 98,
       "parent": "CGeneralRandomRotation",
       "fields": [
       ]
     },
     "C_INIT_Orient2DRelToCP": {
-      "index": 99,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomRotationSpeed": {
-      "index": 100,
       "parent": "CGeneralRandomRotation",
       "fields": [
       ]
     },
     "C_INIT_RandomYaw": {
-      "index": 101,
       "parent": "CGeneralRandomRotation",
       "fields": [
       ]
     },
     "C_INIT_RandomColor": {
-      "index": 102,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_ColorLitPerParticle": {
-      "index": 103,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomTrailLength": {
-      "index": 104,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomSequence": {
-      "index": 105,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_SequenceFromCP": {
-      "index": 106,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomModelSequence": {
-      "index": 107,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_ScaleVelocity": {
-      "index": 108,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PositionWarp": {
-      "index": 109,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PositionWarpScalar": {
-      "index": 110,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreationNoise": {
-      "index": 111,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateAlongPath": {
-      "index": 112,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_MoveBetweenPoints": {
-      "index": 113,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapScalar": {
-      "index": 114,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapParticleCountToScalar": {
-      "index": 115,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapParticleCountToNamedModelElementScalar": {
-      "index": 116,
       "parent": "C_INIT_RemapParticleCountToScalar",
       "fields": [
       ]
     },
     "C_INIT_RemapParticleCountToNamedModelSequenceScalar": {
-      "index": 117,
       "parent": "C_INIT_RemapParticleCountToNamedModelElementScalar",
       "fields": [
       ]
     },
     "C_INIT_RemapParticleCountToNamedModelBodyPartScalar": {
-      "index": 118,
       "parent": "C_INIT_RemapParticleCountToNamedModelElementScalar",
       "fields": [
       ]
     },
     "C_INIT_RemapParticleCountToNamedModelMeshGroupScalar": {
-      "index": 119,
       "parent": "C_INIT_RemapParticleCountToNamedModelElementScalar",
       "fields": [
       ]
     },
     "C_INIT_InheritVelocity": {
-      "index": 120,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_VelocityFromCP": {
-      "index": 121,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_AgeNoise": {
-      "index": 122,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_SequenceLifeTime": {
-      "index": 123,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapScalarToVector": {
-      "index": 124,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_OffsetVectorToVector": {
-      "index": 125,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateSequentialPathV2": {
-      "index": 126,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateSequentialPath": {
-      "index": 127,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitialRepulsionVelocity": {
-      "index": 128,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomYawFlip": {
-      "index": 129,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomSecondSequence": {
-      "index": 130,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapCPtoScalar": {
-      "index": 131,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapTransformToVector": {
-      "index": 132,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_ChaoticAttractor": {
-      "index": 133,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateFromParentParticles": {
-      "index": 134,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InheritFromParentParticles": {
-      "index": 135,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateFromCPs": {
-      "index": 136,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_DistanceToCPInit": {
-      "index": 137,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_LifespanFromVelocity": {
-      "index": 138,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateFromPlaneCache": {
-      "index": 139,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_ModelCull": {
-      "index": 140,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_DistanceCull": {
-      "index": 141,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PlaneCull": {
-      "index": 142,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_DistanceToNeighborCull": {
-      "index": 143,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RtEnvCull": {
-      "index": 144,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_NormalAlignToCP": {
-      "index": 145,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_NormalOffset": {
-      "index": 146,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapSpeedToScalar": {
-      "index": 147,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitFromCPSnapshot": {
-      "index": 148,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitSkinnedPositionFromCPSnapshot": {
-      "index": 149,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitFromParentKilled": {
-      "index": 150,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitFromVectorFieldSnapshot": {
-      "index": 151,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapInitialDirectionToTransformToVector": {
-      "index": 152,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapInitialTransformDirectionToRotation": {
-      "index": 153,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapQAnglesToRotation": {
-      "index": 154,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapTransformOrientationToRotations": {
-      "index": 155,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_SetRigidAttachment": {
-      "index": 156,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapInitialVisibilityScalar": {
-      "index": 157,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RadiusFromCPObject": {
-      "index": 158,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitialSequenceFromModel": {
-      "index": 159,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_GlobalScale": {
-      "index": 160,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_PointList": {
-      "index": 161,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomNamedModelElement": {
-      "index": 162,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RandomNamedModelSequence": {
-      "index": 163,
       "parent": "C_INIT_RandomNamedModelElement",
       "fields": [
       ]
     },
     "C_INIT_RandomNamedModelBodyPart": {
-      "index": 164,
       "parent": "C_INIT_RandomNamedModelElement",
       "fields": [
       ]
     },
     "C_INIT_RandomNamedModelMeshGroup": {
-      "index": 165,
       "parent": "C_INIT_RandomNamedModelElement",
       "fields": [
       ]
     },
     "C_INIT_RemapNamedModelElementToScalar": {
-      "index": 166,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_RemapNamedModelSequenceToScalar": {
-      "index": 167,
       "parent": "C_INIT_RemapNamedModelElementToScalar",
       "fields": [
       ]
     },
     "C_INIT_RemapNamedModelBodyPartToScalar": {
-      "index": 168,
       "parent": "C_INIT_RemapNamedModelElementToScalar",
       "fields": [
       ]
     },
     "C_INIT_RemapNamedModelMeshGroupToScalar": {
-      "index": 169,
       "parent": "C_INIT_RemapNamedModelElementToScalar",
       "fields": [
       ]
     },
     "C_INIT_StatusEffect": {
-      "index": 170,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_StatusEffectCitadel": {
-      "index": 171,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_CreateParticleImpulse": {
-      "index": 172,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_QuantizeFloat": {
-      "index": 173,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_SetVectorAttributeToVectorExpression": {
-      "index": 174,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitFloatCollection": {
-      "index": 175,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitFloat": {
-      "index": 176,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitVecCollection": {
-      "index": 177,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_INIT_InitVec": {
-      "index": 178,
       "parent": "CParticleFunctionInitializer",
       "fields": [
       ]
     },
     "C_OP_InstantaneousEmitter": {
-      "index": 179,
       "parent": "CParticleFunctionEmitter",
       "fields": [
       ]
     },
     "C_OP_ContinuousEmitter": {
-      "index": 180,
       "parent": "CParticleFunctionEmitter",
       "fields": [
       ]
     },
     "C_OP_NoiseEmitter": {
-      "index": 181,
       "parent": "CParticleFunctionEmitter",
       "fields": [
       ]
     },
     "C_OP_MaintainEmitter": {
-      "index": 182,
       "parent": "CParticleFunctionEmitter",
       "fields": [
       ]
     },
     "C_OP_RandomForce": {
-      "index": 183,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_CPVelocityForce": {
-      "index": 184,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_ParentVortices": {
-      "index": 185,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_TwistAroundAxis": {
-      "index": 186,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_AttractToControlPoint": {
-      "index": 187,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_ForceBasedOnDistanceToPlane": {
-      "index": 188,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_TimeVaryingForce": {
-      "index": 189,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_TurbulenceForce": {
-      "index": 190,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_CurlNoiseForce": {
-      "index": 191,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_PerParticleForce": {
-      "index": 192,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_WindForce": {
-      "index": 193,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_ExternalWindForce": {
-      "index": 194,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_ExternalGameImpulseForce": {
-      "index": 195,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_LocalAccelerationForce": {
-      "index": 196,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_DensityForce": {
-      "index": 197,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_BasicMovement": {
-      "index": 198,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_FadeAndKill": {
-      "index": 199,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_FadeAndKillForTracers": {
-      "index": 200,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_FadeIn": {
-      "index": 201,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_FadeOut": {
-      "index": 202,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_FadeInSimple": {
-      "index": 203,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_FadeOutSimple": {
-      "index": 204,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ClampScalar": {
-      "index": 205,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ClampVector": {
-      "index": 206,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_OscillateScalar": {
-      "index": 207,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_OscillateScalarSimple": {
-      "index": 208,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_OscillateVector": {
-      "index": 209,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_OscillateVectorSimple": {
-      "index": 210,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DifferencePreviousParticle": {
-      "index": 211,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PointVectorAtNextParticle": {
-      "index": 212,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapScalar": {
-      "index": 213,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapDensityToVector": {
-      "index": 214,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_Diffusion": {
-      "index": 215,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapScalarEndCap": {
-      "index": 216,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ReinitializeScalarEndCap": {
-      "index": 217,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapScalarOnceTimed": {
-      "index": 218,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapParticleCountOnScalarEndCap": {
-      "index": 219,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapParticleCountToScalar": {
-      "index": 220,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapVisibilityScalar": {
-      "index": 221,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapTransformVisibilityToScalar": {
-      "index": 222,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapTransformVisibilityToVector": {
-      "index": 223,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LerpScalar": {
-      "index": 224,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LerpEndCapScalar": {
-      "index": 225,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LerpEndCapVector": {
-      "index": 226,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LerpVector": {
-      "index": 227,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LerpToOtherAttribute": {
-      "index": 228,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapSpeed": {
-      "index": 229,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapVectortoCP": {
-      "index": 230,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RampScalarLinear": {
-      "index": 231,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RampScalarSpline": {
-      "index": 232,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RampScalarLinearSimple": {
-      "index": 233,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RampScalarSplineSimple": {
-      "index": 234,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ChladniWave": {
-      "index": 235,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_Noise": {
-      "index": 236,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_VectorNoise": {
-      "index": 237,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_Decay": {
-      "index": 238,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DecayOffscreen": {
-      "index": 239,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_EndCapTimedFreeze": {
-      "index": 240,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_EndCapTimedDecay": {
-      "index": 241,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_EndCapDecay": {
-      "index": 242,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_VelocityDecay": {
-      "index": 243,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_AlphaDecay": {
-      "index": 244,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RadiusDecay": {
-      "index": 245,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DecayMaintainCount": {
-      "index": 246,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DecayClampCount": {
-      "index": 247,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_Cull": {
-      "index": 248,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "CGeneralSpin": {
-      "index": 249,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "CSpinUpdateBase": {
-      "index": 250,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_Spin": {
-      "index": 251,
       "parent": "CGeneralSpin",
       "fields": [
       ]
     },
     "C_OP_SpinUpdate": {
-      "index": 252,
       "parent": "CSpinUpdateBase",
       "fields": [
       ]
     },
     "C_OP_SpinYaw": {
-      "index": 253,
       "parent": "CGeneralSpin",
       "fields": [
       ]
     },
     "C_OP_InterpolateRadius": {
-      "index": 254,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ColorInterpolate": {
-      "index": 255,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ColorInterpolateRandom": {
-      "index": 256,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PositionLock": {
-      "index": 257,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ControlpointLight": {
-      "index": 258,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_GlobalLight": {
-      "index": 259,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetChildControlPoints": {
-      "index": 260,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetControlPointsToParticle": {
-      "index": 261,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetControlPointsToModelParticles": {
-      "index": 262,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetPerChildControlPoint": {
-      "index": 263,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetPerChildControlPointFromAttribute": {
-      "index": 264,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapTransformOrientationToYaw": {
-      "index": 265,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DampenToCP": {
-      "index": 266,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetToCP": {
-      "index": 267,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PinParticleToCP": {
-      "index": 268,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementRigidAttachToCP": {
-      "index": 269,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LerpToInitialPosition": {
-      "index": 270,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DistanceBetweenTransforms": {
-      "index": 271,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PercentageBetweenTransforms": {
-      "index": 272,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PercentageBetweenTransformsVector": {
-      "index": 273,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PercentageBetweenTransformLerpCPs": {
-      "index": 274,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DistanceBetweenVecs": {
-      "index": 275,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DirectionBetweenVecsToVec": {
-      "index": 276,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DistanceToTransform": {
-      "index": 277,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_CylindricalDistanceToTransform": {
-      "index": 278,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RtEnvCull": {
-      "index": 279,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementLoopInsideSphere": {
-      "index": 280,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MoveToHitbox": {
-      "index": 281,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LockToBone": {
-      "index": 282,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SnapshotRigidSkinToBones": {
-      "index": 283,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SnapshotSkinToBones": {
-      "index": 284,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_CPOffsetToPercentageBetweenCPs": {
-      "index": 285,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_PlaneCull": {
-      "index": 286,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DistanceCull": {
-      "index": 287,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ModelCull": {
-      "index": 288,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ModelDampenMovement": {
-      "index": 289,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SequenceFromModel": {
-      "index": 290,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_VelocityMatchingForce": {
-      "index": 291,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementMaintainOffset": {
-      "index": 292,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementPlaceOnGround": {
-      "index": 293,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_InheritFromParentParticles": {
-      "index": 294,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_InheritFromParentParticlesV2": {
-      "index": 295,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ReadFromNeighboringParticle": {
-      "index": 296,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_InheritFromPeerSystem": {
-      "index": 297,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapVectorComponentToScalar": {
-      "index": 298,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_OrientTo2dDirection": {
-      "index": 299,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RestartAfterDuration": {
-      "index": 300,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_Orient2DRelToCP": {
-      "index": 301,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementRotateParticleAroundAxis": {
-      "index": 302,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RotateVector": {
-      "index": 303,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MaxVelocity": {
-      "index": 304,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LagCompensation": {
-      "index": 305,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MaintainSequentialPath": {
-      "index": 306,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LockToSavedSequentialPathV2": {
-      "index": 307,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LockToSavedSequentialPath": {
-      "index": 308,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapDotProductToScalar": {
-      "index": 309,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapCPtoScalar": {
-      "index": 310,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_NormalLock": {
-      "index": 311,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapCPtoVector": {
-      "index": 312,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetCPtoVector": {
-      "index": 313,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapTransformToVelocity": {
-      "index": 314,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapVelocityToVector": {
-      "index": 315,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapCPVelocityToVector": {
-      "index": 316,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetCPOrientationToDirection": {
-      "index": 317,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapDirectionToCPToVector": {
-      "index": 318,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapCrossProductOfTwoVectorsToVector": {
-      "index": 319,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_NormalizeVector": {
-      "index": 320,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapControlPointDirectionToVector": {
-      "index": 321,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetCPOrientationToGroundNormal": {
-      "index": 322,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapTransformOrientationToRotations": {
-      "index": 323,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapControlPointOrientationToRotation": {
-      "index": 324,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LockToPointList": {
-      "index": 325,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelElementOnceTimed": {
-      "index": 326,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelSequenceOnceTimed": {
-      "index": 327,
       "parent": "C_OP_RemapNamedModelElementOnceTimed",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelBodyPartOnceTimed": {
-      "index": 328,
       "parent": "C_OP_RemapNamedModelElementOnceTimed",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelMeshGroupOnceTimed": {
-      "index": 329,
       "parent": "C_OP_RemapNamedModelElementOnceTimed",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelElementEndCap": {
-      "index": 330,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelSequenceEndCap": {
-      "index": 331,
       "parent": "C_OP_RemapNamedModelElementEndCap",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelBodyPartEndCap": {
-      "index": 332,
       "parent": "C_OP_RemapNamedModelElementEndCap",
       "fields": [
       ]
     },
     "C_OP_RemapNamedModelMeshGroupEndCap": {
-      "index": 333,
       "parent": "C_OP_RemapNamedModelElementEndCap",
       "fields": [
       ]
     },
     "C_OP_SetFromCPSnapshot": {
-      "index": 334,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_VectorFieldSnapshot": {
-      "index": 335,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetAttributeToScalarExpression": {
-      "index": 336,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetVectorAttributeToVectorExpression": {
-      "index": 337,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetFloatAttributeToVectorExpression": {
-      "index": 338,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementSkinnedPositionFromCPSnapshot": {
-      "index": 339,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_MovementMoveAlongSkinnedCPSnapshot": {
-      "index": 340,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_QuantizeFloat": {
-      "index": 341,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetFloatCollection": {
-      "index": 342,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetFloat": {
-      "index": 343,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SetVec": {
-      "index": 344,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_DragRelativeToPlane": {
-      "index": 345,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapDensityGradientToVectorAttribute": {
-      "index": 346,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_LockPoints": {
-      "index": 347,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapDistanceToLineSegmentBase": {
-      "index": 348,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapDistanceToLineSegmentToScalar": {
-      "index": 349,
       "parent": "C_OP_RemapDistanceToLineSegmentBase",
       "fields": [
       ]
     },
     "C_OP_RemapDistanceToLineSegmentToVector": {
-      "index": 350,
       "parent": "C_OP_RemapDistanceToLineSegmentBase",
       "fields": [
       ]
     },
     "C_OP_TeleportBeam": {
-      "index": 351,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_CycleScalar": {
-      "index": 352,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_CalculateVectorAttribute": {
-      "index": 353,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ColorAdjustHSL": {
-      "index": 354,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_ConnectParentParticleToNearest": {
-      "index": 355,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_UpdateLightSource": {
-      "index": 356,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapSpeedtoCP": {
-      "index": 357,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapAverageHitboxSpeedtoCP": {
-      "index": 358,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapDotProductToCP": {
-      "index": 359,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointFieldToScalarExpression": {
-      "index": 360,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointFieldFromVectorExpression": {
-      "index": 361,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToVectorExpression": {
-      "index": 362,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapModelVolumetoCP": {
-      "index": 363,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapBoundingVolumetoCP": {
-      "index": 364,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapAverageScalarValuetoCP": {
-      "index": 365,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RampCPLinearRandom": {
-      "index": 366,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetParentControlPointsToChildCP": {
-      "index": 367,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetVariable": {
-      "index": 368,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointPositions": {
-      "index": 369,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetSingleControlPointPosition": {
-      "index": 370,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointPositionToRandomActiveCP": {
-      "index": 371,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetRandomControlPointPosition": {
-      "index": 372,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointOrientation": {
-      "index": 373,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointFromObjectScale": {
-      "index": 374,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_DistanceBetweenCPsToCP": {
-      "index": 375,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToPlayer": {
-      "index": 376,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToHand": {
-      "index": 377,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToHMD": {
-      "index": 378,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointPositionToTimeOfDayValue": {
-      "index": 379,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToCenter": {
-      "index": 380,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToCPVelocity": {
-      "index": 381,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointOrientationToCPVelocity": {
-      "index": 382,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_StopAfterCPDuration": {
-      "index": 383,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointRotation": {
-      "index": 384,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapCPtoCP": {
-      "index": 385,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_HSVShiftToCP": {
-      "index": 386,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToImpactPoint": {
-      "index": 387,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetCPOrientationToPointAtCP": {
-      "index": 388,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_EnableChildrenFromParentParticleCount": {
-      "index": 389,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SelectivelyEnableChildren": {
-      "index": 390,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_PlayEndCapWhenFinished": {
-      "index": 391,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_ForceControlPointStub": {
-      "index": 392,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_DriveCPFromGlobalSoundFloat": {
-      "index": 393,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointFieldToWater": {
-      "index": 394,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetControlPointToWaterSurface": {
-      "index": 395,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RepeatedTriggerChildGroup": {
-      "index": 396,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_ChooseRandomChildrenInGroup": {
-      "index": 397,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetSimulationRate": {
-      "index": 398,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_ControlPointToRadialScreenSpace": {
-      "index": 399,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_LightningSnapshotGenerator": {
-      "index": 400,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RemapExternalWindToCP": {
-      "index": 401,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_SetGravityToCP": {
-      "index": 402,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_QuantizeCPComponent": {
-      "index": 403,
       "parent": "CParticleFunctionPreEmission",
       "fields": [
       ]
     },
     "C_OP_RenderPoints": {
-      "index": 404,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "CBaseTrailRenderer": {
-      "index": 405,
       "parent": "CBaseRendererSource2",
       "fields": [
       ]
     },
     "C_OP_RenderTrails": {
-      "index": 406,
       "parent": "CBaseTrailRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderRopes": {
-      "index": 407,
       "parent": "CBaseRendererSource2",
       "fields": [
       ]
     },
     "C_OP_RenderAsModels": {
-      "index": 408,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderLights": {
-      "index": 409,
       "parent": "C_OP_RenderPoints",
       "fields": [
       ]
     },
     "C_OP_RenderBlobs": {
-      "index": 410,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderGpuImplicit": {
-      "index": 411,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderScreenVelocityRotate": {
-      "index": 412,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderModels": {
-      "index": 413,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderMaterialProxy": {
-      "index": 414,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderProjected": {
-      "index": 415,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderDeferredLight": {
-      "index": 416,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderStandardLight": {
-      "index": 417,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderOmni2Light": {
-      "index": 418,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderLightBeam": {
-      "index": 419,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderClothForce": {
-      "index": 420,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_Callback": {
-      "index": 421,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderScreenShake": {
-      "index": 422,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderTonemapController": {
-      "index": 423,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderPostProcessing": {
-      "index": 424,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderSound": {
-      "index": 425,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderStatusEffect": {
-      "index": 426,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderStatusEffectCitadel": {
-      "index": 427,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderFlattenGrass": {
-      "index": 428,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderTreeShake": {
-      "index": 429,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderText": {
-      "index": 430,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RenderVRHapticEvent": {
-      "index": 431,
       "parent": "CParticleFunctionRenderer",
       "fields": [
       ]
     },
     "C_OP_RemapSDFDistanceToScalarAttribute": {
-      "index": 432,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_RemapSDFDistanceToVectorAttribute": {
-      "index": 433,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SDFForce": {
-      "index": 434,
       "parent": "CParticleFunctionForce",
       "fields": [
       ]
     },
     "C_OP_RemapSDFGradientToVectorAttribute": {
-      "index": 435,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SDFLighting": {
-      "index": 436,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]
     },
     "C_OP_SDFConstraint": {
-      "index": 437,
       "parent": "CParticleFunctionConstraint",
       "fields": [
       ]
     },
     "C_OP_ParticlePhysics": {
-      "index": 438,
       "parent": "CParticleFunctionOperator",
       "fields": [
       ]

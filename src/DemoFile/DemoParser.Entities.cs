@@ -26,16 +26,18 @@ public partial class DemoParser
 
     private int _serverClassBits;
     private ServerClass?[] _serverClasses = Array.Empty<ServerClass>();
-    private CHandle<CCSTeam> _teamCounterTerroristHandle;
-
-    private CHandle<CCSTeam> _teamSpectatorHandle;
-    private CHandle<CCSTeam> _teamTerroristHandle;
+    private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
 
     public int MaxPlayers { get; private set; }
 
-    public CCSTeam TeamSpectator => GetCachedSingletonEntity(ref _teamSpectatorHandle, team => team.CSTeamNum == CSTeamNumber.Spectator);
-    public CCSTeam TeamTerrorist => GetCachedSingletonEntity(ref _teamTerroristHandle, team => team.CSTeamNum == CSTeamNumber.Terrorist);
-    public CCSTeam TeamCounterTerrorist => GetCachedSingletonEntity(ref _teamCounterTerroristHandle, team => team.CSTeamNum == CSTeamNumber.CounterTerrorist);
+    public CCSTeam GetTeam(CSTeamNumber teamNumber) =>
+        GetCachedSingletonEntity(
+            ref _teamHandles[(int)teamNumber],
+            team => team.CSTeamNum == teamNumber);
+
+    public CCSTeam TeamSpectator => GetTeam(CSTeamNumber.Spectator);
+    public CCSTeam TeamTerrorist => GetTeam(CSTeamNumber.Terrorist);
+    public CCSTeam TeamCounterTerrorist => GetTeam(CSTeamNumber.CounterTerrorist);
     public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
     public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
 

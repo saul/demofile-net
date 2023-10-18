@@ -195,8 +195,8 @@ public sealed partial class DemoParser
     /// <param name="tick">Tick to fire the callback.</param>
     /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
     /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
-    public IDisposable StartTimer(DemoTick tick, Action callback) =>
-        StartTimer(tick, callback, static callback => callback());
+    public IDisposable CreateTimer(DemoTick tick, Action callback) =>
+        CreateTimer(tick, callback, static callback => callback());
 
     /// <summary>
     /// Schedule a callback at demo tick <paramref name="tick"/>.
@@ -208,7 +208,7 @@ public sealed partial class DemoParser
     /// <param name="state">State to pass to the callback.</param>
     /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
     /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
-    public IDisposable StartTimer<T>(DemoTick tick, T state, Action<T> callback)
+    public IDisposable CreateTimer<T>(DemoTick tick, T state, Action<T> callback)
     {
         var timer = new TickTimer<T>(state, callback);
         _demoTickTimers.Enqueue(timer, tick.Value);
@@ -224,8 +224,8 @@ public sealed partial class DemoParser
     /// <param name="tick">Tick to fire the callback.</param>
     /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
     /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
-    public IDisposable StartTimer(GameTick_t tick, Action callback) =>
-        StartTimer(tick, callback, static callback => callback());
+    public IDisposable CreateTimer(GameTick_t tick, Action callback) =>
+        CreateTimer(tick, callback, static callback => callback());
 
     /// <summary>
     /// Schedule a callback at game tick <paramref name="tick"/>.
@@ -237,7 +237,7 @@ public sealed partial class DemoParser
     /// <param name="state">State to pass to the callback.</param>
     /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
     /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
-    public IDisposable StartTimer<T>(GameTick_t tick, T state, Action<T> callback)
+    public IDisposable CreateTimer<T>(GameTick_t tick, T state, Action<T> callback)
     {
         var timer = new TickTimer<T>(state, callback);
         _serverTickTimers.Enqueue(timer, tick.Value);

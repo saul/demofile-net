@@ -9,6 +9,12 @@ public static class GlobalUtil
     private static byte[] SpaceVsForwardM1 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "space-vs-forward-m1-ancient.dem"));
     public static MemoryStream SpaceVsForwardM1Stream => new(SpaceVsForwardM1);
 
+    private static byte[] PositionGotv { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "position_gotv.dem"));
+    public static MemoryStream PositionGotvStream => new(PositionGotv);
+
+    private static byte[] PositionNegativeGotv { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "position_negative_gotv.dem"));
+    public static MemoryStream PositionNegativeGotvStream => new(PositionNegativeGotv);
+
     public static byte[] ToBitStream(string input)
     {
         var bitArray = new BitArray(input.Length);

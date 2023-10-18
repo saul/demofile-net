@@ -516,191 +516,154 @@
   },
   "classes": {
     "CSosGroupActionSchema": {
-      "index": 0,
       "fields": [
       ]
     },
     "CSosGroupActionLimitSchema": {
-      "index": 1,
       "parent": "CSosGroupActionSchema",
       "fields": [
       ]
     },
     "CSosGroupActionTimeLimitSchema": {
-      "index": 2,
       "parent": "CSosGroupActionSchema",
       "fields": [
       ]
     },
     "CSosGroupActionSetSoundeventParameterSchema": {
-      "index": 3,
       "parent": "CSosGroupActionSchema",
       "fields": [
       ]
     },
     "CSosGroupBranchPattern": {
-      "index": 4,
       "fields": [
       ]
     },
     "CSosGroupMatchPattern": {
-      "index": 5,
       "parent": "CSosGroupBranchPattern",
       "fields": [
       ]
     },
     "CSosSoundEventGroupSchema": {
-      "index": 6,
       "fields": [
       ]
     },
     "CSosSoundEventGroupListSchema": {
-      "index": 7,
       "fields": [
       ]
     },
     "SosEditItemInfo_t": {
-      "index": 8,
       "fields": [
       ]
     },
     "SelectedEditItemInfo_t": {
-      "index": 9,
       "fields": [
       ]
     },
     "CSoundEventMetaData": {
-      "index": 10,
       "fields": [
       ]
     },
     "CDSPMixgroupModifier": {
-      "index": 11,
       "fields": [
       ]
     },
     "CDspPresetModifierList": {
-      "index": 12,
       "fields": [
       ]
     },
     "CDSPPresetMixgroupModifierTable": {
-      "index": 13,
       "fields": [
       ]
     },
     "VMixFilterDesc_t": {
-      "index": 14,
       "fields": [
       ]
     },
     "VMixEQ8Desc_t": {
-      "index": 15,
       "fields": [
       ]
     },
     "VMixDelayDesc_t": {
-      "index": 16,
       "fields": [
       ]
     },
     "VMixPannerDesc_t": {
-      "index": 17,
       "fields": [
       ]
     },
     "VMixModDelayDesc_t": {
-      "index": 18,
       "fields": [
       ]
     },
     "VMixDiffusorDesc_t": {
-      "index": 19,
       "fields": [
       ]
     },
     "VMixBoxverbDesc_t": {
-      "index": 20,
       "fields": [
       ]
     },
     "VMixFreeverbDesc_t": {
-      "index": 21,
       "fields": [
       ]
     },
     "VMixPlateverbDesc_t": {
-      "index": 22,
       "fields": [
       ]
     },
     "VMixDynamicsDesc_t": {
-      "index": 23,
       "fields": [
       ]
     },
     "VMixDynamicsCompressorDesc_t": {
-      "index": 24,
       "fields": [
       ]
     },
     "VMixDynamicsBand_t": {
-      "index": 25,
       "fields": [
       ]
     },
     "VMixDynamics3BandDesc_t": {
-      "index": 26,
       "fields": [
       ]
     },
     "VMixEnvelopeDesc_t": {
-      "index": 27,
       "fields": [
       ]
     },
     "VMixPitchShiftDesc_t": {
-      "index": 28,
       "fields": [
       ]
     },
     "VMixConvolutionDesc_t": {
-      "index": 29,
       "fields": [
       ]
     },
     "VMixVocoderDesc_t": {
-      "index": 30,
       "fields": [
       ]
     },
     "VMixShaperDesc_t": {
-      "index": 31,
       "fields": [
       ]
     },
     "VMixUtilityDesc_t": {
-      "index": 32,
       "fields": [
       ]
     },
     "VMixAutoFilterDesc_t": {
-      "index": 33,
       "fields": [
       ]
     },
     "VMixOscDesc_t": {
-      "index": 34,
       "fields": [
       ]
     },
     "VMixEffectChainDesc_t": {
-      "index": 35,
       "fields": [
       ]
     },
     "VMixSubgraphSwitchDesc_t": {
-      "index": 36,
       "fields": [
       ]
     }

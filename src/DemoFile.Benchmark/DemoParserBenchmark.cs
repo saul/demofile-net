@@ -7,6 +7,7 @@ namespace DemoFile.Benchmark;
 [WarmupCount(1)]
 [MemoryDiagnoser]
 [Config(typeof(Config))]
+[MaxIterationCount(16)]
 public class DemoParserBenchmark
 {
     private class Config : ManualConfig

@@ -11,7 +11,7 @@ public class TimerIntegrationTest
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
-        demo.StartTimer(
+        demo.CreateTimer(
             new DemoTick(128),
             () =>
             {
@@ -40,21 +40,21 @@ public class TimerIntegrationTest
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
-        var disposable = demo.StartTimer(
+        var disposable = demo.CreateTimer(
             new DemoTick(128),
             () =>
             {
                 timerTick1 = demo.CurrentDemoTick;
             });
 
-        demo.StartTimer(
+        demo.CreateTimer(
             new DemoTick(127),
             () =>
             {
                 disposable.Dispose();
             });
 
-        demo.StartTimer(
+        demo.CreateTimer(
             new DemoTick(129),
             () =>
             {
@@ -83,7 +83,7 @@ public class TimerIntegrationTest
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
-        demo.StartTimer(
+        demo.CreateTimer(
             new DemoTick(128),
             demo,
             demo =>
@@ -113,7 +113,7 @@ public class TimerIntegrationTest
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
-        demo.StartTimer(
+        demo.CreateTimer(
             new GameTick_t(17100u),
             () =>
             {
@@ -142,21 +142,21 @@ public class TimerIntegrationTest
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
-        var disposable = demo.StartTimer(
+        var disposable = demo.CreateTimer(
             new GameTick_t(17099u),
             () =>
             {
                 timerTick1 = demo.CurrentGameTick;
             });
 
-        demo.StartTimer(
+        demo.CreateTimer(
             new GameTick_t(17098u),
             () =>
             {
                 disposable.Dispose();
             });
 
-        demo.StartTimer(
+        demo.CreateTimer(
             new GameTick_t(17100u),
             () =>
             {
@@ -185,7 +185,7 @@ public class TimerIntegrationTest
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
-        demo.StartTimer(
+        demo.CreateTimer(
             new GameTick_t(17100u),
             demo,
             demo =>
