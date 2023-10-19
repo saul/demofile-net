@@ -99,6 +99,7 @@ public static class NetworkClasses
         "CFish",
         "CFists",
         "CFlashbang",
+        "CFlashbangProjectile",
         "CFogController",
         "CFootstepControl",
         "CFuncBrush",

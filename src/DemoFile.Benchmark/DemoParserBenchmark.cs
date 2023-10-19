@@ -16,7 +16,7 @@ public class DemoParserBenchmark
         {
             var baseJob = Job.Default;
 
-            AddJob(baseJob.WithArguments(new[] {new MsBuildArgument("/p:Baseline=true")}).AsBaseline().WithId("Baseline"));
+            AddJob(baseJob.WithArguments(new[] { new MsBuildArgument("/p:Baseline=true") }).AsBaseline().WithId("Baseline"));
             AddJob(baseJob.WithId("Current"));
         }
     }
@@ -28,7 +28,7 @@ public class DemoParserBenchmark
     [GlobalSetup]
     public void GlobalSetup()
     {
-        _demoBytes = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "demos", "space-vs-forward-m1-ancient.dem"));
+        _demoBytes = File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "demos", "navi-javelins-vs-9-pandas-fearless-m1-mirage.dem"));
     }
 
     [IterationSetup]

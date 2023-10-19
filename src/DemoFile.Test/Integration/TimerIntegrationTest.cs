@@ -22,7 +22,7 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(SpaceVsForwardM1Stream, cts.Token);
+            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
         }
         catch (OperationCanceledException)
         {
@@ -64,7 +64,7 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(SpaceVsForwardM1Stream, cts.Token);
+            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
         }
         catch (OperationCanceledException)
         {
@@ -95,7 +95,7 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(SpaceVsForwardM1Stream, cts.Token);
+            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
         }
         catch (OperationCanceledException)
         {
@@ -114,7 +114,7 @@ public class TimerIntegrationTest
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
         demo.CreateTimer(
-            new GameTick_t(17100u),
+            new GameTick_t(120_000u),
             () =>
             {
                 timerTick1 = demo.CurrentGameTick;
@@ -124,14 +124,14 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(SpaceVsForwardM1Stream, cts.Token);
+            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
         }
         catch (OperationCanceledException)
         {
         }
 
         // Assert
-        Assert.That(timerTick1, Is.EqualTo(new GameTick_t(17100u)));
+        Assert.That(timerTick1, Is.EqualTo(new GameTick_t(120_000u)));
     }
 
     [Test]
@@ -143,21 +143,21 @@ public class TimerIntegrationTest
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
         var disposable = demo.CreateTimer(
-            new GameTick_t(17099u),
+            new GameTick_t(119_999u),
             () =>
             {
                 timerTick1 = demo.CurrentGameTick;
             });
 
         demo.CreateTimer(
-            new GameTick_t(17098u),
+            new GameTick_t(119_998u),
             () =>
             {
                 disposable.Dispose();
             });
 
         demo.CreateTimer(
-            new GameTick_t(17100u),
+            new GameTick_t(120_000u),
             () =>
             {
                 cts.Cancel();
@@ -166,14 +166,14 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(SpaceVsForwardM1Stream, cts.Token);
+            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
         }
         catch (OperationCanceledException)
         {
         }
 
         // Assert
-        Assert.That(demo.CurrentGameTick, Is.EqualTo(new GameTick_t(17100u)));
+        Assert.That(demo.CurrentGameTick, Is.EqualTo(new GameTick_t(120_000u)));
         Assert.That(timerTick1, Is.EqualTo(default(GameTick_t)));
     }
 
@@ -186,7 +186,7 @@ public class TimerIntegrationTest
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
         demo.CreateTimer(
-            new GameTick_t(17100u),
+            new GameTick_t(120_000u),
             demo,
             demo =>
             {
@@ -197,13 +197,13 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(SpaceVsForwardM1Stream, cts.Token);
+            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
         }
         catch (OperationCanceledException)
         {
         }
 
         // Assert
-        Assert.That(timerTick1, Is.EqualTo(new GameTick_t(17100u)));
+        Assert.That(timerTick1, Is.EqualTo(new GameTick_t(120_000u)));
     }
 }

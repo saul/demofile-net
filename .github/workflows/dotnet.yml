@@ -40,7 +40,7 @@ jobs:
           dirs=($(find . -mindepth 1 -maxdepth 1 -type d))
           for dir in "${dirs[@]}"; do
             echo "Running example: $dir..."
-            dotnet run -v quiet -c Release --project "$dir" -- ../demos/space-vs-forward-m1-ancient.dem
+            dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem
           done
       - name: Benchmark
         id: benchmark

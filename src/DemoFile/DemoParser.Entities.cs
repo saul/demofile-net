@@ -132,7 +132,7 @@ public partial class DemoParser
                 _serverClasses[@class.ClassId] = new ServerClass(
                     @class.NetworkName,
                     @class.ClassId,
-                    context => throw new Exception($"Unknown server class in demo: {@class.NetworkName}"));
+                    context => throw new Exception($"Attempted to create unknown entity: {@class.NetworkName}"));
 
                 continue;
             }

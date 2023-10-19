@@ -11861,6 +11861,16 @@ public partial class CFlashbang : CBaseCSGrenade
     }
 }
 
+public partial class CFlashbangProjectile : CBaseCSGrenadeProjectile
+{
+    internal CFlashbangProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CFlashbangProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+}
+
 public partial class CFogController : CBaseEntity
 {
     internal CFogController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -21211,6 +21221,10 @@ internal static class SendNodeDecoders
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbang>(CFlashbang.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CFlashbangProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbangProjectile>(CFlashbangProjectile.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CFogController))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFogController>(CFogController.CreateFieldDecoder);
@@ -22049,6 +22063,7 @@ internal static class EntityFactories
         {"CFish", (context, decoder) => new CFish(context, decoder)},
         {"CFists", (context, decoder) => new CFists(context, decoder)},
         {"CFlashbang", (context, decoder) => new CFlashbang(context, decoder)},
+        {"CFlashbangProjectile", (context, decoder) => new CFlashbangProjectile(context, decoder)},
         {"CFogController", (context, decoder) => new CFogController(context, decoder)},
         {"CFootstepControl", (context, decoder) => new CFootstepControl(context, decoder)},
         {"CFuncBrush", (context, decoder) => new CFuncBrush(context, decoder)},
@@ -22961,6 +22976,12 @@ internal partial class DecoderSet
             var decoder = GetDecoder<CFlashbang>(new SerializerKey(className, 0));
             return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                 decoder((CFlashbang)instance, path, ref buffer);
+        }
+        case "CFlashbangProjectile":
+        {
+            var decoder = GetDecoder<CFlashbangProjectile>(new SerializerKey(className, 0));
+            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                decoder((CFlashbangProjectile)instance, path, ref buffer);
         }
         case "CFogController":
         {
