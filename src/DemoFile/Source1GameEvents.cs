@@ -13,8 +13,15 @@ public enum GameEventKeyType
     PlayerController = 9,
 }
 
+public abstract partial class Source1GameEventBase
+{
+    public abstract string GameEventName { get; }
+}
+
 public partial class Source1GameEvents
 {
+    public Action<Source1GameEventBase>? Source1GameEvent;
+
     // todo(net8): store as a FrozenDictionary
     private Dictionary<int, Action<CMsgSource1LegacyGameEvent>> _handlers = new();
 

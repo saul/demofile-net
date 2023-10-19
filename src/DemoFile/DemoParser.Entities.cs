@@ -17,21 +17,43 @@ public partial class DemoParser
     public const int MaxEdicts = 1 << MaxEdictBits;
     public const int NumEHandleSerialNumberBits = 17;
 
+    private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
+    private CHandle<CCSGameRulesProxy> _gameRulesHandle;
+    private CHandle<CCSPlayerResource> _playerResourceHandle;
+
     // todo(net8): use a frozen dictionary here
     private Dictionary<SerializerKey, Serializer> _serializers = new();
 
     private int _serverClassBits;
     private ServerClass?[] _serverClasses = Array.Empty<ServerClass>();
+    private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
 
     public int MaxPlayers { get; private set; }
 
-    private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
+    public CCSTeam GetTeam(CSTeamNumber teamNumber) =>
+        GetCachedSingletonEntity(
+            ref _teamHandles[(int)teamNumber],
+            team => team.CSTeamNum == teamNumber);
 
-    private CHandle<CCSTeam> _teamSpectatorHandle;
-    private CHandle<CCSTeam> _teamTerroristHandle;
-    private CHandle<CCSTeam> _teamCounterTerroristHandle;
-    private CHandle<CCSPlayerResource> _playerResourceHandle;
-    private CHandle<CCSGameRulesProxy> _gameRulesHandle;
+    public CCSTeam TeamSpectator => GetTeam(CSTeamNumber.Spectator);
+    public CCSTeam TeamTerrorist => GetTeam(CSTeamNumber.Terrorist);
+    public CCSTeam TeamCounterTerrorist => GetTeam(CSTeamNumber.CounterTerrorist);
+    public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
+    public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
+
+    public IEnumerable<CEntityInstance> Entities => _entities.Where(x => x != null)!;
+
+    public IEnumerable<CCSPlayerController> Players
+    {
+        get
+        {
+            for (var i = 1; i <= MaxPlayers; ++i)
+            {
+                if (_entities[i] is CCSPlayerController controller)
+                    yield return controller;
+            }
+        }
+    }
 
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
@@ -59,26 +81,6 @@ public partial class DemoParser
     private T GetCachedSingletonEntity<T>(ref CHandle<T> handle) where T : CEntityInstance =>
         GetCachedSingletonEntity(ref handle, _ => true);
 
-    public CCSTeam TeamSpectator => GetCachedSingletonEntity(ref _teamSpectatorHandle, team => team.CSTeamNum == CSTeamNumber.Spectator);
-    public CCSTeam TeamTerrorist => GetCachedSingletonEntity(ref _teamTerroristHandle, team => team.CSTeamNum == CSTeamNumber.Terrorist);
-    public CCSTeam TeamCounterTerrorist => GetCachedSingletonEntity(ref _teamCounterTerroristHandle, team => team.CSTeamNum == CSTeamNumber.CounterTerrorist);
-    public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
-    public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
-
-    public IEnumerable<CEntityInstance> Entities => _entities.Where(x => x != null)!;
-
-    public IEnumerable<CCSPlayerController> Players
-    {
-        get
-        {
-            for (var i = 1; i <= MaxPlayers; ++i)
-            {
-                if (_entities[i] is CCSPlayerController controller)
-                    yield return controller;
-            }
-        }
-    }
-
     public T? GetEntityByHandle<T>(CHandle<T> handle) where T : CEntityInstance
     {
         return _entities[(int) handle.Index.Value] is T entity && entity.SerialNumber == handle.SerialNum
@@ -91,62 +93,29 @@ public partial class DemoParser
         return _entities[(int)index.Value] as T;
     }
 
-    internal void OnDemoSendTables(CDemoSendTables msg)
+    internal void OnDemoSendTables(CDemoSendTables outerMsg)
     {
-        var byteBuffer = new ByteBuffer(msg.Data.Span);
+        var byteBuffer = new ByteBuffer(outerMsg.Data.Span);
         var size = byteBuffer.ReadUVarInt32();
 
-        var flattenedSerializer = CSVCMsg_FlattenedSerializer.Parser.ParseFrom(byteBuffer.ReadBytes((int)size));
+        var msg = CSVCMsg_FlattenedSerializer.Parser.ParseFrom(byteBuffer.ReadBytes((int)size));
 
-        // todo: abstract this into its own method
-        var fieldFactories = flattenedSerializer.Fields.Select(
-                Func<SerializerKey, SerializableField> (field) =>
-                {
-                    var varName = flattenedSerializer.Symbols[field.VarNameSym];
-                    var varType = flattenedSerializer.Symbols[field.VarTypeSym];
-                    var sendNode = flattenedSerializer.Symbols[field.SendNodeSym].Split('.', StringSplitOptions.RemoveEmptyEntries);
-                    var varEncoder = field.HasVarEncoderSym
-                        ? flattenedSerializer.Symbols[field.VarEncoderSym]
-                        : null;
-                    var fieldSerializerKey = field.HasFieldSerializerNameSym
-                        ? new SerializerKey(
-                            flattenedSerializer.Symbols[field.FieldSerializerNameSym],
-                            field.FieldSerializerVersion)
-                        : default(SerializerKey?);
-                    var encodingInfo = new FieldEncodingInfo(
-                        VarEncoder: varEncoder,
-                        BitCount: field.BitCount,
-                        EncodeFlags: field.EncodeFlags,
-                        LowValue: field.HasLowValue ? field.LowValue : default(float?),
-                        HighValue: field.HasHighValue ? field.HighValue : default(float?));
-                    var fieldType = FieldType.Parse(varType);
-
-                    return key => new SerializableField(
-                        key,
-                        varName,
-                        fieldType,
-                        sendNode,
-                        encodingInfo,
-                        fieldSerializerKey
-                    );
-                })
+        var fields = msg.Fields
+            .Select(field => SerializableField.FromProto(field, msg.Symbols))
             .ToArray();
 
-        _serializers =
-            flattenedSerializer.Serializers.Select(
-                    sz =>
-                    {
-                        var key = new SerializerKey(
-                            flattenedSerializer.Symbols[sz.SerializerNameSym],
-                            sz.SerializerVersion);
+        _serializers = msg.Serializers
+            .Select(sz =>
+            {
+                var key = new SerializerKey(msg.Symbols[sz.SerializerNameSym], sz.SerializerVersion);
 
-                        var serializer = new Serializer(
-                            key,
-                            sz.FieldsIndex.Select(i => fieldFactories[i](key)).ToArray());
+                var serializer = new Serializer(
+                    key,
+                    sz.FieldsIndex.Select(i => fields[i]).ToArray());
 
-                        return KeyValuePair.Create(key, serializer);
-                    })
-                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+                return KeyValuePair.Create(key, serializer);
+            })
+            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
     }
 
     internal void OnDemoClassInfo(CDemoClassInfo msg)
@@ -163,7 +132,7 @@ public partial class DemoParser
                 _serverClasses[@class.ClassId] = new ServerClass(
                     @class.NetworkName,
                     @class.ClassId,
-                    context => throw new Exception($"Unknown server class in demo: {@class.NetworkName}"));
+                    context => throw new Exception($"Attempted to create unknown entity: {@class.NetworkName}"));
 
                 continue;
             }
@@ -288,6 +257,21 @@ public partial class DemoParser
         {
             var pathSpan = fieldPath.AsSpan();
             entity.ReadField(pathSpan, ref entityBitBuffer);
+        }
+    }
+
+    private void OnNetTick(CNETMsg_Tick msg)
+    {
+        if (!msg.HasTick)
+            return;
+
+        var tick = msg.Tick;
+        CurrentGameTick = new GameTick_t(tick);
+
+        while (_serverTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= tick)
+        {
+            _serverTickTimers.Dequeue();
+            timer.Invoke();
         }
     }
 }

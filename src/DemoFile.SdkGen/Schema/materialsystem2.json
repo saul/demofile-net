@@ -96,73 +96,60 @@
   },
   "classes": {
     "MaterialParam_t": {
-      "index": 0,
       "fields": [
       ]
     },
     "MaterialParamInt_t": {
-      "index": 1,
       "parent": "MaterialParam_t",
       "fields": [
       ]
     },
     "MaterialParamFloat_t": {
-      "index": 2,
       "parent": "MaterialParam_t",
       "fields": [
       ]
     },
     "MaterialParamVector_t": {
-      "index": 3,
       "parent": "MaterialParam_t",
       "fields": [
       ]
     },
     "MaterialParamTexture_t": {
-      "index": 4,
       "parent": "MaterialParam_t",
       "fields": [
       ]
     },
     "MaterialParamString_t": {
-      "index": 5,
       "parent": "MaterialParam_t",
       "fields": [
       ]
     },
     "MaterialParamBuffer_t": {
-      "index": 6,
       "parent": "MaterialParam_t",
       "fields": [
       ]
     },
     "MaterialResourceData_t": {
-      "index": 7,
       "fields": [
       ]
     },
     "PostProcessingTonemapParameters_t": {
-      "index": 8,
       "fields": [
       ]
     },
     "PostProcessingBloomParameters_t": {
-      "index": 9,
       "fields": [
       ]
     },
     "PostProcessingVignetteParameters_t": {
-      "index": 10,
       "fields": [
       ]
     },
     "PostProcessingLocalContrastParameters_t": {
-      "index": 11,
       "fields": [
       ]
     },
     "PostProcessingResource_t": {
-      "index": 12,
       "fields": [
       ]
     }

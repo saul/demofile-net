@@ -176,17 +176,14 @@
   },
   "classes": {
     "RenderInputLayoutField_t": {
-      "index": 0,
       "fields": [
       ]
     },
     "VsInputSignatureElement_t": {
-      "index": 1,
       "fields": [
       ]
     },
     "VsInputSignature_t": {
-      "index": 2,
       "fields": [
       ]
     }

@@ -7,6 +7,7 @@ public partial class CCSGameModeRules
     internal static bool TryCreateDowncastDecoderById(
         DecoderSet decoderSet,
         uint childClassId,
+        [NotNullWhen(true)] out Func<CCSGameModeRules>? factory,
         [NotNullWhen(true)] out SendNodeDecoder<CCSGameModeRules>? innerDecoder)
     {
         // todo: still need to reverse engineer this. here's what I've seen so far:
@@ -18,14 +19,14 @@ public partial class CCSGameModeRules
             innerDecoder = CreateDowncastDecoder(
                 new SerializerKey(nameof(CCSGameModeRules_Deathmatch), 0),
                 decoderSet,
-                out _);
+                out factory);
         }
         else
         {
             innerDecoder = CreateDowncastDecoder(
                 new SerializerKey(nameof(CCSGameModeRules_Noop), 0),
                 decoderSet,
-                out _);
+                out factory);
         }
 
         return true;

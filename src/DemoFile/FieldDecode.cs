@@ -217,9 +217,11 @@ internal static class FieldDecode
         }
     }
 
-    // todo: verify this is definitely 1/30
-    internal static float DecodeSimulationTime(ref BitBuffer buffer) =>
-        buffer.ReadUVarInt32() * (1.0f / 30);
+    internal static float DecodeSimulationTime(ref BitBuffer buffer)
+    {
+        var ticks = new GameTick_t(buffer.ReadUVarInt32());
+        return ticks.ToGameTime().Value;
+    }
 
     internal static float DecodeFloatNoscale(ref BitBuffer buffer) => buffer.ReadFloat();
 

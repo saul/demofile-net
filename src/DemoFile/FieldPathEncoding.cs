@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace DemoFile;
 
 internal delegate void FieldPathReader(ref BitBuffer buffer, ref FieldPath fieldPath);
@@ -9,7 +11,7 @@ internal record FieldPathEncodingOp(string Name, int Frequency, FieldPathReader?
 
 internal static class FieldPathEncoding
 {
-    public static readonly HuffmanNode<FieldPathEncodingOp> HuffmanRoot;
+    internal static readonly HuffmanNode<FieldPathEncodingOp> HuffmanRoot;
 
     static FieldPathEncoding()
     {
@@ -234,7 +236,12 @@ internal static class FieldPathEncoding
 
     public static FieldPathEncodingOp ReadFieldPathOp(ref BitBuffer buffer)
     {
-        // todo: implement peek on BitBuffer and build a lookup table of symbols
+        // perf: implementing peek on BitBuffer and build a lookup table of symbols
+        // was noticeably slower than reading one bit at a time
+        // | Method    | Job        | Arguments        | Mean    | Error    | StdDev   | Ratio | RatioSD | Gen0       | Gen1       | Gen2      | Allocated | Alloc Ratio |
+        // |---------- |----------- |----------------- |--------:|---------:|---------:|------:|--------:|-----------:|-----------:|----------:|----------:|------------:|
+        // | ParseDemo | Job-KLQGNY | /p:Baseline=true | 2.256 s | 0.0336 s | 0.0314 s |  1.00 |    0.00 | 73000.0000 | 17000.0000 | 2000.0000 | 671.65 MB |        1.00 |
+        // | ParseDemo | Job-LTNMPJ | Default          | 2.387 s | 0.0267 s | 0.0236 s |  1.06 |    0.02 | 75000.0000 | 17000.0000 | 3000.0000 | 683.36 MB |        1.02 |
 
         var node = HuffmanRoot;
         for (;;)
@@ -244,7 +251,7 @@ internal static class FieldPathEncoding
                     ? node.Right
                     : node.Left)
                 ?? throw new InvalidOperationException("Invalid field path encoding");
-            
+
             // Is this node a leaf?
             if (next.Symbol is { } encodingOp)
                 return encodingOp;

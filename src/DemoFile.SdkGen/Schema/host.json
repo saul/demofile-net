@@ -3,12 +3,10 @@
   },
   "classes": {
     "CAnimScriptBase": {
-      "index": 0,
       "fields": [
       ]
     },
     "EmptyTestScript": {
-      "index": 1,
       "parent": "CAnimScriptBase",
       "fields": [
       ]

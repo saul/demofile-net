@@ -40,8 +40,20 @@ jobs:
           dirs=($(find . -mindepth 1 -maxdepth 1 -type d))
           for dir in "${dirs[@]}"; do
             echo "Running example: $dir..."
-            dotnet run -v quiet -c Release --project "$dir" -- ../demos/space-vs-forward-m1-ancient.dem
+            dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem
           done
+      - name: Benchmark
+        id: benchmark
+        continue-on-error: true
+        run: |
+          dotnet run -c Release --project src/DemoFile.Benchmark -- --exporters=github
+      - name: Comment on PR with benchmark results
+        if: github.ref != 'refs/heads/main' && steps.benchmark.conclusion == 'success'
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          filePath: ./BenchmarkDotNet.Artifacts/results/DemoFile.Benchmark.DemoParserBenchmark-report-github.md
+          comment_tag: benchmark
       - name: Publish to NuGet
         if: github.ref == 'refs/heads/main'
         run: |

@@ -2,6 +2,7 @@
 #nullable enable
 #pragma warning disable CS1591
 
+using System.Text.Json.Serialization;
 using DemoFile.Sdk;
 
 namespace DemoFile;
@@ -321,14 +322,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ServerSpawn is not { } callback)
+                    if (Source1GameEvent == null && ServerSpawn == null)
                         return;
                     var @this = new Source1ServerSpawnEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ServerSpawn?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "server_pre_shutdown")
@@ -343,14 +345,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ServerPreShutdown is not { } callback)
+                    if (Source1GameEvent == null && ServerPreShutdown == null)
                         return;
                     var @this = new Source1ServerPreShutdownEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ServerPreShutdown?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "server_shutdown")
@@ -365,14 +368,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ServerShutdown is not { } callback)
+                    if (Source1GameEvent == null && ServerShutdown == null)
                         return;
                     var @this = new Source1ServerShutdownEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ServerShutdown?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "server_message")
@@ -387,14 +391,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ServerMessage is not { } callback)
+                    if (Source1GameEvent == null && ServerMessage == null)
                         return;
                     var @this = new Source1ServerMessageEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ServerMessage?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "server_cvar")
@@ -411,14 +416,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ServerCvar is not { } callback)
+                    if (Source1GameEvent == null && ServerCvar == null)
                         return;
                     var @this = new Source1ServerCvarEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ServerCvar?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_activate")
@@ -433,14 +439,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerActivate is not { } callback)
+                    if (Source1GameEvent == null && PlayerActivate == null)
                         return;
                     var @this = new Source1PlayerActivateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerActivate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_connect_full")
@@ -455,14 +462,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerConnectFull is not { } callback)
+                    if (Source1GameEvent == null && PlayerConnectFull == null)
                         return;
                     var @this = new Source1PlayerConnectFullEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerConnectFull?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_full_update")
@@ -479,14 +487,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerFullUpdate is not { } callback)
+                    if (Source1GameEvent == null && PlayerFullUpdate == null)
                         return;
                     var @this = new Source1PlayerFullUpdateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerFullUpdate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_connect")
@@ -511,14 +520,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerConnect is not { } callback)
+                    if (Source1GameEvent == null && PlayerConnect == null)
                         return;
                     var @this = new Source1PlayerConnectEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerConnect?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_disconnect")
@@ -543,14 +553,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerDisconnect is not { } callback)
+                    if (Source1GameEvent == null && PlayerDisconnect == null)
                         return;
                     var @this = new Source1PlayerDisconnectEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerDisconnect?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_info")
@@ -571,14 +582,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerInfo is not { } callback)
+                    if (Source1GameEvent == null && PlayerInfo == null)
                         return;
                     var @this = new Source1PlayerInfoEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerInfo?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_spawn")
@@ -595,14 +607,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerSpawn is not { } callback)
+                    if (Source1GameEvent == null && PlayerSpawn == null)
                         return;
                     var @this = new Source1PlayerSpawnEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerSpawn?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_team")
@@ -629,14 +642,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerTeam is not { } callback)
+                    if (Source1GameEvent == null && PlayerTeam == null)
                         return;
                     var @this = new Source1PlayerTeamEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerTeam?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "local_player_team")
@@ -649,14 +663,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (LocalPlayerTeam is not { } callback)
+                    if (Source1GameEvent == null && LocalPlayerTeam == null)
                         return;
                     var @this = new Source1LocalPlayerTeamEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    LocalPlayerTeam?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "local_player_controller_team")
@@ -669,14 +684,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (LocalPlayerControllerTeam is not { } callback)
+                    if (Source1GameEvent == null && LocalPlayerControllerTeam == null)
                         return;
                     var @this = new Source1LocalPlayerControllerTeamEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    LocalPlayerControllerTeam?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_changename")
@@ -695,14 +711,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerChangename is not { } callback)
+                    if (Source1GameEvent == null && PlayerChangename == null)
                         return;
                     var @this = new Source1PlayerChangenameEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerChangename?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_hurt")
@@ -735,14 +752,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerHurt is not { } callback)
+                    if (Source1GameEvent == null && PlayerHurt == null)
                         return;
                     var @this = new Source1PlayerHurtEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerHurt?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_chat")
@@ -761,14 +779,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerChat is not { } callback)
+                    if (Source1GameEvent == null && PlayerChat == null)
                         return;
                     var @this = new Source1PlayerChatEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerChat?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "local_player_pawn_changed")
@@ -781,14 +800,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (LocalPlayerPawnChanged is not { } callback)
+                    if (Source1GameEvent == null && LocalPlayerPawnChanged == null)
                         return;
                     var @this = new Source1LocalPlayerPawnChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    LocalPlayerPawnChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "teamplay_broadcast_audio")
@@ -805,14 +825,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamplayBroadcastAudio is not { } callback)
+                    if (Source1GameEvent == null && TeamplayBroadcastAudio == null)
                         return;
                     var @this = new Source1TeamplayBroadcastAudioEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamplayBroadcastAudio?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "finale_start")
@@ -827,14 +848,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (FinaleStart is not { } callback)
+                    if (Source1GameEvent == null && FinaleStart == null)
                         return;
                     var @this = new Source1FinaleStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    FinaleStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_stats_updated")
@@ -849,14 +871,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerStatsUpdated is not { } callback)
+                    if (Source1GameEvent == null && PlayerStatsUpdated == null)
                         return;
                     var @this = new Source1PlayerStatsUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerStatsUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "user_data_downloaded")
@@ -869,14 +892,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UserDataDownloaded is not { } callback)
+                    if (Source1GameEvent == null && UserDataDownloaded == null)
                         return;
                     var @this = new Source1UserDataDownloadedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UserDataDownloaded?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ragdoll_dissolved")
@@ -891,14 +915,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RagdollDissolved is not { } callback)
+                    if (Source1GameEvent == null && RagdollDissolved == null)
                         return;
                     var @this = new Source1RagdollDissolvedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RagdollDissolved?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "team_info")
@@ -915,14 +940,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamInfo is not { } callback)
+                    if (Source1GameEvent == null && TeamInfo == null)
                         return;
                     var @this = new Source1TeamInfoEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamInfo?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "team_score")
@@ -939,14 +965,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamScore is not { } callback)
+                    if (Source1GameEvent == null && TeamScore == null)
                         return;
                     var @this = new Source1TeamScoreEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamScore?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_cameraman")
@@ -961,14 +988,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvCameraman is not { } callback)
+                    if (Source1GameEvent == null && HltvCameraman == null)
                         return;
                     var @this = new Source1HltvCameramanEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvCameraman?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_chase")
@@ -995,14 +1023,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvChase is not { } callback)
+                    if (Source1GameEvent == null && HltvChase == null)
                         return;
                     var @this = new Source1HltvChaseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvChase?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_rank_camera")
@@ -1021,14 +1050,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvRankCamera is not { } callback)
+                    if (Source1GameEvent == null && HltvRankCamera == null)
                         return;
                     var @this = new Source1HltvRankCameraEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvRankCamera?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_rank_entity")
@@ -1047,14 +1077,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvRankEntity is not { } callback)
+                    if (Source1GameEvent == null && HltvRankEntity == null)
                         return;
                     var @this = new Source1HltvRankEntityEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvRankEntity?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_fixed")
@@ -1083,14 +1114,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvFixed is not { } callback)
+                    if (Source1GameEvent == null && HltvFixed == null)
                         return;
                     var @this = new Source1HltvFixedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvFixed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_message")
@@ -1105,14 +1137,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvMessage is not { } callback)
+                    if (Source1GameEvent == null && HltvMessage == null)
                         return;
                     var @this = new Source1HltvMessageEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvMessage?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_status")
@@ -1133,14 +1166,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvStatus is not { } callback)
+                    if (Source1GameEvent == null && HltvStatus == null)
                         return;
                     var @this = new Source1HltvStatusEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvStatus?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_title")
@@ -1155,14 +1189,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvTitle is not { } callback)
+                    if (Source1GameEvent == null && HltvTitle == null)
                         return;
                     var @this = new Source1HltvTitleEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvTitle?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_chat")
@@ -1179,14 +1214,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvChat is not { } callback)
+                    if (Source1GameEvent == null && HltvChat == null)
                         return;
                     var @this = new Source1HltvChatEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvChat?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_versioninfo")
@@ -1201,14 +1237,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvVersioninfo is not { } callback)
+                    if (Source1GameEvent == null && HltvVersioninfo == null)
                         return;
                     var @this = new Source1HltvVersioninfoEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvVersioninfo?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_replay")
@@ -1225,14 +1262,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvReplay is not { } callback)
+                    if (Source1GameEvent == null && HltvReplay == null)
                         return;
                     var @this = new Source1HltvReplayEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvReplay?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_replay_status")
@@ -1247,14 +1285,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvReplayStatus is not { } callback)
+                    if (Source1GameEvent == null && HltvReplayStatus == null)
                         return;
                     var @this = new Source1HltvReplayStatusEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvReplayStatus?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "demo_stop")
@@ -1267,14 +1306,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DemoStop is not { } callback)
+                    if (Source1GameEvent == null && DemoStop == null)
                         return;
                     var @this = new Source1DemoStopEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DemoStop?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "map_shutdown")
@@ -1287,14 +1327,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MapShutdown is not { } callback)
+                    if (Source1GameEvent == null && MapShutdown == null)
                         return;
                     var @this = new Source1MapShutdownEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MapShutdown?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "map_transition")
@@ -1307,14 +1348,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MapTransition is not { } callback)
+                    if (Source1GameEvent == null && MapTransition == null)
                         return;
                     var @this = new Source1MapTransitionEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MapTransition?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostname_changed")
@@ -1329,14 +1371,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostnameChanged is not { } callback)
+                    if (Source1GameEvent == null && HostnameChanged == null)
                         return;
                     var @this = new Source1HostnameChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostnameChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "difficulty_changed")
@@ -1355,14 +1398,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DifficultyChanged is not { } callback)
+                    if (Source1GameEvent == null && DifficultyChanged == null)
                         return;
                     var @this = new Source1DifficultyChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DifficultyChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "game_message")
@@ -1379,14 +1423,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameMessage is not { } callback)
+                    if (Source1GameEvent == null && GameMessage == null)
                         return;
                     var @this = new Source1GameMessageEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameMessage?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "game_newmap")
@@ -1401,14 +1446,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameNewmap is not { } callback)
+                    if (Source1GameEvent == null && GameNewmap == null)
                         return;
                     var @this = new Source1GameNewmapEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameNewmap?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_start")
@@ -1427,14 +1473,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundStart is not { } callback)
+                    if (Source1GameEvent == null && RoundStart == null)
                         return;
                     var @this = new Source1RoundStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_end")
@@ -1459,14 +1506,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundEnd is not { } callback)
+                    if (Source1GameEvent == null && RoundEnd == null)
                         return;
                     var @this = new Source1RoundEndEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundEnd?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_start_pre_entity")
@@ -1479,14 +1527,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundStartPreEntity is not { } callback)
+                    if (Source1GameEvent == null && RoundStartPreEntity == null)
                         return;
                     var @this = new Source1RoundStartPreEntityEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundStartPreEntity?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_start_post_nav")
@@ -1499,14 +1548,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundStartPostNav is not { } callback)
+                    if (Source1GameEvent == null && RoundStartPostNav == null)
                         return;
                     var @this = new Source1RoundStartPostNavEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundStartPostNav?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_freeze_end")
@@ -1519,14 +1569,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundFreezeEnd is not { } callback)
+                    if (Source1GameEvent == null && RoundFreezeEnd == null)
                         return;
                     var @this = new Source1RoundFreezeEndEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundFreezeEnd?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "teamplay_round_start")
@@ -1541,14 +1592,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamplayRoundStart is not { } callback)
+                    if (Source1GameEvent == null && TeamplayRoundStart == null)
                         return;
                     var @this = new Source1TeamplayRoundStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamplayRoundStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_death")
@@ -1609,14 +1661,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerDeath is not { } callback)
+                    if (Source1GameEvent == null && PlayerDeath == null)
                         return;
                     var @this = new Source1PlayerDeathEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerDeath?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_footstep")
@@ -1633,14 +1686,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerFootstep is not { } callback)
+                    if (Source1GameEvent == null && PlayerFootstep == null)
                         return;
                     var @this = new Source1PlayerFootstepEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerFootstep?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_hintmessage")
@@ -1655,14 +1709,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerHintmessage is not { } callback)
+                    if (Source1GameEvent == null && PlayerHintmessage == null)
                         return;
                     var @this = new Source1PlayerHintmessageEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerHintmessage?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "break_breakable")
@@ -1681,14 +1736,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BreakBreakable is not { } callback)
+                    if (Source1GameEvent == null && BreakBreakable == null)
                         return;
                     var @this = new Source1BreakBreakableEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BreakBreakable?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "broken_breakable")
@@ -1707,14 +1763,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BrokenBreakable is not { } callback)
+                    if (Source1GameEvent == null && BrokenBreakable == null)
                         return;
                     var @this = new Source1BrokenBreakableEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BrokenBreakable?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "break_prop")
@@ -1731,14 +1788,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BreakProp is not { } callback)
+                    if (Source1GameEvent == null && BreakProp == null)
                         return;
                     var @this = new Source1BreakPropEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BreakProp?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "entity_killed")
@@ -1759,14 +1817,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EntityKilled is not { } callback)
+                    if (Source1GameEvent == null && EntityKilled == null)
                         return;
                     var @this = new Source1EntityKilledEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EntityKilled?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "door_close")
@@ -1783,14 +1842,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DoorClose is not { } callback)
+                    if (Source1GameEvent == null && DoorClose == null)
                         return;
                     var @this = new Source1DoorCloseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DoorClose?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_started")
@@ -1811,14 +1871,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteStarted is not { } callback)
+                    if (Source1GameEvent == null && VoteStarted == null)
                         return;
                     var @this = new Source1VoteStartedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteStarted?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_failed")
@@ -1833,14 +1894,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteFailed is not { } callback)
+                    if (Source1GameEvent == null && VoteFailed == null)
                         return;
                     var @this = new Source1VoteFailedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteFailed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_passed")
@@ -1859,14 +1921,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VotePassed is not { } callback)
+                    if (Source1GameEvent == null && VotePassed == null)
                         return;
                     var @this = new Source1VotePassedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VotePassed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_changed")
@@ -1891,14 +1954,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteChanged is not { } callback)
+                    if (Source1GameEvent == null && VoteChanged == null)
                         return;
                     var @this = new Source1VoteChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_cast_yes")
@@ -1915,14 +1979,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteCastYes is not { } callback)
+                    if (Source1GameEvent == null && VoteCastYes == null)
                         return;
                     var @this = new Source1VoteCastYesEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteCastYes?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_cast_no")
@@ -1939,14 +2004,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteCastNo is not { } callback)
+                    if (Source1GameEvent == null && VoteCastNo == null)
                         return;
                     var @this = new Source1VoteCastNoEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteCastNo?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "achievement_event")
@@ -1965,14 +2031,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AchievementEvent is not { } callback)
+                    if (Source1GameEvent == null && AchievementEvent == null)
                         return;
                     var @this = new Source1AchievementEventEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AchievementEvent?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "achievement_earned")
@@ -1989,14 +2056,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AchievementEarned is not { } callback)
+                    if (Source1GameEvent == null && AchievementEarned == null)
                         return;
                     var @this = new Source1AchievementEarnedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AchievementEarned?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "achievement_write_failed")
@@ -2009,14 +2077,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AchievementWriteFailed is not { } callback)
+                    if (Source1GameEvent == null && AchievementWriteFailed == null)
                         return;
                     var @this = new Source1AchievementWriteFailedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AchievementWriteFailed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bonus_updated")
@@ -2037,14 +2106,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BonusUpdated is not { } callback)
+                    if (Source1GameEvent == null && BonusUpdated == null)
                         return;
                     var @this = new Source1BonusUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BonusUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "spec_target_updated")
@@ -2063,14 +2133,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SpecTargetUpdated is not { } callback)
+                    if (Source1GameEvent == null && SpecTargetUpdated == null)
                         return;
                     var @this = new Source1SpecTargetUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SpecTargetUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "spec_mode_updated")
@@ -2085,14 +2156,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SpecModeUpdated is not { } callback)
+                    if (Source1GameEvent == null && SpecModeUpdated == null)
                         return;
                     var @this = new Source1SpecModeUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SpecModeUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "entity_visible")
@@ -2113,14 +2185,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EntityVisible is not { } callback)
+                    if (Source1GameEvent == null && EntityVisible == null)
                         return;
                     var @this = new Source1EntityVisibleEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EntityVisible?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "gameinstructor_draw")
@@ -2133,14 +2206,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameinstructorDraw is not { } callback)
+                    if (Source1GameEvent == null && GameinstructorDraw == null)
                         return;
                     var @this = new Source1GameinstructorDrawEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameinstructorDraw?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "gameinstructor_nodraw")
@@ -2153,14 +2227,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameinstructorNodraw is not { } callback)
+                    if (Source1GameEvent == null && GameinstructorNodraw == null)
                         return;
                     var @this = new Source1GameinstructorNodrawEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameinstructorNodraw?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "flare_ignite_npc")
@@ -2175,14 +2250,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (FlareIgniteNpc is not { } callback)
+                    if (Source1GameEvent == null && FlareIgniteNpc == null)
                         return;
                     var @this = new Source1FlareIgniteNpcEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    FlareIgniteNpc?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "helicopter_grenade_punt_miss")
@@ -2195,14 +2271,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HelicopterGrenadePuntMiss is not { } callback)
+                    if (Source1GameEvent == null && HelicopterGrenadePuntMiss == null)
                         return;
                     var @this = new Source1HelicopterGrenadePuntMissEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HelicopterGrenadePuntMiss?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "physgun_pickup")
@@ -2217,14 +2294,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PhysgunPickup is not { } callback)
+                    if (Source1GameEvent == null && PhysgunPickup == null)
                         return;
                     var @this = new Source1PhysgunPickupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PhysgunPickup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "inventory_updated")
@@ -2237,14 +2315,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InventoryUpdated is not { } callback)
+                    if (Source1GameEvent == null && InventoryUpdated == null)
                         return;
                     var @this = new Source1InventoryUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InventoryUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cart_updated")
@@ -2257,14 +2336,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CartUpdated is not { } callback)
+                    if (Source1GameEvent == null && CartUpdated == null)
                         return;
                     var @this = new Source1CartUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CartUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "store_pricesheet_updated")
@@ -2277,14 +2357,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (StorePricesheetUpdated is not { } callback)
+                    if (Source1GameEvent == null && StorePricesheetUpdated == null)
                         return;
                     var @this = new Source1StorePricesheetUpdatedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    StorePricesheetUpdated?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_schema_initialized")
@@ -2297,14 +2378,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemSchemaInitialized is not { } callback)
+                    if (Source1GameEvent == null && ItemSchemaInitialized == null)
                         return;
                     var @this = new Source1ItemSchemaInitializedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemSchemaInitialized?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "drop_rate_modified")
@@ -2317,14 +2399,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DropRateModified is not { } callback)
+                    if (Source1GameEvent == null && DropRateModified == null)
                         return;
                     var @this = new Source1DropRateModifiedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DropRateModified?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "event_ticket_modified")
@@ -2337,14 +2420,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EventTicketModified is not { } callback)
+                    if (Source1GameEvent == null && EventTicketModified == null)
                         return;
                     var @this = new Source1EventTicketModifiedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EventTicketModified?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "gc_connected")
@@ -2357,14 +2441,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GcConnected is not { } callback)
+                    if (Source1GameEvent == null && GcConnected == null)
                         return;
                     var @this = new Source1GcConnectedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GcConnected?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "instructor_start_lesson")
@@ -2389,14 +2474,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InstructorStartLesson is not { } callback)
+                    if (Source1GameEvent == null && InstructorStartLesson == null)
                         return;
                     var @this = new Source1InstructorStartLessonEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InstructorStartLesson?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "instructor_close_lesson")
@@ -2413,14 +2499,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InstructorCloseLesson is not { } callback)
+                    if (Source1GameEvent == null && InstructorCloseLesson == null)
                         return;
                     var @this = new Source1InstructorCloseLessonEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InstructorCloseLesson?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "instructor_server_hint_create")
@@ -2473,14 +2560,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InstructorServerHintCreate is not { } callback)
+                    if (Source1GameEvent == null && InstructorServerHintCreate == null)
                         return;
                     var @this = new Source1InstructorServerHintCreateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InstructorServerHintCreate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "instructor_server_hint_stop")
@@ -2495,14 +2583,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InstructorServerHintStop is not { } callback)
+                    if (Source1GameEvent == null && InstructorServerHintStop == null)
                         return;
                     var @this = new Source1InstructorServerHintStopEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InstructorServerHintStop?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "set_instructor_group_enabled")
@@ -2519,14 +2608,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SetInstructorGroupEnabled is not { } callback)
+                    if (Source1GameEvent == null && SetInstructorGroupEnabled == null)
                         return;
                     var @this = new Source1SetInstructorGroupEnabledEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SetInstructorGroupEnabled?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "clientside_lesson_closed")
@@ -2541,14 +2631,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ClientsideLessonClosed is not { } callback)
+                    if (Source1GameEvent == null && ClientsideLessonClosed == null)
                         return;
                     var @this = new Source1ClientsideLessonClosedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ClientsideLessonClosed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "dynamic_shadow_light_changed")
@@ -2561,14 +2652,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DynamicShadowLightChanged is not { } callback)
+                    if (Source1GameEvent == null && DynamicShadowLightChanged == null)
                         return;
                     var @this = new Source1DynamicShadowLightChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DynamicShadowLightChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "gameui_hidden")
@@ -2581,14 +2673,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameuiHidden is not { } callback)
+                    if (Source1GameEvent == null && GameuiHidden == null)
                         return;
                     var @this = new Source1GameuiHiddenEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameuiHidden?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "items_gifted")
@@ -2611,14 +2704,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemsGifted is not { } callback)
+                    if (Source1GameEvent == null && ItemsGifted == null)
                         return;
                     var @this = new Source1ItemsGiftedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemsGifted?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_score")
@@ -2639,14 +2733,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerScore is not { } callback)
+                    if (Source1GameEvent == null && PlayerScore == null)
                         return;
                     var @this = new Source1PlayerScoreEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerScore?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_shoot")
@@ -2667,14 +2762,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerShoot is not { } callback)
+                    if (Source1GameEvent == null && PlayerShoot == null)
                         return;
                     var @this = new Source1PlayerShootEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerShoot?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "game_init")
@@ -2687,14 +2783,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameInit is not { } callback)
+                    if (Source1GameEvent == null && GameInit == null)
                         return;
                     var @this = new Source1GameInitEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameInit?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "game_start")
@@ -2715,14 +2812,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameStart is not { } callback)
+                    if (Source1GameEvent == null && GameStart == null)
                         return;
                     var @this = new Source1GameStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "game_end")
@@ -2737,14 +2835,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GameEnd is not { } callback)
+                    if (Source1GameEvent == null && GameEnd == null)
                         return;
                     var @this = new Source1GameEndEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GameEnd?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_announce_match_point")
@@ -2757,14 +2856,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundAnnounceMatchPoint is not { } callback)
+                    if (Source1GameEvent == null && RoundAnnounceMatchPoint == null)
                         return;
                     var @this = new Source1RoundAnnounceMatchPointEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundAnnounceMatchPoint?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_announce_final")
@@ -2777,14 +2877,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundAnnounceFinal is not { } callback)
+                    if (Source1GameEvent == null && RoundAnnounceFinal == null)
                         return;
                     var @this = new Source1RoundAnnounceFinalEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundAnnounceFinal?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_announce_last_round_half")
@@ -2797,14 +2898,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundAnnounceLastRoundHalf is not { } callback)
+                    if (Source1GameEvent == null && RoundAnnounceLastRoundHalf == null)
                         return;
                     var @this = new Source1RoundAnnounceLastRoundHalfEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundAnnounceLastRoundHalf?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_announce_match_start")
@@ -2817,14 +2919,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundAnnounceMatchStart is not { } callback)
+                    if (Source1GameEvent == null && RoundAnnounceMatchStart == null)
                         return;
                     var @this = new Source1RoundAnnounceMatchStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundAnnounceMatchStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_announce_warmup")
@@ -2837,14 +2940,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundAnnounceWarmup is not { } callback)
+                    if (Source1GameEvent == null && RoundAnnounceWarmup == null)
                         return;
                     var @this = new Source1RoundAnnounceWarmupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundAnnounceWarmup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_end_upload_stats")
@@ -2857,14 +2961,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundEndUploadStats is not { } callback)
+                    if (Source1GameEvent == null && RoundEndUploadStats == null)
                         return;
                     var @this = new Source1RoundEndUploadStatsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundEndUploadStats?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_officially_ended")
@@ -2877,14 +2982,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundOfficiallyEnded is not { } callback)
+                    if (Source1GameEvent == null && RoundOfficiallyEnded == null)
                         return;
                     var @this = new Source1RoundOfficiallyEndedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundOfficiallyEnded?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_time_warning")
@@ -2897,14 +3003,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundTimeWarning is not { } callback)
+                    if (Source1GameEvent == null && RoundTimeWarning == null)
                         return;
                     var @this = new Source1RoundTimeWarningEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundTimeWarning?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ugc_map_info_received")
@@ -2919,14 +3026,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UgcMapInfoReceived is not { } callback)
+                    if (Source1GameEvent == null && UgcMapInfoReceived == null)
                         return;
                     var @this = new Source1UgcMapInfoReceivedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UgcMapInfoReceived?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ugc_map_unsubscribed")
@@ -2941,14 +3049,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UgcMapUnsubscribed is not { } callback)
+                    if (Source1GameEvent == null && UgcMapUnsubscribed == null)
                         return;
                     var @this = new Source1UgcMapUnsubscribedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UgcMapUnsubscribed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ugc_map_download_error")
@@ -2965,14 +3074,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UgcMapDownloadError is not { } callback)
+                    if (Source1GameEvent == null && UgcMapDownloadError == null)
                         return;
                     var @this = new Source1UgcMapDownloadErrorEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UgcMapDownloadError?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ugc_file_download_finished")
@@ -2987,14 +3097,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UgcFileDownloadFinished is not { } callback)
+                    if (Source1GameEvent == null && UgcFileDownloadFinished == null)
                         return;
                     var @this = new Source1UgcFileDownloadFinishedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UgcFileDownloadFinished?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ugc_file_download_start")
@@ -3011,14 +3122,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UgcFileDownloadStart is not { } callback)
+                    if (Source1GameEvent == null && UgcFileDownloadStart == null)
                         return;
                     var @this = new Source1UgcFileDownloadStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UgcFileDownloadStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "begin_new_match")
@@ -3031,14 +3143,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BeginNewMatch is not { } callback)
+                    if (Source1GameEvent == null && BeginNewMatch == null)
                         return;
                     var @this = new Source1BeginNewMatchEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BeginNewMatch?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "dm_bonus_weapon_start")
@@ -3055,14 +3168,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DmBonusWeaponStart is not { } callback)
+                    if (Source1GameEvent == null && DmBonusWeaponStart == null)
                         return;
                     var @this = new Source1DmBonusWeaponStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DmBonusWeaponStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "survival_announce_phase")
@@ -3077,14 +3191,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SurvivalAnnouncePhase is not { } callback)
+                    if (Source1GameEvent == null && SurvivalAnnouncePhase == null)
                         return;
                     var @this = new Source1SurvivalAnnouncePhaseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SurvivalAnnouncePhase?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_decal")
@@ -3099,14 +3214,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerDecal is not { } callback)
+                    if (Source1GameEvent == null && PlayerDecal == null)
                         return;
                     var @this = new Source1PlayerDecalEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerDecal?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "read_game_titledata")
@@ -3121,14 +3237,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ReadGameTitledata is not { } callback)
+                    if (Source1GameEvent == null && ReadGameTitledata == null)
                         return;
                     var @this = new Source1ReadGameTitledataEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ReadGameTitledata?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "write_game_titledata")
@@ -3143,14 +3260,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WriteGameTitledata is not { } callback)
+                    if (Source1GameEvent == null && WriteGameTitledata == null)
                         return;
                     var @this = new Source1WriteGameTitledataEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WriteGameTitledata?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "reset_game_titledata")
@@ -3165,14 +3283,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ResetGameTitledata is not { } callback)
+                    if (Source1GameEvent == null && ResetGameTitledata == null)
                         return;
                     var @this = new Source1ResetGameTitledataEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ResetGameTitledata?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weaponhud_selection")
@@ -3193,14 +3312,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponhudSelection is not { } callback)
+                    if (Source1GameEvent == null && WeaponhudSelection == null)
                         return;
                     var @this = new Source1WeaponhudSelectionEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponhudSelection?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_ended")
@@ -3213,14 +3333,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteEnded is not { } callback)
+                    if (Source1GameEvent == null && VoteEnded == null)
                         return;
                     var @this = new Source1VoteEndedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteEnded?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_cast")
@@ -3239,14 +3360,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteCast is not { } callback)
+                    if (Source1GameEvent == null && VoteCast == null)
                         return;
                     var @this = new Source1VoteCastEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteCast?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vote_options")
@@ -3271,14 +3393,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VoteOptions is not { } callback)
+                    if (Source1GameEvent == null && VoteOptions == null)
                         return;
                     var @this = new Source1VoteOptionsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VoteOptions?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "endmatch_mapvote_selecting_map")
@@ -3313,14 +3436,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EndmatchMapvoteSelectingMap is not { } callback)
+                    if (Source1GameEvent == null && EndmatchMapvoteSelectingMap == null)
                         return;
                     var @this = new Source1EndmatchMapvoteSelectingMapEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EndmatchMapvoteSelectingMap?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "endmatch_cmm_start_reveal_items")
@@ -3333,14 +3457,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EndmatchCmmStartRevealItems is not { } callback)
+                    if (Source1GameEvent == null && EndmatchCmmStartRevealItems == null)
                         return;
                     var @this = new Source1EndmatchCmmStartRevealItemsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EndmatchCmmStartRevealItems?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "client_loadout_changed")
@@ -3353,14 +3478,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ClientLoadoutChanged is not { } callback)
+                    if (Source1GameEvent == null && ClientLoadoutChanged == null)
                         return;
                     var @this = new Source1ClientLoadoutChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ClientLoadoutChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "add_player_sonar_icon")
@@ -3381,14 +3507,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AddPlayerSonarIcon is not { } callback)
+                    if (Source1GameEvent == null && AddPlayerSonarIcon == null)
                         return;
                     var @this = new Source1AddPlayerSonarIconEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AddPlayerSonarIcon?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "door_open")
@@ -3405,14 +3532,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DoorOpen is not { } callback)
+                    if (Source1GameEvent == null && DoorOpen == null)
                         return;
                     var @this = new Source1DoorOpenEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DoorOpen?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "door_closed")
@@ -3429,14 +3557,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DoorClosed is not { } callback)
+                    if (Source1GameEvent == null && DoorClosed == null)
                         return;
                     var @this = new Source1DoorClosedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DoorClosed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "door_break")
@@ -3453,14 +3582,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DoorBreak is not { } callback)
+                    if (Source1GameEvent == null && DoorBreak == null)
                         return;
                     var @this = new Source1DoorBreakEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DoorBreak?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "add_bullet_hit_marker")
@@ -3497,14 +3627,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AddBulletHitMarker is not { } callback)
+                    if (Source1GameEvent == null && AddBulletHitMarker == null)
                         return;
                     var @this = new Source1AddBulletHitMarkerEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AddBulletHitMarker?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "other_death")
@@ -3541,14 +3672,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (OtherDeath is not { } callback)
+                    if (Source1GameEvent == null && OtherDeath == null)
                         return;
                     var @this = new Source1OtherDeathEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    OtherDeath?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_purchase")
@@ -3569,14 +3701,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemPurchase is not { } callback)
+                    if (Source1GameEvent == null && ItemPurchase == null)
                         return;
                     var @this = new Source1ItemPurchaseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemPurchase?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_beginplant")
@@ -3595,14 +3728,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombBeginplant is not { } callback)
+                    if (Source1GameEvent == null && BombBeginplant == null)
                         return;
                     var @this = new Source1BombBeginplantEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombBeginplant?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_abortplant")
@@ -3621,14 +3755,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombAbortplant is not { } callback)
+                    if (Source1GameEvent == null && BombAbortplant == null)
                         return;
                     var @this = new Source1BombAbortplantEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombAbortplant?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_planted")
@@ -3647,14 +3782,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombPlanted is not { } callback)
+                    if (Source1GameEvent == null && BombPlanted == null)
                         return;
                     var @this = new Source1BombPlantedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombPlanted?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_defused")
@@ -3673,14 +3809,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombDefused is not { } callback)
+                    if (Source1GameEvent == null && BombDefused == null)
                         return;
                     var @this = new Source1BombDefusedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombDefused?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_exploded")
@@ -3699,14 +3836,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombExploded is not { } callback)
+                    if (Source1GameEvent == null && BombExploded == null)
                         return;
                     var @this = new Source1BombExplodedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombExploded?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_dropped")
@@ -3725,14 +3863,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombDropped is not { } callback)
+                    if (Source1GameEvent == null && BombDropped == null)
                         return;
                     var @this = new Source1BombDroppedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombDropped?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_pickup")
@@ -3747,14 +3886,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombPickup is not { } callback)
+                    if (Source1GameEvent == null && BombPickup == null)
                         return;
                     var @this = new Source1BombPickupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombPickup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "defuser_dropped")
@@ -3769,14 +3909,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DefuserDropped is not { } callback)
+                    if (Source1GameEvent == null && DefuserDropped == null)
                         return;
                     var @this = new Source1DefuserDroppedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DefuserDropped?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "defuser_pickup")
@@ -3795,14 +3936,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DefuserPickup is not { } callback)
+                    if (Source1GameEvent == null && DefuserPickup == null)
                         return;
                     var @this = new Source1DefuserPickupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DefuserPickup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "announce_phase_end")
@@ -3815,14 +3957,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AnnouncePhaseEnd is not { } callback)
+                    if (Source1GameEvent == null && AnnouncePhaseEnd == null)
                         return;
                     var @this = new Source1AnnouncePhaseEndEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AnnouncePhaseEnd?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_intermission")
@@ -3835,14 +3978,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsIntermission is not { } callback)
+                    if (Source1GameEvent == null && CsIntermission == null)
                         return;
                     var @this = new Source1CsIntermissionEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsIntermission?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_begindefuse")
@@ -3861,14 +4005,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombBegindefuse is not { } callback)
+                    if (Source1GameEvent == null && BombBegindefuse == null)
                         return;
                     var @this = new Source1BombBegindefuseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombBegindefuse?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_abortdefuse")
@@ -3885,14 +4030,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombAbortdefuse is not { } callback)
+                    if (Source1GameEvent == null && BombAbortdefuse == null)
                         return;
                     var @this = new Source1BombAbortdefuseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombAbortdefuse?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_follows")
@@ -3911,14 +4057,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageFollows is not { } callback)
+                    if (Source1GameEvent == null && HostageFollows == null)
                         return;
                     var @this = new Source1HostageFollowsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageFollows?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_hurt")
@@ -3937,14 +4084,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageHurt is not { } callback)
+                    if (Source1GameEvent == null && HostageHurt == null)
                         return;
                     var @this = new Source1HostageHurtEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageHurt?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_killed")
@@ -3963,14 +4111,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageKilled is not { } callback)
+                    if (Source1GameEvent == null && HostageKilled == null)
                         return;
                     var @this = new Source1HostageKilledEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageKilled?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_rescued")
@@ -3991,14 +4140,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageRescued is not { } callback)
+                    if (Source1GameEvent == null && HostageRescued == null)
                         return;
                     var @this = new Source1HostageRescuedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageRescued?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_stops_following")
@@ -4017,14 +4167,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageStopsFollowing is not { } callback)
+                    if (Source1GameEvent == null && HostageStopsFollowing == null)
                         return;
                     var @this = new Source1HostageStopsFollowingEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageStopsFollowing?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_rescued_all")
@@ -4037,14 +4188,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageRescuedAll is not { } callback)
+                    if (Source1GameEvent == null && HostageRescuedAll == null)
                         return;
                     var @this = new Source1HostageRescuedAllEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageRescuedAll?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hostage_call_for_help")
@@ -4059,14 +4211,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HostageCallForHelp is not { } callback)
+                    if (Source1GameEvent == null && HostageCallForHelp == null)
                         return;
                     var @this = new Source1HostageCallForHelpEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HostageCallForHelp?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vip_escaped")
@@ -4081,14 +4234,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VipEscaped is not { } callback)
+                    if (Source1GameEvent == null && VipEscaped == null)
                         return;
                     var @this = new Source1VipEscapedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VipEscaped?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "vip_killed")
@@ -4105,14 +4259,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (VipKilled is not { } callback)
+                    if (Source1GameEvent == null && VipKilled == null)
                         return;
                     var @this = new Source1VipKilledEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    VipKilled?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_radio")
@@ -4131,14 +4286,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerRadio is not { } callback)
+                    if (Source1GameEvent == null && PlayerRadio == null)
                         return;
                     var @this = new Source1PlayerRadioEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerRadio?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bomb_beep")
@@ -4153,14 +4309,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BombBeep is not { } callback)
+                    if (Source1GameEvent == null && BombBeep == null)
                         return;
                     var @this = new Source1BombBeepEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BombBeep?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weapon_fire")
@@ -4181,14 +4338,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponFire is not { } callback)
+                    if (Source1GameEvent == null && WeaponFire == null)
                         return;
                     var @this = new Source1WeaponFireEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponFire?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weapon_fire_on_empty")
@@ -4207,14 +4365,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponFireOnEmpty is not { } callback)
+                    if (Source1GameEvent == null && WeaponFireOnEmpty == null)
                         return;
                     var @this = new Source1WeaponFireOnEmptyEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponFireOnEmpty?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "grenade_thrown")
@@ -4233,14 +4392,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GrenadeThrown is not { } callback)
+                    if (Source1GameEvent == null && GrenadeThrown == null)
                         return;
                     var @this = new Source1GrenadeThrownEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GrenadeThrown?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weapon_outofammo")
@@ -4257,14 +4417,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponOutofammo is not { } callback)
+                    if (Source1GameEvent == null && WeaponOutofammo == null)
                         return;
                     var @this = new Source1WeaponOutofammoEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponOutofammo?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weapon_reload")
@@ -4281,14 +4442,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponReload is not { } callback)
+                    if (Source1GameEvent == null && WeaponReload == null)
                         return;
                     var @this = new Source1WeaponReloadEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponReload?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weapon_zoom")
@@ -4305,14 +4467,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponZoom is not { } callback)
+                    if (Source1GameEvent == null && WeaponZoom == null)
                         return;
                     var @this = new Source1WeaponZoomEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponZoom?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "silencer_detach")
@@ -4329,14 +4492,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SilencerDetach is not { } callback)
+                    if (Source1GameEvent == null && SilencerDetach == null)
                         return;
                     var @this = new Source1SilencerDetachEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SilencerDetach?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "inspect_weapon")
@@ -4353,14 +4517,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InspectWeapon is not { } callback)
+                    if (Source1GameEvent == null && InspectWeapon == null)
                         return;
                     var @this = new Source1InspectWeaponEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InspectWeapon?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "weapon_zoom_rifle")
@@ -4377,14 +4542,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WeaponZoomRifle is not { } callback)
+                    if (Source1GameEvent == null && WeaponZoomRifle == null)
                         return;
                     var @this = new Source1WeaponZoomRifleEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WeaponZoomRifle?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_spawned")
@@ -4403,14 +4569,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerSpawned is not { } callback)
+                    if (Source1GameEvent == null && PlayerSpawned == null)
                         return;
                     var @this = new Source1PlayerSpawnedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerSpawned?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_pickup")
@@ -4431,14 +4598,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemPickup is not { } callback)
+                    if (Source1GameEvent == null && ItemPickup == null)
                         return;
                     var @this = new Source1ItemPickupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemPickup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_pickup_slerp")
@@ -4457,14 +4625,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemPickupSlerp is not { } callback)
+                    if (Source1GameEvent == null && ItemPickupSlerp == null)
                         return;
                     var @this = new Source1ItemPickupSlerpEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemPickupSlerp?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_pickup_failed")
@@ -4485,14 +4654,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemPickupFailed is not { } callback)
+                    if (Source1GameEvent == null && ItemPickupFailed == null)
                         return;
                     var @this = new Source1ItemPickupFailedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemPickupFailed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_remove")
@@ -4511,14 +4681,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemRemove is not { } callback)
+                    if (Source1GameEvent == null && ItemRemove == null)
                         return;
                     var @this = new Source1ItemRemoveEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemRemove?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ammo_pickup")
@@ -4537,14 +4708,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AmmoPickup is not { } callback)
+                    if (Source1GameEvent == null && AmmoPickup == null)
                         return;
                     var @this = new Source1AmmoPickupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AmmoPickup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "item_equip")
@@ -4575,14 +4747,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ItemEquip is not { } callback)
+                    if (Source1GameEvent == null && ItemEquip == null)
                         return;
                     var @this = new Source1ItemEquipEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ItemEquip?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "enter_buyzone")
@@ -4599,14 +4772,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EnterBuyzone is not { } callback)
+                    if (Source1GameEvent == null && EnterBuyzone == null)
                         return;
                     var @this = new Source1EnterBuyzoneEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EnterBuyzone?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "exit_buyzone")
@@ -4623,14 +4797,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ExitBuyzone is not { } callback)
+                    if (Source1GameEvent == null && ExitBuyzone == null)
                         return;
                     var @this = new Source1ExitBuyzoneEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ExitBuyzone?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "buytime_ended")
@@ -4643,14 +4818,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BuytimeEnded is not { } callback)
+                    if (Source1GameEvent == null && BuytimeEnded == null)
                         return;
                     var @this = new Source1BuytimeEndedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BuytimeEnded?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "enter_bombzone")
@@ -4669,14 +4845,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EnterBombzone is not { } callback)
+                    if (Source1GameEvent == null && EnterBombzone == null)
                         return;
                     var @this = new Source1EnterBombzoneEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EnterBombzone?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "exit_bombzone")
@@ -4695,14 +4872,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ExitBombzone is not { } callback)
+                    if (Source1GameEvent == null && ExitBombzone == null)
                         return;
                     var @this = new Source1ExitBombzoneEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ExitBombzone?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "enter_rescue_zone")
@@ -4717,14 +4895,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EnterRescueZone is not { } callback)
+                    if (Source1GameEvent == null && EnterRescueZone == null)
                         return;
                     var @this = new Source1EnterRescueZoneEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EnterRescueZone?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "exit_rescue_zone")
@@ -4739,14 +4918,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ExitRescueZone is not { } callback)
+                    if (Source1GameEvent == null && ExitRescueZone == null)
                         return;
                     var @this = new Source1ExitRescueZoneEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ExitRescueZone?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "silencer_off")
@@ -4761,14 +4941,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SilencerOff is not { } callback)
+                    if (Source1GameEvent == null && SilencerOff == null)
                         return;
                     var @this = new Source1SilencerOffEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SilencerOff?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "silencer_on")
@@ -4783,14 +4964,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SilencerOn is not { } callback)
+                    if (Source1GameEvent == null && SilencerOn == null)
                         return;
                     var @this = new Source1SilencerOnEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SilencerOn?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "buymenu_open")
@@ -4803,14 +4985,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BuymenuOpen is not { } callback)
+                    if (Source1GameEvent == null && BuymenuOpen == null)
                         return;
                     var @this = new Source1BuymenuOpenEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BuymenuOpen?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "buymenu_close")
@@ -4825,14 +5008,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BuymenuClose is not { } callback)
+                    if (Source1GameEvent == null && BuymenuClose == null)
                         return;
                     var @this = new Source1BuymenuCloseEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BuymenuClose?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_prestart")
@@ -4845,14 +5029,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundPrestart is not { } callback)
+                    if (Source1GameEvent == null && RoundPrestart == null)
                         return;
                     var @this = new Source1RoundPrestartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundPrestart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_poststart")
@@ -4865,14 +5050,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundPoststart is not { } callback)
+                    if (Source1GameEvent == null && RoundPoststart == null)
                         return;
                     var @this = new Source1RoundPoststartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundPoststart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "grenade_bounce")
@@ -4889,14 +5075,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GrenadeBounce is not { } callback)
+                    if (Source1GameEvent == null && GrenadeBounce == null)
                         return;
                     var @this = new Source1GrenadeBounceEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GrenadeBounce?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hegrenade_detonate")
@@ -4921,14 +5108,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HegrenadeDetonate is not { } callback)
+                    if (Source1GameEvent == null && HegrenadeDetonate == null)
                         return;
                     var @this = new Source1HegrenadeDetonateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HegrenadeDetonate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "flashbang_detonate")
@@ -4953,14 +5141,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (FlashbangDetonate is not { } callback)
+                    if (Source1GameEvent == null && FlashbangDetonate == null)
                         return;
                     var @this = new Source1FlashbangDetonateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    FlashbangDetonate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "smokegrenade_detonate")
@@ -4985,14 +5174,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SmokegrenadeDetonate is not { } callback)
+                    if (Source1GameEvent == null && SmokegrenadeDetonate == null)
                         return;
                     var @this = new Source1SmokegrenadeDetonateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SmokegrenadeDetonate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "smokegrenade_expired")
@@ -5017,14 +5207,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SmokegrenadeExpired is not { } callback)
+                    if (Source1GameEvent == null && SmokegrenadeExpired == null)
                         return;
                     var @this = new Source1SmokegrenadeExpiredEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SmokegrenadeExpired?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "molotov_detonate")
@@ -5047,14 +5238,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MolotovDetonate is not { } callback)
+                    if (Source1GameEvent == null && MolotovDetonate == null)
                         return;
                     var @this = new Source1MolotovDetonateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MolotovDetonate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "decoy_detonate")
@@ -5079,14 +5271,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DecoyDetonate is not { } callback)
+                    if (Source1GameEvent == null && DecoyDetonate == null)
                         return;
                     var @this = new Source1DecoyDetonateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DecoyDetonate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "decoy_started")
@@ -5109,14 +5302,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DecoyStarted is not { } callback)
+                    if (Source1GameEvent == null && DecoyStarted == null)
                         return;
                     var @this = new Source1DecoyStartedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DecoyStarted?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tagrenade_detonate")
@@ -5139,14 +5333,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TagrenadeDetonate is not { } callback)
+                    if (Source1GameEvent == null && TagrenadeDetonate == null)
                         return;
                     var @this = new Source1TagrenadeDetonateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TagrenadeDetonate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "inferno_startburn")
@@ -5167,14 +5362,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InfernoStartburn is not { } callback)
+                    if (Source1GameEvent == null && InfernoStartburn == null)
                         return;
                     var @this = new Source1InfernoStartburnEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InfernoStartburn?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "inferno_expire")
@@ -5195,14 +5391,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InfernoExpire is not { } callback)
+                    if (Source1GameEvent == null && InfernoExpire == null)
                         return;
                     var @this = new Source1InfernoExpireEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InfernoExpire?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "inferno_extinguish")
@@ -5223,14 +5420,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (InfernoExtinguish is not { } callback)
+                    if (Source1GameEvent == null && InfernoExtinguish == null)
                         return;
                     var @this = new Source1InfernoExtinguishEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    InfernoExtinguish?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "decoy_firing")
@@ -5255,14 +5453,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DecoyFiring is not { } callback)
+                    if (Source1GameEvent == null && DecoyFiring == null)
                         return;
                     var @this = new Source1DecoyFiringEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DecoyFiring?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bullet_impact")
@@ -5285,14 +5484,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BulletImpact is not { } callback)
+                    if (Source1GameEvent == null && BulletImpact == null)
                         return;
                     var @this = new Source1BulletImpactEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BulletImpact?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_jump")
@@ -5307,14 +5507,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerJump is not { } callback)
+                    if (Source1GameEvent == null && PlayerJump == null)
                         return;
                     var @this = new Source1PlayerJumpEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerJump?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_blind")
@@ -5335,14 +5536,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerBlind is not { } callback)
+                    if (Source1GameEvent == null && PlayerBlind == null)
                         return;
                     var @this = new Source1PlayerBlindEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerBlind?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_falldamage")
@@ -5361,14 +5563,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerFalldamage is not { } callback)
+                    if (Source1GameEvent == null && PlayerFalldamage == null)
                         return;
                     var @this = new Source1PlayerFalldamageEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerFalldamage?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "door_moving")
@@ -5387,14 +5590,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DoorMoving is not { } callback)
+                    if (Source1GameEvent == null && DoorMoving == null)
                         return;
                     var @this = new Source1DoorMovingEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DoorMoving?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "mb_input_lock_success")
@@ -5407,14 +5611,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MbInputLockSuccess is not { } callback)
+                    if (Source1GameEvent == null && MbInputLockSuccess == null)
                         return;
                     var @this = new Source1MbInputLockSuccessEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MbInputLockSuccess?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "mb_input_lock_cancel")
@@ -5427,14 +5632,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MbInputLockCancel is not { } callback)
+                    if (Source1GameEvent == null && MbInputLockCancel == null)
                         return;
                     var @this = new Source1MbInputLockCancelEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MbInputLockCancel?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "nav_blocked")
@@ -5451,14 +5657,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (NavBlocked is not { } callback)
+                    if (Source1GameEvent == null && NavBlocked == null)
                         return;
                     var @this = new Source1NavBlockedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    NavBlocked?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "nav_generate")
@@ -5471,14 +5678,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (NavGenerate is not { } callback)
+                    if (Source1GameEvent == null && NavGenerate == null)
                         return;
                     var @this = new Source1NavGenerateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    NavGenerate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "achievement_info_loaded")
@@ -5491,14 +5699,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AchievementInfoLoaded is not { } callback)
+                    if (Source1GameEvent == null && AchievementInfoLoaded == null)
                         return;
                     var @this = new Source1AchievementInfoLoadedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AchievementInfoLoaded?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hltv_changed_mode")
@@ -5517,14 +5726,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HltvChangedMode is not { } callback)
+                    if (Source1GameEvent == null && HltvChangedMode == null)
                         return;
                     var @this = new Source1HltvChangedModeEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HltvChangedMode?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_game_disconnected")
@@ -5537,14 +5747,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsGameDisconnected is not { } callback)
+                    if (Source1GameEvent == null && CsGameDisconnected == null)
                         return;
                     var @this = new Source1CsGameDisconnectedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsGameDisconnected?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_round_final_beep")
@@ -5557,14 +5768,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsRoundFinalBeep is not { } callback)
+                    if (Source1GameEvent == null && CsRoundFinalBeep == null)
                         return;
                     var @this = new Source1CsRoundFinalBeepEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsRoundFinalBeep?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_round_start_beep")
@@ -5577,14 +5789,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsRoundStartBeep is not { } callback)
+                    if (Source1GameEvent == null && CsRoundStartBeep == null)
                         return;
                     var @this = new Source1CsRoundStartBeepEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsRoundStartBeep?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_win_panel_round")
@@ -5615,14 +5828,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsWinPanelRound is not { } callback)
+                    if (Source1GameEvent == null && CsWinPanelRound == null)
                         return;
                     var @this = new Source1CsWinPanelRoundEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsWinPanelRound?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_win_panel_match")
@@ -5635,14 +5849,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsWinPanelMatch is not { } callback)
+                    if (Source1GameEvent == null && CsWinPanelMatch == null)
                         return;
                     var @this = new Source1CsWinPanelMatchEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsWinPanelMatch?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_match_end_restart")
@@ -5655,14 +5870,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsMatchEndRestart is not { } callback)
+                    if (Source1GameEvent == null && CsMatchEndRestart == null)
                         return;
                     var @this = new Source1CsMatchEndRestartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsMatchEndRestart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_pre_restart")
@@ -5675,14 +5891,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsPreRestart is not { } callback)
+                    if (Source1GameEvent == null && CsPreRestart == null)
                         return;
                     var @this = new Source1CsPreRestartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsPreRestart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "show_deathpanel")
@@ -5711,14 +5928,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ShowDeathpanel is not { } callback)
+                    if (Source1GameEvent == null && ShowDeathpanel == null)
                         return;
                     var @this = new Source1ShowDeathpanelEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ShowDeathpanel?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "hide_deathpanel")
@@ -5731,14 +5949,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (HideDeathpanel is not { } callback)
+                    if (Source1GameEvent == null && HideDeathpanel == null)
                         return;
                     var @this = new Source1HideDeathpanelEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    HideDeathpanel?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_avenged_teammate")
@@ -5755,14 +5974,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerAvengedTeammate is not { } callback)
+                    if (Source1GameEvent == null && PlayerAvengedTeammate == null)
                         return;
                     var @this = new Source1PlayerAvengedTeammateEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerAvengedTeammate?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "achievement_earned_local")
@@ -5779,14 +5999,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AchievementEarnedLocal is not { } callback)
+                    if (Source1GameEvent == null && AchievementEarnedLocal == null)
                         return;
                     var @this = new Source1AchievementEarnedLocalEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AchievementEarnedLocal?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "repost_xbox_achievements")
@@ -5801,14 +6022,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RepostXboxAchievements is not { } callback)
+                    if (Source1GameEvent == null && RepostXboxAchievements == null)
                         return;
                     var @this = new Source1RepostXboxAchievementsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RepostXboxAchievements?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "match_end_conditions")
@@ -5829,14 +6051,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MatchEndConditions is not { } callback)
+                    if (Source1GameEvent == null && MatchEndConditions == null)
                         return;
                     var @this = new Source1MatchEndConditionsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MatchEndConditions?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "round_mvp")
@@ -5861,14 +6084,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (RoundMvp is not { } callback)
+                    if (Source1GameEvent == null && RoundMvp == null)
                         return;
                     var @this = new Source1RoundMvpEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    RoundMvp?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "show_survival_respawn_status")
@@ -5889,14 +6113,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ShowSurvivalRespawnStatus is not { } callback)
+                    if (Source1GameEvent == null && ShowSurvivalRespawnStatus == null)
                         return;
                     var @this = new Source1ShowSurvivalRespawnStatusEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ShowSurvivalRespawnStatus?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "client_disconnect")
@@ -5909,14 +6134,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ClientDisconnect is not { } callback)
+                    if (Source1GameEvent == null && ClientDisconnect == null)
                         return;
                     var @this = new Source1ClientDisconnectEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ClientDisconnect?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "gg_killed_enemy")
@@ -5939,14 +6165,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GgKilledEnemy is not { } callback)
+                    if (Source1GameEvent == null && GgKilledEnemy == null)
                         return;
                     var @this = new Source1GgKilledEnemyEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GgKilledEnemy?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "switch_team")
@@ -5969,14 +6196,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SwitchTeam is not { } callback)
+                    if (Source1GameEvent == null && SwitchTeam == null)
                         return;
                     var @this = new Source1SwitchTeamEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SwitchTeam?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "write_profile_data")
@@ -5989,14 +6217,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (WriteProfileData is not { } callback)
+                    if (Source1GameEvent == null && WriteProfileData == null)
                         return;
                     var @this = new Source1WriteProfileDataEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    WriteProfileData?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "trial_time_expired")
@@ -6011,14 +6240,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrialTimeExpired is not { } callback)
+                    if (Source1GameEvent == null && TrialTimeExpired == null)
                         return;
                     var @this = new Source1TrialTimeExpiredEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrialTimeExpired?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "update_matchmaking_stats")
@@ -6031,14 +6261,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (UpdateMatchmakingStats is not { } callback)
+                    if (Source1GameEvent == null && UpdateMatchmakingStats == null)
                         return;
                     var @this = new Source1UpdateMatchmakingStatsEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    UpdateMatchmakingStats?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_reset_vote")
@@ -6055,14 +6286,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerResetVote is not { } callback)
+                    if (Source1GameEvent == null && PlayerResetVote == null)
                         return;
                     var @this = new Source1PlayerResetVoteEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerResetVote?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "enable_restart_voting")
@@ -6077,14 +6309,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (EnableRestartVoting is not { } callback)
+                    if (Source1GameEvent == null && EnableRestartVoting == null)
                         return;
                     var @this = new Source1EnableRestartVotingEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    EnableRestartVoting?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "sfuievent")
@@ -6103,14 +6336,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (Sfuievent is not { } callback)
+                    if (Source1GameEvent == null && Sfuievent == null)
                         return;
                     var @this = new Source1SfuieventEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    Sfuievent?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "start_vote")
@@ -6129,14 +6363,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (StartVote is not { } callback)
+                    if (Source1GameEvent == null && StartVote == null)
                         return;
                     var @this = new Source1StartVoteEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    StartVote?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_given_c4")
@@ -6151,14 +6386,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerGivenC4 is not { } callback)
+                    if (Source1GameEvent == null && PlayerGivenC4 == null)
                         return;
                     var @this = new Source1PlayerGivenC4Event();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerGivenC4?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tr_player_flashbanged")
@@ -6173,14 +6409,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrPlayerFlashbanged is not { } callback)
+                    if (Source1GameEvent == null && TrPlayerFlashbanged == null)
                         return;
                     var @this = new Source1TrPlayerFlashbangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrPlayerFlashbanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tr_mark_complete")
@@ -6195,14 +6432,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrMarkComplete is not { } callback)
+                    if (Source1GameEvent == null && TrMarkComplete == null)
                         return;
                     var @this = new Source1TrMarkCompleteEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrMarkComplete?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tr_mark_best_time")
@@ -6217,14 +6455,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrMarkBestTime is not { } callback)
+                    if (Source1GameEvent == null && TrMarkBestTime == null)
                         return;
                     var @this = new Source1TrMarkBestTimeEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrMarkBestTime?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tr_exit_hint_trigger")
@@ -6237,14 +6476,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrExitHintTrigger is not { } callback)
+                    if (Source1GameEvent == null && TrExitHintTrigger == null)
                         return;
                     var @this = new Source1TrExitHintTriggerEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrExitHintTrigger?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bot_takeover")
@@ -6269,14 +6509,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BotTakeover is not { } callback)
+                    if (Source1GameEvent == null && BotTakeover == null)
                         return;
                     var @this = new Source1BotTakeoverEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BotTakeover?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tr_show_finish_msgbox")
@@ -6289,14 +6530,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrShowFinishMsgbox is not { } callback)
+                    if (Source1GameEvent == null && TrShowFinishMsgbox == null)
                         return;
                     var @this = new Source1TrShowFinishMsgboxEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrShowFinishMsgbox?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tr_show_exit_msgbox")
@@ -6309,14 +6551,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TrShowExitMsgbox is not { } callback)
+                    if (Source1GameEvent == null && TrShowExitMsgbox == null)
                         return;
                     var @this = new Source1TrShowExitMsgboxEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TrShowExitMsgbox?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "jointeam_failed")
@@ -6333,14 +6576,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (JointeamFailed is not { } callback)
+                    if (Source1GameEvent == null && JointeamFailed == null)
                         return;
                     var @this = new Source1JointeamFailedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    JointeamFailed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "teamchange_pending")
@@ -6357,14 +6601,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamchangePending is not { } callback)
+                    if (Source1GameEvent == null && TeamchangePending == null)
                         return;
                     var @this = new Source1TeamchangePendingEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamchangePending?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "material_default_complete")
@@ -6377,14 +6622,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (MaterialDefaultComplete is not { } callback)
+                    if (Source1GameEvent == null && MaterialDefaultComplete == null)
                         return;
                     var @this = new Source1MaterialDefaultCompleteEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    MaterialDefaultComplete?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "cs_prev_next_spectator")
@@ -6399,14 +6645,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (CsPrevNextSpectator is not { } callback)
+                    if (Source1GameEvent == null && CsPrevNextSpectator == null)
                         return;
                     var @this = new Source1CsPrevNextSpectatorEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    CsPrevNextSpectator?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "nextlevel_changed")
@@ -6425,14 +6672,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (NextlevelChanged is not { } callback)
+                    if (Source1GameEvent == null && NextlevelChanged == null)
                         return;
                     var @this = new Source1NextlevelChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    NextlevelChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "seasoncoin_levelup")
@@ -6451,14 +6699,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SeasoncoinLevelup is not { } callback)
+                    if (Source1GameEvent == null && SeasoncoinLevelup == null)
                         return;
                     var @this = new Source1SeasoncoinLevelupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SeasoncoinLevelup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "tournament_reward")
@@ -6477,14 +6726,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TournamentReward is not { } callback)
+                    if (Source1GameEvent == null && TournamentReward == null)
                         return;
                     var @this = new Source1TournamentRewardEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TournamentReward?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "start_halftime")
@@ -6497,14 +6747,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (StartHalftime is not { } callback)
+                    if (Source1GameEvent == null && StartHalftime == null)
                         return;
                     var @this = new Source1StartHalftimeEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    StartHalftime?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "ammo_refill")
@@ -6521,14 +6772,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (AmmoRefill is not { } callback)
+                    if (Source1GameEvent == null && AmmoRefill == null)
                         return;
                     var @this = new Source1AmmoRefillEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    AmmoRefill?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "parachute_pickup")
@@ -6543,14 +6795,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ParachutePickup is not { } callback)
+                    if (Source1GameEvent == null && ParachutePickup == null)
                         return;
                     var @this = new Source1ParachutePickupEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ParachutePickup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "parachute_deploy")
@@ -6565,14 +6818,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ParachuteDeploy is not { } callback)
+                    if (Source1GameEvent == null && ParachuteDeploy == null)
                         return;
                     var @this = new Source1ParachuteDeployEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ParachuteDeploy?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "dronegun_attack")
@@ -6587,14 +6841,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DronegunAttack is not { } callback)
+                    if (Source1GameEvent == null && DronegunAttack == null)
                         return;
                     var @this = new Source1DronegunAttackEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DronegunAttack?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "drone_dispatched")
@@ -6613,14 +6868,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DroneDispatched is not { } callback)
+                    if (Source1GameEvent == null && DroneDispatched == null)
                         return;
                     var @this = new Source1DroneDispatchedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DroneDispatched?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "loot_crate_visible")
@@ -6639,14 +6895,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (LootCrateVisible is not { } callback)
+                    if (Source1GameEvent == null && LootCrateVisible == null)
                         return;
                     var @this = new Source1LootCrateVisibleEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    LootCrateVisible?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "loot_crate_opened")
@@ -6663,14 +6920,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (LootCrateOpened is not { } callback)
+                    if (Source1GameEvent == null && LootCrateOpened == null)
                         return;
                     var @this = new Source1LootCrateOpenedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    LootCrateOpened?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "open_crate_instr")
@@ -6689,14 +6947,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (OpenCrateInstr is not { } callback)
+                    if (Source1GameEvent == null && OpenCrateInstr == null)
                         return;
                     var @this = new Source1OpenCrateInstrEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    OpenCrateInstr?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "smoke_beacon_paradrop")
@@ -6713,14 +6972,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SmokeBeaconParadrop is not { } callback)
+                    if (Source1GameEvent == null && SmokeBeaconParadrop == null)
                         return;
                     var @this = new Source1SmokeBeaconParadropEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SmokeBeaconParadrop?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "survival_paradrop_spawn")
@@ -6735,14 +6995,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SurvivalParadropSpawn is not { } callback)
+                    if (Source1GameEvent == null && SurvivalParadropSpawn == null)
                         return;
                     var @this = new Source1SurvivalParadropSpawnEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SurvivalParadropSpawn?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "survival_paradrop_break")
@@ -6757,14 +7018,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SurvivalParadropBreak is not { } callback)
+                    if (Source1GameEvent == null && SurvivalParadropBreak == null)
                         return;
                     var @this = new Source1SurvivalParadropBreakEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SurvivalParadropBreak?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "drone_cargo_detached")
@@ -6783,14 +7045,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DroneCargoDetached is not { } callback)
+                    if (Source1GameEvent == null && DroneCargoDetached == null)
                         return;
                     var @this = new Source1DroneCargoDetachedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DroneCargoDetached?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "drone_above_roof")
@@ -6807,14 +7070,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DroneAboveRoof is not { } callback)
+                    if (Source1GameEvent == null && DroneAboveRoof == null)
                         return;
                     var @this = new Source1DroneAboveRoofEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DroneAboveRoof?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "choppers_incoming_warning")
@@ -6829,14 +7093,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (ChoppersIncomingWarning is not { } callback)
+                    if (Source1GameEvent == null && ChoppersIncomingWarning == null)
                         return;
                     var @this = new Source1ChoppersIncomingWarningEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    ChoppersIncomingWarning?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "firstbombs_incoming_warning")
@@ -6851,14 +7116,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (FirstbombsIncomingWarning is not { } callback)
+                    if (Source1GameEvent == null && FirstbombsIncomingWarning == null)
                         return;
                     var @this = new Source1FirstbombsIncomingWarningEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    FirstbombsIncomingWarning?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "dz_item_interaction")
@@ -6877,14 +7143,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (DzItemInteraction is not { } callback)
+                    if (Source1GameEvent == null && DzItemInteraction == null)
                         return;
                     var @this = new Source1DzItemInteractionEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    DzItemInteraction?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "survival_teammate_respawn")
@@ -6899,14 +7166,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SurvivalTeammateRespawn is not { } callback)
+                    if (Source1GameEvent == null && SurvivalTeammateRespawn == null)
                         return;
                     var @this = new Source1SurvivalTeammateRespawnEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SurvivalTeammateRespawn?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "survival_no_respawns_warning")
@@ -6921,14 +7189,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SurvivalNoRespawnsWarning is not { } callback)
+                    if (Source1GameEvent == null && SurvivalNoRespawnsWarning == null)
                         return;
                     var @this = new Source1SurvivalNoRespawnsWarningEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SurvivalNoRespawnsWarning?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "survival_no_respawns_final")
@@ -6943,14 +7212,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (SurvivalNoRespawnsFinal is not { } callback)
+                    if (Source1GameEvent == null && SurvivalNoRespawnsFinal == null)
                         return;
                     var @this = new Source1SurvivalNoRespawnsFinalEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    SurvivalNoRespawnsFinal?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_ping")
@@ -6977,14 +7247,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerPing is not { } callback)
+                    if (Source1GameEvent == null && PlayerPing == null)
                         return;
                     var @this = new Source1PlayerPingEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerPing?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_ping_stop")
@@ -6999,14 +7270,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerPingStop is not { } callback)
+                    if (Source1GameEvent == null && PlayerPingStop == null)
                         return;
                     var @this = new Source1PlayerPingStopEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerPingStop?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "player_sound")
@@ -7029,14 +7301,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (PlayerSound is not { } callback)
+                    if (Source1GameEvent == null && PlayerSound == null)
                         return;
                     var @this = new Source1PlayerSoundEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    PlayerSound?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "guardian_wave_restart")
@@ -7049,14 +7322,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GuardianWaveRestart is not { } callback)
+                    if (Source1GameEvent == null && GuardianWaveRestart == null)
                         return;
                     var @this = new Source1GuardianWaveRestartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GuardianWaveRestart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "team_intro_start")
@@ -7069,14 +7343,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamIntroStart is not { } callback)
+                    if (Source1GameEvent == null && TeamIntroStart == null)
                         return;
                     var @this = new Source1TeamIntroStartEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamIntroStart?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "team_intro_end")
@@ -7089,14 +7364,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (TeamIntroEnd is not { } callback)
+                    if (Source1GameEvent == null && TeamIntroEnd == null)
                         return;
                     var @this = new Source1TeamIntroEndEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    TeamIntroEnd?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "bullet_flight_resolution")
@@ -7131,14 +7407,15 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (BulletFlightResolution is not { } callback)
+                    if (Source1GameEvent == null && BulletFlightResolution == null)
                         return;
                     var @this = new Source1BulletFlightResolutionEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    BulletFlightResolution?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
             if (descriptor.Name == "game_phase_changed")
@@ -7153,22 +7430,24 @@ public partial class Source1GameEvents
 
                 _handlers[descriptor.Eventid] = @event =>
                 {
-                    if (GamePhaseChanged is not { } callback)
+                    if (Source1GameEvent == null && GamePhaseChanged == null)
                         return;
                     var @this = new Source1GamePhaseChangedEvent();
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
                     }
-                    callback(@this);
+                    GamePhaseChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
                 };
             }
         }
     }
 }
 
-public partial class Source1ServerSpawnEvent
+public partial class Source1ServerSpawnEvent : Source1GameEventBase
 {
+    public override string GameEventName => "server_spawn";
     public string Hostname { get; set; } = "";
     public string Address { get; set; } = "";
     public int Port { get; set; }
@@ -7181,45 +7460,53 @@ public partial class Source1ServerSpawnEvent
     public bool Password { get; set; }
 }
 
-public partial class Source1ServerPreShutdownEvent
+public partial class Source1ServerPreShutdownEvent : Source1GameEventBase
 {
+    public override string GameEventName => "server_pre_shutdown";
     public string Reason { get; set; } = "";
 }
 
-public partial class Source1ServerShutdownEvent
+public partial class Source1ServerShutdownEvent : Source1GameEventBase
 {
+    public override string GameEventName => "server_shutdown";
     public string Reason { get; set; } = "";
 }
 
-public partial class Source1ServerMessageEvent
+public partial class Source1ServerMessageEvent : Source1GameEventBase
 {
+    public override string GameEventName => "server_message";
     public string Text { get; set; } = "";
 }
 
-public partial class Source1ServerCvarEvent
+public partial class Source1ServerCvarEvent : Source1GameEventBase
 {
+    public override string GameEventName => "server_cvar";
     public string Cvarname { get; set; } = "";
     public string Cvarvalue { get; set; } = "";
 }
 
-public partial class Source1PlayerActivateEvent
+public partial class Source1PlayerActivateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_activate";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1PlayerConnectFullEvent
+public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_connect_full";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1PlayerFullUpdateEvent
+public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_full_update";
     public CEntityIndex Userid { get; set; }
     public int Count { get; set; }
 }
 
-public partial class Source1PlayerConnectEvent
+public partial class Source1PlayerConnectEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_connect";
     public string Name { get; set; } = "";
     public CEntityIndex Userid { get; set; }
     public string Networkid { get; set; } = "";
@@ -7228,8 +7515,9 @@ public partial class Source1PlayerConnectEvent
     public bool Bot { get; set; }
 }
 
-public partial class Source1PlayerDisconnectEvent
+public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_disconnect";
     public CEntityIndex Userid { get; set; }
     public int Reason { get; set; }
     public string Name { get; set; } = "";
@@ -7238,22 +7526,25 @@ public partial class Source1PlayerDisconnectEvent
     public int PlayerID { get; set; }
 }
 
-public partial class Source1PlayerInfoEvent
+public partial class Source1PlayerInfoEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_info";
     public string Name { get; set; } = "";
     public CEntityIndex Userid { get; set; }
     public ulong Steamid { get; set; }
     public bool Bot { get; set; }
 }
 
-public partial class Source1PlayerSpawnEvent
+public partial class Source1PlayerSpawnEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_spawn";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1PlayerTeamEvent
+public partial class Source1PlayerTeamEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_team";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Team { get; set; }
@@ -7263,23 +7554,27 @@ public partial class Source1PlayerTeamEvent
     public bool Isbot { get; set; }
 }
 
-public partial class Source1LocalPlayerTeamEvent
+public partial class Source1LocalPlayerTeamEvent : Source1GameEventBase
 {
+    public override string GameEventName => "local_player_team";
 }
 
-public partial class Source1LocalPlayerControllerTeamEvent
+public partial class Source1LocalPlayerControllerTeamEvent : Source1GameEventBase
 {
+    public override string GameEventName => "local_player_controller_team";
 }
 
-public partial class Source1PlayerChangenameEvent
+public partial class Source1PlayerChangenameEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_changename";
     public CEntityIndex Userid { get; set; }
     public string Oldname { get; set; } = "";
     public string Newname { get; set; } = "";
 }
 
-public partial class Source1PlayerHurtEvent
+public partial class Source1PlayerHurtEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_hurt";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public CEntityIndex Attacker { get; set; }
@@ -7292,61 +7587,72 @@ public partial class Source1PlayerHurtEvent
     public int Hitgroup { get; set; }
 }
 
-public partial class Source1PlayerChatEvent
+public partial class Source1PlayerChatEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_chat";
     public bool Teamonly { get; set; }
     public int Userid { get; set; }
     public string Text { get; set; } = "";
 }
 
-public partial class Source1LocalPlayerPawnChangedEvent
+public partial class Source1LocalPlayerPawnChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "local_player_pawn_changed";
 }
 
-public partial class Source1TeamplayBroadcastAudioEvent
+public partial class Source1TeamplayBroadcastAudioEvent : Source1GameEventBase
 {
+    public override string GameEventName => "teamplay_broadcast_audio";
     public int Team { get; set; }
     public string Sound { get; set; } = "";
 }
 
-public partial class Source1FinaleStartEvent
+public partial class Source1FinaleStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "finale_start";
     public int Rushes { get; set; }
 }
 
-public partial class Source1PlayerStatsUpdatedEvent
+public partial class Source1PlayerStatsUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_stats_updated";
     public bool Forceupload { get; set; }
 }
 
-public partial class Source1UserDataDownloadedEvent
+public partial class Source1UserDataDownloadedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "user_data_downloaded";
 }
 
-public partial class Source1RagdollDissolvedEvent
+public partial class Source1RagdollDissolvedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ragdoll_dissolved";
     public int Entindex { get; set; }
 }
 
-public partial class Source1TeamInfoEvent
+public partial class Source1TeamInfoEvent : Source1GameEventBase
 {
+    public override string GameEventName => "team_info";
     public int Teamid { get; set; }
     public string Teamname { get; set; } = "";
 }
 
-public partial class Source1TeamScoreEvent
+public partial class Source1TeamScoreEvent : Source1GameEventBase
 {
+    public override string GameEventName => "team_score";
     public int Teamid { get; set; }
     public int Score { get; set; }
 }
 
-public partial class Source1HltvCameramanEvent
+public partial class Source1HltvCameramanEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_cameraman";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1HltvChaseEvent
+public partial class Source1HltvChaseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_chase";
     public CEntityIndex Target1 { get; set; }
     public CEntityIndex Target2 { get; set; }
     public int Distance { get; set; }
@@ -7356,22 +7662,25 @@ public partial class Source1HltvChaseEvent
     public int Ineye { get; set; }
 }
 
-public partial class Source1HltvRankCameraEvent
+public partial class Source1HltvRankCameraEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_rank_camera";
     public int Index { get; set; }
     public float Rank { get; set; }
     public CEntityIndex Target { get; set; }
 }
 
-public partial class Source1HltvRankEntityEvent
+public partial class Source1HltvRankEntityEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_rank_entity";
     public CEntityIndex Userid { get; set; }
     public float Rank { get; set; }
     public CEntityIndex Target { get; set; }
 }
 
-public partial class Source1HltvFixedEvent
+public partial class Source1HltvFixedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_fixed";
     public int Posx { get; set; }
     public int Posy { get; set; }
     public int Posz { get; set; }
@@ -7382,90 +7691,106 @@ public partial class Source1HltvFixedEvent
     public CEntityIndex Target { get; set; }
 }
 
-public partial class Source1HltvMessageEvent
+public partial class Source1HltvMessageEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_message";
     public string Text { get; set; } = "";
 }
 
-public partial class Source1HltvStatusEvent
+public partial class Source1HltvStatusEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_status";
     public int Clients { get; set; }
     public int Slots { get; set; }
     public int Proxies { get; set; }
     public string Master { get; set; } = "";
 }
 
-public partial class Source1HltvTitleEvent
+public partial class Source1HltvTitleEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_title";
     public string Text { get; set; } = "";
 }
 
-public partial class Source1HltvChatEvent
+public partial class Source1HltvChatEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_chat";
     public string Text { get; set; } = "";
     public ulong SteamID { get; set; }
 }
 
-public partial class Source1HltvVersioninfoEvent
+public partial class Source1HltvVersioninfoEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_versioninfo";
     public int Version { get; set; }
 }
 
-public partial class Source1HltvReplayEvent
+public partial class Source1HltvReplayEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_replay";
     public int Delay { get; set; }
     public int Reason { get; set; }
 }
 
-public partial class Source1HltvReplayStatusEvent
+public partial class Source1HltvReplayStatusEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_replay_status";
     public int Reason { get; set; }
 }
 
-public partial class Source1DemoStopEvent
+public partial class Source1DemoStopEvent : Source1GameEventBase
 {
+    public override string GameEventName => "demo_stop";
 }
 
-public partial class Source1MapShutdownEvent
+public partial class Source1MapShutdownEvent : Source1GameEventBase
 {
+    public override string GameEventName => "map_shutdown";
 }
 
-public partial class Source1MapTransitionEvent
+public partial class Source1MapTransitionEvent : Source1GameEventBase
 {
+    public override string GameEventName => "map_transition";
 }
 
-public partial class Source1HostnameChangedEvent
+public partial class Source1HostnameChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hostname_changed";
     public string Hostname { get; set; } = "";
 }
 
-public partial class Source1DifficultyChangedEvent
+public partial class Source1DifficultyChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "difficulty_changed";
     public int NewDifficulty { get; set; }
     public int OldDifficulty { get; set; }
     public string StrDifficulty { get; set; } = "";
 }
 
-public partial class Source1GameMessageEvent
+public partial class Source1GameMessageEvent : Source1GameEventBase
 {
+    public override string GameEventName => "game_message";
     public int Target { get; set; }
     public string Text { get; set; } = "";
 }
 
-public partial class Source1GameNewmapEvent
+public partial class Source1GameNewmapEvent : Source1GameEventBase
 {
+    public override string GameEventName => "game_newmap";
     public string Mapname { get; set; } = "";
 }
 
-public partial class Source1RoundStartEvent
+public partial class Source1RoundStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_start";
     public int Timelimit { get; set; }
     public int Fraglimit { get; set; }
     public string Objective { get; set; } = "";
 }
 
-public partial class Source1RoundEndEvent
+public partial class Source1RoundEndEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_end";
     public int Winner { get; set; }
     public int Reason { get; set; }
     public string Message { get; set; } = "";
@@ -7474,25 +7799,30 @@ public partial class Source1RoundEndEvent
     public int Nomusic { get; set; }
 }
 
-public partial class Source1RoundStartPreEntityEvent
+public partial class Source1RoundStartPreEntityEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_start_pre_entity";
 }
 
-public partial class Source1RoundStartPostNavEvent
+public partial class Source1RoundStartPostNavEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_start_post_nav";
 }
 
-public partial class Source1RoundFreezeEndEvent
+public partial class Source1RoundFreezeEndEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_freeze_end";
 }
 
-public partial class Source1TeamplayRoundStartEvent
+public partial class Source1TeamplayRoundStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "teamplay_round_start";
     public bool FullReset { get; set; }
 }
 
-public partial class Source1PlayerDeathEvent
+public partial class Source1PlayerDeathEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_death";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public CEntityIndex Attacker { get; set; }
@@ -7519,73 +7849,84 @@ public partial class Source1PlayerDeathEvent
     public int Hitgroup { get; set; }
 }
 
-public partial class Source1PlayerFootstepEvent
+public partial class Source1PlayerFootstepEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_footstep";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1PlayerHintmessageEvent
+public partial class Source1PlayerHintmessageEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_hintmessage";
     public string Hintmessage { get; set; } = "";
 }
 
-public partial class Source1BreakBreakableEvent
+public partial class Source1BreakBreakableEvent : Source1GameEventBase
 {
+    public override string GameEventName => "break_breakable";
     public int Entindex { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Material { get; set; }
 }
 
-public partial class Source1BrokenBreakableEvent
+public partial class Source1BrokenBreakableEvent : Source1GameEventBase
 {
+    public override string GameEventName => "broken_breakable";
     public int Entindex { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Material { get; set; }
 }
 
-public partial class Source1BreakPropEvent
+public partial class Source1BreakPropEvent : Source1GameEventBase
 {
+    public override string GameEventName => "break_prop";
     public int Entindex { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1EntityKilledEvent
+public partial class Source1EntityKilledEvent : Source1GameEventBase
 {
+    public override string GameEventName => "entity_killed";
     public int EntindexKilled { get; set; }
     public int EntindexAttacker { get; set; }
     public int EntindexInflictor { get; set; }
     public int Damagebits { get; set; }
 }
 
-public partial class Source1DoorCloseEvent
+public partial class Source1DoorCloseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "door_close";
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public bool Checkpoint { get; set; }
 }
 
-public partial class Source1VoteStartedEvent
+public partial class Source1VoteStartedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_started";
     public string Issue { get; set; } = "";
     public string Param1 { get; set; } = "";
     public int Team { get; set; }
     public int Initiator { get; set; }
 }
 
-public partial class Source1VoteFailedEvent
+public partial class Source1VoteFailedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_failed";
     public int Team { get; set; }
 }
 
-public partial class Source1VotePassedEvent
+public partial class Source1VotePassedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_passed";
     public string Details { get; set; } = "";
     public string Param1 { get; set; } = "";
     public int Team { get; set; }
 }
 
-public partial class Source1VoteChangedEvent
+public partial class Source1VoteChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_changed";
     public int VoteOption1 { get; set; }
     public int VoteOption2 { get; set; }
     public int VoteOption3 { get; set; }
@@ -7594,115 +7935,137 @@ public partial class Source1VoteChangedEvent
     public int PotentialVotes { get; set; }
 }
 
-public partial class Source1VoteCastYesEvent
+public partial class Source1VoteCastYesEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_cast_yes";
     public int Team { get; set; }
     public int Entityid { get; set; }
 }
 
-public partial class Source1VoteCastNoEvent
+public partial class Source1VoteCastNoEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_cast_no";
     public int Team { get; set; }
     public int Entityid { get; set; }
 }
 
-public partial class Source1AchievementEventEvent
+public partial class Source1AchievementEventEvent : Source1GameEventBase
 {
+    public override string GameEventName => "achievement_event";
     public string AchievementName { get; set; } = "";
     public int CurVal { get; set; }
     public int MaxVal { get; set; }
 }
 
-public partial class Source1AchievementEarnedEvent
+public partial class Source1AchievementEarnedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "achievement_earned";
     public CEntityIndex Player { get; set; }
     public int Achievement { get; set; }
 }
 
-public partial class Source1AchievementWriteFailedEvent
+public partial class Source1AchievementWriteFailedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "achievement_write_failed";
 }
 
-public partial class Source1BonusUpdatedEvent
+public partial class Source1BonusUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bonus_updated";
     public int Numadvanced { get; set; }
     public int Numbronze { get; set; }
     public int Numsilver { get; set; }
     public int Numgold { get; set; }
 }
 
-public partial class Source1SpecTargetUpdatedEvent
+public partial class Source1SpecTargetUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "spec_target_updated";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Target { get; set; }
 }
 
-public partial class Source1SpecModeUpdatedEvent
+public partial class Source1SpecModeUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "spec_mode_updated";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1EntityVisibleEvent
+public partial class Source1EntityVisibleEvent : Source1GameEventBase
 {
+    public override string GameEventName => "entity_visible";
     public CEntityIndex Userid { get; set; }
     public int Subject { get; set; }
     public string Classname { get; set; } = "";
     public string Entityname { get; set; } = "";
 }
 
-public partial class Source1GameinstructorDrawEvent
+public partial class Source1GameinstructorDrawEvent : Source1GameEventBase
 {
+    public override string GameEventName => "gameinstructor_draw";
 }
 
-public partial class Source1GameinstructorNodrawEvent
+public partial class Source1GameinstructorNodrawEvent : Source1GameEventBase
 {
+    public override string GameEventName => "gameinstructor_nodraw";
 }
 
-public partial class Source1FlareIgniteNpcEvent
+public partial class Source1FlareIgniteNpcEvent : Source1GameEventBase
 {
+    public override string GameEventName => "flare_ignite_npc";
     public int Entindex { get; set; }
 }
 
-public partial class Source1HelicopterGrenadePuntMissEvent
+public partial class Source1HelicopterGrenadePuntMissEvent : Source1GameEventBase
 {
+    public override string GameEventName => "helicopter_grenade_punt_miss";
 }
 
-public partial class Source1PhysgunPickupEvent
+public partial class Source1PhysgunPickupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "physgun_pickup";
     public int Target { get; set; }
 }
 
-public partial class Source1InventoryUpdatedEvent
+public partial class Source1InventoryUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "inventory_updated";
 }
 
-public partial class Source1CartUpdatedEvent
+public partial class Source1CartUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cart_updated";
 }
 
-public partial class Source1StorePricesheetUpdatedEvent
+public partial class Source1StorePricesheetUpdatedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "store_pricesheet_updated";
 }
 
-public partial class Source1ItemSchemaInitializedEvent
+public partial class Source1ItemSchemaInitializedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_schema_initialized";
 }
 
-public partial class Source1DropRateModifiedEvent
+public partial class Source1DropRateModifiedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "drop_rate_modified";
 }
 
-public partial class Source1EventTicketModifiedEvent
+public partial class Source1EventTicketModifiedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "event_ticket_modified";
 }
 
-public partial class Source1GcConnectedEvent
+public partial class Source1GcConnectedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "gc_connected";
 }
 
-public partial class Source1InstructorStartLessonEvent
+public partial class Source1InstructorStartLessonEvent : Source1GameEventBase
 {
+    public override string GameEventName => "instructor_start_lesson";
     public CEntityIndex Userid { get; set; }
     public string HintName { get; set; } = "";
     public int HintTarget { get; set; }
@@ -7711,14 +8074,16 @@ public partial class Source1InstructorStartLessonEvent
     public int VrControllerType { get; set; }
 }
 
-public partial class Source1InstructorCloseLessonEvent
+public partial class Source1InstructorCloseLessonEvent : Source1GameEventBase
 {
+    public override string GameEventName => "instructor_close_lesson";
     public CEntityIndex Userid { get; set; }
     public string HintName { get; set; } = "";
 }
 
-public partial class Source1InstructorServerHintCreateEvent
+public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "instructor_server_hint_create";
     public CEntityIndex Userid { get; set; }
     public string HintName { get; set; } = "";
     public string HintReplaceKey { get; set; } = "";
@@ -7741,32 +8106,38 @@ public partial class Source1InstructorServerHintCreateEvent
     public bool HintLocalPlayerOnly { get; set; }
 }
 
-public partial class Source1InstructorServerHintStopEvent
+public partial class Source1InstructorServerHintStopEvent : Source1GameEventBase
 {
+    public override string GameEventName => "instructor_server_hint_stop";
     public string HintName { get; set; } = "";
 }
 
-public partial class Source1SetInstructorGroupEnabledEvent
+public partial class Source1SetInstructorGroupEnabledEvent : Source1GameEventBase
 {
+    public override string GameEventName => "set_instructor_group_enabled";
     public string Group { get; set; } = "";
     public int Enabled { get; set; }
 }
 
-public partial class Source1ClientsideLessonClosedEvent
+public partial class Source1ClientsideLessonClosedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "clientside_lesson_closed";
     public string LessonName { get; set; } = "";
 }
 
-public partial class Source1DynamicShadowLightChangedEvent
+public partial class Source1DynamicShadowLightChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "dynamic_shadow_light_changed";
 }
 
-public partial class Source1GameuiHiddenEvent
+public partial class Source1GameuiHiddenEvent : Source1GameEventBase
 {
+    public override string GameEventName => "gameui_hidden";
 }
 
-public partial class Source1ItemsGiftedEvent
+public partial class Source1ItemsGiftedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "items_gifted";
     public CEntityIndex Player { get; set; }
     public int Itemdef { get; set; }
     public int Numgifts { get; set; }
@@ -7774,154 +8145,183 @@ public partial class Source1ItemsGiftedEvent
     public int Accountid { get; set; }
 }
 
-public partial class Source1PlayerScoreEvent
+public partial class Source1PlayerScoreEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_score";
     public CEntityIndex Userid { get; set; }
     public int Kills { get; set; }
     public int Deaths { get; set; }
     public int Score { get; set; }
 }
 
-public partial class Source1PlayerShootEvent
+public partial class Source1PlayerShootEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_shoot";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Weapon { get; set; }
     public int Mode { get; set; }
 }
 
-public partial class Source1GameInitEvent
+public partial class Source1GameInitEvent : Source1GameEventBase
 {
+    public override string GameEventName => "game_init";
 }
 
-public partial class Source1GameStartEvent
+public partial class Source1GameStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "game_start";
     public int Roundslimit { get; set; }
     public int Timelimit { get; set; }
     public int Fraglimit { get; set; }
     public string Objective { get; set; } = "";
 }
 
-public partial class Source1GameEndEvent
+public partial class Source1GameEndEvent : Source1GameEventBase
 {
+    public override string GameEventName => "game_end";
     public int Winner { get; set; }
 }
 
-public partial class Source1RoundAnnounceMatchPointEvent
+public partial class Source1RoundAnnounceMatchPointEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_announce_match_point";
 }
 
-public partial class Source1RoundAnnounceFinalEvent
+public partial class Source1RoundAnnounceFinalEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_announce_final";
 }
 
-public partial class Source1RoundAnnounceLastRoundHalfEvent
+public partial class Source1RoundAnnounceLastRoundHalfEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_announce_last_round_half";
 }
 
-public partial class Source1RoundAnnounceMatchStartEvent
+public partial class Source1RoundAnnounceMatchStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_announce_match_start";
 }
 
-public partial class Source1RoundAnnounceWarmupEvent
+public partial class Source1RoundAnnounceWarmupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_announce_warmup";
 }
 
-public partial class Source1RoundEndUploadStatsEvent
+public partial class Source1RoundEndUploadStatsEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_end_upload_stats";
 }
 
-public partial class Source1RoundOfficiallyEndedEvent
+public partial class Source1RoundOfficiallyEndedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_officially_ended";
 }
 
-public partial class Source1RoundTimeWarningEvent
+public partial class Source1RoundTimeWarningEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_time_warning";
 }
 
-public partial class Source1UgcMapInfoReceivedEvent
+public partial class Source1UgcMapInfoReceivedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ugc_map_info_received";
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1UgcMapUnsubscribedEvent
+public partial class Source1UgcMapUnsubscribedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ugc_map_unsubscribed";
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1UgcMapDownloadErrorEvent
+public partial class Source1UgcMapDownloadErrorEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ugc_map_download_error";
     public ulong PublishedFileId { get; set; }
     public int ErrorCode { get; set; }
 }
 
-public partial class Source1UgcFileDownloadFinishedEvent
+public partial class Source1UgcFileDownloadFinishedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ugc_file_download_finished";
     public ulong Hcontent { get; set; }
 }
 
-public partial class Source1UgcFileDownloadStartEvent
+public partial class Source1UgcFileDownloadStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ugc_file_download_start";
     public ulong Hcontent { get; set; }
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1BeginNewMatchEvent
+public partial class Source1BeginNewMatchEvent : Source1GameEventBase
 {
+    public override string GameEventName => "begin_new_match";
 }
 
-public partial class Source1DmBonusWeaponStartEvent
+public partial class Source1DmBonusWeaponStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "dm_bonus_weapon_start";
     public int Time { get; set; }
     public int Pos { get; set; }
 }
 
-public partial class Source1SurvivalAnnouncePhaseEvent
+public partial class Source1SurvivalAnnouncePhaseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "survival_announce_phase";
     public int Phase { get; set; }
 }
 
-public partial class Source1PlayerDecalEvent
+public partial class Source1PlayerDecalEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_decal";
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1ReadGameTitledataEvent
+public partial class Source1ReadGameTitledataEvent : Source1GameEventBase
 {
+    public override string GameEventName => "read_game_titledata";
     public int ControllerId { get; set; }
 }
 
-public partial class Source1WriteGameTitledataEvent
+public partial class Source1WriteGameTitledataEvent : Source1GameEventBase
 {
+    public override string GameEventName => "write_game_titledata";
     public int ControllerId { get; set; }
 }
 
-public partial class Source1ResetGameTitledataEvent
+public partial class Source1ResetGameTitledataEvent : Source1GameEventBase
 {
+    public override string GameEventName => "reset_game_titledata";
     public int ControllerId { get; set; }
 }
 
-public partial class Source1WeaponhudSelectionEvent
+public partial class Source1WeaponhudSelectionEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weaponhud_selection";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Mode { get; set; }
     public int Entindex { get; set; }
 }
 
-public partial class Source1VoteEndedEvent
+public partial class Source1VoteEndedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_ended";
 }
 
-public partial class Source1VoteCastEvent
+public partial class Source1VoteCastEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_cast";
     public int VoteOption { get; set; }
     public int Team { get; set; }
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1VoteOptionsEvent
+public partial class Source1VoteOptionsEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vote_options";
     public int Count { get; set; }
     public string Option1 { get; set; } = "";
     public string Option2 { get; set; } = "";
@@ -7930,8 +8330,9 @@ public partial class Source1VoteOptionsEvent
     public string Option5 { get; set; } = "";
 }
 
-public partial class Source1EndmatchMapvoteSelectingMapEvent
+public partial class Source1EndmatchMapvoteSelectingMapEvent : Source1GameEventBase
 {
+    public override string GameEventName => "endmatch_mapvote_selecting_map";
     public int Count { get; set; }
     public int Slot1 { get; set; }
     public int Slot2 { get; set; }
@@ -7945,42 +8346,49 @@ public partial class Source1EndmatchMapvoteSelectingMapEvent
     public int Slot10 { get; set; }
 }
 
-public partial class Source1EndmatchCmmStartRevealItemsEvent
+public partial class Source1EndmatchCmmStartRevealItemsEvent : Source1GameEventBase
 {
+    public override string GameEventName => "endmatch_cmm_start_reveal_items";
 }
 
-public partial class Source1ClientLoadoutChangedEvent
+public partial class Source1ClientLoadoutChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "client_loadout_changed";
 }
 
-public partial class Source1AddPlayerSonarIconEvent
+public partial class Source1AddPlayerSonarIconEvent : Source1GameEventBase
 {
+    public override string GameEventName => "add_player_sonar_icon";
     public CEntityIndex Userid { get; set; }
     public float PosX { get; set; }
     public float PosY { get; set; }
     public float PosZ { get; set; }
 }
 
-public partial class Source1DoorOpenEvent
+public partial class Source1DoorOpenEvent : Source1GameEventBase
 {
+    public override string GameEventName => "door_open";
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entindex { get; set; }
 }
 
-public partial class Source1DoorClosedEvent
+public partial class Source1DoorClosedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "door_closed";
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entindex { get; set; }
 }
 
-public partial class Source1DoorBreakEvent
+public partial class Source1DoorBreakEvent : Source1GameEventBase
 {
+    public override string GameEventName => "door_break";
     public int Entindex { get; set; }
     public int Dmgstate { get; set; }
 }
 
-public partial class Source1AddBulletHitMarkerEvent
+public partial class Source1AddBulletHitMarkerEvent : Source1GameEventBase
 {
+    public override string GameEventName => "add_bullet_hit_marker";
     public CEntityIndex Userid { get; set; }
     public int Bone { get; set; }
     public int PosX { get; set; }
@@ -7995,8 +8403,9 @@ public partial class Source1AddBulletHitMarkerEvent
     public bool Hit { get; set; }
 }
 
-public partial class Source1OtherDeathEvent
+public partial class Source1OtherDeathEvent : Source1GameEventBase
 {
+    public override string GameEventName => "other_death";
     public int Otherid { get; set; }
     public string Othertype { get; set; } = "";
     public int Attacker { get; set; }
@@ -8011,266 +8420,307 @@ public partial class Source1OtherDeathEvent
     public bool Attackerblind { get; set; }
 }
 
-public partial class Source1ItemPurchaseEvent
+public partial class Source1ItemPurchaseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_purchase";
     public CEntityIndex Userid { get; set; }
     public int Team { get; set; }
     public int Loadout { get; set; }
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1BombBeginplantEvent
+public partial class Source1BombBeginplantEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_beginplant";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Site { get; set; }
 }
 
-public partial class Source1BombAbortplantEvent
+public partial class Source1BombAbortplantEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_abortplant";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Site { get; set; }
 }
 
-public partial class Source1BombPlantedEvent
+public partial class Source1BombPlantedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_planted";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Site { get; set; }
 }
 
-public partial class Source1BombDefusedEvent
+public partial class Source1BombDefusedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_defused";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Site { get; set; }
 }
 
-public partial class Source1BombExplodedEvent
+public partial class Source1BombExplodedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_exploded";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Site { get; set; }
 }
 
-public partial class Source1BombDroppedEvent
+public partial class Source1BombDroppedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_dropped";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entindex { get; set; }
 }
 
-public partial class Source1BombPickupEvent
+public partial class Source1BombPickupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_pickup";
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1DefuserDroppedEvent
+public partial class Source1DefuserDroppedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "defuser_dropped";
     public int Entityid { get; set; }
 }
 
-public partial class Source1DefuserPickupEvent
+public partial class Source1DefuserPickupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "defuser_pickup";
     public int Entityid { get; set; }
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1AnnouncePhaseEndEvent
+public partial class Source1AnnouncePhaseEndEvent : Source1GameEventBase
 {
+    public override string GameEventName => "announce_phase_end";
 }
 
-public partial class Source1CsIntermissionEvent
+public partial class Source1CsIntermissionEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_intermission";
 }
 
-public partial class Source1BombBegindefuseEvent
+public partial class Source1BombBegindefuseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_begindefuse";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public bool Haskit { get; set; }
 }
 
-public partial class Source1BombAbortdefuseEvent
+public partial class Source1BombAbortdefuseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_abortdefuse";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1HostageFollowsEvent
+public partial class Source1HostageFollowsEvent : Source1GameEventBase
 {
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public int Hostage { get; set; }
-}
-
-public partial class Source1HostageHurtEvent
-{
+    public override string GameEventName => "hostage_follows";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageKilledEvent
+public partial class Source1HostageHurtEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hostage_hurt";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageRescuedEvent
+public partial class Source1HostageKilledEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hostage_killed";
+    public CEntityIndex Userid { get; set; }
+    public CHandle<CEntityInstance> UseridPawn { get; set; }
+    public int Hostage { get; set; }
+}
+
+public partial class Source1HostageRescuedEvent : Source1GameEventBase
+{
+    public override string GameEventName => "hostage_rescued";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Hostage { get; set; }
     public int Site { get; set; }
 }
 
-public partial class Source1HostageStopsFollowingEvent
+public partial class Source1HostageStopsFollowingEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hostage_stops_following";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageRescuedAllEvent
+public partial class Source1HostageRescuedAllEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hostage_rescued_all";
 }
 
-public partial class Source1HostageCallForHelpEvent
+public partial class Source1HostageCallForHelpEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hostage_call_for_help";
     public int Hostage { get; set; }
 }
 
-public partial class Source1VipEscapedEvent
+public partial class Source1VipEscapedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vip_escaped";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1VipKilledEvent
+public partial class Source1VipKilledEvent : Source1GameEventBase
 {
+    public override string GameEventName => "vip_killed";
     public CEntityIndex Userid { get; set; }
     public CEntityIndex Attacker { get; set; }
 }
 
-public partial class Source1PlayerRadioEvent
+public partial class Source1PlayerRadioEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_radio";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Slot { get; set; }
 }
 
-public partial class Source1BombBeepEvent
+public partial class Source1BombBeepEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bomb_beep";
     public int Entindex { get; set; }
 }
 
-public partial class Source1WeaponFireEvent
+public partial class Source1WeaponFireEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weapon_fire";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public string Weapon { get; set; } = "";
     public bool Silenced { get; set; }
 }
 
-public partial class Source1WeaponFireOnEmptyEvent
+public partial class Source1WeaponFireOnEmptyEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weapon_fire_on_empty";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1GrenadeThrownEvent
+public partial class Source1GrenadeThrownEvent : Source1GameEventBase
 {
+    public override string GameEventName => "grenade_thrown";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1WeaponOutofammoEvent
+public partial class Source1WeaponOutofammoEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weapon_outofammo";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1WeaponReloadEvent
+public partial class Source1WeaponReloadEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weapon_reload";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1WeaponZoomEvent
+public partial class Source1WeaponZoomEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weapon_zoom";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1SilencerDetachEvent
+public partial class Source1SilencerDetachEvent : Source1GameEventBase
 {
+    public override string GameEventName => "silencer_detach";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1InspectWeaponEvent
+public partial class Source1InspectWeaponEvent : Source1GameEventBase
 {
+    public override string GameEventName => "inspect_weapon";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1WeaponZoomRifleEvent
+public partial class Source1WeaponZoomRifleEvent : Source1GameEventBase
 {
+    public override string GameEventName => "weapon_zoom_rifle";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1PlayerSpawnedEvent
+public partial class Source1PlayerSpawnedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_spawned";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public bool Inrestart { get; set; }
 }
 
-public partial class Source1ItemPickupEvent
+public partial class Source1ItemPickupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_pickup";
     public CEntityIndex Userid { get; set; }
     public string Item { get; set; } = "";
     public bool Silent { get; set; }
     public int Defindex { get; set; }
 }
 
-public partial class Source1ItemPickupSlerpEvent
+public partial class Source1ItemPickupSlerpEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_pickup_slerp";
     public CEntityIndex Userid { get; set; }
     public int Index { get; set; }
     public int Behavior { get; set; }
 }
 
-public partial class Source1ItemPickupFailedEvent
+public partial class Source1ItemPickupFailedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_pickup_failed";
     public CEntityIndex Userid { get; set; }
     public string Item { get; set; } = "";
     public int Reason { get; set; }
     public int Limit { get; set; }
 }
 
-public partial class Source1ItemRemoveEvent
+public partial class Source1ItemRemoveEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_remove";
     public CEntityIndex Userid { get; set; }
     public string Item { get; set; } = "";
     public int Defindex { get; set; }
 }
 
-public partial class Source1AmmoPickupEvent
+public partial class Source1AmmoPickupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ammo_pickup";
     public CEntityIndex Userid { get; set; }
     public string Item { get; set; } = "";
     public int Index { get; set; }
 }
 
-public partial class Source1ItemEquipEvent
+public partial class Source1ItemEquipEvent : Source1GameEventBase
 {
+    public override string GameEventName => "item_equip";
     public CEntityIndex Userid { get; set; }
     public string Item { get; set; } = "";
     public int Defindex { get; set; }
@@ -8282,101 +8732,96 @@ public partial class Source1ItemEquipEvent
     public bool Ispainted { get; set; }
 }
 
-public partial class Source1EnterBuyzoneEvent
+public partial class Source1EnterBuyzoneEvent : Source1GameEventBase
 {
+    public override string GameEventName => "enter_buyzone";
     public CEntityIndex Userid { get; set; }
     public bool Canbuy { get; set; }
 }
 
-public partial class Source1ExitBuyzoneEvent
+public partial class Source1ExitBuyzoneEvent : Source1GameEventBase
 {
+    public override string GameEventName => "exit_buyzone";
     public CEntityIndex Userid { get; set; }
     public bool Canbuy { get; set; }
 }
 
-public partial class Source1BuytimeEndedEvent
+public partial class Source1BuytimeEndedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "buytime_ended";
 }
 
-public partial class Source1EnterBombzoneEvent
+public partial class Source1EnterBombzoneEvent : Source1GameEventBase
 {
+    public override string GameEventName => "enter_bombzone";
     public CEntityIndex Userid { get; set; }
     public bool Hasbomb { get; set; }
     public bool Isplanted { get; set; }
 }
 
-public partial class Source1ExitBombzoneEvent
+public partial class Source1ExitBombzoneEvent : Source1GameEventBase
 {
+    public override string GameEventName => "exit_bombzone";
     public CEntityIndex Userid { get; set; }
     public bool Hasbomb { get; set; }
     public bool Isplanted { get; set; }
 }
 
-public partial class Source1EnterRescueZoneEvent
+public partial class Source1EnterRescueZoneEvent : Source1GameEventBase
 {
+    public override string GameEventName => "enter_rescue_zone";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1ExitRescueZoneEvent
+public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
 {
+    public override string GameEventName => "exit_rescue_zone";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1SilencerOffEvent
+public partial class Source1SilencerOffEvent : Source1GameEventBase
 {
+    public override string GameEventName => "silencer_off";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1SilencerOnEvent
+public partial class Source1SilencerOnEvent : Source1GameEventBase
 {
+    public override string GameEventName => "silencer_on";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1BuymenuOpenEvent
+public partial class Source1BuymenuOpenEvent : Source1GameEventBase
 {
+    public override string GameEventName => "buymenu_open";
 }
 
-public partial class Source1BuymenuCloseEvent
+public partial class Source1BuymenuCloseEvent : Source1GameEventBase
 {
+    public override string GameEventName => "buymenu_close";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1RoundPrestartEvent
+public partial class Source1RoundPrestartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_prestart";
 }
 
-public partial class Source1RoundPoststartEvent
+public partial class Source1RoundPoststartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_poststart";
 }
 
-public partial class Source1GrenadeBounceEvent
+public partial class Source1GrenadeBounceEvent : Source1GameEventBase
 {
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-}
-
-public partial class Source1HegrenadeDetonateEvent
-{
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1FlashbangDetonateEvent
-{
+    public override string GameEventName => "grenade_bounce";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
 }
 
-public partial class Source1SmokegrenadeDetonateEvent
+public partial class Source1HegrenadeDetonateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hegrenade_detonate";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entityid { get; set; }
@@ -8385,8 +8830,9 @@ public partial class Source1SmokegrenadeDetonateEvent
     public float Z { get; set; }
 }
 
-public partial class Source1SmokegrenadeExpiredEvent
+public partial class Source1FlashbangDetonateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "flashbang_detonate";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entityid { get; set; }
@@ -8395,17 +8841,9 @@ public partial class Source1SmokegrenadeExpiredEvent
     public float Z { get; set; }
 }
 
-public partial class Source1MolotovDetonateEvent
+public partial class Source1SmokegrenadeDetonateEvent : Source1GameEventBase
 {
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1DecoyDetonateEvent
-{
+    public override string GameEventName => "smokegrenade_detonate";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entityid { get; set; }
@@ -8414,50 +8852,9 @@ public partial class Source1DecoyDetonateEvent
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyStartedEvent
+public partial class Source1SmokegrenadeExpiredEvent : Source1GameEventBase
 {
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1TagrenadeDetonateEvent
-{
-    public CEntityIndex Userid { get; set; }
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1InfernoStartburnEvent
-{
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1InfernoExpireEvent
-{
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1InfernoExtinguishEvent
-{
-    public int Entityid { get; set; }
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-}
-
-public partial class Source1DecoyFiringEvent
-{
+    public override string GameEventName => "smokegrenade_expired";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entityid { get; set; }
@@ -8466,8 +8863,9 @@ public partial class Source1DecoyFiringEvent
     public float Z { get; set; }
 }
 
-public partial class Source1BulletImpactEvent
+public partial class Source1MolotovDetonateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "molotov_detonate";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public float X { get; set; }
@@ -8475,76 +8873,169 @@ public partial class Source1BulletImpactEvent
     public float Z { get; set; }
 }
 
-public partial class Source1PlayerJumpEvent
+public partial class Source1DecoyDetonateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "decoy_detonate";
+    public CEntityIndex Userid { get; set; }
+    public CHandle<CEntityInstance> UseridPawn { get; set; }
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1DecoyStartedEvent : Source1GameEventBase
+{
+    public override string GameEventName => "decoy_started";
+    public CHandle<CEntityInstance> UseridPawn { get; set; }
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1TagrenadeDetonateEvent : Source1GameEventBase
+{
+    public override string GameEventName => "tagrenade_detonate";
+    public CEntityIndex Userid { get; set; }
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1InfernoStartburnEvent : Source1GameEventBase
+{
+    public override string GameEventName => "inferno_startburn";
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1InfernoExpireEvent : Source1GameEventBase
+{
+    public override string GameEventName => "inferno_expire";
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1InfernoExtinguishEvent : Source1GameEventBase
+{
+    public override string GameEventName => "inferno_extinguish";
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1DecoyFiringEvent : Source1GameEventBase
+{
+    public override string GameEventName => "decoy_firing";
+    public CEntityIndex Userid { get; set; }
+    public CHandle<CEntityInstance> UseridPawn { get; set; }
+    public int Entityid { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1BulletImpactEvent : Source1GameEventBase
+{
+    public override string GameEventName => "bullet_impact";
+    public CEntityIndex Userid { get; set; }
+    public CHandle<CEntityInstance> UseridPawn { get; set; }
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+}
+
+public partial class Source1PlayerJumpEvent : Source1GameEventBase
+{
+    public override string GameEventName => "player_jump";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1PlayerBlindEvent
+public partial class Source1PlayerBlindEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_blind";
     public CEntityIndex Userid { get; set; }
     public CEntityIndex Attacker { get; set; }
     public int Entityid { get; set; }
     public float BlindDuration { get; set; }
 }
 
-public partial class Source1PlayerFalldamageEvent
+public partial class Source1PlayerFalldamageEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_falldamage";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public float Damage { get; set; }
 }
 
-public partial class Source1DoorMovingEvent
+public partial class Source1DoorMovingEvent : Source1GameEventBase
 {
+    public override string GameEventName => "door_moving";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entindex { get; set; }
 }
 
-public partial class Source1MbInputLockSuccessEvent
+public partial class Source1MbInputLockSuccessEvent : Source1GameEventBase
 {
+    public override string GameEventName => "mb_input_lock_success";
 }
 
-public partial class Source1MbInputLockCancelEvent
+public partial class Source1MbInputLockCancelEvent : Source1GameEventBase
 {
+    public override string GameEventName => "mb_input_lock_cancel";
 }
 
-public partial class Source1NavBlockedEvent
+public partial class Source1NavBlockedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "nav_blocked";
     public int Area { get; set; }
     public bool Blocked { get; set; }
 }
 
-public partial class Source1NavGenerateEvent
+public partial class Source1NavGenerateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "nav_generate";
 }
 
-public partial class Source1AchievementInfoLoadedEvent
+public partial class Source1AchievementInfoLoadedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "achievement_info_loaded";
 }
 
-public partial class Source1HltvChangedModeEvent
+public partial class Source1HltvChangedModeEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hltv_changed_mode";
     public int Oldmode { get; set; }
     public int Newmode { get; set; }
     public int ObsTarget { get; set; }
 }
 
-public partial class Source1CsGameDisconnectedEvent
+public partial class Source1CsGameDisconnectedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_game_disconnected";
 }
 
-public partial class Source1CsRoundFinalBeepEvent
+public partial class Source1CsRoundFinalBeepEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_round_final_beep";
 }
 
-public partial class Source1CsRoundStartBeepEvent
+public partial class Source1CsRoundStartBeepEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_round_start_beep";
 }
 
-public partial class Source1CsWinPanelRoundEvent
+public partial class Source1CsWinPanelRoundEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_win_panel_round";
     public bool ShowTimerDefend { get; set; }
     public bool ShowTimerAttack { get; set; }
     public int TimerTime { get; set; }
@@ -8556,20 +9047,24 @@ public partial class Source1CsWinPanelRoundEvent
     public int FunfactData3 { get; set; }
 }
 
-public partial class Source1CsWinPanelMatchEvent
+public partial class Source1CsWinPanelMatchEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_win_panel_match";
 }
 
-public partial class Source1CsMatchEndRestartEvent
+public partial class Source1CsMatchEndRestartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_match_end_restart";
 }
 
-public partial class Source1CsPreRestartEvent
+public partial class Source1CsPreRestartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_pre_restart";
 }
 
-public partial class Source1ShowDeathpanelEvent
+public partial class Source1ShowDeathpanelEvent : Source1GameEventBase
 {
+    public override string GameEventName => "show_deathpanel";
     public CEntityIndex Victim { get; set; }
     public CHandle<CEntityInstance> VictimPawn { get; set; }
     public int Killer { get; set; }
@@ -8580,37 +9075,43 @@ public partial class Source1ShowDeathpanelEvent
     public int DamageGiven { get; set; }
 }
 
-public partial class Source1HideDeathpanelEvent
+public partial class Source1HideDeathpanelEvent : Source1GameEventBase
 {
+    public override string GameEventName => "hide_deathpanel";
 }
 
-public partial class Source1PlayerAvengedTeammateEvent
+public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_avenged_teammate";
     public CEntityIndex AvengerId { get; set; }
     public CEntityIndex AvengedPlayerId { get; set; }
 }
 
-public partial class Source1AchievementEarnedLocalEvent
+public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
 {
+    public override string GameEventName => "achievement_earned_local";
     public int Achievement { get; set; }
     public int Splitscreenplayer { get; set; }
 }
 
-public partial class Source1RepostXboxAchievementsEvent
+public partial class Source1RepostXboxAchievementsEvent : Source1GameEventBase
 {
+    public override string GameEventName => "repost_xbox_achievements";
     public int Splitscreenplayer { get; set; }
 }
 
-public partial class Source1MatchEndConditionsEvent
+public partial class Source1MatchEndConditionsEvent : Source1GameEventBase
 {
+    public override string GameEventName => "match_end_conditions";
     public int Frags { get; set; }
     public int MaxRounds { get; set; }
     public int WinRounds { get; set; }
     public int Time { get; set; }
 }
 
-public partial class Source1RoundMvpEvent
+public partial class Source1RoundMvpEvent : Source1GameEventBase
 {
+    public override string GameEventName => "round_mvp";
     public CEntityIndex Userid { get; set; }
     public int Reason { get; set; }
     public int Value { get; set; }
@@ -8619,20 +9120,23 @@ public partial class Source1RoundMvpEvent
     public int Musickitid { get; set; }
 }
 
-public partial class Source1ShowSurvivalRespawnStatusEvent
+public partial class Source1ShowSurvivalRespawnStatusEvent : Source1GameEventBase
 {
+    public override string GameEventName => "show_survival_respawn_status";
     public string LocToken { get; set; } = "";
     public int Duration { get; set; }
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
 }
 
-public partial class Source1ClientDisconnectEvent
+public partial class Source1ClientDisconnectEvent : Source1GameEventBase
 {
+    public override string GameEventName => "client_disconnect";
 }
 
-public partial class Source1GgKilledEnemyEvent
+public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
 {
+    public override string GameEventName => "gg_killed_enemy";
     public CEntityIndex Victimid { get; set; }
     public CEntityIndex Attackerid { get; set; }
     public int Dominated { get; set; }
@@ -8640,8 +9144,9 @@ public partial class Source1GgKilledEnemyEvent
     public bool Bonus { get; set; }
 }
 
-public partial class Source1SwitchTeamEvent
+public partial class Source1SwitchTeamEvent : Source1GameEventBase
 {
+    public override string GameEventName => "switch_team";
     public int NumPlayers { get; set; }
     public int NumSpectators { get; set; }
     public int AvgRank { get; set; }
@@ -8649,70 +9154,83 @@ public partial class Source1SwitchTeamEvent
     public int NumCTSlotsFree { get; set; }
 }
 
-public partial class Source1WriteProfileDataEvent
+public partial class Source1WriteProfileDataEvent : Source1GameEventBase
 {
+    public override string GameEventName => "write_profile_data";
 }
 
-public partial class Source1TrialTimeExpiredEvent
+public partial class Source1TrialTimeExpiredEvent : Source1GameEventBase
 {
+    public override string GameEventName => "trial_time_expired";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1UpdateMatchmakingStatsEvent
+public partial class Source1UpdateMatchmakingStatsEvent : Source1GameEventBase
 {
+    public override string GameEventName => "update_matchmaking_stats";
 }
 
-public partial class Source1PlayerResetVoteEvent
+public partial class Source1PlayerResetVoteEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_reset_vote";
     public CEntityIndex Userid { get; set; }
     public bool Vote { get; set; }
 }
 
-public partial class Source1EnableRestartVotingEvent
+public partial class Source1EnableRestartVotingEvent : Source1GameEventBase
 {
+    public override string GameEventName => "enable_restart_voting";
     public bool Enable { get; set; }
 }
 
-public partial class Source1SfuieventEvent
+public partial class Source1SfuieventEvent : Source1GameEventBase
 {
+    public override string GameEventName => "sfuievent";
     public string Action { get; set; } = "";
     public string Data { get; set; } = "";
     public int Slot { get; set; }
 }
 
-public partial class Source1StartVoteEvent
+public partial class Source1StartVoteEvent : Source1GameEventBase
 {
+    public override string GameEventName => "start_vote";
     public CEntityIndex Userid { get; set; }
     public int Type { get; set; }
     public int VoteParameter { get; set; }
 }
 
-public partial class Source1PlayerGivenC4Event
+public partial class Source1PlayerGivenC4Event : Source1GameEventBase
 {
+    public override string GameEventName => "player_given_c4";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1TrPlayerFlashbangedEvent
+public partial class Source1TrPlayerFlashbangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tr_player_flashbanged";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1TrMarkCompleteEvent
+public partial class Source1TrMarkCompleteEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tr_mark_complete";
     public int Complete { get; set; }
 }
 
-public partial class Source1TrMarkBestTimeEvent
+public partial class Source1TrMarkBestTimeEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tr_mark_best_time";
     public int Time { get; set; }
 }
 
-public partial class Source1TrExitHintTriggerEvent
+public partial class Source1TrExitHintTriggerEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tr_exit_hint_trigger";
 }
 
-public partial class Source1BotTakeoverEvent
+public partial class Source1BotTakeoverEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bot_takeover";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public CEntityIndex Botid { get; set; }
@@ -8721,171 +9239,201 @@ public partial class Source1BotTakeoverEvent
     public float R { get; set; }
 }
 
-public partial class Source1TrShowFinishMsgboxEvent
+public partial class Source1TrShowFinishMsgboxEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tr_show_finish_msgbox";
 }
 
-public partial class Source1TrShowExitMsgboxEvent
+public partial class Source1TrShowExitMsgboxEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tr_show_exit_msgbox";
 }
 
-public partial class Source1JointeamFailedEvent
+public partial class Source1JointeamFailedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "jointeam_failed";
     public CEntityIndex Userid { get; set; }
     public int Reason { get; set; }
 }
 
-public partial class Source1TeamchangePendingEvent
+public partial class Source1TeamchangePendingEvent : Source1GameEventBase
 {
+    public override string GameEventName => "teamchange_pending";
     public CEntityIndex Userid { get; set; }
     public int Toteam { get; set; }
 }
 
-public partial class Source1MaterialDefaultCompleteEvent
+public partial class Source1MaterialDefaultCompleteEvent : Source1GameEventBase
 {
+    public override string GameEventName => "material_default_complete";
 }
 
-public partial class Source1CsPrevNextSpectatorEvent
+public partial class Source1CsPrevNextSpectatorEvent : Source1GameEventBase
 {
+    public override string GameEventName => "cs_prev_next_spectator";
     public bool Next { get; set; }
 }
 
-public partial class Source1NextlevelChangedEvent
+public partial class Source1NextlevelChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "nextlevel_changed";
     public string Nextlevel { get; set; } = "";
     public string Mapgroup { get; set; } = "";
     public string Skirmishmode { get; set; } = "";
 }
 
-public partial class Source1SeasoncoinLevelupEvent
+public partial class Source1SeasoncoinLevelupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "seasoncoin_levelup";
     public CEntityIndex Userid { get; set; }
     public int Category { get; set; }
     public int Rank { get; set; }
 }
 
-public partial class Source1TournamentRewardEvent
+public partial class Source1TournamentRewardEvent : Source1GameEventBase
 {
+    public override string GameEventName => "tournament_reward";
     public int Defindex { get; set; }
     public int Totalrewards { get; set; }
     public int Accountid { get; set; }
 }
 
-public partial class Source1StartHalftimeEvent
+public partial class Source1StartHalftimeEvent : Source1GameEventBase
 {
+    public override string GameEventName => "start_halftime";
 }
 
-public partial class Source1AmmoRefillEvent
+public partial class Source1AmmoRefillEvent : Source1GameEventBase
 {
+    public override string GameEventName => "ammo_refill";
     public CEntityIndex Userid { get; set; }
     public bool Success { get; set; }
 }
 
-public partial class Source1ParachutePickupEvent
+public partial class Source1ParachutePickupEvent : Source1GameEventBase
 {
+    public override string GameEventName => "parachute_pickup";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1ParachuteDeployEvent
+public partial class Source1ParachuteDeployEvent : Source1GameEventBase
 {
+    public override string GameEventName => "parachute_deploy";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1DronegunAttackEvent
+public partial class Source1DronegunAttackEvent : Source1GameEventBase
 {
+    public override string GameEventName => "dronegun_attack";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1DroneDispatchedEvent
+public partial class Source1DroneDispatchedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "drone_dispatched";
     public CEntityIndex Userid { get; set; }
     public int Priority { get; set; }
     public int DroneDispatched { get; set; }
 }
 
-public partial class Source1LootCrateVisibleEvent
+public partial class Source1LootCrateVisibleEvent : Source1GameEventBase
 {
+    public override string GameEventName => "loot_crate_visible";
     public CEntityIndex Userid { get; set; }
     public int Subject { get; set; }
     public string Type { get; set; } = "";
 }
 
-public partial class Source1LootCrateOpenedEvent
+public partial class Source1LootCrateOpenedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "loot_crate_opened";
     public CEntityIndex Userid { get; set; }
     public string Type { get; set; } = "";
 }
 
-public partial class Source1OpenCrateInstrEvent
+public partial class Source1OpenCrateInstrEvent : Source1GameEventBase
 {
+    public override string GameEventName => "open_crate_instr";
     public CEntityIndex Userid { get; set; }
     public int Subject { get; set; }
     public string Type { get; set; } = "";
 }
 
-public partial class Source1SmokeBeaconParadropEvent
+public partial class Source1SmokeBeaconParadropEvent : Source1GameEventBase
 {
+    public override string GameEventName => "smoke_beacon_paradrop";
     public CEntityIndex Userid { get; set; }
     public int Paradrop { get; set; }
 }
 
-public partial class Source1SurvivalParadropSpawnEvent
+public partial class Source1SurvivalParadropSpawnEvent : Source1GameEventBase
 {
+    public override string GameEventName => "survival_paradrop_spawn";
     public int Entityid { get; set; }
 }
 
-public partial class Source1SurvivalParadropBreakEvent
+public partial class Source1SurvivalParadropBreakEvent : Source1GameEventBase
 {
+    public override string GameEventName => "survival_paradrop_break";
     public int Entityid { get; set; }
 }
 
-public partial class Source1DroneCargoDetachedEvent
+public partial class Source1DroneCargoDetachedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "drone_cargo_detached";
     public CEntityIndex Userid { get; set; }
     public int Cargo { get; set; }
     public bool Delivered { get; set; }
 }
 
-public partial class Source1DroneAboveRoofEvent
+public partial class Source1DroneAboveRoofEvent : Source1GameEventBase
 {
+    public override string GameEventName => "drone_above_roof";
     public CEntityIndex Userid { get; set; }
     public int Cargo { get; set; }
 }
 
-public partial class Source1ChoppersIncomingWarningEvent
+public partial class Source1ChoppersIncomingWarningEvent : Source1GameEventBase
 {
+    public override string GameEventName => "choppers_incoming_warning";
     public bool Global { get; set; }
 }
 
-public partial class Source1FirstbombsIncomingWarningEvent
+public partial class Source1FirstbombsIncomingWarningEvent : Source1GameEventBase
 {
+    public override string GameEventName => "firstbombs_incoming_warning";
     public bool Global { get; set; }
 }
 
-public partial class Source1DzItemInteractionEvent
+public partial class Source1DzItemInteractionEvent : Source1GameEventBase
 {
+    public override string GameEventName => "dz_item_interaction";
     public CEntityIndex Userid { get; set; }
     public int Subject { get; set; }
     public string Type { get; set; } = "";
 }
 
-public partial class Source1SurvivalTeammateRespawnEvent
+public partial class Source1SurvivalTeammateRespawnEvent : Source1GameEventBase
 {
+    public override string GameEventName => "survival_teammate_respawn";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1SurvivalNoRespawnsWarningEvent
+public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBase
 {
+    public override string GameEventName => "survival_no_respawns_warning";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1SurvivalNoRespawnsFinalEvent
+public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
 {
+    public override string GameEventName => "survival_no_respawns_final";
     public CEntityIndex Userid { get; set; }
 }
 
-public partial class Source1PlayerPingEvent
+public partial class Source1PlayerPingEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_ping";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Entityid { get; set; }
@@ -8895,13 +9443,15 @@ public partial class Source1PlayerPingEvent
     public bool Urgent { get; set; }
 }
 
-public partial class Source1PlayerPingStopEvent
+public partial class Source1PlayerPingStopEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_ping_stop";
     public int Entityid { get; set; }
 }
 
-public partial class Source1PlayerSoundEvent
+public partial class Source1PlayerSoundEvent : Source1GameEventBase
 {
+    public override string GameEventName => "player_sound";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int Radius { get; set; }
@@ -8909,20 +9459,24 @@ public partial class Source1PlayerSoundEvent
     public bool Step { get; set; }
 }
 
-public partial class Source1GuardianWaveRestartEvent
+public partial class Source1GuardianWaveRestartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "guardian_wave_restart";
 }
 
-public partial class Source1TeamIntroStartEvent
+public partial class Source1TeamIntroStartEvent : Source1GameEventBase
 {
+    public override string GameEventName => "team_intro_start";
 }
 
-public partial class Source1TeamIntroEndEvent
+public partial class Source1TeamIntroEndEvent : Source1GameEventBase
 {
+    public override string GameEventName => "team_intro_end";
 }
 
-public partial class Source1BulletFlightResolutionEvent
+public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
 {
+    public override string GameEventName => "bullet_flight_resolution";
     public CEntityIndex Userid { get; set; }
     public CHandle<CEntityInstance> UseridPawn { get; set; }
     public int PosX { get; set; }
@@ -8936,7 +9490,289 @@ public partial class Source1BulletFlightResolutionEvent
     public int StartZ { get; set; }
 }
 
-public partial class Source1GamePhaseChangedEvent
+public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 {
+    public override string GameEventName => "game_phase_changed";
     public int NewPhase { get; set; }
+}
+
+[JsonDerivedType(typeof(Source1ServerSpawnEvent))]
+[JsonDerivedType(typeof(Source1ServerPreShutdownEvent))]
+[JsonDerivedType(typeof(Source1ServerShutdownEvent))]
+[JsonDerivedType(typeof(Source1ServerMessageEvent))]
+[JsonDerivedType(typeof(Source1ServerCvarEvent))]
+[JsonDerivedType(typeof(Source1PlayerActivateEvent))]
+[JsonDerivedType(typeof(Source1PlayerConnectFullEvent))]
+[JsonDerivedType(typeof(Source1PlayerFullUpdateEvent))]
+[JsonDerivedType(typeof(Source1PlayerConnectEvent))]
+[JsonDerivedType(typeof(Source1PlayerDisconnectEvent))]
+[JsonDerivedType(typeof(Source1PlayerInfoEvent))]
+[JsonDerivedType(typeof(Source1PlayerSpawnEvent))]
+[JsonDerivedType(typeof(Source1PlayerTeamEvent))]
+[JsonDerivedType(typeof(Source1LocalPlayerTeamEvent))]
+[JsonDerivedType(typeof(Source1LocalPlayerControllerTeamEvent))]
+[JsonDerivedType(typeof(Source1PlayerChangenameEvent))]
+[JsonDerivedType(typeof(Source1PlayerHurtEvent))]
+[JsonDerivedType(typeof(Source1PlayerChatEvent))]
+[JsonDerivedType(typeof(Source1LocalPlayerPawnChangedEvent))]
+[JsonDerivedType(typeof(Source1TeamplayBroadcastAudioEvent))]
+[JsonDerivedType(typeof(Source1FinaleStartEvent))]
+[JsonDerivedType(typeof(Source1PlayerStatsUpdatedEvent))]
+[JsonDerivedType(typeof(Source1UserDataDownloadedEvent))]
+[JsonDerivedType(typeof(Source1RagdollDissolvedEvent))]
+[JsonDerivedType(typeof(Source1TeamInfoEvent))]
+[JsonDerivedType(typeof(Source1TeamScoreEvent))]
+[JsonDerivedType(typeof(Source1HltvCameramanEvent))]
+[JsonDerivedType(typeof(Source1HltvChaseEvent))]
+[JsonDerivedType(typeof(Source1HltvRankCameraEvent))]
+[JsonDerivedType(typeof(Source1HltvRankEntityEvent))]
+[JsonDerivedType(typeof(Source1HltvFixedEvent))]
+[JsonDerivedType(typeof(Source1HltvMessageEvent))]
+[JsonDerivedType(typeof(Source1HltvStatusEvent))]
+[JsonDerivedType(typeof(Source1HltvTitleEvent))]
+[JsonDerivedType(typeof(Source1HltvChatEvent))]
+[JsonDerivedType(typeof(Source1HltvVersioninfoEvent))]
+[JsonDerivedType(typeof(Source1HltvReplayEvent))]
+[JsonDerivedType(typeof(Source1HltvReplayStatusEvent))]
+[JsonDerivedType(typeof(Source1DemoStopEvent))]
+[JsonDerivedType(typeof(Source1MapShutdownEvent))]
+[JsonDerivedType(typeof(Source1MapTransitionEvent))]
+[JsonDerivedType(typeof(Source1HostnameChangedEvent))]
+[JsonDerivedType(typeof(Source1DifficultyChangedEvent))]
+[JsonDerivedType(typeof(Source1GameMessageEvent))]
+[JsonDerivedType(typeof(Source1GameNewmapEvent))]
+[JsonDerivedType(typeof(Source1RoundStartEvent))]
+[JsonDerivedType(typeof(Source1RoundEndEvent))]
+[JsonDerivedType(typeof(Source1RoundStartPreEntityEvent))]
+[JsonDerivedType(typeof(Source1RoundStartPostNavEvent))]
+[JsonDerivedType(typeof(Source1RoundFreezeEndEvent))]
+[JsonDerivedType(typeof(Source1TeamplayRoundStartEvent))]
+[JsonDerivedType(typeof(Source1PlayerDeathEvent))]
+[JsonDerivedType(typeof(Source1PlayerFootstepEvent))]
+[JsonDerivedType(typeof(Source1PlayerHintmessageEvent))]
+[JsonDerivedType(typeof(Source1BreakBreakableEvent))]
+[JsonDerivedType(typeof(Source1BrokenBreakableEvent))]
+[JsonDerivedType(typeof(Source1BreakPropEvent))]
+[JsonDerivedType(typeof(Source1EntityKilledEvent))]
+[JsonDerivedType(typeof(Source1DoorCloseEvent))]
+[JsonDerivedType(typeof(Source1VoteStartedEvent))]
+[JsonDerivedType(typeof(Source1VoteFailedEvent))]
+[JsonDerivedType(typeof(Source1VotePassedEvent))]
+[JsonDerivedType(typeof(Source1VoteChangedEvent))]
+[JsonDerivedType(typeof(Source1VoteCastYesEvent))]
+[JsonDerivedType(typeof(Source1VoteCastNoEvent))]
+[JsonDerivedType(typeof(Source1AchievementEventEvent))]
+[JsonDerivedType(typeof(Source1AchievementEarnedEvent))]
+[JsonDerivedType(typeof(Source1AchievementWriteFailedEvent))]
+[JsonDerivedType(typeof(Source1BonusUpdatedEvent))]
+[JsonDerivedType(typeof(Source1SpecTargetUpdatedEvent))]
+[JsonDerivedType(typeof(Source1SpecModeUpdatedEvent))]
+[JsonDerivedType(typeof(Source1EntityVisibleEvent))]
+[JsonDerivedType(typeof(Source1GameinstructorDrawEvent))]
+[JsonDerivedType(typeof(Source1GameinstructorNodrawEvent))]
+[JsonDerivedType(typeof(Source1FlareIgniteNpcEvent))]
+[JsonDerivedType(typeof(Source1HelicopterGrenadePuntMissEvent))]
+[JsonDerivedType(typeof(Source1PhysgunPickupEvent))]
+[JsonDerivedType(typeof(Source1InventoryUpdatedEvent))]
+[JsonDerivedType(typeof(Source1CartUpdatedEvent))]
+[JsonDerivedType(typeof(Source1StorePricesheetUpdatedEvent))]
+[JsonDerivedType(typeof(Source1ItemSchemaInitializedEvent))]
+[JsonDerivedType(typeof(Source1DropRateModifiedEvent))]
+[JsonDerivedType(typeof(Source1EventTicketModifiedEvent))]
+[JsonDerivedType(typeof(Source1GcConnectedEvent))]
+[JsonDerivedType(typeof(Source1InstructorStartLessonEvent))]
+[JsonDerivedType(typeof(Source1InstructorCloseLessonEvent))]
+[JsonDerivedType(typeof(Source1InstructorServerHintCreateEvent))]
+[JsonDerivedType(typeof(Source1InstructorServerHintStopEvent))]
+[JsonDerivedType(typeof(Source1SetInstructorGroupEnabledEvent))]
+[JsonDerivedType(typeof(Source1ClientsideLessonClosedEvent))]
+[JsonDerivedType(typeof(Source1DynamicShadowLightChangedEvent))]
+[JsonDerivedType(typeof(Source1GameuiHiddenEvent))]
+[JsonDerivedType(typeof(Source1ItemsGiftedEvent))]
+[JsonDerivedType(typeof(Source1PlayerScoreEvent))]
+[JsonDerivedType(typeof(Source1PlayerShootEvent))]
+[JsonDerivedType(typeof(Source1GameInitEvent))]
+[JsonDerivedType(typeof(Source1GameStartEvent))]
+[JsonDerivedType(typeof(Source1GameEndEvent))]
+[JsonDerivedType(typeof(Source1RoundAnnounceMatchPointEvent))]
+[JsonDerivedType(typeof(Source1RoundAnnounceFinalEvent))]
+[JsonDerivedType(typeof(Source1RoundAnnounceLastRoundHalfEvent))]
+[JsonDerivedType(typeof(Source1RoundAnnounceMatchStartEvent))]
+[JsonDerivedType(typeof(Source1RoundAnnounceWarmupEvent))]
+[JsonDerivedType(typeof(Source1RoundEndUploadStatsEvent))]
+[JsonDerivedType(typeof(Source1RoundOfficiallyEndedEvent))]
+[JsonDerivedType(typeof(Source1RoundTimeWarningEvent))]
+[JsonDerivedType(typeof(Source1UgcMapInfoReceivedEvent))]
+[JsonDerivedType(typeof(Source1UgcMapUnsubscribedEvent))]
+[JsonDerivedType(typeof(Source1UgcMapDownloadErrorEvent))]
+[JsonDerivedType(typeof(Source1UgcFileDownloadFinishedEvent))]
+[JsonDerivedType(typeof(Source1UgcFileDownloadStartEvent))]
+[JsonDerivedType(typeof(Source1BeginNewMatchEvent))]
+[JsonDerivedType(typeof(Source1DmBonusWeaponStartEvent))]
+[JsonDerivedType(typeof(Source1SurvivalAnnouncePhaseEvent))]
+[JsonDerivedType(typeof(Source1PlayerDecalEvent))]
+[JsonDerivedType(typeof(Source1ReadGameTitledataEvent))]
+[JsonDerivedType(typeof(Source1WriteGameTitledataEvent))]
+[JsonDerivedType(typeof(Source1ResetGameTitledataEvent))]
+[JsonDerivedType(typeof(Source1WeaponhudSelectionEvent))]
+[JsonDerivedType(typeof(Source1VoteEndedEvent))]
+[JsonDerivedType(typeof(Source1VoteCastEvent))]
+[JsonDerivedType(typeof(Source1VoteOptionsEvent))]
+[JsonDerivedType(typeof(Source1EndmatchMapvoteSelectingMapEvent))]
+[JsonDerivedType(typeof(Source1EndmatchCmmStartRevealItemsEvent))]
+[JsonDerivedType(typeof(Source1ClientLoadoutChangedEvent))]
+[JsonDerivedType(typeof(Source1AddPlayerSonarIconEvent))]
+[JsonDerivedType(typeof(Source1DoorOpenEvent))]
+[JsonDerivedType(typeof(Source1DoorClosedEvent))]
+[JsonDerivedType(typeof(Source1DoorBreakEvent))]
+[JsonDerivedType(typeof(Source1AddBulletHitMarkerEvent))]
+[JsonDerivedType(typeof(Source1OtherDeathEvent))]
+[JsonDerivedType(typeof(Source1ItemPurchaseEvent))]
+[JsonDerivedType(typeof(Source1BombBeginplantEvent))]
+[JsonDerivedType(typeof(Source1BombAbortplantEvent))]
+[JsonDerivedType(typeof(Source1BombPlantedEvent))]
+[JsonDerivedType(typeof(Source1BombDefusedEvent))]
+[JsonDerivedType(typeof(Source1BombExplodedEvent))]
+[JsonDerivedType(typeof(Source1BombDroppedEvent))]
+[JsonDerivedType(typeof(Source1BombPickupEvent))]
+[JsonDerivedType(typeof(Source1DefuserDroppedEvent))]
+[JsonDerivedType(typeof(Source1DefuserPickupEvent))]
+[JsonDerivedType(typeof(Source1AnnouncePhaseEndEvent))]
+[JsonDerivedType(typeof(Source1CsIntermissionEvent))]
+[JsonDerivedType(typeof(Source1BombBegindefuseEvent))]
+[JsonDerivedType(typeof(Source1BombAbortdefuseEvent))]
+[JsonDerivedType(typeof(Source1HostageFollowsEvent))]
+[JsonDerivedType(typeof(Source1HostageHurtEvent))]
+[JsonDerivedType(typeof(Source1HostageKilledEvent))]
+[JsonDerivedType(typeof(Source1HostageRescuedEvent))]
+[JsonDerivedType(typeof(Source1HostageStopsFollowingEvent))]
+[JsonDerivedType(typeof(Source1HostageRescuedAllEvent))]
+[JsonDerivedType(typeof(Source1HostageCallForHelpEvent))]
+[JsonDerivedType(typeof(Source1VipEscapedEvent))]
+[JsonDerivedType(typeof(Source1VipKilledEvent))]
+[JsonDerivedType(typeof(Source1PlayerRadioEvent))]
+[JsonDerivedType(typeof(Source1BombBeepEvent))]
+[JsonDerivedType(typeof(Source1WeaponFireEvent))]
+[JsonDerivedType(typeof(Source1WeaponFireOnEmptyEvent))]
+[JsonDerivedType(typeof(Source1GrenadeThrownEvent))]
+[JsonDerivedType(typeof(Source1WeaponOutofammoEvent))]
+[JsonDerivedType(typeof(Source1WeaponReloadEvent))]
+[JsonDerivedType(typeof(Source1WeaponZoomEvent))]
+[JsonDerivedType(typeof(Source1SilencerDetachEvent))]
+[JsonDerivedType(typeof(Source1InspectWeaponEvent))]
+[JsonDerivedType(typeof(Source1WeaponZoomRifleEvent))]
+[JsonDerivedType(typeof(Source1PlayerSpawnedEvent))]
+[JsonDerivedType(typeof(Source1ItemPickupEvent))]
+[JsonDerivedType(typeof(Source1ItemPickupSlerpEvent))]
+[JsonDerivedType(typeof(Source1ItemPickupFailedEvent))]
+[JsonDerivedType(typeof(Source1ItemRemoveEvent))]
+[JsonDerivedType(typeof(Source1AmmoPickupEvent))]
+[JsonDerivedType(typeof(Source1ItemEquipEvent))]
+[JsonDerivedType(typeof(Source1EnterBuyzoneEvent))]
+[JsonDerivedType(typeof(Source1ExitBuyzoneEvent))]
+[JsonDerivedType(typeof(Source1BuytimeEndedEvent))]
+[JsonDerivedType(typeof(Source1EnterBombzoneEvent))]
+[JsonDerivedType(typeof(Source1ExitBombzoneEvent))]
+[JsonDerivedType(typeof(Source1EnterRescueZoneEvent))]
+[JsonDerivedType(typeof(Source1ExitRescueZoneEvent))]
+[JsonDerivedType(typeof(Source1SilencerOffEvent))]
+[JsonDerivedType(typeof(Source1SilencerOnEvent))]
+[JsonDerivedType(typeof(Source1BuymenuOpenEvent))]
+[JsonDerivedType(typeof(Source1BuymenuCloseEvent))]
+[JsonDerivedType(typeof(Source1RoundPrestartEvent))]
+[JsonDerivedType(typeof(Source1RoundPoststartEvent))]
+[JsonDerivedType(typeof(Source1GrenadeBounceEvent))]
+[JsonDerivedType(typeof(Source1HegrenadeDetonateEvent))]
+[JsonDerivedType(typeof(Source1FlashbangDetonateEvent))]
+[JsonDerivedType(typeof(Source1SmokegrenadeDetonateEvent))]
+[JsonDerivedType(typeof(Source1SmokegrenadeExpiredEvent))]
+[JsonDerivedType(typeof(Source1MolotovDetonateEvent))]
+[JsonDerivedType(typeof(Source1DecoyDetonateEvent))]
+[JsonDerivedType(typeof(Source1DecoyStartedEvent))]
+[JsonDerivedType(typeof(Source1TagrenadeDetonateEvent))]
+[JsonDerivedType(typeof(Source1InfernoStartburnEvent))]
+[JsonDerivedType(typeof(Source1InfernoExpireEvent))]
+[JsonDerivedType(typeof(Source1InfernoExtinguishEvent))]
+[JsonDerivedType(typeof(Source1DecoyFiringEvent))]
+[JsonDerivedType(typeof(Source1BulletImpactEvent))]
+[JsonDerivedType(typeof(Source1PlayerJumpEvent))]
+[JsonDerivedType(typeof(Source1PlayerBlindEvent))]
+[JsonDerivedType(typeof(Source1PlayerFalldamageEvent))]
+[JsonDerivedType(typeof(Source1DoorMovingEvent))]
+[JsonDerivedType(typeof(Source1MbInputLockSuccessEvent))]
+[JsonDerivedType(typeof(Source1MbInputLockCancelEvent))]
+[JsonDerivedType(typeof(Source1NavBlockedEvent))]
+[JsonDerivedType(typeof(Source1NavGenerateEvent))]
+[JsonDerivedType(typeof(Source1AchievementInfoLoadedEvent))]
+[JsonDerivedType(typeof(Source1HltvChangedModeEvent))]
+[JsonDerivedType(typeof(Source1CsGameDisconnectedEvent))]
+[JsonDerivedType(typeof(Source1CsRoundFinalBeepEvent))]
+[JsonDerivedType(typeof(Source1CsRoundStartBeepEvent))]
+[JsonDerivedType(typeof(Source1CsWinPanelRoundEvent))]
+[JsonDerivedType(typeof(Source1CsWinPanelMatchEvent))]
+[JsonDerivedType(typeof(Source1CsMatchEndRestartEvent))]
+[JsonDerivedType(typeof(Source1CsPreRestartEvent))]
+[JsonDerivedType(typeof(Source1ShowDeathpanelEvent))]
+[JsonDerivedType(typeof(Source1HideDeathpanelEvent))]
+[JsonDerivedType(typeof(Source1PlayerAvengedTeammateEvent))]
+[JsonDerivedType(typeof(Source1AchievementEarnedLocalEvent))]
+[JsonDerivedType(typeof(Source1RepostXboxAchievementsEvent))]
+[JsonDerivedType(typeof(Source1MatchEndConditionsEvent))]
+[JsonDerivedType(typeof(Source1RoundMvpEvent))]
+[JsonDerivedType(typeof(Source1ShowSurvivalRespawnStatusEvent))]
+[JsonDerivedType(typeof(Source1ClientDisconnectEvent))]
+[JsonDerivedType(typeof(Source1GgKilledEnemyEvent))]
+[JsonDerivedType(typeof(Source1SwitchTeamEvent))]
+[JsonDerivedType(typeof(Source1WriteProfileDataEvent))]
+[JsonDerivedType(typeof(Source1TrialTimeExpiredEvent))]
+[JsonDerivedType(typeof(Source1UpdateMatchmakingStatsEvent))]
+[JsonDerivedType(typeof(Source1PlayerResetVoteEvent))]
+[JsonDerivedType(typeof(Source1EnableRestartVotingEvent))]
+[JsonDerivedType(typeof(Source1SfuieventEvent))]
+[JsonDerivedType(typeof(Source1StartVoteEvent))]
+[JsonDerivedType(typeof(Source1PlayerGivenC4Event))]
+[JsonDerivedType(typeof(Source1TrPlayerFlashbangedEvent))]
+[JsonDerivedType(typeof(Source1TrMarkCompleteEvent))]
+[JsonDerivedType(typeof(Source1TrMarkBestTimeEvent))]
+[JsonDerivedType(typeof(Source1TrExitHintTriggerEvent))]
+[JsonDerivedType(typeof(Source1BotTakeoverEvent))]
+[JsonDerivedType(typeof(Source1TrShowFinishMsgboxEvent))]
+[JsonDerivedType(typeof(Source1TrShowExitMsgboxEvent))]
+[JsonDerivedType(typeof(Source1JointeamFailedEvent))]
+[JsonDerivedType(typeof(Source1TeamchangePendingEvent))]
+[JsonDerivedType(typeof(Source1MaterialDefaultCompleteEvent))]
+[JsonDerivedType(typeof(Source1CsPrevNextSpectatorEvent))]
+[JsonDerivedType(typeof(Source1NextlevelChangedEvent))]
+[JsonDerivedType(typeof(Source1SeasoncoinLevelupEvent))]
+[JsonDerivedType(typeof(Source1TournamentRewardEvent))]
+[JsonDerivedType(typeof(Source1StartHalftimeEvent))]
+[JsonDerivedType(typeof(Source1AmmoRefillEvent))]
+[JsonDerivedType(typeof(Source1ParachutePickupEvent))]
+[JsonDerivedType(typeof(Source1ParachuteDeployEvent))]
+[JsonDerivedType(typeof(Source1DronegunAttackEvent))]
+[JsonDerivedType(typeof(Source1DroneDispatchedEvent))]
+[JsonDerivedType(typeof(Source1LootCrateVisibleEvent))]
+[JsonDerivedType(typeof(Source1LootCrateOpenedEvent))]
+[JsonDerivedType(typeof(Source1OpenCrateInstrEvent))]
+[JsonDerivedType(typeof(Source1SmokeBeaconParadropEvent))]
+[JsonDerivedType(typeof(Source1SurvivalParadropSpawnEvent))]
+[JsonDerivedType(typeof(Source1SurvivalParadropBreakEvent))]
+[JsonDerivedType(typeof(Source1DroneCargoDetachedEvent))]
+[JsonDerivedType(typeof(Source1DroneAboveRoofEvent))]
+[JsonDerivedType(typeof(Source1ChoppersIncomingWarningEvent))]
+[JsonDerivedType(typeof(Source1FirstbombsIncomingWarningEvent))]
+[JsonDerivedType(typeof(Source1DzItemInteractionEvent))]
+[JsonDerivedType(typeof(Source1SurvivalTeammateRespawnEvent))]
+[JsonDerivedType(typeof(Source1SurvivalNoRespawnsWarningEvent))]
+[JsonDerivedType(typeof(Source1SurvivalNoRespawnsFinalEvent))]
+[JsonDerivedType(typeof(Source1PlayerPingEvent))]
+[JsonDerivedType(typeof(Source1PlayerPingStopEvent))]
+[JsonDerivedType(typeof(Source1PlayerSoundEvent))]
+[JsonDerivedType(typeof(Source1GuardianWaveRestartEvent))]
+[JsonDerivedType(typeof(Source1TeamIntroStartEvent))]
+[JsonDerivedType(typeof(Source1TeamIntroEndEvent))]
+[JsonDerivedType(typeof(Source1BulletFlightResolutionEvent))]
+[JsonDerivedType(typeof(Source1GamePhaseChangedEvent))]
+public partial class Source1GameEventBase
+{
 }

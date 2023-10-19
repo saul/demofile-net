@@ -11,8 +11,15 @@
     <PackageReference Include="BenchmarkDotNet" Version="0.13.9" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(Baseline)' != 'true' ">
     <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Baseline)' == 'true' ">
+    <PackageReference Include="DemoFile" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\demos\*.dem" CopyToOutputDirectory="PreserveNewest" LinkBase="demos" />
   </ItemGroup>
 
 </Project>

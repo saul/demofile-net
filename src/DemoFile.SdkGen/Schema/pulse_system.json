@@ -342,394 +342,323 @@
   },
   "classes": {
     "CPulseTestFuncs_LibraryA": {
-      "index": 0,
       "fields": [
       ]
     },
     "CPulseExecCursor": {
-      "index": 1,
       "fields": [
       ]
     },
     "PulseRuntimeRegisterIndex_t": {
-      "index": 18,
       "fields": [
       ]
     },
     "CPulse_Chunk": {
-      "index": 3,
       "fields": [
       ]
     },
     "CPulse_Variable": {
-      "index": 4,
       "fields": [
       ]
     },
     "CPulse_PublicOutput": {
-      "index": 5,
       "fields": [
       ]
     },
     "CPulse_OutputConnection": {
-      "index": 6,
       "fields": [
       ]
     },
     "PulseRuntimeChunkIndex_t": {
-      "index": 13,
       "fields": [
       ]
     },
     "PulseDocNodeID_t": {
-      "index": 21,
       "fields": [
       ]
     },
     "CPulseGraphDef": {
-      "index": 9,
       "fields": [
       ]
     },
     "CBasePulseGraphInstance": {
-      "index": 10,
       "fields": [
       ]
     },
     "CPulseMathlib": {
-      "index": 11,
       "fields": [
       ]
     },
     "CPulseTestScriptLib": {
-      "index": 12,
       "fields": [
       ]
     },
     "PulseRuntimeCellIndex_t": {
-      "index": 19,
       "fields": [
       ]
     },
     "PulseRuntimeCallInfoIndex_t": {
-      "index": 14,
       "fields": [
       ]
     },
     "PulseRuntimeVarIndex_t": {
-      "index": 15,
       "fields": [
       ]
     },
     "PulseRuntimeOutputIndex_t": {
-      "index": 16,
       "fields": [
       ]
     },
     "PulseRuntimeStateOffset_t": {
-      "index": 17,
       "fields": [
       ]
     },
     "CPulse_RegisterInfo": {
-      "index": 2,
       "fields": [
       ]
     },
     "PulseRegisterMap_t": {
-      "index": 23,
       "fields": [
       ]
     },
     "PulseRuntimeInvokeIndex_t": {
-      "index": 20,
       "fields": [
       ]
     },
     "CPulse_CallInfo": {
-      "index": 8,
       "fields": [
       ]
     },
     "PulseRuntimeEntrypointIndex_t": {
-      "index": 22,
       "fields": [
       ]
     },
     "CPulse_InvokeBinding": {
-      "index": 7,
       "fields": [
       ]
     },
     "PGDInstruction_t": {
-      "index": 24,
       "fields": [
       ]
     },
     "CPulse_OutflowConnection": {
-      "index": 25,
       "fields": [
       ]
     },
     "CPulse_ResumePoint": {
-      "index": 26,
       "parent": "CPulse_OutflowConnection",
       "fields": [
       ]
     },
     "CPulseCell_Base": {
-      "index": 27,
       "fields": [
       ]
     },
     "CPulseCell_BaseFlow": {
-      "index": 28,
       "parent": "CPulseCell_Base",
       "fields": [
       ]
     },
     "CPulseCell_Inflow_BaseEntrypoint": {
-      "index": 29,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseRuntimeMethodArg": {
-      "index": 30,
       "fields": [
       ]
     },
     "CPulseCell_Inflow_Method": {
-      "index": 31,
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
       ]
     },
     "CPulseCell_Inflow_EventHandler": {
-      "index": 32,
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
       ]
     },
     "CPulseCell_Inflow_GraphHook": {
-      "index": 33,
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
       ]
     },
     "CPulseCell_Inflow_EntOutputHandler": {
-      "index": 34,
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
       ]
     },
     "CPulseCell_BaseYieldingInflow": {
-      "index": 35,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_BaseValue": {
-      "index": 36,
       "parent": "CPulseCell_Base",
       "fields": [
       ]
     },
     "CPulseCell_Step_PublicOutput": {
-      "index": 37,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Inflow_Yield": {
-      "index": 38,
       "parent": "CPulseCell_BaseYieldingInflow",
       "fields": [
       ]
     },
     "CPulseCell_Inflow_Wait": {
-      "index": 39,
       "parent": "CPulseCell_BaseYieldingInflow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_StringSwitch": {
-      "index": 40,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_IntSwitch": {
-      "index": 41,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_CycleOrdered": {
-      "index": 42,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_CycleOrdered::InstanceState_t": {
-      "index": 43,
       "fields": [
       ]
     },
     "CPulseCell_Outflow_CycleRandom": {
-      "index": 44,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_CycleShuffled": {
-      "index": 45,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_CycleShuffled::InstanceState_t": {
-      "index": 46,
       "fields": [
       ]
     },
     "CPulseCell_Outflow_SimultaneousParallel": {
-      "index": 47,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_TestRandomYesNo": {
-      "index": 48,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Outflow_TestExplicitYesNo": {
-      "index": 49,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Value_TestValue50": {
-      "index": 50,
       "parent": "CPulseCell_BaseValue",
       "fields": [
       ]
     },
     "CPulseCell_Value_RandomInt": {
-      "index": 51,
       "parent": "CPulseCell_BaseValue",
       "fields": [
       ]
     },
     "CPulseCell_Step_DebugLog": {
-      "index": 52,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Step_CallExternalMethod": {
-      "index": 53,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "PulseTestEHandle_t": {
-      "index": 54,
       "fields": [
       ]
     },
     "FakeEntity_t": {
-      "index": 55,
       "fields": [
       ]
     },
     "CPulseGraphInstance_TestDomain": {
-      "index": 56,
       "parent": "CBasePulseGraphInstance",
       "fields": [
       ]
     },
     "CPulseCell_Step_TestDomainTracepoint": {
-      "index": 57,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Step_TestDomainCreateFakeEntity": {
-      "index": 58,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Step_TestDomainDestroyFakeEntity": {
-      "index": 59,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Step_TestDomainEntFire": {
-      "index": 60,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Val_TestDomainGetEntityName": {
-      "index": 61,
       "parent": "CPulseCell_BaseValue",
       "fields": [
       ]
     },
     "CPulseCell_Val_TestDomainFindEntityByName": {
-      "index": 62,
       "parent": "CPulseCell_BaseValue",
       "fields": [
       ]
     },
     "CTestDomainDerived_Cursor": {
-      "index": 63,
       "parent": "CPulseExecCursor",
       "fields": [
       ]
     },
     "CPulseGraphInstance_TestDomain_Derived": {
-      "index": 64,
       "parent": "CPulseGraphInstance_TestDomain",
       "fields": [
       ]
     },
     "CPulseTestFuncs_DerivedDomain": {
-      "index": 65,
       "fields": [
       ]
     },
     "CPulseCell_Test_NoInflow": {
-      "index": 66,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Test_MultiInflow_WithDefault": {
-      "index": 67,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseCell_Test_MultiInflow_NoDefault": {
-      "index": 68,
       "parent": "CPulseCell_BaseFlow",
       "fields": [
       ]
     },
     "CPulseTurtleGraphicsCursor": {
-      "index": 69,
       "parent": "CPulseExecCursor",
       "fields": [
       ]
     },
     "CPulseGraphInstance_TurtleGraphics": {
-      "index": 70,
       "parent": "CBasePulseGraphInstance",
       "fields": [
       ]

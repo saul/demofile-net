@@ -122,21 +122,26 @@ internal ref struct BitBuffer
     
     public uint ReadUVarInt32()
     {
-        var c = 0;
         uint result = 0;
-        byte b;
+        var shift = 0;
+        byte byteRead;
 
         do
         {
-            b = ReadByte();
-            if (c < 5)
-                result |= (uint)(b & 0x7f) << (7 * c);
-            c += 1;
-        } while ((b & 0x80) != 0);
+            byteRead = ReadByte();
+            result |= (uint)(byteRead & 0x7F) << shift;
+            shift += 7;
+        } while ((byteRead & 0x80) != 0);
 
         return result;
     }
-    
+
+    public int ReadVarInt32()
+    {
+        var result = ReadUVarInt32();
+        return (int)(result >> 1) ^ -(int)(result & 1);
+    }
+
     public void ReadBytes(scoped Span<byte> output)
     {
         for (var i = 0; i < output.Length; ++i)
@@ -175,22 +180,6 @@ internal ref struct BitBuffer
         return (int)ReadUBits(31);
     }
 
-    public int ReadVarInt32()
-    {
-        uint result = 0;
-        var shift = 0;
-        byte byteRead;
-
-        do
-        {
-            byteRead = ReadByte();
-            result |= (uint)(byteRead & 0x7F) << shift;
-            shift += 7;
-        } while ((byteRead & 0x80) != 0);
-
-        return (int)(result >> 1) ^ -(int)(result & 1);
-    }
-
     public ulong ReadUVarInt64()
     {
         var c = 0;
@@ -210,8 +199,7 @@ internal ref struct BitBuffer
 
     public float ReadAngle(int bits)
     {
-        // todo: should this be (1 << bits) - 1?
-        var max = (float)(1 << bits);
+        var max = (float)((1UL << bits) - 1);
         return 360.0f * (ReadUBits(bits) / max);
     }
 

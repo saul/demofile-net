@@ -255,12 +255,10 @@
   },
   "classes": {
     "CEntityComponent": {
-      "index": 0,
       "fields": [
       ]
     },
     "CEntityIdentity": {
-      "index": 1,
       "fields": [
         {
           "name": "m_nameStringableIndex",
@@ -275,7 +273,6 @@
       ]
     },
     "CEntityInstance": {
-      "index": 2,
       "fields": [
         {
           "name": "m_pEntity",
@@ -308,19 +305,16 @@
       ]
     },
     "CScriptComponent": {
-      "index": 3,
       "parent": "CEntityComponent",
       "fields": [
       ]
     },
     "CBodyComponent": {
-      "index": 4,
       "parent": "CEntityComponent",
       "fields": [
       ]
     },
     "CGameSceneNodeHandle": {
-      "index": 28,
       "fields": [
         {
           "name": "m_hOwner",
@@ -345,7 +339,6 @@
       ]
     },
     "CGameSceneNode": {
-      "index": 29,
       "fields": [
         {
           "name": "m_hParent",
@@ -421,7 +414,6 @@
       ]
     },
     "CHitboxComponent": {
-      "index": 7,
       "parent": "CEntityComponent",
       "fields": [
         {
@@ -441,7 +433,6 @@
       ]
     },
     "CLightComponent": {
-      "index": 8,
       "parent": "CEntityComponent",
       "fields": [
         {
@@ -1108,23 +1099,19 @@
       ]
     },
     "CRenderComponent": {
-      "index": 9,
       "parent": "CEntityComponent",
       "fields": [
       ]
     },
     "CBuoyancyHelper": {
-      "index": 10,
       "fields": [
       ]
     },
     "C_CommandContext": {
-      "index": 11,
       "fields": [
       ]
     },
     "ViewAngleServerChange_t": {
-      "index": 12,
       "fields": [
         {
           "name": "nType",
@@ -1158,13 +1145,11 @@
       ]
     },
     "CPlayer_AutoaimServices": {
-      "index": 13,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "audioparams_t": {
-      "index": 14,
       "fields": [
         {
           "name": "localSound",
@@ -1221,7 +1206,6 @@
       ]
     },
     "fogparams_t": {
-      "index": 72,
       "fields": [
         {
           "name": "dirPrimary",
@@ -1461,19 +1445,16 @@
       ]
     },
     "CPlayer_FlashlightServices": {
-      "index": 16,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "CPlayer_ItemServices": {
-      "index": 17,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "CPlayer_MovementServices": {
-      "index": 18,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -1516,7 +1497,6 @@
       ]
     },
     "CPlayer_MovementServices_Humanoid": {
-      "index": 19,
       "parent": "CPlayer_MovementServices",
       "fields": [
         {
@@ -1596,7 +1576,6 @@
       ]
     },
     "CPlayer_ObserverServices": {
-      "index": 20,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -1628,19 +1607,16 @@
       ]
     },
     "CPlayer_UseServices": {
-      "index": 21,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "CPlayer_WaterServices": {
-      "index": 22,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "CPlayer_WeaponServices": {
-      "index": 23,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -1711,7 +1687,6 @@
       ]
     },
     "CModelState": {
-      "index": 31,
       "fields": [
         {
           "name": "m_hModel",
@@ -1761,7 +1736,6 @@
       ]
     },
     "EntityRenderAttribute_t": {
-      "index": 25,
       "fields": [
         {
           "name": "m_ID",
@@ -1786,7 +1760,6 @@
       ]
     },
     "ActiveModelConfig_t": {
-      "index": 26,
       "fields": [
         {
           "name": "m_Handle",
@@ -1845,7 +1818,6 @@
       ]
     },
     "CSkeletonInstance": {
-      "index": 32,
       "parent": "CGameSceneNode",
       "fields": [
         {
@@ -1898,7 +1870,6 @@
       ]
     },
     "CBodyComponentSkeletonInstance": {
-      "index": 6,
       "parent": "CBodyComponent",
       "fields": [
         {
@@ -1913,7 +1884,6 @@
       ]
     },
     "CBodyComponentPoint": {
-      "index": 5,
       "parent": "CBodyComponent",
       "fields": [
         {
@@ -1928,7 +1898,6 @@
       ]
     },
     "CNetworkedSequenceOperation": {
-      "index": 30,
       "fields": [
         {
           "name": "m_hSequence",
@@ -1992,13 +1961,11 @@
       ]
     },
     "CBodyComponentBaseModelEntity": {
-      "index": 27,
       "parent": "CBodyComponentSkeletonInstance",
       "fields": [
       ]
     },
     "CAnimGraphNetworkedVariables": {
-      "index": 37,
       "fields": [
         {
           "name": "m_PredNetBoolVariables",
@@ -2371,7 +2338,6 @@
       ]
     },
     "IntervalTimer": {
-      "index": 33,
       "fields": [
         {
           "name": "m_timestamp",
@@ -2395,7 +2361,6 @@
       ]
     },
     "CountdownTimer": {
-      "index": 34,
       "fields": [
         {
           "name": "m_duration",
@@ -2437,7 +2402,6 @@
       ]
     },
     "EngineCountdownTimer": {
-      "index": 35,
       "fields": [
         {
           "name": "m_duration",
@@ -2469,7 +2433,6 @@
       ]
     },
     "CTimeline": {
-      "index": 36,
       "parent": "IntervalTimer",
       "fields": [
         {
@@ -2548,7 +2511,6 @@
       ]
     },
     "CBaseAnimGraphController": {
-      "index": 200,
       "parent": "CSkeletonAnimationController",
       "fields": [
         {
@@ -2629,7 +2591,6 @@
       ]
     },
     "C_BaseEntity": {
-      "index": 38,
       "parent": "CEntityInstance",
       "fields": [
         {
@@ -2995,18 +2956,15 @@
       ]
     },
     "CLogicalEntity": {
-      "index": 39,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_BaseFlex::Emphasized_Phoneme": {
-      "index": 40,
       "fields": [
       ]
     },
     "C_ColorCorrection": {
-      "index": 41,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -3116,7 +3074,6 @@
       ]
     },
     "C_EnvWindShared": {
-      "index": 63,
       "fields": [
         {
           "name": "m_flStartTime",
@@ -3249,7 +3206,6 @@
       ]
     },
     "C_EntityFlame": {
-      "index": 43,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -3279,7 +3235,6 @@
       ]
     },
     "CProjectedTextureBase": {
-      "index": 44,
       "fields": [
         {
           "name": "m_hTargetEntity",
@@ -3574,7 +3529,6 @@
       ]
     },
     "C_BaseFire": {
-      "index": 45,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -3616,59 +3570,48 @@
       ]
     },
     "TimedEvent": {
-      "index": 57,
       "fields": [
       ]
     },
     "C_RopeKeyframe::CPhysicsDelegate": {
-      "index": 47,
       "fields": [
       ]
     },
     "C_SceneEntity::QueuedEvents_t": {
-      "index": 48,
       "fields": [
       ]
     },
     "C_TintController": {
-      "index": 49,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "CFlashlightEffect": {
-      "index": 50,
       "fields": [
       ]
     },
     "CInterpolatedValue": {
-      "index": 51,
       "fields": [
       ]
     },
     "CGlowSprite": {
-      "index": 52,
       "fields": [
       ]
     },
     "CGlowOverlay": {
-      "index": 53,
       "fields": [
       ]
     },
     "IClientAlphaProperty": {
-      "index": 54,
       "fields": [
       ]
     },
     "CSkyboxReference": {
-      "index": 55,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "sky3dparams_t": {
-      "index": 74,
       "fields": [
         {
           "name": "scale",
@@ -3730,7 +3673,6 @@
       ]
     },
     "C_FireSmoke": {
-      "index": 46,
       "parent": "C_BaseFire",
       "fields": [
         {
@@ -3754,7 +3696,6 @@
       ]
     },
     "VPhysicsCollisionAttribute_t": {
-      "index": 58,
       "fields": [
         {
           "name": "m_nInteractsAs",
@@ -3831,7 +3772,6 @@
       ]
     },
     "CCollisionProperty": {
-      "index": 59,
       "fields": [
         {
           "name": "m_collisionAttribute",
@@ -3978,12 +3918,10 @@
       ]
     },
     "CDecalInfo": {
-      "index": 60,
       "fields": [
       ]
     },
     "CEffectData": {
-      "index": 61,
       "fields": [
         {
           "name": "m_vOrigin",
@@ -4202,7 +4140,6 @@
       ]
     },
     "C_EnvDetailController": {
-      "index": 62,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -4226,7 +4163,6 @@
       ]
     },
     "C_EnvWindClientside": {
-      "index": 42,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -4242,23 +4178,19 @@
       ]
     },
     "C_EnvWindShared::WindAveEvent_t": {
-      "index": 64,
       "fields": [
       ]
     },
     "C_EnvWindShared::WindVariationEvent_t": {
-      "index": 65,
       "fields": [
       ]
     },
     "C_InfoLadderDismount": {
-      "index": 66,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "shard_model_desc_t": {
-      "index": 67,
       "fields": [
         {
           "name": "m_nModelID",
@@ -4397,18 +4329,15 @@
       ]
     },
     "C_GameRulesProxy": {
-      "index": 68,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_GameRules": {
-      "index": 69,
       "fields": [
       ]
     },
     "CGlowProperty": {
-      "index": 70,
       "fields": [
         {
           "name": "m_iGlowType",
@@ -4497,13 +4426,11 @@
       ]
     },
     "C_MultiplayRules": {
-      "index": 71,
       "parent": "C_GameRules",
       "fields": [
       ]
     },
     "C_fogplayerparams_t": {
-      "index": 73,
       "fields": [
         {
           "name": "m_hCtrl",
@@ -4524,7 +4451,6 @@
       ]
     },
     "CPlayer_CameraServices": {
-      "index": 15,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -4644,7 +4570,6 @@
       ]
     },
     "C_SkyCamera": {
-      "index": 56,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -4669,7 +4594,6 @@
       ]
     },
     "PhysicsRagdollPose_t": {
-      "index": 75,
       "fields": [
         {
           "name": "m_Transforms",
@@ -4705,13 +4629,11 @@
       ]
     },
     "C_SingleplayRules": {
-      "index": 76,
       "parent": "C_GameRules",
       "fields": [
       ]
     },
     "C_SoundOpvarSetPointBase": {
-      "index": 77,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -4765,43 +4687,36 @@
       ]
     },
     "C_SoundOpvarSetPointEntity": {
-      "index": 78,
       "parent": "C_SoundOpvarSetPointBase",
       "fields": [
       ]
     },
     "C_SoundOpvarSetAABBEntity": {
-      "index": 79,
       "parent": "C_SoundOpvarSetPointEntity",
       "fields": [
       ]
     },
     "C_SoundOpvarSetOBBEntity": {
-      "index": 80,
       "parent": "C_SoundOpvarSetAABBEntity",
       "fields": [
       ]
     },
     "C_SoundOpvarSetPathCornerEntity": {
-      "index": 81,
       "parent": "C_SoundOpvarSetPointEntity",
       "fields": [
       ]
     },
     "C_SoundOpvarSetOBBWindEntity": {
-      "index": 82,
       "parent": "C_SoundOpvarSetPointBase",
       "fields": [
       ]
     },
     "C_TeamplayRules": {
-      "index": 83,
       "parent": "C_MultiplayRules",
       "fields": [
       ]
     },
     "C_TeamRoundTimer": {
-      "index": 84,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -4943,12 +4858,10 @@
       ]
     },
     "CComicBook": {
-      "index": 85,
       "fields": [
       ]
     },
     "CAttributeList": {
-      "index": 86,
       "fields": [
         {
           "name": "m_Attributes",
@@ -4968,7 +4881,6 @@
       ]
     },
     "CEconItemAttribute": {
-      "index": 87,
       "fields": [
         {
           "name": "m_iAttributeDefinitionIndex",
@@ -5019,7 +4931,6 @@
       ]
     },
     "CAttributeManager": {
-      "index": 88,
       "fields": [
         {
           "name": "m_iReapplyProvisionParity",
@@ -5057,12 +4968,10 @@
       ]
     },
     "CAttributeManager::cached_attribute_float_t": {
-      "index": 89,
       "fields": [
       ]
     },
     "C_EconItemView": {
-      "index": 252,
       "parent": "IEconItemInterface",
       "fields": [
         {
@@ -5172,12 +5081,10 @@
       ]
     },
     "C_EconEntity::AttachedModelData_t": {
-      "index": 91,
       "fields": [
       ]
     },
     "EntitySpottedState_t": {
-      "index": 92,
       "fields": [
         {
           "name": "m_bSpotted",
@@ -5207,7 +5114,6 @@
       ]
     },
     "C_CSGameRulesProxy": {
-      "index": 93,
       "parent": "C_GameRulesProxy",
       "fields": [
         {
@@ -5228,7 +5134,6 @@
       ]
     },
     "C_RetakeGameRules": {
-      "index": 100,
       "fields": [
         {
           "name": "m_nMatchSeed",
@@ -5278,30 +5183,25 @@
       ]
     },
     "CCSGameModeRules": {
-      "index": 95,
       "fields": [
       ]
     },
     "CCSGameModeRules_Noop": {
-      "index": 96,
       "parent": "CCSGameModeRules",
       "fields": [
       ]
     },
     "CCSGameModeScript": {
-      "index": 97,
       "parent": "CBasePulseGraphInstance",
       "fields": [
       ]
     },
     "CCSGameModeRules_Scripted": {
-      "index": 98,
       "parent": "CCSGameModeRules",
       "fields": [
       ]
     },
     "CCSGameModeRules_Deathmatch": {
-      "index": 99,
       "parent": "CCSGameModeRules",
       "fields": [
         {
@@ -5334,7 +5234,6 @@
       ]
     },
     "C_CSGameRules": {
-      "index": 94,
       "parent": "C_TeamplayRules",
       "fields": [
         {
@@ -5809,6 +5708,15 @@
           }
         },
         {
+          "name": "m_bIsHltvActive",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": {
+          }
+        },
+        {
           "name": "m_nGuardianModeWaveNumber",
           "type": {
             "name": "int32",
@@ -6240,7 +6148,6 @@
       ]
     },
     "CSPerRoundStats_t": {
-      "index": 101,
       "fields": [
         {
           "name": "m_iKills",
@@ -6370,7 +6277,6 @@
       ]
     },
     "CSMatchStats_t": {
-      "index": 102,
       "parent": "CSPerRoundStats_t",
       "fields": [
         {
@@ -6403,7 +6309,6 @@
       ]
     },
     "C_CSGO_TeamPreviewCharacterPosition": {
-      "index": 103,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -6453,6 +6358,24 @@
           }
         },
         {
+          "name": "m_agentItem",
+          "type": {
+            "name": "C_EconItemView",
+            "category": 5
+          },
+          "metadata": {
+          }
+        },
+        {
+          "name": "m_glovesItem",
+          "type": {
+            "name": "C_EconItemView",
+            "category": 5
+          },
+          "metadata": {
+          }
+        },
+        {
           "name": "m_weaponItem",
           "type": {
             "name": "C_EconItemView",
@@ -6464,67 +6387,56 @@
       ]
     },
     "C_CSGO_TeamSelectCharacterPosition": {
-      "index": 104,
       "parent": "C_CSGO_TeamPreviewCharacterPosition",
       "fields": [
       ]
     },
     "C_CSGO_TeamSelectTerroristPosition": {
-      "index": 105,
       "parent": "C_CSGO_TeamSelectCharacterPosition",
       "fields": [
       ]
     },
     "C_CSGO_TeamSelectCounterTerroristPosition": {
-      "index": 106,
       "parent": "C_CSGO_TeamSelectCharacterPosition",
       "fields": [
       ]
     },
     "C_CSGO_TeamIntroCharacterPosition": {
-      "index": 107,
       "parent": "C_CSGO_TeamPreviewCharacterPosition",
       "fields": [
       ]
     },
     "C_CSGO_TeamIntroTerroristPosition": {
-      "index": 108,
       "parent": "C_CSGO_TeamIntroCharacterPosition",
       "fields": [
       ]
     },
     "C_CSGO_TeamIntroCounterTerroristPosition": {
-      "index": 109,
       "parent": "C_CSGO_TeamIntroCharacterPosition",
       "fields": [
       ]
     },
     "CCSGO_WingmanIntroCharacterPosition": {
-      "index": 110,
       "parent": "C_CSGO_TeamIntroCharacterPosition",
       "fields": [
       ]
     },
     "CCSGO_WingmanIntroTerroristPosition": {
-      "index": 111,
       "parent": "CCSGO_WingmanIntroCharacterPosition",
       "fields": [
       ]
     },
     "CCSGO_WingmanIntroCounterTerroristPosition": {
-      "index": 112,
       "parent": "CCSGO_WingmanIntroCharacterPosition",
       "fields": [
       ]
     },
     "C_CSMinimapBoundary": {
-      "index": 113,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_PlayerPing": {
-      "index": 114,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -6592,7 +6504,6 @@
       ]
     },
     "CCSPlayer_PingServices": {
-      "index": 115,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -6613,7 +6524,6 @@
       ]
     },
     "C_CSPlayerResource": {
-      "index": 116,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -6733,13 +6643,11 @@
       ]
     },
     "CPlayer_ViewModelServices": {
-      "index": 117,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "CCSPlayerBase_CameraServices": {
-      "index": 118,
       "parent": "CPlayer_CameraServices",
       "fields": [
         {
@@ -6797,7 +6705,6 @@
       ]
     },
     "WeaponPurchaseCount_t": {
-      "index": 119,
       "fields": [
         {
           "name": "m_nItemDefIndex",
@@ -6820,7 +6727,6 @@
       ]
     },
     "WeaponPurchaseTracker_t": {
-      "index": 120,
       "fields": [
         {
           "name": "m_weaponPurchases",
@@ -6839,7 +6745,6 @@
       ]
     },
     "CCSPlayer_ActionTrackingServices": {
-      "index": 121,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -6872,7 +6777,6 @@
       ]
     },
     "CCSPlayer_BulletServices": {
-      "index": 122,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -6887,7 +6791,6 @@
       ]
     },
     "SellbackPurchaseEntry_t": {
-      "index": 123,
       "fields": [
         {
           "name": "m_unDefIdx",
@@ -6938,7 +6841,6 @@
       ]
     },
     "CCSPlayer_BuyServices": {
-      "index": 124,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -6958,13 +6860,11 @@
       ]
     },
     "CCSPlayer_CameraServices": {
-      "index": 125,
       "parent": "CCSPlayerBase_CameraServices",
       "fields": [
       ]
     },
     "CCSPlayer_HostageServices": {
-      "index": 126,
       "parent": "CPlayerPawnComponent",
       "fields": [
         {
@@ -7000,7 +6900,6 @@
       ]
     },
     "CCSPlayer_ItemServices": {
-      "index": 127,
       "parent": "CPlayer_ItemServices",
       "fields": [
         {
@@ -7033,7 +6932,6 @@
       ]
     },
     "CCSPlayer_MovementServices": {
-      "index": 128,
       "parent": "CPlayer_MovementServices_Humanoid",
       "fields": [
         {
@@ -7217,13 +7115,11 @@
       ]
     },
     "CCSPlayer_UseServices": {
-      "index": 129,
       "parent": "CPlayer_UseServices",
       "fields": [
       ]
     },
     "CCSPlayer_ViewModelServices": {
-      "index": 130,
       "parent": "CPlayer_ViewModelServices",
       "fields": [
         {
@@ -7248,13 +7144,11 @@
       ]
     },
     "CCSPlayer_WaterServices": {
-      "index": 131,
       "parent": "CPlayer_WaterServices",
       "fields": [
       ]
     },
     "CCSPlayer_WeaponServices": {
-      "index": 132,
       "parent": "CPlayer_WeaponServices",
       "fields": [
         {
@@ -7288,37 +7182,31 @@
       ]
     },
     "CCSObserver_ObserverServices": {
-      "index": 133,
       "parent": "CPlayer_ObserverServices",
       "fields": [
       ]
     },
     "CCSObserver_CameraServices": {
-      "index": 134,
       "parent": "CCSPlayerBase_CameraServices",
       "fields": [
       ]
     },
     "CCSObserver_MovementServices": {
-      "index": 135,
       "parent": "CPlayer_MovementServices",
       "fields": [
       ]
     },
     "CCSObserver_UseServices": {
-      "index": 136,
       "parent": "CPlayer_UseServices",
       "fields": [
       ]
     },
     "CCSObserver_ViewModelServices": {
-      "index": 137,
       "parent": "CPlayer_ViewModelServices",
       "fields": [
       ]
     },
     "CCSPlayerController_ActionTrackingServices": {
-      "index": 138,
       "parent": "CPlayerControllerComponent",
       "fields": [
         {
@@ -7361,11 +7249,19 @@
           },
           "metadata": {
           }
+        },
+        {
+          "name": "m_unTotalRoundDamageDealt",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": {
+          }
         }
       ]
     },
     "CDamageRecord": {
-      "index": 139,
       "fields": [
         {
           "name": "m_PlayerDamager",
@@ -7522,7 +7418,6 @@
       ]
     },
     "CCSPlayerController_DamageServices": {
-      "index": 140,
       "parent": "CPlayerControllerComponent",
       "fields": [
         {
@@ -7554,7 +7449,6 @@
       ]
     },
     "CCSPlayerController_InGameMoneyServices": {
-      "index": 141,
       "parent": "CPlayerControllerComponent",
       "fields": [
         {
@@ -7595,8 +7489,38 @@
         }
       ]
     },
+    "ServerAuthoritativeWeaponSlot_t": {
+      "fields": [
+        {
+          "name": "unClass",
+          "type": {
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": {
+          }
+        },
+        {
+          "name": "unSlot",
+          "type": {
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": {
+          }
+        },
+        {
+          "name": "unItemDefIdx",
+          "type": {
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": {
+          }
+        }
+      ]
+    },
     "CCSPlayerController_InventoryServices": {
-      "index": 142,
       "parent": "CPlayerControllerComponent",
       "fields": [
         {
@@ -7659,123 +7583,91 @@
           }
         },
         {
-          "name": "m_vecTerroristLoadoutCache",
+          "name": "m_vecServerAuthoritativeWeaponSlots",
           "type": {
-            "name": "C_UtlVectorEmbeddedNetworkVar< C_EconItemView >",
+            "name": "C_UtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >",
             "category": 4,
             "atomic": 2,
             "inner": {
-              "name": "C_EconItemView",
+              "name": "ServerAuthoritativeWeaponSlot_t",
               "category": 5
             }
           },
           "metadata": {
-            "MNetworkChangeCallback": "OnTerroristLoadoutCacheChanged"
-          }
-        },
-        {
-          "name": "m_vecCounterTerroristLoadoutCache",
-          "type": {
-            "name": "C_UtlVectorEmbeddedNetworkVar< C_EconItemView >",
-            "category": 4,
-            "atomic": 2,
-            "inner": {
-              "name": "C_EconItemView",
-              "category": 5
-            }
-          },
-          "metadata": {
-            "MNetworkChangeCallback": "OnCounterTerroristLoadoutCacheChanged"
+            "MNetworkUserGroup": "LocalPlayerExclusive"
           }
         }
       ]
     },
     "C_IronSightController": {
-      "index": 143,
       "fields": [
       ]
     },
     "CompositeMaterialMatchFilter_t": {
-      "index": 144,
       "fields": [
       ]
     },
     "CompositeMaterialInputLooseVariable_t": {
-      "index": 145,
       "fields": [
       ]
     },
     "CompMatMutatorCondition_t": {
-      "index": 146,
       "fields": [
       ]
     },
     "CompMatPropertyMutator_t": {
-      "index": 147,
       "fields": [
       ]
     },
     "CompositeMaterialInputContainer_t": {
-      "index": 148,
       "fields": [
       ]
     },
     "CompositeMaterialAssemblyProcedure_t": {
-      "index": 149,
       "fields": [
       ]
     },
     "GeneratedTextureHandle_t": {
-      "index": 150,
       "fields": [
       ]
     },
     "CompositeMaterial_t": {
-      "index": 151,
       "fields": [
       ]
     },
     "CompositeMaterialEditorPoint_t": {
-      "index": 152,
       "fields": [
       ]
     },
     "CCompositeMaterialEditorDoc": {
-      "index": 153,
       "fields": [
       ]
     },
     "CGlobalLightBase": {
-      "index": 154,
       "fields": [
       ]
     },
     "C_GlobalLight": {
-      "index": 155,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_CSGO_MapPreviewCameraPathNode": {
-      "index": 156,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_CSGO_MapPreviewCameraPath": {
-      "index": 157,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "CCSPlayer_GlowServices": {
-      "index": 158,
       "parent": "CPlayerPawnComponent",
       "fields": [
       ]
     },
     "C_VoteController": {
-      "index": 159,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -7833,7 +7725,6 @@
       ]
     },
     "C_MapVetoPickController": {
-      "index": 160,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -8024,90 +7915,75 @@
       ]
     },
     "CPlayerSprayDecalRenderHelper": {
-      "index": 161,
       "fields": [
       ]
     },
     "C_CSGO_TeamPreviewCamera": {
-      "index": 162,
       "parent": "C_CSGO_MapPreviewCameraPath",
       "fields": [
       ]
     },
     "C_CSGO_TeamSelectCamera": {
-      "index": 163,
       "parent": "C_CSGO_TeamPreviewCamera",
       "fields": [
       ]
     },
     "C_CSGO_TerroristTeamIntroCamera": {
-      "index": 164,
       "parent": "C_CSGO_TeamPreviewCamera",
       "fields": [
       ]
     },
     "C_CSGO_TerroristWingmanIntroCamera": {
-      "index": 165,
       "parent": "C_CSGO_TeamPreviewCamera",
       "fields": [
       ]
     },
     "C_CSGO_CounterTerroristTeamIntroCamera": {
-      "index": 166,
       "parent": "C_CSGO_TeamPreviewCamera",
       "fields": [
       ]
     },
     "C_CSGO_CounterTerroristWingmanIntroCamera": {
-      "index": 167,
       "parent": "C_CSGO_TeamPreviewCamera",
       "fields": [
       ]
     },
     "C_CSGO_EndOfMatchCamera": {
-      "index": 168,
       "parent": "C_CSGO_TeamPreviewCamera",
       "fields": [
       ]
     },
     "C_CSGO_EndOfMatchCharacterPosition": {
-      "index": 169,
       "parent": "C_CSGO_TeamPreviewCharacterPosition",
       "fields": [
       ]
     },
     "C_CSGO_EndOfMatchLineupEndpoint": {
-      "index": 170,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_CSGO_EndOfMatchLineupStart": {
-      "index": 171,
       "parent": "C_CSGO_EndOfMatchLineupEndpoint",
       "fields": [
       ]
     },
     "C_CSGO_EndOfMatchLineupEnd": {
-      "index": 172,
       "parent": "C_CSGO_EndOfMatchLineupEndpoint",
       "fields": [
       ]
     },
     "C_CsmFovOverride": {
-      "index": 173,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_PointEntity": {
-      "index": 174,
       "parent": "C_BaseEntity",
       "fields": [
       ]
     },
     "C_EnvCombinedLightProbeVolume": {
-      "index": 175,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -8375,7 +8251,6 @@
       ]
     },
     "C_EnvCubemap": {
-      "index": 176,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -8562,13 +8437,11 @@
       ]
     },
     "C_EnvCubemapBox": {
-      "index": 177,
       "parent": "C_EnvCubemap",
       "fields": [
       ]
     },
     "C_EnvCubemapFog": {
-      "index": 178,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -8740,7 +8613,6 @@
       ]
     },
     "C_GradientFog": {
-      "index": 179,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -8900,7 +8772,6 @@
       ]
     },
     "C_EnvLightProbeVolume": {
-      "index": 180,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9095,7 +8966,6 @@
       ]
     },
     "C_PlayerVisibility": {
-      "index": 181,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9159,7 +9029,6 @@
       ]
     },
     "C_TonemapController2": {
-      "index": 182,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9237,7 +9106,6 @@
       ]
     },
     "C_EnvVolumetricFogController": {
-      "index": 183,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9494,7 +9362,6 @@
       ]
     },
     "C_EnvVolumetricFogVolume": {
-      "index": 184,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9565,7 +9432,6 @@
       ]
     },
     "C_FogController": {
-      "index": 185,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9580,19 +9446,16 @@
       ]
     },
     "CInfoTarget": {
-      "index": 186,
       "parent": "C_PointEntity",
       "fields": [
       ]
     },
     "CInfoParticleTarget": {
-      "index": 187,
       "parent": "C_PointEntity",
       "fields": [
       ]
     },
     "C_InfoVisibilityBox": {
-      "index": 188,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9626,7 +9489,6 @@
       ]
     },
     "CInfoWorldLayer": {
-      "index": 189,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9670,7 +9532,6 @@
       ]
     },
     "C_PointCamera": {
-      "index": 190,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9866,19 +9727,16 @@
       ]
     },
     "C_PointCameraVFOV": {
-      "index": 191,
       "parent": "C_PointCamera",
       "fields": [
       ]
     },
     "CPointTemplate": {
-      "index": 192,
       "parent": "CLogicalEntity",
       "fields": [
       ]
     },
     "C_SoundAreaEntityBase": {
-      "index": 193,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -9913,7 +9771,6 @@
       ]
     },
     "C_SoundAreaEntitySphere": {
-      "index": 194,
       "parent": "C_SoundAreaEntityBase",
       "fields": [
         {
@@ -9928,7 +9785,6 @@
       ]
     },
     "C_SoundAreaEntityOrientedBox": {
-      "index": 195,
       "parent": "C_SoundAreaEntityBase",
       "fields": [
         {
@@ -9954,7 +9810,6 @@
       ]
     },
     "C_Team": {
-      "index": 196,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -10025,7 +9880,6 @@
       ]
     },
     "CBasePlayerController": {
-      "index": 197,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -10103,19 +9957,16 @@
       ]
     },
     "CBasePlayerVData": {
-      "index": 198,
       "parent": "CEntitySubclassVDataBase",
       "fields": [
       ]
     },
     "CBasePlayerWeaponVData": {
-      "index": 199,
       "parent": "CEntitySubclassVDataBase",
       "fields": [
       ]
     },
     "CBodyComponentBaseAnimGraph": {
-      "index": 24,
       "parent": "CBodyComponentSkeletonInstance",
       "fields": [
         {
@@ -10130,7 +9981,6 @@
       ]
     },
     "C_BaseModelEntity": {
-      "index": 201,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -10380,25 +10230,21 @@
       ]
     },
     "CServerOnlyModelEntity": {
-      "index": 202,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_ModelPointEntity": {
-      "index": 203,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "CLogicRelay": {
-      "index": 204,
       "parent": "CLogicalEntity",
       "fields": [
       ]
     },
     "C_ParticleSystem": {
-      "index": 205,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -10572,7 +10418,6 @@
       ]
     },
     "C_PathParticleRope": {
-      "index": 206,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -10732,13 +10577,11 @@
       ]
     },
     "C_PathParticleRopeAlias_path_particle_rope_clientside": {
-      "index": 207,
       "parent": "C_PathParticleRope",
       "fields": [
       ]
     },
     "C_DynamicLight": {
-      "index": 208,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -10813,7 +10656,6 @@
       ]
     },
     "C_EnvScreenOverlay": {
-      "index": 209,
       "parent": "C_PointEntity",
       "fields": [
         {
@@ -10878,19 +10720,16 @@
       ]
     },
     "C_FuncTrackTrain": {
-      "index": 210,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_LightGlowOverlay": {
-      "index": 211,
       "parent": "CGlowOverlay",
       "fields": [
       ]
     },
     "C_LightGlow": {
-      "index": 212,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -10966,7 +10805,6 @@
       ]
     },
     "C_RagdollManager": {
-      "index": 213,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -10981,7 +10819,6 @@
       ]
     },
     "C_SpotlightEnd": {
-      "index": 214,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -11005,7 +10842,6 @@
       ]
     },
     "C_PointValueRemapper": {
-      "index": 215,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -11187,7 +11023,6 @@
       ]
     },
     "C_PointWorldText": {
-      "index": 216,
       "parent": "C_ModelPointEntity",
       "fields": [
         {
@@ -11303,7 +11138,6 @@
       ]
     },
     "C_HandleTest": {
-      "index": 217,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -11333,7 +11167,6 @@
       ]
     },
     "C_EnvWind": {
-      "index": 218,
       "parent": "C_BaseEntity",
       "fields": [
         {
@@ -11348,13 +11181,11 @@
       ]
     },
     "C_BaseToggle": {
-      "index": 219,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_BaseButton": {
-      "index": 220,
       "parent": "C_BaseToggle",
       "fields": [
         {
@@ -11394,13 +11225,11 @@
       ]
     },
     "C_PrecipitationBlocker": {
-      "index": 221,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_EntityDissolve": {
-      "index": 222,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -11497,13 +11326,11 @@
       ]
     },
     "C_EnvProjectedTexture": {
-      "index": 223,
       "parent": "C_ModelPointEntity",
       "fields": [
       ]
     },
     "C_EnvDecal": {
-      "index": 224,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -11599,19 +11426,16 @@
       ]
     },
     "CFireOverlay": {
-      "index": 225,
       "parent": "CGlowOverlay",
       "fields": [
       ]
     },
     "C_FuncBrush": {
-      "index": 226,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_FuncElectrifiedVolume": {
-      "index": 227,
       "parent": "C_FuncBrush",
       "fields": [
         {
@@ -11636,25 +11460,21 @@
       ]
     },
     "C_FuncRotating": {
-      "index": 228,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_Breakable": {
-      "index": 229,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_PhysBox": {
-      "index": 230,
       "parent": "C_Breakable",
       "fields": [
       ]
     },
     "C_RopeKeyframe": {
-      "index": 231,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -11827,7 +11647,6 @@
       ]
     },
     "C_SceneEntity": {
-      "index": 232,
       "parent": "C_PointEntity",
       "fields": [
         {
@@ -11909,13 +11728,11 @@
       ]
     },
     "C_SunGlowOverlay": {
-      "index": 233,
       "parent": "CGlowOverlay",
       "fields": [
       ]
     },
     "C_Sun": {
-      "index": 234,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -12064,7 +11881,6 @@
       ]
     },
     "C_BaseTrigger": {
-      "index": 235,
       "parent": "C_BaseToggle",
       "fields": [
         {
@@ -12088,31 +11904,26 @@
       ]
     },
     "C_TriggerVolume": {
-      "index": 236,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_TriggerMultiple": {
-      "index": 237,
       "parent": "C_BaseTrigger",
       "fields": [
       ]
     },
     "C_TriggerLerpObject": {
-      "index": 238,
       "parent": "C_BaseTrigger",
       "fields": [
       ]
     },
     "CClientAlphaProperty": {
-      "index": 239,
       "parent": "IClientAlphaProperty",
       "fields": [
       ]
     },
     "C_Beam": {
-      "index": 240,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -12356,7 +12167,6 @@
       ]
     },
     "C_FuncLadder": {
-      "index": 241,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -12413,13 +12223,11 @@
       ]
     },
     "CPrecipitationVData": {
-      "index": 242,
       "parent": "CEntitySubclassVDataBase",
       "fields": [
       ]
     },
     "C_Sprite": {
-      "index": 243,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -12558,13 +12366,11 @@
       ]
     },
     "C_SpriteOriented": {
-      "index": 244,
       "parent": "C_Sprite",
       "fields": [
       ]
     },
     "C_BaseClientUIEntity": {
-      "index": 245,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -12609,7 +12415,6 @@
       ]
     },
     "C_PointClientUIDialog": {
-      "index": 246,
       "parent": "C_BaseClientUIEntity",
       "fields": [
         {
@@ -12631,7 +12436,6 @@
       ]
     },
     "C_PointClientUIHUD": {
-      "index": 247,
       "parent": "C_BaseClientUIEntity",
       "fields": [
         {
@@ -12751,7 +12555,6 @@
       ]
     },
     "C_PointClientUIWorldPanel": {
-      "index": 248,
       "parent": "C_BaseClientUIEntity",
       "fields": [
         {
@@ -12970,13 +12773,11 @@
       ]
     },
     "CPointOffScreenIndicatorUi": {
-      "index": 249,
       "parent": "C_PointClientUIWorldPanel",
       "fields": [
       ]
     },
     "C_PointClientUIWorldTextPanel": {
-      "index": 250,
       "parent": "C_PointClientUIWorldPanel",
       "fields": [
         {
@@ -12996,7 +12797,6 @@
       ]
     },
     "CInfoOffscreenPanoramaTexture": {
-      "index": 251,
       "parent": "C_PointEntity",
       "fields": [
         {
@@ -13093,7 +12893,6 @@
       ]
     },
     "C_AttributeContainer": {
-      "index": 90,
       "parent": "CAttributeManager",
       "fields": [
         {
@@ -13108,7 +12907,6 @@
       ]
     },
     "CBombTarget": {
-      "index": 253,
       "parent": "C_BaseTrigger",
       "fields": [
         {
@@ -13123,19 +12921,16 @@
       ]
     },
     "CHostageRescueZoneShim": {
-      "index": 254,
       "parent": "C_BaseTrigger",
       "fields": [
       ]
     },
     "CHostageRescueZone": {
-      "index": 255,
       "parent": "CHostageRescueZoneShim",
       "fields": [
       ]
     },
     "C_TriggerBuoyancy": {
-      "index": 256,
       "parent": "C_BaseTrigger",
       "fields": [
         {
@@ -13150,25 +12945,21 @@
       ]
     },
     "CFuncWater": {
-      "index": 257,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "CWaterSplasher": {
-      "index": 258,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_InfoInstructorHintHostageRescueZone": {
-      "index": 259,
       "parent": "C_PointEntity",
       "fields": [
       ]
     },
     "CCSPlayerController": {
-      "index": 260,
       "parent": "CBasePlayerController",
       "fields": [
         {
@@ -13395,6 +13186,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "LocalPlayerExclusive"
           }
         },
         {
@@ -13404,6 +13196,7 @@
             "category": 6
           },
           "metadata": {
+            "MNetworkUserGroup": "LocalPlayerExclusive"
           }
         },
         {
@@ -13413,6 +13206,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "LocalPlayerExclusive"
           }
         },
         {
@@ -13422,6 +13216,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "LocalPlayerExclusive"
           }
         },
         {
@@ -13449,6 +13244,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "LocalPlayerExclusive"
           }
         },
         {
@@ -13497,6 +13293,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "TeammateAndSpectatorExclusive"
           }
         },
         {
@@ -13506,6 +13303,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "TeammateAndSpectatorExclusive"
           }
         },
         {
@@ -13515,6 +13313,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "TeammateAndSpectatorExclusive"
           }
         },
         {
@@ -13524,6 +13323,7 @@
             "category": 0
           },
           "metadata": {
+            "MNetworkUserGroup": "TeammateAndSpectatorExclusive"
           }
         },
         {
@@ -13612,7 +13412,6 @@
       ]
     },
     "C_FootstepControl": {
-      "index": 261,
       "parent": "C_BaseTrigger",
       "fields": [
         {
@@ -13638,13 +13437,11 @@
       ]
     },
     "CCSWeaponBaseVData": {
-      "index": 262,
       "parent": "CBasePlayerWeaponVData",
       "fields": [
       ]
     },
     "C_PlayerSprayDecal": {
-      "index": 263,
       "parent": "C_ModelPointEntity",
       "fields": [
         {
@@ -13794,7 +13591,6 @@
       ]
     },
     "C_FuncConveyor": {
-      "index": 264,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -13866,13 +13662,11 @@
       ]
     },
     "CGrenadeTracer": {
-      "index": 265,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "C_Inferno": {
-      "index": 266,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -14036,13 +13830,11 @@
       ]
     },
     "C_FireCrackerBlast": {
-      "index": 267,
       "parent": "C_Inferno",
       "fields": [
       ]
     },
     "C_BarnLight": {
-      "index": 268,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -14586,7 +14378,6 @@
       ]
     },
     "C_RectLight": {
-      "index": 269,
       "parent": "C_BarnLight",
       "fields": [
         {
@@ -14602,7 +14393,6 @@
       ]
     },
     "C_OmniLight": {
-      "index": 270,
       "parent": "C_BarnLight",
       "fields": [
         {
@@ -14638,7 +14428,6 @@
       ]
     },
     "C_CSTeam": {
-      "index": 271,
       "parent": "C_Team",
       "fields": [
         {
@@ -14754,25 +14543,21 @@
       ]
     },
     "C_MapPreviewParticleSystem": {
-      "index": 272,
       "parent": "C_ParticleSystem",
       "fields": [
       ]
     },
     "CInfoDynamicShadowHint": {
-      "index": 273,
       "parent": "C_PointEntity",
       "fields": [
       ]
     },
     "CInfoDynamicShadowHintBox": {
-      "index": 274,
       "parent": "CInfoDynamicShadowHint",
       "fields": [
       ]
     },
     "C_EnvSky": {
-      "index": 275,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -14912,13 +14697,11 @@
       ]
     },
     "C_TonemapController2Alias_env_tonemap_controller2": {
-      "index": 276,
       "parent": "C_TonemapController2",
       "fields": [
       ]
     },
     "C_LightEntity": {
-      "index": 277,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -14940,31 +14723,26 @@
       ]
     },
     "C_LightSpotEntity": {
-      "index": 278,
       "parent": "C_LightEntity",
       "fields": [
       ]
     },
     "C_LightOrthoEntity": {
-      "index": 279,
       "parent": "C_LightEntity",
       "fields": [
       ]
     },
     "C_LightDirectionalEntity": {
-      "index": 280,
       "parent": "C_LightEntity",
       "fields": [
       ]
     },
     "C_LightEnvironmentEntity": {
-      "index": 281,
       "parent": "C_LightDirectionalEntity",
       "fields": [
       ]
     },
     "C_PostProcessingVolume": {
-      "index": 282,
       "parent": "C_BaseTrigger",
       "fields": [
         {
@@ -15120,7 +14898,6 @@
       ]
     },
     "C_EnvParticleGlow": {
-      "index": 283,
       "parent": "C_ParticleSystem",
       "fields": [
         {
@@ -15178,7 +14955,6 @@
       ]
     },
     "C_TextureBasedAnimatable": {
-      "index": 284,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -15270,13 +15046,11 @@
       ]
     },
     "C_World": {
-      "index": 285,
       "parent": "C_BaseModelEntity",
       "fields": [
       ]
     },
     "CBaseAnimGraph": {
-      "index": 286,
       "parent": "C_BaseModelEntity",
       "fields": [
         {
@@ -15351,13 +15125,11 @@
       ]
     },
     "CBaseProp": {
-      "index": 287,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_BreakableProp": {
-      "index": 288,
       "parent": "CBaseProp",
       "fields": [
         {
@@ -15372,7 +15144,6 @@
       ]
     },
     "C_DynamicProp": {
-      "index": 289,
       "parent": "C_BreakableProp",
       "fields": [
         {
@@ -15396,25 +15167,21 @@
       ]
     },
     "C_DynamicPropAlias_dynamic_prop": {
-      "index": 290,
       "parent": "C_DynamicProp",
       "fields": [
       ]
     },
     "C_DynamicPropAlias_prop_dynamic_override": {
-      "index": 291,
       "parent": "C_DynamicProp",
       "fields": [
       ]
     },
     "C_DynamicPropAlias_cable_dynamic": {
-      "index": 292,
       "parent": "C_DynamicProp",
       "fields": [
       ]
     },
     "C_ColorCorrectionVolume": {
-      "index": 293,
       "parent": "C_BaseTrigger",
       "fields": [
         {
@@ -15470,7 +15237,6 @@
       ]
     },
     "C_FuncMonitor": {
-      "index": 294,
       "parent": "C_FuncBrush",
       "fields": [
         {
@@ -15556,19 +15322,16 @@
       ]
     },
     "C_FuncMoveLinear": {
-      "index": 295,
       "parent": "C_BaseToggle",
       "fields": [
       ]
     },
     "C_PhysMagnet": {
-      "index": 296,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_PointCommentaryNode": {
-      "index": 297,
       "parent": "CBaseAnimGraph",
       "fields": [
         {
@@ -15673,13 +15436,11 @@
       ]
     },
     "C_WaterBullet": {
-      "index": 298,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_BaseDoor": {
-      "index": 299,
       "parent": "C_BaseToggle",
       "fields": [
         {
@@ -15694,7 +15455,6 @@
       ]
     },
     "C_BaseFlex": {
-      "index": 300,
       "parent": "CBaseAnimGraph",
       "fields": [
         {
@@ -15739,31 +15499,26 @@
       ]
     },
     "C_ClientRagdoll": {
-      "index": 301,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_Precipitation": {
-      "index": 302,
       "parent": "C_BaseTrigger",
       "fields": [
       ]
     },
     "C_FireSprite": {
-      "index": 303,
       "parent": "C_Sprite",
       "fields": [
       ]
     },
     "C_FireFromAboveSprite": {
-      "index": 304,
       "parent": "C_Sprite",
       "fields": [
       ]
     },
     "C_Fish": {
-      "index": 305,
       "parent": "CBaseAnimGraph",
       "fields": [
         {
@@ -15837,7 +15592,6 @@
       ]
     },
     "C_PhysicsProp": {
-      "index": 306,
       "parent": "C_BreakableProp",
       "fields": [
         {
@@ -15852,7 +15606,6 @@
       ]
     },
     "C_BasePropDoor": {
-      "index": 307,
       "parent": "C_DynamicProp",
       "fields": [
         {
@@ -15911,13 +15664,11 @@
       ]
     },
     "C_PhysPropClientside": {
-      "index": 308,
       "parent": "C_BreakableProp",
       "fields": [
       ]
     },
     "C_RagdollProp": {
-      "index": 309,
       "parent": "CBaseAnimGraph",
       "fields": [
         {
@@ -15986,13 +15737,11 @@
       ]
     },
     "C_LocalTempEntity": {
-      "index": 310,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_ShatterGlassShardPhysics": {
-      "index": 311,
       "parent": "C_PhysicsProp",
       "fields": [
         {
@@ -16007,7 +15756,6 @@
       ]
     },
     "C_EconEntity": {
-      "index": 312,
       "parent": "C_BaseFlex",
       "fields": [
         {
@@ -16076,13 +15824,11 @@
       ]
     },
     "C_EconWearable": {
-      "index": 313,
       "parent": "C_EconEntity",
       "fields": [
       ]
     },
     "C_BaseGrenade": {
-      "index": 314,
       "parent": "C_BaseFlex",
       "fields": [
         {
@@ -16147,19 +15893,16 @@
       ]
     },
     "C_PhysicsPropMultiplayer": {
-      "index": 315,
       "parent": "C_PhysicsProp",
       "fields": [
       ]
     },
     "C_ViewmodelWeapon": {
-      "index": 316,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_BaseViewModel": {
-      "index": 317,
       "parent": "CBaseAnimGraph",
       "fields": [
         {
@@ -16222,31 +15965,26 @@
       ]
     },
     "C_ViewmodelAttachmentModel": {
-      "index": 318,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_PredictedViewModel": {
-      "index": 319,
       "parent": "C_BaseViewModel",
       "fields": [
       ]
     },
     "C_WorldModelStattrak": {
-      "index": 320,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_WorldModelNametag": {
-      "index": 321,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_BaseCSGrenadeProjectile": {
-      "index": 322,
       "parent": "C_BaseGrenade",
       "fields": [
         {
@@ -16305,73 +16043,61 @@
       ]
     },
     "C_SensorGrenadeProjectile": {
-      "index": 323,
       "parent": "C_BaseCSGrenadeProjectile",
       "fields": [
       ]
     },
     "CBreachChargeProjectile": {
-      "index": 324,
       "parent": "C_BaseGrenade",
       "fields": [
       ]
     },
     "CBumpMineProjectile": {
-      "index": 325,
       "parent": "C_BaseGrenade",
       "fields": [
       ]
     },
     "CTripWireFireProjectile": {
-      "index": 326,
       "parent": "C_BaseGrenade",
       "fields": [
       ]
     },
     "C_CSGO_PreviewModel": {
-      "index": 327,
       "parent": "C_BaseFlex",
       "fields": [
       ]
     },
     "C_CSGO_PreviewModelAlias_csgo_item_previewmodel": {
-      "index": 328,
       "parent": "C_CSGO_PreviewModel",
       "fields": [
       ]
     },
     "C_BulletHitModel": {
-      "index": 329,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_PickUpModelSlerper": {
-      "index": 330,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_WorldModelGloves": {
-      "index": 331,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_HostageCarriableProp": {
-      "index": 332,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_Multimeter": {
-      "index": 333,
       "parent": "CBaseAnimGraph",
       "fields": [
       ]
     },
     "C_PlantedC4": {
-      "index": 334,
       "parent": "CBaseAnimGraph",
       "fields": [
         {
@@ -16516,7 +16242,6 @@
       ]
     },
     "C_Item": {
-      "index": 335,
       "parent": "C_EconEntity",
       "fields": [
         {
@@ -16530,8 +16255,12 @@
         }
       ]
     },
+    "C_FlashbangProjectile": {
+      "parent": "C_BaseCSGrenadeProjectile",
+      "fields": [
+      ]
+    },
     "C_Chicken": {
-      "index": 336,
       "parent": "C_DynamicProp",
       "fields": [
         {
@@ -16589,7 +16318,6 @@
       ]
     },
     "C_BasePlayerWeapon": {
-      "index": 337,
       "parent": "C_EconEntity",
       "fields": [
         {
@@ -16672,7 +16400,6 @@
       ]
     },
     "C_RagdollPropAttached": {
-      "index": 338,
       "parent": "C_RagdollProp",
       "fields": [
         {
@@ -16718,7 +16445,6 @@
       ]
     },
     "C_BaseCombatCharacter": {
-      "index": 339,
       "parent": "C_BaseFlex",
       "fields": [
         {
@@ -16753,7 +16479,6 @@
       ]
     },
     "C_BasePlayerPawn": {
-      "index": 340,
       "parent": "C_BaseCombatCharacter",
       "fields": [
         {
@@ -16937,7 +16662,6 @@
       ]
     },
     "C_CSGOViewModel": {
-      "index": 341,
       "parent": "C_PredictedViewModel",
       "fields": [
         {
@@ -16961,7 +16685,6 @@
       ]
     },
     "C_CSWeaponBase": {
-      "index": 342,
       "parent": "C_BasePlayerWeapon",
       "fields": [
         {
@@ -17193,7 +16916,6 @@
       ]
     },
     "C_CSWeaponBaseGun": {
-      "index": 343,
       "parent": "C_CSWeaponBase",
       "fields": [
         {
@@ -17226,7 +16948,6 @@
       ]
     },
     "C_C4": {
-      "index": 344,
       "parent": "C_CSWeaponBase",
       "fields": [
         {
@@ -17277,31 +16998,26 @@
       ]
     },
     "C_DEagle": {
-      "index": 345,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponElite": {
-      "index": 346,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponNOVA": {
-      "index": 347,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "C_WeaponSawedoff": {
-      "index": 348,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "C_WeaponTaser": {
-      "index": 349,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
         {
@@ -17316,19 +17032,16 @@
       ]
     },
     "C_WeaponXM1014": {
-      "index": 350,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "C_Knife": {
-      "index": 351,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "C_Melee": {
-      "index": 352,
       "parent": "C_CSWeaponBase",
       "fields": [
         {
@@ -17343,7 +17056,6 @@
       ]
     },
     "C_WeaponShield": {
-      "index": 353,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
         {
@@ -17358,7 +17070,6 @@
       ]
     },
     "C_MolotovProjectile": {
-      "index": 354,
       "parent": "C_BaseCSGrenadeProjectile",
       "fields": [
         {
@@ -17373,13 +17084,11 @@
       ]
     },
     "C_DecoyProjectile": {
-      "index": 355,
       "parent": "C_BaseCSGrenadeProjectile",
       "fields": [
       ]
     },
     "C_SmokeGrenadeProjectile": {
-      "index": 356,
       "parent": "C_BaseCSGrenadeProjectile",
       "fields": [
         {
@@ -17447,7 +17156,6 @@
       ]
     },
     "C_BaseCSGrenade": {
-      "index": 357,
       "parent": "C_CSWeaponBase",
       "fields": [
         {
@@ -17534,7 +17242,6 @@
       ]
     },
     "C_WeaponBaseItem": {
-      "index": 358,
       "parent": "C_CSWeaponBase",
       "fields": [
         {
@@ -17558,7 +17265,6 @@
       ]
     },
     "C_ItemDogtags": {
-      "index": 359,
       "parent": "C_Item",
       "fields": [
         {
@@ -17594,13 +17300,11 @@
       ]
     },
     "C_Item_Healthshot": {
-      "index": 360,
       "parent": "C_WeaponBaseItem",
       "fields": [
       ]
     },
     "C_Fists": {
-      "index": 361,
       "parent": "C_CSWeaponBase",
       "fields": [
         {
@@ -17625,43 +17329,36 @@
       ]
     },
     "C_SensorGrenade": {
-      "index": 362,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "CBreachCharge": {
-      "index": 363,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "CBumpMine": {
-      "index": 364,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "CTablet": {
-      "index": 365,
       "parent": "C_CSWeaponBase",
       "fields": [
       ]
     },
     "CTripWireFire": {
-      "index": 366,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "CWeaponZoneRepulsor": {
-      "index": 367,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_CSPlayerPawnBase": {
-      "index": 368,
       "parent": "C_BasePlayerPawn",
       "fields": [
         {
@@ -17831,15 +17528,6 @@
           "name": "m_bHasMovedSinceSpawn",
           "type": {
             "name": "bool",
-            "category": 0
-          },
-          "metadata": {
-          }
-        },
-        {
-          "name": "m_unTotalRoundDamageDealt",
-          "type": {
-            "name": "uint32",
             "category": 0
           },
           "metadata": {
@@ -18291,13 +17979,11 @@
       ]
     },
     "C_CSObserverPawn": {
-      "index": 369,
       "parent": "C_CSPlayerPawnBase",
       "fields": [
       ]
     },
     "C_CSPlayerPawn": {
-      "index": 370,
       "parent": "C_CSPlayerPawnBase",
       "fields": [
         {
@@ -18622,7 +18308,6 @@
       ]
     },
     "C_Hostage": {
-      "index": 371,
       "parent": "C_BaseCombatCharacter",
       "fields": [
         {
@@ -18753,205 +18438,171 @@
       ]
     },
     "C_NetTestBaseCombatCharacter": {
-      "index": 372,
       "parent": "C_BaseCombatCharacter",
       "fields": [
       ]
     },
     "C_AK47": {
-      "index": 373,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponAug": {
-      "index": 374,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponAWP": {
-      "index": 375,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponBizon": {
-      "index": 376,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponFamas": {
-      "index": 377,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponFiveSeven": {
-      "index": 378,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponG3SG1": {
-      "index": 379,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponGalilAR": {
-      "index": 380,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponGlock": {
-      "index": 381,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponHKP2000": {
-      "index": 382,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponM4A1": {
-      "index": 383,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponMAC10": {
-      "index": 384,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponMag7": {
-      "index": 385,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponMP7": {
-      "index": 386,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponMP9": {
-      "index": 387,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponNegev": {
-      "index": 388,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponP250": {
-      "index": 389,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponP90": {
-      "index": 390,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponSCAR20": {
-      "index": 391,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponSG556": {
-      "index": 392,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponSSG08": {
-      "index": 393,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponTec9": {
-      "index": 394,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponUMP45": {
-      "index": 395,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_WeaponM249": {
-      "index": 396,
       "parent": "C_CSWeaponBaseGun",
       "fields": [
       ]
     },
     "C_MolotovGrenade": {
-      "index": 397,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "C_IncendiaryGrenade": {
-      "index": 398,
       "parent": "C_MolotovGrenade",
       "fields": [
       ]
     },
     "C_DecoyGrenade": {
-      "index": 399,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "C_Flashbang": {
-      "index": 400,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "C_HEGrenade": {
-      "index": 401,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "C_SmokeGrenade": {
-      "index": 402,
       "parent": "C_BaseCSGrenade",
       "fields": [
       ]
     },
     "C_CSGO_PreviewPlayer": {
-      "index": 403,
       "parent": "C_CSPlayerPawn",
       "fields": [
       ]
     },
     "C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel": {
-      "index": 404,
       "parent": "C_CSGO_PreviewPlayer",
       "fields": [
       ]
     },
     "C_CSGO_TeamPreviewModel": {
-      "index": 405,
       "parent": "C_CSGO_PreviewPlayer",
       "fields": [
       ]

@@ -345,38 +345,31 @@
   },
   "classes": {
     "CSchemaSystemInternalRegistration": {
-      "index": 0,
       "fields": [
       ]
     },
     "InfoForResourceTypeCResourceManifestInternal": {
-      "index": 1,
       "fields": [
       ]
     },
     "ResourceId_t": {
-      "index": 2,
       "fields": [
       ]
     },
     "CExampleSchemaVData_Monomorphic": {
-      "index": 3,
       "fields": [
       ]
     },
     "CExampleSchemaVData_PolymorphicBase": {
-      "index": 4,
       "fields": [
       ]
     },
     "CExampleSchemaVData_PolymorphicDerivedA": {
-      "index": 5,
       "parent": "CExampleSchemaVData_PolymorphicBase",
       "fields": [
       ]
     },
     "CExampleSchemaVData_PolymorphicDerivedB": {
-      "index": 6,
       "parent": "CExampleSchemaVData_PolymorphicBase",
       "fields": [
       ]

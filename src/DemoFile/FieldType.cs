@@ -39,8 +39,7 @@ internal partial record FieldType(string Name, FieldType? GenericParameter, bool
             ? Parse(genericName)
             : null;
         var isPointer = match.Groups["ptr"].Success;
-        
-        // todo: may need to support consts here
+
         var count = match.Groups["count"] is { Success: true, Value: var countStr }
             ? int.Parse(countStr)
             : 0;

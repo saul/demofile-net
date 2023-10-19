@@ -4773,6 +4773,8 @@ public partial class CCSGameRules : CTeamplayRules
 
     public bool IsQuestEligible { get; private set; }
 
+    public bool IsHltvActive { get; private set; }
+
     public Int32 GuardianModeWaveNumber { get; private set; }
 
     public Int32 GuardianModeSpecialKillsRemaining { get; private set; }
@@ -5258,6 +5260,14 @@ public partial class CCSGameRules : CTeamplayRules
                 @this.IsQuestEligible = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_bIsHltvActive")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCSGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.IsHltvActive = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_nGuardianModeWaveNumber")
         {
             var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
@@ -5567,10 +5577,12 @@ public partial class CCSGameRules : CTeamplayRules
                         innerDecoder = null;
                         @this.GameModeRules = null;
                     }
-                    if (!CCSGameModeRules.TryCreateDowncastDecoderById(decoderSet, childClassId, out innerDecoder))
+                    else if (CCSGameModeRules.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))
                     {
-                        throw new Exception($"Unknown polymorphic child class of CCSGameModeRules: {childClassId}");
+                        @this.GameModeRules = factory();
+                        return;
                     }
+                    throw new Exception($"Unknown polymorphic child class of CCSGameModeRules: {childClassId}");
                 }
                 else
                 {
@@ -5701,6 +5713,10 @@ public partial class CCSGO_TeamPreviewCharacterPosition : CBaseEntity
 
     public UInt64 Xuid { get; private set; }
 
+    public CEconItemView AgentItem { get; private set; } = new();
+
+    public CEconItemView GlovesItem { get; private set; } = new();
+
     public CEconItemView WeaponItem { get; private set; } = new();
 
     internal new static SendNodeDecoder<CCSGO_TeamPreviewCharacterPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -5743,6 +5759,22 @@ public partial class CCSGO_TeamPreviewCharacterPosition : CBaseEntity
             return (CCSGO_TeamPreviewCharacterPosition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Xuid = decoder(ref buffer);
+            };
+        }
+        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_agentItem")
+        {
+            var innerDecoder = CEconItemView.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
+            return (CCSGO_TeamPreviewCharacterPosition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                innerDecoder(@this.AgentItem, path, ref buffer);
+            };
+        }
+        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_glovesItem")
+        {
+            var innerDecoder = CEconItemView.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
+            return (CCSGO_TeamPreviewCharacterPosition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                innerDecoder(@this.GlovesItem, path, ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_weaponItem")
@@ -6522,18 +6554,23 @@ public partial class CCSPlayerController : CBasePlayerController
 
     public Int32 EndMatchNextMapVote { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerExclusive"
     public UInt16 ActiveQuestId { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerExclusive"
     public QuestProgressReason QuestProgressReason { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerExclusive"
     public UInt32 PlayerTvControlFlags { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerExclusive"
     public Int32 DisconnectionTick { get; private set; }
 
     public bool ControllingBot { get; private set; }
 
     public bool HasControlledBotThisRound { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerExclusive"
     public bool CanControlObservedBot { get; private set; }
 
     public CHandle<CCSPlayerPawn> PlayerPawn { get; private set; }
@@ -6542,12 +6579,16 @@ public partial class CCSPlayerController : CBasePlayerController
 
     public bool PawnIsAlive { get; private set; }
 
+    // MNetworkUserGroup "TeammateAndSpectatorExclusive"
     public UInt32 PawnHealth { get; private set; }
 
+    // MNetworkUserGroup "TeammateAndSpectatorExclusive"
     public Int32 PawnArmor { get; private set; }
 
+    // MNetworkUserGroup "TeammateAndSpectatorExclusive"
     public bool PawnHasDefuser { get; private set; }
 
+    // MNetworkUserGroup "TeammateAndSpectatorExclusive"
     public bool PawnHasHelmet { get; private set; }
 
     public UInt16 PawnCharacterDefIndex { get; private set; }
@@ -6996,6 +7037,8 @@ public partial class CCSPlayerController_ActionTrackingServices : CPlayerControl
 
     public Int32 NumRoundKillsHeadshots { get; private set; }
 
+    public UInt32 TotalRoundDamageDealt { get; private set; }
+
     internal new static SendNodeDecoder<CCSPlayerController_ActionTrackingServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_perRoundStats")
@@ -7040,6 +7083,14 @@ public partial class CCSPlayerController_ActionTrackingServices : CPlayerControl
             return (CCSPlayerController_ActionTrackingServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.NumRoundKillsHeadshots = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_unTotalRoundDamageDealt")
+        {
+            var decoder = FieldDecode.CreateDecoder_UInt32(field.FieldEncodingInfo);
+            return (CCSPlayerController_ActionTrackingServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TotalRoundDamageDealt = decoder(ref buffer);
             };
         }
         return CPlayerControllerComponent.CreateFieldDecoder(field, decoderSet);
@@ -7181,9 +7232,8 @@ public partial class CCSPlayerController_InventoryServices : CPlayerControllerCo
 
     public Int32 PersonaDataPublicCommendsFriendly { get; private set; }
 
-    public NetworkedVector<CEconItemView> TerroristLoadoutCache { get; private set; } = new NetworkedVector<CEconItemView>();
-
-    public NetworkedVector<CEconItemView> CounterTerroristLoadoutCache { get; private set; } = new NetworkedVector<CEconItemView>();
+    // MNetworkUserGroup "LocalPlayerExclusive"
+    public NetworkedVector<ServerAuthoritativeWeaponSlot_t> ServerAuthoritativeWeaponSlots { get; private set; } = new NetworkedVector<ServerAuthoritativeWeaponSlot_t>();
 
     internal new static SendNodeDecoder<CCSPlayerController_InventoryServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -7237,42 +7287,22 @@ public partial class CCSPlayerController_InventoryServices : CPlayerControllerCo
                 @this.PersonaDataPublicCommendsFriendly = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_vecTerroristLoadoutCache")
+        if (field.VarName == "m_vecServerAuthoritativeWeaponSlots")
         {
-            var innerDecoder = decoderSet.GetDecoder<CEconItemView>(field.FieldSerializerKey!.Value);
+            var innerDecoder = decoderSet.GetDecoder<ServerAuthoritativeWeaponSlot_t>(field.FieldSerializerKey!.Value);
             return (CCSPlayerController_InventoryServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
                 {
                     var newSize = (int)buffer.ReadUVarInt32();
-                    @this.TerroristLoadoutCache.Resize(newSize);
+                    @this.ServerAuthoritativeWeaponSlots.Resize(newSize);
                 }
                 else
                 {
                     Debug.Assert(path.Length > 2);
                     var index = path[1];
-                    @this.TerroristLoadoutCache.EnsureSize(index + 1);
-                    var element = @this.TerroristLoadoutCache[index] ??= new CEconItemView();
-                    innerDecoder(element, path[2..], ref buffer);
-                }
-            };
-        }
-        if (field.VarName == "m_vecCounterTerroristLoadoutCache")
-        {
-            var innerDecoder = decoderSet.GetDecoder<CEconItemView>(field.FieldSerializerKey!.Value);
-            return (CCSPlayerController_InventoryServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var newSize = (int)buffer.ReadUVarInt32();
-                    @this.CounterTerroristLoadoutCache.Resize(newSize);
-                }
-                else
-                {
-                    Debug.Assert(path.Length > 2);
-                    var index = path[1];
-                    @this.CounterTerroristLoadoutCache.EnsureSize(index + 1);
-                    var element = @this.CounterTerroristLoadoutCache[index] ??= new CEconItemView();
+                    @this.ServerAuthoritativeWeaponSlots.EnsureSize(index + 1);
+                    var element = @this.ServerAuthoritativeWeaponSlots[index] ??= new ServerAuthoritativeWeaponSlot_t();
                     innerDecoder(element, path[2..], ref buffer);
                 }
             };
@@ -7669,8 +7699,6 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
 
     public bool GunGameImmunity { get; private set; }
 
-    public UInt32 TotalRoundDamageDealt { get; private set; }
-
     public float MolotovDamageTime { get; private set; }
 
     public bool HasMovedSinceSpawn { get; private set; }
@@ -7902,14 +7930,6 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
             return (CCSPlayerPawnBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.GunGameImmunity = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_unTotalRoundDamageDealt")
-        {
-            var decoder = FieldDecode.CreateDecoder_UInt32(field.FieldEncodingInfo);
-            return (CCSPlayerPawnBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.TotalRoundDamageDealt = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_fMolotovDamageTime")
@@ -10693,7 +10713,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
 
     public float ProjectionSize { get; private set; }
 
-    public float Rotation { get; private set; }
+    public float TextureRotation { get; private set; }
 
     public bool FlipHorizontal { get; private set; }
 
@@ -10928,7 +10948,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CEnvProjectedTexture @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Rotation = decoder(ref buffer);
+                @this.TextureRotation = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bFlipHorizontal")
@@ -11838,6 +11858,16 @@ public partial class CFlashbang : CBaseCSGrenade
     internal new static SendNodeDecoder<CFlashbang> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
+    }
+}
+
+public partial class CFlashbangProjectile : CBaseCSGrenadeProjectile
+{
+    internal CFlashbangProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CFlashbangProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 }
 
@@ -18805,7 +18835,7 @@ public partial class CSun : CBaseModelEntity
 
     // MNetworkMinValue "-360.000000"
     // MNetworkMaxValue "360.000000"
-    public float Rotation { get; private set; }
+    public float SunRotation { get; private set; }
 
     // MNetworkMinValue "0.000000"
     // MNetworkMaxValue "100.000000"
@@ -18894,7 +18924,7 @@ public partial class CSun : CBaseModelEntity
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CSun @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Rotation = decoder(ref buffer);
+                @this.SunRotation = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flHazeScale")
@@ -20229,6 +20259,44 @@ public partial class SellbackPurchaseEntry_t
     }
 }
 
+public partial class ServerAuthoritativeWeaponSlot_t
+{
+    public UInt16 Class { get; private set; }
+
+    public UInt16 Slot { get; private set; }
+
+    public UInt16 ItemDefIdx { get; private set; }
+
+    internal static SendNodeDecoder<ServerAuthoritativeWeaponSlot_t> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "unClass")
+        {
+            var decoder = FieldDecode.CreateDecoder_UInt16(field.FieldEncodingInfo);
+            return (ServerAuthoritativeWeaponSlot_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Class = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "unSlot")
+        {
+            var decoder = FieldDecode.CreateDecoder_UInt16(field.FieldEncodingInfo);
+            return (ServerAuthoritativeWeaponSlot_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Slot = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "unItemDefIdx")
+        {
+            var decoder = FieldDecode.CreateDecoder_UInt16(field.FieldEncodingInfo);
+            return (ServerAuthoritativeWeaponSlot_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ItemDefIdx = decoder(ref buffer);
+            };
+        }
+        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+    }
+}
+
 public partial class shard_model_desc_t
 {
     public Int32 ModelID { get; private set; }
@@ -20386,9 +20454,9 @@ public partial class sky3dparams_t
     // MNetworkEncoder "coord"
     public Vector Origin { get; private set; }
 
-    public bool BClip3DSkyBoxNearToWorldFar { get; private set; }
+    public bool Clip3DSkyBoxNearToWorldFar { get; private set; }
 
-    public float FlClip3DSkyBoxNearToWorldFarOffset { get; private set; }
+    public float Clip3DSkyBoxNearToWorldFarOffset { get; private set; }
 
     public fogparams_t Fog { get; private set; } = new();
 
@@ -20417,7 +20485,7 @@ public partial class sky3dparams_t
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
             return (sky3dparams_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.BClip3DSkyBoxNearToWorldFar = decoder(ref buffer);
+                @this.Clip3DSkyBoxNearToWorldFar = decoder(ref buffer);
             };
         }
         if (field.VarName == "flClip3DSkyBoxNearToWorldFarOffset")
@@ -20425,7 +20493,7 @@ public partial class sky3dparams_t
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (sky3dparams_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.FlClip3DSkyBoxNearToWorldFarOffset = decoder(ref buffer);
+                @this.Clip3DSkyBoxNearToWorldFarOffset = decoder(ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "fog")
@@ -20450,12 +20518,12 @@ public partial class sky3dparams_t
 
 public partial class ViewAngleServerChange_t
 {
-    public FixAngleSet_t NType { get; private set; }
+    public FixAngleSet_t Type { get; private set; }
 
     // MNetworkEncoder "qangle_precise"
-    public QAngle QAngle { get; private set; }
+    public QAngle Angle { get; private set; }
 
-    public UInt32 NIndex { get; private set; }
+    public UInt32 Index { get; private set; }
 
     internal static SendNodeDecoder<ViewAngleServerChange_t> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -20464,7 +20532,7 @@ public partial class ViewAngleServerChange_t
             var decoder = FieldDecode.CreateDecoder_enum<FixAngleSet_t>(field.FieldEncodingInfo);
             return (ViewAngleServerChange_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.NType = decoder(ref buffer);
+                @this.Type = decoder(ref buffer);
             };
         }
         if (field.VarName == "qAngle")
@@ -20472,7 +20540,7 @@ public partial class ViewAngleServerChange_t
             var decoder = FieldDecode.CreateDecoder_QAngle(field.FieldEncodingInfo);
             return (ViewAngleServerChange_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.QAngle = decoder(ref buffer);
+                @this.Angle = decoder(ref buffer);
             };
         }
         if (field.VarName == "nIndex")
@@ -20480,7 +20548,7 @@ public partial class ViewAngleServerChange_t
             var decoder = FieldDecode.CreateDecoder_UInt32(field.FieldEncodingInfo);
             return (ViewAngleServerChange_t @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.NIndex = decoder(ref buffer);
+                @this.Index = decoder(ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -21152,6 +21220,10 @@ internal static class SendNodeDecoders
         if (typeof(T) == typeof(CFlashbang))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbang>(CFlashbang.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFlashbangProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbangProjectile>(CFlashbangProjectile.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CFogController))
         {
@@ -21873,6 +21945,10 @@ internal static class SendNodeDecoders
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SellbackPurchaseEntry_t>(SellbackPurchaseEntry_t.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(ServerAuthoritativeWeaponSlot_t))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ServerAuthoritativeWeaponSlot_t>(ServerAuthoritativeWeaponSlot_t.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(shard_model_desc_t))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<shard_model_desc_t>(shard_model_desc_t.CreateFieldDecoder);
@@ -21987,6 +22063,7 @@ internal static class EntityFactories
         {"CFish", (context, decoder) => new CFish(context, decoder)},
         {"CFists", (context, decoder) => new CFists(context, decoder)},
         {"CFlashbang", (context, decoder) => new CFlashbang(context, decoder)},
+        {"CFlashbangProjectile", (context, decoder) => new CFlashbangProjectile(context, decoder)},
         {"CFogController", (context, decoder) => new CFogController(context, decoder)},
         {"CFootstepControl", (context, decoder) => new CFootstepControl(context, decoder)},
         {"CFuncBrush", (context, decoder) => new CFuncBrush(context, decoder)},
@@ -22899,6 +22976,12 @@ internal partial class DecoderSet
             var decoder = GetDecoder<CFlashbang>(new SerializerKey(className, 0));
             return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                 decoder((CFlashbang)instance, path, ref buffer);
+        }
+        case "CFlashbangProjectile":
+        {
+            var decoder = GetDecoder<CFlashbangProjectile>(new SerializerKey(className, 0));
+            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                decoder((CFlashbangProjectile)instance, path, ref buffer);
         }
         case "CFogController":
         {
@@ -23979,6 +24062,12 @@ internal partial class DecoderSet
             var decoder = GetDecoder<SellbackPurchaseEntry_t>(new SerializerKey(className, 0));
             return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                 decoder((SellbackPurchaseEntry_t)instance, path, ref buffer);
+        }
+        case "ServerAuthoritativeWeaponSlot_t":
+        {
+            var decoder = GetDecoder<ServerAuthoritativeWeaponSlot_t>(new SerializerKey(className, 0));
+            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                decoder((ServerAuthoritativeWeaponSlot_t)instance, path, ref buffer);
         }
         case "shard_model_desc_t":
         {

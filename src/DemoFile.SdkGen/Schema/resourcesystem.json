@@ -57,282 +57,226 @@
   },
   "classes": {
     "TestResource_t": {
-      "index": 0,
       "fields": [
       ]
     },
     "InfoForResourceTypeTestResource_t": {
-      "index": 1,
       "fields": [
       ]
     },
     "InfoForResourceTypeProceduralTestResource_t": {
-      "index": 2,
       "fields": [
       ]
     },
     "InfoForResourceTypeManifestTestResource_t": {
-      "index": 3,
       "fields": [
       ]
     },
     "ManifestTestResource_t": {
-      "index": 4,
       "fields": [
       ]
     },
     "InfoForResourceTypeCVDataResource": {
-      "index": 5,
       "fields": [
       ]
     },
     "InfoForResourceTypeIPulseGraphDef": {
-      "index": 6,
       "fields": [
       ]
     },
     "InfoForResourceTypeCTypeScriptResource": {
-      "index": 7,
       "fields": [
       ]
     },
     "InfoForResourceTypeCJavaScriptResource": {
-      "index": 8,
       "fields": [
       ]
     },
     "InfoForResourceTypeIParticleSystemDefinition": {
-      "index": 9,
       "fields": [
       ]
     },
     "InfoForResourceTypeIParticleSnapshot": {
-      "index": 10,
       "fields": [
       ]
     },
     "InfoForResourceTypeCAnimData": {
-      "index": 11,
       "fields": [
       ]
     },
     "InfoForResourceTypeCAnimationGroup": {
-      "index": 12,
       "fields": [
       ]
     },
     "InfoForResourceTypeCSequenceGroupData": {
-      "index": 13,
       "fields": [
       ]
     },
     "InfoForResourceTypeIMaterial2": {
-      "index": 14,
       "fields": [
       ]
     },
     "InfoForResourceTypeCMorphSetData": {
-      "index": 15,
       "fields": [
       ]
     },
     "InfoForResourceTypeCRenderMesh": {
-      "index": 16,
       "fields": [
       ]
     },
     "InfoForResourceTypeCModel": {
-      "index": 17,
       "fields": [
       ]
     },
     "InfoForResourceTypeCTextureBase": {
-      "index": 18,
       "fields": [
       ]
     },
     "InfoForResourceTypeIVectorGraphic": {
-      "index": 19,
       "fields": [
       ]
     },
     "InfoForResourceTypeCVSoundEventScriptList": {
-      "index": 20,
       "fields": [
       ]
     },
     "InfoForResourceTypeCVSoundStackScriptList": {
-      "index": 21,
       "fields": [
       ]
     },
     "InfoForResourceTypeVSound_t": {
-      "index": 22,
       "fields": [
       ]
     },
     "InfoForResourceTypeCVMixListResource": {
-      "index": 23,
       "fields": [
       ]
     },
     "InfoForResourceTypeCPhysAggregateData": {
-      "index": 24,
       "fields": [
       ]
     },
     "InfoForResourceTypeCVPhysXSurfacePropertiesList": {
-      "index": 25,
       "fields": [
       ]
     },
     "InfoForResourceTypeCEntityLump": {
-      "index": 26,
       "fields": [
       ]
     },
     "InfoForResourceTypeCWorldNode": {
-      "index": 27,
       "fields": [
       ]
     },
     "InfoForResourceTypeWorld_t": {
-      "index": 28,
       "fields": [
       ]
     },
     "InfoForResourceTypeCVoxelVisibility": {
-      "index": 29,
       "fields": [
       ]
     },
     "InfoForResourceTypeCPostProcessingResource": {
-      "index": 30,
       "fields": [
       ]
     },
     "InfoForResourceTypeCPanoramaStyle": {
-      "index": 31,
       "fields": [
       ]
     },
     "InfoForResourceTypeCPanoramaLayout": {
-      "index": 32,
       "fields": [
       ]
     },
     "InfoForResourceTypeCPanoramaDynamicImages": {
-      "index": 33,
       "fields": [
       ]
     },
     "InfoForResourceTypeCDotaItemDefinitionResource": {
-      "index": 34,
       "fields": [
       ]
     },
     "InfoForResourceTypeCDOTAPatchNotesList": {
-      "index": 35,
       "fields": [
       ]
     },
     "InfoForResourceTypeCDOTANovelsList": {
-      "index": 36,
       "fields": [
       ]
     },
     "InfoForResourceTypeIAnimGraphModelBinding": {
-      "index": 37,
       "fields": [
       ]
     },
     "InfoForResourceTypeCChoreoSceneFileData": {
-      "index": 38,
       "fields": [
       ]
     },
     "InfoForResourceTypeCDACGameDefsData": {
-      "index": 39,
       "fields": [
       ]
     },
     "InfoForResourceTypeCCompositeMaterialKit": {
-      "index": 40,
       "fields": [
       ]
     },
     "InfoForResourceTypeCSmartProp": {
-      "index": 41,
       "fields": [
       ]
     },
     "InfoForResourceTypeCCSGOEconItem": {
-      "index": 42,
       "fields": [
       ]
     },
     "InfoForResourceTypeCResponseRulesList": {
-      "index": 43,
       "fields": [
       ]
     },
     "InfoForResourceTypeCNmSkeleton": {
-      "index": 44,
       "fields": [
       ]
     },
     "InfoForResourceTypeCNmClip": {
-      "index": 45,
       "fields": [
       ]
     },
     "FuseVariableIndex_t": {
-      "index": 46,
       "fields": [
       ]
     },
     "FuseFunctionIndex_t": {
-      "index": 47,
       "fields": [
       ]
     },
     "ConstantInfo_t": {
-      "index": 48,
       "fields": [
       ]
     },
     "VariableInfo_t": {
-      "index": 49,
       "fields": [
       ]
     },
     "FunctionInfo_t": {
-      "index": 50,
       "fields": [
       ]
     },
     "CFuseProgram": {
-      "index": 51,
       "fields": [
       ]
     },
     "CFuseSymbolTable": {
-      "index": 52,
       "fields": [
       ]
     },
     "AABB_t": {
-      "index": 53,
       "fields": [
       ]
     },
     "PackedAABB_t": {
-      "index": 54,
       "fields": [
       ]
     },
     "FourQuaternions": {
-      "index": 55,
       "fields": [
       ]
     }

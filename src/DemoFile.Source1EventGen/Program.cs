@@ -23,7 +23,13 @@ internal static class Program
             File.WriteAllText(outputPath, builder.ToString());
         };
 
-        await demo.Start(File.OpenRead(demoPath), cts.Token);
+        try
+        {
+            await demo.Start(File.OpenRead(demoPath), cts.Token);
+        }
+        catch (OperationCanceledException) when (cts.IsCancellationRequested)
+        {
+        }
     }
 
     public static string SnakeCaseToPascalCase(string snakey)
@@ -48,6 +54,7 @@ internal static class Program
         builder.AppendLine("#nullable enable");
         builder.AppendLine("#pragma warning disable CS1591");
         builder.AppendLine();
+        builder.AppendLine("using System.Text.Json.Serialization;");
         builder.AppendLine("using DemoFile.Sdk;");
         builder.AppendLine();
         builder.AppendLine("namespace DemoFile;");
@@ -87,14 +94,15 @@ internal static class Program
             builder.AppendLine();
             builder.AppendLine($"                _handlers[descriptor.Eventid] = @event =>");
             builder.AppendLine($"                {{");
-            builder.AppendLine($"                    if ({SnakeCaseToPascalCase(descriptor.Name)} is not {{ }} callback)");
+            builder.AppendLine($"                    if (Source1GameEvent == null && {SnakeCaseToPascalCase(descriptor.Name)} == null)");
             builder.AppendLine($"                        return;");
             builder.AppendLine($"                    var @this = new {EventNameToCsClass(descriptor.Name)}();");
             builder.AppendLine($"                    for (var i = 0; i < @event.Keys.Count; i++)");
             builder.AppendLine($"                    {{");
             builder.AppendLine($"                        keys[i](@this, @event.Keys[i]);");
             builder.AppendLine($"                    }}");
-            builder.AppendLine($"                    callback(@this);");
+            builder.AppendLine($"                    {SnakeCaseToPascalCase(descriptor.Name)}?.Invoke(@this);");
+            builder.AppendLine($"                    Source1GameEvent?.Invoke(@this);");
             builder.AppendLine($"                }};");
             builder.AppendLine($"            }}");
         }
@@ -106,8 +114,10 @@ internal static class Program
         foreach (var descriptor in descriptors)
         {
             builder.AppendLine();
-            builder.AppendLine($"public partial class {EventNameToCsClass(descriptor.Name)}");
+            builder.AppendLine($"public partial class {EventNameToCsClass(descriptor.Name)} : Source1GameEventBase");
             builder.AppendLine($"{{");
+
+            builder.AppendLine($"    public override string GameEventName => \"{descriptor.Name}\";");
 
             foreach (var key in descriptor.Keys)
             {
@@ -121,6 +131,16 @@ internal static class Program
 
             builder.AppendLine($"}}");
         }
+
+        builder.AppendLine();
+
+        foreach (var descriptor in descriptors)
+        {
+            builder.AppendLine($"[JsonDerivedType(typeof({EventNameToCsClass(descriptor.Name)}))]");
+        }
+        builder.AppendLine($"public partial class Source1GameEventBase");
+        builder.AppendLine($"{{");
+        builder.AppendLine($"}}");
     }
 
     private static string CSharpEventTypeName(GameEventKeyType keyType)

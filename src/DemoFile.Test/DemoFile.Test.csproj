@@ -22,5 +22,4 @@
     <None Include="..\..\demos\*.dem" CopyToOutputDirectory="PreserveNewest" LinkBase="demos" />
   </ItemGroup>
 
-
 </Project>

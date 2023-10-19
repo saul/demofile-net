@@ -6,6 +6,6 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        BenchmarkRunner.Run<DemoParserBenchmark>();
+        BenchmarkRunner.Run<DemoParserBenchmark>(args: args);
     }
 }
