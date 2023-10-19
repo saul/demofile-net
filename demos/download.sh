@@ -4,7 +4,7 @@
 set -e
 pushd `dirname "$0"`
 
-curl 'https://demofiledemos.blob.core.windows.net/demoblobs/space-vs-forward-m1-ancient.zip' --output test-demos.zip
+curl 'https://demofiledemos.blob.core.windows.net/demoblobs/navi-javelins-vs-9-pandas-fearless-m1-mirage.zip' --output test-demos.zip
 
 unzip -o test-demos.zip
 
