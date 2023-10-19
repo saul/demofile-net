@@ -30,6 +30,8 @@ public partial record SchemaClass(
             case ("CDynamicLight", "m_Flags"): return "DynamicLightFlags";
             case ("CEnvScreenOverlay", "m_bIsActive"): return "IsOverlayActive";
             case ("CPlayerSprayDecal", "m_nEntity"): return "DecalEntity";
+            case ("CEnvProjectedTexture", "m_flRotation"): return "TextureRotation";
+            case ("CSun", "m_flRotation"): return "SunRotation";
         }
 
         string CleanFieldName(string fieldName) =>

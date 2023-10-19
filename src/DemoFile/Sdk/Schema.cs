@@ -10713,7 +10713,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
 
     public float ProjectionSize { get; private set; }
 
-    public float Rotation { get; private set; }
+    public float TextureRotation { get; private set; }
 
     public bool FlipHorizontal { get; private set; }
 
@@ -10948,7 +10948,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CEnvProjectedTexture @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Rotation = decoder(ref buffer);
+                @this.TextureRotation = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bFlipHorizontal")
@@ -18825,7 +18825,7 @@ public partial class CSun : CBaseModelEntity
 
     // MNetworkMinValue "-360.000000"
     // MNetworkMaxValue "360.000000"
-    public float Rotation { get; private set; }
+    public float SunRotation { get; private set; }
 
     // MNetworkMinValue "0.000000"
     // MNetworkMaxValue "100.000000"
@@ -18914,7 +18914,7 @@ public partial class CSun : CBaseModelEntity
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CSun @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Rotation = decoder(ref buffer);
+                @this.SunRotation = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flHazeScale")
