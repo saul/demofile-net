@@ -49,8 +49,8 @@ public sealed partial class DemoParser
 
     public CDemoFileHeader FileHeader { get; private set; } = new();
 
-    public GameTick_t CurrentGameTick { get; private set; }
-    public GameTime_t CurrentGameTime => CurrentGameTick.ToGameTime();
+    public GameTick CurrentGameTick { get; private set; }
+    public GameTime CurrentGameTime => CurrentGameTick.ToGameTime();
 
     public DemoTick CurrentDemoTick { get; private set; }
     public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
@@ -224,7 +224,7 @@ public sealed partial class DemoParser
     /// <param name="tick">Tick to fire the callback.</param>
     /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
     /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
-    public IDisposable CreateTimer(GameTick_t tick, Action callback) =>
+    public IDisposable CreateTimer(GameTick tick, Action callback) =>
         CreateTimer(tick, callback, static callback => callback());
 
     /// <summary>
@@ -237,7 +237,7 @@ public sealed partial class DemoParser
     /// <param name="state">State to pass to the callback.</param>
     /// <param name="callback">Callback to invoke when <paramref name="tick"/> starts.</param>
     /// <returns>A disposable that cancels the callback on <c>Dispose</c>.</returns>
-    public IDisposable CreateTimer<T>(GameTick_t tick, T state, Action<T> callback)
+    public IDisposable CreateTimer<T>(GameTick tick, T state, Action<T> callback)
     {
         var timer = new TickTimer<T>(state, callback);
         _serverTickTimers.Enqueue(timer, tick.Value);

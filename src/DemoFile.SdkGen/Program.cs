@@ -7,7 +7,7 @@ using QuickGraph.Algorithms.Search;
 
 namespace DemoFile.SdkGen;
 
-internal static partial class Program
+internal static class Program
 {
     private static readonly IReadOnlySet<string> IgnoreClasses = new HashSet<string>
     {
@@ -17,8 +17,6 @@ internal static partial class Program
         "CGameSceneNodeHandle",
         "HSequence"
     };
-
-    public static string SanitiseTypeName(string typeName) => typeName.Replace(":", "");
 
     public static void Main(string[] args)
     {
@@ -191,9 +189,11 @@ internal static partial class Program
 
         foreach (var className in classNames)
         {
-            builder.AppendLine($"        if (typeof(T) == typeof({className}))");
+            var schemaType = SchemaFieldType.FromDeclaredClass(className);
+
+            builder.AppendLine($"        if (typeof(T) == typeof({schemaType.CsTypeName}))");
             builder.AppendLine($"        {{");
-            builder.AppendLine($"            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<{className}>({className}.CreateFieldDecoder);");
+            builder.AppendLine($"            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<{schemaType.CsTypeName}>({schemaType.CsTypeName}.CreateFieldDecoder);");
             builder.AppendLine($"        }}");
         }
 
@@ -217,11 +217,13 @@ internal static partial class Program
 
         foreach (var className in classNames)
         {
+            var schemaType = SchemaFieldType.FromDeclaredClass(className);
+
             builder.AppendLine($"        case \"{className}\":");
             builder.AppendLine($"        {{");
-            builder.AppendLine($"            var decoder = GetDecoder<{className}>(new SerializerKey(className, 0));");
+            builder.AppendLine($"            var decoder = GetDecoder<{schemaType.CsTypeName}>(new SerializerKey(className, 0));");
             builder.AppendLine($"            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-            builder.AppendLine($"                decoder(({className})instance, path, ref buffer);");
+            builder.AppendLine($"                decoder(({schemaType.CsTypeName})instance, path, ref buffer);");
             builder.AppendLine($"        }}");
         }
 
@@ -243,13 +245,17 @@ internal static partial class Program
             NetworkClasses.Names.Contains(schemaClassName)
             || NetworkClasses.Names.Contains(schemaClass.Parent ?? "");
 
-        var classNameCs = SanitiseTypeName(schemaClassName);
+        var classType = SchemaFieldType.FromDeclaredClass(schemaClassName);
+        var classNameCs = classType.CsTypeName;
 
         builder.AppendLine();
-        builder.Append($"public partial class {classNameCs}");
+        builder.Append($"public partial class {classType.CsTypeName}");
 
-        if (schemaClass.Parent != null)
-            builder.Append($" : {schemaClass.Parent}");
+        var parentType = schemaClass.Parent == null
+            ? null
+            : SchemaFieldType.FromDeclaredClass(schemaClass.Parent);
+        if (parentType != null)
+            builder.Append($" : {parentType.CsTypeName}");
 
         builder.AppendLine();
         builder.AppendLine("{");
@@ -328,7 +334,7 @@ internal static partial class Program
                 builder.AppendLine($"    // {metadataKey}{(value == "" ? "" : $" \"{value}\"")}");
             }
 
-            builder.AppendLine($"    public {SanitiseTypeName(field.Type.CsTypeName)} {schemaClass.CsPropertyNameForField(schemaClassName, field)} {{ get; private set; }}{defaultValue}");
+            builder.AppendLine($"    public {field.Type.CsTypeName} {schemaClass.CsPropertyNameForField(schemaClassName, field)} {{ get; private set; }}{defaultValue}");
             builder.AppendLine();
         }
 
@@ -338,7 +344,7 @@ internal static partial class Program
 
         foreach (var field in schemaClass.Fields)
         {
-            var fieldCsTypeName = SanitiseTypeName(field.Type.CsTypeName);
+            var fieldCsTypeName = field.Type.CsTypeName;
             var fieldCsPropertyName = schemaClass.CsPropertyNameForField(schemaClassName, field);
             
             field.TryGetMetadata("MNetworkSerializer", out var serializer);
@@ -367,7 +373,7 @@ internal static partial class Program
                     // This field is a variable array for a declared class
                     // (i.e. we'll need to delegate deserialisation of the child elements)
 
-                    builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{inner.Name}>(field.FieldSerializerKey!.Value);");
+                    builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{inner.CsTypeName}>(field.FieldSerializerKey!.Value);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
                     builder.AppendLine($"                if (path.Length == 1)");
@@ -380,7 +386,7 @@ internal static partial class Program
                     builder.AppendLine($"                    Debug.Assert(path.Length > 2);");
                     builder.AppendLine($"                    var index = path[1];");
                     builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
-                    builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[index] ??= new {inner.Name}();");
+                    builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[index] ??= new {inner.CsTypeName}();");
                     builder.AppendLine($"                    innerDecoder(element, path[2..], ref buffer);");
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"            }};");
@@ -391,7 +397,7 @@ internal static partial class Program
 
                     // This field is a variable array for an atomic value
 
-                    var elementCsTypeName = SanitiseTypeName(field.Type.Inner!.CsTypeName);
+                    var elementCsTypeName = field.Type.Inner!.CsTypeName;
 
                     var decoderMethod = field.Type.Inner.Category == SchemaTypeCategory.DeclaredEnum
                         ? $"CreateDecoder_enum<{elementCsTypeName}>"
@@ -421,7 +427,7 @@ internal static partial class Program
 
                     // This field is a fixed array
 
-                    var elementCsTypeName = SanitiseTypeName(elementType.CsTypeName);
+                    var elementCsTypeName = elementType.CsTypeName;
 
                     var decoderMethod = elementType.Category == SchemaTypeCategory.DeclaredEnum
                         ? $"CreateDecoder_enum<{elementCsTypeName}>"
@@ -449,13 +455,13 @@ internal static partial class Program
 
                     if (isPolymorphic)
                     {
-                        builder.AppendLine($"            SendNodeDecoder<{inner.Name}>? innerDecoder = null;");
+                        builder.AppendLine($"            SendNodeDecoder<{inner.CsTypeName}>? innerDecoder = null;");
                     }
                     else
                     {
                         builder.AppendLine($"            Debug.Assert(field.FieldSerializerKey.HasValue);");
                         builder.AppendLine($"            var serializerKey = field.FieldSerializerKey.Value;");
-                        builder.AppendLine($"            var innerDecoder = {inner.Name}.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);");
+                        builder.AppendLine($"            var innerDecoder = {inner.CsTypeName}.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);");
                     }
 
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
@@ -478,7 +484,7 @@ internal static partial class Program
                         builder.AppendLine($"                        innerDecoder = null;");
                         builder.AppendLine($"                        @this.{fieldCsPropertyName} = null;");
                         builder.AppendLine($"                    }}");
-                        builder.AppendLine($"                    else if ({inner.Name}.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))");
+                        builder.AppendLine($"                    else if ({inner.CsTypeName}.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))");
                         builder.AppendLine($"                    {{");
                         builder.AppendLine($"                        @this.{fieldCsPropertyName} = factory();");
                         builder.AppendLine($"                        return;");
@@ -514,8 +520,11 @@ internal static partial class Program
                     // This field is a primitive - decode and assign the value directly
 
                     var decoderMethod =
-                        field.Type.Category == SchemaTypeCategory.DeclaredEnum ? $"FieldDecode.CreateDecoder_enum<{fieldCsTypeName}>" :
-                        serializer == null ? $"FieldDecode.CreateDecoder_{fieldCsTypeName}" : $"CreateDecoder_{serializer}";
+                        field.Type.Category == SchemaTypeCategory.DeclaredEnum
+                            ? $"FieldDecode.CreateDecoder_enum<{fieldCsTypeName}>"
+                            : serializer == null
+                                ? $"FieldDecode.CreateDecoder_{fieldCsTypeName}"
+                                : $"CreateDecoder_{serializer}";
 
                     builder.AppendLine($"            var decoder = {decoderMethod}(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
@@ -528,13 +537,13 @@ internal static partial class Program
             }
         }
 
-        if (schemaClass.Parent == null)
+        if (parentType == null)
         {
             builder.AppendLine($"        throw new NotSupportedException($\"Unrecognised serializer field: {{field.VarName}}\");");
         }
         else
         {
-            builder.AppendLine($"        return {SanitiseTypeName(schemaClass.Parent)}.CreateFieldDecoder(field, decoderSet);");
+            builder.AppendLine($"        return {parentType.CsTypeName}.CreateFieldDecoder(field, decoderSet);");
         }
 
         builder.AppendLine("    }");
@@ -560,8 +569,10 @@ internal static partial class Program
 
     private static void WriteEnum(StringBuilder builder, string enumName, SchemaEnum schemaEnum)
     {
+        var enumType = SchemaFieldType.FromDeclaredClass(enumName);
+
         builder.AppendLine();
-        builder.AppendLine($"public enum {SanitiseTypeName(enumName)} : {EnumType(schemaEnum.Align)}");
+        builder.AppendLine($"public enum {enumType.CsTypeName} : {EnumType(schemaEnum.Align)}");
         builder.AppendLine("{");
 
         var maxValue = schemaEnum.Align switch

@@ -7,7 +7,7 @@ namespace DemoFile;
 /// These include messages like <see cref="CSVCMsg_ServerInfo"/>.
 /// </summary>
 /// <param name="Value">Current demo tick. <c>-1</c> or greater.</param>
-/// <seealso cref="GameTick_t"/>
+/// <seealso cref="GameTick"/>
 public readonly record struct DemoTick(int Value) : IComparable<DemoTick>
 {
     public int CompareTo(DemoTick other) => Value.CompareTo(other.Value);
