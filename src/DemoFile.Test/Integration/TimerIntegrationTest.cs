@@ -109,12 +109,12 @@ public class TimerIntegrationTest
     public async Task StartTimer_GameTick()
     {
         // Arrange
-        GameTick_t timerTick1 = default;
+        GameTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
         demo.CreateTimer(
-            new GameTick_t(120_000u),
+            new GameTick(120_000u),
             () =>
             {
                 timerTick1 = demo.CurrentGameTick;
@@ -131,33 +131,33 @@ public class TimerIntegrationTest
         }
 
         // Assert
-        Assert.That(timerTick1, Is.EqualTo(new GameTick_t(120_000u)));
+        Assert.That(timerTick1, Is.EqualTo(new GameTick(120_000u)));
     }
 
     [Test]
     public async Task StartTimer_GameTick_Cancel()
     {
         // Arrange
-        GameTick_t timerTick1 = default;
+        GameTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
         var disposable = demo.CreateTimer(
-            new GameTick_t(119_999u),
+            new GameTick(119_999u),
             () =>
             {
                 timerTick1 = demo.CurrentGameTick;
             });
 
         demo.CreateTimer(
-            new GameTick_t(119_998u),
+            new GameTick(119_998u),
             () =>
             {
                 disposable.Dispose();
             });
 
         demo.CreateTimer(
-            new GameTick_t(120_000u),
+            new GameTick(120_000u),
             () =>
             {
                 cts.Cancel();
@@ -173,20 +173,20 @@ public class TimerIntegrationTest
         }
 
         // Assert
-        Assert.That(demo.CurrentGameTick, Is.EqualTo(new GameTick_t(120_000u)));
-        Assert.That(timerTick1, Is.EqualTo(default(GameTick_t)));
+        Assert.That(demo.CurrentGameTick, Is.EqualTo(new GameTick(120_000u)));
+        Assert.That(timerTick1, Is.EqualTo(default(GameTick)));
     }
 
     [Test]
     public async Task StartTimer_GameTick_State()
     {
         // Arrange
-        GameTick_t timerTick1 = default;
+        GameTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
         demo.CreateTimer(
-            new GameTick_t(120_000u),
+            new GameTick(120_000u),
             demo,
             demo =>
             {
@@ -204,6 +204,6 @@ public class TimerIntegrationTest
         }
 
         // Assert
-        Assert.That(timerTick1, Is.EqualTo(new GameTick_t(120_000u)));
+        Assert.That(timerTick1, Is.EqualTo(new GameTick(120_000u)));
     }
 }

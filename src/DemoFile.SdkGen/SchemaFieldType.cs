@@ -8,6 +8,12 @@ public record SchemaFieldType(
     SchemaAtomicCategory? Atomic,
     SchemaFieldType? Inner)
 {
+    public static SchemaFieldType FromDeclaredClass(string declaredTypeName) => new(
+        Name: declaredTypeName,
+        Category: SchemaTypeCategory.DeclaredClass,
+        Atomic: null,
+        Inner: null);
+
     public bool IsString =>
         Category == SchemaTypeCategory.FixedArray
         && Inner!.Category == SchemaTypeCategory.Builtin
@@ -52,7 +58,7 @@ public record SchemaFieldType(
             "CUtlString" or "CUtlSymbolLarge" => "NetworkedString",
             "CEntityHandle" => "CHandle<CEntityInstance>",
             "CNetworkedQuantizedFloat" => "float",
-            _ => name
+            _ => SanitiseTypeName(name)
         },
         SchemaAtomicCategory.T => $"{name.Split('<')[0]}<{inner!.CsTypeName}>",
         SchemaAtomicCategory.Collection => $"NetworkedVector<{inner!.CsTypeName}>",
@@ -67,8 +73,31 @@ public record SchemaFieldType(
             ? "string"
             : $"{Inner!.CsTypeName}[]",
         SchemaTypeCategory.Atomic => AtomicToCsTypeName(Name, Atomic!.Value, Inner),
-        SchemaTypeCategory.DeclaredClass => Name,
-        SchemaTypeCategory.DeclaredEnum => Name,
+        SchemaTypeCategory.DeclaredClass => SanitiseTypeName(Name),
+        SchemaTypeCategory.DeclaredEnum => SanitiseTypeName(Name),
         _ => throw new ArgumentOutOfRangeException(nameof(Category), Category, $"Unsupported type category: {Category}")
+    };
+
+    private static string SanitiseTypeName(string typeName)
+    {
+        if (SchemaNameMap.TryGetValue(typeName, out var sanitised))
+            return sanitised;
+
+        var withoutColons = typeName.Replace(":", "");
+
+        return withoutColons.EndsWith("_t")
+            ? withoutColons[..^2]
+            : withoutColons;
+    }
+
+    private static readonly Dictionary<string, string> SchemaNameMap = new()
+    {
+        { "shard_model_desc_t", "SharedModelDesc" },
+        { "fogplayerparams_t", "FogPlayerParams" },
+        { "fogparams_t", "FogParams" },
+        { "audioparams_t", "AudioParams" },
+        { "loadout_slot_t", "LoadoutSlot" },
+        { "attributeprovidertypes_t", "AttributeProviderTypes" },
+        { "sky3dparams_t", "Sky3DParams" },
     };
 }

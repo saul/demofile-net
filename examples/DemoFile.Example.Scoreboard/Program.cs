@@ -46,7 +46,7 @@ internal class Program
 
         foreach (var player in orderedPlayers)
         {
-            var matchStats = player.ActionTrackingServices?.MatchStats ?? new CSMatchStats_t();
+            var matchStats = player.ActionTrackingServices?.MatchStats ?? new CSMatchStats();
             var teamColour = player.CSTeamNum switch
             {
                 CSTeamNumber.Terrorist => "bold red",

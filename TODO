@@ -1,6 +1,8 @@
-- [ ] Snapshot testing of demo files
 - [x] Add CI to run integration tests on PRs
 - [x] Add CI to push NuGet package on `main` builds
+- [x] Drop `_t` suffix on GameTick_t and GameTime_t
+- [ ] Fallback deserialisation for unknown classes/fields
+- [ ] Snapshot testing of demo files
 - [ ] Events for entity creation/update/deletion
 - [ ] Archive old saul/demofile repo
 - [ ] Release source2gen-json

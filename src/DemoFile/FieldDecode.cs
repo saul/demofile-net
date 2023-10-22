@@ -124,16 +124,16 @@ internal static class FieldDecode
             return buffer.ReadStringUtf8();
         };
 
-    public static FieldDecoder<GameTime_t> CreateDecoder_GameTime_t(FieldEncodingInfo fieldEncodingInfo) =>
+    public static FieldDecoder<GameTime> CreateDecoder_GameTime(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {
-            return new GameTime_t(DecodeFloatNoscale(ref buffer));
+            return new GameTime(DecodeFloatNoscale(ref buffer));
         };
 
-    public static FieldDecoder<GameTick_t> CreateDecoder_GameTick_t(FieldEncodingInfo fieldEncodingInfo) =>
+    public static FieldDecoder<GameTick> CreateDecoder_GameTick(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {
-            return new GameTick_t(buffer.ReadUVarInt32());
+            return new GameTick(buffer.ReadUVarInt32());
         };
 
     public static FieldDecoder<CEntityIndex> CreateDecoder_CEntityIndex(FieldEncodingInfo fieldEncodingInfo) =>
@@ -219,7 +219,7 @@ internal static class FieldDecode
 
     internal static float DecodeSimulationTime(ref BitBuffer buffer)
     {
-        var ticks = new GameTick_t(buffer.ReadUVarInt32());
+        var ticks = new GameTick(buffer.ReadUVarInt32());
         return ticks.ToGameTime().Value;
     }
 
@@ -246,11 +246,11 @@ internal static class FieldDecode
     public static FieldDecoder<ushort> CreateDecoder_UInt16(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => (ushort)buffer.ReadUVarInt32();
 
-    public static FieldDecoder<WorldGroupId_t> CreateDecoder_WorldGroupId_t(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => new WorldGroupId_t(buffer.ReadUVarInt32());
+    public static FieldDecoder<WorldGroupId> CreateDecoder_WorldGroupId(FieldEncodingInfo fieldEncodingInfo) =>
+        (ref BitBuffer buffer) => new WorldGroupId(buffer.ReadUVarInt32());
 
-    public static FieldDecoder<AttachmentHandle_t> CreateDecoder_AttachmentHandle_t(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => new AttachmentHandle_t(buffer.ReadUVarInt64());
+    public static FieldDecoder<AttachmentHandle> CreateDecoder_AttachmentHandle(FieldEncodingInfo fieldEncodingInfo) =>
+        (ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadUVarInt64());
 
     public static FieldDecoder<CTransform> CreateDecoder_CTransform(FieldEncodingInfo fieldFieldEncodingInfo) =>
         (ref BitBuffer buffer) => new CTransform(DecodeFloatNoscale(ref buffer));

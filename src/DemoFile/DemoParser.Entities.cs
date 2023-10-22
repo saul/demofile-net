@@ -266,7 +266,7 @@ public partial class DemoParser
             return;
 
         var tick = msg.Tick;
-        CurrentGameTick = new GameTick_t(tick);
+        CurrentGameTick = new GameTick(tick);
 
         while (_serverTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= tick)
         {
