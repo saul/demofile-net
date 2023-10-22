@@ -275,7 +275,7 @@ internal static class Program
             builder.AppendLine($"    internal static SendNodeDecoder<{classNameCs}> CreateDowncastDecoder(SerializerKey serializerKey, DecoderSet decoderSet, out Func<{classNameCs}> factory)");
             builder.AppendLine($"    {{");
 
-            builder.AppendLine($"        if (serializerKey.Name == \"{classNameCs}\")");
+            builder.AppendLine($"        if (serializerKey.Name == \"{schemaClassName}\")");
             builder.AppendLine($"        {{");
             builder.AppendLine($"            factory = () => new {classNameCs}();");
             builder.AppendLine($"            return decoderSet.GetDecoder<{classNameCs}>(serializerKey);");

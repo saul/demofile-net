@@ -20154,7 +20154,7 @@ public partial class PhysicsRagdollPose
 {
     internal static SendNodeDecoder<PhysicsRagdollPose> CreateDowncastDecoder(SerializerKey serializerKey, DecoderSet decoderSet, out Func<PhysicsRagdollPose> factory)
     {
-        if (serializerKey.Name == "PhysicsRagdollPose")
+        if (serializerKey.Name == "PhysicsRagdollPose_t")
         {
             factory = () => new PhysicsRagdollPose();
             return decoderSet.GetDecoder<PhysicsRagdollPose>(serializerKey);
