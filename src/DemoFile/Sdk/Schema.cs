@@ -3,6 +3,7 @@
 #pragma warning disable CS1591
 
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using DemoFile;
 
@@ -512,6 +513,16 @@ public partial class AudioParams
             return (AudioParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.SoundEventHash = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (AudioParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -1044,6 +1055,16 @@ public partial class CAnimGraphNetworkedVariables
                 @this.LastTeleportTime = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CAnimGraphNetworkedVariables @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -1093,6 +1114,16 @@ public partial class CAttributeList
                 }
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CAttributeList @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -1129,6 +1160,16 @@ public partial class CAttributeManager
             return (CAttributeManager @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ProviderType = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CAttributeManager @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -4377,6 +4418,16 @@ public partial class CCollisionProperty
                 @this.CapsuleRadius = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CCollisionProperty @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -4602,6 +4653,16 @@ public partial class CCSGameModeRules
 
     internal static SendNodeDecoder<CCSGameModeRules> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CCSGameModeRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -8966,6 +9027,16 @@ public partial class CDamageRecord
                 @this.KillType = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -9251,6 +9322,16 @@ public partial class CEconItemAttribute
                 @this.SetBonus = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CEconItemAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -9387,6 +9468,16 @@ public partial class CEntityComponent
 {
     internal static SendNodeDecoder<CEntityComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CEntityComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -9556,6 +9647,16 @@ public partial class CEntityIdentity
                 @this.NameStringableIndex = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CEntityIdentity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -9604,6 +9705,16 @@ public partial class CEntityInstance
                     var inner = @this.CScriptComponent ??= factory();
                     innerDecoder(inner, path[1..], ref buffer);
                 }
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CEntityInstance @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -11697,6 +11808,16 @@ public partial class CEnvWindShared
                 @this.InitialWindSpeed = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CEnvWindShared @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -12230,6 +12351,16 @@ public partial class CGameRules
 {
     internal static SendNodeDecoder<CGameRules> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -12320,6 +12451,16 @@ public partial class CGameSceneNode
             return (CGameSceneNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.HierarchyAttachName = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CGameSceneNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -12420,6 +12561,16 @@ public partial class CGlowProperty
             return (CGlowProperty @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EligibleForScreenHighlight = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CGlowProperty @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -12842,17 +12993,9 @@ public partial class CInferno : CBaseModelEntity
 {
     internal CInferno(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public Int32[] FireXDelta { get; private set; } = Array.Empty<Int32>();
+    public Vector[] FirePositions { get; private set; } = Array.Empty<Vector>();
 
-    public Int32[] FireYDelta { get; private set; } = Array.Empty<Int32>();
-
-    public Int32[] FireZDelta { get; private set; } = Array.Empty<Int32>();
-
-    public Int32[] FireParentXDelta { get; private set; } = Array.Empty<Int32>();
-
-    public Int32[] FireParentYDelta { get; private set; } = Array.Empty<Int32>();
-
-    public Int32[] FireParentZDelta { get; private set; } = Array.Empty<Int32>();
+    public Vector[] FireParentPositions { get; private set; } = Array.Empty<Vector>();
 
     public bool[] FireIsBurning { get; private set; } = Array.Empty<bool>();
 
@@ -12870,64 +13013,24 @@ public partial class CInferno : CBaseModelEntity
 
     internal new static SendNodeDecoder<CInferno> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (field.VarName == "m_fireXDelta")
+        if (field.VarName == "m_firePositions")
         {
             var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CInferno @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                if (@this.FireXDelta.Length == 0) @this.FireXDelta = new Int32[fixedArraySize];
-                @this.FireXDelta[path[1]] = decoder(ref buffer);
+                if (@this.FirePositions.Length == 0) @this.FirePositions = new Vector[fixedArraySize];
+                @this.FirePositions[path[1]] = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_fireYDelta")
+        if (field.VarName == "m_fireParentPositions")
         {
             var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CInferno @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                if (@this.FireYDelta.Length == 0) @this.FireYDelta = new Int32[fixedArraySize];
-                @this.FireYDelta[path[1]] = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_fireZDelta")
-        {
-            var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
-            return (CInferno @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (@this.FireZDelta.Length == 0) @this.FireZDelta = new Int32[fixedArraySize];
-                @this.FireZDelta[path[1]] = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_fireParentXDelta")
-        {
-            var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
-            return (CInferno @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (@this.FireParentXDelta.Length == 0) @this.FireParentXDelta = new Int32[fixedArraySize];
-                @this.FireParentXDelta[path[1]] = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_fireParentYDelta")
-        {
-            var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
-            return (CInferno @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (@this.FireParentYDelta.Length == 0) @this.FireParentYDelta = new Int32[fixedArraySize];
-                @this.FireParentYDelta[path[1]] = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_fireParentZDelta")
-        {
-            var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
-            return (CInferno @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (@this.FireParentZDelta.Length == 0) @this.FireParentZDelta = new Int32[fixedArraySize];
-                @this.FireParentZDelta[path[1]] = decoder(ref buffer);
+                if (@this.FireParentPositions.Length == 0) @this.FireParentPositions = new Vector[fixedArraySize];
+                @this.FireParentPositions[path[1]] = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bFireIsBurning")
@@ -14422,6 +14525,16 @@ public partial class CModelState
                 @this.IdealMotionType = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CModelState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -14528,6 +14641,16 @@ public partial class CNetworkedSequenceOperation
             return (CNetworkedSequenceOperation @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Weight = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CNetworkedSequenceOperation @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -14638,6 +14761,16 @@ public partial class CNetworkOriginCellCoordQuantizedVector
                 @this.Z = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -14691,6 +14824,16 @@ public partial class CNetworkVelocityVector
                 @this.Z = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CNetworkVelocityVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -14742,6 +14885,16 @@ public partial class CNetworkViewOffsetVector
             return (CNetworkViewOffsetVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Z = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CNetworkViewOffsetVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -14833,6 +14986,16 @@ public partial class CountdownTimer
             return (CountdownTimer @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.WorldGroupId = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CountdownTimer @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -16031,6 +16194,16 @@ public partial class CPlayerControllerComponent
 {
     internal static SendNodeDecoder<CPlayerControllerComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CPlayerControllerComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -16039,6 +16212,16 @@ public partial class CPlayerPawnComponent
 {
     internal static SendNodeDecoder<CPlayerPawnComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CPlayerPawnComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -17730,6 +17913,16 @@ public partial class CRetakeGameRules
                 @this.BombSite = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CRetakeGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -18624,6 +18817,16 @@ public partial class CSPerRoundStats
             return (CSPerRoundStats @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EnemiesFlashed = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CSPerRoundStats @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -19777,6 +19980,16 @@ public partial class EntityRenderAttribute
                 @this.Values = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (EntityRenderAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -19807,6 +20020,16 @@ public partial class EntitySpottedState
             {
                 if (@this.SpottedByMask.Length == 0) @this.SpottedByMask = new UInt32[fixedArraySize];
                 @this.SpottedByMask[path[1]] = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (EntitySpottedState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -20071,6 +20294,16 @@ public partial class FogParams
                 @this.NoReflectionFog = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (FogParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20090,6 +20323,16 @@ public partial class FogPlayerParams
                 @this.Ctrl = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (FogPlayerParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20098,6 +20341,16 @@ public partial class IEconItemInterface
 {
     internal static SendNodeDecoder<IEconItemInterface> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (IEconItemInterface @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20106,6 +20359,16 @@ public partial class InfoForResourceTypeCModel
 {
     internal static SendNodeDecoder<InfoForResourceTypeCModel> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (InfoForResourceTypeCModel @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20114,6 +20377,16 @@ public partial class InfoForResourceTypeCPostProcessingResource
 {
     internal static SendNodeDecoder<InfoForResourceTypeCPostProcessingResource> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (InfoForResourceTypeCPostProcessingResource @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20122,6 +20395,16 @@ public partial class InfoForResourceTypeCTextureBase
 {
     internal static SendNodeDecoder<InfoForResourceTypeCTextureBase> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (InfoForResourceTypeCTextureBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20130,6 +20413,16 @@ public partial class InfoForResourceTypeIMaterial2
 {
     internal static SendNodeDecoder<InfoForResourceTypeIMaterial2> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (InfoForResourceTypeIMaterial2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20138,6 +20431,16 @@ public partial class InfoForResourceTypeIParticleSystemDefinition
 {
     internal static SendNodeDecoder<InfoForResourceTypeIParticleSystemDefinition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (InfoForResourceTypeIParticleSystemDefinition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20146,6 +20449,16 @@ public partial class ISkeletonAnimationController
 {
     internal static SendNodeDecoder<ISkeletonAnimationController> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (ISkeletonAnimationController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20195,6 +20508,16 @@ public partial class PhysicsRagdollPose
             return (PhysicsRagdollPose @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Owner = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (PhysicsRagdollPose @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -20255,6 +20578,16 @@ public partial class SellbackPurchaseEntry
                 @this.Item = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (SellbackPurchaseEntry @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20291,6 +20624,16 @@ public partial class ServerAuthoritativeWeaponSlot
             return (ServerAuthoritativeWeaponSlot @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ItemDefIdx = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (ServerAuthoritativeWeaponSlot @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -20443,6 +20786,16 @@ public partial class SharedModelDesc
                 @this.LightGroup = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (SharedModelDesc @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20512,6 +20865,16 @@ public partial class Sky3DParams
                 @this.WorldGroupID = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (Sky3DParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20549,6 +20912,16 @@ public partial class ViewAngleServerChange
             return (ViewAngleServerChange @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Index = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (ViewAngleServerChange @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -20639,6 +21012,16 @@ public partial class VPhysicsCollisionAttribute
                 @this.CollisionFunctionMask = decoder(ref buffer);
             };
         }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (VPhysicsCollisionAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
 }
@@ -20665,6 +21048,16 @@ public partial class WeaponPurchaseCount
             return (WeaponPurchaseCount @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Count = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (WeaponPurchaseCount @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -20695,6 +21088,16 @@ public partial class WeaponPurchaseTracker
                     var element = @this.WeaponPurchases[index] ??= new WeaponPurchaseCount();
                     innerDecoder(element, path[2..], ref buffer);
                 }
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (WeaponPurchaseTracker @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
@@ -22199,1914 +22602,2550 @@ internal static class EntityFactories
 
 internal partial class DecoderSet
 {
-    public SendNodeDecoder<object> GetDecoder(string className)
+    public bool TryGetDecoder(string className, [NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)
     {
         switch (className)
         {
         case "audioparams_t":
         {
-            var decoder = GetDecoder<AudioParams>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((AudioParams)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<AudioParams>(new SerializerKey(className, 0));
+            classType = typeof(AudioParams);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((AudioParams)instance, path, ref buffer);
+            return true;
         }
         case "CAK47":
         {
-            var decoder = GetDecoder<CAK47>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CAK47)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CAK47>(new SerializerKey(className, 0));
+            classType = typeof(CAK47);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CAK47)instance, path, ref buffer);
+            return true;
         }
         case "CAnimGraphNetworkedVariables":
         {
-            var decoder = GetDecoder<CAnimGraphNetworkedVariables>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CAnimGraphNetworkedVariables)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CAnimGraphNetworkedVariables>(new SerializerKey(className, 0));
+            classType = typeof(CAnimGraphNetworkedVariables);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CAnimGraphNetworkedVariables)instance, path, ref buffer);
+            return true;
         }
         case "CAttributeContainer":
         {
-            var decoder = GetDecoder<CAttributeContainer>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CAttributeContainer)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CAttributeContainer>(new SerializerKey(className, 0));
+            classType = typeof(CAttributeContainer);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CAttributeContainer)instance, path, ref buffer);
+            return true;
         }
         case "CAttributeList":
         {
-            var decoder = GetDecoder<CAttributeList>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CAttributeList)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CAttributeList>(new SerializerKey(className, 0));
+            classType = typeof(CAttributeList);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CAttributeList)instance, path, ref buffer);
+            return true;
         }
         case "CAttributeManager":
         {
-            var decoder = GetDecoder<CAttributeManager>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CAttributeManager)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CAttributeManager>(new SerializerKey(className, 0));
+            classType = typeof(CAttributeManager);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CAttributeManager)instance, path, ref buffer);
+            return true;
         }
         case "CBarnLight":
         {
-            var decoder = GetDecoder<CBarnLight>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBarnLight)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBarnLight>(new SerializerKey(className, 0));
+            classType = typeof(CBarnLight);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBarnLight)instance, path, ref buffer);
+            return true;
         }
         case "CBaseAnimGraph":
         {
-            var decoder = GetDecoder<CBaseAnimGraph>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseAnimGraph)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseAnimGraph>(new SerializerKey(className, 0));
+            classType = typeof(CBaseAnimGraph);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseAnimGraph)instance, path, ref buffer);
+            return true;
         }
         case "CBaseAnimGraphController":
         {
-            var decoder = GetDecoder<CBaseAnimGraphController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseAnimGraphController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseAnimGraphController>(new SerializerKey(className, 0));
+            classType = typeof(CBaseAnimGraphController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseAnimGraphController)instance, path, ref buffer);
+            return true;
         }
         case "CBaseButton":
         {
-            var decoder = GetDecoder<CBaseButton>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseButton)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseButton>(new SerializerKey(className, 0));
+            classType = typeof(CBaseButton);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseButton)instance, path, ref buffer);
+            return true;
         }
         case "CBaseClientUIEntity":
         {
-            var decoder = GetDecoder<CBaseClientUIEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseClientUIEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseClientUIEntity>(new SerializerKey(className, 0));
+            classType = typeof(CBaseClientUIEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseClientUIEntity)instance, path, ref buffer);
+            return true;
         }
         case "CBaseCombatCharacter":
         {
-            var decoder = GetDecoder<CBaseCombatCharacter>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseCombatCharacter)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseCombatCharacter>(new SerializerKey(className, 0));
+            classType = typeof(CBaseCombatCharacter);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseCombatCharacter)instance, path, ref buffer);
+            return true;
         }
         case "CBaseCSGrenade":
         {
-            var decoder = GetDecoder<CBaseCSGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseCSGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseCSGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CBaseCSGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseCSGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CBaseCSGrenadeProjectile":
         {
-            var decoder = GetDecoder<CBaseCSGrenadeProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseCSGrenadeProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseCSGrenadeProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CBaseCSGrenadeProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseCSGrenadeProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CBaseDoor":
         {
-            var decoder = GetDecoder<CBaseDoor>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseDoor)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseDoor>(new SerializerKey(className, 0));
+            classType = typeof(CBaseDoor);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseDoor)instance, path, ref buffer);
+            return true;
         }
         case "CBaseEntity":
         {
-            var decoder = GetDecoder<CBaseEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseEntity>(new SerializerKey(className, 0));
+            classType = typeof(CBaseEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseEntity)instance, path, ref buffer);
+            return true;
         }
         case "CBaseFire":
         {
-            var decoder = GetDecoder<CBaseFire>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseFire)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseFire>(new SerializerKey(className, 0));
+            classType = typeof(CBaseFire);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseFire)instance, path, ref buffer);
+            return true;
         }
         case "CBaseFlex":
         {
-            var decoder = GetDecoder<CBaseFlex>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseFlex)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseFlex>(new SerializerKey(className, 0));
+            classType = typeof(CBaseFlex);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseFlex)instance, path, ref buffer);
+            return true;
         }
         case "CBaseGrenade":
         {
-            var decoder = GetDecoder<CBaseGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CBaseGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CBaseModelEntity":
         {
-            var decoder = GetDecoder<CBaseModelEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseModelEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseModelEntity>(new SerializerKey(className, 0));
+            classType = typeof(CBaseModelEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseModelEntity)instance, path, ref buffer);
+            return true;
         }
         case "CBasePlayerController":
         {
-            var decoder = GetDecoder<CBasePlayerController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBasePlayerController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBasePlayerController>(new SerializerKey(className, 0));
+            classType = typeof(CBasePlayerController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBasePlayerController)instance, path, ref buffer);
+            return true;
         }
         case "CBasePlayerPawn":
         {
-            var decoder = GetDecoder<CBasePlayerPawn>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBasePlayerPawn)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBasePlayerPawn>(new SerializerKey(className, 0));
+            classType = typeof(CBasePlayerPawn);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBasePlayerPawn)instance, path, ref buffer);
+            return true;
         }
         case "CBasePlayerWeapon":
         {
-            var decoder = GetDecoder<CBasePlayerWeapon>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBasePlayerWeapon)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBasePlayerWeapon>(new SerializerKey(className, 0));
+            classType = typeof(CBasePlayerWeapon);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBasePlayerWeapon)instance, path, ref buffer);
+            return true;
         }
         case "CBaseProp":
         {
-            var decoder = GetDecoder<CBaseProp>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseProp)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseProp>(new SerializerKey(className, 0));
+            classType = typeof(CBaseProp);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseProp)instance, path, ref buffer);
+            return true;
         }
         case "CBasePropDoor":
         {
-            var decoder = GetDecoder<CBasePropDoor>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBasePropDoor)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBasePropDoor>(new SerializerKey(className, 0));
+            classType = typeof(CBasePropDoor);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBasePropDoor)instance, path, ref buffer);
+            return true;
         }
         case "CBaseToggle":
         {
-            var decoder = GetDecoder<CBaseToggle>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseToggle)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseToggle>(new SerializerKey(className, 0));
+            classType = typeof(CBaseToggle);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseToggle)instance, path, ref buffer);
+            return true;
         }
         case "CBaseTrigger":
         {
-            var decoder = GetDecoder<CBaseTrigger>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseTrigger)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseTrigger>(new SerializerKey(className, 0));
+            classType = typeof(CBaseTrigger);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseTrigger)instance, path, ref buffer);
+            return true;
         }
         case "CBaseViewModel":
         {
-            var decoder = GetDecoder<CBaseViewModel>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBaseViewModel)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBaseViewModel>(new SerializerKey(className, 0));
+            classType = typeof(CBaseViewModel);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBaseViewModel)instance, path, ref buffer);
+            return true;
         }
         case "CBeam":
         {
-            var decoder = GetDecoder<CBeam>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBeam)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBeam>(new SerializerKey(className, 0));
+            classType = typeof(CBeam);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBeam)instance, path, ref buffer);
+            return true;
         }
         case "CBodyComponent":
         {
-            var decoder = GetDecoder<CBodyComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBodyComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBodyComponent>(new SerializerKey(className, 0));
+            classType = typeof(CBodyComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBodyComponent)instance, path, ref buffer);
+            return true;
         }
         case "CBodyComponentBaseAnimGraph":
         {
-            var decoder = GetDecoder<CBodyComponentBaseAnimGraph>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBodyComponentBaseAnimGraph)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBodyComponentBaseAnimGraph>(new SerializerKey(className, 0));
+            classType = typeof(CBodyComponentBaseAnimGraph);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBodyComponentBaseAnimGraph)instance, path, ref buffer);
+            return true;
         }
         case "CBodyComponentBaseModelEntity":
         {
-            var decoder = GetDecoder<CBodyComponentBaseModelEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBodyComponentBaseModelEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBodyComponentBaseModelEntity>(new SerializerKey(className, 0));
+            classType = typeof(CBodyComponentBaseModelEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBodyComponentBaseModelEntity)instance, path, ref buffer);
+            return true;
         }
         case "CBodyComponentPoint":
         {
-            var decoder = GetDecoder<CBodyComponentPoint>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBodyComponentPoint)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBodyComponentPoint>(new SerializerKey(className, 0));
+            classType = typeof(CBodyComponentPoint);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBodyComponentPoint)instance, path, ref buffer);
+            return true;
         }
         case "CBodyComponentSkeletonInstance":
         {
-            var decoder = GetDecoder<CBodyComponentSkeletonInstance>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBodyComponentSkeletonInstance)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBodyComponentSkeletonInstance>(new SerializerKey(className, 0));
+            classType = typeof(CBodyComponentSkeletonInstance);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBodyComponentSkeletonInstance)instance, path, ref buffer);
+            return true;
         }
         case "CBombTarget":
         {
-            var decoder = GetDecoder<CBombTarget>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBombTarget)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBombTarget>(new SerializerKey(className, 0));
+            classType = typeof(CBombTarget);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBombTarget)instance, path, ref buffer);
+            return true;
         }
         case "CBreachCharge":
         {
-            var decoder = GetDecoder<CBreachCharge>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBreachCharge)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBreachCharge>(new SerializerKey(className, 0));
+            classType = typeof(CBreachCharge);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBreachCharge)instance, path, ref buffer);
+            return true;
         }
         case "CBreachChargeProjectile":
         {
-            var decoder = GetDecoder<CBreachChargeProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBreachChargeProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBreachChargeProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CBreachChargeProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBreachChargeProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CBreakable":
         {
-            var decoder = GetDecoder<CBreakable>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBreakable)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBreakable>(new SerializerKey(className, 0));
+            classType = typeof(CBreakable);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBreakable)instance, path, ref buffer);
+            return true;
         }
         case "CBreakableProp":
         {
-            var decoder = GetDecoder<CBreakableProp>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBreakableProp)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBreakableProp>(new SerializerKey(className, 0));
+            classType = typeof(CBreakableProp);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBreakableProp)instance, path, ref buffer);
+            return true;
         }
         case "CBumpMine":
         {
-            var decoder = GetDecoder<CBumpMine>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBumpMine)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBumpMine>(new SerializerKey(className, 0));
+            classType = typeof(CBumpMine);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBumpMine)instance, path, ref buffer);
+            return true;
         }
         case "CBumpMineProjectile":
         {
-            var decoder = GetDecoder<CBumpMineProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CBumpMineProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CBumpMineProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CBumpMineProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CBumpMineProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CC4":
         {
-            var decoder = GetDecoder<CC4>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CC4)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CC4>(new SerializerKey(className, 0));
+            classType = typeof(CC4);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CC4)instance, path, ref buffer);
+            return true;
         }
         case "CChicken":
         {
-            var decoder = GetDecoder<CChicken>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CChicken)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CChicken>(new SerializerKey(className, 0));
+            classType = typeof(CChicken);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CChicken)instance, path, ref buffer);
+            return true;
         }
         case "CCollisionProperty":
         {
-            var decoder = GetDecoder<CCollisionProperty>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCollisionProperty)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCollisionProperty>(new SerializerKey(className, 0));
+            classType = typeof(CCollisionProperty);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCollisionProperty)instance, path, ref buffer);
+            return true;
         }
         case "CColorCorrection":
         {
-            var decoder = GetDecoder<CColorCorrection>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CColorCorrection)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CColorCorrection>(new SerializerKey(className, 0));
+            classType = typeof(CColorCorrection);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CColorCorrection)instance, path, ref buffer);
+            return true;
         }
         case "CColorCorrectionVolume":
         {
-            var decoder = GetDecoder<CColorCorrectionVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CColorCorrectionVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CColorCorrectionVolume>(new SerializerKey(className, 0));
+            classType = typeof(CColorCorrectionVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CColorCorrectionVolume)instance, path, ref buffer);
+            return true;
         }
         case "CCSGameModeRules":
         {
-            var decoder = GetDecoder<CCSGameModeRules>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGameModeRules)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGameModeRules>(new SerializerKey(className, 0));
+            classType = typeof(CCSGameModeRules);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGameModeRules)instance, path, ref buffer);
+            return true;
         }
         case "CCSGameModeRules_Deathmatch":
         {
-            var decoder = GetDecoder<CCSGameModeRules_Deathmatch>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGameModeRules_Deathmatch)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGameModeRules_Deathmatch>(new SerializerKey(className, 0));
+            classType = typeof(CCSGameModeRules_Deathmatch);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGameModeRules_Deathmatch)instance, path, ref buffer);
+            return true;
         }
         case "CCSGameModeRules_Noop":
         {
-            var decoder = GetDecoder<CCSGameModeRules_Noop>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGameModeRules_Noop)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGameModeRules_Noop>(new SerializerKey(className, 0));
+            classType = typeof(CCSGameModeRules_Noop);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGameModeRules_Noop)instance, path, ref buffer);
+            return true;
         }
         case "CCSGameModeRules_Scripted":
         {
-            var decoder = GetDecoder<CCSGameModeRules_Scripted>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGameModeRules_Scripted)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGameModeRules_Scripted>(new SerializerKey(className, 0));
+            classType = typeof(CCSGameModeRules_Scripted);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGameModeRules_Scripted)instance, path, ref buffer);
+            return true;
         }
         case "CCSGameRules":
         {
-            var decoder = GetDecoder<CCSGameRules>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGameRules)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGameRules>(new SerializerKey(className, 0));
+            classType = typeof(CCSGameRules);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGameRules)instance, path, ref buffer);
+            return true;
         }
         case "CCSGameRulesProxy":
         {
-            var decoder = GetDecoder<CCSGameRulesProxy>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGameRulesProxy)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGameRulesProxy>(new SerializerKey(className, 0));
+            classType = typeof(CCSGameRulesProxy);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGameRulesProxy)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamIntroCharacterPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamIntroCharacterPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamIntroCharacterPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamIntroCharacterPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamIntroCharacterPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamIntroCharacterPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamIntroCounterTerroristPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamIntroCounterTerroristPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamIntroCounterTerroristPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamIntroCounterTerroristPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamIntroCounterTerroristPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamIntroCounterTerroristPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamIntroTerroristPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamIntroTerroristPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamIntroTerroristPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamIntroTerroristPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamIntroTerroristPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamIntroTerroristPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamPreviewCharacterPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamPreviewCharacterPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamPreviewCharacterPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamPreviewCharacterPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamPreviewCharacterPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamPreviewCharacterPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamSelectCharacterPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamSelectCharacterPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamSelectCharacterPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamSelectCharacterPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamSelectCharacterPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamSelectCharacterPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamSelectCounterTerroristPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamSelectCounterTerroristPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamSelectCounterTerroristPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamSelectCounterTerroristPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamSelectCounterTerroristPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamSelectCounterTerroristPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_TeamSelectTerroristPosition":
         {
-            var decoder = GetDecoder<CCSGO_TeamSelectTerroristPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_TeamSelectTerroristPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_TeamSelectTerroristPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_TeamSelectTerroristPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_TeamSelectTerroristPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_WingmanIntroCharacterPosition":
         {
-            var decoder = GetDecoder<CCSGO_WingmanIntroCharacterPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_WingmanIntroCharacterPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_WingmanIntroCharacterPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_WingmanIntroCharacterPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_WingmanIntroCharacterPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_WingmanIntroCounterTerroristPosition":
         {
-            var decoder = GetDecoder<CCSGO_WingmanIntroCounterTerroristPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_WingmanIntroCounterTerroristPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_WingmanIntroCounterTerroristPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_WingmanIntroCounterTerroristPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_WingmanIntroCounterTerroristPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGO_WingmanIntroTerroristPosition":
         {
-            var decoder = GetDecoder<CCSGO_WingmanIntroTerroristPosition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGO_WingmanIntroTerroristPosition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGO_WingmanIntroTerroristPosition>(new SerializerKey(className, 0));
+            classType = typeof(CCSGO_WingmanIntroTerroristPosition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGO_WingmanIntroTerroristPosition)instance, path, ref buffer);
+            return true;
         }
         case "CCSGOViewModel":
         {
-            var decoder = GetDecoder<CCSGOViewModel>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSGOViewModel)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSGOViewModel>(new SerializerKey(className, 0));
+            classType = typeof(CCSGOViewModel);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSGOViewModel)instance, path, ref buffer);
+            return true;
         }
         case "CCSMinimapBoundary":
         {
-            var decoder = GetDecoder<CCSMinimapBoundary>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSMinimapBoundary)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSMinimapBoundary>(new SerializerKey(className, 0));
+            classType = typeof(CCSMinimapBoundary);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSMinimapBoundary)instance, path, ref buffer);
+            return true;
         }
         case "CCSObserver_CameraServices":
         {
-            var decoder = GetDecoder<CCSObserver_CameraServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSObserver_CameraServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSObserver_CameraServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSObserver_CameraServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSObserver_CameraServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSObserver_MovementServices":
         {
-            var decoder = GetDecoder<CCSObserver_MovementServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSObserver_MovementServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSObserver_MovementServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSObserver_MovementServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSObserver_MovementServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSObserver_ObserverServices":
         {
-            var decoder = GetDecoder<CCSObserver_ObserverServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSObserver_ObserverServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSObserver_ObserverServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSObserver_ObserverServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSObserver_ObserverServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSObserver_UseServices":
         {
-            var decoder = GetDecoder<CCSObserver_UseServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSObserver_UseServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSObserver_UseServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSObserver_UseServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSObserver_UseServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSObserver_ViewModelServices":
         {
-            var decoder = GetDecoder<CCSObserver_ViewModelServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSObserver_ViewModelServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSObserver_ViewModelServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSObserver_ViewModelServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSObserver_ViewModelServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSObserverPawn":
         {
-            var decoder = GetDecoder<CCSObserverPawn>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSObserverPawn)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSObserverPawn>(new SerializerKey(className, 0));
+            classType = typeof(CCSObserverPawn);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSObserverPawn)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_ActionTrackingServices":
         {
-            var decoder = GetDecoder<CCSPlayer_ActionTrackingServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_ActionTrackingServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_ActionTrackingServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_ActionTrackingServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_ActionTrackingServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_BulletServices":
         {
-            var decoder = GetDecoder<CCSPlayer_BulletServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_BulletServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_BulletServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_BulletServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_BulletServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_BuyServices":
         {
-            var decoder = GetDecoder<CCSPlayer_BuyServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_BuyServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_BuyServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_BuyServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_BuyServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_CameraServices":
         {
-            var decoder = GetDecoder<CCSPlayer_CameraServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_CameraServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_CameraServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_CameraServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_CameraServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_HostageServices":
         {
-            var decoder = GetDecoder<CCSPlayer_HostageServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_HostageServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_HostageServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_HostageServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_HostageServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_ItemServices":
         {
-            var decoder = GetDecoder<CCSPlayer_ItemServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_ItemServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_ItemServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_ItemServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_ItemServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_MovementServices":
         {
-            var decoder = GetDecoder<CCSPlayer_MovementServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_MovementServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_MovementServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_MovementServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_MovementServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_PingServices":
         {
-            var decoder = GetDecoder<CCSPlayer_PingServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_PingServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_PingServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_PingServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_PingServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_UseServices":
         {
-            var decoder = GetDecoder<CCSPlayer_UseServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_UseServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_UseServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_UseServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_UseServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_ViewModelServices":
         {
-            var decoder = GetDecoder<CCSPlayer_ViewModelServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_ViewModelServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_ViewModelServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_ViewModelServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_ViewModelServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_WaterServices":
         {
-            var decoder = GetDecoder<CCSPlayer_WaterServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_WaterServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_WaterServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_WaterServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_WaterServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayer_WeaponServices":
         {
-            var decoder = GetDecoder<CCSPlayer_WeaponServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayer_WeaponServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayer_WeaponServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayer_WeaponServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayer_WeaponServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerBase_CameraServices":
         {
-            var decoder = GetDecoder<CCSPlayerBase_CameraServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerBase_CameraServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerBase_CameraServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerBase_CameraServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerBase_CameraServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerController":
         {
-            var decoder = GetDecoder<CCSPlayerController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerController>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerController)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerController_ActionTrackingServices":
         {
-            var decoder = GetDecoder<CCSPlayerController_ActionTrackingServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerController_ActionTrackingServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerController_ActionTrackingServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerController_ActionTrackingServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerController_ActionTrackingServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerController_DamageServices":
         {
-            var decoder = GetDecoder<CCSPlayerController_DamageServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerController_DamageServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerController_DamageServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerController_DamageServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerController_DamageServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerController_InGameMoneyServices":
         {
-            var decoder = GetDecoder<CCSPlayerController_InGameMoneyServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerController_InGameMoneyServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerController_InGameMoneyServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerController_InGameMoneyServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerController_InGameMoneyServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerController_InventoryServices":
         {
-            var decoder = GetDecoder<CCSPlayerController_InventoryServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerController_InventoryServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerController_InventoryServices>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerController_InventoryServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerController_InventoryServices)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerPawn":
         {
-            var decoder = GetDecoder<CCSPlayerPawn>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerPawn)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerPawn>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerPawn);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerPawn)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerPawnBase":
         {
-            var decoder = GetDecoder<CCSPlayerPawnBase>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerPawnBase)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerPawnBase>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerPawnBase);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerPawnBase)instance, path, ref buffer);
+            return true;
         }
         case "CCSPlayerResource":
         {
-            var decoder = GetDecoder<CCSPlayerResource>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSPlayerResource)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSPlayerResource>(new SerializerKey(className, 0));
+            classType = typeof(CCSPlayerResource);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSPlayerResource)instance, path, ref buffer);
+            return true;
         }
         case "CCSTeam":
         {
-            var decoder = GetDecoder<CCSTeam>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSTeam)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSTeam>(new SerializerKey(className, 0));
+            classType = typeof(CCSTeam);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSTeam)instance, path, ref buffer);
+            return true;
         }
         case "CCSWeaponBase":
         {
-            var decoder = GetDecoder<CCSWeaponBase>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSWeaponBase)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSWeaponBase>(new SerializerKey(className, 0));
+            classType = typeof(CCSWeaponBase);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSWeaponBase)instance, path, ref buffer);
+            return true;
         }
         case "CCSWeaponBaseGun":
         {
-            var decoder = GetDecoder<CCSWeaponBaseGun>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CCSWeaponBaseGun)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CCSWeaponBaseGun>(new SerializerKey(className, 0));
+            classType = typeof(CCSWeaponBaseGun);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CCSWeaponBaseGun)instance, path, ref buffer);
+            return true;
         }
         case "CDamageRecord":
         {
-            var decoder = GetDecoder<CDamageRecord>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CDamageRecord)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CDamageRecord>(new SerializerKey(className, 0));
+            classType = typeof(CDamageRecord);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CDamageRecord)instance, path, ref buffer);
+            return true;
         }
         case "CDEagle":
         {
-            var decoder = GetDecoder<CDEagle>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CDEagle)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CDEagle>(new SerializerKey(className, 0));
+            classType = typeof(CDEagle);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CDEagle)instance, path, ref buffer);
+            return true;
         }
         case "CDecoyGrenade":
         {
-            var decoder = GetDecoder<CDecoyGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CDecoyGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CDecoyGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CDecoyGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CDecoyGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CDecoyProjectile":
         {
-            var decoder = GetDecoder<CDecoyProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CDecoyProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CDecoyProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CDecoyProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CDecoyProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CDynamicLight":
         {
-            var decoder = GetDecoder<CDynamicLight>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CDynamicLight)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CDynamicLight>(new SerializerKey(className, 0));
+            classType = typeof(CDynamicLight);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CDynamicLight)instance, path, ref buffer);
+            return true;
         }
         case "CDynamicProp":
         {
-            var decoder = GetDecoder<CDynamicProp>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CDynamicProp)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CDynamicProp>(new SerializerKey(className, 0));
+            classType = typeof(CDynamicProp);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CDynamicProp)instance, path, ref buffer);
+            return true;
         }
         case "CEconEntity":
         {
-            var decoder = GetDecoder<CEconEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEconEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEconEntity>(new SerializerKey(className, 0));
+            classType = typeof(CEconEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEconEntity)instance, path, ref buffer);
+            return true;
         }
         case "CEconItemAttribute":
         {
-            var decoder = GetDecoder<CEconItemAttribute>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEconItemAttribute)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEconItemAttribute>(new SerializerKey(className, 0));
+            classType = typeof(CEconItemAttribute);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEconItemAttribute)instance, path, ref buffer);
+            return true;
         }
         case "CEconItemView":
         {
-            var decoder = GetDecoder<CEconItemView>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEconItemView)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEconItemView>(new SerializerKey(className, 0));
+            classType = typeof(CEconItemView);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEconItemView)instance, path, ref buffer);
+            return true;
         }
         case "CEconWearable":
         {
-            var decoder = GetDecoder<CEconWearable>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEconWearable)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEconWearable>(new SerializerKey(className, 0));
+            classType = typeof(CEconWearable);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEconWearable)instance, path, ref buffer);
+            return true;
         }
         case "CEntityComponent":
         {
-            var decoder = GetDecoder<CEntityComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEntityComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEntityComponent>(new SerializerKey(className, 0));
+            classType = typeof(CEntityComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEntityComponent)instance, path, ref buffer);
+            return true;
         }
         case "CEntityDissolve":
         {
-            var decoder = GetDecoder<CEntityDissolve>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEntityDissolve)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEntityDissolve>(new SerializerKey(className, 0));
+            classType = typeof(CEntityDissolve);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEntityDissolve)instance, path, ref buffer);
+            return true;
         }
         case "CEntityFlame":
         {
-            var decoder = GetDecoder<CEntityFlame>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEntityFlame)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEntityFlame>(new SerializerKey(className, 0));
+            classType = typeof(CEntityFlame);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEntityFlame)instance, path, ref buffer);
+            return true;
         }
         case "CEntityIdentity":
         {
-            var decoder = GetDecoder<CEntityIdentity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEntityIdentity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEntityIdentity>(new SerializerKey(className, 0));
+            classType = typeof(CEntityIdentity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEntityIdentity)instance, path, ref buffer);
+            return true;
         }
         case "CEntityInstance":
         {
-            var decoder = GetDecoder<CEntityInstance>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEntityInstance)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEntityInstance>(new SerializerKey(className, 0));
+            classType = typeof(CEntityInstance);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEntityInstance)instance, path, ref buffer);
+            return true;
         }
         case "CEnvCombinedLightProbeVolume":
         {
-            var decoder = GetDecoder<CEnvCombinedLightProbeVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvCombinedLightProbeVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvCombinedLightProbeVolume>(new SerializerKey(className, 0));
+            classType = typeof(CEnvCombinedLightProbeVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvCombinedLightProbeVolume)instance, path, ref buffer);
+            return true;
         }
         case "CEnvCubemap":
         {
-            var decoder = GetDecoder<CEnvCubemap>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvCubemap)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvCubemap>(new SerializerKey(className, 0));
+            classType = typeof(CEnvCubemap);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvCubemap)instance, path, ref buffer);
+            return true;
         }
         case "CEnvCubemapBox":
         {
-            var decoder = GetDecoder<CEnvCubemapBox>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvCubemapBox)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvCubemapBox>(new SerializerKey(className, 0));
+            classType = typeof(CEnvCubemapBox);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvCubemapBox)instance, path, ref buffer);
+            return true;
         }
         case "CEnvCubemapFog":
         {
-            var decoder = GetDecoder<CEnvCubemapFog>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvCubemapFog)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvCubemapFog>(new SerializerKey(className, 0));
+            classType = typeof(CEnvCubemapFog);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvCubemapFog)instance, path, ref buffer);
+            return true;
         }
         case "CEnvDecal":
         {
-            var decoder = GetDecoder<CEnvDecal>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvDecal)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvDecal>(new SerializerKey(className, 0));
+            classType = typeof(CEnvDecal);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvDecal)instance, path, ref buffer);
+            return true;
         }
         case "CEnvDetailController":
         {
-            var decoder = GetDecoder<CEnvDetailController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvDetailController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvDetailController>(new SerializerKey(className, 0));
+            classType = typeof(CEnvDetailController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvDetailController)instance, path, ref buffer);
+            return true;
         }
         case "CEnvLightProbeVolume":
         {
-            var decoder = GetDecoder<CEnvLightProbeVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvLightProbeVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvLightProbeVolume>(new SerializerKey(className, 0));
+            classType = typeof(CEnvLightProbeVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvLightProbeVolume)instance, path, ref buffer);
+            return true;
         }
         case "CEnvParticleGlow":
         {
-            var decoder = GetDecoder<CEnvParticleGlow>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvParticleGlow)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvParticleGlow>(new SerializerKey(className, 0));
+            classType = typeof(CEnvParticleGlow);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvParticleGlow)instance, path, ref buffer);
+            return true;
         }
         case "CEnvProjectedTexture":
         {
-            var decoder = GetDecoder<CEnvProjectedTexture>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvProjectedTexture)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvProjectedTexture>(new SerializerKey(className, 0));
+            classType = typeof(CEnvProjectedTexture);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvProjectedTexture)instance, path, ref buffer);
+            return true;
         }
         case "CEnvScreenOverlay":
         {
-            var decoder = GetDecoder<CEnvScreenOverlay>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvScreenOverlay)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvScreenOverlay>(new SerializerKey(className, 0));
+            classType = typeof(CEnvScreenOverlay);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvScreenOverlay)instance, path, ref buffer);
+            return true;
         }
         case "CEnvSky":
         {
-            var decoder = GetDecoder<CEnvSky>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvSky)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvSky>(new SerializerKey(className, 0));
+            classType = typeof(CEnvSky);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvSky)instance, path, ref buffer);
+            return true;
         }
         case "CEnvVolumetricFogController":
         {
-            var decoder = GetDecoder<CEnvVolumetricFogController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvVolumetricFogController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvVolumetricFogController>(new SerializerKey(className, 0));
+            classType = typeof(CEnvVolumetricFogController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvVolumetricFogController)instance, path, ref buffer);
+            return true;
         }
         case "CEnvVolumetricFogVolume":
         {
-            var decoder = GetDecoder<CEnvVolumetricFogVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvVolumetricFogVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvVolumetricFogVolume>(new SerializerKey(className, 0));
+            classType = typeof(CEnvVolumetricFogVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvVolumetricFogVolume)instance, path, ref buffer);
+            return true;
         }
         case "CEnvWind":
         {
-            var decoder = GetDecoder<CEnvWind>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvWind)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvWind>(new SerializerKey(className, 0));
+            classType = typeof(CEnvWind);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvWind)instance, path, ref buffer);
+            return true;
         }
         case "CEnvWindShared":
         {
-            var decoder = GetDecoder<CEnvWindShared>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CEnvWindShared)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CEnvWindShared>(new SerializerKey(className, 0));
+            classType = typeof(CEnvWindShared);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CEnvWindShared)instance, path, ref buffer);
+            return true;
         }
         case "CFireCrackerBlast":
         {
-            var decoder = GetDecoder<CFireCrackerBlast>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFireCrackerBlast)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFireCrackerBlast>(new SerializerKey(className, 0));
+            classType = typeof(CFireCrackerBlast);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFireCrackerBlast)instance, path, ref buffer);
+            return true;
         }
         case "CFireSmoke":
         {
-            var decoder = GetDecoder<CFireSmoke>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFireSmoke)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFireSmoke>(new SerializerKey(className, 0));
+            classType = typeof(CFireSmoke);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFireSmoke)instance, path, ref buffer);
+            return true;
         }
         case "CFish":
         {
-            var decoder = GetDecoder<CFish>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFish)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFish>(new SerializerKey(className, 0));
+            classType = typeof(CFish);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFish)instance, path, ref buffer);
+            return true;
         }
         case "CFists":
         {
-            var decoder = GetDecoder<CFists>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFists)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFists>(new SerializerKey(className, 0));
+            classType = typeof(CFists);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFists)instance, path, ref buffer);
+            return true;
         }
         case "CFlashbang":
         {
-            var decoder = GetDecoder<CFlashbang>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFlashbang)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFlashbang>(new SerializerKey(className, 0));
+            classType = typeof(CFlashbang);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFlashbang)instance, path, ref buffer);
+            return true;
         }
         case "CFlashbangProjectile":
         {
-            var decoder = GetDecoder<CFlashbangProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFlashbangProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFlashbangProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CFlashbangProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFlashbangProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CFogController":
         {
-            var decoder = GetDecoder<CFogController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFogController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFogController>(new SerializerKey(className, 0));
+            classType = typeof(CFogController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFogController)instance, path, ref buffer);
+            return true;
         }
         case "CFootstepControl":
         {
-            var decoder = GetDecoder<CFootstepControl>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFootstepControl)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFootstepControl>(new SerializerKey(className, 0));
+            classType = typeof(CFootstepControl);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFootstepControl)instance, path, ref buffer);
+            return true;
         }
         case "CFuncBrush":
         {
-            var decoder = GetDecoder<CFuncBrush>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncBrush)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncBrush>(new SerializerKey(className, 0));
+            classType = typeof(CFuncBrush);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncBrush)instance, path, ref buffer);
+            return true;
         }
         case "CFuncConveyor":
         {
-            var decoder = GetDecoder<CFuncConveyor>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncConveyor)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncConveyor>(new SerializerKey(className, 0));
+            classType = typeof(CFuncConveyor);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncConveyor)instance, path, ref buffer);
+            return true;
         }
         case "CFuncElectrifiedVolume":
         {
-            var decoder = GetDecoder<CFuncElectrifiedVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncElectrifiedVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncElectrifiedVolume>(new SerializerKey(className, 0));
+            classType = typeof(CFuncElectrifiedVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncElectrifiedVolume)instance, path, ref buffer);
+            return true;
         }
         case "CFuncLadder":
         {
-            var decoder = GetDecoder<CFuncLadder>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncLadder)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncLadder>(new SerializerKey(className, 0));
+            classType = typeof(CFuncLadder);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncLadder)instance, path, ref buffer);
+            return true;
         }
         case "CFuncMonitor":
         {
-            var decoder = GetDecoder<CFuncMonitor>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncMonitor)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncMonitor>(new SerializerKey(className, 0));
+            classType = typeof(CFuncMonitor);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncMonitor)instance, path, ref buffer);
+            return true;
         }
         case "CFuncMoveLinear":
         {
-            var decoder = GetDecoder<CFuncMoveLinear>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncMoveLinear)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncMoveLinear>(new SerializerKey(className, 0));
+            classType = typeof(CFuncMoveLinear);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncMoveLinear)instance, path, ref buffer);
+            return true;
         }
         case "CFuncRotating":
         {
-            var decoder = GetDecoder<CFuncRotating>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncRotating)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncRotating>(new SerializerKey(className, 0));
+            classType = typeof(CFuncRotating);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncRotating)instance, path, ref buffer);
+            return true;
         }
         case "CFuncTrackTrain":
         {
-            var decoder = GetDecoder<CFuncTrackTrain>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncTrackTrain)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncTrackTrain>(new SerializerKey(className, 0));
+            classType = typeof(CFuncTrackTrain);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncTrackTrain)instance, path, ref buffer);
+            return true;
         }
         case "CFuncWater":
         {
-            var decoder = GetDecoder<CFuncWater>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CFuncWater)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CFuncWater>(new SerializerKey(className, 0));
+            classType = typeof(CFuncWater);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CFuncWater)instance, path, ref buffer);
+            return true;
         }
         case "CGameRules":
         {
-            var decoder = GetDecoder<CGameRules>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CGameRules)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CGameRules>(new SerializerKey(className, 0));
+            classType = typeof(CGameRules);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CGameRules)instance, path, ref buffer);
+            return true;
         }
         case "CGameRulesProxy":
         {
-            var decoder = GetDecoder<CGameRulesProxy>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CGameRulesProxy)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CGameRulesProxy>(new SerializerKey(className, 0));
+            classType = typeof(CGameRulesProxy);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CGameRulesProxy)instance, path, ref buffer);
+            return true;
         }
         case "CGameSceneNode":
         {
-            var decoder = GetDecoder<CGameSceneNode>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CGameSceneNode)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CGameSceneNode>(new SerializerKey(className, 0));
+            classType = typeof(CGameSceneNode);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CGameSceneNode)instance, path, ref buffer);
+            return true;
         }
         case "CGlowProperty":
         {
-            var decoder = GetDecoder<CGlowProperty>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CGlowProperty)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CGlowProperty>(new SerializerKey(className, 0));
+            classType = typeof(CGlowProperty);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CGlowProperty)instance, path, ref buffer);
+            return true;
         }
         case "CGradientFog":
         {
-            var decoder = GetDecoder<CGradientFog>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CGradientFog)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CGradientFog>(new SerializerKey(className, 0));
+            classType = typeof(CGradientFog);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CGradientFog)instance, path, ref buffer);
+            return true;
         }
         case "CHandleTest":
         {
-            var decoder = GetDecoder<CHandleTest>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHandleTest)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHandleTest>(new SerializerKey(className, 0));
+            classType = typeof(CHandleTest);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHandleTest)instance, path, ref buffer);
+            return true;
         }
         case "CHEGrenade":
         {
-            var decoder = GetDecoder<CHEGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHEGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHEGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CHEGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHEGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CHitboxComponent":
         {
-            var decoder = GetDecoder<CHitboxComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHitboxComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHitboxComponent>(new SerializerKey(className, 0));
+            classType = typeof(CHitboxComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHitboxComponent)instance, path, ref buffer);
+            return true;
         }
         case "CHostage":
         {
-            var decoder = GetDecoder<CHostage>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHostage)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHostage>(new SerializerKey(className, 0));
+            classType = typeof(CHostage);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHostage)instance, path, ref buffer);
+            return true;
         }
         case "CHostageCarriableProp":
         {
-            var decoder = GetDecoder<CHostageCarriableProp>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHostageCarriableProp)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHostageCarriableProp>(new SerializerKey(className, 0));
+            classType = typeof(CHostageCarriableProp);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHostageCarriableProp)instance, path, ref buffer);
+            return true;
         }
         case "CHostageExpresserShim":
         {
-            var decoder = GetDecoder<CHostageExpresserShim>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHostageExpresserShim)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHostageExpresserShim>(new SerializerKey(className, 0));
+            classType = typeof(CHostageExpresserShim);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHostageExpresserShim)instance, path, ref buffer);
+            return true;
         }
         case "CHostageRescueZone":
         {
-            var decoder = GetDecoder<CHostageRescueZone>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHostageRescueZone)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHostageRescueZone>(new SerializerKey(className, 0));
+            classType = typeof(CHostageRescueZone);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHostageRescueZone)instance, path, ref buffer);
+            return true;
         }
         case "CHostageRescueZoneShim":
         {
-            var decoder = GetDecoder<CHostageRescueZoneShim>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CHostageRescueZoneShim)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CHostageRescueZoneShim>(new SerializerKey(className, 0));
+            classType = typeof(CHostageRescueZoneShim);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHostageRescueZoneShim)instance, path, ref buffer);
+            return true;
         }
         case "CIncendiaryGrenade":
         {
-            var decoder = GetDecoder<CIncendiaryGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CIncendiaryGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CIncendiaryGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CIncendiaryGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CIncendiaryGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CInferno":
         {
-            var decoder = GetDecoder<CInferno>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CInferno)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CInferno>(new SerializerKey(className, 0));
+            classType = typeof(CInferno);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CInferno)instance, path, ref buffer);
+            return true;
         }
         case "CInfoInstructorHintHostageRescueZone":
         {
-            var decoder = GetDecoder<CInfoInstructorHintHostageRescueZone>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CInfoInstructorHintHostageRescueZone)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CInfoInstructorHintHostageRescueZone>(new SerializerKey(className, 0));
+            classType = typeof(CInfoInstructorHintHostageRescueZone);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CInfoInstructorHintHostageRescueZone)instance, path, ref buffer);
+            return true;
         }
         case "CInfoLadderDismount":
         {
-            var decoder = GetDecoder<CInfoLadderDismount>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CInfoLadderDismount)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CInfoLadderDismount>(new SerializerKey(className, 0));
+            classType = typeof(CInfoLadderDismount);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CInfoLadderDismount)instance, path, ref buffer);
+            return true;
         }
         case "CInfoOffscreenPanoramaTexture":
         {
-            var decoder = GetDecoder<CInfoOffscreenPanoramaTexture>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CInfoOffscreenPanoramaTexture)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CInfoOffscreenPanoramaTexture>(new SerializerKey(className, 0));
+            classType = typeof(CInfoOffscreenPanoramaTexture);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CInfoOffscreenPanoramaTexture)instance, path, ref buffer);
+            return true;
         }
         case "CInfoVisibilityBox":
         {
-            var decoder = GetDecoder<CInfoVisibilityBox>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CInfoVisibilityBox)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CInfoVisibilityBox>(new SerializerKey(className, 0));
+            classType = typeof(CInfoVisibilityBox);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CInfoVisibilityBox)instance, path, ref buffer);
+            return true;
         }
         case "CInfoWorldLayer":
         {
-            var decoder = GetDecoder<CInfoWorldLayer>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CInfoWorldLayer)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CInfoWorldLayer>(new SerializerKey(className, 0));
+            classType = typeof(CInfoWorldLayer);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CInfoWorldLayer)instance, path, ref buffer);
+            return true;
         }
         case "CItem":
         {
-            var decoder = GetDecoder<CItem>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CItem)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CItem>(new SerializerKey(className, 0));
+            classType = typeof(CItem);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CItem)instance, path, ref buffer);
+            return true;
         }
         case "CItem_Healthshot":
         {
-            var decoder = GetDecoder<CItem_Healthshot>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CItem_Healthshot)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CItem_Healthshot>(new SerializerKey(className, 0));
+            classType = typeof(CItem_Healthshot);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CItem_Healthshot)instance, path, ref buffer);
+            return true;
         }
         case "CItemDogtags":
         {
-            var decoder = GetDecoder<CItemDogtags>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CItemDogtags)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CItemDogtags>(new SerializerKey(className, 0));
+            classType = typeof(CItemDogtags);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CItemDogtags)instance, path, ref buffer);
+            return true;
         }
         case "CKnife":
         {
-            var decoder = GetDecoder<CKnife>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CKnife)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CKnife>(new SerializerKey(className, 0));
+            classType = typeof(CKnife);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CKnife)instance, path, ref buffer);
+            return true;
         }
         case "CLightComponent":
         {
-            var decoder = GetDecoder<CLightComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightComponent>(new SerializerKey(className, 0));
+            classType = typeof(CLightComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightComponent)instance, path, ref buffer);
+            return true;
         }
         case "CLightDirectionalEntity":
         {
-            var decoder = GetDecoder<CLightDirectionalEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightDirectionalEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightDirectionalEntity>(new SerializerKey(className, 0));
+            classType = typeof(CLightDirectionalEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightDirectionalEntity)instance, path, ref buffer);
+            return true;
         }
         case "CLightEntity":
         {
-            var decoder = GetDecoder<CLightEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightEntity>(new SerializerKey(className, 0));
+            classType = typeof(CLightEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightEntity)instance, path, ref buffer);
+            return true;
         }
         case "CLightEnvironmentEntity":
         {
-            var decoder = GetDecoder<CLightEnvironmentEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightEnvironmentEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightEnvironmentEntity>(new SerializerKey(className, 0));
+            classType = typeof(CLightEnvironmentEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightEnvironmentEntity)instance, path, ref buffer);
+            return true;
         }
         case "CLightGlow":
         {
-            var decoder = GetDecoder<CLightGlow>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightGlow)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightGlow>(new SerializerKey(className, 0));
+            classType = typeof(CLightGlow);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightGlow)instance, path, ref buffer);
+            return true;
         }
         case "CLightOrthoEntity":
         {
-            var decoder = GetDecoder<CLightOrthoEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightOrthoEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightOrthoEntity>(new SerializerKey(className, 0));
+            classType = typeof(CLightOrthoEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightOrthoEntity)instance, path, ref buffer);
+            return true;
         }
         case "CLightSpotEntity":
         {
-            var decoder = GetDecoder<CLightSpotEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CLightSpotEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CLightSpotEntity>(new SerializerKey(className, 0));
+            classType = typeof(CLightSpotEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CLightSpotEntity)instance, path, ref buffer);
+            return true;
         }
         case "CMapVetoPickController":
         {
-            var decoder = GetDecoder<CMapVetoPickController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CMapVetoPickController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CMapVetoPickController>(new SerializerKey(className, 0));
+            classType = typeof(CMapVetoPickController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CMapVetoPickController)instance, path, ref buffer);
+            return true;
         }
         case "CMelee":
         {
-            var decoder = GetDecoder<CMelee>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CMelee)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CMelee>(new SerializerKey(className, 0));
+            classType = typeof(CMelee);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CMelee)instance, path, ref buffer);
+            return true;
         }
         case "CModelPointEntity":
         {
-            var decoder = GetDecoder<CModelPointEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CModelPointEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CModelPointEntity>(new SerializerKey(className, 0));
+            classType = typeof(CModelPointEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CModelPointEntity)instance, path, ref buffer);
+            return true;
         }
         case "CModelState":
         {
-            var decoder = GetDecoder<CModelState>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CModelState)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CModelState>(new SerializerKey(className, 0));
+            classType = typeof(CModelState);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CModelState)instance, path, ref buffer);
+            return true;
         }
         case "CMolotovGrenade":
         {
-            var decoder = GetDecoder<CMolotovGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CMolotovGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CMolotovGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CMolotovGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CMolotovGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CMolotovProjectile":
         {
-            var decoder = GetDecoder<CMolotovProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CMolotovProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CMolotovProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CMolotovProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CMolotovProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CMultiplayRules":
         {
-            var decoder = GetDecoder<CMultiplayRules>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CMultiplayRules)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CMultiplayRules>(new SerializerKey(className, 0));
+            classType = typeof(CMultiplayRules);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CMultiplayRules)instance, path, ref buffer);
+            return true;
         }
         case "CNetworkedSequenceOperation":
         {
-            var decoder = GetDecoder<CNetworkedSequenceOperation>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CNetworkedSequenceOperation)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CNetworkedSequenceOperation>(new SerializerKey(className, 0));
+            classType = typeof(CNetworkedSequenceOperation);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CNetworkedSequenceOperation)instance, path, ref buffer);
+            return true;
         }
         case "CNetworkOriginCellCoordQuantizedVector":
         {
-            var decoder = GetDecoder<CNetworkOriginCellCoordQuantizedVector>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CNetworkOriginCellCoordQuantizedVector)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CNetworkOriginCellCoordQuantizedVector>(new SerializerKey(className, 0));
+            classType = typeof(CNetworkOriginCellCoordQuantizedVector);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CNetworkOriginCellCoordQuantizedVector)instance, path, ref buffer);
+            return true;
         }
         case "CNetworkVelocityVector":
         {
-            var decoder = GetDecoder<CNetworkVelocityVector>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CNetworkVelocityVector)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CNetworkVelocityVector>(new SerializerKey(className, 0));
+            classType = typeof(CNetworkVelocityVector);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CNetworkVelocityVector)instance, path, ref buffer);
+            return true;
         }
         case "CNetworkViewOffsetVector":
         {
-            var decoder = GetDecoder<CNetworkViewOffsetVector>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CNetworkViewOffsetVector)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CNetworkViewOffsetVector>(new SerializerKey(className, 0));
+            classType = typeof(CNetworkViewOffsetVector);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CNetworkViewOffsetVector)instance, path, ref buffer);
+            return true;
         }
         case "COmniLight":
         {
-            var decoder = GetDecoder<COmniLight>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((COmniLight)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<COmniLight>(new SerializerKey(className, 0));
+            classType = typeof(COmniLight);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((COmniLight)instance, path, ref buffer);
+            return true;
         }
         case "CountdownTimer":
         {
-            var decoder = GetDecoder<CountdownTimer>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CountdownTimer)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CountdownTimer>(new SerializerKey(className, 0));
+            classType = typeof(CountdownTimer);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CountdownTimer)instance, path, ref buffer);
+            return true;
         }
         case "CParticleSystem":
         {
-            var decoder = GetDecoder<CParticleSystem>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CParticleSystem)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CParticleSystem>(new SerializerKey(className, 0));
+            classType = typeof(CParticleSystem);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CParticleSystem)instance, path, ref buffer);
+            return true;
         }
         case "CPathParticleRope":
         {
-            var decoder = GetDecoder<CPathParticleRope>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPathParticleRope)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPathParticleRope>(new SerializerKey(className, 0));
+            classType = typeof(CPathParticleRope);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPathParticleRope)instance, path, ref buffer);
+            return true;
         }
         case "CPhysBox":
         {
-            var decoder = GetDecoder<CPhysBox>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPhysBox)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPhysBox>(new SerializerKey(className, 0));
+            classType = typeof(CPhysBox);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPhysBox)instance, path, ref buffer);
+            return true;
         }
         case "CPhysicsProp":
         {
-            var decoder = GetDecoder<CPhysicsProp>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPhysicsProp)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPhysicsProp>(new SerializerKey(className, 0));
+            classType = typeof(CPhysicsProp);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPhysicsProp)instance, path, ref buffer);
+            return true;
         }
         case "CPhysicsPropMultiplayer":
         {
-            var decoder = GetDecoder<CPhysicsPropMultiplayer>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPhysicsPropMultiplayer)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPhysicsPropMultiplayer>(new SerializerKey(className, 0));
+            classType = typeof(CPhysicsPropMultiplayer);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPhysicsPropMultiplayer)instance, path, ref buffer);
+            return true;
         }
         case "CPhysMagnet":
         {
-            var decoder = GetDecoder<CPhysMagnet>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPhysMagnet)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPhysMagnet>(new SerializerKey(className, 0));
+            classType = typeof(CPhysMagnet);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPhysMagnet)instance, path, ref buffer);
+            return true;
         }
         case "CPlantedC4":
         {
-            var decoder = GetDecoder<CPlantedC4>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlantedC4)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlantedC4>(new SerializerKey(className, 0));
+            classType = typeof(CPlantedC4);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlantedC4)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_AutoaimServices":
         {
-            var decoder = GetDecoder<CPlayer_AutoaimServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_AutoaimServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_AutoaimServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_AutoaimServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_AutoaimServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_CameraServices":
         {
-            var decoder = GetDecoder<CPlayer_CameraServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_CameraServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_CameraServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_CameraServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_CameraServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_FlashlightServices":
         {
-            var decoder = GetDecoder<CPlayer_FlashlightServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_FlashlightServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_FlashlightServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_FlashlightServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_FlashlightServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_ItemServices":
         {
-            var decoder = GetDecoder<CPlayer_ItemServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_ItemServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_ItemServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_ItemServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_ItemServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_MovementServices":
         {
-            var decoder = GetDecoder<CPlayer_MovementServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_MovementServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_MovementServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_MovementServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_MovementServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_MovementServices_Humanoid":
         {
-            var decoder = GetDecoder<CPlayer_MovementServices_Humanoid>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_MovementServices_Humanoid)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_MovementServices_Humanoid>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_MovementServices_Humanoid);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_MovementServices_Humanoid)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_ObserverServices":
         {
-            var decoder = GetDecoder<CPlayer_ObserverServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_ObserverServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_ObserverServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_ObserverServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_ObserverServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_UseServices":
         {
-            var decoder = GetDecoder<CPlayer_UseServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_UseServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_UseServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_UseServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_UseServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_ViewModelServices":
         {
-            var decoder = GetDecoder<CPlayer_ViewModelServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_ViewModelServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_ViewModelServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_ViewModelServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_ViewModelServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_WaterServices":
         {
-            var decoder = GetDecoder<CPlayer_WaterServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_WaterServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_WaterServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_WaterServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_WaterServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayer_WeaponServices":
         {
-            var decoder = GetDecoder<CPlayer_WeaponServices>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayer_WeaponServices)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayer_WeaponServices>(new SerializerKey(className, 0));
+            classType = typeof(CPlayer_WeaponServices);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayer_WeaponServices)instance, path, ref buffer);
+            return true;
         }
         case "CPlayerControllerComponent":
         {
-            var decoder = GetDecoder<CPlayerControllerComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayerControllerComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayerControllerComponent>(new SerializerKey(className, 0));
+            classType = typeof(CPlayerControllerComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayerControllerComponent)instance, path, ref buffer);
+            return true;
         }
         case "CPlayerPawnComponent":
         {
-            var decoder = GetDecoder<CPlayerPawnComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayerPawnComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayerPawnComponent>(new SerializerKey(className, 0));
+            classType = typeof(CPlayerPawnComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayerPawnComponent)instance, path, ref buffer);
+            return true;
         }
         case "CPlayerPing":
         {
-            var decoder = GetDecoder<CPlayerPing>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayerPing)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayerPing>(new SerializerKey(className, 0));
+            classType = typeof(CPlayerPing);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayerPing)instance, path, ref buffer);
+            return true;
         }
         case "CPlayerSprayDecal":
         {
-            var decoder = GetDecoder<CPlayerSprayDecal>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayerSprayDecal)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayerSprayDecal>(new SerializerKey(className, 0));
+            classType = typeof(CPlayerSprayDecal);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayerSprayDecal)instance, path, ref buffer);
+            return true;
         }
         case "CPlayerVisibility":
         {
-            var decoder = GetDecoder<CPlayerVisibility>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPlayerVisibility)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPlayerVisibility>(new SerializerKey(className, 0));
+            classType = typeof(CPlayerVisibility);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPlayerVisibility)instance, path, ref buffer);
+            return true;
         }
         case "CPointCamera":
         {
-            var decoder = GetDecoder<CPointCamera>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointCamera)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointCamera>(new SerializerKey(className, 0));
+            classType = typeof(CPointCamera);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointCamera)instance, path, ref buffer);
+            return true;
         }
         case "CPointClientUIDialog":
         {
-            var decoder = GetDecoder<CPointClientUIDialog>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointClientUIDialog)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointClientUIDialog>(new SerializerKey(className, 0));
+            classType = typeof(CPointClientUIDialog);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointClientUIDialog)instance, path, ref buffer);
+            return true;
         }
         case "CPointClientUIWorldPanel":
         {
-            var decoder = GetDecoder<CPointClientUIWorldPanel>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointClientUIWorldPanel)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointClientUIWorldPanel>(new SerializerKey(className, 0));
+            classType = typeof(CPointClientUIWorldPanel);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointClientUIWorldPanel)instance, path, ref buffer);
+            return true;
         }
         case "CPointClientUIWorldTextPanel":
         {
-            var decoder = GetDecoder<CPointClientUIWorldTextPanel>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointClientUIWorldTextPanel)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointClientUIWorldTextPanel>(new SerializerKey(className, 0));
+            classType = typeof(CPointClientUIWorldTextPanel);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointClientUIWorldTextPanel)instance, path, ref buffer);
+            return true;
         }
         case "CPointCommentaryNode":
         {
-            var decoder = GetDecoder<CPointCommentaryNode>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointCommentaryNode)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointCommentaryNode>(new SerializerKey(className, 0));
+            classType = typeof(CPointCommentaryNode);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointCommentaryNode)instance, path, ref buffer);
+            return true;
         }
         case "CPointEntity":
         {
-            var decoder = GetDecoder<CPointEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointEntity>(new SerializerKey(className, 0));
+            classType = typeof(CPointEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointEntity)instance, path, ref buffer);
+            return true;
         }
         case "CPointValueRemapper":
         {
-            var decoder = GetDecoder<CPointValueRemapper>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointValueRemapper)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointValueRemapper>(new SerializerKey(className, 0));
+            classType = typeof(CPointValueRemapper);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointValueRemapper)instance, path, ref buffer);
+            return true;
         }
         case "CPointWorldText":
         {
-            var decoder = GetDecoder<CPointWorldText>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPointWorldText)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPointWorldText>(new SerializerKey(className, 0));
+            classType = typeof(CPointWorldText);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPointWorldText)instance, path, ref buffer);
+            return true;
         }
         case "CPostProcessingVolume":
         {
-            var decoder = GetDecoder<CPostProcessingVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPostProcessingVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPostProcessingVolume>(new SerializerKey(className, 0));
+            classType = typeof(CPostProcessingVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPostProcessingVolume)instance, path, ref buffer);
+            return true;
         }
         case "CPrecipitation":
         {
-            var decoder = GetDecoder<CPrecipitation>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPrecipitation)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPrecipitation>(new SerializerKey(className, 0));
+            classType = typeof(CPrecipitation);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPrecipitation)instance, path, ref buffer);
+            return true;
         }
         case "CPrecipitationBlocker":
         {
-            var decoder = GetDecoder<CPrecipitationBlocker>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPrecipitationBlocker)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPrecipitationBlocker>(new SerializerKey(className, 0));
+            classType = typeof(CPrecipitationBlocker);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPrecipitationBlocker)instance, path, ref buffer);
+            return true;
         }
         case "CPredictedViewModel":
         {
-            var decoder = GetDecoder<CPredictedViewModel>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CPredictedViewModel)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CPredictedViewModel>(new SerializerKey(className, 0));
+            classType = typeof(CPredictedViewModel);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CPredictedViewModel)instance, path, ref buffer);
+            return true;
         }
         case "CRagdollManager":
         {
-            var decoder = GetDecoder<CRagdollManager>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRagdollManager)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRagdollManager>(new SerializerKey(className, 0));
+            classType = typeof(CRagdollManager);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRagdollManager)instance, path, ref buffer);
+            return true;
         }
         case "CRagdollProp":
         {
-            var decoder = GetDecoder<CRagdollProp>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRagdollProp)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRagdollProp>(new SerializerKey(className, 0));
+            classType = typeof(CRagdollProp);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRagdollProp)instance, path, ref buffer);
+            return true;
         }
         case "CRagdollPropAttached":
         {
-            var decoder = GetDecoder<CRagdollPropAttached>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRagdollPropAttached)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRagdollPropAttached>(new SerializerKey(className, 0));
+            classType = typeof(CRagdollPropAttached);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRagdollPropAttached)instance, path, ref buffer);
+            return true;
         }
         case "CRectLight":
         {
-            var decoder = GetDecoder<CRectLight>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRectLight)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRectLight>(new SerializerKey(className, 0));
+            classType = typeof(CRectLight);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRectLight)instance, path, ref buffer);
+            return true;
         }
         case "CRenderComponent":
         {
-            var decoder = GetDecoder<CRenderComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRenderComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRenderComponent>(new SerializerKey(className, 0));
+            classType = typeof(CRenderComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRenderComponent)instance, path, ref buffer);
+            return true;
         }
         case "CRetakeGameRules":
         {
-            var decoder = GetDecoder<CRetakeGameRules>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRetakeGameRules)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRetakeGameRules>(new SerializerKey(className, 0));
+            classType = typeof(CRetakeGameRules);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRetakeGameRules)instance, path, ref buffer);
+            return true;
         }
         case "CRopeKeyframe":
         {
-            var decoder = GetDecoder<CRopeKeyframe>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CRopeKeyframe)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CRopeKeyframe>(new SerializerKey(className, 0));
+            classType = typeof(CRopeKeyframe);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CRopeKeyframe)instance, path, ref buffer);
+            return true;
         }
         case "CSceneEntity":
         {
-            var decoder = GetDecoder<CSceneEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSceneEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSceneEntity>(new SerializerKey(className, 0));
+            classType = typeof(CSceneEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSceneEntity)instance, path, ref buffer);
+            return true;
         }
         case "CScriptComponent":
         {
-            var decoder = GetDecoder<CScriptComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CScriptComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CScriptComponent>(new SerializerKey(className, 0));
+            classType = typeof(CScriptComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CScriptComponent)instance, path, ref buffer);
+            return true;
         }
         case "CSensorGrenade":
         {
-            var decoder = GetDecoder<CSensorGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSensorGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSensorGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CSensorGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSensorGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CSensorGrenadeProjectile":
         {
-            var decoder = GetDecoder<CSensorGrenadeProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSensorGrenadeProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSensorGrenadeProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CSensorGrenadeProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSensorGrenadeProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CShatterGlassShardPhysics":
         {
-            var decoder = GetDecoder<CShatterGlassShardPhysics>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CShatterGlassShardPhysics)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CShatterGlassShardPhysics>(new SerializerKey(className, 0));
+            classType = typeof(CShatterGlassShardPhysics);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CShatterGlassShardPhysics)instance, path, ref buffer);
+            return true;
         }
         case "CSkeletonAnimationController":
         {
-            var decoder = GetDecoder<CSkeletonAnimationController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSkeletonAnimationController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSkeletonAnimationController>(new SerializerKey(className, 0));
+            classType = typeof(CSkeletonAnimationController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSkeletonAnimationController)instance, path, ref buffer);
+            return true;
         }
         case "CSkeletonInstance":
         {
-            var decoder = GetDecoder<CSkeletonInstance>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSkeletonInstance)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSkeletonInstance>(new SerializerKey(className, 0));
+            classType = typeof(CSkeletonInstance);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSkeletonInstance)instance, path, ref buffer);
+            return true;
         }
         case "CSkyCamera":
         {
-            var decoder = GetDecoder<CSkyCamera>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSkyCamera)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSkyCamera>(new SerializerKey(className, 0));
+            classType = typeof(CSkyCamera);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSkyCamera)instance, path, ref buffer);
+            return true;
         }
         case "CSMatchStats_t":
         {
-            var decoder = GetDecoder<CSMatchStats>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSMatchStats)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSMatchStats>(new SerializerKey(className, 0));
+            classType = typeof(CSMatchStats);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSMatchStats)instance, path, ref buffer);
+            return true;
         }
         case "CSmokeGrenade":
         {
-            var decoder = GetDecoder<CSmokeGrenade>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSmokeGrenade)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSmokeGrenade>(new SerializerKey(className, 0));
+            classType = typeof(CSmokeGrenade);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSmokeGrenade)instance, path, ref buffer);
+            return true;
         }
         case "CSmokeGrenadeProjectile":
         {
-            var decoder = GetDecoder<CSmokeGrenadeProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSmokeGrenadeProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSmokeGrenadeProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CSmokeGrenadeProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSmokeGrenadeProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CSoundAreaEntityBase":
         {
-            var decoder = GetDecoder<CSoundAreaEntityBase>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundAreaEntityBase)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundAreaEntityBase>(new SerializerKey(className, 0));
+            classType = typeof(CSoundAreaEntityBase);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundAreaEntityBase)instance, path, ref buffer);
+            return true;
         }
         case "CSoundAreaEntityOrientedBox":
         {
-            var decoder = GetDecoder<CSoundAreaEntityOrientedBox>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundAreaEntityOrientedBox)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundAreaEntityOrientedBox>(new SerializerKey(className, 0));
+            classType = typeof(CSoundAreaEntityOrientedBox);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundAreaEntityOrientedBox)instance, path, ref buffer);
+            return true;
         }
         case "CSoundAreaEntitySphere":
         {
-            var decoder = GetDecoder<CSoundAreaEntitySphere>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundAreaEntitySphere)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundAreaEntitySphere>(new SerializerKey(className, 0));
+            classType = typeof(CSoundAreaEntitySphere);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundAreaEntitySphere)instance, path, ref buffer);
+            return true;
         }
         case "CSoundOpvarSetAABBEntity":
         {
-            var decoder = GetDecoder<CSoundOpvarSetAABBEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundOpvarSetAABBEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundOpvarSetAABBEntity>(new SerializerKey(className, 0));
+            classType = typeof(CSoundOpvarSetAABBEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundOpvarSetAABBEntity)instance, path, ref buffer);
+            return true;
         }
         case "CSoundOpvarSetOBBEntity":
         {
-            var decoder = GetDecoder<CSoundOpvarSetOBBEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundOpvarSetOBBEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundOpvarSetOBBEntity>(new SerializerKey(className, 0));
+            classType = typeof(CSoundOpvarSetOBBEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundOpvarSetOBBEntity)instance, path, ref buffer);
+            return true;
         }
         case "CSoundOpvarSetOBBWindEntity":
         {
-            var decoder = GetDecoder<CSoundOpvarSetOBBWindEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundOpvarSetOBBWindEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundOpvarSetOBBWindEntity>(new SerializerKey(className, 0));
+            classType = typeof(CSoundOpvarSetOBBWindEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundOpvarSetOBBWindEntity)instance, path, ref buffer);
+            return true;
         }
         case "CSoundOpvarSetPathCornerEntity":
         {
-            var decoder = GetDecoder<CSoundOpvarSetPathCornerEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundOpvarSetPathCornerEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundOpvarSetPathCornerEntity>(new SerializerKey(className, 0));
+            classType = typeof(CSoundOpvarSetPathCornerEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundOpvarSetPathCornerEntity)instance, path, ref buffer);
+            return true;
         }
         case "CSoundOpvarSetPointBase":
         {
-            var decoder = GetDecoder<CSoundOpvarSetPointBase>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundOpvarSetPointBase)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundOpvarSetPointBase>(new SerializerKey(className, 0));
+            classType = typeof(CSoundOpvarSetPointBase);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundOpvarSetPointBase)instance, path, ref buffer);
+            return true;
         }
         case "CSoundOpvarSetPointEntity":
         {
-            var decoder = GetDecoder<CSoundOpvarSetPointEntity>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSoundOpvarSetPointEntity)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSoundOpvarSetPointEntity>(new SerializerKey(className, 0));
+            classType = typeof(CSoundOpvarSetPointEntity);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSoundOpvarSetPointEntity)instance, path, ref buffer);
+            return true;
         }
         case "CSPerRoundStats_t":
         {
-            var decoder = GetDecoder<CSPerRoundStats>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSPerRoundStats)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSPerRoundStats>(new SerializerKey(className, 0));
+            classType = typeof(CSPerRoundStats);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSPerRoundStats)instance, path, ref buffer);
+            return true;
         }
         case "CSpotlightEnd":
         {
-            var decoder = GetDecoder<CSpotlightEnd>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSpotlightEnd)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSpotlightEnd>(new SerializerKey(className, 0));
+            classType = typeof(CSpotlightEnd);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSpotlightEnd)instance, path, ref buffer);
+            return true;
         }
         case "CSprite":
         {
-            var decoder = GetDecoder<CSprite>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSprite)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSprite>(new SerializerKey(className, 0));
+            classType = typeof(CSprite);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSprite)instance, path, ref buffer);
+            return true;
         }
         case "CSpriteOriented":
         {
-            var decoder = GetDecoder<CSpriteOriented>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSpriteOriented)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSpriteOriented>(new SerializerKey(className, 0));
+            classType = typeof(CSpriteOriented);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSpriteOriented)instance, path, ref buffer);
+            return true;
         }
         case "CSun":
         {
-            var decoder = GetDecoder<CSun>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CSun)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CSun>(new SerializerKey(className, 0));
+            classType = typeof(CSun);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CSun)instance, path, ref buffer);
+            return true;
         }
         case "CTablet":
         {
-            var decoder = GetDecoder<CTablet>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTablet)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTablet>(new SerializerKey(className, 0));
+            classType = typeof(CTablet);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTablet)instance, path, ref buffer);
+            return true;
         }
         case "CTeam":
         {
-            var decoder = GetDecoder<CTeam>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTeam)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTeam>(new SerializerKey(className, 0));
+            classType = typeof(CTeam);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTeam)instance, path, ref buffer);
+            return true;
         }
         case "CTeamplayRules":
         {
-            var decoder = GetDecoder<CTeamplayRules>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTeamplayRules)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTeamplayRules>(new SerializerKey(className, 0));
+            classType = typeof(CTeamplayRules);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTeamplayRules)instance, path, ref buffer);
+            return true;
         }
         case "CTextureBasedAnimatable":
         {
-            var decoder = GetDecoder<CTextureBasedAnimatable>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTextureBasedAnimatable)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTextureBasedAnimatable>(new SerializerKey(className, 0));
+            classType = typeof(CTextureBasedAnimatable);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTextureBasedAnimatable)instance, path, ref buffer);
+            return true;
         }
         case "CTonemapController2":
         {
-            var decoder = GetDecoder<CTonemapController2>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTonemapController2)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTonemapController2>(new SerializerKey(className, 0));
+            classType = typeof(CTonemapController2);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTonemapController2)instance, path, ref buffer);
+            return true;
         }
         case "CTouchExpansionComponent":
         {
-            var decoder = GetDecoder<CTouchExpansionComponent>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTouchExpansionComponent)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTouchExpansionComponent>(new SerializerKey(className, 0));
+            classType = typeof(CTouchExpansionComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTouchExpansionComponent)instance, path, ref buffer);
+            return true;
         }
         case "CTriggerBuoyancy":
         {
-            var decoder = GetDecoder<CTriggerBuoyancy>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTriggerBuoyancy)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTriggerBuoyancy>(new SerializerKey(className, 0));
+            classType = typeof(CTriggerBuoyancy);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTriggerBuoyancy)instance, path, ref buffer);
+            return true;
         }
         case "CTriggerTripWire":
         {
-            var decoder = GetDecoder<CTriggerTripWire>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTriggerTripWire)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTriggerTripWire>(new SerializerKey(className, 0));
+            classType = typeof(CTriggerTripWire);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTriggerTripWire)instance, path, ref buffer);
+            return true;
         }
         case "CTriggerVolume":
         {
-            var decoder = GetDecoder<CTriggerVolume>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTriggerVolume)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTriggerVolume>(new SerializerKey(className, 0));
+            classType = typeof(CTriggerVolume);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTriggerVolume)instance, path, ref buffer);
+            return true;
         }
         case "CTripWireFire":
         {
-            var decoder = GetDecoder<CTripWireFire>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTripWireFire)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTripWireFire>(new SerializerKey(className, 0));
+            classType = typeof(CTripWireFire);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTripWireFire)instance, path, ref buffer);
+            return true;
         }
         case "CTripWireFireProjectile":
         {
-            var decoder = GetDecoder<CTripWireFireProjectile>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CTripWireFireProjectile)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CTripWireFireProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CTripWireFireProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CTripWireFireProjectile)instance, path, ref buffer);
+            return true;
         }
         case "CVoteController":
         {
-            var decoder = GetDecoder<CVoteController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CVoteController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CVoteController>(new SerializerKey(className, 0));
+            classType = typeof(CVoteController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CVoteController)instance, path, ref buffer);
+            return true;
         }
         case "CWaterBullet":
         {
-            var decoder = GetDecoder<CWaterBullet>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWaterBullet)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWaterBullet>(new SerializerKey(className, 0));
+            classType = typeof(CWaterBullet);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWaterBullet)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponAug":
         {
-            var decoder = GetDecoder<CWeaponAug>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponAug)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponAug>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponAug);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponAug)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponAWP":
         {
-            var decoder = GetDecoder<CWeaponAWP>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponAWP)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponAWP>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponAWP);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponAWP)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponBaseItem":
         {
-            var decoder = GetDecoder<CWeaponBaseItem>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponBaseItem)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponBaseItem>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponBaseItem);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponBaseItem)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponBizon":
         {
-            var decoder = GetDecoder<CWeaponBizon>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponBizon)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponBizon>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponBizon);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponBizon)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponElite":
         {
-            var decoder = GetDecoder<CWeaponElite>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponElite)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponElite>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponElite);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponElite)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponFamas":
         {
-            var decoder = GetDecoder<CWeaponFamas>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponFamas)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponFamas>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponFamas);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponFamas)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponFiveSeven":
         {
-            var decoder = GetDecoder<CWeaponFiveSeven>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponFiveSeven)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponFiveSeven>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponFiveSeven);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponFiveSeven)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponG3SG1":
         {
-            var decoder = GetDecoder<CWeaponG3SG1>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponG3SG1)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponG3SG1>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponG3SG1);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponG3SG1)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponGalilAR":
         {
-            var decoder = GetDecoder<CWeaponGalilAR>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponGalilAR)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponGalilAR>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponGalilAR);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponGalilAR)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponGlock":
         {
-            var decoder = GetDecoder<CWeaponGlock>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponGlock)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponGlock>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponGlock);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponGlock)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponHKP2000":
         {
-            var decoder = GetDecoder<CWeaponHKP2000>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponHKP2000)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponHKP2000>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponHKP2000);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponHKP2000)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponM249":
         {
-            var decoder = GetDecoder<CWeaponM249>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponM249)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponM249>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponM249);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponM249)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponM4A1":
         {
-            var decoder = GetDecoder<CWeaponM4A1>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponM4A1)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponM4A1>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponM4A1);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponM4A1)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponMAC10":
         {
-            var decoder = GetDecoder<CWeaponMAC10>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponMAC10)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponMAC10>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponMAC10);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponMAC10)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponMag7":
         {
-            var decoder = GetDecoder<CWeaponMag7>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponMag7)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponMag7>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponMag7);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponMag7)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponMP7":
         {
-            var decoder = GetDecoder<CWeaponMP7>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponMP7)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponMP7>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponMP7);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponMP7)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponMP9":
         {
-            var decoder = GetDecoder<CWeaponMP9>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponMP9)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponMP9>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponMP9);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponMP9)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponNegev":
         {
-            var decoder = GetDecoder<CWeaponNegev>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponNegev)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponNegev>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponNegev);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponNegev)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponNOVA":
         {
-            var decoder = GetDecoder<CWeaponNOVA>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponNOVA)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponNOVA>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponNOVA);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponNOVA)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponP250":
         {
-            var decoder = GetDecoder<CWeaponP250>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponP250)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponP250>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponP250);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponP250)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponP90":
         {
-            var decoder = GetDecoder<CWeaponP90>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponP90)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponP90>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponP90);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponP90)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponSawedoff":
         {
-            var decoder = GetDecoder<CWeaponSawedoff>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponSawedoff)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponSawedoff>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponSawedoff);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponSawedoff)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponSCAR20":
         {
-            var decoder = GetDecoder<CWeaponSCAR20>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponSCAR20)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponSCAR20>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponSCAR20);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponSCAR20)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponSG556":
         {
-            var decoder = GetDecoder<CWeaponSG556>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponSG556)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponSG556>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponSG556);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponSG556)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponShield":
         {
-            var decoder = GetDecoder<CWeaponShield>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponShield)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponShield>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponShield);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponShield)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponSSG08":
         {
-            var decoder = GetDecoder<CWeaponSSG08>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponSSG08)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponSSG08>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponSSG08);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponSSG08)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponTaser":
         {
-            var decoder = GetDecoder<CWeaponTaser>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponTaser)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponTaser>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponTaser);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponTaser)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponTec9":
         {
-            var decoder = GetDecoder<CWeaponTec9>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponTec9)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponTec9>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponTec9);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponTec9)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponUMP45":
         {
-            var decoder = GetDecoder<CWeaponUMP45>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponUMP45)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponUMP45>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponUMP45);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponUMP45)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponXM1014":
         {
-            var decoder = GetDecoder<CWeaponXM1014>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponXM1014)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponXM1014>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponXM1014);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponXM1014)instance, path, ref buffer);
+            return true;
         }
         case "CWeaponZoneRepulsor":
         {
-            var decoder = GetDecoder<CWeaponZoneRepulsor>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWeaponZoneRepulsor)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWeaponZoneRepulsor>(new SerializerKey(className, 0));
+            classType = typeof(CWeaponZoneRepulsor);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWeaponZoneRepulsor)instance, path, ref buffer);
+            return true;
         }
         case "CWorld":
         {
-            var decoder = GetDecoder<CWorld>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((CWorld)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<CWorld>(new SerializerKey(className, 0));
+            classType = typeof(CWorld);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CWorld)instance, path, ref buffer);
+            return true;
         }
         case "EntityRenderAttribute_t":
         {
-            var decoder = GetDecoder<EntityRenderAttribute>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((EntityRenderAttribute)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<EntityRenderAttribute>(new SerializerKey(className, 0));
+            classType = typeof(EntityRenderAttribute);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((EntityRenderAttribute)instance, path, ref buffer);
+            return true;
         }
         case "EntitySpottedState_t":
         {
-            var decoder = GetDecoder<EntitySpottedState>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((EntitySpottedState)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<EntitySpottedState>(new SerializerKey(className, 0));
+            classType = typeof(EntitySpottedState);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((EntitySpottedState)instance, path, ref buffer);
+            return true;
         }
         case "fogparams_t":
         {
-            var decoder = GetDecoder<FogParams>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((FogParams)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<FogParams>(new SerializerKey(className, 0));
+            classType = typeof(FogParams);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((FogParams)instance, path, ref buffer);
+            return true;
         }
         case "fogplayerparams_t":
         {
-            var decoder = GetDecoder<FogPlayerParams>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((FogPlayerParams)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<FogPlayerParams>(new SerializerKey(className, 0));
+            classType = typeof(FogPlayerParams);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((FogPlayerParams)instance, path, ref buffer);
+            return true;
         }
         case "IEconItemInterface":
         {
-            var decoder = GetDecoder<IEconItemInterface>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((IEconItemInterface)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<IEconItemInterface>(new SerializerKey(className, 0));
+            classType = typeof(IEconItemInterface);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((IEconItemInterface)instance, path, ref buffer);
+            return true;
         }
         case "InfoForResourceTypeCModel":
         {
-            var decoder = GetDecoder<InfoForResourceTypeCModel>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((InfoForResourceTypeCModel)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<InfoForResourceTypeCModel>(new SerializerKey(className, 0));
+            classType = typeof(InfoForResourceTypeCModel);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((InfoForResourceTypeCModel)instance, path, ref buffer);
+            return true;
         }
         case "InfoForResourceTypeCPostProcessingResource":
         {
-            var decoder = GetDecoder<InfoForResourceTypeCPostProcessingResource>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((InfoForResourceTypeCPostProcessingResource)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<InfoForResourceTypeCPostProcessingResource>(new SerializerKey(className, 0));
+            classType = typeof(InfoForResourceTypeCPostProcessingResource);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((InfoForResourceTypeCPostProcessingResource)instance, path, ref buffer);
+            return true;
         }
         case "InfoForResourceTypeCTextureBase":
         {
-            var decoder = GetDecoder<InfoForResourceTypeCTextureBase>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((InfoForResourceTypeCTextureBase)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<InfoForResourceTypeCTextureBase>(new SerializerKey(className, 0));
+            classType = typeof(InfoForResourceTypeCTextureBase);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((InfoForResourceTypeCTextureBase)instance, path, ref buffer);
+            return true;
         }
         case "InfoForResourceTypeIMaterial2":
         {
-            var decoder = GetDecoder<InfoForResourceTypeIMaterial2>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((InfoForResourceTypeIMaterial2)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<InfoForResourceTypeIMaterial2>(new SerializerKey(className, 0));
+            classType = typeof(InfoForResourceTypeIMaterial2);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((InfoForResourceTypeIMaterial2)instance, path, ref buffer);
+            return true;
         }
         case "InfoForResourceTypeIParticleSystemDefinition":
         {
-            var decoder = GetDecoder<InfoForResourceTypeIParticleSystemDefinition>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((InfoForResourceTypeIParticleSystemDefinition)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<InfoForResourceTypeIParticleSystemDefinition>(new SerializerKey(className, 0));
+            classType = typeof(InfoForResourceTypeIParticleSystemDefinition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((InfoForResourceTypeIParticleSystemDefinition)instance, path, ref buffer);
+            return true;
         }
         case "ISkeletonAnimationController":
         {
-            var decoder = GetDecoder<ISkeletonAnimationController>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((ISkeletonAnimationController)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<ISkeletonAnimationController>(new SerializerKey(className, 0));
+            classType = typeof(ISkeletonAnimationController);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((ISkeletonAnimationController)instance, path, ref buffer);
+            return true;
         }
         case "PhysicsRagdollPose_t":
         {
-            var decoder = GetDecoder<PhysicsRagdollPose>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((PhysicsRagdollPose)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<PhysicsRagdollPose>(new SerializerKey(className, 0));
+            classType = typeof(PhysicsRagdollPose);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((PhysicsRagdollPose)instance, path, ref buffer);
+            return true;
         }
         case "SellbackPurchaseEntry_t":
         {
-            var decoder = GetDecoder<SellbackPurchaseEntry>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((SellbackPurchaseEntry)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<SellbackPurchaseEntry>(new SerializerKey(className, 0));
+            classType = typeof(SellbackPurchaseEntry);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((SellbackPurchaseEntry)instance, path, ref buffer);
+            return true;
         }
         case "ServerAuthoritativeWeaponSlot_t":
         {
-            var decoder = GetDecoder<ServerAuthoritativeWeaponSlot>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((ServerAuthoritativeWeaponSlot)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<ServerAuthoritativeWeaponSlot>(new SerializerKey(className, 0));
+            classType = typeof(ServerAuthoritativeWeaponSlot);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((ServerAuthoritativeWeaponSlot)instance, path, ref buffer);
+            return true;
         }
         case "shard_model_desc_t":
         {
-            var decoder = GetDecoder<SharedModelDesc>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((SharedModelDesc)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<SharedModelDesc>(new SerializerKey(className, 0));
+            classType = typeof(SharedModelDesc);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((SharedModelDesc)instance, path, ref buffer);
+            return true;
         }
         case "sky3dparams_t":
         {
-            var decoder = GetDecoder<Sky3DParams>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((Sky3DParams)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<Sky3DParams>(new SerializerKey(className, 0));
+            classType = typeof(Sky3DParams);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((Sky3DParams)instance, path, ref buffer);
+            return true;
         }
         case "ViewAngleServerChange_t":
         {
-            var decoder = GetDecoder<ViewAngleServerChange>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((ViewAngleServerChange)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<ViewAngleServerChange>(new SerializerKey(className, 0));
+            classType = typeof(ViewAngleServerChange);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((ViewAngleServerChange)instance, path, ref buffer);
+            return true;
         }
         case "VPhysicsCollisionAttribute_t":
         {
-            var decoder = GetDecoder<VPhysicsCollisionAttribute>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((VPhysicsCollisionAttribute)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<VPhysicsCollisionAttribute>(new SerializerKey(className, 0));
+            classType = typeof(VPhysicsCollisionAttribute);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((VPhysicsCollisionAttribute)instance, path, ref buffer);
+            return true;
         }
         case "WeaponPurchaseCount_t":
         {
-            var decoder = GetDecoder<WeaponPurchaseCount>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((WeaponPurchaseCount)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<WeaponPurchaseCount>(new SerializerKey(className, 0));
+            classType = typeof(WeaponPurchaseCount);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((WeaponPurchaseCount)instance, path, ref buffer);
+            return true;
         }
         case "WeaponPurchaseTracker_t":
         {
-            var decoder = GetDecoder<WeaponPurchaseTracker>(new SerializerKey(className, 0));
-            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                decoder((WeaponPurchaseTracker)instance, path, ref buffer);
+            var innerDecoder = GetDecoder<WeaponPurchaseTracker>(new SerializerKey(className, 0));
+            classType = typeof(WeaponPurchaseTracker);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((WeaponPurchaseTracker)instance, path, ref buffer);
+            return true;
         }
         default:
-            throw new NotImplementedException($"Unknown send node class: {className}");
+            classType = null;
+            decoder = null;
+            return false;
         }
     }
 }

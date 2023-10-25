@@ -19180,84 +19180,30 @@
       "parent": "CBaseModelEntity",
       "fields": [
         {
-          "name": "m_fireXDelta",
+          "name": "m_firePositions",
           "type": {
-            "name": "int32[64]",
+            "name": "Vector[64]",
             "category": 3,
             "arraySize": 64,
             "inner": {
-              "name": "int32",
-              "category": 0
+              "name": "Vector",
+              "category": 4,
+              "atomic": 0
             }
           },
           "metadata": {
           }
         },
         {
-          "name": "m_fireYDelta",
+          "name": "m_fireParentPositions",
           "type": {
-            "name": "int32[64]",
+            "name": "Vector[64]",
             "category": 3,
             "arraySize": 64,
             "inner": {
-              "name": "int32",
-              "category": 0
-            }
-          },
-          "metadata": {
-          }
-        },
-        {
-          "name": "m_fireZDelta",
-          "type": {
-            "name": "int32[64]",
-            "category": 3,
-            "arraySize": 64,
-            "inner": {
-              "name": "int32",
-              "category": 0
-            }
-          },
-          "metadata": {
-          }
-        },
-        {
-          "name": "m_fireParentXDelta",
-          "type": {
-            "name": "int32[64]",
-            "category": 3,
-            "arraySize": 64,
-            "inner": {
-              "name": "int32",
-              "category": 0
-            }
-          },
-          "metadata": {
-          }
-        },
-        {
-          "name": "m_fireParentYDelta",
-          "type": {
-            "name": "int32[64]",
-            "category": 3,
-            "arraySize": 64,
-            "inner": {
-              "name": "int32",
-              "category": 0
-            }
-          },
-          "metadata": {
-          }
-        },
-        {
-          "name": "m_fireParentZDelta",
-          "type": {
-            "name": "int32[64]",
-            "category": 3,
-            "arraySize": 64,
-            "inner": {
-              "name": "int32",
-              "category": 0
+              "name": "Vector",
+              "category": 4,
+              "atomic": 0
             }
           },
           "metadata": {
