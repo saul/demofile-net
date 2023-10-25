@@ -1,7 +1,4 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: .NET Test
+name: .NET
 
 on:
   push:
@@ -57,5 +54,5 @@ jobs:
       - name: Publish to NuGet
         if: github.ref == 'refs/heads/main'
         run: |
-          dotnet pack
-          dotnet nuget push **/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_APIKEY}}
+          dotnet pack -c Release
+          dotnet nuget push src/DemoFile/bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_APIKEY}}
