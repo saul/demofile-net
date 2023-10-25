@@ -10,6 +10,14 @@ internal partial class DecoderSet
         _serializers = serializers;
     }
 
+    public SendNodeDecoder<object> GetDecoder(string className)
+    {
+        if (!TryGetDecoder(className, out _, out var decoder))
+            throw new NotImplementedException($"Unknown send node class: {className}");
+
+        return decoder;
+    }
+
     public SendNodeDecoder<T> GetDecoder<T>(SerializerKey serializerKey)
     {
         if (!_decoders.TryGetValue(serializerKey, out var decoder))

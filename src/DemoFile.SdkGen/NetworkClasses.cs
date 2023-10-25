@@ -6,7 +6,7 @@ public static class NetworkClasses
     //
     // var cts = new CancellationTokenSource();
     // var reader = new DemoParser();
-    // reader.DemoClassInfo += msg =>
+    // demo.DemoEvents.DemoClassInfo += msg =>
     // {
     //     foreach (var classInfo in msg.Classes)
     //     {
@@ -115,6 +115,7 @@ public static class NetworkClasses
         "CGradientFog",
         "CHandleTest",
         "CHEGrenade",
+        "CHEGrenadeProjectile",
         "CHostage",
         "CHostageCarriableProp",
         "CHostageRescueZone",

@@ -126,6 +126,7 @@ internal static class Program
         builder.AppendLine("#pragma warning disable CS1591");
         builder.AppendLine();
         builder.AppendLine("using System.Diagnostics;");
+        builder.AppendLine("using System.Diagnostics.CodeAnalysis;");
         builder.AppendLine("using System.Drawing;");
         builder.AppendLine("using DemoFile;");
         builder.AppendLine();
@@ -210,7 +211,7 @@ internal static class Program
         builder.AppendLine();
         builder.AppendLine("internal partial class DecoderSet");
         builder.AppendLine("{");
-        builder.AppendLine("    public SendNodeDecoder<object> GetDecoder(string className)");
+        builder.AppendLine("    public bool TryGetDecoder(string className, [NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)");
         builder.AppendLine("    {");
         builder.AppendLine("        switch (className)");
         builder.AppendLine("        {");
@@ -221,14 +222,18 @@ internal static class Program
 
             builder.AppendLine($"        case \"{className}\":");
             builder.AppendLine($"        {{");
-            builder.AppendLine($"            var decoder = GetDecoder<{schemaType.CsTypeName}>(new SerializerKey(className, 0));");
-            builder.AppendLine($"            return (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-            builder.AppendLine($"                decoder(({schemaType.CsTypeName})instance, path, ref buffer);");
+            builder.AppendLine($"            var innerDecoder = GetDecoder<{schemaType.CsTypeName}>(new SerializerKey(className, 0));");
+            builder.AppendLine($"            classType = typeof({schemaType.CsTypeName});");
+            builder.AppendLine($"            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+            builder.AppendLine($"                innerDecoder(({schemaType.CsTypeName})instance, path, ref buffer);");
+            builder.AppendLine($"            return true;");
             builder.AppendLine($"        }}");
         }
 
         builder.AppendLine("        default:");
-        builder.AppendLine("            throw new NotImplementedException($\"Unknown send node class: {className}\");");
+        builder.AppendLine("            classType = null;");
+        builder.AppendLine("            decoder = null;");
+        builder.AppendLine("            return false;");
         builder.AppendLine("        }");
         builder.AppendLine("    }");
         builder.AppendLine("}");
@@ -539,6 +544,16 @@ internal static class Program
 
         if (parentType == null)
         {
+            builder.AppendLine($"        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))");
+            builder.AppendLine($"        {{");
+            builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+            builder.AppendLine($"            {{");
+            builder.AppendLine($"#if DEBUG");
+            builder.AppendLine($"                var _field = field;");
+            builder.AppendLine($"#endif");
+            builder.AppendLine($"                fallback(default, path, ref buffer);");
+            builder.AppendLine($"            }};");
+            builder.AppendLine($"        }}");
             builder.AppendLine($"        throw new NotSupportedException($\"Unrecognised serializer field: {{field.VarName}}\");");
         }
         else
