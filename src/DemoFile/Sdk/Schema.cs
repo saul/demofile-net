@@ -12789,6 +12789,16 @@ public partial class CHEGrenade : CBaseCSGrenade
     }
 }
 
+public partial class CHEGrenadeProjectile : CBaseCSGrenadeProjectile
+{
+    internal CHEGrenadeProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CHEGrenadeProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+}
+
 public partial class CHitboxComponent : CEntityComponent
 {
     public UInt32[] DisabledHitGroups { get; private set; } = Array.Empty<UInt32>();
@@ -21700,6 +21710,10 @@ internal static class SendNodeDecoders
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHEGrenade>(CHEGrenade.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CHEGrenadeProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHEGrenadeProjectile>(CHEGrenadeProjectile.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CHitboxComponent))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHitboxComponent>(CHitboxComponent.CreateFieldDecoder);
@@ -22482,6 +22496,7 @@ internal static class EntityFactories
         {"CGradientFog", (context, decoder) => new CGradientFog(context, decoder)},
         {"CHandleTest", (context, decoder) => new CHandleTest(context, decoder)},
         {"CHEGrenade", (context, decoder) => new CHEGrenade(context, decoder)},
+        {"CHEGrenadeProjectile", (context, decoder) => new CHEGrenadeProjectile(context, decoder)},
         {"CHostage", (context, decoder) => new CHostage(context, decoder)},
         {"CHostageCarriableProp", (context, decoder) => new CHostageCarriableProp(context, decoder)},
         {"CHostageRescueZone", (context, decoder) => new CHostageRescueZone(context, decoder)},
@@ -23788,6 +23803,14 @@ internal partial class DecoderSet
             classType = typeof(CHEGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                 innerDecoder((CHEGrenade)instance, path, ref buffer);
+            return true;
+        }
+        case "CHEGrenadeProjectile":
+        {
+            var innerDecoder = GetDecoder<CHEGrenadeProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CHEGrenadeProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                innerDecoder((CHEGrenadeProjectile)instance, path, ref buffer);
             return true;
         }
         case "CHitboxComponent":
