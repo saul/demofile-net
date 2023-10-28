@@ -171,10 +171,7 @@ public partial class DemoParser
                 if (entity == null)
                     continue;
 
-                // todo: abstract to DeleteEntity method
-                entity.IsActive = false;
-                entity.FireDeleteEvent();
-                _entities[idx] = null;
+                DeleteEntity(idx);
             }
         }
 
@@ -200,10 +197,8 @@ public partial class DemoParser
 
                 if (updateType == 0b11)
                 {
-                    entity.FireDeleteEvent();
-
                     // FHDR_LEAVEPVS | FHDR_DELETE
-                    _entities[entityIndex] = null;
+                    DeleteEntity(entityIndex);
                 }
             }
             else if (updateType == 0b10)
@@ -234,7 +229,6 @@ public partial class DemoParser
                 entity.IsActive = true;
                 _entities[entityIndex] = entity;
 
-                // todo: only fire if new? what happens to leave -> reenter PVS?
                 entity.FireCreateEvent();
             }
             else
@@ -255,6 +249,14 @@ public partial class DemoParser
                 entity.FirePostUpdateEvent();
             }
         }
+    }
+
+    private void DeleteEntity(int entityIndex)
+    {
+        var entity = _entities[entityIndex]!;
+        entity.IsActive = false;
+        entity.FireDeleteEvent();
+        _entities[entityIndex] = null;
     }
 
     [SkipLocalsInit]
