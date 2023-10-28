@@ -90,6 +90,11 @@ public partial class DemoParser
 
     public T? GetEntityByIndex<T>(CEntityIndex index) where T : CEntityInstance
     {
+        if (!index.IsValid)
+        {
+            throw new ArgumentException("Invalid entity index", nameof(index));
+        }
+
         return _entities[(int)index.Value] as T;
     }
 

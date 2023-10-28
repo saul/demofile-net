@@ -15,8 +15,7 @@ public readonly record struct CHandle<T>(ulong Value)
     public static CHandle<T> FromIndexSerialNum(CEntityIndex index, uint serialNum) =>
         new(((ulong)index.Value) | (serialNum << DemoParser.MaxEdictBits));
 
-    public void Deconstruct(out ulong Value)
-    {
-        Value = this.Value;
-    }
+    public T? Get(DemoParser demo) => demo.GetEntityByHandle(this);
+
+    public TEntity? Get<TEntity>(DemoParser demo) where TEntity : T => demo.GetEntityByHandle(this) as TEntity;
 }

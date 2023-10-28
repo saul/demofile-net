@@ -10,10 +10,7 @@ internal class Program
         var demo = new DemoParser();
         demo.Source1GameEvents.PlayerDeath += e =>
         {
-            var attacker = demo.GetEntityByIndex<CCSPlayerController>(e.Attacker);
-            var victim = demo.GetEntityByIndex<CCSPlayerController>(e.Userid);
-
-            Console.WriteLine($"{attacker?.PlayerName} [{e.Weapon}] {victim?.PlayerName}");
+            Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
         };
 
         await demo.Start(File.OpenRead(path));

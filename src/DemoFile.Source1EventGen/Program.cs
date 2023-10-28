@@ -32,9 +32,9 @@ internal static class Program
         }
     }
 
-    public static string SnakeCaseToPascalCase(string snakey)
+    public static string SnakeCaseToPascalCase(string snaky)
     {
-        var parts = snakey.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        var parts = snaky.Split('_', StringSplitOptions.RemoveEmptyEntries);
         for (var i = 0; i < parts.Length; i++)
         {
             parts[i] = char.ToUpper(parts[i][0]) + parts[i][1..];
@@ -43,7 +43,30 @@ internal static class Program
         return string.Concat(parts);
     }
 
-    public static string EventNameToCsClass(string name) =>
+    private static string EventKeyToCsPropertyName(GameEventKeyType keyType, string eventKey)
+    {
+        var parts = eventKey.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        for (var i = 0; i < parts.Length; i++)
+        {
+            parts[i] = parts[i].ToLower() switch
+            {
+                "userid" => "Player",
+                "steamid" => "SteamId",
+                "xuid" => "SteamId",
+                _ => char.ToUpper(parts[i][0]) + parts[i][1..]
+            };
+        }
+
+        var csPropertyName = string.Concat(parts);
+        return keyType switch
+        {
+            GameEventKeyType.StrictEHandle => csPropertyName + "Handle",
+            GameEventKeyType.PlayerController => csPropertyName + "Index",
+            _ => csPropertyName
+        };
+    }
+
+    private static string EventNameToCsClass(string name) =>
         $"Source1{SnakeCaseToPascalCase(name)}Event";
 
     private static void WriteDescriptors(
@@ -71,7 +94,7 @@ internal static class Program
         builder.AppendLine("");
         builder.AppendLine($"    internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)");
         builder.AppendLine($"    {{");
-        builder.AppendLine($"        _handlers = new Dictionary<int, Action<CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);");
+        builder.AppendLine($"        _handlers = new Dictionary<int, Action<DemoParser, CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);");
         builder.AppendLine($"        foreach (var descriptor in eventList.Descriptors)");
         builder.AppendLine($"        {{");
 
@@ -85,18 +108,18 @@ internal static class Program
             foreach (var key in descriptor.Keys)
             {
                 builder.AppendLine($"                        if (key.Name == \"{key.Name}\")");
-                builder.AppendLine($"                            return (@this, x) => @this.{SnakeCaseToPascalCase(key.Name)} = {CSharpEventKeyParser((GameEventKeyType) key.Type)};");
+                builder.AppendLine($"                            return (@this, x) => @this.{EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name)} = {CSharpEventKeyParser((GameEventKeyType) key.Type)};");
             }
 
             builder.AppendLine($"                        return (@this, x) => {{ }};");
             builder.AppendLine($"                    }})");
             builder.AppendLine($"                    .ToArray();");
             builder.AppendLine();
-            builder.AppendLine($"                _handlers[descriptor.Eventid] = @event =>");
+            builder.AppendLine($"                _handlers[descriptor.Eventid] = (demo, @event) =>");
             builder.AppendLine($"                {{");
             builder.AppendLine($"                    if (Source1GameEvent == null && {SnakeCaseToPascalCase(descriptor.Name)} == null)");
             builder.AppendLine($"                        return;");
-            builder.AppendLine($"                    var @this = new {EventNameToCsClass(descriptor.Name)}();");
+            builder.AppendLine($"                    var @this = new {EventNameToCsClass(descriptor.Name)}(demo);");
             builder.AppendLine($"                    for (var i = 0; i < @event.Keys.Count; i++)");
             builder.AppendLine($"                    {{");
             builder.AppendLine($"                        keys[i](@this, @event.Keys[i]);");
@@ -117,16 +140,30 @@ internal static class Program
             builder.AppendLine($"public partial class {EventNameToCsClass(descriptor.Name)} : Source1GameEventBase");
             builder.AppendLine($"{{");
 
+            builder.AppendLine($"    internal {EventNameToCsClass(descriptor.Name)}(DemoParser demo) : base(demo) {{}}");
+            builder.AppendLine($"");
             builder.AppendLine($"    public override string GameEventName => \"{descriptor.Name}\";");
 
             foreach (var key in descriptor.Keys)
             {
-                builder.Append($"    public {CSharpEventTypeName((GameEventKeyType) key.Type)} {SnakeCaseToPascalCase(key.Name)} {{ get; set; }}");
+                builder.AppendLine($"");
+
+                var csPropertyName = EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name);
+                builder.Append($"    public {CSharpEventTypeName((GameEventKeyType) key.Type)} {csPropertyName} {{ get; set; }}");
 
                 if ((GameEventKeyType)key.Type == GameEventKeyType.String)
                     builder.AppendLine(" = \"\";");
                 else
                     builder.AppendLine();
+
+                if ((GameEventKeyType) key.Type == GameEventKeyType.PlayerController)
+                {
+                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^5]} => _demo.GetEntityByIndex<CCSPlayerController>({csPropertyName});");
+                }
+                else if ((GameEventKeyType) key.Type == GameEventKeyType.StrictEHandle && key.Name.EndsWith("_pawn"))
+                {
+                    builder.AppendLine($"    public CCSPlayerPawn? {csPropertyName[..^6]} => _demo.GetEntityByHandle({csPropertyName}) as CCSPlayerPawn;");
+                }
             }
 
             builder.AppendLine($"}}");
@@ -171,8 +208,8 @@ internal static class Program
             GameEventKeyType.Byte => $"x.ValByte",
             GameEventKeyType.Bool => $"x.ValBool",
             GameEventKeyType.UInt64 => $"x.ValUint64",
-            GameEventKeyType.StrictEHandle => $"new CHandle<CEntityInstance>((ulong) x.ValLong)",
-            GameEventKeyType.PlayerController => $"new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1)",
+            GameEventKeyType.StrictEHandle => $"new CHandle<CEntityInstance>((uint) x.ValLong)",
+            GameEventKeyType.PlayerController => $"x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1)",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
     }

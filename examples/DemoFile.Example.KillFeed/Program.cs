@@ -13,11 +13,8 @@ internal class Program
 
         demo.Source1GameEvents.PlayerDeath += e =>
         {
-            var attacker = demo.GetEntityByIndex<CCSPlayerController>(e.Attacker);
-            var victim = demo.GetEntityByIndex<CCSPlayerController>(e.Userid);
-
             // Write attacker name in the colour of their team
-            AnsiConsole.Markup($"[{TeamNumberToString(attacker?.CSTeamNum)}]{attacker?.PlayerName}[/]");
+            AnsiConsole.Markup($"[{TeamNumberToString(e.Attacker?.CSTeamNum)}]{e.Attacker?.PlayerName}[/]");
 
             // Write the weapon
             AnsiConsole.Markup(" <");
@@ -27,7 +24,7 @@ internal class Program
             AnsiConsole.Markup("> ");
 
             // Write the victim's name in the colour of their team
-            AnsiConsole.MarkupLine($"[{TeamNumberToString(victim?.CSTeamNum)}]{victim?.PlayerName}[/]");
+            AnsiConsole.MarkupLine($"[{TeamNumberToString(e.Player?.CSTeamNum)}]{e.Player?.PlayerName}[/]");
         };
 
         demo.Source1GameEvents.RoundEnd += e =>
