@@ -154,7 +154,23 @@ public partial class DemoParser
             _serverClasses.Length > 0 && _serializers.Count > 0,
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
+        Debug.Assert(!msg.UpdateBaseline);
         Debug.Assert(msg.AlternateBaselines.Count == 0);
+
+        if (!msg.IsDelta)
+        {
+            // Clear out old entities - this is a full update
+            for (var idx = 0; idx < _entities.Length; idx++)
+            {
+                var entity = _entities[idx];
+                if (entity == null)
+                    continue;
+
+                // todo: abstract to DeleteEntity method
+                entity.IsActive = false;
+                _entities[idx] = null;
+            }
+        }
 
         var entityBitBuffer = new BitBuffer(msg.EntityData.Span);
         var entityIndex = -1;
@@ -253,8 +269,9 @@ public partial class DemoParser
 
         fieldPaths = fieldPaths[..index];
 
-        foreach (var fieldPath in fieldPaths)
+        for (var idx = 0; idx < fieldPaths.Length; idx++)
         {
+            var fieldPath = fieldPaths[idx];
             var pathSpan = fieldPath.AsSpan();
             entity.ReadField(pathSpan, ref entityBitBuffer);
         }

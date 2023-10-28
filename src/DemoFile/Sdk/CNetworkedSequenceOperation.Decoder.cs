@@ -7,7 +7,8 @@ public partial class CNetworkedSequenceOperation
     {
         return (ref BitBuffer buffer) =>
         {
-            return new HSequence(buffer.ReadUVarInt64());
+            var read = buffer.ReadUVarInt64() - 1;
+            return new HSequence((long)read);
         };
     }
 }

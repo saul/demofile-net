@@ -7,12 +7,20 @@ namespace DemoFile;
 
 internal static class FieldDecode
 {
+    // Note: some encodings for atomic types are defined in:
+    //   game/core/tools/demoinfo2/demoinfo2.txt
+
     public delegate T FieldDecoder<T>(ref BitBuffer buffer);
 
     public static FieldDecoder<T> CreateDecoder_enum<T>(
         FieldEncodingInfo fieldEncodingInfo)
         where T : struct
     {
+        // Note that some enums are NOT encoded as unsigned 64-bit,
+        // which is what we assume here.
+        // One example is TakeDamageFlags_t, which is supposedly
+        // NET_DATA_TYPE_INT64. I haven't seen it set in CS2 demos
+        // (even though it exists on CBaseEntity)
         return (ref BitBuffer buffer) => (T)Enum.ToObject(typeof(T), buffer.ReadUVarInt64());
     }
 
@@ -139,7 +147,7 @@ internal static class FieldDecode
     public static FieldDecoder<CEntityIndex> CreateDecoder_CEntityIndex(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {
-            return new CEntityIndex(buffer.ReadUVarInt32());
+            return new CEntityIndex((uint) buffer.ReadVarInt32());
         };
 
     public static FieldDecoder<CUtlStringToken> CreateDecoder_CUtlStringToken(FieldEncodingInfo fieldEncodingInfo) =>
@@ -253,11 +261,18 @@ internal static class FieldDecode
         (ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadUVarInt64());
 
     public static FieldDecoder<CTransform> CreateDecoder_CTransform(FieldEncodingInfo fieldFieldEncodingInfo) =>
-        (ref BitBuffer buffer) => new CTransform(DecodeFloatNoscale(ref buffer));
+        (ref BitBuffer buffer) =>
+        {
+            // not seen in CS2 demos
+            // equivalent to Vector3 + Quaternion (although represented as 6 floats)
+            throw new NotImplementedException("CTransform decoding is not implemented");
+        };
 
     public static FieldDecoder<Quaternion> CreateDecoder_Quaternion(FieldEncodingInfo fieldFieldEncodingInfo) =>
-        (ref BitBuffer buffer) => new Quaternion(DecodeFloatNoscale(ref buffer));
-
-    public static FieldDecoder<HSequence> CreateDecoder_HSequence(FieldEncodingInfo fieldFieldEncodingInfo) =>
-        (ref BitBuffer buffer) => new HSequence(buffer.ReadUVarInt64());
+        (ref BitBuffer buffer) =>
+        {
+            // not seen in CS2 demos
+            // equivalent to Vector4D
+            throw new NotImplementedException("Quaternion decoding is not implemented");
+        };
 }

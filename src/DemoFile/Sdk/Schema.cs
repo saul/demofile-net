@@ -5,6 +5,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using DemoFile;
 
 namespace DemoFile.Sdk;
@@ -1840,7 +1841,8 @@ public partial class CBaseAnimGraph : CBaseModelEntity
             {
                 if (path.Length == 1)
                 {
-                    @this.RagdollPose = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.RagdollPose = isSet ? factory() : null;
                 }
                 else
                 {
@@ -2380,7 +2382,8 @@ public partial class CBaseEntity : CEntityInstance
             {
                 if (path.Length == 1)
                 {
-                    @this.CBodyComponent = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.CBodyComponent = isSet ? factory() : null;
                 }
                 else
                 {
@@ -2888,7 +2891,8 @@ public partial class CBaseModelEntity : CBaseEntity
             {
                 if (path.Length == 1)
                 {
-                    @this.CRenderComponent = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.CRenderComponent = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3225,7 +3229,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.WeaponServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.WeaponServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3243,7 +3248,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.ItemServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.ItemServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3261,7 +3267,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.AutoaimServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.AutoaimServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3279,7 +3286,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.ObserverServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.ObserverServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3297,7 +3305,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.WaterServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.WaterServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3315,7 +3324,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.UseServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.UseServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3333,7 +3343,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.FlashlightServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.FlashlightServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3351,7 +3362,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.CameraServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.CameraServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3369,7 +3381,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             {
                 if (path.Length == 1)
                 {
-                    @this.MovementServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.MovementServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -3953,7 +3966,9 @@ public partial class CBodyComponent : CEntityComponent
             var childClassDecoder = decoderSet.GetDecoder<CBodyComponentPoint>(serializerKey);
             return (CBodyComponent instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CBodyComponentPoint)instance, path, ref buffer);
+                Debug.Assert(instance is CBodyComponentPoint);
+                var downcastInstance = Unsafe.As<CBodyComponentPoint>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CBodyComponentSkeletonInstance")
@@ -3962,7 +3977,9 @@ public partial class CBodyComponent : CEntityComponent
             var childClassDecoder = decoderSet.GetDecoder<CBodyComponentSkeletonInstance>(serializerKey);
             return (CBodyComponent instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CBodyComponentSkeletonInstance)instance, path, ref buffer);
+                Debug.Assert(instance is CBodyComponentSkeletonInstance);
+                var downcastInstance = Unsafe.As<CBodyComponentSkeletonInstance>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CBodyComponentBaseAnimGraph")
@@ -3971,7 +3988,9 @@ public partial class CBodyComponent : CEntityComponent
             var childClassDecoder = decoderSet.GetDecoder<CBodyComponentBaseAnimGraph>(serializerKey);
             return (CBodyComponent instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CBodyComponentBaseAnimGraph)instance, path, ref buffer);
+                Debug.Assert(instance is CBodyComponentBaseAnimGraph);
+                var downcastInstance = Unsafe.As<CBodyComponentBaseAnimGraph>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CBodyComponentBaseModelEntity")
@@ -3980,7 +3999,9 @@ public partial class CBodyComponent : CEntityComponent
             var childClassDecoder = decoderSet.GetDecoder<CBodyComponentBaseModelEntity>(serializerKey);
             return (CBodyComponent instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CBodyComponentBaseModelEntity)instance, path, ref buffer);
+                Debug.Assert(instance is CBodyComponentBaseModelEntity);
+                var downcastInstance = Unsafe.As<CBodyComponentBaseModelEntity>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CBodyComponent: {serializerKey}");
@@ -4627,7 +4648,9 @@ public partial class CCSGameModeRules
             var childClassDecoder = decoderSet.GetDecoder<CCSGameModeRules_Deathmatch>(serializerKey);
             return (CCSGameModeRules instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSGameModeRules_Deathmatch)instance, path, ref buffer);
+                Debug.Assert(instance is CCSGameModeRules_Deathmatch);
+                var downcastInstance = Unsafe.As<CCSGameModeRules_Deathmatch>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSGameModeRules_Noop")
@@ -4636,7 +4659,9 @@ public partial class CCSGameModeRules
             var childClassDecoder = decoderSet.GetDecoder<CCSGameModeRules_Noop>(serializerKey);
             return (CCSGameModeRules instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSGameModeRules_Noop)instance, path, ref buffer);
+                Debug.Assert(instance is CCSGameModeRules_Noop);
+                var downcastInstance = Unsafe.As<CCSGameModeRules_Noop>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSGameModeRules_Scripted")
@@ -4645,7 +4670,9 @@ public partial class CCSGameModeRules
             var childClassDecoder = decoderSet.GetDecoder<CCSGameModeRules_Scripted>(serializerKey);
             return (CCSGameModeRules instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSGameModeRules_Scripted)instance, path, ref buffer);
+                Debug.Assert(instance is CCSGameModeRules_Scripted);
+                var downcastInstance = Unsafe.As<CCSGameModeRules_Scripted>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CCSGameModeRules: {serializerKey}");
@@ -5632,18 +5659,19 @@ public partial class CCSGameRules : CTeamplayRules
             {
                 if (path.Length == 1)
                 {
-                    var childClassId = buffer.ReadUBits(7);
-                    if (childClassId == 0)
+                    var isSet = buffer.ReadOneBit();
+                    var childClassId = (int) buffer.ReadUBitVar();
+                    innerDecoder = CCSGameModeRules.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);
+                    if (!isSet)
                     {
                         innerDecoder = null;
                         @this.GameModeRules = null;
                     }
-                    else if (CCSGameModeRules.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))
+                    else
                     {
                         @this.GameModeRules = factory();
                         return;
                     }
-                    throw new Exception($"Unknown polymorphic child class of CCSGameModeRules: {childClassId}");
                 }
                 else
                 {
@@ -5717,7 +5745,8 @@ public partial class CCSGameRulesProxy : CGameRulesProxy
             {
                 if (path.Length == 1)
                 {
-                    @this.GameRules = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.GameRules = isSet ? factory() : null;
                 }
                 else
                 {
@@ -6679,7 +6708,8 @@ public partial class CCSPlayerController : CBasePlayerController
             {
                 if (path.Length == 1)
                 {
-                    @this.InGameMoneyServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.InGameMoneyServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -6697,7 +6727,8 @@ public partial class CCSPlayerController : CBasePlayerController
             {
                 if (path.Length == 1)
                 {
-                    @this.InventoryServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.InventoryServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -6715,7 +6746,8 @@ public partial class CCSPlayerController : CBasePlayerController
             {
                 if (path.Length == 1)
                 {
-                    @this.ActionTrackingServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.ActionTrackingServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -6733,7 +6765,8 @@ public partial class CCSPlayerController : CBasePlayerController
             {
                 if (path.Length == 1)
                 {
-                    @this.DamageServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.DamageServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -7450,7 +7483,8 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
             {
                 if (path.Length == 1)
                 {
-                    @this.BulletServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.BulletServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -7468,7 +7502,8 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
             {
                 if (path.Length == 1)
                 {
-                    @this.HostageServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.HostageServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -7486,7 +7521,8 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
             {
                 if (path.Length == 1)
                 {
-                    @this.BuyServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.BuyServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -7504,7 +7540,8 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
             {
                 if (path.Length == 1)
                 {
-                    @this.ActionTrackingServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.ActionTrackingServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -7878,7 +7915,8 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
             {
                 if (path.Length == 1)
                 {
-                    @this.PingServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.PingServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -7896,7 +7934,8 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
             {
                 if (path.Length == 1)
                 {
-                    @this.ViewModelServices = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.ViewModelServices = isSet ? factory() : null;
                 }
                 else
                 {
@@ -9680,7 +9719,8 @@ public partial class CEntityInstance
             {
                 if (path.Length == 1)
                 {
-                    @this.Entity = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.Entity = isSet ? factory() : null;
                 }
                 else
                 {
@@ -9698,7 +9738,8 @@ public partial class CEntityInstance
             {
                 if (path.Length == 1)
                 {
-                    @this.CScriptComponent = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.CScriptComponent = isSet ? factory() : null;
                 }
                 else
                 {
@@ -14149,7 +14190,8 @@ public partial class CLightEntity : CBaseModelEntity
             {
                 if (path.Length == 1)
                 {
-                    @this.CLightComponent = buffer.ReadOneBit() ? factory() : null;
+                    var isSet = buffer.ReadOneBit();
+                    @this.CLightComponent = isSet ? factory() : null;
                 }
                 else
                 {
@@ -15618,7 +15660,9 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayerBase_CameraServices>(serializerKey);
             return (CPlayer_CameraServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayerBase_CameraServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayerBase_CameraServices);
+                var downcastInstance = Unsafe.As<CCSPlayerBase_CameraServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSObserver_CameraServices")
@@ -15627,7 +15671,9 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSObserver_CameraServices>(serializerKey);
             return (CPlayer_CameraServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSObserver_CameraServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSObserver_CameraServices);
+                var downcastInstance = Unsafe.As<CCSObserver_CameraServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSPlayer_CameraServices")
@@ -15636,7 +15682,9 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_CameraServices>(serializerKey);
             return (CPlayer_CameraServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_CameraServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_CameraServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_CameraServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_CameraServices: {serializerKey}");
@@ -15787,7 +15835,9 @@ public partial class CPlayer_ItemServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_ItemServices>(serializerKey);
             return (CPlayer_ItemServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_ItemServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_ItemServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_ItemServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_ItemServices: {serializerKey}");
@@ -15814,7 +15864,9 @@ public partial class CPlayer_MovementServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSObserver_MovementServices>(serializerKey);
             return (CPlayer_MovementServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSObserver_MovementServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSObserver_MovementServices);
+                var downcastInstance = Unsafe.As<CCSObserver_MovementServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CPlayer_MovementServices_Humanoid")
@@ -15823,7 +15875,9 @@ public partial class CPlayer_MovementServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CPlayer_MovementServices_Humanoid>(serializerKey);
             return (CPlayer_MovementServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CPlayer_MovementServices_Humanoid)instance, path, ref buffer);
+                Debug.Assert(instance is CPlayer_MovementServices_Humanoid);
+                var downcastInstance = Unsafe.As<CPlayer_MovementServices_Humanoid>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSPlayer_MovementServices")
@@ -15832,7 +15886,9 @@ public partial class CPlayer_MovementServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_MovementServices>(serializerKey);
             return (CPlayer_MovementServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_MovementServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_MovementServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_MovementServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_MovementServices: {serializerKey}");
@@ -15985,7 +16041,9 @@ public partial class CPlayer_ObserverServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSObserver_ObserverServices>(serializerKey);
             return (CPlayer_ObserverServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSObserver_ObserverServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSObserver_ObserverServices);
+                var downcastInstance = Unsafe.As<CCSObserver_ObserverServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_ObserverServices: {serializerKey}");
@@ -16034,7 +16092,9 @@ public partial class CPlayer_UseServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSObserver_UseServices>(serializerKey);
             return (CPlayer_UseServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSObserver_UseServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSObserver_UseServices);
+                var downcastInstance = Unsafe.As<CCSObserver_UseServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSPlayer_UseServices")
@@ -16043,7 +16103,9 @@ public partial class CPlayer_UseServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_UseServices>(serializerKey);
             return (CPlayer_UseServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_UseServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_UseServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_UseServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_UseServices: {serializerKey}");
@@ -16070,7 +16132,9 @@ public partial class CPlayer_ViewModelServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSObserver_ViewModelServices>(serializerKey);
             return (CPlayer_ViewModelServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSObserver_ViewModelServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSObserver_ViewModelServices);
+                var downcastInstance = Unsafe.As<CCSObserver_ViewModelServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         else if (serializerKey.Name == "CCSPlayer_ViewModelServices")
@@ -16079,7 +16143,9 @@ public partial class CPlayer_ViewModelServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_ViewModelServices>(serializerKey);
             return (CPlayer_ViewModelServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_ViewModelServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_ViewModelServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_ViewModelServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_ViewModelServices: {serializerKey}");
@@ -16106,7 +16172,9 @@ public partial class CPlayer_WaterServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_WaterServices>(serializerKey);
             return (CPlayer_WaterServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_WaterServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_WaterServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_WaterServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_WaterServices: {serializerKey}");
@@ -16133,7 +16201,9 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
             var childClassDecoder = decoderSet.GetDecoder<CCSPlayer_WeaponServices>(serializerKey);
             return (CPlayer_WeaponServices instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                childClassDecoder((CCSPlayer_WeaponServices)instance, path, ref buffer);
+                Debug.Assert(instance is CCSPlayer_WeaponServices);
+                var downcastInstance = Unsafe.As<CCSPlayer_WeaponServices>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
             };
         }
         throw new NotImplementedException($"Unknown derived class of CPlayer_WeaponServices: {serializerKey}");
@@ -22626,7 +22696,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<AudioParams>(new SerializerKey(className, 0));
             classType = typeof(AudioParams);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((AudioParams)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is AudioParams);
+                var @this = Unsafe.As<AudioParams>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CAK47":
@@ -22634,7 +22708,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CAK47>(new SerializerKey(className, 0));
             classType = typeof(CAK47);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CAK47)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CAK47);
+                var @this = Unsafe.As<CAK47>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CAnimGraphNetworkedVariables":
@@ -22642,7 +22720,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CAnimGraphNetworkedVariables>(new SerializerKey(className, 0));
             classType = typeof(CAnimGraphNetworkedVariables);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CAnimGraphNetworkedVariables)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CAnimGraphNetworkedVariables);
+                var @this = Unsafe.As<CAnimGraphNetworkedVariables>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CAttributeContainer":
@@ -22650,7 +22732,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CAttributeContainer>(new SerializerKey(className, 0));
             classType = typeof(CAttributeContainer);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CAttributeContainer)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CAttributeContainer);
+                var @this = Unsafe.As<CAttributeContainer>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CAttributeList":
@@ -22658,7 +22744,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CAttributeList>(new SerializerKey(className, 0));
             classType = typeof(CAttributeList);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CAttributeList)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CAttributeList);
+                var @this = Unsafe.As<CAttributeList>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CAttributeManager":
@@ -22666,7 +22756,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CAttributeManager>(new SerializerKey(className, 0));
             classType = typeof(CAttributeManager);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CAttributeManager)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CAttributeManager);
+                var @this = Unsafe.As<CAttributeManager>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBarnLight":
@@ -22674,7 +22768,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBarnLight>(new SerializerKey(className, 0));
             classType = typeof(CBarnLight);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBarnLight)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBarnLight);
+                var @this = Unsafe.As<CBarnLight>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseAnimGraph":
@@ -22682,7 +22780,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseAnimGraph>(new SerializerKey(className, 0));
             classType = typeof(CBaseAnimGraph);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseAnimGraph)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseAnimGraph);
+                var @this = Unsafe.As<CBaseAnimGraph>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseAnimGraphController":
@@ -22690,7 +22792,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseAnimGraphController>(new SerializerKey(className, 0));
             classType = typeof(CBaseAnimGraphController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseAnimGraphController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseAnimGraphController);
+                var @this = Unsafe.As<CBaseAnimGraphController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseButton":
@@ -22698,7 +22804,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseButton>(new SerializerKey(className, 0));
             classType = typeof(CBaseButton);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseButton)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseButton);
+                var @this = Unsafe.As<CBaseButton>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseClientUIEntity":
@@ -22706,7 +22816,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseClientUIEntity>(new SerializerKey(className, 0));
             classType = typeof(CBaseClientUIEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseClientUIEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseClientUIEntity);
+                var @this = Unsafe.As<CBaseClientUIEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseCombatCharacter":
@@ -22714,7 +22828,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseCombatCharacter>(new SerializerKey(className, 0));
             classType = typeof(CBaseCombatCharacter);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseCombatCharacter)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseCombatCharacter);
+                var @this = Unsafe.As<CBaseCombatCharacter>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseCSGrenade":
@@ -22722,7 +22840,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseCSGrenade>(new SerializerKey(className, 0));
             classType = typeof(CBaseCSGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseCSGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseCSGrenade);
+                var @this = Unsafe.As<CBaseCSGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseCSGrenadeProjectile":
@@ -22730,7 +22852,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseCSGrenadeProjectile>(new SerializerKey(className, 0));
             classType = typeof(CBaseCSGrenadeProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseCSGrenadeProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseCSGrenadeProjectile);
+                var @this = Unsafe.As<CBaseCSGrenadeProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseDoor":
@@ -22738,7 +22864,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseDoor>(new SerializerKey(className, 0));
             classType = typeof(CBaseDoor);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseDoor)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseDoor);
+                var @this = Unsafe.As<CBaseDoor>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseEntity":
@@ -22746,7 +22876,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseEntity>(new SerializerKey(className, 0));
             classType = typeof(CBaseEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseEntity);
+                var @this = Unsafe.As<CBaseEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseFire":
@@ -22754,7 +22888,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseFire>(new SerializerKey(className, 0));
             classType = typeof(CBaseFire);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseFire)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseFire);
+                var @this = Unsafe.As<CBaseFire>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseFlex":
@@ -22762,7 +22900,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseFlex>(new SerializerKey(className, 0));
             classType = typeof(CBaseFlex);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseFlex)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseFlex);
+                var @this = Unsafe.As<CBaseFlex>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseGrenade":
@@ -22770,7 +22912,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseGrenade>(new SerializerKey(className, 0));
             classType = typeof(CBaseGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseGrenade);
+                var @this = Unsafe.As<CBaseGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseModelEntity":
@@ -22778,7 +22924,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseModelEntity>(new SerializerKey(className, 0));
             classType = typeof(CBaseModelEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseModelEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseModelEntity);
+                var @this = Unsafe.As<CBaseModelEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBasePlayerController":
@@ -22786,7 +22936,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBasePlayerController>(new SerializerKey(className, 0));
             classType = typeof(CBasePlayerController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBasePlayerController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBasePlayerController);
+                var @this = Unsafe.As<CBasePlayerController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBasePlayerPawn":
@@ -22794,7 +22948,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBasePlayerPawn>(new SerializerKey(className, 0));
             classType = typeof(CBasePlayerPawn);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBasePlayerPawn)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBasePlayerPawn);
+                var @this = Unsafe.As<CBasePlayerPawn>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBasePlayerWeapon":
@@ -22802,7 +22960,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBasePlayerWeapon>(new SerializerKey(className, 0));
             classType = typeof(CBasePlayerWeapon);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBasePlayerWeapon)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBasePlayerWeapon);
+                var @this = Unsafe.As<CBasePlayerWeapon>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseProp":
@@ -22810,7 +22972,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseProp>(new SerializerKey(className, 0));
             classType = typeof(CBaseProp);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseProp)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseProp);
+                var @this = Unsafe.As<CBaseProp>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBasePropDoor":
@@ -22818,7 +22984,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBasePropDoor>(new SerializerKey(className, 0));
             classType = typeof(CBasePropDoor);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBasePropDoor)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBasePropDoor);
+                var @this = Unsafe.As<CBasePropDoor>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseToggle":
@@ -22826,7 +22996,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseToggle>(new SerializerKey(className, 0));
             classType = typeof(CBaseToggle);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseToggle)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseToggle);
+                var @this = Unsafe.As<CBaseToggle>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseTrigger":
@@ -22834,7 +23008,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseTrigger>(new SerializerKey(className, 0));
             classType = typeof(CBaseTrigger);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseTrigger)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseTrigger);
+                var @this = Unsafe.As<CBaseTrigger>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBaseViewModel":
@@ -22842,7 +23020,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBaseViewModel>(new SerializerKey(className, 0));
             classType = typeof(CBaseViewModel);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBaseViewModel)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBaseViewModel);
+                var @this = Unsafe.As<CBaseViewModel>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBeam":
@@ -22850,7 +23032,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBeam>(new SerializerKey(className, 0));
             classType = typeof(CBeam);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBeam)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBeam);
+                var @this = Unsafe.As<CBeam>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBodyComponent":
@@ -22858,7 +23044,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBodyComponent>(new SerializerKey(className, 0));
             classType = typeof(CBodyComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBodyComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBodyComponent);
+                var @this = Unsafe.As<CBodyComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBodyComponentBaseAnimGraph":
@@ -22866,7 +23056,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBodyComponentBaseAnimGraph>(new SerializerKey(className, 0));
             classType = typeof(CBodyComponentBaseAnimGraph);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBodyComponentBaseAnimGraph)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBodyComponentBaseAnimGraph);
+                var @this = Unsafe.As<CBodyComponentBaseAnimGraph>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBodyComponentBaseModelEntity":
@@ -22874,7 +23068,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBodyComponentBaseModelEntity>(new SerializerKey(className, 0));
             classType = typeof(CBodyComponentBaseModelEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBodyComponentBaseModelEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBodyComponentBaseModelEntity);
+                var @this = Unsafe.As<CBodyComponentBaseModelEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBodyComponentPoint":
@@ -22882,7 +23080,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBodyComponentPoint>(new SerializerKey(className, 0));
             classType = typeof(CBodyComponentPoint);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBodyComponentPoint)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBodyComponentPoint);
+                var @this = Unsafe.As<CBodyComponentPoint>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBodyComponentSkeletonInstance":
@@ -22890,7 +23092,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBodyComponentSkeletonInstance>(new SerializerKey(className, 0));
             classType = typeof(CBodyComponentSkeletonInstance);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBodyComponentSkeletonInstance)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBodyComponentSkeletonInstance);
+                var @this = Unsafe.As<CBodyComponentSkeletonInstance>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBombTarget":
@@ -22898,7 +23104,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBombTarget>(new SerializerKey(className, 0));
             classType = typeof(CBombTarget);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBombTarget)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBombTarget);
+                var @this = Unsafe.As<CBombTarget>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBreachCharge":
@@ -22906,7 +23116,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBreachCharge>(new SerializerKey(className, 0));
             classType = typeof(CBreachCharge);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBreachCharge)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBreachCharge);
+                var @this = Unsafe.As<CBreachCharge>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBreachChargeProjectile":
@@ -22914,7 +23128,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBreachChargeProjectile>(new SerializerKey(className, 0));
             classType = typeof(CBreachChargeProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBreachChargeProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBreachChargeProjectile);
+                var @this = Unsafe.As<CBreachChargeProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBreakable":
@@ -22922,7 +23140,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBreakable>(new SerializerKey(className, 0));
             classType = typeof(CBreakable);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBreakable)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBreakable);
+                var @this = Unsafe.As<CBreakable>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBreakableProp":
@@ -22930,7 +23152,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBreakableProp>(new SerializerKey(className, 0));
             classType = typeof(CBreakableProp);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBreakableProp)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBreakableProp);
+                var @this = Unsafe.As<CBreakableProp>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBumpMine":
@@ -22938,7 +23164,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBumpMine>(new SerializerKey(className, 0));
             classType = typeof(CBumpMine);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBumpMine)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBumpMine);
+                var @this = Unsafe.As<CBumpMine>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CBumpMineProjectile":
@@ -22946,7 +23176,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CBumpMineProjectile>(new SerializerKey(className, 0));
             classType = typeof(CBumpMineProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CBumpMineProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CBumpMineProjectile);
+                var @this = Unsafe.As<CBumpMineProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CC4":
@@ -22954,7 +23188,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CC4>(new SerializerKey(className, 0));
             classType = typeof(CC4);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CC4)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CC4);
+                var @this = Unsafe.As<CC4>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CChicken":
@@ -22962,7 +23200,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CChicken>(new SerializerKey(className, 0));
             classType = typeof(CChicken);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CChicken)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CChicken);
+                var @this = Unsafe.As<CChicken>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCollisionProperty":
@@ -22970,7 +23212,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCollisionProperty>(new SerializerKey(className, 0));
             classType = typeof(CCollisionProperty);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCollisionProperty)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCollisionProperty);
+                var @this = Unsafe.As<CCollisionProperty>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CColorCorrection":
@@ -22978,7 +23224,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CColorCorrection>(new SerializerKey(className, 0));
             classType = typeof(CColorCorrection);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CColorCorrection)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CColorCorrection);
+                var @this = Unsafe.As<CColorCorrection>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CColorCorrectionVolume":
@@ -22986,7 +23236,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CColorCorrectionVolume>(new SerializerKey(className, 0));
             classType = typeof(CColorCorrectionVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CColorCorrectionVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CColorCorrectionVolume);
+                var @this = Unsafe.As<CColorCorrectionVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGameModeRules":
@@ -22994,7 +23248,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGameModeRules>(new SerializerKey(className, 0));
             classType = typeof(CCSGameModeRules);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGameModeRules)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGameModeRules);
+                var @this = Unsafe.As<CCSGameModeRules>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGameModeRules_Deathmatch":
@@ -23002,7 +23260,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGameModeRules_Deathmatch>(new SerializerKey(className, 0));
             classType = typeof(CCSGameModeRules_Deathmatch);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGameModeRules_Deathmatch)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGameModeRules_Deathmatch);
+                var @this = Unsafe.As<CCSGameModeRules_Deathmatch>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGameModeRules_Noop":
@@ -23010,7 +23272,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGameModeRules_Noop>(new SerializerKey(className, 0));
             classType = typeof(CCSGameModeRules_Noop);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGameModeRules_Noop)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGameModeRules_Noop);
+                var @this = Unsafe.As<CCSGameModeRules_Noop>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGameModeRules_Scripted":
@@ -23018,7 +23284,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGameModeRules_Scripted>(new SerializerKey(className, 0));
             classType = typeof(CCSGameModeRules_Scripted);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGameModeRules_Scripted)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGameModeRules_Scripted);
+                var @this = Unsafe.As<CCSGameModeRules_Scripted>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGameRules":
@@ -23026,7 +23296,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGameRules>(new SerializerKey(className, 0));
             classType = typeof(CCSGameRules);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGameRules)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGameRules);
+                var @this = Unsafe.As<CCSGameRules>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGameRulesProxy":
@@ -23034,7 +23308,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGameRulesProxy>(new SerializerKey(className, 0));
             classType = typeof(CCSGameRulesProxy);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGameRulesProxy)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGameRulesProxy);
+                var @this = Unsafe.As<CCSGameRulesProxy>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamIntroCharacterPosition":
@@ -23042,7 +23320,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamIntroCharacterPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamIntroCharacterPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamIntroCharacterPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamIntroCharacterPosition);
+                var @this = Unsafe.As<CCSGO_TeamIntroCharacterPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamIntroCounterTerroristPosition":
@@ -23050,7 +23332,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamIntroCounterTerroristPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamIntroCounterTerroristPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamIntroCounterTerroristPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamIntroCounterTerroristPosition);
+                var @this = Unsafe.As<CCSGO_TeamIntroCounterTerroristPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamIntroTerroristPosition":
@@ -23058,7 +23344,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamIntroTerroristPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamIntroTerroristPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamIntroTerroristPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamIntroTerroristPosition);
+                var @this = Unsafe.As<CCSGO_TeamIntroTerroristPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamPreviewCharacterPosition":
@@ -23066,7 +23356,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamPreviewCharacterPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamPreviewCharacterPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamPreviewCharacterPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamPreviewCharacterPosition);
+                var @this = Unsafe.As<CCSGO_TeamPreviewCharacterPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamSelectCharacterPosition":
@@ -23074,7 +23368,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamSelectCharacterPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamSelectCharacterPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamSelectCharacterPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamSelectCharacterPosition);
+                var @this = Unsafe.As<CCSGO_TeamSelectCharacterPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamSelectCounterTerroristPosition":
@@ -23082,7 +23380,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamSelectCounterTerroristPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamSelectCounterTerroristPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamSelectCounterTerroristPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamSelectCounterTerroristPosition);
+                var @this = Unsafe.As<CCSGO_TeamSelectCounterTerroristPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_TeamSelectTerroristPosition":
@@ -23090,7 +23392,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_TeamSelectTerroristPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_TeamSelectTerroristPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_TeamSelectTerroristPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_TeamSelectTerroristPosition);
+                var @this = Unsafe.As<CCSGO_TeamSelectTerroristPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_WingmanIntroCharacterPosition":
@@ -23098,7 +23404,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_WingmanIntroCharacterPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_WingmanIntroCharacterPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_WingmanIntroCharacterPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_WingmanIntroCharacterPosition);
+                var @this = Unsafe.As<CCSGO_WingmanIntroCharacterPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_WingmanIntroCounterTerroristPosition":
@@ -23106,7 +23416,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_WingmanIntroCounterTerroristPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_WingmanIntroCounterTerroristPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_WingmanIntroCounterTerroristPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_WingmanIntroCounterTerroristPosition);
+                var @this = Unsafe.As<CCSGO_WingmanIntroCounterTerroristPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGO_WingmanIntroTerroristPosition":
@@ -23114,7 +23428,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGO_WingmanIntroTerroristPosition>(new SerializerKey(className, 0));
             classType = typeof(CCSGO_WingmanIntroTerroristPosition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGO_WingmanIntroTerroristPosition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGO_WingmanIntroTerroristPosition);
+                var @this = Unsafe.As<CCSGO_WingmanIntroTerroristPosition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSGOViewModel":
@@ -23122,7 +23440,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSGOViewModel>(new SerializerKey(className, 0));
             classType = typeof(CCSGOViewModel);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSGOViewModel)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSGOViewModel);
+                var @this = Unsafe.As<CCSGOViewModel>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSMinimapBoundary":
@@ -23130,7 +23452,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSMinimapBoundary>(new SerializerKey(className, 0));
             classType = typeof(CCSMinimapBoundary);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSMinimapBoundary)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSMinimapBoundary);
+                var @this = Unsafe.As<CCSMinimapBoundary>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSObserver_CameraServices":
@@ -23138,7 +23464,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSObserver_CameraServices>(new SerializerKey(className, 0));
             classType = typeof(CCSObserver_CameraServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSObserver_CameraServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSObserver_CameraServices);
+                var @this = Unsafe.As<CCSObserver_CameraServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSObserver_MovementServices":
@@ -23146,7 +23476,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSObserver_MovementServices>(new SerializerKey(className, 0));
             classType = typeof(CCSObserver_MovementServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSObserver_MovementServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSObserver_MovementServices);
+                var @this = Unsafe.As<CCSObserver_MovementServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSObserver_ObserverServices":
@@ -23154,7 +23488,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSObserver_ObserverServices>(new SerializerKey(className, 0));
             classType = typeof(CCSObserver_ObserverServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSObserver_ObserverServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSObserver_ObserverServices);
+                var @this = Unsafe.As<CCSObserver_ObserverServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSObserver_UseServices":
@@ -23162,7 +23500,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSObserver_UseServices>(new SerializerKey(className, 0));
             classType = typeof(CCSObserver_UseServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSObserver_UseServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSObserver_UseServices);
+                var @this = Unsafe.As<CCSObserver_UseServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSObserver_ViewModelServices":
@@ -23170,7 +23512,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSObserver_ViewModelServices>(new SerializerKey(className, 0));
             classType = typeof(CCSObserver_ViewModelServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSObserver_ViewModelServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSObserver_ViewModelServices);
+                var @this = Unsafe.As<CCSObserver_ViewModelServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSObserverPawn":
@@ -23178,7 +23524,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSObserverPawn>(new SerializerKey(className, 0));
             classType = typeof(CCSObserverPawn);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSObserverPawn)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSObserverPawn);
+                var @this = Unsafe.As<CCSObserverPawn>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_ActionTrackingServices":
@@ -23186,7 +23536,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_ActionTrackingServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_ActionTrackingServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_ActionTrackingServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_ActionTrackingServices);
+                var @this = Unsafe.As<CCSPlayer_ActionTrackingServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_BulletServices":
@@ -23194,7 +23548,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_BulletServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_BulletServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_BulletServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_BulletServices);
+                var @this = Unsafe.As<CCSPlayer_BulletServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_BuyServices":
@@ -23202,7 +23560,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_BuyServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_BuyServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_BuyServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_BuyServices);
+                var @this = Unsafe.As<CCSPlayer_BuyServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_CameraServices":
@@ -23210,7 +23572,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_CameraServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_CameraServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_CameraServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_CameraServices);
+                var @this = Unsafe.As<CCSPlayer_CameraServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_HostageServices":
@@ -23218,7 +23584,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_HostageServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_HostageServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_HostageServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_HostageServices);
+                var @this = Unsafe.As<CCSPlayer_HostageServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_ItemServices":
@@ -23226,7 +23596,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_ItemServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_ItemServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_ItemServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_ItemServices);
+                var @this = Unsafe.As<CCSPlayer_ItemServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_MovementServices":
@@ -23234,7 +23608,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_MovementServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_MovementServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_MovementServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_MovementServices);
+                var @this = Unsafe.As<CCSPlayer_MovementServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_PingServices":
@@ -23242,7 +23620,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_PingServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_PingServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_PingServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_PingServices);
+                var @this = Unsafe.As<CCSPlayer_PingServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_UseServices":
@@ -23250,7 +23632,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_UseServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_UseServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_UseServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_UseServices);
+                var @this = Unsafe.As<CCSPlayer_UseServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_ViewModelServices":
@@ -23258,7 +23644,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_ViewModelServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_ViewModelServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_ViewModelServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_ViewModelServices);
+                var @this = Unsafe.As<CCSPlayer_ViewModelServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_WaterServices":
@@ -23266,7 +23656,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_WaterServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_WaterServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_WaterServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_WaterServices);
+                var @this = Unsafe.As<CCSPlayer_WaterServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayer_WeaponServices":
@@ -23274,7 +23668,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayer_WeaponServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayer_WeaponServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayer_WeaponServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayer_WeaponServices);
+                var @this = Unsafe.As<CCSPlayer_WeaponServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerBase_CameraServices":
@@ -23282,7 +23680,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerBase_CameraServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerBase_CameraServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerBase_CameraServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerBase_CameraServices);
+                var @this = Unsafe.As<CCSPlayerBase_CameraServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerController":
@@ -23290,7 +23692,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerController>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerController);
+                var @this = Unsafe.As<CCSPlayerController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerController_ActionTrackingServices":
@@ -23298,7 +23704,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerController_ActionTrackingServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerController_ActionTrackingServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerController_ActionTrackingServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerController_ActionTrackingServices);
+                var @this = Unsafe.As<CCSPlayerController_ActionTrackingServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerController_DamageServices":
@@ -23306,7 +23716,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerController_DamageServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerController_DamageServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerController_DamageServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerController_DamageServices);
+                var @this = Unsafe.As<CCSPlayerController_DamageServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerController_InGameMoneyServices":
@@ -23314,7 +23728,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerController_InGameMoneyServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerController_InGameMoneyServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerController_InGameMoneyServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerController_InGameMoneyServices);
+                var @this = Unsafe.As<CCSPlayerController_InGameMoneyServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerController_InventoryServices":
@@ -23322,7 +23740,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerController_InventoryServices>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerController_InventoryServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerController_InventoryServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerController_InventoryServices);
+                var @this = Unsafe.As<CCSPlayerController_InventoryServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerPawn":
@@ -23330,7 +23752,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerPawn>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerPawn);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerPawn)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerPawn);
+                var @this = Unsafe.As<CCSPlayerPawn>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerPawnBase":
@@ -23338,7 +23764,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerPawnBase>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerPawnBase);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerPawnBase)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerPawnBase);
+                var @this = Unsafe.As<CCSPlayerPawnBase>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSPlayerResource":
@@ -23346,7 +23776,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSPlayerResource>(new SerializerKey(className, 0));
             classType = typeof(CCSPlayerResource);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSPlayerResource)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSPlayerResource);
+                var @this = Unsafe.As<CCSPlayerResource>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSTeam":
@@ -23354,7 +23788,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSTeam>(new SerializerKey(className, 0));
             classType = typeof(CCSTeam);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSTeam)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSTeam);
+                var @this = Unsafe.As<CCSTeam>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSWeaponBase":
@@ -23362,7 +23800,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSWeaponBase>(new SerializerKey(className, 0));
             classType = typeof(CCSWeaponBase);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSWeaponBase)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSWeaponBase);
+                var @this = Unsafe.As<CCSWeaponBase>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CCSWeaponBaseGun":
@@ -23370,7 +23812,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CCSWeaponBaseGun>(new SerializerKey(className, 0));
             classType = typeof(CCSWeaponBaseGun);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CCSWeaponBaseGun)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CCSWeaponBaseGun);
+                var @this = Unsafe.As<CCSWeaponBaseGun>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CDamageRecord":
@@ -23378,7 +23824,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CDamageRecord>(new SerializerKey(className, 0));
             classType = typeof(CDamageRecord);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CDamageRecord)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CDamageRecord);
+                var @this = Unsafe.As<CDamageRecord>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CDEagle":
@@ -23386,7 +23836,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CDEagle>(new SerializerKey(className, 0));
             classType = typeof(CDEagle);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CDEagle)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CDEagle);
+                var @this = Unsafe.As<CDEagle>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CDecoyGrenade":
@@ -23394,7 +23848,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CDecoyGrenade>(new SerializerKey(className, 0));
             classType = typeof(CDecoyGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CDecoyGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CDecoyGrenade);
+                var @this = Unsafe.As<CDecoyGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CDecoyProjectile":
@@ -23402,7 +23860,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CDecoyProjectile>(new SerializerKey(className, 0));
             classType = typeof(CDecoyProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CDecoyProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CDecoyProjectile);
+                var @this = Unsafe.As<CDecoyProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CDynamicLight":
@@ -23410,7 +23872,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CDynamicLight>(new SerializerKey(className, 0));
             classType = typeof(CDynamicLight);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CDynamicLight)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CDynamicLight);
+                var @this = Unsafe.As<CDynamicLight>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CDynamicProp":
@@ -23418,7 +23884,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CDynamicProp>(new SerializerKey(className, 0));
             classType = typeof(CDynamicProp);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CDynamicProp)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CDynamicProp);
+                var @this = Unsafe.As<CDynamicProp>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEconEntity":
@@ -23426,7 +23896,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEconEntity>(new SerializerKey(className, 0));
             classType = typeof(CEconEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEconEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEconEntity);
+                var @this = Unsafe.As<CEconEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEconItemAttribute":
@@ -23434,7 +23908,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEconItemAttribute>(new SerializerKey(className, 0));
             classType = typeof(CEconItemAttribute);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEconItemAttribute)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEconItemAttribute);
+                var @this = Unsafe.As<CEconItemAttribute>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEconItemView":
@@ -23442,7 +23920,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEconItemView>(new SerializerKey(className, 0));
             classType = typeof(CEconItemView);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEconItemView)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEconItemView);
+                var @this = Unsafe.As<CEconItemView>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEconWearable":
@@ -23450,7 +23932,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEconWearable>(new SerializerKey(className, 0));
             classType = typeof(CEconWearable);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEconWearable)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEconWearable);
+                var @this = Unsafe.As<CEconWearable>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEntityComponent":
@@ -23458,7 +23944,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEntityComponent>(new SerializerKey(className, 0));
             classType = typeof(CEntityComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEntityComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEntityComponent);
+                var @this = Unsafe.As<CEntityComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEntityDissolve":
@@ -23466,7 +23956,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEntityDissolve>(new SerializerKey(className, 0));
             classType = typeof(CEntityDissolve);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEntityDissolve)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEntityDissolve);
+                var @this = Unsafe.As<CEntityDissolve>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEntityFlame":
@@ -23474,7 +23968,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEntityFlame>(new SerializerKey(className, 0));
             classType = typeof(CEntityFlame);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEntityFlame)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEntityFlame);
+                var @this = Unsafe.As<CEntityFlame>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEntityIdentity":
@@ -23482,7 +23980,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEntityIdentity>(new SerializerKey(className, 0));
             classType = typeof(CEntityIdentity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEntityIdentity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEntityIdentity);
+                var @this = Unsafe.As<CEntityIdentity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEntityInstance":
@@ -23490,7 +23992,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEntityInstance>(new SerializerKey(className, 0));
             classType = typeof(CEntityInstance);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEntityInstance)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEntityInstance);
+                var @this = Unsafe.As<CEntityInstance>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvCombinedLightProbeVolume":
@@ -23498,7 +24004,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvCombinedLightProbeVolume>(new SerializerKey(className, 0));
             classType = typeof(CEnvCombinedLightProbeVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvCombinedLightProbeVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvCombinedLightProbeVolume);
+                var @this = Unsafe.As<CEnvCombinedLightProbeVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvCubemap":
@@ -23506,7 +24016,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvCubemap>(new SerializerKey(className, 0));
             classType = typeof(CEnvCubemap);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvCubemap)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvCubemap);
+                var @this = Unsafe.As<CEnvCubemap>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvCubemapBox":
@@ -23514,7 +24028,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvCubemapBox>(new SerializerKey(className, 0));
             classType = typeof(CEnvCubemapBox);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvCubemapBox)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvCubemapBox);
+                var @this = Unsafe.As<CEnvCubemapBox>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvCubemapFog":
@@ -23522,7 +24040,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvCubemapFog>(new SerializerKey(className, 0));
             classType = typeof(CEnvCubemapFog);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvCubemapFog)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvCubemapFog);
+                var @this = Unsafe.As<CEnvCubemapFog>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvDecal":
@@ -23530,7 +24052,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvDecal>(new SerializerKey(className, 0));
             classType = typeof(CEnvDecal);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvDecal)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvDecal);
+                var @this = Unsafe.As<CEnvDecal>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvDetailController":
@@ -23538,7 +24064,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvDetailController>(new SerializerKey(className, 0));
             classType = typeof(CEnvDetailController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvDetailController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvDetailController);
+                var @this = Unsafe.As<CEnvDetailController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvLightProbeVolume":
@@ -23546,7 +24076,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvLightProbeVolume>(new SerializerKey(className, 0));
             classType = typeof(CEnvLightProbeVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvLightProbeVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvLightProbeVolume);
+                var @this = Unsafe.As<CEnvLightProbeVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvParticleGlow":
@@ -23554,7 +24088,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvParticleGlow>(new SerializerKey(className, 0));
             classType = typeof(CEnvParticleGlow);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvParticleGlow)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvParticleGlow);
+                var @this = Unsafe.As<CEnvParticleGlow>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvProjectedTexture":
@@ -23562,7 +24100,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvProjectedTexture>(new SerializerKey(className, 0));
             classType = typeof(CEnvProjectedTexture);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvProjectedTexture)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvProjectedTexture);
+                var @this = Unsafe.As<CEnvProjectedTexture>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvScreenOverlay":
@@ -23570,7 +24112,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvScreenOverlay>(new SerializerKey(className, 0));
             classType = typeof(CEnvScreenOverlay);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvScreenOverlay)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvScreenOverlay);
+                var @this = Unsafe.As<CEnvScreenOverlay>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvSky":
@@ -23578,7 +24124,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvSky>(new SerializerKey(className, 0));
             classType = typeof(CEnvSky);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvSky)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvSky);
+                var @this = Unsafe.As<CEnvSky>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvVolumetricFogController":
@@ -23586,7 +24136,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvVolumetricFogController>(new SerializerKey(className, 0));
             classType = typeof(CEnvVolumetricFogController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvVolumetricFogController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvVolumetricFogController);
+                var @this = Unsafe.As<CEnvVolumetricFogController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvVolumetricFogVolume":
@@ -23594,7 +24148,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvVolumetricFogVolume>(new SerializerKey(className, 0));
             classType = typeof(CEnvVolumetricFogVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvVolumetricFogVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvVolumetricFogVolume);
+                var @this = Unsafe.As<CEnvVolumetricFogVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvWind":
@@ -23602,7 +24160,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvWind>(new SerializerKey(className, 0));
             classType = typeof(CEnvWind);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvWind)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvWind);
+                var @this = Unsafe.As<CEnvWind>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CEnvWindShared":
@@ -23610,7 +24172,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CEnvWindShared>(new SerializerKey(className, 0));
             classType = typeof(CEnvWindShared);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CEnvWindShared)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CEnvWindShared);
+                var @this = Unsafe.As<CEnvWindShared>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFireCrackerBlast":
@@ -23618,7 +24184,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFireCrackerBlast>(new SerializerKey(className, 0));
             classType = typeof(CFireCrackerBlast);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFireCrackerBlast)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFireCrackerBlast);
+                var @this = Unsafe.As<CFireCrackerBlast>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFireSmoke":
@@ -23626,7 +24196,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFireSmoke>(new SerializerKey(className, 0));
             classType = typeof(CFireSmoke);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFireSmoke)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFireSmoke);
+                var @this = Unsafe.As<CFireSmoke>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFish":
@@ -23634,7 +24208,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFish>(new SerializerKey(className, 0));
             classType = typeof(CFish);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFish)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFish);
+                var @this = Unsafe.As<CFish>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFists":
@@ -23642,7 +24220,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFists>(new SerializerKey(className, 0));
             classType = typeof(CFists);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFists)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFists);
+                var @this = Unsafe.As<CFists>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFlashbang":
@@ -23650,7 +24232,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFlashbang>(new SerializerKey(className, 0));
             classType = typeof(CFlashbang);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFlashbang)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFlashbang);
+                var @this = Unsafe.As<CFlashbang>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFlashbangProjectile":
@@ -23658,7 +24244,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFlashbangProjectile>(new SerializerKey(className, 0));
             classType = typeof(CFlashbangProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFlashbangProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFlashbangProjectile);
+                var @this = Unsafe.As<CFlashbangProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFogController":
@@ -23666,7 +24256,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFogController>(new SerializerKey(className, 0));
             classType = typeof(CFogController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFogController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFogController);
+                var @this = Unsafe.As<CFogController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFootstepControl":
@@ -23674,7 +24268,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFootstepControl>(new SerializerKey(className, 0));
             classType = typeof(CFootstepControl);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFootstepControl)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFootstepControl);
+                var @this = Unsafe.As<CFootstepControl>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncBrush":
@@ -23682,7 +24280,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncBrush>(new SerializerKey(className, 0));
             classType = typeof(CFuncBrush);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncBrush)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncBrush);
+                var @this = Unsafe.As<CFuncBrush>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncConveyor":
@@ -23690,7 +24292,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncConveyor>(new SerializerKey(className, 0));
             classType = typeof(CFuncConveyor);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncConveyor)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncConveyor);
+                var @this = Unsafe.As<CFuncConveyor>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncElectrifiedVolume":
@@ -23698,7 +24304,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncElectrifiedVolume>(new SerializerKey(className, 0));
             classType = typeof(CFuncElectrifiedVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncElectrifiedVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncElectrifiedVolume);
+                var @this = Unsafe.As<CFuncElectrifiedVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncLadder":
@@ -23706,7 +24316,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncLadder>(new SerializerKey(className, 0));
             classType = typeof(CFuncLadder);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncLadder)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncLadder);
+                var @this = Unsafe.As<CFuncLadder>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncMonitor":
@@ -23714,7 +24328,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncMonitor>(new SerializerKey(className, 0));
             classType = typeof(CFuncMonitor);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncMonitor)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncMonitor);
+                var @this = Unsafe.As<CFuncMonitor>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncMoveLinear":
@@ -23722,7 +24340,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncMoveLinear>(new SerializerKey(className, 0));
             classType = typeof(CFuncMoveLinear);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncMoveLinear)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncMoveLinear);
+                var @this = Unsafe.As<CFuncMoveLinear>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncRotating":
@@ -23730,7 +24352,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncRotating>(new SerializerKey(className, 0));
             classType = typeof(CFuncRotating);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncRotating)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncRotating);
+                var @this = Unsafe.As<CFuncRotating>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncTrackTrain":
@@ -23738,7 +24364,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncTrackTrain>(new SerializerKey(className, 0));
             classType = typeof(CFuncTrackTrain);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncTrackTrain)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncTrackTrain);
+                var @this = Unsafe.As<CFuncTrackTrain>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CFuncWater":
@@ -23746,7 +24376,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CFuncWater>(new SerializerKey(className, 0));
             classType = typeof(CFuncWater);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CFuncWater)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CFuncWater);
+                var @this = Unsafe.As<CFuncWater>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CGameRules":
@@ -23754,7 +24388,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CGameRules>(new SerializerKey(className, 0));
             classType = typeof(CGameRules);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CGameRules)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CGameRules);
+                var @this = Unsafe.As<CGameRules>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CGameRulesProxy":
@@ -23762,7 +24400,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CGameRulesProxy>(new SerializerKey(className, 0));
             classType = typeof(CGameRulesProxy);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CGameRulesProxy)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CGameRulesProxy);
+                var @this = Unsafe.As<CGameRulesProxy>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CGameSceneNode":
@@ -23770,7 +24412,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CGameSceneNode>(new SerializerKey(className, 0));
             classType = typeof(CGameSceneNode);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CGameSceneNode)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CGameSceneNode);
+                var @this = Unsafe.As<CGameSceneNode>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CGlowProperty":
@@ -23778,7 +24424,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CGlowProperty>(new SerializerKey(className, 0));
             classType = typeof(CGlowProperty);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CGlowProperty)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CGlowProperty);
+                var @this = Unsafe.As<CGlowProperty>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CGradientFog":
@@ -23786,7 +24436,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CGradientFog>(new SerializerKey(className, 0));
             classType = typeof(CGradientFog);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CGradientFog)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CGradientFog);
+                var @this = Unsafe.As<CGradientFog>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHandleTest":
@@ -23794,7 +24448,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHandleTest>(new SerializerKey(className, 0));
             classType = typeof(CHandleTest);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHandleTest)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHandleTest);
+                var @this = Unsafe.As<CHandleTest>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHEGrenade":
@@ -23802,7 +24460,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHEGrenade>(new SerializerKey(className, 0));
             classType = typeof(CHEGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHEGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHEGrenade);
+                var @this = Unsafe.As<CHEGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHEGrenadeProjectile":
@@ -23810,7 +24472,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHEGrenadeProjectile>(new SerializerKey(className, 0));
             classType = typeof(CHEGrenadeProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHEGrenadeProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHEGrenadeProjectile);
+                var @this = Unsafe.As<CHEGrenadeProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHitboxComponent":
@@ -23818,7 +24484,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHitboxComponent>(new SerializerKey(className, 0));
             classType = typeof(CHitboxComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHitboxComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHitboxComponent);
+                var @this = Unsafe.As<CHitboxComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHostage":
@@ -23826,7 +24496,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHostage>(new SerializerKey(className, 0));
             classType = typeof(CHostage);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHostage)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHostage);
+                var @this = Unsafe.As<CHostage>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHostageCarriableProp":
@@ -23834,7 +24508,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHostageCarriableProp>(new SerializerKey(className, 0));
             classType = typeof(CHostageCarriableProp);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHostageCarriableProp)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHostageCarriableProp);
+                var @this = Unsafe.As<CHostageCarriableProp>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHostageExpresserShim":
@@ -23842,7 +24520,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHostageExpresserShim>(new SerializerKey(className, 0));
             classType = typeof(CHostageExpresserShim);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHostageExpresserShim)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHostageExpresserShim);
+                var @this = Unsafe.As<CHostageExpresserShim>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHostageRescueZone":
@@ -23850,7 +24532,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHostageRescueZone>(new SerializerKey(className, 0));
             classType = typeof(CHostageRescueZone);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHostageRescueZone)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHostageRescueZone);
+                var @this = Unsafe.As<CHostageRescueZone>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CHostageRescueZoneShim":
@@ -23858,7 +24544,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CHostageRescueZoneShim>(new SerializerKey(className, 0));
             classType = typeof(CHostageRescueZoneShim);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CHostageRescueZoneShim)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CHostageRescueZoneShim);
+                var @this = Unsafe.As<CHostageRescueZoneShim>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CIncendiaryGrenade":
@@ -23866,7 +24556,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CIncendiaryGrenade>(new SerializerKey(className, 0));
             classType = typeof(CIncendiaryGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CIncendiaryGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CIncendiaryGrenade);
+                var @this = Unsafe.As<CIncendiaryGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CInferno":
@@ -23874,7 +24568,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CInferno>(new SerializerKey(className, 0));
             classType = typeof(CInferno);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CInferno)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CInferno);
+                var @this = Unsafe.As<CInferno>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CInfoInstructorHintHostageRescueZone":
@@ -23882,7 +24580,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CInfoInstructorHintHostageRescueZone>(new SerializerKey(className, 0));
             classType = typeof(CInfoInstructorHintHostageRescueZone);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CInfoInstructorHintHostageRescueZone)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CInfoInstructorHintHostageRescueZone);
+                var @this = Unsafe.As<CInfoInstructorHintHostageRescueZone>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CInfoLadderDismount":
@@ -23890,7 +24592,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CInfoLadderDismount>(new SerializerKey(className, 0));
             classType = typeof(CInfoLadderDismount);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CInfoLadderDismount)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CInfoLadderDismount);
+                var @this = Unsafe.As<CInfoLadderDismount>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CInfoOffscreenPanoramaTexture":
@@ -23898,7 +24604,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CInfoOffscreenPanoramaTexture>(new SerializerKey(className, 0));
             classType = typeof(CInfoOffscreenPanoramaTexture);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CInfoOffscreenPanoramaTexture)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CInfoOffscreenPanoramaTexture);
+                var @this = Unsafe.As<CInfoOffscreenPanoramaTexture>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CInfoVisibilityBox":
@@ -23906,7 +24616,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CInfoVisibilityBox>(new SerializerKey(className, 0));
             classType = typeof(CInfoVisibilityBox);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CInfoVisibilityBox)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CInfoVisibilityBox);
+                var @this = Unsafe.As<CInfoVisibilityBox>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CInfoWorldLayer":
@@ -23914,7 +24628,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CInfoWorldLayer>(new SerializerKey(className, 0));
             classType = typeof(CInfoWorldLayer);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CInfoWorldLayer)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CInfoWorldLayer);
+                var @this = Unsafe.As<CInfoWorldLayer>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CItem":
@@ -23922,7 +24640,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CItem>(new SerializerKey(className, 0));
             classType = typeof(CItem);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CItem)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CItem);
+                var @this = Unsafe.As<CItem>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CItem_Healthshot":
@@ -23930,7 +24652,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CItem_Healthshot>(new SerializerKey(className, 0));
             classType = typeof(CItem_Healthshot);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CItem_Healthshot)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CItem_Healthshot);
+                var @this = Unsafe.As<CItem_Healthshot>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CItemDogtags":
@@ -23938,7 +24664,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CItemDogtags>(new SerializerKey(className, 0));
             classType = typeof(CItemDogtags);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CItemDogtags)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CItemDogtags);
+                var @this = Unsafe.As<CItemDogtags>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CKnife":
@@ -23946,7 +24676,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CKnife>(new SerializerKey(className, 0));
             classType = typeof(CKnife);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CKnife)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CKnife);
+                var @this = Unsafe.As<CKnife>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightComponent":
@@ -23954,7 +24688,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightComponent>(new SerializerKey(className, 0));
             classType = typeof(CLightComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightComponent);
+                var @this = Unsafe.As<CLightComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightDirectionalEntity":
@@ -23962,7 +24700,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightDirectionalEntity>(new SerializerKey(className, 0));
             classType = typeof(CLightDirectionalEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightDirectionalEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightDirectionalEntity);
+                var @this = Unsafe.As<CLightDirectionalEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightEntity":
@@ -23970,7 +24712,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightEntity>(new SerializerKey(className, 0));
             classType = typeof(CLightEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightEntity);
+                var @this = Unsafe.As<CLightEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightEnvironmentEntity":
@@ -23978,7 +24724,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightEnvironmentEntity>(new SerializerKey(className, 0));
             classType = typeof(CLightEnvironmentEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightEnvironmentEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightEnvironmentEntity);
+                var @this = Unsafe.As<CLightEnvironmentEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightGlow":
@@ -23986,7 +24736,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightGlow>(new SerializerKey(className, 0));
             classType = typeof(CLightGlow);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightGlow)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightGlow);
+                var @this = Unsafe.As<CLightGlow>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightOrthoEntity":
@@ -23994,7 +24748,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightOrthoEntity>(new SerializerKey(className, 0));
             classType = typeof(CLightOrthoEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightOrthoEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightOrthoEntity);
+                var @this = Unsafe.As<CLightOrthoEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CLightSpotEntity":
@@ -24002,7 +24760,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CLightSpotEntity>(new SerializerKey(className, 0));
             classType = typeof(CLightSpotEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CLightSpotEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CLightSpotEntity);
+                var @this = Unsafe.As<CLightSpotEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CMapVetoPickController":
@@ -24010,7 +24772,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CMapVetoPickController>(new SerializerKey(className, 0));
             classType = typeof(CMapVetoPickController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CMapVetoPickController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CMapVetoPickController);
+                var @this = Unsafe.As<CMapVetoPickController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CMelee":
@@ -24018,7 +24784,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CMelee>(new SerializerKey(className, 0));
             classType = typeof(CMelee);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CMelee)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CMelee);
+                var @this = Unsafe.As<CMelee>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CModelPointEntity":
@@ -24026,7 +24796,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CModelPointEntity>(new SerializerKey(className, 0));
             classType = typeof(CModelPointEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CModelPointEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CModelPointEntity);
+                var @this = Unsafe.As<CModelPointEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CModelState":
@@ -24034,7 +24808,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CModelState>(new SerializerKey(className, 0));
             classType = typeof(CModelState);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CModelState)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CModelState);
+                var @this = Unsafe.As<CModelState>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CMolotovGrenade":
@@ -24042,7 +24820,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CMolotovGrenade>(new SerializerKey(className, 0));
             classType = typeof(CMolotovGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CMolotovGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CMolotovGrenade);
+                var @this = Unsafe.As<CMolotovGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CMolotovProjectile":
@@ -24050,7 +24832,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CMolotovProjectile>(new SerializerKey(className, 0));
             classType = typeof(CMolotovProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CMolotovProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CMolotovProjectile);
+                var @this = Unsafe.As<CMolotovProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CMultiplayRules":
@@ -24058,7 +24844,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CMultiplayRules>(new SerializerKey(className, 0));
             classType = typeof(CMultiplayRules);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CMultiplayRules)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CMultiplayRules);
+                var @this = Unsafe.As<CMultiplayRules>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CNetworkedSequenceOperation":
@@ -24066,7 +24856,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CNetworkedSequenceOperation>(new SerializerKey(className, 0));
             classType = typeof(CNetworkedSequenceOperation);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CNetworkedSequenceOperation)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CNetworkedSequenceOperation);
+                var @this = Unsafe.As<CNetworkedSequenceOperation>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CNetworkOriginCellCoordQuantizedVector":
@@ -24074,7 +24868,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CNetworkOriginCellCoordQuantizedVector>(new SerializerKey(className, 0));
             classType = typeof(CNetworkOriginCellCoordQuantizedVector);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CNetworkOriginCellCoordQuantizedVector)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CNetworkOriginCellCoordQuantizedVector);
+                var @this = Unsafe.As<CNetworkOriginCellCoordQuantizedVector>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CNetworkVelocityVector":
@@ -24082,7 +24880,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CNetworkVelocityVector>(new SerializerKey(className, 0));
             classType = typeof(CNetworkVelocityVector);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CNetworkVelocityVector)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CNetworkVelocityVector);
+                var @this = Unsafe.As<CNetworkVelocityVector>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CNetworkViewOffsetVector":
@@ -24090,7 +24892,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CNetworkViewOffsetVector>(new SerializerKey(className, 0));
             classType = typeof(CNetworkViewOffsetVector);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CNetworkViewOffsetVector)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CNetworkViewOffsetVector);
+                var @this = Unsafe.As<CNetworkViewOffsetVector>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "COmniLight":
@@ -24098,7 +24904,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<COmniLight>(new SerializerKey(className, 0));
             classType = typeof(COmniLight);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((COmniLight)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is COmniLight);
+                var @this = Unsafe.As<COmniLight>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CountdownTimer":
@@ -24106,7 +24916,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CountdownTimer>(new SerializerKey(className, 0));
             classType = typeof(CountdownTimer);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CountdownTimer)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CountdownTimer);
+                var @this = Unsafe.As<CountdownTimer>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CParticleSystem":
@@ -24114,7 +24928,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CParticleSystem>(new SerializerKey(className, 0));
             classType = typeof(CParticleSystem);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CParticleSystem)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CParticleSystem);
+                var @this = Unsafe.As<CParticleSystem>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPathParticleRope":
@@ -24122,7 +24940,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPathParticleRope>(new SerializerKey(className, 0));
             classType = typeof(CPathParticleRope);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPathParticleRope)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPathParticleRope);
+                var @this = Unsafe.As<CPathParticleRope>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPhysBox":
@@ -24130,7 +24952,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPhysBox>(new SerializerKey(className, 0));
             classType = typeof(CPhysBox);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPhysBox)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPhysBox);
+                var @this = Unsafe.As<CPhysBox>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPhysicsProp":
@@ -24138,7 +24964,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPhysicsProp>(new SerializerKey(className, 0));
             classType = typeof(CPhysicsProp);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPhysicsProp)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPhysicsProp);
+                var @this = Unsafe.As<CPhysicsProp>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPhysicsPropMultiplayer":
@@ -24146,7 +24976,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPhysicsPropMultiplayer>(new SerializerKey(className, 0));
             classType = typeof(CPhysicsPropMultiplayer);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPhysicsPropMultiplayer)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPhysicsPropMultiplayer);
+                var @this = Unsafe.As<CPhysicsPropMultiplayer>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPhysMagnet":
@@ -24154,7 +24988,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPhysMagnet>(new SerializerKey(className, 0));
             classType = typeof(CPhysMagnet);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPhysMagnet)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPhysMagnet);
+                var @this = Unsafe.As<CPhysMagnet>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlantedC4":
@@ -24162,7 +25000,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlantedC4>(new SerializerKey(className, 0));
             classType = typeof(CPlantedC4);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlantedC4)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlantedC4);
+                var @this = Unsafe.As<CPlantedC4>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_AutoaimServices":
@@ -24170,7 +25012,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_AutoaimServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_AutoaimServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_AutoaimServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_AutoaimServices);
+                var @this = Unsafe.As<CPlayer_AutoaimServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_CameraServices":
@@ -24178,7 +25024,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_CameraServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_CameraServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_CameraServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_CameraServices);
+                var @this = Unsafe.As<CPlayer_CameraServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_FlashlightServices":
@@ -24186,7 +25036,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_FlashlightServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_FlashlightServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_FlashlightServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_FlashlightServices);
+                var @this = Unsafe.As<CPlayer_FlashlightServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_ItemServices":
@@ -24194,7 +25048,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_ItemServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_ItemServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_ItemServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_ItemServices);
+                var @this = Unsafe.As<CPlayer_ItemServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_MovementServices":
@@ -24202,7 +25060,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_MovementServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_MovementServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_MovementServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_MovementServices);
+                var @this = Unsafe.As<CPlayer_MovementServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_MovementServices_Humanoid":
@@ -24210,7 +25072,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_MovementServices_Humanoid>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_MovementServices_Humanoid);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_MovementServices_Humanoid)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_MovementServices_Humanoid);
+                var @this = Unsafe.As<CPlayer_MovementServices_Humanoid>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_ObserverServices":
@@ -24218,7 +25084,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_ObserverServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_ObserverServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_ObserverServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_ObserverServices);
+                var @this = Unsafe.As<CPlayer_ObserverServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_UseServices":
@@ -24226,7 +25096,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_UseServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_UseServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_UseServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_UseServices);
+                var @this = Unsafe.As<CPlayer_UseServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_ViewModelServices":
@@ -24234,7 +25108,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_ViewModelServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_ViewModelServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_ViewModelServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_ViewModelServices);
+                var @this = Unsafe.As<CPlayer_ViewModelServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_WaterServices":
@@ -24242,7 +25120,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_WaterServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_WaterServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_WaterServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_WaterServices);
+                var @this = Unsafe.As<CPlayer_WaterServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayer_WeaponServices":
@@ -24250,7 +25132,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayer_WeaponServices>(new SerializerKey(className, 0));
             classType = typeof(CPlayer_WeaponServices);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayer_WeaponServices)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayer_WeaponServices);
+                var @this = Unsafe.As<CPlayer_WeaponServices>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayerControllerComponent":
@@ -24258,7 +25144,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayerControllerComponent>(new SerializerKey(className, 0));
             classType = typeof(CPlayerControllerComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayerControllerComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayerControllerComponent);
+                var @this = Unsafe.As<CPlayerControllerComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayerPawnComponent":
@@ -24266,7 +25156,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayerPawnComponent>(new SerializerKey(className, 0));
             classType = typeof(CPlayerPawnComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayerPawnComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayerPawnComponent);
+                var @this = Unsafe.As<CPlayerPawnComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayerPing":
@@ -24274,7 +25168,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayerPing>(new SerializerKey(className, 0));
             classType = typeof(CPlayerPing);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayerPing)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayerPing);
+                var @this = Unsafe.As<CPlayerPing>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayerSprayDecal":
@@ -24282,7 +25180,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayerSprayDecal>(new SerializerKey(className, 0));
             classType = typeof(CPlayerSprayDecal);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayerSprayDecal)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayerSprayDecal);
+                var @this = Unsafe.As<CPlayerSprayDecal>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPlayerVisibility":
@@ -24290,7 +25192,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPlayerVisibility>(new SerializerKey(className, 0));
             classType = typeof(CPlayerVisibility);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPlayerVisibility)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPlayerVisibility);
+                var @this = Unsafe.As<CPlayerVisibility>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointCamera":
@@ -24298,7 +25204,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointCamera>(new SerializerKey(className, 0));
             classType = typeof(CPointCamera);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointCamera)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointCamera);
+                var @this = Unsafe.As<CPointCamera>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointClientUIDialog":
@@ -24306,7 +25216,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointClientUIDialog>(new SerializerKey(className, 0));
             classType = typeof(CPointClientUIDialog);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointClientUIDialog)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointClientUIDialog);
+                var @this = Unsafe.As<CPointClientUIDialog>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointClientUIWorldPanel":
@@ -24314,7 +25228,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointClientUIWorldPanel>(new SerializerKey(className, 0));
             classType = typeof(CPointClientUIWorldPanel);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointClientUIWorldPanel)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointClientUIWorldPanel);
+                var @this = Unsafe.As<CPointClientUIWorldPanel>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointClientUIWorldTextPanel":
@@ -24322,7 +25240,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointClientUIWorldTextPanel>(new SerializerKey(className, 0));
             classType = typeof(CPointClientUIWorldTextPanel);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointClientUIWorldTextPanel)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointClientUIWorldTextPanel);
+                var @this = Unsafe.As<CPointClientUIWorldTextPanel>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointCommentaryNode":
@@ -24330,7 +25252,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointCommentaryNode>(new SerializerKey(className, 0));
             classType = typeof(CPointCommentaryNode);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointCommentaryNode)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointCommentaryNode);
+                var @this = Unsafe.As<CPointCommentaryNode>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointEntity":
@@ -24338,7 +25264,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointEntity>(new SerializerKey(className, 0));
             classType = typeof(CPointEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointEntity);
+                var @this = Unsafe.As<CPointEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointValueRemapper":
@@ -24346,7 +25276,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointValueRemapper>(new SerializerKey(className, 0));
             classType = typeof(CPointValueRemapper);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointValueRemapper)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointValueRemapper);
+                var @this = Unsafe.As<CPointValueRemapper>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPointWorldText":
@@ -24354,7 +25288,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPointWorldText>(new SerializerKey(className, 0));
             classType = typeof(CPointWorldText);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPointWorldText)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPointWorldText);
+                var @this = Unsafe.As<CPointWorldText>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPostProcessingVolume":
@@ -24362,7 +25300,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPostProcessingVolume>(new SerializerKey(className, 0));
             classType = typeof(CPostProcessingVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPostProcessingVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPostProcessingVolume);
+                var @this = Unsafe.As<CPostProcessingVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPrecipitation":
@@ -24370,7 +25312,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPrecipitation>(new SerializerKey(className, 0));
             classType = typeof(CPrecipitation);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPrecipitation)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPrecipitation);
+                var @this = Unsafe.As<CPrecipitation>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPrecipitationBlocker":
@@ -24378,7 +25324,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPrecipitationBlocker>(new SerializerKey(className, 0));
             classType = typeof(CPrecipitationBlocker);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPrecipitationBlocker)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPrecipitationBlocker);
+                var @this = Unsafe.As<CPrecipitationBlocker>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CPredictedViewModel":
@@ -24386,7 +25336,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CPredictedViewModel>(new SerializerKey(className, 0));
             classType = typeof(CPredictedViewModel);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CPredictedViewModel)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CPredictedViewModel);
+                var @this = Unsafe.As<CPredictedViewModel>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRagdollManager":
@@ -24394,7 +25348,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRagdollManager>(new SerializerKey(className, 0));
             classType = typeof(CRagdollManager);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRagdollManager)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRagdollManager);
+                var @this = Unsafe.As<CRagdollManager>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRagdollProp":
@@ -24402,7 +25360,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRagdollProp>(new SerializerKey(className, 0));
             classType = typeof(CRagdollProp);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRagdollProp)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRagdollProp);
+                var @this = Unsafe.As<CRagdollProp>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRagdollPropAttached":
@@ -24410,7 +25372,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRagdollPropAttached>(new SerializerKey(className, 0));
             classType = typeof(CRagdollPropAttached);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRagdollPropAttached)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRagdollPropAttached);
+                var @this = Unsafe.As<CRagdollPropAttached>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRectLight":
@@ -24418,7 +25384,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRectLight>(new SerializerKey(className, 0));
             classType = typeof(CRectLight);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRectLight)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRectLight);
+                var @this = Unsafe.As<CRectLight>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRenderComponent":
@@ -24426,7 +25396,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRenderComponent>(new SerializerKey(className, 0));
             classType = typeof(CRenderComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRenderComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRenderComponent);
+                var @this = Unsafe.As<CRenderComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRetakeGameRules":
@@ -24434,7 +25408,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRetakeGameRules>(new SerializerKey(className, 0));
             classType = typeof(CRetakeGameRules);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRetakeGameRules)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRetakeGameRules);
+                var @this = Unsafe.As<CRetakeGameRules>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CRopeKeyframe":
@@ -24442,7 +25420,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CRopeKeyframe>(new SerializerKey(className, 0));
             classType = typeof(CRopeKeyframe);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CRopeKeyframe)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CRopeKeyframe);
+                var @this = Unsafe.As<CRopeKeyframe>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSceneEntity":
@@ -24450,7 +25432,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSceneEntity>(new SerializerKey(className, 0));
             classType = typeof(CSceneEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSceneEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSceneEntity);
+                var @this = Unsafe.As<CSceneEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CScriptComponent":
@@ -24458,7 +25444,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CScriptComponent>(new SerializerKey(className, 0));
             classType = typeof(CScriptComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CScriptComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CScriptComponent);
+                var @this = Unsafe.As<CScriptComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSensorGrenade":
@@ -24466,7 +25456,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSensorGrenade>(new SerializerKey(className, 0));
             classType = typeof(CSensorGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSensorGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSensorGrenade);
+                var @this = Unsafe.As<CSensorGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSensorGrenadeProjectile":
@@ -24474,7 +25468,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSensorGrenadeProjectile>(new SerializerKey(className, 0));
             classType = typeof(CSensorGrenadeProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSensorGrenadeProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSensorGrenadeProjectile);
+                var @this = Unsafe.As<CSensorGrenadeProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CShatterGlassShardPhysics":
@@ -24482,7 +25480,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CShatterGlassShardPhysics>(new SerializerKey(className, 0));
             classType = typeof(CShatterGlassShardPhysics);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CShatterGlassShardPhysics)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CShatterGlassShardPhysics);
+                var @this = Unsafe.As<CShatterGlassShardPhysics>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSkeletonAnimationController":
@@ -24490,7 +25492,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSkeletonAnimationController>(new SerializerKey(className, 0));
             classType = typeof(CSkeletonAnimationController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSkeletonAnimationController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSkeletonAnimationController);
+                var @this = Unsafe.As<CSkeletonAnimationController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSkeletonInstance":
@@ -24498,7 +25504,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSkeletonInstance>(new SerializerKey(className, 0));
             classType = typeof(CSkeletonInstance);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSkeletonInstance)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSkeletonInstance);
+                var @this = Unsafe.As<CSkeletonInstance>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSkyCamera":
@@ -24506,7 +25516,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSkyCamera>(new SerializerKey(className, 0));
             classType = typeof(CSkyCamera);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSkyCamera)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSkyCamera);
+                var @this = Unsafe.As<CSkyCamera>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSMatchStats_t":
@@ -24514,7 +25528,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSMatchStats>(new SerializerKey(className, 0));
             classType = typeof(CSMatchStats);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSMatchStats)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSMatchStats);
+                var @this = Unsafe.As<CSMatchStats>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSmokeGrenade":
@@ -24522,7 +25540,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSmokeGrenade>(new SerializerKey(className, 0));
             classType = typeof(CSmokeGrenade);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSmokeGrenade)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSmokeGrenade);
+                var @this = Unsafe.As<CSmokeGrenade>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSmokeGrenadeProjectile":
@@ -24530,7 +25552,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSmokeGrenadeProjectile>(new SerializerKey(className, 0));
             classType = typeof(CSmokeGrenadeProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSmokeGrenadeProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSmokeGrenadeProjectile);
+                var @this = Unsafe.As<CSmokeGrenadeProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundAreaEntityBase":
@@ -24538,7 +25564,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundAreaEntityBase>(new SerializerKey(className, 0));
             classType = typeof(CSoundAreaEntityBase);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundAreaEntityBase)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundAreaEntityBase);
+                var @this = Unsafe.As<CSoundAreaEntityBase>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundAreaEntityOrientedBox":
@@ -24546,7 +25576,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundAreaEntityOrientedBox>(new SerializerKey(className, 0));
             classType = typeof(CSoundAreaEntityOrientedBox);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundAreaEntityOrientedBox)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundAreaEntityOrientedBox);
+                var @this = Unsafe.As<CSoundAreaEntityOrientedBox>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundAreaEntitySphere":
@@ -24554,7 +25588,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundAreaEntitySphere>(new SerializerKey(className, 0));
             classType = typeof(CSoundAreaEntitySphere);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundAreaEntitySphere)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundAreaEntitySphere);
+                var @this = Unsafe.As<CSoundAreaEntitySphere>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundOpvarSetAABBEntity":
@@ -24562,7 +25600,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundOpvarSetAABBEntity>(new SerializerKey(className, 0));
             classType = typeof(CSoundOpvarSetAABBEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundOpvarSetAABBEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundOpvarSetAABBEntity);
+                var @this = Unsafe.As<CSoundOpvarSetAABBEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundOpvarSetOBBEntity":
@@ -24570,7 +25612,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundOpvarSetOBBEntity>(new SerializerKey(className, 0));
             classType = typeof(CSoundOpvarSetOBBEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundOpvarSetOBBEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundOpvarSetOBBEntity);
+                var @this = Unsafe.As<CSoundOpvarSetOBBEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundOpvarSetOBBWindEntity":
@@ -24578,7 +25624,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundOpvarSetOBBWindEntity>(new SerializerKey(className, 0));
             classType = typeof(CSoundOpvarSetOBBWindEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundOpvarSetOBBWindEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundOpvarSetOBBWindEntity);
+                var @this = Unsafe.As<CSoundOpvarSetOBBWindEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundOpvarSetPathCornerEntity":
@@ -24586,7 +25636,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundOpvarSetPathCornerEntity>(new SerializerKey(className, 0));
             classType = typeof(CSoundOpvarSetPathCornerEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundOpvarSetPathCornerEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundOpvarSetPathCornerEntity);
+                var @this = Unsafe.As<CSoundOpvarSetPathCornerEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundOpvarSetPointBase":
@@ -24594,7 +25648,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundOpvarSetPointBase>(new SerializerKey(className, 0));
             classType = typeof(CSoundOpvarSetPointBase);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundOpvarSetPointBase)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundOpvarSetPointBase);
+                var @this = Unsafe.As<CSoundOpvarSetPointBase>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSoundOpvarSetPointEntity":
@@ -24602,7 +25660,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSoundOpvarSetPointEntity>(new SerializerKey(className, 0));
             classType = typeof(CSoundOpvarSetPointEntity);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSoundOpvarSetPointEntity)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSoundOpvarSetPointEntity);
+                var @this = Unsafe.As<CSoundOpvarSetPointEntity>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSPerRoundStats_t":
@@ -24610,7 +25672,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSPerRoundStats>(new SerializerKey(className, 0));
             classType = typeof(CSPerRoundStats);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSPerRoundStats)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSPerRoundStats);
+                var @this = Unsafe.As<CSPerRoundStats>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSpotlightEnd":
@@ -24618,7 +25684,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSpotlightEnd>(new SerializerKey(className, 0));
             classType = typeof(CSpotlightEnd);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSpotlightEnd)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSpotlightEnd);
+                var @this = Unsafe.As<CSpotlightEnd>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSprite":
@@ -24626,7 +25696,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSprite>(new SerializerKey(className, 0));
             classType = typeof(CSprite);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSprite)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSprite);
+                var @this = Unsafe.As<CSprite>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSpriteOriented":
@@ -24634,7 +25708,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSpriteOriented>(new SerializerKey(className, 0));
             classType = typeof(CSpriteOriented);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSpriteOriented)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSpriteOriented);
+                var @this = Unsafe.As<CSpriteOriented>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CSun":
@@ -24642,7 +25720,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CSun>(new SerializerKey(className, 0));
             classType = typeof(CSun);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CSun)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CSun);
+                var @this = Unsafe.As<CSun>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTablet":
@@ -24650,7 +25732,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTablet>(new SerializerKey(className, 0));
             classType = typeof(CTablet);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTablet)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTablet);
+                var @this = Unsafe.As<CTablet>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTeam":
@@ -24658,7 +25744,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTeam>(new SerializerKey(className, 0));
             classType = typeof(CTeam);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTeam)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTeam);
+                var @this = Unsafe.As<CTeam>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTeamplayRules":
@@ -24666,7 +25756,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTeamplayRules>(new SerializerKey(className, 0));
             classType = typeof(CTeamplayRules);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTeamplayRules)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTeamplayRules);
+                var @this = Unsafe.As<CTeamplayRules>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTextureBasedAnimatable":
@@ -24674,7 +25768,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTextureBasedAnimatable>(new SerializerKey(className, 0));
             classType = typeof(CTextureBasedAnimatable);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTextureBasedAnimatable)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTextureBasedAnimatable);
+                var @this = Unsafe.As<CTextureBasedAnimatable>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTonemapController2":
@@ -24682,7 +25780,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTonemapController2>(new SerializerKey(className, 0));
             classType = typeof(CTonemapController2);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTonemapController2)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTonemapController2);
+                var @this = Unsafe.As<CTonemapController2>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTouchExpansionComponent":
@@ -24690,7 +25792,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTouchExpansionComponent>(new SerializerKey(className, 0));
             classType = typeof(CTouchExpansionComponent);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTouchExpansionComponent)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTouchExpansionComponent);
+                var @this = Unsafe.As<CTouchExpansionComponent>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTriggerBuoyancy":
@@ -24698,7 +25804,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTriggerBuoyancy>(new SerializerKey(className, 0));
             classType = typeof(CTriggerBuoyancy);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTriggerBuoyancy)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTriggerBuoyancy);
+                var @this = Unsafe.As<CTriggerBuoyancy>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTriggerTripWire":
@@ -24706,7 +25816,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTriggerTripWire>(new SerializerKey(className, 0));
             classType = typeof(CTriggerTripWire);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTriggerTripWire)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTriggerTripWire);
+                var @this = Unsafe.As<CTriggerTripWire>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTriggerVolume":
@@ -24714,7 +25828,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTriggerVolume>(new SerializerKey(className, 0));
             classType = typeof(CTriggerVolume);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTriggerVolume)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTriggerVolume);
+                var @this = Unsafe.As<CTriggerVolume>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTripWireFire":
@@ -24722,7 +25840,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTripWireFire>(new SerializerKey(className, 0));
             classType = typeof(CTripWireFire);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTripWireFire)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTripWireFire);
+                var @this = Unsafe.As<CTripWireFire>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CTripWireFireProjectile":
@@ -24730,7 +25852,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CTripWireFireProjectile>(new SerializerKey(className, 0));
             classType = typeof(CTripWireFireProjectile);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CTripWireFireProjectile)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CTripWireFireProjectile);
+                var @this = Unsafe.As<CTripWireFireProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CVoteController":
@@ -24738,7 +25864,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CVoteController>(new SerializerKey(className, 0));
             classType = typeof(CVoteController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CVoteController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CVoteController);
+                var @this = Unsafe.As<CVoteController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWaterBullet":
@@ -24746,7 +25876,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWaterBullet>(new SerializerKey(className, 0));
             classType = typeof(CWaterBullet);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWaterBullet)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWaterBullet);
+                var @this = Unsafe.As<CWaterBullet>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponAug":
@@ -24754,7 +25888,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponAug>(new SerializerKey(className, 0));
             classType = typeof(CWeaponAug);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponAug)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponAug);
+                var @this = Unsafe.As<CWeaponAug>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponAWP":
@@ -24762,7 +25900,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponAWP>(new SerializerKey(className, 0));
             classType = typeof(CWeaponAWP);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponAWP)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponAWP);
+                var @this = Unsafe.As<CWeaponAWP>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponBaseItem":
@@ -24770,7 +25912,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponBaseItem>(new SerializerKey(className, 0));
             classType = typeof(CWeaponBaseItem);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponBaseItem)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponBaseItem);
+                var @this = Unsafe.As<CWeaponBaseItem>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponBizon":
@@ -24778,7 +25924,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponBizon>(new SerializerKey(className, 0));
             classType = typeof(CWeaponBizon);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponBizon)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponBizon);
+                var @this = Unsafe.As<CWeaponBizon>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponElite":
@@ -24786,7 +25936,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponElite>(new SerializerKey(className, 0));
             classType = typeof(CWeaponElite);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponElite)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponElite);
+                var @this = Unsafe.As<CWeaponElite>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponFamas":
@@ -24794,7 +25948,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponFamas>(new SerializerKey(className, 0));
             classType = typeof(CWeaponFamas);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponFamas)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponFamas);
+                var @this = Unsafe.As<CWeaponFamas>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponFiveSeven":
@@ -24802,7 +25960,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponFiveSeven>(new SerializerKey(className, 0));
             classType = typeof(CWeaponFiveSeven);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponFiveSeven)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponFiveSeven);
+                var @this = Unsafe.As<CWeaponFiveSeven>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponG3SG1":
@@ -24810,7 +25972,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponG3SG1>(new SerializerKey(className, 0));
             classType = typeof(CWeaponG3SG1);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponG3SG1)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponG3SG1);
+                var @this = Unsafe.As<CWeaponG3SG1>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponGalilAR":
@@ -24818,7 +25984,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponGalilAR>(new SerializerKey(className, 0));
             classType = typeof(CWeaponGalilAR);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponGalilAR)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponGalilAR);
+                var @this = Unsafe.As<CWeaponGalilAR>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponGlock":
@@ -24826,7 +25996,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponGlock>(new SerializerKey(className, 0));
             classType = typeof(CWeaponGlock);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponGlock)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponGlock);
+                var @this = Unsafe.As<CWeaponGlock>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponHKP2000":
@@ -24834,7 +26008,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponHKP2000>(new SerializerKey(className, 0));
             classType = typeof(CWeaponHKP2000);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponHKP2000)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponHKP2000);
+                var @this = Unsafe.As<CWeaponHKP2000>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponM249":
@@ -24842,7 +26020,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponM249>(new SerializerKey(className, 0));
             classType = typeof(CWeaponM249);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponM249)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponM249);
+                var @this = Unsafe.As<CWeaponM249>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponM4A1":
@@ -24850,7 +26032,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponM4A1>(new SerializerKey(className, 0));
             classType = typeof(CWeaponM4A1);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponM4A1)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponM4A1);
+                var @this = Unsafe.As<CWeaponM4A1>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponMAC10":
@@ -24858,7 +26044,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponMAC10>(new SerializerKey(className, 0));
             classType = typeof(CWeaponMAC10);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponMAC10)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponMAC10);
+                var @this = Unsafe.As<CWeaponMAC10>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponMag7":
@@ -24866,7 +26056,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponMag7>(new SerializerKey(className, 0));
             classType = typeof(CWeaponMag7);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponMag7)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponMag7);
+                var @this = Unsafe.As<CWeaponMag7>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponMP7":
@@ -24874,7 +26068,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponMP7>(new SerializerKey(className, 0));
             classType = typeof(CWeaponMP7);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponMP7)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponMP7);
+                var @this = Unsafe.As<CWeaponMP7>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponMP9":
@@ -24882,7 +26080,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponMP9>(new SerializerKey(className, 0));
             classType = typeof(CWeaponMP9);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponMP9)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponMP9);
+                var @this = Unsafe.As<CWeaponMP9>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponNegev":
@@ -24890,7 +26092,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponNegev>(new SerializerKey(className, 0));
             classType = typeof(CWeaponNegev);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponNegev)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponNegev);
+                var @this = Unsafe.As<CWeaponNegev>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponNOVA":
@@ -24898,7 +26104,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponNOVA>(new SerializerKey(className, 0));
             classType = typeof(CWeaponNOVA);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponNOVA)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponNOVA);
+                var @this = Unsafe.As<CWeaponNOVA>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponP250":
@@ -24906,7 +26116,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponP250>(new SerializerKey(className, 0));
             classType = typeof(CWeaponP250);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponP250)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponP250);
+                var @this = Unsafe.As<CWeaponP250>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponP90":
@@ -24914,7 +26128,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponP90>(new SerializerKey(className, 0));
             classType = typeof(CWeaponP90);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponP90)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponP90);
+                var @this = Unsafe.As<CWeaponP90>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponSawedoff":
@@ -24922,7 +26140,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponSawedoff>(new SerializerKey(className, 0));
             classType = typeof(CWeaponSawedoff);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponSawedoff)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponSawedoff);
+                var @this = Unsafe.As<CWeaponSawedoff>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponSCAR20":
@@ -24930,7 +26152,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponSCAR20>(new SerializerKey(className, 0));
             classType = typeof(CWeaponSCAR20);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponSCAR20)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponSCAR20);
+                var @this = Unsafe.As<CWeaponSCAR20>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponSG556":
@@ -24938,7 +26164,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponSG556>(new SerializerKey(className, 0));
             classType = typeof(CWeaponSG556);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponSG556)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponSG556);
+                var @this = Unsafe.As<CWeaponSG556>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponShield":
@@ -24946,7 +26176,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponShield>(new SerializerKey(className, 0));
             classType = typeof(CWeaponShield);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponShield)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponShield);
+                var @this = Unsafe.As<CWeaponShield>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponSSG08":
@@ -24954,7 +26188,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponSSG08>(new SerializerKey(className, 0));
             classType = typeof(CWeaponSSG08);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponSSG08)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponSSG08);
+                var @this = Unsafe.As<CWeaponSSG08>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponTaser":
@@ -24962,7 +26200,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponTaser>(new SerializerKey(className, 0));
             classType = typeof(CWeaponTaser);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponTaser)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponTaser);
+                var @this = Unsafe.As<CWeaponTaser>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponTec9":
@@ -24970,7 +26212,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponTec9>(new SerializerKey(className, 0));
             classType = typeof(CWeaponTec9);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponTec9)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponTec9);
+                var @this = Unsafe.As<CWeaponTec9>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponUMP45":
@@ -24978,7 +26224,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponUMP45>(new SerializerKey(className, 0));
             classType = typeof(CWeaponUMP45);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponUMP45)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponUMP45);
+                var @this = Unsafe.As<CWeaponUMP45>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponXM1014":
@@ -24986,7 +26236,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponXM1014>(new SerializerKey(className, 0));
             classType = typeof(CWeaponXM1014);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponXM1014)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponXM1014);
+                var @this = Unsafe.As<CWeaponXM1014>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWeaponZoneRepulsor":
@@ -24994,7 +26248,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWeaponZoneRepulsor>(new SerializerKey(className, 0));
             classType = typeof(CWeaponZoneRepulsor);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWeaponZoneRepulsor)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWeaponZoneRepulsor);
+                var @this = Unsafe.As<CWeaponZoneRepulsor>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "CWorld":
@@ -25002,7 +26260,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<CWorld>(new SerializerKey(className, 0));
             classType = typeof(CWorld);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((CWorld)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is CWorld);
+                var @this = Unsafe.As<CWorld>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "EntityRenderAttribute_t":
@@ -25010,7 +26272,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<EntityRenderAttribute>(new SerializerKey(className, 0));
             classType = typeof(EntityRenderAttribute);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((EntityRenderAttribute)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is EntityRenderAttribute);
+                var @this = Unsafe.As<EntityRenderAttribute>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "EntitySpottedState_t":
@@ -25018,7 +26284,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<EntitySpottedState>(new SerializerKey(className, 0));
             classType = typeof(EntitySpottedState);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((EntitySpottedState)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is EntitySpottedState);
+                var @this = Unsafe.As<EntitySpottedState>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "fogparams_t":
@@ -25026,7 +26296,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<FogParams>(new SerializerKey(className, 0));
             classType = typeof(FogParams);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((FogParams)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is FogParams);
+                var @this = Unsafe.As<FogParams>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "fogplayerparams_t":
@@ -25034,7 +26308,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<FogPlayerParams>(new SerializerKey(className, 0));
             classType = typeof(FogPlayerParams);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((FogPlayerParams)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is FogPlayerParams);
+                var @this = Unsafe.As<FogPlayerParams>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "IEconItemInterface":
@@ -25042,7 +26320,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<IEconItemInterface>(new SerializerKey(className, 0));
             classType = typeof(IEconItemInterface);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((IEconItemInterface)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is IEconItemInterface);
+                var @this = Unsafe.As<IEconItemInterface>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "InfoForResourceTypeCModel":
@@ -25050,7 +26332,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<InfoForResourceTypeCModel>(new SerializerKey(className, 0));
             classType = typeof(InfoForResourceTypeCModel);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((InfoForResourceTypeCModel)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is InfoForResourceTypeCModel);
+                var @this = Unsafe.As<InfoForResourceTypeCModel>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "InfoForResourceTypeCPostProcessingResource":
@@ -25058,7 +26344,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<InfoForResourceTypeCPostProcessingResource>(new SerializerKey(className, 0));
             classType = typeof(InfoForResourceTypeCPostProcessingResource);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((InfoForResourceTypeCPostProcessingResource)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is InfoForResourceTypeCPostProcessingResource);
+                var @this = Unsafe.As<InfoForResourceTypeCPostProcessingResource>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "InfoForResourceTypeCTextureBase":
@@ -25066,7 +26356,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<InfoForResourceTypeCTextureBase>(new SerializerKey(className, 0));
             classType = typeof(InfoForResourceTypeCTextureBase);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((InfoForResourceTypeCTextureBase)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is InfoForResourceTypeCTextureBase);
+                var @this = Unsafe.As<InfoForResourceTypeCTextureBase>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "InfoForResourceTypeIMaterial2":
@@ -25074,7 +26368,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<InfoForResourceTypeIMaterial2>(new SerializerKey(className, 0));
             classType = typeof(InfoForResourceTypeIMaterial2);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((InfoForResourceTypeIMaterial2)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is InfoForResourceTypeIMaterial2);
+                var @this = Unsafe.As<InfoForResourceTypeIMaterial2>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "InfoForResourceTypeIParticleSystemDefinition":
@@ -25082,7 +26380,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<InfoForResourceTypeIParticleSystemDefinition>(new SerializerKey(className, 0));
             classType = typeof(InfoForResourceTypeIParticleSystemDefinition);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((InfoForResourceTypeIParticleSystemDefinition)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is InfoForResourceTypeIParticleSystemDefinition);
+                var @this = Unsafe.As<InfoForResourceTypeIParticleSystemDefinition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "ISkeletonAnimationController":
@@ -25090,7 +26392,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<ISkeletonAnimationController>(new SerializerKey(className, 0));
             classType = typeof(ISkeletonAnimationController);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((ISkeletonAnimationController)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is ISkeletonAnimationController);
+                var @this = Unsafe.As<ISkeletonAnimationController>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "PhysicsRagdollPose_t":
@@ -25098,7 +26404,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<PhysicsRagdollPose>(new SerializerKey(className, 0));
             classType = typeof(PhysicsRagdollPose);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((PhysicsRagdollPose)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is PhysicsRagdollPose);
+                var @this = Unsafe.As<PhysicsRagdollPose>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "SellbackPurchaseEntry_t":
@@ -25106,7 +26416,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<SellbackPurchaseEntry>(new SerializerKey(className, 0));
             classType = typeof(SellbackPurchaseEntry);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((SellbackPurchaseEntry)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is SellbackPurchaseEntry);
+                var @this = Unsafe.As<SellbackPurchaseEntry>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "ServerAuthoritativeWeaponSlot_t":
@@ -25114,7 +26428,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<ServerAuthoritativeWeaponSlot>(new SerializerKey(className, 0));
             classType = typeof(ServerAuthoritativeWeaponSlot);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((ServerAuthoritativeWeaponSlot)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is ServerAuthoritativeWeaponSlot);
+                var @this = Unsafe.As<ServerAuthoritativeWeaponSlot>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "shard_model_desc_t":
@@ -25122,7 +26440,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<SharedModelDesc>(new SerializerKey(className, 0));
             classType = typeof(SharedModelDesc);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((SharedModelDesc)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is SharedModelDesc);
+                var @this = Unsafe.As<SharedModelDesc>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "sky3dparams_t":
@@ -25130,7 +26452,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<Sky3DParams>(new SerializerKey(className, 0));
             classType = typeof(Sky3DParams);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((Sky3DParams)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is Sky3DParams);
+                var @this = Unsafe.As<Sky3DParams>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "ViewAngleServerChange_t":
@@ -25138,7 +26464,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<ViewAngleServerChange>(new SerializerKey(className, 0));
             classType = typeof(ViewAngleServerChange);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((ViewAngleServerChange)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is ViewAngleServerChange);
+                var @this = Unsafe.As<ViewAngleServerChange>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "VPhysicsCollisionAttribute_t":
@@ -25146,7 +26476,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<VPhysicsCollisionAttribute>(new SerializerKey(className, 0));
             classType = typeof(VPhysicsCollisionAttribute);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((VPhysicsCollisionAttribute)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is VPhysicsCollisionAttribute);
+                var @this = Unsafe.As<VPhysicsCollisionAttribute>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "WeaponPurchaseCount_t":
@@ -25154,7 +26488,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<WeaponPurchaseCount>(new SerializerKey(className, 0));
             classType = typeof(WeaponPurchaseCount);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((WeaponPurchaseCount)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is WeaponPurchaseCount);
+                var @this = Unsafe.As<WeaponPurchaseCount>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         case "WeaponPurchaseTracker_t":
@@ -25162,7 +26500,11 @@ internal partial class DecoderSet
             var innerDecoder = GetDecoder<WeaponPurchaseTracker>(new SerializerKey(className, 0));
             classType = typeof(WeaponPurchaseTracker);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                innerDecoder((WeaponPurchaseTracker)instance, path, ref buffer);
+            {
+                Debug.Assert(instance is WeaponPurchaseTracker);
+                var @this = Unsafe.As<WeaponPurchaseTracker>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
             return true;
         }
         default:

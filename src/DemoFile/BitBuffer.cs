@@ -197,6 +197,12 @@ internal ref struct BitBuffer
         return result;
     }
 
+    public long ReadVarInt64()
+    {
+        var result = ReadUVarInt64();
+        return (long)(result >> 1) ^ -(long)(result & 1);
+    }
+
     public float ReadAngle(int bits)
     {
         var max = (float)((1UL << bits) - 1);
