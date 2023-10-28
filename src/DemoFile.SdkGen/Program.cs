@@ -22,7 +22,7 @@ internal static class Program
     {
         var outputPath =
             args.SingleOrDefault() ??
-            throw new Exception("Expected a single CLI argument: <output path .cs>");
+            throw new Exception("Expected a single CLI argument: <output dir for .cs files>");
 
         // Concat together all enums and classes
         var allEnums = new SortedDictionary<string, SchemaEnum>();
@@ -142,14 +142,22 @@ internal static class Program
         }
 
         var visitedClassNames = new HashSet<string>();
+        var visitedEntityClasses = new HashSet<string>();
         foreach (var (className, schemaClass) in allClasses)
         {
             if (visited.Contains(className))
             {
                 var isPointeeType = pointeeTypes.Contains(className);
 
-                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType);
+                var isEntityClass =
+                    NetworkClasses.Names.Contains(className)
+                    || NetworkClasses.Names.Contains(schemaClass.Parent ?? "");
+
+                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass);
+
                 visitedClassNames.Add(className);
+                if (isEntityClass)
+                    visitedEntityClasses.Add(className);
             }
         }
 
@@ -159,7 +167,32 @@ internal static class Program
 
         WriteDecoderSetPartial(builder, visitedClassNames);
 
-        File.WriteAllText(outputPath, builder.ToString());
+        var schemaPathCs = Path.Combine(outputPath, "Sdk", "Schema.cs");
+        File.WriteAllText(schemaPathCs, builder.ToString());
+
+        var entityEventsCs = Path.Combine(outputPath, "EntityEvents.AutoGen.cs");
+        File.WriteAllText(entityEventsCs, WriteEntityEvents(visitedEntityClasses));
+    }
+
+    private static string WriteEntityEvents(IEnumerable<string> entityClassNames)
+    {
+        var builder = new StringBuilder();
+
+        builder.AppendLine($"using DemoFile.Sdk;");
+        builder.AppendLine($"");
+        builder.AppendLine($"namespace DemoFile;");
+        builder.AppendLine($"");
+        builder.AppendLine($"public partial struct EntityEvents");
+        builder.AppendLine($"{{");
+
+        foreach (var entityClass in entityClassNames)
+        {
+            builder.AppendLine($"    public Events<{entityClass}> {entityClass};");
+        }
+
+        builder.AppendLine($"}}");
+
+        return builder.ToString();
     }
 
     private static void WriteEntityFactoriesLookup(StringBuilder builder)
@@ -249,12 +282,9 @@ internal static class Program
         string schemaClassName,
         SchemaClass schemaClass,
         IReadOnlyDictionary<string, ImmutableList<KeyValuePair<string, SchemaClass>>> parentToChildMap,
-        bool isPointeeType)
+        bool isPointeeType,
+        bool isEntityClass)
     {
-        var isEntityClass =
-            NetworkClasses.Names.Contains(schemaClassName)
-            || NetworkClasses.Names.Contains(schemaClass.Parent ?? "");
-
         var classType = SchemaFieldType.FromDeclaredClass(schemaClassName);
         var classNameCs = classType.CsTypeName;
 
@@ -563,6 +593,23 @@ internal static class Program
         }
 
         builder.AppendLine("    }");
+
+        if (isEntityClass)
+        {
+            foreach (var eventName in new[] { "Create", "Delete", "PreUpdate", "PostUpdate" })
+            {
+                builder.AppendLine($"");
+                builder.AppendLine($"    internal override void Fire{eventName}Event()");
+                builder.AppendLine($"    {{");
+                builder.AppendLine($"        Demo.EntityEvents.{classNameCs}.{eventName}?.Invoke(this);");
+                if (parentType != null)
+                {
+                    builder.AppendLine($"        base.Fire{eventName}Event();");
+                }
+
+                builder.AppendLine($"    }}");
+            }
+        }
 
         builder.AppendLine("}");
     }

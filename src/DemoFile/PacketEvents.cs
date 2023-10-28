@@ -4,48 +4,48 @@ namespace DemoFile;
 
 public struct PacketEvents
 {
-    public Action<CNETMsg_Disconnect>? NetDisconnect { get; set; }
-    public Action<CNETMsg_SplitScreenUser>? NetSplitScreenUser { get; set; }
-    public Action<CNETMsg_Tick>? NetTick { get; set; }
-    public Action<CNETMsg_StringCmd>? NetStringCmd { get; set; }
-    public Action<CNETMsg_SetConVar>? NetSetConVar { get; set; }
-    public Action<CNETMsg_SignonState>? NetSignonState { get; set; }
-    public Action<CNETMsg_SpawnGroup_Load>? NetSpawnGroupLoad { get; set; }
-    public Action<CNETMsg_SpawnGroup_ManifestUpdate>? NetSpawnGroupManifestUpdate { get; set; }
-    public Action<CNETMsg_SpawnGroup_SetCreationTick>? NetSpawnGroupSetCreationTick { get; set; }
-    public Action<CNETMsg_SpawnGroup_Unload>? NetSpawnGroupUnload { get; set; }
-    public Action<CNETMsg_SpawnGroup_LoadCompleted>? NetSpawnGroupLoadCompleted { get; set; }
-    public Action<CNETMsg_DebugOverlay>? NetDebugOverlay { get; set; }
-    public Action<CSVCMsg_ServerInfo>? SvcServerInfo { get; set; }
-    public Action<CSVCMsg_FlattenedSerializer>? SvcFlattenedSerializer { get; set; }
-    public Action<CSVCMsg_ClassInfo>? SvcClassInfo { get; set; }
-    public Action<CSVCMsg_SetPause>? SvcSetPause { get; set; }
-    public Action<CSVCMsg_CreateStringTable>? SvcCreateStringTable { get; set; }
-    public Action<CSVCMsg_UpdateStringTable>? SvcUpdateStringTable { get; set; }
-    public Action<CSVCMsg_VoiceInit>? SvcVoiceInit { get; set; }
-    public Action<CSVCMsg_VoiceData>? SvcVoiceData { get; set; }
-    public Action<CSVCMsg_Print>? SvcPrint { get; set; }
-    public Action<CSVCMsg_Sounds>? SvcSounds { get; set; }
-    public Action<CSVCMsg_SetView>? SvcSetView { get; set; }
-    public Action<CSVCMsg_ClearAllStringTables>? SvcClearAllStringTables { get; set; }
-    public Action<CSVCMsg_CmdKeyValues>? SvcCmdKeyValues { get; set; }
-    public Action<CSVCMsg_BSPDecal>? SvcBspDecal { get; set; }
-    public Action<CSVCMsg_SplitScreen>? SvcSplitScreen { get; set; }
-    public Action<CSVCMsg_PacketEntities>? SvcPacketEntities { get; set; }
-    public Action<CSVCMsg_Prefetch>? SvcPrefetch { get; set; }
-    public Action<CSVCMsg_Menu>? SvcMenu { get; set; }
-    public Action<CSVCMsg_GetCvarValue>? SvcGetCvarValue { get; set; }
-    public Action<CSVCMsg_StopSound>? SvcStopSound { get; set; }
-    public Action<CSVCMsg_PeerList>? SvcPeerList { get; set; }
-    public Action<CSVCMsg_PacketReliable>? SvcPacketReliable { get; set; }
-    public Action<CSVCMsg_HLTVStatus>? SvcHltvStatus { get; set; }
-    public Action<CSVCMsg_ServerSteamID>? SvcServerSteamId { get; set; }
-    public Action<CSVCMsg_FullFrameSplit>? SvcFullFrameSplit { get; set; }
-    public Action<CSVCMsg_RconServerDetails>? SvcRconServerDetails { get; set; }
-    public Action<CSVCMsg_UserMessage>? SvcUserMessage { get; set; }
-    public Action<CSVCMsg_HltvReplay>? SvcHltvReplay { get; set; }
-    public Action<CSVCMsg_Broadcast_Command>? SvcBroadcastCommand { get; set; }
-    public Action<CSVCMsg_HltvFixupOperatorStatus>? SvcHltvFixupOperatorStatus { get; set; }
+    public Action<CNETMsg_Disconnect>? NetDisconnect;
+    public Action<CNETMsg_SplitScreenUser>? NetSplitScreenUser;
+    public Action<CNETMsg_Tick>? NetTick;
+    public Action<CNETMsg_StringCmd>? NetStringCmd;
+    public Action<CNETMsg_SetConVar>? NetSetConVar;
+    public Action<CNETMsg_SignonState>? NetSignonState;
+    public Action<CNETMsg_SpawnGroup_Load>? NetSpawnGroupLoad;
+    public Action<CNETMsg_SpawnGroup_ManifestUpdate>? NetSpawnGroupManifestUpdate;
+    public Action<CNETMsg_SpawnGroup_SetCreationTick>? NetSpawnGroupSetCreationTick;
+    public Action<CNETMsg_SpawnGroup_Unload>? NetSpawnGroupUnload;
+    public Action<CNETMsg_SpawnGroup_LoadCompleted>? NetSpawnGroupLoadCompleted;
+    public Action<CNETMsg_DebugOverlay>? NetDebugOverlay;
+    public Action<CSVCMsg_ServerInfo>? SvcServerInfo;
+    public Action<CSVCMsg_FlattenedSerializer>? SvcFlattenedSerializer;
+    public Action<CSVCMsg_ClassInfo>? SvcClassInfo;
+    public Action<CSVCMsg_SetPause>? SvcSetPause;
+    public Action<CSVCMsg_CreateStringTable>? SvcCreateStringTable;
+    public Action<CSVCMsg_UpdateStringTable>? SvcUpdateStringTable;
+    public Action<CSVCMsg_VoiceInit>? SvcVoiceInit;
+    public Action<CSVCMsg_VoiceData>? SvcVoiceData;
+    public Action<CSVCMsg_Print>? SvcPrint;
+    public Action<CSVCMsg_Sounds>? SvcSounds;
+    public Action<CSVCMsg_SetView>? SvcSetView;
+    public Action<CSVCMsg_ClearAllStringTables>? SvcClearAllStringTables;
+    public Action<CSVCMsg_CmdKeyValues>? SvcCmdKeyValues;
+    public Action<CSVCMsg_BSPDecal>? SvcBspDecal;
+    public Action<CSVCMsg_SplitScreen>? SvcSplitScreen;
+    public Action<CSVCMsg_PacketEntities>? SvcPacketEntities;
+    public Action<CSVCMsg_Prefetch>? SvcPrefetch;
+    public Action<CSVCMsg_Menu>? SvcMenu;
+    public Action<CSVCMsg_GetCvarValue>? SvcGetCvarValue;
+    public Action<CSVCMsg_StopSound>? SvcStopSound;
+    public Action<CSVCMsg_PeerList>? SvcPeerList;
+    public Action<CSVCMsg_PacketReliable>? SvcPacketReliable;
+    public Action<CSVCMsg_HLTVStatus>? SvcHltvStatus;
+    public Action<CSVCMsg_ServerSteamID>? SvcServerSteamId;
+    public Action<CSVCMsg_FullFrameSplit>? SvcFullFrameSplit;
+    public Action<CSVCMsg_RconServerDetails>? SvcRconServerDetails;
+    public Action<CSVCMsg_UserMessage>? SvcUserMessage;
+    public Action<CSVCMsg_HltvReplay>? SvcHltvReplay;
+    public Action<CSVCMsg_Broadcast_Command>? SvcBroadcastCommand;
+    public Action<CSVCMsg_HltvFixupOperatorStatus>? SvcHltvFixupOperatorStatus;
 
     internal bool ParseNetMessage(int msgType, ReadOnlySpan<byte> buf)
     {

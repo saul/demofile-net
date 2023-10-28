@@ -88,7 +88,7 @@ internal static class Program
 
         foreach (var descriptor in descriptors)
         {
-            builder.AppendLine($"    public Action<{EventNameToCsClass(descriptor.Name)}>? {SnakeCaseToPascalCase(descriptor.Name)} {{ get; set; }}");
+            builder.AppendLine($"    public Action<{EventNameToCsClass(descriptor.Name)}>? {SnakeCaseToPascalCase(descriptor.Name)};");
         }
 
         builder.AppendLine("");

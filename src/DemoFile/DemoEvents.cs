@@ -63,18 +63,18 @@ public struct DemoEvents
         }
     }
 
-    public Action<CDemoFileHeader>? DemoFileHeader { get; set; }
-    public Action<CDemoFileInfo>? DemoFileInfo { get; set; }
-    public Action<CDemoSyncTick>? DemoSyncTick { get; set; }
-    public Action<CDemoSendTables>? DemoSendTables { get; set; }
-    public Action<CDemoClassInfo>? DemoClassInfo { get; set; }
-    public Action<CDemoStringTables>? DemoStringTables { get; set; }
-    public Action<CDemoPacket>? DemoPacket { get; set; }
-    public Action<CDemoConsoleCmd>? DemoConsoleCmd { get; set; }
-    public Action<CDemoCustomData>? DemoCustomData { get; set; }
-    public Action<CDemoCustomDataCallbacks>? DemoCustomDataCallbacks { get; set; }
-    public Action<CDemoUserCmd>? DemoUserCmd { get; set; }
-    public Action<CDemoSaveGame>? DemoSaveGame { get; set; }
-    public Action<CDemoSpawnGroups>? DemoSpawnGroups { get; set; }
-    public Action<CDemoAnimationData>? DemoAnimationData { get; set; }
+    public Action<CDemoFileHeader>? DemoFileHeader;
+    public Action<CDemoFileInfo>? DemoFileInfo;
+    public Action<CDemoSyncTick>? DemoSyncTick;
+    public Action<CDemoSendTables>? DemoSendTables;
+    public Action<CDemoClassInfo>? DemoClassInfo;
+    public Action<CDemoStringTables>? DemoStringTables;
+    public Action<CDemoPacket>? DemoPacket;
+    public Action<CDemoConsoleCmd>? DemoConsoleCmd;
+    public Action<CDemoCustomData>? DemoCustomData;
+    public Action<CDemoCustomDataCallbacks>? DemoCustomDataCallbacks;
+    public Action<CDemoUserCmd>? DemoUserCmd;
+    public Action<CDemoSaveGame>? DemoSaveGame;
+    public Action<CDemoSpawnGroups>? DemoSpawnGroups;
+    public Action<CDemoAnimationData>? DemoAnimationData;
 }

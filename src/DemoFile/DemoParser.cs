@@ -17,6 +17,7 @@ public sealed partial class DemoParser
     private GameEvents _gameEvents;
     private PacketEvents _packetEvents;
     private UserMessageEvents _userMessageEvents;
+    private EntityEvents _entityEvents;
 
     public Action<DemoProgressEvent>? OnProgress;
 
@@ -46,6 +47,7 @@ public sealed partial class DemoParser
     public ref PacketEvents PacketEvents => ref _packetEvents;
     public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
     public Source1GameEvents Source1GameEvents => _source1GameEvents;
+    public ref EntityEvents EntityEvents => ref _entityEvents;
 
     public CDemoFileHeader FileHeader { get; private set; } = new();
 

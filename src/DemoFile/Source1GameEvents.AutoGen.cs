@@ -9,283 +9,283 @@ namespace DemoFile;
 
 public partial class Source1GameEvents
 {
-    public Action<Source1ServerSpawnEvent>? ServerSpawn { get; set; }
-    public Action<Source1ServerPreShutdownEvent>? ServerPreShutdown { get; set; }
-    public Action<Source1ServerShutdownEvent>? ServerShutdown { get; set; }
-    public Action<Source1ServerMessageEvent>? ServerMessage { get; set; }
-    public Action<Source1ServerCvarEvent>? ServerCvar { get; set; }
-    public Action<Source1PlayerActivateEvent>? PlayerActivate { get; set; }
-    public Action<Source1PlayerConnectFullEvent>? PlayerConnectFull { get; set; }
-    public Action<Source1PlayerFullUpdateEvent>? PlayerFullUpdate { get; set; }
-    public Action<Source1PlayerConnectEvent>? PlayerConnect { get; set; }
-    public Action<Source1PlayerDisconnectEvent>? PlayerDisconnect { get; set; }
-    public Action<Source1PlayerInfoEvent>? PlayerInfo { get; set; }
-    public Action<Source1PlayerSpawnEvent>? PlayerSpawn { get; set; }
-    public Action<Source1PlayerTeamEvent>? PlayerTeam { get; set; }
-    public Action<Source1LocalPlayerTeamEvent>? LocalPlayerTeam { get; set; }
-    public Action<Source1LocalPlayerControllerTeamEvent>? LocalPlayerControllerTeam { get; set; }
-    public Action<Source1PlayerChangenameEvent>? PlayerChangename { get; set; }
-    public Action<Source1PlayerHurtEvent>? PlayerHurt { get; set; }
-    public Action<Source1PlayerChatEvent>? PlayerChat { get; set; }
-    public Action<Source1LocalPlayerPawnChangedEvent>? LocalPlayerPawnChanged { get; set; }
-    public Action<Source1TeamplayBroadcastAudioEvent>? TeamplayBroadcastAudio { get; set; }
-    public Action<Source1FinaleStartEvent>? FinaleStart { get; set; }
-    public Action<Source1PlayerStatsUpdatedEvent>? PlayerStatsUpdated { get; set; }
-    public Action<Source1UserDataDownloadedEvent>? UserDataDownloaded { get; set; }
-    public Action<Source1RagdollDissolvedEvent>? RagdollDissolved { get; set; }
-    public Action<Source1TeamInfoEvent>? TeamInfo { get; set; }
-    public Action<Source1TeamScoreEvent>? TeamScore { get; set; }
-    public Action<Source1HltvCameramanEvent>? HltvCameraman { get; set; }
-    public Action<Source1HltvChaseEvent>? HltvChase { get; set; }
-    public Action<Source1HltvRankCameraEvent>? HltvRankCamera { get; set; }
-    public Action<Source1HltvRankEntityEvent>? HltvRankEntity { get; set; }
-    public Action<Source1HltvFixedEvent>? HltvFixed { get; set; }
-    public Action<Source1HltvMessageEvent>? HltvMessage { get; set; }
-    public Action<Source1HltvStatusEvent>? HltvStatus { get; set; }
-    public Action<Source1HltvTitleEvent>? HltvTitle { get; set; }
-    public Action<Source1HltvChatEvent>? HltvChat { get; set; }
-    public Action<Source1HltvVersioninfoEvent>? HltvVersioninfo { get; set; }
-    public Action<Source1HltvReplayEvent>? HltvReplay { get; set; }
-    public Action<Source1HltvReplayStatusEvent>? HltvReplayStatus { get; set; }
-    public Action<Source1DemoStopEvent>? DemoStop { get; set; }
-    public Action<Source1MapShutdownEvent>? MapShutdown { get; set; }
-    public Action<Source1MapTransitionEvent>? MapTransition { get; set; }
-    public Action<Source1HostnameChangedEvent>? HostnameChanged { get; set; }
-    public Action<Source1DifficultyChangedEvent>? DifficultyChanged { get; set; }
-    public Action<Source1GameMessageEvent>? GameMessage { get; set; }
-    public Action<Source1GameNewmapEvent>? GameNewmap { get; set; }
-    public Action<Source1RoundStartEvent>? RoundStart { get; set; }
-    public Action<Source1RoundEndEvent>? RoundEnd { get; set; }
-    public Action<Source1RoundStartPreEntityEvent>? RoundStartPreEntity { get; set; }
-    public Action<Source1RoundStartPostNavEvent>? RoundStartPostNav { get; set; }
-    public Action<Source1RoundFreezeEndEvent>? RoundFreezeEnd { get; set; }
-    public Action<Source1TeamplayRoundStartEvent>? TeamplayRoundStart { get; set; }
-    public Action<Source1PlayerDeathEvent>? PlayerDeath { get; set; }
-    public Action<Source1PlayerFootstepEvent>? PlayerFootstep { get; set; }
-    public Action<Source1PlayerHintmessageEvent>? PlayerHintmessage { get; set; }
-    public Action<Source1BreakBreakableEvent>? BreakBreakable { get; set; }
-    public Action<Source1BrokenBreakableEvent>? BrokenBreakable { get; set; }
-    public Action<Source1BreakPropEvent>? BreakProp { get; set; }
-    public Action<Source1EntityKilledEvent>? EntityKilled { get; set; }
-    public Action<Source1DoorCloseEvent>? DoorClose { get; set; }
-    public Action<Source1VoteStartedEvent>? VoteStarted { get; set; }
-    public Action<Source1VoteFailedEvent>? VoteFailed { get; set; }
-    public Action<Source1VotePassedEvent>? VotePassed { get; set; }
-    public Action<Source1VoteChangedEvent>? VoteChanged { get; set; }
-    public Action<Source1VoteCastYesEvent>? VoteCastYes { get; set; }
-    public Action<Source1VoteCastNoEvent>? VoteCastNo { get; set; }
-    public Action<Source1AchievementEventEvent>? AchievementEvent { get; set; }
-    public Action<Source1AchievementEarnedEvent>? AchievementEarned { get; set; }
-    public Action<Source1AchievementWriteFailedEvent>? AchievementWriteFailed { get; set; }
-    public Action<Source1BonusUpdatedEvent>? BonusUpdated { get; set; }
-    public Action<Source1SpecTargetUpdatedEvent>? SpecTargetUpdated { get; set; }
-    public Action<Source1SpecModeUpdatedEvent>? SpecModeUpdated { get; set; }
-    public Action<Source1EntityVisibleEvent>? EntityVisible { get; set; }
-    public Action<Source1GameinstructorDrawEvent>? GameinstructorDraw { get; set; }
-    public Action<Source1GameinstructorNodrawEvent>? GameinstructorNodraw { get; set; }
-    public Action<Source1FlareIgniteNpcEvent>? FlareIgniteNpc { get; set; }
-    public Action<Source1HelicopterGrenadePuntMissEvent>? HelicopterGrenadePuntMiss { get; set; }
-    public Action<Source1PhysgunPickupEvent>? PhysgunPickup { get; set; }
-    public Action<Source1InventoryUpdatedEvent>? InventoryUpdated { get; set; }
-    public Action<Source1CartUpdatedEvent>? CartUpdated { get; set; }
-    public Action<Source1StorePricesheetUpdatedEvent>? StorePricesheetUpdated { get; set; }
-    public Action<Source1ItemSchemaInitializedEvent>? ItemSchemaInitialized { get; set; }
-    public Action<Source1DropRateModifiedEvent>? DropRateModified { get; set; }
-    public Action<Source1EventTicketModifiedEvent>? EventTicketModified { get; set; }
-    public Action<Source1GcConnectedEvent>? GcConnected { get; set; }
-    public Action<Source1InstructorStartLessonEvent>? InstructorStartLesson { get; set; }
-    public Action<Source1InstructorCloseLessonEvent>? InstructorCloseLesson { get; set; }
-    public Action<Source1InstructorServerHintCreateEvent>? InstructorServerHintCreate { get; set; }
-    public Action<Source1InstructorServerHintStopEvent>? InstructorServerHintStop { get; set; }
-    public Action<Source1SetInstructorGroupEnabledEvent>? SetInstructorGroupEnabled { get; set; }
-    public Action<Source1ClientsideLessonClosedEvent>? ClientsideLessonClosed { get; set; }
-    public Action<Source1DynamicShadowLightChangedEvent>? DynamicShadowLightChanged { get; set; }
-    public Action<Source1GameuiHiddenEvent>? GameuiHidden { get; set; }
-    public Action<Source1ItemsGiftedEvent>? ItemsGifted { get; set; }
-    public Action<Source1PlayerScoreEvent>? PlayerScore { get; set; }
-    public Action<Source1PlayerShootEvent>? PlayerShoot { get; set; }
-    public Action<Source1GameInitEvent>? GameInit { get; set; }
-    public Action<Source1GameStartEvent>? GameStart { get; set; }
-    public Action<Source1GameEndEvent>? GameEnd { get; set; }
-    public Action<Source1RoundAnnounceMatchPointEvent>? RoundAnnounceMatchPoint { get; set; }
-    public Action<Source1RoundAnnounceFinalEvent>? RoundAnnounceFinal { get; set; }
-    public Action<Source1RoundAnnounceLastRoundHalfEvent>? RoundAnnounceLastRoundHalf { get; set; }
-    public Action<Source1RoundAnnounceMatchStartEvent>? RoundAnnounceMatchStart { get; set; }
-    public Action<Source1RoundAnnounceWarmupEvent>? RoundAnnounceWarmup { get; set; }
-    public Action<Source1RoundEndUploadStatsEvent>? RoundEndUploadStats { get; set; }
-    public Action<Source1RoundOfficiallyEndedEvent>? RoundOfficiallyEnded { get; set; }
-    public Action<Source1RoundTimeWarningEvent>? RoundTimeWarning { get; set; }
-    public Action<Source1UgcMapInfoReceivedEvent>? UgcMapInfoReceived { get; set; }
-    public Action<Source1UgcMapUnsubscribedEvent>? UgcMapUnsubscribed { get; set; }
-    public Action<Source1UgcMapDownloadErrorEvent>? UgcMapDownloadError { get; set; }
-    public Action<Source1UgcFileDownloadFinishedEvent>? UgcFileDownloadFinished { get; set; }
-    public Action<Source1UgcFileDownloadStartEvent>? UgcFileDownloadStart { get; set; }
-    public Action<Source1BeginNewMatchEvent>? BeginNewMatch { get; set; }
-    public Action<Source1DmBonusWeaponStartEvent>? DmBonusWeaponStart { get; set; }
-    public Action<Source1SurvivalAnnouncePhaseEvent>? SurvivalAnnouncePhase { get; set; }
-    public Action<Source1PlayerDecalEvent>? PlayerDecal { get; set; }
-    public Action<Source1ReadGameTitledataEvent>? ReadGameTitledata { get; set; }
-    public Action<Source1WriteGameTitledataEvent>? WriteGameTitledata { get; set; }
-    public Action<Source1ResetGameTitledataEvent>? ResetGameTitledata { get; set; }
-    public Action<Source1WeaponhudSelectionEvent>? WeaponhudSelection { get; set; }
-    public Action<Source1VoteEndedEvent>? VoteEnded { get; set; }
-    public Action<Source1VoteCastEvent>? VoteCast { get; set; }
-    public Action<Source1VoteOptionsEvent>? VoteOptions { get; set; }
-    public Action<Source1EndmatchMapvoteSelectingMapEvent>? EndmatchMapvoteSelectingMap { get; set; }
-    public Action<Source1EndmatchCmmStartRevealItemsEvent>? EndmatchCmmStartRevealItems { get; set; }
-    public Action<Source1ClientLoadoutChangedEvent>? ClientLoadoutChanged { get; set; }
-    public Action<Source1AddPlayerSonarIconEvent>? AddPlayerSonarIcon { get; set; }
-    public Action<Source1DoorOpenEvent>? DoorOpen { get; set; }
-    public Action<Source1DoorClosedEvent>? DoorClosed { get; set; }
-    public Action<Source1DoorBreakEvent>? DoorBreak { get; set; }
-    public Action<Source1AddBulletHitMarkerEvent>? AddBulletHitMarker { get; set; }
-    public Action<Source1OtherDeathEvent>? OtherDeath { get; set; }
-    public Action<Source1ItemPurchaseEvent>? ItemPurchase { get; set; }
-    public Action<Source1BombBeginplantEvent>? BombBeginplant { get; set; }
-    public Action<Source1BombAbortplantEvent>? BombAbortplant { get; set; }
-    public Action<Source1BombPlantedEvent>? BombPlanted { get; set; }
-    public Action<Source1BombDefusedEvent>? BombDefused { get; set; }
-    public Action<Source1BombExplodedEvent>? BombExploded { get; set; }
-    public Action<Source1BombDroppedEvent>? BombDropped { get; set; }
-    public Action<Source1BombPickupEvent>? BombPickup { get; set; }
-    public Action<Source1DefuserDroppedEvent>? DefuserDropped { get; set; }
-    public Action<Source1DefuserPickupEvent>? DefuserPickup { get; set; }
-    public Action<Source1AnnouncePhaseEndEvent>? AnnouncePhaseEnd { get; set; }
-    public Action<Source1CsIntermissionEvent>? CsIntermission { get; set; }
-    public Action<Source1BombBegindefuseEvent>? BombBegindefuse { get; set; }
-    public Action<Source1BombAbortdefuseEvent>? BombAbortdefuse { get; set; }
-    public Action<Source1HostageFollowsEvent>? HostageFollows { get; set; }
-    public Action<Source1HostageHurtEvent>? HostageHurt { get; set; }
-    public Action<Source1HostageKilledEvent>? HostageKilled { get; set; }
-    public Action<Source1HostageRescuedEvent>? HostageRescued { get; set; }
-    public Action<Source1HostageStopsFollowingEvent>? HostageStopsFollowing { get; set; }
-    public Action<Source1HostageRescuedAllEvent>? HostageRescuedAll { get; set; }
-    public Action<Source1HostageCallForHelpEvent>? HostageCallForHelp { get; set; }
-    public Action<Source1VipEscapedEvent>? VipEscaped { get; set; }
-    public Action<Source1VipKilledEvent>? VipKilled { get; set; }
-    public Action<Source1PlayerRadioEvent>? PlayerRadio { get; set; }
-    public Action<Source1BombBeepEvent>? BombBeep { get; set; }
-    public Action<Source1WeaponFireEvent>? WeaponFire { get; set; }
-    public Action<Source1WeaponFireOnEmptyEvent>? WeaponFireOnEmpty { get; set; }
-    public Action<Source1GrenadeThrownEvent>? GrenadeThrown { get; set; }
-    public Action<Source1WeaponOutofammoEvent>? WeaponOutofammo { get; set; }
-    public Action<Source1WeaponReloadEvent>? WeaponReload { get; set; }
-    public Action<Source1WeaponZoomEvent>? WeaponZoom { get; set; }
-    public Action<Source1SilencerDetachEvent>? SilencerDetach { get; set; }
-    public Action<Source1InspectWeaponEvent>? InspectWeapon { get; set; }
-    public Action<Source1WeaponZoomRifleEvent>? WeaponZoomRifle { get; set; }
-    public Action<Source1PlayerSpawnedEvent>? PlayerSpawned { get; set; }
-    public Action<Source1ItemPickupEvent>? ItemPickup { get; set; }
-    public Action<Source1ItemPickupSlerpEvent>? ItemPickupSlerp { get; set; }
-    public Action<Source1ItemPickupFailedEvent>? ItemPickupFailed { get; set; }
-    public Action<Source1ItemRemoveEvent>? ItemRemove { get; set; }
-    public Action<Source1AmmoPickupEvent>? AmmoPickup { get; set; }
-    public Action<Source1ItemEquipEvent>? ItemEquip { get; set; }
-    public Action<Source1EnterBuyzoneEvent>? EnterBuyzone { get; set; }
-    public Action<Source1ExitBuyzoneEvent>? ExitBuyzone { get; set; }
-    public Action<Source1BuytimeEndedEvent>? BuytimeEnded { get; set; }
-    public Action<Source1EnterBombzoneEvent>? EnterBombzone { get; set; }
-    public Action<Source1ExitBombzoneEvent>? ExitBombzone { get; set; }
-    public Action<Source1EnterRescueZoneEvent>? EnterRescueZone { get; set; }
-    public Action<Source1ExitRescueZoneEvent>? ExitRescueZone { get; set; }
-    public Action<Source1SilencerOffEvent>? SilencerOff { get; set; }
-    public Action<Source1SilencerOnEvent>? SilencerOn { get; set; }
-    public Action<Source1BuymenuOpenEvent>? BuymenuOpen { get; set; }
-    public Action<Source1BuymenuCloseEvent>? BuymenuClose { get; set; }
-    public Action<Source1RoundPrestartEvent>? RoundPrestart { get; set; }
-    public Action<Source1RoundPoststartEvent>? RoundPoststart { get; set; }
-    public Action<Source1GrenadeBounceEvent>? GrenadeBounce { get; set; }
-    public Action<Source1HegrenadeDetonateEvent>? HegrenadeDetonate { get; set; }
-    public Action<Source1FlashbangDetonateEvent>? FlashbangDetonate { get; set; }
-    public Action<Source1SmokegrenadeDetonateEvent>? SmokegrenadeDetonate { get; set; }
-    public Action<Source1SmokegrenadeExpiredEvent>? SmokegrenadeExpired { get; set; }
-    public Action<Source1MolotovDetonateEvent>? MolotovDetonate { get; set; }
-    public Action<Source1DecoyDetonateEvent>? DecoyDetonate { get; set; }
-    public Action<Source1DecoyStartedEvent>? DecoyStarted { get; set; }
-    public Action<Source1TagrenadeDetonateEvent>? TagrenadeDetonate { get; set; }
-    public Action<Source1InfernoStartburnEvent>? InfernoStartburn { get; set; }
-    public Action<Source1InfernoExpireEvent>? InfernoExpire { get; set; }
-    public Action<Source1InfernoExtinguishEvent>? InfernoExtinguish { get; set; }
-    public Action<Source1DecoyFiringEvent>? DecoyFiring { get; set; }
-    public Action<Source1BulletImpactEvent>? BulletImpact { get; set; }
-    public Action<Source1PlayerJumpEvent>? PlayerJump { get; set; }
-    public Action<Source1PlayerBlindEvent>? PlayerBlind { get; set; }
-    public Action<Source1PlayerFalldamageEvent>? PlayerFalldamage { get; set; }
-    public Action<Source1DoorMovingEvent>? DoorMoving { get; set; }
-    public Action<Source1MbInputLockSuccessEvent>? MbInputLockSuccess { get; set; }
-    public Action<Source1MbInputLockCancelEvent>? MbInputLockCancel { get; set; }
-    public Action<Source1NavBlockedEvent>? NavBlocked { get; set; }
-    public Action<Source1NavGenerateEvent>? NavGenerate { get; set; }
-    public Action<Source1AchievementInfoLoadedEvent>? AchievementInfoLoaded { get; set; }
-    public Action<Source1HltvChangedModeEvent>? HltvChangedMode { get; set; }
-    public Action<Source1CsGameDisconnectedEvent>? CsGameDisconnected { get; set; }
-    public Action<Source1CsRoundFinalBeepEvent>? CsRoundFinalBeep { get; set; }
-    public Action<Source1CsRoundStartBeepEvent>? CsRoundStartBeep { get; set; }
-    public Action<Source1CsWinPanelRoundEvent>? CsWinPanelRound { get; set; }
-    public Action<Source1CsWinPanelMatchEvent>? CsWinPanelMatch { get; set; }
-    public Action<Source1CsMatchEndRestartEvent>? CsMatchEndRestart { get; set; }
-    public Action<Source1CsPreRestartEvent>? CsPreRestart { get; set; }
-    public Action<Source1ShowDeathpanelEvent>? ShowDeathpanel { get; set; }
-    public Action<Source1HideDeathpanelEvent>? HideDeathpanel { get; set; }
-    public Action<Source1PlayerAvengedTeammateEvent>? PlayerAvengedTeammate { get; set; }
-    public Action<Source1AchievementEarnedLocalEvent>? AchievementEarnedLocal { get; set; }
-    public Action<Source1RepostXboxAchievementsEvent>? RepostXboxAchievements { get; set; }
-    public Action<Source1MatchEndConditionsEvent>? MatchEndConditions { get; set; }
-    public Action<Source1RoundMvpEvent>? RoundMvp { get; set; }
-    public Action<Source1ShowSurvivalRespawnStatusEvent>? ShowSurvivalRespawnStatus { get; set; }
-    public Action<Source1ClientDisconnectEvent>? ClientDisconnect { get; set; }
-    public Action<Source1GgKilledEnemyEvent>? GgKilledEnemy { get; set; }
-    public Action<Source1SwitchTeamEvent>? SwitchTeam { get; set; }
-    public Action<Source1WriteProfileDataEvent>? WriteProfileData { get; set; }
-    public Action<Source1TrialTimeExpiredEvent>? TrialTimeExpired { get; set; }
-    public Action<Source1UpdateMatchmakingStatsEvent>? UpdateMatchmakingStats { get; set; }
-    public Action<Source1PlayerResetVoteEvent>? PlayerResetVote { get; set; }
-    public Action<Source1EnableRestartVotingEvent>? EnableRestartVoting { get; set; }
-    public Action<Source1SfuieventEvent>? Sfuievent { get; set; }
-    public Action<Source1StartVoteEvent>? StartVote { get; set; }
-    public Action<Source1PlayerGivenC4Event>? PlayerGivenC4 { get; set; }
-    public Action<Source1TrPlayerFlashbangedEvent>? TrPlayerFlashbanged { get; set; }
-    public Action<Source1TrMarkCompleteEvent>? TrMarkComplete { get; set; }
-    public Action<Source1TrMarkBestTimeEvent>? TrMarkBestTime { get; set; }
-    public Action<Source1TrExitHintTriggerEvent>? TrExitHintTrigger { get; set; }
-    public Action<Source1BotTakeoverEvent>? BotTakeover { get; set; }
-    public Action<Source1TrShowFinishMsgboxEvent>? TrShowFinishMsgbox { get; set; }
-    public Action<Source1TrShowExitMsgboxEvent>? TrShowExitMsgbox { get; set; }
-    public Action<Source1JointeamFailedEvent>? JointeamFailed { get; set; }
-    public Action<Source1TeamchangePendingEvent>? TeamchangePending { get; set; }
-    public Action<Source1MaterialDefaultCompleteEvent>? MaterialDefaultComplete { get; set; }
-    public Action<Source1CsPrevNextSpectatorEvent>? CsPrevNextSpectator { get; set; }
-    public Action<Source1NextlevelChangedEvent>? NextlevelChanged { get; set; }
-    public Action<Source1SeasoncoinLevelupEvent>? SeasoncoinLevelup { get; set; }
-    public Action<Source1TournamentRewardEvent>? TournamentReward { get; set; }
-    public Action<Source1StartHalftimeEvent>? StartHalftime { get; set; }
-    public Action<Source1AmmoRefillEvent>? AmmoRefill { get; set; }
-    public Action<Source1ParachutePickupEvent>? ParachutePickup { get; set; }
-    public Action<Source1ParachuteDeployEvent>? ParachuteDeploy { get; set; }
-    public Action<Source1DronegunAttackEvent>? DronegunAttack { get; set; }
-    public Action<Source1DroneDispatchedEvent>? DroneDispatched { get; set; }
-    public Action<Source1LootCrateVisibleEvent>? LootCrateVisible { get; set; }
-    public Action<Source1LootCrateOpenedEvent>? LootCrateOpened { get; set; }
-    public Action<Source1OpenCrateInstrEvent>? OpenCrateInstr { get; set; }
-    public Action<Source1SmokeBeaconParadropEvent>? SmokeBeaconParadrop { get; set; }
-    public Action<Source1SurvivalParadropSpawnEvent>? SurvivalParadropSpawn { get; set; }
-    public Action<Source1SurvivalParadropBreakEvent>? SurvivalParadropBreak { get; set; }
-    public Action<Source1DroneCargoDetachedEvent>? DroneCargoDetached { get; set; }
-    public Action<Source1DroneAboveRoofEvent>? DroneAboveRoof { get; set; }
-    public Action<Source1ChoppersIncomingWarningEvent>? ChoppersIncomingWarning { get; set; }
-    public Action<Source1FirstbombsIncomingWarningEvent>? FirstbombsIncomingWarning { get; set; }
-    public Action<Source1DzItemInteractionEvent>? DzItemInteraction { get; set; }
-    public Action<Source1SurvivalTeammateRespawnEvent>? SurvivalTeammateRespawn { get; set; }
-    public Action<Source1SurvivalNoRespawnsWarningEvent>? SurvivalNoRespawnsWarning { get; set; }
-    public Action<Source1SurvivalNoRespawnsFinalEvent>? SurvivalNoRespawnsFinal { get; set; }
-    public Action<Source1PlayerPingEvent>? PlayerPing { get; set; }
-    public Action<Source1PlayerPingStopEvent>? PlayerPingStop { get; set; }
-    public Action<Source1PlayerSoundEvent>? PlayerSound { get; set; }
-    public Action<Source1GuardianWaveRestartEvent>? GuardianWaveRestart { get; set; }
-    public Action<Source1TeamIntroStartEvent>? TeamIntroStart { get; set; }
-    public Action<Source1TeamIntroEndEvent>? TeamIntroEnd { get; set; }
-    public Action<Source1BulletFlightResolutionEvent>? BulletFlightResolution { get; set; }
-    public Action<Source1GamePhaseChangedEvent>? GamePhaseChanged { get; set; }
+    public Action<Source1ServerSpawnEvent>? ServerSpawn;
+    public Action<Source1ServerPreShutdownEvent>? ServerPreShutdown;
+    public Action<Source1ServerShutdownEvent>? ServerShutdown;
+    public Action<Source1ServerMessageEvent>? ServerMessage;
+    public Action<Source1ServerCvarEvent>? ServerCvar;
+    public Action<Source1PlayerActivateEvent>? PlayerActivate;
+    public Action<Source1PlayerConnectFullEvent>? PlayerConnectFull;
+    public Action<Source1PlayerFullUpdateEvent>? PlayerFullUpdate;
+    public Action<Source1PlayerConnectEvent>? PlayerConnect;
+    public Action<Source1PlayerDisconnectEvent>? PlayerDisconnect;
+    public Action<Source1PlayerInfoEvent>? PlayerInfo;
+    public Action<Source1PlayerSpawnEvent>? PlayerSpawn;
+    public Action<Source1PlayerTeamEvent>? PlayerTeam;
+    public Action<Source1LocalPlayerTeamEvent>? LocalPlayerTeam;
+    public Action<Source1LocalPlayerControllerTeamEvent>? LocalPlayerControllerTeam;
+    public Action<Source1PlayerChangenameEvent>? PlayerChangename;
+    public Action<Source1PlayerHurtEvent>? PlayerHurt;
+    public Action<Source1PlayerChatEvent>? PlayerChat;
+    public Action<Source1LocalPlayerPawnChangedEvent>? LocalPlayerPawnChanged;
+    public Action<Source1TeamplayBroadcastAudioEvent>? TeamplayBroadcastAudio;
+    public Action<Source1FinaleStartEvent>? FinaleStart;
+    public Action<Source1PlayerStatsUpdatedEvent>? PlayerStatsUpdated;
+    public Action<Source1UserDataDownloadedEvent>? UserDataDownloaded;
+    public Action<Source1RagdollDissolvedEvent>? RagdollDissolved;
+    public Action<Source1TeamInfoEvent>? TeamInfo;
+    public Action<Source1TeamScoreEvent>? TeamScore;
+    public Action<Source1HltvCameramanEvent>? HltvCameraman;
+    public Action<Source1HltvChaseEvent>? HltvChase;
+    public Action<Source1HltvRankCameraEvent>? HltvRankCamera;
+    public Action<Source1HltvRankEntityEvent>? HltvRankEntity;
+    public Action<Source1HltvFixedEvent>? HltvFixed;
+    public Action<Source1HltvMessageEvent>? HltvMessage;
+    public Action<Source1HltvStatusEvent>? HltvStatus;
+    public Action<Source1HltvTitleEvent>? HltvTitle;
+    public Action<Source1HltvChatEvent>? HltvChat;
+    public Action<Source1HltvVersioninfoEvent>? HltvVersioninfo;
+    public Action<Source1HltvReplayEvent>? HltvReplay;
+    public Action<Source1HltvReplayStatusEvent>? HltvReplayStatus;
+    public Action<Source1DemoStopEvent>? DemoStop;
+    public Action<Source1MapShutdownEvent>? MapShutdown;
+    public Action<Source1MapTransitionEvent>? MapTransition;
+    public Action<Source1HostnameChangedEvent>? HostnameChanged;
+    public Action<Source1DifficultyChangedEvent>? DifficultyChanged;
+    public Action<Source1GameMessageEvent>? GameMessage;
+    public Action<Source1GameNewmapEvent>? GameNewmap;
+    public Action<Source1RoundStartEvent>? RoundStart;
+    public Action<Source1RoundEndEvent>? RoundEnd;
+    public Action<Source1RoundStartPreEntityEvent>? RoundStartPreEntity;
+    public Action<Source1RoundStartPostNavEvent>? RoundStartPostNav;
+    public Action<Source1RoundFreezeEndEvent>? RoundFreezeEnd;
+    public Action<Source1TeamplayRoundStartEvent>? TeamplayRoundStart;
+    public Action<Source1PlayerDeathEvent>? PlayerDeath;
+    public Action<Source1PlayerFootstepEvent>? PlayerFootstep;
+    public Action<Source1PlayerHintmessageEvent>? PlayerHintmessage;
+    public Action<Source1BreakBreakableEvent>? BreakBreakable;
+    public Action<Source1BrokenBreakableEvent>? BrokenBreakable;
+    public Action<Source1BreakPropEvent>? BreakProp;
+    public Action<Source1EntityKilledEvent>? EntityKilled;
+    public Action<Source1DoorCloseEvent>? DoorClose;
+    public Action<Source1VoteStartedEvent>? VoteStarted;
+    public Action<Source1VoteFailedEvent>? VoteFailed;
+    public Action<Source1VotePassedEvent>? VotePassed;
+    public Action<Source1VoteChangedEvent>? VoteChanged;
+    public Action<Source1VoteCastYesEvent>? VoteCastYes;
+    public Action<Source1VoteCastNoEvent>? VoteCastNo;
+    public Action<Source1AchievementEventEvent>? AchievementEvent;
+    public Action<Source1AchievementEarnedEvent>? AchievementEarned;
+    public Action<Source1AchievementWriteFailedEvent>? AchievementWriteFailed;
+    public Action<Source1BonusUpdatedEvent>? BonusUpdated;
+    public Action<Source1SpecTargetUpdatedEvent>? SpecTargetUpdated;
+    public Action<Source1SpecModeUpdatedEvent>? SpecModeUpdated;
+    public Action<Source1EntityVisibleEvent>? EntityVisible;
+    public Action<Source1GameinstructorDrawEvent>? GameinstructorDraw;
+    public Action<Source1GameinstructorNodrawEvent>? GameinstructorNodraw;
+    public Action<Source1FlareIgniteNpcEvent>? FlareIgniteNpc;
+    public Action<Source1HelicopterGrenadePuntMissEvent>? HelicopterGrenadePuntMiss;
+    public Action<Source1PhysgunPickupEvent>? PhysgunPickup;
+    public Action<Source1InventoryUpdatedEvent>? InventoryUpdated;
+    public Action<Source1CartUpdatedEvent>? CartUpdated;
+    public Action<Source1StorePricesheetUpdatedEvent>? StorePricesheetUpdated;
+    public Action<Source1ItemSchemaInitializedEvent>? ItemSchemaInitialized;
+    public Action<Source1DropRateModifiedEvent>? DropRateModified;
+    public Action<Source1EventTicketModifiedEvent>? EventTicketModified;
+    public Action<Source1GcConnectedEvent>? GcConnected;
+    public Action<Source1InstructorStartLessonEvent>? InstructorStartLesson;
+    public Action<Source1InstructorCloseLessonEvent>? InstructorCloseLesson;
+    public Action<Source1InstructorServerHintCreateEvent>? InstructorServerHintCreate;
+    public Action<Source1InstructorServerHintStopEvent>? InstructorServerHintStop;
+    public Action<Source1SetInstructorGroupEnabledEvent>? SetInstructorGroupEnabled;
+    public Action<Source1ClientsideLessonClosedEvent>? ClientsideLessonClosed;
+    public Action<Source1DynamicShadowLightChangedEvent>? DynamicShadowLightChanged;
+    public Action<Source1GameuiHiddenEvent>? GameuiHidden;
+    public Action<Source1ItemsGiftedEvent>? ItemsGifted;
+    public Action<Source1PlayerScoreEvent>? PlayerScore;
+    public Action<Source1PlayerShootEvent>? PlayerShoot;
+    public Action<Source1GameInitEvent>? GameInit;
+    public Action<Source1GameStartEvent>? GameStart;
+    public Action<Source1GameEndEvent>? GameEnd;
+    public Action<Source1RoundAnnounceMatchPointEvent>? RoundAnnounceMatchPoint;
+    public Action<Source1RoundAnnounceFinalEvent>? RoundAnnounceFinal;
+    public Action<Source1RoundAnnounceLastRoundHalfEvent>? RoundAnnounceLastRoundHalf;
+    public Action<Source1RoundAnnounceMatchStartEvent>? RoundAnnounceMatchStart;
+    public Action<Source1RoundAnnounceWarmupEvent>? RoundAnnounceWarmup;
+    public Action<Source1RoundEndUploadStatsEvent>? RoundEndUploadStats;
+    public Action<Source1RoundOfficiallyEndedEvent>? RoundOfficiallyEnded;
+    public Action<Source1RoundTimeWarningEvent>? RoundTimeWarning;
+    public Action<Source1UgcMapInfoReceivedEvent>? UgcMapInfoReceived;
+    public Action<Source1UgcMapUnsubscribedEvent>? UgcMapUnsubscribed;
+    public Action<Source1UgcMapDownloadErrorEvent>? UgcMapDownloadError;
+    public Action<Source1UgcFileDownloadFinishedEvent>? UgcFileDownloadFinished;
+    public Action<Source1UgcFileDownloadStartEvent>? UgcFileDownloadStart;
+    public Action<Source1BeginNewMatchEvent>? BeginNewMatch;
+    public Action<Source1DmBonusWeaponStartEvent>? DmBonusWeaponStart;
+    public Action<Source1SurvivalAnnouncePhaseEvent>? SurvivalAnnouncePhase;
+    public Action<Source1PlayerDecalEvent>? PlayerDecal;
+    public Action<Source1ReadGameTitledataEvent>? ReadGameTitledata;
+    public Action<Source1WriteGameTitledataEvent>? WriteGameTitledata;
+    public Action<Source1ResetGameTitledataEvent>? ResetGameTitledata;
+    public Action<Source1WeaponhudSelectionEvent>? WeaponhudSelection;
+    public Action<Source1VoteEndedEvent>? VoteEnded;
+    public Action<Source1VoteCastEvent>? VoteCast;
+    public Action<Source1VoteOptionsEvent>? VoteOptions;
+    public Action<Source1EndmatchMapvoteSelectingMapEvent>? EndmatchMapvoteSelectingMap;
+    public Action<Source1EndmatchCmmStartRevealItemsEvent>? EndmatchCmmStartRevealItems;
+    public Action<Source1ClientLoadoutChangedEvent>? ClientLoadoutChanged;
+    public Action<Source1AddPlayerSonarIconEvent>? AddPlayerSonarIcon;
+    public Action<Source1DoorOpenEvent>? DoorOpen;
+    public Action<Source1DoorClosedEvent>? DoorClosed;
+    public Action<Source1DoorBreakEvent>? DoorBreak;
+    public Action<Source1AddBulletHitMarkerEvent>? AddBulletHitMarker;
+    public Action<Source1OtherDeathEvent>? OtherDeath;
+    public Action<Source1ItemPurchaseEvent>? ItemPurchase;
+    public Action<Source1BombBeginplantEvent>? BombBeginplant;
+    public Action<Source1BombAbortplantEvent>? BombAbortplant;
+    public Action<Source1BombPlantedEvent>? BombPlanted;
+    public Action<Source1BombDefusedEvent>? BombDefused;
+    public Action<Source1BombExplodedEvent>? BombExploded;
+    public Action<Source1BombDroppedEvent>? BombDropped;
+    public Action<Source1BombPickupEvent>? BombPickup;
+    public Action<Source1DefuserDroppedEvent>? DefuserDropped;
+    public Action<Source1DefuserPickupEvent>? DefuserPickup;
+    public Action<Source1AnnouncePhaseEndEvent>? AnnouncePhaseEnd;
+    public Action<Source1CsIntermissionEvent>? CsIntermission;
+    public Action<Source1BombBegindefuseEvent>? BombBegindefuse;
+    public Action<Source1BombAbortdefuseEvent>? BombAbortdefuse;
+    public Action<Source1HostageFollowsEvent>? HostageFollows;
+    public Action<Source1HostageHurtEvent>? HostageHurt;
+    public Action<Source1HostageKilledEvent>? HostageKilled;
+    public Action<Source1HostageRescuedEvent>? HostageRescued;
+    public Action<Source1HostageStopsFollowingEvent>? HostageStopsFollowing;
+    public Action<Source1HostageRescuedAllEvent>? HostageRescuedAll;
+    public Action<Source1HostageCallForHelpEvent>? HostageCallForHelp;
+    public Action<Source1VipEscapedEvent>? VipEscaped;
+    public Action<Source1VipKilledEvent>? VipKilled;
+    public Action<Source1PlayerRadioEvent>? PlayerRadio;
+    public Action<Source1BombBeepEvent>? BombBeep;
+    public Action<Source1WeaponFireEvent>? WeaponFire;
+    public Action<Source1WeaponFireOnEmptyEvent>? WeaponFireOnEmpty;
+    public Action<Source1GrenadeThrownEvent>? GrenadeThrown;
+    public Action<Source1WeaponOutofammoEvent>? WeaponOutofammo;
+    public Action<Source1WeaponReloadEvent>? WeaponReload;
+    public Action<Source1WeaponZoomEvent>? WeaponZoom;
+    public Action<Source1SilencerDetachEvent>? SilencerDetach;
+    public Action<Source1InspectWeaponEvent>? InspectWeapon;
+    public Action<Source1WeaponZoomRifleEvent>? WeaponZoomRifle;
+    public Action<Source1PlayerSpawnedEvent>? PlayerSpawned;
+    public Action<Source1ItemPickupEvent>? ItemPickup;
+    public Action<Source1ItemPickupSlerpEvent>? ItemPickupSlerp;
+    public Action<Source1ItemPickupFailedEvent>? ItemPickupFailed;
+    public Action<Source1ItemRemoveEvent>? ItemRemove;
+    public Action<Source1AmmoPickupEvent>? AmmoPickup;
+    public Action<Source1ItemEquipEvent>? ItemEquip;
+    public Action<Source1EnterBuyzoneEvent>? EnterBuyzone;
+    public Action<Source1ExitBuyzoneEvent>? ExitBuyzone;
+    public Action<Source1BuytimeEndedEvent>? BuytimeEnded;
+    public Action<Source1EnterBombzoneEvent>? EnterBombzone;
+    public Action<Source1ExitBombzoneEvent>? ExitBombzone;
+    public Action<Source1EnterRescueZoneEvent>? EnterRescueZone;
+    public Action<Source1ExitRescueZoneEvent>? ExitRescueZone;
+    public Action<Source1SilencerOffEvent>? SilencerOff;
+    public Action<Source1SilencerOnEvent>? SilencerOn;
+    public Action<Source1BuymenuOpenEvent>? BuymenuOpen;
+    public Action<Source1BuymenuCloseEvent>? BuymenuClose;
+    public Action<Source1RoundPrestartEvent>? RoundPrestart;
+    public Action<Source1RoundPoststartEvent>? RoundPoststart;
+    public Action<Source1GrenadeBounceEvent>? GrenadeBounce;
+    public Action<Source1HegrenadeDetonateEvent>? HegrenadeDetonate;
+    public Action<Source1FlashbangDetonateEvent>? FlashbangDetonate;
+    public Action<Source1SmokegrenadeDetonateEvent>? SmokegrenadeDetonate;
+    public Action<Source1SmokegrenadeExpiredEvent>? SmokegrenadeExpired;
+    public Action<Source1MolotovDetonateEvent>? MolotovDetonate;
+    public Action<Source1DecoyDetonateEvent>? DecoyDetonate;
+    public Action<Source1DecoyStartedEvent>? DecoyStarted;
+    public Action<Source1TagrenadeDetonateEvent>? TagrenadeDetonate;
+    public Action<Source1InfernoStartburnEvent>? InfernoStartburn;
+    public Action<Source1InfernoExpireEvent>? InfernoExpire;
+    public Action<Source1InfernoExtinguishEvent>? InfernoExtinguish;
+    public Action<Source1DecoyFiringEvent>? DecoyFiring;
+    public Action<Source1BulletImpactEvent>? BulletImpact;
+    public Action<Source1PlayerJumpEvent>? PlayerJump;
+    public Action<Source1PlayerBlindEvent>? PlayerBlind;
+    public Action<Source1PlayerFalldamageEvent>? PlayerFalldamage;
+    public Action<Source1DoorMovingEvent>? DoorMoving;
+    public Action<Source1MbInputLockSuccessEvent>? MbInputLockSuccess;
+    public Action<Source1MbInputLockCancelEvent>? MbInputLockCancel;
+    public Action<Source1NavBlockedEvent>? NavBlocked;
+    public Action<Source1NavGenerateEvent>? NavGenerate;
+    public Action<Source1AchievementInfoLoadedEvent>? AchievementInfoLoaded;
+    public Action<Source1HltvChangedModeEvent>? HltvChangedMode;
+    public Action<Source1CsGameDisconnectedEvent>? CsGameDisconnected;
+    public Action<Source1CsRoundFinalBeepEvent>? CsRoundFinalBeep;
+    public Action<Source1CsRoundStartBeepEvent>? CsRoundStartBeep;
+    public Action<Source1CsWinPanelRoundEvent>? CsWinPanelRound;
+    public Action<Source1CsWinPanelMatchEvent>? CsWinPanelMatch;
+    public Action<Source1CsMatchEndRestartEvent>? CsMatchEndRestart;
+    public Action<Source1CsPreRestartEvent>? CsPreRestart;
+    public Action<Source1ShowDeathpanelEvent>? ShowDeathpanel;
+    public Action<Source1HideDeathpanelEvent>? HideDeathpanel;
+    public Action<Source1PlayerAvengedTeammateEvent>? PlayerAvengedTeammate;
+    public Action<Source1AchievementEarnedLocalEvent>? AchievementEarnedLocal;
+    public Action<Source1RepostXboxAchievementsEvent>? RepostXboxAchievements;
+    public Action<Source1MatchEndConditionsEvent>? MatchEndConditions;
+    public Action<Source1RoundMvpEvent>? RoundMvp;
+    public Action<Source1ShowSurvivalRespawnStatusEvent>? ShowSurvivalRespawnStatus;
+    public Action<Source1ClientDisconnectEvent>? ClientDisconnect;
+    public Action<Source1GgKilledEnemyEvent>? GgKilledEnemy;
+    public Action<Source1SwitchTeamEvent>? SwitchTeam;
+    public Action<Source1WriteProfileDataEvent>? WriteProfileData;
+    public Action<Source1TrialTimeExpiredEvent>? TrialTimeExpired;
+    public Action<Source1UpdateMatchmakingStatsEvent>? UpdateMatchmakingStats;
+    public Action<Source1PlayerResetVoteEvent>? PlayerResetVote;
+    public Action<Source1EnableRestartVotingEvent>? EnableRestartVoting;
+    public Action<Source1SfuieventEvent>? Sfuievent;
+    public Action<Source1StartVoteEvent>? StartVote;
+    public Action<Source1PlayerGivenC4Event>? PlayerGivenC4;
+    public Action<Source1TrPlayerFlashbangedEvent>? TrPlayerFlashbanged;
+    public Action<Source1TrMarkCompleteEvent>? TrMarkComplete;
+    public Action<Source1TrMarkBestTimeEvent>? TrMarkBestTime;
+    public Action<Source1TrExitHintTriggerEvent>? TrExitHintTrigger;
+    public Action<Source1BotTakeoverEvent>? BotTakeover;
+    public Action<Source1TrShowFinishMsgboxEvent>? TrShowFinishMsgbox;
+    public Action<Source1TrShowExitMsgboxEvent>? TrShowExitMsgbox;
+    public Action<Source1JointeamFailedEvent>? JointeamFailed;
+    public Action<Source1TeamchangePendingEvent>? TeamchangePending;
+    public Action<Source1MaterialDefaultCompleteEvent>? MaterialDefaultComplete;
+    public Action<Source1CsPrevNextSpectatorEvent>? CsPrevNextSpectator;
+    public Action<Source1NextlevelChangedEvent>? NextlevelChanged;
+    public Action<Source1SeasoncoinLevelupEvent>? SeasoncoinLevelup;
+    public Action<Source1TournamentRewardEvent>? TournamentReward;
+    public Action<Source1StartHalftimeEvent>? StartHalftime;
+    public Action<Source1AmmoRefillEvent>? AmmoRefill;
+    public Action<Source1ParachutePickupEvent>? ParachutePickup;
+    public Action<Source1ParachuteDeployEvent>? ParachuteDeploy;
+    public Action<Source1DronegunAttackEvent>? DronegunAttack;
+    public Action<Source1DroneDispatchedEvent>? DroneDispatched;
+    public Action<Source1LootCrateVisibleEvent>? LootCrateVisible;
+    public Action<Source1LootCrateOpenedEvent>? LootCrateOpened;
+    public Action<Source1OpenCrateInstrEvent>? OpenCrateInstr;
+    public Action<Source1SmokeBeaconParadropEvent>? SmokeBeaconParadrop;
+    public Action<Source1SurvivalParadropSpawnEvent>? SurvivalParadropSpawn;
+    public Action<Source1SurvivalParadropBreakEvent>? SurvivalParadropBreak;
+    public Action<Source1DroneCargoDetachedEvent>? DroneCargoDetached;
+    public Action<Source1DroneAboveRoofEvent>? DroneAboveRoof;
+    public Action<Source1ChoppersIncomingWarningEvent>? ChoppersIncomingWarning;
+    public Action<Source1FirstbombsIncomingWarningEvent>? FirstbombsIncomingWarning;
+    public Action<Source1DzItemInteractionEvent>? DzItemInteraction;
+    public Action<Source1SurvivalTeammateRespawnEvent>? SurvivalTeammateRespawn;
+    public Action<Source1SurvivalNoRespawnsWarningEvent>? SurvivalNoRespawnsWarning;
+    public Action<Source1SurvivalNoRespawnsFinalEvent>? SurvivalNoRespawnsFinal;
+    public Action<Source1PlayerPingEvent>? PlayerPing;
+    public Action<Source1PlayerPingStopEvent>? PlayerPingStop;
+    public Action<Source1PlayerSoundEvent>? PlayerSound;
+    public Action<Source1GuardianWaveRestartEvent>? GuardianWaveRestart;
+    public Action<Source1TeamIntroStartEvent>? TeamIntroStart;
+    public Action<Source1TeamIntroEndEvent>? TeamIntroEnd;
+    public Action<Source1BulletFlightResolutionEvent>? BulletFlightResolution;
+    public Action<Source1GamePhaseChangedEvent>? GamePhaseChanged;
 
     internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)
     {

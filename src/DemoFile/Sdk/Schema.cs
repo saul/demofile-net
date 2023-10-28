@@ -538,6 +538,30 @@ public partial class CAK47 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CAK47.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CAK47.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CAK47.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CAK47.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CAnimGraphNetworkedVariables
@@ -1769,6 +1793,30 @@ public partial class CBarnLight : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBarnLight.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBarnLight.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBarnLight.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBarnLight.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseAnimGraph : CBaseModelEntity
@@ -1860,6 +1908,30 @@ public partial class CBaseAnimGraph : CBaseModelEntity
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseAnimGraph.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseAnimGraph.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseAnimGraph.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseAnimGraph.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -1990,6 +2062,30 @@ public partial class CBaseButton : CBaseToggle
         }
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseButton.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseButton.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseButton.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseButton.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseClientUIEntity : CBaseModelEntity
@@ -2040,6 +2136,30 @@ public partial class CBaseClientUIEntity : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseClientUIEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseClientUIEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseClientUIEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseClientUIEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseCombatCharacter : CBaseFlex
@@ -2081,6 +2201,30 @@ public partial class CBaseCombatCharacter : CBaseFlex
             };
         }
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseCombatCharacter.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseCombatCharacter.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseCombatCharacter.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseCombatCharacter.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -2182,6 +2326,30 @@ public partial class CBaseCSGrenade : CCSWeaponBase
         }
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseCSGrenadeProjectile : CBaseGrenade
@@ -2242,6 +2410,30 @@ public partial class CBaseCSGrenadeProjectile : CBaseGrenade
         }
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenadeProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenadeProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenadeProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseCSGrenadeProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseDoor : CBaseToggle
@@ -2261,6 +2453,30 @@ public partial class CBaseDoor : CBaseToggle
             };
         }
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseDoor.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseDoor.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseDoor.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseDoor.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -2642,6 +2858,30 @@ public partial class CBaseEntity : CEntityInstance
         }
         return CEntityInstance.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseFire : CBaseEntity
@@ -2691,6 +2931,30 @@ public partial class CBaseFire : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseFire.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseFire.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseFire.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseFire.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -2748,6 +3012,30 @@ public partial class CBaseFlex : CBaseAnimGraph
             };
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseFlex.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseFlex.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseFlex.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseFlex.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -2816,6 +3104,30 @@ public partial class CBaseGrenade : CBaseFlex
             };
         }
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -3103,6 +3415,30 @@ public partial class CBaseModelEntity : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseModelEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseModelEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseModelEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseModelEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBasePlayerController : CBaseEntity
@@ -3179,6 +3515,30 @@ public partial class CBasePlayerController : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBasePlayerController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -3445,6 +3805,30 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
         }
         return CBaseCombatCharacter.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerPawn.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBasePlayerPawn.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerPawn.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerPawn.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBasePlayerWeapon : CEconEntity
@@ -3536,6 +3920,30 @@ public partial class CBasePlayerWeapon : CEconEntity
         }
         return CEconEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerWeapon.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBasePlayerWeapon.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerWeapon.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePlayerWeapon.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseProp : CBaseAnimGraph
@@ -3545,6 +3953,30 @@ public partial class CBaseProp : CBaseAnimGraph
     internal new static SendNodeDecoder<CBaseProp> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseProp.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseProp.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseProp.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseProp.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -3606,6 +4038,30 @@ public partial class CBasePropDoor : CDynamicProp
         }
         return CDynamicProp.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBasePropDoor.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBasePropDoor.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePropDoor.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBasePropDoor.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBaseToggle : CBaseModelEntity
@@ -3615,6 +4071,30 @@ public partial class CBaseToggle : CBaseModelEntity
     internal new static SendNodeDecoder<CBaseToggle> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseToggle.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseToggle.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseToggle.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseToggle.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -3645,6 +4125,30 @@ public partial class CBaseTrigger : CBaseToggle
             };
         }
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseTrigger.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseTrigger.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseTrigger.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseTrigger.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -3705,6 +4209,30 @@ public partial class CBaseViewModel : CBaseAnimGraph
             };
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBaseViewModel.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBaseViewModel.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseViewModel.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBaseViewModel.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -3949,6 +4477,30 @@ public partial class CBeam : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBeam.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBeam.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBeam.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBeam.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBodyComponent : CEntityComponent
@@ -4093,6 +4645,30 @@ public partial class CBombTarget : CBaseTrigger
         }
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBombTarget.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBombTarget.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBombTarget.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBombTarget.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBreachCharge : CCSWeaponBase
@@ -4102,6 +4678,30 @@ public partial class CBreachCharge : CCSWeaponBase
     internal new static SendNodeDecoder<CBreachCharge> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBreachCharge.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBreachCharge.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBreachCharge.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBreachCharge.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -4113,6 +4713,30 @@ public partial class CBreachChargeProjectile : CBaseGrenade
     {
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBreachChargeProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBreachChargeProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBreachChargeProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBreachChargeProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBreakable : CBaseModelEntity
@@ -4122,6 +4746,30 @@ public partial class CBreakable : CBaseModelEntity
     internal new static SendNodeDecoder<CBreakable> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBreakable.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBreakable.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBreakable.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBreakable.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -4143,6 +4791,30 @@ public partial class CBreakableProp : CBaseProp
         }
         return CBaseProp.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBreakableProp.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBreakableProp.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBreakableProp.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBreakableProp.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBumpMine : CCSWeaponBase
@@ -4153,6 +4825,30 @@ public partial class CBumpMine : CCSWeaponBase
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBumpMine.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBumpMine.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBumpMine.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBumpMine.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CBumpMineProjectile : CBaseGrenade
@@ -4162,6 +4858,30 @@ public partial class CBumpMineProjectile : CBaseGrenade
     internal new static SendNodeDecoder<CBumpMineProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CBumpMineProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CBumpMineProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CBumpMineProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CBumpMineProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -4223,6 +4943,30 @@ public partial class CC4 : CCSWeaponBase
         }
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CC4.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CC4.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CC4.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CC4.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CChicken : CDynamicProp
@@ -4282,6 +5026,30 @@ public partial class CChicken : CDynamicProp
             };
         }
         return CDynamicProp.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CChicken.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CChicken.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CChicken.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CChicken.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -4571,6 +5339,30 @@ public partial class CColorCorrection : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CColorCorrection.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CColorCorrection.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CColorCorrection.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CColorCorrection.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CColorCorrectionVolume : CBaseTrigger
@@ -4630,6 +5422,30 @@ public partial class CColorCorrectionVolume : CBaseTrigger
             };
         }
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CColorCorrectionVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CColorCorrectionVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CColorCorrectionVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CColorCorrectionVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -5757,6 +6573,30 @@ public partial class CCSGameRulesProxy : CGameRulesProxy
         }
         return CGameRulesProxy.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGameRulesProxy.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGameRulesProxy.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGameRulesProxy.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGameRulesProxy.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCharacterPosition
@@ -5766,6 +6606,30 @@ public partial class CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCharact
     internal new static SendNodeDecoder<CCSGO_TeamIntroCharacterPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamPreviewCharacterPosition.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -5777,6 +6641,30 @@ public partial class CCSGO_TeamIntroCounterTerroristPosition : CCSGO_TeamIntroCh
     {
         return CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSGO_TeamIntroTerroristPosition : CCSGO_TeamIntroCharacterPosition
@@ -5786,6 +6674,30 @@ public partial class CCSGO_TeamIntroTerroristPosition : CCSGO_TeamIntroCharacter
     internal new static SendNodeDecoder<CCSGO_TeamIntroTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -5877,6 +6789,30 @@ public partial class CCSGO_TeamPreviewCharacterPosition : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSGO_TeamSelectCharacterPosition : CCSGO_TeamPreviewCharacterPosition
@@ -5886,6 +6822,30 @@ public partial class CCSGO_TeamSelectCharacterPosition : CCSGO_TeamPreviewCharac
     internal new static SendNodeDecoder<CCSGO_TeamSelectCharacterPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamPreviewCharacterPosition.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -5897,6 +6857,30 @@ public partial class CCSGO_TeamSelectCounterTerroristPosition : CCSGO_TeamSelect
     {
         return CCSGO_TeamSelectCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSGO_TeamSelectTerroristPosition : CCSGO_TeamSelectCharacterPosition
@@ -5906,6 +6890,30 @@ public partial class CCSGO_TeamSelectTerroristPosition : CCSGO_TeamSelectCharact
     internal new static SendNodeDecoder<CCSGO_TeamSelectTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamSelectCharacterPosition.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -5917,6 +6925,30 @@ public partial class CCSGO_WingmanIntroCharacterPosition : CCSGO_TeamIntroCharac
     {
         return CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSGO_WingmanIntroCounterTerroristPosition : CCSGO_WingmanIntroCharacterPosition
@@ -5927,6 +6959,30 @@ public partial class CCSGO_WingmanIntroCounterTerroristPosition : CCSGO_WingmanI
     {
         return CCSGO_WingmanIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSGO_WingmanIntroTerroristPosition : CCSGO_WingmanIntroCharacterPosition
@@ -5936,6 +6992,30 @@ public partial class CCSGO_WingmanIntroTerroristPosition : CCSGO_WingmanIntroCha
     internal new static SendNodeDecoder<CCSGO_WingmanIntroTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_WingmanIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -5967,6 +7047,30 @@ public partial class CCSGOViewModel : CPredictedViewModel
         }
         return CPredictedViewModel.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSGOViewModel.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSGOViewModel.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGOViewModel.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSGOViewModel.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSMinimapBoundary : CBaseEntity
@@ -5976,6 +7080,30 @@ public partial class CCSMinimapBoundary : CBaseEntity
     internal new static SendNodeDecoder<CCSMinimapBoundary> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSMinimapBoundary.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSMinimapBoundary.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSMinimapBoundary.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSMinimapBoundary.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -6026,6 +7154,30 @@ public partial class CCSObserverPawn : CCSPlayerPawnBase
     internal new static SendNodeDecoder<CCSObserverPawn> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSPlayerPawnBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSObserverPawn.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSObserverPawn.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSObserverPawn.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSObserverPawn.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -7109,6 +8261,30 @@ public partial class CCSPlayerController : CBasePlayerController
         }
         return CBasePlayerController.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSPlayerController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSPlayerController_ActionTrackingServices : CPlayerControllerComponent
@@ -7760,6 +8936,30 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
         }
         return CCSPlayerPawnBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawn.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawn.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawn.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawn.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSPlayerPawnBase : CBasePlayerPawn
@@ -8404,6 +9604,30 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
         }
         return CBasePlayerPawn.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawnBase.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawnBase.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawnBase.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerPawnBase.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSPlayerResource : CBaseEntity
@@ -8516,6 +9740,30 @@ public partial class CCSPlayerResource : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerResource.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSPlayerResource.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerResource.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSPlayerResource.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSTeam : CTeam
@@ -8625,6 +9873,30 @@ public partial class CCSTeam : CTeam
             };
         }
         return CTeam.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSTeam.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSTeam.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSTeam.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSTeam.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -8880,6 +10152,30 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
         }
         return CBasePlayerWeapon.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBase.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBase.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBase.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBase.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CCSWeaponBaseGun : CCSWeaponBase
@@ -8919,6 +10215,30 @@ public partial class CCSWeaponBaseGun : CCSWeaponBase
             };
         }
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBaseGun.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBaseGun.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBaseGun.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCSWeaponBaseGun.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -9088,6 +10408,30 @@ public partial class CDEagle : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CDEagle.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CDEagle.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CDEagle.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CDEagle.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CDecoyGrenade : CBaseCSGrenade
@@ -9098,6 +10442,30 @@ public partial class CDecoyGrenade : CBaseCSGrenade
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CDecoyGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CDecoyGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CDecoyGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CDecoyGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CDecoyProjectile : CBaseCSGrenadeProjectile
@@ -9107,6 +10475,30 @@ public partial class CDecoyProjectile : CBaseCSGrenadeProjectile
     internal new static SendNodeDecoder<CDecoyProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CDecoyProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CDecoyProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CDecoyProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CDecoyProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -9194,6 +10586,30 @@ public partial class CDynamicLight : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CDynamicLight.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CDynamicLight.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CDynamicLight.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CDynamicLight.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CDynamicProp : CBreakableProp
@@ -9223,6 +10639,30 @@ public partial class CDynamicProp : CBreakableProp
             };
         }
         return CBreakableProp.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CDynamicProp.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CDynamicProp.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CDynamicProp.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CDynamicProp.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -9303,6 +10743,30 @@ public partial class CEconEntity : CBaseFlex
             };
         }
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEconEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEconEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEconEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEconEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -9501,6 +10965,30 @@ public partial class CEconWearable : CEconEntity
     {
         return CEconEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEconWearable.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEconWearable.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEconWearable.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEconWearable.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEntityComponent
@@ -9629,6 +11117,30 @@ public partial class CEntityDissolve : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEntityDissolve.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEntityDissolve.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEntityDissolve.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEntityDissolve.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEntityFlame : CBaseEntity
@@ -9658,6 +11170,30 @@ public partial class CEntityFlame : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEntityFlame.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEntityFlame.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEntityFlame.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEntityFlame.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -10022,6 +11558,30 @@ public partial class CEnvCombinedLightProbeVolume : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvCombinedLightProbeVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvCombinedLightProbeVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCombinedLightProbeVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCombinedLightProbeVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvCubemap : CBaseEntity
@@ -10222,6 +11782,30 @@ public partial class CEnvCubemap : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemap.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvCubemap.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemap.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemap.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvCubemapBox : CEnvCubemap
@@ -10231,6 +11815,30 @@ public partial class CEnvCubemapBox : CEnvCubemap
     internal new static SendNodeDecoder<CEnvCubemapBox> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CEnvCubemap.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapBox.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapBox.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapBox.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapBox.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -10412,6 +12020,30 @@ public partial class CEnvCubemapFog : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapFog.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapFog.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapFog.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvCubemapFog.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvDecal : CBaseModelEntity
@@ -10515,6 +12147,30 @@ public partial class CEnvDecal : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvDecal.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvDecal.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvDecal.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvDecal.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvDetailController : CBaseEntity
@@ -10544,6 +12200,30 @@ public partial class CEnvDetailController : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvDetailController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvDetailController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvDetailController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvDetailController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -10735,6 +12415,30 @@ public partial class CEnvLightProbeVolume : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvLightProbeVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvLightProbeVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvLightProbeVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvLightProbeVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvParticleGlow : CParticleSystem
@@ -10794,6 +12498,30 @@ public partial class CEnvParticleGlow : CParticleSystem
             };
         }
         return CParticleSystem.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvParticleGlow.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvParticleGlow.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvParticleGlow.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvParticleGlow.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -11113,6 +12841,30 @@ public partial class CEnvProjectedTexture : CModelPointEntity
         }
         return CModelPointEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvProjectedTexture.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvProjectedTexture.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvProjectedTexture.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvProjectedTexture.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvScreenOverlay : CPointEntity
@@ -11179,6 +12931,30 @@ public partial class CEnvScreenOverlay : CPointEntity
             };
         }
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvScreenOverlay.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvScreenOverlay.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvScreenOverlay.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvScreenOverlay.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -11321,6 +13097,30 @@ public partial class CEnvSky : CBaseModelEntity
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvSky.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvSky.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvSky.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvSky.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -11602,6 +13402,30 @@ public partial class CEnvVolumetricFogController : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvVolumetricFogVolume : CBaseEntity
@@ -11682,6 +13506,30 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvVolumetricFogVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CEnvWind : CBaseEntity
@@ -11701,6 +13549,30 @@ public partial class CEnvWind : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEnvWind.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEnvWind.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvWind.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEnvWind.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -11871,6 +13743,30 @@ public partial class CFireCrackerBlast : CInferno
     {
         return CInferno.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFireCrackerBlast.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFireCrackerBlast.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFireCrackerBlast.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFireCrackerBlast.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFireSmoke : CBaseFire
@@ -11900,6 +13796,30 @@ public partial class CFireSmoke : CBaseFire
             };
         }
         return CBaseFire.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFireSmoke.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFireSmoke.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFireSmoke.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFireSmoke.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -11980,6 +13900,30 @@ public partial class CFish : CBaseAnimGraph
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFish.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFish.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFish.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFish.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFists : CCSWeaponBase
@@ -12011,6 +13955,30 @@ public partial class CFists : CCSWeaponBase
         }
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFists.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFists.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFists.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFists.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFlashbang : CBaseCSGrenade
@@ -12021,6 +13989,30 @@ public partial class CFlashbang : CBaseCSGrenade
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFlashbang.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFlashbang.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFlashbang.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFlashbang.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFlashbangProjectile : CBaseCSGrenadeProjectile
@@ -12030,6 +14022,30 @@ public partial class CFlashbangProjectile : CBaseCSGrenadeProjectile
     internal new static SendNodeDecoder<CFlashbangProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFlashbangProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFlashbangProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFlashbangProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFlashbangProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12050,6 +14066,30 @@ public partial class CFogController : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFogController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFogController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFogController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFogController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12081,6 +14121,30 @@ public partial class CFootstepControl : CBaseTrigger
         }
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFootstepControl.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFootstepControl.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFootstepControl.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFootstepControl.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFuncBrush : CBaseModelEntity
@@ -12090,6 +14154,30 @@ public partial class CFuncBrush : CBaseModelEntity
     internal new static SendNodeDecoder<CFuncBrush> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncBrush.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncBrush.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncBrush.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncBrush.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12173,6 +14261,30 @@ public partial class CFuncConveyor : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncConveyor.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncConveyor.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncConveyor.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncConveyor.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFuncElectrifiedVolume : CFuncBrush
@@ -12192,6 +14304,30 @@ public partial class CFuncElectrifiedVolume : CFuncBrush
             };
         }
         return CFuncBrush.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncElectrifiedVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncElectrifiedVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncElectrifiedVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncElectrifiedVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12255,6 +14391,30 @@ public partial class CFuncLadder : CBaseModelEntity
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncLadder.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncLadder.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncLadder.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncLadder.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12346,6 +14506,30 @@ public partial class CFuncMonitor : CFuncBrush
         }
         return CFuncBrush.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncMonitor.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncMonitor.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncMonitor.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncMonitor.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFuncMoveLinear : CBaseToggle
@@ -12355,6 +14539,30 @@ public partial class CFuncMoveLinear : CBaseToggle
     internal new static SendNodeDecoder<CFuncMoveLinear> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncMoveLinear.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncMoveLinear.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncMoveLinear.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncMoveLinear.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12366,6 +14574,30 @@ public partial class CFuncRotating : CBaseModelEntity
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncRotating.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncRotating.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncRotating.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncRotating.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFuncTrackTrain : CBaseModelEntity
@@ -12376,6 +14608,30 @@ public partial class CFuncTrackTrain : CBaseModelEntity
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncTrackTrain.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncTrackTrain.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncTrackTrain.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncTrackTrain.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CFuncWater : CBaseModelEntity
@@ -12385,6 +14641,30 @@ public partial class CFuncWater : CBaseModelEntity
     internal new static SendNodeDecoder<CFuncWater> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CFuncWater.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CFuncWater.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncWater.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CFuncWater.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12413,6 +14693,30 @@ public partial class CGameRulesProxy : CBaseEntity
     internal new static SendNodeDecoder<CGameRulesProxy> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CGameRulesProxy.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CGameRulesProxy.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CGameRulesProxy.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CGameRulesProxy.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12788,6 +15092,30 @@ public partial class CGradientFog : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CGradientFog.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CGradientFog.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CGradientFog.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CGradientFog.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CHandleTest : CBaseEntity
@@ -12818,6 +15146,30 @@ public partial class CHandleTest : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHandleTest.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHandleTest.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHandleTest.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHandleTest.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CHEGrenade : CBaseCSGrenade
@@ -12828,6 +15180,30 @@ public partial class CHEGrenade : CBaseCSGrenade
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHEGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHEGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHEGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHEGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CHEGrenadeProjectile : CBaseCSGrenadeProjectile
@@ -12837,6 +15213,30 @@ public partial class CHEGrenadeProjectile : CBaseCSGrenadeProjectile
     internal new static SendNodeDecoder<CHEGrenadeProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHEGrenadeProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHEGrenadeProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHEGrenadeProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHEGrenadeProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -12988,6 +15388,30 @@ public partial class CHostage : CHostageExpresserShim
         }
         return CHostageExpresserShim.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHostage.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHostage.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHostage.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHostage.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CHostageCarriableProp : CBaseAnimGraph
@@ -12997,6 +15421,30 @@ public partial class CHostageCarriableProp : CBaseAnimGraph
     internal new static SendNodeDecoder<CHostageCarriableProp> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHostageCarriableProp.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHostageCarriableProp.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageCarriableProp.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageCarriableProp.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -13008,6 +15456,30 @@ public partial class CHostageExpresserShim : CBaseCombatCharacter
     {
         return CBaseCombatCharacter.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHostageExpresserShim.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHostageExpresserShim.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageExpresserShim.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageExpresserShim.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CHostageRescueZone : CHostageRescueZoneShim
@@ -13017,6 +15489,30 @@ public partial class CHostageRescueZone : CHostageRescueZoneShim
     internal new static SendNodeDecoder<CHostageRescueZone> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CHostageRescueZoneShim.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZone.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZone.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZone.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZone.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -13028,6 +15524,30 @@ public partial class CHostageRescueZoneShim : CBaseTrigger
     {
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZoneShim.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZoneShim.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZoneShim.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CHostageRescueZoneShim.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CIncendiaryGrenade : CMolotovGrenade
@@ -13037,6 +15557,30 @@ public partial class CIncendiaryGrenade : CMolotovGrenade
     internal new static SendNodeDecoder<CIncendiaryGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CMolotovGrenade.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CIncendiaryGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CIncendiaryGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CIncendiaryGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CIncendiaryGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -13146,6 +15690,30 @@ public partial class CInferno : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CInferno.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CInferno.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CInferno.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CInferno.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CInfoInstructorHintHostageRescueZone : CPointEntity
@@ -13156,6 +15724,30 @@ public partial class CInfoInstructorHintHostageRescueZone : CPointEntity
     {
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CInfoLadderDismount : CBaseEntity
@@ -13165,6 +15757,30 @@ public partial class CInfoLadderDismount : CBaseEntity
     internal new static SendNodeDecoder<CInfoLadderDismount> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CInfoLadderDismount.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CInfoLadderDismount.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoLadderDismount.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoLadderDismount.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -13280,6 +15896,30 @@ public partial class CInfoOffscreenPanoramaTexture : CPointEntity
         }
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CInfoOffscreenPanoramaTexture.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CInfoOffscreenPanoramaTexture.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoOffscreenPanoramaTexture.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoOffscreenPanoramaTexture.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CInfoVisibilityBox : CBaseEntity
@@ -13319,6 +15959,30 @@ public partial class CInfoVisibilityBox : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CInfoVisibilityBox.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CInfoVisibilityBox.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoVisibilityBox.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoVisibilityBox.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -13370,6 +16034,30 @@ public partial class CInfoWorldLayer : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CInfoWorldLayer.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CInfoWorldLayer.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoWorldLayer.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CInfoWorldLayer.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CItem : CBaseAnimGraph
@@ -13380,6 +16068,30 @@ public partial class CItem : CBaseAnimGraph
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CItem.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CItem.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CItem.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CItem.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CItem_Healthshot : CWeaponBaseItem
@@ -13389,6 +16101,30 @@ public partial class CItem_Healthshot : CWeaponBaseItem
     internal new static SendNodeDecoder<CItem_Healthshot> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CWeaponBaseItem.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CItem_Healthshot.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CItem_Healthshot.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CItem_Healthshot.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CItem_Healthshot.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -13420,6 +16156,30 @@ public partial class CItemDogtags : CItem
         }
         return CItem.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CItemDogtags.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CItemDogtags.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CItemDogtags.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CItemDogtags.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CKnife : CCSWeaponBase
@@ -13429,6 +16189,30 @@ public partial class CKnife : CCSWeaponBase
     internal new static SendNodeDecoder<CKnife> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CKnife.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CKnife.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CKnife.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CKnife.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -14168,6 +16952,30 @@ public partial class CLightDirectionalEntity : CLightEntity
     {
         return CLightEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CLightDirectionalEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CLightDirectionalEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CLightDirectionalEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CLightDirectionalEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CLightEntity : CBaseModelEntity
@@ -14202,6 +17010,30 @@ public partial class CLightEntity : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CLightEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CLightEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CLightEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CLightEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CLightEnvironmentEntity : CLightDirectionalEntity
@@ -14211,6 +17043,30 @@ public partial class CLightEnvironmentEntity : CLightDirectionalEntity
     internal new static SendNodeDecoder<CLightEnvironmentEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CLightDirectionalEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CLightEnvironmentEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CLightEnvironmentEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CLightEnvironmentEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CLightEnvironmentEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -14298,6 +17154,30 @@ public partial class CLightGlow : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CLightGlow.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CLightGlow.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CLightGlow.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CLightGlow.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CLightOrthoEntity : CLightEntity
@@ -14308,6 +17188,30 @@ public partial class CLightOrthoEntity : CLightEntity
     {
         return CLightEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CLightOrthoEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CLightOrthoEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CLightOrthoEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CLightOrthoEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CLightSpotEntity : CLightEntity
@@ -14317,6 +17221,30 @@ public partial class CLightSpotEntity : CLightEntity
     internal new static SendNodeDecoder<CLightSpotEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CLightEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CLightSpotEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CLightSpotEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CLightSpotEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CLightSpotEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -14498,6 +17426,30 @@ public partial class CMapVetoPickController : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CMapVetoPickController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CMapVetoPickController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CMapVetoPickController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CMapVetoPickController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CMelee : CCSWeaponBase
@@ -14518,6 +17470,30 @@ public partial class CMelee : CCSWeaponBase
         }
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CMelee.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CMelee.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CMelee.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CMelee.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CModelPointEntity : CBaseModelEntity
@@ -14527,6 +17503,30 @@ public partial class CModelPointEntity : CBaseModelEntity
     internal new static SendNodeDecoder<CModelPointEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CModelPointEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CModelPointEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CModelPointEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CModelPointEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -14599,6 +17599,30 @@ public partial class CMolotovGrenade : CBaseCSGrenade
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CMolotovGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CMolotovGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CMolotovGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CMolotovGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CMolotovProjectile : CBaseCSGrenadeProjectile
@@ -14618,6 +17642,30 @@ public partial class CMolotovProjectile : CBaseCSGrenadeProjectile
             };
         }
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CMolotovProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CMolotovProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CMolotovProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CMolotovProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -14994,6 +18042,30 @@ public partial class COmniLight : CBarnLight
         }
         return CBarnLight.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.COmniLight.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.COmniLight.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.COmniLight.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.COmniLight.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CountdownTimer
@@ -15218,6 +18290,30 @@ public partial class CParticleSystem : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CParticleSystem.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CParticleSystem.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CParticleSystem.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CParticleSystem.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPathParticleRope : CBaseEntity
@@ -15425,6 +18521,30 @@ public partial class CPathParticleRope : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPathParticleRope.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPathParticleRope.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPathParticleRope.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPathParticleRope.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPhysBox : CBreakable
@@ -15434,6 +18554,30 @@ public partial class CPhysBox : CBreakable
     internal new static SendNodeDecoder<CPhysBox> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBreakable.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPhysBox.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPhysBox.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysBox.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysBox.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -15455,6 +18599,30 @@ public partial class CPhysicsProp : CBreakableProp
         }
         return CBreakableProp.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPhysicsProp.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPhysicsProp.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysicsProp.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysicsProp.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPhysicsPropMultiplayer : CPhysicsProp
@@ -15465,6 +18633,30 @@ public partial class CPhysicsPropMultiplayer : CPhysicsProp
     {
         return CPhysicsProp.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPhysicsPropMultiplayer.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPhysicsPropMultiplayer.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysicsPropMultiplayer.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysicsPropMultiplayer.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPhysMagnet : CBaseAnimGraph
@@ -15474,6 +18666,30 @@ public partial class CPhysMagnet : CBaseAnimGraph
     internal new static SendNodeDecoder<CPhysMagnet> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPhysMagnet.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPhysMagnet.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysMagnet.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPhysMagnet.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -15624,6 +18840,30 @@ public partial class CPlantedC4 : CBaseAnimGraph
             };
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPlantedC4.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPlantedC4.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPlantedC4.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPlantedC4.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -16364,6 +19604,30 @@ public partial class CPlayerPing : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPlayerPing.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPlayerPing.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPlayerPing.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPlayerPing.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPlayerSprayDecal : CModelPointEntity
@@ -16526,6 +19790,30 @@ public partial class CPlayerSprayDecal : CModelPointEntity
         }
         return CModelPointEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPlayerSprayDecal.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPlayerSprayDecal.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPlayerSprayDecal.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPlayerSprayDecal.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPlayerVisibility : CBaseEntity
@@ -16599,6 +19887,30 @@ public partial class CPlayerVisibility : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPlayerVisibility.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPlayerVisibility.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPlayerVisibility.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPlayerVisibility.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -16820,6 +20132,30 @@ public partial class CPointCamera : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointCamera.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointCamera.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointCamera.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointCamera.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPointClientUIDialog : CBaseClientUIEntity
@@ -16840,6 +20176,30 @@ public partial class CPointClientUIDialog : CBaseClientUIEntity
             };
         }
         return CBaseClientUIEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIDialog.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointClientUIDialog.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIDialog.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIDialog.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17093,6 +20453,30 @@ public partial class CPointClientUIWorldPanel : CBaseClientUIEntity
         }
         return CBaseClientUIEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldPanel.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldPanel.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldPanel.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldPanel.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
@@ -17112,6 +20496,30 @@ public partial class CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
             };
         }
         return CPointClientUIWorldPanel.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldTextPanel.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldTextPanel.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldTextPanel.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointClientUIWorldTextPanel.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17223,6 +20631,30 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointCommentaryNode.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointCommentaryNode.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointCommentaryNode.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointCommentaryNode.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPointEntity : CBaseEntity
@@ -17232,6 +20664,30 @@ public partial class CPointEntity : CBaseEntity
     internal new static SendNodeDecoder<CPointEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17425,6 +20881,30 @@ public partial class CPointValueRemapper : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointValueRemapper.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointValueRemapper.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointValueRemapper.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointValueRemapper.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPointWorldText : CModelPointEntity
@@ -17544,6 +21024,30 @@ public partial class CPointWorldText : CModelPointEntity
             };
         }
         return CModelPointEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPointWorldText.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPointWorldText.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPointWorldText.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPointWorldText.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17715,6 +21219,30 @@ public partial class CPostProcessingVolume : CBaseTrigger
         }
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPostProcessingVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPostProcessingVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPostProcessingVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPostProcessingVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPrecipitation : CBaseTrigger
@@ -17724,6 +21252,30 @@ public partial class CPrecipitation : CBaseTrigger
     internal new static SendNodeDecoder<CPrecipitation> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPrecipitation.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPrecipitation.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPrecipitation.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPrecipitation.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17735,6 +21287,30 @@ public partial class CPrecipitationBlocker : CBaseModelEntity
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPrecipitationBlocker.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPrecipitationBlocker.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPrecipitationBlocker.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPrecipitationBlocker.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CPredictedViewModel : CBaseViewModel
@@ -17744,6 +21320,30 @@ public partial class CPredictedViewModel : CBaseViewModel
     internal new static SendNodeDecoder<CPredictedViewModel> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseViewModel.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CPredictedViewModel.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CPredictedViewModel.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CPredictedViewModel.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CPredictedViewModel.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17764,6 +21364,30 @@ public partial class CRagdollManager : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CRagdollManager.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CRagdollManager.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CRagdollManager.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CRagdollManager.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -17846,6 +21470,30 @@ public partial class CRagdollProp : CBaseAnimGraph
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CRagdollProp.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CRagdollProp.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CRagdollProp.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CRagdollProp.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CRagdollPropAttached : CRagdollProp
@@ -17898,6 +21546,30 @@ public partial class CRagdollPropAttached : CRagdollProp
         }
         return CRagdollProp.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CRagdollPropAttached.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CRagdollPropAttached.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CRagdollPropAttached.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CRagdollPropAttached.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CRectLight : CBarnLight
@@ -17918,6 +21590,30 @@ public partial class CRectLight : CBarnLight
             };
         }
         return CBarnLight.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CRectLight.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CRectLight.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CRectLight.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CRectLight.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18178,6 +21874,30 @@ public partial class CRopeKeyframe : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CRopeKeyframe.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CRopeKeyframe.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CRopeKeyframe.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CRopeKeyframe.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSceneEntity : CPointEntity
@@ -18270,6 +21990,30 @@ public partial class CSceneEntity : CPointEntity
         }
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSceneEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSceneEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSceneEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSceneEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CScriptComponent : CEntityComponent
@@ -18298,6 +22042,30 @@ public partial class CSensorGrenade : CBaseCSGrenade
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSensorGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSensorGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSensorGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSensorGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSensorGrenadeProjectile : CBaseCSGrenadeProjectile
@@ -18307,6 +22075,30 @@ public partial class CSensorGrenadeProjectile : CBaseCSGrenadeProjectile
     internal new static SendNodeDecoder<CSensorGrenadeProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSensorGrenadeProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSensorGrenadeProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSensorGrenadeProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSensorGrenadeProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18327,6 +22119,30 @@ public partial class CShatterGlassShardPhysics : CPhysicsProp
             };
         }
         return CPhysicsProp.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CShatterGlassShardPhysics.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CShatterGlassShardPhysics.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CShatterGlassShardPhysics.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CShatterGlassShardPhysics.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18425,6 +22241,30 @@ public partial class CSkyCamera : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSkyCamera.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSkyCamera.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSkyCamera.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSkyCamera.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSMatchStats : CSPerRoundStats
@@ -18472,6 +22312,30 @@ public partial class CSmokeGrenade : CBaseCSGrenade
     internal new static SendNodeDecoder<CSmokeGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenade.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenade.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenade.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenade.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18555,6 +22419,30 @@ public partial class CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile
         }
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenadeProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenadeProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenadeProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSmokeGrenadeProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundAreaEntityBase : CBaseEntity
@@ -18595,6 +22483,30 @@ public partial class CSoundAreaEntityBase : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityBase.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityBase.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityBase.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityBase.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundAreaEntityOrientedBox : CSoundAreaEntityBase
@@ -18625,6 +22537,30 @@ public partial class CSoundAreaEntityOrientedBox : CSoundAreaEntityBase
         }
         return CSoundAreaEntityBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityOrientedBox.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityOrientedBox.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityOrientedBox.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntityOrientedBox.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundAreaEntitySphere : CSoundAreaEntityBase
@@ -18645,6 +22581,30 @@ public partial class CSoundAreaEntitySphere : CSoundAreaEntityBase
         }
         return CSoundAreaEntityBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntitySphere.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntitySphere.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntitySphere.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundAreaEntitySphere.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity
@@ -18654,6 +22614,30 @@ public partial class CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity
     internal new static SendNodeDecoder<CSoundOpvarSetAABBEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetAABBEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetAABBEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetAABBEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetAABBEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18665,6 +22649,30 @@ public partial class CSoundOpvarSetOBBEntity : CSoundOpvarSetAABBEntity
     {
         return CSoundOpvarSetAABBEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase
@@ -18675,6 +22683,30 @@ public partial class CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase
     {
         return CSoundOpvarSetPointBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity
@@ -18684,6 +22716,30 @@ public partial class CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity
     internal new static SendNodeDecoder<CSoundOpvarSetPathCornerEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18745,6 +22801,30 @@ public partial class CSoundOpvarSetPointBase : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointBase.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointBase.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointBase.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointBase.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase
@@ -18754,6 +22834,30 @@ public partial class CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase
     internal new static SendNodeDecoder<CSoundOpvarSetPointEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointEntity.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointEntity.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointEntity.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSoundOpvarSetPointEntity.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -18941,6 +23045,30 @@ public partial class CSpotlightEnd : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSpotlightEnd.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSpotlightEnd.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSpotlightEnd.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSpotlightEnd.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSprite : CBaseModelEntity
@@ -19084,6 +23212,30 @@ public partial class CSprite : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSprite.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSprite.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSprite.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSprite.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CSpriteOriented : CSprite
@@ -19093,6 +23245,30 @@ public partial class CSpriteOriented : CSprite
     internal new static SendNodeDecoder<CSpriteOriented> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSprite.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSpriteOriented.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSpriteOriented.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSpriteOriented.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSpriteOriented.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19260,6 +23436,30 @@ public partial class CSun : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CSun.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CSun.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CSun.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CSun.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CTablet : CCSWeaponBase
@@ -19269,6 +23469,30 @@ public partial class CTablet : CCSWeaponBase
     internal new static SendNodeDecoder<CTablet> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTablet.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTablet.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTablet.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTablet.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19345,6 +23569,30 @@ public partial class CTeam : CBaseEntity
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTeam.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTeam.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTeam.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTeam.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19444,6 +23692,30 @@ public partial class CTextureBasedAnimatable : CBaseModelEntity
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTextureBasedAnimatable.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTextureBasedAnimatable.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTextureBasedAnimatable.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTextureBasedAnimatable.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CTonemapController2 : CBaseEntity
@@ -19534,6 +23806,30 @@ public partial class CTonemapController2 : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTonemapController2.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTonemapController2.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTonemapController2.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTonemapController2.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CTouchExpansionComponent : CEntityComponent
@@ -19562,6 +23858,30 @@ public partial class CTriggerBuoyancy : CBaseTrigger
         }
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTriggerBuoyancy.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTriggerBuoyancy.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTriggerBuoyancy.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTriggerBuoyancy.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CTriggerTripWire : CBaseTrigger
@@ -19571,6 +23891,30 @@ public partial class CTriggerTripWire : CBaseTrigger
     internal new static SendNodeDecoder<CTriggerTripWire> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTriggerTripWire.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTriggerTripWire.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTriggerTripWire.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTriggerTripWire.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19582,6 +23926,30 @@ public partial class CTriggerVolume : CBaseModelEntity
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTriggerVolume.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTriggerVolume.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTriggerVolume.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTriggerVolume.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CTripWireFire : CBaseCSGrenade
@@ -19592,6 +23960,30 @@ public partial class CTripWireFire : CBaseCSGrenade
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTripWireFire.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTripWireFire.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTripWireFire.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTripWireFire.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CTripWireFireProjectile : CBaseGrenade
@@ -19601,6 +23993,30 @@ public partial class CTripWireFireProjectile : CBaseGrenade
     internal new static SendNodeDecoder<CTripWireFireProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CTripWireFireProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CTripWireFireProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CTripWireFireProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CTripWireFireProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19664,6 +24080,30 @@ public partial class CVoteController : CBaseEntity
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CVoteController.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CVoteController.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CVoteController.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CVoteController.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWaterBullet : CBaseAnimGraph
@@ -19673,6 +24113,30 @@ public partial class CWaterBullet : CBaseAnimGraph
     internal new static SendNodeDecoder<CWaterBullet> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWaterBullet.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWaterBullet.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWaterBullet.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWaterBullet.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19684,6 +24148,30 @@ public partial class CWeaponAug : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponAug.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponAug.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponAug.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponAug.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponAWP : CCSWeaponBaseGun
@@ -19693,6 +24181,30 @@ public partial class CWeaponAWP : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponAWP> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponAWP.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponAWP.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponAWP.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponAWP.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19724,6 +24236,30 @@ public partial class CWeaponBaseItem : CCSWeaponBase
         }
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponBaseItem.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponBaseItem.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponBaseItem.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponBaseItem.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponBizon : CCSWeaponBaseGun
@@ -19733,6 +24269,30 @@ public partial class CWeaponBizon : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponBizon> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponBizon.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponBizon.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponBizon.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponBizon.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19744,6 +24304,30 @@ public partial class CWeaponElite : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponElite.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponElite.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponElite.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponElite.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponFamas : CCSWeaponBaseGun
@@ -19753,6 +24337,30 @@ public partial class CWeaponFamas : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponFamas> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponFamas.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponFamas.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponFamas.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponFamas.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19764,6 +24372,30 @@ public partial class CWeaponFiveSeven : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponFiveSeven.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponFiveSeven.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponFiveSeven.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponFiveSeven.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponG3SG1 : CCSWeaponBaseGun
@@ -19773,6 +24405,30 @@ public partial class CWeaponG3SG1 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponG3SG1> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponG3SG1.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponG3SG1.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponG3SG1.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponG3SG1.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19784,6 +24440,30 @@ public partial class CWeaponGalilAR : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponGalilAR.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponGalilAR.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponGalilAR.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponGalilAR.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponGlock : CCSWeaponBaseGun
@@ -19793,6 +24473,30 @@ public partial class CWeaponGlock : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponGlock> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponGlock.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponGlock.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponGlock.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponGlock.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19804,6 +24508,30 @@ public partial class CWeaponHKP2000 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponHKP2000.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponHKP2000.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponHKP2000.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponHKP2000.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponM249 : CCSWeaponBaseGun
@@ -19813,6 +24541,30 @@ public partial class CWeaponM249 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponM249> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponM249.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponM249.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponM249.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponM249.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19824,6 +24576,30 @@ public partial class CWeaponM4A1 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponM4A1.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponM4A1.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponM4A1.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponM4A1.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponMAC10 : CCSWeaponBaseGun
@@ -19833,6 +24609,30 @@ public partial class CWeaponMAC10 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponMAC10> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponMAC10.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponMAC10.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMAC10.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMAC10.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19844,6 +24644,30 @@ public partial class CWeaponMag7 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponMag7.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponMag7.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMag7.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMag7.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponMP7 : CCSWeaponBaseGun
@@ -19853,6 +24677,30 @@ public partial class CWeaponMP7 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponMP7> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponMP7.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponMP7.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMP7.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMP7.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19864,6 +24712,30 @@ public partial class CWeaponMP9 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponMP9.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponMP9.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMP9.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponMP9.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponNegev : CCSWeaponBaseGun
@@ -19873,6 +24745,30 @@ public partial class CWeaponNegev : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponNegev> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponNegev.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponNegev.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponNegev.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponNegev.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19884,6 +24780,30 @@ public partial class CWeaponNOVA : CCSWeaponBase
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponNOVA.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponNOVA.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponNOVA.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponNOVA.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponP250 : CCSWeaponBaseGun
@@ -19893,6 +24813,30 @@ public partial class CWeaponP250 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponP250> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponP250.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponP250.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponP250.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponP250.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19904,6 +24848,30 @@ public partial class CWeaponP90 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponP90.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponP90.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponP90.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponP90.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponSawedoff : CCSWeaponBase
@@ -19913,6 +24881,30 @@ public partial class CWeaponSawedoff : CCSWeaponBase
     internal new static SendNodeDecoder<CWeaponSawedoff> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponSawedoff.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponSawedoff.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSawedoff.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSawedoff.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19924,6 +24916,30 @@ public partial class CWeaponSCAR20 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponSCAR20.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponSCAR20.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSCAR20.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSCAR20.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponSG556 : CCSWeaponBaseGun
@@ -19933,6 +24949,30 @@ public partial class CWeaponSG556 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponSG556> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponSG556.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponSG556.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSG556.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSG556.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19954,6 +24994,30 @@ public partial class CWeaponShield : CCSWeaponBaseGun
         }
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponShield.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponShield.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponShield.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponShield.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponSSG08 : CCSWeaponBaseGun
@@ -19963,6 +25027,30 @@ public partial class CWeaponSSG08 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponSSG08> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponSSG08.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponSSG08.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSSG08.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponSSG08.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -19984,6 +25072,30 @@ public partial class CWeaponTaser : CCSWeaponBaseGun
         }
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponTaser.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponTaser.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponTaser.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponTaser.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponTec9 : CCSWeaponBaseGun
@@ -19993,6 +25105,30 @@ public partial class CWeaponTec9 : CCSWeaponBaseGun
     internal new static SendNodeDecoder<CWeaponTec9> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponTec9.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponTec9.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponTec9.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponTec9.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -20004,6 +25140,30 @@ public partial class CWeaponUMP45 : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponUMP45.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponUMP45.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponUMP45.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponUMP45.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWeaponXM1014 : CCSWeaponBase
@@ -20013,6 +25173,30 @@ public partial class CWeaponXM1014 : CCSWeaponBase
     internal new static SendNodeDecoder<CWeaponXM1014> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponXM1014.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponXM1014.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponXM1014.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponXM1014.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 
@@ -20024,6 +25208,30 @@ public partial class CWeaponZoneRepulsor : CCSWeaponBaseGun
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWeaponZoneRepulsor.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWeaponZoneRepulsor.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponZoneRepulsor.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWeaponZoneRepulsor.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
 }
 
 public partial class CWorld : CBaseModelEntity
@@ -20033,6 +25241,30 @@ public partial class CWorld : CBaseModelEntity
     internal new static SendNodeDecoder<CWorld> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
+    }
+
+    internal override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CWorld.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    internal override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CWorld.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    internal override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CWorld.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    internal override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CWorld.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
     }
 }
 

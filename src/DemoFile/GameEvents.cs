@@ -4,19 +4,19 @@ namespace DemoFile;
 
 public struct GameEvents
 {
-    public Action<CMsgVDebugGameSessionIDEvent>? VDebugGameSessionIdEvent { get; set; }
-    public Action<CMsgPlaceDecalEvent>? PlaceDecalEvent { get; set; }
-    public Action<CMsgClearWorldDecalsEvent>? ClearWorldDecalsEvent { get; set; }
-    public Action<CMsgClearEntityDecalsEvent>? ClearEntityDecalsEvent { get; set; }
-    public Action<CMsgClearDecalsForSkeletonInstanceEvent>? ClearDecalsForSkeletonInstanceEvent { get; set; }
-    public Action<CMsgSource1LegacyGameEventList>? Source1LegacyGameEventList { get; set; }
-    public Action<CMsgSource1LegacyListenEvents>? Source1LegacyListenEvents { get; set; }
-    public Action<CMsgSource1LegacyGameEvent>? Source1LegacyGameEvent { get; set; }
-    public Action<CMsgSosStartSoundEvent>? SosStartSoundEvent { get; set; }
-    public Action<CMsgSosStopSoundEvent>? SosStopSoundEvent { get; set; }
-    public Action<CMsgSosSetSoundEventParams>? SosSetSoundEventParams { get; set; }
-    public Action<CMsgSosSetLibraryStackFields>? SosSetLibraryStackFields { get; set; }
-    public Action<CMsgSosStopSoundEventHash>? SosStopSoundEventHash { get; set; }
+    public Action<CMsgVDebugGameSessionIDEvent>? VDebugGameSessionIdEvent;
+    public Action<CMsgPlaceDecalEvent>? PlaceDecalEvent;
+    public Action<CMsgClearWorldDecalsEvent>? ClearWorldDecalsEvent;
+    public Action<CMsgClearEntityDecalsEvent>? ClearEntityDecalsEvent;
+    public Action<CMsgClearDecalsForSkeletonInstanceEvent>? ClearDecalsForSkeletonInstanceEvent;
+    public Action<CMsgSource1LegacyGameEventList>? Source1LegacyGameEventList;
+    public Action<CMsgSource1LegacyListenEvents>? Source1LegacyListenEvents;
+    public Action<CMsgSource1LegacyGameEvent>? Source1LegacyGameEvent;
+    public Action<CMsgSosStartSoundEvent>? SosStartSoundEvent;
+    public Action<CMsgSosStopSoundEvent>? SosStopSoundEvent;
+    public Action<CMsgSosSetSoundEventParams>? SosSetSoundEventParams;
+    public Action<CMsgSosSetLibraryStackFields>? SosSetLibraryStackFields;
+    public Action<CMsgSosStopSoundEventHash>? SosStopSoundEventHash;
 
     internal bool ParseGameEvent(int msgType, ReadOnlySpan<byte> buf)
     {

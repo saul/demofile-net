@@ -3,17 +3,16 @@
 public partial class CEntityInstance
 {
     private readonly SendNodeDecoder<object> _decoder;
+    protected readonly DemoParser Demo;
 
     internal CEntityInstance(EntityContext context, SendNodeDecoder<object> decoder)
     {
         _decoder = decoder;
+        Demo = context.Demo;
         EntityIndex = context.EntityIndex;
         ServerClass = context.ServerClass;
         SerialNumber = context.SerialNumber;
-        Demo = context.Demo;
     }
-
-    protected DemoParser Demo { get; }
 
     public CEntityIndex EntityIndex { get; }
 
@@ -29,5 +28,25 @@ public partial class CEntityInstance
     internal void ReadField(ReadOnlySpan<int> fieldPath, ref BitBuffer buffer)
     {
         _decoder(this, fieldPath, ref buffer);
+    }
+
+    internal virtual void FireCreateEvent()
+    {
+        Demo.EntityEvents.CEntityInstance.Create?.Invoke(this);
+    }
+
+    internal virtual void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CEntityInstance.Delete?.Invoke(this);
+    }
+
+    internal virtual void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CEntityInstance.PreUpdate?.Invoke(this);
+    }
+
+    internal virtual void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CEntityInstance.PostUpdate?.Invoke(this);
     }
 }
