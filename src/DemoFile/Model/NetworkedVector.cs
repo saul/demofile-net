@@ -5,8 +5,11 @@ using System.Numerics;
 namespace DemoFile;
 
 [DebuggerDisplay("Count = {Count}")]
-public class NetworkedVector<T> : IReadOnlyList<T?> where T : new()
+public class NetworkedVector<T> : IReadOnlyList<T?>
+    where T : new()
 {
+    public int Version { get; private set; }
+
     private struct NetworkedVectorEnumerator : IEnumerator<T>
     {
         private readonly NetworkedVector<T> _vector;
@@ -42,49 +45,74 @@ public class NetworkedVector<T> : IReadOnlyList<T?> where T : new()
         }
     }
 
-    private T?[]? _values;
-    private int _size;
+    private T?[]? _array;
+    private ArraySegment<T?> _values = ArraySegment<T?>.Empty;
 
     public IEnumerator<T> GetEnumerator() => new NetworkedVectorEnumerator(this);
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-    public int Count => _size;
+    public int Count => _values.Count;
 
     public T? this[int index]
     {
-        get => _values![index];
-        internal set => _values![index] = value;
+        get => _values[index];
+        internal set
+        {
+            Debug.Assert(index < _values.Count);
+            Version++;
+            _array![index] = value;
+        }
     }
 
     internal void EnsureSize(int length)
     {
-        if (length > _size)
+        if (length > _values.Count)
         {
+            Debug.Assert(length == _values.Count + 1);
             Resize(length);
         }
     }
 
     internal void Resize(int length)
     {
-        if (_values != null && length <= _values.Length)
+        Version++;
+
+        if (length == 0)
         {
-            _size = length;
+            // Drop the reference to the values - let the GC clear it up
+            _array = null;
+            _values = ArraySegment<T?>.Empty;
+
             return;
         }
 
-        var newCapacity = (int)BitOperations.RoundUpToPowerOf2((uint)length);
-        var newValues = new T[newCapacity];
-
-        // Copy the old values to the new array
-        if (_values != null)
+        // Can we accommodate this resize with our existing capacity?
+        if (_array != null && length <= _array.Length)
         {
-            Debug.Assert(length > _values.Length, "guessed implementation! what to do on resize?");
-            // todo: ensure we can only grow?
-            new ReadOnlySpan<T?>(_values).CopyTo(newValues);
+            // Vector is shrinking - clear removed values
+            if (length < _values.Count)
+            {
+                ((Span<T?>)_array)[length.._values.Count].Clear();
+            }
+
+            _values = new ArraySegment<T?>(_array, 0, length);
+            return;
         }
 
-        _size = length;
-        _values = newValues;
+        // If we're here, it's to grow the backing array
+        Debug.Assert(_array == null || length > _array.Length);
+
+        var newCapacity = (int)BitOperations.RoundUpToPowerOf2((uint)length);
+        var newArray = new T[newCapacity];
+
+        // Copy the old values to the new, larger backing array
+        if (_array != null)
+        {
+            ((ReadOnlySpan<T?>)_array).CopyTo(newArray);
+        }
+
+        _array = newArray;
+        _values = new ArraySegment<T?>(newArray, 0, length);
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System.Buffers;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using DemoFile.Extensions;
 using DemoFile.Sdk;
 
 namespace DemoFile;
@@ -41,7 +43,7 @@ public partial class DemoParser
     public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
     public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
 
-    public IEnumerable<CEntityInstance> Entities => _entities.Where(x => x != null)!;
+    public IEnumerable<CEntityInstance> Entities => _entities.WhereNotNull();
 
     public IEnumerable<CCSPlayerController> Players
     {
@@ -90,7 +92,7 @@ public partial class DemoParser
 
     public T? GetEntityByIndex<T>(CEntityIndex index) where T : CEntityInstance
     {
-        return _entities[(int)index.Value] as T;
+        return index.IsValid ? _entities[(int)index.Value] as T : null;
     }
 
     internal void OnDemoSendTables(CDemoSendTables outerMsg)
@@ -154,10 +156,37 @@ public partial class DemoParser
             _serverClasses.Length > 0 && _serializers.Count > 0,
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
+        Debug.Assert(!msg.UpdateBaseline);
         Debug.Assert(msg.AlternateBaselines.Count == 0);
+
+        var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
+        var entityDeleteIdx = 0;
+
+        // Clear out all entities - this is a full update.
+        if (!msg.IsDelta)
+        {
+            foreach (var entity in _entities)
+            {
+                if (entity == null)
+                    continue;
+
+                entity.IsActive = false;
+                entity.FireDeleteEvent();
+                entitiesToDelete[entityDeleteIdx++] = entity;
+            }
+        }
 
         var entityBitBuffer = new BitBuffer(msg.EntityData.Span);
         var entityIndex = -1;
+
+        // Fire create/post update events after all entities have been read.
+        // Otherwise things like handle props may refer to entities that
+        // haven't been created yet.
+        var createEvents = ArrayPool<CEntityInstance>.Shared.Rent(msg.UpdatedEntries);
+        var createEventIdx = 0;
+
+        var postUpdateEvents = ArrayPool<CEntityInstance>.Shared.Rent(msg.UpdatedEntries);
+        var postEventIdx = 0;
 
         for (var i = 0; i < msg.UpdatedEntries; ++i)
         {
@@ -179,7 +208,9 @@ public partial class DemoParser
                 if (updateType == 0b11)
                 {
                     // FHDR_LEAVEPVS | FHDR_DELETE
-                    _entities[entityIndex] = null;
+                    entity.IsActive = false;
+                    entity.FireDeleteEvent();
+                    entitiesToDelete[entityDeleteIdx++] = entity;
                 }
             }
             else if (updateType == 0b10)
@@ -208,7 +239,19 @@ public partial class DemoParser
                 ReadNewEntity(ref entityBitBuffer, entity);
 
                 entity.IsActive = true;
+
+                // If this entity already existed with the same serial number,
+                // treat it as an entity update as well as entity creation.
+                // This allows AddChangeCallback to track changes on snapshot.
+                if (_entities[entityIndex] is { } previousEnt
+                    && previousEnt.EntityHandle == entity.EntityHandle)
+                {
+                    previousEnt.FirePreUpdateEvent();
+                    postUpdateEvents[postEventIdx++] = entity;
+                }
+
                 _entities[entityIndex] = entity;
+                createEvents[createEventIdx++] = entity;
             }
             else
             {
@@ -223,9 +266,40 @@ public partial class DemoParser
                     // todo: fire event: EntityEnterPvs
                 }
 
+                entity.FirePreUpdateEvent();
                 ReadNewEntity(ref entityBitBuffer, entity);
+
+                postUpdateEvents[postEventIdx++] = entity;
             }
         }
+
+        for (var idx = 0; idx < entityDeleteIdx; ++idx)
+        {
+            var entity = entitiesToDelete[idx];
+            var entityIndexToDelete = entity.EntityIndex.Value;
+            if (ReferenceEquals(_entities[entityIndexToDelete], entity))
+            {
+                _entities[entityIndexToDelete] = null;
+            }
+
+            entitiesToDelete[idx] = null!;
+        }
+
+        for (var idx = 0; idx < createEventIdx; ++idx)
+        {
+            createEvents[idx].FireCreateEvent();
+            createEvents[idx] = null!;
+        }
+
+        for (var idx = 0; idx < postEventIdx; ++idx)
+        {
+            postUpdateEvents[idx].FirePostUpdateEvent();
+            postUpdateEvents[idx] = null!;
+        }
+
+        ArrayPool<CEntityInstance>.Shared.Return(entitiesToDelete);
+        ArrayPool<CEntityInstance>.Shared.Return(createEvents);
+        ArrayPool<CEntityInstance>.Shared.Return(postUpdateEvents);
     }
 
     [SkipLocalsInit]
@@ -253,8 +327,9 @@ public partial class DemoParser
 
         fieldPaths = fieldPaths[..index];
 
-        foreach (var fieldPath in fieldPaths)
+        for (var idx = 0; idx < fieldPaths.Length; idx++)
         {
+            var fieldPath = fieldPaths[idx];
             var pathSpan = fieldPath.AsSpan();
             entity.ReadField(pathSpan, ref entityBitBuffer);
         }

@@ -9,287 +9,287 @@ namespace DemoFile;
 
 public partial class Source1GameEvents
 {
-    public Action<Source1ServerSpawnEvent>? ServerSpawn { get; set; }
-    public Action<Source1ServerPreShutdownEvent>? ServerPreShutdown { get; set; }
-    public Action<Source1ServerShutdownEvent>? ServerShutdown { get; set; }
-    public Action<Source1ServerMessageEvent>? ServerMessage { get; set; }
-    public Action<Source1ServerCvarEvent>? ServerCvar { get; set; }
-    public Action<Source1PlayerActivateEvent>? PlayerActivate { get; set; }
-    public Action<Source1PlayerConnectFullEvent>? PlayerConnectFull { get; set; }
-    public Action<Source1PlayerFullUpdateEvent>? PlayerFullUpdate { get; set; }
-    public Action<Source1PlayerConnectEvent>? PlayerConnect { get; set; }
-    public Action<Source1PlayerDisconnectEvent>? PlayerDisconnect { get; set; }
-    public Action<Source1PlayerInfoEvent>? PlayerInfo { get; set; }
-    public Action<Source1PlayerSpawnEvent>? PlayerSpawn { get; set; }
-    public Action<Source1PlayerTeamEvent>? PlayerTeam { get; set; }
-    public Action<Source1LocalPlayerTeamEvent>? LocalPlayerTeam { get; set; }
-    public Action<Source1LocalPlayerControllerTeamEvent>? LocalPlayerControllerTeam { get; set; }
-    public Action<Source1PlayerChangenameEvent>? PlayerChangename { get; set; }
-    public Action<Source1PlayerHurtEvent>? PlayerHurt { get; set; }
-    public Action<Source1PlayerChatEvent>? PlayerChat { get; set; }
-    public Action<Source1LocalPlayerPawnChangedEvent>? LocalPlayerPawnChanged { get; set; }
-    public Action<Source1TeamplayBroadcastAudioEvent>? TeamplayBroadcastAudio { get; set; }
-    public Action<Source1FinaleStartEvent>? FinaleStart { get; set; }
-    public Action<Source1PlayerStatsUpdatedEvent>? PlayerStatsUpdated { get; set; }
-    public Action<Source1UserDataDownloadedEvent>? UserDataDownloaded { get; set; }
-    public Action<Source1RagdollDissolvedEvent>? RagdollDissolved { get; set; }
-    public Action<Source1TeamInfoEvent>? TeamInfo { get; set; }
-    public Action<Source1TeamScoreEvent>? TeamScore { get; set; }
-    public Action<Source1HltvCameramanEvent>? HltvCameraman { get; set; }
-    public Action<Source1HltvChaseEvent>? HltvChase { get; set; }
-    public Action<Source1HltvRankCameraEvent>? HltvRankCamera { get; set; }
-    public Action<Source1HltvRankEntityEvent>? HltvRankEntity { get; set; }
-    public Action<Source1HltvFixedEvent>? HltvFixed { get; set; }
-    public Action<Source1HltvMessageEvent>? HltvMessage { get; set; }
-    public Action<Source1HltvStatusEvent>? HltvStatus { get; set; }
-    public Action<Source1HltvTitleEvent>? HltvTitle { get; set; }
-    public Action<Source1HltvChatEvent>? HltvChat { get; set; }
-    public Action<Source1HltvVersioninfoEvent>? HltvVersioninfo { get; set; }
-    public Action<Source1HltvReplayEvent>? HltvReplay { get; set; }
-    public Action<Source1HltvReplayStatusEvent>? HltvReplayStatus { get; set; }
-    public Action<Source1DemoStopEvent>? DemoStop { get; set; }
-    public Action<Source1MapShutdownEvent>? MapShutdown { get; set; }
-    public Action<Source1MapTransitionEvent>? MapTransition { get; set; }
-    public Action<Source1HostnameChangedEvent>? HostnameChanged { get; set; }
-    public Action<Source1DifficultyChangedEvent>? DifficultyChanged { get; set; }
-    public Action<Source1GameMessageEvent>? GameMessage { get; set; }
-    public Action<Source1GameNewmapEvent>? GameNewmap { get; set; }
-    public Action<Source1RoundStartEvent>? RoundStart { get; set; }
-    public Action<Source1RoundEndEvent>? RoundEnd { get; set; }
-    public Action<Source1RoundStartPreEntityEvent>? RoundStartPreEntity { get; set; }
-    public Action<Source1RoundStartPostNavEvent>? RoundStartPostNav { get; set; }
-    public Action<Source1RoundFreezeEndEvent>? RoundFreezeEnd { get; set; }
-    public Action<Source1TeamplayRoundStartEvent>? TeamplayRoundStart { get; set; }
-    public Action<Source1PlayerDeathEvent>? PlayerDeath { get; set; }
-    public Action<Source1PlayerFootstepEvent>? PlayerFootstep { get; set; }
-    public Action<Source1PlayerHintmessageEvent>? PlayerHintmessage { get; set; }
-    public Action<Source1BreakBreakableEvent>? BreakBreakable { get; set; }
-    public Action<Source1BrokenBreakableEvent>? BrokenBreakable { get; set; }
-    public Action<Source1BreakPropEvent>? BreakProp { get; set; }
-    public Action<Source1EntityKilledEvent>? EntityKilled { get; set; }
-    public Action<Source1DoorCloseEvent>? DoorClose { get; set; }
-    public Action<Source1VoteStartedEvent>? VoteStarted { get; set; }
-    public Action<Source1VoteFailedEvent>? VoteFailed { get; set; }
-    public Action<Source1VotePassedEvent>? VotePassed { get; set; }
-    public Action<Source1VoteChangedEvent>? VoteChanged { get; set; }
-    public Action<Source1VoteCastYesEvent>? VoteCastYes { get; set; }
-    public Action<Source1VoteCastNoEvent>? VoteCastNo { get; set; }
-    public Action<Source1AchievementEventEvent>? AchievementEvent { get; set; }
-    public Action<Source1AchievementEarnedEvent>? AchievementEarned { get; set; }
-    public Action<Source1AchievementWriteFailedEvent>? AchievementWriteFailed { get; set; }
-    public Action<Source1BonusUpdatedEvent>? BonusUpdated { get; set; }
-    public Action<Source1SpecTargetUpdatedEvent>? SpecTargetUpdated { get; set; }
-    public Action<Source1SpecModeUpdatedEvent>? SpecModeUpdated { get; set; }
-    public Action<Source1EntityVisibleEvent>? EntityVisible { get; set; }
-    public Action<Source1GameinstructorDrawEvent>? GameinstructorDraw { get; set; }
-    public Action<Source1GameinstructorNodrawEvent>? GameinstructorNodraw { get; set; }
-    public Action<Source1FlareIgniteNpcEvent>? FlareIgniteNpc { get; set; }
-    public Action<Source1HelicopterGrenadePuntMissEvent>? HelicopterGrenadePuntMiss { get; set; }
-    public Action<Source1PhysgunPickupEvent>? PhysgunPickup { get; set; }
-    public Action<Source1InventoryUpdatedEvent>? InventoryUpdated { get; set; }
-    public Action<Source1CartUpdatedEvent>? CartUpdated { get; set; }
-    public Action<Source1StorePricesheetUpdatedEvent>? StorePricesheetUpdated { get; set; }
-    public Action<Source1ItemSchemaInitializedEvent>? ItemSchemaInitialized { get; set; }
-    public Action<Source1DropRateModifiedEvent>? DropRateModified { get; set; }
-    public Action<Source1EventTicketModifiedEvent>? EventTicketModified { get; set; }
-    public Action<Source1GcConnectedEvent>? GcConnected { get; set; }
-    public Action<Source1InstructorStartLessonEvent>? InstructorStartLesson { get; set; }
-    public Action<Source1InstructorCloseLessonEvent>? InstructorCloseLesson { get; set; }
-    public Action<Source1InstructorServerHintCreateEvent>? InstructorServerHintCreate { get; set; }
-    public Action<Source1InstructorServerHintStopEvent>? InstructorServerHintStop { get; set; }
-    public Action<Source1SetInstructorGroupEnabledEvent>? SetInstructorGroupEnabled { get; set; }
-    public Action<Source1ClientsideLessonClosedEvent>? ClientsideLessonClosed { get; set; }
-    public Action<Source1DynamicShadowLightChangedEvent>? DynamicShadowLightChanged { get; set; }
-    public Action<Source1GameuiHiddenEvent>? GameuiHidden { get; set; }
-    public Action<Source1ItemsGiftedEvent>? ItemsGifted { get; set; }
-    public Action<Source1PlayerScoreEvent>? PlayerScore { get; set; }
-    public Action<Source1PlayerShootEvent>? PlayerShoot { get; set; }
-    public Action<Source1GameInitEvent>? GameInit { get; set; }
-    public Action<Source1GameStartEvent>? GameStart { get; set; }
-    public Action<Source1GameEndEvent>? GameEnd { get; set; }
-    public Action<Source1RoundAnnounceMatchPointEvent>? RoundAnnounceMatchPoint { get; set; }
-    public Action<Source1RoundAnnounceFinalEvent>? RoundAnnounceFinal { get; set; }
-    public Action<Source1RoundAnnounceLastRoundHalfEvent>? RoundAnnounceLastRoundHalf { get; set; }
-    public Action<Source1RoundAnnounceMatchStartEvent>? RoundAnnounceMatchStart { get; set; }
-    public Action<Source1RoundAnnounceWarmupEvent>? RoundAnnounceWarmup { get; set; }
-    public Action<Source1RoundEndUploadStatsEvent>? RoundEndUploadStats { get; set; }
-    public Action<Source1RoundOfficiallyEndedEvent>? RoundOfficiallyEnded { get; set; }
-    public Action<Source1RoundTimeWarningEvent>? RoundTimeWarning { get; set; }
-    public Action<Source1UgcMapInfoReceivedEvent>? UgcMapInfoReceived { get; set; }
-    public Action<Source1UgcMapUnsubscribedEvent>? UgcMapUnsubscribed { get; set; }
-    public Action<Source1UgcMapDownloadErrorEvent>? UgcMapDownloadError { get; set; }
-    public Action<Source1UgcFileDownloadFinishedEvent>? UgcFileDownloadFinished { get; set; }
-    public Action<Source1UgcFileDownloadStartEvent>? UgcFileDownloadStart { get; set; }
-    public Action<Source1BeginNewMatchEvent>? BeginNewMatch { get; set; }
-    public Action<Source1DmBonusWeaponStartEvent>? DmBonusWeaponStart { get; set; }
-    public Action<Source1SurvivalAnnouncePhaseEvent>? SurvivalAnnouncePhase { get; set; }
-    public Action<Source1PlayerDecalEvent>? PlayerDecal { get; set; }
-    public Action<Source1ReadGameTitledataEvent>? ReadGameTitledata { get; set; }
-    public Action<Source1WriteGameTitledataEvent>? WriteGameTitledata { get; set; }
-    public Action<Source1ResetGameTitledataEvent>? ResetGameTitledata { get; set; }
-    public Action<Source1WeaponhudSelectionEvent>? WeaponhudSelection { get; set; }
-    public Action<Source1VoteEndedEvent>? VoteEnded { get; set; }
-    public Action<Source1VoteCastEvent>? VoteCast { get; set; }
-    public Action<Source1VoteOptionsEvent>? VoteOptions { get; set; }
-    public Action<Source1EndmatchMapvoteSelectingMapEvent>? EndmatchMapvoteSelectingMap { get; set; }
-    public Action<Source1EndmatchCmmStartRevealItemsEvent>? EndmatchCmmStartRevealItems { get; set; }
-    public Action<Source1ClientLoadoutChangedEvent>? ClientLoadoutChanged { get; set; }
-    public Action<Source1AddPlayerSonarIconEvent>? AddPlayerSonarIcon { get; set; }
-    public Action<Source1DoorOpenEvent>? DoorOpen { get; set; }
-    public Action<Source1DoorClosedEvent>? DoorClosed { get; set; }
-    public Action<Source1DoorBreakEvent>? DoorBreak { get; set; }
-    public Action<Source1AddBulletHitMarkerEvent>? AddBulletHitMarker { get; set; }
-    public Action<Source1OtherDeathEvent>? OtherDeath { get; set; }
-    public Action<Source1ItemPurchaseEvent>? ItemPurchase { get; set; }
-    public Action<Source1BombBeginplantEvent>? BombBeginplant { get; set; }
-    public Action<Source1BombAbortplantEvent>? BombAbortplant { get; set; }
-    public Action<Source1BombPlantedEvent>? BombPlanted { get; set; }
-    public Action<Source1BombDefusedEvent>? BombDefused { get; set; }
-    public Action<Source1BombExplodedEvent>? BombExploded { get; set; }
-    public Action<Source1BombDroppedEvent>? BombDropped { get; set; }
-    public Action<Source1BombPickupEvent>? BombPickup { get; set; }
-    public Action<Source1DefuserDroppedEvent>? DefuserDropped { get; set; }
-    public Action<Source1DefuserPickupEvent>? DefuserPickup { get; set; }
-    public Action<Source1AnnouncePhaseEndEvent>? AnnouncePhaseEnd { get; set; }
-    public Action<Source1CsIntermissionEvent>? CsIntermission { get; set; }
-    public Action<Source1BombBegindefuseEvent>? BombBegindefuse { get; set; }
-    public Action<Source1BombAbortdefuseEvent>? BombAbortdefuse { get; set; }
-    public Action<Source1HostageFollowsEvent>? HostageFollows { get; set; }
-    public Action<Source1HostageHurtEvent>? HostageHurt { get; set; }
-    public Action<Source1HostageKilledEvent>? HostageKilled { get; set; }
-    public Action<Source1HostageRescuedEvent>? HostageRescued { get; set; }
-    public Action<Source1HostageStopsFollowingEvent>? HostageStopsFollowing { get; set; }
-    public Action<Source1HostageRescuedAllEvent>? HostageRescuedAll { get; set; }
-    public Action<Source1HostageCallForHelpEvent>? HostageCallForHelp { get; set; }
-    public Action<Source1VipEscapedEvent>? VipEscaped { get; set; }
-    public Action<Source1VipKilledEvent>? VipKilled { get; set; }
-    public Action<Source1PlayerRadioEvent>? PlayerRadio { get; set; }
-    public Action<Source1BombBeepEvent>? BombBeep { get; set; }
-    public Action<Source1WeaponFireEvent>? WeaponFire { get; set; }
-    public Action<Source1WeaponFireOnEmptyEvent>? WeaponFireOnEmpty { get; set; }
-    public Action<Source1GrenadeThrownEvent>? GrenadeThrown { get; set; }
-    public Action<Source1WeaponOutofammoEvent>? WeaponOutofammo { get; set; }
-    public Action<Source1WeaponReloadEvent>? WeaponReload { get; set; }
-    public Action<Source1WeaponZoomEvent>? WeaponZoom { get; set; }
-    public Action<Source1SilencerDetachEvent>? SilencerDetach { get; set; }
-    public Action<Source1InspectWeaponEvent>? InspectWeapon { get; set; }
-    public Action<Source1WeaponZoomRifleEvent>? WeaponZoomRifle { get; set; }
-    public Action<Source1PlayerSpawnedEvent>? PlayerSpawned { get; set; }
-    public Action<Source1ItemPickupEvent>? ItemPickup { get; set; }
-    public Action<Source1ItemPickupSlerpEvent>? ItemPickupSlerp { get; set; }
-    public Action<Source1ItemPickupFailedEvent>? ItemPickupFailed { get; set; }
-    public Action<Source1ItemRemoveEvent>? ItemRemove { get; set; }
-    public Action<Source1AmmoPickupEvent>? AmmoPickup { get; set; }
-    public Action<Source1ItemEquipEvent>? ItemEquip { get; set; }
-    public Action<Source1EnterBuyzoneEvent>? EnterBuyzone { get; set; }
-    public Action<Source1ExitBuyzoneEvent>? ExitBuyzone { get; set; }
-    public Action<Source1BuytimeEndedEvent>? BuytimeEnded { get; set; }
-    public Action<Source1EnterBombzoneEvent>? EnterBombzone { get; set; }
-    public Action<Source1ExitBombzoneEvent>? ExitBombzone { get; set; }
-    public Action<Source1EnterRescueZoneEvent>? EnterRescueZone { get; set; }
-    public Action<Source1ExitRescueZoneEvent>? ExitRescueZone { get; set; }
-    public Action<Source1SilencerOffEvent>? SilencerOff { get; set; }
-    public Action<Source1SilencerOnEvent>? SilencerOn { get; set; }
-    public Action<Source1BuymenuOpenEvent>? BuymenuOpen { get; set; }
-    public Action<Source1BuymenuCloseEvent>? BuymenuClose { get; set; }
-    public Action<Source1RoundPrestartEvent>? RoundPrestart { get; set; }
-    public Action<Source1RoundPoststartEvent>? RoundPoststart { get; set; }
-    public Action<Source1GrenadeBounceEvent>? GrenadeBounce { get; set; }
-    public Action<Source1HegrenadeDetonateEvent>? HegrenadeDetonate { get; set; }
-    public Action<Source1FlashbangDetonateEvent>? FlashbangDetonate { get; set; }
-    public Action<Source1SmokegrenadeDetonateEvent>? SmokegrenadeDetonate { get; set; }
-    public Action<Source1SmokegrenadeExpiredEvent>? SmokegrenadeExpired { get; set; }
-    public Action<Source1MolotovDetonateEvent>? MolotovDetonate { get; set; }
-    public Action<Source1DecoyDetonateEvent>? DecoyDetonate { get; set; }
-    public Action<Source1DecoyStartedEvent>? DecoyStarted { get; set; }
-    public Action<Source1TagrenadeDetonateEvent>? TagrenadeDetonate { get; set; }
-    public Action<Source1InfernoStartburnEvent>? InfernoStartburn { get; set; }
-    public Action<Source1InfernoExpireEvent>? InfernoExpire { get; set; }
-    public Action<Source1InfernoExtinguishEvent>? InfernoExtinguish { get; set; }
-    public Action<Source1DecoyFiringEvent>? DecoyFiring { get; set; }
-    public Action<Source1BulletImpactEvent>? BulletImpact { get; set; }
-    public Action<Source1PlayerJumpEvent>? PlayerJump { get; set; }
-    public Action<Source1PlayerBlindEvent>? PlayerBlind { get; set; }
-    public Action<Source1PlayerFalldamageEvent>? PlayerFalldamage { get; set; }
-    public Action<Source1DoorMovingEvent>? DoorMoving { get; set; }
-    public Action<Source1MbInputLockSuccessEvent>? MbInputLockSuccess { get; set; }
-    public Action<Source1MbInputLockCancelEvent>? MbInputLockCancel { get; set; }
-    public Action<Source1NavBlockedEvent>? NavBlocked { get; set; }
-    public Action<Source1NavGenerateEvent>? NavGenerate { get; set; }
-    public Action<Source1AchievementInfoLoadedEvent>? AchievementInfoLoaded { get; set; }
-    public Action<Source1HltvChangedModeEvent>? HltvChangedMode { get; set; }
-    public Action<Source1CsGameDisconnectedEvent>? CsGameDisconnected { get; set; }
-    public Action<Source1CsRoundFinalBeepEvent>? CsRoundFinalBeep { get; set; }
-    public Action<Source1CsRoundStartBeepEvent>? CsRoundStartBeep { get; set; }
-    public Action<Source1CsWinPanelRoundEvent>? CsWinPanelRound { get; set; }
-    public Action<Source1CsWinPanelMatchEvent>? CsWinPanelMatch { get; set; }
-    public Action<Source1CsMatchEndRestartEvent>? CsMatchEndRestart { get; set; }
-    public Action<Source1CsPreRestartEvent>? CsPreRestart { get; set; }
-    public Action<Source1ShowDeathpanelEvent>? ShowDeathpanel { get; set; }
-    public Action<Source1HideDeathpanelEvent>? HideDeathpanel { get; set; }
-    public Action<Source1PlayerAvengedTeammateEvent>? PlayerAvengedTeammate { get; set; }
-    public Action<Source1AchievementEarnedLocalEvent>? AchievementEarnedLocal { get; set; }
-    public Action<Source1RepostXboxAchievementsEvent>? RepostXboxAchievements { get; set; }
-    public Action<Source1MatchEndConditionsEvent>? MatchEndConditions { get; set; }
-    public Action<Source1RoundMvpEvent>? RoundMvp { get; set; }
-    public Action<Source1ShowSurvivalRespawnStatusEvent>? ShowSurvivalRespawnStatus { get; set; }
-    public Action<Source1ClientDisconnectEvent>? ClientDisconnect { get; set; }
-    public Action<Source1GgKilledEnemyEvent>? GgKilledEnemy { get; set; }
-    public Action<Source1SwitchTeamEvent>? SwitchTeam { get; set; }
-    public Action<Source1WriteProfileDataEvent>? WriteProfileData { get; set; }
-    public Action<Source1TrialTimeExpiredEvent>? TrialTimeExpired { get; set; }
-    public Action<Source1UpdateMatchmakingStatsEvent>? UpdateMatchmakingStats { get; set; }
-    public Action<Source1PlayerResetVoteEvent>? PlayerResetVote { get; set; }
-    public Action<Source1EnableRestartVotingEvent>? EnableRestartVoting { get; set; }
-    public Action<Source1SfuieventEvent>? Sfuievent { get; set; }
-    public Action<Source1StartVoteEvent>? StartVote { get; set; }
-    public Action<Source1PlayerGivenC4Event>? PlayerGivenC4 { get; set; }
-    public Action<Source1TrPlayerFlashbangedEvent>? TrPlayerFlashbanged { get; set; }
-    public Action<Source1TrMarkCompleteEvent>? TrMarkComplete { get; set; }
-    public Action<Source1TrMarkBestTimeEvent>? TrMarkBestTime { get; set; }
-    public Action<Source1TrExitHintTriggerEvent>? TrExitHintTrigger { get; set; }
-    public Action<Source1BotTakeoverEvent>? BotTakeover { get; set; }
-    public Action<Source1TrShowFinishMsgboxEvent>? TrShowFinishMsgbox { get; set; }
-    public Action<Source1TrShowExitMsgboxEvent>? TrShowExitMsgbox { get; set; }
-    public Action<Source1JointeamFailedEvent>? JointeamFailed { get; set; }
-    public Action<Source1TeamchangePendingEvent>? TeamchangePending { get; set; }
-    public Action<Source1MaterialDefaultCompleteEvent>? MaterialDefaultComplete { get; set; }
-    public Action<Source1CsPrevNextSpectatorEvent>? CsPrevNextSpectator { get; set; }
-    public Action<Source1NextlevelChangedEvent>? NextlevelChanged { get; set; }
-    public Action<Source1SeasoncoinLevelupEvent>? SeasoncoinLevelup { get; set; }
-    public Action<Source1TournamentRewardEvent>? TournamentReward { get; set; }
-    public Action<Source1StartHalftimeEvent>? StartHalftime { get; set; }
-    public Action<Source1AmmoRefillEvent>? AmmoRefill { get; set; }
-    public Action<Source1ParachutePickupEvent>? ParachutePickup { get; set; }
-    public Action<Source1ParachuteDeployEvent>? ParachuteDeploy { get; set; }
-    public Action<Source1DronegunAttackEvent>? DronegunAttack { get; set; }
-    public Action<Source1DroneDispatchedEvent>? DroneDispatched { get; set; }
-    public Action<Source1LootCrateVisibleEvent>? LootCrateVisible { get; set; }
-    public Action<Source1LootCrateOpenedEvent>? LootCrateOpened { get; set; }
-    public Action<Source1OpenCrateInstrEvent>? OpenCrateInstr { get; set; }
-    public Action<Source1SmokeBeaconParadropEvent>? SmokeBeaconParadrop { get; set; }
-    public Action<Source1SurvivalParadropSpawnEvent>? SurvivalParadropSpawn { get; set; }
-    public Action<Source1SurvivalParadropBreakEvent>? SurvivalParadropBreak { get; set; }
-    public Action<Source1DroneCargoDetachedEvent>? DroneCargoDetached { get; set; }
-    public Action<Source1DroneAboveRoofEvent>? DroneAboveRoof { get; set; }
-    public Action<Source1ChoppersIncomingWarningEvent>? ChoppersIncomingWarning { get; set; }
-    public Action<Source1FirstbombsIncomingWarningEvent>? FirstbombsIncomingWarning { get; set; }
-    public Action<Source1DzItemInteractionEvent>? DzItemInteraction { get; set; }
-    public Action<Source1SurvivalTeammateRespawnEvent>? SurvivalTeammateRespawn { get; set; }
-    public Action<Source1SurvivalNoRespawnsWarningEvent>? SurvivalNoRespawnsWarning { get; set; }
-    public Action<Source1SurvivalNoRespawnsFinalEvent>? SurvivalNoRespawnsFinal { get; set; }
-    public Action<Source1PlayerPingEvent>? PlayerPing { get; set; }
-    public Action<Source1PlayerPingStopEvent>? PlayerPingStop { get; set; }
-    public Action<Source1PlayerSoundEvent>? PlayerSound { get; set; }
-    public Action<Source1GuardianWaveRestartEvent>? GuardianWaveRestart { get; set; }
-    public Action<Source1TeamIntroStartEvent>? TeamIntroStart { get; set; }
-    public Action<Source1TeamIntroEndEvent>? TeamIntroEnd { get; set; }
-    public Action<Source1BulletFlightResolutionEvent>? BulletFlightResolution { get; set; }
-    public Action<Source1GamePhaseChangedEvent>? GamePhaseChanged { get; set; }
+    public Action<Source1ServerSpawnEvent>? ServerSpawn;
+    public Action<Source1ServerPreShutdownEvent>? ServerPreShutdown;
+    public Action<Source1ServerShutdownEvent>? ServerShutdown;
+    public Action<Source1ServerMessageEvent>? ServerMessage;
+    public Action<Source1ServerCvarEvent>? ServerCvar;
+    public Action<Source1PlayerActivateEvent>? PlayerActivate;
+    public Action<Source1PlayerConnectFullEvent>? PlayerConnectFull;
+    public Action<Source1PlayerFullUpdateEvent>? PlayerFullUpdate;
+    public Action<Source1PlayerConnectEvent>? PlayerConnect;
+    public Action<Source1PlayerDisconnectEvent>? PlayerDisconnect;
+    public Action<Source1PlayerInfoEvent>? PlayerInfo;
+    public Action<Source1PlayerSpawnEvent>? PlayerSpawn;
+    public Action<Source1PlayerTeamEvent>? PlayerTeam;
+    public Action<Source1LocalPlayerTeamEvent>? LocalPlayerTeam;
+    public Action<Source1LocalPlayerControllerTeamEvent>? LocalPlayerControllerTeam;
+    public Action<Source1PlayerChangenameEvent>? PlayerChangename;
+    public Action<Source1PlayerHurtEvent>? PlayerHurt;
+    public Action<Source1PlayerChatEvent>? PlayerChat;
+    public Action<Source1LocalPlayerPawnChangedEvent>? LocalPlayerPawnChanged;
+    public Action<Source1TeamplayBroadcastAudioEvent>? TeamplayBroadcastAudio;
+    public Action<Source1FinaleStartEvent>? FinaleStart;
+    public Action<Source1PlayerStatsUpdatedEvent>? PlayerStatsUpdated;
+    public Action<Source1UserDataDownloadedEvent>? UserDataDownloaded;
+    public Action<Source1RagdollDissolvedEvent>? RagdollDissolved;
+    public Action<Source1TeamInfoEvent>? TeamInfo;
+    public Action<Source1TeamScoreEvent>? TeamScore;
+    public Action<Source1HltvCameramanEvent>? HltvCameraman;
+    public Action<Source1HltvChaseEvent>? HltvChase;
+    public Action<Source1HltvRankCameraEvent>? HltvRankCamera;
+    public Action<Source1HltvRankEntityEvent>? HltvRankEntity;
+    public Action<Source1HltvFixedEvent>? HltvFixed;
+    public Action<Source1HltvMessageEvent>? HltvMessage;
+    public Action<Source1HltvStatusEvent>? HltvStatus;
+    public Action<Source1HltvTitleEvent>? HltvTitle;
+    public Action<Source1HltvChatEvent>? HltvChat;
+    public Action<Source1HltvVersioninfoEvent>? HltvVersioninfo;
+    public Action<Source1HltvReplayEvent>? HltvReplay;
+    public Action<Source1HltvReplayStatusEvent>? HltvReplayStatus;
+    public Action<Source1DemoStopEvent>? DemoStop;
+    public Action<Source1MapShutdownEvent>? MapShutdown;
+    public Action<Source1MapTransitionEvent>? MapTransition;
+    public Action<Source1HostnameChangedEvent>? HostnameChanged;
+    public Action<Source1DifficultyChangedEvent>? DifficultyChanged;
+    public Action<Source1GameMessageEvent>? GameMessage;
+    public Action<Source1GameNewmapEvent>? GameNewmap;
+    public Action<Source1RoundStartEvent>? RoundStart;
+    public Action<Source1RoundEndEvent>? RoundEnd;
+    public Action<Source1RoundStartPreEntityEvent>? RoundStartPreEntity;
+    public Action<Source1RoundStartPostNavEvent>? RoundStartPostNav;
+    public Action<Source1RoundFreezeEndEvent>? RoundFreezeEnd;
+    public Action<Source1TeamplayRoundStartEvent>? TeamplayRoundStart;
+    public Action<Source1PlayerDeathEvent>? PlayerDeath;
+    public Action<Source1PlayerFootstepEvent>? PlayerFootstep;
+    public Action<Source1PlayerHintmessageEvent>? PlayerHintmessage;
+    public Action<Source1BreakBreakableEvent>? BreakBreakable;
+    public Action<Source1BrokenBreakableEvent>? BrokenBreakable;
+    public Action<Source1BreakPropEvent>? BreakProp;
+    public Action<Source1EntityKilledEvent>? EntityKilled;
+    public Action<Source1DoorCloseEvent>? DoorClose;
+    public Action<Source1VoteStartedEvent>? VoteStarted;
+    public Action<Source1VoteFailedEvent>? VoteFailed;
+    public Action<Source1VotePassedEvent>? VotePassed;
+    public Action<Source1VoteChangedEvent>? VoteChanged;
+    public Action<Source1VoteCastYesEvent>? VoteCastYes;
+    public Action<Source1VoteCastNoEvent>? VoteCastNo;
+    public Action<Source1AchievementEventEvent>? AchievementEvent;
+    public Action<Source1AchievementEarnedEvent>? AchievementEarned;
+    public Action<Source1AchievementWriteFailedEvent>? AchievementWriteFailed;
+    public Action<Source1BonusUpdatedEvent>? BonusUpdated;
+    public Action<Source1SpecTargetUpdatedEvent>? SpecTargetUpdated;
+    public Action<Source1SpecModeUpdatedEvent>? SpecModeUpdated;
+    public Action<Source1EntityVisibleEvent>? EntityVisible;
+    public Action<Source1GameinstructorDrawEvent>? GameinstructorDraw;
+    public Action<Source1GameinstructorNodrawEvent>? GameinstructorNodraw;
+    public Action<Source1FlareIgniteNpcEvent>? FlareIgniteNpc;
+    public Action<Source1HelicopterGrenadePuntMissEvent>? HelicopterGrenadePuntMiss;
+    public Action<Source1PhysgunPickupEvent>? PhysgunPickup;
+    public Action<Source1InventoryUpdatedEvent>? InventoryUpdated;
+    public Action<Source1CartUpdatedEvent>? CartUpdated;
+    public Action<Source1StorePricesheetUpdatedEvent>? StorePricesheetUpdated;
+    public Action<Source1ItemSchemaInitializedEvent>? ItemSchemaInitialized;
+    public Action<Source1DropRateModifiedEvent>? DropRateModified;
+    public Action<Source1EventTicketModifiedEvent>? EventTicketModified;
+    public Action<Source1GcConnectedEvent>? GcConnected;
+    public Action<Source1InstructorStartLessonEvent>? InstructorStartLesson;
+    public Action<Source1InstructorCloseLessonEvent>? InstructorCloseLesson;
+    public Action<Source1InstructorServerHintCreateEvent>? InstructorServerHintCreate;
+    public Action<Source1InstructorServerHintStopEvent>? InstructorServerHintStop;
+    public Action<Source1SetInstructorGroupEnabledEvent>? SetInstructorGroupEnabled;
+    public Action<Source1ClientsideLessonClosedEvent>? ClientsideLessonClosed;
+    public Action<Source1DynamicShadowLightChangedEvent>? DynamicShadowLightChanged;
+    public Action<Source1GameuiHiddenEvent>? GameuiHidden;
+    public Action<Source1ItemsGiftedEvent>? ItemsGifted;
+    public Action<Source1PlayerScoreEvent>? PlayerScore;
+    public Action<Source1PlayerShootEvent>? PlayerShoot;
+    public Action<Source1GameInitEvent>? GameInit;
+    public Action<Source1GameStartEvent>? GameStart;
+    public Action<Source1GameEndEvent>? GameEnd;
+    public Action<Source1RoundAnnounceMatchPointEvent>? RoundAnnounceMatchPoint;
+    public Action<Source1RoundAnnounceFinalEvent>? RoundAnnounceFinal;
+    public Action<Source1RoundAnnounceLastRoundHalfEvent>? RoundAnnounceLastRoundHalf;
+    public Action<Source1RoundAnnounceMatchStartEvent>? RoundAnnounceMatchStart;
+    public Action<Source1RoundAnnounceWarmupEvent>? RoundAnnounceWarmup;
+    public Action<Source1RoundEndUploadStatsEvent>? RoundEndUploadStats;
+    public Action<Source1RoundOfficiallyEndedEvent>? RoundOfficiallyEnded;
+    public Action<Source1RoundTimeWarningEvent>? RoundTimeWarning;
+    public Action<Source1UgcMapInfoReceivedEvent>? UgcMapInfoReceived;
+    public Action<Source1UgcMapUnsubscribedEvent>? UgcMapUnsubscribed;
+    public Action<Source1UgcMapDownloadErrorEvent>? UgcMapDownloadError;
+    public Action<Source1UgcFileDownloadFinishedEvent>? UgcFileDownloadFinished;
+    public Action<Source1UgcFileDownloadStartEvent>? UgcFileDownloadStart;
+    public Action<Source1BeginNewMatchEvent>? BeginNewMatch;
+    public Action<Source1DmBonusWeaponStartEvent>? DmBonusWeaponStart;
+    public Action<Source1SurvivalAnnouncePhaseEvent>? SurvivalAnnouncePhase;
+    public Action<Source1PlayerDecalEvent>? PlayerDecal;
+    public Action<Source1ReadGameTitledataEvent>? ReadGameTitledata;
+    public Action<Source1WriteGameTitledataEvent>? WriteGameTitledata;
+    public Action<Source1ResetGameTitledataEvent>? ResetGameTitledata;
+    public Action<Source1WeaponhudSelectionEvent>? WeaponhudSelection;
+    public Action<Source1VoteEndedEvent>? VoteEnded;
+    public Action<Source1VoteCastEvent>? VoteCast;
+    public Action<Source1VoteOptionsEvent>? VoteOptions;
+    public Action<Source1EndmatchMapvoteSelectingMapEvent>? EndmatchMapvoteSelectingMap;
+    public Action<Source1EndmatchCmmStartRevealItemsEvent>? EndmatchCmmStartRevealItems;
+    public Action<Source1ClientLoadoutChangedEvent>? ClientLoadoutChanged;
+    public Action<Source1AddPlayerSonarIconEvent>? AddPlayerSonarIcon;
+    public Action<Source1DoorOpenEvent>? DoorOpen;
+    public Action<Source1DoorClosedEvent>? DoorClosed;
+    public Action<Source1DoorBreakEvent>? DoorBreak;
+    public Action<Source1AddBulletHitMarkerEvent>? AddBulletHitMarker;
+    public Action<Source1OtherDeathEvent>? OtherDeath;
+    public Action<Source1ItemPurchaseEvent>? ItemPurchase;
+    public Action<Source1BombBeginplantEvent>? BombBeginplant;
+    public Action<Source1BombAbortplantEvent>? BombAbortplant;
+    public Action<Source1BombPlantedEvent>? BombPlanted;
+    public Action<Source1BombDefusedEvent>? BombDefused;
+    public Action<Source1BombExplodedEvent>? BombExploded;
+    public Action<Source1BombDroppedEvent>? BombDropped;
+    public Action<Source1BombPickupEvent>? BombPickup;
+    public Action<Source1DefuserDroppedEvent>? DefuserDropped;
+    public Action<Source1DefuserPickupEvent>? DefuserPickup;
+    public Action<Source1AnnouncePhaseEndEvent>? AnnouncePhaseEnd;
+    public Action<Source1CsIntermissionEvent>? CsIntermission;
+    public Action<Source1BombBegindefuseEvent>? BombBegindefuse;
+    public Action<Source1BombAbortdefuseEvent>? BombAbortdefuse;
+    public Action<Source1HostageFollowsEvent>? HostageFollows;
+    public Action<Source1HostageHurtEvent>? HostageHurt;
+    public Action<Source1HostageKilledEvent>? HostageKilled;
+    public Action<Source1HostageRescuedEvent>? HostageRescued;
+    public Action<Source1HostageStopsFollowingEvent>? HostageStopsFollowing;
+    public Action<Source1HostageRescuedAllEvent>? HostageRescuedAll;
+    public Action<Source1HostageCallForHelpEvent>? HostageCallForHelp;
+    public Action<Source1VipEscapedEvent>? VipEscaped;
+    public Action<Source1VipKilledEvent>? VipKilled;
+    public Action<Source1PlayerRadioEvent>? PlayerRadio;
+    public Action<Source1BombBeepEvent>? BombBeep;
+    public Action<Source1WeaponFireEvent>? WeaponFire;
+    public Action<Source1WeaponFireOnEmptyEvent>? WeaponFireOnEmpty;
+    public Action<Source1GrenadeThrownEvent>? GrenadeThrown;
+    public Action<Source1WeaponOutofammoEvent>? WeaponOutofammo;
+    public Action<Source1WeaponReloadEvent>? WeaponReload;
+    public Action<Source1WeaponZoomEvent>? WeaponZoom;
+    public Action<Source1SilencerDetachEvent>? SilencerDetach;
+    public Action<Source1InspectWeaponEvent>? InspectWeapon;
+    public Action<Source1WeaponZoomRifleEvent>? WeaponZoomRifle;
+    public Action<Source1PlayerSpawnedEvent>? PlayerSpawned;
+    public Action<Source1ItemPickupEvent>? ItemPickup;
+    public Action<Source1ItemPickupSlerpEvent>? ItemPickupSlerp;
+    public Action<Source1ItemPickupFailedEvent>? ItemPickupFailed;
+    public Action<Source1ItemRemoveEvent>? ItemRemove;
+    public Action<Source1AmmoPickupEvent>? AmmoPickup;
+    public Action<Source1ItemEquipEvent>? ItemEquip;
+    public Action<Source1EnterBuyzoneEvent>? EnterBuyzone;
+    public Action<Source1ExitBuyzoneEvent>? ExitBuyzone;
+    public Action<Source1BuytimeEndedEvent>? BuytimeEnded;
+    public Action<Source1EnterBombzoneEvent>? EnterBombzone;
+    public Action<Source1ExitBombzoneEvent>? ExitBombzone;
+    public Action<Source1EnterRescueZoneEvent>? EnterRescueZone;
+    public Action<Source1ExitRescueZoneEvent>? ExitRescueZone;
+    public Action<Source1SilencerOffEvent>? SilencerOff;
+    public Action<Source1SilencerOnEvent>? SilencerOn;
+    public Action<Source1BuymenuOpenEvent>? BuymenuOpen;
+    public Action<Source1BuymenuCloseEvent>? BuymenuClose;
+    public Action<Source1RoundPrestartEvent>? RoundPrestart;
+    public Action<Source1RoundPoststartEvent>? RoundPoststart;
+    public Action<Source1GrenadeBounceEvent>? GrenadeBounce;
+    public Action<Source1HegrenadeDetonateEvent>? HegrenadeDetonate;
+    public Action<Source1FlashbangDetonateEvent>? FlashbangDetonate;
+    public Action<Source1SmokegrenadeDetonateEvent>? SmokegrenadeDetonate;
+    public Action<Source1SmokegrenadeExpiredEvent>? SmokegrenadeExpired;
+    public Action<Source1MolotovDetonateEvent>? MolotovDetonate;
+    public Action<Source1DecoyDetonateEvent>? DecoyDetonate;
+    public Action<Source1DecoyStartedEvent>? DecoyStarted;
+    public Action<Source1TagrenadeDetonateEvent>? TagrenadeDetonate;
+    public Action<Source1InfernoStartburnEvent>? InfernoStartburn;
+    public Action<Source1InfernoExpireEvent>? InfernoExpire;
+    public Action<Source1InfernoExtinguishEvent>? InfernoExtinguish;
+    public Action<Source1DecoyFiringEvent>? DecoyFiring;
+    public Action<Source1BulletImpactEvent>? BulletImpact;
+    public Action<Source1PlayerJumpEvent>? PlayerJump;
+    public Action<Source1PlayerBlindEvent>? PlayerBlind;
+    public Action<Source1PlayerFalldamageEvent>? PlayerFalldamage;
+    public Action<Source1DoorMovingEvent>? DoorMoving;
+    public Action<Source1MbInputLockSuccessEvent>? MbInputLockSuccess;
+    public Action<Source1MbInputLockCancelEvent>? MbInputLockCancel;
+    public Action<Source1NavBlockedEvent>? NavBlocked;
+    public Action<Source1NavGenerateEvent>? NavGenerate;
+    public Action<Source1AchievementInfoLoadedEvent>? AchievementInfoLoaded;
+    public Action<Source1HltvChangedModeEvent>? HltvChangedMode;
+    public Action<Source1CsGameDisconnectedEvent>? CsGameDisconnected;
+    public Action<Source1CsRoundFinalBeepEvent>? CsRoundFinalBeep;
+    public Action<Source1CsRoundStartBeepEvent>? CsRoundStartBeep;
+    public Action<Source1CsWinPanelRoundEvent>? CsWinPanelRound;
+    public Action<Source1CsWinPanelMatchEvent>? CsWinPanelMatch;
+    public Action<Source1CsMatchEndRestartEvent>? CsMatchEndRestart;
+    public Action<Source1CsPreRestartEvent>? CsPreRestart;
+    public Action<Source1ShowDeathpanelEvent>? ShowDeathpanel;
+    public Action<Source1HideDeathpanelEvent>? HideDeathpanel;
+    public Action<Source1PlayerAvengedTeammateEvent>? PlayerAvengedTeammate;
+    public Action<Source1AchievementEarnedLocalEvent>? AchievementEarnedLocal;
+    public Action<Source1RepostXboxAchievementsEvent>? RepostXboxAchievements;
+    public Action<Source1MatchEndConditionsEvent>? MatchEndConditions;
+    public Action<Source1RoundMvpEvent>? RoundMvp;
+    public Action<Source1ShowSurvivalRespawnStatusEvent>? ShowSurvivalRespawnStatus;
+    public Action<Source1ClientDisconnectEvent>? ClientDisconnect;
+    public Action<Source1GgKilledEnemyEvent>? GgKilledEnemy;
+    public Action<Source1SwitchTeamEvent>? SwitchTeam;
+    public Action<Source1WriteProfileDataEvent>? WriteProfileData;
+    public Action<Source1TrialTimeExpiredEvent>? TrialTimeExpired;
+    public Action<Source1UpdateMatchmakingStatsEvent>? UpdateMatchmakingStats;
+    public Action<Source1PlayerResetVoteEvent>? PlayerResetVote;
+    public Action<Source1EnableRestartVotingEvent>? EnableRestartVoting;
+    public Action<Source1SfuieventEvent>? Sfuievent;
+    public Action<Source1StartVoteEvent>? StartVote;
+    public Action<Source1PlayerGivenC4Event>? PlayerGivenC4;
+    public Action<Source1TrPlayerFlashbangedEvent>? TrPlayerFlashbanged;
+    public Action<Source1TrMarkCompleteEvent>? TrMarkComplete;
+    public Action<Source1TrMarkBestTimeEvent>? TrMarkBestTime;
+    public Action<Source1TrExitHintTriggerEvent>? TrExitHintTrigger;
+    public Action<Source1BotTakeoverEvent>? BotTakeover;
+    public Action<Source1TrShowFinishMsgboxEvent>? TrShowFinishMsgbox;
+    public Action<Source1TrShowExitMsgboxEvent>? TrShowExitMsgbox;
+    public Action<Source1JointeamFailedEvent>? JointeamFailed;
+    public Action<Source1TeamchangePendingEvent>? TeamchangePending;
+    public Action<Source1MaterialDefaultCompleteEvent>? MaterialDefaultComplete;
+    public Action<Source1CsPrevNextSpectatorEvent>? CsPrevNextSpectator;
+    public Action<Source1NextlevelChangedEvent>? NextlevelChanged;
+    public Action<Source1SeasoncoinLevelupEvent>? SeasoncoinLevelup;
+    public Action<Source1TournamentRewardEvent>? TournamentReward;
+    public Action<Source1StartHalftimeEvent>? StartHalftime;
+    public Action<Source1AmmoRefillEvent>? AmmoRefill;
+    public Action<Source1ParachutePickupEvent>? ParachutePickup;
+    public Action<Source1ParachuteDeployEvent>? ParachuteDeploy;
+    public Action<Source1DronegunAttackEvent>? DronegunAttack;
+    public Action<Source1DroneDispatchedEvent>? DroneDispatched;
+    public Action<Source1LootCrateVisibleEvent>? LootCrateVisible;
+    public Action<Source1LootCrateOpenedEvent>? LootCrateOpened;
+    public Action<Source1OpenCrateInstrEvent>? OpenCrateInstr;
+    public Action<Source1SmokeBeaconParadropEvent>? SmokeBeaconParadrop;
+    public Action<Source1SurvivalParadropSpawnEvent>? SurvivalParadropSpawn;
+    public Action<Source1SurvivalParadropBreakEvent>? SurvivalParadropBreak;
+    public Action<Source1DroneCargoDetachedEvent>? DroneCargoDetached;
+    public Action<Source1DroneAboveRoofEvent>? DroneAboveRoof;
+    public Action<Source1ChoppersIncomingWarningEvent>? ChoppersIncomingWarning;
+    public Action<Source1FirstbombsIncomingWarningEvent>? FirstbombsIncomingWarning;
+    public Action<Source1DzItemInteractionEvent>? DzItemInteraction;
+    public Action<Source1SurvivalTeammateRespawnEvent>? SurvivalTeammateRespawn;
+    public Action<Source1SurvivalNoRespawnsWarningEvent>? SurvivalNoRespawnsWarning;
+    public Action<Source1SurvivalNoRespawnsFinalEvent>? SurvivalNoRespawnsFinal;
+    public Action<Source1PlayerPingEvent>? PlayerPing;
+    public Action<Source1PlayerPingStopEvent>? PlayerPingStop;
+    public Action<Source1PlayerSoundEvent>? PlayerSound;
+    public Action<Source1GuardianWaveRestartEvent>? GuardianWaveRestart;
+    public Action<Source1TeamIntroStartEvent>? TeamIntroStart;
+    public Action<Source1TeamIntroEndEvent>? TeamIntroEnd;
+    public Action<Source1BulletFlightResolutionEvent>? BulletFlightResolution;
+    public Action<Source1GamePhaseChangedEvent>? GamePhaseChanged;
 
     internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)
     {
-        _handlers = new Dictionary<int, Action<CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);
+        _handlers = new Dictionary<int, Action<DemoParser, CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);
         foreach (var descriptor in eventList.Descriptors)
         {
             if (descriptor.Name == "server_spawn")
@@ -320,11 +320,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ServerSpawn == null)
                         return;
-                    var @this = new Source1ServerSpawnEvent();
+                    var @this = new Source1ServerSpawnEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -343,11 +343,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ServerPreShutdown == null)
                         return;
-                    var @this = new Source1ServerPreShutdownEvent();
+                    var @this = new Source1ServerPreShutdownEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -366,11 +366,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ServerShutdown == null)
                         return;
-                    var @this = new Source1ServerShutdownEvent();
+                    var @this = new Source1ServerShutdownEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -389,11 +389,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ServerMessage == null)
                         return;
-                    var @this = new Source1ServerMessageEvent();
+                    var @this = new Source1ServerMessageEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -414,11 +414,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ServerCvar == null)
                         return;
-                    var @this = new Source1ServerCvarEvent();
+                    var @this = new Source1ServerCvarEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -432,16 +432,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerActivateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerActivate == null)
                         return;
-                    var @this = new Source1PlayerActivateEvent();
+                    var @this = new Source1PlayerActivateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -455,16 +455,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerConnectFullEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerConnectFull == null)
                         return;
-                    var @this = new Source1PlayerConnectFullEvent();
+                    var @this = new Source1PlayerConnectFullEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -478,18 +478,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerFullUpdateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "count")
                             return (@this, x) => @this.Count = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerFullUpdate == null)
                         return;
-                    var @this = new Source1PlayerFullUpdateEvent();
+                    var @this = new Source1PlayerFullUpdateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -505,11 +505,11 @@ public partial class Source1GameEvents
                         if (key.Name == "name")
                             return (@this, x) => @this.Name = x.ValString;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "networkid")
                             return (@this, x) => @this.Networkid = x.ValString;
                         if (key.Name == "xuid")
-                            return (@this, x) => @this.Xuid = x.ValUint64;
+                            return (@this, x) => @this.SteamId = x.ValUint64;
                         if (key.Name == "address")
                             return (@this, x) => @this.Address = x.ValString;
                         if (key.Name == "bot")
@@ -518,11 +518,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerConnect == null)
                         return;
-                    var @this = new Source1PlayerConnectEvent();
+                    var @this = new Source1PlayerConnectEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -536,7 +536,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDisconnectEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "reason")
                             return (@this, x) => @this.Reason = x.ValShort;
                         if (key.Name == "name")
@@ -544,18 +544,18 @@ public partial class Source1GameEvents
                         if (key.Name == "networkid")
                             return (@this, x) => @this.Networkid = x.ValString;
                         if (key.Name == "xuid")
-                            return (@this, x) => @this.Xuid = x.ValUint64;
+                            return (@this, x) => @this.SteamId = x.ValUint64;
                         if (key.Name == "PlayerID")
                             return (@this, x) => @this.PlayerID = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerDisconnect == null)
                         return;
-                    var @this = new Source1PlayerDisconnectEvent();
+                    var @this = new Source1PlayerDisconnectEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -571,20 +571,20 @@ public partial class Source1GameEvents
                         if (key.Name == "name")
                             return (@this, x) => @this.Name = x.ValString;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "steamid")
-                            return (@this, x) => @this.Steamid = x.ValUint64;
+                            return (@this, x) => @this.SteamId = x.ValUint64;
                         if (key.Name == "bot")
                             return (@this, x) => @this.Bot = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerInfo == null)
                         return;
-                    var @this = new Source1PlayerInfoEvent();
+                    var @this = new Source1PlayerInfoEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -598,18 +598,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerSpawnEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerSpawn == null)
                         return;
-                    var @this = new Source1PlayerSpawnEvent();
+                    var @this = new Source1PlayerSpawnEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -623,9 +623,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerTeamEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValByte;
                         if (key.Name == "oldteam")
@@ -640,11 +640,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerTeam == null)
                         return;
-                    var @this = new Source1PlayerTeamEvent();
+                    var @this = new Source1PlayerTeamEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -661,11 +661,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && LocalPlayerTeam == null)
                         return;
-                    var @this = new Source1LocalPlayerTeamEvent();
+                    var @this = new Source1LocalPlayerTeamEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -682,11 +682,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && LocalPlayerControllerTeam == null)
                         return;
-                    var @this = new Source1LocalPlayerControllerTeamEvent();
+                    var @this = new Source1LocalPlayerControllerTeamEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -700,7 +700,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerChangenameEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "oldname")
                             return (@this, x) => @this.Oldname = x.ValString;
                         if (key.Name == "newname")
@@ -709,11 +709,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerChangename == null)
                         return;
-                    var @this = new Source1PlayerChangenameEvent();
+                    var @this = new Source1PlayerChangenameEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -727,13 +727,13 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerHurtEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.Attacker = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "health")
                             return (@this, x) => @this.Health = x.ValByte;
                         if (key.Name == "armor")
@@ -750,11 +750,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerHurt == null)
                         return;
-                    var @this = new Source1PlayerHurtEvent();
+                    var @this = new Source1PlayerHurtEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -770,18 +770,18 @@ public partial class Source1GameEvents
                         if (key.Name == "teamonly")
                             return (@this, x) => @this.Teamonly = x.ValBool;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = x.ValShort;
+                            return (@this, x) => @this.Player = x.ValShort;
                         if (key.Name == "text")
                             return (@this, x) => @this.Text = x.ValString;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerChat == null)
                         return;
-                    var @this = new Source1PlayerChatEvent();
+                    var @this = new Source1PlayerChatEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -798,11 +798,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && LocalPlayerPawnChanged == null)
                         return;
-                    var @this = new Source1LocalPlayerPawnChangedEvent();
+                    var @this = new Source1LocalPlayerPawnChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -823,11 +823,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamplayBroadcastAudio == null)
                         return;
-                    var @this = new Source1TeamplayBroadcastAudioEvent();
+                    var @this = new Source1TeamplayBroadcastAudioEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -846,11 +846,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && FinaleStart == null)
                         return;
-                    var @this = new Source1FinaleStartEvent();
+                    var @this = new Source1FinaleStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -869,11 +869,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerStatsUpdated == null)
                         return;
-                    var @this = new Source1PlayerStatsUpdatedEvent();
+                    var @this = new Source1PlayerStatsUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -890,11 +890,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UserDataDownloaded == null)
                         return;
-                    var @this = new Source1UserDataDownloadedEvent();
+                    var @this = new Source1UserDataDownloadedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -913,11 +913,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RagdollDissolved == null)
                         return;
-                    var @this = new Source1RagdollDissolvedEvent();
+                    var @this = new Source1RagdollDissolvedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -938,11 +938,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamInfo == null)
                         return;
-                    var @this = new Source1TeamInfoEvent();
+                    var @this = new Source1TeamInfoEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -963,11 +963,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamScore == null)
                         return;
-                    var @this = new Source1TeamScoreEvent();
+                    var @this = new Source1TeamScoreEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -981,16 +981,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HltvCameramanEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvCameraman == null)
                         return;
-                    var @this = new Source1HltvCameramanEvent();
+                    var @this = new Source1HltvCameramanEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1004,9 +1004,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HltvChaseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "target1")
-                            return (@this, x) => @this.Target1 = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.Target1Index = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "target2")
-                            return (@this, x) => @this.Target2 = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.Target2Index = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "distance")
                             return (@this, x) => @this.Distance = x.ValShort;
                         if (key.Name == "theta")
@@ -1021,11 +1021,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvChase == null)
                         return;
-                    var @this = new Source1HltvChaseEvent();
+                    var @this = new Source1HltvChaseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1043,16 +1043,16 @@ public partial class Source1GameEvents
                         if (key.Name == "rank")
                             return (@this, x) => @this.Rank = x.ValFloat;
                         if (key.Name == "target")
-                            return (@this, x) => @this.Target = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.TargetIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvRankCamera == null)
                         return;
-                    var @this = new Source1HltvRankCameraEvent();
+                    var @this = new Source1HltvRankCameraEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1066,20 +1066,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HltvRankEntityEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "rank")
                             return (@this, x) => @this.Rank = x.ValFloat;
                         if (key.Name == "target")
-                            return (@this, x) => @this.Target = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.TargetIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvRankEntity == null)
                         return;
-                    var @this = new Source1HltvRankEntityEvent();
+                    var @this = new Source1HltvRankEntityEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1107,16 +1107,16 @@ public partial class Source1GameEvents
                         if (key.Name == "fov")
                             return (@this, x) => @this.Fov = x.ValFloat;
                         if (key.Name == "target")
-                            return (@this, x) => @this.Target = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.TargetIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvFixed == null)
                         return;
-                    var @this = new Source1HltvFixedEvent();
+                    var @this = new Source1HltvFixedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1135,11 +1135,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvMessage == null)
                         return;
-                    var @this = new Source1HltvMessageEvent();
+                    var @this = new Source1HltvMessageEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1164,11 +1164,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvStatus == null)
                         return;
-                    var @this = new Source1HltvStatusEvent();
+                    var @this = new Source1HltvStatusEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1187,11 +1187,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvTitle == null)
                         return;
-                    var @this = new Source1HltvTitleEvent();
+                    var @this = new Source1HltvTitleEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1207,16 +1207,16 @@ public partial class Source1GameEvents
                         if (key.Name == "text")
                             return (@this, x) => @this.Text = x.ValString;
                         if (key.Name == "steamID")
-                            return (@this, x) => @this.SteamID = x.ValUint64;
+                            return (@this, x) => @this.SteamId = x.ValUint64;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvChat == null)
                         return;
-                    var @this = new Source1HltvChatEvent();
+                    var @this = new Source1HltvChatEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1235,11 +1235,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvVersioninfo == null)
                         return;
-                    var @this = new Source1HltvVersioninfoEvent();
+                    var @this = new Source1HltvVersioninfoEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1260,11 +1260,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvReplay == null)
                         return;
-                    var @this = new Source1HltvReplayEvent();
+                    var @this = new Source1HltvReplayEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1283,11 +1283,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvReplayStatus == null)
                         return;
-                    var @this = new Source1HltvReplayStatusEvent();
+                    var @this = new Source1HltvReplayStatusEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1304,11 +1304,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DemoStop == null)
                         return;
-                    var @this = new Source1DemoStopEvent();
+                    var @this = new Source1DemoStopEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1325,11 +1325,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MapShutdown == null)
                         return;
-                    var @this = new Source1MapShutdownEvent();
+                    var @this = new Source1MapShutdownEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1346,11 +1346,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MapTransition == null)
                         return;
-                    var @this = new Source1MapTransitionEvent();
+                    var @this = new Source1MapTransitionEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1369,11 +1369,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostnameChanged == null)
                         return;
-                    var @this = new Source1HostnameChangedEvent();
+                    var @this = new Source1HostnameChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1396,11 +1396,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DifficultyChanged == null)
                         return;
-                    var @this = new Source1DifficultyChangedEvent();
+                    var @this = new Source1DifficultyChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1421,11 +1421,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameMessage == null)
                         return;
-                    var @this = new Source1GameMessageEvent();
+                    var @this = new Source1GameMessageEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1444,11 +1444,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameNewmap == null)
                         return;
-                    var @this = new Source1GameNewmapEvent();
+                    var @this = new Source1GameNewmapEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1471,11 +1471,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundStart == null)
                         return;
-                    var @this = new Source1RoundStartEvent();
+                    var @this = new Source1RoundStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1504,11 +1504,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundEnd == null)
                         return;
-                    var @this = new Source1RoundEndEvent();
+                    var @this = new Source1RoundEndEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1525,11 +1525,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundStartPreEntity == null)
                         return;
-                    var @this = new Source1RoundStartPreEntityEvent();
+                    var @this = new Source1RoundStartPreEntityEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1546,11 +1546,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundStartPostNav == null)
                         return;
-                    var @this = new Source1RoundStartPostNavEvent();
+                    var @this = new Source1RoundStartPostNavEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1567,11 +1567,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundFreezeEnd == null)
                         return;
-                    var @this = new Source1RoundFreezeEndEvent();
+                    var @this = new Source1RoundFreezeEndEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1590,11 +1590,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamplayRoundStart == null)
                         return;
-                    var @this = new Source1TeamplayRoundStartEvent();
+                    var @this = new Source1TeamplayRoundStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1608,17 +1608,17 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDeathEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.Attacker = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "assister")
-                            return (@this, x) => @this.Assister = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AssisterIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "assister_pawn")
-                            return (@this, x) => @this.AssisterPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.AssisterPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "assistedflash")
                             return (@this, x) => @this.Assistedflash = x.ValBool;
                         if (key.Name == "weapon")
@@ -1628,7 +1628,7 @@ public partial class Source1GameEvents
                         if (key.Name == "weapon_fauxitemid")
                             return (@this, x) => @this.WeaponFauxitemid = x.ValString;
                         if (key.Name == "weapon_originalowner_xuid")
-                            return (@this, x) => @this.WeaponOriginalownerXuid = x.ValString;
+                            return (@this, x) => @this.WeaponOriginalownerSteamId = x.ValString;
                         if (key.Name == "headshot")
                             return (@this, x) => @this.Headshot = x.ValBool;
                         if (key.Name == "dominated")
@@ -1659,11 +1659,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerDeath == null)
                         return;
-                    var @this = new Source1PlayerDeathEvent();
+                    var @this = new Source1PlayerDeathEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1677,18 +1677,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerFootstepEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerFootstep == null)
                         return;
-                    var @this = new Source1PlayerFootstepEvent();
+                    var @this = new Source1PlayerFootstepEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1707,11 +1707,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerHintmessage == null)
                         return;
-                    var @this = new Source1PlayerHintmessageEvent();
+                    var @this = new Source1PlayerHintmessageEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1727,18 +1727,18 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "material")
                             return (@this, x) => @this.Material = x.ValByte;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BreakBreakable == null)
                         return;
-                    var @this = new Source1BreakBreakableEvent();
+                    var @this = new Source1BreakBreakableEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1754,18 +1754,18 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "material")
                             return (@this, x) => @this.Material = x.ValByte;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BrokenBreakable == null)
                         return;
-                    var @this = new Source1BrokenBreakableEvent();
+                    var @this = new Source1BrokenBreakableEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1781,16 +1781,16 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BreakProp == null)
                         return;
-                    var @this = new Source1BreakPropEvent();
+                    var @this = new Source1BreakPropEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1815,11 +1815,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EntityKilled == null)
                         return;
-                    var @this = new Source1EntityKilledEvent();
+                    var @this = new Source1EntityKilledEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1833,18 +1833,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorCloseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "checkpoint")
                             return (@this, x) => @this.Checkpoint = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DoorClose == null)
                         return;
-                    var @this = new Source1DoorCloseEvent();
+                    var @this = new Source1DoorCloseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1869,11 +1869,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteStarted == null)
                         return;
-                    var @this = new Source1VoteStartedEvent();
+                    var @this = new Source1VoteStartedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1892,11 +1892,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteFailed == null)
                         return;
-                    var @this = new Source1VoteFailedEvent();
+                    var @this = new Source1VoteFailedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1919,11 +1919,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VotePassed == null)
                         return;
-                    var @this = new Source1VotePassedEvent();
+                    var @this = new Source1VotePassedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1952,11 +1952,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteChanged == null)
                         return;
-                    var @this = new Source1VoteChangedEvent();
+                    var @this = new Source1VoteChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -1977,11 +1977,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteCastYes == null)
                         return;
-                    var @this = new Source1VoteCastYesEvent();
+                    var @this = new Source1VoteCastYesEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2002,11 +2002,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteCastNo == null)
                         return;
-                    var @this = new Source1VoteCastNoEvent();
+                    var @this = new Source1VoteCastNoEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2029,11 +2029,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AchievementEvent == null)
                         return;
-                    var @this = new Source1AchievementEventEvent();
+                    var @this = new Source1AchievementEventEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2047,18 +2047,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AchievementEarnedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "player")
-                            return (@this, x) => @this.Player = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "achievement")
                             return (@this, x) => @this.Achievement = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AchievementEarned == null)
                         return;
-                    var @this = new Source1AchievementEarnedEvent();
+                    var @this = new Source1AchievementEarnedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2075,11 +2075,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AchievementWriteFailed == null)
                         return;
-                    var @this = new Source1AchievementWriteFailedEvent();
+                    var @this = new Source1AchievementWriteFailedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2104,11 +2104,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BonusUpdated == null)
                         return;
-                    var @this = new Source1BonusUpdatedEvent();
+                    var @this = new Source1BonusUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2122,20 +2122,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SpecTargetUpdatedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "target")
                             return (@this, x) => @this.Target = x.ValLong;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SpecTargetUpdated == null)
                         return;
-                    var @this = new Source1SpecTargetUpdatedEvent();
+                    var @this = new Source1SpecTargetUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2149,16 +2149,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SpecModeUpdatedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SpecModeUpdated == null)
                         return;
-                    var @this = new Source1SpecModeUpdatedEvent();
+                    var @this = new Source1SpecModeUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2172,7 +2172,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EntityVisibleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "classname")
@@ -2183,11 +2183,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EntityVisible == null)
                         return;
-                    var @this = new Source1EntityVisibleEvent();
+                    var @this = new Source1EntityVisibleEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2204,11 +2204,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameinstructorDraw == null)
                         return;
-                    var @this = new Source1GameinstructorDrawEvent();
+                    var @this = new Source1GameinstructorDrawEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2225,11 +2225,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameinstructorNodraw == null)
                         return;
-                    var @this = new Source1GameinstructorNodrawEvent();
+                    var @this = new Source1GameinstructorNodrawEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2248,11 +2248,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && FlareIgniteNpc == null)
                         return;
-                    var @this = new Source1FlareIgniteNpcEvent();
+                    var @this = new Source1FlareIgniteNpcEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2269,11 +2269,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HelicopterGrenadePuntMiss == null)
                         return;
-                    var @this = new Source1HelicopterGrenadePuntMissEvent();
+                    var @this = new Source1HelicopterGrenadePuntMissEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2292,11 +2292,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PhysgunPickup == null)
                         return;
-                    var @this = new Source1PhysgunPickupEvent();
+                    var @this = new Source1PhysgunPickupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2313,11 +2313,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InventoryUpdated == null)
                         return;
-                    var @this = new Source1InventoryUpdatedEvent();
+                    var @this = new Source1InventoryUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2334,11 +2334,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CartUpdated == null)
                         return;
-                    var @this = new Source1CartUpdatedEvent();
+                    var @this = new Source1CartUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2355,11 +2355,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && StorePricesheetUpdated == null)
                         return;
-                    var @this = new Source1StorePricesheetUpdatedEvent();
+                    var @this = new Source1StorePricesheetUpdatedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2376,11 +2376,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemSchemaInitialized == null)
                         return;
-                    var @this = new Source1ItemSchemaInitializedEvent();
+                    var @this = new Source1ItemSchemaInitializedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2397,11 +2397,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DropRateModified == null)
                         return;
-                    var @this = new Source1DropRateModifiedEvent();
+                    var @this = new Source1DropRateModifiedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2418,11 +2418,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EventTicketModified == null)
                         return;
-                    var @this = new Source1EventTicketModifiedEvent();
+                    var @this = new Source1EventTicketModifiedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2439,11 +2439,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GcConnected == null)
                         return;
-                    var @this = new Source1GcConnectedEvent();
+                    var @this = new Source1GcConnectedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2457,7 +2457,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InstructorStartLessonEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hint_name")
                             return (@this, x) => @this.HintName = x.ValString;
                         if (key.Name == "hint_target")
@@ -2472,11 +2472,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InstructorStartLesson == null)
                         return;
-                    var @this = new Source1InstructorStartLessonEvent();
+                    var @this = new Source1InstructorStartLessonEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2490,18 +2490,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InstructorCloseLessonEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hint_name")
                             return (@this, x) => @this.HintName = x.ValString;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InstructorCloseLesson == null)
                         return;
-                    var @this = new Source1InstructorCloseLessonEvent();
+                    var @this = new Source1InstructorCloseLessonEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2515,7 +2515,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InstructorServerHintCreateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hint_name")
                             return (@this, x) => @this.HintName = x.ValString;
                         if (key.Name == "hint_replace_key")
@@ -2523,7 +2523,7 @@ public partial class Source1GameEvents
                         if (key.Name == "hint_target")
                             return (@this, x) => @this.HintTarget = x.ValLong;
                         if (key.Name == "hint_activator_userid")
-                            return (@this, x) => @this.HintActivatorUserid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.HintActivatorPlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hint_timeout")
                             return (@this, x) => @this.HintTimeout = x.ValShort;
                         if (key.Name == "hint_icon_onscreen")
@@ -2558,11 +2558,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InstructorServerHintCreate == null)
                         return;
-                    var @this = new Source1InstructorServerHintCreateEvent();
+                    var @this = new Source1InstructorServerHintCreateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2581,11 +2581,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InstructorServerHintStop == null)
                         return;
-                    var @this = new Source1InstructorServerHintStopEvent();
+                    var @this = new Source1InstructorServerHintStopEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2606,11 +2606,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SetInstructorGroupEnabled == null)
                         return;
-                    var @this = new Source1SetInstructorGroupEnabledEvent();
+                    var @this = new Source1SetInstructorGroupEnabledEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2629,11 +2629,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ClientsideLessonClosed == null)
                         return;
-                    var @this = new Source1ClientsideLessonClosedEvent();
+                    var @this = new Source1ClientsideLessonClosedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2650,11 +2650,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DynamicShadowLightChanged == null)
                         return;
-                    var @this = new Source1DynamicShadowLightChangedEvent();
+                    var @this = new Source1DynamicShadowLightChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2671,11 +2671,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameuiHidden == null)
                         return;
-                    var @this = new Source1GameuiHiddenEvent();
+                    var @this = new Source1GameuiHiddenEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2689,7 +2689,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemsGiftedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "player")
-                            return (@this, x) => @this.Player = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "itemdef")
                             return (@this, x) => @this.Itemdef = x.ValLong;
                         if (key.Name == "numgifts")
@@ -2702,11 +2702,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemsGifted == null)
                         return;
-                    var @this = new Source1ItemsGiftedEvent();
+                    var @this = new Source1ItemsGiftedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2720,7 +2720,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerScoreEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "kills")
                             return (@this, x) => @this.Kills = x.ValShort;
                         if (key.Name == "deaths")
@@ -2731,11 +2731,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerScore == null)
                         return;
-                    var @this = new Source1PlayerScoreEvent();
+                    var @this = new Source1PlayerScoreEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2749,9 +2749,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerShootEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValByte;
                         if (key.Name == "mode")
@@ -2760,11 +2760,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerShoot == null)
                         return;
-                    var @this = new Source1PlayerShootEvent();
+                    var @this = new Source1PlayerShootEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2781,11 +2781,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameInit == null)
                         return;
-                    var @this = new Source1GameInitEvent();
+                    var @this = new Source1GameInitEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2810,11 +2810,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameStart == null)
                         return;
-                    var @this = new Source1GameStartEvent();
+                    var @this = new Source1GameStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2833,11 +2833,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GameEnd == null)
                         return;
-                    var @this = new Source1GameEndEvent();
+                    var @this = new Source1GameEndEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2854,11 +2854,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundAnnounceMatchPoint == null)
                         return;
-                    var @this = new Source1RoundAnnounceMatchPointEvent();
+                    var @this = new Source1RoundAnnounceMatchPointEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2875,11 +2875,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundAnnounceFinal == null)
                         return;
-                    var @this = new Source1RoundAnnounceFinalEvent();
+                    var @this = new Source1RoundAnnounceFinalEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2896,11 +2896,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundAnnounceLastRoundHalf == null)
                         return;
-                    var @this = new Source1RoundAnnounceLastRoundHalfEvent();
+                    var @this = new Source1RoundAnnounceLastRoundHalfEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2917,11 +2917,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundAnnounceMatchStart == null)
                         return;
-                    var @this = new Source1RoundAnnounceMatchStartEvent();
+                    var @this = new Source1RoundAnnounceMatchStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2938,11 +2938,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundAnnounceWarmup == null)
                         return;
-                    var @this = new Source1RoundAnnounceWarmupEvent();
+                    var @this = new Source1RoundAnnounceWarmupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2959,11 +2959,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundEndUploadStats == null)
                         return;
-                    var @this = new Source1RoundEndUploadStatsEvent();
+                    var @this = new Source1RoundEndUploadStatsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -2980,11 +2980,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundOfficiallyEnded == null)
                         return;
-                    var @this = new Source1RoundOfficiallyEndedEvent();
+                    var @this = new Source1RoundOfficiallyEndedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3001,11 +3001,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundTimeWarning == null)
                         return;
-                    var @this = new Source1RoundTimeWarningEvent();
+                    var @this = new Source1RoundTimeWarningEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3024,11 +3024,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UgcMapInfoReceived == null)
                         return;
-                    var @this = new Source1UgcMapInfoReceivedEvent();
+                    var @this = new Source1UgcMapInfoReceivedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3047,11 +3047,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UgcMapUnsubscribed == null)
                         return;
-                    var @this = new Source1UgcMapUnsubscribedEvent();
+                    var @this = new Source1UgcMapUnsubscribedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3072,11 +3072,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UgcMapDownloadError == null)
                         return;
-                    var @this = new Source1UgcMapDownloadErrorEvent();
+                    var @this = new Source1UgcMapDownloadErrorEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3095,11 +3095,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UgcFileDownloadFinished == null)
                         return;
-                    var @this = new Source1UgcFileDownloadFinishedEvent();
+                    var @this = new Source1UgcFileDownloadFinishedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3120,11 +3120,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UgcFileDownloadStart == null)
                         return;
-                    var @this = new Source1UgcFileDownloadStartEvent();
+                    var @this = new Source1UgcFileDownloadStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3141,11 +3141,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BeginNewMatch == null)
                         return;
-                    var @this = new Source1BeginNewMatchEvent();
+                    var @this = new Source1BeginNewMatchEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3166,11 +3166,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DmBonusWeaponStart == null)
                         return;
-                    var @this = new Source1DmBonusWeaponStartEvent();
+                    var @this = new Source1DmBonusWeaponStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3189,11 +3189,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SurvivalAnnouncePhase == null)
                         return;
-                    var @this = new Source1SurvivalAnnouncePhaseEvent();
+                    var @this = new Source1SurvivalAnnouncePhaseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3207,16 +3207,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDecalEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerDecal == null)
                         return;
-                    var @this = new Source1PlayerDecalEvent();
+                    var @this = new Source1PlayerDecalEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3235,11 +3235,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ReadGameTitledata == null)
                         return;
-                    var @this = new Source1ReadGameTitledataEvent();
+                    var @this = new Source1ReadGameTitledataEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3258,11 +3258,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WriteGameTitledata == null)
                         return;
-                    var @this = new Source1WriteGameTitledataEvent();
+                    var @this = new Source1WriteGameTitledataEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3281,11 +3281,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ResetGameTitledata == null)
                         return;
-                    var @this = new Source1ResetGameTitledataEvent();
+                    var @this = new Source1ResetGameTitledataEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3299,9 +3299,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponhudSelectionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "mode")
                             return (@this, x) => @this.Mode = x.ValByte;
                         if (key.Name == "entindex")
@@ -3310,11 +3310,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponhudSelection == null)
                         return;
-                    var @this = new Source1WeaponhudSelectionEvent();
+                    var @this = new Source1WeaponhudSelectionEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3331,11 +3331,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteEnded == null)
                         return;
-                    var @this = new Source1VoteEndedEvent();
+                    var @this = new Source1VoteEndedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3353,16 +3353,16 @@ public partial class Source1GameEvents
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValShort;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteCast == null)
                         return;
-                    var @this = new Source1VoteCastEvent();
+                    var @this = new Source1VoteCastEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3391,11 +3391,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VoteOptions == null)
                         return;
-                    var @this = new Source1VoteOptionsEvent();
+                    var @this = new Source1VoteOptionsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3434,11 +3434,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EndmatchMapvoteSelectingMap == null)
                         return;
-                    var @this = new Source1EndmatchMapvoteSelectingMapEvent();
+                    var @this = new Source1EndmatchMapvoteSelectingMapEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3455,11 +3455,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EndmatchCmmStartRevealItems == null)
                         return;
-                    var @this = new Source1EndmatchCmmStartRevealItemsEvent();
+                    var @this = new Source1EndmatchCmmStartRevealItemsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3476,11 +3476,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ClientLoadoutChanged == null)
                         return;
-                    var @this = new Source1ClientLoadoutChangedEvent();
+                    var @this = new Source1ClientLoadoutChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3494,7 +3494,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AddPlayerSonarIconEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "pos_x")
                             return (@this, x) => @this.PosX = x.ValFloat;
                         if (key.Name == "pos_y")
@@ -3505,11 +3505,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AddPlayerSonarIcon == null)
                         return;
-                    var @this = new Source1AddPlayerSonarIconEvent();
+                    var @this = new Source1AddPlayerSonarIconEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3523,18 +3523,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorOpenEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DoorOpen == null)
                         return;
-                    var @this = new Source1DoorOpenEvent();
+                    var @this = new Source1DoorOpenEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3548,18 +3548,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorClosedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DoorClosed == null)
                         return;
-                    var @this = new Source1DoorClosedEvent();
+                    var @this = new Source1DoorClosedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3580,11 +3580,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DoorBreak == null)
                         return;
-                    var @this = new Source1DoorBreakEvent();
+                    var @this = new Source1DoorBreakEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3598,7 +3598,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AddBulletHitMarkerEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "bone")
                             return (@this, x) => @this.Bone = x.ValShort;
                         if (key.Name == "pos_x")
@@ -3625,11 +3625,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AddBulletHitMarker == null)
                         return;
-                    var @this = new Source1AddBulletHitMarkerEvent();
+                    var @this = new Source1AddBulletHitMarkerEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3655,7 +3655,7 @@ public partial class Source1GameEvents
                         if (key.Name == "weapon_fauxitemid")
                             return (@this, x) => @this.WeaponFauxitemid = x.ValString;
                         if (key.Name == "weapon_originalowner_xuid")
-                            return (@this, x) => @this.WeaponOriginalownerXuid = x.ValString;
+                            return (@this, x) => @this.WeaponOriginalownerSteamId = x.ValString;
                         if (key.Name == "headshot")
                             return (@this, x) => @this.Headshot = x.ValBool;
                         if (key.Name == "penetrated")
@@ -3670,11 +3670,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && OtherDeath == null)
                         return;
-                    var @this = new Source1OtherDeathEvent();
+                    var @this = new Source1OtherDeathEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3688,7 +3688,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPurchaseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValShort;
                         if (key.Name == "loadout")
@@ -3699,11 +3699,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemPurchase == null)
                         return;
-                    var @this = new Source1ItemPurchaseEvent();
+                    var @this = new Source1ItemPurchaseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3717,20 +3717,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombBeginplantEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombBeginplant == null)
                         return;
-                    var @this = new Source1BombBeginplantEvent();
+                    var @this = new Source1BombBeginplantEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3744,20 +3744,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombAbortplantEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombAbortplant == null)
                         return;
-                    var @this = new Source1BombAbortplantEvent();
+                    var @this = new Source1BombAbortplantEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3771,20 +3771,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombPlantedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombPlanted == null)
                         return;
-                    var @this = new Source1BombPlantedEvent();
+                    var @this = new Source1BombPlantedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3798,20 +3798,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombDefusedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombDefused == null)
                         return;
-                    var @this = new Source1BombDefusedEvent();
+                    var @this = new Source1BombDefusedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3825,20 +3825,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombExplodedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombExploded == null)
                         return;
-                    var @this = new Source1BombExplodedEvent();
+                    var @this = new Source1BombExplodedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3852,20 +3852,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombDroppedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombDropped == null)
                         return;
-                    var @this = new Source1BombDroppedEvent();
+                    var @this = new Source1BombDroppedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3879,16 +3879,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombPickup == null)
                         return;
-                    var @this = new Source1BombPickupEvent();
+                    var @this = new Source1BombPickupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3907,11 +3907,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DefuserDropped == null)
                         return;
-                    var @this = new Source1DefuserDroppedEvent();
+                    var @this = new Source1DefuserDroppedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3927,18 +3927,18 @@ public partial class Source1GameEvents
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValLong;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DefuserPickup == null)
                         return;
-                    var @this = new Source1DefuserPickupEvent();
+                    var @this = new Source1DefuserPickupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3955,11 +3955,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AnnouncePhaseEnd == null)
                         return;
-                    var @this = new Source1AnnouncePhaseEndEvent();
+                    var @this = new Source1AnnouncePhaseEndEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3976,11 +3976,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsIntermission == null)
                         return;
-                    var @this = new Source1CsIntermissionEvent();
+                    var @this = new Source1CsIntermissionEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -3994,20 +3994,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombBegindefuseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "haskit")
                             return (@this, x) => @this.Haskit = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombBegindefuse == null)
                         return;
-                    var @this = new Source1BombBegindefuseEvent();
+                    var @this = new Source1BombBegindefuseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4021,18 +4021,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombAbortdefuseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombAbortdefuse == null)
                         return;
-                    var @this = new Source1BombAbortdefuseEvent();
+                    var @this = new Source1BombAbortdefuseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4046,20 +4046,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageFollowsEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageFollows == null)
                         return;
-                    var @this = new Source1HostageFollowsEvent();
+                    var @this = new Source1HostageFollowsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4073,20 +4073,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageHurtEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageHurt == null)
                         return;
-                    var @this = new Source1HostageHurtEvent();
+                    var @this = new Source1HostageHurtEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4100,20 +4100,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageKilledEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageKilled == null)
                         return;
-                    var @this = new Source1HostageKilledEvent();
+                    var @this = new Source1HostageKilledEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4127,9 +4127,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageRescuedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         if (key.Name == "site")
@@ -4138,11 +4138,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageRescued == null)
                         return;
-                    var @this = new Source1HostageRescuedEvent();
+                    var @this = new Source1HostageRescuedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4156,20 +4156,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageStopsFollowingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageStopsFollowing == null)
                         return;
-                    var @this = new Source1HostageStopsFollowingEvent();
+                    var @this = new Source1HostageStopsFollowingEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4186,11 +4186,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageRescuedAll == null)
                         return;
-                    var @this = new Source1HostageRescuedAllEvent();
+                    var @this = new Source1HostageRescuedAllEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4209,11 +4209,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HostageCallForHelp == null)
                         return;
-                    var @this = new Source1HostageCallForHelpEvent();
+                    var @this = new Source1HostageCallForHelpEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4227,16 +4227,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1VipEscapedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VipEscaped == null)
                         return;
-                    var @this = new Source1VipEscapedEvent();
+                    var @this = new Source1VipEscapedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4250,18 +4250,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1VipKilledEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.Attacker = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && VipKilled == null)
                         return;
-                    var @this = new Source1VipKilledEvent();
+                    var @this = new Source1VipKilledEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4275,20 +4275,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerRadioEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "slot")
                             return (@this, x) => @this.Slot = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerRadio == null)
                         return;
-                    var @this = new Source1PlayerRadioEvent();
+                    var @this = new Source1PlayerRadioEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4307,11 +4307,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BombBeep == null)
                         return;
-                    var @this = new Source1BombBeepEvent();
+                    var @this = new Source1BombBeepEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4325,9 +4325,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponFireEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         if (key.Name == "silenced")
@@ -4336,11 +4336,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponFire == null)
                         return;
-                    var @this = new Source1WeaponFireEvent();
+                    var @this = new Source1WeaponFireEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4354,20 +4354,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponFireOnEmptyEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponFireOnEmpty == null)
                         return;
-                    var @this = new Source1WeaponFireOnEmptyEvent();
+                    var @this = new Source1WeaponFireOnEmptyEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4381,20 +4381,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GrenadeThrownEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GrenadeThrown == null)
                         return;
-                    var @this = new Source1GrenadeThrownEvent();
+                    var @this = new Source1GrenadeThrownEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4408,18 +4408,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponOutofammoEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponOutofammo == null)
                         return;
-                    var @this = new Source1WeaponOutofammoEvent();
+                    var @this = new Source1WeaponOutofammoEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4433,18 +4433,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponReloadEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponReload == null)
                         return;
-                    var @this = new Source1WeaponReloadEvent();
+                    var @this = new Source1WeaponReloadEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4458,18 +4458,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponZoomEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponZoom == null)
                         return;
-                    var @this = new Source1WeaponZoomEvent();
+                    var @this = new Source1WeaponZoomEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4483,18 +4483,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SilencerDetachEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SilencerDetach == null)
                         return;
-                    var @this = new Source1SilencerDetachEvent();
+                    var @this = new Source1SilencerDetachEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4508,18 +4508,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InspectWeaponEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InspectWeapon == null)
                         return;
-                    var @this = new Source1InspectWeaponEvent();
+                    var @this = new Source1InspectWeaponEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4533,18 +4533,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponZoomRifleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WeaponZoomRifle == null)
                         return;
-                    var @this = new Source1WeaponZoomRifleEvent();
+                    var @this = new Source1WeaponZoomRifleEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4558,20 +4558,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerSpawnedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "inrestart")
                             return (@this, x) => @this.Inrestart = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerSpawned == null)
                         return;
-                    var @this = new Source1PlayerSpawnedEvent();
+                    var @this = new Source1PlayerSpawnedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4585,7 +4585,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "silent")
@@ -4596,11 +4596,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemPickup == null)
                         return;
-                    var @this = new Source1ItemPickupEvent();
+                    var @this = new Source1ItemPickupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4614,7 +4614,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPickupSlerpEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "index")
                             return (@this, x) => @this.Index = x.ValShort;
                         if (key.Name == "behavior")
@@ -4623,11 +4623,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemPickupSlerp == null)
                         return;
-                    var @this = new Source1ItemPickupSlerpEvent();
+                    var @this = new Source1ItemPickupSlerpEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4641,7 +4641,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPickupFailedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "reason")
@@ -4652,11 +4652,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemPickupFailed == null)
                         return;
-                    var @this = new Source1ItemPickupFailedEvent();
+                    var @this = new Source1ItemPickupFailedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4670,7 +4670,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemRemoveEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "defindex")
@@ -4679,11 +4679,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemRemove == null)
                         return;
-                    var @this = new Source1ItemRemoveEvent();
+                    var @this = new Source1ItemRemoveEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4697,7 +4697,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AmmoPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "index")
@@ -4706,11 +4706,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AmmoPickup == null)
                         return;
-                    var @this = new Source1AmmoPickupEvent();
+                    var @this = new Source1AmmoPickupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4724,7 +4724,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemEquipEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "defindex")
@@ -4745,11 +4745,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ItemEquip == null)
                         return;
-                    var @this = new Source1ItemEquipEvent();
+                    var @this = new Source1ItemEquipEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4763,18 +4763,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EnterBuyzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "canbuy")
                             return (@this, x) => @this.Canbuy = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EnterBuyzone == null)
                         return;
-                    var @this = new Source1EnterBuyzoneEvent();
+                    var @this = new Source1EnterBuyzoneEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4788,18 +4788,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ExitBuyzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "canbuy")
                             return (@this, x) => @this.Canbuy = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ExitBuyzone == null)
                         return;
-                    var @this = new Source1ExitBuyzoneEvent();
+                    var @this = new Source1ExitBuyzoneEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4816,11 +4816,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BuytimeEnded == null)
                         return;
-                    var @this = new Source1BuytimeEndedEvent();
+                    var @this = new Source1BuytimeEndedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4834,7 +4834,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EnterBombzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hasbomb")
                             return (@this, x) => @this.Hasbomb = x.ValBool;
                         if (key.Name == "isplanted")
@@ -4843,11 +4843,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EnterBombzone == null)
                         return;
-                    var @this = new Source1EnterBombzoneEvent();
+                    var @this = new Source1EnterBombzoneEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4861,7 +4861,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ExitBombzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hasbomb")
                             return (@this, x) => @this.Hasbomb = x.ValBool;
                         if (key.Name == "isplanted")
@@ -4870,11 +4870,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ExitBombzone == null)
                         return;
-                    var @this = new Source1ExitBombzoneEvent();
+                    var @this = new Source1ExitBombzoneEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4888,16 +4888,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EnterRescueZoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EnterRescueZone == null)
                         return;
-                    var @this = new Source1EnterRescueZoneEvent();
+                    var @this = new Source1EnterRescueZoneEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4911,16 +4911,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ExitRescueZoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ExitRescueZone == null)
                         return;
-                    var @this = new Source1ExitRescueZoneEvent();
+                    var @this = new Source1ExitRescueZoneEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4934,16 +4934,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SilencerOffEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SilencerOff == null)
                         return;
-                    var @this = new Source1SilencerOffEvent();
+                    var @this = new Source1SilencerOffEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4957,16 +4957,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SilencerOnEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SilencerOn == null)
                         return;
-                    var @this = new Source1SilencerOnEvent();
+                    var @this = new Source1SilencerOnEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -4983,11 +4983,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BuymenuOpen == null)
                         return;
-                    var @this = new Source1BuymenuOpenEvent();
+                    var @this = new Source1BuymenuOpenEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5001,16 +5001,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BuymenuCloseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BuymenuClose == null)
                         return;
-                    var @this = new Source1BuymenuCloseEvent();
+                    var @this = new Source1BuymenuCloseEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5027,11 +5027,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundPrestart == null)
                         return;
-                    var @this = new Source1RoundPrestartEvent();
+                    var @this = new Source1RoundPrestartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5048,11 +5048,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundPoststart == null)
                         return;
-                    var @this = new Source1RoundPoststartEvent();
+                    var @this = new Source1RoundPoststartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5066,18 +5066,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GrenadeBounceEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GrenadeBounce == null)
                         return;
-                    var @this = new Source1GrenadeBounceEvent();
+                    var @this = new Source1GrenadeBounceEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5091,9 +5091,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HegrenadeDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5106,11 +5106,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HegrenadeDetonate == null)
                         return;
-                    var @this = new Source1HegrenadeDetonateEvent();
+                    var @this = new Source1HegrenadeDetonateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5124,9 +5124,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1FlashbangDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5139,11 +5139,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && FlashbangDetonate == null)
                         return;
-                    var @this = new Source1FlashbangDetonateEvent();
+                    var @this = new Source1FlashbangDetonateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5157,9 +5157,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SmokegrenadeDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5172,11 +5172,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SmokegrenadeDetonate == null)
                         return;
-                    var @this = new Source1SmokegrenadeDetonateEvent();
+                    var @this = new Source1SmokegrenadeDetonateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5190,9 +5190,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SmokegrenadeExpiredEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5205,11 +5205,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SmokegrenadeExpired == null)
                         return;
-                    var @this = new Source1SmokegrenadeExpiredEvent();
+                    var @this = new Source1SmokegrenadeExpiredEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5223,9 +5223,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1MolotovDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "x")
                             return (@this, x) => @this.X = x.ValFloat;
                         if (key.Name == "y")
@@ -5236,11 +5236,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MolotovDetonate == null)
                         return;
-                    var @this = new Source1MolotovDetonateEvent();
+                    var @this = new Source1MolotovDetonateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5254,9 +5254,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5269,11 +5269,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DecoyDetonate == null)
                         return;
-                    var @this = new Source1DecoyDetonateEvent();
+                    var @this = new Source1DecoyDetonateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5287,7 +5287,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyStartedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5300,11 +5300,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DecoyStarted == null)
                         return;
-                    var @this = new Source1DecoyStartedEvent();
+                    var @this = new Source1DecoyStartedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5318,7 +5318,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TagrenadeDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5331,11 +5331,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TagrenadeDetonate == null)
                         return;
-                    var @this = new Source1TagrenadeDetonateEvent();
+                    var @this = new Source1TagrenadeDetonateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5360,11 +5360,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InfernoStartburn == null)
                         return;
-                    var @this = new Source1InfernoStartburnEvent();
+                    var @this = new Source1InfernoStartburnEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5389,11 +5389,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InfernoExpire == null)
                         return;
-                    var @this = new Source1InfernoExpireEvent();
+                    var @this = new Source1InfernoExpireEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5418,11 +5418,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && InfernoExtinguish == null)
                         return;
-                    var @this = new Source1InfernoExtinguishEvent();
+                    var @this = new Source1InfernoExtinguishEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5436,9 +5436,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyFiringEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5451,11 +5451,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DecoyFiring == null)
                         return;
-                    var @this = new Source1DecoyFiringEvent();
+                    var @this = new Source1DecoyFiringEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5469,9 +5469,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BulletImpactEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "x")
                             return (@this, x) => @this.X = x.ValFloat;
                         if (key.Name == "y")
@@ -5482,11 +5482,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BulletImpact == null)
                         return;
-                    var @this = new Source1BulletImpactEvent();
+                    var @this = new Source1BulletImpactEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5500,16 +5500,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerJumpEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerJump == null)
                         return;
-                    var @this = new Source1PlayerJumpEvent();
+                    var @this = new Source1PlayerJumpEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5523,9 +5523,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerBlindEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.Attacker = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "blind_duration")
@@ -5534,11 +5534,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerBlind == null)
                         return;
-                    var @this = new Source1PlayerBlindEvent();
+                    var @this = new Source1PlayerBlindEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5552,20 +5552,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerFalldamageEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "damage")
                             return (@this, x) => @this.Damage = x.ValFloat;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerFalldamage == null)
                         return;
-                    var @this = new Source1PlayerFalldamageEvent();
+                    var @this = new Source1PlayerFalldamageEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5579,20 +5579,20 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorMovingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DoorMoving == null)
                         return;
-                    var @this = new Source1DoorMovingEvent();
+                    var @this = new Source1DoorMovingEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5609,11 +5609,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MbInputLockSuccess == null)
                         return;
-                    var @this = new Source1MbInputLockSuccessEvent();
+                    var @this = new Source1MbInputLockSuccessEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5630,11 +5630,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MbInputLockCancel == null)
                         return;
-                    var @this = new Source1MbInputLockCancelEvent();
+                    var @this = new Source1MbInputLockCancelEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5655,11 +5655,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && NavBlocked == null)
                         return;
-                    var @this = new Source1NavBlockedEvent();
+                    var @this = new Source1NavBlockedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5676,11 +5676,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && NavGenerate == null)
                         return;
-                    var @this = new Source1NavGenerateEvent();
+                    var @this = new Source1NavGenerateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5697,11 +5697,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AchievementInfoLoaded == null)
                         return;
-                    var @this = new Source1AchievementInfoLoadedEvent();
+                    var @this = new Source1AchievementInfoLoadedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5724,11 +5724,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HltvChangedMode == null)
                         return;
-                    var @this = new Source1HltvChangedModeEvent();
+                    var @this = new Source1HltvChangedModeEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5745,11 +5745,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsGameDisconnected == null)
                         return;
-                    var @this = new Source1CsGameDisconnectedEvent();
+                    var @this = new Source1CsGameDisconnectedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5766,11 +5766,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsRoundFinalBeep == null)
                         return;
-                    var @this = new Source1CsRoundFinalBeepEvent();
+                    var @this = new Source1CsRoundFinalBeepEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5787,11 +5787,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsRoundStartBeep == null)
                         return;
-                    var @this = new Source1CsRoundStartBeepEvent();
+                    var @this = new Source1CsRoundStartBeepEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5815,7 +5815,7 @@ public partial class Source1GameEvents
                         if (key.Name == "funfact_token")
                             return (@this, x) => @this.FunfactToken = x.ValString;
                         if (key.Name == "funfact_player")
-                            return (@this, x) => @this.FunfactPlayer = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.FunfactPlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "funfact_data1")
                             return (@this, x) => @this.FunfactData1 = x.ValLong;
                         if (key.Name == "funfact_data2")
@@ -5826,11 +5826,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsWinPanelRound == null)
                         return;
-                    var @this = new Source1CsWinPanelRoundEvent();
+                    var @this = new Source1CsWinPanelRoundEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5847,11 +5847,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsWinPanelMatch == null)
                         return;
-                    var @this = new Source1CsWinPanelMatchEvent();
+                    var @this = new Source1CsWinPanelMatchEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5868,11 +5868,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsMatchEndRestart == null)
                         return;
-                    var @this = new Source1CsMatchEndRestartEvent();
+                    var @this = new Source1CsMatchEndRestartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5889,11 +5889,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsPreRestart == null)
                         return;
-                    var @this = new Source1CsPreRestartEvent();
+                    var @this = new Source1CsPreRestartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5907,13 +5907,13 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ShowDeathpanelEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "victim")
-                            return (@this, x) => @this.Victim = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.VictimIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "victim_pawn")
-                            return (@this, x) => @this.VictimPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.VictimPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "killer")
                             return (@this, x) => @this.Killer = x.ValLong;
                         if (key.Name == "killer_controller")
-                            return (@this, x) => @this.KillerController = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.KillerControllerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "hits_taken")
                             return (@this, x) => @this.HitsTaken = x.ValShort;
                         if (key.Name == "damage_taken")
@@ -5926,11 +5926,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ShowDeathpanel == null)
                         return;
-                    var @this = new Source1ShowDeathpanelEvent();
+                    var @this = new Source1ShowDeathpanelEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5947,11 +5947,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && HideDeathpanel == null)
                         return;
-                    var @this = new Source1HideDeathpanelEvent();
+                    var @this = new Source1HideDeathpanelEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5965,18 +5965,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerAvengedTeammateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "avenger_id")
-                            return (@this, x) => @this.AvengerId = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AvengerIdIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "avenged_player_id")
-                            return (@this, x) => @this.AvengedPlayerId = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AvengedPlayerIdIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerAvengedTeammate == null)
                         return;
-                    var @this = new Source1PlayerAvengedTeammateEvent();
+                    var @this = new Source1PlayerAvengedTeammateEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -5997,11 +5997,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AchievementEarnedLocal == null)
                         return;
-                    var @this = new Source1AchievementEarnedLocalEvent();
+                    var @this = new Source1AchievementEarnedLocalEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6020,11 +6020,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RepostXboxAchievements == null)
                         return;
-                    var @this = new Source1RepostXboxAchievementsEvent();
+                    var @this = new Source1RepostXboxAchievementsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6049,11 +6049,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MatchEndConditions == null)
                         return;
-                    var @this = new Source1MatchEndConditionsEvent();
+                    var @this = new Source1MatchEndConditionsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6067,7 +6067,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1RoundMvpEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "reason")
                             return (@this, x) => @this.Reason = x.ValShort;
                         if (key.Name == "value")
@@ -6082,11 +6082,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && RoundMvp == null)
                         return;
-                    var @this = new Source1RoundMvpEvent();
+                    var @this = new Source1RoundMvpEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6104,18 +6104,18 @@ public partial class Source1GameEvents
                         if (key.Name == "duration")
                             return (@this, x) => @this.Duration = x.ValLong;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ShowSurvivalRespawnStatus == null)
                         return;
-                    var @this = new Source1ShowSurvivalRespawnStatusEvent();
+                    var @this = new Source1ShowSurvivalRespawnStatusEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6132,11 +6132,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ClientDisconnect == null)
                         return;
-                    var @this = new Source1ClientDisconnectEvent();
+                    var @this = new Source1ClientDisconnectEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6150,9 +6150,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GgKilledEnemyEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "victimid")
-                            return (@this, x) => @this.Victimid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.VictimidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "attackerid")
-                            return (@this, x) => @this.Attackerid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackeridIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "dominated")
                             return (@this, x) => @this.Dominated = x.ValShort;
                         if (key.Name == "revenge")
@@ -6163,11 +6163,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GgKilledEnemy == null)
                         return;
-                    var @this = new Source1GgKilledEnemyEvent();
+                    var @this = new Source1GgKilledEnemyEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6194,11 +6194,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SwitchTeam == null)
                         return;
-                    var @this = new Source1SwitchTeamEvent();
+                    var @this = new Source1SwitchTeamEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6215,11 +6215,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && WriteProfileData == null)
                         return;
-                    var @this = new Source1WriteProfileDataEvent();
+                    var @this = new Source1WriteProfileDataEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6233,16 +6233,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TrialTimeExpiredEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrialTimeExpired == null)
                         return;
-                    var @this = new Source1TrialTimeExpiredEvent();
+                    var @this = new Source1TrialTimeExpiredEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6259,11 +6259,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && UpdateMatchmakingStats == null)
                         return;
-                    var @this = new Source1UpdateMatchmakingStatsEvent();
+                    var @this = new Source1UpdateMatchmakingStatsEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6277,18 +6277,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerResetVoteEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "vote")
                             return (@this, x) => @this.Vote = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerResetVote == null)
                         return;
-                    var @this = new Source1PlayerResetVoteEvent();
+                    var @this = new Source1PlayerResetVoteEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6307,11 +6307,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && EnableRestartVoting == null)
                         return;
-                    var @this = new Source1EnableRestartVotingEvent();
+                    var @this = new Source1EnableRestartVotingEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6334,11 +6334,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && Sfuievent == null)
                         return;
-                    var @this = new Source1SfuieventEvent();
+                    var @this = new Source1SfuieventEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6352,7 +6352,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1StartVoteEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "type")
                             return (@this, x) => @this.Type = x.ValByte;
                         if (key.Name == "vote_parameter")
@@ -6361,11 +6361,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && StartVote == null)
                         return;
-                    var @this = new Source1StartVoteEvent();
+                    var @this = new Source1StartVoteEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6379,16 +6379,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerGivenC4Event, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerGivenC4 == null)
                         return;
-                    var @this = new Source1PlayerGivenC4Event();
+                    var @this = new Source1PlayerGivenC4Event(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6402,16 +6402,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TrPlayerFlashbangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrPlayerFlashbanged == null)
                         return;
-                    var @this = new Source1TrPlayerFlashbangedEvent();
+                    var @this = new Source1TrPlayerFlashbangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6430,11 +6430,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrMarkComplete == null)
                         return;
-                    var @this = new Source1TrMarkCompleteEvent();
+                    var @this = new Source1TrMarkCompleteEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6453,11 +6453,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrMarkBestTime == null)
                         return;
-                    var @this = new Source1TrMarkBestTimeEvent();
+                    var @this = new Source1TrMarkBestTimeEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6474,11 +6474,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrExitHintTrigger == null)
                         return;
-                    var @this = new Source1TrExitHintTriggerEvent();
+                    var @this = new Source1TrExitHintTriggerEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6492,11 +6492,11 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BotTakeoverEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "botid")
-                            return (@this, x) => @this.Botid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.BotidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "p")
                             return (@this, x) => @this.P = x.ValFloat;
                         if (key.Name == "y")
@@ -6507,11 +6507,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BotTakeover == null)
                         return;
-                    var @this = new Source1BotTakeoverEvent();
+                    var @this = new Source1BotTakeoverEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6528,11 +6528,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrShowFinishMsgbox == null)
                         return;
-                    var @this = new Source1TrShowFinishMsgboxEvent();
+                    var @this = new Source1TrShowFinishMsgboxEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6549,11 +6549,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TrShowExitMsgbox == null)
                         return;
-                    var @this = new Source1TrShowExitMsgboxEvent();
+                    var @this = new Source1TrShowExitMsgboxEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6567,18 +6567,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1JointeamFailedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "reason")
                             return (@this, x) => @this.Reason = x.ValByte;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && JointeamFailed == null)
                         return;
-                    var @this = new Source1JointeamFailedEvent();
+                    var @this = new Source1JointeamFailedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6592,18 +6592,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TeamchangePendingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "toteam")
                             return (@this, x) => @this.Toteam = x.ValByte;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamchangePending == null)
                         return;
-                    var @this = new Source1TeamchangePendingEvent();
+                    var @this = new Source1TeamchangePendingEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6620,11 +6620,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && MaterialDefaultComplete == null)
                         return;
-                    var @this = new Source1MaterialDefaultCompleteEvent();
+                    var @this = new Source1MaterialDefaultCompleteEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6643,11 +6643,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && CsPrevNextSpectator == null)
                         return;
-                    var @this = new Source1CsPrevNextSpectatorEvent();
+                    var @this = new Source1CsPrevNextSpectatorEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6670,11 +6670,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && NextlevelChanged == null)
                         return;
-                    var @this = new Source1NextlevelChangedEvent();
+                    var @this = new Source1NextlevelChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6688,7 +6688,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SeasoncoinLevelupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "category")
                             return (@this, x) => @this.Category = x.ValShort;
                         if (key.Name == "rank")
@@ -6697,11 +6697,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SeasoncoinLevelup == null)
                         return;
-                    var @this = new Source1SeasoncoinLevelupEvent();
+                    var @this = new Source1SeasoncoinLevelupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6724,11 +6724,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TournamentReward == null)
                         return;
-                    var @this = new Source1TournamentRewardEvent();
+                    var @this = new Source1TournamentRewardEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6745,11 +6745,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && StartHalftime == null)
                         return;
-                    var @this = new Source1StartHalftimeEvent();
+                    var @this = new Source1StartHalftimeEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6763,18 +6763,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AmmoRefillEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "success")
                             return (@this, x) => @this.Success = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && AmmoRefill == null)
                         return;
-                    var @this = new Source1AmmoRefillEvent();
+                    var @this = new Source1AmmoRefillEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6788,16 +6788,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ParachutePickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ParachutePickup == null)
                         return;
-                    var @this = new Source1ParachutePickupEvent();
+                    var @this = new Source1ParachutePickupEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6811,16 +6811,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ParachuteDeployEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ParachuteDeploy == null)
                         return;
-                    var @this = new Source1ParachuteDeployEvent();
+                    var @this = new Source1ParachuteDeployEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6834,16 +6834,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DronegunAttackEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DronegunAttack == null)
                         return;
-                    var @this = new Source1DronegunAttackEvent();
+                    var @this = new Source1DronegunAttackEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6857,7 +6857,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DroneDispatchedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "priority")
                             return (@this, x) => @this.Priority = x.ValShort;
                         if (key.Name == "drone_dispatched")
@@ -6866,11 +6866,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DroneDispatched == null)
                         return;
-                    var @this = new Source1DroneDispatchedEvent();
+                    var @this = new Source1DroneDispatchedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6884,7 +6884,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1LootCrateVisibleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "type")
@@ -6893,11 +6893,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && LootCrateVisible == null)
                         return;
-                    var @this = new Source1LootCrateVisibleEvent();
+                    var @this = new Source1LootCrateVisibleEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6911,18 +6911,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1LootCrateOpenedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "type")
                             return (@this, x) => @this.Type = x.ValString;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && LootCrateOpened == null)
                         return;
-                    var @this = new Source1LootCrateOpenedEvent();
+                    var @this = new Source1LootCrateOpenedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6936,7 +6936,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1OpenCrateInstrEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "type")
@@ -6945,11 +6945,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && OpenCrateInstr == null)
                         return;
-                    var @this = new Source1OpenCrateInstrEvent();
+                    var @this = new Source1OpenCrateInstrEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6963,18 +6963,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SmokeBeaconParadropEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "paradrop")
                             return (@this, x) => @this.Paradrop = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SmokeBeaconParadrop == null)
                         return;
-                    var @this = new Source1SmokeBeaconParadropEvent();
+                    var @this = new Source1SmokeBeaconParadropEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -6993,11 +6993,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SurvivalParadropSpawn == null)
                         return;
-                    var @this = new Source1SurvivalParadropSpawnEvent();
+                    var @this = new Source1SurvivalParadropSpawnEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7016,11 +7016,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SurvivalParadropBreak == null)
                         return;
-                    var @this = new Source1SurvivalParadropBreakEvent();
+                    var @this = new Source1SurvivalParadropBreakEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7034,7 +7034,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DroneCargoDetachedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "cargo")
                             return (@this, x) => @this.Cargo = x.ValShort;
                         if (key.Name == "delivered")
@@ -7043,11 +7043,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DroneCargoDetached == null)
                         return;
-                    var @this = new Source1DroneCargoDetachedEvent();
+                    var @this = new Source1DroneCargoDetachedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7061,18 +7061,18 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DroneAboveRoofEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "cargo")
                             return (@this, x) => @this.Cargo = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DroneAboveRoof == null)
                         return;
-                    var @this = new Source1DroneAboveRoofEvent();
+                    var @this = new Source1DroneAboveRoofEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7091,11 +7091,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && ChoppersIncomingWarning == null)
                         return;
-                    var @this = new Source1ChoppersIncomingWarningEvent();
+                    var @this = new Source1ChoppersIncomingWarningEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7114,11 +7114,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && FirstbombsIncomingWarning == null)
                         return;
-                    var @this = new Source1FirstbombsIncomingWarningEvent();
+                    var @this = new Source1FirstbombsIncomingWarningEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7132,7 +7132,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DzItemInteractionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "type")
@@ -7141,11 +7141,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && DzItemInteraction == null)
                         return;
-                    var @this = new Source1DzItemInteractionEvent();
+                    var @this = new Source1DzItemInteractionEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7159,16 +7159,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SurvivalTeammateRespawnEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SurvivalTeammateRespawn == null)
                         return;
-                    var @this = new Source1SurvivalTeammateRespawnEvent();
+                    var @this = new Source1SurvivalTeammateRespawnEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7182,16 +7182,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SurvivalNoRespawnsWarningEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SurvivalNoRespawnsWarning == null)
                         return;
-                    var @this = new Source1SurvivalNoRespawnsWarningEvent();
+                    var @this = new Source1SurvivalNoRespawnsWarningEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7205,16 +7205,16 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SurvivalNoRespawnsFinalEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         return (@this, x) => { };
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && SurvivalNoRespawnsFinal == null)
                         return;
-                    var @this = new Source1SurvivalNoRespawnsFinalEvent();
+                    var @this = new Source1SurvivalNoRespawnsFinalEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7228,9 +7228,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerPingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -7245,11 +7245,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerPing == null)
                         return;
-                    var @this = new Source1PlayerPingEvent();
+                    var @this = new Source1PlayerPingEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7268,11 +7268,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerPingStop == null)
                         return;
-                    var @this = new Source1PlayerPingStopEvent();
+                    var @this = new Source1PlayerPingStopEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7286,9 +7286,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerSoundEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "radius")
                             return (@this, x) => @this.Radius = x.ValLong;
                         if (key.Name == "duration")
@@ -7299,11 +7299,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && PlayerSound == null)
                         return;
-                    var @this = new Source1PlayerSoundEvent();
+                    var @this = new Source1PlayerSoundEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7320,11 +7320,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GuardianWaveRestart == null)
                         return;
-                    var @this = new Source1GuardianWaveRestartEvent();
+                    var @this = new Source1GuardianWaveRestartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7341,11 +7341,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamIntroStart == null)
                         return;
-                    var @this = new Source1TeamIntroStartEvent();
+                    var @this = new Source1TeamIntroStartEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7362,11 +7362,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && TeamIntroEnd == null)
                         return;
-                    var @this = new Source1TeamIntroEndEvent();
+                    var @this = new Source1TeamIntroEndEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7380,9 +7380,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BulletFlightResolutionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.Userid = new CEntityIndex(x.ValShort == ushort.MaxValue ? 0 : (uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.UseridPawn = new CHandle<CEntityInstance>((ulong) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "pos_x")
                             return (@this, x) => @this.PosX = x.ValShort;
                         if (key.Name == "pos_y")
@@ -7405,11 +7405,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && BulletFlightResolution == null)
                         return;
-                    var @this = new Source1BulletFlightResolutionEvent();
+                    var @this = new Source1BulletFlightResolutionEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7428,11 +7428,11 @@ public partial class Source1GameEvents
                     })
                     .ToArray();
 
-                _handlers[descriptor.Eventid] = @event =>
+                _handlers[descriptor.Eventid] = (demo, @event) =>
                 {
                     if (Source1GameEvent == null && GamePhaseChanged == null)
                         return;
-                    var @this = new Source1GamePhaseChangedEvent();
+                    var @this = new Source1GamePhaseChangedEvent(demo);
                     for (var i = 0; i < @event.Keys.Count; i++)
                     {
                         keys[i](@this, @event.Keys[i]);
@@ -7447,2052 +7447,3467 @@ public partial class Source1GameEvents
 
 public partial class Source1ServerSpawnEvent : Source1GameEventBase
 {
+    internal Source1ServerSpawnEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "server_spawn";
+
     public string Hostname { get; set; } = "";
+
     public string Address { get; set; } = "";
+
     public int Port { get; set; }
+
     public string Game { get; set; } = "";
+
     public string Mapname { get; set; } = "";
+
     public string Addonname { get; set; } = "";
+
     public int Maxplayers { get; set; }
+
     public string Os { get; set; } = "";
+
     public bool Dedicated { get; set; }
+
     public bool Password { get; set; }
 }
 
 public partial class Source1ServerPreShutdownEvent : Source1GameEventBase
 {
+    internal Source1ServerPreShutdownEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "server_pre_shutdown";
+
     public string Reason { get; set; } = "";
 }
 
 public partial class Source1ServerShutdownEvent : Source1GameEventBase
 {
+    internal Source1ServerShutdownEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "server_shutdown";
+
     public string Reason { get; set; } = "";
 }
 
 public partial class Source1ServerMessageEvent : Source1GameEventBase
 {
+    internal Source1ServerMessageEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "server_message";
+
     public string Text { get; set; } = "";
 }
 
 public partial class Source1ServerCvarEvent : Source1GameEventBase
 {
+    internal Source1ServerCvarEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "server_cvar";
+
     public string Cvarname { get; set; } = "";
+
     public string Cvarvalue { get; set; } = "";
 }
 
 public partial class Source1PlayerActivateEvent : Source1GameEventBase
 {
+    internal Source1PlayerActivateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_activate";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
 {
+    internal Source1PlayerConnectFullEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_connect_full";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
 {
+    internal Source1PlayerFullUpdateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_full_update";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Count { get; set; }
 }
 
 public partial class Source1PlayerConnectEvent : Source1GameEventBase
 {
+    internal Source1PlayerConnectEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_connect";
+
     public string Name { get; set; } = "";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Networkid { get; set; } = "";
-    public ulong Xuid { get; set; }
+
+    public ulong SteamId { get; set; }
+
     public string Address { get; set; } = "";
+
     public bool Bot { get; set; }
 }
 
 public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
 {
+    internal Source1PlayerDisconnectEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_disconnect";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Reason { get; set; }
+
     public string Name { get; set; } = "";
+
     public string Networkid { get; set; } = "";
-    public ulong Xuid { get; set; }
+
+    public ulong SteamId { get; set; }
+
     public int PlayerID { get; set; }
 }
 
 public partial class Source1PlayerInfoEvent : Source1GameEventBase
 {
+    internal Source1PlayerInfoEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_info";
+
     public string Name { get; set; } = "";
-    public CEntityIndex Userid { get; set; }
-    public ulong Steamid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public ulong SteamId { get; set; }
+
     public bool Bot { get; set; }
 }
 
 public partial class Source1PlayerSpawnEvent : Source1GameEventBase
 {
+    internal Source1PlayerSpawnEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_spawn";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1PlayerTeamEvent : Source1GameEventBase
 {
+    internal Source1PlayerTeamEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_team";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Team { get; set; }
+
     public int Oldteam { get; set; }
+
     public bool Disconnect { get; set; }
+
     public bool Silent { get; set; }
+
     public bool Isbot { get; set; }
 }
 
 public partial class Source1LocalPlayerTeamEvent : Source1GameEventBase
 {
+    internal Source1LocalPlayerTeamEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "local_player_team";
 }
 
 public partial class Source1LocalPlayerControllerTeamEvent : Source1GameEventBase
 {
+    internal Source1LocalPlayerControllerTeamEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "local_player_controller_team";
 }
 
 public partial class Source1PlayerChangenameEvent : Source1GameEventBase
 {
+    internal Source1PlayerChangenameEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_changename";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Oldname { get; set; } = "";
+
     public string Newname { get; set; } = "";
 }
 
 public partial class Source1PlayerHurtEvent : Source1GameEventBase
 {
+    internal Source1PlayerHurtEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_hurt";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public CEntityIndex Attacker { get; set; }
-    public CHandle<CEntityInstance> AttackerPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
+    public CEntityIndex AttackerIndex { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+
+    public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
+    public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
+
     public int Health { get; set; }
+
     public int Armor { get; set; }
+
     public string Weapon { get; set; } = "";
+
     public int DmgHealth { get; set; }
+
     public int DmgArmor { get; set; }
+
     public int Hitgroup { get; set; }
 }
 
 public partial class Source1PlayerChatEvent : Source1GameEventBase
 {
+    internal Source1PlayerChatEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_chat";
+
     public bool Teamonly { get; set; }
-    public int Userid { get; set; }
+
+    public int Player { get; set; }
+
     public string Text { get; set; } = "";
 }
 
 public partial class Source1LocalPlayerPawnChangedEvent : Source1GameEventBase
 {
+    internal Source1LocalPlayerPawnChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "local_player_pawn_changed";
 }
 
 public partial class Source1TeamplayBroadcastAudioEvent : Source1GameEventBase
 {
+    internal Source1TeamplayBroadcastAudioEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "teamplay_broadcast_audio";
+
     public int Team { get; set; }
+
     public string Sound { get; set; } = "";
 }
 
 public partial class Source1FinaleStartEvent : Source1GameEventBase
 {
+    internal Source1FinaleStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "finale_start";
+
     public int Rushes { get; set; }
 }
 
 public partial class Source1PlayerStatsUpdatedEvent : Source1GameEventBase
 {
+    internal Source1PlayerStatsUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_stats_updated";
+
     public bool Forceupload { get; set; }
 }
 
 public partial class Source1UserDataDownloadedEvent : Source1GameEventBase
 {
+    internal Source1UserDataDownloadedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "user_data_downloaded";
 }
 
 public partial class Source1RagdollDissolvedEvent : Source1GameEventBase
 {
+    internal Source1RagdollDissolvedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ragdoll_dissolved";
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1TeamInfoEvent : Source1GameEventBase
 {
+    internal Source1TeamInfoEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "team_info";
+
     public int Teamid { get; set; }
+
     public string Teamname { get; set; } = "";
 }
 
 public partial class Source1TeamScoreEvent : Source1GameEventBase
 {
+    internal Source1TeamScoreEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "team_score";
+
     public int Teamid { get; set; }
+
     public int Score { get; set; }
 }
 
 public partial class Source1HltvCameramanEvent : Source1GameEventBase
 {
+    internal Source1HltvCameramanEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_cameraman";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1HltvChaseEvent : Source1GameEventBase
 {
+    internal Source1HltvChaseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_chase";
-    public CEntityIndex Target1 { get; set; }
-    public CEntityIndex Target2 { get; set; }
+
+    public CEntityIndex Target1Index { get; set; }
+    public CCSPlayerController? Target1 => _demo.GetEntityByIndex<CCSPlayerController>(Target1Index);
+
+    public CEntityIndex Target2Index { get; set; }
+    public CCSPlayerController? Target2 => _demo.GetEntityByIndex<CCSPlayerController>(Target2Index);
+
     public int Distance { get; set; }
+
     public int Theta { get; set; }
+
     public int Phi { get; set; }
+
     public int Inertia { get; set; }
+
     public int Ineye { get; set; }
 }
 
 public partial class Source1HltvRankCameraEvent : Source1GameEventBase
 {
+    internal Source1HltvRankCameraEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_rank_camera";
+
     public int Index { get; set; }
+
     public float Rank { get; set; }
-    public CEntityIndex Target { get; set; }
+
+    public CEntityIndex TargetIndex { get; set; }
+    public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
 public partial class Source1HltvRankEntityEvent : Source1GameEventBase
 {
+    internal Source1HltvRankEntityEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_rank_entity";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public float Rank { get; set; }
-    public CEntityIndex Target { get; set; }
+
+    public CEntityIndex TargetIndex { get; set; }
+    public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
 public partial class Source1HltvFixedEvent : Source1GameEventBase
 {
+    internal Source1HltvFixedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_fixed";
+
     public int Posx { get; set; }
+
     public int Posy { get; set; }
+
     public int Posz { get; set; }
+
     public int Theta { get; set; }
+
     public int Phi { get; set; }
+
     public int Offset { get; set; }
+
     public float Fov { get; set; }
-    public CEntityIndex Target { get; set; }
+
+    public CEntityIndex TargetIndex { get; set; }
+    public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
 public partial class Source1HltvMessageEvent : Source1GameEventBase
 {
+    internal Source1HltvMessageEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_message";
+
     public string Text { get; set; } = "";
 }
 
 public partial class Source1HltvStatusEvent : Source1GameEventBase
 {
+    internal Source1HltvStatusEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_status";
+
     public int Clients { get; set; }
+
     public int Slots { get; set; }
+
     public int Proxies { get; set; }
+
     public string Master { get; set; } = "";
 }
 
 public partial class Source1HltvTitleEvent : Source1GameEventBase
 {
+    internal Source1HltvTitleEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_title";
+
     public string Text { get; set; } = "";
 }
 
 public partial class Source1HltvChatEvent : Source1GameEventBase
 {
+    internal Source1HltvChatEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_chat";
+
     public string Text { get; set; } = "";
-    public ulong SteamID { get; set; }
+
+    public ulong SteamId { get; set; }
 }
 
 public partial class Source1HltvVersioninfoEvent : Source1GameEventBase
 {
+    internal Source1HltvVersioninfoEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_versioninfo";
+
     public int Version { get; set; }
 }
 
 public partial class Source1HltvReplayEvent : Source1GameEventBase
 {
+    internal Source1HltvReplayEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_replay";
+
     public int Delay { get; set; }
+
     public int Reason { get; set; }
 }
 
 public partial class Source1HltvReplayStatusEvent : Source1GameEventBase
 {
+    internal Source1HltvReplayStatusEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_replay_status";
+
     public int Reason { get; set; }
 }
 
 public partial class Source1DemoStopEvent : Source1GameEventBase
 {
+    internal Source1DemoStopEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "demo_stop";
 }
 
 public partial class Source1MapShutdownEvent : Source1GameEventBase
 {
+    internal Source1MapShutdownEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "map_shutdown";
 }
 
 public partial class Source1MapTransitionEvent : Source1GameEventBase
 {
+    internal Source1MapTransitionEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "map_transition";
 }
 
 public partial class Source1HostnameChangedEvent : Source1GameEventBase
 {
+    internal Source1HostnameChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostname_changed";
+
     public string Hostname { get; set; } = "";
 }
 
 public partial class Source1DifficultyChangedEvent : Source1GameEventBase
 {
+    internal Source1DifficultyChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "difficulty_changed";
+
     public int NewDifficulty { get; set; }
+
     public int OldDifficulty { get; set; }
+
     public string StrDifficulty { get; set; } = "";
 }
 
 public partial class Source1GameMessageEvent : Source1GameEventBase
 {
+    internal Source1GameMessageEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "game_message";
+
     public int Target { get; set; }
+
     public string Text { get; set; } = "";
 }
 
 public partial class Source1GameNewmapEvent : Source1GameEventBase
 {
+    internal Source1GameNewmapEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "game_newmap";
+
     public string Mapname { get; set; } = "";
 }
 
 public partial class Source1RoundStartEvent : Source1GameEventBase
 {
+    internal Source1RoundStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_start";
+
     public int Timelimit { get; set; }
+
     public int Fraglimit { get; set; }
+
     public string Objective { get; set; } = "";
 }
 
 public partial class Source1RoundEndEvent : Source1GameEventBase
 {
+    internal Source1RoundEndEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_end";
+
     public int Winner { get; set; }
+
     public int Reason { get; set; }
+
     public string Message { get; set; } = "";
+
     public int Legacy { get; set; }
+
     public int PlayerCount { get; set; }
+
     public int Nomusic { get; set; }
 }
 
 public partial class Source1RoundStartPreEntityEvent : Source1GameEventBase
 {
+    internal Source1RoundStartPreEntityEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_start_pre_entity";
 }
 
 public partial class Source1RoundStartPostNavEvent : Source1GameEventBase
 {
+    internal Source1RoundStartPostNavEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_start_post_nav";
 }
 
 public partial class Source1RoundFreezeEndEvent : Source1GameEventBase
 {
+    internal Source1RoundFreezeEndEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_freeze_end";
 }
 
 public partial class Source1TeamplayRoundStartEvent : Source1GameEventBase
 {
+    internal Source1TeamplayRoundStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "teamplay_round_start";
+
     public bool FullReset { get; set; }
 }
 
 public partial class Source1PlayerDeathEvent : Source1GameEventBase
 {
+    internal Source1PlayerDeathEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_death";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public CEntityIndex Attacker { get; set; }
-    public CHandle<CEntityInstance> AttackerPawn { get; set; }
-    public CEntityIndex Assister { get; set; }
-    public CHandle<CEntityInstance> AssisterPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
+    public CEntityIndex AttackerIndex { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+
+    public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
+    public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
+
+    public CEntityIndex AssisterIndex { get; set; }
+    public CCSPlayerController? Assister => _demo.GetEntityByIndex<CCSPlayerController>(AssisterIndex);
+
+    public CHandle<CEntityInstance> AssisterPawnHandle { get; set; }
+    public CCSPlayerPawn? AssisterPawn => _demo.GetEntityByHandle(AssisterPawnHandle) as CCSPlayerPawn;
+
     public bool Assistedflash { get; set; }
+
     public string Weapon { get; set; } = "";
+
     public string WeaponItemid { get; set; } = "";
+
     public string WeaponFauxitemid { get; set; } = "";
-    public string WeaponOriginalownerXuid { get; set; } = "";
+
+    public string WeaponOriginalownerSteamId { get; set; } = "";
+
     public bool Headshot { get; set; }
+
     public int Dominated { get; set; }
+
     public int Revenge { get; set; }
+
     public int Wipe { get; set; }
+
     public int Penetrated { get; set; }
+
     public bool Noreplay { get; set; }
+
     public bool Noscope { get; set; }
+
     public bool Thrusmoke { get; set; }
+
     public bool Attackerblind { get; set; }
+
     public float Distance { get; set; }
+
     public int DmgHealth { get; set; }
+
     public int DmgArmor { get; set; }
+
     public int Hitgroup { get; set; }
 }
 
 public partial class Source1PlayerFootstepEvent : Source1GameEventBase
 {
+    internal Source1PlayerFootstepEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_footstep";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1PlayerHintmessageEvent : Source1GameEventBase
 {
+    internal Source1PlayerHintmessageEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_hintmessage";
+
     public string Hintmessage { get; set; } = "";
 }
 
 public partial class Source1BreakBreakableEvent : Source1GameEventBase
 {
+    internal Source1BreakBreakableEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "break_breakable";
+
     public int Entindex { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Material { get; set; }
 }
 
 public partial class Source1BrokenBreakableEvent : Source1GameEventBase
 {
+    internal Source1BrokenBreakableEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "broken_breakable";
+
     public int Entindex { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Material { get; set; }
 }
 
 public partial class Source1BreakPropEvent : Source1GameEventBase
 {
+    internal Source1BreakPropEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "break_prop";
+
     public int Entindex { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1EntityKilledEvent : Source1GameEventBase
 {
+    internal Source1EntityKilledEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "entity_killed";
+
     public int EntindexKilled { get; set; }
+
     public int EntindexAttacker { get; set; }
+
     public int EntindexInflictor { get; set; }
+
     public int Damagebits { get; set; }
 }
 
 public partial class Source1DoorCloseEvent : Source1GameEventBase
 {
+    internal Source1DoorCloseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "door_close";
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public bool Checkpoint { get; set; }
 }
 
 public partial class Source1VoteStartedEvent : Source1GameEventBase
 {
+    internal Source1VoteStartedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_started";
+
     public string Issue { get; set; } = "";
+
     public string Param1 { get; set; } = "";
+
     public int Team { get; set; }
+
     public int Initiator { get; set; }
 }
 
 public partial class Source1VoteFailedEvent : Source1GameEventBase
 {
+    internal Source1VoteFailedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_failed";
+
     public int Team { get; set; }
 }
 
 public partial class Source1VotePassedEvent : Source1GameEventBase
 {
+    internal Source1VotePassedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_passed";
+
     public string Details { get; set; } = "";
+
     public string Param1 { get; set; } = "";
+
     public int Team { get; set; }
 }
 
 public partial class Source1VoteChangedEvent : Source1GameEventBase
 {
+    internal Source1VoteChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_changed";
+
     public int VoteOption1 { get; set; }
+
     public int VoteOption2 { get; set; }
+
     public int VoteOption3 { get; set; }
+
     public int VoteOption4 { get; set; }
+
     public int VoteOption5 { get; set; }
+
     public int PotentialVotes { get; set; }
 }
 
 public partial class Source1VoteCastYesEvent : Source1GameEventBase
 {
+    internal Source1VoteCastYesEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_cast_yes";
+
     public int Team { get; set; }
+
     public int Entityid { get; set; }
 }
 
 public partial class Source1VoteCastNoEvent : Source1GameEventBase
 {
+    internal Source1VoteCastNoEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_cast_no";
+
     public int Team { get; set; }
+
     public int Entityid { get; set; }
 }
 
 public partial class Source1AchievementEventEvent : Source1GameEventBase
 {
+    internal Source1AchievementEventEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "achievement_event";
+
     public string AchievementName { get; set; } = "";
+
     public int CurVal { get; set; }
+
     public int MaxVal { get; set; }
 }
 
 public partial class Source1AchievementEarnedEvent : Source1GameEventBase
 {
+    internal Source1AchievementEarnedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "achievement_earned";
-    public CEntityIndex Player { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Achievement { get; set; }
 }
 
 public partial class Source1AchievementWriteFailedEvent : Source1GameEventBase
 {
+    internal Source1AchievementWriteFailedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "achievement_write_failed";
 }
 
 public partial class Source1BonusUpdatedEvent : Source1GameEventBase
 {
+    internal Source1BonusUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bonus_updated";
+
     public int Numadvanced { get; set; }
+
     public int Numbronze { get; set; }
+
     public int Numsilver { get; set; }
+
     public int Numgold { get; set; }
 }
 
 public partial class Source1SpecTargetUpdatedEvent : Source1GameEventBase
 {
+    internal Source1SpecTargetUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "spec_target_updated";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Target { get; set; }
 }
 
 public partial class Source1SpecModeUpdatedEvent : Source1GameEventBase
 {
+    internal Source1SpecModeUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "spec_mode_updated";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1EntityVisibleEvent : Source1GameEventBase
 {
+    internal Source1EntityVisibleEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "entity_visible";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Subject { get; set; }
+
     public string Classname { get; set; } = "";
+
     public string Entityname { get; set; } = "";
 }
 
 public partial class Source1GameinstructorDrawEvent : Source1GameEventBase
 {
+    internal Source1GameinstructorDrawEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "gameinstructor_draw";
 }
 
 public partial class Source1GameinstructorNodrawEvent : Source1GameEventBase
 {
+    internal Source1GameinstructorNodrawEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "gameinstructor_nodraw";
 }
 
 public partial class Source1FlareIgniteNpcEvent : Source1GameEventBase
 {
+    internal Source1FlareIgniteNpcEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "flare_ignite_npc";
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1HelicopterGrenadePuntMissEvent : Source1GameEventBase
 {
+    internal Source1HelicopterGrenadePuntMissEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "helicopter_grenade_punt_miss";
 }
 
 public partial class Source1PhysgunPickupEvent : Source1GameEventBase
 {
+    internal Source1PhysgunPickupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "physgun_pickup";
+
     public int Target { get; set; }
 }
 
 public partial class Source1InventoryUpdatedEvent : Source1GameEventBase
 {
+    internal Source1InventoryUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "inventory_updated";
 }
 
 public partial class Source1CartUpdatedEvent : Source1GameEventBase
 {
+    internal Source1CartUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cart_updated";
 }
 
 public partial class Source1StorePricesheetUpdatedEvent : Source1GameEventBase
 {
+    internal Source1StorePricesheetUpdatedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "store_pricesheet_updated";
 }
 
 public partial class Source1ItemSchemaInitializedEvent : Source1GameEventBase
 {
+    internal Source1ItemSchemaInitializedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_schema_initialized";
 }
 
 public partial class Source1DropRateModifiedEvent : Source1GameEventBase
 {
+    internal Source1DropRateModifiedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "drop_rate_modified";
 }
 
 public partial class Source1EventTicketModifiedEvent : Source1GameEventBase
 {
+    internal Source1EventTicketModifiedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "event_ticket_modified";
 }
 
 public partial class Source1GcConnectedEvent : Source1GameEventBase
 {
+    internal Source1GcConnectedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "gc_connected";
 }
 
 public partial class Source1InstructorStartLessonEvent : Source1GameEventBase
 {
+    internal Source1InstructorStartLessonEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "instructor_start_lesson";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string HintName { get; set; } = "";
+
     public int HintTarget { get; set; }
+
     public int VrMovementType { get; set; }
+
     public bool VrSingleController { get; set; }
+
     public int VrControllerType { get; set; }
 }
 
 public partial class Source1InstructorCloseLessonEvent : Source1GameEventBase
 {
+    internal Source1InstructorCloseLessonEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "instructor_close_lesson";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string HintName { get; set; } = "";
 }
 
 public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBase
 {
+    internal Source1InstructorServerHintCreateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "instructor_server_hint_create";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string HintName { get; set; } = "";
+
     public string HintReplaceKey { get; set; } = "";
+
     public int HintTarget { get; set; }
-    public CEntityIndex HintActivatorUserid { get; set; }
+
+    public CEntityIndex HintActivatorPlayerIndex { get; set; }
+    public CCSPlayerController? HintActivatorPlayer => _demo.GetEntityByIndex<CCSPlayerController>(HintActivatorPlayerIndex);
+
     public int HintTimeout { get; set; }
+
     public string HintIconOnscreen { get; set; } = "";
+
     public string HintIconOffscreen { get; set; } = "";
+
     public string HintCaption { get; set; } = "";
+
     public string HintActivatorCaption { get; set; } = "";
+
     public string HintColor { get; set; } = "";
+
     public float HintIconOffset { get; set; }
+
     public float HintRange { get; set; }
+
     public int HintFlags { get; set; }
+
     public string HintBinding { get; set; } = "";
+
     public string HintGamepadBinding { get; set; } = "";
+
     public bool HintAllowNodrawTarget { get; set; }
+
     public bool HintNooffscreen { get; set; }
+
     public bool HintForcecaption { get; set; }
+
     public bool HintLocalPlayerOnly { get; set; }
 }
 
 public partial class Source1InstructorServerHintStopEvent : Source1GameEventBase
 {
+    internal Source1InstructorServerHintStopEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "instructor_server_hint_stop";
+
     public string HintName { get; set; } = "";
 }
 
 public partial class Source1SetInstructorGroupEnabledEvent : Source1GameEventBase
 {
+    internal Source1SetInstructorGroupEnabledEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "set_instructor_group_enabled";
+
     public string Group { get; set; } = "";
+
     public int Enabled { get; set; }
 }
 
 public partial class Source1ClientsideLessonClosedEvent : Source1GameEventBase
 {
+    internal Source1ClientsideLessonClosedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "clientside_lesson_closed";
+
     public string LessonName { get; set; } = "";
 }
 
 public partial class Source1DynamicShadowLightChangedEvent : Source1GameEventBase
 {
+    internal Source1DynamicShadowLightChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "dynamic_shadow_light_changed";
 }
 
 public partial class Source1GameuiHiddenEvent : Source1GameEventBase
 {
+    internal Source1GameuiHiddenEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "gameui_hidden";
 }
 
 public partial class Source1ItemsGiftedEvent : Source1GameEventBase
 {
+    internal Source1ItemsGiftedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "items_gifted";
-    public CEntityIndex Player { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Itemdef { get; set; }
+
     public int Numgifts { get; set; }
+
     public int Giftidx { get; set; }
+
     public int Accountid { get; set; }
 }
 
 public partial class Source1PlayerScoreEvent : Source1GameEventBase
 {
+    internal Source1PlayerScoreEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_score";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Kills { get; set; }
+
     public int Deaths { get; set; }
+
     public int Score { get; set; }
 }
 
 public partial class Source1PlayerShootEvent : Source1GameEventBase
 {
+    internal Source1PlayerShootEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_shoot";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Weapon { get; set; }
+
     public int Mode { get; set; }
 }
 
 public partial class Source1GameInitEvent : Source1GameEventBase
 {
+    internal Source1GameInitEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "game_init";
 }
 
 public partial class Source1GameStartEvent : Source1GameEventBase
 {
+    internal Source1GameStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "game_start";
+
     public int Roundslimit { get; set; }
+
     public int Timelimit { get; set; }
+
     public int Fraglimit { get; set; }
+
     public string Objective { get; set; } = "";
 }
 
 public partial class Source1GameEndEvent : Source1GameEventBase
 {
+    internal Source1GameEndEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "game_end";
+
     public int Winner { get; set; }
 }
 
 public partial class Source1RoundAnnounceMatchPointEvent : Source1GameEventBase
 {
+    internal Source1RoundAnnounceMatchPointEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_announce_match_point";
 }
 
 public partial class Source1RoundAnnounceFinalEvent : Source1GameEventBase
 {
+    internal Source1RoundAnnounceFinalEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_announce_final";
 }
 
 public partial class Source1RoundAnnounceLastRoundHalfEvent : Source1GameEventBase
 {
+    internal Source1RoundAnnounceLastRoundHalfEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_announce_last_round_half";
 }
 
 public partial class Source1RoundAnnounceMatchStartEvent : Source1GameEventBase
 {
+    internal Source1RoundAnnounceMatchStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_announce_match_start";
 }
 
 public partial class Source1RoundAnnounceWarmupEvent : Source1GameEventBase
 {
+    internal Source1RoundAnnounceWarmupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_announce_warmup";
 }
 
 public partial class Source1RoundEndUploadStatsEvent : Source1GameEventBase
 {
+    internal Source1RoundEndUploadStatsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_end_upload_stats";
 }
 
 public partial class Source1RoundOfficiallyEndedEvent : Source1GameEventBase
 {
+    internal Source1RoundOfficiallyEndedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_officially_ended";
 }
 
 public partial class Source1RoundTimeWarningEvent : Source1GameEventBase
 {
+    internal Source1RoundTimeWarningEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_time_warning";
 }
 
 public partial class Source1UgcMapInfoReceivedEvent : Source1GameEventBase
 {
+    internal Source1UgcMapInfoReceivedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ugc_map_info_received";
+
     public ulong PublishedFileId { get; set; }
 }
 
 public partial class Source1UgcMapUnsubscribedEvent : Source1GameEventBase
 {
+    internal Source1UgcMapUnsubscribedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ugc_map_unsubscribed";
+
     public ulong PublishedFileId { get; set; }
 }
 
 public partial class Source1UgcMapDownloadErrorEvent : Source1GameEventBase
 {
+    internal Source1UgcMapDownloadErrorEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ugc_map_download_error";
+
     public ulong PublishedFileId { get; set; }
+
     public int ErrorCode { get; set; }
 }
 
 public partial class Source1UgcFileDownloadFinishedEvent : Source1GameEventBase
 {
+    internal Source1UgcFileDownloadFinishedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ugc_file_download_finished";
+
     public ulong Hcontent { get; set; }
 }
 
 public partial class Source1UgcFileDownloadStartEvent : Source1GameEventBase
 {
+    internal Source1UgcFileDownloadStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ugc_file_download_start";
+
     public ulong Hcontent { get; set; }
+
     public ulong PublishedFileId { get; set; }
 }
 
 public partial class Source1BeginNewMatchEvent : Source1GameEventBase
 {
+    internal Source1BeginNewMatchEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "begin_new_match";
 }
 
 public partial class Source1DmBonusWeaponStartEvent : Source1GameEventBase
 {
+    internal Source1DmBonusWeaponStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "dm_bonus_weapon_start";
+
     public int Time { get; set; }
+
     public int Pos { get; set; }
 }
 
 public partial class Source1SurvivalAnnouncePhaseEvent : Source1GameEventBase
 {
+    internal Source1SurvivalAnnouncePhaseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "survival_announce_phase";
+
     public int Phase { get; set; }
 }
 
 public partial class Source1PlayerDecalEvent : Source1GameEventBase
 {
+    internal Source1PlayerDecalEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_decal";
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1ReadGameTitledataEvent : Source1GameEventBase
 {
+    internal Source1ReadGameTitledataEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "read_game_titledata";
+
     public int ControllerId { get; set; }
 }
 
 public partial class Source1WriteGameTitledataEvent : Source1GameEventBase
 {
+    internal Source1WriteGameTitledataEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "write_game_titledata";
+
     public int ControllerId { get; set; }
 }
 
 public partial class Source1ResetGameTitledataEvent : Source1GameEventBase
 {
+    internal Source1ResetGameTitledataEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "reset_game_titledata";
+
     public int ControllerId { get; set; }
 }
 
 public partial class Source1WeaponhudSelectionEvent : Source1GameEventBase
 {
+    internal Source1WeaponhudSelectionEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weaponhud_selection";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Mode { get; set; }
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1VoteEndedEvent : Source1GameEventBase
 {
+    internal Source1VoteEndedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_ended";
 }
 
 public partial class Source1VoteCastEvent : Source1GameEventBase
 {
+    internal Source1VoteCastEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_cast";
+
     public int VoteOption { get; set; }
+
     public int Team { get; set; }
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1VoteOptionsEvent : Source1GameEventBase
 {
+    internal Source1VoteOptionsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vote_options";
+
     public int Count { get; set; }
+
     public string Option1 { get; set; } = "";
+
     public string Option2 { get; set; } = "";
+
     public string Option3 { get; set; } = "";
+
     public string Option4 { get; set; } = "";
+
     public string Option5 { get; set; } = "";
 }
 
 public partial class Source1EndmatchMapvoteSelectingMapEvent : Source1GameEventBase
 {
+    internal Source1EndmatchMapvoteSelectingMapEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "endmatch_mapvote_selecting_map";
+
     public int Count { get; set; }
+
     public int Slot1 { get; set; }
+
     public int Slot2 { get; set; }
+
     public int Slot3 { get; set; }
+
     public int Slot4 { get; set; }
+
     public int Slot5 { get; set; }
+
     public int Slot6 { get; set; }
+
     public int Slot7 { get; set; }
+
     public int Slot8 { get; set; }
+
     public int Slot9 { get; set; }
+
     public int Slot10 { get; set; }
 }
 
 public partial class Source1EndmatchCmmStartRevealItemsEvent : Source1GameEventBase
 {
+    internal Source1EndmatchCmmStartRevealItemsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "endmatch_cmm_start_reveal_items";
 }
 
 public partial class Source1ClientLoadoutChangedEvent : Source1GameEventBase
 {
+    internal Source1ClientLoadoutChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "client_loadout_changed";
 }
 
 public partial class Source1AddPlayerSonarIconEvent : Source1GameEventBase
 {
+    internal Source1AddPlayerSonarIconEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "add_player_sonar_icon";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public float PosX { get; set; }
+
     public float PosY { get; set; }
+
     public float PosZ { get; set; }
 }
 
 public partial class Source1DoorOpenEvent : Source1GameEventBase
 {
+    internal Source1DoorOpenEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "door_open";
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1DoorClosedEvent : Source1GameEventBase
 {
+    internal Source1DoorClosedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "door_closed";
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1DoorBreakEvent : Source1GameEventBase
 {
+    internal Source1DoorBreakEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "door_break";
+
     public int Entindex { get; set; }
+
     public int Dmgstate { get; set; }
 }
 
 public partial class Source1AddBulletHitMarkerEvent : Source1GameEventBase
 {
+    internal Source1AddBulletHitMarkerEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "add_bullet_hit_marker";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Bone { get; set; }
+
     public int PosX { get; set; }
+
     public int PosY { get; set; }
+
     public int PosZ { get; set; }
+
     public int AngX { get; set; }
+
     public int AngY { get; set; }
+
     public int AngZ { get; set; }
+
     public int StartX { get; set; }
+
     public int StartY { get; set; }
+
     public int StartZ { get; set; }
+
     public bool Hit { get; set; }
 }
 
 public partial class Source1OtherDeathEvent : Source1GameEventBase
 {
+    internal Source1OtherDeathEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "other_death";
+
     public int Otherid { get; set; }
+
     public string Othertype { get; set; } = "";
+
     public int Attacker { get; set; }
+
     public string Weapon { get; set; } = "";
+
     public string WeaponItemid { get; set; } = "";
+
     public string WeaponFauxitemid { get; set; } = "";
-    public string WeaponOriginalownerXuid { get; set; } = "";
+
+    public string WeaponOriginalownerSteamId { get; set; } = "";
+
     public bool Headshot { get; set; }
+
     public int Penetrated { get; set; }
+
     public bool Noscope { get; set; }
+
     public bool Thrusmoke { get; set; }
+
     public bool Attackerblind { get; set; }
 }
 
 public partial class Source1ItemPurchaseEvent : Source1GameEventBase
 {
+    internal Source1ItemPurchaseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_purchase";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Team { get; set; }
+
     public int Loadout { get; set; }
+
     public string Weapon { get; set; } = "";
 }
 
 public partial class Source1BombBeginplantEvent : Source1GameEventBase
 {
+    internal Source1BombBeginplantEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_beginplant";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Site { get; set; }
 }
 
 public partial class Source1BombAbortplantEvent : Source1GameEventBase
 {
+    internal Source1BombAbortplantEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_abortplant";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Site { get; set; }
 }
 
 public partial class Source1BombPlantedEvent : Source1GameEventBase
 {
+    internal Source1BombPlantedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_planted";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Site { get; set; }
 }
 
 public partial class Source1BombDefusedEvent : Source1GameEventBase
 {
+    internal Source1BombDefusedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_defused";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Site { get; set; }
 }
 
 public partial class Source1BombExplodedEvent : Source1GameEventBase
 {
+    internal Source1BombExplodedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_exploded";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Site { get; set; }
 }
 
 public partial class Source1BombDroppedEvent : Source1GameEventBase
 {
+    internal Source1BombDroppedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_dropped";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1BombPickupEvent : Source1GameEventBase
 {
+    internal Source1BombPickupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_pickup";
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1DefuserDroppedEvent : Source1GameEventBase
 {
+    internal Source1DefuserDroppedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "defuser_dropped";
+
     public int Entityid { get; set; }
 }
 
 public partial class Source1DefuserPickupEvent : Source1GameEventBase
 {
+    internal Source1DefuserPickupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "defuser_pickup";
+
     public int Entityid { get; set; }
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1AnnouncePhaseEndEvent : Source1GameEventBase
 {
+    internal Source1AnnouncePhaseEndEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "announce_phase_end";
 }
 
 public partial class Source1CsIntermissionEvent : Source1GameEventBase
 {
+    internal Source1CsIntermissionEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_intermission";
 }
 
 public partial class Source1BombBegindefuseEvent : Source1GameEventBase
 {
+    internal Source1BombBegindefuseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_begindefuse";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public bool Haskit { get; set; }
 }
 
 public partial class Source1BombAbortdefuseEvent : Source1GameEventBase
 {
+    internal Source1BombAbortdefuseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_abortdefuse";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1HostageFollowsEvent : Source1GameEventBase
 {
+    internal Source1HostageFollowsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_follows";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Hostage { get; set; }
 }
 
 public partial class Source1HostageHurtEvent : Source1GameEventBase
 {
+    internal Source1HostageHurtEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_hurt";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Hostage { get; set; }
 }
 
 public partial class Source1HostageKilledEvent : Source1GameEventBase
 {
+    internal Source1HostageKilledEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_killed";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Hostage { get; set; }
 }
 
 public partial class Source1HostageRescuedEvent : Source1GameEventBase
 {
+    internal Source1HostageRescuedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_rescued";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Hostage { get; set; }
+
     public int Site { get; set; }
 }
 
 public partial class Source1HostageStopsFollowingEvent : Source1GameEventBase
 {
+    internal Source1HostageStopsFollowingEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_stops_following";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Hostage { get; set; }
 }
 
 public partial class Source1HostageRescuedAllEvent : Source1GameEventBase
 {
+    internal Source1HostageRescuedAllEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_rescued_all";
 }
 
 public partial class Source1HostageCallForHelpEvent : Source1GameEventBase
 {
+    internal Source1HostageCallForHelpEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hostage_call_for_help";
+
     public int Hostage { get; set; }
 }
 
 public partial class Source1VipEscapedEvent : Source1GameEventBase
 {
+    internal Source1VipEscapedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vip_escaped";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1VipKilledEvent : Source1GameEventBase
 {
+    internal Source1VipKilledEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "vip_killed";
-    public CEntityIndex Userid { get; set; }
-    public CEntityIndex Attacker { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CEntityIndex AttackerIndex { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
 }
 
 public partial class Source1PlayerRadioEvent : Source1GameEventBase
 {
+    internal Source1PlayerRadioEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_radio";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Slot { get; set; }
 }
 
 public partial class Source1BombBeepEvent : Source1GameEventBase
 {
+    internal Source1BombBeepEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bomb_beep";
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1WeaponFireEvent : Source1GameEventBase
 {
+    internal Source1WeaponFireEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weapon_fire";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public string Weapon { get; set; } = "";
+
     public bool Silenced { get; set; }
 }
 
 public partial class Source1WeaponFireOnEmptyEvent : Source1GameEventBase
 {
+    internal Source1WeaponFireOnEmptyEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weapon_fire_on_empty";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public string Weapon { get; set; } = "";
 }
 
 public partial class Source1GrenadeThrownEvent : Source1GameEventBase
 {
+    internal Source1GrenadeThrownEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "grenade_thrown";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public string Weapon { get; set; } = "";
 }
 
 public partial class Source1WeaponOutofammoEvent : Source1GameEventBase
 {
+    internal Source1WeaponOutofammoEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weapon_outofammo";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1WeaponReloadEvent : Source1GameEventBase
 {
+    internal Source1WeaponReloadEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weapon_reload";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1WeaponZoomEvent : Source1GameEventBase
 {
+    internal Source1WeaponZoomEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weapon_zoom";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1SilencerDetachEvent : Source1GameEventBase
 {
+    internal Source1SilencerDetachEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "silencer_detach";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1InspectWeaponEvent : Source1GameEventBase
 {
+    internal Source1InspectWeaponEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "inspect_weapon";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1WeaponZoomRifleEvent : Source1GameEventBase
 {
+    internal Source1WeaponZoomRifleEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "weapon_zoom_rifle";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1PlayerSpawnedEvent : Source1GameEventBase
 {
+    internal Source1PlayerSpawnedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_spawned";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public bool Inrestart { get; set; }
 }
 
 public partial class Source1ItemPickupEvent : Source1GameEventBase
 {
+    internal Source1ItemPickupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_pickup";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Item { get; set; } = "";
+
     public bool Silent { get; set; }
+
     public int Defindex { get; set; }
 }
 
 public partial class Source1ItemPickupSlerpEvent : Source1GameEventBase
 {
+    internal Source1ItemPickupSlerpEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_pickup_slerp";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Index { get; set; }
+
     public int Behavior { get; set; }
 }
 
 public partial class Source1ItemPickupFailedEvent : Source1GameEventBase
 {
+    internal Source1ItemPickupFailedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_pickup_failed";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Item { get; set; } = "";
+
     public int Reason { get; set; }
+
     public int Limit { get; set; }
 }
 
 public partial class Source1ItemRemoveEvent : Source1GameEventBase
 {
+    internal Source1ItemRemoveEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_remove";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Item { get; set; } = "";
+
     public int Defindex { get; set; }
 }
 
 public partial class Source1AmmoPickupEvent : Source1GameEventBase
 {
+    internal Source1AmmoPickupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ammo_pickup";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Item { get; set; } = "";
+
     public int Index { get; set; }
 }
 
 public partial class Source1ItemEquipEvent : Source1GameEventBase
 {
+    internal Source1ItemEquipEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "item_equip";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Item { get; set; } = "";
+
     public int Defindex { get; set; }
+
     public bool Canzoom { get; set; }
+
     public bool Hassilencer { get; set; }
+
     public bool Issilenced { get; set; }
+
     public bool Hastracers { get; set; }
+
     public int Weptype { get; set; }
+
     public bool Ispainted { get; set; }
 }
 
 public partial class Source1EnterBuyzoneEvent : Source1GameEventBase
 {
+    internal Source1EnterBuyzoneEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "enter_buyzone";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public bool Canbuy { get; set; }
 }
 
 public partial class Source1ExitBuyzoneEvent : Source1GameEventBase
 {
+    internal Source1ExitBuyzoneEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "exit_buyzone";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public bool Canbuy { get; set; }
 }
 
 public partial class Source1BuytimeEndedEvent : Source1GameEventBase
 {
+    internal Source1BuytimeEndedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "buytime_ended";
 }
 
 public partial class Source1EnterBombzoneEvent : Source1GameEventBase
 {
+    internal Source1EnterBombzoneEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "enter_bombzone";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public bool Hasbomb { get; set; }
+
     public bool Isplanted { get; set; }
 }
 
 public partial class Source1ExitBombzoneEvent : Source1GameEventBase
 {
+    internal Source1ExitBombzoneEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "exit_bombzone";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public bool Hasbomb { get; set; }
+
     public bool Isplanted { get; set; }
 }
 
 public partial class Source1EnterRescueZoneEvent : Source1GameEventBase
 {
+    internal Source1EnterRescueZoneEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "enter_rescue_zone";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
 {
+    internal Source1ExitRescueZoneEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "exit_rescue_zone";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1SilencerOffEvent : Source1GameEventBase
 {
+    internal Source1SilencerOffEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "silencer_off";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1SilencerOnEvent : Source1GameEventBase
 {
+    internal Source1SilencerOnEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "silencer_on";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1BuymenuOpenEvent : Source1GameEventBase
 {
+    internal Source1BuymenuOpenEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "buymenu_open";
 }
 
 public partial class Source1BuymenuCloseEvent : Source1GameEventBase
 {
+    internal Source1BuymenuCloseEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "buymenu_close";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1RoundPrestartEvent : Source1GameEventBase
 {
+    internal Source1RoundPrestartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_prestart";
 }
 
 public partial class Source1RoundPoststartEvent : Source1GameEventBase
 {
+    internal Source1RoundPoststartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_poststart";
 }
 
 public partial class Source1GrenadeBounceEvent : Source1GameEventBase
 {
+    internal Source1GrenadeBounceEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "grenade_bounce";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1HegrenadeDetonateEvent : Source1GameEventBase
 {
+    internal Source1HegrenadeDetonateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hegrenade_detonate";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1FlashbangDetonateEvent : Source1GameEventBase
 {
+    internal Source1FlashbangDetonateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "flashbang_detonate";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1SmokegrenadeDetonateEvent : Source1GameEventBase
 {
+    internal Source1SmokegrenadeDetonateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "smokegrenade_detonate";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1SmokegrenadeExpiredEvent : Source1GameEventBase
 {
+    internal Source1SmokegrenadeExpiredEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "smokegrenade_expired";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1MolotovDetonateEvent : Source1GameEventBase
 {
+    internal Source1MolotovDetonateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "molotov_detonate";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1DecoyDetonateEvent : Source1GameEventBase
 {
+    internal Source1DecoyDetonateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "decoy_detonate";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1DecoyStartedEvent : Source1GameEventBase
 {
+    internal Source1DecoyStartedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "decoy_started";
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1TagrenadeDetonateEvent : Source1GameEventBase
 {
+    internal Source1TagrenadeDetonateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tagrenade_detonate";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1InfernoStartburnEvent : Source1GameEventBase
 {
+    internal Source1InfernoStartburnEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "inferno_startburn";
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1InfernoExpireEvent : Source1GameEventBase
 {
+    internal Source1InfernoExpireEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "inferno_expire";
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1InfernoExtinguishEvent : Source1GameEventBase
 {
+    internal Source1InfernoExtinguishEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "inferno_extinguish";
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1DecoyFiringEvent : Source1GameEventBase
 {
+    internal Source1DecoyFiringEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "decoy_firing";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1BulletImpactEvent : Source1GameEventBase
 {
+    internal Source1BulletImpactEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bullet_impact";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
 }
 
 public partial class Source1PlayerJumpEvent : Source1GameEventBase
 {
+    internal Source1PlayerJumpEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_jump";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1PlayerBlindEvent : Source1GameEventBase
 {
+    internal Source1PlayerBlindEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_blind";
-    public CEntityIndex Userid { get; set; }
-    public CEntityIndex Attacker { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CEntityIndex AttackerIndex { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+
     public int Entityid { get; set; }
+
     public float BlindDuration { get; set; }
 }
 
 public partial class Source1PlayerFalldamageEvent : Source1GameEventBase
 {
+    internal Source1PlayerFalldamageEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_falldamage";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public float Damage { get; set; }
 }
 
 public partial class Source1DoorMovingEvent : Source1GameEventBase
 {
+    internal Source1DoorMovingEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "door_moving";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entindex { get; set; }
 }
 
 public partial class Source1MbInputLockSuccessEvent : Source1GameEventBase
 {
+    internal Source1MbInputLockSuccessEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "mb_input_lock_success";
 }
 
 public partial class Source1MbInputLockCancelEvent : Source1GameEventBase
 {
+    internal Source1MbInputLockCancelEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "mb_input_lock_cancel";
 }
 
 public partial class Source1NavBlockedEvent : Source1GameEventBase
 {
+    internal Source1NavBlockedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "nav_blocked";
+
     public int Area { get; set; }
+
     public bool Blocked { get; set; }
 }
 
 public partial class Source1NavGenerateEvent : Source1GameEventBase
 {
+    internal Source1NavGenerateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "nav_generate";
 }
 
 public partial class Source1AchievementInfoLoadedEvent : Source1GameEventBase
 {
+    internal Source1AchievementInfoLoadedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "achievement_info_loaded";
 }
 
 public partial class Source1HltvChangedModeEvent : Source1GameEventBase
 {
+    internal Source1HltvChangedModeEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hltv_changed_mode";
+
     public int Oldmode { get; set; }
+
     public int Newmode { get; set; }
+
     public int ObsTarget { get; set; }
 }
 
 public partial class Source1CsGameDisconnectedEvent : Source1GameEventBase
 {
+    internal Source1CsGameDisconnectedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_game_disconnected";
 }
 
 public partial class Source1CsRoundFinalBeepEvent : Source1GameEventBase
 {
+    internal Source1CsRoundFinalBeepEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_round_final_beep";
 }
 
 public partial class Source1CsRoundStartBeepEvent : Source1GameEventBase
 {
+    internal Source1CsRoundStartBeepEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_round_start_beep";
 }
 
 public partial class Source1CsWinPanelRoundEvent : Source1GameEventBase
 {
+    internal Source1CsWinPanelRoundEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_win_panel_round";
+
     public bool ShowTimerDefend { get; set; }
+
     public bool ShowTimerAttack { get; set; }
+
     public int TimerTime { get; set; }
+
     public int FinalEvent { get; set; }
+
     public string FunfactToken { get; set; } = "";
-    public CEntityIndex FunfactPlayer { get; set; }
+
+    public CEntityIndex FunfactPlayerIndex { get; set; }
+    public CCSPlayerController? FunfactPlayer => _demo.GetEntityByIndex<CCSPlayerController>(FunfactPlayerIndex);
+
     public int FunfactData1 { get; set; }
+
     public int FunfactData2 { get; set; }
+
     public int FunfactData3 { get; set; }
 }
 
 public partial class Source1CsWinPanelMatchEvent : Source1GameEventBase
 {
+    internal Source1CsWinPanelMatchEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_win_panel_match";
 }
 
 public partial class Source1CsMatchEndRestartEvent : Source1GameEventBase
 {
+    internal Source1CsMatchEndRestartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_match_end_restart";
 }
 
 public partial class Source1CsPreRestartEvent : Source1GameEventBase
 {
+    internal Source1CsPreRestartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_pre_restart";
 }
 
 public partial class Source1ShowDeathpanelEvent : Source1GameEventBase
 {
+    internal Source1ShowDeathpanelEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "show_deathpanel";
-    public CEntityIndex Victim { get; set; }
-    public CHandle<CEntityInstance> VictimPawn { get; set; }
+
+    public CEntityIndex VictimIndex { get; set; }
+    public CCSPlayerController? Victim => _demo.GetEntityByIndex<CCSPlayerController>(VictimIndex);
+
+    public CHandle<CEntityInstance> VictimPawnHandle { get; set; }
+    public CCSPlayerPawn? VictimPawn => _demo.GetEntityByHandle(VictimPawnHandle) as CCSPlayerPawn;
+
     public int Killer { get; set; }
-    public CEntityIndex KillerController { get; set; }
+
+    public CEntityIndex KillerControllerIndex { get; set; }
+    public CCSPlayerController? KillerController => _demo.GetEntityByIndex<CCSPlayerController>(KillerControllerIndex);
+
     public int HitsTaken { get; set; }
+
     public int DamageTaken { get; set; }
+
     public int HitsGiven { get; set; }
+
     public int DamageGiven { get; set; }
 }
 
 public partial class Source1HideDeathpanelEvent : Source1GameEventBase
 {
+    internal Source1HideDeathpanelEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "hide_deathpanel";
 }
 
 public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
 {
+    internal Source1PlayerAvengedTeammateEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_avenged_teammate";
-    public CEntityIndex AvengerId { get; set; }
-    public CEntityIndex AvengedPlayerId { get; set; }
+
+    public CEntityIndex AvengerIdIndex { get; set; }
+    public CCSPlayerController? AvengerId => _demo.GetEntityByIndex<CCSPlayerController>(AvengerIdIndex);
+
+    public CEntityIndex AvengedPlayerIdIndex { get; set; }
+    public CCSPlayerController? AvengedPlayerId => _demo.GetEntityByIndex<CCSPlayerController>(AvengedPlayerIdIndex);
 }
 
 public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
 {
+    internal Source1AchievementEarnedLocalEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "achievement_earned_local";
+
     public int Achievement { get; set; }
+
     public int Splitscreenplayer { get; set; }
 }
 
 public partial class Source1RepostXboxAchievementsEvent : Source1GameEventBase
 {
+    internal Source1RepostXboxAchievementsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "repost_xbox_achievements";
+
     public int Splitscreenplayer { get; set; }
 }
 
 public partial class Source1MatchEndConditionsEvent : Source1GameEventBase
 {
+    internal Source1MatchEndConditionsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "match_end_conditions";
+
     public int Frags { get; set; }
+
     public int MaxRounds { get; set; }
+
     public int WinRounds { get; set; }
+
     public int Time { get; set; }
 }
 
 public partial class Source1RoundMvpEvent : Source1GameEventBase
 {
+    internal Source1RoundMvpEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "round_mvp";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Reason { get; set; }
+
     public int Value { get; set; }
+
     public int Musickitmvps { get; set; }
+
     public int Nomusic { get; set; }
+
     public int Musickitid { get; set; }
 }
 
 public partial class Source1ShowSurvivalRespawnStatusEvent : Source1GameEventBase
 {
+    internal Source1ShowSurvivalRespawnStatusEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "show_survival_respawn_status";
+
     public string LocToken { get; set; } = "";
+
     public int Duration { get; set; }
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1ClientDisconnectEvent : Source1GameEventBase
 {
+    internal Source1ClientDisconnectEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "client_disconnect";
 }
 
 public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
 {
+    internal Source1GgKilledEnemyEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "gg_killed_enemy";
-    public CEntityIndex Victimid { get; set; }
-    public CEntityIndex Attackerid { get; set; }
+
+    public CEntityIndex VictimidIndex { get; set; }
+    public CCSPlayerController? Victimid => _demo.GetEntityByIndex<CCSPlayerController>(VictimidIndex);
+
+    public CEntityIndex AttackeridIndex { get; set; }
+    public CCSPlayerController? Attackerid => _demo.GetEntityByIndex<CCSPlayerController>(AttackeridIndex);
+
     public int Dominated { get; set; }
+
     public int Revenge { get; set; }
+
     public bool Bonus { get; set; }
 }
 
 public partial class Source1SwitchTeamEvent : Source1GameEventBase
 {
+    internal Source1SwitchTeamEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "switch_team";
+
     public int NumPlayers { get; set; }
+
     public int NumSpectators { get; set; }
+
     public int AvgRank { get; set; }
+
     public int NumTSlotsFree { get; set; }
+
     public int NumCTSlotsFree { get; set; }
 }
 
 public partial class Source1WriteProfileDataEvent : Source1GameEventBase
 {
+    internal Source1WriteProfileDataEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "write_profile_data";
 }
 
 public partial class Source1TrialTimeExpiredEvent : Source1GameEventBase
 {
+    internal Source1TrialTimeExpiredEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "trial_time_expired";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1UpdateMatchmakingStatsEvent : Source1GameEventBase
 {
+    internal Source1UpdateMatchmakingStatsEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "update_matchmaking_stats";
 }
 
 public partial class Source1PlayerResetVoteEvent : Source1GameEventBase
 {
+    internal Source1PlayerResetVoteEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_reset_vote";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public bool Vote { get; set; }
 }
 
 public partial class Source1EnableRestartVotingEvent : Source1GameEventBase
 {
+    internal Source1EnableRestartVotingEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "enable_restart_voting";
+
     public bool Enable { get; set; }
 }
 
 public partial class Source1SfuieventEvent : Source1GameEventBase
 {
+    internal Source1SfuieventEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "sfuievent";
+
     public string Action { get; set; } = "";
+
     public string Data { get; set; } = "";
+
     public int Slot { get; set; }
 }
 
 public partial class Source1StartVoteEvent : Source1GameEventBase
 {
+    internal Source1StartVoteEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "start_vote";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Type { get; set; }
+
     public int VoteParameter { get; set; }
 }
 
 public partial class Source1PlayerGivenC4Event : Source1GameEventBase
 {
+    internal Source1PlayerGivenC4Event(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_given_c4";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1TrPlayerFlashbangedEvent : Source1GameEventBase
 {
+    internal Source1TrPlayerFlashbangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tr_player_flashbanged";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1TrMarkCompleteEvent : Source1GameEventBase
 {
+    internal Source1TrMarkCompleteEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tr_mark_complete";
+
     public int Complete { get; set; }
 }
 
 public partial class Source1TrMarkBestTimeEvent : Source1GameEventBase
 {
+    internal Source1TrMarkBestTimeEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tr_mark_best_time";
+
     public int Time { get; set; }
 }
 
 public partial class Source1TrExitHintTriggerEvent : Source1GameEventBase
 {
+    internal Source1TrExitHintTriggerEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tr_exit_hint_trigger";
 }
 
 public partial class Source1BotTakeoverEvent : Source1GameEventBase
 {
+    internal Source1BotTakeoverEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bot_takeover";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
-    public CEntityIndex Botid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
+    public CEntityIndex BotidIndex { get; set; }
+    public CCSPlayerController? Botid => _demo.GetEntityByIndex<CCSPlayerController>(BotidIndex);
+
     public float P { get; set; }
+
     public float Y { get; set; }
+
     public float R { get; set; }
 }
 
 public partial class Source1TrShowFinishMsgboxEvent : Source1GameEventBase
 {
+    internal Source1TrShowFinishMsgboxEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tr_show_finish_msgbox";
 }
 
 public partial class Source1TrShowExitMsgboxEvent : Source1GameEventBase
 {
+    internal Source1TrShowExitMsgboxEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tr_show_exit_msgbox";
 }
 
 public partial class Source1JointeamFailedEvent : Source1GameEventBase
 {
+    internal Source1JointeamFailedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "jointeam_failed";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Reason { get; set; }
 }
 
 public partial class Source1TeamchangePendingEvent : Source1GameEventBase
 {
+    internal Source1TeamchangePendingEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "teamchange_pending";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Toteam { get; set; }
 }
 
 public partial class Source1MaterialDefaultCompleteEvent : Source1GameEventBase
 {
+    internal Source1MaterialDefaultCompleteEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "material_default_complete";
 }
 
 public partial class Source1CsPrevNextSpectatorEvent : Source1GameEventBase
 {
+    internal Source1CsPrevNextSpectatorEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "cs_prev_next_spectator";
+
     public bool Next { get; set; }
 }
 
 public partial class Source1NextlevelChangedEvent : Source1GameEventBase
 {
+    internal Source1NextlevelChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "nextlevel_changed";
+
     public string Nextlevel { get; set; } = "";
+
     public string Mapgroup { get; set; } = "";
+
     public string Skirmishmode { get; set; } = "";
 }
 
 public partial class Source1SeasoncoinLevelupEvent : Source1GameEventBase
 {
+    internal Source1SeasoncoinLevelupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "seasoncoin_levelup";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Category { get; set; }
+
     public int Rank { get; set; }
 }
 
 public partial class Source1TournamentRewardEvent : Source1GameEventBase
 {
+    internal Source1TournamentRewardEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "tournament_reward";
+
     public int Defindex { get; set; }
+
     public int Totalrewards { get; set; }
+
     public int Accountid { get; set; }
 }
 
 public partial class Source1StartHalftimeEvent : Source1GameEventBase
 {
+    internal Source1StartHalftimeEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "start_halftime";
 }
 
 public partial class Source1AmmoRefillEvent : Source1GameEventBase
 {
+    internal Source1AmmoRefillEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "ammo_refill";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public bool Success { get; set; }
 }
 
 public partial class Source1ParachutePickupEvent : Source1GameEventBase
 {
+    internal Source1ParachutePickupEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "parachute_pickup";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1ParachuteDeployEvent : Source1GameEventBase
 {
+    internal Source1ParachuteDeployEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "parachute_deploy";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1DronegunAttackEvent : Source1GameEventBase
 {
+    internal Source1DronegunAttackEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "dronegun_attack";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1DroneDispatchedEvent : Source1GameEventBase
 {
+    internal Source1DroneDispatchedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "drone_dispatched";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Priority { get; set; }
+
     public int DroneDispatched { get; set; }
 }
 
 public partial class Source1LootCrateVisibleEvent : Source1GameEventBase
 {
+    internal Source1LootCrateVisibleEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "loot_crate_visible";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Subject { get; set; }
+
     public string Type { get; set; } = "";
 }
 
 public partial class Source1LootCrateOpenedEvent : Source1GameEventBase
 {
+    internal Source1LootCrateOpenedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "loot_crate_opened";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public string Type { get; set; } = "";
 }
 
 public partial class Source1OpenCrateInstrEvent : Source1GameEventBase
 {
+    internal Source1OpenCrateInstrEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "open_crate_instr";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Subject { get; set; }
+
     public string Type { get; set; } = "";
 }
 
 public partial class Source1SmokeBeaconParadropEvent : Source1GameEventBase
 {
+    internal Source1SmokeBeaconParadropEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "smoke_beacon_paradrop";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Paradrop { get; set; }
 }
 
 public partial class Source1SurvivalParadropSpawnEvent : Source1GameEventBase
 {
+    internal Source1SurvivalParadropSpawnEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "survival_paradrop_spawn";
+
     public int Entityid { get; set; }
 }
 
 public partial class Source1SurvivalParadropBreakEvent : Source1GameEventBase
 {
+    internal Source1SurvivalParadropBreakEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "survival_paradrop_break";
+
     public int Entityid { get; set; }
 }
 
 public partial class Source1DroneCargoDetachedEvent : Source1GameEventBase
 {
+    internal Source1DroneCargoDetachedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "drone_cargo_detached";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Cargo { get; set; }
+
     public bool Delivered { get; set; }
 }
 
 public partial class Source1DroneAboveRoofEvent : Source1GameEventBase
 {
+    internal Source1DroneAboveRoofEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "drone_above_roof";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Cargo { get; set; }
 }
 
 public partial class Source1ChoppersIncomingWarningEvent : Source1GameEventBase
 {
+    internal Source1ChoppersIncomingWarningEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "choppers_incoming_warning";
+
     public bool Global { get; set; }
 }
 
 public partial class Source1FirstbombsIncomingWarningEvent : Source1GameEventBase
 {
+    internal Source1FirstbombsIncomingWarningEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "firstbombs_incoming_warning";
+
     public bool Global { get; set; }
 }
 
 public partial class Source1DzItemInteractionEvent : Source1GameEventBase
 {
+    internal Source1DzItemInteractionEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "dz_item_interaction";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
     public int Subject { get; set; }
+
     public string Type { get; set; } = "";
 }
 
 public partial class Source1SurvivalTeammateRespawnEvent : Source1GameEventBase
 {
+    internal Source1SurvivalTeammateRespawnEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "survival_teammate_respawn";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBase
 {
+    internal Source1SurvivalNoRespawnsWarningEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "survival_no_respawns_warning";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
 {
+    internal Source1SurvivalNoRespawnsFinalEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "survival_no_respawns_final";
-    public CEntityIndex Userid { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
 public partial class Source1PlayerPingEvent : Source1GameEventBase
 {
+    internal Source1PlayerPingEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_ping";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Entityid { get; set; }
+
     public float X { get; set; }
+
     public float Y { get; set; }
+
     public float Z { get; set; }
+
     public bool Urgent { get; set; }
 }
 
 public partial class Source1PlayerPingStopEvent : Source1GameEventBase
 {
+    internal Source1PlayerPingStopEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_ping_stop";
+
     public int Entityid { get; set; }
 }
 
 public partial class Source1PlayerSoundEvent : Source1GameEventBase
 {
+    internal Source1PlayerSoundEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "player_sound";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int Radius { get; set; }
+
     public float Duration { get; set; }
+
     public bool Step { get; set; }
 }
 
 public partial class Source1GuardianWaveRestartEvent : Source1GameEventBase
 {
+    internal Source1GuardianWaveRestartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "guardian_wave_restart";
 }
 
 public partial class Source1TeamIntroStartEvent : Source1GameEventBase
 {
+    internal Source1TeamIntroStartEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "team_intro_start";
 }
 
 public partial class Source1TeamIntroEndEvent : Source1GameEventBase
 {
+    internal Source1TeamIntroEndEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "team_intro_end";
 }
 
 public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
 {
+    internal Source1BulletFlightResolutionEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "bullet_flight_resolution";
-    public CEntityIndex Userid { get; set; }
-    public CHandle<CEntityInstance> UseridPawn { get; set; }
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
     public int PosX { get; set; }
+
     public int PosY { get; set; }
+
     public int PosZ { get; set; }
+
     public int AngX { get; set; }
+
     public int AngY { get; set; }
+
     public int AngZ { get; set; }
+
     public int StartX { get; set; }
+
     public int StartY { get; set; }
+
     public int StartZ { get; set; }
 }
 
 public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 {
+    internal Source1GamePhaseChangedEvent(DemoParser demo) : base(demo) {}
+
     public override string GameEventName => "game_phase_changed";
+
     public int NewPhase { get; set; }
 }
 

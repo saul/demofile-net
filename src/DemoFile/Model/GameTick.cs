@@ -14,4 +14,7 @@ public readonly record struct GameTick(uint Value) : IComparable<GameTick>
     public int CompareTo(GameTick other) => Value.CompareTo(other.Value);
 
     public override string ToString() => $"Tick {Value} ({ToGameTime()})";
+
+    public static GameTick operator +(GameTick tick, TimeSpan duration) => new((uint)(tick.Value + duration.TotalSeconds / 64.0));
+    public static GameTick operator -(GameTick tick, TimeSpan duration) => new((uint)(tick.Value - duration.TotalSeconds / 64.0));
 }

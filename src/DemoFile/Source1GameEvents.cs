@@ -15,6 +15,13 @@ public enum GameEventKeyType
 
 public abstract partial class Source1GameEventBase
 {
+    protected readonly DemoParser _demo;
+
+    protected Source1GameEventBase(DemoParser demo)
+    {
+        _demo = demo;
+    }
+
     public abstract string GameEventName { get; }
 }
 
@@ -23,13 +30,13 @@ public partial class Source1GameEvents
     public Action<Source1GameEventBase>? Source1GameEvent;
 
     // todo(net8): store as a FrozenDictionary
-    private Dictionary<int, Action<CMsgSource1LegacyGameEvent>> _handlers = new();
+    private Dictionary<int, Action<DemoParser, CMsgSource1LegacyGameEvent>> _handlers = new();
 
-    internal void ParseSource1GameEvent(CMsgSource1LegacyGameEvent @event)
+    internal void ParseSource1GameEvent(DemoParser demo, CMsgSource1LegacyGameEvent @event)
     {
         if (_handlers.TryGetValue(@event.Eventid, out var handler))
         {
-            handler(@event);
+            handler(demo, @event);
         }
     }
 }

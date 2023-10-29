@@ -22,7 +22,7 @@ internal static class Program
     {
         var outputPath =
             args.SingleOrDefault() ??
-            throw new Exception("Expected a single CLI argument: <output path .cs>");
+            throw new Exception("Expected a single CLI argument: <output dir for .cs files>");
 
         // Concat together all enums and classes
         var allEnums = new SortedDictionary<string, SchemaEnum>();
@@ -128,6 +128,7 @@ internal static class Program
         builder.AppendLine("using System.Diagnostics;");
         builder.AppendLine("using System.Diagnostics.CodeAnalysis;");
         builder.AppendLine("using System.Drawing;");
+        builder.AppendLine("using System.Runtime.CompilerServices;");
         builder.AppendLine("using DemoFile;");
         builder.AppendLine();
         builder.AppendLine("namespace DemoFile.Sdk;");
@@ -141,14 +142,22 @@ internal static class Program
         }
 
         var visitedClassNames = new HashSet<string>();
+        var visitedEntityClasses = new HashSet<string>();
         foreach (var (className, schemaClass) in allClasses)
         {
             if (visited.Contains(className))
             {
                 var isPointeeType = pointeeTypes.Contains(className);
 
-                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType);
+                var isEntityClass =
+                    NetworkClasses.Names.Contains(className)
+                    || NetworkClasses.Names.Contains(schemaClass.Parent ?? "");
+
+                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass);
+
                 visitedClassNames.Add(className);
+                if (isEntityClass)
+                    visitedEntityClasses.Add(className);
             }
         }
 
@@ -158,7 +167,32 @@ internal static class Program
 
         WriteDecoderSetPartial(builder, visitedClassNames);
 
-        File.WriteAllText(outputPath, builder.ToString());
+        var schemaPathCs = Path.Combine(outputPath, "Sdk", "Schema.cs");
+        File.WriteAllText(schemaPathCs, builder.ToString());
+
+        var entityEventsCs = Path.Combine(outputPath, "EntityEvents.AutoGen.cs");
+        File.WriteAllText(entityEventsCs, WriteEntityEvents(visitedEntityClasses));
+    }
+
+    private static string WriteEntityEvents(IEnumerable<string> entityClassNames)
+    {
+        var builder = new StringBuilder();
+
+        builder.AppendLine($"using DemoFile.Sdk;");
+        builder.AppendLine($"");
+        builder.AppendLine($"namespace DemoFile;");
+        builder.AppendLine($"");
+        builder.AppendLine($"public partial struct EntityEvents");
+        builder.AppendLine($"{{");
+
+        foreach (var entityClass in entityClassNames)
+        {
+            builder.AppendLine($"    public Events<{entityClass}> {entityClass};");
+        }
+
+        builder.AppendLine($"}}");
+
+        return builder.ToString();
     }
 
     private static void WriteEntityFactoriesLookup(StringBuilder builder)
@@ -225,7 +259,11 @@ internal static class Program
             builder.AppendLine($"            var innerDecoder = GetDecoder<{schemaType.CsTypeName}>(new SerializerKey(className, 0));");
             builder.AppendLine($"            classType = typeof({schemaType.CsTypeName});");
             builder.AppendLine($"            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-            builder.AppendLine($"                innerDecoder(({schemaType.CsTypeName})instance, path, ref buffer);");
+            builder.AppendLine($"            {{");
+            builder.AppendLine($"                Debug.Assert(instance is {schemaType.CsTypeName});");
+            builder.AppendLine($"                var @this = Unsafe.As<{schemaType.CsTypeName}>(instance);");
+            builder.AppendLine($"                innerDecoder(@this, path, ref buffer);");
+            builder.AppendLine($"            }};");
             builder.AppendLine($"            return true;");
             builder.AppendLine($"        }}");
         }
@@ -244,12 +282,9 @@ internal static class Program
         string schemaClassName,
         SchemaClass schemaClass,
         IReadOnlyDictionary<string, ImmutableList<KeyValuePair<string, SchemaClass>>> parentToChildMap,
-        bool isPointeeType)
+        bool isPointeeType,
+        bool isEntityClass)
     {
-        var isEntityClass =
-            NetworkClasses.Names.Contains(schemaClassName)
-            || NetworkClasses.Names.Contains(schemaClass.Parent ?? "");
-
         var classType = SchemaFieldType.FromDeclaredClass(schemaClassName);
         var classNameCs = classType.CsTypeName;
 
@@ -300,7 +335,9 @@ internal static class Program
                     builder.AppendLine($"            var childClassDecoder = decoderSet.GetDecoder<{childClass}>(serializerKey);");
                     builder.AppendLine($"            return ({classNameCs} instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                childClassDecoder(({childClass})instance, path, ref buffer);");
+                    builder.AppendLine($"                Debug.Assert(instance is {childClass});");
+                    builder.AppendLine($"                var downcastInstance = Unsafe.As<{childClass}>(instance);");
+                    builder.AppendLine($"                childClassDecoder(downcastInstance, path, ref buffer);");
                     builder.AppendLine($"            }};");
                     builder.AppendLine($"        }}");
 
@@ -473,32 +510,26 @@ internal static class Program
                     builder.AppendLine($"            {{");
                     builder.AppendLine($"                if (path.Length == 1)");
                     builder.AppendLine($"                {{");
-
-                    // if (isPolymorphic)
-                    // {
-                    //     // todo: should be this conditional on `if (isSet)`
-                    //     builder.AppendLine($"                    var childClassId = (int) buffer.ReadUBits(6);");
-                    //     builder.AppendLine($"                    innerDecoder = {inner.Name}.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);");
-                    // }
+                    builder.AppendLine($"                    var isSet = buffer.ReadOneBit();");
 
                     if (isPolymorphic)
                     {
-                        builder.AppendLine($"                    var childClassId = buffer.ReadUBits(7);");
-                        builder.AppendLine($"                    if (childClassId == 0)");
+                        builder.AppendLine($"                    var childClassId = (int) buffer.ReadUBitVar();");
+                        builder.AppendLine($"                    innerDecoder = {inner.Name}.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);");
+                        builder.AppendLine($"                    if (!isSet)");
                         builder.AppendLine($"                    {{");
                         builder.AppendLine($"                        innerDecoder = null;");
                         builder.AppendLine($"                        @this.{fieldCsPropertyName} = null;");
                         builder.AppendLine($"                    }}");
-                        builder.AppendLine($"                    else if ({inner.CsTypeName}.TryCreateDowncastDecoderById(decoderSet, childClassId, out var factory, out innerDecoder))");
+                        builder.AppendLine($"                    else");
                         builder.AppendLine($"                    {{");
                         builder.AppendLine($"                        @this.{fieldCsPropertyName} = factory();");
                         builder.AppendLine($"                        return;");
                         builder.AppendLine($"                    }}");
-                        builder.AppendLine($"                    throw new Exception($\"Unknown polymorphic child class of {inner.Name}: {{childClassId}}\");");
                     }
                     else
                     {
-                        builder.AppendLine($"                    @this.{fieldCsPropertyName} = buffer.ReadOneBit() ? factory() : null;");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName} = isSet ? factory() : null;");
                     }
 
                     builder.AppendLine($"                }}");
@@ -562,6 +593,23 @@ internal static class Program
         }
 
         builder.AppendLine("    }");
+
+        if (isEntityClass)
+        {
+            foreach (var eventName in new[] { "Create", "Delete", "PreUpdate", "PostUpdate" })
+            {
+                builder.AppendLine($"");
+                builder.AppendLine($"    internal override void Fire{eventName}Event()");
+                builder.AppendLine($"    {{");
+                builder.AppendLine($"        Demo.EntityEvents.{classNameCs}.{eventName}?.Invoke(this);");
+                if (parentType != null)
+                {
+                    builder.AppendLine($"        base.Fire{eventName}Event();");
+                }
+
+                builder.AppendLine($"    }}");
+            }
+        }
 
         builder.AppendLine("}");
     }

@@ -4,53 +4,53 @@ namespace DemoFile;
 
 public struct UserMessageEvents
 {
-    public Action<CUserMessageAchievementEvent>? UserMessageAchievementEvent { get; set; }
-    public Action<CUserMessageCloseCaption>? UserMessageCloseCaption { get; set; }
-    public Action<CUserMessageCloseCaptionDirect>? UserMessageCloseCaptionDirect { get; set; }
-    public Action<CUserMessageCurrentTimescale>? UserMessageCurrentTimescale { get; set; }
-    public Action<CUserMessageDesiredTimescale>? UserMessageDesiredTimescale { get; set; }
-    public Action<CUserMessageFade>? UserMessageFade { get; set; }
-    public Action<CUserMessageGameTitle>? UserMessageGameTitle { get; set; }
-    public Action<CUserMessageHudMsg>? UserMessageHudMsg { get; set; }
-    public Action<CUserMessageHudText>? UserMessageHudText { get; set; }
-    public Action<CUserMessageColoredText>? UserMessageColoredText { get; set; }
-    public Action<CUserMessageRequestState>? UserMessageRequestState { get; set; }
-    public Action<CUserMessageResetHUD>? UserMessageResetHud { get; set; }
-    public Action<CUserMessageRumble>? UserMessageRumble { get; set; }
-    public Action<CUserMessageSayText>? UserMessageSayText { get; set; }
-    public Action<CUserMessageSayText2>? UserMessageSayText2 { get; set; }
-    public Action<CUserMessageSayTextChannel>? UserMessageSayTextChannel { get; set; }
-    public Action<CUserMessageShake>? UserMessageShake { get; set; }
-    public Action<CUserMessageShakeDir>? UserMessageShakeDir { get; set; }
-    public Action<CUserMessageTextMsg>? UserMessageTextMsg { get; set; }
-    public Action<CUserMessageScreenTilt>? UserMessageScreenTilt { get; set; }
-    public Action<CUserMessageVoiceMask>? UserMessageVoiceMask { get; set; }
-    public Action<CUserMessageSendAudio>? UserMessageSendAudio { get; set; }
-    public Action<CUserMessageItemPickup>? UserMessageItemPickup { get; set; }
-    public Action<CUserMessageAmmoDenied>? UserMessageAmmoDenied { get; set; }
-    public Action<CUserMessageShowMenu>? UserMessageShowMenu { get; set; }
-    public Action<CUserMessageCreditsMsg>? UserMessageCreditsMsg { get; set; }
-    public Action<CUserMessageCloseCaptionPlaceholder>? UserMessageCloseCaptionPlaceholder { get; set; }
-    public Action<CUserMessageCameraTransition>? UserMessageCameraTransition { get; set; }
-    public Action<CUserMessageAudioParameter>? UserMessageAudioParameter { get; set; }
-    public Action<CUserMsg_ParticleManager>? UserMessageParticleManager { get; set; }
-    public Action<CUserMsg_HudError>? UserMessageHudError { get; set; }
-    public Action<CUserMsg_CustomGameEvent>? UserMessageCustomGameEvent { get; set; }
-    public Action<CUserMessageAnimStateGraphState>? UserMessageAnimGraphUpdate { get; set; }
-    public Action<CUserMessageHapticsManagerPulse>? UserMessageHapticsManagerPulse { get; set; }
-    public Action<CUserMessageHapticsManagerEffect>? UserMessageHapticsManagerEffect { get; set; }
-    public Action<CUserMessageCommandQueueState>? UserMessageCommandQueueState { get; set; }
-    public Action<CUserMessageUpdateCssClasses>? UserMessageUpdateCssClasses { get; set; }
-    public Action<CUserMessageServerFrameTime>? UserMessageServerFrameTime { get; set; }
-    public Action<CUserMessageLagCompensationError>? UserMessageLagCompensationError { get; set; }
-    public Action<CUserMessageRequestDllStatus>? UserMessageRequestDllStatus { get; set; }
-    public Action<CUserMessageRequestUtilAction>? UserMessageRequestUtilAction { get; set; }
-    public Action<CUserMessage_UtilMsg_Response>? UserMessageUtilActionResponse { get; set; }
-    public Action<CUserMessage_DllStatus>? UserMessageDllStatusResponse { get; set; }
-    public Action<CUserMessageRequestInventory>? UserMessageRequestInventory { get; set; }
-    public Action<CUserMessage_Inventory_Response>? UserMessageInventoryResponse { get; set; }
-    public Action<CUserMessageRequestDiagnostic>? UserMessageRequestDiagnostic { get; set; }
-    public Action<CUserMessage_ExtraUserData>? UserMessageExtraUserData { get; set; }
+    public Action<CUserMessageAchievementEvent>? UserMessageAchievementEvent;
+    public Action<CUserMessageCloseCaption>? UserMessageCloseCaption;
+    public Action<CUserMessageCloseCaptionDirect>? UserMessageCloseCaptionDirect;
+    public Action<CUserMessageCurrentTimescale>? UserMessageCurrentTimescale;
+    public Action<CUserMessageDesiredTimescale>? UserMessageDesiredTimescale;
+    public Action<CUserMessageFade>? UserMessageFade;
+    public Action<CUserMessageGameTitle>? UserMessageGameTitle;
+    public Action<CUserMessageHudMsg>? UserMessageHudMsg;
+    public Action<CUserMessageHudText>? UserMessageHudText;
+    public Action<CUserMessageColoredText>? UserMessageColoredText;
+    public Action<CUserMessageRequestState>? UserMessageRequestState;
+    public Action<CUserMessageResetHUD>? UserMessageResetHud;
+    public Action<CUserMessageRumble>? UserMessageRumble;
+    public Action<CUserMessageSayText>? UserMessageSayText;
+    public Action<CUserMessageSayText2>? UserMessageSayText2;
+    public Action<CUserMessageSayTextChannel>? UserMessageSayTextChannel;
+    public Action<CUserMessageShake>? UserMessageShake;
+    public Action<CUserMessageShakeDir>? UserMessageShakeDir;
+    public Action<CUserMessageTextMsg>? UserMessageTextMsg;
+    public Action<CUserMessageScreenTilt>? UserMessageScreenTilt;
+    public Action<CUserMessageVoiceMask>? UserMessageVoiceMask;
+    public Action<CUserMessageSendAudio>? UserMessageSendAudio;
+    public Action<CUserMessageItemPickup>? UserMessageItemPickup;
+    public Action<CUserMessageAmmoDenied>? UserMessageAmmoDenied;
+    public Action<CUserMessageShowMenu>? UserMessageShowMenu;
+    public Action<CUserMessageCreditsMsg>? UserMessageCreditsMsg;
+    public Action<CUserMessageCloseCaptionPlaceholder>? UserMessageCloseCaptionPlaceholder;
+    public Action<CUserMessageCameraTransition>? UserMessageCameraTransition;
+    public Action<CUserMessageAudioParameter>? UserMessageAudioParameter;
+    public Action<CUserMsg_ParticleManager>? UserMessageParticleManager;
+    public Action<CUserMsg_HudError>? UserMessageHudError;
+    public Action<CUserMsg_CustomGameEvent>? UserMessageCustomGameEvent;
+    public Action<CUserMessageAnimStateGraphState>? UserMessageAnimGraphUpdate;
+    public Action<CUserMessageHapticsManagerPulse>? UserMessageHapticsManagerPulse;
+    public Action<CUserMessageHapticsManagerEffect>? UserMessageHapticsManagerEffect;
+    public Action<CUserMessageCommandQueueState>? UserMessageCommandQueueState;
+    public Action<CUserMessageUpdateCssClasses>? UserMessageUpdateCssClasses;
+    public Action<CUserMessageServerFrameTime>? UserMessageServerFrameTime;
+    public Action<CUserMessageLagCompensationError>? UserMessageLagCompensationError;
+    public Action<CUserMessageRequestDllStatus>? UserMessageRequestDllStatus;
+    public Action<CUserMessageRequestUtilAction>? UserMessageRequestUtilAction;
+    public Action<CUserMessage_UtilMsg_Response>? UserMessageUtilActionResponse;
+    public Action<CUserMessage_DllStatus>? UserMessageDllStatusResponse;
+    public Action<CUserMessageRequestInventory>? UserMessageRequestInventory;
+    public Action<CUserMessage_Inventory_Response>? UserMessageInventoryResponse;
+    public Action<CUserMessageRequestDiagnostic>? UserMessageRequestDiagnostic;
+    public Action<CUserMessage_ExtraUserData>? UserMessageExtraUserData;
 
     internal bool ParseUserMessage(int msgType, ReadOnlySpan<byte> buf)
     {

@@ -97,9 +97,11 @@ internal static class FallbackDecoder
                 return true;
             }
             case "bool":
+            {
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     buffer.ReadOneBit();
                 return true;
+            }
             case "Color":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_Color(encodingInfo);
@@ -107,10 +109,12 @@ internal static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle":
+            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle":
+            {
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     buffer.ReadUVarInt64();
                 return true;
+            }
             case "CUtlString" or "CUtlSymbolLarge":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_string(encodingInfo);
