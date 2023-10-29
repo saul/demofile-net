@@ -19,6 +19,13 @@ internal class Program
             Console.WriteLine($"\n\n>>> Round start [{roundNum}] <<<");
         };
 
+        demo.EntityEvents.CCSPlayerPawn.AddCollectionChangeCallback(pawn => pawn.Grenades, (pawn, oldGrenades, newGrenades) =>
+        {
+            Console.Write($"  [Tick {demo.CurrentGameTick.Value}] ");
+            MarkupPlayerName(pawn.CSController);
+            AnsiConsole.MarkupLine($" grenades changed [grey]{string.Join(", ", oldGrenades.Select(x => x.ServerClass.Name))}[/] => [bold]{string.Join(", ", newGrenades.Select(x => x.ServerClass.Name))}[/]");
+        });
+
         demo.Source1GameEvents.RoundFreezeEnd += e =>
         {
             Console.WriteLine("\n  > Round freeze end");
@@ -30,7 +37,9 @@ internal class Program
             if (!e.Weapon.Contains("nade") && !e.Weapon.Contains("molotov"))
                 return;
 
-            Console.WriteLine($"  {e.Player!.PlayerName} threw a {e.Weapon}");
+            Console.Write($"  [Tick {demo.CurrentGameTick.Value}] ");
+            MarkupPlayerName(e.Player);
+            AnsiConsole.MarkupLine($" [bold]threw a {e.Weapon}[/]");
         };
 
         demo.Source1GameEvents.RoundEnd += e =>
@@ -46,7 +55,9 @@ internal class Program
         {
             foreach (var player in demo.Players)
             {
-                Console.Write($"    {player.PlayerName} - ");
+                Console.Write("    ");
+                MarkupPlayerName(player);
+                Console.Write(" - ");
 
                 var pawn = player.PlayerPawn.Get(demo);
                 if (pawn == null)
@@ -62,8 +73,8 @@ internal class Program
                 }
 
                 var grenades =
-                    pawn.WeaponServices!.MyWeapons
-                        .Select(h => h.Get<CBaseCSGrenade>(demo))
+                    pawn.Weapons
+                        .Select(h => h as CBaseCSGrenade)
                         .Where(x => x != null)!
                         .Select(x => x!);
 
@@ -89,5 +100,32 @@ internal class Program
 
         var ticks = demo.CurrentDemoTick.Value;
         AnsiConsole.MarkupLine($"\n[bold green]Finished![/] Parsed [bold white]{ticks:N0} ticks[/] ({demo.CurrentGameTime.Value:N1} game secs) in [bold white]{sw.Elapsed.TotalSeconds:0.000} secs[/] ({ticks * 1000 / sw.Elapsed.TotalMilliseconds:N1} ticks/sec)");
+    }
+
+    private static readonly string[] PlayerColours =
+    {
+        "#FF0000",
+        "#FF7F00",
+        "#FFD700",
+        "#7FFF00",
+        "#00FF00",
+        "#00FF7F",
+        "#00FFFF",
+        "#007FFF",
+        "#0000FF",
+        "#7F00FF",
+        "#FF00FF",
+        "#FF007F",
+    };
+
+    private static void MarkupPlayerName(CBasePlayerController? player)
+    {
+        if (player == null)
+        {
+            AnsiConsole.Markup("[grey](unknown)[/]");
+            return;
+        }
+
+        AnsiConsole.Markup($"[{PlayerColours[player.EntityIndex.Value % PlayerColours.Length]}]{player.PlayerName}[/]");
     }
 }

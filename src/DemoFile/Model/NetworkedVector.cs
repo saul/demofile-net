@@ -5,8 +5,11 @@ using System.Numerics;
 namespace DemoFile;
 
 [DebuggerDisplay("Count = {Count}")]
-public class NetworkedVector<T> : IReadOnlyList<T?> where T : new()
+public class NetworkedVector<T> : IReadOnlyList<T?>
+    where T : new()
 {
+    public int Version { get; private set; }
+
     private struct NetworkedVectorEnumerator : IEnumerator<T>
     {
         private readonly NetworkedVector<T> _vector;
@@ -57,6 +60,7 @@ public class NetworkedVector<T> : IReadOnlyList<T?> where T : new()
         internal set
         {
             Debug.Assert(index < _values.Count);
+            Version++;
             _array![index] = value;
         }
     }
@@ -73,6 +77,8 @@ public class NetworkedVector<T> : IReadOnlyList<T?> where T : new()
 
     internal void Resize(int length)
     {
+        Version++;
+
         if (length == 0)
         {
             // Drop the reference to the values - let the GC clear it up

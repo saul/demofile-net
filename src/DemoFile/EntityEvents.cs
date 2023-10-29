@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Collections.Immutable;
+using System.Runtime.InteropServices;
+using DemoFile.Extensions;
 using DemoFile.Sdk;
 
 namespace DemoFile;
@@ -25,16 +27,45 @@ public partial struct EntityEvents
         public Action<T>? PreUpdate;
         public Action<T>? PostUpdate;
 
-        public EntityEventRegistration<T> AddChangeCallback<TState>(Func<T, TState> read, Action<T, TState, TState> onChange)
-            where TState : struct, IEquatable<TState>
+        public EntityEventRegistration<T> AddChangeCallback<TState>(
+            Func<T, TState> read,
+            Action<T, TState, TState> onChange,
+            IEqualityComparer<TState>? equalityComparer = null)
+            where TState : IEquatable<TState>
         {
+            equalityComparer ??= EqualityComparer<TState>.Default;
+
             TState oldValue = default!;
 
             Action<T> preFunc = entity => oldValue = read(entity);
             Action<T> postFunc = entity =>
             {
                 var newValue = read(entity);
-                if (!oldValue.Equals(newValue))
+                if (!equalityComparer.Equals(oldValue, newValue))
+                {
+                    onChange(entity, oldValue, newValue);
+                }
+
+                oldValue = default!;
+            };
+
+            PreUpdate += preFunc;
+            PostUpdate += postFunc;
+
+            return new EntityEventRegistration<T>(preFunc, postFunc);
+        }
+
+        public EntityEventRegistration<T> AddCollectionChangeCallback<TState>(
+            Func<T, IEnumerable<TState>> read,
+            Action<T, IReadOnlyList<TState>, IReadOnlyList<TState>> onChange)
+        {
+            ImmutableArray<TState> oldValue = default!;
+
+            Action<T> preFunc = entity => oldValue = read(entity).ToImmutableArray();
+            Action<T> postFunc = entity =>
+            {
+                var newValue = read(entity).ToImmutableArray();
+                if (!StructuralEqualityComparer<TState>.Instance.Equals(oldValue, newValue))
                 {
                     onChange(entity, oldValue, newValue);
                 }
