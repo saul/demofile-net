@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using Snappier;
 
 namespace DemoFile;
@@ -8,6 +9,7 @@ public partial class DemoParser
     private readonly Dictionary<string, StringTable> _stringTables = new();
     private readonly List<StringTable> _stringTableList = new();
 
+    // todo: make this an array for perf?
     private readonly Dictionary<uint, byte[]> _instanceBaselines = new();
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
@@ -27,7 +29,7 @@ public partial class DemoParser
         Action<KeyValuePair<string, byte[]>>? onUpdatedEntry = null;
         if (msg.Name == "instancebaseline")
         {
-            _instanceBaselineTableId = _stringTableList.Count - 1;
+            _instanceBaselineTableId = _stringTableList.Count;
             onUpdatedEntry = OnInstanceBaselineUpdate;
         }
 
@@ -43,7 +45,6 @@ public partial class DemoParser
 
         _stringTableList.Add(stringTable);
         _stringTables.Add(msg.Name, stringTable);
-
     }
 
     private void OnUpdateStringTable(CSVCMsg_UpdateStringTable msg)
