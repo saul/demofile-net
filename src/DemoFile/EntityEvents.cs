@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using DemoFile.Extensions;
 using DemoFile.Sdk;
@@ -35,18 +36,20 @@ public partial struct EntityEvents
         {
             equalityComparer ??= EqualityComparer<TState>.Default;
 
-            TState oldValue = default!;
+            var oldValues = new Queue<(T Entity, TState State)>();
 
-            Action<T> preFunc = entity => oldValue = read(entity);
+            Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity)));
             Action<T> postFunc = entity =>
             {
+                // Invariant: postFunc will be called in the same order that preFunc was
+                var (queuedEnt, oldValue) = oldValues.Dequeue();
+                Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
+
                 var newValue = read(entity);
                 if (!equalityComparer.Equals(oldValue, newValue))
                 {
                     onChange(entity, oldValue, newValue);
                 }
-
-                oldValue = default!;
             };
 
             PreUpdate += preFunc;
@@ -59,18 +62,20 @@ public partial struct EntityEvents
             Func<T, IEnumerable<TState>> read,
             Action<T, IReadOnlyList<TState>, IReadOnlyList<TState>> onChange)
         {
-            ImmutableArray<TState> oldValue = default!;
+            var oldValues = new Queue<(T Entity, ImmutableArray<TState> State)>();
 
-            Action<T> preFunc = entity => oldValue = read(entity).ToImmutableArray();
+            Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity).ToImmutableArray()));
             Action<T> postFunc = entity =>
             {
+                // Invariant: postFunc will be called in the same order that preFunc was
+                var (queuedEnt, oldValue) = oldValues.Dequeue();
+                Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
+
                 var newValue = read(entity).ToImmutableArray();
                 if (!StructuralEqualityComparer<TState>.Instance.Equals(oldValue, newValue))
                 {
                     onChange(entity, oldValue, newValue);
                 }
-
-                oldValue = default!;
             };
 
             PreUpdate += preFunc;

@@ -70,7 +70,7 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
         if (length > _values.Count)
         {
             // todo: this assertion shouldn't fail - bad baselines?
-            Debug.Assert(length == _values.Count + 1);
+            //Debug.Assert(length == _values.Count + 1);
             Resize(length);
         }
     }

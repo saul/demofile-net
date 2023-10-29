@@ -16,6 +16,8 @@ public partial class CEntityInstance
 
     public CEntityIndex EntityIndex { get; }
 
+    public CHandle<CEntityInstance> EntityHandle => CHandle<CEntityInstance>.FromIndexSerialNum(EntityIndex, SerialNumber);
+
     /// <summary>
     /// Is this entity within the recording player's PVS?
     /// For GOTV demos, this is always <c>true</c>
