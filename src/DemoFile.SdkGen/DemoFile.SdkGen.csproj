@@ -16,4 +16,8 @@
         <None Include="Schema\*.json" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
+    </ItemGroup>
+
 </Project>

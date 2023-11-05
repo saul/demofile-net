@@ -5,272 +5,272 @@
       "items": [
         {
           "name": "SPAWN_DEBUG_OVERRIDE_NONE",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "SPAWN_DEBUG_OVERRIDE_FORCE_ENABLED",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "SPAWN_DEBUG_OVERRIDE_FORCE_DISABLED",
-          "value": 2
-        }
-      ]
+          "value": 2,
+        },
+      ],
     },
     "SpawnDebugRestrictionOverrideState_t": {
       "align": 4,
       "items": [
         {
           "name": "SPAWN_DEBUG_RESTRICT_NONE",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "SPAWN_DEBUG_RESTRICT_IGNORE_MANAGER_DISTANCE_REQS",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "SPAWN_DEBUG_RESTRICT_IGNORE_TEMPLATE_DISTANCE_LOS_REQS",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "SPAWN_DEBUG_RESTRICT_IGNORE_TEMPLATE_COOLDOWN_LIMITS",
-          "value": 4
+          "value": 4,
         },
         {
           "name": "SPAWN_DEBUG_RESTRICT_IGNORE_TARGET_COOLDOWN_LIMITS",
-          "value": 8
-        }
-      ]
+          "value": 8,
+        },
+      ],
     },
     "EntityDormancyType_t": {
       "align": 4,
       "items": [
         {
           "name": "ENTITY_NOT_DORMANT",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "ENTITY_DORMANT",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "ENTITY_SUSPENDED",
-          "value": 2
-        }
-      ]
+          "value": 2,
+        },
+      ],
     },
     "EntityIOTargetType_t": {
       "align": 4,
       "items": [
         {
           "name": "ENTITY_IO_TARGET_INVALID",
-          "value": 18446744073709551615
+          "value": 18446744073709551615,
         },
         {
           "name": "ENTITY_IO_TARGET_ENTITYNAME",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "ENTITY_IO_TARGET_EHANDLE",
-          "value": 6
+          "value": 6,
         },
         {
           "name": "ENTITY_IO_TARGET_ENTITYNAME_OR_CLASSNAME",
-          "value": 7
-        }
-      ]
-    }
+          "value": 7,
+        },
+      ],
+    },
   },
   "classes": {
     "EngineLoopState_t": {
       "fields": [
-      ]
+      ],
     },
     "EventModInitialized_t": {
       "fields": [
-      ]
+      ],
     },
     "EventFrameBoundary_t": {
       "fields": [
-      ]
+      ],
     },
     "EventProfileStorageAvailable_t": {
       "fields": [
-      ]
+      ],
     },
     "EventSplitScreenStateChanged_t": {
       "fields": [
-      ]
+      ],
     },
     "EventSetTime_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientPollInput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientProcessInput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientProcessGameInput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientPreOutput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientSceneSystemThreadStateChange_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientOutput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientPostOutput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientFrameSimulate_t": {
       "fields": [
-      ]
+      ],
     },
     "EventSimpleLoopFrameUpdate_t": {
       "fields": [
-      ]
+      ],
     },
     "EventSimulate_t": {
       "fields": [
-      ]
+      ],
     },
     "EventAdvanceTick_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventPostAdvanceTick_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventServerAdvanceTick_t": {
       "parent": "EventAdvanceTick_t",
       "fields": [
-      ]
+      ],
     },
     "EventServerPostAdvanceTick_t": {
       "parent": "EventPostAdvanceTick_t",
       "fields": [
-      ]
+      ],
     },
     "EventClientAdvanceTick_t": {
       "parent": "EventAdvanceTick_t",
       "fields": [
-      ]
+      ],
     },
     "EventClientPostAdvanceTick_t": {
       "parent": "EventPostAdvanceTick_t",
       "fields": [
-      ]
+      ],
     },
     "EventClientSendInput_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientPredictionPostNetupdate_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientPollNetworking_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientProcessNetworking_t": {
       "fields": [
-      ]
+      ],
     },
     "EventClientPreSimulate_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventClientSimulate_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventServerPollNetworking_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventServerProcessNetworking_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventServerSimulate_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventServerPostSimulate_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventClientPostSimulate_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventClientPauseSimulate_t": {
       "parent": "EventSimulate_t",
       "fields": [
-      ]
+      ],
     },
     "EventPostDataUpdate_t": {
       "fields": [
-      ]
+      ],
     },
     "EventPreDataUpdate_t": {
       "fields": [
-      ]
+      ],
     },
     "EventAppShutdown_t": {
       "fields": [
-      ]
+      ],
     },
     "CNetworkVarChainer": {
       "fields": [
-      ]
+      ],
     },
     "CVariantDefaultAllocator": {
       "fields": [
-      ]
+      ],
     },
     "EntOutput_t": {
       "fields": [
-      ]
+      ],
     },
     "EntComponentInfo_t": {
       "fields": [
-      ]
+      ],
     },
     "CEntityComponent": {
       "fields": [
-      ]
+      ],
     },
     "EntInput_t": {
       "fields": [
-      ]
+      ],
     },
     "CEntityComponentHelper": {
       "fields": [
-      ]
+      ],
     },
     "CEntityIdentity": {
       "fields": [
@@ -278,17 +278,17 @@
           "name": "m_nameStringableIndex",
           "type": {
             "name": "int32",
-            "category": 0
+            "category": 0,
           },
           "metadata": {
-            "MNetworkChangeCallback": "entityIdentityNameChanged"
-          }
-        }
-      ]
+            "MNetworkChangeCallback": "entityIdentityNameChanged",
+          },
+        },
+      ],
     },
     "CEmptyEntityInstance": {
       "fields": [
-      ]
+      ],
     },
     "CEntityInstance": {
       "fields": [
@@ -299,12 +299,12 @@
             "category": 1,
             "inner": {
               "name": "CEntityIdentity",
-              "category": 5
-            }
+              "category": 5,
+            },
           },
           "metadata": {
-            "MNetworkPriority": "56"
-          }
+            "MNetworkPriority": "56",
+          },
         },
         {
           "name": "m_CScriptComponent",
@@ -313,23 +313,23 @@
             "category": 1,
             "inner": {
               "name": "CScriptComponent",
-              "category": 5
-            }
+              "category": 5,
+            },
           },
           "metadata": {
-            "MNetworkDisable": ""
-          }
-        }
-      ]
+            "MNetworkDisable": "",
+          },
+        },
+      ],
     },
     "CEntityIOOutput": {
       "fields": [
-      ]
+      ],
     },
     "CScriptComponent": {
       "parent": "CEntityComponent",
       "fields": [
-      ]
-    }
-  }
+      ],
+    },
+  },
 }

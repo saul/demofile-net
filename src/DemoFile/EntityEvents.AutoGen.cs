@@ -194,6 +194,7 @@ public partial struct EntityEvents
     public Events<CWeaponAWP> CWeaponAWP;
     public Events<CWeaponBaseItem> CWeaponBaseItem;
     public Events<CWeaponBizon> CWeaponBizon;
+    public Events<CWeaponCZ75a> CWeaponCZ75a;
     public Events<CWeaponElite> CWeaponElite;
     public Events<CWeaponFamas> CWeaponFamas;
     public Events<CWeaponFiveSeven> CWeaponFiveSeven;
@@ -203,14 +204,17 @@ public partial struct EntityEvents
     public Events<CWeaponHKP2000> CWeaponHKP2000;
     public Events<CWeaponM249> CWeaponM249;
     public Events<CWeaponM4A1> CWeaponM4A1;
+    public Events<CWeaponM4A1Silencer> CWeaponM4A1Silencer;
     public Events<CWeaponMAC10> CWeaponMAC10;
     public Events<CWeaponMag7> CWeaponMag7;
+    public Events<CWeaponMP5SD> CWeaponMP5SD;
     public Events<CWeaponMP7> CWeaponMP7;
     public Events<CWeaponMP9> CWeaponMP9;
     public Events<CWeaponNegev> CWeaponNegev;
     public Events<CWeaponNOVA> CWeaponNOVA;
     public Events<CWeaponP250> CWeaponP250;
     public Events<CWeaponP90> CWeaponP90;
+    public Events<CWeaponRevolver> CWeaponRevolver;
     public Events<CWeaponSawedoff> CWeaponSawedoff;
     public Events<CWeaponSCAR20> CWeaponSCAR20;
     public Events<CWeaponSG556> CWeaponSG556;
@@ -219,6 +223,7 @@ public partial struct EntityEvents
     public Events<CWeaponTaser> CWeaponTaser;
     public Events<CWeaponTec9> CWeaponTec9;
     public Events<CWeaponUMP45> CWeaponUMP45;
+    public Events<CWeaponUSPSilencer> CWeaponUSPSilencer;
     public Events<CWeaponXM1014> CWeaponXM1014;
     public Events<CWeaponZoneRepulsor> CWeaponZoneRepulsor;
     public Events<CWorld> CWorld;

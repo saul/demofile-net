@@ -5,280 +5,280 @@
       "items": [
         {
           "name": "WRITABLE",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "READ_ONLY",
-          "value": 1
-        }
-      ]
+          "value": 1,
+        },
+      ],
     },
     "FuseVariableType_t": {
       "align": 1,
       "items": [
         {
           "name": "INVALID",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "BOOL",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "INT8",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "INT16",
-          "value": 3
+          "value": 3,
         },
         {
           "name": "INT32",
-          "value": 4
+          "value": 4,
         },
         {
           "name": "UINT8",
-          "value": 5
+          "value": 5,
         },
         {
           "name": "UINT16",
-          "value": 6
+          "value": 6,
         },
         {
           "name": "UINT32",
-          "value": 7
+          "value": 7,
         },
         {
           "name": "FLOAT32",
-          "value": 8
-        }
-      ]
-    }
+          "value": 8,
+        },
+      ],
+    },
   },
   "classes": {
     "TestResource_t": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeTestResource_t": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeProceduralTestResource_t": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeManifestTestResource_t": {
       "fields": [
-      ]
+      ],
     },
     "ManifestTestResource_t": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCVDataResource": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeIPulseGraphDef": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCTypeScriptResource": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCJavaScriptResource": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeIParticleSystemDefinition": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeIParticleSnapshot": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCAnimData": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCAnimationGroup": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCSequenceGroupData": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeIMaterial2": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCMorphSetData": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCRenderMesh": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCModel": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCTextureBase": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeIVectorGraphic": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCVSoundEventScriptList": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCVSoundStackScriptList": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeVSound_t": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCVMixListResource": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCPhysAggregateData": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCVPhysXSurfacePropertiesList": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCEntityLump": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCWorldNode": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeWorld_t": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCVoxelVisibility": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCPostProcessingResource": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCPanoramaStyle": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCPanoramaLayout": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCPanoramaDynamicImages": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCDotaItemDefinitionResource": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCDOTAPatchNotesList": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCDOTANovelsList": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeIAnimGraphModelBinding": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCChoreoSceneFileData": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCDACGameDefsData": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCCompositeMaterialKit": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCSmartProp": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCCSGOEconItem": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCResponseRulesList": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCNmSkeleton": {
       "fields": [
-      ]
+      ],
     },
     "InfoForResourceTypeCNmClip": {
       "fields": [
-      ]
+      ],
     },
     "FuseVariableIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "FuseFunctionIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "ConstantInfo_t": {
       "fields": [
-      ]
+      ],
     },
     "VariableInfo_t": {
       "fields": [
-      ]
+      ],
     },
     "FunctionInfo_t": {
       "fields": [
-      ]
+      ],
     },
     "CFuseProgram": {
       "fields": [
-      ]
+      ],
     },
     "CFuseSymbolTable": {
       "fields": [
-      ]
+      ],
     },
     "AABB_t": {
       "fields": [
-      ]
+      ],
     },
     "PackedAABB_t": {
       "fields": [
-      ]
+      ],
     },
     "FourQuaternions": {
       "fields": [
-      ]
-    }
-  }
+      ],
+    },
+  },
 }

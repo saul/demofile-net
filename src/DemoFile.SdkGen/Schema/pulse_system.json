@@ -5,663 +5,663 @@
       "items": [
         {
           "name": "INVALID",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "IMMEDIATE_HALT",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "RETURN_VOID",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "RETURN_VALUE",
-          "value": 3
+          "value": 3,
         },
         {
           "name": "NOP",
-          "value": 4
+          "value": 4,
         },
         {
           "name": "JUMP",
-          "value": 5
+          "value": 5,
         },
         {
           "name": "JUMP_COND",
-          "value": 6
+          "value": 6,
         },
         {
           "name": "CHUNK_LEAP",
-          "value": 7
+          "value": 7,
         },
         {
           "name": "CHUNK_LEAP_COND",
-          "value": 8
+          "value": 8,
         },
         {
           "name": "PULSE_CALL_SYNC",
-          "value": 9
+          "value": 9,
         },
         {
           "name": "PULSE_CALL_ASYNC_FIRE",
-          "value": 10
+          "value": 10,
         },
         {
           "name": "CELL_INVOKE",
-          "value": 11
+          "value": 11,
         },
         {
           "name": "LIBRARY_INVOKE",
-          "value": 12
+          "value": 12,
         },
         {
           "name": "TARGET_INVOKE",
-          "value": 13
+          "value": 13,
         },
         {
           "name": "SET_VAR",
-          "value": 14
+          "value": 14,
         },
         {
           "name": "GET_VAR",
-          "value": 15
+          "value": 15,
         },
         {
           "name": "SET_REGISTER_LIT_BOOL",
-          "value": 16
+          "value": 16,
         },
         {
           "name": "SET_REGISTER_LIT_INT",
-          "value": 17
+          "value": 17,
         },
         {
           "name": "SET_REGISTER_LIT_FLOAT",
-          "value": 18
+          "value": 18,
         },
         {
           "name": "SET_REGISTER_LIT_STR",
-          "value": 19
+          "value": 19,
         },
         {
           "name": "SET_REGISTER_LIT_INVAL_EHANDLE",
-          "value": 20
+          "value": 20,
         },
         {
           "name": "SET_REGISTER_LIT_INVAL_SNDEVT_GUID",
-          "value": 21
+          "value": 21,
         },
         {
           "name": "SET_REGISTER_LIT_VEC3",
-          "value": 22
+          "value": 22,
         },
         {
           "name": "SET_REGISTER_DOMAIN_VALUE",
-          "value": 23
+          "value": 23,
         },
         {
           "name": "COPY",
-          "value": 24
+          "value": 24,
         },
         {
           "name": "NOT",
-          "value": 25
+          "value": 25,
         },
         {
           "name": "NEGATE",
-          "value": 26
+          "value": 26,
         },
         {
           "name": "ADD",
-          "value": 27
+          "value": 27,
         },
         {
           "name": "SUB",
-          "value": 28
+          "value": 28,
         },
         {
           "name": "MUL",
-          "value": 29
+          "value": 29,
         },
         {
           "name": "DIV",
-          "value": 30
+          "value": 30,
         },
         {
           "name": "MOD",
-          "value": 31
+          "value": 31,
         },
         {
           "name": "LT",
-          "value": 32
+          "value": 32,
         },
         {
           "name": "LTE",
-          "value": 33
+          "value": 33,
         },
         {
           "name": "EQ",
-          "value": 34
+          "value": 34,
         },
         {
           "name": "NE",
-          "value": 35
+          "value": 35,
         },
         {
           "name": "AND",
-          "value": 36
+          "value": 36,
         },
         {
           "name": "OR",
-          "value": 37
+          "value": 37,
         },
         {
           "name": "CONVERT_VALUE",
-          "value": 38
+          "value": 38,
         },
         {
           "name": "LAST_SERIALIZED_CODE",
-          "value": 39
+          "value": 39,
         },
         {
           "name": "NEGATE_INT",
-          "value": 40
+          "value": 40,
         },
         {
           "name": "NEGATE_FLOAT",
-          "value": 41
+          "value": 41,
         },
         {
           "name": "ADD_INT",
-          "value": 42
+          "value": 42,
         },
         {
           "name": "ADD_FLOAT",
-          "value": 43
+          "value": 43,
         },
         {
           "name": "ADD_STRING",
-          "value": 44
+          "value": 44,
         },
         {
           "name": "SUB_INT",
-          "value": 45
+          "value": 45,
         },
         {
           "name": "SUB_FLOAT",
-          "value": 46
+          "value": 46,
         },
         {
           "name": "MUL_INT",
-          "value": 47
+          "value": 47,
         },
         {
           "name": "MUL_FLOAT",
-          "value": 48
+          "value": 48,
         },
         {
           "name": "DIV_INT",
-          "value": 49
+          "value": 49,
         },
         {
           "name": "DIV_FLOAT",
-          "value": 50
+          "value": 50,
         },
         {
           "name": "MOD_INT",
-          "value": 51
+          "value": 51,
         },
         {
           "name": "MOD_FLOAT",
-          "value": 52
+          "value": 52,
         },
         {
           "name": "LT_INT",
-          "value": 53
+          "value": 53,
         },
         {
           "name": "LT_FLOAT",
-          "value": 54
+          "value": 54,
         },
         {
           "name": "LTE_INT",
-          "value": 55
+          "value": 55,
         },
         {
           "name": "LTE_FLOAT",
-          "value": 56
+          "value": 56,
         },
         {
           "name": "EQ_BOOL",
-          "value": 57
+          "value": 57,
         },
         {
           "name": "EQ_INT",
-          "value": 58
+          "value": 58,
         },
         {
           "name": "EQ_FLOAT",
-          "value": 59
+          "value": 59,
         },
         {
           "name": "EQ_STRING",
-          "value": 60
+          "value": 60,
         },
         {
           "name": "NE_BOOL",
-          "value": 61
+          "value": 61,
         },
         {
           "name": "NE_INT",
-          "value": 62
+          "value": 62,
         },
         {
           "name": "NE_FLOAT",
-          "value": 63
+          "value": 63,
         },
         {
           "name": "NE_STRING",
-          "value": 64
-        }
-      ]
+          "value": 64,
+        },
+      ],
     },
     "PulseMethodCallMode_t": {
       "align": 4,
       "items": [
         {
           "name": "SYNC_WAIT_FOR_COMPLETION",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "ASYNC_FIRE_AND_FORGET",
-          "value": 1
-        }
-      ]
+          "value": 1,
+        },
+      ],
     },
     "PulseValueType_t": {
       "align": 4,
       "items": [
         {
           "name": "PVAL_INVALID",
-          "value": 18446744073709551615
+          "value": 18446744073709551615,
         },
         {
           "name": "PVAL_BOOL",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "PVAL_INT",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "PVAL_FLOAT",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "PVAL_STRING",
-          "value": 3
+          "value": 3,
         },
         {
           "name": "PVAL_VEC3",
-          "value": 4
+          "value": 4,
         },
         {
           "name": "PVAL_TRANSFORM",
-          "value": 5
+          "value": 5,
         },
         {
           "name": "PVAL_EHANDLE",
-          "value": 6
+          "value": 6,
         },
         {
           "name": "PVAL_RESOURCE",
-          "value": 7
+          "value": 7,
         },
         {
           "name": "PVAL_SNDEVT_GUID",
-          "value": 8
+          "value": 8,
         },
         {
           "name": "PVAL_SCHEMA_PTR",
-          "value": 9
+          "value": 9,
         },
         {
           "name": "PVAL_CURSOR_FLOW",
-          "value": 10
+          "value": 10,
         },
         {
           "name": "PVAL_ANY",
-          "value": 11
+          "value": 11,
         },
         {
           "name": "PVAL_COUNT",
-          "value": 12
-        }
-      ]
-    }
+          "value": 12,
+        },
+      ],
+    },
   },
   "classes": {
     "CPulseTestFuncs_LibraryA": {
       "fields": [
-      ]
+      ],
     },
     "CPulseExecCursor": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeRegisterIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_Chunk": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_Variable": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_PublicOutput": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_OutputConnection": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeChunkIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "PulseDocNodeID_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulseGraphDef": {
       "fields": [
-      ]
+      ],
     },
     "CBasePulseGraphInstance": {
       "fields": [
-      ]
+      ],
     },
     "CPulseMathlib": {
       "fields": [
-      ]
+      ],
     },
     "CPulseTestScriptLib": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeCellIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeCallInfoIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeVarIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeOutputIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeStateOffset_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_RegisterInfo": {
       "fields": [
-      ]
+      ],
     },
     "PulseRegisterMap_t": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeInvokeIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_CallInfo": {
       "fields": [
-      ]
+      ],
     },
     "PulseRuntimeEntrypointIndex_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_InvokeBinding": {
       "fields": [
-      ]
+      ],
     },
     "PGDInstruction_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_OutflowConnection": {
       "fields": [
-      ]
+      ],
     },
     "CPulse_ResumePoint": {
       "parent": "CPulse_OutflowConnection",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Base": {
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_BaseFlow": {
       "parent": "CPulseCell_Base",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_BaseEntrypoint": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseRuntimeMethodArg": {
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_Method": {
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_EventHandler": {
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_GraphHook": {
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_EntOutputHandler": {
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_BaseYieldingInflow": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_BaseValue": {
       "parent": "CPulseCell_Base",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_PublicOutput": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_Yield": {
       "parent": "CPulseCell_BaseYieldingInflow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Inflow_Wait": {
       "parent": "CPulseCell_BaseYieldingInflow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_StringSwitch": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_IntSwitch": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_CycleOrdered": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_CycleOrdered::InstanceState_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_CycleRandom": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_CycleShuffled": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_CycleShuffled::InstanceState_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_SimultaneousParallel": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_TestRandomYesNo": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Outflow_TestExplicitYesNo": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Value_TestValue50": {
       "parent": "CPulseCell_BaseValue",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Value_RandomInt": {
       "parent": "CPulseCell_BaseValue",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_DebugLog": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_CallExternalMethod": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "PulseTestEHandle_t": {
       "fields": [
-      ]
+      ],
     },
     "FakeEntity_t": {
       "fields": [
-      ]
+      ],
     },
     "CPulseGraphInstance_TestDomain": {
       "parent": "CBasePulseGraphInstance",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_TestDomainTracepoint": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_TestDomainCreateFakeEntity": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_TestDomainDestroyFakeEntity": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Step_TestDomainEntFire": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Val_TestDomainGetEntityName": {
       "parent": "CPulseCell_BaseValue",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Val_TestDomainFindEntityByName": {
       "parent": "CPulseCell_BaseValue",
       "fields": [
-      ]
+      ],
     },
     "CTestDomainDerived_Cursor": {
       "parent": "CPulseExecCursor",
       "fields": [
-      ]
+      ],
     },
     "CPulseGraphInstance_TestDomain_Derived": {
       "parent": "CPulseGraphInstance_TestDomain",
       "fields": [
-      ]
+      ],
     },
     "CPulseTestFuncs_DerivedDomain": {
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Test_NoInflow": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Test_MultiInflow_WithDefault": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseCell_Test_MultiInflow_NoDefault": {
       "parent": "CPulseCell_BaseFlow",
       "fields": [
-      ]
+      ],
     },
     "CPulseTurtleGraphicsCursor": {
       "parent": "CPulseExecCursor",
       "fields": [
-      ]
+      ],
     },
     "CPulseGraphInstance_TurtleGraphics": {
       "parent": "CBasePulseGraphInstance",
       "fields": [
-      ]
-    }
-  }
+      ],
+    },
+  },
 }

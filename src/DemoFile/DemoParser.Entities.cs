@@ -95,7 +95,7 @@ public partial class DemoParser
         return index.IsValid ? _entities[(int)index.Value] as T : null;
     }
 
-    internal void OnDemoSendTables(CDemoSendTables outerMsg)
+    private void OnDemoSendTables(CDemoSendTables outerMsg)
     {
         var byteBuffer = new ByteBuffer(outerMsg.Data.Span);
         var size = byteBuffer.ReadUVarInt32();
@@ -120,7 +120,7 @@ public partial class DemoParser
             .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
     }
 
-    internal void OnDemoClassInfo(CDemoClassInfo msg)
+    private void OnDemoClassInfo(CDemoClassInfo msg)
     {
         var maxClassIds = msg.Classes.Max(x => x.ClassId) + 1;
         _serverClasses = new ServerClass[maxClassIds];
@@ -150,7 +150,7 @@ public partial class DemoParser
         Debug.Assert(_serverClasses.All(x => x != null), "Missing server classes");
     }
 
-    internal void OnPacketEntities(CSVCMsg_PacketEntities msg)
+    private void OnPacketEntities(CSVCMsg_PacketEntities msg)
     {
         Debug.Assert(
             _serverClasses.Length > 0 && _serializers.Count > 0,
@@ -240,11 +240,12 @@ public partial class DemoParser
 
                 entity.IsActive = true;
 
-                // If this entity already existed with the same serial number,
+                // If this entity already exists with the same serial number,
                 // treat it as an entity update as well as entity creation.
                 // This allows AddChangeCallback to track changes on snapshot.
                 if (_entities[entityIndex] is { } previousEnt
-                    && previousEnt.EntityHandle == entity.EntityHandle)
+                    && previousEnt.SerialNumber == entity.SerialNumber
+                    && previousEnt.ServerClass.ServerClassId == entity.ServerClass.ServerClassId)
                 {
                     previousEnt.FirePreUpdateEvent();
                     postUpdateEvents[postEventIdx++] = entity;
@@ -303,7 +304,7 @@ public partial class DemoParser
     }
 
     [SkipLocalsInit]
-    private void ReadNewEntity(ref BitBuffer entityBitBuffer, CEntityInstance entity)
+    private static void ReadNewEntity(ref BitBuffer entityBitBuffer, CEntityInstance entity)
     {
         Span<FieldPath> fieldPaths = stackalloc FieldPath[512];
 

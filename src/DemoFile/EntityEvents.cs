@@ -32,7 +32,6 @@ public partial struct EntityEvents
             Func<T, TState> read,
             Action<T, TState, TState> onChange,
             IEqualityComparer<TState>? equalityComparer = null)
-            where TState : IEquatable<TState>
         {
             equalityComparer ??= EqualityComparer<TState>.Default;
 
@@ -62,16 +61,16 @@ public partial struct EntityEvents
             Func<T, IEnumerable<TState>> read,
             Action<T, IReadOnlyList<TState>, IReadOnlyList<TState>> onChange)
         {
-            var oldValues = new Queue<(T Entity, ImmutableArray<TState> State)>();
+            var oldValues = new Queue<(T Entity, ImmutableList<TState> State)>();
 
-            Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity).ToImmutableArray()));
+            Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity).ToImmutableList()));
             Action<T> postFunc = entity =>
             {
                 // Invariant: postFunc will be called in the same order that preFunc was
                 var (queuedEnt, oldValue) = oldValues.Dequeue();
                 Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
 
-                var newValue = read(entity).ToImmutableArray();
+                var newValue = read(entity).ToImmutableList();
                 if (!StructuralEqualityComparer<TState>.Instance.Equals(oldValue, newValue))
                 {
                     onChange(entity, oldValue, newValue);

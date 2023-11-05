@@ -4,12 +4,12 @@
   "classes": {
     "CAnimScriptBase": {
       "fields": [
-      ]
+      ],
     },
     "EmptyTestScript": {
       "parent": "CAnimScriptBase",
       "fields": [
-      ]
-    }
-  }
+      ],
+    },
+  },
 }

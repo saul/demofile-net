@@ -5,61 +5,61 @@
       "items": [
         {
           "name": "kDisableShadows_None",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "kDisableShadows_All",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "kDisableShadows_Baked",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "kDisableShadows_Realtime",
-          "value": 3
-        }
-      ]
-    }
+          "value": 3,
+        },
+      ],
+    },
   },
   "classes": {
     "CSSDSEndFrameViewInfo": {
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_EndFrame": {
       "fields": [
-      ]
+      ],
     },
     "SceneViewId_t": {
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_ViewRender": {
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_LayerBase": {
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_ViewTarget": {
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_ViewTargetList": {
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_PreLayer": {
       "parent": "CSSDSMsg_LayerBase",
       "fields": [
-      ]
+      ],
     },
     "CSSDSMsg_PostLayer": {
       "parent": "CSSDSMsg_LayerBase",
       "fields": [
-      ]
-    }
-  }
+      ],
+    },
+  },
 }
