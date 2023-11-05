@@ -5,6 +5,7 @@
 - [x] TryGetDecoder should unsafe cast to expected T
 - [x] downcast decoder should unsafe cast
 - [x] Events for entity creation/update/deletion
+- [x] Release source2gen-json
+- [ ] Perf test field vs properties on events
 - [ ] Snapshot testing of demo files
 - [ ] Archive old saul/demofile repo
-- [ ] Release source2gen-json

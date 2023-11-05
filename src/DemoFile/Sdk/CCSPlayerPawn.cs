@@ -12,4 +12,10 @@ public partial class CCSPlayerPawn
         Weapons.Select(weapon => weapon as CBaseCSGrenade).Where(x => x != null)!;
 
     public CCSPlayerController? CSController => Controller.Get<CCSPlayerController>(Demo);
+
+    public CCSPlayer_MovementServices? CSMovementServices => MovementServices as CCSPlayer_MovementServices;
+
+    public InputButtons InputButtons => CSMovementServices is {} csMovement
+        ? (InputButtons) csMovement.ButtonDownMaskPrev
+        : default;
 }

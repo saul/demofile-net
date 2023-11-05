@@ -5,396 +5,400 @@
       "items": [
         {
           "name": "JOINT_AXIS_X",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "JOINT_AXIS_Y",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "JOINT_AXIS_Z",
-          "value": 2
+          "value": 2,
         },
         {
           "name": "JOINT_AXIS_COUNT",
-          "value": 3
-        }
-      ]
+          "value": 3,
+        },
+      ],
     },
     "JointMotion_t": {
       "align": 4,
       "items": [
         {
           "name": "JOINT_MOTION_FREE",
-          "value": 0
+          "value": 0,
         },
         {
           "name": "JOINT_MOTION_LOCKED",
-          "value": 1
+          "value": 1,
         },
         {
           "name": "JOINT_MOTION_COUNT",
-          "value": 2
-        }
-      ]
-    }
+          "value": 2,
+        },
+      ],
+    },
   },
   "classes": {
     "constraint_breakableparams_t": {
       "fields": [
-      ]
+      ],
     },
     "constraint_axislimit_t": {
       "fields": [
-      ]
+      ],
     },
     "constraint_hingeparams_t": {
       "fields": [
-      ]
+      ],
     },
     "IPhysicsPlayerController": {
       "fields": [
-      ]
+      ],
     },
     "CFeJiggleBone": {
       "fields": [
-      ]
+      ],
     },
     "CFeNamedJiggleBone": {
       "fields": [
-      ]
+      ],
     },
     "CFeIndexedJiggleBone": {
       "fields": [
-      ]
+      ],
     },
     "PhysFeModelDesc_t": {
       "fields": [
-      ]
+      ],
     },
     "FourVectors2D": {
       "fields": [
-      ]
+      ],
     },
     "FeEdgeDesc_t": {
       "fields": [
-      ]
+      ],
     },
     "OldFeEdge_t": {
       "fields": [
-      ]
+      ],
     },
     "FeWeightedNode_t": {
       "fields": [
-      ]
+      ],
     },
     "FeKelagerBend2_t": {
       "fields": [
-      ]
+      ],
     },
     "FeStiffHingeBuild_t": {
       "fields": [
-      ]
+      ],
     },
     "FeTri_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSimdTri_t": {
       "fields": [
-      ]
+      ],
     },
     "FeQuad_t": {
       "fields": [
-      ]
+      ],
     },
     "FeNodeBase_t": {
       "fields": [
-      ]
+      ],
     },
     "FeNodeWindBase_t": {
       "fields": [
-      ]
+      ],
     },
     "FeNodeReverseOffset_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSimdQuad_t": {
       "fields": [
-      ]
+      ],
     },
     "FeAxialEdgeBend_t": {
       "fields": [
-      ]
+      ],
     },
     "FeBandBendLimit_t": {
       "fields": [
-      ]
+      ],
     },
     "FeRodConstraint_t": {
       "fields": [
-      ]
+      ],
     },
     "FeTwistConstraint_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSimdRodConstraint_t": {
       "fields": [
-      ]
+      ],
     },
     "FeAnimStrayRadius_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSimdAnimStrayRadius_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSimdNodeBase_t": {
       "fields": [
-      ]
+      ],
     },
     "FeNodeIntegrator_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSpringIntegrator_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSimdSpringIntegrator_t": {
       "fields": [
-      ]
+      ],
     },
     "FeCtrlOffset_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSoftParent_t": {
       "fields": [
-      ]
+      ],
     },
     "FeCtrlSoftOffset_t": {
       "fields": [
-      ]
+      ],
     },
     "FeCtrlOsOffset_t": {
       "fields": [
-      ]
+      ],
     },
     "FeFollowNode_t": {
       "fields": [
-      ]
+      ],
     },
     "RnPlane_t": {
       "fields": [
-      ]
+      ],
     },
     "FeWorldCollisionParams_t": {
       "fields": [
-      ]
+      ],
     },
     "FeTreeChildren_t": {
       "fields": [
-      ]
+      ],
     },
     "FeTaperedCapsuleRigid_t": {
       "fields": [
-      ]
+      ],
     },
     "FeSphereRigid_t": {
       "fields": [
-      ]
+      ],
     },
     "FeTaperedCapsuleStretch_t": {
       "fields": [
-      ]
+      ],
     },
     "FeBoxRigid_t": {
       "fields": [
-      ]
+      ],
     },
     "CovMatrix3": {
       "fields": [
-      ]
+      ],
     },
     "FourCovMatrices3": {
       "fields": [
-      ]
+      ],
     },
     "FeFitWeight_t": {
       "fields": [
-      ]
+      ],
     },
     "FeFitInfluence_t": {
       "fields": [
-      ]
+      ],
     },
     "FeFitMatrix_t": {
       "fields": [
-      ]
+      ],
     },
     "FeRigidColliderIndices_t": {
       "fields": [
-      ]
+      ],
     },
     "FeBuildTaperedCapsuleRigid_t": {
       "parent": "FeTaperedCapsuleRigid_t",
       "fields": [
-      ]
+      ],
     },
     "FeBuildBoxRigid_t": {
       "parent": "FeBoxRigid_t",
       "fields": [
-      ]
+      ],
     },
     "FeBuildSphereRigid_t": {
       "parent": "FeSphereRigid_t",
       "fields": [
-      ]
+      ],
     },
     "FeSourceEdge_t": {
       "fields": [
-      ]
+      ],
     },
     "FeEffectDesc_t": {
       "fields": [
-      ]
+      ],
     },
     "FeVertexMapBuild_t": {
       "fields": [
-      ]
+      ],
     },
     "CFeVertexMapBuildArray": {
       "fields": [
-      ]
+      ],
     },
     "FeProxyVertexMap_t": {
       "fields": [
-      ]
+      ],
     },
     "FeVertexMapDesc_t": {
       "fields": [
-      ]
+      ],
     },
     "FeMorphLayerDepr_t": {
       "fields": [
-      ]
+      ],
     },
     "CFeMorphLayer": {
       "fields": [
-      ]
+      ],
     },
     "Dop26_t": {
       "fields": [
-      ]
+      ],
     },
     "RnSphere_t": {
       "fields": [
-      ]
+      ],
     },
     "RnCapsule_t": {
       "fields": [
-      ]
+      ],
     },
     "FeCollisionPlane_t": {
       "fields": [
-      ]
+      ],
+    },
+    "RnVertex_t": {
+      "fields": [
+      ],
     },
     "RnHalfEdge_t": {
       "fields": [
-      ]
+      ],
     },
     "RnFace_t": {
       "fields": [
-      ]
+      ],
     },
     "CRegionSVM": {
       "fields": [
-      ]
+      ],
     },
     "RnHull_t": {
       "fields": [
-      ]
+      ],
     },
     "RnTriangle_t": {
       "fields": [
-      ]
+      ],
     },
     "RnWing_t": {
       "fields": [
-      ]
+      ],
     },
     "RnNode_t": {
       "fields": [
-      ]
+      ],
     },
     "RnMesh_t": {
       "fields": [
-      ]
+      ],
     },
     "RnShapeDesc_t": {
       "fields": [
-      ]
+      ],
     },
     "RnSphereDesc_t": {
       "parent": "RnShapeDesc_t",
       "fields": [
-      ]
+      ],
     },
     "RnCapsuleDesc_t": {
       "parent": "RnShapeDesc_t",
       "fields": [
-      ]
+      ],
     },
     "RnHullDesc_t": {
       "parent": "RnShapeDesc_t",
       "fields": [
-      ]
+      ],
     },
     "RnMeshDesc_t": {
       "parent": "RnShapeDesc_t",
       "fields": [
-      ]
+      ],
     },
     "RnSoftbodyParticle_t": {
       "fields": [
-      ]
+      ],
     },
     "RnSoftbodySpring_t": {
       "fields": [
-      ]
+      ],
     },
     "RnSoftbodyCapsule_t": {
       "fields": [
-      ]
+      ],
     },
     "RnBlendVertex_t": {
       "fields": [
-      ]
+      ],
     },
     "CastSphereSATParams_t": {
       "fields": [
-      ]
+      ],
     },
     "RnBodyDesc_t": {
       "fields": [
-      ]
+      ],
     },
     "VertexPositionNormal_t": {
       "fields": [
-      ]
+      ],
     },
     "VertexPositionColor_t": {
       "fields": [
-      ]
+      ],
     },
     "vphysics_save_cphysicsbody_t": {
       "parent": "RnBodyDesc_t",
       "fields": [
-      ]
-    }
-  }
+      ],
+    },
+  },
 }

@@ -122,6 +122,13 @@ internal static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
+            case "CUtlStringToken":
+            {
+                var fieldDecoder = FieldDecode.CreateDecoder_CUtlStringToken(encodingInfo);
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    fieldDecoder(ref buffer);
+                return true;
+            }
             default:
                 return TryCreateFallbackClassDecoder(fieldType, decoderSet, out decoder);
         }
