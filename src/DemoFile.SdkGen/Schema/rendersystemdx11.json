@@ -176,14 +176,20 @@
   },
   "classes": {
     "RenderInputLayoutField_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "VsInputSignatureElement_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "VsInputSignature_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },

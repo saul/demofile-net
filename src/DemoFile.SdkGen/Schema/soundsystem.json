@@ -516,154 +516,351 @@
   },
   "classes": {
     "CSosGroupActionSchema": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyElementNameFn",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosGroupActionLimitSchema": {
       "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosGroupActionTimeLimitSchema": {
       "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosGroupActionSetSoundeventParameterSchema": {
       "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosGroupBranchPattern": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosGroupMatchPattern": {
       "parent": "CSosGroupBranchPattern",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosSoundEventGroupSchema": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyElementNameFn",
+        },
+      ],
       "fields": [
       ],
     },
     "CSosSoundEventGroupListSchema": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "SosEditItemInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "SelectedEditItemInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSoundEventMetaData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDSPMixgroupModifier": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDspPresetModifierList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDSPPresetMixgroupModifierTable": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MVDataRoot",
+        },
+        {
+          "name": "MVDataNodeType",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixFilterDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixEQ8Desc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixDelayDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixPannerDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixModDelayDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixDiffusorDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixBoxverbDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixFreeverbDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixPlateverbDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixDynamicsDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixDynamicsCompressorDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixDynamicsBand_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixDynamics3BandDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixEnvelopeDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixPitchShiftDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixConvolutionDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixVocoderDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixShaperDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixUtilityDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixAutoFilterDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixOscDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixEffectChainDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMixSubgraphSwitchDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },

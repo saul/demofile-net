@@ -22,9 +22,11 @@ internal static class Program
     {
         var (demoPath, outputPath) = args switch
         {
-            [var fst, var snd] => (fst, snd),
+            [var fst, var snd] => (Path.GetFullPath(fst), Path.GetFullPath(snd)),
             _ => throw new Exception("Expected arguments: <path to .dem> <output dir for .cs files>")
         };
+
+        Console.WriteLine($"Writing output to: {outputPath}");
 
         var (protocolVersion, networkClasses) = await ReadNetworkClasses(demoPath);
 
@@ -40,7 +42,7 @@ internal static class Program
 
             var schema = JsonSerializer.Deserialize<SchemaModule>(
                 File.ReadAllText(schemaPath),
-                SerializerOptions)!;
+                SchemaJson.SerializerOptions)!;
 
             foreach (var (enumName, schemaEnum) in schema.Enums)
             {
@@ -118,10 +120,13 @@ internal static class Program
         var search = new BreadthFirstSearchAlgorithm<string, Edge<string>>(graph);
         search.FinishVertex += node => { visited.Add(node); };
 
+        Console.Write($"Building network class reachability graph");
         foreach (var networkClassName in networkClasses)
         {
+            Console.Write('.');
             search.Compute(networkClassName);
         }
+        Console.WriteLine();
 
         // Only emit visited vertices from the search
         var builder = new StringBuilder();
@@ -158,7 +163,7 @@ internal static class Program
                     networkClasses.Contains(className)
                     || networkClasses.Contains(schemaClass.Parent ?? "");
 
-                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass);
+                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass, allClasses);
 
                 visitedClassNames.Add(className);
                 if (isEntityClass)
@@ -172,11 +177,15 @@ internal static class Program
 
         WriteDecoderSetPartial(builder, visitedClassNames);
 
+        Console.WriteLine("Saving Schema.cs...");
         var schemaPathCs = Path.Combine(outputPath, "Sdk", "Schema.cs");
         File.WriteAllText(schemaPathCs, builder.ToString());
 
+        Console.WriteLine("Saving EntityEvents.AutoGen.cs...");
         var entityEventsCs = Path.Combine(outputPath, "EntityEvents.AutoGen.cs");
         File.WriteAllText(entityEventsCs, WriteEntityEvents(visitedEntityClasses));
+
+        Console.WriteLine("Done!");
     }
 
     private static async Task<(int ProtocolVersion, IReadOnlyList<string> NetworkClasses)> ReadNetworkClasses(string demoPath)
@@ -198,6 +207,8 @@ internal static class Program
             cts.Cancel();
         };
 
+        Console.WriteLine($"Reading class information from: {demoPath}");
+
         try
         {
             await demo.Start(File.OpenRead(demoPath), cts.Token);
@@ -206,6 +217,8 @@ internal static class Program
         {
         }
 
+        Console.WriteLine($"Protocol version: {protocolVersion}");
+        Console.WriteLine($"Network classes: {networkClasses.Count} classes");
         return (protocolVersion, networkClasses);
     }
 
@@ -318,12 +331,17 @@ internal static class Program
         SchemaClass schemaClass,
         IReadOnlyDictionary<string, ImmutableList<KeyValuePair<string, SchemaClass>>> parentToChildMap,
         bool isPointeeType,
-        bool isEntityClass)
+        bool isEntityClass,
+        IReadOnlyDictionary<string, SchemaClass> classMap)
     {
         var classType = SchemaFieldType.FromDeclaredClass(schemaClassName);
         var classNameCs = classType.CsTypeName;
 
         builder.AppendLine();
+        foreach (var metadata in schemaClass.Metadata)
+        {
+            builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
+        }
         builder.Append($"public partial class {classType.CsTypeName}");
 
         var parentType = schemaClass.Parent == null
@@ -391,6 +409,37 @@ internal static class Program
             builder.AppendLine();
         }
 
+        foreach (var metadata in schemaClass.Metadata)
+        {
+            if (metadata.Name != "MNetworkVarTypeOverride")
+                continue;
+
+            var typeOverride = metadata.ClassValue;
+
+            SchemaField? ancestorField = null;
+            var searchType = classMap[schemaClass.Parent!];
+            while (ancestorField == null)
+            {
+                ancestorField = searchType.Fields.FirstOrDefault(x => x.Name == typeOverride.Name);
+                if (ancestorField == null)
+                    searchType = classMap[searchType.Parent!];
+            }
+
+            Debug.Assert(searchType != null && ancestorField != null);
+
+            var csPropertyName = searchType.CsPropertyNameForField(schemaClassName, ancestorField);
+
+            var overrideType = ancestorField.Type.Inner != null
+                ? ancestorField.Type with { Inner = ancestorField.Type.Inner with { Name = typeOverride.Type } }
+                : ancestorField.Type with { Name = typeOverride.Type };
+
+            builder.AppendLine($"    public new {overrideType.CsTypeName} {csPropertyName}");
+            builder.AppendLine($"    {{");
+            builder.AppendLine($"        get => ({overrideType.CsTypeName}) base.{csPropertyName};");
+            builder.AppendLine($"    }}");
+            builder.AppendLine();
+        }
+
         foreach (var field in schemaClass.Fields)
         {
             var defaultValue = field.Type.Category switch
@@ -406,9 +455,9 @@ internal static class Program
                 _ => null
             };
 
-            foreach (var (metadataKey, value) in field.Metadata)
+            foreach (var metadata in field.Metadata)
             {
-                builder.AppendLine($"    // {metadataKey}{(value == "" ? "" : $" \"{value}\"")}");
+                builder.AppendLine($"    // {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
             }
 
             builder.AppendLine($"    public {field.Type.CsTypeName} {schemaClass.CsPropertyNameForField(schemaClassName, field)} {{ get; private set; }}{defaultValue}");
@@ -440,7 +489,7 @@ internal static class Program
             }
             else
             {
-                builder.AppendLine($"        if (field.VarName == \"{alias ?? field.Name}\")");
+                builder.AppendLine($"        if (field.VarName == \"{alias?.StringValue ?? field.Name}\")");
                 builder.AppendLine($"        {{");
 
                 if (field.Type.Atomic == SchemaAtomicCategory.Collection && field.Type.Inner!.Category == SchemaTypeCategory.DeclaredClass)
@@ -595,7 +644,7 @@ internal static class Program
                             ? $"FieldDecode.CreateDecoder_enum<{fieldCsTypeName}>"
                             : serializer == null
                                 ? $"FieldDecode.CreateDecoder_{fieldCsTypeName}"
-                                : $"CreateDecoder_{serializer}";
+                                : $"CreateDecoder_{serializer.StringValue}";
 
                     builder.AppendLine($"            var decoder = {decoderMethod}(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
@@ -648,12 +697,6 @@ internal static class Program
 
         builder.AppendLine("}");
     }
-
-    private static readonly JsonSerializerOptions SerializerOptions = new()
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        AllowTrailingCommas = true
-    };
 
     private static string EnumType(int alignment) =>
         alignment switch

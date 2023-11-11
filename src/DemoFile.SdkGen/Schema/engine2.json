@@ -83,196 +83,286 @@
   },
   "classes": {
     "EngineLoopState_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventModInitialized_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventFrameBoundary_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventProfileStorageAvailable_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventSplitScreenStateChanged_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventSetTime_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPollInput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientProcessInput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientProcessGameInput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPreOutput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientSceneSystemThreadStateChange_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientOutput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPostOutput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientFrameSimulate_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventSimpleLoopFrameUpdate_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventSimulate_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventAdvanceTick_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventPostAdvanceTick_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventServerAdvanceTick_t": {
       "parent": "EventAdvanceTick_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventServerPostAdvanceTick_t": {
       "parent": "EventPostAdvanceTick_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientAdvanceTick_t": {
       "parent": "EventAdvanceTick_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPostAdvanceTick_t": {
       "parent": "EventPostAdvanceTick_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientSendInput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPredictionPostNetupdate_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPollNetworking_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientProcessNetworking_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPreSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventServerPollNetworking_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventServerProcessNetworking_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventServerSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventServerPostSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPostSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventClientPauseSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventPostDataUpdate_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventPreDataUpdate_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EventAppShutdown_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CNetworkVarChainer": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CVariantDefaultAllocator": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EntOutput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EntComponentInfo_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CEntityComponent": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "EntInput_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CEntityComponentHelper": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CEntityIdentity": {
+      "metadata": [
+      ],
       "fields": [
         {
           "name": "m_nameStringableIndex",
@@ -280,17 +370,24 @@
             "name": "int32",
             "category": 0,
           },
-          "metadata": {
-            "MNetworkChangeCallback": "entityIdentityNameChanged",
-          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "entityIdentityNameChanged",
+            },
+          ],
         },
       ],
     },
     "CEmptyEntityInstance": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CEntityInstance": {
+      "metadata": [
+      ],
       "fields": [
         {
           "name": "m_pEntity",
@@ -302,9 +399,12 @@
               "category": 5,
             },
           },
-          "metadata": {
-            "MNetworkPriority": "56",
-          },
+          "metadata": [
+            {
+              "name": "MNetworkPriority",
+              "value": 56,
+            },
+          ],
         },
         {
           "name": "m_CScriptComponent",
@@ -316,18 +416,24 @@
               "category": 5,
             },
           },
-          "metadata": {
-            "MNetworkDisable": "",
-          },
+          "metadata": [
+            {
+              "name": "MNetworkDisable",
+            },
+          ],
         },
       ],
     },
     "CEntityIOOutput": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CScriptComponent": {
       "parent": "CEntityComponent",
+      "metadata": [
+      ],
       "fields": [
       ],
     },

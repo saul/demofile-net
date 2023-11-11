@@ -4,6 +4,7 @@ namespace DemoFile.SdkGen;
 
 public partial record SchemaClass(
     string? Parent,
+    IReadOnlyList<SchemaMetadata> Metadata,
     IReadOnlyList<SchemaField> Fields)
 {
     private Dictionary<string, SchemaField[]>? _fieldsByCsPropertyName = null;

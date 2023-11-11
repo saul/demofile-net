@@ -72,104 +72,220 @@
   },
   "classes": {
     "EntityIOConnectionData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "EntityKeyValueData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PermEntityLumpData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "SceneObject_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "BaseSceneObjectOverride_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ExtraVertexStreamOverride_t": {
       "parent": "BaseSceneObjectOverride_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialOverride_t": {
       "parent": "BaseSceneObjectOverride_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoOverlayData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "BakedLightingInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "WorldNodeOnDiskBufferData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AggregateMeshInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AggregateLODSetup_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AggregateSceneObject_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ClutterTile_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ClutterSceneObject_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "WorldNode_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "WorldBuilderParams_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "NodeData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "World_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VoxelVisBlockOffset_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CVoxelVisibility": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VMapResourceData_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeVMapResourceData_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "CEntityComponent": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CEntityIdentity": {
+      "metadata": [
+      ],
       "fields": [
         {
           "name": "m_nameStringableIndex",
@@ -177,13 +293,18 @@
             "name": "int32",
             "category": 0,
           },
-          "metadata": {
-            "MNetworkChangeCallback": "entityIdentityNameChanged",
-          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "entityIdentityNameChanged",
+            },
+          ],
         },
       ],
     },
     "CEntityInstance": {
+      "metadata": [
+      ],
       "fields": [
         {
           "name": "m_pEntity",
@@ -195,9 +316,12 @@
               "category": 5,
             },
           },
-          "metadata": {
-            "MNetworkPriority": "56",
-          },
+          "metadata": [
+            {
+              "name": "MNetworkPriority",
+              "value": 56,
+            },
+          ],
         },
         {
           "name": "m_CScriptComponent",
@@ -209,14 +333,18 @@
               "category": 5,
             },
           },
-          "metadata": {
-            "MNetworkDisable": "",
-          },
+          "metadata": [
+            {
+              "name": "MNetworkDisable",
+            },
+          ],
         },
       ],
     },
     "CScriptComponent": {
       "parent": "CEntityComponent",
+      "metadata": [
+      ],
       "fields": [
       ],
     },

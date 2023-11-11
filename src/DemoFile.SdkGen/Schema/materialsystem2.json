@@ -96,60 +96,125 @@
   },
   "classes": {
     "MaterialParam_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialParamInt_t": {
       "parent": "MaterialParam_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialParamFloat_t": {
       "parent": "MaterialParam_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialParamVector_t": {
       "parent": "MaterialParam_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialParamTexture_t": {
       "parent": "MaterialParam_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialParamString_t": {
       "parent": "MaterialParam_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialParamBuffer_t": {
       "parent": "MaterialParam_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialResourceData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PostProcessingTonemapParameters_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PostProcessingBloomParameters_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PostProcessingVignetteParameters_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PostProcessingLocalContrastParameters_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PostProcessingResource_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },

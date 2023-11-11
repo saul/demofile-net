@@ -57,226 +57,497 @@
   },
   "classes": {
     "TestResource_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeTestResource_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeProceduralTestResource_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeManifestTestResource_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "ManifestTestResource_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCVDataResource": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeIPulseGraphDef": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCTypeScriptResource": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCJavaScriptResource": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeIParticleSystemDefinition": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeIParticleSnapshot": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCAnimData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCAnimationGroup": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCSequenceGroupData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeIMaterial2": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCMorphSetData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCRenderMesh": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCModel": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCTextureBase": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeIVectorGraphic": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCVSoundEventScriptList": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCVSoundStackScriptList": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeVSound_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCVMixListResource": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCPhysAggregateData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCVPhysXSurfacePropertiesList": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCEntityLump": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCWorldNode": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeWorld_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCVoxelVisibility": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCPostProcessingResource": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCPanoramaStyle": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCPanoramaLayout": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCPanoramaDynamicImages": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCDotaItemDefinitionResource": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCDOTAPatchNotesList": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCDOTANovelsList": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeIAnimGraphModelBinding": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCChoreoSceneFileData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCDACGameDefsData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCCompositeMaterialKit": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCSmartProp": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCCSGOEconItem": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCResponseRulesList": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCNmSkeleton": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCNmClip": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "FuseVariableIndex_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
       "fields": [
       ],
     },
     "FuseFunctionIndex_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
       "fields": [
       ],
     },
     "ConstantInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VariableInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FunctionInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFuseProgram": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFuseSymbolTable": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AABB_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "PackedAABB_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "FourQuaternions": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },

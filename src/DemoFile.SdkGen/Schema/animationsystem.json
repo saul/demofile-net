@@ -1859,1506 +1859,3323 @@
   },
   "classes": {
     "MoodAnimation_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyArrayElementNameKey",
+          "value": "m_sName",
+        },
+      ],
       "fields": [
       ],
     },
     "MoodAnimationLayer_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyArrayElementNameKey",
+          "value": "m_sName",
+        },
+      ],
       "fields": [
       ],
     },
     "CMoodVData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MVDataRoot",
+        },
+        {
+          "name": "MVDataOverlayType",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimationDecodeDebugDumpElement_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimationDecodeDebugDump_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimationSnapshotBase_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimationSnapshot_t": {
       "parent": "AnimationSnapshotBase_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimBoneDifference": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimMorphDifference": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimUserDifference": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimEncodeDifference": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimEventDefinition": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimMovement": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimLocalHierarchy": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimDecoder": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimFrameSegment": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimFrameBlockAnim": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimEncodedFrames": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimDesc_Flag": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimSequenceParams": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimActivity": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimBone": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimUser": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimDataChannelDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimKeyData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGroup": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqAutoLayerFlag": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqAutoLayer": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqIKLock": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqBoneMaskList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqScaleSet": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqMultiFetchFlag": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqMultiFetch": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqSeqDescFlag": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqTransition": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqS1SeqDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqSynthAnimDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqCmdLayer": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqPoseSetting": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqCmdSeqDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSeqPoseParamDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSequenceGroupData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCompressorGroup": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "HSequence": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimEnum": {
+      "metadata": [
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimNodeID": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimNodeOutputID": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimStateID": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimParamID": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimTagID": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimComponentID": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "AnimScriptHandle": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyEditClassAsString",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimAttachment": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysics2ShapeDef_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXBodyPart_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXCollisionAttributes_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXRange_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXConstraintParams_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXConstraint2_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXJoint_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PhysSoftbodyDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "VPhysXAggregateData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPhysSurfacePropertiesPhysics": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPhysSurfacePropertiesAudio": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPhysSurfacePropertiesSoundNames": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPhysSurfaceProperties": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CVPhysXSurfacePropertiesList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MaterialGroup_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ModelSkeletonData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PermModelInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PermModelExtPart_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ModelBoneFlexDriverControl_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ModelBoneFlexDriver_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PermModelDataAnimatedMaterialAttribute_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "PermModelData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AttachmentHandle_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_AttachedModel": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_UserPick": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_RandomPick": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_SetMaterialGroup": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_SetMaterialGroupOnAttachedModels": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_SetRenderColor": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_RandomColor": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_SetBodygroup": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_SetBodygroupOnAttachedModels": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigElement_Command": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfig": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CModelConfigList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CRenderBufferBinding": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "SkeletonBoneBounds_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "RenderSkeletonBone_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CRenderSkeleton": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDrawCullingData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMaterialDrawDescriptor": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMeshletDescriptor": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSceneObjectData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAttachment": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CHitBox": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CHitBoxSet": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CHitBoxSetList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CRenderMesh": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CConstraintTarget": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CConstraintSlave": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoneConstraintBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBaseConstraint": {
       "parent": "CBoneConstraintBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPointConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "COrientConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAimConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CTwistConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CTiltTwistConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMorphConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CParentConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoneConstraintPoseSpaceMorph": {
       "parent": "CBoneConstraintBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoneConstraintPoseSpaceMorph::Input_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CBoneConstraintPoseSpaceBone": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoneConstraintPoseSpaceBone::Input_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "CBoneConstraintDotToMorph": {
       "parent": "CBoneConstraintBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFlexOp": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFlexRule": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFlexDesc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFlexController": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMorphBundleData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMorphRectData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMorphData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMorphSetData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimFoot": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimSkeleton": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootDefinition": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCycleBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimCycle": {
       "parent": "CCycleBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootCycle": {
       "parent": "CCycleBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootCycleDefinition": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootTrajectory": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootTrajectories": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootStride": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootMotion": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFingerSource": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFingerBone": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFingerChain": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CWristBone": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CVrSkeletalInputSettings": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "BoneDemoCaptureSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "IKDemoCaptureSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimDemoCaptureSettings": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimReplayFrame": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimGraphDebugReplay": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimGraphModelBinding": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimInputDamping": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Damping",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimParamHandle": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimParamHandleMap": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimParameterManagerUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimGraphSettingsManager": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBlendCurve": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ParamSpanSample_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ParamSpan_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CParamSpanUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimGraphSettingsGroup": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimNodePath": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCachedPose": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStaticPoseCache": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStaticPoseCacheBuilder": {
       "parent": "CStaticPoseCache",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimActionUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CEmitTagActionUpdater": {
       "parent": "CAnimActionUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSetParameterActionUpdater": {
       "parent": "CAnimActionUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CToggleComponentActionUpdater": {
       "parent": "CAnimActionUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CExpressionActionUpdater": {
       "parent": "CAnimActionUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimTagBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimTagManagerUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAudioAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Audio Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CBodyGroupSetting": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Body Group Setting",
+        },
+        {
+          "name": "MPropertyElementNameFn",
+        },
+      ],
       "fields": [
       ],
     },
     "CBodyGroupAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Body Group Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CClothSettingsAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Cloth Settings Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootFallAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "FootFall Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootstepLandedAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "FootstepLanded Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CMaterialAttributeAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Material Attribute Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CParticleAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Particle Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CRagdollAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Ragdoll Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CSequenceFinishedAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Sequence Finished Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CStringAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Internal Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CTaskStatusAnimTag": {
       "parent": "CAnimTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Status Tag",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimComponentUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimScriptComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCPPScriptComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDampedValueUpdateItem": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDampedValueComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDemoSettingsComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CLODComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CLookComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMovementMode": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Movement Mode",
+        },
+        {
+          "name": "MPropertyElementNameFn",
+        },
+      ],
       "fields": [
       ],
     },
     "CMovementComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "WeightList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CRagdollComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSlopeComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CVRInputComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimStateMachineUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionDataSet": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CProductQuantizer": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "SampleCode": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MotionDBIndex": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CVectorQuantizer": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionSearchNode": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionSearchDB": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionGraphGroup": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionGraph": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CEditableMotionGraph": {
       "parent": "CMotionGraph",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionNode": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionNodeSequence": {
       "parent": "CMotionNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MotionBlendItem": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionNodeBlend1D": {
       "parent": "CMotionNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionMetricEvaluator": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBlockSelectionMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBonePositionMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoneVelocityMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCurrentRotationVelocityMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCurrentVelocityMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDistanceRemainingMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootCycleMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootPositionMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFutureFacingMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFutureVelocityMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPathMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStepsRemainingMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CTimeRemainingMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimMotorUpdaterBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPathAnimMotorUpdaterBase": {
       "parent": "CAnimMotorUpdaterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDampedPathAnimMotorUpdater": {
       "parent": "CPathAnimMotorUpdaterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPathAnimMotorUpdater": {
       "parent": "CPathAnimMotorUpdaterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPlayerInputAnimMotorUpdater": {
       "parent": "CAnimMotorUpdaterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "AimMatrixOpFixedSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FollowAttachmentSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FootLockPoseOpFixedSettings": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FootPinningPoseOpFixedData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "HitReactFixedSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "JiggleBoneSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "JiggleBoneSettingsList_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "LookAtBone_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "LookAtOpFixedSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FingerSource_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FingerBone_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FingerChain_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "WristBone_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "SkeletalInputOpFixedSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "IKSolverSettings_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "SolveIKChainPoseOpFixedSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimParameterBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CConcreteAnimParameter": {
       "parent": "CAnimParameterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CVirtualAnimParameter": {
       "parent": "CAnimParameterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoolAnimParameter": {
       "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Bool Parameter",
+        },
+      ],
       "fields": [
       ],
     },
     "CEnumAnimParameter": {
       "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Enum Parameter",
+        },
+      ],
       "fields": [
       ],
     },
     "CIntAnimParameter": {
       "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Int Parameter",
+        },
+      ],
       "fields": [
       ],
     },
     "CFloatAnimParameter": {
       "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Float Parameter",
+        },
+      ],
       "fields": [
       ],
     },
     "CVectorAnimParameter": {
       "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Vector Parameter",
+        },
+      ],
       "fields": [
       ],
     },
     "CQuaternionAnimParameter": {
       "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Quaternion Parameter",
+        },
+      ],
       "fields": [
       ],
     },
     "ScriptInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimScriptManager": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStateActionUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CTransitionUpdateData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStateUpdateData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStateMachineComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimUpdateNodeRef": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimUpdateNodeBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBinaryUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBlendUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "BlendItem_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBlend2DUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBoneMaskUpdateNode": {
       "parent": "CBinaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CChoiceUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDirectPlaybackTagData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FootFixedData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "TraceSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FootFixedSettings": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "FootStepTrigger": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CLeafUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CLeanMatrixUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionGraphUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionMatchingUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSelectorUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSequenceUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPoseHandle": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSkeletalInputUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSolveIKTargetHandle_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "StanceInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStateNodeTransitionData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStateNodeStateData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStateMachineUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSubtractUpdateNode": {
       "parent": "CBinaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "TwoBoneIKSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CUnaryUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CWayPointHelperUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CZeroPoseUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "TagSpan_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimUpdateSharedData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "ConfigIndex": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "MotionIndex": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMotionGraphConfig": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSingleFrameUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGraphVisualizerPrimitiveBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGraphVisualizerText": {
       "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGraphVisualizerSphere": {
       "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGraphVisualizerLine": {
       "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGraphVisualizerPie": {
       "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimationGraphVisualizerAxis": {
       "parent": "CAnimationGraphVisualizerPrimitiveBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "IKBoneNameAndIndex_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "IKTargetSettings_t": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "ChainToSolveData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAnimGraphNetworkSettings": {
       "parent": "CAnimGraphSettingsGroup",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Networking",
+        },
+      ],
       "fields": [
       ],
     },
     "CActionComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAddUpdateNode": {
       "parent": "CBinaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CAimMatrixUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CBindPoseUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CChoreoUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCycleControlUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CCycleControlClipUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDirectionalBlendUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CDirectPlaybackUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFollowPathUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFollowAttachmentUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootAdjustmentUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootLockUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootPinningUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CFootStepTriggerUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CHitReactUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CInputStreamUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CJiggleBoneUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CJumpHelperUpdateNode": {
       "parent": "CSequenceUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CLookAtUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CMoverUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CPathHelperUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CRagdollUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CRootUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSetFacingUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSlowDownOnSlopesUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSolveIKChainUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CSpeedScaleUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStanceOverrideUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStanceScaleUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CStopAtGoalUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CTurnHelperUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CTwoBoneIKUpdateNode": {
       "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },

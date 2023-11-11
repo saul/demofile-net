@@ -345,32 +345,64 @@
   },
   "classes": {
     "CSchemaSystemInternalRegistration": {
+      "metadata": [
+      ],
       "fields": [
       ],
     },
     "InfoForResourceTypeCResourceManifestInternal": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
       "fields": [
       ],
     },
     "ResourceId_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
       "fields": [
       ],
     },
     "CExampleSchemaVData_Monomorphic": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CExampleSchemaVData_PolymorphicBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CExampleSchemaVData_PolymorphicDerivedA": {
       "parent": "CExampleSchemaVData_PolymorphicBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },
     "CExampleSchemaVData_PolymorphicDerivedB": {
       "parent": "CExampleSchemaVData_PolymorphicBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
       "fields": [
       ],
     },

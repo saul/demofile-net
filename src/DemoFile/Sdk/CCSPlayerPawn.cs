@@ -13,9 +13,7 @@ public partial class CCSPlayerPawn
 
     public CCSPlayerController? CSController => Controller.Get<CCSPlayerController>(Demo);
 
-    public CCSPlayer_MovementServices? CSMovementServices => MovementServices as CCSPlayer_MovementServices;
-
-    public InputButtons InputButtons => CSMovementServices is {} csMovement
+    public InputButtons InputButtons => MovementServices is {} csMovement
         ? (InputButtons) csMovement.ButtonDownMaskPrev
         : default;
 }
