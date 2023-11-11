@@ -1164,7 +1164,7 @@ public partial class CAttributeManager
 {
     public Int32 ReapplyProvisionParity { get; private set; }
 
-    public CHandle<CBaseEntity> Outer { get; private set; }
+    public CHandle<CBaseEntity> OuterHandle { get; private set; }
 
     public AttributeProviderTypes ProviderType { get; private set; }
 
@@ -1183,7 +1183,7 @@ public partial class CAttributeManager
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CAttributeManager @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Outer = decoder(ref buffer);
+                @this.OuterHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_ProviderType")
@@ -2043,7 +2043,8 @@ public partial class CBaseButton : CBaseToggle
 {
     internal CBaseButton(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseModelEntity> GlowEntity { get; private set; }
+    public CHandle<CBaseModelEntity> GlowEntityHandle { get; private set; }
+    public CBaseModelEntity? GlowEntity => GlowEntityHandle.Get(Demo);
 
     public bool Usable { get; private set; }
 
@@ -2056,7 +2057,7 @@ public partial class CBaseButton : CBaseToggle
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity>(field.FieldEncodingInfo);
             return (CBaseButton @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.GlowEntity = decoder(ref buffer);
+                @this.GlowEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_usable")
@@ -2584,17 +2585,20 @@ public partial class CBaseEntity : CEntityInstance
     // MNetworkUserGroup "LocalPlayerExclusive"
     public Vector BaseVelocity { get; private set; }
 
-    public CHandle<CBaseEntity> EffectEntity { get; private set; }
+    public CHandle<CBaseEntity> EffectEntityHandle { get; private set; }
+    public CBaseEntity? EffectEntity => EffectEntityHandle.Get(Demo);
 
     // MNetworkPriority 32
-    public CHandle<CBaseEntity> OwnerEntity { get; private set; }
+    public CHandle<CBaseEntity> OwnerEntityHandle { get; private set; }
+    public CBaseEntity? OwnerEntity => OwnerEntityHandle.Get(Demo);
 
     // MNetworkChangeCallback "OnEffectsChanged"
     public UInt32 Effects { get; private set; }
 
     // MNetworkPriority 32
     // MNetworkUserGroup "Player"
-    public CHandle<CBaseEntity> GroundEntity { get; private set; }
+    public CHandle<CBaseEntity> GroundEntityHandle { get; private set; }
+    public CBaseEntity? GroundEntity => GroundEntityHandle.Get(Demo);
 
     // MNetworkBitCount 8
     // MNetworkMinValue 0
@@ -2803,7 +2807,7 @@ public partial class CBaseEntity : CEntityInstance
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EffectEntity = decoder(ref buffer);
+                @this.EffectEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hOwnerEntity")
@@ -2811,7 +2815,7 @@ public partial class CBaseEntity : CEntityInstance
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.OwnerEntity = decoder(ref buffer);
+                @this.OwnerEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_fEffects")
@@ -2827,7 +2831,7 @@ public partial class CBaseEntity : CEntityInstance
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.GroundEntity = decoder(ref buffer);
+                @this.GroundEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flFriction")
@@ -3115,7 +3119,8 @@ public partial class CBaseGrenade : CBaseFlex
     // MNetworkEncodeFlags 1
     public float Damage { get; private set; }
 
-    public CHandle<CCSPlayerPawn> Thrower { get; private set; }
+    public CHandle<CCSPlayerPawn> ThrowerHandle { get; private set; }
+    public CCSPlayerPawn? Thrower => ThrowerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBaseGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -3156,7 +3161,7 @@ public partial class CBaseGrenade : CBaseFlex
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CBaseGrenade @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Thrower = decoder(ref buffer);
+                @this.ThrowerHandle = decoder(ref buffer);
             };
         }
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
@@ -3509,7 +3514,8 @@ public partial class CBasePlayerController : CBaseEntity
     public UInt32 TickBase { get; private set; }
 
     // MNetworkChangeCallback "OnPawnChanged"
-    public CHandle<CBasePlayerPawn> Pawn { get; private set; }
+    public CHandle<CBasePlayerPawn> PawnHandle { get; private set; }
+    public CBasePlayerPawn? Pawn => PawnHandle.Get(Demo);
 
     // MNetworkChangeCallback "OnConnectionStateChanged"
     public PlayerConnectedState Connected { get; private set; }
@@ -3538,7 +3544,7 @@ public partial class CBasePlayerController : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerPawn>(field.FieldEncodingInfo);
             return (CBasePlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Pawn = decoder(ref buffer);
+                @this.PawnHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iConnected")
@@ -3656,7 +3662,8 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
 
     public GameTime DeathTime { get; private set; } = new();
 
-    public CHandle<CBasePlayerController> Controller { get; private set; }
+    public CHandle<CBasePlayerController> ControllerHandle { get; private set; }
+    public CBasePlayerController? Controller => ControllerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBasePlayerPawn> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -3880,7 +3887,7 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerController>(field.FieldEncodingInfo);
             return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Controller = decoder(ref buffer);
+                @this.ControllerHandle = decoder(ref buffer);
             };
         }
         return CBaseCombatCharacter.CreateFieldDecoder(field, decoderSet);
@@ -4092,7 +4099,8 @@ public partial class CBasePropDoor : CDynamicProp
 
     public QAngle ClosedAngles { get; private set; }
 
-    public CHandle<CBasePropDoor> Master { get; private set; }
+    public CHandle<CBasePropDoor> MasterHandle { get; private set; }
+    public CBasePropDoor? Master => MasterHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBasePropDoor> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -4133,7 +4141,7 @@ public partial class CBasePropDoor : CDynamicProp
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePropDoor>(field.FieldEncodingInfo);
             return (CBasePropDoor @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Master = decoder(ref buffer);
+                @this.MasterHandle = decoder(ref buffer);
             };
         }
         return CDynamicProp.CreateFieldDecoder(field, decoderSet);
@@ -4284,9 +4292,11 @@ public partial class CBaseViewModel : CBaseAnimGraph
 
     public float AnimationStartTime { get; private set; }
 
-    public CHandle<CBasePlayerWeapon> Weapon { get; private set; }
+    public CHandle<CBasePlayerWeapon> WeaponHandle { get; private set; }
+    public CBasePlayerWeapon? Weapon => WeaponHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> ControlPanel { get; private set; }
+    public CHandle<CBaseEntity> ControlPanelHandle { get; private set; }
+    public CBaseEntity? ControlPanel => ControlPanelHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBaseViewModel> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -4319,7 +4329,7 @@ public partial class CBaseViewModel : CBaseAnimGraph
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
             return (CBaseViewModel @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Weapon = decoder(ref buffer);
+                @this.WeaponHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hControlPanel")
@@ -4327,7 +4337,7 @@ public partial class CBaseViewModel : CBaseAnimGraph
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CBaseViewModel @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ControlPanel = decoder(ref buffer);
+                @this.ControlPanelHandle = decoder(ref buffer);
             };
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
@@ -5130,7 +5140,8 @@ public partial class CChicken : CDynamicProp
 
     public bool JumpedThisFrame { get; private set; }
 
-    public CHandle<CCSPlayerPawn> Leader { get; private set; }
+    public CHandle<CCSPlayerPawn> LeaderHandle { get; private set; }
+    public CCSPlayerPawn? Leader => LeaderHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CChicken> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -5171,7 +5182,7 @@ public partial class CChicken : CDynamicProp
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CChicken @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Leader = decoder(ref buffer);
+                @this.LeaderHandle = decoder(ref buffer);
             };
         }
         return CDynamicProp.CreateFieldDecoder(field, decoderSet);
@@ -7535,9 +7546,9 @@ public partial class CCSPlayer_HostageServices : CPlayerPawnComponent
         throw new NotImplementedException($"Unknown derived class of CCSPlayer_HostageServices: {serializerKey}");
     }
 
-    public CHandle<CBaseEntity> CarriedHostage { get; private set; }
+    public CHandle<CBaseEntity> CarriedHostageHandle { get; private set; }
 
-    public CHandle<CBaseEntity> CarriedHostageProp { get; private set; }
+    public CHandle<CBaseEntity> CarriedHostagePropHandle { get; private set; }
 
     internal new static SendNodeDecoder<CCSPlayer_HostageServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -7546,7 +7557,7 @@ public partial class CCSPlayer_HostageServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CCSPlayer_HostageServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.CarriedHostage = decoder(ref buffer);
+                @this.CarriedHostageHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hCarriedHostageProp")
@@ -7554,7 +7565,7 @@ public partial class CCSPlayer_HostageServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CCSPlayer_HostageServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.CarriedHostageProp = decoder(ref buffer);
+                @this.CarriedHostagePropHandle = decoder(ref buffer);
             };
         }
         return CPlayerPawnComponent.CreateFieldDecoder(field, decoderSet);
@@ -7815,7 +7826,7 @@ public partial class CCSPlayer_PingServices : CPlayerPawnComponent
         throw new NotImplementedException($"Unknown derived class of CCSPlayer_PingServices: {serializerKey}");
     }
 
-    public CHandle<CBaseEntity> PlayerPing { get; private set; }
+    public CHandle<CBaseEntity> PlayerPingHandle { get; private set; }
 
     internal new static SendNodeDecoder<CCSPlayer_PingServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -7824,7 +7835,7 @@ public partial class CCSPlayer_PingServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CCSPlayer_PingServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PlayerPing = decoder(ref buffer);
+                @this.PlayerPingHandle = decoder(ref buffer);
             };
         }
         return CPlayerPawnComponent.CreateFieldDecoder(field, decoderSet);
@@ -7917,7 +7928,7 @@ public partial class CCSPlayerBase_CameraServices : CPlayer_CameraServices
     // MNetworkUserGroup "LocalPlayerExclusive"
     public float FOVRate { get; private set; }
 
-    public CHandle<CBaseEntity> ZoomOwner { get; private set; }
+    public CHandle<CBaseEntity> ZoomOwnerHandle { get; private set; }
 
     internal new static SendNodeDecoder<CCSPlayerBase_CameraServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -7958,7 +7969,7 @@ public partial class CCSPlayerBase_CameraServices : CPlayer_CameraServices
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CCSPlayerBase_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ZoomOwner = decoder(ref buffer);
+                @this.ZoomOwnerHandle = decoder(ref buffer);
             };
         }
         return CPlayer_CameraServices.CreateFieldDecoder(field, decoderSet);
@@ -8040,9 +8051,11 @@ public partial class CCSPlayerController : CBasePlayerController
     // MNetworkUserGroup "LocalPlayerExclusive"
     public bool CanControlObservedBot { get; private set; }
 
-    public CHandle<CCSPlayerPawn> PlayerPawn { get; private set; }
+    public CHandle<CCSPlayerPawn> PlayerPawnHandle { get; private set; }
+    public CCSPlayerPawn? PlayerPawn => PlayerPawnHandle.Get(Demo);
 
-    public CHandle<CCSObserverPawn> ObserverPawn { get; private set; }
+    public CHandle<CCSObserverPawn> ObserverPawnHandle { get; private set; }
+    public CCSObserverPawn? ObserverPawn => ObserverPawnHandle.Get(Demo);
 
     public bool PawnIsAlive { get; private set; }
 
@@ -8066,7 +8079,8 @@ public partial class CCSPlayerController : CBasePlayerController
 
     public Int32 PawnBotDifficulty { get; private set; }
 
-    public CHandle<CCSPlayerController> OriginalControllerOfCurrentPawn { get; private set; }
+    public CHandle<CCSPlayerController> OriginalControllerOfCurrentPawnHandle { get; private set; }
+    public CCSPlayerController? OriginalControllerOfCurrentPawn => OriginalControllerOfCurrentPawnHandle.Get(Demo);
 
     public Int32 Score { get; private set; }
 
@@ -8357,7 +8371,7 @@ public partial class CCSPlayerController : CBasePlayerController
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CCSPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PlayerPawn = decoder(ref buffer);
+                @this.PlayerPawnHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hObserverPawn")
@@ -8365,7 +8379,7 @@ public partial class CCSPlayerController : CBasePlayerController
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSObserverPawn>(field.FieldEncodingInfo);
             return (CCSPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ObserverPawn = decoder(ref buffer);
+                @this.ObserverPawnHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bPawnIsAlive")
@@ -8445,7 +8459,7 @@ public partial class CCSPlayerController : CBasePlayerController
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
             return (CCSPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.OriginalControllerOfCurrentPawn = decoder(ref buffer);
+                @this.OriginalControllerOfCurrentPawnHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iScore")
@@ -9270,7 +9284,8 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
 
     public CPlayer_ViewModelServices? ViewModelServices { get; private set; }
 
-    public CHandle<CCSPlayerController> OriginalController { get; private set; }
+    public CHandle<CCSPlayerController> OriginalControllerHandle { get; private set; }
+    public CCSPlayerController? OriginalController => OriginalControllerHandle.Get(Demo);
 
     public EntitySpottedState EntitySpottedState { get; private set; } = new();
 
@@ -9444,7 +9459,7 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
             return (CCSPlayerPawnBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.OriginalController = decoder(ref buffer);
+                @this.OriginalControllerHandle = decoder(ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_entitySpottedState")
@@ -10248,7 +10263,8 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
 
     public Int32 OriginalTeamNumber { get; private set; }
 
-    public CHandle<CCSPlayerPawn> PrevOwner { get; private set; }
+    public CHandle<CCSPlayerPawn> PrevOwnerHandle { get; private set; }
+    public CCSPlayerPawn? PrevOwner => PrevOwnerHandle.Get(Demo);
 
     public GameTick DropTick { get; private set; } = new();
 
@@ -10417,7 +10433,7 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CCSWeaponBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PrevOwner = decoder(ref buffer);
+                @this.PrevOwnerHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_nDropTick")
@@ -10548,13 +10564,13 @@ public partial class CCSWeaponBaseGun : CCSWeaponBase
 
 public partial class CDamageRecord
 {
-    public CHandle<CCSPlayerPawnBase> PlayerDamager { get; private set; }
+    public CHandle<CCSPlayerPawnBase> PlayerDamagerHandle { get; private set; }
 
-    public CHandle<CCSPlayerPawnBase> PlayerRecipient { get; private set; }
+    public CHandle<CCSPlayerPawnBase> PlayerRecipientHandle { get; private set; }
 
-    public CHandle<CCSPlayerController> PlayerControllerDamager { get; private set; }
+    public CHandle<CCSPlayerController> PlayerControllerDamagerHandle { get; private set; }
 
-    public CHandle<CCSPlayerController> PlayerControllerRecipient { get; private set; }
+    public CHandle<CCSPlayerController> PlayerControllerRecipientHandle { get; private set; }
 
     public NetworkedString PlayerDamagerName { get; private set; }
 
@@ -10583,7 +10599,7 @@ public partial class CDamageRecord
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawnBase>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PlayerDamager = decoder(ref buffer);
+                @this.PlayerDamagerHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_PlayerRecipient")
@@ -10591,7 +10607,7 @@ public partial class CDamageRecord
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawnBase>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PlayerRecipient = decoder(ref buffer);
+                @this.PlayerRecipientHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hPlayerControllerDamager")
@@ -10599,7 +10615,7 @@ public partial class CDamageRecord
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PlayerControllerDamager = decoder(ref buffer);
+                @this.PlayerControllerDamagerHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hPlayerControllerRecipient")
@@ -10607,7 +10623,7 @@ public partial class CDamageRecord
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PlayerControllerRecipient = decoder(ref buffer);
+                @this.PlayerControllerRecipientHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_szPlayerDamagerName")
@@ -11479,7 +11495,8 @@ public partial class CEntityFlame : CBaseEntity
 {
     internal CEntityFlame(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseEntity> EntAttached { get; private set; }
+    public CHandle<CBaseEntity> EntAttachedHandle { get; private set; }
+    public CBaseEntity? EntAttached => EntAttachedHandle.Get(Demo);
 
     public bool CheapEffect { get; private set; }
 
@@ -11490,7 +11507,7 @@ public partial class CEntityFlame : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CEntityFlame @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EntAttached = decoder(ref buffer);
+                @this.EntAttachedHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bCheapEffect")
@@ -12849,7 +12866,8 @@ public partial class CEnvProjectedTexture : CModelPointEntity
 {
     internal CEnvProjectedTexture(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseEntity> TargetEntity { get; private set; }
+    public CHandle<CBaseEntity> TargetEntityHandle { get; private set; }
+    public CBaseEntity? TargetEntity => TargetEntityHandle.Get(Demo);
 
     public bool State { get; private set; }
 
@@ -12924,7 +12942,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CEnvProjectedTexture @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.TargetEntity = decoder(ref buffer);
+                @this.TargetEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bState")
@@ -14792,7 +14810,8 @@ public partial class CFuncMonitor : CFuncBrush
 
     public NetworkedString BrushModelName { get; private set; }
 
-    public CHandle<CBaseEntity> HTargetCamera { get; private set; }
+    public CHandle<CBaseEntity> HTargetCameraHandle { get; private set; }
+    public CBaseEntity? HTargetCamera => HTargetCameraHandle.Get(Demo);
 
     public bool Enabled { get; private set; }
 
@@ -14845,7 +14864,7 @@ public partial class CFuncMonitor : CFuncBrush
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CFuncMonitor @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.HTargetCamera = decoder(ref buffer);
+                @this.HTargetCameraHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bEnabled")
@@ -15501,7 +15520,8 @@ public partial class CHandleTest : CBaseEntity
 {
     internal CHandleTest(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseEntity> Handle { get; private set; }
+    public CHandle<CBaseEntity> HandleHandle { get; private set; }
+    public CBaseEntity? Handle => HandleHandle.Get(Demo);
 
     public bool SendHandle { get; private set; }
 
@@ -15512,7 +15532,7 @@ public partial class CHandleTest : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CHandleTest @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Handle = decoder(ref buffer);
+                @this.HandleHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bSendHandle")
@@ -15664,13 +15684,15 @@ public partial class CHostage : CHostageExpresserShim
 
     public Int32 HostageState { get; private set; }
 
-    public CHandle<CBaseEntity> Leader { get; private set; }
+    public CHandle<CBaseEntity> LeaderHandle { get; private set; }
+    public CBaseEntity? Leader => LeaderHandle.Get(Demo);
 
     public CountdownTimer ReuseTimer { get; private set; } = new();
 
     public bool HandsHaveBeenCut { get; private set; }
 
-    public CHandle<CCSPlayerPawn> HostageGrabber { get; private set; }
+    public CHandle<CCSPlayerPawn> HostageGrabberHandle { get; private set; }
+    public CCSPlayerPawn? HostageGrabber => HostageGrabberHandle.Get(Demo);
 
     public GameTime RescueStartTime { get; private set; } = new();
 
@@ -15725,7 +15747,7 @@ public partial class CHostage : CHostageExpresserShim
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CHostage @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Leader = decoder(ref buffer);
+                @this.LeaderHandle = decoder(ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_reuseTimer")
@@ -15749,7 +15771,7 @@ public partial class CHostage : CHostageExpresserShim
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CHostage @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.HostageGrabber = decoder(ref buffer);
+                @this.HostageGrabberHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flRescueStartTime")
@@ -16550,9 +16572,11 @@ public partial class CItemDogtags : CItem
 {
     internal CItemDogtags(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CCSPlayerPawn> OwningPlayer { get; private set; }
+    public CHandle<CCSPlayerPawn> OwningPlayerHandle { get; private set; }
+    public CCSPlayerPawn? OwningPlayer => OwningPlayerHandle.Get(Demo);
 
-    public CHandle<CCSPlayerPawn> KillingPlayer { get; private set; }
+    public CHandle<CCSPlayerPawn> KillingPlayerHandle { get; private set; }
+    public CCSPlayerPawn? KillingPlayer => KillingPlayerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CItemDogtags> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -16561,7 +16585,7 @@ public partial class CItemDogtags : CItem
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CItemDogtags @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.OwningPlayer = decoder(ref buffer);
+                @this.OwningPlayerHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_KillingPlayer")
@@ -16569,7 +16593,7 @@ public partial class CItemDogtags : CItem
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CItemDogtags @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.KillingPlayer = decoder(ref buffer);
+                @this.KillingPlayerHandle = decoder(ref buffer);
             };
         }
         return CItem.CreateFieldDecoder(field, decoderSet);
@@ -19189,9 +19213,11 @@ public partial class CPlantedC4 : CBaseAnimGraph
 
     public bool BombDefused { get; private set; }
 
-    public CHandle<CCSPlayerPawn> BombDefuser { get; private set; }
+    public CHandle<CCSPlayerPawn> BombDefuserHandle { get; private set; }
+    public CCSPlayerPawn? BombDefuser => BombDefuserHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> ControlPanel { get; private set; }
+    public CHandle<CBaseEntity> ControlPanelHandle { get; private set; }
+    public CBaseEntity? ControlPanel => ControlPanelHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CPlantedC4> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -19296,7 +19322,7 @@ public partial class CPlantedC4 : CBaseAnimGraph
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CPlantedC4 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.BombDefuser = decoder(ref buffer);
+                @this.BombDefuserHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hControlPanel")
@@ -19304,7 +19330,7 @@ public partial class CPlantedC4 : CBaseAnimGraph
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPlantedC4 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ControlPanel = decoder(ref buffer);
+                @this.ControlPanelHandle = decoder(ref buffer);
             };
         }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
@@ -19407,12 +19433,12 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
 
     public FogPlayerParams PlayerFog { get; private set; } = new();
 
-    public CHandle<CColorCorrection> ColorCorrectionCtrl { get; private set; }
+    public CHandle<CColorCorrection> ColorCorrectionCtrlHandle { get; private set; }
 
-    public CHandle<CBaseEntity> ViewEntity { get; private set; }
+    public CHandle<CBaseEntity> ViewEntityHandle { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerAndObserversExclusive"
-    public CHandle<CTonemapController2> TonemapController { get; private set; }
+    public CHandle<CTonemapController2> TonemapControllerHandle { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerAndObserversExclusive"
     public AudioParams Audio { get; private set; } = new();
@@ -19459,7 +19485,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CColorCorrection>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ColorCorrectionCtrl = decoder(ref buffer);
+                @this.ColorCorrectionCtrlHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hViewEntity")
@@ -19467,7 +19493,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ViewEntity = decoder(ref buffer);
+                @this.ViewEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hTonemapController")
@@ -19475,7 +19501,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CTonemapController2>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.TonemapController = decoder(ref buffer);
+                @this.TonemapControllerHandle = decoder(ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_audio")
@@ -19761,7 +19787,7 @@ public partial class CPlayer_ObserverServices : CPlayerPawnComponent
     public byte ObserverMode { get; private set; }
 
     // MNetworkChangeCallback "OnObserverTargetChanged"
-    public CHandle<CBaseEntity> ObserverTarget { get; private set; }
+    public CHandle<CBaseEntity> ObserverTargetHandle { get; private set; }
 
     internal new static SendNodeDecoder<CPlayer_ObserverServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -19778,7 +19804,7 @@ public partial class CPlayer_ObserverServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPlayer_ObserverServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ObserverTarget = decoder(ref buffer);
+                @this.ObserverTargetHandle = decoder(ref buffer);
             };
         }
         return CPlayerPawnComponent.CreateFieldDecoder(field, decoderSet);
@@ -19919,10 +19945,10 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
 
     public NetworkedVector<CHandle<CBasePlayerWeapon>> MyWeapons { get; private set; } = new NetworkedVector<CHandle<CBasePlayerWeapon>>();
 
-    public CHandle<CBasePlayerWeapon> ActiveWeapon { get; private set; }
+    public CHandle<CBasePlayerWeapon> ActiveWeaponHandle { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerExclusive"
-    public CHandle<CBasePlayerWeapon> LastWeapon { get; private set; }
+    public CHandle<CBasePlayerWeapon> LastWeaponHandle { get; private set; }
 
     public UInt16[] Ammo { get; private set; } = Array.Empty<UInt16>();
 
@@ -19953,7 +19979,7 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
             return (CPlayer_WeaponServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ActiveWeapon = decoder(ref buffer);
+                @this.ActiveWeaponHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hLastWeapon")
@@ -19961,7 +19987,7 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
             return (CPlayer_WeaponServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.LastWeapon = decoder(ref buffer);
+                @this.LastWeaponHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iAmmo")
@@ -20020,9 +20046,11 @@ public partial class CPlayerPing : CBaseEntity
 {
     internal CPlayerPing(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CCSPlayerPawn> Player { get; private set; }
+    public CHandle<CCSPlayerPawn> PlayerHandle { get; private set; }
+    public CCSPlayerPawn? Player => PlayerHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> PingedEntity { get; private set; }
+    public CHandle<CBaseEntity> PingedEntityHandle { get; private set; }
+    public CBaseEntity? PingedEntity => PingedEntityHandle.Get(Demo);
 
     public Int32 Type { get; private set; }
 
@@ -20037,7 +20065,7 @@ public partial class CPlayerPing : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
             return (CPlayerPing @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Player = decoder(ref buffer);
+                @this.PlayerHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hPingedEntity")
@@ -20045,7 +20073,7 @@ public partial class CPlayerPing : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPlayerPing @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PingedEntity = decoder(ref buffer);
+                @this.PingedEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iType")
@@ -20641,7 +20669,8 @@ public partial class CPointClientUIDialog : CBaseClientUIEntity
     internal CPointClientUIDialog(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "OnDialogActivatorChanged"
-    public CHandle<CBaseEntity> Activator { get; private set; }
+    public CHandle<CBaseEntity> ActivatorHandle { get; private set; }
+    public CBaseEntity? Activator => ActivatorHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CPointClientUIDialog> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -20650,7 +20679,7 @@ public partial class CPointClientUIDialog : CBaseClientUIEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPointClientUIDialog @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Activator = decoder(ref buffer);
+                @this.ActivatorHandle = decoder(ref buffer);
             };
         }
         return CBaseClientUIEntity.CreateFieldDecoder(field, decoderSet);
@@ -21013,7 +21042,8 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
 
     public NetworkedString CommentaryFile { get; private set; }
 
-    public CHandle<CBaseEntity> ViewPosition { get; private set; }
+    public CHandle<CBaseEntity> ViewPositionHandle { get; private set; }
+    public CBaseEntity? ViewPosition => ViewPositionHandle.Get(Demo);
 
     public bool Active { get; private set; }
 
@@ -21046,7 +21076,7 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPointCommentaryNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ViewPosition = decoder(ref buffer);
+                @this.ViewPositionHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bActive")
@@ -21189,9 +21219,11 @@ public partial class CPointValueRemapper : CBaseEntity
 
     public ValueRemapperInputType InputType { get; private set; }
 
-    public CHandle<CBaseEntity> RemapLineStart { get; private set; }
+    public CHandle<CBaseEntity> RemapLineStartHandle { get; private set; }
+    public CBaseEntity? RemapLineStart => RemapLineStartHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> RemapLineEnd { get; private set; }
+    public CHandle<CBaseEntity> RemapLineEndHandle { get; private set; }
+    public CBaseEntity? RemapLineEnd => RemapLineEndHandle.Get(Demo);
 
     public float MaximumChangePerSecond { get; private set; }
 
@@ -21248,7 +21280,7 @@ public partial class CPointValueRemapper : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPointValueRemapper @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.RemapLineStart = decoder(ref buffer);
+                @this.RemapLineStartHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hRemapLineEnd")
@@ -21256,7 +21288,7 @@ public partial class CPointValueRemapper : CBaseEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CPointValueRemapper @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.RemapLineEnd = decoder(ref buffer);
+                @this.RemapLineEndHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flMaximumChangePerSecond")
@@ -21904,7 +21936,8 @@ public partial class CRagdollProp : CBaseAnimGraph
     // MNetworkBitCount 13
     public NetworkedVector<QAngle> RagAngles { get; private set; } = new NetworkedVector<QAngle>();
 
-    public CHandle<CBaseEntity> RagdollSource { get; private set; }
+    public CHandle<CBaseEntity> RagdollSourceHandle { get; private set; }
+    public CBaseEntity? RagdollSource => RagdollSourceHandle.Get(Demo);
 
     // MNetworkBitCount 8
     // MNetworkMinValue 0
@@ -21959,7 +21992,7 @@ public partial class CRagdollProp : CBaseAnimGraph
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CRagdollProp @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.RagdollSource = decoder(ref buffer);
+                @this.RagdollSourceHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flBlendWeight")
@@ -22249,9 +22282,11 @@ public partial class CRopeKeyframe : CBaseModelEntity
 
     public float ScrollSpeed { get; private set; }
 
-    public CHandle<CBaseEntity> StartPoint { get; private set; }
+    public CHandle<CBaseEntity> StartPointHandle { get; private set; }
+    public CBaseEntity? StartPoint => StartPointHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> EndPoint { get; private set; }
+    public CHandle<CBaseEntity> EndPointHandle { get; private set; }
+    public CBaseEntity? EndPoint => EndPointHandle.Get(Demo);
 
     public AttachmentHandle StartAttachment { get; private set; } = new();
 
@@ -22360,7 +22395,7 @@ public partial class CRopeKeyframe : CBaseModelEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.StartPoint = decoder(ref buffer);
+                @this.StartPointHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_hEndPoint")
@@ -22368,7 +22403,7 @@ public partial class CRopeKeyframe : CBaseModelEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EndPoint = decoder(ref buffer);
+                @this.EndPointHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iStartAttachment")
@@ -23629,7 +23664,8 @@ public partial class CSprite : CBaseModelEntity
 
     public CStrongHandle<InfoForResourceTypeIMaterial2> SpriteMaterial { get; private set; }
 
-    public CHandle<CBaseEntity> AttachedToEntity { get; private set; }
+    public CHandle<CBaseEntity> AttachedToEntityHandle { get; private set; }
+    public CBaseEntity? AttachedToEntity => AttachedToEntityHandle.Get(Demo);
 
     public AttachmentHandle Attachment { get; private set; } = new();
 
@@ -23679,7 +23715,7 @@ public partial class CSprite : CBaseModelEntity
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (CSprite @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.AttachedToEntity = decoder(ref buffer);
+                @this.AttachedToEntityHandle = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_nAttachment")
@@ -26447,7 +26483,7 @@ public partial class FogParams
 public partial class FogPlayerParams
 {
     // MNetworkUserGroup "PlayerFogController"
-    public CHandle<CFogController> Ctrl { get; private set; }
+    public CHandle<CFogController> CtrlHandle { get; private set; }
 
     internal static SendNodeDecoder<FogPlayerParams> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -26456,7 +26492,7 @@ public partial class FogPlayerParams
             var decoder = FieldDecode.CreateDecoder_CHandle<CFogController>(field.FieldEncodingInfo);
             return (FogPlayerParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Ctrl = decoder(ref buffer);
+                @this.CtrlHandle = decoder(ref buffer);
             };
         }
         if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
@@ -26619,7 +26655,7 @@ public partial class PhysicsRagdollPose
     // MNetworkChangeCallback "OnTransformChanged"
     public NetworkedVector<CTransform> Transforms { get; private set; } = new NetworkedVector<CTransform>();
 
-    public CHandle<CBaseEntity> Owner { get; private set; }
+    public CHandle<CBaseEntity> OwnerHandle { get; private set; }
 
     internal static SendNodeDecoder<PhysicsRagdollPose> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -26648,7 +26684,7 @@ public partial class PhysicsRagdollPose
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
             return (PhysicsRagdollPose @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Owner = decoder(ref buffer);
+                @this.OwnerHandle = decoder(ref buffer);
             };
         }
         if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
@@ -26675,7 +26711,7 @@ public partial class SellbackPurchaseEntry
 
     public bool PrevHelmet { get; private set; }
 
-    public CHandle<CEntityInstance> Item { get; private set; }
+    public CHandle<CEntityInstance> ItemHandle { get; private set; }
 
     internal static SendNodeDecoder<SellbackPurchaseEntry> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -26716,7 +26752,7 @@ public partial class SellbackPurchaseEntry
             var decoder = FieldDecode.CreateDecoder_CHandle<CEntityInstance>(field.FieldEncodingInfo);
             return (SellbackPurchaseEntry @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Item = decoder(ref buffer);
+                @this.ItemHandle = decoder(ref buffer);
             };
         }
         if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
