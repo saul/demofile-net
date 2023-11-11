@@ -1,4 +1,4 @@
-# DemoFile.Net
+# DemoFile.Net ![NuGet](https://img.shields.io/nuget/v/DemoFile) ![Build status](https://github.com/saul/demofile-net/actions/workflows/dotnet.yml/badge.svg)
 
 DemoFile.Net is a blazing fast demo parser library for Counter-Strike 2, written in C#. It is cross platform, and can be
 used from Windows, Mac or Linux.
@@ -21,7 +21,6 @@ used from Windows, Mac or Linux.
 
 ```c#
 using DemoFile;
-using DemoFile.Sdk;
 
 internal class Program
 {
@@ -32,10 +31,7 @@ internal class Program
         var demo = new DemoParser();
         demo.Source1GameEvents.PlayerDeath += e =>
         {
-            var attacker = demo.GetEntityByIndex<CCSPlayerController>(e.Attacker);
-            var victim = demo.GetEntityByIndex<CCSPlayerController>(e.Userid);
-
-            Console.WriteLine($"{attacker?.PlayerName} [{e.Weapon}] {victim?.PlayerName}");
+            Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
         };
 
         await demo.Start(File.OpenRead(path));
