@@ -72,12 +72,7 @@ internal class Program
                     continue;
                 }
 
-                var grenades =
-                    pawn.Weapons
-                        .Select(h => h as CBaseCSGrenade)
-                        .Where(x => x != null)!
-                        .Select(x => x!);
-
+                var grenades = pawn.Grenades;
                 foreach (var grenade in grenades)
                 {
                     Console.Write($"{grenade.ServerClass.Name} x {grenade.GrenadeCount}, ");

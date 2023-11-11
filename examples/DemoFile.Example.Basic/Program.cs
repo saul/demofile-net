@@ -1,5 +1,4 @@
 ﻿using DemoFile;
-using DemoFile.Sdk;
 
 internal class Program
 {
