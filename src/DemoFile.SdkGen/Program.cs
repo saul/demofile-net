@@ -460,7 +460,14 @@ internal static class Program
                 builder.AppendLine($"    // {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
             }
 
-            builder.AppendLine($"    public {field.Type.CsTypeName} {schemaClass.CsPropertyNameForField(schemaClassName, field)} {{ get; private set; }}{defaultValue}");
+            var csPropertyName = schemaClass.CsPropertyNameForField(schemaClassName, field);
+            builder.AppendLine($"    public {field.Type.CsTypeName} {csPropertyName} {{ get; private set; }}{defaultValue}");
+
+            if (isEntityClass && field.Type.TryGetEntityHandleType(out var entityType))
+            {
+                builder.AppendLine($"    public {entityType}? {csPropertyName[..^6]} => {csPropertyName}.Get(Demo);");
+            }
+
             builder.AppendLine();
         }
 

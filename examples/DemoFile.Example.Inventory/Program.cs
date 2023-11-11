@@ -22,7 +22,7 @@ internal class Program
         demo.EntityEvents.CCSPlayerPawn.AddCollectionChangeCallback(pawn => pawn.Grenades, (pawn, oldGrenades, newGrenades) =>
         {
             Console.Write($"  [Tick {demo.CurrentGameTick.Value}] ");
-            MarkupPlayerName(pawn.CSController);
+            MarkupPlayerName(pawn.Controller);
             AnsiConsole.MarkupLine($" grenades changed [grey]{string.Join(", ", oldGrenades.Select(x => x.ServerClass.Name))}[/] => [bold]{string.Join(", ", newGrenades.Select(x => x.ServerClass.Name))}[/]");
         });
 
@@ -59,8 +59,7 @@ internal class Program
                 MarkupPlayerName(player);
                 Console.Write(" - ");
 
-                var pawn = player.PlayerPawn.Get(demo);
-                if (pawn == null)
+                if (player.PlayerPawn is not {} pawn)
                 {
                     Console.WriteLine("<no pawn>");
                     continue;

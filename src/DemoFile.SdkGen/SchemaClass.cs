@@ -46,8 +46,12 @@ public partial record SchemaClass(
 
         // If removing the hungarian notation prefix causes clashes with other fields,
         // then just remove the `m_` prefix and convert to title case.
-        return _fieldsByCsPropertyName[cleanName].Length == 1
+        var uniqueName = _fieldsByCsPropertyName[cleanName].Length == 1
             ? cleanName
             : RemoveMemberPrefix(field.Name);
+
+        return field.Type.TryGetEntityHandleType(out _)
+            ? uniqueName + "Handle"
+            : uniqueName;
     }
 }

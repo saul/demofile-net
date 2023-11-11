@@ -19,6 +19,28 @@ public record SchemaFieldType(
         && Inner!.Category == SchemaTypeCategory.Builtin
         && Inner.Name == "char";
 
+    public bool TryGetEntityHandleType([NotNullWhen(true)] out string? entityType)
+    {
+        entityType = null;
+
+        if (Category != SchemaTypeCategory.Atomic)
+            return false;
+
+        if (Atomic == SchemaAtomicCategory.Basic && Name == "CEntityHandle")
+        {
+            entityType = "CEntityInstance";
+            return true;
+        }
+
+        if (Atomic == SchemaAtomicCategory.T && Name.StartsWith("CHandle<"))
+        {
+            entityType = Inner!.Name;
+            return true;
+        }
+
+        return false;
+    }
+
     public bool IsDeclared => Category is SchemaTypeCategory.DeclaredClass or SchemaTypeCategory.DeclaredEnum;
 
     public bool TryGetArrayElementType([NotNullWhen(true)] out SchemaFieldType? elementType)
