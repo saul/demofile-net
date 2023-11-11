@@ -5,6 +5,12 @@ used from Windows, Mac or Linux.
 
 ![Screenshot of DemoFile.Net](./assets/screenshot-2x.png)
 
+Easy discoverability of available data through your IDE's inbuilt autocompletion:
+
+| ![](./assets/ide-1.png) | ![](./assets/ide-2.png) |
+|-------------------------|-------------------------|
+| ![](./assets/ide-3.png) | ![](./assets/ide-4.png) |
+
 ## Features
 
 | Feature                                           | Availability      |
