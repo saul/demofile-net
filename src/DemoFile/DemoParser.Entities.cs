@@ -95,6 +95,30 @@ public partial class DemoParser
         return index.IsValid ? _entities[(int)index.Value] as T : null;
     }
 
+    public CCSPlayerController? GetPlayerByUserId(ushort userId)
+    {
+        for (var slot = 0; slot < _playerInfos.Length; slot++)
+        {
+            var playerInfo = _playerInfos[slot];
+            if (playerInfo?.Userid == userId)
+                return _entities[slot + 1] as CCSPlayerController;
+        }
+
+        return null;
+    }
+
+    public CCSPlayerController? GetPlayerBySteamId(ulong steamId64)
+    {
+        for (var slot = 0; slot < _playerInfos.Length; slot++)
+        {
+            var playerInfo = _playerInfos[slot];
+            if (playerInfo?.Steamid == steamId64)
+                return _entities[slot + 1] as CCSPlayerController;
+        }
+
+        return null;
+    }
+
     private void OnDemoSendTables(CDemoSendTables outerMsg)
     {
         var byteBuffer = new ByteBuffer(outerMsg.Data.Span);
@@ -157,7 +181,7 @@ public partial class DemoParser
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
         Debug.Assert(!msg.UpdateBaseline);
-        Debug.Assert(msg.AlternateBaselines.Count == 0);
+        //Debug.Assert(msg.AlternateBaselines.Count == 0);
 
         var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;

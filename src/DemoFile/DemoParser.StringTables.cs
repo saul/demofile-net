@@ -12,10 +12,13 @@ public partial class DemoParser
     // todo: make this an array for perf?
     private readonly Dictionary<uint, byte[]> _instanceBaselines = new();
 
+    private readonly CMsgPlayerInfo?[] _playerInfos = Array.Empty<CMsgPlayerInfo?>();
+
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
         _stringTables.TryGetValue(tableName, out stringTable);
 
     private int _instanceBaselineTableId = -1;
+    private int _userInfoTableId = -1;
 
     private void OnCreateStringTable(CSVCMsg_CreateStringTable msg)
     {
@@ -31,6 +34,11 @@ public partial class DemoParser
         {
             _instanceBaselineTableId = _stringTableList.Count;
             onUpdatedEntry = OnInstanceBaselineUpdate;
+        }
+        else if (msg.Name == "userinfo")
+        {
+            _userInfoTableId = _stringTableList.Count;
+            onUpdatedEntry = OnUserInfoUpdate;
         }
 
         if (msg.DataCompressed)
@@ -51,8 +59,9 @@ public partial class DemoParser
     {
         var stringTable = _stringTableList[msg.TableId];
 
-        Action<KeyValuePair<string,byte[]>>? onUpdatedEntry =
-            msg.TableId == _instanceBaselineTableId ? OnInstanceBaselineUpdate : null;
+        Action<KeyValuePair<string, byte[]>>? onUpdatedEntry =
+            msg.TableId == _instanceBaselineTableId ? OnInstanceBaselineUpdate :
+            msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
 
         stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries, onUpdatedEntry);
     }
@@ -63,5 +72,13 @@ public partial class DemoParser
         {
             _instanceBaselines[classId] = entry.Value;
         }
+    }
+
+    private void OnUserInfoUpdate(KeyValuePair<string, byte[]> entry)
+    {
+        var slot = int.Parse(entry.Key);
+        _playerInfos[slot] = entry.Value.Length == 0
+            ? null
+            : CMsgPlayerInfo.Parser.ParseFrom(entry.Value);
     }
 }
