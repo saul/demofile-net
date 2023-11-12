@@ -27,7 +27,7 @@ public class StringTable
 
     public override string ToString() => $"StringTable {{ {Name}, Entries = {_entries.Count} }}";
 
-    internal void ReadUpdate(ReadOnlySpan<byte> stringData, int entries, Action<KeyValuePair<string, byte[]>>? onUpdatedEntry)
+    internal void ReadUpdate(ReadOnlySpan<byte> stringData, int entries, Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry)
     {
         if (_entries.Count == 0)
             _entries.EnsureCapacity(entries);
@@ -116,7 +116,7 @@ public class StringTable
             else
                 _entries[index] = entry;
 
-            onUpdatedEntry?.Invoke(entry);
+            onUpdatedEntry?.Invoke(index, entry);
         }
 
         ArrayPool<string>.Shared.Return(keys);

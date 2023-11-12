@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace DemoFile;
 
 internal delegate void FieldPathReader(ref BitBuffer buffer, ref FieldPath fieldPath);

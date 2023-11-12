@@ -57,6 +57,8 @@ public partial class DemoParser
         }
     }
 
+    public IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
+
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
         MaxPlayers = msg.MaxClients;
