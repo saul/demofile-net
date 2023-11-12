@@ -65,8 +65,7 @@ public partial class DemoParser
     {
         var stringTable = _stringTableList[msg.TableId];
 
-        Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry;
-        onUpdatedEntry =
+        Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry =
             msg.TableId == _instanceBaselineTableId ? OnInstanceBaselineUpdate :
             msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
 
