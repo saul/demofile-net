@@ -1,4 +1,5 @@
 ﻿using System.Buffers;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using DemoFile.Extensions;
@@ -15,11 +16,12 @@ public readonly record struct EntityContext(
 public partial class DemoParser
 {
     // https://github.com/dotabuff/manta/blob/master/entity.go#L186-L190
-    public const int MaxEdictBits = 14;
-    public const int MaxEdicts = 1 << MaxEdictBits;
-    public const int NumEHandleSerialNumberBits = 17;
+    internal const int MaxEdictBits = 14;
+    internal const int MaxEdicts = 1 << MaxEdictBits;
+    internal const int NumEHandleSerialNumberBits = 17;
 
     private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
+    private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
     private CHandle<CCSGameRulesProxy> _gameRulesHandle;
     private CHandle<CCSPlayerResource> _playerResourceHandle;
 
@@ -28,24 +30,71 @@ public partial class DemoParser
 
     private int _serverClassBits;
     private ServerClass?[] _serverClasses = Array.Empty<ServerClass>();
-    private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
 
+    /// <summary>
+    /// Maximum number of players allowed on the server.
+    /// </summary>
     public int MaxPlayers { get; private set; }
 
-    public CCSTeam GetTeam(CSTeamNumber teamNumber) =>
-        GetCachedSingletonEntity(
-            ref _teamHandles[(int)teamNumber],
-            team => team.CSTeamNum == teamNumber);
-
+    /// <summary>
+    /// The <see cref="CCSTeam"/> entity representing the Spectators.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
     public CCSTeam TeamSpectator => GetTeam(CSTeamNumber.Spectator);
+
+    /// <summary>
+    /// The <see cref="CCSTeam"/> entity representing the Terrorists.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
     public CCSTeam TeamTerrorist => GetTeam(CSTeamNumber.Terrorist);
+
+    /// <summary>
+    /// The <see cref="CCSTeam"/> entity representing the Counter-Terrorists.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
     public CCSTeam TeamCounterTerrorist => GetTeam(CSTeamNumber.CounterTerrorist);
+
     public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
+
+    /// <summary>
+    /// The <see cref="CCSGameRules"/> entity representing the game rules
+    /// (e.g. freeze time, current game phase)
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
     public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
 
+    /// <summary>
+    /// All entities in the game at this point in time.
+    /// </summary>
     public IEnumerable<CEntityInstance> Entities => _entities.WhereNotNull();
 
+    /// <summary>
+    /// All connected players.
+    /// </summary>
     public IEnumerable<CCSPlayerController> Players
+    {
+        get
+        {
+            for (var i = 1; i <= MaxPlayers; ++i)
+            {
+                if (_entities[i] is CCSPlayerController { Connected: PlayerConnectedState.PlayerConnected } controller)
+                    yield return controller;
+            }
+        }
+    }
+
+    /// <summary>
+    /// All players - including those that have disconnected or are reconnecting.
+    /// </summary>
+    public IEnumerable<CCSPlayerController> PlayersIncludingDisconnected
     {
         get
         {
@@ -57,7 +106,24 @@ public partial class DemoParser
         }
     }
 
+    /// <summary>
+    /// All <see cref="CMsgPlayerInfo"/>s for connected players.
+    /// Contains <c>null</c> for empty slots.
+    /// Will always have length equal to <see cref="MaxPlayers"/>.
+    /// </summary>
+    /// <seealso cref="CCSPlayerController.PlayerInfo"/>
     public IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
+
+    /// <summary>
+    /// Get the <see cref="CCSTeam"/> entity representing a given team.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
+    public CCSTeam GetTeam(CSTeamNumber teamNumber) =>
+        GetCachedSingletonEntity(
+            ref _teamHandles[(int)teamNumber],
+            team => team.CSTeamNum == teamNumber);
 
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
@@ -183,7 +249,10 @@ public partial class DemoParser
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
         Debug.Assert(!msg.UpdateBaseline);
-        Debug.Assert(msg.AlternateBaselines.Count == 0);
+
+        IReadOnlyDictionary<int, int> alternateBaselines = msg.AlternateBaselines.Count == 0
+            ? ImmutableDictionary<int, int>.Empty
+            : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => x.BaselineIndex);
 
         var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;
@@ -243,6 +312,8 @@ public partial class DemoParser
             {
                 // FHDR_ENTERPVS
 
+                Debug.Assert(!alternateBaselines.ContainsKey(entityIndex));
+
                 var classId = entityBitBuffer.ReadUBits(_serverClassBits);
                 var serialNum = entityBitBuffer.ReadUBits(NumEHandleSerialNumberBits);
 
@@ -256,9 +327,9 @@ public partial class DemoParser
                 var entity = serverClass.EntityFactory(context);
 
                 // Grab the server class baseline and populate the entity with it
-                if (_instanceBaselines.TryGetValue(classId, out var baseline))
+                if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
                 {
-                    var baselineBuf = new BitBuffer(baseline);
+                    var baselineBuf = new BitBuffer(_instanceBaselines[baselineIndex].Value);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 
@@ -294,6 +365,16 @@ public partial class DemoParser
                 }
 
                 entity.FirePreUpdateEvent();
+
+                if (alternateBaselines.TryGetValue(entityIndex, out var alternateBaseline))
+                {
+                    var (savedBaseline, baselineBytes) = _instanceBaselines[alternateBaseline];
+                    Debug.Assert(savedBaseline.ServerClassId == entity.ServerClass.ServerClassId);
+
+                    var baselineBuf = new BitBuffer(baselineBytes);
+                    ReadNewEntity(ref baselineBuf, entity);
+                }
+
                 ReadNewEntity(ref entityBitBuffer, entity);
 
                 postUpdateEvents[postEventIdx++] = entity;

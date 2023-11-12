@@ -4,14 +4,20 @@ using Snappier;
 
 namespace DemoFile;
 
+internal readonly record struct BaselineKey(uint ServerClassId, uint AlternateBaseline)
+{
+    public override string ToString() => AlternateBaseline == 0
+        ? ServerClassId.ToString()
+        : $"{ServerClassId}:{AlternateBaseline}";
+}
+
 public partial class DemoParser
 {
     private readonly Dictionary<string, StringTable> _stringTables = new();
     private readonly List<StringTable> _stringTableList = new();
 
-    // todo: make this an array for perf?
-    private readonly Dictionary<uint, byte[]> _instanceBaselines = new();
-
+    private readonly Dictionary<BaselineKey, int> _instanceBaselineLookup = new();
+    private KeyValuePair<BaselineKey, byte[]>[] _instanceBaselines = new KeyValuePair<BaselineKey, byte[]>[64];
     private CMsgPlayerInfo?[] _playerInfos = new CMsgPlayerInfo?[16];
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
@@ -68,10 +74,31 @@ public partial class DemoParser
 
     private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]> entry)
     {
-        if (uint.TryParse(entry.Key, out var classId))
+        if (index >= _instanceBaselines.Length)
         {
-            _instanceBaselines[classId] = entry.Value;
+            var newBacking = new KeyValuePair<BaselineKey, byte[]>[(int) BitOperations.RoundUpToPowerOf2((uint) index + 1)];
+            ((ReadOnlySpan<KeyValuePair<BaselineKey, byte[]>>)_instanceBaselines).CopyTo(newBacking);
+            _instanceBaselines = newBacking;
         }
+
+        ReadOnlySpan<char> key = entry.Key;
+
+        BaselineKey baselineKey;
+        if (key.IndexOf(':') is var sepIdx && sepIdx >= 0)
+        {
+            var classId = uint.Parse(key[..sepIdx]);
+            var alternateBaseline = uint.Parse(key[(sepIdx + 1)..]);
+
+            baselineKey = new BaselineKey(classId, alternateBaseline);
+        }
+        else
+        {
+            var classId = uint.Parse(key);
+            baselineKey = new BaselineKey(classId, 0);
+        }
+
+        _instanceBaselines[index] = KeyValuePair.Create(baselineKey, entry.Value);
+        _instanceBaselineLookup[baselineKey] = index;
     }
 
     private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]> entry)

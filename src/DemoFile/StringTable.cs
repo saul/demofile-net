@@ -42,11 +42,8 @@ public class StringTable
             var key = "";
             var value = Array.Empty<byte>();
 
-            if (bitBuffer.ReadOneBit())
-            {
-                index += 1;
-            }
-            else
+            index += 1;
+            if (!bitBuffer.ReadOneBit())
             {
                 index += (int)bitBuffer.ReadUVarInt32() + 1;
             }
@@ -77,6 +74,11 @@ public class StringTable
                 {
                     key = bitBuffer.ReadStringUtf8();
                 }
+            }
+            else
+            {
+                // If key is missing, this is an update to an existing entry
+                key = _entries[index].Key;
             }
 
             // Keep track of the key
