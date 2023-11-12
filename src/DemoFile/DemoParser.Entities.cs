@@ -57,6 +57,8 @@ public partial class DemoParser
         }
     }
 
+    public IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
+
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
         MaxPlayers = msg.MaxClients;
@@ -93,6 +95,30 @@ public partial class DemoParser
     public T? GetEntityByIndex<T>(CEntityIndex index) where T : CEntityInstance
     {
         return index.IsValid ? _entities[(int)index.Value] as T : null;
+    }
+
+    public CCSPlayerController? GetPlayerByUserId(ushort userId)
+    {
+        for (var slot = 0; slot < _playerInfos.Length; slot++)
+        {
+            var playerInfo = _playerInfos[slot];
+            if (playerInfo?.Userid == userId)
+                return _entities[slot + 1] as CCSPlayerController;
+        }
+
+        return null;
+    }
+
+    public CCSPlayerController? GetPlayerBySteamId(ulong steamId64)
+    {
+        for (var slot = 0; slot < _playerInfos.Length; slot++)
+        {
+            var playerInfo = _playerInfos[slot];
+            if (playerInfo?.Steamid == steamId64)
+                return _entities[slot + 1] as CCSPlayerController;
+        }
+
+        return null;
     }
 
     private void OnDemoSendTables(CDemoSendTables outerMsg)

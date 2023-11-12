@@ -48,9 +48,17 @@ internal static class Program
         var parts = eventKey.Split('_', StringSplitOptions.RemoveEmptyEntries);
         for (var i = 0; i < parts.Length; i++)
         {
+            if (keyType == GameEventKeyType.PlayerController && parts[i] == "id")
+            {
+                parts[i] = "";
+                continue;
+            }
+
             parts[i] = parts[i].ToLower() switch
             {
                 "userid" => "Player",
+                "victimid" => "Victim",
+                "attackerid" => "Attacker",
                 "steamid" => "SteamId",
                 "xuid" => "SteamId",
                 _ => char.ToUpper(parts[i][0]) + parts[i][1..]
@@ -61,7 +69,7 @@ internal static class Program
         return keyType switch
         {
             GameEventKeyType.StrictEHandle => csPropertyName + "Handle",
-            GameEventKeyType.PlayerController => csPropertyName + "Index",
+            GameEventKeyType.PlayerController => csPropertyName + "UserId",
             _ => csPropertyName
         };
     }
@@ -158,7 +166,7 @@ internal static class Program
 
                 if ((GameEventKeyType) key.Type == GameEventKeyType.PlayerController)
                 {
-                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^5]} => _demo.GetEntityByIndex<CCSPlayerController>({csPropertyName});");
+                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^6]} => _demo.GetPlayerByUserId({csPropertyName});");
                 }
                 else if ((GameEventKeyType) key.Type == GameEventKeyType.StrictEHandle && key.Name.EndsWith("_pawn"))
                 {
@@ -192,7 +200,7 @@ internal static class Program
             GameEventKeyType.Bool => $"bool",
             GameEventKeyType.UInt64 => $"ulong",
             GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance>",
-            GameEventKeyType.PlayerController => $"CEntityIndex",
+            GameEventKeyType.PlayerController => $"ushort",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
     }
@@ -209,7 +217,7 @@ internal static class Program
             GameEventKeyType.Bool => $"x.ValBool",
             GameEventKeyType.UInt64 => $"x.ValUint64",
             GameEventKeyType.StrictEHandle => $"new CHandle<CEntityInstance>((uint) x.ValLong)",
-            GameEventKeyType.PlayerController => $"x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1)",
+            GameEventKeyType.PlayerController => $"(ushort) x.ValShort",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
     }

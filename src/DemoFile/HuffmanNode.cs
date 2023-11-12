@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace DemoFile;
+﻿namespace DemoFile;
 
 internal readonly record struct NodePriority(int Weight, int Value) : IComparable<NodePriority>
 {

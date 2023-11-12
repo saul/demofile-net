@@ -13,4 +13,7 @@ public readonly record struct DemoTick(int Value) : IComparable<DemoTick>
     public int CompareTo(DemoTick other) => Value.CompareTo(other.Value);
 
     public override string ToString() => Value == -1 ? "<pre record>" : $"Demo tick {Value}";
+
+    public static DemoTick operator +(DemoTick tick, TimeSpan duration) => new((int)(tick.Value + duration.TotalSeconds * 64.0));
+    public static DemoTick operator -(DemoTick tick, TimeSpan duration) => new((int)(tick.Value - duration.TotalSeconds * 64.0));
 }

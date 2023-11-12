@@ -432,7 +432,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerActivateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -455,7 +455,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerConnectFullEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -478,7 +478,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerFullUpdateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "count")
                             return (@this, x) => @this.Count = x.ValShort;
                         return (@this, x) => { };
@@ -505,7 +505,7 @@ public partial class Source1GameEvents
                         if (key.Name == "name")
                             return (@this, x) => @this.Name = x.ValString;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "networkid")
                             return (@this, x) => @this.Networkid = x.ValString;
                         if (key.Name == "xuid")
@@ -536,7 +536,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDisconnectEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "reason")
                             return (@this, x) => @this.Reason = x.ValShort;
                         if (key.Name == "name")
@@ -571,7 +571,7 @@ public partial class Source1GameEvents
                         if (key.Name == "name")
                             return (@this, x) => @this.Name = x.ValString;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "steamid")
                             return (@this, x) => @this.SteamId = x.ValUint64;
                         if (key.Name == "bot")
@@ -598,7 +598,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerSpawnEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -623,7 +623,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerTeamEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "team")
@@ -700,7 +700,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerChangenameEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "oldname")
                             return (@this, x) => @this.Oldname = x.ValString;
                         if (key.Name == "newname")
@@ -727,11 +727,11 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerHurtEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerUserId = (ushort) x.ValShort;
                         if (key.Name == "attacker_pawn")
                             return (@this, x) => @this.AttackerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "health")
@@ -981,7 +981,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HltvCameramanEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1004,9 +1004,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HltvChaseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "target1")
-                            return (@this, x) => @this.Target1Index = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.Target1UserId = (ushort) x.ValShort;
                         if (key.Name == "target2")
-                            return (@this, x) => @this.Target2Index = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.Target2UserId = (ushort) x.ValShort;
                         if (key.Name == "distance")
                             return (@this, x) => @this.Distance = x.ValShort;
                         if (key.Name == "theta")
@@ -1043,7 +1043,7 @@ public partial class Source1GameEvents
                         if (key.Name == "rank")
                             return (@this, x) => @this.Rank = x.ValFloat;
                         if (key.Name == "target")
-                            return (@this, x) => @this.TargetIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.TargetUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1066,11 +1066,11 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HltvRankEntityEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "rank")
                             return (@this, x) => @this.Rank = x.ValFloat;
                         if (key.Name == "target")
-                            return (@this, x) => @this.TargetIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.TargetUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1107,7 +1107,7 @@ public partial class Source1GameEvents
                         if (key.Name == "fov")
                             return (@this, x) => @this.Fov = x.ValFloat;
                         if (key.Name == "target")
-                            return (@this, x) => @this.TargetIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.TargetUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1608,15 +1608,15 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDeathEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerUserId = (ushort) x.ValShort;
                         if (key.Name == "attacker_pawn")
                             return (@this, x) => @this.AttackerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "assister")
-                            return (@this, x) => @this.AssisterIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AssisterUserId = (ushort) x.ValShort;
                         if (key.Name == "assister_pawn")
                             return (@this, x) => @this.AssisterPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "assistedflash")
@@ -1677,7 +1677,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerFootstepEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -2047,7 +2047,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AchievementEarnedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "player")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "achievement")
                             return (@this, x) => @this.Achievement = x.ValShort;
                         return (@this, x) => { };
@@ -2122,7 +2122,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SpecTargetUpdatedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "target")
@@ -2149,7 +2149,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SpecModeUpdatedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -2172,7 +2172,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EntityVisibleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "classname")
@@ -2457,7 +2457,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InstructorStartLessonEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "hint_name")
                             return (@this, x) => @this.HintName = x.ValString;
                         if (key.Name == "hint_target")
@@ -2490,7 +2490,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InstructorCloseLessonEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "hint_name")
                             return (@this, x) => @this.HintName = x.ValString;
                         return (@this, x) => { };
@@ -2515,7 +2515,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InstructorServerHintCreateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "hint_name")
                             return (@this, x) => @this.HintName = x.ValString;
                         if (key.Name == "hint_replace_key")
@@ -2523,7 +2523,7 @@ public partial class Source1GameEvents
                         if (key.Name == "hint_target")
                             return (@this, x) => @this.HintTarget = x.ValLong;
                         if (key.Name == "hint_activator_userid")
-                            return (@this, x) => @this.HintActivatorPlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.HintActivatorPlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "hint_timeout")
                             return (@this, x) => @this.HintTimeout = x.ValShort;
                         if (key.Name == "hint_icon_onscreen")
@@ -2689,7 +2689,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemsGiftedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "player")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "itemdef")
                             return (@this, x) => @this.Itemdef = x.ValLong;
                         if (key.Name == "numgifts")
@@ -2720,7 +2720,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerScoreEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "kills")
                             return (@this, x) => @this.Kills = x.ValShort;
                         if (key.Name == "deaths")
@@ -2749,7 +2749,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerShootEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
@@ -3299,7 +3299,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponhudSelectionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "mode")
@@ -3353,7 +3353,7 @@ public partial class Source1GameEvents
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValShort;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3494,7 +3494,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AddPlayerSonarIconEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "pos_x")
                             return (@this, x) => @this.PosX = x.ValFloat;
                         if (key.Name == "pos_y")
@@ -3598,7 +3598,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AddBulletHitMarkerEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "bone")
                             return (@this, x) => @this.Bone = x.ValShort;
                         if (key.Name == "pos_x")
@@ -3688,7 +3688,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPurchaseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValShort;
                         if (key.Name == "loadout")
@@ -3717,7 +3717,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombBeginplantEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
@@ -3744,7 +3744,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombAbortplantEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
@@ -3771,7 +3771,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombPlantedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
@@ -3798,7 +3798,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombDefusedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
@@ -3825,7 +3825,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombExplodedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "site")
@@ -3852,7 +3852,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombDroppedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entindex")
@@ -3927,7 +3927,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValLong;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -3994,7 +3994,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombBegindefuseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "haskit")
@@ -4021,7 +4021,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombAbortdefuseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4046,7 +4046,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageFollowsEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
@@ -4073,7 +4073,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageHurtEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
@@ -4100,7 +4100,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageKilledEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
@@ -4127,7 +4127,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageRescuedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
@@ -4156,7 +4156,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HostageStopsFollowingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "hostage")
@@ -4227,7 +4227,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1VipEscapedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4250,9 +4250,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1VipKilledEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4275,7 +4275,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerRadioEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "slot")
@@ -4325,7 +4325,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponFireEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
@@ -4354,7 +4354,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponFireOnEmptyEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
@@ -4381,7 +4381,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GrenadeThrownEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "weapon")
@@ -4408,7 +4408,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponOutofammoEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4433,7 +4433,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponReloadEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4458,7 +4458,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponZoomEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4483,7 +4483,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SilencerDetachEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4508,7 +4508,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1InspectWeaponEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4533,7 +4533,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1WeaponZoomRifleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -4558,7 +4558,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerSpawnedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "inrestart")
@@ -4585,7 +4585,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "silent")
@@ -4614,7 +4614,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPickupSlerpEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "index")
                             return (@this, x) => @this.Index = x.ValShort;
                         if (key.Name == "behavior")
@@ -4641,7 +4641,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemPickupFailedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "reason")
@@ -4670,7 +4670,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemRemoveEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "defindex")
@@ -4697,7 +4697,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AmmoPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "index")
@@ -4724,7 +4724,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ItemEquipEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "item")
                             return (@this, x) => @this.Item = x.ValString;
                         if (key.Name == "defindex")
@@ -4763,7 +4763,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EnterBuyzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "canbuy")
                             return (@this, x) => @this.Canbuy = x.ValBool;
                         return (@this, x) => { };
@@ -4788,7 +4788,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ExitBuyzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "canbuy")
                             return (@this, x) => @this.Canbuy = x.ValBool;
                         return (@this, x) => { };
@@ -4834,7 +4834,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EnterBombzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "hasbomb")
                             return (@this, x) => @this.Hasbomb = x.ValBool;
                         if (key.Name == "isplanted")
@@ -4861,7 +4861,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ExitBombzoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "hasbomb")
                             return (@this, x) => @this.Hasbomb = x.ValBool;
                         if (key.Name == "isplanted")
@@ -4888,7 +4888,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1EnterRescueZoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4911,7 +4911,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ExitRescueZoneEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4934,7 +4934,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SilencerOffEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4957,7 +4957,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SilencerOnEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -5001,7 +5001,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BuymenuCloseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -5066,7 +5066,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GrenadeBounceEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -5091,7 +5091,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1HegrenadeDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -5124,7 +5124,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1FlashbangDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -5157,7 +5157,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SmokegrenadeDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -5190,7 +5190,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SmokegrenadeExpiredEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -5223,7 +5223,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1MolotovDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "x")
@@ -5254,7 +5254,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -5318,7 +5318,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TagrenadeDetonateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5436,7 +5436,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyFiringEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -5469,7 +5469,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BulletImpactEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "x")
@@ -5500,7 +5500,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerJumpEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -5523,9 +5523,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerBlindEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "attacker")
-                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerUserId = (ushort) x.ValShort;
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "blind_duration")
@@ -5552,7 +5552,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerFalldamageEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "damage")
@@ -5579,7 +5579,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorMovingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entindex")
@@ -5815,7 +5815,7 @@ public partial class Source1GameEvents
                         if (key.Name == "funfact_token")
                             return (@this, x) => @this.FunfactToken = x.ValString;
                         if (key.Name == "funfact_player")
-                            return (@this, x) => @this.FunfactPlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.FunfactPlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "funfact_data1")
                             return (@this, x) => @this.FunfactData1 = x.ValLong;
                         if (key.Name == "funfact_data2")
@@ -5907,13 +5907,13 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ShowDeathpanelEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "victim")
-                            return (@this, x) => @this.VictimIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.VictimUserId = (ushort) x.ValShort;
                         if (key.Name == "victim_pawn")
                             return (@this, x) => @this.VictimPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "killer")
                             return (@this, x) => @this.Killer = x.ValLong;
                         if (key.Name == "killer_controller")
-                            return (@this, x) => @this.KillerControllerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.KillerControllerUserId = (ushort) x.ValShort;
                         if (key.Name == "hits_taken")
                             return (@this, x) => @this.HitsTaken = x.ValShort;
                         if (key.Name == "damage_taken")
@@ -5965,9 +5965,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerAvengedTeammateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "avenger_id")
-                            return (@this, x) => @this.AvengerIdIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AvengerUserId = (ushort) x.ValShort;
                         if (key.Name == "avenged_player_id")
-                            return (@this, x) => @this.AvengedPlayerIdIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AvengedPlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6067,7 +6067,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1RoundMvpEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "reason")
                             return (@this, x) => @this.Reason = x.ValShort;
                         if (key.Name == "value")
@@ -6104,7 +6104,7 @@ public partial class Source1GameEvents
                         if (key.Name == "duration")
                             return (@this, x) => @this.Duration = x.ValLong;
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         return (@this, x) => { };
@@ -6150,9 +6150,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GgKilledEnemyEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "victimid")
-                            return (@this, x) => @this.VictimidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.VictimUserId = (ushort) x.ValShort;
                         if (key.Name == "attackerid")
-                            return (@this, x) => @this.AttackeridIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.AttackerUserId = (ushort) x.ValShort;
                         if (key.Name == "dominated")
                             return (@this, x) => @this.Dominated = x.ValShort;
                         if (key.Name == "revenge")
@@ -6233,7 +6233,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TrialTimeExpiredEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6277,7 +6277,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerResetVoteEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "vote")
                             return (@this, x) => @this.Vote = x.ValBool;
                         return (@this, x) => { };
@@ -6352,7 +6352,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1StartVoteEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "type")
                             return (@this, x) => @this.Type = x.ValByte;
                         if (key.Name == "vote_parameter")
@@ -6379,7 +6379,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerGivenC4Event, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6402,7 +6402,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TrPlayerFlashbangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6492,11 +6492,11 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BotTakeoverEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "botid")
-                            return (@this, x) => @this.BotidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.BotidUserId = (ushort) x.ValShort;
                         if (key.Name == "p")
                             return (@this, x) => @this.P = x.ValFloat;
                         if (key.Name == "y")
@@ -6567,7 +6567,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1JointeamFailedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "reason")
                             return (@this, x) => @this.Reason = x.ValByte;
                         return (@this, x) => { };
@@ -6592,7 +6592,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1TeamchangePendingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "toteam")
                             return (@this, x) => @this.Toteam = x.ValByte;
                         return (@this, x) => { };
@@ -6688,7 +6688,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SeasoncoinLevelupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "category")
                             return (@this, x) => @this.Category = x.ValShort;
                         if (key.Name == "rank")
@@ -6763,7 +6763,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1AmmoRefillEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "success")
                             return (@this, x) => @this.Success = x.ValBool;
                         return (@this, x) => { };
@@ -6788,7 +6788,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ParachutePickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6811,7 +6811,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1ParachuteDeployEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6834,7 +6834,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DronegunAttackEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6857,7 +6857,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DroneDispatchedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "priority")
                             return (@this, x) => @this.Priority = x.ValShort;
                         if (key.Name == "drone_dispatched")
@@ -6884,7 +6884,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1LootCrateVisibleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "type")
@@ -6911,7 +6911,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1LootCrateOpenedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "type")
                             return (@this, x) => @this.Type = x.ValString;
                         return (@this, x) => { };
@@ -6936,7 +6936,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1OpenCrateInstrEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "type")
@@ -6963,7 +6963,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SmokeBeaconParadropEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "paradrop")
                             return (@this, x) => @this.Paradrop = x.ValShort;
                         return (@this, x) => { };
@@ -7034,7 +7034,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DroneCargoDetachedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "cargo")
                             return (@this, x) => @this.Cargo = x.ValShort;
                         if (key.Name == "delivered")
@@ -7061,7 +7061,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DroneAboveRoofEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "cargo")
                             return (@this, x) => @this.Cargo = x.ValShort;
                         return (@this, x) => { };
@@ -7132,7 +7132,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DzItemInteractionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "subject")
                             return (@this, x) => @this.Subject = x.ValShort;
                         if (key.Name == "type")
@@ -7159,7 +7159,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SurvivalTeammateRespawnEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -7182,7 +7182,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SurvivalNoRespawnsWarningEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -7205,7 +7205,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1SurvivalNoRespawnsFinalEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -7228,7 +7228,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerPingEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "entityid")
@@ -7286,7 +7286,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerSoundEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "radius")
@@ -7380,7 +7380,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BulletFlightResolutionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) x.ValShort + 1);
+                            return (@this, x) => @this.PlayerUserId = (ushort) x.ValShort;
                         if (key.Name == "userid_pawn")
                             return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
                         if (key.Name == "pos_x")
@@ -7516,8 +7516,8 @@ public partial class Source1PlayerActivateEvent : Source1GameEventBase
 
     public override string GameEventName => "player_activate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
@@ -7526,8 +7526,8 @@ public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
 
     public override string GameEventName => "player_connect_full";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
@@ -7536,8 +7536,8 @@ public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
 
     public override string GameEventName => "player_full_update";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Count { get; set; }
 }
@@ -7550,8 +7550,8 @@ public partial class Source1PlayerConnectEvent : Source1GameEventBase
 
     public string Name { get; set; } = "";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Networkid { get; set; } = "";
 
@@ -7568,8 +7568,8 @@ public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
 
     public override string GameEventName => "player_disconnect";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Reason { get; set; }
 
@@ -7590,8 +7590,8 @@ public partial class Source1PlayerInfoEvent : Source1GameEventBase
 
     public string Name { get; set; } = "";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public ulong SteamId { get; set; }
 
@@ -7604,8 +7604,8 @@ public partial class Source1PlayerSpawnEvent : Source1GameEventBase
 
     public override string GameEventName => "player_spawn";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -7617,8 +7617,8 @@ public partial class Source1PlayerTeamEvent : Source1GameEventBase
 
     public override string GameEventName => "player_team";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -7654,8 +7654,8 @@ public partial class Source1PlayerChangenameEvent : Source1GameEventBase
 
     public override string GameEventName => "player_changename";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Oldname { get; set; } = "";
 
@@ -7668,14 +7668,14 @@ public partial class Source1PlayerHurtEvent : Source1GameEventBase
 
     public override string GameEventName => "player_hurt";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
-    public CEntityIndex AttackerIndex { get; set; }
-    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+    public ushort AttackerUserId { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetPlayerByUserId(AttackerUserId);
 
     public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
     public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
@@ -7786,8 +7786,8 @@ public partial class Source1HltvCameramanEvent : Source1GameEventBase
 
     public override string GameEventName => "hltv_cameraman";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1HltvChaseEvent : Source1GameEventBase
@@ -7796,11 +7796,11 @@ public partial class Source1HltvChaseEvent : Source1GameEventBase
 
     public override string GameEventName => "hltv_chase";
 
-    public CEntityIndex Target1Index { get; set; }
-    public CCSPlayerController? Target1 => _demo.GetEntityByIndex<CCSPlayerController>(Target1Index);
+    public ushort Target1UserId { get; set; }
+    public CCSPlayerController? Target1 => _demo.GetPlayerByUserId(Target1UserId);
 
-    public CEntityIndex Target2Index { get; set; }
-    public CCSPlayerController? Target2 => _demo.GetEntityByIndex<CCSPlayerController>(Target2Index);
+    public ushort Target2UserId { get; set; }
+    public CCSPlayerController? Target2 => _demo.GetPlayerByUserId(Target2UserId);
 
     public int Distance { get; set; }
 
@@ -7823,8 +7823,8 @@ public partial class Source1HltvRankCameraEvent : Source1GameEventBase
 
     public float Rank { get; set; }
 
-    public CEntityIndex TargetIndex { get; set; }
-    public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
+    public ushort TargetUserId { get; set; }
+    public CCSPlayerController? Target => _demo.GetPlayerByUserId(TargetUserId);
 }
 
 public partial class Source1HltvRankEntityEvent : Source1GameEventBase
@@ -7833,13 +7833,13 @@ public partial class Source1HltvRankEntityEvent : Source1GameEventBase
 
     public override string GameEventName => "hltv_rank_entity";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public float Rank { get; set; }
 
-    public CEntityIndex TargetIndex { get; set; }
-    public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
+    public ushort TargetUserId { get; set; }
+    public CCSPlayerController? Target => _demo.GetPlayerByUserId(TargetUserId);
 }
 
 public partial class Source1HltvFixedEvent : Source1GameEventBase
@@ -7862,8 +7862,8 @@ public partial class Source1HltvFixedEvent : Source1GameEventBase
 
     public float Fov { get; set; }
 
-    public CEntityIndex TargetIndex { get; set; }
-    public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
+    public ushort TargetUserId { get; set; }
+    public CCSPlayerController? Target => _demo.GetPlayerByUserId(TargetUserId);
 }
 
 public partial class Source1HltvMessageEvent : Source1GameEventBase
@@ -8070,20 +8070,20 @@ public partial class Source1PlayerDeathEvent : Source1GameEventBase
 
     public override string GameEventName => "player_death";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
-    public CEntityIndex AttackerIndex { get; set; }
-    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+    public ushort AttackerUserId { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetPlayerByUserId(AttackerUserId);
 
     public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
     public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
 
-    public CEntityIndex AssisterIndex { get; set; }
-    public CCSPlayerController? Assister => _demo.GetEntityByIndex<CCSPlayerController>(AssisterIndex);
+    public ushort AssisterUserId { get; set; }
+    public CCSPlayerController? Assister => _demo.GetPlayerByUserId(AssisterUserId);
 
     public CHandle<CEntityInstance> AssisterPawnHandle { get; set; }
     public CCSPlayerPawn? AssisterPawn => _demo.GetEntityByHandle(AssisterPawnHandle) as CCSPlayerPawn;
@@ -8131,8 +8131,8 @@ public partial class Source1PlayerFootstepEvent : Source1GameEventBase
 
     public override string GameEventName => "player_footstep";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -8311,8 +8311,8 @@ public partial class Source1AchievementEarnedEvent : Source1GameEventBase
 
     public override string GameEventName => "achievement_earned";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Achievement { get; set; }
 }
@@ -8345,8 +8345,8 @@ public partial class Source1SpecTargetUpdatedEvent : Source1GameEventBase
 
     public override string GameEventName => "spec_target_updated";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -8360,8 +8360,8 @@ public partial class Source1SpecModeUpdatedEvent : Source1GameEventBase
 
     public override string GameEventName => "spec_mode_updated";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1EntityVisibleEvent : Source1GameEventBase
@@ -8370,8 +8370,8 @@ public partial class Source1EntityVisibleEvent : Source1GameEventBase
 
     public override string GameEventName => "entity_visible";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Subject { get; set; }
 
@@ -8474,8 +8474,8 @@ public partial class Source1InstructorStartLessonEvent : Source1GameEventBase
 
     public override string GameEventName => "instructor_start_lesson";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string HintName { get; set; } = "";
 
@@ -8494,8 +8494,8 @@ public partial class Source1InstructorCloseLessonEvent : Source1GameEventBase
 
     public override string GameEventName => "instructor_close_lesson";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string HintName { get; set; } = "";
 }
@@ -8506,8 +8506,8 @@ public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBa
 
     public override string GameEventName => "instructor_server_hint_create";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string HintName { get; set; } = "";
 
@@ -8515,8 +8515,8 @@ public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBa
 
     public int HintTarget { get; set; }
 
-    public CEntityIndex HintActivatorPlayerIndex { get; set; }
-    public CCSPlayerController? HintActivatorPlayer => _demo.GetEntityByIndex<CCSPlayerController>(HintActivatorPlayerIndex);
+    public ushort HintActivatorPlayerUserId { get; set; }
+    public CCSPlayerController? HintActivatorPlayer => _demo.GetPlayerByUserId(HintActivatorPlayerUserId);
 
     public int HintTimeout { get; set; }
 
@@ -8598,8 +8598,8 @@ public partial class Source1ItemsGiftedEvent : Source1GameEventBase
 
     public override string GameEventName => "items_gifted";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Itemdef { get; set; }
 
@@ -8616,8 +8616,8 @@ public partial class Source1PlayerScoreEvent : Source1GameEventBase
 
     public override string GameEventName => "player_score";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Kills { get; set; }
 
@@ -8632,8 +8632,8 @@ public partial class Source1PlayerShootEvent : Source1GameEventBase
 
     public override string GameEventName => "player_shoot";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -8849,8 +8849,8 @@ public partial class Source1WeaponhudSelectionEvent : Source1GameEventBase
 
     public override string GameEventName => "weaponhud_selection";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -8877,8 +8877,8 @@ public partial class Source1VoteCastEvent : Source1GameEventBase
 
     public int Team { get; set; }
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1VoteOptionsEvent : Source1GameEventBase
@@ -8949,8 +8949,8 @@ public partial class Source1AddPlayerSonarIconEvent : Source1GameEventBase
 
     public override string GameEventName => "add_player_sonar_icon";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public float PosX { get; set; }
 
@@ -9000,8 +9000,8 @@ public partial class Source1AddBulletHitMarkerEvent : Source1GameEventBase
 
     public override string GameEventName => "add_bullet_hit_marker";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Bone { get; set; }
 
@@ -9063,8 +9063,8 @@ public partial class Source1ItemPurchaseEvent : Source1GameEventBase
 
     public override string GameEventName => "item_purchase";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Team { get; set; }
 
@@ -9079,8 +9079,8 @@ public partial class Source1BombBeginplantEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_beginplant";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9094,8 +9094,8 @@ public partial class Source1BombAbortplantEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_abortplant";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9109,8 +9109,8 @@ public partial class Source1BombPlantedEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_planted";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9124,8 +9124,8 @@ public partial class Source1BombDefusedEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_defused";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9139,8 +9139,8 @@ public partial class Source1BombExplodedEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_exploded";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9154,8 +9154,8 @@ public partial class Source1BombDroppedEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_dropped";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9190,8 +9190,8 @@ public partial class Source1DefuserPickupEvent : Source1GameEventBase
 
     public int Entityid { get; set; }
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9217,8 +9217,8 @@ public partial class Source1BombBegindefuseEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_begindefuse";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9232,8 +9232,8 @@ public partial class Source1BombAbortdefuseEvent : Source1GameEventBase
 
     public override string GameEventName => "bomb_abortdefuse";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9245,8 +9245,8 @@ public partial class Source1HostageFollowsEvent : Source1GameEventBase
 
     public override string GameEventName => "hostage_follows";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9260,8 +9260,8 @@ public partial class Source1HostageHurtEvent : Source1GameEventBase
 
     public override string GameEventName => "hostage_hurt";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9275,8 +9275,8 @@ public partial class Source1HostageKilledEvent : Source1GameEventBase
 
     public override string GameEventName => "hostage_killed";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9290,8 +9290,8 @@ public partial class Source1HostageRescuedEvent : Source1GameEventBase
 
     public override string GameEventName => "hostage_rescued";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9307,8 +9307,8 @@ public partial class Source1HostageStopsFollowingEvent : Source1GameEventBase
 
     public override string GameEventName => "hostage_stops_following";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9338,8 +9338,8 @@ public partial class Source1VipEscapedEvent : Source1GameEventBase
 
     public override string GameEventName => "vip_escaped";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1VipKilledEvent : Source1GameEventBase
@@ -9348,11 +9348,11 @@ public partial class Source1VipKilledEvent : Source1GameEventBase
 
     public override string GameEventName => "vip_killed";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
-    public CEntityIndex AttackerIndex { get; set; }
-    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+    public ushort AttackerUserId { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetPlayerByUserId(AttackerUserId);
 }
 
 public partial class Source1PlayerRadioEvent : Source1GameEventBase
@@ -9361,8 +9361,8 @@ public partial class Source1PlayerRadioEvent : Source1GameEventBase
 
     public override string GameEventName => "player_radio";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9385,8 +9385,8 @@ public partial class Source1WeaponFireEvent : Source1GameEventBase
 
     public override string GameEventName => "weapon_fire";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9402,8 +9402,8 @@ public partial class Source1WeaponFireOnEmptyEvent : Source1GameEventBase
 
     public override string GameEventName => "weapon_fire_on_empty";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9417,8 +9417,8 @@ public partial class Source1GrenadeThrownEvent : Source1GameEventBase
 
     public override string GameEventName => "grenade_thrown";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9432,8 +9432,8 @@ public partial class Source1WeaponOutofammoEvent : Source1GameEventBase
 
     public override string GameEventName => "weapon_outofammo";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9445,8 +9445,8 @@ public partial class Source1WeaponReloadEvent : Source1GameEventBase
 
     public override string GameEventName => "weapon_reload";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9458,8 +9458,8 @@ public partial class Source1WeaponZoomEvent : Source1GameEventBase
 
     public override string GameEventName => "weapon_zoom";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9471,8 +9471,8 @@ public partial class Source1SilencerDetachEvent : Source1GameEventBase
 
     public override string GameEventName => "silencer_detach";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9484,8 +9484,8 @@ public partial class Source1InspectWeaponEvent : Source1GameEventBase
 
     public override string GameEventName => "inspect_weapon";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9497,8 +9497,8 @@ public partial class Source1WeaponZoomRifleEvent : Source1GameEventBase
 
     public override string GameEventName => "weapon_zoom_rifle";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9510,8 +9510,8 @@ public partial class Source1PlayerSpawnedEvent : Source1GameEventBase
 
     public override string GameEventName => "player_spawned";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9525,8 +9525,8 @@ public partial class Source1ItemPickupEvent : Source1GameEventBase
 
     public override string GameEventName => "item_pickup";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Item { get; set; } = "";
 
@@ -9541,8 +9541,8 @@ public partial class Source1ItemPickupSlerpEvent : Source1GameEventBase
 
     public override string GameEventName => "item_pickup_slerp";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Index { get; set; }
 
@@ -9555,8 +9555,8 @@ public partial class Source1ItemPickupFailedEvent : Source1GameEventBase
 
     public override string GameEventName => "item_pickup_failed";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Item { get; set; } = "";
 
@@ -9571,8 +9571,8 @@ public partial class Source1ItemRemoveEvent : Source1GameEventBase
 
     public override string GameEventName => "item_remove";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Item { get; set; } = "";
 
@@ -9585,8 +9585,8 @@ public partial class Source1AmmoPickupEvent : Source1GameEventBase
 
     public override string GameEventName => "ammo_pickup";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Item { get; set; } = "";
 
@@ -9599,8 +9599,8 @@ public partial class Source1ItemEquipEvent : Source1GameEventBase
 
     public override string GameEventName => "item_equip";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Item { get; set; } = "";
 
@@ -9625,8 +9625,8 @@ public partial class Source1EnterBuyzoneEvent : Source1GameEventBase
 
     public override string GameEventName => "enter_buyzone";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public bool Canbuy { get; set; }
 }
@@ -9637,8 +9637,8 @@ public partial class Source1ExitBuyzoneEvent : Source1GameEventBase
 
     public override string GameEventName => "exit_buyzone";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public bool Canbuy { get; set; }
 }
@@ -9656,8 +9656,8 @@ public partial class Source1EnterBombzoneEvent : Source1GameEventBase
 
     public override string GameEventName => "enter_bombzone";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public bool Hasbomb { get; set; }
 
@@ -9670,8 +9670,8 @@ public partial class Source1ExitBombzoneEvent : Source1GameEventBase
 
     public override string GameEventName => "exit_bombzone";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public bool Hasbomb { get; set; }
 
@@ -9684,8 +9684,8 @@ public partial class Source1EnterRescueZoneEvent : Source1GameEventBase
 
     public override string GameEventName => "enter_rescue_zone";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
@@ -9694,8 +9694,8 @@ public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
 
     public override string GameEventName => "exit_rescue_zone";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1SilencerOffEvent : Source1GameEventBase
@@ -9704,8 +9704,8 @@ public partial class Source1SilencerOffEvent : Source1GameEventBase
 
     public override string GameEventName => "silencer_off";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1SilencerOnEvent : Source1GameEventBase
@@ -9714,8 +9714,8 @@ public partial class Source1SilencerOnEvent : Source1GameEventBase
 
     public override string GameEventName => "silencer_on";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1BuymenuOpenEvent : Source1GameEventBase
@@ -9731,8 +9731,8 @@ public partial class Source1BuymenuCloseEvent : Source1GameEventBase
 
     public override string GameEventName => "buymenu_close";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1RoundPrestartEvent : Source1GameEventBase
@@ -9755,8 +9755,8 @@ public partial class Source1GrenadeBounceEvent : Source1GameEventBase
 
     public override string GameEventName => "grenade_bounce";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9768,8 +9768,8 @@ public partial class Source1HegrenadeDetonateEvent : Source1GameEventBase
 
     public override string GameEventName => "hegrenade_detonate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9789,8 +9789,8 @@ public partial class Source1FlashbangDetonateEvent : Source1GameEventBase
 
     public override string GameEventName => "flashbang_detonate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9810,8 +9810,8 @@ public partial class Source1SmokegrenadeDetonateEvent : Source1GameEventBase
 
     public override string GameEventName => "smokegrenade_detonate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9831,8 +9831,8 @@ public partial class Source1SmokegrenadeExpiredEvent : Source1GameEventBase
 
     public override string GameEventName => "smokegrenade_expired";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9852,8 +9852,8 @@ public partial class Source1MolotovDetonateEvent : Source1GameEventBase
 
     public override string GameEventName => "molotov_detonate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9871,8 +9871,8 @@ public partial class Source1DecoyDetonateEvent : Source1GameEventBase
 
     public override string GameEventName => "decoy_detonate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9910,8 +9910,8 @@ public partial class Source1TagrenadeDetonateEvent : Source1GameEventBase
 
     public override string GameEventName => "tagrenade_detonate";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Entityid { get; set; }
 
@@ -9973,8 +9973,8 @@ public partial class Source1DecoyFiringEvent : Source1GameEventBase
 
     public override string GameEventName => "decoy_firing";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -9994,8 +9994,8 @@ public partial class Source1BulletImpactEvent : Source1GameEventBase
 
     public override string GameEventName => "bullet_impact";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -10013,8 +10013,8 @@ public partial class Source1PlayerJumpEvent : Source1GameEventBase
 
     public override string GameEventName => "player_jump";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1PlayerBlindEvent : Source1GameEventBase
@@ -10023,11 +10023,11 @@ public partial class Source1PlayerBlindEvent : Source1GameEventBase
 
     public override string GameEventName => "player_blind";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
-    public CEntityIndex AttackerIndex { get; set; }
-    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+    public ushort AttackerUserId { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetPlayerByUserId(AttackerUserId);
 
     public int Entityid { get; set; }
 
@@ -10040,8 +10040,8 @@ public partial class Source1PlayerFalldamageEvent : Source1GameEventBase
 
     public override string GameEventName => "player_falldamage";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -10055,8 +10055,8 @@ public partial class Source1DoorMovingEvent : Source1GameEventBase
 
     public override string GameEventName => "door_moving";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -10153,8 +10153,8 @@ public partial class Source1CsWinPanelRoundEvent : Source1GameEventBase
 
     public string FunfactToken { get; set; } = "";
 
-    public CEntityIndex FunfactPlayerIndex { get; set; }
-    public CCSPlayerController? FunfactPlayer => _demo.GetEntityByIndex<CCSPlayerController>(FunfactPlayerIndex);
+    public ushort FunfactPlayerUserId { get; set; }
+    public CCSPlayerController? FunfactPlayer => _demo.GetPlayerByUserId(FunfactPlayerUserId);
 
     public int FunfactData1 { get; set; }
 
@@ -10190,16 +10190,16 @@ public partial class Source1ShowDeathpanelEvent : Source1GameEventBase
 
     public override string GameEventName => "show_deathpanel";
 
-    public CEntityIndex VictimIndex { get; set; }
-    public CCSPlayerController? Victim => _demo.GetEntityByIndex<CCSPlayerController>(VictimIndex);
+    public ushort VictimUserId { get; set; }
+    public CCSPlayerController? Victim => _demo.GetPlayerByUserId(VictimUserId);
 
     public CHandle<CEntityInstance> VictimPawnHandle { get; set; }
     public CCSPlayerPawn? VictimPawn => _demo.GetEntityByHandle(VictimPawnHandle) as CCSPlayerPawn;
 
     public int Killer { get; set; }
 
-    public CEntityIndex KillerControllerIndex { get; set; }
-    public CCSPlayerController? KillerController => _demo.GetEntityByIndex<CCSPlayerController>(KillerControllerIndex);
+    public ushort KillerControllerUserId { get; set; }
+    public CCSPlayerController? KillerController => _demo.GetPlayerByUserId(KillerControllerUserId);
 
     public int HitsTaken { get; set; }
 
@@ -10223,11 +10223,11 @@ public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
 
     public override string GameEventName => "player_avenged_teammate";
 
-    public CEntityIndex AvengerIdIndex { get; set; }
-    public CCSPlayerController? AvengerId => _demo.GetEntityByIndex<CCSPlayerController>(AvengerIdIndex);
+    public ushort AvengerUserId { get; set; }
+    public CCSPlayerController? Avenger => _demo.GetPlayerByUserId(AvengerUserId);
 
-    public CEntityIndex AvengedPlayerIdIndex { get; set; }
-    public CCSPlayerController? AvengedPlayerId => _demo.GetEntityByIndex<CCSPlayerController>(AvengedPlayerIdIndex);
+    public ushort AvengedPlayerUserId { get; set; }
+    public CCSPlayerController? AvengedPlayer => _demo.GetPlayerByUserId(AvengedPlayerUserId);
 }
 
 public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
@@ -10271,8 +10271,8 @@ public partial class Source1RoundMvpEvent : Source1GameEventBase
 
     public override string GameEventName => "round_mvp";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Reason { get; set; }
 
@@ -10295,8 +10295,8 @@ public partial class Source1ShowSurvivalRespawnStatusEvent : Source1GameEventBas
 
     public int Duration { get; set; }
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -10315,11 +10315,11 @@ public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
 
     public override string GameEventName => "gg_killed_enemy";
 
-    public CEntityIndex VictimidIndex { get; set; }
-    public CCSPlayerController? Victimid => _demo.GetEntityByIndex<CCSPlayerController>(VictimidIndex);
+    public ushort VictimUserId { get; set; }
+    public CCSPlayerController? Victim => _demo.GetPlayerByUserId(VictimUserId);
 
-    public CEntityIndex AttackeridIndex { get; set; }
-    public CCSPlayerController? Attackerid => _demo.GetEntityByIndex<CCSPlayerController>(AttackeridIndex);
+    public ushort AttackerUserId { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetPlayerByUserId(AttackerUserId);
 
     public int Dominated { get; set; }
 
@@ -10358,8 +10358,8 @@ public partial class Source1TrialTimeExpiredEvent : Source1GameEventBase
 
     public override string GameEventName => "trial_time_expired";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1UpdateMatchmakingStatsEvent : Source1GameEventBase
@@ -10375,8 +10375,8 @@ public partial class Source1PlayerResetVoteEvent : Source1GameEventBase
 
     public override string GameEventName => "player_reset_vote";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public bool Vote { get; set; }
 }
@@ -10409,8 +10409,8 @@ public partial class Source1StartVoteEvent : Source1GameEventBase
 
     public override string GameEventName => "start_vote";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Type { get; set; }
 
@@ -10423,8 +10423,8 @@ public partial class Source1PlayerGivenC4Event : Source1GameEventBase
 
     public override string GameEventName => "player_given_c4";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1TrPlayerFlashbangedEvent : Source1GameEventBase
@@ -10433,8 +10433,8 @@ public partial class Source1TrPlayerFlashbangedEvent : Source1GameEventBase
 
     public override string GameEventName => "tr_player_flashbanged";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1TrMarkCompleteEvent : Source1GameEventBase
@@ -10468,14 +10468,14 @@ public partial class Source1BotTakeoverEvent : Source1GameEventBase
 
     public override string GameEventName => "bot_takeover";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
-    public CEntityIndex BotidIndex { get; set; }
-    public CCSPlayerController? Botid => _demo.GetEntityByIndex<CCSPlayerController>(BotidIndex);
+    public ushort BotidUserId { get; set; }
+    public CCSPlayerController? Botid => _demo.GetPlayerByUserId(BotidUserId);
 
     public float P { get; set; }
 
@@ -10504,8 +10504,8 @@ public partial class Source1JointeamFailedEvent : Source1GameEventBase
 
     public override string GameEventName => "jointeam_failed";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Reason { get; set; }
 }
@@ -10516,8 +10516,8 @@ public partial class Source1TeamchangePendingEvent : Source1GameEventBase
 
     public override string GameEventName => "teamchange_pending";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Toteam { get; set; }
 }
@@ -10557,8 +10557,8 @@ public partial class Source1SeasoncoinLevelupEvent : Source1GameEventBase
 
     public override string GameEventName => "seasoncoin_levelup";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Category { get; set; }
 
@@ -10591,8 +10591,8 @@ public partial class Source1AmmoRefillEvent : Source1GameEventBase
 
     public override string GameEventName => "ammo_refill";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public bool Success { get; set; }
 }
@@ -10603,8 +10603,8 @@ public partial class Source1ParachutePickupEvent : Source1GameEventBase
 
     public override string GameEventName => "parachute_pickup";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1ParachuteDeployEvent : Source1GameEventBase
@@ -10613,8 +10613,8 @@ public partial class Source1ParachuteDeployEvent : Source1GameEventBase
 
     public override string GameEventName => "parachute_deploy";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1DronegunAttackEvent : Source1GameEventBase
@@ -10623,8 +10623,8 @@ public partial class Source1DronegunAttackEvent : Source1GameEventBase
 
     public override string GameEventName => "dronegun_attack";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1DroneDispatchedEvent : Source1GameEventBase
@@ -10633,8 +10633,8 @@ public partial class Source1DroneDispatchedEvent : Source1GameEventBase
 
     public override string GameEventName => "drone_dispatched";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Priority { get; set; }
 
@@ -10647,8 +10647,8 @@ public partial class Source1LootCrateVisibleEvent : Source1GameEventBase
 
     public override string GameEventName => "loot_crate_visible";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Subject { get; set; }
 
@@ -10661,8 +10661,8 @@ public partial class Source1LootCrateOpenedEvent : Source1GameEventBase
 
     public override string GameEventName => "loot_crate_opened";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public string Type { get; set; } = "";
 }
@@ -10673,8 +10673,8 @@ public partial class Source1OpenCrateInstrEvent : Source1GameEventBase
 
     public override string GameEventName => "open_crate_instr";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Subject { get; set; }
 
@@ -10687,8 +10687,8 @@ public partial class Source1SmokeBeaconParadropEvent : Source1GameEventBase
 
     public override string GameEventName => "smoke_beacon_paradrop";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Paradrop { get; set; }
 }
@@ -10717,8 +10717,8 @@ public partial class Source1DroneCargoDetachedEvent : Source1GameEventBase
 
     public override string GameEventName => "drone_cargo_detached";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Cargo { get; set; }
 
@@ -10731,8 +10731,8 @@ public partial class Source1DroneAboveRoofEvent : Source1GameEventBase
 
     public override string GameEventName => "drone_above_roof";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Cargo { get; set; }
 }
@@ -10761,8 +10761,8 @@ public partial class Source1DzItemInteractionEvent : Source1GameEventBase
 
     public override string GameEventName => "dz_item_interaction";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public int Subject { get; set; }
 
@@ -10775,8 +10775,8 @@ public partial class Source1SurvivalTeammateRespawnEvent : Source1GameEventBase
 
     public override string GameEventName => "survival_teammate_respawn";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBase
@@ -10785,8 +10785,8 @@ public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBas
 
     public override string GameEventName => "survival_no_respawns_warning";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
@@ -10795,8 +10795,8 @@ public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
 
     public override string GameEventName => "survival_no_respawns_final";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 }
 
 public partial class Source1PlayerPingEvent : Source1GameEventBase
@@ -10805,8 +10805,8 @@ public partial class Source1PlayerPingEvent : Source1GameEventBase
 
     public override string GameEventName => "player_ping";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -10837,8 +10837,8 @@ public partial class Source1PlayerSoundEvent : Source1GameEventBase
 
     public override string GameEventName => "player_sound";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
@@ -10877,8 +10877,8 @@ public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
 
     public override string GameEventName => "bullet_flight_resolution";
 
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+    public ushort PlayerUserId { get; set; }
+    public CCSPlayerController? Player => _demo.GetPlayerByUserId(PlayerUserId);
 
     public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;

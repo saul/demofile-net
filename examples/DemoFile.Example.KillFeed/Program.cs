@@ -38,7 +38,7 @@ internal class Program
             };
 
             AnsiConsole.MarkupLine($"\n>>> Round end: [bold white]{roundEndReason}[/]");
-            AnsiConsole.MarkupLine($"  Winner: [{TeamNumberToString((CSTeamNumber) e.Winner)}]{winningTeam?.ClanTeamname}[/]");
+            AnsiConsole.MarkupLine($"  Winner: [{TeamNumberToString((CSTeamNumber) e.Winner)}]({winningTeam?.Teamname}) {winningTeam?.ClanTeamname}[/]");
             AnsiConsole.MarkupLine($"  {demo.GameRules.RoundsPlayedThisPhase} rounds played in {demo.GameRules.CSGamePhase}");
             AnsiConsole.MarkupLine($"  Scores: [red]{demo.TeamTerrorist.ClanTeamname}[/] {demo.TeamTerrorist.Score} - {demo.TeamCounterTerrorist.Score} [blue]{demo.TeamCounterTerrorist.ClanTeamname}[/]");
             AnsiConsole.WriteLine("");

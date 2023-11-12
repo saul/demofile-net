@@ -8,5 +8,5 @@ public partial class CCSPlayerController
 
     public string? PawnCharacterName => GameItems.ItemDefinitions.GetValueOrDefault(PawnCharacterDefIndex)?.Name;
 
-    public new CCSPlayerPawn? Pawn => (CCSPlayerPawn?) base.Pawn;
+    public CMsgPlayerInfo PlayerInfo => Demo.PlayerInfos[(int) EntityIndex.Value - 1]!;
 }
