@@ -368,17 +368,11 @@ public partial class DemoParser
 
                 if (alternateBaselines.TryGetValue(entityIndex, out var alternateBaseline))
                 {
-                    if (_instanceBaselines[alternateBaseline] is { Key: var savedBaseline, Value: { } baselineBytes })
-                    {
-                        Debug.Assert(savedBaseline.ServerClassId == entity.ServerClass.ServerClassId);
+                    var (savedBaseline, baselineBytes) = _instanceBaselines[alternateBaseline];
+                    Debug.Assert(savedBaseline.ServerClassId == entity.ServerClass.ServerClassId);
 
-                        var baselineBuf = new BitBuffer(baselineBytes);
-                        ReadNewEntity(ref baselineBuf, entity);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"[{CurrentDemoTick}] !!!!! [{alternateBaseline}] missing");
-                    }
+                    var baselineBuf = new BitBuffer(baselineBytes);
+                    ReadNewEntity(ref baselineBuf, entity);
                 }
 
                 ReadNewEntity(ref entityBitBuffer, entity);

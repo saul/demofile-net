@@ -40,7 +40,6 @@ public partial class DemoParser
         {
             _instanceBaselineTableId = _stringTableList.Count;
             onUpdatedEntry = OnInstanceBaselineUpdate;
-            Console.WriteLine($"[{CurrentDemoTick}] svc_CreateStringTable");
         }
         else if (msg.Name == "userinfo")
         {
@@ -67,20 +66,11 @@ public partial class DemoParser
         var stringTable = _stringTableList[msg.TableId];
 
         Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry;
-        if (msg.TableId == _instanceBaselineTableId)
-        {
-            Console.WriteLine($"[{CurrentDemoTick}] svc_UpdateStringTable ({stringTable.Entries.Count} entries, {msg.NumChangedEntries} changed)");
-            onUpdatedEntry = OnInstanceBaselineUpdate;
-        }
-        else
-            onUpdatedEntry = msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
+        onUpdatedEntry =
+            msg.TableId == _instanceBaselineTableId ? OnInstanceBaselineUpdate :
+            msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
 
         stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries, onUpdatedEntry);
-
-        if (msg.TableId == _instanceBaselineTableId)
-        {
-            Console.WriteLine($"    Now have {stringTable.Entries.Count} entries");
-        }
     }
 
     private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]> entry)
@@ -108,8 +98,6 @@ public partial class DemoParser
             baselineKey = new BaselineKey(classId, 0);
         }
 
-        Console.WriteLine($"[{CurrentDemoTick}]   [{index}] {key} updated {(baselineKey.AlternateBaseline != 0 ? "*****" : "")}");
-
         _instanceBaselines[index] = KeyValuePair.Create(baselineKey, entry.Value);
         _instanceBaselineLookup[baselineKey] = index;
     }
@@ -126,35 +114,5 @@ public partial class DemoParser
         _playerInfos[index] = entry.Value.Length == 0
             ? null
             : CMsgPlayerInfo.Parser.ParseFrom(entry.Value);
-    }
-
-    private void OnDemoStringTables(CDemoStringTables tables)
-    {
-        foreach (var table in tables.Tables)
-        {
-            Action<int, KeyValuePair<string, byte[]>> onItem;
-
-            if (table.TableName == "userinfo")
-            {
-                _playerInfos = new CMsgPlayerInfo?[table.Items.Count];
-                onItem = OnUserInfoUpdate;
-            }
-            else if (table.TableName == "instancebaseline")
-            {
-                Console.WriteLine($"[{CurrentDemoTick}] OnDemoStringTables");
-                _instanceBaselines = new KeyValuePair<BaselineKey, byte[]>[table.Items.Count];
-                onItem = OnInstanceBaselineUpdate;
-            }
-            else
-            {
-                continue;
-            }
-
-            for (var index = 0; index < table.Items.Count; index++)
-            {
-                var item = table.Items[index];
-                onItem(index, KeyValuePair.Create(item.Str, item.Data.ToByteArray()));
-            }
-        }
     }
 }
