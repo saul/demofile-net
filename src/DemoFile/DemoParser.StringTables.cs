@@ -4,14 +4,20 @@ using Snappier;
 
 namespace DemoFile;
 
+internal readonly record struct BaselineKey(uint ServerClassId, uint AlternateBaseline)
+{
+    public override string ToString() => AlternateBaseline == 0
+        ? ServerClassId.ToString()
+        : $"{ServerClassId}:{AlternateBaseline}";
+}
+
 public partial class DemoParser
 {
     private readonly Dictionary<string, StringTable> _stringTables = new();
     private readonly List<StringTable> _stringTableList = new();
 
-    // todo: make this an array for perf?
-    private readonly Dictionary<uint, byte[]> _instanceBaselines = new();
-
+    private readonly Dictionary<BaselineKey, int> _instanceBaselineLookup = new();
+    private KeyValuePair<BaselineKey, byte[]>[] _instanceBaselines = new KeyValuePair<BaselineKey, byte[]>[64];
     private CMsgPlayerInfo?[] _playerInfos = new CMsgPlayerInfo?[16];
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
@@ -34,6 +40,7 @@ public partial class DemoParser
         {
             _instanceBaselineTableId = _stringTableList.Count;
             onUpdatedEntry = OnInstanceBaselineUpdate;
+            Console.WriteLine($"[{CurrentDemoTick}] svc_CreateStringTable");
         }
         else if (msg.Name == "userinfo")
         {
@@ -59,19 +66,52 @@ public partial class DemoParser
     {
         var stringTable = _stringTableList[msg.TableId];
 
-        Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry =
-            msg.TableId == _instanceBaselineTableId ? OnInstanceBaselineUpdate :
-            msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
+        Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry;
+        if (msg.TableId == _instanceBaselineTableId)
+        {
+            Console.WriteLine($"[{CurrentDemoTick}] svc_UpdateStringTable ({stringTable.Entries.Count} entries, {msg.NumChangedEntries} changed)");
+            onUpdatedEntry = OnInstanceBaselineUpdate;
+        }
+        else
+            onUpdatedEntry = msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
 
         stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries, onUpdatedEntry);
+
+        if (msg.TableId == _instanceBaselineTableId)
+        {
+            Console.WriteLine($"    Now have {stringTable.Entries.Count} entries");
+        }
     }
 
     private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]> entry)
     {
-        if (uint.TryParse(entry.Key, out var classId))
+        if (index >= _instanceBaselines.Length)
         {
-            _instanceBaselines[classId] = entry.Value;
+            var newBacking = new KeyValuePair<BaselineKey, byte[]>[(int) BitOperations.RoundUpToPowerOf2((uint) index + 1)];
+            ((ReadOnlySpan<KeyValuePair<BaselineKey, byte[]>>)_instanceBaselines).CopyTo(newBacking);
+            _instanceBaselines = newBacking;
         }
+
+        ReadOnlySpan<char> key = entry.Key;
+
+        BaselineKey baselineKey;
+        if (key.IndexOf(':') is var sepIdx && sepIdx >= 0)
+        {
+            var classId = uint.Parse(key[..sepIdx]);
+            var alternateBaseline = uint.Parse(key[(sepIdx + 1)..]);
+
+            baselineKey = new BaselineKey(classId, alternateBaseline);
+        }
+        else
+        {
+            var classId = uint.Parse(key);
+            baselineKey = new BaselineKey(classId, 0);
+        }
+
+        Console.WriteLine($"[{CurrentDemoTick}]   [{index}] {key} updated {(baselineKey.AlternateBaseline != 0 ? "*****" : "")}");
+
+        _instanceBaselines[index] = KeyValuePair.Create(baselineKey, entry.Value);
+        _instanceBaselineLookup[baselineKey] = index;
     }
 
     private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]> entry)
@@ -86,5 +126,35 @@ public partial class DemoParser
         _playerInfos[index] = entry.Value.Length == 0
             ? null
             : CMsgPlayerInfo.Parser.ParseFrom(entry.Value);
+    }
+
+    private void OnDemoStringTables(CDemoStringTables tables)
+    {
+        foreach (var table in tables.Tables)
+        {
+            Action<int, KeyValuePair<string, byte[]>> onItem;
+
+            if (table.TableName == "userinfo")
+            {
+                _playerInfos = new CMsgPlayerInfo?[table.Items.Count];
+                onItem = OnUserInfoUpdate;
+            }
+            else if (table.TableName == "instancebaseline")
+            {
+                Console.WriteLine($"[{CurrentDemoTick}] OnDemoStringTables");
+                _instanceBaselines = new KeyValuePair<BaselineKey, byte[]>[table.Items.Count];
+                onItem = OnInstanceBaselineUpdate;
+            }
+            else
+            {
+                continue;
+            }
+
+            for (var index = 0; index < table.Items.Count; index++)
+            {
+                var item = table.Items[index];
+                onItem(index, KeyValuePair.Create(item.Str, item.Data.ToByteArray()));
+            }
+        }
     }
 }
