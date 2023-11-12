@@ -76,13 +76,13 @@ public class Source1GameEventIntegrationTest
         {
             snapshot.AppendLine($"[{demo.CurrentGameTick.Value}] Timer snapshot:");
             SnapshotPlayerState();
-            demo.CreateTimer(playerSnapshotInterval, TimerCallback);
+            //demo.CreateTimer(playerSnapshotInterval, TimerCallback);
         }
 
-        demo.CreateTimer(playerSnapshotInterval, TimerCallback);
+        //demo.CreateTimer(playerSnapshotInterval, TimerCallback);
 
         // Act
-        await demo.Start(ParivisionSangalAnubis, default);
+        await demo.Start(GotvCompetitiveProtocol13963, default);
 
         // Assert
         File.WriteAllText(@"C:\Scratch\snapshot_position.txt", snapshot.ToString());
