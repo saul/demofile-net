@@ -27,6 +27,7 @@ public sealed partial class DemoParser
         _demoEvents.DemoPacket += OnDemoPacket;
         _demoEvents.DemoClassInfo += OnDemoClassInfo;
         _demoEvents.DemoSendTables += OnDemoSendTables;
+        _demoEvents.DemoStringTables += OnDemoStringTables;
 
         _packetEvents.SvcCreateStringTable += OnCreateStringTable;
         _packetEvents.SvcUpdateStringTable += OnUpdateStringTable;

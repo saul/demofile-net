@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -6,15 +7,43 @@ namespace DemoFile;
 
 internal ref struct BitBuffer
 {
+    private int _bitsRead = 0;
     private int _bitsAvail = 0;
     private uint _buf = 0;
+    private ReadOnlySpan<byte> _original;
     private ReadOnlySpan<byte> _pointer;
 
     public BitBuffer(ReadOnlySpan<byte> pointer)
     {
+        _original = pointer;
         _pointer = pointer;
         FetchNext();
     }
+
+    public BitBuffer Clone()
+    {
+        var (fromByte, skipBits) = Math.DivRem(_bitsRead, 8);
+        var cloned = new BitBuffer(_original[fromByte..]);
+        cloned.ReadUBits(skipBits);
+        return cloned;
+    }
+
+    public int TellBits => _bitsRead;
+
+    /*
+    public byte[] SliceFrom(int fromBits)
+    {
+        var (fromByte, skipBits) = Math.DivRem(fromBits, 8);
+        var rewound = new BitBuffer(_original[fromByte..]);
+        rewound.ReadUBits(skipBits);
+
+        var bitCount = _bitsRead - fromBits;
+        Debug.Assert(bitCount >= 0);
+        var slices = new byte[(bitCount + 7) / 8];
+
+        ReadBitsAsBytes();
+    }
+    */
 
     public int RemainingBytes => _pointer.Length + _bitsAvail / 8;
 
@@ -26,6 +55,8 @@ internal ref struct BitBuffer
 
     public uint ReadUBits(int numBits)
     {
+        _bitsRead += numBits;
+
         if (_bitsAvail >= numBits)
         {
             var ret = (uint)(_buf & ((1 << numBits) - 1));
@@ -78,6 +109,8 @@ internal ref struct BitBuffer
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool ReadOneBit()
     {
+        _bitsRead += 1;
+
         var ret = _buf & 1;
         if (--_bitsAvail == 0)
         {

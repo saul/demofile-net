@@ -1,4 +1,5 @@
-﻿using System.Buffers;
+using System.Buffers;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using DemoFile.Extensions;
@@ -14,12 +15,23 @@ public readonly record struct EntityContext(
 
 public partial class DemoParser
 {
+    private readonly record struct EntityBaseline(
+        uint ServerClassId,
+        ImmutableList<byte[]> Baselines);
+
     // https://github.com/dotabuff/manta/blob/master/entity.go#L186-L190
     public const int MaxEdictBits = 14;
     public const int MaxEdicts = 1 << MaxEdictBits;
     public const int NumEHandleSerialNumberBits = 17;
 
     private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
+    private readonly EntityBaseline[][] _entityBaselines =
+    {
+        new EntityBaseline[MaxEdicts],
+        new EntityBaseline[MaxEdicts],
+    };
+    private bool _anyEntityBaselines = false;
+
     private CHandle<CCSGameRulesProxy> _gameRulesHandle;
     private CHandle<CCSPlayerResource> _playerResourceHandle;
 
@@ -154,10 +166,13 @@ public partial class DemoParser
     {
         Debug.Assert(
             _serverClasses.Length > 0 && _serializers.Count > 0,
-            $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
+            $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info");
+        Debug.Assert(_instanceBaselines.Count > 0,
+            $"{nameof(CSVCMsg_PacketEntities)} message before instancebaselines");
 
-        Debug.Assert(!msg.UpdateBaseline);
-        Debug.Assert(msg.AlternateBaselines.Count == 0);
+        var alternateBaselines = msg.AlternateBaselines.Count == 0
+            ? (IReadOnlyDictionary<int, uint>)ImmutableDictionary<int, uint>.Empty
+            : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => (uint) x.BaselineIndex);
 
         var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;
@@ -173,6 +188,14 @@ public partial class DemoParser
                 entity.IsActive = false;
                 entity.FireDeleteEvent();
                 entitiesToDelete[entityDeleteIdx++] = entity;
+            }
+
+            // Clear entity baselines if any have been touched
+            if (_anyEntityBaselines)
+            {
+                ((Span<EntityBaseline>)_entityBaselines[0]).Clear();
+                ((Span<EntityBaseline>)_entityBaselines[1]).Clear();
+                _anyEntityBaselines = false;
             }
         }
 
@@ -219,8 +242,6 @@ public partial class DemoParser
 
                 var classId = entityBitBuffer.ReadUBits(_serverClassBits);
                 var serialNum = entityBitBuffer.ReadUBits(NumEHandleSerialNumberBits);
-
-                // maybe spawngroup handle?
                 var _unknown = entityBitBuffer.ReadUVarInt32();
 
                 var serverClass = _serverClasses[classId];
@@ -229,26 +250,85 @@ public partial class DemoParser
                 var context = new EntityContext(this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
                 var entity = serverClass.EntityFactory(context);
 
-                // Grab the server class baseline and populate the entity with it
-                if (_instanceBaselines.TryGetValue(classId, out var baseline))
+                EntityBaseline existingBaseline = default;
+                byte[]? baselineBytes = null;
+
+                // Does this entity have an alternate baseline?
+                if (alternateBaselines.TryGetValue(entityIndex, out var alternateBaseline))
                 {
-                    var baselineBuf = new BitBuffer(baseline);
-                    ReadNewEntity(ref baselineBuf, entity);
+                    baselineBytes = _instanceBaselines[new BaselineKey(classId, alternateBaseline)];
                 }
 
-                ReadNewEntity(ref entityBitBuffer, entity);
+                else if (_anyEntityBaselines
+                    && msg.IsDelta
+                    && _entityBaselines[msg.Baseline][entityIndex] is { ServerClassId: var baselineClassId, Baselines: not null } entityBaseline
+                    && baselineClassId == classId)
+                {
+                    Debug.Assert(entityBaseline.Baselines != null);
+
+                    // Apply all baselines
+                    foreach (var baseline in entityBaseline.Baselines)
+                    {
+                        var baselineBuf = new BitBuffer(baseline);
+                        ReadNewEntity(ref baselineBuf, entity);
+                    }
+
+                    existingBaseline = entityBaseline;
+                }
+
+                // Grab the server class baseline and populate the entity with it
+                else if (!_instanceBaselines.TryGetValue(new BaselineKey(classId, 0), out baselineBytes))
+                {
+                    //throw new Exception($"No baseline available for server class {classId}");
+                }
+
+                if (baselineBytes != null)
+                {
+                    var baselineBuf = new BitBuffer(baselineBytes);
+                    ReadNewEntity(ref baselineBuf, entity);
+
+                    existingBaseline = new EntityBaseline(classId, ImmutableList.Create<byte[]>(baselineBytes));
+                }
+
+                if (msg.UpdateBaseline)
+                {
+                    var cloned = entityBitBuffer.Clone();
+                    var prevBitsRead = entityBitBuffer.TellBits;
+                    ReadNewEntity(ref entityBitBuffer, entity);
+                    var bitsRead = entityBitBuffer.TellBits - prevBitsRead;
+
+                    var newBaseline = new byte[(bitsRead + 7) / 8];
+                    cloned.ReadBitsAsBytes(newBaseline, bitsRead);
+
+                    _anyEntityBaselines = true;
+                    _entityBaselines[msg.Baseline == 0 ? 1 : 0][entityIndex] = existingBaseline == default
+                        ? new EntityBaseline(classId, ImmutableList.Create<byte[]>(newBaseline))
+                        : existingBaseline with {Baselines = existingBaseline.Baselines.Add(newBaseline)};
+                }
+                else
+                {
+                    ReadNewEntity(ref entityBitBuffer, entity);
+                }
 
                 entity.IsActive = true;
 
                 // If this entity already exists with the same serial number,
                 // treat it as an entity update as well as entity creation.
                 // This allows AddChangeCallback to track changes on snapshot.
-                if (_entities[entityIndex] is { } previousEnt
-                    && previousEnt.SerialNumber == entity.SerialNumber
-                    && previousEnt.ServerClass.ServerClassId == entity.ServerClass.ServerClassId)
+                if (_entities[entityIndex] is { } previousEnt)
                 {
-                    previousEnt.FirePreUpdateEvent();
-                    postUpdateEvents[postEventIdx++] = entity;
+                    if (previousEnt.SerialNumber == entity.SerialNumber
+                        && previousEnt.ServerClass.ServerClassId == entity.ServerClass.ServerClassId)
+                    {
+                        previousEnt.FirePreUpdateEvent();
+                        postUpdateEvents[postEventIdx++] = entity;
+                    }
+                    else if (msg.IsDelta)
+                    {
+                        Debug.Assert(false, "new entity overwrites old ent!");
+                        entity.IsActive = false;
+                        entity.FireDeleteEvent();
+                    }
                 }
 
                 _entities[entityIndex] = entity;
@@ -259,7 +339,43 @@ public partial class DemoParser
                 // DeltaEnt
                 Debug.Assert(msg.IsDelta, "Delta entity on full update");
 
+                // todo: do we need to go off baselines here?
+                //Debug.Assert(!alternateBaselines.ContainsKey(entityIndex));
+
                 var entity = _entities[entityIndex] ?? throw new Exception($"Delta on non-existent entity {entityIndex}");
+
+                entity.FirePreUpdateEvent();
+
+                if (entityIndex == 369 && _entities[entityIndex]!.SerialNumber == 374 && CurrentDemoTick.Value == 14)
+                {
+                    var ents = new List<(uint, CCSGOViewModel)>();
+
+                    foreach (var kvp in _instanceBaselines.Where(kvp => kvp.Key.AlternateBaseline != 0))
+                    {
+                        var serverClass = _serverClasses[43]!;
+                        var context = new EntityContext(this, new CEntityIndex((uint) entityIndex), 1000, serverClass);
+                        var testEnt = (CCSGOViewModel)serverClass.EntityFactory(context);
+                        var baselineBuf = new BitBuffer(kvp.Value);
+                        ReadNewEntity(ref baselineBuf, testEnt);
+                        ents.Add((kvp.Key.AlternateBaseline, testEnt));
+                    }
+
+                    var foos = ents.Where(x =>
+                        ((CBodyComponentBaseAnimGraph?) x.Item2.CBodyComponent)!.AnimationController.AnimGraphNetworkedVars
+                        .PredNetFloatVariables.Count >= 132);
+
+                    Debugger.Break();
+                }
+
+                if (alternateBaselines.TryGetValue(entityIndex, out var alternateBaseline))
+                {
+                    // todo: find field paths with at least
+
+                    var baselineKey = new BaselineKey((uint) entity.ServerClass.ServerClassId, alternateBaseline >> 5);
+                    var baselineBytes = _instanceBaselines[baselineKey];
+                    var baselineBuf = new BitBuffer(baselineBytes);
+                    ReadNewEntity(ref baselineBuf, entity);
+                }
 
                 if (!entity.IsActive)
                 {
@@ -267,7 +383,6 @@ public partial class DemoParser
                     // todo: fire event: EntityEnterPvs
                 }
 
-                entity.FirePreUpdateEvent();
                 ReadNewEntity(ref entityBitBuffer, entity);
 
                 postUpdateEvents[postEventIdx++] = entity;

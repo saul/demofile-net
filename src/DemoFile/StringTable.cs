@@ -3,9 +3,16 @@ using Snappier;
 
 namespace DemoFile;
 
+[Flags]
+internal enum StringTableFlags
+{
+    None,
+    UserDataCompressed = 1<<0
+}
+
 public class StringTable
 {
-    private readonly int _flags;
+    private readonly StringTableFlags _flags;
     private readonly int _userDataSizeBits;
     private readonly bool _isBitcountVarint;
     private readonly bool _isUserDataFixedSize;
@@ -15,7 +22,7 @@ public class StringTable
 
     public IReadOnlyList<KeyValuePair<string, byte[]>> Entries => _entries;
 
-    public StringTable(string name, int flags, int userDataSizeBits, bool isBitcountVarint, bool isUserDataFixedSize)
+    internal StringTable(string name, StringTableFlags flags, int userDataSizeBits, bool isBitcountVarint, bool isUserDataFixedSize)
     {
         _flags = flags;
         _userDataSizeBits = userDataSizeBits;
@@ -90,7 +97,7 @@ public class StringTable
 
                 if (!_isUserDataFixedSize)
                 {
-                    if ((_flags & 0x1) != 0)
+                    if ((_flags & StringTableFlags.UserDataCompressed) != 0)
                     {
                         isCompressed = bitBuffer.ReadOneBit();
                     }

@@ -4,7 +4,21 @@ using System.Numerics;
 
 namespace DemoFile;
 
+internal class NetworkedVectorDebugProxy<T> where T : new()
+{
+    private readonly NetworkedVector<T> _vector;
+
+    public NetworkedVectorDebugProxy(NetworkedVector<T> vector)
+    {
+        _vector = vector;
+    }
+
+    [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
+    public ArraySegment<T?> Values => _vector.Values;
+}
+
 [DebuggerDisplay("Count = {Count}")]
+[DebuggerTypeProxy(typeof(NetworkedVectorDebugProxy<>))]
 public class NetworkedVector<T> : IReadOnlyList<T?>
     where T : new()
 {
@@ -51,6 +65,8 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
     public IEnumerator<T> GetEnumerator() => new NetworkedVectorEnumerator(this);
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+    internal ArraySegment<T?> Values => _values;
 
     public int Count => _values.Count;
 

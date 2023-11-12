@@ -1,16 +1,23 @@
-﻿using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Snappier;
 
 namespace DemoFile;
+
+public readonly record struct BaselineKey(uint ServerClassId, uint AlternateBaseline)
+{
+    public override string ToString() => AlternateBaseline == 0
+        ? ServerClassId.ToString()
+        : $"{ServerClassId}:{AlternateBaseline}";
+}
 
 public partial class DemoParser
 {
     private readonly Dictionary<string, StringTable> _stringTables = new();
     private readonly List<StringTable> _stringTableList = new();
 
-    // todo: make this an array for perf?
-    private readonly Dictionary<uint, byte[]> _instanceBaselines = new();
+    // todo: split into baseline/alternate baselines, store plain baseline in array?
+    private readonly Dictionary<BaselineKey, byte[]> _instanceBaselines = new();
+    private readonly List<KeyValuePair<string, byte[]>> _instanceBaselineList = new();
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
         _stringTables.TryGetValue(tableName, out stringTable);
@@ -21,7 +28,7 @@ public partial class DemoParser
     {
         var stringTable = new StringTable(
             msg.Name,
-            msg.Flags,
+            (StringTableFlags) msg.Flags,
             msg.UserDataSizeBits,
             msg.UsingVarintBitcounts,
             msg.UserDataFixedSize);
@@ -59,9 +66,35 @@ public partial class DemoParser
 
     private void OnInstanceBaselineUpdate(KeyValuePair<string, byte[]> entry)
     {
-        if (uint.TryParse(entry.Key, out var classId))
+        ReadOnlySpan<char> key = entry.Key;
+
+        if (key.IndexOf(':') is var index && index >= 0)
         {
-            _instanceBaselines[classId] = entry.Value;
+            var classId = uint.Parse(key[..index]);
+            var alternateBaseline = uint.Parse(key[(index + 1)..]);
+
+            _instanceBaselines[new BaselineKey(classId, alternateBaseline)] = entry.Value;
+        }
+        else
+        {
+            var classId = uint.Parse(key);
+            _instanceBaselines[new BaselineKey(classId, 0)] = entry.Value;
+        }
+    }
+
+    private void OnDemoStringTables(CDemoStringTables msg)
+    {
+        foreach (var table in msg.Tables)
+        {
+            // todo: handle other tables
+            if (table.TableName != "instancebaseline")
+                continue;
+
+            var flags = (StringTableFlags) table.TableFlags;
+            foreach (var item in table.Items)
+            {
+                OnInstanceBaselineUpdate(KeyValuePair.Create(item.Str, item.Data.ToByteArray()));
+            }
         }
     }
 }
