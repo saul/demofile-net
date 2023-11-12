@@ -48,9 +48,17 @@ internal static class Program
         var parts = eventKey.Split('_', StringSplitOptions.RemoveEmptyEntries);
         for (var i = 0; i < parts.Length; i++)
         {
+            if (keyType == GameEventKeyType.PlayerController && parts[i] == "id")
+            {
+                parts[i] = "";
+                continue;
+            }
+
             parts[i] = parts[i].ToLower() switch
             {
                 "userid" => "Player",
+                "victimid" => "Victim",
+                "attackerid" => "Attacker",
                 "steamid" => "SteamId",
                 "xuid" => "SteamId",
                 _ => char.ToUpper(parts[i][0]) + parts[i][1..]

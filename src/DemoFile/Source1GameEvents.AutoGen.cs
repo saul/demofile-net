@@ -5965,9 +5965,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerAvengedTeammateEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "avenger_id")
-                            return (@this, x) => @this.AvengerIdUserId = (ushort) x.ValShort;
+                            return (@this, x) => @this.AvengerUserId = (ushort) x.ValShort;
                         if (key.Name == "avenged_player_id")
-                            return (@this, x) => @this.AvengedPlayerIdUserId = (ushort) x.ValShort;
+                            return (@this, x) => @this.AvengedPlayerUserId = (ushort) x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6150,9 +6150,9 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1GgKilledEnemyEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "victimid")
-                            return (@this, x) => @this.VictimidUserId = (ushort) x.ValShort;
+                            return (@this, x) => @this.VictimUserId = (ushort) x.ValShort;
                         if (key.Name == "attackerid")
-                            return (@this, x) => @this.AttackeridUserId = (ushort) x.ValShort;
+                            return (@this, x) => @this.AttackerUserId = (ushort) x.ValShort;
                         if (key.Name == "dominated")
                             return (@this, x) => @this.Dominated = x.ValShort;
                         if (key.Name == "revenge")
@@ -10223,11 +10223,11 @@ public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
 
     public override string GameEventName => "player_avenged_teammate";
 
-    public ushort AvengerIdUserId { get; set; }
-    public CCSPlayerController? AvengerId => _demo.GetPlayerByUserId(AvengerIdUserId);
+    public ushort AvengerUserId { get; set; }
+    public CCSPlayerController? Avenger => _demo.GetPlayerByUserId(AvengerUserId);
 
-    public ushort AvengedPlayerIdUserId { get; set; }
-    public CCSPlayerController? AvengedPlayerId => _demo.GetPlayerByUserId(AvengedPlayerIdUserId);
+    public ushort AvengedPlayerUserId { get; set; }
+    public CCSPlayerController? AvengedPlayer => _demo.GetPlayerByUserId(AvengedPlayerUserId);
 }
 
 public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
@@ -10315,11 +10315,11 @@ public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
 
     public override string GameEventName => "gg_killed_enemy";
 
-    public ushort VictimidUserId { get; set; }
-    public CCSPlayerController? Victimid => _demo.GetPlayerByUserId(VictimidUserId);
+    public ushort VictimUserId { get; set; }
+    public CCSPlayerController? Victim => _demo.GetPlayerByUserId(VictimUserId);
 
-    public ushort AttackeridUserId { get; set; }
-    public CCSPlayerController? Attackerid => _demo.GetPlayerByUserId(AttackeridUserId);
+    public ushort AttackerUserId { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetPlayerByUserId(AttackerUserId);
 
     public int Dominated { get; set; }
 
