@@ -183,7 +183,7 @@ public partial class DemoParser
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
         Debug.Assert(!msg.UpdateBaseline);
-        //Debug.Assert(msg.AlternateBaselines.Count == 0);
+        Debug.Assert(msg.AlternateBaselines.Count == 0);
 
         var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;
