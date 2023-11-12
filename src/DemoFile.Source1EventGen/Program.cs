@@ -69,7 +69,7 @@ internal static class Program
         return keyType switch
         {
             GameEventKeyType.StrictEHandle => csPropertyName + "Handle",
-            GameEventKeyType.PlayerController => csPropertyName + "UserId",
+            GameEventKeyType.PlayerController => csPropertyName + "Index",
             _ => csPropertyName
         };
     }
@@ -166,7 +166,7 @@ internal static class Program
 
                 if ((GameEventKeyType) key.Type == GameEventKeyType.PlayerController)
                 {
-                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^6]} => _demo.GetPlayerByUserId({csPropertyName});");
+                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^5]} => _demo.GetEntityByIndex<CCSPlayerController>({csPropertyName});");
                 }
                 else if ((GameEventKeyType) key.Type == GameEventKeyType.StrictEHandle && key.Name.EndsWith("_pawn"))
                 {
@@ -200,7 +200,7 @@ internal static class Program
             GameEventKeyType.Bool => $"bool",
             GameEventKeyType.UInt64 => $"ulong",
             GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance>",
-            GameEventKeyType.PlayerController => $"ushort",
+            GameEventKeyType.PlayerController => $"CEntityIndex",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
     }
@@ -217,7 +217,7 @@ internal static class Program
             GameEventKeyType.Bool => $"x.ValBool",
             GameEventKeyType.UInt64 => $"x.ValUint64",
             GameEventKeyType.StrictEHandle => $"new CHandle<CEntityInstance>((uint) x.ValLong)",
-            GameEventKeyType.PlayerController => $"(ushort) x.ValShort",
+            GameEventKeyType.PlayerController => $"x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1)",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
     }

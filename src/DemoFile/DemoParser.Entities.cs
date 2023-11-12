@@ -106,13 +106,7 @@ public partial class DemoParser
         }
     }
 
-    /// <summary>
-    /// All <see cref="CMsgPlayerInfo"/>s for connected players.
-    /// Contains <c>null</c> for empty slots.
-    /// Will always have length equal to <see cref="MaxPlayers"/>.
-    /// </summary>
-    /// <seealso cref="CCSPlayerController.PlayerInfo"/>
-    public IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
+    internal IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
 
     /// <summary>
     /// Get the <see cref="CCSTeam"/> entity representing a given team.
