@@ -216,7 +216,7 @@ internal static class Program
             GameEventKeyType.Byte => $"x.ValByte",
             GameEventKeyType.Bool => $"x.ValBool",
             GameEventKeyType.UInt64 => $"x.ValUint64",
-            GameEventKeyType.StrictEHandle => $"new CHandle<CEntityInstance>((uint) x.ValLong)",
+            GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong)",
             GameEventKeyType.PlayerController => $"x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1)",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };

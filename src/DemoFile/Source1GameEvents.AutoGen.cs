@@ -600,7 +600,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -625,7 +625,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValByte;
                         if (key.Name == "oldteam")
@@ -729,11 +729,11 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "attacker")
                             return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "health")
                             return (@this, x) => @this.Health = x.ValByte;
                         if (key.Name == "armor")
@@ -1610,15 +1610,15 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "attacker")
                             return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "assister")
                             return (@this, x) => @this.AssisterIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "assister_pawn")
-                            return (@this, x) => @this.AssisterPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.AssisterPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "assistedflash")
                             return (@this, x) => @this.Assistedflash = x.ValBool;
                         if (key.Name == "weapon")
@@ -1679,7 +1679,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1727,7 +1727,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "material")
                             return (@this, x) => @this.Material = x.ValByte;
                         return (@this, x) => { };
@@ -1754,7 +1754,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "material")
                             return (@this, x) => @this.Material = x.ValByte;
                         return (@this, x) => { };
@@ -1781,7 +1781,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1833,7 +1833,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorCloseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "checkpoint")
                             return (@this, x) => @this.Checkpoint = x.ValBool;
                         return (@this, x) => { };
@@ -2124,7 +2124,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "target")
                             return (@this, x) => @this.Target = x.ValLong;
                         return (@this, x) => { };
@@ -2751,7 +2751,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValByte;
                         if (key.Name == "mode")
@@ -3207,7 +3207,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDecalEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3301,7 +3301,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "mode")
                             return (@this, x) => @this.Mode = x.ValByte;
                         if (key.Name == "entindex")
@@ -3523,7 +3523,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorOpenEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -3548,7 +3548,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorClosedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -3719,7 +3719,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3746,7 +3746,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3773,7 +3773,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3800,7 +3800,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3827,7 +3827,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3854,7 +3854,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -3879,7 +3879,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3929,7 +3929,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3996,7 +3996,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "haskit")
                             return (@this, x) => @this.Haskit = x.ValBool;
                         return (@this, x) => { };
@@ -4023,7 +4023,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4048,7 +4048,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4075,7 +4075,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4102,7 +4102,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4129,7 +4129,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         if (key.Name == "site")
@@ -4158,7 +4158,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4277,7 +4277,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "slot")
                             return (@this, x) => @this.Slot = x.ValShort;
                         return (@this, x) => { };
@@ -4327,7 +4327,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         if (key.Name == "silenced")
@@ -4356,7 +4356,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         return (@this, x) => { };
@@ -4383,7 +4383,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         return (@this, x) => { };
@@ -4410,7 +4410,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4435,7 +4435,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4460,7 +4460,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4485,7 +4485,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4510,7 +4510,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4535,7 +4535,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4560,7 +4560,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "inrestart")
                             return (@this, x) => @this.Inrestart = x.ValBool;
                         return (@this, x) => { };
@@ -5068,7 +5068,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -5093,7 +5093,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5126,7 +5126,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5159,7 +5159,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5192,7 +5192,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5225,7 +5225,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "x")
                             return (@this, x) => @this.X = x.ValFloat;
                         if (key.Name == "y")
@@ -5256,7 +5256,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5287,7 +5287,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyStartedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5438,7 +5438,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5471,7 +5471,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "x")
                             return (@this, x) => @this.X = x.ValFloat;
                         if (key.Name == "y")
@@ -5554,7 +5554,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "damage")
                             return (@this, x) => @this.Damage = x.ValFloat;
                         return (@this, x) => { };
@@ -5581,7 +5581,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -5909,7 +5909,7 @@ public partial class Source1GameEvents
                         if (key.Name == "victim")
                             return (@this, x) => @this.VictimIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "victim_pawn")
-                            return (@this, x) => @this.VictimPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.VictimPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "killer")
                             return (@this, x) => @this.Killer = x.ValLong;
                         if (key.Name == "killer_controller")
@@ -6106,7 +6106,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6494,7 +6494,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "botid")
                             return (@this, x) => @this.BotidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "p")
@@ -7230,7 +7230,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -7288,7 +7288,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "radius")
                             return (@this, x) => @this.Radius = x.ValLong;
                         if (key.Name == "duration")
@@ -7382,7 +7382,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = new CHandle<CEntityInstance>((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "pos_x")
                             return (@this, x) => @this.PosX = x.ValShort;
                         if (key.Name == "pos_y")

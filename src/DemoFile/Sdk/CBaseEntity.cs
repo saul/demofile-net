@@ -2,6 +2,8 @@ namespace DemoFile.Sdk;
 
 public partial class CBaseEntity
 {
+    public override string ToString() => $"{ServerClass.Name} ({EntityHandle})";
+
     public bool IsAlive => LifeState == 0;
 
     public CSTeamNumber CSTeamNum => (CSTeamNumber) TeamNum;
