@@ -45,7 +45,7 @@ public class StringTable
             index += 1;
             if (!bitBuffer.ReadOneBit())
             {
-                index += (int)bitBuffer.ReadUVarInt32() + 1;
+                index += (int)bitBuffer.ReadUVarInt32();
             }
 
             // Does this entry have a key?

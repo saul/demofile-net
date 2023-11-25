@@ -8,6 +8,6 @@
 - [x] Release source2gen-json
 - [x] Add support for `MNetworkVarTypeOverride` schema overrides
 - [x] Only include fields included in `MNetworkVarNames` (or with `MNetworkEnable`?)
+- [x] Snapshot testing of demo files
 - [ ] Perf test field vs properties on events
-- [ ] Snapshot testing of demo files
 - [ ] Archive old saul/demofile repo

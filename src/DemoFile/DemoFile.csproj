@@ -49,5 +49,5 @@
     <Protobuf Include="../../protos/gameevents.proto" />
     <Protobuf Include="../../protos/usermessages.proto" />
   </ItemGroup>
-  
+
 </Project>

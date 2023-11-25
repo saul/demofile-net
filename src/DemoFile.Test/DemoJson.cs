@@ -68,6 +68,12 @@ public static class DemoJson
 
         public override void Write(Utf8JsonWriter writer, CEntityIndex value, JsonSerializerOptions options)
         {
+            if (!value.IsValid)
+            {
+                writer.WriteNullValue();
+                return;
+            }
+
             writer.WriteStartObject();
             writer.WriteNumber("index", value.Value);
             writer.WriteEndObject();
