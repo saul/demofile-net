@@ -1,10 +1,11 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Concurrent;
+using System.Text.RegularExpressions;
 
 namespace DemoFile;
 
 internal partial record FieldType(string Name, FieldType? GenericParameter, bool IsPointer, int ArrayLength)
 {
-    private static readonly Dictionary<string, FieldType> FieldTypeCache = new();
+    private static readonly ConcurrentDictionary<string, FieldType> FieldTypeCache = new();
 
     public override string ToString()
     {

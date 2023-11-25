@@ -32,4 +32,30 @@ public class Source1GameEventIntegrationTest
         // Assert
         Snapshot.Assert(snapshot.ToString());
     }
+
+    [Test]
+    public async Task PlayerProperties()
+    {
+        var demo = new DemoParser();
+
+        demo.Source1GameEvents.PlayerHurt += e =>
+        {
+            Assert.That(e.Player, Is.Not.Null);
+            Assert.That(e.PlayerPawn, Is.Not.Null);
+        };
+
+        demo.Source1GameEvents.PlayerDeath += e =>
+        {
+            Assert.That(e.Player, Is.Not.Null);
+            Assert.That(e.PlayerPawn, Is.Not.Null);
+        };
+
+        demo.Source1GameEvents.WeaponFire += e =>
+        {
+            Assert.That(e.Player, Is.Not.Null);
+            Assert.That(e.PlayerPawn, Is.Not.Null);
+        };
+
+        await demo.Start(GotvCompetitiveProtocol13963, default);
+    }
 }

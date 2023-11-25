@@ -1,3 +1,7 @@
+### 0.3.6 (2023-11-25)
+
+- Fix alternate baseline regression introduced in 0.3.x
+
 ### 0.3.5 (2023-11-25)
 
 - Added release notes
