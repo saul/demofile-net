@@ -1,4 +1,4 @@
-### 0.3.4 (2023-11-25)
+### 0.3.5 (2023-11-25)
 
 - Added release notes
 
@@ -41,7 +41,7 @@
 ### 0.2.2 (2023-10-29)
 
 - Add events for entity creation/update/deletion
-- Improve game event generation 
+- Improve game event generation
 
 ### 0.2.1 (2023-10-25)
 

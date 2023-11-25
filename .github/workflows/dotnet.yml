@@ -68,6 +68,7 @@ jobs:
         with:
           dotnet-version: 7.0.x
       - name: Pull version from package.json
+        working-directory: src/DemoFile
         run: |
           VERSION=$(nbgv get-version -f json | jq -r '.NuGetPackageVersion')
           echo "Current package version: $VERSION"
