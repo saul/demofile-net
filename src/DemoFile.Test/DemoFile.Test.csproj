@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Snapshots\*.txt" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\..\demos\*.dem" CopyToOutputDirectory="PreserveNewest" LinkBase="demos" />
   </ItemGroup>
 
