@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -51,8 +52,48 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           filePath: ./BenchmarkDotNet.Artifacts/results/DemoFile.Benchmark.DemoParserBenchmark-report-github.md
           comment_tag: benchmark
+
+  deploy:
+    needs: [build]
+    if: github.ref == 'refs/heads/main'
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+      - name: Install nbgv tool
+        run: |
+          dotnet tool install -g nbgv
+      - name: Pull version from package.json
+        run: |
+          VERSION=$(nbgv get-version -f json | jq -r '.NuGetPackageVersion')
+          echo "Current package version: $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "TAG=v$VERSION" >> $GITHUB_ENV
+      - uses: mukunku/tag-exists-action@v1.0.0
+        id: checkTag
+        with:
+          tag: ${{ env.TAG }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Ensure release notes are available
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
+        run: grep -Fxq "### $VERSION (`date -u '+%Y-%m-%d'`)" RELEASE_NOTES.md || exit 1
+      - name: Version package and tag
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          git tag $TAG
+          git push origin $TAG
       - name: Publish to NuGet
-        if: github.ref == 'refs/heads/main'
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
         run: |
           dotnet pack -c Release
           dotnet nuget push src/DemoFile/bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_APIKEY}}
