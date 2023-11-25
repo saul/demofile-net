@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TODO = TODO
 		Directory.Build.props = Directory.Build.props
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		RELEASE_NOTES.md = RELEASE_NOTES.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{20EAA685-6916-4B0C-8D0C-E407B072E28F}"
