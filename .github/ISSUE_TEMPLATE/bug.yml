@@ -1,0 +1,29 @@
+name: 🐛 Bug report
+description: Create a report about a problem you're having
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Research
+      options:
+        - label: I've already searched and I could not find an existing issue or discussion about this issue.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of the bug. Please include what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Code to reproduce
+      description: Please copy and paste the code that reproduces the issue above. This will be automatically formatted into code, so no need for backticks.
+      render: csharp
+  - type: textarea
+    id: demo
+    attributes:
+      label: Affected demos
+      description: Drag-and-drop the affected demo file (`.dem`) into this field. You may also paste a link to the file here.
