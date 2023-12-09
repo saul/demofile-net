@@ -1,4 +1,4 @@
-### 0.3.7 (2023-12-09)
+### 0.4.1 (2023-12-09)
 
 - Update to schema v13980
 - Improve fallback field decoding (GameTime_t, GameTick_t and heuristics for enums)
