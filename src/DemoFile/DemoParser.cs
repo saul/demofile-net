@@ -18,6 +18,8 @@ public sealed partial class DemoParser
     private PacketEvents _packetEvents;
     private UserMessageEvents _userMessageEvents;
     private EntityEvents _entityEvents;
+    private int _sizeBytes;
+    private Stream? _stream;
 
     public Action<DemoProgressEvent>? OnProgress;
 
@@ -56,6 +58,8 @@ public sealed partial class DemoParser
 
     public DemoTick CurrentDemoTick { get; private set; }
     public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
+
+    public bool ReachedEndOfFile { get; private set; }
 
     public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
 
@@ -104,6 +108,35 @@ public sealed partial class DemoParser
         return (values[0], values[1]);
     }
 
+    public void StartNonAsync(Stream stream)
+    {
+        ValidateMagic(ReadExactBytes(stream, 8));
+        var (sizeBytes, _) = ReadDemoSizes(ReadExactBytes(stream, 8));
+        _sizeBytes = sizeBytes;
+        _stream = stream;
+    }
+
+    public void ReadNext()
+    {
+        if (ReachedEndOfFile)
+            throw new InvalidOperationException("Reached end of file");
+
+        if (_stream == null)
+            throw new ArgumentNullException(nameof(_stream));
+
+        ReadCommandHeader(_stream, out var size, out var isCompressed, out var msgType);
+
+        // todo: read into pooled array
+        var buf = ReadExactBytes(_stream, (int)size);
+
+        ReachedEndOfFile = !ReadDemoCommand(_stream, isCompressed, buf, msgType);
+
+        if (ReachedEndOfFile)
+            return;
+
+        OnProgress?.Invoke(new DemoProgressEvent((float)_stream.Position / (_sizeBytes + 16)));
+    }
+
     public async ValueTask Start(Stream stream, CancellationToken cancellationToken)
     {
         ValidateMagic(await ReadExactBytesAsync(stream, 8, cancellationToken));
@@ -114,41 +147,12 @@ public sealed partial class DemoParser
 
         while (!cancellationToken.IsCancellationRequested)
         {
-            // Read a command header, which includes both the message type
-            // well as a flag to determine whether or not whether or not the
-            // message is compressed with snappy.
-            var command = stream.ReadUVarInt32();
-
-            var msgType = (EDemoCommands)(command & ~(uint)EDemoCommands.DemIsCompressed);
-            if (msgType is < 0 or >= EDemoCommands.DemMax)
-                throw new InvalidDemoException($"Unexpected demo command: {command}");
-
-            var isCompressed = (command & (uint)EDemoCommands.DemIsCompressed)
-                               == (uint)EDemoCommands.DemIsCompressed;
-
-            var tick = (int) stream.ReadUVarInt32();
-            var size = stream.ReadUVarInt32();
-
-            CurrentDemoTick = new DemoTick(tick);
-
-            while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= tick)
-            {
-                _demoTickTimers.Dequeue();
-                timer.Invoke();
-            }
+            ReadCommandHeader(stream, out var size, out var isCompressed, out var msgType);
 
             // todo: read into pooled array
             var buf = await ReadExactBytesAsync(stream, (int)size, cancellationToken);
 
-            if (isCompressed)
-            {
-                using var decompressed = Snappy.DecompressToMemory(buf);
-                if (!_demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span)) break;
-            }
-            else
-            {
-                if (!_demoEvents.ReadDemoCommand(msgType, buf)) break;
-            }
+            if (!ReadDemoCommand(stream, isCompressed, buf, msgType)) break;
 
             OnProgress?.Invoke(new DemoProgressEvent((float)stream.Position / (sizeBytes + 16)));
         }
@@ -165,6 +169,45 @@ public sealed partial class DemoParser
         }
     }
 
+    private void ReadCommandHeader(Stream stream, out uint size, out bool isCompressed, out EDemoCommands msgType)
+    {
+        // Read a command header, which includes both the message type
+        // well as a flag to determine whether or not whether or not the
+        // message is compressed with snappy.
+        var command = stream.ReadUVarInt32();
+
+        msgType = (EDemoCommands)(command & ~(uint)EDemoCommands.DemIsCompressed);
+        if (msgType is < 0 or >= EDemoCommands.DemMax)
+            throw new InvalidDemoException($"Unexpected demo command: {command}");
+
+        isCompressed = (command & (uint)EDemoCommands.DemIsCompressed)
+                           == (uint)EDemoCommands.DemIsCompressed;
+
+        var tick = (int)stream.ReadUVarInt32();
+        size = stream.ReadUVarInt32();
+
+        CurrentDemoTick = new DemoTick(tick);
+
+        while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= tick)
+        {
+            _demoTickTimers.Dequeue();
+            timer.Invoke();
+        }
+    }
+
+    private bool ReadDemoCommand(Stream stream, bool isCompressed, byte[] buf, EDemoCommands msgType)
+    {
+        if (isCompressed)
+        {
+            using var decompressed = Snappy.DecompressToMemory(buf);
+            return _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
+        }
+        else
+        {
+            return _demoEvents.ReadDemoCommand(msgType, buf);
+        }
+    }
+
     private static async ValueTask<byte[]> ReadExactBytesAsync(
         Stream stream,
         int length,
@@ -176,6 +219,28 @@ public sealed partial class DemoParser
         while (buffer.Length > 0)
         {
             var read = await stream.ReadAsync(buffer, cancellationToken);
+            if (read == 0)
+            {
+                throw new InvalidOperationException(
+                    "End of stream reached before reading the desired number of bytes.");
+            }
+
+            buffer = buffer[read..];
+        }
+
+        return result;
+    }
+
+    private static byte[] ReadExactBytes(
+        Stream stream,
+        int length)
+    {
+        var result = new byte[length];
+
+        Span<byte> buffer = result;
+        while (buffer.Length > 0)
+        {
+            var read = stream.Read(buffer);
             if (read == 0)
             {
                 throw new InvalidOperationException(

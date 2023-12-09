@@ -2,3 +2,4 @@ obj/
 bin/
 /GameTracking-CSGO/
 *.dem
+.vs/

@@ -6,13 +6,8 @@ namespace DemoFile.Test.Integration;
 [TestFixture]
 public class Source1GameEventIntegrationTest
 {
-    [Test]
-    public async Task GameEvent()
+    private static void SetupGameEvent(DemoParser demo, StringBuilder snapshot)
     {
-        // Arrange
-        var snapshot = new StringBuilder();
-        var demo = new DemoParser();
-
         demo.Source1GameEvents.Source1GameEvent += e =>
         {
             // Ignore very noisy events
@@ -25,12 +20,40 @@ public class Source1GameEventIntegrationTest
                 .ReplaceLineEndings(Environment.NewLine + "  ");
             snapshot.AppendLine($"  {eventJson}");
         };
+    }
+
+    [Test]
+    public async Task GameEvent()
+    {
+        // Arrange
+        var snapshot = new StringBuilder();
+        var demo = new DemoParser();
+
+        SetupGameEvent(demo, snapshot);
 
         // Act
         await demo.Start(GotvCompetitiveProtocol13963, default);
 
         // Assert
         Snapshot.Assert(snapshot.ToString());
+    }
+
+    [Test]
+    public void GameEventNonAsync()
+    {
+        // Arrange
+        var snapshot = new StringBuilder();
+        var demo = new DemoParser();
+
+        SetupGameEvent(demo, snapshot);
+
+        // Act
+        demo.StartNonAsync(GotvCompetitiveProtocol13963);
+        while (!demo.ReachedEndOfFile)
+            demo.ReadNext();
+
+        // Assert
+        Snapshot.Assert(snapshot.ToString(), "GameEvent");
     }
 
     [Test]
