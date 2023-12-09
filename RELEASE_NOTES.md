@@ -1,3 +1,8 @@
+### 0.3.7 (2023-12-09)
+
+- Update to schema v13980
+- Improve fallback field decoding (GameTime_t, GameTick_t and heuristics for enums)
+
 ### 0.3.6 (2023-11-25)
 
 - Fix alternate baseline regression introduced in 0.3.x

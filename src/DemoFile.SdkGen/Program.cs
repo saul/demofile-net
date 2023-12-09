@@ -666,7 +666,7 @@ internal static class Program
 
         if (parentType == null)
         {
-            builder.AppendLine($"        if (FallbackDecoder.TryCreate(field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))");
+            builder.AppendLine($"        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))");
             builder.AppendLine($"        {{");
             builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
             builder.AppendLine($"            {{");
