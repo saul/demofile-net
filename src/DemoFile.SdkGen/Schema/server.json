@@ -751,6 +751,10 @@
           "name": "DFLAG_IGNORE_ARMOR",
           "value": 2048,
         },
+        {
+          "name": "DFLAG_SUPPRESS_UTILREMOVE",
+          "value": 4096,
+        },
       ],
     },
     "DamageTypes_t": {
@@ -4298,19 +4302,19 @@
         },
       ],
     },
-    "EGrenadeThrowState": {
+    "C4LightEffect_t": {
       "align": 4,
       "items": [
         {
-          "name": "NotThrowing",
+          "name": "eLightEffectNone",
           "value": 0,
         },
         {
-          "name": "Throwing",
+          "name": "eLightEffectDropped",
           "value": 1,
         },
         {
-          "name": "ThrowComplete",
+          "name": "eLightEffectThirdPersonHeld",
           "value": 2,
         },
       ],
@@ -12487,9 +12491,9 @@
           ],
         },
         {
-          "name": "m_bMatchAbortedDueToPlayerBan",
+          "name": "m_nMatchAbortedEarlyReason",
           "type": {
-            "name": "bool",
+            "name": "int32",
             "category": 0,
           },
           "metadata": [
@@ -12612,7 +12616,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -12682,7 +12686,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -12708,7 +12712,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -12721,7 +12725,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -14596,6 +14600,19 @@
         {
           "name": "MPropertyDescription",
           "value": "Analogous to the logic_playerproxy entity. Only makes sense for single-player games.",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CLogicEventListener": {
+      "parent": "CLogicalEntity",
+      "metadata": [
+        {
+          "name": "MPulseBindableTarget",
+        },
+        {
+          "name": "MPulseRegisterTypeInfo",
         },
       ],
       "fields": [
@@ -24074,8 +24091,34 @@
       "fields": [
       ],
     },
+    "CTriggerHostageReset": {
+      "parent": "CBaseTrigger",
+      "metadata": [
+        {
+          "name": "MPulseBindableTarget",
+        },
+        {
+          "name": "MPulseRegisterTypeInfo",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CCSPlace": {
       "parent": "CServerOnlyModelEntity",
+      "metadata": [
+        {
+          "name": "MPulseBindableTarget",
+        },
+        {
+          "name": "MPulseRegisterTypeInfo",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CGameMoney": {
+      "parent": "CRulePointEntity",
       "metadata": [
         {
           "name": "MPulseBindableTarget",
@@ -24242,19 +24285,6 @@
           "metadata": [
           ],
         },
-      ],
-    },
-    "CGameMoney": {
-      "parent": "CRulePointEntity",
-      "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-      ],
-      "fields": [
       ],
     },
     "CInferno": {
@@ -28269,6 +28299,16 @@
       ],
       "fields": [
         {
+          "name": "m_vInitialPosition",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
           "name": "m_vInitialVelocity",
           "type": {
             "name": "Vector",
@@ -29129,10 +29169,6 @@
             },
           },
           "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive",
-            },
           ],
         },
         {
@@ -29258,10 +29294,19 @@
           ],
         },
         {
-          "name": "m_bPlayerFireEventIsPrimary",
+          "name": "m_ePlayerFireEvent",
           "type": {
-            "name": "bool",
-            "category": 0,
+            "name": "PlayerAnimEvent_t",
+            "category": 6,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_ePlayerFireEventAttackType",
+          "type": {
+            "name": "WeaponAttackType_t",
+            "category": 6,
           },
           "metadata": [
           ],
@@ -29355,10 +29400,19 @@
           ],
         },
         {
-          "name": "m_flPostponeFireReadyTime",
+          "name": "m_nPostponeFireReadyTicks",
           "type": {
-            "name": "GameTime_t",
+            "name": "GameTick_t",
             "category": 5,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_flPostponeFireReadyFrac",
+          "type": {
+            "name": "float32",
+            "category": 0,
           },
           "metadata": [
           ],
@@ -29688,15 +29742,6 @@
         },
       ],
       "fields": [
-        {
-          "name": "m_flThrowAt",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5,
-          },
-          "metadata": [
-          ],
-        },
       ],
     },
     "CWeaponShield": {
@@ -29866,6 +29911,10 @@
             "category": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnGrenadeStateChanged",
+            },
           ],
         },
         {
@@ -29875,6 +29924,10 @@
             "category": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnGrenadeStateChanged",
+            },
           ],
         },
         {
@@ -29887,10 +29940,10 @@
           ],
         },
         {
-          "name": "m_eThrowStatus",
+          "name": "m_bThrowAnimating",
           "type": {
-            "name": "EGrenadeThrowState",
-            "category": 6,
+            "name": "bool",
+            "category": 0,
           },
           "metadata": [
           ],
@@ -29927,6 +29980,48 @@
           "type": {
             "name": "GameTime_t",
             "category": 5,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bJustPulledPin",
+          "type": {
+            "name": "bool",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_nNextHoldTick",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_flNextHoldFrac",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_hSwitchToWeaponAfterThrow",
+          "type": {
+            "name": "CHandle< CCSWeaponBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CCSWeaponBase",
+              "category": 5,
+            },
           },
           "metadata": [
           ],

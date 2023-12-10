@@ -5760,6 +5760,10 @@
           "name": "DFLAG_IGNORE_ARMOR",
           "value": 2048,
         },
+        {
+          "name": "DFLAG_SUPPRESS_UTILREMOVE",
+          "value": 4096,
+        },
       ],
     },
     "WeaponSound_t": {
@@ -9750,6 +9754,23 @@
         },
       ],
     },
+    "C4LightEffect_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "eLightEffectNone",
+          "value": 0,
+        },
+        {
+          "name": "eLightEffectDropped",
+          "value": 1,
+        },
+        {
+          "name": "eLightEffectThirdPersonHeld",
+          "value": 2,
+        },
+      ],
+    },
     "SubclassVDataChangeType_t": {
       "align": 4,
       "items": [
@@ -9805,23 +9826,6 @@
         },
         {
           "name": "LAYOUT_CUSTOM",
-          "value": 2,
-        },
-      ],
-    },
-    "EGrenadeThrowState": {
-      "align": 4,
-      "items": [
-        {
-          "name": "NotThrowing",
-          "value": 0,
-        },
-        {
-          "name": "Throwing",
-          "value": 1,
-        },
-        {
-          "name": "ThrowComplete",
           "value": 2,
         },
       ],

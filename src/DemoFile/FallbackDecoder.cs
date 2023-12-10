@@ -8,6 +8,7 @@ internal static class FallbackDecoder
     public readonly record struct Unit;
 
     public static bool TryCreate(
+        string fieldName,
         FieldType fieldType,
         FieldEncodingInfo encodingInfo,
         DecoderSet decoderSet,
@@ -27,7 +28,7 @@ internal static class FallbackDecoder
                 return true;
             }
 
-            if (!TryCreate(fieldType with {ArrayLength = 0}, encodingInfo, decoderSet, out var innerDecoder))
+            if (!TryCreate(fieldName, fieldType with {ArrayLength = 0}, encodingInfo, decoderSet, out var innerDecoder))
                 return false;
 
             decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
@@ -40,7 +41,7 @@ internal static class FallbackDecoder
 
         if (fieldType.Name is "CNetworkUtlVectorBase" or "CUtlVectorEmbeddedNetworkVar" or "CUtlVector")
         {
-            if (!TryCreate(fieldType.GenericParameter!, encodingInfo, decoderSet, out var innerDecoder))
+            if (!TryCreate(fieldName, fieldType.GenericParameter!, encodingInfo, decoderSet, out var innerDecoder))
                 return false;
 
             decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
@@ -129,9 +130,52 @@ internal static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
+            case "GameTime_t":
+            {
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    FieldDecode.DecodeFloatNoscale(ref buffer);
+                return true;
+            }
+            case "GameTick_t":
+            {
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    buffer.ReadUVarInt32();
+                return true;
+            }
             default:
-                return TryCreateFallbackClassDecoder(fieldType, decoderSet, out decoder);
+                return TryCreateFallbackClassDecoder(fieldType, decoderSet, out decoder)
+                       || TryCreateHeuristicDecoder(fieldName, fieldType, out decoder);
         }
+    }
+
+    private static bool TryCreateHeuristicDecoder(
+        string fieldName,
+        FieldType fieldType,
+        out SendNodeDecoder<Unit>? decoder)
+    {
+        // Heuristic: enum types. Example: EGrenadeThrowState, EFoo
+        if (fieldType.Name.Length > 2
+            && fieldType.Name[0] == 'E'
+            && char.IsUpper(fieldType.Name[1]))
+        {
+            // See also FieldDecode.CreateDecoder_enum
+            decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                buffer.ReadUVarInt64();
+            return true;
+        }
+
+        // Heuristic: enum fields. Example: m_ePlayerFireEvent, m_eDoorState
+        if (fieldName.Length > 4
+            && fieldName.StartsWith("m_e")
+            && char.IsUpper(fieldName[3]))
+        {
+            decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                buffer.ReadUVarInt64();
+            return true;
+        }
+
+        decoder = null;
+        return false;
     }
 
     private static bool TryCreateFallbackClassDecoder(

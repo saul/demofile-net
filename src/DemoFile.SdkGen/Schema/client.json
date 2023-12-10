@@ -7373,9 +7373,9 @@
           ],
         },
         {
-          "name": "m_bMatchAbortedDueToPlayerBan",
+          "name": "m_nMatchAbortedEarlyReason",
           "type": {
-            "name": "bool",
+            "name": "int32",
             "category": 0,
           },
           "metadata": [
@@ -7492,7 +7492,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -7562,7 +7562,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -7588,7 +7588,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -7601,7 +7601,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "AllPlayersDuringFreezePeriod",
+              "value": "AllPlayersDuringFreezePeriodOrMatchEnd",
             },
           ],
         },
@@ -19950,6 +19950,16 @@
       ],
       "fields": [
         {
+          "name": "m_vInitialPosition",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
           "name": "m_vInitialVelocity",
           "type": {
             "name": "Vector",
@@ -20886,10 +20896,6 @@
             },
           },
           "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive",
-            },
           ],
         },
         {
@@ -21019,10 +21025,19 @@
           ],
         },
         {
-          "name": "m_bPlayerFireEventIsPrimary",
+          "name": "m_ePlayerFireEvent",
           "type": {
-            "name": "bool",
-            "category": 0,
+            "name": "PlayerAnimEvent_t",
+            "category": 6,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_ePlayerFireEventAttackType",
+          "type": {
+            "name": "WeaponAttackType_t",
+            "category": 6,
           },
           "metadata": [
           ],
@@ -21116,10 +21131,19 @@
           ],
         },
         {
-          "name": "m_flPostponeFireReadyTime",
+          "name": "m_nPostponeFireReadyTicks",
           "type": {
-            "name": "GameTime_t",
+            "name": "GameTick_t",
             "category": 5,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_flPostponeFireReadyFrac",
+          "type": {
+            "name": "float32",
+            "category": 0,
           },
           "metadata": [
           ],
@@ -21449,15 +21473,6 @@
         },
       ],
       "fields": [
-        {
-          "name": "m_flThrowAt",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5,
-          },
-          "metadata": [
-          ],
-        },
       ],
     },
     "C_WeaponShield": {
@@ -21631,6 +21646,10 @@
             "category": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnGrenadeStateChanged",
+            },
           ],
         },
         {
@@ -21640,6 +21659,10 @@
             "category": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnGrenadeStateChanged",
+            },
           ],
         },
         {
@@ -21652,10 +21675,10 @@
           ],
         },
         {
-          "name": "m_eThrowStatus",
+          "name": "m_bThrowAnimating",
           "type": {
-            "name": "EGrenadeThrowState",
-            "category": 6,
+            "name": "bool",
+            "category": 0,
           },
           "metadata": [
           ],
@@ -21692,6 +21715,48 @@
           "type": {
             "name": "GameTime_t",
             "category": 5,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bJustPulledPin",
+          "type": {
+            "name": "bool",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_nNextHoldTick",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_flNextHoldFrac",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_hSwitchToWeaponAfterThrow",
+          "type": {
+            "name": "CHandle< C_CSWeaponBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "C_CSWeaponBase",
+              "category": 5,
+            },
           },
           "metadata": [
           ],

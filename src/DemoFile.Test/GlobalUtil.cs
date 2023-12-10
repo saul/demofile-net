@@ -10,6 +10,10 @@ public static class GlobalUtil
 
     public static MemoryStream MatchmakingProtocol13968 => new(File.ReadAllBytes(Path.Combine(DemoBase, "93n781.dem")));
 
+    public static MemoryStream GotvProtocol13978 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13978.dem")));
+
+    public static MemoryStream GotvProtocol13980 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13980.dem")));
+
     public static byte[] ToBitStream(string input)
     {
         var bitArray = new BitArray(input.Length);
