@@ -2,3 +2,5 @@ obj/
 bin/
 /GameTracking-CSGO/
 *.dem
+.idea/
+*.DotSettings.user

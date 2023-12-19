@@ -59,13 +59,21 @@ internal ref struct BitBuffer
     public byte ReadByte() => (byte)ReadUBits(8);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void UpdateBuffer()
+    private unsafe void UpdateBuffer()
     {
         if (_pointer.Length < 4)
         {
-            Span<byte> buf = stackalloc byte[4];
-            _pointer.CopyTo(buf);
-            _buf = MemoryMarshal.Read<uint>(buf);
+            // .NET 8/PGO optimisation issue (https://github.com/dotnet/runtime/issues/95056)
+            // We can't depend on stackalloc being zero-initialised here.
+            fixed (uint* bufPtr = &_buf)
+            {
+                var bufBytes = (byte*) bufPtr;
+                for (var i = 0; i < 4; ++i)
+                {
+                    bufBytes[i] = i < _pointer.Length ? _pointer[i] : default;
+                }
+            }
+
             _pointer = default;
         }
         else
