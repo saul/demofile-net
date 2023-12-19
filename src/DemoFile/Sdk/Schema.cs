@@ -28863,7 +28863,7 @@ internal static class EntityFactories
 
 internal partial class DecoderSet
 {
-    public bool TryGetDecoder(string className, [NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)
+    public bool TryGetDecoder(string className, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor), NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)
     {
         switch (className)
         {

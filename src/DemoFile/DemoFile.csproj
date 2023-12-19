@@ -12,6 +12,7 @@
     <IsPackable>true</IsPackable>
     <!-- Missing XML comment for publicly visible type or member -->
     <WarningsNotAsErrors>$(WarningsNotAsErrors);CS1591</WarningsNotAsErrors>
+    <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
   <!-- NuGet package settings -->

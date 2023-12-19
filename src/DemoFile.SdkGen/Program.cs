@@ -293,7 +293,7 @@ internal static class Program
         builder.AppendLine();
         builder.AppendLine("internal partial class DecoderSet");
         builder.AppendLine("{");
-        builder.AppendLine("    public bool TryGetDecoder(string className, [NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)");
+        builder.AppendLine("    public bool TryGetDecoder(string className, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor), NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)");
         builder.AppendLine("    {");
         builder.AppendLine("        switch (className)");
         builder.AppendLine("        {");
