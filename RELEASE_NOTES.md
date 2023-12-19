@@ -1,3 +1,7 @@
+### 0.5.1 (2023-12-19)
+
+- Fix decode exception caused by .NET runtime bug (https://github.com/dotnet/runtime/issues/96174)
+
 ### 0.4.1 (2023-12-09)
 
 - Update to schema v13980
