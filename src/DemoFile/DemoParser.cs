@@ -14,10 +14,10 @@ public sealed partial class DemoParser
     private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
     private readonly Source1GameEvents _source1GameEvents = new();
     private DemoEvents _demoEvents;
+    private EntityEvents _entityEvents;
     private GameEvents _gameEvents;
     private PacketEvents _packetEvents;
     private UserMessageEvents _userMessageEvents;
-    private EntityEvents _entityEvents;
 
     public Action<DemoProgressEvent>? OnProgress;
 
@@ -58,6 +58,11 @@ public sealed partial class DemoParser
     public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
 
     public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
+
+    /// <summary>
+    /// <c>true</c> if the recording client is GOTV. <c>false</c> if this is a POV demo.
+    /// </summary>
+    public bool IsGotvRecording { get; private set; }
 
     private void OnDemoPacket(CDemoPacket msg)
     {
