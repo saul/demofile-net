@@ -1,3 +1,8 @@
+### 0.6.1 (2023-12-21)
+
+- Only read the first entity snapshot in GOTV demos (~10% perf improvement)
+- Added `DemoFile.IsGotv`, indicating whether the demo was recorded by GOTV
+
 ### 0.5.1 (2023-12-19)
 
 - Fix decode exception caused by .NET runtime bug (https://github.com/dotnet/runtime/issues/96174)
