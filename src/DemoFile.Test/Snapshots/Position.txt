@@ -2954,7 +2954,7 @@
     },
     "Weapons": []
   }
-[157934] Interval snapshot:
+[157935] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -3032,13 +3032,13 @@
     "LastPlaceName": "Apartments",
     "ActiveWeapon": "CWeaponM4A1",
     "Origin": {
-      "X": -1836.4205,
-      "Y": 761.94495,
+      "X": -1834.6072,
+      "Y": 761.71326,
       "Z": -47.96875
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -11.696655,
+      "Yaw": -11.749878,
       "Roll": 0
     },
     "EyeAngles": {
@@ -3244,18 +3244,18 @@
     "LastPlaceName": "Catwalk",
     "ActiveWeapon": "CWeaponGalilAR",
     "Origin": {
-      "X": -992.00696,
-      "Y": -117.87042,
+      "X": -990.98285,
+      "Y": -116.51825,
       "Z": -167.96875
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -37.21756,
+      "Yaw": -37.28279,
       "Roll": 0
     },
     "EyeAngles": {
       "Pitch": 3.0360107,
-      "Yaw": -37.252228,
+      "Yaw": -37.34012,
       "Roll": 0
     },
     "Weapons": [
@@ -3325,18 +3325,18 @@
     "LastPlaceName": "BombsiteA",
     "ActiveWeapon": "CAK47",
     "Origin": {
-      "X": -1004.04236,
-      "Y": -2324.4055,
-      "Z": -167.55713
+      "X": -1007.3092,
+      "Y": -2323.6953,
+      "Z": -163.04382
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 168.38437,
+      "Yaw": 169.51184,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": 6.1777496,
-      "Yaw": 173.35535,
+      "Pitch": 5.3063965,
+      "Yaw": 174.82062,
       "Roll": 0
     },
     "Weapons": [
@@ -3441,7 +3441,7 @@
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -168.0201,
+      "Yaw": -168.02112,
       "Roll": 0
     },
     "EyeAngles": {
@@ -3552,8 +3552,8 @@
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": 10.120117,
-      "Yaw": -174.17381,
+      "Pitch": 11.329987,
+      "Yaw": -167.46391,
       "Roll": 0
     },
     "Weapons": [
@@ -3639,18 +3639,18 @@
     "LastPlaceName": "Middle",
     "ActiveWeapon": "CWeaponGalilAR",
     "Origin": {
-      "X": -115.2829,
-      "Y": -775.86475,
-      "Z": -215.97913
+      "X": -114.64331,
+      "Y": -775.05,
+      "Z": -215.84283
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 142.2987,
+      "Yaw": 142.23312,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": -0.1980896,
-      "Yaw": 141.85855,
+      "Pitch": -0.1538086,
+      "Yaw": 141.68277,
       "Roll": 0
     },
     "Weapons": [
@@ -6101,7 +6101,7 @@
     },
     "Weapons": []
   }
-[196334] Interval snapshot:
+[196335] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -6302,8 +6302,8 @@
     "LastPlaceName": "Shop",
     "ActiveWeapon": "CWeaponM4A1",
     "Origin": {
-      "X": -2304.964,
-      "Y": -468.00244,
+      "X": -2305.2866,
+      "Y": -466.25098,
       "Z": -167.96875
     },
     "Rotation": {
@@ -6443,18 +6443,18 @@
     "LastPlaceName": "BombsiteA",
     "ActiveWeapon": "CWeaponM4A1",
     "Origin": {
-      "X": 140.36563,
-      "Y": -1982.4438,
-      "Z": -134.29114
+      "X": 141.79317,
+      "Y": -1981.8328,
+      "Z": -131.51099
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -12.371292,
+      "Yaw": -15.673035,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": -9.147827,
-      "Yaw": -53.091087,
+      "Pitch": -7.9135895,
+      "Yaw": -64.27139,
       "Roll": 0
     },
     "Weapons": [
@@ -6553,13 +6553,13 @@
     "LastPlaceName": "Jungle",
     "ActiveWeapon": "CWeaponM4A1",
     "Origin": {
-      "X": -1224.6986,
+      "X": -1223.9816,
       "Y": -1526.9688,
-      "Z": -152.49683
+      "Z": -152.56763
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 82.55884,
+      "Yaw": 82.559845,
       "Roll": 0
     },
     "EyeAngles": {
@@ -6710,9 +6710,9 @@
     "LastPlaceName": "SideAlley",
     "ActiveWeapon": "CWeaponAWP",
     "Origin": {
-      "X": 349.91104,
-      "Y": 143.31969,
-      "Z": -241.84888
+      "X": 349.57492,
+      "Y": 141.81766,
+      "Z": -241.30621
     },
     "Rotation": {
       "Pitch": 0,
@@ -6864,18 +6864,18 @@
     "LastPlaceName": "Underpass",
     "ActiveWeapon": "CAK47",
     "Origin": {
-      "X": -1046.7396,
-      "Y": 154.05153,
+      "X": -1046.6476,
+      "Y": 152.36642,
       "Z": -367.96875
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -81.799736,
+      "Yaw": -81.750984,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": -5.037918,
-      "Yaw": -81.76712,
+      "Pitch": -5.0818634,
+      "Yaw": -81.723175,
       "Roll": 0
     },
     "Weapons": [
@@ -8587,7 +8587,7 @@
     },
     "Weapons": []
   }
-[234734] Interval snapshot:
+[234735] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -8752,12 +8752,12 @@
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 80.48102,
+      "Yaw": 80.32037,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": -1.8017578,
-      "Yaw": 62.497437,
+      "Pitch": -1.782196,
+      "Yaw": 62.57675,
       "Roll": 0
     },
     "Weapons": [
@@ -8814,13 +8814,13 @@
     "LastPlaceName": "Catwalk",
     "ActiveWeapon": "CWeaponP250",
     "Origin": {
-      "X": -558.94745,
-      "Y": -494.43066,
-      "Z": -166.13165
+      "X": -558.7208,
+      "Y": -494.31268,
+      "Z": -166.13098
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 117.513885,
+      "Yaw": 117.5101,
       "Roll": 0
     },
     "EyeAngles": {
@@ -8883,7 +8883,7 @@
     "ActiveWeapon": "CWeaponGlock",
     "Origin": {
       "X": -1247.9696,
-      "Y": -563.4946,
+      "Y": -562.28766,
       "Z": -167.96875
     },
     "Rotation": {
@@ -8950,18 +8950,18 @@
     "LastPlaceName": "Connector",
     "ActiveWeapon": "CWeaponGlock",
     "Origin": {
-      "X": -781.2559,
-      "Y": -1023.2875,
+      "X": -780.4675,
+      "Y": -1022.99225,
       "Z": -167.96875
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -69.42982,
+      "Yaw": -69.4796,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": 0.17611694,
-      "Yaw": -69.46449,
+      "Pitch": 0.13183594,
+      "Yaw": -69.50844,
       "Roll": 0
     },
     "Weapons": [
@@ -9167,8 +9167,8 @@
     "LastPlaceName": "BombsiteB",
     "ActiveWeapon": "CWeaponElite",
     "Origin": {
-      "X": -2021.8165,
-      "Y": 363.94922,
+      "X": -2021.277,
+      "Y": 366.3002,
       "Z": -159.96875
     },
     "Rotation": {
@@ -9300,8 +9300,8 @@
     "LastPlaceName": "PalaceInterior",
     "ActiveWeapon": "CWeaponElite",
     "Origin": {
-      "X": 365.13593,
-      "Y": -1944.0347,
+      "X": 365.1959,
+      "Y": -1944.0397,
       "Z": -39.96875
     },
     "Rotation": {
@@ -11904,7 +11904,7 @@
     },
     "Weapons": []
   }
-[273134] Interval snapshot:
+[273135] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -11982,9 +11982,9 @@
     "LastPlaceName": "TopofMid",
     "ActiveWeapon": "CAK47",
     "Origin": {
-      "X": 503.20663,
-      "Y": -454.9369,
-      "Z": -159.99426
+      "X": 503.26428,
+      "Y": -456.07764,
+      "Z": -159.99243
     },
     "Rotation": {
       "Pitch": 0,
@@ -12098,12 +12098,12 @@
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 144.89801,
+      "Yaw": 144.62952,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": 1.4453888,
-      "Yaw": 138.74738,
+      "Pitch": 1.5047913,
+      "Yaw": 143.28162,
       "Roll": 0
     },
     "Weapons": [
@@ -12215,8 +12215,8 @@
     "LastPlaceName": "Underpass",
     "ActiveWeapon": "CWeaponGalilAR",
     "Origin": {
-      "X": -931.2329,
-      "Y": 466.15787,
+      "X": -930.26447,
+      "Y": 465.84125,
       "Z": -367.96875
     },
     "Rotation": {
@@ -12318,12 +12318,12 @@
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 52.29698,
+      "Yaw": 52.321014,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": 1.125412,
-      "Yaw": 52.360504,
+      "Pitch": 1.0890198,
+      "Yaw": 52.324097,
       "Roll": 0
     },
     "Weapons": [
@@ -12409,18 +12409,18 @@
     "LastPlaceName": "BackAlley",
     "ActiveWeapon": "CWeaponGalilAR",
     "Origin": {
-      "X": -916.6452,
-      "Y": 565.0045,
-      "Z": -81.75012
+      "X": -916.93756,
+      "Y": 564.013,
+      "Z": -81.74481
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 163.56342,
+      "Yaw": 163.49545,
       "Roll": 0
     },
     "EyeAngles": {
       "Pitch": -2.4640198,
-      "Yaw": 163.51913,
+      "Yaw": 163.43124,
       "Roll": 0
     },
     "Weapons": [
@@ -12506,13 +12506,13 @@
     "LastPlaceName": "BombsiteA",
     "ActiveWeapon": "CWeaponMP9",
     "Origin": {
-      "X": 122.3635,
-      "Y": -1709.9886,
+      "X": 122.0562,
+      "Y": -1709.7021,
       "Z": -167.96875
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 59.263687,
+      "Yaw": 59.334076,
       "Roll": 0
     },
     "EyeAngles": {
@@ -12624,9 +12624,9 @@
     "LastPlaceName": "BombsiteB",
     "ActiveWeapon": "CKnife",
     "Origin": {
-      "X": -2170.393,
-      "Y": 556.03186,
-      "Z": -159.68604
+      "X": -2170.4429,
+      "Y": 557.53174,
+      "Z": -159.32507
     },
     "Rotation": {
       "Pitch": 0,
@@ -12705,18 +12705,18 @@
     "LastPlaceName": "Middle",
     "ActiveWeapon": "CWeaponM4A1",
     "Origin": {
-      "X": -965.8047,
-      "Y": -579.0725,
-      "Z": -275.27313
+      "X": -964.36786,
+      "Y": -580.2028,
+      "Z": -274.47235
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": 7.2767334,
+      "Yaw": 7.256134,
       "Roll": 0
     },
     "EyeAngles": {
       "Pitch": -2.090149,
-      "Yaw": 7.2767334,
+      "Yaw": 7.25441,
       "Roll": 0
     },
     "Weapons": [
@@ -12815,18 +12815,18 @@
     "LastPlaceName": "Underpass",
     "ActiveWeapon": "CFlashbang",
     "Origin": {
-      "X": -1068.36,
-      "Y": -423.16412,
+      "X": -1067.7012,
+      "Y": -424.48157,
       "Z": -263.96875
     },
     "Rotation": {
       "Pitch": 0,
-      "Yaw": -10.508759,
+      "Yaw": -11.196106,
       "Roll": 0
     },
     "EyeAngles": {
-      "Pitch": 4.5936584,
-      "Yaw": -18.658905,
+      "Pitch": 4.505432,
+      "Yaw": -20.559875,
       "Roll": 0
     },
     "Weapons": [
@@ -15895,7 +15895,7 @@
     },
     "Weapons": []
   }
-[311534] Interval snapshot:
+[311535] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",

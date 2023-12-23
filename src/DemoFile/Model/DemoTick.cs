@@ -10,6 +10,9 @@ namespace DemoFile;
 /// <seealso cref="GameTick"/>
 public readonly record struct DemoTick(int Value) : IComparable<DemoTick>
 {
+    public static readonly DemoTick Zero = default;
+    public static readonly DemoTick PreRecord = new(-1);
+
     public int CompareTo(DemoTick other) => Value.CompareTo(other.Value);
 
     public override string ToString() => Value == -1 ? "<pre record>" : $"Demo tick {Value}";

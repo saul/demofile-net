@@ -79,9 +79,7 @@ public class PlayerPropsIntegrationTest
                 OnSnapshotTimer);
         }
 
-        demo.CreateTimer(
-            demo.CurrentDemoTick + playerSnapshotInterval,
-            OnSnapshotTimer);
+        demo.CreateTimer(DemoTick.Zero + playerSnapshotInterval, OnSnapshotTimer);
 
         // Act
         await demo.Start(GotvCompetitiveProtocol13963, default);
