@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace DemoFile;
 
 /// <summary>
@@ -8,6 +10,7 @@ namespace DemoFile;
 /// </summary>
 /// <param name="Value">Current demo tick. <c>-1</c> or greater.</param>
 /// <seealso cref="GameTick"/>
+[DebuggerDisplay("{DebuggerDisplay,nq}")]
 public readonly record struct DemoTick(int Value) : IComparable<DemoTick>
 {
     public static readonly DemoTick Zero = default;
@@ -15,7 +18,9 @@ public readonly record struct DemoTick(int Value) : IComparable<DemoTick>
 
     public int CompareTo(DemoTick other) => Value.CompareTo(other.Value);
 
-    public override string ToString() => Value == -1 ? "<pre record>" : $"Demo tick {Value}";
+    public override string ToString() => this == PreRecord ? "<pre record>" : $"{Value}";
+
+    private string DebuggerDisplay => this == PreRecord ? "<pre record>" : $"Demo tick {Value}";
 
     public static DemoTick operator +(DemoTick tick, TimeSpan duration) => new((int)(tick.Value + duration.TotalSeconds * 64.0));
     public static DemoTick operator -(DemoTick tick, TimeSpan duration) => new((int)(tick.Value - duration.TotalSeconds * 64.0));

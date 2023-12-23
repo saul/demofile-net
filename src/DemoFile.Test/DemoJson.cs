@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 using DemoFile.Sdk;
 using Google.Protobuf;
 
@@ -107,6 +108,32 @@ public static class DemoJson
             new ByteStringJsonConverter(),
             new JsonStringEnumConverter(),
             new CEntityInstanceJsonConverter()
+        },
+        TypeInfoResolver = new DefaultJsonTypeInfoResolver
+        {
+            Modifiers =
+            {
+                IgnoreProtoPresenceProperties
+            }
         }
     };
+
+    private static void IgnoreProtoPresenceProperties(JsonTypeInfo typeInfo)
+    {
+        if (!typeInfo.Type.IsAssignableTo(typeof(IMessage)))
+            return;
+
+        var properties = typeInfo.Properties.ToDictionary(x => x.Name);
+
+        foreach (var propertyInfo in typeInfo.Properties)
+        {
+            if (!propertyInfo.Name.StartsWith("Has"))
+                continue;
+
+            if (properties.ContainsKey(propertyInfo.Name[3..]))
+            {
+                propertyInfo.ShouldSerialize = (o, o1) => false;
+            }
+        }
+    }
 }

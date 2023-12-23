@@ -1,0 +1,44 @@
+[<pre record>/0] TickCount=217866
+[<pre record>/0] DemoFileInfo: {
+  "PlaybackTime": 3404.1562,
+  "PlaybackTicks": 217866,
+  "PlaybackFrames": 217801
+}
+[<pre record>/119535] SvcServerInfo: {
+  "Protocol": 13963,
+  "ServerCount": 6,
+  "IsDedicated": true,
+  "IsHltv": true,
+  "COs": 108,
+  "MaxClients": 64,
+  "MaxClasses": 212,
+  "PlayerSlot": 0,
+  "TickInterval": 0.015625,
+  "GameDir": "/home/steam/cs2/game/csgo",
+  "MapName": "de_mirage",
+  "SkyName": "",
+  "HostName": "ESL GOTV",
+  "AddonName": "",
+  "GameSessionConfig": {
+    "IsMultiplayer": true,
+    "IsLoadsavegame": false,
+    "IsBackgroundMap": false,
+    "IsHeadless": false,
+    "MinClientLimit": 1,
+    "MaxClientLimit": 64,
+    "MaxClients": 64,
+    "TickInterval": 0,
+    "Hostname": "",
+    "Savegamename": "",
+    "S1Mapname": "de_mirage",
+    "Gamemode": "",
+    "ServerIpAddress": "138.199.37.129:0",
+    "Data": "\u003C576 bytes\u003E",
+    "IsLocalonly": false,
+    "NoSteamServer": false,
+    "IsTransition": false,
+    "Previouslevel": "",
+    "Landmarkname": ""
+  },
+  "GameSessionManifest": "\u003C7073 bytes\u003E"
+}

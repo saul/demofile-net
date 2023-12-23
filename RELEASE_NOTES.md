@@ -1,3 +1,7 @@
+### 0.7.1 (2023-12-23)
+
+- Read CDemoFileInfo in seekable streams (available on complete demo recordings only)
+
 ### 0.6.1 (2023-12-23)
 
 - Only read the first entity snapshot in GOTV demos (~10% perf improvement)
