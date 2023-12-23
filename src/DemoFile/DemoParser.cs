@@ -1,11 +1,10 @@
 ﻿using System.Buffers;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 using Snappier;
 
 namespace DemoFile;
-
-public readonly record struct DemoProgressEvent(float Progress);
 
 public sealed partial class DemoParser
 {
@@ -19,6 +18,9 @@ public sealed partial class DemoParser
     private PacketEvents _packetEvents;
     private UserMessageEvents _userMessageEvents;
 
+    /// <summary>
+    /// Event fired every time a demo command is parsed.
+    /// </summary>
     public Action<DemoProgressEvent>? OnProgress;
 
     public DemoParser()
@@ -27,6 +29,7 @@ public sealed partial class DemoParser
         _demoEvents.DemoPacket += OnDemoPacket;
         _demoEvents.DemoClassInfo += OnDemoClassInfo;
         _demoEvents.DemoSendTables += OnDemoSendTables;
+        _demoEvents.DemoFileInfo += OnDemoFileInfo;
 
         _packetEvents.SvcCreateStringTable += OnCreateStringTable;
         _packetEvents.SvcUpdateStringTable += OnUpdateStringTable;
@@ -54,7 +57,15 @@ public sealed partial class DemoParser
     public GameTick CurrentGameTick { get; private set; }
     public GameTime CurrentGameTime => CurrentGameTick.ToGameTime();
 
-    public DemoTick CurrentDemoTick { get; private set; }
+    public DemoTick CurrentDemoTick { get; private set; } = DemoTick.PreRecord;
+
+    /// <summary>
+    /// Total number of ticks in the demo.
+    /// Only available when parsing stream that can be seeked,
+    /// as the information is located at the end of the demo file.
+    /// </summary>
+    public DemoTick TickCount { get; private set; }
+
     public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
 
     public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
@@ -63,6 +74,11 @@ public sealed partial class DemoParser
     /// <c>true</c> if the recording client is GOTV. <c>false</c> if this is a POV demo.
     /// </summary>
     public bool IsGotv { get; private set; }
+
+    private void OnDemoFileInfo(CDemoFileInfo fileInfo)
+    {
+        TickCount = new DemoTick(fileInfo.PlaybackTicks);
+    }
 
     private void OnDemoPacket(CDemoPacket msg)
     {
@@ -103,19 +119,28 @@ public sealed partial class DemoParser
 
     public ValueTask Start(Stream stream) => Start(stream, default(CancellationToken));
 
-    private static (int SizeBytes, int Unknown) ReadDemoSizes(byte[] bytes)
+    private static int ReadDemoSize(byte[] bytes)
     {
         ReadOnlySpan<int> values = MemoryMarshal.Cast<byte, int>(bytes);
-        return (values[0], values[1]);
+        return values[0];
     }
 
     public async ValueTask Start(Stream stream, CancellationToken cancellationToken)
     {
         ValidateMagic(await ReadExactBytesAsync(stream, 8, cancellationToken));
-        var (sizeBytes, _) = ReadDemoSizes(await ReadExactBytesAsync(stream, 8, cancellationToken));
+        var sizeBytes = ReadDemoSize(await ReadExactBytesAsync(stream, 8, cancellationToken));
 
         // `sizeBytes` represents the number of bytes remaining in the demo,
         // from this point (i.e. 16 bytes into the file).
+
+        var isComplete = sizeBytes > 0;
+        if (stream.CanSeek && isComplete)
+        {
+            var oldPosition = stream.Position;
+            stream.Position = sizeBytes;
+            await ReadFileInfo(stream, cancellationToken);
+            stream.Position = oldPosition;
+        }
 
         while (!cancellationToken.IsCancellationRequested)
         {
@@ -159,6 +184,19 @@ public sealed partial class DemoParser
         }
 
         cancellationToken.ThrowIfCancellationRequested();
+    }
+
+    private async ValueTask ReadFileInfo(Stream stream, CancellationToken cancellationToken)
+    {
+        var command = (EDemoCommands) stream.ReadUVarInt32();
+        Debug.Assert(command == EDemoCommands.DemFileInfo);
+
+        // This should match CDemoFileInfo.PlaybackTicks
+        var totalTicks = stream.ReadUVarInt32();
+
+        var size = stream.ReadUVarInt32();
+        var buf = await ReadExactBytesAsync(stream, (int)size, cancellationToken);
+        DemoEvents.DemoFileInfo?.Invoke(CDemoFileInfo.Parser.ParseFrom(buf));
     }
 
     private static void ValidateMagic(ReadOnlySpan<byte> magic)

@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace DemoFile;
 
 /// <summary>
@@ -6,6 +8,7 @@ namespace DemoFile;
 /// </summary>
 /// <param name="Value">Tick number.</param>
 /// <seealso cref="DemoTick"/>
+[DebuggerDisplay("{DebuggerDisplay,nq}")]
 public readonly record struct GameTick(uint Value) : IComparable<GameTick>
 {
     // CS2 is hardcoded as 64-tick
@@ -13,7 +16,9 @@ public readonly record struct GameTick(uint Value) : IComparable<GameTick>
 
     public int CompareTo(GameTick other) => Value.CompareTo(other.Value);
 
-    public override string ToString() => $"Tick {Value} ({ToGameTime()})";
+    public override string ToString() => Value.ToString();
+
+    private string DebuggerDisplay => $"Tick {Value} ({ToGameTime()})";
 
     public static GameTick operator +(GameTick tick, TimeSpan duration) => new((uint)(tick.Value + duration.TotalSeconds / 64.0));
     public static GameTick operator -(GameTick tick, TimeSpan duration) => new((uint)(tick.Value - duration.TotalSeconds / 64.0));

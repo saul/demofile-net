@@ -4,6 +4,9 @@ namespace DemoFile.Sdk;
 
 public partial class CCSPlayerPawn
 {
+    public override string ToString() =>
+        $"{(IsActive ? "[PAWN]" : "[INACTIVE PAWN]")} {Controller?.PlayerName ?? "<no controller>"}";
+
     public IEnumerable<CCSWeaponBase> Weapons =>
         WeaponServices?.MyWeapons.Select(handle => handle.Get<CCSWeaponBase>(Demo)).WhereNotNull()
         ?? Enumerable.Empty<CCSWeaponBase>();
