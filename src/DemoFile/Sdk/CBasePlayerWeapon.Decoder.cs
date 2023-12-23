@@ -2,9 +2,9 @@
 
 public partial class CBasePlayerWeapon
 {
-    private static FieldDecode.FieldDecoder<int> CreateDecoder_minusone(
+    private static FieldDecode.CustomDeserializer<CBasePlayerWeapon, int> CreateDecoder_minusone(
         FieldEncodingInfo fieldEncodingInfo)
     {
-        return (ref BitBuffer buffer) => (int)buffer.ReadUVarInt32() - 1;
+        return (CBasePlayerWeapon _, ref BitBuffer buffer) => (int)buffer.ReadUVarInt32() - 1;
     }
 }

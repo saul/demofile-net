@@ -2,15 +2,16 @@
 
 public partial class CGameSceneNode
 {
-    private static FieldDecode.FieldDecoder<QAngle> CreateDecoder_gameSceneNodeStepSimulationAnglesSerializer(
+    private static FieldDecode.CustomDeserializer<CGameSceneNode, QAngle> CreateDecoder_gameSceneNodeStepSimulationAnglesSerializer(
         FieldEncodingInfo fieldEncodingInfo)
     {
-        return FieldDecode.CreateDecoder_QAngle(fieldEncodingInfo);
+        var decoder = FieldDecode.CreateDecoder_QAngle(fieldEncodingInfo);
+        return (CGameSceneNode _, ref BitBuffer buffer) => decoder(ref buffer);
     }
 
-    private static FieldDecode.FieldDecoder<CGameSceneNodeHandle> CreateDecoder_gameSceneNode(
+    private static FieldDecode.CustomDeserializer<CGameSceneNode, CGameSceneNodeHandle> CreateDecoder_gameSceneNode(
         FieldEncodingInfo fieldEncodingInfo)
     {
-        return (ref BitBuffer buffer) => new CGameSceneNodeHandle(buffer.ReadUVarInt32());
+        return (CGameSceneNode _, ref BitBuffer buffer) => new CGameSceneNodeHandle(buffer.ReadUVarInt32());
     }
 }

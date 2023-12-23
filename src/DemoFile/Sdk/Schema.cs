@@ -2710,7 +2710,7 @@ public partial class CBaseEntity : CEntityInstance
             var decoder = CreateDecoder_ClampHealth(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Health = decoder(ref buffer);
+                @this.Health = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_iMaxHealth")
@@ -2774,7 +2774,7 @@ public partial class CBaseEntity : CEntityInstance
             var decoder = CreateDecoder_animTimeSerializer(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.AnimTime = decoder(ref buffer);
+                @this.AnimTime = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_flSimulationTime")
@@ -2782,7 +2782,7 @@ public partial class CBaseEntity : CEntityInstance
             var decoder = CreateDecoder_simulationTimeSerializer(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.SimulationTime = decoder(ref buffer);
+                @this.SimulationTime = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_flCreateTime")
@@ -4047,7 +4047,7 @@ public partial class CBasePlayerWeapon : CEconEntity
             var decoder = CreateDecoder_minusone(field.FieldEncodingInfo);
             return (CBasePlayerWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Clip1 = decoder(ref buffer);
+                @this.Clip1 = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_iClip2")
@@ -4055,7 +4055,7 @@ public partial class CBasePlayerWeapon : CEconEntity
             var decoder = CreateDecoder_minusone(field.FieldEncodingInfo);
             return (CBasePlayerWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Clip2 = decoder(ref buffer);
+                @this.Clip2 = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_pReserveAmmo")
@@ -14285,7 +14285,7 @@ public partial class CFish : CBaseAnimGraph
             var decoder = CreateDecoder_fish_pos_x(field.FieldEncodingInfo);
             return (CFish @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.X = decoder(ref buffer);
+                @this.X = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_y")
@@ -14293,7 +14293,7 @@ public partial class CFish : CBaseAnimGraph
             var decoder = CreateDecoder_fish_pos_y(field.FieldEncodingInfo);
             return (CFish @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Y = decoder(ref buffer);
+                @this.Y = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_z")
@@ -14301,7 +14301,7 @@ public partial class CFish : CBaseAnimGraph
             var decoder = CreateDecoder_fish_pos_z(field.FieldEncodingInfo);
             return (CFish @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Z = decoder(ref buffer);
+                @this.Z = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_angle")
@@ -14309,7 +14309,7 @@ public partial class CFish : CBaseAnimGraph
             var decoder = CreateDecoder_angle_normalize_positive(field.FieldEncodingInfo);
             return (CFish @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Angle = decoder(ref buffer);
+                @this.Angle = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_poolOrigin")
@@ -15223,7 +15223,7 @@ public partial class CGameSceneNode
             var decoder = CreateDecoder_gameSceneNode(field.FieldEncodingInfo);
             return (CGameSceneNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Parent = decoder(ref buffer);
+                @this.Parent = decoder(@this, ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_vecOrigin")
@@ -15239,7 +15239,7 @@ public partial class CGameSceneNode
             var decoder = CreateDecoder_gameSceneNodeStepSimulationAnglesSerializer(field.FieldEncodingInfo);
             return (CGameSceneNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Rotation = decoder(ref buffer);
+                @this.Rotation = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_flScale")
@@ -18240,7 +18240,7 @@ public partial class CNetworkedSequenceOperation
             var decoder = CreateDecoder_minusone(field.FieldEncodingInfo);
             return (CNetworkedSequenceOperation @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Sequence = decoder(ref buffer);
+                @this.Sequence = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_flPrevCycle")
@@ -18335,7 +18335,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
             var decoder = CreateDecoder_cellx(field.FieldEncodingInfo);
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.CellX = decoder(ref buffer);
+                @this.CellX = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_cellY")
@@ -18343,7 +18343,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
             var decoder = CreateDecoder_celly(field.FieldEncodingInfo);
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.CellY = decoder(ref buffer);
+                @this.CellY = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_cellZ")
@@ -18351,7 +18351,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
             var decoder = CreateDecoder_cellz(field.FieldEncodingInfo);
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.CellZ = decoder(ref buffer);
+                @this.CellZ = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_nOutsideWorld")
@@ -18367,7 +18367,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
             var decoder = CreateDecoder_posx(field.FieldEncodingInfo);
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.X = decoder(ref buffer);
+                @this.X = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_vecY")
@@ -18375,7 +18375,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
             var decoder = CreateDecoder_posy(field.FieldEncodingInfo);
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Y = decoder(ref buffer);
+                @this.Y = decoder(@this, ref buffer);
             };
         }
         if (field.VarName == "m_vecZ")
@@ -18383,7 +18383,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
             var decoder = CreateDecoder_posz(field.FieldEncodingInfo);
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Z = decoder(ref buffer);
+                @this.Z = decoder(@this, ref buffer);
             };
         }
         if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))

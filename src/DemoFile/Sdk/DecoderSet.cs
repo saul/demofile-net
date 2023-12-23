@@ -56,7 +56,8 @@ internal partial class DecoderSet
             var _serializer = serializer;
 #endif
 
-            fieldDecodersByIndex[path[0]](instance, path, ref buffer);
+            var fieldDecoder = fieldDecodersByIndex[path[0]];
+            fieldDecoder(instance, path, ref buffer);
         };
     }
 }

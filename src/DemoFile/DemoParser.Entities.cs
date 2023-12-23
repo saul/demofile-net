@@ -124,7 +124,7 @@ public partial class DemoParser
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
         Debug.Assert(_playerInfos[msg.PlayerSlot] != null);
-        IsGotvRecording = _playerInfos[msg.PlayerSlot]?.Ishltv ?? false;
+        IsGotv = _playerInfos[msg.PlayerSlot]?.Ishltv ?? false;
         _fullSnapshotRead = false;
 
         MaxPlayers = msg.MaxClients;
@@ -260,7 +260,7 @@ public partial class DemoParser
         // Clear out all entities - this is a full update.
         if (!msg.IsDelta)
         {
-            if (IsGotvRecording)
+            if (IsGotv)
             {
                 // In GOTV recordings, we see a snapshot every 3840 ticks (60 seconds).
                 // After we've read the first one, we can ignore the rest.
