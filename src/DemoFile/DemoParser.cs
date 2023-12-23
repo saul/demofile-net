@@ -62,7 +62,7 @@ public sealed partial class DemoParser
     /// <summary>
     /// <c>true</c> if the recording client is GOTV. <c>false</c> if this is a POV demo.
     /// </summary>
-    public bool IsGotvRecording { get; private set; }
+    public bool IsGotv { get; private set; }
 
     private void OnDemoPacket(CDemoPacket msg)
     {
