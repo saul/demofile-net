@@ -656,7 +656,16 @@ internal static class Program
                     builder.AppendLine($"            var decoder = {decoderMethod}(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(ref buffer);");
+
+                    if (serializer == null)
+                    {
+                        builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(ref buffer);");
+                    }
+                    else
+                    {
+                        builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(@this, ref buffer);");
+                    }
+
                     builder.AppendLine($"            }};");
                 }
 

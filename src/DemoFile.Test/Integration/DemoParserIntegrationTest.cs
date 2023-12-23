@@ -1,4 +1,7 @@
-﻿namespace DemoFile.Test.Integration;
+﻿using System.Text;
+using System.Text.Json;
+
+namespace DemoFile.Test.Integration;
 
 [TestFixture]
 public class DemoParserIntegrationTest

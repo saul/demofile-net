@@ -2,19 +2,22 @@
 
 public partial class CBaseEntity
 {
-    private static FieldDecode.FieldDecoder<float> CreateDecoder_animTimeSerializer(
+    private static FieldDecode.CustomDeserializer<CBaseEntity, float> CreateDecoder_animTimeSerializer(
         FieldEncodingInfo fieldEncodingInfo)
     {
-        return (ref BitBuffer buffer) => FieldDecode.DecodeSimulationTime(ref buffer);
+        return (CBaseEntity _, ref BitBuffer buffer) => FieldDecode.DecodeSimulationTime(ref buffer);
     }
 
-    private static FieldDecode.FieldDecoder<float> CreateDecoder_simulationTimeSerializer(
+    private static FieldDecode.CustomDeserializer<CBaseEntity, float> CreateDecoder_simulationTimeSerializer(
         FieldEncodingInfo fieldEncodingInfo)
     {
-        return (ref BitBuffer buffer) => FieldDecode.DecodeSimulationTime(ref buffer);
+        return (CBaseEntity _, ref BitBuffer buffer) => FieldDecode.DecodeSimulationTime(ref buffer);
     }
 
-    private static FieldDecode.FieldDecoder<int> CreateDecoder_ClampHealth(
-        FieldEncodingInfo fieldEncodingInfo) =>
-        FieldDecode.CreateDecoder_Int32(fieldEncodingInfo);
+    private static FieldDecode.CustomDeserializer<CBaseEntity, int> CreateDecoder_ClampHealth(
+        FieldEncodingInfo fieldEncodingInfo)
+    {
+        var decoder = FieldDecode.CreateDecoder_Int32(fieldEncodingInfo);
+        return (CBaseEntity _, ref BitBuffer buffer) => decoder(ref buffer);
+    }
 }

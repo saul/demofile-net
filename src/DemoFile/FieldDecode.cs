@@ -12,6 +12,8 @@ internal static class FieldDecode
 
     public delegate T FieldDecoder<T>(ref BitBuffer buffer);
 
+    public delegate TValue CustomDeserializer<TType, TValue>(TType @this, ref BitBuffer buffer);
+
     public static FieldDecoder<T> CreateDecoder_enum<T>(
         FieldEncodingInfo fieldEncodingInfo)
         where T : struct
