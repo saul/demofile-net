@@ -3,9 +3,17 @@ using System.Text.Json;
 
 namespace DemoFile.Test.Integration;
 
-[TestFixture]
+[TestFixture(true)]
+[TestFixture(false)]
 public class DemoEventsIntegrationTest
 {
+    private readonly bool _readAll;
+
+    public DemoEventsIntegrationTest(bool readAll)
+    {
+        _readAll = readAll;
+    }
+
     [Test]
     public async Task DemoFileInfo()
     {
@@ -25,7 +33,17 @@ public class DemoEventsIntegrationTest
         };
 
         // Act
-        await demo.Start(GotvCompetitiveProtocol13963, default);
+        if (_readAll)
+        {
+            await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
+        }
+        else
+        {
+            await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
+            while (await demo.MoveNextAsync(default))
+            {
+            }
+        }
 
         // Assert
         Snapshot.Assert(snapshot.ToString());

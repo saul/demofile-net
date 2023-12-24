@@ -1,3 +1,9 @@
+### 0.8.1 (2023-12-24)
+
+- BREAKING CHANGE: `DemoParser.Start` is now `DemoParser.ReadAllAsync`
+- Added ability to read tick-by-tick with `DemoParser.StartReadingAsync` and `DemoParser.MoveNextAsync`
+- Added comparison operators to `DemoTick` and `GameTick`
+
 ### 0.7.1 (2023-12-23)
 
 - Read CDemoFileInfo in seekable streams (available on complete demo recordings only)

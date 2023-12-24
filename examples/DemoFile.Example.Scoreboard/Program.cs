@@ -35,7 +35,7 @@ internal class Program
             AnsiConsole.Write(table);
         };
 
-        await demo.Start(File.OpenRead(path));
+        await demo.ReadAllAsync(File.OpenRead(path));
     }
 
     private static void AddTeamRows(DemoParser demo, Table table, CCSTeam team)

@@ -1,8 +1,16 @@
 ﻿namespace DemoFile.Test.Integration;
 
-[TestFixture]
+[TestFixture(true)]
+[TestFixture(false)]
 public class TimerIntegrationTest
 {
+    private readonly bool _readAll;
+
+    public TimerIntegrationTest(bool readAll)
+    {
+        _readAll = readAll;
+    }
+
     [Test]
     public async Task StartTimer_DemoTick()
     {
@@ -22,7 +30,17 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
+            if (_readAll)
+            {
+                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+            }
+            else
+            {
+                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                while (await demo.MoveNextAsync(cts.Token))
+                {
+                }
+            }
         }
         catch (OperationCanceledException)
         {
@@ -64,7 +82,17 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
+            if (_readAll)
+            {
+                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+            }
+            else
+            {
+                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                while (await demo.MoveNextAsync(cts.Token))
+                {
+                }
+            }
         }
         catch (OperationCanceledException)
         {
@@ -95,7 +123,17 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
+            if (_readAll)
+            {
+                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+            }
+            else
+            {
+                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                while (await demo.MoveNextAsync(cts.Token))
+                {
+                }
+            }
         }
         catch (OperationCanceledException)
         {
@@ -124,7 +162,17 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
+            if (_readAll)
+            {
+                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+            }
+            else
+            {
+                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                while (await demo.MoveNextAsync(cts.Token))
+                {
+                }
+            }
         }
         catch (OperationCanceledException)
         {
@@ -166,7 +214,17 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
+            if (_readAll)
+            {
+                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+            }
+            else
+            {
+                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                while (await demo.MoveNextAsync(cts.Token))
+                {
+                }
+            }
         }
         catch (OperationCanceledException)
         {
@@ -197,7 +255,17 @@ public class TimerIntegrationTest
         // Act
         try
         {
-            await demo.Start(GotvCompetitiveProtocol13963, cts.Token);
+            if (_readAll)
+            {
+                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+            }
+            else
+            {
+                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                while (await demo.MoveNextAsync(cts.Token))
+                {
+                }
+            }
         }
         catch (OperationCanceledException)
         {

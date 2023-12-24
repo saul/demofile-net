@@ -22,4 +22,9 @@ public readonly record struct GameTick(uint Value) : IComparable<GameTick>
 
     public static GameTick operator +(GameTick tick, TimeSpan duration) => new((uint)(tick.Value + duration.TotalSeconds / 64.0));
     public static GameTick operator -(GameTick tick, TimeSpan duration) => new((uint)(tick.Value - duration.TotalSeconds / 64.0));
+
+    public static bool operator <(GameTick left, GameTick right) => left.Value < right.Value;
+    public static bool operator <=(GameTick left, GameTick right) => left.Value <= right.Value;
+    public static bool operator >(GameTick left, GameTick right) => left.Value > right.Value;
+    public static bool operator >=(GameTick left, GameTick right) => left.Value >= right.Value;
 }

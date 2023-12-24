@@ -25,7 +25,7 @@ internal static class Program
 
         try
         {
-            await demo.Start(File.OpenRead(demoPath), cts.Token);
+            await demo.ReadAllAsync(File.OpenRead(demoPath), cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {
