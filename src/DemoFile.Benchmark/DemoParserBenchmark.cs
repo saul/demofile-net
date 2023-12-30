@@ -42,6 +42,10 @@ public class DemoParserBenchmark
     public async Task ParseDemo()
     {
         _demoParser = new DemoParser();
+#if BASELINE
+        await _demoParser.Start(_fileStream, default);
+#else
         await _demoParser.ReadAllAsync(_fileStream, default);
+#endif
     }
 }
