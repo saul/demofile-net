@@ -25,9 +25,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="" />
-    <Compile Remove="DemoParser - Copy.cs" />
-    <None Include="DemoParser - Copy.cs" />
-    <None Include="DemoParser.StringTables - Copy.cs" />
   </ItemGroup>
 
   <ItemGroup>
