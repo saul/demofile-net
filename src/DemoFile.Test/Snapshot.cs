@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using NUnit.Framework.Internal;
 
 namespace DemoFile.Test;
 
@@ -25,9 +26,9 @@ public static class Snapshot
         throw new Exception("Could not find 'Snapshots' source directory");
     }
 
-    public static void Assert(string contents, [CallerMemberName] string? name = null)
+    public static void Assert(string contents)
     {
-        ArgumentException.ThrowIfNullOrEmpty(name);
+        var name = TestExecutionContext.CurrentContext.CurrentTest.Name;
 
         var fileName = name + ".txt";
         var path = Path.Combine(SnapshotDir.FullName, fileName);

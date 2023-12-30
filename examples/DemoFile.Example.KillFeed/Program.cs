@@ -46,7 +46,7 @@ internal class Program
 
         // Now that we've attached the event listeners, start reading the demo
         var sw = Stopwatch.StartNew();
-        await demo.Start(File.OpenRead(path));
+        await demo.ReadAllAsync(File.OpenRead(path));
         sw.Stop();
 
         var ticks = demo.CurrentDemoTick.Value;

@@ -85,7 +85,7 @@ internal class Program
         var sw = Stopwatch.StartNew();
         try
         {
-            await demo.Start(File.OpenRead(path), cts.Token);
+            await demo.ReadAllAsync(File.OpenRead(path), cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {

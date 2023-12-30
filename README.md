@@ -40,7 +40,7 @@ internal class Program
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
         };
 
-        await demo.Start(File.OpenRead(path));
+        await demo.ReadAllAsync(File.OpenRead(path));
 
         Console.WriteLine("\nFinished!");
     }

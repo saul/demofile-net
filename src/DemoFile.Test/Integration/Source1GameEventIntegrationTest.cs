@@ -3,9 +3,17 @@ using System.Text.Json;
 
 namespace DemoFile.Test.Integration;
 
-[TestFixture]
+[TestFixture(true)]
+[TestFixture(false)]
 public class Source1GameEventIntegrationTest
 {
+    private readonly bool _readAll;
+
+    public Source1GameEventIntegrationTest(bool readAll)
+    {
+        _readAll = readAll;
+    }
+
     [Test]
     public async Task GameEvent()
     {
@@ -27,7 +35,17 @@ public class Source1GameEventIntegrationTest
         };
 
         // Act
-        await demo.Start(GotvCompetitiveProtocol13963, default);
+        if (_readAll)
+        {
+            await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
+        }
+        else
+        {
+            await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
+            while (await demo.MoveNextAsync(default))
+            {
+            }
+        }
 
         // Assert
         Snapshot.Assert(snapshot.ToString());
@@ -56,6 +74,16 @@ public class Source1GameEventIntegrationTest
             Assert.That(e.PlayerPawn, Is.Not.Null);
         };
 
-        await demo.Start(GotvCompetitiveProtocol13963, default);
+        if (_readAll)
+        {
+            await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
+        }
+        else
+        {
+            await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
+            while (await demo.MoveNextAsync(default))
+            {
+            }
+        }
     }
 }
