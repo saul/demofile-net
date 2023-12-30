@@ -1,0 +1,784 @@
+[123375] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[127215] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[131055] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[134895] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[138735] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[142575] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[146415] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[150255] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[154095] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[157935] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[161775] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[165615] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[169455] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[173295] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[177135] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[180975] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[184815] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[188655] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[192495] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[196335] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[200175] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[204015] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[207855] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[211695] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[215535] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[219375] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[223215] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[227055] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[230895] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[234735] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[238575] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[242415] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[246255] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[250095] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[253935] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[257775] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[261615] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[265455] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[269295] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[273135] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[276975] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[280815] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[284655] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[288495] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[292335] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[296175] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[300015] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[303855] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[307695] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[311535] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[315375] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[319215] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "vicu", "xuid": "76561198266290430", "userid": 5, "steamid": "76561198266290430", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "Ksu", "xuid": "76561197989010446", "userid": 8, "steamid": "76561197989010446", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "t4tty", "xuid": "76561197961799823", "userid": 11, "steamid": "76561197961799823", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[323055] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: <null>
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: <null>
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: <null>
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[326895] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: <null>
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: <null>
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: <null>
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[330735] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: <null>
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: <null>
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: <null>
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }
+[334575] Player infos:
+  #0: { "name": "ESL GOTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "ESL GOTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "Referee | @JanicKa953", "xuid": "76561198351887977", "userid": 2, "steamid": "76561198351887977", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "LETi-", "xuid": "76561198184979557", "userid": 3, "steamid": "76561198184979557", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "Liina", "xuid": "76561197996875761", "userid": 4, "steamid": "76561197996875761", "fakeplayer": false, "ishltv": false }
+  #5: <null>
+  #6: { "name": "Hanka-", "xuid": "76561198070540608", "userid": 6, "steamid": "76561198070540608", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "Angelka", "xuid": "76561198191616018", "userid": 7, "steamid": "76561198191616018", "fakeplayer": false, "ishltv": false }
+  #8: <null>
+  #9: { "name": "victoria", "xuid": "76561197965929550", "userid": 9, "steamid": "76561197965929550", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "Elizabeth-", "xuid": "76561198037661952", "userid": 10, "steamid": "76561198037661952", "fakeplayer": false, "ishltv": false }
+  #11: <null>
+  #12: { "name": "f6tal", "xuid": "76561198014914403", "userid": 12, "steamid": "76561198014914403", "fakeplayer": false, "ishltv": false }

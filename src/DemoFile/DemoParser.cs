@@ -273,6 +273,9 @@ public sealed partial class DemoParser
         var cmd = ReadCommandHeader();
         Debug.Assert(cmd.Command == (uint)EDemoCommands.DemFileInfo);
 
+        // Always treat DemoFileInfo as being at 'pre-record'
+        CurrentDemoTick = DemoTick.PreRecord;
+
         var buf = await ReadExactBytesAsync((int)cmd.Size, cancellationToken).ConfigureAwait(false);
         DemoEvents.DemoFileInfo?.Invoke(CDemoFileInfo.Parser.ParseFrom(buf));
     }

@@ -28,7 +28,7 @@ public static class Snapshot
 
     public static void Assert(string contents)
     {
-        var name = TestExecutionContext.CurrentContext.CurrentTest.FullName;
+        var name = TestExecutionContext.CurrentContext.CurrentTest.Name;
 
         var fileName = name + ".txt";
         var path = Path.Combine(SnapshotDir.FullName, fileName);
