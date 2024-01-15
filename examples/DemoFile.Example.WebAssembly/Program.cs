@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DemoFile.Example.WebAssembly;
 
-internal partial class Program
+public partial class Program
 {
     public static async Task Main(string[] args)
     {
@@ -12,7 +12,7 @@ internal partial class Program
     }
 
     [JSExport]
-    internal static async Task<string> ParseToEnd(byte[] buffer)
+    public static async Task<string> ParseToEnd(byte[] buffer)
     {
         Console.WriteLine("Parsing started");
 

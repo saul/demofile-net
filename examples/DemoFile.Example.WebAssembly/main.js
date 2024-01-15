@@ -12,7 +12,8 @@ setModuleImports("main.js", {
 
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
-const text = exports.Program.Greeting();
+const demoFileProgram = exports.DemoFile.Example.WebAssembly.Program;
+const text = demoFileProgram.Greeting();
 console.log(text);
 
 await dotnet.run(); // runs Main() function
@@ -38,7 +39,7 @@ function readFile(file) {
 	reader.onload = async function (e) {
 		var arrayBuf = reader.result;
 		console.log(arrayBuf.byteLength);
-        var resultStr = await exports.Program.ParseToEnd(new Uint8Array(arrayBuf));
+        var resultStr = await demoFileProgram.ParseToEnd(new Uint8Array(arrayBuf));
 		document.getElementById("demo_parse_result").innerHTML = resultStr;
 	}
 	reader.readAsArrayBuffer(file);
