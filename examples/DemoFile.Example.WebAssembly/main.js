@@ -6,17 +6,22 @@ if (!is_browser) throw new Error(`Expected to be running in a browser`);
 const { setModuleImports, getAssemblyExports, getConfig } = 
 	await dotnet.create();
 
+// define JS exports (which can be imported into C#)
 setModuleImports("main.js", {
   
 });
 
+// obtain exported C# object
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 const demoFileProgram = exports.DemoFile.Example.WebAssembly.Program;
-const text = demoFileProgram.Greeting();
-console.log(text);
 
-await dotnet.run(); // runs Main() function
+// print string returned from C#
+const greetingText = demoFileProgram.Greeting();
+console.log(greetingText);
+
+// setup button click
+window.document.getElementById("OpenDemoFileButton").onclick = openDemoFile;
 
 
 function openDemoFile()
@@ -44,7 +49,3 @@ function readFile(file) {
 	}
 	reader.readAsArrayBuffer(file);
 }
-
-
-window.document.getElementById("OpenDemoFileButton").onclick = openDemoFile;
-
