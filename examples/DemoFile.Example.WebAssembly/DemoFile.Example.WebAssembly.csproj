@@ -15,5 +15,9 @@
   <ItemGroup>
     <WasmExtraFilesToDeploy Include="index.html" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DemoFile\DemoFile.csproj" />
+  </ItemGroup>
+
 </Project>
