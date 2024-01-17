@@ -23,6 +23,10 @@ console.log(greetingText);
 // setup button click
 window.document.getElementById("OpenDemoFileButton").onclick = openDemoFile;
 
+// setup update function - this function will be called on every repaint - frequency will match display refresh rate
+//window.requestAnimationFrame(update);
+setTimeout(update, 0);
+
 
 function openDemoFile()
 {
@@ -48,4 +52,11 @@ function readFile(file) {
 		document.getElementById("demo_parse_result").innerHTML = resultStr;
 	}
 	reader.readAsArrayBuffer(file);
+}
+
+function update() {
+
+	demoFileProgram.Update();
+
+	setTimeout(update, 0);
 }
