@@ -52,8 +52,9 @@ public partial class Program
             sb.Append("<br />");
         };
 
-        var sw = Stopwatch.StartNew();
+        var totalTimeStopwatch = Stopwatch.StartNew();
         var delayStopwatch = Stopwatch.StartNew();
+        var processingTimeStopwatch = Stopwatch.StartNew();
 
         await demo.StartReadingAsync(stream, default);
 
@@ -61,16 +62,20 @@ public partial class Program
         {
             if (delayStopwatch.Elapsed.TotalMilliseconds > 16.66f)
             {
+                processingTimeStopwatch.Stop();
+
                 if (sb.Length > 0)
                     AppendDemoParseResult(sb.ToString());
                 sb.Clear();
                 await Task.Delay(1); // has to be at least 1
                 delayStopwatch.Restart();
+
+                processingTimeStopwatch.Start();
             }
         }
 
         sb.Append("<br /> <br />");
-        sb.Append($"Finished, ticks: {demo.CurrentDemoTick}, elapsed: {sw.ElapsedMilliseconds} ms");
+        sb.Append($"Finished, ticks: {demo.CurrentDemoTick}, processing time: {processingTimeStopwatch.ElapsedMilliseconds} ms, elapsed: {totalTimeStopwatch.ElapsedMilliseconds} ms");
         sb.Append("<br />");
 
         AppendDemoParseResult(sb.ToString());
