@@ -8,7 +8,12 @@ const { setModuleImports, getAssemblyExports, getConfig } =
 
 // define JS exports (which can be imported into C#)
 setModuleImports("main.js", {
-  
+  cs_setDemoParseResult: function(result){
+	  setDemoParseResult(result);
+  },
+  cs_appendDemoParseResult: function(result){
+	  appendDemoParseResult(result);
+  }
 });
 
 // obtain exported C# object
@@ -39,13 +44,20 @@ function openDemoFile()
 }
 
 function readFile(file) {
-	document.getElementById("demo_parse_result").innerHTML = "";
+	setDemoParseResult("");
 	var reader = new FileReader ();
 	reader.onload = async function (e) {
 		var arrayBuf = reader.result;
 		console.log(arrayBuf.byteLength);
-        var resultStr = await demoFileProgram.ParseToEnd(new Uint8Array(arrayBuf));
-		document.getElementById("demo_parse_result").innerHTML = resultStr;
+        await demoFileProgram.ParseToEnd(new Uint8Array(arrayBuf));
 	}
 	reader.readAsArrayBuffer(file);
+}
+
+function setDemoParseResult(result) {
+	document.getElementById("demo_parse_result").innerHTML = result;
+}
+
+function appendDemoParseResult(result) {
+	document.getElementById("demo_parse_result").innerHTML += result;
 }

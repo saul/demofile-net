@@ -12,9 +12,11 @@ public partial class Program
     }
 
     [JSExport]
-    public static async Task<string> ParseToEnd(byte[] buffer)
+    public static async Task ParseToEnd(byte[] buffer)
     {
         Console.WriteLine("Parsing started");
+
+        SetDemoParseResult(string.Empty);
 
         var demo = new DemoParser();
         using var stream = new MemoryStream(buffer);
@@ -51,14 +53,27 @@ public partial class Program
         };
 
         var sw = Stopwatch.StartNew();
+        var delayStopwatch = Stopwatch.StartNew();
 
-        await demo.ReadAllAsync(stream);
+        await demo.StartReadingAsync(stream, default);
 
+        while (await demo.MoveNextAsync(default))
+        {
+            if (delayStopwatch.Elapsed.TotalMilliseconds > 16.66f)
+            {
+                if (sb.Length > 0)
+                    AppendDemoParseResult(sb.ToString());
+                sb.Clear();
+                await Task.Delay(1); // has to be at least 1
+                delayStopwatch.Restart();
+            }
+        }
+
+        sb.Append("<br /> <br />");
+        sb.Append($"Finished, ticks: {demo.CurrentDemoTick}, elapsed: {sw.ElapsedMilliseconds} ms");
         sb.Append("<br />");
-        sb.AppendLine($"Finished, ticks: {demo.CurrentDemoTick}, elapsed: {sw.ElapsedMilliseconds} ms");
-        sb.Append("<br />");
 
-        return sb.ToString();
+        AppendDemoParseResult(sb.ToString());
     }
 
     [JSExport]
@@ -66,6 +81,12 @@ public partial class Program
     {
         return $"Greetings from C#";
     }
+
+    [JSImport("cs_setDemoParseResult", "main.js")]
+    internal static partial void SetDemoParseResult([JSMarshalAs<JSType.String>] string result);
+
+    [JSImport("cs_appendDemoParseResult", "main.js")]
+    internal static partial void AppendDemoParseResult([JSMarshalAs<JSType.String>] string result);
 
     [JSImport("globalThis.console.log")]
     internal static partial void JsLog([JSMarshalAs<JSType.String>] string message);
