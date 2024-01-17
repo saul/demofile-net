@@ -61,7 +61,7 @@ public partial class Program
 
         while (await demo.MoveNextAsync(default))
         {
-            if (delayStopwatch.Elapsed.TotalMilliseconds > 16.66f)
+            if (delayStopwatch.Elapsed.TotalMilliseconds > 50) // 20 FPS
             {
                 processingTimeStopwatch.Stop();
 
