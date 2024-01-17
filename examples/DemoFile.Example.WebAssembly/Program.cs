@@ -14,9 +14,10 @@ public partial class Program
     [JSExport]
     public static async Task ParseToEnd(byte[] buffer)
     {
-        Console.WriteLine("Parsing started");
+        Console.WriteLine($"Parsing started, buffer size {buffer.Length}");
 
         SetDemoParseResult(string.Empty);
+        SetDemoParseProgress(0);
 
         var demo = new DemoParser();
         using var stream = new MemoryStream(buffer);
@@ -67,6 +68,7 @@ public partial class Program
                 if (sb.Length > 0)
                     AppendDemoParseResult(sb.ToString());
                 sb.Clear();
+                SetDemoParseProgress(stream.Position / (float)stream.Length * 100f);
                 await Task.Delay(1); // has to be at least 1
                 delayStopwatch.Restart();
 
@@ -79,6 +81,7 @@ public partial class Program
         sb.Append("<br />");
 
         AppendDemoParseResult(sb.ToString());
+        SetDemoParseProgress(100);
     }
 
     [JSExport]
@@ -92,6 +95,9 @@ public partial class Program
 
     [JSImport("cs_appendDemoParseResult", "main.js")]
     internal static partial void AppendDemoParseResult([JSMarshalAs<JSType.String>] string result);
+
+    [JSImport("cs_setDemoParseProgress", "main.js")]
+    internal static partial void SetDemoParseProgress(float progress);
 
     [JSImport("globalThis.console.log")]
     internal static partial void JsLog([JSMarshalAs<JSType.String>] string message);

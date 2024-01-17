@@ -13,6 +13,9 @@ setModuleImports("main.js", {
   },
   cs_appendDemoParseResult: function(result){
 	  appendDemoParseResult(result);
+  },
+  cs_setDemoParseProgress: function(progress){
+	  setDemoParseProgress(progress);
   }
 });
 
@@ -32,24 +35,24 @@ window.document.getElementById("OpenDemoFileButton").onclick = openDemoFile;
 function openDemoFile()
 {
 	let input = document.createElement('input');
-    input.type = 'file';
-    input.onchange = _ => {
-        let files = Array.from(input.files);
-        console.log(files);
+	input.type = 'file';
+	input.onchange = _ => {
+		let files = Array.from(input.files);
+		console.log(files);
 		readFile(files[0]);
-    };
-    input.click();
+	};
+	input.click();
 
-    input.remove();
+	input.remove();
 }
 
 function readFile(file) {
 	setDemoParseResult("");
+	setDemoParseProgress(0);
 	var reader = new FileReader ();
 	reader.onload = async function (e) {
 		var arrayBuf = reader.result;
-		console.log(arrayBuf.byteLength);
-        await demoFileProgram.ParseToEnd(new Uint8Array(arrayBuf));
+		await demoFileProgram.ParseToEnd(new Uint8Array(arrayBuf));
 	}
 	reader.readAsArrayBuffer(file);
 }
@@ -60,4 +63,8 @@ function setDemoParseResult(result) {
 
 function appendDemoParseResult(result) {
 	document.getElementById("demo_parse_result").innerHTML += result;
+
+function setDemoParseProgress(progress) {
+	var elem = document.getElementById("demoProcessingProgress");
+	elem.value = progress;
 }
