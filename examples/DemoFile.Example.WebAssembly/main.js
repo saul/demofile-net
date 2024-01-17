@@ -58,11 +58,16 @@ function readFile(file) {
 }
 
 function setDemoParseResult(result) {
-	document.getElementById("demo_parse_result").innerHTML = result;
+	var elem = document.getElementById("demo_parse_result");
+	elem.innerHTML = result;
+	elem.scrollTop = elem.scrollHeight;
 }
 
 function appendDemoParseResult(result) {
-	document.getElementById("demo_parse_result").innerHTML += result;
+	var elem = document.getElementById("demo_parse_result");
+	elem.innerHTML += result;
+	elem.scrollTop = elem.scrollHeight;
+}
 
 function setDemoParseProgress(progress) {
 	var elem = document.getElementById("demoProcessingProgress");
