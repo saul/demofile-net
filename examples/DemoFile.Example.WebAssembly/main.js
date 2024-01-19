@@ -36,25 +36,26 @@ function openDemoFile()
 {
 	let input = document.createElement('input');
 	input.type = 'file';
-	input.onchange = _ => {
+	input.onchange = async _ => {
 		let files = Array.from(input.files);
 		console.log(files);
-		readFile(files[0]);
+		await readFile(files[0]);
 	};
 	input.click();
 
 	input.remove();
 }
 
-function readFile(file) {
+async function readFile(file) {
 	setDemoParseResult("");
 	setDemoParseProgress(0);
-	var reader = new FileReader ();
-	reader.onload = async function (e) {
-		var arrayBuf = reader.result;
-		await demoFileProgram.ParseToEnd(new Uint8Array(arrayBuf));
-	}
-	reader.readAsArrayBuffer(file);
+
+	// by parsing a demo file from URL, we don't allocate memory for entire file (which can even be 400 MB),
+	// but rather read file asyncly in chunks
+
+	var url = URL.createObjectURL(file);
+	await demoFileProgram.ParseToEndFromUrl(url);
+	URL.revokeObjectURL(url);
 }
 
 function setDemoParseResult(result) {

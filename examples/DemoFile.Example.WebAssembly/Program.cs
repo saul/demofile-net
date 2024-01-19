@@ -12,15 +12,29 @@ public partial class Program
     }
 
     [JSExport]
-    public static async Task ParseToEnd(byte[] buffer)
+    public static async Task ParseToEndFromUrl(string url)
     {
-        Console.WriteLine($"Parsing started, buffer size {buffer.Length}");
+        Console.WriteLine($"Parsing demo from url: {url}");
+        using var client = new HttpClient();
+        using var stream = await client.GetStreamAsync(url);
+        await ParseToEndFromStream(stream);
+    }
+
+    [JSExport]
+    public static async Task ParseToEndFromArray(byte[] buffer)
+    {
+        using var stream = new MemoryStream(buffer);
+        await ParseToEndFromStream(stream);
+    }
+
+    private static async Task ParseToEndFromStream(Stream stream)
+    {
+        Console.WriteLine($"Parsing started, stream length {stream.Length}");
 
         SetDemoParseResult(string.Empty);
         SetDemoParseProgress(0);
 
         var demo = new DemoParser();
-        using var stream = new MemoryStream(buffer);
         var sb = new StringBuilder(1024);
 
         var roundNum = 0;
