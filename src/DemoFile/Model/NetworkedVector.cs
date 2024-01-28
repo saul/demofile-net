@@ -104,15 +104,7 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
         Debug.Assert(_array == null || length > _array.Length);
 
         var newCapacity = (int)BitOperations.RoundUpToPowerOf2((uint)length);
-        var newArray = new T[newCapacity];
-
-        // Copy the old values to the new, larger backing array
-        if (_array != null)
-        {
-            ((ReadOnlySpan<T?>)_array).CopyTo(newArray);
-        }
-
-        _array = newArray;
-        _values = new ArraySegment<T?>(newArray, 0, length);
+        Array.Resize(ref _array, newCapacity);
+        _values = new ArraySegment<T?>(_array, 0, length);
     }
 }

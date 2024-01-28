@@ -9,21 +9,23 @@ namespace DemoFile;
 
 public sealed partial class DemoParser
 {
-    /// Key ticks occur every 60 seconds
     private const int KeyTickInterval = 64 * 60;
 
     private readonly PriorityQueue<ITickTimer, int> _demoTickTimers = new();
-    private readonly Dictionary<DemoTick, long> _keyTickPositions = new();
+    private readonly List<KeyValuePair<DemoTick, long>> _keyTickPositions = new(64);
     private readonly PriorityQueue<QueuedPacket, (int, int)> _packetQueue = new(128);
     private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
     private readonly Source1GameEvents _source1GameEvents = new();
+
     private DemoEvents _demoEvents;
     private EntityEvents _entityEvents;
     private GameEvents _gameEvents;
     private PacketEvents _packetEvents;
-
     private Stream _stream;
     private UserMessageEvents _userMessageEvents;
+    private DemoTick _readSnapshotTick;
+    private long _commandStartPosition;
+    private int _keyTickOffset = 0;
 
     /// <summary>
     /// Event fired every time a demo command is parsed during <see cref="ReadAllAsync(System.IO.Stream)"/>.
@@ -42,6 +44,7 @@ public sealed partial class DemoParser
         _demoEvents.DemoClassInfo += OnDemoClassInfo;
         _demoEvents.DemoSendTables += OnDemoSendTables;
         _demoEvents.DemoFileInfo += OnDemoFileInfo;
+        _demoEvents.DemoStringTables += OnDemoStringTables;
 
         _packetEvents.SvcCreateStringTable += OnCreateStringTable;
         _packetEvents.SvcUpdateStringTable += OnUpdateStringTable;
@@ -212,21 +215,137 @@ public sealed partial class DemoParser
         cancellationToken.ThrowIfCancellationRequested();
     }
 
+    private static readonly IComparer<KeyValuePair<DemoTick, long>> _keyTickComparer =
+        Comparer<KeyValuePair<DemoTick, long>>.Create(
+            (left, right) => left.Key.CompareTo(right.Key));
+
+    private bool TryGetKeyTick(DemoTick demoTick, out KeyValuePair<DemoTick, long> keyTick)
+    {
+        var idx = _keyTickPositions.BinarySearch(KeyValuePair.Create(demoTick, 0L), _keyTickComparer);
+        if (idx >= 0)
+        {
+            keyTick = _keyTickPositions[idx];
+            return true;
+        }
+
+        var precedingKeyTickIdx = ~idx - 1;
+        if (precedingKeyTickIdx >= 0 && precedingKeyTickIdx < _keyTickPositions.Count)
+        {
+            keyTick = _keyTickPositions[precedingKeyTickIdx];
+            return true;
+        }
+
+        keyTick = default;
+        return false;
+    }
+
+    public async ValueTask SeekToTickAsync(DemoTick tick, CancellationToken cancellationToken)
+    {
+        if (TickCount < DemoTick.Zero)
+        {
+            throw new InvalidOperationException($"Cannot seek to tick {tick}");
+        }
+
+        if (TickCount != default && tick > TickCount)
+        {
+            throw new InvalidOperationException($"Cannot seek to tick {tick}. The demo only contains data for {TickCount} ticks");
+        }
+
+        var hasKeyTick = TryGetKeyTick(tick, out var keyTick);
+
+        if (tick < CurrentDemoTick)
+        {
+            if (!hasKeyTick)
+            {
+                throw new InvalidOperationException($"Cannot seek backwards to tick {tick}. No key snapshot has been read.");
+            }
+
+            // Seeking backwards. Jump back to the key tick to read the snapshot
+            _readSnapshotTick = keyTick.Key;
+            _stream.Position = keyTick.Value;
+        }
+        else
+        {
+
+        }
+
+        var currentKeyTick = new DemoTick(CurrentDemoTick.Value / KeyTickInterval * KeyTickInterval);
+        var targetKeyTick = new DemoTick(tick.Value / KeyTickInterval * KeyTickInterval);
+
+        if (currentKeyTick == targetKeyTick)
+        {
+            if (tick < CurrentDemoTick)
+            {
+                // Seeking backwards. Jump back to the key tick to read the snapshot
+                _stream.Position = _keyTickPositions[targetKeyTick];
+            }
+            else
+            {
+                // Seeking forwards. May be in the middle of a tick, seek back to start
+                // before fast forwarding
+                _stream.Position = _commandStartPosition;
+            }
+        }
+        else if (_keyTickPositions.TryGetValue(targetKeyTick, out var position))
+        {
+            _stream.Position = position;
+        }
+        else
+        {
+            // Slow path - keep reading commands until we reach the key tick
+            _stream.Position = _commandStartPosition;
+            SkipToTick(targetKeyTick);
+        }
+
+        // Read entity and stringtable snapshots at this tick
+        _readSnapshotTick = targetKeyTick;
+
+        // Advance ticks until we get to the target tick
+        while (CurrentDemoTick < tick)
+        {
+            if (!await MoveNextAsync(cancellationToken).ConfigureAwait(false))
+            {
+                InvalidDemoException.Throw<int>($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {tick}");
+            }
+        }
+    }
+
+    private void SkipToTick(DemoTick targetTick)
+    {
+        while (CurrentDemoTick < targetTick)
+        {
+            var startPosition = _stream.Position;
+            var cmd = ReadCommandHeader();
+
+            // Always read string tables commands when seeking, as they contain
+            // key tick information that improves seeking performance.
+            if (cmd.Command == (uint) EDemoCommands.DemStringTables)
+            {
+                Span<byte> buffer = stackalloc byte[(int) cmd.Size];
+                _stream.ReadExactly(buffer);
+
+                _demoEvents.DemoStringTables?.Invoke(CDemoStringTables.Parser.ParseFrom(buffer));
+            }
+            else
+            {
+                // If we're at the target tick, jump back to the start of the command.
+                // Otherwise, skip over the command data and start reading the next tick.
+                _stream.Position = CurrentDemoTick == targetTick
+                    ? startPosition
+                    : _stream.Position + cmd.Size;
+            }
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private (uint Command, uint Size) ReadCommandHeader()
     {
-        var startPosition = _stream.Position;
+        _commandStartPosition = _stream.Position;
         var command = _stream.ReadUVarInt32();
         var tick = (int) _stream.ReadUVarInt32();
         var size = _stream.ReadUVarInt32();
 
         CurrentDemoTick = new DemoTick(tick);
-
-        if (tick % KeyTickInterval == 0)
-        {
-            // Keep the first time we see a tick
-            _keyTickPositions.TryAdd(CurrentDemoTick, startPosition);
-        }
 
         return (Command: command, Size: size);
     }
@@ -256,7 +375,6 @@ public sealed partial class DemoParser
         // todo: read into pooled array
         var buf = await ReadExactBytesAsync((int)cmd.Size, cancellationToken).ConfigureAwait(false);
 
-        // todo: disable seeking until command is over!
         if (isCompressed)
         {
             using var decompressed = Snappy.DecompressToMemory(buf);
