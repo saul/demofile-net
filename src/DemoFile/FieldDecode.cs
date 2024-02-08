@@ -158,6 +158,18 @@ internal static class FieldDecode
             return new CUtlStringToken(buffer.ReadUVarInt32());
         };
 
+    public static FieldDecoder<CGlobalSymbol> CreateDecoder_CGlobalSymbol(FieldEncodingInfo fieldEncodingInfo) =>
+        (ref BitBuffer buffer) =>
+        {
+            return new CGlobalSymbol(buffer.ReadUVarInt32());
+        };
+
+    public static FieldDecoder<CPlayerSlot> CreateDecoder_CPlayerSlot(FieldEncodingInfo fieldEncodingInfo) =>
+        (ref BitBuffer buffer) =>
+        {
+            return new CPlayerSlot(buffer.ReadUVarInt32());
+        };
+
     public static FieldDecoder<NetworkedString> CreateDecoder_NetworkedString(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {

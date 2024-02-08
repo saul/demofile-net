@@ -139,6 +139,19 @@
         },
       ],
     },
+    "ParticleAttrBoxFlags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "PARTICLE_ATTR_BOX_FLAGS_NONE",
+          "value": 0,
+        },
+        {
+          "name": "PARTICLE_ATTR_BOX_FLAGS_WATER",
+          "value": 1,
+        },
+      ],
+    },
     "PFuncVisualizationType_t": {
       "align": 4,
       "items": [
@@ -892,6 +905,19 @@
         },
         {
           "name": "PARTICLE_HITBOX_COUNT",
+          "value": 1,
+        },
+      ],
+    },
+    "SnapshotIndexType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SNAPSHOT_INDEX_INCREMENT",
+          "value": 0,
+        },
+        {
+          "name": "SNAPSHOT_INDEX_DIRECT",
           "value": 1,
         },
       ],
@@ -1797,6 +1823,15 @@
       "fields": [
       ],
     },
+    "RenderProjectedMaterial_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "MaterialVariable_t": {
       "metadata": [
         {
@@ -2305,22 +2340,6 @@
         },
         {
           "name": "MPulseDomainOptInFeatureTag",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CParticleBindingRealPulse": {
-      "parent": "CParticleCollectionBindingInstance",
-      "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-        },
-        {
-          "name": "MPulseLibraryBindings",
-        },
-        {
-          "name": "MPulseDomainHiddenInTool",
         },
       ],
       "fields": [
@@ -3541,6 +3560,16 @@
       ],
     },
     "C_INIT_QuantizeFloat": {
+      "parent": "CParticleFunctionInitializer",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "C_INIT_SetAttributeToScalarExpression": {
       "parent": "CParticleFunctionInitializer",
       "metadata": [
         {
@@ -5972,6 +6001,16 @@
       ],
     },
     "C_OP_RenderModels": {
+      "parent": "CParticleFunctionRenderer",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "C_OP_RenderSimpleModelCollection": {
       "parent": "CParticleFunctionRenderer",
       "metadata": [
         {

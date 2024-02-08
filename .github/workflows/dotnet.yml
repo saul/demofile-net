@@ -41,6 +41,7 @@ jobs:
             dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem
           done
       - name: Benchmark
+        if: github.ref != 'refs/heads/main'
         id: benchmark
         continue-on-error: true
         run: |

@@ -90,7 +90,7 @@ internal static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "float32" or "CNetworkQuantizedFloat" or "float64":
+            case "float32" or "CNetworkedQuantizedFloat" or "float64":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_float(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
@@ -110,7 +110,7 @@ internal static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle":
+            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence":
             {
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     buffer.ReadUVarInt64();
@@ -126,6 +126,20 @@ internal static class FallbackDecoder
             case "CUtlStringToken":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_CUtlStringToken(encodingInfo);
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    fieldDecoder(ref buffer);
+                return true;
+            }
+            case "CGlobalSymbol":
+            {
+                var fieldDecoder = FieldDecode.CreateDecoder_CGlobalSymbol(encodingInfo);
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    fieldDecoder(ref buffer);
+                return true;
+            }
+            case "CPlayerSlot":
+            {
+                var fieldDecoder = FieldDecode.CreateDecoder_CPlayerSlot(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     fieldDecoder(ref buffer);
                 return true;

@@ -258,7 +258,7 @@ public partial class DemoParser
         var entityDeleteIdx = 0;
 
         // Clear out all entities - this is a full update.
-        if (!msg.IsDelta)
+        if (!msg.LegacyIsDelta)
         {
             if (IsGotv)
             {
@@ -300,7 +300,7 @@ public partial class DemoParser
             var updateType = entityBitBuffer.ReadUBits(2);
             if ((updateType & 0b01) != 0)
             {
-                Debug.Assert(msg.IsDelta, "Deletion on full update");
+                Debug.Assert(msg.LegacyIsDelta, "Deletion on full update");
 
                 // FHDR_LEAVEPVS
                 var entity = _entities[entityIndex] ?? throw new Exception($"LeavePvs on non-existent entity {entityIndex}");
@@ -364,7 +364,7 @@ public partial class DemoParser
             else
             {
                 // DeltaEnt
-                Debug.Assert(msg.IsDelta, "Delta entity on full update");
+                Debug.Assert(msg.LegacyIsDelta, "Delta entity on full update");
 
                 var entity = _entities[entityIndex] ?? throw new Exception($"Delta on non-existent entity {entityIndex}");
 

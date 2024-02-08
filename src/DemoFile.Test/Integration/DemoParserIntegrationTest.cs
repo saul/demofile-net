@@ -35,6 +35,7 @@ public class DemoParserIntegrationTest
     {
         new("v13978", GotvProtocol13978),
         new("v13980", GotvProtocol13980),
+        new("v13987", GotvProtocol13987)
     };
 
     [TestCaseSource(nameof(CompatibilityCases))]
