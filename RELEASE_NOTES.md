@@ -1,3 +1,7 @@
+### 0.9.1 (2024-02-09)
+
+- Update schema for v13987
+
 ### 0.8.1 (2023-12-30)
 
 - BREAKING CHANGE: `DemoParser.Start` is now `DemoParser.ReadAllAsync`
