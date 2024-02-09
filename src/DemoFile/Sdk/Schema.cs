@@ -6723,7 +6723,7 @@ public partial class CCSGameRules : CTeamplayRules
                 if (path.Length == 1)
                 {
                     var isSet = buffer.ReadOneBit();
-                    var childClassId = (int) buffer.ReadUBitVar();
+                    var childClassId = ((int) buffer.ReadUBitVar()) - 1;
                     innerDecoder = CCSGameModeRules.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);
                     if (!isSet)
                     {

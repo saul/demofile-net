@@ -363,6 +363,15 @@ public partial class DemoParser
             }
             else
             {
+                if (msg.HasPvsVisBits > 0)
+                {
+                    var deltaCmd = entityBitBuffer.ReadUBits(2);
+                    if ((deltaCmd & 0x1) == 1)
+                    {
+                        continue;
+                    }
+                }
+
                 // DeltaEnt
                 Debug.Assert(msg.LegacyIsDelta, "Delta entity on full update");
 

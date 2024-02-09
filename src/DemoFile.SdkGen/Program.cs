@@ -619,7 +619,7 @@ internal static class Program
 
                     if (isPolymorphic)
                     {
-                        builder.AppendLine($"                    var childClassId = (int) buffer.ReadUBitVar();");
+                        builder.AppendLine($"                    var childClassId = ((int) buffer.ReadUBitVar()) - 1;");
                         builder.AppendLine($"                    innerDecoder = {inner.Name}.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);");
                         builder.AppendLine($"                    if (!isSet)");
                         builder.AppendLine($"                    {{");

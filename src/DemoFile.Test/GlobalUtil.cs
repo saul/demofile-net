@@ -16,6 +16,10 @@ public static class GlobalUtil
 
     public static MemoryStream GotvProtocol13987 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13987.dem")));
 
+    public static MemoryStream GotvProtocol13990ArmsRace => new(File.ReadAllBytes(Path.Combine(DemoBase, "13990_armsrace.dem")));
+
+    public static MemoryStream GotvProtocol13990Deathmatch => new(File.ReadAllBytes(Path.Combine(DemoBase, "13990_dm.dem")));
+
     public static byte[] ToBitStream(string input)
     {
         var bitArray = new BitArray(input.Length);
