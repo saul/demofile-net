@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace DemoFile;
 
 internal record Serializer(SerializerKey Key, SerializableField[] Fields);
@@ -8,12 +10,26 @@ internal record SerializableField(
     ReadOnlyMemory<string> SendNode,
     FieldEncodingInfo FieldEncodingInfo,
     SerializerKey? FieldSerializerKey,
-    IReadOnlyList<SerializerKey> PolymorphicTypes)
+    IReadOnlyList<SerializerKey> PolymorphicTypes,
+    string? VarSerializer)
 {
     public override string ToString()
     {
-        var prefix = SendNode.Length > 0 ? string.Join('.', SendNode.ToArray()) + "." : "";
-        return $"{prefix}{VarName} ({VarType}{(FieldEncodingInfo.VarEncoder != null ? $" - {FieldEncodingInfo.VarEncoder}" : "")})";
+        var result = new StringBuilder();
+        if (SendNode.Length > 0)
+            result.Append(string.Join('.', SendNode.ToArray()) + ".");
+
+        result.Append(VarName);
+        result.Append(" (" + VarType);
+
+        if (FieldEncodingInfo != default)
+            result.Append($": {FieldEncodingInfo})");
+
+        if (VarSerializer != null)
+            result.Append($", {nameof(VarSerializer)} = {VarSerializer}");
+
+        result.Append(')');
+        return result.ToString();
     }
 
     public static SerializableField FromProto(ProtoFlattenedSerializerField_t field, IReadOnlyList<string> symbols)
@@ -41,6 +57,9 @@ internal record SerializableField(
                 symbols[polymorphicField.PolymorphicFieldSerializerNameSym],
                 polymorphicField.PolymorphicFieldSerializerVersion))
             .ToArray();
+        var varSerializer = field.HasVarSerializerSym
+            ? symbols[field.VarSerializerSym]
+            : null;
 
         return new SerializableField(
             varName,
@@ -48,7 +67,8 @@ internal record SerializableField(
             sendNode,
             encodingInfo,
             fieldSerializerKey,
-            polymorphicTypes
+            polymorphicTypes,
+            varSerializer
         );
     }
 }

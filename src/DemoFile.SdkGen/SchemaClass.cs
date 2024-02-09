@@ -33,6 +33,7 @@ public partial record SchemaClass(
             case ("CPlayerSprayDecal", "m_nEntity"): return "DecalEntity";
             case ("CEnvProjectedTexture", "m_flRotation"): return "TextureRotation";
             case ("CSun", "m_flRotation"): return "SunRotation";
+            case ("CTriggerPhysics", "m_gravityScale"): return "TriggerGravityScale";
         }
 
         string CleanFieldName(string fieldName) =>

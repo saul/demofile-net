@@ -337,8 +337,12 @@
           "value": 78,
         },
         {
-          "name": "FIELD_TYPECOUNT",
+          "name": "FIELD_GLOBALSYMBOL",
           "value": 79,
+        },
+        {
+          "name": "FIELD_TYPECOUNT",
+          "value": 80,
         },
       ],
     },
@@ -435,7 +439,7 @@
       ],
     },
     "RenderMultisampleType_t": {
-      "align": 4,
+      "align": 1,
       "items": [
         {
           "name": "RENDER_MULTISAMPLE_INVALID",
@@ -509,6 +513,18 @@
         {
           "name": "RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS",
           "value": 256,
+        },
+        {
+          "name": "RENDER_BUFFER_ACCELERATION_STRUCTURE",
+          "value": 512,
+        },
+        {
+          "name": "RENDER_BUFFER_SHADER_BINDING_TABLE",
+          "value": 1024,
+        },
+        {
+          "name": "RENDER_BUFFER_PER_FRAME_WRITE_ONCE",
+          "value": 2048,
         },
       ],
     },
@@ -1068,19 +1084,6 @@
         },
       ],
     },
-    "AnimVRHandMotionRange_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "MotionRange_WithController",
-          "value": 0,
-        },
-        {
-          "name": "MotionRange_WithoutController",
-          "value": 1,
-        },
-      ],
-    },
     "FieldNetworkOption": {
       "align": 4,
       "items": [
@@ -1172,6 +1175,23 @@
         {
           "name": "MAX_PATTACH_TYPES",
           "value": 16,
+        },
+      ],
+    },
+    "CNmBoneMask::WeightInfo_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "Zero",
+          "value": 0,
+        },
+        {
+          "name": "Mixed",
+          "value": 1,
+        },
+        {
+          "name": "One",
+          "value": 2,
         },
       ],
     },
@@ -1393,6 +1413,19 @@
         },
       ],
     },
+    "NmFrameSnapEventMode_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Floor",
+          "value": 0,
+        },
+        {
+          "name": "Round",
+          "value": 1,
+        },
+      ],
+    },
     "FootLockSubVisualization": {
       "align": 4,
       "items": [
@@ -1423,6 +1456,27 @@
         },
       ],
     },
+    "NmFootPhase_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "LeftFootDown",
+          "value": 0,
+        },
+        {
+          "name": "RightFootPassing",
+          "value": 1,
+        },
+        {
+          "name": "RightFootDown",
+          "value": 2,
+        },
+        {
+          "name": "LeftFootPassing",
+          "value": 3,
+        },
+      ],
+    },
     "IKChannelMode": {
       "align": 4,
       "items": [
@@ -1441,40 +1495,6 @@
         {
           "name": "OneBone_Translate",
           "value": 3,
-        },
-      ],
-    },
-    "AnimVrFingerSplay_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "AnimVrFingerSplay_Thumb_Index",
-          "value": 0,
-        },
-        {
-          "name": "AnimVrFingerSplay_Index_Middle",
-          "value": 1,
-        },
-        {
-          "name": "AnimVrFingerSplay_Middle_Ring",
-          "value": 2,
-        },
-        {
-          "name": "AnimVrFingerSplay_Ring_Pinky",
-          "value": 3,
-        },
-      ],
-    },
-    "AnimVrBoneTransformSource_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "AnimVrBoneTransformSource_LiveStream",
-          "value": 0,
-        },
-        {
-          "name": "AnimVrBoneTransformSource_GripLimit",
-          "value": 1,
         },
       ],
     },
@@ -1617,6 +1637,35 @@
         },
       ],
     },
+    "NmFootPhaseCondition_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "LeftFootDown",
+          "value": 0,
+        },
+        {
+          "name": "LeftFootPassing",
+          "value": 1,
+        },
+        {
+          "name": "LeftPhase",
+          "value": 4,
+        },
+        {
+          "name": "RightFootDown",
+          "value": 2,
+        },
+        {
+          "name": "RightFootPassing",
+          "value": 3,
+        },
+        {
+          "name": "RightPhase",
+          "value": 5,
+        },
+      ],
+    },
     "StateActionBehavior": {
       "align": 4,
       "items": [
@@ -1719,19 +1768,6 @@
         },
         {
           "name": "Blend2DMode_Directional",
-          "value": 1,
-        },
-      ],
-    },
-    "AnimVRHand_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "AnimVRHand_Left",
-          "value": 0,
-        },
-        {
-          "name": "AnimVRHand_Right",
           "value": 1,
         },
       ],
@@ -2158,7 +2194,7 @@
           "value": 6,
         },
         {
-          "name": "ANIMPARAM_STRINGTOKEN",
+          "name": "ANIMPARAM_GLOBALSYMBOL",
           "value": 7,
         },
         {
@@ -2340,6 +2376,27 @@
         },
       ],
     },
+    "NmTransitionRuleCondition_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "AnyAllowed",
+          "value": 0,
+        },
+        {
+          "name": "FullyAllowed",
+          "value": 1,
+        },
+        {
+          "name": "ConditionallyAllowed",
+          "value": 2,
+        },
+        {
+          "name": "Blocked",
+          "value": 3,
+        },
+      ],
+    },
     "AnimPoseControl": {
       "align": 4,
       "items": [
@@ -2404,28 +2461,28 @@
         },
       ],
     },
-    "AnimVRFinger_t": {
-      "align": 4,
+    "MovementGait_t": {
+      "align": 1,
       "items": [
         {
-          "name": "AnimVrFinger_Thumb",
+          "name": "eInvalid",
+          "value": 18446744073709551615,
+        },
+        {
+          "name": "eWalk",
           "value": 0,
         },
         {
-          "name": "AnimVrFinger_Index",
+          "name": "eJog",
           "value": 1,
         },
         {
-          "name": "AnimVrFinger_Middle",
+          "name": "eRun",
           "value": 2,
         },
         {
-          "name": "AnimVrFinger_Ring",
+          "name": "eSprint",
           "value": 3,
-        },
-        {
-          "name": "AnimVrFinger_Pinky",
-          "value": 4,
         },
       ],
     },
@@ -2475,6 +2532,23 @@
         },
         {
           "name": "SyncChildren",
+          "value": 2,
+        },
+      ],
+    },
+    "NmTransitionRule_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "AllowTransition",
+          "value": 0,
+        },
+        {
+          "name": "ConditionallyAllowTransition",
+          "value": 1,
+        },
+        {
+          "name": "BlockTransition",
           "value": 2,
         },
       ],
@@ -2682,8 +2756,16 @@
           "value": 2,
         },
         {
-          "name": "SOS_ACTION_SET_SOUNDEVENT_PARAM",
+          "name": "SOS_ACTION_TIME_BLOCK_LIMITER",
           "value": 3,
+        },
+        {
+          "name": "SOS_ACTION_SET_SOUNDEVENT_PARAM",
+          "value": 4,
+        },
+        {
+          "name": "SOS_ACTION_SOUNDEVENT_CLUSTER",
+          "value": 5,
         },
       ],
     },
@@ -3178,18 +3260,6 @@
           "value": 0,
         },
         {
-          "name": "OBJECT_TYPE_IMAGE_LOD",
-          "value": 1,
-        },
-        {
-          "name": "OBJECT_TYPE_GEOMETRY_LOD",
-          "value": 2,
-        },
-        {
-          "name": "OBJECT_TYPE_DECAL",
-          "value": 4,
-        },
-        {
           "name": "OBJECT_TYPE_MODEL",
           "value": 8,
         },
@@ -3236,6 +3306,52 @@
         {
           "name": "OBJECT_TYPE_STATIC_CUBE_MAP",
           "value": 32768,
+        },
+      ],
+    },
+    "PulseCursorCancelPriority_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "None",
+          "value": 0,
+        },
+        {
+          "name": "CancelOnSucceeded",
+          "value": 1,
+        },
+        {
+          "name": "SoftCancel",
+          "value": 2,
+        },
+        {
+          "name": "HardCancel",
+          "value": 3,
+        },
+      ],
+    },
+    "PulseTestEnumColor_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "BLACK",
+          "value": 0,
+        },
+        {
+          "name": "WHITE",
+          "value": 1,
+        },
+        {
+          "name": "RED",
+          "value": 2,
+        },
+        {
+          "name": "GREEN",
+          "value": 3,
+        },
+        {
+          "name": "BLUE",
+          "value": 4,
         },
       ],
     },
@@ -3295,212 +3411,196 @@
           "value": 12,
         },
         {
-          "name": "TARGET_INVOKE",
+          "name": "SET_VAR",
           "value": 13,
         },
         {
-          "name": "SET_VAR",
+          "name": "GET_VAR",
           "value": 14,
         },
         {
-          "name": "GET_VAR",
+          "name": "GET_CONST",
           "value": 15,
         },
         {
-          "name": "SET_REGISTER_LIT_BOOL",
+          "name": "SET_REGISTER_DOMAIN_VALUE",
           "value": 16,
         },
         {
-          "name": "SET_REGISTER_LIT_INT",
+          "name": "COPY",
           "value": 17,
         },
         {
-          "name": "SET_REGISTER_LIT_FLOAT",
+          "name": "NOT",
           "value": 18,
         },
         {
-          "name": "SET_REGISTER_LIT_STR",
+          "name": "NEGATE",
           "value": 19,
         },
         {
-          "name": "SET_REGISTER_LIT_INVAL_EHANDLE",
+          "name": "ADD",
           "value": 20,
         },
         {
-          "name": "SET_REGISTER_LIT_INVAL_SNDEVT_GUID",
+          "name": "SUB",
           "value": 21,
         },
         {
-          "name": "SET_REGISTER_LIT_VEC3",
+          "name": "MUL",
           "value": 22,
         },
         {
-          "name": "SET_REGISTER_DOMAIN_VALUE",
+          "name": "DIV",
           "value": 23,
         },
         {
-          "name": "COPY",
+          "name": "MOD",
           "value": 24,
         },
         {
-          "name": "NOT",
+          "name": "LT",
           "value": 25,
         },
         {
-          "name": "NEGATE",
+          "name": "LTE",
           "value": 26,
         },
         {
-          "name": "ADD",
+          "name": "EQ",
           "value": 27,
         },
         {
-          "name": "SUB",
+          "name": "NE",
           "value": 28,
         },
         {
-          "name": "MUL",
+          "name": "AND",
           "value": 29,
         },
         {
-          "name": "DIV",
+          "name": "OR",
           "value": 30,
         },
         {
-          "name": "MOD",
+          "name": "CONVERT_VALUE",
           "value": 31,
         },
         {
-          "name": "LT",
+          "name": "LAST_SERIALIZED_CODE",
           "value": 32,
         },
         {
-          "name": "LTE",
+          "name": "NEGATE_INT",
           "value": 33,
         },
         {
-          "name": "EQ",
+          "name": "NEGATE_FLOAT",
           "value": 34,
         },
         {
-          "name": "NE",
+          "name": "ADD_INT",
           "value": 35,
         },
         {
-          "name": "AND",
+          "name": "ADD_FLOAT",
           "value": 36,
         },
         {
-          "name": "OR",
+          "name": "ADD_STRING",
           "value": 37,
         },
         {
-          "name": "CONVERT_VALUE",
+          "name": "SUB_INT",
           "value": 38,
         },
         {
-          "name": "LAST_SERIALIZED_CODE",
+          "name": "SUB_FLOAT",
           "value": 39,
         },
         {
-          "name": "NEGATE_INT",
+          "name": "MUL_INT",
           "value": 40,
         },
         {
-          "name": "NEGATE_FLOAT",
+          "name": "MUL_FLOAT",
           "value": 41,
         },
         {
-          "name": "ADD_INT",
+          "name": "DIV_INT",
           "value": 42,
         },
         {
-          "name": "ADD_FLOAT",
+          "name": "DIV_FLOAT",
           "value": 43,
         },
         {
-          "name": "ADD_STRING",
+          "name": "MOD_INT",
           "value": 44,
         },
         {
-          "name": "SUB_INT",
+          "name": "MOD_FLOAT",
           "value": 45,
         },
         {
-          "name": "SUB_FLOAT",
+          "name": "LT_INT",
           "value": 46,
         },
         {
-          "name": "MUL_INT",
+          "name": "LT_FLOAT",
           "value": 47,
         },
         {
-          "name": "MUL_FLOAT",
+          "name": "LTE_INT",
           "value": 48,
         },
         {
-          "name": "DIV_INT",
+          "name": "LTE_FLOAT",
           "value": 49,
         },
         {
-          "name": "DIV_FLOAT",
+          "name": "EQ_BOOL",
           "value": 50,
         },
         {
-          "name": "MOD_INT",
+          "name": "EQ_INT",
           "value": 51,
         },
         {
-          "name": "MOD_FLOAT",
+          "name": "EQ_FLOAT",
           "value": 52,
         },
         {
-          "name": "LT_INT",
+          "name": "EQ_STRING",
           "value": 53,
         },
         {
-          "name": "LT_FLOAT",
+          "name": "EQ_ENTITY_NAME",
           "value": 54,
         },
         {
-          "name": "LTE_INT",
+          "name": "NE_BOOL",
           "value": 55,
         },
         {
-          "name": "LTE_FLOAT",
+          "name": "NE_INT",
           "value": 56,
         },
         {
-          "name": "EQ_BOOL",
+          "name": "NE_FLOAT",
           "value": 57,
         },
         {
-          "name": "EQ_INT",
+          "name": "NE_STRING",
           "value": 58,
         },
         {
-          "name": "EQ_FLOAT",
+          "name": "NE_ENTITY_NAME",
           "value": 59,
         },
         {
-          "name": "EQ_STRING",
+          "name": "GET_CONST_INLINE_STORAGE",
           "value": 60,
-        },
-        {
-          "name": "NE_BOOL",
-          "value": 61,
-        },
-        {
-          "name": "NE_INT",
-          "value": 62,
-        },
-        {
-          "name": "NE_FLOAT",
-          "value": 63,
-        },
-        {
-          "name": "NE_STRING",
-          "value": 64,
         },
       ],
     },
@@ -3536,32 +3636,65 @@
           "value": 5,
         },
         {
-          "name": "PVAL_EHANDLE",
+          "name": "PVAL_COLOR_RGB",
           "value": 6,
         },
         {
-          "name": "PVAL_RESOURCE",
+          "name": "PVAL_EHANDLE",
           "value": 7,
         },
         {
-          "name": "PVAL_SNDEVT_GUID",
+          "name": "PVAL_RESOURCE",
           "value": 8,
         },
         {
-          "name": "PVAL_SCHEMA_PTR",
+          "name": "PVAL_SNDEVT_GUID",
           "value": 9,
         },
         {
-          "name": "PVAL_CURSOR_FLOW",
+          "name": "PVAL_ENTITY_NAME",
           "value": 10,
         },
         {
-          "name": "PVAL_ANY",
+          "name": "PVAL_SCHEMA_PTR",
           "value": 11,
         },
         {
-          "name": "PVAL_COUNT",
+          "name": "PVAL_TYPESAFE_INT",
           "value": 12,
+        },
+        {
+          "name": "PVAL_CURSOR_FLOW",
+          "value": 13,
+        },
+        {
+          "name": "PVAL_ANY",
+          "value": 14,
+        },
+        {
+          "name": "PVAL_SCHEMA_ENUM",
+          "value": 15,
+        },
+        {
+          "name": "PVAL_COUNT",
+          "value": 16,
+        },
+      ],
+    },
+    "PulseCursorExecResult_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Succeeded",
+          "value": 0,
+        },
+        {
+          "name": "Canceled",
+          "value": 1,
+        },
+        {
+          "name": "Failed",
+          "value": 2,
         },
       ],
     },
@@ -3575,6 +3708,23 @@
         {
           "name": "ASYNC_FIRE_AND_FORGET",
           "value": 1,
+        },
+      ],
+    },
+    "PulseTestEnumShape_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "CIRCLE",
+          "value": 100,
+        },
+        {
+          "name": "SQUARE",
+          "value": 200,
+        },
+        {
+          "name": "TRIANGLE",
+          "value": 300,
         },
       ],
     },
@@ -4251,6 +4401,19 @@
         },
       ],
     },
+    "SnapshotIndexType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "SNAPSHOT_INDEX_INCREMENT",
+          "value": 0,
+        },
+        {
+          "name": "SNAPSHOT_INDEX_DIRECT",
+          "value": 1,
+        },
+      ],
+    },
     "ParticleFloatInputMode_t": {
       "align": 4,
       "items": [
@@ -4419,6 +4582,19 @@
         {
           "name": "PARTICLE_TOPOLOGY_CUBES",
           "value": 4,
+        },
+      ],
+    },
+    "ParticleAttrBoxFlags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "PARTICLE_ATTR_BOX_FLAGS_NONE",
+          "value": 0,
+        },
+        {
+          "name": "PARTICLE_ATTR_BOX_FLAGS_WATER",
+          "value": 1,
         },
       ],
     },
@@ -5493,44 +5669,44 @@
           "value": 2,
         },
         {
-          "name": "MOVETYPE_STEP",
+          "name": "MOVETYPE_FLY",
           "value": 3,
         },
         {
-          "name": "MOVETYPE_FLY",
+          "name": "MOVETYPE_FLYGRAVITY",
           "value": 4,
         },
         {
-          "name": "MOVETYPE_FLYGRAVITY",
+          "name": "MOVETYPE_VPHYSICS",
           "value": 5,
         },
         {
-          "name": "MOVETYPE_VPHYSICS",
+          "name": "MOVETYPE_PUSH",
           "value": 6,
         },
         {
-          "name": "MOVETYPE_PUSH",
+          "name": "MOVETYPE_NOCLIP",
           "value": 7,
         },
         {
-          "name": "MOVETYPE_NOCLIP",
+          "name": "MOVETYPE_OBSERVER",
           "value": 8,
         },
         {
-          "name": "MOVETYPE_OBSERVER",
+          "name": "MOVETYPE_LADDER",
           "value": 9,
         },
         {
-          "name": "MOVETYPE_LADDER",
+          "name": "MOVETYPE_CUSTOM",
           "value": 10,
         },
         {
-          "name": "MOVETYPE_CUSTOM",
+          "name": "MOVETYPE_LAST",
           "value": 11,
         },
         {
-          "name": "MOVETYPE_LAST",
-          "value": 12,
+          "name": "MOVETYPE_INVALID",
+          "value": 11,
         },
         {
           "name": "MOVETYPE_MAX_BITS",
@@ -5786,59 +5962,59 @@
           "value": 3,
         },
         {
-          "name": "WEAPON_SOUND_RELOAD",
+          "name": "WEAPON_SOUND_MELEE_MISS",
           "value": 4,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_MISS",
+          "name": "WEAPON_SOUND_MELEE_HIT",
           "value": 5,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT",
+          "name": "WEAPON_SOUND_MELEE_HIT_WORLD",
           "value": 6,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT_WORLD",
+          "name": "WEAPON_SOUND_MELEE_HIT_PLAYER",
           "value": 7,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT_PLAYER",
+          "name": "WEAPON_SOUND_MELEE_HIT_NPC",
           "value": 8,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT_NPC",
+          "name": "WEAPON_SOUND_SPECIAL1",
           "value": 9,
         },
         {
-          "name": "WEAPON_SOUND_SPECIAL1",
+          "name": "WEAPON_SOUND_SPECIAL2",
           "value": 10,
         },
         {
-          "name": "WEAPON_SOUND_SPECIAL2",
+          "name": "WEAPON_SOUND_SPECIAL3",
           "value": 11,
         },
         {
-          "name": "WEAPON_SOUND_SPECIAL3",
+          "name": "WEAPON_SOUND_NEARLYEMPTY",
           "value": 12,
         },
         {
-          "name": "WEAPON_SOUND_NEARLYEMPTY",
+          "name": "WEAPON_SOUND_IMPACT",
           "value": 13,
         },
         {
-          "name": "WEAPON_SOUND_IMPACT",
+          "name": "WEAPON_SOUND_REFLECT",
           "value": 14,
         },
         {
-          "name": "WEAPON_SOUND_REFLECT",
+          "name": "WEAPON_SOUND_SECONDARY_IMPACT",
           "value": 15,
         },
         {
-          "name": "WEAPON_SOUND_SECONDARY_IMPACT",
+          "name": "WEAPON_SOUND_SECONDARY_REFLECT",
           "value": 16,
         },
         {
-          "name": "WEAPON_SOUND_SECONDARY_REFLECT",
+          "name": "WEAPON_SOUND_RELOAD",
           "value": 17,
         },
         {
@@ -6938,6 +7114,23 @@
         },
       ],
     },
+    "WeaponSwitchReason_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "eDrawn",
+          "value": 0,
+        },
+        {
+          "name": "eEquipped",
+          "value": 1,
+        },
+        {
+          "name": "eUserInitiatedSwitchToLast",
+          "value": 2,
+        },
+      ],
+    },
     "TrackOrientationType_t": {
       "align": 4,
       "items": [
@@ -7194,12 +7387,8 @@
           "value": 524288,
         },
         {
-          "name": "OVERLAY_NPC_TRIANGULATE_BIT",
+          "name": "OVERLAY_VISIBILITY_TRACES_BIT",
           "value": 1048576,
-        },
-        {
-          "name": "OVERLAY_NPC_ZAP_BIT",
-          "value": 2097152,
         },
         {
           "name": "OVERLAY_NPC_ENEMIES_BIT",
@@ -7262,16 +7451,16 @@
           "value": 68719476736,
         },
         {
-          "name": "OVERLAY_NPC_NEAREST_NODE_BIT",
-          "value": 137438953472,
-        },
-        {
           "name": "OVERLAY_ACTORNAME_BIT",
           "value": 274877906944,
         },
         {
           "name": "OVERLAY_NPC_CONDITIONS_TEXT_BIT",
           "value": 549755813888,
+        },
+        {
+          "name": "OVERLAY_NPC_ABILITY_RANGE_DEBUG_BIT",
+          "value": 1099511627776,
         },
       ],
     },
@@ -7496,6 +7685,103 @@
         },
       ],
     },
+    "PreviewEOMCelebration": {
+      "align": 4,
+      "items": [
+        {
+          "name": "WALKUP",
+          "value": 0,
+        },
+        {
+          "name": "PUNCHING",
+          "value": 1,
+        },
+        {
+          "name": "SWAGGER",
+          "value": 2,
+        },
+        {
+          "name": "DROPDOWN",
+          "value": 3,
+        },
+        {
+          "name": "STRETCH",
+          "value": 4,
+        },
+        {
+          "name": "SWAT_FEMALE",
+          "value": 5,
+        },
+        {
+          "name": "MASK_F",
+          "value": 6,
+        },
+        {
+          "name": "GUERILLA",
+          "value": 7,
+        },
+        {
+          "name": "GUERILLA02",
+          "value": 8,
+        },
+        {
+          "name": "GENDARMERIE",
+          "value": 9,
+        },
+        {
+          "name": "SCUBA_FEMALE",
+          "value": 10,
+        },
+        {
+          "name": "SCUBA_MALE",
+          "value": 11,
+        },
+        {
+          "name": "AVA_DEFEAT",
+          "value": 12,
+        },
+        {
+          "name": "GENDARMERIE_DEFEAT",
+          "value": 13,
+        },
+        {
+          "name": "MAE_DEFEAT",
+          "value": 14,
+        },
+        {
+          "name": "RICKSAW_DEFEAT",
+          "value": 15,
+        },
+        {
+          "name": "SCUBA_FEMALE_DEFEAT",
+          "value": 16,
+        },
+        {
+          "name": "SCUBA_MALE_DEFEAT",
+          "value": 17,
+        },
+        {
+          "name": "CRASSWATER_DEFEAT",
+          "value": 18,
+        },
+        {
+          "name": "DARRYL_DEFEAT",
+          "value": 19,
+        },
+        {
+          "name": "DOCTOR_DEFEAT",
+          "value": 20,
+        },
+        {
+          "name": "MUHLIK_DEFEAT",
+          "value": 21,
+        },
+        {
+          "name": "VYPA_DEFEAT",
+          "value": 22,
+        },
+      ],
+    },
     "AmmoPosition_t": {
       "align": 4,
       "items": [
@@ -7695,6 +7981,23 @@
         {
           "name": "GEAR_SLOT_LAST",
           "value": 12,
+        },
+      ],
+    },
+    "NPCLookType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Chest",
+          "value": 0,
+        },
+        {
+          "name": "Head",
+          "value": 1,
+        },
+        {
+          "name": "Eyes",
+          "value": 2,
         },
       ],
     },
@@ -7963,6 +8266,35 @@
         },
       ],
     },
+    "PreviewWeaponState": {
+      "align": 4,
+      "items": [
+        {
+          "name": "DROPPED",
+          "value": 0,
+        },
+        {
+          "name": "HOLSTERED",
+          "value": 1,
+        },
+        {
+          "name": "DEPLOYED",
+          "value": 2,
+        },
+        {
+          "name": "PLANTED",
+          "value": 3,
+        },
+        {
+          "name": "INSPECT",
+          "value": 4,
+        },
+        {
+          "name": "ICON",
+          "value": 5,
+        },
+      ],
+    },
     "Hull_t": {
       "align": 4,
       "items": [
@@ -8138,6 +8470,10 @@
     "loadout_slot_t": {
       "align": 4,
       "items": [
+        {
+          "name": "LOADOUT_SLOT_PROMOTED",
+          "value": 18446744073709551614,
+        },
         {
           "name": "LOADOUT_SLOT_INVALID",
           "value": 18446744073709551615,
@@ -8877,92 +9213,108 @@
           "value": 16,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_VALUE",
+          "name": "AE_BODYGROUP_SET_VALUE",
           "value": 17,
         },
         {
-          "name": "AE_SV_BODYGROUP_SET_VALUE",
+          "name": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
           "value": 18,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
+          "name": "AE_WEAPON_PERFORM_ATTACK",
           "value": 19,
         },
         {
-          "name": "AE_WEAPON_PERFORM_ATTACK",
+          "name": "AE_FIRE_INPUT",
           "value": 20,
         },
         {
-          "name": "AE_FIRE_INPUT",
+          "name": "AE_CL_CLOTH_ATTR",
           "value": 21,
         },
         {
-          "name": "AE_CL_CLOTH_ATTR",
+          "name": "AE_CL_CLOTH_GROUND_OFFSET",
           "value": 22,
         },
         {
-          "name": "AE_CL_CLOTH_GROUND_OFFSET",
+          "name": "AE_CL_CLOTH_STIFFEN",
           "value": 23,
         },
         {
-          "name": "AE_CL_CLOTH_STIFFEN",
+          "name": "AE_CL_CLOTH_EFFECT",
           "value": 24,
         },
         {
-          "name": "AE_CL_CLOTH_EFFECT",
+          "name": "AE_CL_CREATE_ANIM_SCOPE_PROP",
           "value": 25,
         },
         {
-          "name": "AE_CL_CREATE_ANIM_SCOPE_PROP",
+          "name": "AE_PULSE_GRAPH",
           "value": 26,
         },
         {
-          "name": "AE_CL_WEAPON_TRANSITION_INTO_HAND",
+          "name": "AE_PULSE_GRAPH_LOOKAT",
           "value": 27,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_TO_CLIP",
+          "name": "AE_PULSE_GRAPH_AIMAT",
           "value": 28,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_TO_NEXTCLIP",
+          "name": "AE_PULSE_GRAPH_IKLOCKLEFTARM",
           "value": 29,
         },
         {
-          "name": "AE_SV_SHOW_SILENCER",
+          "name": "AE_PULSE_GRAPH_IKLOCKRIGHTARM",
           "value": 30,
         },
         {
-          "name": "AE_SV_ATTACH_SILENCER_COMPLETE",
+          "name": "AE_CL_WEAPON_TRANSITION_INTO_HAND",
           "value": 31,
         },
         {
-          "name": "AE_SV_HIDE_SILENCER",
+          "name": "AE_CL_BODYGROUP_SET_TO_CLIP",
           "value": 32,
         },
         {
-          "name": "AE_SV_DETACH_SILENCER_COMPLETE",
+          "name": "AE_CL_BODYGROUP_SET_TO_NEXTCLIP",
           "value": 33,
         },
         {
-          "name": "AE_CL_EJECT_MAG",
+          "name": "AE_SV_SHOW_SILENCER",
           "value": 34,
         },
         {
-          "name": "AE_WPN_COMPLETE_RELOAD",
+          "name": "AE_SV_ATTACH_SILENCER_COMPLETE",
           "value": 35,
         },
         {
-          "name": "AE_WPN_HEALTHSHOT_INJECT",
+          "name": "AE_SV_HIDE_SILENCER",
           "value": 36,
         },
         {
-          "name": "AE_CL_C4_SCREEN_TEXT",
+          "name": "AE_SV_DETACH_SILENCER_COMPLETE",
           "value": 37,
         },
         {
-          "name": "AE_GRENADE_THROW_COMPLETE",
+          "name": "AE_CL_EJECT_MAG",
           "value": 38,
+        },
+        {
+          "name": "AE_WPN_COMPLETE_RELOAD",
+          "value": 39,
+        },
+        {
+          "name": "AE_WPN_HEALTHSHOT_INJECT",
+          "value": 40,
+        },
+        {
+          "name": "AE_CL_C4_SCREEN_TEXT",
+          "value": 41,
+        },
+        {
+          "name": "AE_GRENADE_THROW_COMPLETE",
+          "value": 42,
         },
       ],
     },
@@ -9352,6 +9704,31 @@
         },
       ],
     },
+    "NPCFollowFormation_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Default",
+          "value": 18446744073709551615,
+        },
+        {
+          "name": "CloseCircle",
+          "value": 0,
+        },
+        {
+          "name": "WideCircle",
+          "value": 1,
+        },
+        {
+          "name": "MediumCircle",
+          "value": 5,
+        },
+        {
+          "name": "Sidekick",
+          "value": 6,
+        },
+      ],
+    },
     "LifeState_t": {
       "align": 4,
       "items": [
@@ -9405,12 +9782,16 @@
           "value": 5,
         },
         {
-          "name": "USE_COLLISION_BOUNDS_NEVER_VPHYSICS",
+          "name": "USE_ROTATION_EXPANDED_ORIENTED_BOUNDS",
           "value": 6,
         },
         {
-          "name": "USE_ROTATION_EXPANDED_SEQUENCE_BOUNDS",
+          "name": "USE_COLLISION_BOUNDS_NEVER_VPHYSICS",
           "value": 7,
+        },
+        {
+          "name": "USE_ROTATION_EXPANDED_SEQUENCE_BOUNDS",
+          "value": 8,
         },
         {
           "name": "SURROUNDING_TYPE_BIT_COUNT",
@@ -9661,6 +10042,23 @@
         },
       ],
     },
+    "SequenceFinishNotifyState_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "eDoNotNotify",
+          "value": 0,
+        },
+        {
+          "name": "eNotifyWhenFinished",
+          "value": 1,
+        },
+        {
+          "name": "eNotifyTriggered",
+          "value": 2,
+        },
+      ],
+    },
     "WorldTextPanelHorizontalAlign_t": {
       "align": 4,
       "items": [
@@ -9709,6 +10107,47 @@
         {
           "name": "OBSERVER_INTERP_SETTLING",
           "value": 2,
+        },
+      ],
+    },
+    "PreviewCharacterMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "DIORAMA",
+          "value": 0,
+        },
+        {
+          "name": "MAIN_MENU",
+          "value": 1,
+        },
+        {
+          "name": "BUY_MENU",
+          "value": 2,
+        },
+        {
+          "name": "TEAM_SELECT",
+          "value": 3,
+        },
+        {
+          "name": "END_OF_MATCH",
+          "value": 4,
+        },
+        {
+          "name": "INVENTORY_INSPECT",
+          "value": 5,
+        },
+        {
+          "name": "WALKING",
+          "value": 6,
+        },
+        {
+          "name": "TEAM_INTRO",
+          "value": 7,
+        },
+        {
+          "name": "WINGMAN_INTRO",
+          "value": 8,
         },
       ],
     },
@@ -10196,6 +10635,15 @@
       "fields": [
       ],
     },
+    "InfoForResourceTypeCNmGraphDataSet": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "FuseVariableIndex_t": {
       "metadata": [
         {
@@ -10367,6 +10815,24 @@
       "fields": [
       ],
     },
+    "InfoForResourceTypeCNmGraph": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "InfoForResourceTypeCVoiceContainerBase": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "InfoForResourceTypeCVSoundEventScriptList": {
       "metadata": [
         {
@@ -10377,15 +10843,6 @@
       ],
     },
     "InfoForResourceTypeCAnimationGroup": {
-      "metadata": [
-        {
-          "name": "MResourceTypeForInfoType",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "InfoForResourceTypeVSound_t": {
       "metadata": [
         {
           "name": "MResourceTypeForInfoType",
@@ -10551,6 +11008,15 @@
       ],
     },
     "InfoForResourceTypeIAnimGraphModelBinding": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "InfoForResourceTypeCGcExportableExternalData": {
       "metadata": [
         {
           "name": "MResourceTypeForInfoType",
@@ -10728,12 +11194,6 @@
     },
     "EventAdvanceTick_t": {
       "parent": "EventSimulate_t",
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "EventClientSendInput_t": {
       "metadata": [
       ],
       "fields": [
@@ -11119,6 +11579,15 @@
       "fields": [
       ],
     },
+    "NmPercent_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CAnimUpdateNodeRef": {
       "metadata": [
         {
@@ -11182,15 +11651,6 @@
       "fields": [
       ],
     },
-    "CFingerBone": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "IKSolverSettings_t": {
       "metadata": [
       ],
@@ -11246,6 +11706,15 @@
       ],
     },
     "CPhysSurfacePropertiesAudio": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmEvent": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -11378,15 +11847,6 @@
     },
     "CModelConfigElement_SetRenderColor": {
       "parent": "CModelConfigElement",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FingerBone_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -11678,15 +12138,6 @@
       "fields": [
       ],
     },
-    "WristBone_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "VPhysXConstraintParams_t": {
       "metadata": [
         {
@@ -11762,6 +12213,15 @@
       ],
     },
     "CAnimDesc_Flag": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraph::ChildGraphSlot_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -11900,6 +12360,15 @@
       "fields": [
       ],
     },
+    "RenderHairStrandInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CVPhysXSurfacePropertiesList": {
       "metadata": [
         {
@@ -11919,6 +12388,15 @@
       "fields": [
       ],
     },
+    "CRenderGroom": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "ScriptInfo_t": {
       "metadata": [
         {
@@ -11929,6 +12407,16 @@
       ],
     },
     "CFlexRule": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmIDEvent": {
+      "parent": "CNmEvent",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12031,7 +12519,7 @@
       "fields": [
       ],
     },
-    "CRenderMesh": {
+    "DynamicMeshDeformParams_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12041,15 +12529,6 @@
       ],
     },
     "CFlexDesc": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CWristBone": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12068,7 +12547,7 @@
       "fields": [
       ],
     },
-    "CFingerSource": {
+    "SkeletonDemoDb_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12123,6 +12602,15 @@
       "fields": [
       ],
     },
+    "NmSyncTrackTime_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CBindPoseUpdateNode": {
       "parent": "CLeafUpdateNode",
       "metadata": [
@@ -12144,6 +12632,24 @@
       ],
     },
     "CAnimActionUpdater": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmRootMotionData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmSyncTrackTimeRange_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12205,24 +12711,6 @@
     },
     "CBoneConstraintPoseSpaceBone::Input_t": {
       "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "SkeletalInputOpFixedSettings_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CFingerChain": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
       ],
       "fields": [
       ],
@@ -12334,6 +12822,24 @@
       "fields": [
       ],
     },
+    "SkeletonAnimCapture_t::FrameStamp_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraphVariation": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CSetParameterActionUpdater": {
       "parent": "CAnimActionUpdater",
       "metadata": [
@@ -12359,22 +12865,6 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CMovementMode": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Movement Mode",
-        },
-        {
-          "name": "MPropertyElementNameFn",
         },
       ],
       "fields": [
@@ -12475,15 +12965,6 @@
       "fields": [
       ],
     },
-    "CVrSkeletalInputSettings": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CEnumAnimParameter": {
       "parent": "CConcreteAnimParameter",
       "metadata": [
@@ -12513,6 +12994,16 @@
       ],
     },
     "CStateNodeStateData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmLegacyEvent": {
+      "parent": "CNmEvent",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12568,6 +13059,15 @@
       "fields": [
       ],
     },
+    "NmCompressionSettings_t::QuantizationRange_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CFutureFacingMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
       "metadata": [
@@ -12607,8 +13107,27 @@
       "fields": [
       ],
     },
+    "SkeletonAnimCapture_t::Camera_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CPathAnimMotorUpdater": {
       "parent": "CPathAnimMotorUpdaterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmTransitionEvent": {
+      "parent": "CNmEvent",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12689,6 +13208,15 @@
       "fields": [
       ],
     },
+    "CNmGraph": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CAnimBone": {
       "metadata": [
         {
@@ -12717,16 +13245,6 @@
       "fields": [
       ],
     },
-    "CSkeletalInputUpdateNode": {
-      "parent": "CLeafUpdateNode",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CFlexOp": {
       "metadata": [
         {
@@ -12746,6 +13264,15 @@
       "fields": [
       ],
     },
+    "CNmSyncTrack": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CAnimEventDefinition": {
       "metadata": [
         {
@@ -12757,6 +13284,15 @@
     },
     "CModelConfigElement_Command": {
       "parent": "CModelConfigElement",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "SkeletonAnimCapture_t::Frame_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -12826,16 +13362,6 @@
       "fields": [
       ],
     },
-    "CVRInputComponentUpdater": {
-      "parent": "CAnimComponentUpdater",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CBlendUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
       "metadata": [
@@ -12886,6 +13412,15 @@
     },
     "CParentConstraint": {
       "parent": "CBaseConstraint",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmBoneMask": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -13002,15 +13537,6 @@
       "fields": [
       ],
     },
-    "FingerSource_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "JiggleBoneSettings_t": {
       "metadata": [
         {
@@ -13040,6 +13566,15 @@
       "fields": [
       ],
     },
+    "CNmSyncTrack::EventMarker_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "FootStepTrigger": {
       "metadata": [
         {
@@ -13050,15 +13585,6 @@
       ],
     },
     "CAnimMovement": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FingerChain_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -13115,6 +13641,15 @@
       "fields": [
       ],
     },
+    "CNmSyncTrack::Event_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CSelectorUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
       "metadata": [
@@ -13143,6 +13678,15 @@
     },
     "CStateMachineUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CRenderMesh": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -13240,6 +13784,20 @@
       "fields": [
       ],
     },
+    "CSymbolAnimParameter": {
+      "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Symbol Parameter",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CLeanMatrixUpdateNode": {
       "parent": "CLeafUpdateNode",
       "metadata": [
@@ -13308,6 +13866,15 @@
       ],
     },
     "CAnimUser": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "SkeletonAnimCapture_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -13417,6 +13984,15 @@
       "fields": [
       ],
     },
+    "SkeletonAnimCapture_t::Bone_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CChoiceUpdateNode": {
       "parent": "CAnimUpdateNodeBase",
       "metadata": [
@@ -13456,6 +14032,34 @@
       ],
     },
     "TagSpan_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmCompressionSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraph::ExternalGraphSlot_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmFootEvent": {
+      "parent": "CNmEvent",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -13519,6 +14123,15 @@
     },
     "CStepsRemainingMetricEvaluator": {
       "parent": "CMotionMetricEvaluator",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmSkeleton": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -13639,6 +14252,15 @@
     },
     "CDampedPathAnimMotorUpdater": {
       "parent": "CPathAnimMotorUpdaterBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraphDataSet": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -14273,6 +14895,15 @@
       "fields": [
       ],
     },
+    "CNmClip": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "AnimNodeOutputID": {
       "metadata": [
         {
@@ -14287,6 +14918,16 @@
     },
     "CDirectionalBlendUpdateNode": {
       "parent": "CLeafUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmFrameSnapEvent": {
+      "parent": "CNmEvent",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15023,7 +15664,13 @@
       "fields": [
       ],
     },
-    "RnSphere_t": {
+    "constraint_axislimit_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "FeSimdRodConstraint_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15032,13 +15679,7 @@
       "fields": [
       ],
     },
-    "constraint_axislimit_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "FeSimdRodConstraint_t": {
+    "FeSimdRodConstraintAnim_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15203,6 +15844,15 @@
       "fields": [
       ],
     },
+    "CVoiceContainerBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "VMixUtilityDesc_t": {
       "metadata": [
         {
@@ -15233,6 +15883,16 @@
       "fields": [
       ],
     },
+    "CSosGroupActionTimeBlockLimitSchema": {
+      "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "VMixEffectChainDesc_t": {
       "metadata": [
         {
@@ -15252,6 +15912,16 @@
       ],
     },
     "VMixAutoFilterDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerDecayingSineWave": {
+      "parent": "CVoiceContainerBase",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15306,7 +15976,37 @@
       "fields": [
       ],
     },
+    "CVoiceContainerWavFileReader": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "VMixPlateverbDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerTestNestedDynamic": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerTestConstant": {
+      "parent": "CVoiceContainerWavFileReader",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15369,6 +16069,26 @@
       "fields": [
       ],
     },
+    "CVoiceContainerEngineSound": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerEnvelopeAnalyzer": {
+      "parent": "CVoiceContainerWavFileReader",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "VMixEQ8Desc_t": {
       "metadata": [
         {
@@ -15379,6 +16099,26 @@
       ],
     },
     "VMixDelayDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerAmpedDecayingSineWave": {
+      "parent": "CVoiceContainerDecayingSineWave",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerBlend": {
+      "parent": "CVoiceContainerBase",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15473,6 +16213,16 @@
       "fields": [
       ],
     },
+    "CVoiceContainerRealtimeFMSineWave": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "VMixPannerDesc_t": {
       "metadata": [
         {
@@ -15501,6 +16251,16 @@
       "fields": [
       ],
     },
+    "CSosGroupActionSoundeventClusterSchema": {
+      "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CDSPPresetMixgroupModifierTable": {
       "metadata": [
         {
@@ -15511,6 +16271,26 @@
         },
         {
           "name": "MVDataNodeType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerDefault": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerRandomSampler": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
         },
       ],
       "fields": [
@@ -15832,15 +16612,6 @@
       "fields": [
       ],
     },
-    "CPulseCell_Base": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "PulseRuntimeStateOffset_t": {
       "metadata": [
         {
@@ -15859,8 +16630,7 @@
       "fields": [
       ],
     },
-    "CPulseCell_BaseFlow": {
-      "parent": "CPulseCell_Base",
+    "CPulseCell_Base": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15878,20 +16648,11 @@
       "fields": [
       ],
     },
-    "CPulseCell_Step_DebugLog": {
-      "parent": "CPulseCell_BaseFlow",
+    "CPulseCell_BaseFlow": {
+      "parent": "CPulseCell_Base",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MCellForDomain",
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode",
         },
       ],
       "fields": [
@@ -15948,6 +16709,25 @@
       "fields": [
       ],
     },
+    "CPulseCell_BaseYieldingInflow": {
+      "parent": "CPulseCell_BaseFlow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulse_Constant": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CPulseCell_Test_MultiInflow_NoDefault": {
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
@@ -15992,6 +16772,15 @@
       "fields": [
       ],
     },
+    "PulseGraphInstanceID_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CPulseTurtleGraphicsCursor": {
       "parent": "CPulseExecCursor",
       "metadata": [
@@ -16023,18 +16812,8 @@
       "fields": [
       ],
     },
-    "CPulseCell_BaseValue": {
-      "parent": "CPulseCell_Base",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CPulseCell_Val_TestDomainGetEntityName": {
-      "parent": "CPulseCell_BaseValue",
+    "CPulseCell_Step_DebugLog": {
+      "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -16046,8 +16825,17 @@
           "name": "MPulseCellMethodBindings",
         },
         {
-          "name": "MPropertyFriendlyName",
-          "value": "Get Fake Entity Name",
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_BaseValue": {
+      "parent": "CPulseCell_Base",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
         },
       ],
       "fields": [
@@ -16077,6 +16865,15 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Tracepoint",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "PulseRuntimeConstantIndex_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
         },
       ],
       "fields": [
@@ -16156,6 +16953,21 @@
           "name": "MPropertyFriendlyName",
           "value": "Spawn Fake Entity",
         },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_TestWaitWithCursorState::CursorState_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_WaitForCursorsWithTagBase::CursorState_t": {
+      "metadata": [
       ],
       "fields": [
       ],
@@ -16250,11 +17062,27 @@
       "fields": [
       ],
     },
-    "CPulseCell_BaseYieldingInflow": {
-      "parent": "CPulseCell_BaseFlow",
+    "CPulse_ResumePoint": {
+      "parent": "CPulse_OutflowConnection",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_TestWaitWithCursorState": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
         },
       ],
       "fields": [
@@ -16269,7 +17097,16 @@
       "fields": [
       ],
     },
-    "CPulseCell_Outflow_SimultaneousParallel": {
+    "PulseCursorYieldToken_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_CycleOrdered": {
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
@@ -16302,7 +17139,7 @@
       ],
     },
     "CPulseCell_Step_CallExternalMethod": {
-      "parent": "CPulseCell_BaseFlow",
+      "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -16320,10 +17157,54 @@
       "fields": [
       ],
     },
+    "FakeEntity_tAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CPulse_OutputConnection": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Timeline": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCursorFuncs": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Library for interacting with pulse cursors.",
         },
       ],
       "fields": [
@@ -16376,8 +17257,8 @@
       "fields": [
       ],
     },
-    "CPulse_ResumePoint": {
-      "parent": "CPulse_OutflowConnection",
+    "CPulseCell_WaitForCursorsWithTagBase": {
+      "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -16424,18 +17305,6 @@
     },
     "FakeEntity_t": {
       "metadata": [
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseLibraryBindings",
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-        },
       ],
       "fields": [
       ],
@@ -16510,6 +17379,33 @@
         {
           "name": "MPropertyDescription",
           "value": "Test node that just generates the integer 50. Nothing to see here!",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_CursorQueue": {
+      "parent": "CPulseCell_WaitForCursorsWithTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Cursor Queue",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete.",
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
         },
       ],
       "fields": [
@@ -16625,8 +17521,8 @@
       "fields": [
       ],
     },
-    "CPulseCell_Outflow_CycleOrdered": {
-      "parent": "CPulseCell_BaseFlow",
+    "CPulseCell_Val_TestDomainGetEntityName": {
+      "parent": "CPulseCell_BaseValue",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -16638,7 +17534,8 @@
           "name": "MPulseCellMethodBindings",
         },
         {
-          "name": "MPulseCellWithCustomDocNode",
+          "name": "MPropertyFriendlyName",
+          "value": "Get Fake Entity Name",
         },
       ],
       "fields": [
@@ -16655,6 +17552,15 @@
         },
         {
           "name": "MPulseDomainHiddenInTool",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "PulseCursorID_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
         },
       ],
       "fields": [
@@ -16684,6 +17590,15 @@
       "fields": [
       ],
     },
+    "CPulseCell_Timeline::TimelineEvent_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CPulse_RegisterInfo": {
       "metadata": [
         {
@@ -16701,6 +17616,33 @@
         {
           "name": "MPropertyDescription",
           "value": "Testing script helpers.",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_WaitForCursorsWithTag": {
+      "parent": "CPulseCell_WaitForCursorsWithTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Wait For Cursors With Tag",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Causes each execution cursor to wait for the completion of cursors with a given tag. Use this to manage exclusive zones with remote control.",
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
         },
       ],
       "fields": [
@@ -16950,7 +17892,7 @@
       "fields": [
       ],
     },
-    "CPerParticleFloatInput": {
+    "CParticleRemapFloatInput": {
       "parent": "CParticleFloatInput",
       "metadata": [
         {
@@ -17045,6 +17987,15 @@
       "fields": [
       ],
     },
+    "RenderProjectedMaterial_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "PointDefinition_t": {
       "metadata": [
         {
@@ -17116,11 +18067,14 @@
       "fields": [
       ],
     },
-    "C_INIT_QuantizeFloat": {
-      "parent": "CParticleFunctionInitializer",
+    "CPerParticleFloatInput": {
+      "parent": "CParticleFloatInput",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyCustomEditor",
         },
       ],
       "fields": [
@@ -17433,8 +18387,8 @@
       "fields": [
       ],
     },
-    "C_OP_SetAttributeToScalarExpression": {
-      "parent": "CParticleFunctionOperator",
+    "C_INIT_QuantizeFloat": {
+      "parent": "CParticleFunctionInitializer",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -18171,14 +19125,11 @@
       "fields": [
       ],
     },
-    "CParticleRemapFloatInput": {
-      "parent": "CParticleFloatInput",
+    "C_OP_SetFloatAttributeToVectorExpression": {
+      "parent": "CParticleFunctionOperator",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MPropertyCustomEditor",
         },
       ],
       "fields": [
@@ -19170,6 +20121,16 @@
       "fields": [
       ],
     },
+    "C_INIT_SetAttributeToScalarExpression": {
+      "parent": "CParticleFunctionInitializer",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "C_OP_RenderPoints": {
       "parent": "CParticleFunctionRenderer",
       "metadata": [
@@ -19336,7 +20297,7 @@
       "fields": [
       ],
     },
-    "C_OP_SetFloatAttributeToVectorExpression": {
+    "C_OP_SetAttributeToScalarExpression": {
       "parent": "CParticleFunctionOperator",
       "metadata": [
         {
@@ -20202,6 +21163,16 @@
     },
     "C_OP_QuantizeCPComponent": {
       "parent": "CParticleFunctionPreEmission",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "C_OP_RenderSimpleModelCollection": {
+      "parent": "CParticleFunctionRenderer",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -21398,6 +22369,40 @@
       "fields": [
       ],
     },
+    "CPulseCell_Step_FollowEntity": {
+      "parent": "CPulseCell_BaseFlow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseGraphComponentBase": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CCSDeathmatchScript_ConVars": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CSAdditionalPerRoundStats_t": {
       "metadata": [
       ],
@@ -21487,12 +22492,6 @@
       "fields": [
       ],
     },
-    "CAnimGraphTagRef": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
     "CNavVolumeBreadthFirstSearch": {
       "parent": "CNavVolumeCalculatedVector",
       "metadata": [
@@ -21508,6 +22507,12 @@
       ],
     },
     "CAnimEventListenerBase": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "SoundOpvarTraceResult_t": {
       "metadata": [
       ],
       "fields": [
@@ -21594,6 +22599,33 @@
       "fields": [
       ],
     },
+    "CPulseCell_Value_FindEntByClassNameWithin": {
+      "parent": "CPulseCell_BaseValue",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Find Entity by Class Name Within Radius",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Search for an entity by class name within the radius of a given entity. Can loop given a \"start\" entity that is used as a cursor.",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CNavVolumeSphere": {
       "parent": "CNavVolume",
       "metadata": [
@@ -21608,6 +22640,12 @@
       ],
     },
     "IEconItemInterface": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "sndopvarlatchdata_t": {
       "metadata": [
       ],
       "fields": [
@@ -21647,10 +22685,20 @@
       "fields": [
       ],
     },
-    "AnimationUpdateListHandle_t": {
+    "CPulseCell_Outflow_PlaySceneBase::CursorState_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseServerCursor": {
+      "parent": "CPulseExecCursor",
       "metadata": [
         {
-          "name": "MIsBoxedIntegerType",
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPulseInternal_IsCursor",
         },
       ],
       "fields": [
@@ -21662,27 +22710,17 @@
       "fields": [
       ],
     },
-    "CPulseCell_Step_SetAnimGraphParam": {
-      "parent": "CPulseCell_BaseFlow",
+    "CTakeDamageResult": {
       "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MCellForDomain",
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode",
-        },
       ],
       "fields": [
       ],
     },
-    "CTakeDamageResult": {
+    "CCSGameModeScript_ConVars": {
       "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
       ],
       "fields": [
       ],
@@ -21792,20 +22830,11 @@
       "fields": [
       ],
     },
-    "CPulseCell_Outflow_PlayVCD": {
-      "parent": "CPulseCell_BaseFlow",
+    "CPulseCell_Outflow_PlaySceneBase": {
+      "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MCellForDomain",
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode",
         },
       ],
       "fields": [
@@ -22271,6 +23300,13 @@
       "fields": [
       ],
     },
+    "CChicken_GraphController": {
+      "parent": "CAnimGraphControllerBase",
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CNavLinkMovementVData": {
       "metadata": [
         {
@@ -22345,6 +23381,21 @@
       "fields": [
       ],
     },
+    "PulseScriptedSequenceData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NavGravity_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CNavVolumeAll": {
       "parent": "CNavVolumeVector",
       "metadata": [
@@ -22378,6 +23429,25 @@
       "fields": [
       ],
     },
+    "CPulseCell_Outflow_ScriptedSequence": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "dynpitchvol_t": {
       "parent": "dynpitchvol_base_t",
       "metadata": [
@@ -22393,6 +23463,25 @@
     },
     "SimpleConstraintSoundProfile": {
       "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_PlaySequence": {
+      "parent": "CPulseCell_Outflow_PlaySceneBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
       ],
       "fields": [
       ],
@@ -22418,6 +23507,13 @@
     },
     "CGameChoreoServices": {
       "parent": "IChoreoServices",
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseGraphComponentPointServer": {
+      "parent": "CPulseGraphComponentBase",
       "metadata": [
       ],
       "fields": [
@@ -22479,6 +23575,12 @@
       ],
     },
     "ResponseContext_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CRopeOverlapHit": {
       "metadata": [
       ],
       "fields": [
@@ -22612,12 +23714,6 @@
       "fields": [
       ],
     },
-    "IVehicle": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
     "CRandSimTimer": {
       "parent": "CSimpleSimTimer",
       "metadata": [
@@ -22685,11 +23781,36 @@
       "fields": [
       ],
     },
+    "CPulseCell_Outflow_ScriptedSequence::CursorState_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CFootstepTableHandle": {
       "metadata": [
         {
           "name": "MPropertyCustomFGDType",
           "value": "string",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_PlayVCD": {
+      "parent": "CPulseCell_Outflow_PlaySceneBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
         },
       ],
       "fields": [
@@ -22809,18 +23930,6 @@
       "fields": [
       ],
     },
-    "CComicBook": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MVDataRoot",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CompositeMaterialInputLooseVariable_t": {
       "metadata": [
         {
@@ -22853,6 +23962,15 @@
         },
         {
           "name": "MPropertyElementNameFn",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CClientPointEntityAPI": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
         },
       ],
       "fields": [
@@ -22899,6 +24017,13 @@
       "fields": [
       ],
     },
+    "C_CSGO_PreviewPlayer_GraphController": {
+      "parent": "CAnimGraphControllerBase",
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CGlowSprite": {
       "metadata": [
       ],
@@ -22932,6 +24057,13 @@
     },
     "C_LightGlowOverlay": {
       "parent": "CGlowOverlay",
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "C_CSGO_PreviewModel_GraphController": {
+      "parent": "CAnimGraphControllerBase",
       "metadata": [
       ],
       "fields": [

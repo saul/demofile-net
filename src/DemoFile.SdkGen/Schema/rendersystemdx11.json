@@ -56,6 +56,18 @@
           "name": "RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS",
           "value": 256,
         },
+        {
+          "name": "RENDER_BUFFER_ACCELERATION_STRUCTURE",
+          "value": 512,
+        },
+        {
+          "name": "RENDER_BUFFER_SHADER_BINDING_TABLE",
+          "value": 1024,
+        },
+        {
+          "name": "RENDER_BUFFER_PER_FRAME_WRITE_ONCE",
+          "value": 2048,
+        },
       ],
     },
     "RenderPrimitiveType_t": {
@@ -137,7 +149,7 @@
       ],
     },
     "RenderMultisampleType_t": {
-      "align": 4,
+      "align": 1,
       "items": [
         {
           "name": "RENDER_MULTISAMPLE_INVALID",

@@ -68,6 +68,7 @@ public partial struct EntityEvents
     public Events<CEconWearable> CEconWearable;
     public Events<CEntityDissolve> CEntityDissolve;
     public Events<CEntityFlame> CEntityFlame;
+    public Events<CEntityInstance> CEntityInstance;
     public Events<CEnvCombinedLightProbeVolume> CEnvCombinedLightProbeVolume;
     public Events<CEnvCubemap> CEnvCubemap;
     public Events<CEnvCubemapBox> CEnvCubemapBox;
@@ -154,6 +155,7 @@ public partial struct EntityEvents
     public Events<CPrecipitation> CPrecipitation;
     public Events<CPrecipitationBlocker> CPrecipitationBlocker;
     public Events<CPredictedViewModel> CPredictedViewModel;
+    public Events<CPropDoorRotating> CPropDoorRotating;
     public Events<CRagdollManager> CRagdollManager;
     public Events<CRagdollProp> CRagdollProp;
     public Events<CRagdollPropAttached> CRagdollPropAttached;
@@ -170,6 +172,7 @@ public partial struct EntityEvents
     public Events<CSoundAreaEntityOrientedBox> CSoundAreaEntityOrientedBox;
     public Events<CSoundAreaEntitySphere> CSoundAreaEntitySphere;
     public Events<CSoundOpvarSetAABBEntity> CSoundOpvarSetAABBEntity;
+    public Events<CSoundOpvarSetAutoRoomEntity> CSoundOpvarSetAutoRoomEntity;
     public Events<CSoundOpvarSetOBBEntity> CSoundOpvarSetOBBEntity;
     public Events<CSoundOpvarSetOBBWindEntity> CSoundOpvarSetOBBWindEntity;
     public Events<CSoundOpvarSetPathCornerEntity> CSoundOpvarSetPathCornerEntity;
@@ -184,6 +187,7 @@ public partial struct EntityEvents
     public Events<CTextureBasedAnimatable> CTextureBasedAnimatable;
     public Events<CTonemapController2> CTonemapController2;
     public Events<CTriggerBuoyancy> CTriggerBuoyancy;
+    public Events<CTriggerPhysics> CTriggerPhysics;
     public Events<CTriggerTripWire> CTriggerTripWire;
     public Events<CTriggerVolume> CTriggerVolume;
     public Events<CTripWireFire> CTripWireFire;

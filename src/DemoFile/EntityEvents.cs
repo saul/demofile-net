@@ -89,6 +89,4 @@ public partial struct EntityEvents
             PostUpdate -= registration.PostFunc;
         }
     }
-
-    public Events<CEntityInstance> CEntityInstance;
 }
