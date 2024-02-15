@@ -19,9 +19,6 @@ public class RoundEventsIntegrationTest
         var snapshot = new StringBuilder();
         var demo = new DemoParser();
 
-        demo.OnRoundStart += e => LogEvent(nameof(DemoParser.OnRoundStart), e);
-        demo.OnRoundEnd += e => LogEvent(nameof(DemoParser.OnRoundEnd), e);
-
         demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundStartCount, (_, _, _) =>
         {
             var syntheticEvent = new Source1RoundStartEvent(demo);

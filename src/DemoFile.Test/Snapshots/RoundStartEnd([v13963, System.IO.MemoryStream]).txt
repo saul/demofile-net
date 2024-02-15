@@ -346,16 +346,6 @@
     "DmgArmor": 5,
     "Hitgroup": 2
   }
-[5478] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 19,
-    "Nomusic": 0
-  }
 [5478] round_end:
   {
     "GameEventName": "round_end",
@@ -365,13 +355,6 @@
     "Legacy": 0,
     "PlayerCount": 19,
     "Nomusic": 0
-  }
-[5798] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [5798] round_start:
   {
@@ -816,16 +799,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-[10805] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 19,
-    "Nomusic": 0
-  }
 [10805] round_end:
   {
     "GameEventName": "round_end",
@@ -835,13 +808,6 @@
     "Legacy": 0,
     "PlayerCount": 19,
     "Nomusic": 0
-  }
-[11125] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [11125] round_start:
   {
@@ -1243,16 +1209,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-[18154] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 7,
-    "Message": "#SFUI_Notice_Bomb_Defused",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [18154] round_end:
   {
     "GameEventName": "round_end",
@@ -1262,13 +1218,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[18474] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [18474] round_start:
   {
@@ -1655,16 +1604,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-[24965] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 7,
-    "Message": "#SFUI_Notice_Bomb_Defused",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [24965] round_end:
   {
     "GameEventName": "round_end",
@@ -1674,13 +1613,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[25285] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [25285] round_start:
   {
@@ -2256,16 +2188,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-[33042] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [33042] round_end:
   {
     "GameEventName": "round_end",
@@ -2275,13 +2197,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[33362] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [33362] round_start:
   {
@@ -2668,16 +2583,6 @@
     "DmgArmor": 18,
     "Hitgroup": 1
   }
-[41063] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 1,
-    "Message": "#SFUI_Notice_Target_Bombed",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 1
-  }
 [41063] round_end:
   {
     "GameEventName": "round_end",
@@ -2687,13 +2592,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 1
-  }
-[41383] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [41383] round_start:
   {
@@ -3123,16 +3021,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-[49461] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [49461] round_end:
   {
     "GameEventName": "round_end",
@@ -3142,13 +3030,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[49781] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [49781] round_start:
   {
@@ -3550,16 +3431,6 @@
     "DmgArmor": 4,
     "Hitgroup": 5
   }
-[60084] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 1,
-    "Message": "#SFUI_Notice_Target_Bombed",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 1
-  }
 [60084] round_end:
   {
     "GameEventName": "round_end",
@@ -3627,13 +3498,6 @@
     "DmgHealth": 140,
     "DmgArmor": 0,
     "Hitgroup": 1
-  }
-[60404] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [60404] round_start:
   {
@@ -4209,16 +4073,6 @@
     "DmgArmor": 1,
     "Hitgroup": 3
   }
-[71624] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [71624] round_end:
   {
     "GameEventName": "round_end",
@@ -4228,13 +4082,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[71944] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [71944] round_start:
   {
@@ -4752,16 +4599,6 @@
     "DmgArmor": 0,
     "Hitgroup": 7
   }
-[80156] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 8,
-    "Message": "#SFUI_Notice_CTs_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [80156] round_end:
   {
     "GameEventName": "round_end",
@@ -4771,13 +4608,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[80476] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [80476] round_start:
   {
@@ -5207,16 +5037,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-[91201] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 7,
-    "Message": "#SFUI_Notice_Bomb_Defused",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [91201] round_end:
   {
     "GameEventName": "round_end",
@@ -5299,13 +5119,6 @@
     "DmgHealth": 24,
     "DmgArmor": 5,
     "Hitgroup": 2
-  }
-[91521] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [91521] round_start:
   {
@@ -5866,16 +5679,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-[99593] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 8,
-    "Message": "#SFUI_Notice_CTs_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [99593] round_end:
   {
     "GameEventName": "round_end",
@@ -5885,13 +5688,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[100137] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [100137] round_start:
   {
@@ -6278,16 +6074,6 @@
     "DmgArmor": 7,
     "Hitgroup": 2
   }
-[118556] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 8,
-    "Message": "#SFUI_Notice_CTs_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [118556] round_end:
   {
     "GameEventName": "round_end",
@@ -6297,13 +6083,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[118876] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [118876] round_start:
   {
@@ -6866,16 +6645,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-[124657] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 8,
-    "Message": "#SFUI_Notice_CTs_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [124657] round_end:
   {
     "GameEventName": "round_end",
@@ -6885,13 +6654,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[124977] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [124977] round_start:
   {
@@ -7336,16 +7098,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-[130333] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [130333] round_end:
   {
     "GameEventName": "round_end",
@@ -7355,13 +7107,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[130653] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [130653] round_start:
   {
@@ -7864,16 +7609,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-[139174] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 3,
-    "Reason": 8,
-    "Message": "#SFUI_Notice_CTs_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [139174] round_end:
   {
     "GameEventName": "round_end",
@@ -7883,13 +7618,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[139494] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [139494] round_start:
   {
@@ -8450,16 +8178,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-[150406] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [150406] round_end:
   {
     "GameEventName": "round_end",
@@ -8469,13 +8187,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[150726] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [150726] round_start:
   {
@@ -8920,16 +8631,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-[157631] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [157631] round_end:
   {
     "GameEventName": "round_end",
@@ -8939,13 +8640,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[157951] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [157951] round_start:
   {
@@ -9390,16 +9084,6 @@
     "DmgArmor": 0,
     "Hitgroup": 7
   }
-[164811] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [164811] round_end:
   {
     "GameEventName": "round_end",
@@ -9409,13 +9093,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[165131] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [165131] round_start:
   {
@@ -9903,16 +9580,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-[172706] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [172706] round_end:
   {
     "GameEventName": "round_end",
@@ -9922,13 +9589,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[173026] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [173026] round_start:
   {
@@ -10388,16 +10048,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-[180637] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
-  }
 [180637] round_end:
   {
     "GameEventName": "round_end",
@@ -10407,13 +10057,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 0
-  }
-[180957] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [180957] round_start:
   {
@@ -10800,16 +10443,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-[190670] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 1,
-    "Message": "#SFUI_Notice_Target_Bombed",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 1
-  }
 [190670] round_end:
   {
     "GameEventName": "round_end",
@@ -10819,13 +10452,6 @@
     "Legacy": 0,
     "PlayerCount": 21,
     "Nomusic": 1
-  }
-[190990] OnRoundStart:
-  {
-    "GameEventName": "round_start",
-    "Timelimit": 0,
-    "Fraglimit": 0,
-    "Objective": ""
   }
 [190990] round_start:
   {
@@ -11239,16 +10865,6 @@
     "DmgHealth": 141,
     "DmgArmor": 0,
     "Hitgroup": 1
-  }
-[202165] OnRoundEnd:
-  {
-    "GameEventName": "round_end",
-    "Winner": 2,
-    "Reason": 9,
-    "Message": "#SFUI_Notice_Terrorists_Win",
-    "Legacy": 0,
-    "PlayerCount": 21,
-    "Nomusic": 0
   }
 [202165] round_end:
   {

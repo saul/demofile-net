@@ -1,13 +1,13 @@
-using DemoFile.Sdk;
+﻿using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public partial class DemoParser
+public partial class Source1GameEvents
 {
-    public Action<Source1RoundStartEvent>? _onRoundStart;
+    private Action<Source1RoundStartEvent>? _onRoundStart;
     private EntityEventRegistration<CCSGameRulesProxy> _roundStartRegistration;
 
-    public Action<Source1RoundStartEvent>? OnRoundStart
+    public Action<Source1RoundStartEvent>? RoundStart
     {
         get => _onRoundStart;
         set
@@ -27,26 +27,22 @@ public partial class DemoParser
 
     private void InitRoundStart()
     {
-        _roundStartRegistration = EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundStartCount, (_, _, _) =>
+        _roundStartRegistration = _demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundStartCount, (_, _, _) =>
         {
-            var syntheticEvent = new Source1RoundStartEvent(this);
+            var syntheticEvent = new Source1RoundStartEvent(_demo);
 
             // Entity updates happen mid-tick.
             // Wait until the end of the command to ensure player deaths have happened.
-            OnCommandFinish += () =>
+            _demo.OnCommandFinish += () =>
             {
                 _onRoundStart?.Invoke(syntheticEvent);
+                Source1GameEvent?.Invoke(syntheticEvent);
             };
         });
-
-        Source1GameEvents.RoundStart += OnRoundStartEvent;
     }
 
     private void DestroyRoundStart()
     {
-        EntityEvents.CCSGameRulesProxy.RemoveChangeCallback(_roundStartRegistration);
-        Source1GameEvents.RoundStart -= OnRoundStartEvent;
+        _demo.EntityEvents.CCSGameRulesProxy.RemoveChangeCallback(_roundStartRegistration);
     }
-
-    private void OnRoundStartEvent(Source1RoundStartEvent e) => _onRoundStart?.Invoke(e);
 }

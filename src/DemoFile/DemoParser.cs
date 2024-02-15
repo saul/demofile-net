@@ -16,7 +16,7 @@ public sealed partial class DemoParser
     private readonly Dictionary<DemoTick, long> _keyTickPositions = new();
     private readonly PriorityQueue<QueuedPacket, (int, int)> _packetQueue = new(128);
     private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
-    private readonly Source1GameEvents _source1GameEvents = new();
+    private readonly Source1GameEvents _source1GameEvents;
     private DemoEvents _demoEvents;
     private EntityEvents _entityEvents;
     private GameEvents _gameEvents;
@@ -41,6 +41,8 @@ public sealed partial class DemoParser
 
     public DemoParser()
     {
+        _source1GameEvents = new Source1GameEvents(this);
+
         _stream = null!;
 
         _demoEvents.DemoFileHeader += msg => { FileHeader = msg; };

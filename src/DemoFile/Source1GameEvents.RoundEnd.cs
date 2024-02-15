@@ -3,12 +3,12 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public partial class DemoParser
+public partial class Source1GameEvents
 {
     public Action<Source1RoundEndEvent>? _onRoundEnd;
     private EntityEventRegistration<CCSGameRulesProxy> _roundEndRegistration;
 
-    public Action<Source1RoundEndEvent>? OnRoundEnd
+    public Action<Source1RoundEndEvent>? RoundEnd
     {
         get => _onRoundEnd;
         set
@@ -28,12 +28,12 @@ public partial class DemoParser
 
     private void InitRoundEnd()
     {
-        _roundEndRegistration = EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundEndCount, (proxy, _, _) =>
+        _roundEndRegistration = _demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundEndCount, (proxy, _, _) =>
         {
             var gameRules = proxy.GameRules!;
             Debug.Assert(gameRules != null);
 
-            var syntheticEvent = new Source1RoundEndEvent(this)
+            var syntheticEvent = new Source1RoundEndEvent(_demo)
             {
                 Legacy = gameRules.RoundEndLegacy,
                 Message = gameRules.RoundEndMessage,
@@ -45,20 +45,16 @@ public partial class DemoParser
 
             // Entity updates happen mid-tick.
             // Wait until the end of the command to ensure player deaths have happened.
-            OnCommandFinish += () =>
+            _demo.OnCommandFinish += () =>
             {
                 _onRoundEnd?.Invoke(syntheticEvent);
+                Source1GameEvent?.Invoke(syntheticEvent);
             };
         });
-
-        Source1GameEvents.RoundEnd += OnRoundEndEvent;
     }
 
     private void DestroyRoundEnd()
     {
-        EntityEvents.CCSGameRulesProxy.RemoveChangeCallback(_roundEndRegistration);
-        Source1GameEvents.RoundEnd -= OnRoundEndEvent;
+        _demo.EntityEvents.CCSGameRulesProxy.RemoveChangeCallback(_roundEndRegistration);
     }
-
-    private void OnRoundEndEvent(Source1RoundEndEvent e) => _onRoundEnd?.Invoke(e);
 }

@@ -1,6 +1,6 @@
 ### 0.10.1 (2024-02-16)
 
-- Add `DemoParser.OnRoundStart` and `DemoParser.OnRoundEnd` events to replace the now-defunct `round_start` and `round_end` legacy Source1 game events
+- Synthesise `Source1GameEvents.RoundStart` and `Source1GameEvents.RoundEnds` events on newer demos
 
 ### 0.9.1 (2024-02-09)
 
