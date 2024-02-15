@@ -9,7 +9,7 @@ public class RoundEventsIntegrationTest
     private static readonly KeyValuePair<string, Stream>[] RoundCases =
     {
         new("v13963", GotvCompetitiveProtocol13963),
-        // todo: add v13987 cases
+        new("v13992", GotvCompetitiveProtocol13992)
     };
 
     [TestCaseSource(nameof(RoundCases))]
