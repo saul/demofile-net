@@ -33,6 +33,12 @@ public sealed partial class DemoParser
     /// </remarks>
     public Action<DemoProgressEvent>? OnProgress;
 
+    /// <summary>
+    /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
+    /// Reset to <c>null</c> just before it is invoked.
+    /// </summary>
+    public Action? OnCommandFinish;
+
     public DemoParser()
     {
         _stream = null!;
@@ -257,15 +263,25 @@ public sealed partial class DemoParser
         var buf = await ReadExactBytesAsync((int)cmd.Size, cancellationToken).ConfigureAwait(false);
 
         // todo: disable seeking until command is over!
+        bool canContinue;
         if (isCompressed)
         {
             using var decompressed = Snappy.DecompressToMemory(buf);
-            return _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
+            canContinue = _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
         }
         else
         {
-            return _demoEvents.ReadDemoCommand(msgType, buf);
+            canContinue = _demoEvents.ReadDemoCommand(msgType, buf);
         }
+
+        if (OnCommandFinish is { } onCommandFinish)
+        {
+            // Reset to null before invoking to allow any callbacks to re-register
+            OnCommandFinish = null;
+            onCommandFinish();
+        }
+
+        return canContinue;
     }
 
     private async ValueTask ReadFileInfo(CancellationToken cancellationToken)
