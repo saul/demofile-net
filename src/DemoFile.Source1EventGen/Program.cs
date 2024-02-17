@@ -3,6 +3,12 @@ using DemoFile;
 
 internal static class Program
 {
+    private static readonly IReadOnlySet<string> SyntheticEvents = new HashSet<string>
+    {
+        "round_start",
+        "round_end"
+    };
+
     public static async Task Main(string[] args)
     {
         var (demoPath, outputPath) = args switch
@@ -96,6 +102,9 @@ internal static class Program
 
         foreach (var descriptor in descriptors)
         {
+            if (SyntheticEvents.Contains(descriptor.Name))
+                continue;
+
             builder.AppendLine($"    public Action<{EventNameToCsClass(descriptor.Name)}>? {SnakeCaseToPascalCase(descriptor.Name)};");
         }
 

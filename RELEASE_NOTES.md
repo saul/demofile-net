@@ -1,3 +1,7 @@
+### 0.10.1 (2024-02-16)
+
+- Synthesise `Source1GameEvents.RoundStart` and `Source1GameEvents.RoundEnds` events on newer demos
+
 ### 0.9.1 (2024-02-09)
 
 - Update schema for v13987
