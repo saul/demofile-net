@@ -1,4 +1,4 @@
-### 0.10.1 (2024-02-16)
+### 0.10.1 (2024-02-17)
 
 - Synthesise `Source1GameEvents.RoundStart` and `Source1GameEvents.RoundEnds` events on newer demos
 
