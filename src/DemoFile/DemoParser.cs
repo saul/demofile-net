@@ -169,7 +169,14 @@ public sealed partial class DemoParser
         {
             var oldPosition = stream.Position;
             stream.Position = sizeBytes;
-            await ReadFileInfo(cancellationToken).ConfigureAwait(false);
+            try
+            {
+                await ReadFileInfo(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                // Swallow any exceptions during ReadFileInfo - it's best effort
+            }
             stream.Position = oldPosition;
         }
     }
