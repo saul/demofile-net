@@ -31,24 +31,4 @@ public partial class CEntityInstance
     {
         _decoder(this, fieldPath, ref buffer);
     }
-
-    internal virtual void FireCreateEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.Create?.Invoke(this);
-    }
-
-    internal virtual void FireDeleteEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.Delete?.Invoke(this);
-    }
-
-    internal virtual void FirePreUpdateEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.PreUpdate?.Invoke(this);
-    }
-
-    internal virtual void FirePostUpdateEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.PostUpdate?.Invoke(this);
-    }
 }

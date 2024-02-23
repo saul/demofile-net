@@ -56,212 +56,196 @@
           "value": 12,
         },
         {
-          "name": "TARGET_INVOKE",
+          "name": "SET_VAR",
           "value": 13,
         },
         {
-          "name": "SET_VAR",
+          "name": "GET_VAR",
           "value": 14,
         },
         {
-          "name": "GET_VAR",
+          "name": "GET_CONST",
           "value": 15,
         },
         {
-          "name": "SET_REGISTER_LIT_BOOL",
+          "name": "SET_REGISTER_DOMAIN_VALUE",
           "value": 16,
         },
         {
-          "name": "SET_REGISTER_LIT_INT",
+          "name": "COPY",
           "value": 17,
         },
         {
-          "name": "SET_REGISTER_LIT_FLOAT",
+          "name": "NOT",
           "value": 18,
         },
         {
-          "name": "SET_REGISTER_LIT_STR",
+          "name": "NEGATE",
           "value": 19,
         },
         {
-          "name": "SET_REGISTER_LIT_INVAL_EHANDLE",
+          "name": "ADD",
           "value": 20,
         },
         {
-          "name": "SET_REGISTER_LIT_INVAL_SNDEVT_GUID",
+          "name": "SUB",
           "value": 21,
         },
         {
-          "name": "SET_REGISTER_LIT_VEC3",
+          "name": "MUL",
           "value": 22,
         },
         {
-          "name": "SET_REGISTER_DOMAIN_VALUE",
+          "name": "DIV",
           "value": 23,
         },
         {
-          "name": "COPY",
+          "name": "MOD",
           "value": 24,
         },
         {
-          "name": "NOT",
+          "name": "LT",
           "value": 25,
         },
         {
-          "name": "NEGATE",
+          "name": "LTE",
           "value": 26,
         },
         {
-          "name": "ADD",
+          "name": "EQ",
           "value": 27,
         },
         {
-          "name": "SUB",
+          "name": "NE",
           "value": 28,
         },
         {
-          "name": "MUL",
+          "name": "AND",
           "value": 29,
         },
         {
-          "name": "DIV",
+          "name": "OR",
           "value": 30,
         },
         {
-          "name": "MOD",
+          "name": "CONVERT_VALUE",
           "value": 31,
         },
         {
-          "name": "LT",
+          "name": "LAST_SERIALIZED_CODE",
           "value": 32,
         },
         {
-          "name": "LTE",
+          "name": "NEGATE_INT",
           "value": 33,
         },
         {
-          "name": "EQ",
+          "name": "NEGATE_FLOAT",
           "value": 34,
         },
         {
-          "name": "NE",
+          "name": "ADD_INT",
           "value": 35,
         },
         {
-          "name": "AND",
+          "name": "ADD_FLOAT",
           "value": 36,
         },
         {
-          "name": "OR",
+          "name": "ADD_STRING",
           "value": 37,
         },
         {
-          "name": "CONVERT_VALUE",
+          "name": "SUB_INT",
           "value": 38,
         },
         {
-          "name": "LAST_SERIALIZED_CODE",
+          "name": "SUB_FLOAT",
           "value": 39,
         },
         {
-          "name": "NEGATE_INT",
+          "name": "MUL_INT",
           "value": 40,
         },
         {
-          "name": "NEGATE_FLOAT",
+          "name": "MUL_FLOAT",
           "value": 41,
         },
         {
-          "name": "ADD_INT",
+          "name": "DIV_INT",
           "value": 42,
         },
         {
-          "name": "ADD_FLOAT",
+          "name": "DIV_FLOAT",
           "value": 43,
         },
         {
-          "name": "ADD_STRING",
+          "name": "MOD_INT",
           "value": 44,
         },
         {
-          "name": "SUB_INT",
+          "name": "MOD_FLOAT",
           "value": 45,
         },
         {
-          "name": "SUB_FLOAT",
+          "name": "LT_INT",
           "value": 46,
         },
         {
-          "name": "MUL_INT",
+          "name": "LT_FLOAT",
           "value": 47,
         },
         {
-          "name": "MUL_FLOAT",
+          "name": "LTE_INT",
           "value": 48,
         },
         {
-          "name": "DIV_INT",
+          "name": "LTE_FLOAT",
           "value": 49,
         },
         {
-          "name": "DIV_FLOAT",
+          "name": "EQ_BOOL",
           "value": 50,
         },
         {
-          "name": "MOD_INT",
+          "name": "EQ_INT",
           "value": 51,
         },
         {
-          "name": "MOD_FLOAT",
+          "name": "EQ_FLOAT",
           "value": 52,
         },
         {
-          "name": "LT_INT",
+          "name": "EQ_STRING",
           "value": 53,
         },
         {
-          "name": "LT_FLOAT",
+          "name": "EQ_ENTITY_NAME",
           "value": 54,
         },
         {
-          "name": "LTE_INT",
+          "name": "NE_BOOL",
           "value": 55,
         },
         {
-          "name": "LTE_FLOAT",
+          "name": "NE_INT",
           "value": 56,
         },
         {
-          "name": "EQ_BOOL",
+          "name": "NE_FLOAT",
           "value": 57,
         },
         {
-          "name": "EQ_INT",
+          "name": "NE_STRING",
           "value": 58,
         },
         {
-          "name": "EQ_FLOAT",
+          "name": "NE_ENTITY_NAME",
           "value": 59,
         },
         {
-          "name": "EQ_STRING",
+          "name": "GET_CONST_INLINE_STORAGE",
           "value": 60,
-        },
-        {
-          "name": "NE_BOOL",
-          "value": 61,
-        },
-        {
-          "name": "NE_INT",
-          "value": 62,
-        },
-        {
-          "name": "NE_FLOAT",
-          "value": 63,
-        },
-        {
-          "name": "NE_STRING",
-          "value": 64,
         },
       ],
     },
@@ -275,6 +259,44 @@
         {
           "name": "ASYNC_FIRE_AND_FORGET",
           "value": 1,
+        },
+      ],
+    },
+    "PulseCursorExecResult_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Succeeded",
+          "value": 0,
+        },
+        {
+          "name": "Canceled",
+          "value": 1,
+        },
+        {
+          "name": "Failed",
+          "value": 2,
+        },
+      ],
+    },
+    "PulseCursorCancelPriority_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "None",
+          "value": 0,
+        },
+        {
+          "name": "CancelOnSucceeded",
+          "value": 1,
+        },
+        {
+          "name": "SoftCancel",
+          "value": 2,
+        },
+        {
+          "name": "HardCancel",
+          "value": 3,
         },
       ],
     },
@@ -310,37 +332,114 @@
           "value": 5,
         },
         {
-          "name": "PVAL_EHANDLE",
+          "name": "PVAL_COLOR_RGB",
           "value": 6,
         },
         {
-          "name": "PVAL_RESOURCE",
+          "name": "PVAL_EHANDLE",
           "value": 7,
         },
         {
-          "name": "PVAL_SNDEVT_GUID",
+          "name": "PVAL_RESOURCE",
           "value": 8,
         },
         {
-          "name": "PVAL_SCHEMA_PTR",
+          "name": "PVAL_SNDEVT_GUID",
           "value": 9,
         },
         {
-          "name": "PVAL_CURSOR_FLOW",
+          "name": "PVAL_ENTITY_NAME",
           "value": 10,
         },
         {
-          "name": "PVAL_ANY",
+          "name": "PVAL_SCHEMA_PTR",
           "value": 11,
         },
         {
-          "name": "PVAL_COUNT",
+          "name": "PVAL_TYPESAFE_INT",
           "value": 12,
+        },
+        {
+          "name": "PVAL_CURSOR_FLOW",
+          "value": 13,
+        },
+        {
+          "name": "PVAL_ANY",
+          "value": 14,
+        },
+        {
+          "name": "PVAL_SCHEMA_ENUM",
+          "value": 15,
+        },
+        {
+          "name": "PVAL_COUNT",
+          "value": 16,
+        },
+      ],
+    },
+    "PulseTestEnumColor_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "BLACK",
+          "value": 0,
+        },
+        {
+          "name": "WHITE",
+          "value": 1,
+        },
+        {
+          "name": "RED",
+          "value": 2,
+        },
+        {
+          "name": "GREEN",
+          "value": 3,
+        },
+        {
+          "name": "BLUE",
+          "value": 4,
+        },
+      ],
+    },
+    "PulseTestEnumShape_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "CIRCLE",
+          "value": 100,
+        },
+        {
+          "name": "SQUARE",
+          "value": 200,
+        },
+        {
+          "name": "TRIANGLE",
+          "value": 300,
         },
       ],
     },
   },
   "classes": {
+    "CPulseCursorFuncs": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Library for interacting with pulse cursors.",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_WaitForCursorsWithTagBase::CursorState_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CPulseTestFuncs_LibraryA": {
       "metadata": [
         {
@@ -349,6 +448,18 @@
         {
           "name": "MPropertyDescription",
           "value": "Library for interacting with a few global test values.",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "FakeEntity_tAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
         },
       ],
       "fields": [
@@ -382,6 +493,15 @@
       ],
     },
     "CPulse_Variable": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulse_Constant": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -527,6 +647,15 @@
       "fields": [
       ],
     },
+    "PulseRuntimeConstantIndex_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "PulseRegisterMap_t": {
       "metadata": [
         {
@@ -555,6 +684,33 @@
       ],
     },
     "PulseRuntimeEntrypointIndex_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "PulseGraphInstanceID_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "PulseCursorID_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "PulseCursorYieldToken_t": {
       "metadata": [
         {
           "name": "MIsBoxedIntegerType",
@@ -912,25 +1068,6 @@
       "fields": [
       ],
     },
-    "CPulseCell_Outflow_SimultaneousParallel": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MCellForDomain",
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CPulseCell_Outflow_TestRandomYesNo": {
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
@@ -1050,7 +1187,7 @@
       ],
     },
     "CPulseCell_Step_CallExternalMethod": {
-      "parent": "CPulseCell_BaseFlow",
+      "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -1068,6 +1205,34 @@
       "fields": [
       ],
     },
+    "CPulseCell_Timeline": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Timeline::TimelineEvent_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "PulseTestEHandle_t": {
       "metadata": [
         {
@@ -1079,18 +1244,6 @@
     },
     "FakeEntity_t": {
       "metadata": [
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseLibraryBindings",
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-        },
       ],
       "fields": [
       ],
@@ -1234,6 +1387,31 @@
       "fields": [
       ],
     },
+    "CPulseCell_TestWaitWithCursorState": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_TestWaitWithCursorState::CursorState_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CTestDomainDerived_Cursor": {
       "parent": "CPulseExecCursor",
       "metadata": [
@@ -1345,6 +1523,70 @@
         },
         {
           "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_WaitForCursorsWithTagBase": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_WaitForCursorsWithTag": {
+      "parent": "CPulseCell_WaitForCursorsWithTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Wait For Cursors With Tag",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Causes each execution cursor to wait for the completion of cursors with a given tag. Use this to manage exclusive zones with remote control.",
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_CursorQueue": {
+      "parent": "CPulseCell_WaitForCursorsWithTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Cursor Queue",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete.",
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
         },
       ],
       "fields": [

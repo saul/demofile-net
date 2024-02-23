@@ -21,6 +21,7 @@ enum EBaseUserMessages {
 	UM_SayTextChannel = 119;
 	UM_Shake = 120;
 	UM_ShakeDir = 121;
+	UM_WaterShake = 122;
 	UM_TextMsg = 124;
 	UM_ScreenTilt = 125;
 	UM_VoiceMask = 128;
@@ -163,6 +164,13 @@ message CUserMessageShake {
 message CUserMessageShakeDir {
 	optional .CUserMessageShake shake = 1;
 	optional .CMsgVector direction = 2;
+}
+
+message CUserMessageWaterShake {
+	optional uint32 command = 1;
+	optional float amplitude = 2;
+	optional float frequency = 3;
+	optional float duration = 4;
 }
 
 message CUserMessageScreenTilt {
@@ -336,6 +344,8 @@ message CUserMsg_ParticleManager {
 		optional bool apply_voice_ban_rules = 5;
 		optional int32 team_behavior = 6;
 		optional string control_point_configuration = 7;
+		optional bool cluster = 8;
+		optional float endcap_time = 9;
 	}
 
 	message DestroyParticle {
@@ -636,6 +646,13 @@ message CUserMessage_DllStatus {
 		optional string string_value = 4;
 	}
 
+	message CModule {
+		optional uint64 base_addr = 1;
+		optional string name = 2;
+		optional uint32 size = 3;
+		optional uint32 timestamp = 4;
+	}
+
 	optional string file_report = 1;
 	optional string command_line = 2;
 	optional uint32 total_files = 3;
@@ -643,6 +660,7 @@ message CUserMessage_DllStatus {
 	optional int32 osversion = 5;
 	optional uint64 client_time = 6;
 	repeated .CUserMessage_DllStatus.CVDiagnostic diagnostics = 7;
+	repeated .CUserMessage_DllStatus.CModule modules = 8;
 }
 
 message CUserMessageRequestInventory {
@@ -677,6 +695,7 @@ message CUserMessage_Inventory_Response {
 	optional int32 inv_type = 11;
 	optional int32 build_version = 12;
 	optional int32 instance = 13;
+	optional int64 start_time = 15;
 }
 
 message CUserMessageRequestDiagnostic {
@@ -690,6 +709,10 @@ message CUserMessageRequestDiagnostic {
 		optional int64 range = 7;
 		optional int64 extent = 8;
 		optional int64 detail = 9;
+		optional string name = 10;
+		optional string alias = 11;
+		optional bytes vardetail = 12;
+		optional int32 context = 13;
 	}
 
 	repeated .CUserMessageRequestDiagnostic.Diagnostic diagnostics = 1;
@@ -701,15 +724,25 @@ message CUserMessage_Diagnostic_Response {
 		optional int64 offset = 2;
 		optional int32 param = 3;
 		optional int32 length = 4;
-		repeated bytes detail = 5;
+		optional bytes detail = 5;
 		optional int64 base = 6;
 		optional int64 range = 7;
 		optional int32 type = 8;
+		optional string name = 10;
+		optional string alias = 11;
+		optional bytes backup = 12;
+		optional int32 context = 13;
+		optional int64 control = 14;
+		optional int64 augment = 15;
+		optional int64 placebo = 16;
 	}
 
 	repeated .CUserMessage_Diagnostic_Response.Diagnostic diagnostics = 1;
 	optional int32 build_version = 2;
 	optional int32 instance = 3;
+	optional int64 start_time = 4;
+	optional int32 osversion = 5;
+	optional int32 platform = 6;
 }
 
 message CUserMessage_ExtraUserData {

@@ -262,6 +262,15 @@
       "fields": [
       ],
     },
+    "FeSimdRodConstraintAnim_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "FeAnimStrayRadius_t": {
       "metadata": [
         {
@@ -581,15 +590,6 @@
       ],
     },
     "Dop26_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnSphere_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",

@@ -8,11 +8,19 @@ public static class GlobalUtil
 
     public static MemoryStream GotvCompetitiveProtocol13963 => new(File.ReadAllBytes(Path.Combine(DemoBase, "navi-javelins-vs-9-pandas-fearless-m1-mirage.dem")));
 
+    public static MemoryStream GotvCompetitiveProtocol13992 => new(File.ReadAllBytes(Path.Combine(DemoBase, "virtus-pro-vs-natus-vincere-m1-ancient.dem")));
+
     public static MemoryStream MatchmakingProtocol13968 => new(File.ReadAllBytes(Path.Combine(DemoBase, "93n781.dem")));
 
     public static MemoryStream GotvProtocol13978 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13978.dem")));
 
     public static MemoryStream GotvProtocol13980 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13980.dem")));
+
+    public static MemoryStream GotvProtocol13987 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13987.dem")));
+
+    public static MemoryStream GotvProtocol13990ArmsRace => new(File.ReadAllBytes(Path.Combine(DemoBase, "13990_armsrace.dem")));
+
+    public static MemoryStream GotvProtocol13990Deathmatch => new(File.ReadAllBytes(Path.Combine(DemoBase, "13990_dm.dem")));
 
     public static byte[] ToBitStream(string input)
     {

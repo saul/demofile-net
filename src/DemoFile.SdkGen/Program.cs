@@ -64,6 +64,7 @@ internal static class Program
 
         // Generate graph of classes -> fields
         var graph = new AdjacencyGraph<string, Edge<string>>();
+        var parentToChildGraph = new AdjacencyGraph<string, Edge<string>>();
 
         // Types used as pointers
         var pointeeTypes = new HashSet<string>();
@@ -71,7 +72,10 @@ internal static class Program
         foreach (var (className, schemaClass) in allClasses)
         {
             if (schemaClass.Parent != null)
+            {
                 graph.AddVerticesAndEdge(new Edge<string>(className, schemaClass.Parent));
+                parentToChildGraph.AddVerticesAndEdge(new Edge<string>(schemaClass.Parent, className));
+            }
 
             foreach (var field in schemaClass.Fields)
             {
@@ -115,7 +119,13 @@ internal static class Program
             }
         }
 
-        // Do a search from NetworkClasses.Names
+        // Build a list of all classes that implement CEntityInstance
+        var entityClasses = new HashSet<string>();
+        var networkClassSearch = new BreadthFirstSearchAlgorithm<string, Edge<string>>(parentToChildGraph);
+        networkClassSearch.FinishVertex += node => { entityClasses.Add(node); };
+        networkClassSearch.Compute("CEntityInstance");
+
+        // Do a search from all entity classes
         var visited = new HashSet<string>();
         var search = new BreadthFirstSearchAlgorithm<string, Edge<string>>(graph);
         search.FinishVertex += node => { visited.Add(node); };
@@ -155,25 +165,22 @@ internal static class Program
         var visitedEntityClasses = new HashSet<string>();
         foreach (var (className, schemaClass) in allClasses)
         {
-            if (visited.Contains(className))
-            {
-                var isPointeeType = pointeeTypes.Contains(className);
+            if (!visited.Contains(className))
+                continue;
 
-                var isEntityClass =
-                    networkClasses.Contains(className)
-                    || networkClasses.Contains(schemaClass.Parent ?? "");
+            var isPointeeType = pointeeTypes.Contains(className);
+            var isEntityClass = entityClasses.Contains(className);
 
-                WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass, allClasses);
+            WriteClass(builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass, allClasses);
 
-                visitedClassNames.Add(className);
-                if (isEntityClass)
-                    visitedEntityClasses.Add(className);
-            }
+            visitedClassNames.Add(className);
+            if (isEntityClass)
+                visitedEntityClasses.Add(className);
         }
 
         WriteSendNodeDecoderLookup(builder, visitedClassNames);
 
-        WriteEntityFactoriesLookup(networkClasses, builder);
+        WriteEntityFactoriesLookup(visitedEntityClasses, builder);
 
         WriteDecoderSetPartial(builder, visitedClassNames);
 
@@ -233,7 +240,7 @@ internal static class Program
         builder.AppendLine($"public partial struct EntityEvents");
         builder.AppendLine($"{{");
 
-        foreach (var entityClass in entityClassNames)
+        foreach (var entityClass in entityClassNames.Order())
         {
             builder.AppendLine($"    public Events<{entityClass}> {entityClass};");
         }
@@ -243,7 +250,7 @@ internal static class Program
         return builder.ToString();
     }
 
-    private static void WriteEntityFactoriesLookup(IReadOnlyList<string> networkClasses, StringBuilder builder)
+    private static void WriteEntityFactoriesLookup(IEnumerable<string> networkClasses, StringBuilder builder)
     {
         builder.AppendLine();
         builder.AppendLine("internal static class EntityFactories");
@@ -251,7 +258,7 @@ internal static class Program
         builder.AppendLine("    public static readonly IReadOnlyDictionary<string, EntityFactory> All = new Dictionary<string, EntityFactory>");
         builder.AppendLine("    {");
 
-        foreach (var className in networkClasses)
+        foreach (var className in networkClasses.Order())
         {
             builder.AppendLine($"        {{\"{className}\", (context, decoder) => new {className}(context, decoder)}},");
         }
@@ -262,7 +269,7 @@ internal static class Program
 
     private static void WriteSendNodeDecoderLookup(
         StringBuilder builder,
-        IReadOnlySet<string> classNames)
+        IEnumerable<string> classNames)
     {
         builder.AppendLine();
         builder.AppendLine("internal static class SendNodeDecoders");
@@ -270,7 +277,9 @@ internal static class Program
         builder.AppendLine("    public static SendNodeDecoderFactory<T> GetFactory<T>()");
         builder.AppendLine("    {");
 
-        foreach (var className in classNames)
+        var hardcodedClasses = BackCompat.HardcodedChildClasses.Values.SelectMany(x => x);
+
+        foreach (var className in classNames.Concat(hardcodedClasses).Order())
         {
             var schemaType = SchemaFieldType.FromDeclaredClass(className);
 
@@ -334,6 +343,7 @@ internal static class Program
         bool isEntityClass,
         IReadOnlyDictionary<string, SchemaClass> classMap)
     {
+        var isCEntityInstance = schemaClassName == "CEntityInstance";
         var classType = SchemaFieldType.FromDeclaredClass(schemaClassName);
         var classNameCs = classType.CsTypeName;
 
@@ -355,7 +365,7 @@ internal static class Program
 
         // All entity classes eventually derive from CEntityInstance,
         // which is the root networkable class.
-        if (isEntityClass)
+        if (isEntityClass && !isCEntityInstance)
         {
             builder.AppendLine($"    internal {classNameCs}(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {{}}");
             builder.AppendLine();
@@ -376,7 +386,11 @@ internal static class Program
 
             if (parentToChildMap.TryGetValue(schemaClassName, out var directChildren))
             {
-                var childClasses = new Queue<string>(directChildren.Select(x => x.Key));
+                var hardcodedChildren = BackCompat.HardcodedChildClasses.GetValueOrDefault(
+                    schemaClassName,
+                    ArraySegment<string>.Empty);
+
+                var childClasses = new Queue<string>(directChildren.Select(x => x.Key).Concat(hardcodedChildren));
 
                 while (childClasses.Count > 0)
                 {
@@ -605,7 +619,7 @@ internal static class Program
 
                     if (isPolymorphic)
                     {
-                        builder.AppendLine($"                    var childClassId = (int) buffer.ReadUBitVar();");
+                        builder.AppendLine($"                    var childClassId = ((int) buffer.ReadUBitVar()) - 1;");
                         builder.AppendLine($"                    innerDecoder = {inner.Name}.CreateDowncastDecoder(field.PolymorphicTypes[childClassId], decoderSet, out var factory);");
                         builder.AppendLine($"                    if (!isSet)");
                         builder.AppendLine($"                    {{");
@@ -698,8 +712,10 @@ internal static class Program
         {
             foreach (var eventName in new[] { "Create", "Delete", "PreUpdate", "PostUpdate" })
             {
+                var accessor = isCEntityInstance ? "virtual" : "override";
+
                 builder.AppendLine($"");
-                builder.AppendLine($"    internal override void Fire{eventName}Event()");
+                builder.AppendLine($"    internal {accessor} void Fire{eventName}Event()");
                 builder.AppendLine($"    {{");
                 builder.AppendLine($"        Demo.EntityEvents.{classNameCs}.{eventName}?.Invoke(this);");
                 if (parentType != null)

@@ -106,6 +106,23 @@
         },
       ],
     },
+    "SequenceFinishNotifyState_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "eDoNotNotify",
+          "value": 0,
+        },
+        {
+          "name": "eNotifyWhenFinished",
+          "value": 1,
+        },
+        {
+          "name": "eNotifyTriggered",
+          "value": 2,
+        },
+      ],
+    },
     "PointTemplateOwnerSpawnGroupType_t": {
       "align": 4,
       "items": [
@@ -318,92 +335,108 @@
           "value": 16,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_VALUE",
+          "name": "AE_BODYGROUP_SET_VALUE",
           "value": 17,
         },
         {
-          "name": "AE_SV_BODYGROUP_SET_VALUE",
+          "name": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
           "value": 18,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
+          "name": "AE_WEAPON_PERFORM_ATTACK",
           "value": 19,
         },
         {
-          "name": "AE_WEAPON_PERFORM_ATTACK",
+          "name": "AE_FIRE_INPUT",
           "value": 20,
         },
         {
-          "name": "AE_FIRE_INPUT",
+          "name": "AE_CL_CLOTH_ATTR",
           "value": 21,
         },
         {
-          "name": "AE_CL_CLOTH_ATTR",
+          "name": "AE_CL_CLOTH_GROUND_OFFSET",
           "value": 22,
         },
         {
-          "name": "AE_CL_CLOTH_GROUND_OFFSET",
+          "name": "AE_CL_CLOTH_STIFFEN",
           "value": 23,
         },
         {
-          "name": "AE_CL_CLOTH_STIFFEN",
+          "name": "AE_CL_CLOTH_EFFECT",
           "value": 24,
         },
         {
-          "name": "AE_CL_CLOTH_EFFECT",
+          "name": "AE_CL_CREATE_ANIM_SCOPE_PROP",
           "value": 25,
         },
         {
-          "name": "AE_CL_CREATE_ANIM_SCOPE_PROP",
+          "name": "AE_PULSE_GRAPH",
           "value": 26,
         },
         {
-          "name": "AE_CL_WEAPON_TRANSITION_INTO_HAND",
+          "name": "AE_PULSE_GRAPH_LOOKAT",
           "value": 27,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_TO_CLIP",
+          "name": "AE_PULSE_GRAPH_AIMAT",
           "value": 28,
         },
         {
-          "name": "AE_CL_BODYGROUP_SET_TO_NEXTCLIP",
+          "name": "AE_PULSE_GRAPH_IKLOCKLEFTARM",
           "value": 29,
         },
         {
-          "name": "AE_SV_SHOW_SILENCER",
+          "name": "AE_PULSE_GRAPH_IKLOCKRIGHTARM",
           "value": 30,
         },
         {
-          "name": "AE_SV_ATTACH_SILENCER_COMPLETE",
+          "name": "AE_CL_WEAPON_TRANSITION_INTO_HAND",
           "value": 31,
         },
         {
-          "name": "AE_SV_HIDE_SILENCER",
+          "name": "AE_CL_BODYGROUP_SET_TO_CLIP",
           "value": 32,
         },
         {
-          "name": "AE_SV_DETACH_SILENCER_COMPLETE",
+          "name": "AE_CL_BODYGROUP_SET_TO_NEXTCLIP",
           "value": 33,
         },
         {
-          "name": "AE_CL_EJECT_MAG",
+          "name": "AE_SV_SHOW_SILENCER",
           "value": 34,
         },
         {
-          "name": "AE_WPN_COMPLETE_RELOAD",
+          "name": "AE_SV_ATTACH_SILENCER_COMPLETE",
           "value": 35,
         },
         {
-          "name": "AE_WPN_HEALTHSHOT_INJECT",
+          "name": "AE_SV_HIDE_SILENCER",
           "value": 36,
         },
         {
-          "name": "AE_CL_C4_SCREEN_TEXT",
+          "name": "AE_SV_DETACH_SILENCER_COMPLETE",
           "value": 37,
         },
         {
-          "name": "AE_GRENADE_THROW_COMPLETE",
+          "name": "AE_CL_EJECT_MAG",
           "value": 38,
+        },
+        {
+          "name": "AE_WPN_COMPLETE_RELOAD",
+          "value": 39,
+        },
+        {
+          "name": "AE_WPN_HEALTHSHOT_INJECT",
+          "value": 40,
+        },
+        {
+          "name": "AE_CL_C4_SCREEN_TEXT",
+          "value": 41,
+        },
+        {
+          "name": "AE_GRENADE_THROW_COMPLETE",
+          "value": 42,
         },
       ],
     },
@@ -590,59 +623,59 @@
           "value": 3,
         },
         {
-          "name": "WEAPON_SOUND_RELOAD",
+          "name": "WEAPON_SOUND_MELEE_MISS",
           "value": 4,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_MISS",
+          "name": "WEAPON_SOUND_MELEE_HIT",
           "value": 5,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT",
+          "name": "WEAPON_SOUND_MELEE_HIT_WORLD",
           "value": 6,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT_WORLD",
+          "name": "WEAPON_SOUND_MELEE_HIT_PLAYER",
           "value": 7,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT_PLAYER",
+          "name": "WEAPON_SOUND_MELEE_HIT_NPC",
           "value": 8,
         },
         {
-          "name": "WEAPON_SOUND_MELEE_HIT_NPC",
+          "name": "WEAPON_SOUND_SPECIAL1",
           "value": 9,
         },
         {
-          "name": "WEAPON_SOUND_SPECIAL1",
+          "name": "WEAPON_SOUND_SPECIAL2",
           "value": 10,
         },
         {
-          "name": "WEAPON_SOUND_SPECIAL2",
+          "name": "WEAPON_SOUND_SPECIAL3",
           "value": 11,
         },
         {
-          "name": "WEAPON_SOUND_SPECIAL3",
+          "name": "WEAPON_SOUND_NEARLYEMPTY",
           "value": 12,
         },
         {
-          "name": "WEAPON_SOUND_NEARLYEMPTY",
+          "name": "WEAPON_SOUND_IMPACT",
           "value": 13,
         },
         {
-          "name": "WEAPON_SOUND_IMPACT",
+          "name": "WEAPON_SOUND_REFLECT",
           "value": 14,
         },
         {
-          "name": "WEAPON_SOUND_REFLECT",
+          "name": "WEAPON_SOUND_SECONDARY_IMPACT",
           "value": 15,
         },
         {
-          "name": "WEAPON_SOUND_SECONDARY_IMPACT",
+          "name": "WEAPON_SOUND_SECONDARY_REFLECT",
           "value": 16,
         },
         {
-          "name": "WEAPON_SOUND_SECONDARY_REFLECT",
+          "name": "WEAPON_SOUND_RELOAD",
           "value": 17,
         },
         {
@@ -1361,12 +1394,8 @@
           "value": 524288,
         },
         {
-          "name": "OVERLAY_NPC_TRIANGULATE_BIT",
+          "name": "OVERLAY_VISIBILITY_TRACES_BIT",
           "value": 1048576,
-        },
-        {
-          "name": "OVERLAY_NPC_ZAP_BIT",
-          "value": 2097152,
         },
         {
           "name": "OVERLAY_NPC_ENEMIES_BIT",
@@ -1429,16 +1458,16 @@
           "value": 68719476736,
         },
         {
-          "name": "OVERLAY_NPC_NEAREST_NODE_BIT",
-          "value": 137438953472,
-        },
-        {
           "name": "OVERLAY_ACTORNAME_BIT",
           "value": 274877906944,
         },
         {
           "name": "OVERLAY_NPC_CONDITIONS_TEXT_BIT",
           "value": 549755813888,
+        },
+        {
+          "name": "OVERLAY_NPC_ABILITY_RANGE_DEBUG_BIT",
+          "value": 1099511627776,
         },
       ],
     },
@@ -1458,44 +1487,44 @@
           "value": 2,
         },
         {
-          "name": "MOVETYPE_STEP",
+          "name": "MOVETYPE_FLY",
           "value": 3,
         },
         {
-          "name": "MOVETYPE_FLY",
+          "name": "MOVETYPE_FLYGRAVITY",
           "value": 4,
         },
         {
-          "name": "MOVETYPE_FLYGRAVITY",
+          "name": "MOVETYPE_VPHYSICS",
           "value": 5,
         },
         {
-          "name": "MOVETYPE_VPHYSICS",
+          "name": "MOVETYPE_PUSH",
           "value": 6,
         },
         {
-          "name": "MOVETYPE_PUSH",
+          "name": "MOVETYPE_NOCLIP",
           "value": 7,
         },
         {
-          "name": "MOVETYPE_NOCLIP",
+          "name": "MOVETYPE_OBSERVER",
           "value": 8,
         },
         {
-          "name": "MOVETYPE_OBSERVER",
+          "name": "MOVETYPE_LADDER",
           "value": 9,
         },
         {
-          "name": "MOVETYPE_LADDER",
+          "name": "MOVETYPE_CUSTOM",
           "value": 10,
         },
         {
-          "name": "MOVETYPE_CUSTOM",
+          "name": "MOVETYPE_LAST",
           "value": 11,
         },
         {
-          "name": "MOVETYPE_LAST",
-          "value": 12,
+          "name": "MOVETYPE_INVALID",
+          "value": 11,
         },
         {
           "name": "MOVETYPE_MAX_BITS",
@@ -2151,6 +2180,48 @@
         },
       ],
     },
+    "NPCFollowFormation_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Default",
+          "value": 18446744073709551615,
+        },
+        {
+          "name": "CloseCircle",
+          "value": 0,
+        },
+        {
+          "name": "WideCircle",
+          "value": 1,
+        },
+        {
+          "name": "MediumCircle",
+          "value": 5,
+        },
+        {
+          "name": "Sidekick",
+          "value": 6,
+        },
+      ],
+    },
+    "NPCLookType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Chest",
+          "value": 0,
+        },
+        {
+          "name": "Head",
+          "value": 1,
+        },
+        {
+          "name": "Eyes",
+          "value": 2,
+        },
+      ],
+    },
     "SoundEventStartType_t": {
       "align": 4,
       "items": [
@@ -2586,12 +2657,16 @@
           "value": 5,
         },
         {
-          "name": "USE_COLLISION_BOUNDS_NEVER_VPHYSICS",
+          "name": "USE_ROTATION_EXPANDED_ORIENTED_BOUNDS",
           "value": 6,
         },
         {
-          "name": "USE_ROTATION_EXPANDED_SEQUENCE_BOUNDS",
+          "name": "USE_COLLISION_BOUNDS_NEVER_VPHYSICS",
           "value": 7,
+        },
+        {
+          "name": "USE_ROTATION_EXPANDED_SEQUENCE_BOUNDS",
+          "value": 8,
         },
         {
           "name": "SURROUNDING_TYPE_BIT_COUNT",
@@ -2785,6 +2860,23 @@
         {
           "name": "PlayerReserved",
           "value": 5,
+        },
+      ],
+    },
+    "WeaponSwitchReason_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "eDrawn",
+          "value": 0,
+        },
+        {
+          "name": "eEquipped",
+          "value": 1,
+        },
+        {
+          "name": "eUserInitiatedSwitchToLast",
+          "value": 2,
         },
       ],
     },
@@ -3677,6 +3769,10 @@
       "align": 4,
       "items": [
         {
+          "name": "LOADOUT_SLOT_PROMOTED",
+          "value": 18446744073709551614,
+        },
+        {
           "name": "LOADOUT_SLOT_INVALID",
           "value": 18446744073709551615,
         },
@@ -4004,6 +4100,173 @@
         {
           "name": "KILLTYPE_COUNT",
           "value": 7,
+        },
+      ],
+    },
+    "PreviewCharacterMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "DIORAMA",
+          "value": 0,
+        },
+        {
+          "name": "MAIN_MENU",
+          "value": 1,
+        },
+        {
+          "name": "BUY_MENU",
+          "value": 2,
+        },
+        {
+          "name": "TEAM_SELECT",
+          "value": 3,
+        },
+        {
+          "name": "END_OF_MATCH",
+          "value": 4,
+        },
+        {
+          "name": "INVENTORY_INSPECT",
+          "value": 5,
+        },
+        {
+          "name": "WALKING",
+          "value": 6,
+        },
+        {
+          "name": "TEAM_INTRO",
+          "value": 7,
+        },
+        {
+          "name": "WINGMAN_INTRO",
+          "value": 8,
+        },
+      ],
+    },
+    "PreviewWeaponState": {
+      "align": 4,
+      "items": [
+        {
+          "name": "DROPPED",
+          "value": 0,
+        },
+        {
+          "name": "HOLSTERED",
+          "value": 1,
+        },
+        {
+          "name": "DEPLOYED",
+          "value": 2,
+        },
+        {
+          "name": "PLANTED",
+          "value": 3,
+        },
+        {
+          "name": "INSPECT",
+          "value": 4,
+        },
+        {
+          "name": "ICON",
+          "value": 5,
+        },
+      ],
+    },
+    "PreviewEOMCelebration": {
+      "align": 4,
+      "items": [
+        {
+          "name": "WALKUP",
+          "value": 0,
+        },
+        {
+          "name": "PUNCHING",
+          "value": 1,
+        },
+        {
+          "name": "SWAGGER",
+          "value": 2,
+        },
+        {
+          "name": "DROPDOWN",
+          "value": 3,
+        },
+        {
+          "name": "STRETCH",
+          "value": 4,
+        },
+        {
+          "name": "SWAT_FEMALE",
+          "value": 5,
+        },
+        {
+          "name": "MASK_F",
+          "value": 6,
+        },
+        {
+          "name": "GUERILLA",
+          "value": 7,
+        },
+        {
+          "name": "GUERILLA02",
+          "value": 8,
+        },
+        {
+          "name": "GENDARMERIE",
+          "value": 9,
+        },
+        {
+          "name": "SCUBA_FEMALE",
+          "value": 10,
+        },
+        {
+          "name": "SCUBA_MALE",
+          "value": 11,
+        },
+        {
+          "name": "AVA_DEFEAT",
+          "value": 12,
+        },
+        {
+          "name": "GENDARMERIE_DEFEAT",
+          "value": 13,
+        },
+        {
+          "name": "MAE_DEFEAT",
+          "value": 14,
+        },
+        {
+          "name": "RICKSAW_DEFEAT",
+          "value": 15,
+        },
+        {
+          "name": "SCUBA_FEMALE_DEFEAT",
+          "value": 16,
+        },
+        {
+          "name": "SCUBA_MALE_DEFEAT",
+          "value": 17,
+        },
+        {
+          "name": "CRASSWATER_DEFEAT",
+          "value": 18,
+        },
+        {
+          "name": "DARRYL_DEFEAT",
+          "value": 19,
+        },
+        {
+          "name": "DOCTOR_DEFEAT",
+          "value": 20,
+        },
+        {
+          "name": "MUHLIK_DEFEAT",
+          "value": 21,
+        },
+        {
+          "name": "VYPA_DEFEAT",
+          "value": 22,
         },
       ],
     },
@@ -4451,6 +4714,12 @@
       "fields": [
       ],
     },
+    "NavGravity_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CNavVolume": {
       "metadata": [
       ],
@@ -4851,15 +5120,6 @@
       "fields": [
       ],
     },
-    "AnimationUpdateListHandle_t": {
-      "metadata": [
-        {
-          "name": "MIsBoxedIntegerType",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CAnimEventListenerBase": {
       "metadata": [
       ],
@@ -4875,12 +5135,6 @@
     },
     "CAnimEventQueueListener": {
       "parent": "CAnimEventListenerBase",
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "CAnimGraphTagRef": {
       "metadata": [
       ],
       "fields": [
@@ -4934,6 +5188,18 @@
       "fields": [
       ],
     },
+    "CBasePlayerControllerAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "ViewAngleServerChange_t": {
       "metadata": [
       ],
@@ -4982,6 +5248,18 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CDynamicPropAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
         },
       ],
       "fields": [
@@ -6755,6 +7033,12 @@
         },
       ],
     },
+    "CRopeOverlapHit": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CBodyComponentSkeletonInstance": {
       "parent": "CBodyComponent",
       "metadata": [
@@ -6907,6 +7191,12 @@
         },
       ],
     },
+    "SequenceHistory_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "ISkeletonAnimationController": {
       "metadata": [
       ],
@@ -7015,10 +7305,6 @@
               "name": "MNetworkUserGroup",
               "value": "m_flCycle",
             },
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "sequenceOpCycleChanged",
-            },
           ],
         },
         {
@@ -7077,9 +7363,6 @@
               "value": "animationgraph",
             },
             {
-              "name": "MNetworkSendProxyRecipientsFilter",
-            },
-            {
               "name": "MNetworkChangeCallback",
               "value": "OnNetBoolVarChanged",
             },
@@ -7104,9 +7387,6 @@
             {
               "name": "MNetworkUserGroup",
               "value": "animationgraph",
-            },
-            {
-              "name": "MNetworkSendProxyRecipientsFilter",
             },
             {
               "name": "MNetworkChangeCallback",
@@ -7135,9 +7415,6 @@
               "value": "animationgraph",
             },
             {
-              "name": "MNetworkSendProxyRecipientsFilter",
-            },
-            {
               "name": "MNetworkChangeCallback",
               "value": "OnNetUInt16VarChanged",
             },
@@ -7162,9 +7439,6 @@
             {
               "name": "MNetworkUserGroup",
               "value": "animationgraph",
-            },
-            {
-              "name": "MNetworkSendProxyRecipientsFilter",
             },
             {
               "name": "MNetworkChangeCallback",
@@ -7193,9 +7467,6 @@
               "value": "animationgraph",
             },
             {
-              "name": "MNetworkSendProxyRecipientsFilter",
-            },
-            {
               "name": "MNetworkChangeCallback",
               "value": "OnNetUInt32VarChanged",
             },
@@ -7222,9 +7493,6 @@
               "value": "animationgraph",
             },
             {
-              "name": "MNetworkSendProxyRecipientsFilter",
-            },
-            {
               "name": "MNetworkChangeCallback",
               "value": "OnNetUInt64VarChanged",
             },
@@ -7249,9 +7517,6 @@
             {
               "name": "MNetworkUserGroup",
               "value": "animationgraph",
-            },
-            {
-              "name": "MNetworkSendProxyRecipientsFilter",
             },
             {
               "name": "MNetworkChangeCallback",
@@ -7281,9 +7546,6 @@
               "value": "animationgraph",
             },
             {
-              "name": "MNetworkSendProxyRecipientsFilter",
-            },
-            {
               "name": "MNetworkChangeCallback",
               "value": "OnNetVectorVarChanged",
             },
@@ -7311,15 +7573,39 @@
               "value": "animationgraph",
             },
             {
-              "name": "MNetworkSendProxyRecipientsFilter",
-            },
-            {
               "name": "MNetworkChangeCallback",
               "value": "OnNetQuaternionVarChanged",
             },
             {
               "name": "MNetworkAlias",
               "value": "m_PredQuaternionVariables",
+            },
+          ],
+        },
+        {
+          "name": "m_PredNetGlobalSymbolVariables",
+          "type": {
+            "name": "CNetworkUtlVectorBase< CGlobalSymbol >",
+            "category": 4,
+            "atomic": 2,
+            "inner": {
+              "name": "CGlobalSymbol",
+              "category": 4,
+              "atomic": 0,
+            },
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "animationgraph",
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetGlobalSymbolVarChanged",
+            },
+            {
+              "name": "MNetworkAlias",
+              "value": "m_PredGlobalSymbolVariables",
             },
           ],
         },
@@ -7587,6 +7873,36 @@
           ],
         },
         {
+          "name": "m_OwnerOnlyPredNetGlobalSymbolVariables",
+          "type": {
+            "name": "CNetworkUtlVectorBase< CGlobalSymbol >",
+            "category": 4,
+            "atomic": 2,
+            "inner": {
+              "name": "CGlobalSymbol",
+              "category": 4,
+              "atomic": 0,
+            },
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "animationgraph",
+            },
+            {
+              "name": "MNetworkSendProxyRecipientsFilter",
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetOOGlobalSymbolVarChanged",
+            },
+            {
+              "name": "MNetworkAlias",
+              "value": "m_OwnerOnlyPredNetGlobalSymbolVariables",
+            },
+          ],
+        },
+        {
           "name": "m_nBoolVariablesCount",
           "type": {
             "name": "int32",
@@ -7635,6 +7951,10 @@
             {
               "name": "MNetworkUserGroup",
               "value": "animationgraph",
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnTeleportTimeChanged",
             },
           ],
         },
@@ -7824,27 +8144,8 @@
     "CBaseAnimGraphController": {
       "parent": "CSkeletonAnimationController",
       "metadata": [
-        {
-          "name": "MNetworkOverride",
-          "value": {
-            "type": "m_baseLayer.m_hSequence",
-          },
-        },
       ],
       "fields": [
-        {
-          "name": "m_baseLayer",
-          "type": {
-            "name": "CNetworkedSequenceOperation",
-            "category": 5,
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "baseAnimBaseLayerChangedCompat",
-            },
-          ],
-        },
         {
           "name": "m_animGraphNetworkedVars",
           "type": {
@@ -7852,6 +8153,78 @@
             "category": 5,
           },
           "metadata": [
+          ],
+        },
+        {
+          "name": "m_hSequence",
+          "type": {
+            "name": "HSequence",
+            "category": 5,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkSerializer",
+              "value": "minusone",
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetworkedSequenceChanged",
+            },
+            {
+              "name": "MNetworkPriority",
+              "value": 32,
+            },
+          ],
+        },
+        {
+          "name": "m_flSeqStartTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetworkedAnimationChanged",
+            },
+            {
+              "name": "MNetworkPriority",
+              "value": 32,
+            },
+          ],
+        },
+        {
+          "name": "m_flSeqFixedCycle",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetworkedAnimationChanged",
+            },
+            {
+              "name": "MNetworkPriority",
+              "value": 32,
+            },
+          ],
+        },
+        {
+          "name": "m_nAnimLoopMode",
+          "type": {
+            "name": "AnimLoopMode_t",
+            "category": 6,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetworkedAnimationChanged",
+            },
+            {
+              "name": "MNetworkPriority",
+              "value": 32,
+            },
           ],
         },
         {
@@ -7884,60 +8257,8 @@
             },
             {
               "name": "MNetworkChangeCallback",
-              "value": "playbackRateChangedCompat",
+              "value": "OnNetworkedAnimationChanged",
             },
-          ],
-        },
-        {
-          "name": "m_bClientSideAnimation",
-          "type": {
-            "name": "bool",
-            "category": 0,
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "clientSideAnimationChangedCompat",
-            },
-          ],
-        },
-        {
-          "name": "m_nNewSequenceParity",
-          "type": {
-            "name": "int32",
-            "category": 0,
-          },
-          "metadata": [
-            {
-              "name": "MNetworkPriority",
-              "value": 32,
-            },
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "clientSideAnimCycleResetCompat",
-            },
-          ],
-        },
-        {
-          "name": "m_nResetEventsParity",
-          "type": {
-            "name": "int32",
-            "category": 0,
-          },
-          "metadata": [
-            {
-              "name": "MNetworkPriority",
-              "value": 32,
-            },
-          ],
-        },
-        {
-          "name": "m_nAnimLoopMode",
-          "type": {
-            "name": "AnimLoopMode_t",
-            "category": 6,
-          },
-          "metadata": [
           ],
         },
       ],
@@ -8014,6 +8335,18 @@
       "fields": [
       ],
     },
+    "CBaseEntityAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CCommentarySystem": {
       "metadata": [
       ],
@@ -8078,7 +8411,32 @@
       "fields": [
       ],
     },
-    "CPulseGraphInstance_ServerPointEntity": {
+    "CTakeDamageInfoAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseServerCursor": {
+      "parent": "CPulseExecCursor",
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPulseInternal_IsCursor",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseGraphInstance_ServerEntity": {
       "parent": "CBasePulseGraphInstance",
       "metadata": [
         {
@@ -8089,6 +8447,65 @@
         },
         {
           "name": "MPulseDomainOptInFeatureTag",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseGraphInstance_ServerPointEntity": {
+      "parent": "CPulseGraphInstance_ServerEntity",
+      "metadata": [
+        {
+          "name": "MPulseInstanceDomainInfo",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPulseDomainOptInFeatureTag",
+        },
+        {
+          "name": "MPulseDomainHiddenInTool",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseGraphComponentBase": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseGraphComponentPointServer": {
+      "parent": "CPulseGraphComponentBase",
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Value_FindEntByClassNameWithin": {
+      "parent": "CPulseCell_BaseValue",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Find Entity by Class Name Within Radius",
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Search for an entity by class name within the radius of a given entity. Can loop given a \"start\" entity that is used as a cursor.",
         },
       ],
       "fields": [
@@ -8121,7 +8538,7 @@
       "fields": [
       ],
     },
-    "CPulseCell_Step_SetAnimGraphParam": {
+    "CPulseCell_Step_FollowEntity": {
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
@@ -8141,25 +8558,6 @@
       ],
     },
     "CPulseCell_Step_EntFire": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MCellForDomain",
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CPulseCell_Outflow_PlayVCD": {
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
@@ -8255,6 +8653,94 @@
       "fields": [
       ],
     },
+    "CPulseCell_Outflow_PlaySceneBase": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_PlaySceneBase::CursorState_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_PlayVCD": {
+      "parent": "CPulseCell_Outflow_PlaySceneBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_PlaySequence": {
+      "parent": "CPulseCell_Outflow_PlaySceneBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "PulseScriptedSequenceData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_ScriptedSequence": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MCellForDomain",
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CPulseCell_Outflow_ScriptedSequence::CursorState_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
     "CTouchExpansionComponent": {
       "parent": "CEntityComponent",
       "metadata": [
@@ -8291,12 +8777,6 @@
       "parent": "CEntityInstance",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkExcludeByName",
           "value": "m_bClientSideRagdoll",
         },
@@ -8327,12 +8807,6 @@
         {
           "name": "MNetworkExcludeByName",
           "value": "m_nTakeDamageFlags",
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-        },
-        {
-          "name": "MPulseLibraryBindings",
         },
       ],
       "fields": [
@@ -8426,6 +8900,15 @@
           "type": {
             "name": "TakeDamageFlags_t",
             "category": 6,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bIsPlatform",
+          "type": {
+            "name": "bool",
+            "category": 0,
           },
           "metadata": [
           ],
@@ -8775,15 +9258,6 @@
           ],
         },
         {
-          "name": "m_bSimulatedEveryTick",
-          "type": {
-            "name": "bool",
-            "category": 0,
-          },
-          "metadata": [
-          ],
-        },
-        {
           "name": "m_bAnimatedEveryTick",
           "type": {
             "name": "bool",
@@ -8806,12 +9280,6 @@
     "CServerOnlyEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -8819,12 +9287,6 @@
     "CServerOnlyPointEntity": {
       "parent": "CServerOnlyEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -8832,12 +9294,6 @@
     "CLogicalEntity": {
       "parent": "CServerOnlyEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -8845,12 +9301,6 @@
     "CColorCorrection": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByUserGroup",
           "value": "Origin",
@@ -8966,12 +9416,6 @@
     "CEntityFlame": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -9003,12 +9447,6 @@
     "CBaseFilter": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9016,12 +9454,6 @@
     "CFilterMultiple": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9029,12 +9461,6 @@
     "CFilterProximity": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9042,12 +9468,6 @@
     "CFilterLOS": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9055,12 +9475,6 @@
     "CFilterClass": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9068,12 +9482,6 @@
     "CBaseFire": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -9117,12 +9525,6 @@
     "CFireSmoke": {
       "parent": "CBaseFire",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -9148,12 +9550,6 @@
     "CFishPool": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9161,12 +9557,6 @@
     "CInfoData": {
       "parent": "CServerOnlyEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9180,12 +9570,6 @@
     "CLogicBranch": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9193,12 +9577,6 @@
     "CLogicDistanceCheck": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9236,12 +9614,6 @@
     "CPointPrefab": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9249,12 +9621,6 @@
     "CSkyboxReference": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9551,12 +9917,6 @@
     "CEnvSoundscape": {
       "parent": "CServerOnlyEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9564,12 +9924,6 @@
     "CEnvSoundscapeProxy": {
       "parent": "CEnvSoundscape",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9577,12 +9931,6 @@
     "CEnvSoundscapeTriggerable": {
       "parent": "CEnvSoundscape",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -9871,6 +10219,10 @@
             "atomic": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnUpdateCapsule",
+            },
           ],
         },
         {
@@ -9881,6 +10233,10 @@
             "atomic": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnUpdateCapsule",
+            },
           ],
         },
         {
@@ -9890,6 +10246,10 @@
             "category": 0,
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnUpdateCapsule",
+            },
           ],
         },
       ],
@@ -10153,12 +10513,6 @@
     "CEnvDetailController": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -10333,12 +10687,6 @@
     "CInfoLadderDismount": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -10482,12 +10830,6 @@
     "CGameRulesProxy": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -10592,12 +10934,6 @@
           "metadata": [
           ],
         },
-      ],
-    },
-    "IVehicle": {
-      "metadata": [
-      ],
-      "fields": [
       ],
     },
     "CMultiplayRules": {
@@ -10809,12 +11145,6 @@
     "CSkyCamera": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -10836,6 +11166,12 @@
           "metadata": [
           ],
         },
+      ],
+    },
+    "sndopvarlatchdata_t": {
+      "metadata": [
+      ],
+      "fields": [
       ],
     },
     "IRagdoll": {
@@ -11014,12 +11350,6 @@
     "CSoundOpvarSetPointBase": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -11075,12 +11405,6 @@
     "CSoundOpvarSetPointEntity": {
       "parent": "CSoundOpvarSetPointBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -11088,12 +11412,6 @@
     "CSoundOpvarSetAABBEntity": {
       "parent": "CSoundOpvarSetPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -11101,12 +11419,6 @@
     "CSoundOpvarSetOBBEntity": {
       "parent": "CSoundOpvarSetAABBEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -11114,12 +11426,19 @@
     "CSoundOpvarSetPathCornerEntity": {
       "parent": "CSoundOpvarSetPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
+      ],
+      "fields": [
+      ],
+    },
+    "SoundOpvarTraceResult_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ],
+    },
+    "CSoundOpvarSetAutoRoomEntity": {
+      "parent": "CSoundOpvarSetPointEntity",
+      "metadata": [
       ],
       "fields": [
       ],
@@ -11127,12 +11446,6 @@
     "CSoundOpvarSetOBBWindEntity": {
       "parent": "CSoundOpvarSetPointBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -11465,12 +11778,6 @@
     "SpawnPoint": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -11478,12 +11785,6 @@
     "SpawnPointCoopEnemy": {
       "parent": "SpawnPoint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -11491,12 +11792,6 @@
     "CCSGameRulesProxy": {
       "parent": "CGameRulesProxy",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -11573,6 +11868,18 @@
         },
       ],
     },
+    "CCSTakeDamageInfoAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CCSGameModeRules": {
       "metadata": [
       ],
@@ -11602,9 +11909,49 @@
       "fields": [
       ],
     },
-    "CCSGameModeRules_Scripted": {
+    "CCSGameModeScript_ConVars": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CCSGameModeRules_ArmsRace": {
       "parent": "CCSGameModeRules",
       "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_WeaponSequence",
+          "type": {
+            "name": "CNetworkUtlVectorBase< CUtlString >",
+            "category": 4,
+            "atomic": 2,
+            "inner": {
+              "name": "CUtlString",
+              "category": 4,
+              "atomic": 0,
+            },
+          },
+          "metadata": [
+          ],
+        },
+      ],
+    },
+    "CCSArmsRaceScript": {
+      "parent": "CCSGameModeScript",
+      "metadata": [
+        {
+          "name": "MPulseInstanceDomainInfo",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPulseDomainOptInFeatureTag",
+        },
       ],
       "fields": [
       ],
@@ -11641,6 +11988,31 @@
           "metadata": [
           ],
         },
+      ],
+    },
+    "CCSDeathmatchScript": {
+      "parent": "CCSGameModeScript",
+      "metadata": [
+        {
+          "name": "MPulseInstanceDomainInfo",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+        {
+          "name": "MPulseDomainOptInFeatureTag",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CCSDeathmatchScript_ConVars": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
       ],
     },
     "CCSGameRules": {
@@ -12568,6 +12940,161 @@
             },
           ],
         },
+        {
+          "name": "m_iRoundEndWinnerTeam",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_eRoundEndReason",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bRoundEndShowTimerDefend",
+          "type": {
+            "name": "bool",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndTimerTime",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_sRoundEndFunFactToken",
+          "type": {
+            "name": "CUtlString",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndFunFactPlayerSlot",
+          "type": {
+            "name": "CPlayerSlot",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndFunFactData1",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndFunFactData2",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndFunFactData3",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_sRoundEndMessage",
+          "type": {
+            "name": "CUtlString",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndPlayerCount",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bRoundEndNoMusic",
+          "type": {
+            "name": "bool",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iRoundEndLegacy",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_nRoundEndCount",
+          "type": {
+            "name": "uint8",
+            "category": 0,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnRoundEndCountChanged",
+            },
+          ],
+        },
+        {
+          "name": "m_iRoundStartRoundNumber",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_nRoundStartCount",
+          "type": {
+            "name": "uint8",
+            "category": 0,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnRoundStartCountChanged",
+            },
+          ],
+        },
       ],
     },
     "QuestProgress": {
@@ -12763,17 +13290,29 @@
           "metadata": [
           ],
         },
+        {
+          "name": "m_iEnemyKnifeKills",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_iEnemyTaserKills",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
       ],
     },
     "CCSGO_TeamPreviewCharacterPosition": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -12854,12 +13393,6 @@
     "CCSGO_TeamSelectCharacterPosition": {
       "parent": "CCSGO_TeamPreviewCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12867,12 +13400,6 @@
     "CCSGO_TeamSelectTerroristPosition": {
       "parent": "CCSGO_TeamSelectCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12880,12 +13407,6 @@
     "CCSGO_TeamSelectCounterTerroristPosition": {
       "parent": "CCSGO_TeamSelectCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12893,12 +13414,6 @@
     "CCSGO_TeamIntroCharacterPosition": {
       "parent": "CCSGO_TeamPreviewCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12906,12 +13421,6 @@
     "CCSGO_TeamIntroTerroristPosition": {
       "parent": "CCSGO_TeamIntroCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12919,12 +13428,6 @@
     "CCSGO_TeamIntroCounterTerroristPosition": {
       "parent": "CCSGO_TeamIntroCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12932,12 +13435,6 @@
     "CCSGO_WingmanIntroCharacterPosition": {
       "parent": "CCSGO_TeamIntroCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12945,12 +13442,6 @@
     "CCSGO_WingmanIntroTerroristPosition": {
       "parent": "CCSGO_WingmanIntroCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12958,12 +13449,6 @@
     "CCSGO_WingmanIntroCounterTerroristPosition": {
       "parent": "CCSGO_WingmanIntroCharacterPosition",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12971,12 +13456,6 @@
     "CCSMinimapBoundary": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -12990,12 +13469,6 @@
     "CPlayerPing": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -13087,12 +13560,6 @@
     "CCSPlayerResource": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -13209,6 +13676,18 @@
           "metadata": [
           ],
         },
+      ],
+    },
+    "CCSPlayerControllerAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
       ],
     },
     "CPlayer_ViewModelServices": {
@@ -13645,6 +14124,19 @@
           "name": "m_flLastDuckTime",
           "type": {
             "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive",
+            },
+          ],
+        },
+        {
+          "name": "m_nGameCodeHasMovedPlayerAfterCommand",
+          "type": {
+            "name": "int32",
             "category": 0,
           },
           "metadata": [
@@ -14252,6 +14744,15 @@
           ],
         },
         {
+          "name": "m_nPersonaDataXpTrailLevel",
+          "type": {
+            "name": "int32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
           "name": "m_vecServerAuthoritativeWeaponSlots",
           "type": {
             "name": "CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >",
@@ -14269,6 +14770,30 @@
             },
           ],
         },
+      ],
+    },
+    "CCSWeaponBaseVDataAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CCSWeaponBaseAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
       ],
     },
     "CFiringModeFloat": {
@@ -14307,6 +14832,30 @@
       "fields": [
       ],
     },
+    "CCSObserverPawnAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CCSPlayerPawnAPI": {
+      "metadata": [
+        {
+          "name": "MPulseProvideFeatureTag",
+        },
+        {
+          "name": "MPulseLibraryBindings",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CCSPlayer_DamageReactServices": {
       "parent": "CPlayerPawnComponent",
       "metadata": [
@@ -14330,12 +14879,6 @@
     "CVoteController": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -14393,12 +14936,6 @@
     "CMapVetoPickController": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -14608,12 +15145,13 @@
     "CLogicEventListener": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
+      ],
+      "fields": [
+      ],
+    },
+    "CChicken_GraphController": {
+      "parent": "CAnimGraphControllerBase",
+      "metadata": [
       ],
       "fields": [
       ],
@@ -14689,12 +15227,6 @@
     "CPointEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -14702,12 +15234,6 @@
     "CEnvCombinedLightProbeVolume": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -14973,12 +15499,6 @@
     "CEnvCubemap": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -15157,12 +15677,6 @@
     "CEnvCubemapBox": {
       "parent": "CEnvCubemap",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -15170,12 +15684,6 @@
     "CEnvCubemapFog": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -15349,12 +15857,6 @@
     "CGradientFog": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -15552,12 +16054,6 @@
     "CEnvLightProbeVolume": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -15744,12 +16240,6 @@
     "CPlayerVisibility": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -15827,12 +16317,6 @@
     "CTonemapController2": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -15912,12 +16396,6 @@
     "CEnvVolumetricFogController": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16176,12 +16654,6 @@
     "CEnvVolumetricFogVolume": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16254,12 +16726,6 @@
     "CFogController": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16276,12 +16742,6 @@
     "CInfoTarget": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16289,12 +16749,6 @@
     "CInfoTargetServerOnly": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16302,12 +16756,6 @@
     "CInfoParticleTarget": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16315,12 +16763,6 @@
     "CInfoVisibilityBox": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16356,12 +16798,6 @@
     "CInfoWorldLayer": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16407,12 +16843,6 @@
     "CMultiLightProxy": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16420,12 +16850,6 @@
     "CPointCamera": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16623,12 +17047,6 @@
     "CPointCameraVFOV": {
       "parent": "CPointCamera",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16636,12 +17054,6 @@
     "CPointTemplate": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16649,12 +17061,6 @@
     "CGameGibManager": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -16662,12 +17068,6 @@
     "CSoundAreaEntityBase": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16704,12 +17104,6 @@
     "CSoundAreaEntitySphere": {
       "parent": "CSoundAreaEntityBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16726,12 +17120,6 @@
     "CSoundAreaEntityOrientedBox": {
       "parent": "CSoundAreaEntityBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -16759,12 +17147,6 @@
     "CTeam": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_iTeamNum",
@@ -16848,12 +17230,6 @@
       "parent": "CBaseEntity",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkIncludeByName",
           "value": "m_pEntity",
         },
@@ -16876,10 +17252,6 @@
         {
           "name": "MNetworkIncludeByName",
           "value": "m_fFlags",
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_bSimulatedEveryTick",
         },
         {
           "name": "MNetworkUserGroupProxy",
@@ -17013,12 +17385,6 @@
     "CInfoGameEventProxy": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17026,12 +17392,6 @@
     "CProjectedDecal": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17055,12 +17415,6 @@
     "CBaseModelEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -17329,12 +17683,6 @@
     "CServerOnlyModelEntity": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17342,12 +17690,6 @@
     "CModelPointEntity": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17355,12 +17697,6 @@
     "CLogicRelay": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17368,12 +17704,6 @@
     "CParticleSystem": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByUserGroup",
           "value": "Origin",
@@ -17573,12 +17903,6 @@
     "CPathParticleRope": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -17755,12 +18079,6 @@
     "CPathParticleRopeAlias_path_particle_rope_clientside": {
       "parent": "CPathParticleRope",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17768,12 +18086,6 @@
     "CFuncWall": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17781,12 +18093,6 @@
     "CFuncWallToggle": {
       "parent": "CFuncWall",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17794,12 +18100,6 @@
     "CFuncVehicleClip": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17807,12 +18107,6 @@
     "CFuncIllusionary": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17820,12 +18114,6 @@
     "CFuncVPhysicsClip": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17833,12 +18121,6 @@
     "CFuncInteractionLayerClip": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17846,12 +18128,6 @@
     "CPointClientCommand": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17859,12 +18135,6 @@
     "CPointServerCommand": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17872,12 +18142,6 @@
     "CPointBroadcastClientCommand": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17885,12 +18149,6 @@
     "CCommentaryAuto": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -17898,12 +18156,6 @@
     "CDynamicLight": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -17998,12 +18250,6 @@
     "CBubbling": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18011,12 +18257,6 @@
     "CEnvTracer": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18024,12 +18264,6 @@
     "CTestEffect": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18037,12 +18271,6 @@
     "CBlood": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18050,12 +18278,6 @@
     "CEnvFunnel": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18063,12 +18285,6 @@
     "CEnvBeverage": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18076,12 +18292,6 @@
     "CPrecipitationBlocker": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18089,12 +18299,6 @@
     "CEnvWind": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -18111,12 +18315,6 @@
     "CPhysicsWire": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18124,12 +18322,6 @@
     "CEnvMuzzleFlash": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18137,12 +18329,6 @@
     "CEnvSplash": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18150,12 +18336,6 @@
     "CEnvViewPunch": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18163,12 +18343,6 @@
     "CEnvEntityIgniter": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18176,12 +18350,6 @@
     "CDebugHistory": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18189,12 +18357,6 @@
     "CEnvEntityMaker": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18202,12 +18364,6 @@
     "CInfoInstructorHintTarget": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18215,12 +18371,6 @@
     "CEnvInstructorHint": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18228,12 +18378,6 @@
     "CEnvInstructorVRHint": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18241,12 +18385,6 @@
     "CInstructorEventEntity": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18254,12 +18392,6 @@
     "CEnvScreenOverlay": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -18335,12 +18467,6 @@
     "CEnvFade": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -18358,12 +18484,6 @@
     "CCredits": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18371,12 +18491,6 @@
     "CEnvShake": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18384,12 +18498,6 @@
     "CEnvTilt": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18397,12 +18505,6 @@
     "CEnvSpark": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18410,12 +18512,6 @@
     "CShower": {
       "parent": "CModelPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18423,12 +18519,6 @@
     "CEnvExplosion": {
       "parent": "CModelPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18436,12 +18526,6 @@
     "CFilterName": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18449,12 +18533,6 @@
     "CFilterModel": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18462,12 +18540,6 @@
     "CFilterContext": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18475,12 +18547,6 @@
     "FilterTeam": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18488,12 +18554,6 @@
     "CFilterMassGreater": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18501,12 +18561,6 @@
     "FilterDamageType": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18514,12 +18568,6 @@
     "FilterHealth": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18527,12 +18575,6 @@
     "CFilterEnemy": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18540,12 +18582,6 @@
     "CFilterAttributeInt": {
       "parent": "CBaseFilter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18553,12 +18589,6 @@
     "CFire": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18566,12 +18596,6 @@
     "CEnvFireSource": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18579,12 +18603,6 @@
     "CEnvFireSensor": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18592,12 +18610,6 @@
     "CFuncTimescale": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18605,12 +18617,6 @@
     "CLightGlow": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByUserGroup",
           "value": "Origin",
@@ -18725,12 +18731,6 @@
     "CLogicAchievement": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18738,12 +18738,6 @@
     "CLogicGameEventListener": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -18760,12 +18754,6 @@
     "CLogicMeasureMovement": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18773,12 +18761,6 @@
     "CLogicNavigation": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18786,12 +18768,6 @@
     "CLogicNPCCounter": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18799,12 +18775,6 @@
     "CLogicNPCCounterAABB": {
       "parent": "CLogicNPCCounter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18812,12 +18782,6 @@
     "CLogicNPCCounterOBB": {
       "parent": "CLogicNPCCounterAABB",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18825,12 +18789,6 @@
     "CLogicPlayerProxy": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18838,12 +18796,6 @@
     "CLogicAuto": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18851,12 +18803,6 @@
     "CLogicScript": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18864,12 +18810,6 @@
     "CTimerEntity": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18877,12 +18817,6 @@
     "CLogicLineToEntity": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18890,12 +18824,6 @@
     "CMathRemap": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18903,12 +18831,6 @@
     "CMathColorBlend": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18916,12 +18838,6 @@
     "CEnvGlobal": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18929,12 +18845,6 @@
     "CMultiSource": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18942,12 +18852,6 @@
     "CMathCounter": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18955,12 +18859,6 @@
     "CLogicCase": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18968,12 +18866,6 @@
     "CLogicCompare": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18981,12 +18873,6 @@
     "CLogicAutosave": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -18994,12 +18880,6 @@
     "CLogicActiveAutosave": {
       "parent": "CLogicAutosave",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19007,12 +18887,6 @@
     "CLogicDistanceAutosave": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19020,12 +18894,6 @@
     "CLogicCollisionPair": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19033,12 +18901,6 @@
     "CLogicBranchList": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19046,12 +18908,6 @@
     "CLogicGameEvent": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19059,12 +18915,6 @@
     "CMessageEntity": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19072,12 +18922,6 @@
     "CTriggerBrush": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19085,12 +18929,6 @@
     "CPathKeyFrame": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19098,12 +18936,6 @@
     "CBaseMoveBehavior": {
       "parent": "CPathKeyFrame",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19111,12 +18943,6 @@
     "CPathCorner": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19124,12 +18950,6 @@
     "CPhysForce": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19137,12 +18957,6 @@
     "CPhysThruster": {
       "parent": "CPhysForce",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19150,12 +18964,6 @@
     "CPhysTorque": {
       "parent": "CPhysForce",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19163,12 +18971,6 @@
     "CPhysMotor": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19176,12 +18978,6 @@
     "CKeepUpright": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19189,12 +18985,6 @@
     "CPhysConstraint": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19202,12 +18992,6 @@
     "CPhysHinge": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19215,12 +18999,6 @@
     "CPhysHingeAlias_phys_hinge_local": {
       "parent": "CPhysHinge",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19228,12 +19006,6 @@
     "CPhysBallSocket": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19241,12 +19013,6 @@
     "CPhysSlideConstraint": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19254,12 +19020,6 @@
     "CPhysFixed": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19267,12 +19027,6 @@
     "CPhysPulley": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19280,12 +19034,6 @@
     "CPhysLength": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19293,12 +19041,6 @@
     "CRagdollConstraint": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19306,12 +19048,6 @@
     "CGenericConstraint": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19319,12 +19055,6 @@
     "CSplineConstraint": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19332,12 +19062,6 @@
     "CPhysWheelConstraint": {
       "parent": "CPhysConstraint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19345,12 +19069,6 @@
     "CPhysicsEntitySolver": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19358,12 +19076,6 @@
     "CPhysicsSpring": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19371,12 +19083,6 @@
     "CPointPush": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19384,12 +19090,6 @@
     "CInfoPlayerStart": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19397,12 +19097,6 @@
     "CPointEntityFinder": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19410,12 +19104,6 @@
     "CPointValueRemapper": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -19599,12 +19287,6 @@
     "CPointWorldText": {
       "parent": "CModelPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -19722,12 +19404,6 @@
     "CPointAngleSensor": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19735,12 +19411,6 @@
     "CPointProximitySensor": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19748,12 +19418,6 @@
     "CPointAngularVelocitySensor": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19761,12 +19425,6 @@
     "CPointVelocitySensor": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19774,12 +19432,6 @@
     "CPointHurt": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19787,12 +19439,6 @@
     "CPointTeleport": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19800,12 +19446,6 @@
     "CEnableMotionFixup": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19813,12 +19453,6 @@
     "CFuncPropRespawnZone": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19826,12 +19460,6 @@
     "CRagdollManager": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -19848,12 +19476,6 @@
     "CRevertSaved": {
       "parent": "CModelPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19861,12 +19483,6 @@
     "CSceneListManager": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19874,12 +19490,6 @@
     "CSceneEntity": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -19960,12 +19570,6 @@
     "CScriptedSequence": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19973,12 +19577,6 @@
     "CSoundOpvarSetEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19986,12 +19584,6 @@
     "CAISound": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -19999,12 +19591,6 @@
     "CSoundStackSave": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20012,12 +19598,6 @@
     "CSoundEventEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20025,12 +19605,6 @@
     "CSoundEventEntityAlias_snd_event_point": {
       "parent": "CSoundEventEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20038,12 +19612,6 @@
     "CSoundEventAABBEntity": {
       "parent": "CSoundEventEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20051,12 +19619,6 @@
     "CSoundEventOBBEntity": {
       "parent": "CSoundEventEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20064,12 +19626,6 @@
     "CSoundEventPathCornerEntity": {
       "parent": "CSoundEventEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20077,12 +19633,6 @@
     "CSoundEventParameter": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20090,12 +19640,6 @@
     "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
       "parent": "CEnvSoundscapeProxy",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20103,12 +19647,6 @@
     "CEnvSoundscapeAlias_snd_soundscape": {
       "parent": "CEnvSoundscape",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20116,12 +19654,6 @@
     "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
       "parent": "CEnvSoundscapeTriggerable",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20129,12 +19661,6 @@
     "CNullEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20142,12 +19668,6 @@
     "CBaseDMStart": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20155,12 +19675,6 @@
     "CInfoLandmark": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20168,12 +19682,6 @@
     "CSun": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_clrRender",
@@ -20379,12 +19887,6 @@
     "CTankTargetChange": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20392,12 +19894,6 @@
     "CTankTrainAI": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20405,12 +19901,6 @@
     "CHandleTest": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -20442,12 +19932,6 @@
     "CHandleDummy": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20455,12 +19939,6 @@
     "CPlatTrigger": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20468,12 +19946,6 @@
     "CFuncTrainControls": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20481,12 +19953,6 @@
     "CTriggerVolume": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20494,25 +19960,6 @@
     "CInfoTeleportDestination": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CAI_ChangeTarget": {
-      "parent": "CBaseEntity",
-      "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20520,12 +19967,6 @@
     "CAI_ChangeHintGroup": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20533,12 +19974,6 @@
     "CLogicProximity": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20546,12 +19981,6 @@
     "CInfoSpawnGroupLandmark": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20559,12 +19988,6 @@
     "CInfoSpawnGroupLoadUnload": {
       "parent": "CLogicalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20572,25 +19995,13 @@
     "CPointPulse": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
     },
-    "CPointScript": {
+    "CPointScriptEntity": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20598,12 +20009,6 @@
     "CFuncNavObstruction": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20611,12 +20016,6 @@
     "CAmbientGeneric": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20631,12 +20030,6 @@
     "CBaseToggle": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20644,12 +20037,6 @@
     "CBaseButton": {
       "parent": "CBaseToggle",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -20691,12 +20078,6 @@
     "CPhysicalButton": {
       "parent": "CBaseButton",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20704,12 +20085,6 @@
     "CRotButton": {
       "parent": "CBaseButton",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20717,12 +20092,6 @@
     "CMomentaryRotButton": {
       "parent": "CRotButton",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20730,12 +20099,6 @@
     "CRagdollMagnet": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20743,12 +20106,6 @@
     "CBaseDoor": {
       "parent": "CBaseToggle",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -20765,12 +20122,6 @@
     "CEntityBlocker": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -20778,12 +20129,6 @@
     "CEntityDissolve": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -20882,12 +20227,6 @@
     "CEnvProjectedTexture": {
       "parent": "CModelPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -21209,12 +20548,6 @@
     "CEnvDecal": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -21321,12 +20654,6 @@
     "CMessage": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21334,12 +20661,6 @@
     "CEnvMicrophone": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21347,12 +20668,6 @@
     "CBreakable": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21360,12 +20675,6 @@
     "CFuncMoveLinear": {
       "parent": "CBaseToggle",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_fFlags",
@@ -21389,12 +20698,6 @@
       "parent": "CBaseModelEntity",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkOverride",
           "value": {
             "type": "m_angRotation",
@@ -21415,12 +20718,6 @@
     "CItemGenericTriggerHelper": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21428,12 +20725,6 @@
     "CRuleEntity": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21441,12 +20732,6 @@
     "CRulePointEntity": {
       "parent": "CRuleEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21454,12 +20739,6 @@
     "CGamePlayerEquip": {
       "parent": "CRulePointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21467,12 +20746,6 @@
     "CMarkupVolume": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21480,12 +20753,6 @@
     "CMarkupVolumeTagged": {
       "parent": "CMarkupVolume",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21493,12 +20760,6 @@
     "CMarkupVolumeWithRef": {
       "parent": "CMarkupVolumeTagged",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21506,12 +20767,6 @@
     "CFuncBrush": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21519,12 +20774,6 @@
     "CPathTrack": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21532,12 +20781,6 @@
     "CPhysBox": {
       "parent": "CBreakable",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21545,12 +20788,6 @@
     "CPhysExplosion": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21558,12 +20795,6 @@
     "CPhysImpact": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21571,12 +20802,6 @@
     "CRopeKeyframe": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByUserGroup",
           "value": "Origin",
@@ -21786,12 +21011,6 @@
     "CSoundEnt": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21799,12 +21018,6 @@
     "CSpotlightEnd": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -21830,12 +21043,6 @@
     "CFuncTrackTrain": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21843,12 +21050,6 @@
     "CBaseTrigger": {
       "parent": "CBaseToggle",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_spawnflags",
@@ -21878,12 +21079,6 @@
     "CTriggerMultiple": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21891,12 +21086,6 @@
     "CTriggerSndSosOpvar": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21904,12 +21093,6 @@
     "CTriggerHurt": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21917,12 +21100,6 @@
     "CTriggerHurtGhost": {
       "parent": "CTriggerHurt",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21930,12 +21107,6 @@
     "CTriggerCallback": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21943,12 +21114,6 @@
     "CTriggerLerpObject": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21956,12 +21121,6 @@
     "CChangeLevel": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21969,12 +21128,6 @@
     "CTriggerTeleport": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21982,12 +21135,6 @@
     "CTriggerFan": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -21995,12 +21142,6 @@
     "CNavWalkable": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -22008,12 +21149,6 @@
     "CFuncNavBlocker": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -22021,12 +21156,6 @@
     "CNavLinkAreaEntity": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -22034,12 +21163,6 @@
     "CNavSpaceInfo": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -22047,12 +21170,6 @@
     "CBeam": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByUserGroup",
           "value": "Origin",
@@ -22415,12 +21532,6 @@
     "CFuncLadder": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -22488,12 +21599,6 @@
     "CFuncShatterglass": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -22511,12 +21616,6 @@
     "CSprite": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -22696,12 +21795,6 @@
     "CSpriteOriented": {
       "parent": "CSprite",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -22709,12 +21802,6 @@
     "CBaseClientUIEntity": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -22761,12 +21848,6 @@
     "CPointClientUIDialog": {
       "parent": "CBaseClientUIEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -22793,12 +21874,6 @@
     "CPointClientUIWorldPanel": {
       "parent": "CBaseClientUIEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -23019,12 +22094,6 @@
     "CPointClientUIWorldTextPanel": {
       "parent": "CPointClientUIWorldPanel",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -23046,12 +22115,6 @@
     "CInfoOffscreenPanoramaTexture": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -23182,12 +22245,6 @@
     "CInfoPlayerTerrorist": {
       "parent": "SpawnPoint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23195,12 +22252,6 @@
     "CInfoPlayerCounterterrorist": {
       "parent": "SpawnPoint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23208,12 +22259,6 @@
     "CInfoDeathmatchSpawn": {
       "parent": "SpawnPoint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23221,12 +22266,6 @@
     "CInfoEnemyTerroristSpawn": {
       "parent": "SpawnPointCoopEnemy",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23234,12 +22273,6 @@
     "CPointGiveAmmo": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23247,12 +22280,6 @@
     "CBombTarget": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -23269,12 +22296,6 @@
     "CInfoInstructorHintBombTargetA": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23282,12 +22303,6 @@
     "CInfoInstructorHintBombTargetB": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23295,12 +22310,6 @@
     "CHostageRescueZoneShim": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23308,12 +22317,6 @@
     "CHostageRescueZone": {
       "parent": "CHostageRescueZoneShim",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23321,12 +22324,6 @@
     "CInfoInstructorHintHostageRescueZone": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23334,12 +22331,6 @@
     "CTriggerBuoyancy": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -23356,12 +22347,6 @@
     "CFuncWater": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23369,12 +22354,6 @@
     "CCSSprite": {
       "parent": "CSprite",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23383,12 +22362,6 @@
       "parent": "CBasePlayerController",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkUserGroupProxy",
           "value": "CCSPlayerController",
         },
@@ -23399,12 +22372,6 @@
         {
           "name": "MNetworkUserGroupProxy",
           "value": "CCSPlayerController",
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-        },
-        {
-          "name": "MPulseLibraryBindings",
         },
       ],
       "fields": [
@@ -23890,12 +22857,6 @@
     "CFootstepControl": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -23939,12 +22900,6 @@
     "CTriggerTripWire": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23952,12 +22907,6 @@
     "CPointGamestatsCounter": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23965,12 +22914,6 @@
     "CEnvHudHint": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23978,12 +22921,6 @@
     "CBuyZone": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -23991,12 +22928,6 @@
     "CFuncConveyor": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_fFlags",
@@ -24081,12 +23012,6 @@
     "CTriggerBombReset": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -24094,12 +23019,6 @@
     "CTriggerHostageReset": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -24107,12 +23026,6 @@
     "CCSPlace": {
       "parent": "CServerOnlyModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -24120,12 +23033,6 @@
     "CGameMoney": {
       "parent": "CRulePointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -24133,12 +23040,6 @@
     "CPlayerSprayDecal": {
       "parent": "CModelPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -24290,12 +23191,6 @@
     "CInferno": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -24407,12 +23302,6 @@
     "CFireCrackerBlast": {
       "parent": "CInferno",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -24420,12 +23309,6 @@
     "CBarnLight": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25115,12 +23998,6 @@
     "CRectLight": {
       "parent": "CBarnLight",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25141,12 +24018,6 @@
     "COmniLight": {
       "parent": "CBarnLight",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25193,12 +24064,6 @@
     "CCSTeam": {
       "parent": "CTeam",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25316,12 +24181,6 @@
     "CMapInfo": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25336,12 +24195,6 @@
     "CFogVolume": {
       "parent": "CServerOnlyModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25349,12 +24202,6 @@
     "CInfoDynamicShadowHint": {
       "parent": "CPointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25362,12 +24209,6 @@
     "CInfoDynamicShadowHintBox": {
       "parent": "CInfoDynamicShadowHint",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25375,12 +24216,6 @@
     "CEnvSky": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25558,12 +24393,6 @@
     "CTonemapController2Alias_env_tonemap_controller2": {
       "parent": "CTonemapController2",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25571,12 +24400,6 @@
     "CTonemapTrigger": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25584,12 +24407,6 @@
     "CFogTrigger": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25597,12 +24414,6 @@
     "CLightEntity": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25635,12 +24446,6 @@
     "CLightSpotEntity": {
       "parent": "CLightEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25648,12 +24453,6 @@
     "CLightOrthoEntity": {
       "parent": "CLightEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25661,12 +24460,6 @@
     "CLightDirectionalEntity": {
       "parent": "CLightEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25674,12 +24467,6 @@
     "CLightEnvironmentEntity": {
       "parent": "CLightDirectionalEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -25687,12 +24474,6 @@
     "CPostProcessingVolume": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25850,12 +24631,6 @@
     "CEnvParticleGlow": {
       "parent": "CParticleSystem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -25915,12 +24690,6 @@
     "CTextureBasedAnimatable": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26014,12 +24783,6 @@
     "CWorld": {
       "parent": "CBaseModelEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26028,12 +24791,6 @@
       "parent": "CBaseModelEntity",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkIncludeByName",
           "value": "m_bClientSideRagdoll",
         },
@@ -26041,15 +24798,6 @@
       "fields": [
         {
           "name": "m_bInitiallyPopulateInterpHistory",
-          "type": {
-            "name": "bool",
-            "category": 0,
-          },
-          "metadata": [
-          ],
-        },
-        {
-          "name": "m_bShouldAnimateDuringGameplayPause",
           "type": {
             "name": "bool",
             "category": 0,
@@ -26116,12 +24864,6 @@
     "CBaseProp": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26129,12 +24871,6 @@
     "CBreakableProp": {
       "parent": "CBaseProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26151,12 +24887,6 @@
     "CDynamicProp": {
       "parent": "CBreakableProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26182,12 +24912,6 @@
     "CDynamicPropAlias_dynamic_prop": {
       "parent": "CDynamicProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26195,12 +24919,6 @@
     "CDynamicPropAlias_prop_dynamic_override": {
       "parent": "CDynamicProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26208,12 +24926,6 @@
     "CDynamicPropAlias_cable_dynamic": {
       "parent": "CDynamicProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26221,12 +24933,6 @@
     "CColorCorrectionVolume": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26284,12 +24990,6 @@
     "CPointCommentaryNode": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26396,12 +25096,6 @@
     "CCommentaryViewPosition": {
       "parent": "CSprite",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26409,12 +25103,6 @@
     "CRotDoor": {
       "parent": "CBaseDoor",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26422,12 +25110,6 @@
     "CItemSoda": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26435,12 +25117,6 @@
     "CPrecipitation": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26448,12 +25124,6 @@
     "CEnvBeam": {
       "parent": "CBeam",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26461,12 +25131,6 @@
     "CPushable": {
       "parent": "CBreakable",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26474,12 +25138,6 @@
     "CFuncLadderAlias_func_useableladder": {
       "parent": "CFuncLadder",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26487,12 +25145,6 @@
     "CFuncMonitor": {
       "parent": "CFuncBrush",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26580,12 +25232,6 @@
     "CFuncMoveLinearAlias_momentary_door": {
       "parent": "CFuncMoveLinear",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26593,12 +25239,6 @@
     "CGunTarget": {
       "parent": "CBaseToggle",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26606,12 +25246,6 @@
     "CTriggerGameEvent": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26649,12 +25283,6 @@
     "CRuleBrushEntity": {
       "parent": "CRuleEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26662,12 +25290,6 @@
     "CGameEnd": {
       "parent": "CRulePointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26675,12 +25297,6 @@
     "CGameText": {
       "parent": "CRulePointEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26688,12 +25304,6 @@
     "CGamePlayerZone": {
       "parent": "CRuleBrushEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26701,12 +25311,6 @@
     "CSimpleMarkupVolumeTagged": {
       "parent": "CMarkupVolumeTagged",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26714,12 +25318,6 @@
     "CMarkupVolumeTagged_Nav": {
       "parent": "CMarkupVolumeTagged",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26727,12 +25325,6 @@
     "CMarkupVolumeTagged_NavGame": {
       "parent": "CMarkupVolumeWithRef",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26740,12 +25332,6 @@
     "CFuncElectrifiedVolume": {
       "parent": "CFuncBrush",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -26763,12 +25349,6 @@
     "CPathCornerCrash": {
       "parent": "CPathCorner",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26776,12 +25356,6 @@
     "CConstraintAnchor": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26789,12 +25363,6 @@
     "COrnamentProp": {
       "parent": "CDynamicProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26802,12 +25370,6 @@
     "CRopeKeyframeAlias_move_rope": {
       "parent": "CRopeKeyframe",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26815,12 +25377,6 @@
     "CSceneEntityAlias_logic_choreographed_scene": {
       "parent": "CSceneEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26828,12 +25384,6 @@
     "CInstancedSceneEntity": {
       "parent": "CSceneEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26841,12 +25391,6 @@
     "CTriggerSoundscape": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26854,12 +25398,6 @@
     "CSpriteAlias_env_glow": {
       "parent": "CSprite",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26867,12 +25405,6 @@
     "CFuncTankTrain": {
       "parent": "CFuncTrackTrain",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26880,12 +25412,6 @@
     "CBasePlatTrain": {
       "parent": "CBaseToggle",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26893,12 +25419,6 @@
     "CFuncPlat": {
       "parent": "CBasePlatTrain",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26906,12 +25426,6 @@
     "CFuncPlatRot": {
       "parent": "CFuncPlat",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26919,12 +25433,6 @@
     "CFuncTrain": {
       "parent": "CBasePlatTrain",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26932,12 +25440,6 @@
     "CFuncTrackChange": {
       "parent": "CFuncPlatRot",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26945,12 +25447,6 @@
     "CFuncTrackAuto": {
       "parent": "CFuncTrackChange",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26958,12 +25454,6 @@
     "CTriggerRemove": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26971,12 +25461,6 @@
     "CScriptTriggerHurt": {
       "parent": "CTriggerHurt",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26984,12 +25468,6 @@
     "CScriptTriggerMultiple": {
       "parent": "CTriggerMultiple",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -26997,12 +25475,6 @@
     "CTriggerOnce": {
       "parent": "CTriggerMultiple",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27010,12 +25482,6 @@
     "CScriptTriggerOnce": {
       "parent": "CTriggerOnce",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27023,12 +25489,6 @@
     "CTriggerLook": {
       "parent": "CTriggerOnce",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -27045,12 +25505,6 @@
     "CTriggerPush": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27058,12 +25512,6 @@
     "CScriptTriggerPush": {
       "parent": "CTriggerPush",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27071,12 +25519,6 @@
     "CTriggerToggleSave": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27084,12 +25526,6 @@
     "CTriggerSave": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27097,12 +25533,6 @@
     "CTriggerGravity": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27110,12 +25540,6 @@
     "CTriggerProximity": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27123,12 +25547,6 @@
     "CTriggerImpact": {
       "parent": "CTriggerMultiple",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27136,12 +25554,6 @@
     "CServerRagdollTrigger": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27149,12 +25561,6 @@
     "CTriggerActiveWeaponDetect": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27162,25 +25568,133 @@
     "CTriggerPhysics": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
+        {
+          "name": "m_gravityScale",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_linearLimit",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_linearDamping",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_angularLimit",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_angularDamping",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_linearForce",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_flFrequency",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_flDampingRatio",
+          "type": {
+            "name": "float32",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_vecLinearForcePointAt",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bCollapseToForcePoint",
+          "type": {
+            "name": "bool",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_vecLinearForcePointAtWorld",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_vecLinearForceDirection",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_bConvertToDebrisWhenPossible",
+          "type": {
+            "name": "bool",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
       ],
     },
     "CTriggerDetectBulletFire": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27188,12 +25702,6 @@
     "CTriggerDetectExplosion": {
       "parent": "CBaseTrigger",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27201,12 +25709,6 @@
     "CScriptNavBlocker": {
       "parent": "CFuncNavBlocker",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27214,12 +25716,6 @@
     "CBaseFlex": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -27308,12 +25804,6 @@
           "name": "MNetworkIncludeByName",
           "value": "m_spawnflags",
         },
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -27374,12 +25864,6 @@
     "CEnvLaser": {
       "parent": "CBeam",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27387,12 +25871,6 @@
     "CFish": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_nModelIndex",
@@ -27499,12 +25977,6 @@
     "CItem": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27512,12 +25984,6 @@
     "CRagdollProp": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -27607,12 +26073,6 @@
     "CPhysMagnet": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27620,12 +26080,6 @@
     "CPhysicsProp": {
       "parent": "CBreakableProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkExcludeByName",
           "value": "m_flAnimTime",
@@ -27670,12 +26124,6 @@
     "CPhysicsPropOverride": {
       "parent": "CPhysicsProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27683,12 +26131,6 @@
     "CPhysicsPropRespawnable": {
       "parent": "CPhysicsProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27696,12 +26138,6 @@
     "CWaterBullet": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27709,12 +26145,6 @@
     "CShatterGlassShardPhysics": {
       "parent": "CPhysicsProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkExcludeByName",
           "value": "m_hModel",
@@ -27735,12 +26165,6 @@
     "CEconEntity": {
       "parent": "CBaseFlex",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -27811,12 +26235,6 @@
     "CEconWearable": {
       "parent": "CEconEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27824,12 +26242,6 @@
     "CBaseGrenade": {
       "parent": "CBaseFlex",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_fFlags",
@@ -27968,12 +26380,6 @@
     "CCoopBonusCoin": {
       "parent": "CDynamicProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27981,12 +26387,6 @@
     "CPhysicsPropMultiplayer": {
       "parent": "CPhysicsProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -27994,12 +26394,6 @@
     "CBaseViewModel": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_nModelIndex",
@@ -28126,12 +26520,6 @@
     "CPredictedViewModel": {
       "parent": "CBaseViewModel",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28139,12 +26527,6 @@
     "CPlantedC4": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -28290,12 +26672,6 @@
     "CBaseCSGrenadeProjectile": {
       "parent": "CBaseGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -28366,12 +26742,6 @@
     "CItemDogtags": {
       "parent": "CItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -28409,12 +26779,6 @@
     "CSensorGrenadeProjectile": {
       "parent": "CBaseCSGrenadeProjectile",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28422,12 +26786,6 @@
     "CBreachChargeProjectile": {
       "parent": "CBaseGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28435,12 +26793,6 @@
     "CBumpMineProjectile": {
       "parent": "CBaseGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28448,12 +26800,6 @@
     "CTripWireFireProjectile": {
       "parent": "CBaseGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28461,12 +26807,6 @@
     "CFlashbangProjectile": {
       "parent": "CBaseCSGrenadeProjectile",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28474,12 +26814,6 @@
     "CHEGrenadeProjectile": {
       "parent": "CBaseCSGrenadeProjectile",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28487,12 +26821,6 @@
     "CChicken": {
       "parent": "CDynamicProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -28551,12 +26879,6 @@
     "CHostageCarriableProp": {
       "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28564,12 +26886,6 @@
     "CItemAssaultSuit": {
       "parent": "CItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28577,12 +26893,6 @@
     "CItemHeavyAssaultSuit": {
       "parent": "CItemAssaultSuit",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28590,12 +26900,6 @@
     "CItemKevlar": {
       "parent": "CItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28603,12 +26907,6 @@
     "CItemDefuser": {
       "parent": "CItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28616,12 +26914,6 @@
     "CBasePlayerWeapon": {
       "parent": "CEconEntity",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkExcludeByName",
           "value": "m_flexWeight",
@@ -28761,12 +27053,6 @@
     "CBaseFlexAlias_funCBaseFlex": {
       "parent": "CBaseFlex",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28774,12 +27060,6 @@
     "CScriptItem": {
       "parent": "CItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28787,12 +27067,6 @@
     "CRagdollPropAlias_physics_prop_ragdoll": {
       "parent": "CRagdollProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28800,12 +27074,6 @@
     "CRagdollPropAttached": {
       "parent": "CRagdollProp",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -28859,12 +27127,6 @@
     "CPropDoorRotating": {
       "parent": "CBasePropDoor",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28872,12 +27134,6 @@
     "CPropDoorRotatingBreakable": {
       "parent": "CPropDoorRotating",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28885,12 +27141,6 @@
     "CBaseCombatCharacter": {
       "parent": "CBaseFlex",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkExcludeByUserGroup",
           "value": "LocalPlayerExclusive",
@@ -28930,12 +27180,6 @@
     "CItemGeneric": {
       "parent": "CItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -28943,12 +27187,6 @@
     "CBasePlayerPawn": {
       "parent": "CBaseCombatCharacter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkUserGroupProxy",
           "value": "CBasePlayerPawn",
@@ -29169,6 +27407,10 @@
             },
           },
           "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive",
+            },
           ],
         },
         {
@@ -29227,12 +27469,6 @@
       "parent": "CPredictedViewModel",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkOverride",
           "value": {
             "type": "m_hWeapon",
@@ -29263,12 +27499,6 @@
     "CCSWeaponBase": {
       "parent": "CBasePlayerWeapon",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkExcludeByName",
           "value": "m_flTimeWeaponIdle",
@@ -29536,12 +27766,6 @@
     "CCSWeaponBaseGun": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29576,12 +27800,6 @@
     "CC4": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29634,12 +27852,6 @@
     "CDEagle": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29647,12 +27859,6 @@
     "CWeaponElite": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29660,12 +27866,6 @@
     "CWeaponNOVA": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29673,12 +27873,6 @@
     "CWeaponSawedoff": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29686,12 +27880,6 @@
     "CWeaponTaser": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29708,12 +27896,6 @@
     "CWeaponXM1014": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29721,12 +27903,6 @@
     "CKnife": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29734,12 +27910,6 @@
     "CMelee": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -29747,12 +27917,6 @@
     "CWeaponShield": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29769,12 +27933,6 @@
     "CMolotovProjectile": {
       "parent": "CBaseCSGrenadeProjectile",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29791,12 +27949,6 @@
     "CDecoyProjectile": {
       "parent": "CBaseCSGrenadeProjectile",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29813,12 +27965,6 @@
     "CSmokeGrenadeProjectile": {
       "parent": "CBaseCSGrenadeProjectile",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -29887,12 +28033,6 @@
     "CBaseCSGrenade": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -30031,12 +28171,6 @@
     "CWeaponBaseItem": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -30062,12 +28196,6 @@
     "CItem_Healthshot": {
       "parent": "CWeaponBaseItem",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30075,12 +28203,6 @@
     "CFists": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
         {
@@ -30110,12 +28232,6 @@
     "CSensorGrenade": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30123,12 +28239,6 @@
     "CBreachCharge": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30136,12 +28246,6 @@
     "CBumpMine": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30149,12 +28253,6 @@
     "CTablet": {
       "parent": "CCSWeaponBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30162,12 +28260,6 @@
     "CTripWireFire": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30175,12 +28267,6 @@
     "CWeaponZoneRepulsor": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -30188,12 +28274,6 @@
     "CCSPlayerPawnBase": {
       "parent": "CBasePlayerPawn",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkExcludeByName",
           "value": "m_flAnimTime",
@@ -30364,6 +28444,16 @@
           "type": {
             "name": "bool",
             "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
+          "name": "m_GunGameImmunityColor",
+          "type": {
+            "name": "Color",
+            "category": 4,
+            "atomic": 0,
           },
           "metadata": [
           ],
@@ -30825,12 +28915,6 @@
       "parent": "CCSPlayerPawnBase",
       "metadata": [
         {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
-        {
           "name": "MNetworkVarTypeOverride",
           "value": {
             "type": "CCSObserver_ObserverServices",
@@ -30892,12 +28976,6 @@
     "CCSPlayerPawn": {
       "parent": "CCSPlayerPawnBase",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkVarTypeOverride",
           "value": {
@@ -30974,12 +29052,6 @@
         {
           "name": "MNetworkIncludeByName",
           "value": "m_pCameraServices",
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-        },
-        {
-          "name": "MPulseLibraryBindings",
         },
       ],
       "fields": [
@@ -31297,6 +29369,15 @@
           ],
         },
         {
+          "name": "m_nEconGlovesChanged",
+          "type": {
+            "name": "uint8",
+            "category": 0,
+          },
+          "metadata": [
+          ],
+        },
+        {
           "name": "m_qDeathEyeAngles",
           "type": {
             "name": "QAngle",
@@ -31311,12 +29392,6 @@
     "CHostageExpresserShim": {
       "parent": "CBaseCombatCharacter",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31324,12 +29399,6 @@
     "CHostage": {
       "parent": "CHostageExpresserShim",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
         {
           "name": "MNetworkIncludeByName",
           "value": "m_iMaxHealth",
@@ -31478,12 +29547,6 @@
     "CHostageAlias_info_hostage_spawn": {
       "parent": "CHostage",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31491,12 +29554,6 @@
     "CItemDefuserAlias_item_defuser": {
       "parent": "CItemDefuser",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31504,12 +29561,6 @@
     "CAK47": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31517,12 +29568,6 @@
     "CWeaponAug": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31530,12 +29575,6 @@
     "CWeaponAWP": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31543,12 +29582,6 @@
     "CWeaponBizon": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31556,12 +29589,6 @@
     "CWeaponFamas": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31569,12 +29596,6 @@
     "CWeaponFiveSeven": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31582,12 +29603,6 @@
     "CWeaponG3SG1": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31595,12 +29610,6 @@
     "CWeaponGalilAR": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31608,12 +29617,6 @@
     "CWeaponGlock": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31621,12 +29624,6 @@
     "CWeaponHKP2000": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31634,12 +29631,6 @@
     "CWeaponUSPSilencer": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31647,12 +29638,6 @@
     "CWeaponM4A1": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31660,12 +29645,6 @@
     "CWeaponM4A1Silencer": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31673,12 +29652,6 @@
     "CWeaponMAC10": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31686,12 +29659,6 @@
     "CWeaponMag7": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31699,12 +29666,6 @@
     "CWeaponMP5SD": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31712,12 +29673,6 @@
     "CWeaponMP7": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31725,12 +29680,6 @@
     "CWeaponMP9": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31738,12 +29687,6 @@
     "CWeaponNegev": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31751,12 +29694,6 @@
     "CWeaponP250": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31764,12 +29701,6 @@
     "CWeaponCZ75a": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31777,12 +29708,6 @@
     "CWeaponP90": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31790,12 +29715,6 @@
     "CWeaponSCAR20": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31803,12 +29722,6 @@
     "CWeaponSG556": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31816,12 +29729,6 @@
     "CWeaponSSG08": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31829,12 +29736,6 @@
     "CWeaponTec9": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31842,12 +29743,6 @@
     "CWeaponUMP45": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31855,12 +29750,6 @@
     "CWeaponM249": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31868,12 +29757,6 @@
     "CWeaponRevolver": {
       "parent": "CCSWeaponBaseGun",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31881,12 +29764,6 @@
     "CMolotovGrenade": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31894,12 +29771,6 @@
     "CIncendiaryGrenade": {
       "parent": "CMolotovGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31907,12 +29778,6 @@
     "CDecoyGrenade": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31920,12 +29785,6 @@
     "CFlashbang": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31933,12 +29792,6 @@
     "CHEGrenade": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],
@@ -31946,12 +29799,6 @@
     "CSmokeGrenade": {
       "parent": "CBaseCSGrenade",
       "metadata": [
-        {
-          "name": "MPulseBindableTarget",
-        },
-        {
-          "name": "MPulseRegisterTypeInfo",
-        },
       ],
       "fields": [
       ],

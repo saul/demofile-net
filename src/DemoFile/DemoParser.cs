@@ -9,6 +9,7 @@ namespace DemoFile;
 
 public sealed partial class DemoParser
 {
+    /// Key ticks occur every 60 seconds
     private const int KeyTickInterval = 64 * 60;
 
     private readonly PriorityQueue<ITickTimer, int> _demoTickTimers = new();
@@ -35,8 +36,16 @@ public sealed partial class DemoParser
     /// </remarks>
     public Action<DemoProgressEvent>? OnProgress;
 
+    /// <summary>
+    /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
+    /// Reset to <c>null</c> just before it is invoked.
+    /// </summary>
+    public Action? OnCommandFinish;
+
     public DemoParser()
     {
+        _source1GameEvents = new Source1GameEvents(this);
+
         _stream = null!;
 
         _demoEvents.DemoFileHeader += msg => { FileHeader = msg; };
@@ -164,7 +173,15 @@ public sealed partial class DemoParser
         {
             var oldPosition = stream.Position;
             stream.Position = sizeBytes;
-            await ReadFileInfo(cancellationToken).ConfigureAwait(false);
+
+            try
+            {
+                await ReadFileInfo(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                // Swallow any exceptions during ReadFileInfo - it's best effort
+            }
             stream.Position = oldPosition;
         }
     }
@@ -375,15 +392,25 @@ public sealed partial class DemoParser
         // todo: read into pooled array
         var buf = await ReadExactBytesAsync((int)cmd.Size, cancellationToken).ConfigureAwait(false);
 
+        bool canContinue;
         if (isCompressed)
         {
             using var decompressed = Snappy.DecompressToMemory(buf);
-            return _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
+            canContinue = _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
         }
         else
         {
-            return _demoEvents.ReadDemoCommand(msgType, buf);
+            canContinue = _demoEvents.ReadDemoCommand(msgType, buf);
         }
+
+        if (OnCommandFinish is { } onCommandFinish)
+        {
+            // Reset to null before invoking to allow any callbacks to re-register
+            OnCommandFinish = null;
+            onCommandFinish();
+        }
+
+        return canContinue;
     }
 
     private async ValueTask ReadFileInfo(CancellationToken cancellationToken)

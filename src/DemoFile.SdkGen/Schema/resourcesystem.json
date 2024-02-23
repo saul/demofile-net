@@ -254,7 +254,7 @@
       "fields": [
       ],
     },
-    "InfoForResourceTypeVSound_t": {
+    "InfoForResourceTypeCVoiceContainerBase": {
       "metadata": [
         {
           "name": "MResourceTypeForInfoType",
@@ -425,6 +425,15 @@
       "fields": [
       ],
     },
+    "InfoForResourceTypeCGcExportableExternalData": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "InfoForResourceTypeCSmartProp": {
       "metadata": [
         {
@@ -462,6 +471,24 @@
       ],
     },
     "InfoForResourceTypeCNmClip": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "InfoForResourceTypeCNmGraph": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "InfoForResourceTypeCNmGraphDataSet": {
       "metadata": [
         {
           "name": "MResourceTypeForInfoType",

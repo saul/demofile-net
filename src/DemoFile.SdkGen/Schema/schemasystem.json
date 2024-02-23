@@ -337,8 +337,12 @@
           "value": 78,
         },
         {
-          "name": "FIELD_TYPECOUNT",
+          "name": "FIELD_GLOBALSYMBOL",
           "value": 79,
+        },
+        {
+          "name": "FIELD_TYPECOUNT",
+          "value": 80,
         },
       ],
     },

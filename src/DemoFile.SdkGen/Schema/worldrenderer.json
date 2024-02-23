@@ -8,18 +8,6 @@
           "value": 0,
         },
         {
-          "name": "OBJECT_TYPE_IMAGE_LOD",
-          "value": 1,
-        },
-        {
-          "name": "OBJECT_TYPE_GEOMETRY_LOD",
-          "value": 2,
-        },
-        {
-          "name": "OBJECT_TYPE_DECAL",
-          "value": 4,
-        },
-        {
           "name": "OBJECT_TYPE_MODEL",
           "value": 8,
         },
