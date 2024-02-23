@@ -111,7 +111,8 @@ public partial class DemoParser
         _keyTickPositions.TryAdd(CurrentDemoTick, _commandStartPosition);
 
         // Some demos have key ticks at tick 0, some at tick 1.
-        (_, _keyTickOffset) = Math.DivRem(CurrentDemoTick.Value, KeyTickInterval);
+        _keyTickOffset = CurrentDemoTick.Value % KeyTickInterval;
+        Debug.Assert(_keyTickOffset == 0 || _keyTickOffset == 1, "Unexpected key tick offset");
 
         // We only care about DemoStringTables if we're seeking to a key tick
         if (CurrentDemoTick != _readSnapshotTick) return;

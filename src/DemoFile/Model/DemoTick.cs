@@ -22,8 +22,14 @@ public readonly record struct DemoTick(int Value) : IComparable<DemoTick>
 
     private string DebuggerDisplay => this == PreRecord ? "<pre record>" : $"Demo tick {Value}";
 
+    public static DemoTick operator +(DemoTick tick, int ticks) => new(tick.Value + ticks);
+    public static DemoTick operator -(DemoTick tick, int ticks) => new(tick.Value - ticks);
+
     public static DemoTick operator +(DemoTick tick, TimeSpan duration) => new((int)(tick.Value + duration.TotalSeconds * 64.0));
     public static DemoTick operator -(DemoTick tick, TimeSpan duration) => new((int)(tick.Value - duration.TotalSeconds * 64.0));
+
+    public static DemoTick operator +(DemoTick tick, DemoTick other) => new(tick.Value + other.Value);
+    public static DemoTick operator -(DemoTick tick, DemoTick other) => new(tick.Value - other.Value);
 
     public static bool operator <(DemoTick left, DemoTick right) => left.Value < right.Value;
     public static bool operator <=(DemoTick left, DemoTick right) => left.Value <= right.Value;

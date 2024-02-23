@@ -16,7 +16,7 @@ public sealed partial class DemoParser
     private readonly List<KeyValuePair<DemoTick, long>> _keyTickPositions = new(64);
     private readonly PriorityQueue<QueuedPacket, (int, int)> _packetQueue = new(128);
     private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
-    private readonly Source1GameEvents _source1GameEvents = new();
+    private readonly Source1GameEvents _source1GameEvents;
 
     private DemoEvents _demoEvents;
     private EntityEvents _entityEvents;
@@ -26,7 +26,7 @@ public sealed partial class DemoParser
     private UserMessageEvents _userMessageEvents;
     private DemoTick _readSnapshotTick;
     private long _commandStartPosition;
-    private int _keyTickOffset = 0;
+    private int _keyTickOffset;
 
     /// <summary>
     /// Event fired every time a demo command is parsed during <see cref="ReadAllAsync(System.IO.Stream)"/>.
@@ -232,13 +232,13 @@ public sealed partial class DemoParser
         cancellationToken.ThrowIfCancellationRequested();
     }
 
-    private static readonly IComparer<KeyValuePair<DemoTick, long>> _keyTickComparer =
+    private static readonly IComparer<KeyValuePair<DemoTick, long>> KeyTickComparer =
         Comparer<KeyValuePair<DemoTick, long>>.Create(
             (left, right) => left.Key.CompareTo(right.Key));
 
     private bool TryGetKeyTick(DemoTick demoTick, out KeyValuePair<DemoTick, long> keyTick)
     {
-        var idx = _keyTickPositions.BinarySearch(KeyValuePair.Create(demoTick, 0L), _keyTickComparer);
+        var idx = _keyTickPositions.BinarySearch(KeyValuePair.Create(demoTick, 0L), KeyTickComparer);
         if (idx >= 0)
         {
             keyTick = _keyTickPositions[idx];
@@ -258,6 +258,8 @@ public sealed partial class DemoParser
 
     public async ValueTask SeekToTickAsync(DemoTick tick, CancellationToken cancellationToken)
     {
+        // todo: throw if currently in a MoveNextAsync
+
         if (TickCount < DemoTick.Zero)
         {
             throw new InvalidOperationException($"Cannot seek to tick {tick}");
@@ -278,51 +280,44 @@ public sealed partial class DemoParser
             }
 
             // Seeking backwards. Jump back to the key tick to read the snapshot
-            _readSnapshotTick = keyTick.Key;
+            _readSnapshotTick = CurrentDemoTick = keyTick.Key;
             _stream.Position = keyTick.Value;
         }
         else
         {
+            var deltaTicks = keyTick.Key - CurrentDemoTick;
 
-        }
-
-        var currentKeyTick = new DemoTick(CurrentDemoTick.Value / KeyTickInterval * KeyTickInterval);
-        var targetKeyTick = new DemoTick(tick.Value / KeyTickInterval * KeyTickInterval);
-
-        if (currentKeyTick == targetKeyTick)
-        {
-            if (tick < CurrentDemoTick)
+            // Only read the key tick if the jump is far enough ahead
+            if (hasKeyTick && deltaTicks.Value >= KeyTickInterval)
             {
-                // Seeking backwards. Jump back to the key tick to read the snapshot
-                _stream.Position = _keyTickPositions[targetKeyTick];
-            }
-            else
-            {
-                // Seeking forwards. May be in the middle of a tick, seek back to start
-                // before fast forwarding
-                _stream.Position = _commandStartPosition;
+                _readSnapshotTick = CurrentDemoTick = keyTick.Key;
+                _stream.Position = keyTick.Value;
             }
         }
-        else if (_keyTickPositions.TryGetValue(targetKeyTick, out var position))
+
+        // Keep reading commands until we reach the key tick
+        var targetKeyTick = new DemoTick(tick.Value / KeyTickInterval * KeyTickInterval + _keyTickOffset);
+        if (targetKeyTick > CurrentDemoTick)
         {
-            _stream.Position = position;
-        }
-        else
-        {
-            // Slow path - keep reading commands until we reach the key tick
-            _stream.Position = _commandStartPosition;
             SkipToTick(targetKeyTick);
         }
-
-        // Read entity and stringtable snapshots at this tick
-        _readSnapshotTick = targetKeyTick;
 
         // Advance ticks until we get to the target tick
         while (CurrentDemoTick < tick)
         {
-            if (!await MoveNextAsync(cancellationToken).ConfigureAwait(false))
+            var startPosition = _stream.Position;
+            var cmd = ReadCommandHeader();
+
+            // We've arrived at the target tick
+            if (CurrentDemoTick == tick)
             {
-                InvalidDemoException.Throw<int>($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {tick}");
+                _stream.Position = startPosition;
+                break;
+            }
+
+            if (!await MoveNextCoreAsync(cmd.Command, cmd.Size, cancellationToken).ConfigureAwait(false))
+            {
+                throw new EndOfStreamException($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {tick}");
             }
         }
     }
@@ -338,10 +333,11 @@ public sealed partial class DemoParser
             // key tick information that improves seeking performance.
             if (cmd.Command == (uint) EDemoCommands.DemStringTables)
             {
-                Span<byte> buffer = stackalloc byte[(int) cmd.Size];
+                var rentedBuffer = ArrayPool<byte>.Shared.Rent((int)cmd.Size);
+                var buffer = rentedBuffer.AsSpan(0, (int)cmd.Size);
                 _stream.ReadExactly(buffer);
-
                 _demoEvents.DemoStringTables?.Invoke(CDemoStringTables.Parser.ParseFrom(buffer));
+                ArrayPool<byte>.Shared.Return(rentedBuffer);
             }
             else
             {
@@ -372,15 +368,19 @@ public sealed partial class DemoParser
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to stop reading the command.</param>
     /// <returns><c>true</c> if more commands are available in the demo file, otherwise <c>false</c>.</returns>
-    public async ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken)
+    public ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken)
     {
         var cmd = ReadCommandHeader();
+        return MoveNextCoreAsync(cmd.Command, cmd.Size, cancellationToken);
+    }
 
-        var msgType = (EDemoCommands)(cmd.Command & ~(uint)EDemoCommands.DemIsCompressed);
+    private async ValueTask<bool> MoveNextCoreAsync(uint command, uint size, CancellationToken cancellationToken)
+    {
+        var msgType = (EDemoCommands)(command & ~(uint)EDemoCommands.DemIsCompressed);
         if (msgType is < 0 or >= EDemoCommands.DemMax)
-            throw new InvalidDemoException($"Unexpected demo command: {cmd.Command}");
+            throw new InvalidDemoException($"Unexpected demo command: {command}");
 
-        var isCompressed = (cmd.Command & (uint)EDemoCommands.DemIsCompressed)
+        var isCompressed = (command & (uint)EDemoCommands.DemIsCompressed)
                            == (uint)EDemoCommands.DemIsCompressed;
 
         while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
@@ -390,7 +390,7 @@ public sealed partial class DemoParser
         }
 
         // todo: read into pooled array
-        var buf = await ReadExactBytesAsync((int)cmd.Size, cancellationToken).ConfigureAwait(false);
+        var buf = await ReadExactBytesAsync((int)size, cancellationToken).ConfigureAwait(false);
 
         bool canContinue;
         if (isCompressed)

@@ -20,8 +20,14 @@ public readonly record struct GameTick(uint Value) : IComparable<GameTick>
 
     private string DebuggerDisplay => $"Tick {Value} ({ToGameTime()})";
 
+    public static GameTick operator +(GameTick tick, int ticks) => new((uint)(tick.Value + ticks));
+    public static GameTick operator -(GameTick tick, int ticks) => new((uint)(tick.Value - ticks));
+
     public static GameTick operator +(GameTick tick, TimeSpan duration) => new((uint)(tick.Value + duration.TotalSeconds / 64.0));
     public static GameTick operator -(GameTick tick, TimeSpan duration) => new((uint)(tick.Value - duration.TotalSeconds / 64.0));
+
+    public static GameTick operator +(GameTick tick, GameTick other) => new(tick.Value + other.Value);
+    public static GameTick operator -(GameTick tick, GameTick other) => new(tick.Value - other.Value);
 
     public static bool operator <(GameTick left, GameTick right) => left.Value < right.Value;
     public static bool operator <=(GameTick left, GameTick right) => left.Value <= right.Value;
