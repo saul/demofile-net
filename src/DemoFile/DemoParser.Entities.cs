@@ -23,7 +23,6 @@ public partial class DemoParser
     private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
     private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
 
-    private bool _fullSnapshotRead;
     private CHandle<CCSGameRulesProxy> _gameRulesHandle;
     private CHandle<CCSPlayerResource> _playerResourceHandle;
 
@@ -125,7 +124,6 @@ public partial class DemoParser
     {
         Debug.Assert(_playerInfos[msg.PlayerSlot] != null);
         IsGotv = _playerInfos[msg.PlayerSlot]?.Ishltv ?? false;
-        _fullSnapshotRead = false;
 
         MaxPlayers = msg.MaxClients;
         _serverClassBits = (int)Math.Log2(msg.MaxClasses) + 1;
@@ -260,18 +258,6 @@ public partial class DemoParser
         // Clear out all entities - this is a full update.
         if (!msg.LegacyIsDelta)
         {
-            if (IsGotv)
-            {
-                // In GOTV recordings, we see a snapshot every 3840 ticks (60 seconds).
-                // After we've read the first one, we can ignore the rest.
-                if (_fullSnapshotRead && CurrentDemoTick != _readFullPacketTick)
-                    return;
-
-                Console.WriteLine($"Reading snapshot tick: {CurrentDemoTick}");
-
-                _fullSnapshotRead = true;
-            }
-
             foreach (var entity in _entities)
             {
                 if (entity == null)

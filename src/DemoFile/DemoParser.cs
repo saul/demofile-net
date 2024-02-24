@@ -236,9 +236,6 @@ public sealed partial class DemoParser
 
         CurrentDemoTick = new DemoTick(tick);
 
-        //var actualCmd = command & ~(uint)EDemoCommands.DemIsCompressed;
-        //Console.WriteLine($"    Header: Tick = {CurrentDemoTick}, Command = {(EDemoCommands)actualCmd}, Size = {size:N0} bytes");
-
         return (Command: command, Size: size);
     }
 
