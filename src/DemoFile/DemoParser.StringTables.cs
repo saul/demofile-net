@@ -101,29 +101,4 @@ public partial class DemoParser
             ? null
             : CMsgPlayerInfo.Parser.ParseFrom(entry.Value);
     }
-
-    private void OnDemoStringTables(CDemoStringTables stringTables)
-    {
-        // DemoStringTables and packet entity snapshots are recorded in demos
-        // every 3,840 ticks (60 secs). Keep track of where they are to allow
-        // for fast seeking through the demo.
-        // DemoStringTables are always before the packet entities snapshot.
-        _keyTickPositions.TryAdd(CurrentDemoTick, _commandStartPosition);
-
-        // Some demos have key ticks at tick 0, some at tick 1.
-        _keyTickOffset = CurrentDemoTick.Value % KeyTickInterval;
-        Debug.Assert(_keyTickOffset == 0 || _keyTickOffset == 1, "Unexpected key tick offset");
-
-        // We only care about DemoStringTables if we're seeking to a key tick
-        if (CurrentDemoTick != _readSnapshotTick) return;
-
-        for (var tableIdx = 0; tableIdx < stringTables.Tables.Count; tableIdx++)
-        {
-            var snapshot = stringTables.Tables[tableIdx];
-            var stringTable = _stringTableList[tableIdx];
-            Debug.Assert(stringTable.Name == snapshot.TableName);
-
-            stringTable.ReplaceWith(snapshot.Items);
-        }
-    }
 }

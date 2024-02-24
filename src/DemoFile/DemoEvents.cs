@@ -45,9 +45,7 @@ public struct DemoEvents
                 DemoUserCmd?.Invoke(CDemoUserCmd.Parser.ParseFrom(buffer));
                 return true;
             case EDemoCommands.DemFullPacket:
-                var fullPacket = CDemoFullPacket.Parser.ParseFrom(buffer);
-                DemoStringTables?.Invoke(fullPacket.StringTable);
-                DemoPacket?.Invoke(fullPacket.Packet);
+                DemoFullPacket?.Invoke(CDemoFullPacket.Parser.ParseFrom(buffer));
                 return true;
             case EDemoCommands.DemSaveGame:
                 DemoSaveGame?.Invoke(CDemoSaveGame.Parser.ParseFrom(buffer));
@@ -69,6 +67,7 @@ public struct DemoEvents
     public Action<CDemoSendTables>? DemoSendTables;
     public Action<CDemoClassInfo>? DemoClassInfo;
     public Action<CDemoStringTables>? DemoStringTables;
+    public Action<CDemoFullPacket>? DemoFullPacket;
     public Action<CDemoPacket>? DemoPacket;
     public Action<CDemoConsoleCmd>? DemoConsoleCmd;
     public Action<CDemoCustomData>? DemoCustomData;

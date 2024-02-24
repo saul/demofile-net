@@ -264,8 +264,10 @@ public partial class DemoParser
             {
                 // In GOTV recordings, we see a snapshot every 3840 ticks (60 seconds).
                 // After we've read the first one, we can ignore the rest.
-                if (_fullSnapshotRead)
+                if (_fullSnapshotRead && CurrentDemoTick != _readFullPacketTick)
                     return;
+
+                Console.WriteLine($"Reading snapshot tick: {CurrentDemoTick}");
 
                 _fullSnapshotRead = true;
             }
