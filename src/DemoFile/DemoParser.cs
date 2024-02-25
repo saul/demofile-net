@@ -188,6 +188,22 @@ public sealed partial class DemoParser
             }
             stream.Position = oldPosition;
         }
+
+        // Keep reading commands until we've passed the PreRecord tick
+        while (CurrentDemoTick == DemoTick.PreRecord)
+        {
+            var cmd = ReadCommandHeader();
+            if (CurrentDemoTick != DemoTick.PreRecord)
+            {
+                _stream.Position = _commandStartPosition;
+                break;
+            }
+
+            if (!await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false))
+            {
+                throw new EndOfStreamException($"Reached EOF before reaching tick 0");
+            }
+        }
     }
 
     /// <summary>
