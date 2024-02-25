@@ -195,6 +195,9 @@ public sealed partial class DemoParser
             var cmd = ReadCommandHeader();
             if (CurrentDemoTick != DemoTick.PreRecord)
             {
+                _fullPacketTickOffset = CurrentDemoTick.Value;
+                Debug.Assert(_fullPacketTickOffset is 0 or 1, "Unexpected first demo tick");
+
                 _stream.Position = _commandStartPosition;
                 break;
             }
@@ -296,16 +299,7 @@ public sealed partial class DemoParser
         var buf = rented.AsMemory(..size);
         await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
 
-        bool canContinue;
-        if (isCompressed)
-        {
-            using var decompressed = Snappy.DecompressToMemory(buf.Span);
-            canContinue = _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
-        }
-        else
-        {
-            canContinue = _demoEvents.ReadDemoCommand(msgType, buf.Span);
-        }
+        var canContinue = _demoEvents.ReadDemoCommand(msgType, buf.Span, isCompressed);
 
         if (OnCommandFinish is { } onCommandFinish)
         {

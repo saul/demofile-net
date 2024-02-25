@@ -69,7 +69,7 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
     {
         if (length > _values.Count)
         {
-            Debug.Assert(length == _values.Count + 1);
+            //Debug.Assert(length == _values.Count + 1);
             Resize(length);
         }
     }

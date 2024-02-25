@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace DemoFile;
 
 public partial class DemoParser
@@ -81,7 +79,7 @@ public partial class DemoParser
         }
 
         // Keep reading commands until we reach the full packet
-        _readFullPacketTick = new DemoTick(targetTick.Value / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
+        _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
         SkipToTick(_readFullPacketTick);
 
         // Advance ticks until we get to the target tick
@@ -135,10 +133,6 @@ public partial class DemoParser
         {
             _fullPacketPositions.Insert(~idx, new FullPacketPosition(CurrentDemoTick, _commandStartPosition));
         }
-
-        // Some demos have fullpackets at tick 0, some at tick 1.
-        _fullPacketTickOffset = CurrentDemoTick.Value % FullPacketInterval;
-        Debug.Assert(_fullPacketTickOffset == 0 || _fullPacketTickOffset == 1, "Unexpected full packet tick offset");
     }
 
     private void OnDemoFullPacket(CDemoFullPacket fullPacket)
