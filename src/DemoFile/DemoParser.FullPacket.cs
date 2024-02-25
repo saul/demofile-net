@@ -10,10 +10,9 @@ public partial class DemoParser
         public int CompareTo(FullPacketPosition other) => Tick.CompareTo(other.Tick);
     }
 
-    /// Key ticks occur every 60 seconds
+    /// Full packets occur every 60 seconds
     private const int FullPacketInterval = 64 * 60;
 
-    // todo: reset on StartReadingAsync
     private readonly List<FullPacketPosition> _fullPacketPositions = new(64);
     private DemoTick _readFullPacketTick = DemoTick.PreRecord;
     private int _fullPacketTickOffset;
@@ -38,61 +37,67 @@ public partial class DemoParser
         return false;
     }
 
-    public async ValueTask SeekToTickAsync(DemoTick tick, CancellationToken cancellationToken)
+    /// <summary>
+    /// Seek to a specific tick within the demo file. Tick can be in the future or the past.
+    /// This works by first seeking to the nearest <see cref="CDemoFullPacket"/> before <paramref name="targetTick"/>,
+    /// decoding the full stringtable and entity snapshot, then reading tick-by-tick to <paramref name="targetTick"/>.
+    /// </summary>
+    /// <param name="targetTick">Tick to seek to.</param>
+    /// <param name="cancellationToken">Cancellation token for cancelling the seek.</param>
+    /// <exception cref="InvalidOperationException">Tick is invalid, or attempting to seek while reading commands.</exception>
+    /// <exception cref="EndOfStreamException">EOF before reaching <paramref name="targetTick"/>.</exception>
+    /// <remarks>
+    /// Seeking is not allowed while reading commands. See <see cref="IsReading"/>.
+    /// </remarks>
+    public async ValueTask SeekToTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
     {
-        // todo: throw if currently in a MoveNextAsync
+        if (IsReading)
+            throw new InvalidOperationException($"Cannot seek to tick while reading commands");
 
         if (TickCount < DemoTick.Zero)
-        {
-            throw new InvalidOperationException($"Cannot seek to tick {tick}");
-        }
+            throw new InvalidOperationException($"Cannot seek to tick {targetTick}");
 
-        if (TickCount != default && tick > TickCount)
-        {
-            throw new InvalidOperationException($"Cannot seek to tick {tick}. The demo only contains data for {TickCount} ticks");
-        }
+        if (TickCount != default && targetTick > TickCount)
+            throw new InvalidOperationException($"Cannot seek to tick {targetTick}. The demo only contains data for {TickCount} ticks");
 
-        var hasFullPacket = TryFindFullPacketBefore(tick, out var fullPacket);
-        if (tick < CurrentDemoTick)
+        var hasFullPacket = TryFindFullPacketBefore(targetTick, out var fullPacket);
+        if (targetTick < CurrentDemoTick)
         {
             if (!hasFullPacket)
-            {
-                throw new InvalidOperationException($"Cannot seek backwards to tick {tick}. No {nameof(CDemoFullPacket)} has been read");
-            }
+                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick}. No {nameof(CDemoFullPacket)} has been read");
 
-            // Seeking backwards. Jump back to the key tick to read the snapshot
+            // Seeking backwards. Jump back to the full packet to read the snapshot
             (CurrentDemoTick, _stream.Position) = fullPacket;
         }
         else
         {
             var deltaTicks = fullPacket.Tick - CurrentDemoTick;
 
-            // Only read the key tick if the jump is far enough ahead
+            // Only read the full packet if the jump is far enough ahead
             if (hasFullPacket && deltaTicks.Value >= FullPacketInterval)
             {
                 (CurrentDemoTick, _stream.Position) = fullPacket;
             }
         }
 
-        // Keep reading commands until we reach the key tick
-        _readFullPacketTick = new DemoTick(tick.Value / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
+        // Keep reading commands until we reach the full packet
+        _readFullPacketTick = new DemoTick(targetTick.Value / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
         SkipToTick(_readFullPacketTick);
 
         // Advance ticks until we get to the target tick
-        while (CurrentDemoTick < tick)
+        while (CurrentDemoTick < targetTick)
         {
             var cmd = ReadCommandHeader();
 
-            // We've arrived at the target tick
-            if (CurrentDemoTick == tick)
+            if (CurrentDemoTick == targetTick)
             {
                 _stream.Position = _commandStartPosition;
                 break;
             }
 
-            if (!await MoveNextCoreAsync(cmd.Command, cmd.Size, cancellationToken).ConfigureAwait(false))
+            if (!await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false))
             {
-                throw new EndOfStreamException($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {tick}");
+                throw new EndOfStreamException($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {targetTick}");
             }
         }
     }
@@ -102,17 +107,16 @@ public partial class DemoParser
         while (CurrentDemoTick < targetTick)
         {
             var cmd = ReadCommandHeader();
-            var actualCmd = cmd.Command & ~(uint) EDemoCommands.DemIsCompressed;
 
             // If we're at the target tick, jump back to the start of the command
-            if (CurrentDemoTick == targetTick && actualCmd == (uint)EDemoCommands.DemFullPacket)
+            if (CurrentDemoTick == targetTick && cmd.Command == EDemoCommands.DemFullPacket)
             {
                 _stream.Position = _commandStartPosition;
                 break;
             }
 
             // Record fullpackets even when seeking to improve seeking performance
-            if (actualCmd == (uint) EDemoCommands.DemFullPacket)
+            if (cmd.Command == EDemoCommands.DemFullPacket)
             {
                 RecordFullPacket();
             }
@@ -134,23 +138,18 @@ public partial class DemoParser
 
         // Some demos have fullpackets at tick 0, some at tick 1.
         _fullPacketTickOffset = CurrentDemoTick.Value % FullPacketInterval;
-        Debug.Assert(_fullPacketTickOffset == 0 || _fullPacketTickOffset == 1, "Unexpected key tick offset");
+        Debug.Assert(_fullPacketTickOffset == 0 || _fullPacketTickOffset == 1, "Unexpected full packet tick offset");
     }
 
     private void OnDemoFullPacket(CDemoFullPacket fullPacket)
     {
-        if (CurrentDemoTick < DemoTick.Zero)
-            return;
-
         RecordFullPacket();
 
-        // We only care about full packets if we're seeking
+        // We only want to read full packets if we're seeking to it
         if (CurrentDemoTick == _readFullPacketTick)
         {
-            var stringTables = fullPacket.StringTable;
-            for (var tableIdx = 0; tableIdx < stringTables.Tables.Count; tableIdx++)
+            foreach (var snapshot in fullPacket.StringTable.Tables)
             {
-                var snapshot = stringTables.Tables[tableIdx];
                 var stringTable = _stringTables[snapshot.TableName];
                 stringTable.ReplaceWith(snapshot.Items);
             }

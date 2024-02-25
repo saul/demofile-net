@@ -9,18 +9,25 @@ namespace DemoFile;
 
 public sealed partial class DemoParser
 {
+    private readonly ArrayPool<byte> _bytePool = ArrayPool<byte>.Create();
     private readonly PriorityQueue<ITickTimer, int> _demoTickTimers = new();
     private readonly PriorityQueue<QueuedPacket, (int, int)> _packetQueue = new(128);
     private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
     private readonly Source1GameEvents _source1GameEvents;
 
+    private long _commandStartPosition;
     private DemoEvents _demoEvents;
     private EntityEvents _entityEvents;
     private GameEvents _gameEvents;
     private PacketEvents _packetEvents;
     private Stream _stream;
     private UserMessageEvents _userMessageEvents;
-    private long _commandStartPosition;
+
+    /// <summary>
+    /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
+    /// Reset to <c>null</c> just before it is invoked.
+    /// </summary>
+    public Action? OnCommandFinish;
 
     /// <summary>
     /// Event fired every time a demo command is parsed during <see cref="ReadAllAsync(System.IO.Stream)"/>.
@@ -29,12 +36,6 @@ public sealed partial class DemoParser
     /// Only fired if demo is a complete recording (i.e. <see cref="TickCount"/> is non-zero).
     /// </remarks>
     public Action<DemoProgressEvent>? OnProgress;
-
-    /// <summary>
-    /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
-    /// Reset to <c>null</c> just before it is invoked.
-    /// </summary>
-    public Action? OnCommandFinish;
 
     public DemoParser()
     {
@@ -62,6 +63,12 @@ public sealed partial class DemoParser
         _gameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
         _gameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
     }
+
+    /// <summary>
+    /// Flag indicate whether the parser is currently reading a command.
+    /// During reading, seeking (e.g. with <see cref="SeekToTickAsync"/>) is not possible.
+    /// </summary>
+    public bool IsReading { get; private set; }
 
     public ref DemoEvents DemoEvents => ref _demoEvents;
     public ref GameEvents GameEvents => ref _gameEvents;
@@ -100,7 +107,6 @@ public sealed partial class DemoParser
 
     private void OnDemoPacket(CDemoPacket msg)
     {
-        var arrayPool = ArrayPool<byte>.Shared;
         var buffer = new BitBuffer(msg.Data.Span);
 
         // Read all messages from the buffer. Messages are packed serially as
@@ -111,8 +117,8 @@ public sealed partial class DemoParser
             var msgType = (int) buffer.ReadUBitVar();
             var size = (int) buffer.ReadUVarInt32();
 
-            var rentedBuffer = arrayPool.Rent(size);
-            var msgBuf = ((Span<byte>) rentedBuffer)[..size];
+            var rentedBuffer = _bytePool.Rent(size);
+            var msgBuf = rentedBuffer.AsSpan(..size);
             buffer.ReadBytes(msgBuf);
 
             // Queue packets to be read in a specific order.
@@ -131,11 +137,11 @@ public sealed partial class DemoParser
             {
             }
 
-            arrayPool.Return(queued.RentedBuf);
+            _bytePool.Return(queued.RentedBuf);
         }
     }
 
-    private static int ReadDemoSize(byte[] bytes)
+    private static int ReadDemoSize(Span<byte> bytes)
     {
         ReadOnlySpan<int> values = MemoryMarshal.Cast<byte, int>(bytes);
         return values[0];
@@ -156,8 +162,12 @@ public sealed partial class DemoParser
         _fullPacketPositions.Clear();
         _stream = stream;
 
-        ValidateMagic(await ReadExactBytesAsync(8, cancellationToken).ConfigureAwait(false));
-        var sizeBytes = ReadDemoSize(await ReadExactBytesAsync(8, cancellationToken).ConfigureAwait(false));
+        var rented = _bytePool.Rent(16);
+        var buf = rented.AsMemory(..16);
+        await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
+        ValidateMagic(buf.Span[..8]);
+        var sizeBytes = ReadDemoSize(buf.Span[8..]);
+        _bytePool.Return(rented);
 
         // `sizeBytes` represents the number of bytes remaining in the demo,
         // from this point (i.e. 16 bytes into the file).
@@ -227,16 +237,19 @@ public sealed partial class DemoParser
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private (uint Command, uint Size) ReadCommandHeader()
+    private (EDemoCommands Command, bool IsCompressed, int Size) ReadCommandHeader()
     {
         _commandStartPosition = _stream.Position;
         var command = _stream.ReadUVarInt32();
         var tick = (int) _stream.ReadUVarInt32();
-        var size = _stream.ReadUVarInt32();
+        var size = (int) _stream.ReadUVarInt32();
 
         CurrentDemoTick = new DemoTick(tick);
 
-        return (Command: command, Size: size);
+        var isCompressed = (command & (uint) EDemoCommands.DemIsCompressed) != 0;
+        var msgType = (EDemoCommands)(command & ~(uint) EDemoCommands.DemIsCompressed);
+
+        return (Command: msgType, IsCompressed: isCompressed, Size: size);
     }
 
     /// <summary>
@@ -247,17 +260,15 @@ public sealed partial class DemoParser
     public ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken)
     {
         var cmd = ReadCommandHeader();
-        return MoveNextCoreAsync(cmd.Command, cmd.Size, cancellationToken);
+        return MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken);
     }
 
-    private async ValueTask<bool> MoveNextCoreAsync(uint command, uint size, CancellationToken cancellationToken)
+    private async ValueTask<bool> MoveNextCoreAsync(EDemoCommands msgType, bool isCompressed, int size, CancellationToken cancellationToken)
     {
-        var msgType = (EDemoCommands)(command & ~(uint)EDemoCommands.DemIsCompressed);
-        if (msgType is < 0 or >= EDemoCommands.DemMax)
-            throw new InvalidDemoException($"Unexpected demo command: {command}");
+        IsReading = true;
 
-        var isCompressed = (command & (uint)EDemoCommands.DemIsCompressed)
-                           == (uint)EDemoCommands.DemIsCompressed;
+        if (msgType is < 0 or >= EDemoCommands.DemMax)
+            throw new InvalidDemoException($"Unexpected demo command: {msgType}");
 
         while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
         {
@@ -265,18 +276,19 @@ public sealed partial class DemoParser
             timer.Invoke();
         }
 
-        // todo: read into pooled array
-        var buf = await ReadExactBytesAsync((int)size, cancellationToken).ConfigureAwait(false);
+        var rented = _bytePool.Rent(size);
+        var buf = rented.AsMemory(..size);
+        await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
 
         bool canContinue;
         if (isCompressed)
         {
-            using var decompressed = Snappy.DecompressToMemory(buf);
+            using var decompressed = Snappy.DecompressToMemory(buf.Span);
             canContinue = _demoEvents.ReadDemoCommand(msgType, decompressed.Memory.Span);
         }
         else
         {
-            canContinue = _demoEvents.ReadDemoCommand(msgType, buf);
+            canContinue = _demoEvents.ReadDemoCommand(msgType, buf.Span);
         }
 
         if (OnCommandFinish is { } onCommandFinish)
@@ -286,19 +298,24 @@ public sealed partial class DemoParser
             onCommandFinish();
         }
 
+        IsReading = false;
+        _bytePool.Return(rented);
         return canContinue;
     }
 
     private async ValueTask ReadFileInfo(CancellationToken cancellationToken)
     {
         var cmd = ReadCommandHeader();
-        Debug.Assert(cmd.Command == (uint)EDemoCommands.DemFileInfo);
+        Debug.Assert(cmd.Command == EDemoCommands.DemFileInfo);
 
         // Always treat DemoFileInfo as being at 'pre-record'
         CurrentDemoTick = DemoTick.PreRecord;
 
-        var buf = await ReadExactBytesAsync((int)cmd.Size, cancellationToken).ConfigureAwait(false);
-        DemoEvents.DemoFileInfo?.Invoke(CDemoFileInfo.Parser.ParseFrom(buf));
+        var rented = _bytePool.Rent(cmd.Size);
+        var buf = rented.AsMemory(..cmd.Size);
+        await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
+        DemoEvents.DemoFileInfo?.Invoke(CDemoFileInfo.Parser.ParseFrom(buf.Span));
+        _bytePool.Return(rented);
     }
 
     private static void ValidateMagic(ReadOnlySpan<byte> magic)
@@ -308,15 +325,6 @@ public sealed partial class DemoParser
             throw new InvalidDemoException(
                 $"Invalid Source 2 demo magic ('{Encoding.ASCII.GetString(magic)}' != expected 'PBDEMS2')");
         }
-    }
-
-    private async ValueTask<byte[]> ReadExactBytesAsync(
-        int length,
-        CancellationToken cancellationToken)
-    {
-        var result = new byte[length];
-        await _stream.ReadExactlyAsync(result, 0, length, cancellationToken).ConfigureAwait(false);
-        return result;
     }
 
     /// <summary>
