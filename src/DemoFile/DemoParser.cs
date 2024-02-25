@@ -286,8 +286,7 @@ public sealed partial class DemoParser
     {
         IsReading = true;
 
-        if (msgType is < 0 or >= EDemoCommands.DemMax)
-            throw new InvalidDemoException($"Unexpected demo command: {msgType}");
+        Debug.Assert(msgType is >= 0 and < EDemoCommands.DemMax, $"Unexpected demo command: {msgType}");
 
         while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
         {
