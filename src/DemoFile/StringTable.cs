@@ -1,24 +1,21 @@
 ﻿using System.Buffers;
+using System.Collections.Immutable;
 using System.Diagnostics;
-using Google.Protobuf.Collections;
+using System.Diagnostics.Contracts;
 using Snappier;
 
 namespace DemoFile;
 
 public class StringTable
 {
-    public delegate void UpdateCallback(int index, KeyValuePair<string, byte[]> userData);
+    public delegate void UpdateCallback(int index, KeyValuePair<string, byte[]>? entry);
 
+    private readonly List<KeyValuePair<string, byte[]>> _entries = new();
     private readonly int _flags;
-    private readonly int _userDataSizeBits;
     private readonly bool _isBitcountVarint;
     private readonly bool _isUserDataFixedSize;
+    private readonly int _userDataSizeBits;
     private readonly UpdateCallback? _onUpdatedEntry;
-    private List<KeyValuePair<string, byte[]>> _entries = new();
-
-    public string Name { get; }
-
-    public IReadOnlyList<KeyValuePair<string, byte[]>> Entries => _entries;
 
     public StringTable(string name, int flags, int userDataSizeBits, bool isBitcountVarint, bool isUserDataFixedSize,
         UpdateCallback? onUpdatedEntry)
@@ -31,6 +28,10 @@ public class StringTable
 
         Name = name;
     }
+
+    public string Name { get; }
+
+    public IReadOnlyList<KeyValuePair<string, byte[]>> Entries => _entries.ToImmutableList();
 
     public override string ToString() => $"StringTable {{ {Name}, Entries = {_entries.Count} }}";
 
@@ -131,28 +132,26 @@ public class StringTable
         ArrayPool<string>.Shared.Return(keys);
     }
 
-    internal void ReplaceWith(IReadOnlyList<CDemoStringTables.Types.items_t> items)
+    internal void ReplaceWith(IReadOnlyList<KeyValuePair<string, byte[]>> items)
     {
         for (var index = 0; index < items.Count; index++)
         {
-            var item = items[index];
+            var entry = items[index];
 
             // Add any new entries
             if (index >= _entries.Count)
             {
-                var entry = KeyValuePair.Create(item.Str, item.Data.ToArray());
                 _entries.Add(entry);
                 _onUpdatedEntry?.Invoke(index, entry);
                 continue;
             }
 
             var existing = _entries[index];
-            Debug.Assert(existing.Key == item.Str, "String table entry changed on snapshot");
+            Debug.Assert(existing.Key == entry.Key, "String table entry changed on snapshot");
 
             // If the user data has changed, invoke the change callback
-            if (!existing.Value.SequenceEqual(item.Data))
+            if (!existing.Value.SequenceEqual(entry.Value))
             {
-                var entry = KeyValuePair.Create(item.Str, item.Data.ToArray());
                 _entries[index] = entry;
                 _onUpdatedEntry?.Invoke(index, entry);
             }
@@ -161,6 +160,10 @@ public class StringTable
         if (items.Count < _entries.Count)
         {
             _entries.RemoveRange(items.Count, _entries.Count - items.Count);
+            for (var removedIdx = _entries.Count; removedIdx < items.Count; ++removedIdx)
+            {
+                _onUpdatedEntry?.Invoke(removedIdx, null);
+            }
         }
     }
 }

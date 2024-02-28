@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Snappier;
@@ -61,7 +62,26 @@ public partial class DemoParser
         stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries);
     }
 
-    private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]> entry)
+    private void RestoreStringTables(ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>> snapshot)
+    {
+        foreach (var stringTable in _stringTableList)
+        {
+            stringTable.ReplaceWith(snapshot[stringTable.Name]);
+        }
+    }
+
+    private void OnDemoStringTable(CDemoStringTables.Types.table_t snapshot)
+    {
+        var stringTable = _stringTables[snapshot.TableName];
+
+        var newEntries = snapshot.Items
+            .Select(item => KeyValuePair.Create(item.Str, item.Data.ToArray()))
+            .ToImmutableList();
+
+        stringTable.ReplaceWith(newEntries);
+    }
+
+    private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]>? entry)
     {
         if (index >= _instanceBaselines.Length)
         {
@@ -69,27 +89,36 @@ public partial class DemoParser
             Array.Resize(ref _instanceBaselines, newSize);
         }
 
-        ReadOnlySpan<char> key = entry.Key;
-
-        BaselineKey baselineKey;
-        if (key.IndexOf(':') is var sepIdx && sepIdx >= 0)
+        if (entry is {Key: var stringData, Value: var userData})
         {
-            var classId = uint.Parse(key[..sepIdx]);
-            var alternateBaseline = uint.Parse(key[(sepIdx + 1)..]);
+            ReadOnlySpan<char> key = stringData;
 
-            baselineKey = new BaselineKey(classId, alternateBaseline);
+            BaselineKey baselineKey;
+            if (key.IndexOf(':') is var sepIdx && sepIdx >= 0)
+            {
+                var classId = uint.Parse(key[..sepIdx]);
+                var alternateBaseline = uint.Parse(key[(sepIdx + 1)..]);
+
+                baselineKey = new BaselineKey(classId, alternateBaseline);
+            }
+            else
+            {
+                var classId = uint.Parse(key);
+                baselineKey = new BaselineKey(classId, 0);
+            }
+
+            _instanceBaselines[index] = KeyValuePair.Create(baselineKey, userData);
+            _instanceBaselineLookup[baselineKey] = index;
         }
         else
         {
-            var classId = uint.Parse(key);
-            baselineKey = new BaselineKey(classId, 0);
+            var (removedBaseline, _) = _instanceBaselines[index];
+            var removed = _instanceBaselineLookup.Remove(removedBaseline);
+            Debug.Assert(removed, "Expected to remove instancebaseline");
         }
-
-        _instanceBaselines[index] = KeyValuePair.Create(baselineKey, entry.Value);
-        _instanceBaselineLookup[baselineKey] = index;
     }
 
-    private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]> entry)
+    private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]>? entry)
     {
         if (index >= _playerInfos.Length)
         {
@@ -97,8 +126,8 @@ public partial class DemoParser
             Array.Resize(ref _playerInfos, newSize);
         }
 
-        _playerInfos[index] = entry.Value.Length == 0
-            ? null
-            : CMsgPlayerInfo.Parser.ParseFrom(entry.Value);
+        _playerInfos[index] = entry?.Value is {Length: >0} userInfo
+            ? CMsgPlayerInfo.Parser.ParseFrom(userInfo)
+            : null;
     }
 }

@@ -1,23 +1,30 @@
+using System.Collections.Immutable;
+
 namespace DemoFile;
 
 public partial class DemoParser
 {
-    private readonly record struct FullPacketPosition(DemoTick Tick, long StreamPosition)
-        : IComparable<FullPacketPosition>
+    private readonly record struct FullPacketRecord(
+        DemoTick Tick,
+        long StreamPosition,
+        ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>> StringTables)
+        : IComparable<FullPacketRecord>
     {
-        public int CompareTo(FullPacketPosition other) => Tick.CompareTo(other.Tick);
+        public static FullPacketRecord ForTick(DemoTick tick) => new(tick, 0L, ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>>.Empty);
+
+        public int CompareTo(FullPacketRecord other) => Tick.CompareTo(other.Tick);
     }
 
     /// Full packets occur every 60 seconds
     private const int FullPacketInterval = 64 * 60;
 
-    private readonly List<FullPacketPosition> _fullPacketPositions = new(64);
+    private readonly List<FullPacketRecord> _fullPacketPositions = new(64);
     private DemoTick _readFullPacketTick = DemoTick.PreRecord;
     private int _fullPacketTickOffset;
 
-    private bool TryFindFullPacketBefore(DemoTick demoTick, out FullPacketPosition fullPacket)
+    private bool TryFindFullPacketBefore(DemoTick demoTick, out FullPacketRecord fullPacket)
     {
-        var idx = _fullPacketPositions.BinarySearch(new FullPacketPosition(demoTick, 0L));
+        var idx = _fullPacketPositions.BinarySearch(FullPacketRecord.ForTick(demoTick));
         if (idx >= 0)
         {
             fullPacket = _fullPacketPositions[idx];
@@ -58,14 +65,18 @@ public partial class DemoParser
         if (TickCount != default && targetTick > TickCount)
             throw new InvalidOperationException($"Cannot seek to tick {targetTick}. The demo only contains data for {TickCount} ticks");
 
+        // Can never seek before the first tick of the demo
+        targetTick = new DemoTick(Math.Max(targetTick.Value, _fullPacketTickOffset));
+
         var hasFullPacket = TryFindFullPacketBefore(targetTick, out var fullPacket);
         if (targetTick < CurrentDemoTick)
         {
             if (!hasFullPacket)
-                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick}. No {nameof(CDemoFullPacket)} has been read");
+                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
 
             // Seeking backwards. Jump back to the full packet to read the snapshot
-            (CurrentDemoTick, _stream.Position) = fullPacket;
+            (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
+            RestoreStringTables(stringTables);
         }
         else
         {
@@ -74,13 +85,17 @@ public partial class DemoParser
             // Only read the full packet if the jump is far enough ahead
             if (hasFullPacket && deltaTicks.Value >= FullPacketInterval)
             {
-                (CurrentDemoTick, _stream.Position) = fullPacket;
+                (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
+                RestoreStringTables(stringTables);
             }
         }
 
         // Keep reading commands until we reach the full packet
         _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
-        SkipToTick(_readFullPacketTick);
+        if (CurrentDemoTick < _readFullPacketTick)
+        {
+            await SkipToFullPacketTickAsync(_readFullPacketTick, cancellationToken).ConfigureAwait(false);
+        }
 
         // Advance ticks until we get to the target tick
         while (CurrentDemoTick < targetTick)
@@ -100,9 +115,9 @@ public partial class DemoParser
         }
     }
 
-    private void SkipToTick(DemoTick targetTick)
+    private async ValueTask SkipToFullPacketTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
     {
-        while (CurrentDemoTick < targetTick)
+        while (CurrentDemoTick <= targetTick)
         {
             var cmd = ReadCommandHeader();
 
@@ -110,45 +125,53 @@ public partial class DemoParser
             if (CurrentDemoTick == targetTick && cmd.Command == EDemoCommands.DemFullPacket)
             {
                 _stream.Position = _commandStartPosition;
-                break;
+                return;
             }
 
-            // Record fullpackets even when seeking to improve seeking performance
+            // Decode fullpackets even when seeking for two reasons:
+            // - Full packets are recorded to enable faster seeking in future
+            // - Contain string table delta since last full packet that must be decoded
             if (cmd.Command == EDemoCommands.DemFullPacket)
             {
-                RecordFullPacket();
+                await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false);
             }
-
-            // Skip over the data and start reading the next command
-            _stream.Position += cmd.Size;
+            else
+            {
+                // Skip over the data and start reading the next command
+                _stream.Position += cmd.Size;
+            }
         }
-    }
 
-    private void RecordFullPacket()
-    {
-        // DemoFullPackets are recorded in demos every 3,840 ticks (60 secs).
-        // Keep track of where they are to allow for fast seeking through the demo.
-        var idx = _fullPacketPositions.BinarySearch(new FullPacketPosition(CurrentDemoTick, 0L));
-        if (idx < 0)
-        {
-            _fullPacketPositions.Insert(~idx, new FullPacketPosition(CurrentDemoTick, _commandStartPosition));
-        }
+        throw new InvalidDemoException($"Could not find {nameof(EDemoCommands.DemFullPacket)} at tick {targetTick}");
     }
 
     private void OnDemoFullPacket(CDemoFullPacket fullPacket)
     {
-        RecordFullPacket();
-
-        // We only want to read full packets if we're seeking to it
-        if (CurrentDemoTick == _readFullPacketTick)
+        // DemoFullPackets are recorded in demos every 3,840 ticks (60 secs).
+        // Keep track of where they are to allow for fast seeking through the demo.
+        var idx = _fullPacketPositions.BinarySearch(FullPacketRecord.ForTick(CurrentDemoTick));
+        if (idx < 0)
         {
+            _fullPacketPositions.Insert(~idx, new FullPacketRecord(
+                CurrentDemoTick,
+                _commandStartPosition,
+                _stringTables.ToImmutableDictionary(kvp => kvp.Key, kvp => kvp.Value.Entries)));
+        }
+
+        if (CurrentDemoTick <= _readFullPacketTick)
+        {
+            // CDemoFullPacket.string_table only contains tables that have changed
+            // since the last CDemoFullPacket, so we need to read each one while seeking.
             foreach (var snapshot in fullPacket.StringTable.Tables)
             {
-                var stringTable = _stringTables[snapshot.TableName];
-                stringTable.ReplaceWith(snapshot.Items);
+                OnDemoStringTable(snapshot);
             }
 
-            OnDemoPacket(fullPacket.Packet);
+            // We only need to parse the entity snapshot if we're seeking to it
+            if (CurrentDemoTick == _readFullPacketTick)
+            {
+                OnDemoPacket(fullPacket.Packet);
+            }
         }
     }
 }
