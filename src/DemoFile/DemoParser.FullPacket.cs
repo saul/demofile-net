@@ -69,10 +69,10 @@ public partial class DemoParser
         targetTick = new DemoTick(Math.Max(targetTick.Value, _fullPacketTickOffset));
 
         var hasFullPacket = TryFindFullPacketBefore(targetTick, out var fullPacket);
-        if (targetTick < CurrentDemoTick)
+        if (targetTick <= CurrentDemoTick)
         {
             if (!hasFullPacket)
-                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
+                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick} from {CurrentDemoTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
 
             // Seeking backwards. Jump back to the full packet to read the snapshot
             (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
