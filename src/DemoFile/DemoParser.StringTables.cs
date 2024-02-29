@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Snappier;
@@ -24,38 +25,31 @@ public partial class DemoParser
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
         _stringTables.TryGetValue(tableName, out stringTable);
 
-    private int _instanceBaselineTableId = -1;
-    private int _userInfoTableId = -1;
-
     private void OnCreateStringTable(CSVCMsg_CreateStringTable msg)
     {
+        StringTable.UpdateCallback? onUpdatedEntry = msg.Name switch
+        {
+            "instancebaseline" => OnInstanceBaselineUpdate,
+            "userinfo" => OnUserInfoUpdate,
+            _ => null
+        };
+
         var stringTable = new StringTable(
             msg.Name,
             msg.Flags,
             msg.UserDataSizeBits,
             msg.UsingVarintBitcounts,
-            msg.UserDataFixedSize);
-
-        Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry = null;
-        if (msg.Name == "instancebaseline")
-        {
-            _instanceBaselineTableId = _stringTableList.Count;
-            onUpdatedEntry = OnInstanceBaselineUpdate;
-        }
-        else if (msg.Name == "userinfo")
-        {
-            _userInfoTableId = _stringTableList.Count;
-            onUpdatedEntry = OnUserInfoUpdate;
-        }
+            msg.UserDataFixedSize,
+            onUpdatedEntry);
 
         if (msg.DataCompressed)
         {
             using var decompressed = Snappy.DecompressToMemory(msg.StringData.Span);
-            stringTable.ReadUpdate(decompressed.Memory.Span, msg.NumEntries, onUpdatedEntry);
+            stringTable.ReadUpdate(decompressed.Memory.Span, msg.NumEntries);
         }
         else
         {
-            stringTable.ReadUpdate(msg.StringData.Span, msg.NumEntries, onUpdatedEntry);
+            stringTable.ReadUpdate(msg.StringData.Span, msg.NumEntries);
         }
 
         _stringTableList.Add(stringTable);
@@ -65,54 +59,75 @@ public partial class DemoParser
     private void OnUpdateStringTable(CSVCMsg_UpdateStringTable msg)
     {
         var stringTable = _stringTableList[msg.TableId];
-
-        Action<int, KeyValuePair<string, byte[]>>? onUpdatedEntry =
-            msg.TableId == _instanceBaselineTableId ? OnInstanceBaselineUpdate :
-            msg.TableId == _userInfoTableId ? OnUserInfoUpdate : null;
-
-        stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries, onUpdatedEntry);
+        stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries);
     }
 
-    private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]> entry)
+    private void RestoreStringTables(ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>> snapshot)
+    {
+        foreach (var stringTable in _stringTableList)
+        {
+            stringTable.ReplaceWith(snapshot[stringTable.Name]);
+        }
+    }
+
+    private void OnDemoStringTable(CDemoStringTables.Types.table_t snapshot)
+    {
+        var stringTable = _stringTables[snapshot.TableName];
+
+        var newEntries = snapshot.Items
+            .Select(item => KeyValuePair.Create(item.Str, item.Data.ToArray()))
+            .ToImmutableList();
+
+        stringTable.ReplaceWith(newEntries);
+    }
+
+    private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]>? entry)
     {
         if (index >= _instanceBaselines.Length)
         {
-            var newBacking = new KeyValuePair<BaselineKey, byte[]>[(int) BitOperations.RoundUpToPowerOf2((uint) index + 1)];
-            ((ReadOnlySpan<KeyValuePair<BaselineKey, byte[]>>)_instanceBaselines).CopyTo(newBacking);
-            _instanceBaselines = newBacking;
+            var newSize = (int) BitOperations.RoundUpToPowerOf2((uint) index + 1);
+            Array.Resize(ref _instanceBaselines, newSize);
         }
 
-        ReadOnlySpan<char> key = entry.Key;
-
-        BaselineKey baselineKey;
-        if (key.IndexOf(':') is var sepIdx && sepIdx >= 0)
+        if (entry is {Key: var stringData, Value: var userData})
         {
-            var classId = uint.Parse(key[..sepIdx]);
-            var alternateBaseline = uint.Parse(key[(sepIdx + 1)..]);
+            ReadOnlySpan<char> key = stringData;
 
-            baselineKey = new BaselineKey(classId, alternateBaseline);
+            BaselineKey baselineKey;
+            if (key.IndexOf(':') is var sepIdx && sepIdx >= 0)
+            {
+                var classId = uint.Parse(key[..sepIdx]);
+                var alternateBaseline = uint.Parse(key[(sepIdx + 1)..]);
+
+                baselineKey = new BaselineKey(classId, alternateBaseline);
+            }
+            else
+            {
+                var classId = uint.Parse(key);
+                baselineKey = new BaselineKey(classId, 0);
+            }
+
+            _instanceBaselines[index] = KeyValuePair.Create(baselineKey, userData);
+            _instanceBaselineLookup[baselineKey] = index;
         }
         else
         {
-            var classId = uint.Parse(key);
-            baselineKey = new BaselineKey(classId, 0);
+            var (removedBaseline, _) = _instanceBaselines[index];
+            var removed = _instanceBaselineLookup.Remove(removedBaseline);
+            Debug.Assert(removed, "Expected to remove instancebaseline");
         }
-
-        _instanceBaselines[index] = KeyValuePair.Create(baselineKey, entry.Value);
-        _instanceBaselineLookup[baselineKey] = index;
     }
 
-    private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]> entry)
+    private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]>? entry)
     {
         if (index >= _playerInfos.Length)
         {
-            var newBacking = new CMsgPlayerInfo?[(int) BitOperations.RoundUpToPowerOf2((uint) index + 1)];
-            ((ReadOnlySpan<CMsgPlayerInfo?>)_playerInfos).CopyTo(newBacking);
-            _playerInfos = newBacking;
+            var newSize = (int) BitOperations.RoundUpToPowerOf2((uint) index + 1);
+            Array.Resize(ref _playerInfos, newSize);
         }
 
-        _playerInfos[index] = entry.Value.Length == 0
-            ? null
-            : CMsgPlayerInfo.Parser.ParseFrom(entry.Value);
+        _playerInfos[index] = entry?.Value is {Length: >0} userInfo
+            ? CMsgPlayerInfo.Parser.ParseFrom(userInfo)
+            : null;
     }
 }

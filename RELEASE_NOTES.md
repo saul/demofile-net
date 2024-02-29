@@ -1,3 +1,8 @@
+### 0.12.1 (2024-02-29)
+
+- Add support for seeking to arbitrary ticks with `DemoParser.SeekToTickAsync`. \
+  It supports seeking backwards and forwards, and makes use of Source 2 demo 'full packet' snapshots to do this efficiently.
+
 ### 0.11.1 (2024-02-19)
 
 - Reading CDemoFileInfo is best effort
