@@ -35,7 +35,7 @@ public class DemoParserBenchmark
     [IterationSetup]
     public void Setup()
     {
-        _fileStream = new MemoryStream(_demoBytes);
+        _fileStream = new MemoryStream(_demoBytes, 0, _demoBytes.Length, false, true);
     }
 
     [Benchmark]
@@ -47,5 +47,11 @@ public class DemoParserBenchmark
 #else
         await _demoParser.ReadAllAsync(_fileStream, default);
 #endif
+    }
+
+    [Benchmark]
+    public async Task ParseDemoMT()
+    {
+        await DemoParser.ReadAllMultiThreadedAsync(null, _fileStream, default);
     }
 }
