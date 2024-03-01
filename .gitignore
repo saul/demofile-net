@@ -3,4 +3,5 @@ bin/
 /GameTracking-CSGO/
 *.dem
 .idea/
+.vs/
 *.DotSettings.user
