@@ -1,13 +1,18 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
 
 namespace DemoFile
 {
+    /// <summary>
+    /// Result of multi-threaded parsing.
+    /// </summary>
     public class MultiThreadedDemoParsingResult
     {
-        public List<MultiThreadedDemoParserSection> Sections = new();
+        /// <summary>
+        /// All section that were parsed. Every section is parsed on a different thread.
+        /// </summary>
+        public List<MultiThreadedDemoParserSection> Sections { get; } = new();
 
-        internal MultiThreadedDemoParsingResult(params MultiThreadedDemoParserSection[] sections)
+        public MultiThreadedDemoParsingResult(params MultiThreadedDemoParserSection[] sections)
         {
             Sections.AddRange(sections);
         }
@@ -15,10 +20,19 @@ namespace DemoFile
 
     public class MultiThreadedDemoParserSection
     {
-        public DemoParser DemoParser { get; set; }
+        /// <summary>
+        /// Parser that is parsing this section.
+        /// </summary>
+        public DemoParser DemoParser { get; }
 
+        /// <summary>
+        /// StringBuilder that you can use to output data. Provided for convenience.
+        /// </summary>
         public StringBuilder StringBuilder { get; set; } = new StringBuilder();
 
+        /// <summary>
+        /// Optional user data stored for this section. This should be used when outputing data in a custom format.
+        /// </summary>
         public object? UserData { get; set; }
 
         public MultiThreadedDemoParserSection(DemoParser demoParser)
@@ -29,11 +43,20 @@ namespace DemoFile
 
     public partial class DemoParser
     {
+        /// <summary>
+        /// Read entire demo in a multi-threaded way. Demo is split-up into multiple sections, and each section is parsed
+        /// on a different thread. When parsing is finished, you can access parsed sections and their data, without the need
+        /// for sorting. Note that <paramref name="setupAction"/> will be called on a background thread, so your callbacks
+        /// need to be thread-safe, but they can freely access the data of their own section.
+        /// </summary>
         public static async ValueTask<MultiThreadedDemoParsingResult> ReadAllMultiThreadedAsync(
             Action<MultiThreadedDemoParserSection>? setupAction, MemoryStream stream, CancellationToken cancellationToken)
         {
             if (!stream.TryGetBuffer(out var arraySegment))
-                throw new ArgumentException("Can't get buffer");
+            {
+                throw new ArgumentException("Can't get MemoryStream's internal buffer - this is a waste of performance. " +
+                    "Make sure that you create MemoryStream with exposed buffer");
+            }
 
             var parser = new DemoParser();
 
@@ -51,28 +74,20 @@ namespace DemoFile
                 return new MultiThreadedDemoParsingResult(section);
             }
 
-            int numParsers = 6 * 2;
+            int numParsers = Environment.ProcessorCount;
             int numSections = (int)Math.Ceiling(parser.TickCount.Value / (double)FullPacketInterval);
             int numSectionsPerParser = (int)Math.Ceiling(numSections / (double)numParsers);
-            //Console.WriteLine($"num parsers {numParsers}, num sections {numSections}, numSectionsPerParser {numSectionsPerParser}");
-
-            var sw = Stopwatch.StartNew();
-
+            
             // seek to end of demo to find all snapshot positions
             await parser.SeekToTickAsync(parser.TickCount, cancellationToken).ConfigureAwait(false);
 
-            //Console.WriteLine($"Seek to end in {sw.ElapsedMilliseconds} ms");
-
             var tasks = new List<Task>();
-            var threads = new List<Thread>();
             var sections = new List<MultiThreadedDemoParserSection>();
 
             for (int p = 0; p < numParsers; p++)
             {
                 int startFullPacketPositionIndex = p * numSectionsPerParser;
                 int endFullPacketPositionIndex = startFullPacketPositionIndex + numSectionsPerParser;
-
-                //Console.WriteLine($"starting parser {p}, startFullPacketPositionIndex {startFullPacketPositionIndex}, endFullPacketPositionIndex {endFullPacketPositionIndex}");
 
                 bool reachedLastTick = endFullPacketPositionIndex >= parser._fullPacketPositions.Count;
 
@@ -94,10 +109,6 @@ namespace DemoFile
                     setupAction,
                     cancellationToken);
 
-                //var thread = new Thread(() => taskFunc().GetAwaiter().GetResult());
-                //thread.Start();
-                //threads.Add(thread);
-
                 tasks.Add(Task.Run(taskFunc, cancellationToken));
 
                 sections.Add(section);
@@ -106,39 +117,9 @@ namespace DemoFile
                     break;
             }
 
-            // start background parser for every section
-            //for (int i = 0; i < parser._fullPacketPositions.Count; i++)
-            //{
-            //    var fullPacketPosition = parser._fullPacketPositions[i];
-
-            //    var backgroundParser = new DemoParser();
-            //    var backgroundParserStream = new MemoryStream(arraySegment.Array!);
-
-            //    DemoTick endTick = i == parser._fullPacketPositions.Count - 1
-            //        ? parser.TickCount
-            //        : parser._fullPacketPositions[i + 1].Tick;
-
-            //    var taskFunc = () => backgroundParser.ParseSectionInBackgroundAsync(
-            //        backgroundParserStream,
-            //        fullPacketPosition.Tick,
-            //        endTick,
-            //        parser._fullPacketPositions,
-            //        setupAction,
-            //        cancellationToken);
-
-            //    //var thread = new Thread(() => taskFunc().GetAwaiter().GetResult());
-            //    //thread.Start();
-            //    //threads.Add(thread);
-
-            //    tasks.Add(Task.Run(taskFunc, cancellationToken));
-            //}
-
             // wait for all parsers to finish
 
             await Task.WhenAll(tasks).ConfigureAwait(false);
-
-            foreach (var thread in threads)
-                thread.Join();
 
             return new MultiThreadedDemoParsingResult(sections.ToArray());
         }
@@ -179,6 +160,9 @@ namespace DemoFile
             }
         }
 
+        /// <summary>
+        /// Peek next command. Parser's state will not be modified and callbacks will not be invoked.
+        /// </summary>
         public (DemoTick nextTick, EDemoCommands command) PeekNext()
         {
             var streamPositionBefore = _stream.Position;
