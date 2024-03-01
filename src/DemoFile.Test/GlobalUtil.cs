@@ -22,6 +22,15 @@ public static class GlobalUtil
 
     public static MemoryStream GotvProtocol13990Deathmatch => new(File.ReadAllBytes(Path.Combine(DemoBase, "13990_dm.dem")));
 
+    public static KeyValuePair<string, MemoryStream>[] GetAllFiles()
+    {
+        return typeof(GlobalUtil)
+            .GetProperties()
+            .Where(p => p.PropertyType == typeof(MemoryStream))
+            .Select(p => new KeyValuePair<string, MemoryStream>(p.Name, (MemoryStream)p.GetValue(null)!))
+            .ToArray();
+    }
+
     public static byte[] ToBitStream(string input)
     {
         var bitArray = new BitArray(input.Length);
