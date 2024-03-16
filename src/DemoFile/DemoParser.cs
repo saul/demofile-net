@@ -159,7 +159,7 @@ public sealed partial class DemoParser
     /// </returns>
     public async ValueTask StartReadingAsync(Stream stream, CancellationToken cancellationToken)
     {
-        _fullPacketPositions.Clear();
+        _fullPackets.Clear();
         _stream = stream;
 
         var rented = _bytePool.Rent(16);
