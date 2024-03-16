@@ -16,7 +16,7 @@ public class DemoParserBenchmark
         {
             var baseJob = Job.Default;
 
-            AddJob(baseJob.WithArguments(new[] { new MsBuildArgument("/p:Baseline=true") }).AsBaseline().WithId("Baseline"));
+            //AddJob(baseJob.WithArguments(new[] { new MsBuildArgument("/p:Baseline=true") }).AsBaseline().WithId("Baseline"));
             AddJob(baseJob);
             //AddJob(baseJob.WithArguments(new[] { new MsBuildArgument("/p:ClearBuf=true") }).WithId("ClearBuf"));
         }
@@ -52,6 +52,6 @@ public class DemoParserBenchmark
     [Benchmark]
     public async Task ParseDemoMT()
     {
-        await DemoParser.ReadAllMultiThreadedAsync(null, _fileStream, default);
+        await DemoParser.ReadAllParallelAsync(_demoBytes, _ => 0, default);
     }
 }
