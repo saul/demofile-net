@@ -527,7 +527,6 @@
       }
     ]
   }
-
 [10805] GameTick: 130341, Round end snapshot:
   {
     "IsActive": true,
@@ -1104,7 +1103,6 @@
       }
     ]
   }
-
 [18154] GameTick: 137690, Round end snapshot:
   {
     "IsActive": true,
@@ -1734,7 +1732,6 @@
     },
     "Weapons": []
   }
-
 [24965] GameTick: 144501, Round end snapshot:
   {
     "IsActive": true,
@@ -2413,7 +2410,6 @@
     },
     "Weapons": []
   }
-
 [33042] GameTick: 152578, Round end snapshot:
   {
     "IsActive": true,
@@ -2886,7 +2882,6 @@
     },
     "Weapons": []
   }
-
 [38400] Interval snapshot:
   {
     "IsActive": true,
@@ -3671,7 +3666,6 @@
     },
     "Weapons": []
   }
-
 [41063] GameTick: 160599, Round end snapshot:
   {
     "IsActive": true,
@@ -4333,7 +4327,6 @@
     },
     "Weapons": []
   }
-
 [49461] GameTick: 168997, Round end snapshot:
   {
     "IsActive": true,
@@ -4929,7 +4922,6 @@
       }
     ]
   }
-
 [60084] GameTick: 179620, Round end snapshot:
   {
     "IsActive": true,
@@ -5591,7 +5583,6 @@
       }
     ]
   }
-
 [71624] GameTick: 191160, Round end snapshot:
   {
     "IsActive": true,
@@ -6038,7 +6029,6 @@
     },
     "Weapons": []
   }
-
 [76800] Interval snapshot:
   {
     "IsActive": true,
@@ -6940,7 +6930,6 @@
     },
     "Weapons": []
   }
-
 [80156] GameTick: 199692, Round end snapshot:
   {
     "IsActive": true,
@@ -7489,7 +7478,6 @@
     },
     "Weapons": []
   }
-
 [91201] GameTick: 210737, Round end snapshot:
   {
     "IsActive": true,
@@ -8052,7 +8040,6 @@
     },
     "Weapons": []
   }
-
 [99593] GameTick: 219129, Round end snapshot:
   {
     "IsActive": true,
@@ -8528,7 +8515,6 @@
     },
     "Weapons": []
   }
-
 [115200] Interval snapshot:
   {
     "IsActive": true,
@@ -9288,7 +9274,6 @@
       }
     ]
   }
-
 [118556] GameTick: 238092, Round end snapshot:
   {
     "IsActive": true,
@@ -9818,7 +9803,6 @@
       }
     ]
   }
-
 [124657] GameTick: 244193, Round end snapshot:
   {
     "IsActive": true,
@@ -10328,7 +10312,6 @@
     },
     "Weapons": []
   }
-
 [130333] GameTick: 249869, Round end snapshot:
   {
     "IsActive": true,
@@ -10904,7 +10887,6 @@
     },
     "Weapons": []
   }
-
 [139174] GameTick: 258710, Round end snapshot:
   {
     "IsActive": true,
@@ -11401,7 +11383,6 @@
       }
     ]
   }
-
 [150406] GameTick: 269942, Round end snapshot:
   {
     "IsActive": true,
@@ -11851,7 +11832,6 @@
     },
     "Weapons": []
   }
-
 [153600] Interval snapshot:
   {
     "IsActive": true,
@@ -12825,7 +12805,6 @@
       }
     ]
   }
-
 [157631] GameTick: 277167, Round end snapshot:
   {
     "IsActive": true,
@@ -13401,7 +13380,6 @@
     },
     "Weapons": []
   }
-
 [164811] GameTick: 284347, Round end snapshot:
   {
     "IsActive": true,
@@ -14055,7 +14033,6 @@
     },
     "Weapons": []
   }
-
 [172706] GameTick: 292242, Round end snapshot:
   {
     "IsActive": true,
@@ -14581,7 +14558,6 @@
     },
     "Weapons": []
   }
-
 [180637] GameTick: 300173, Round end snapshot:
   {
     "IsActive": true,
@@ -15170,7 +15146,6 @@
     },
     "Weapons": []
   }
-
 [190670] GameTick: 310206, Round end snapshot:
   {
     "IsActive": true,
@@ -15848,7 +15823,6 @@
     },
     "Weapons": []
   }
-
 [192000] Interval snapshot:
   {
     "IsActive": true,
@@ -16983,7 +16957,6 @@
       }
     ]
   }
-
 [202165] GameTick: 321701, Round end snapshot:
   {
     "IsActive": true,
@@ -17572,4 +17545,3 @@
     },
     "Weapons": []
   }
-

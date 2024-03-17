@@ -5,7 +5,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [79] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -16,7 +15,6 @@
     "PlayerCount": 1,
     "Nomusic": 0
   }
-
 [79] round_start:
   {
     "GameEventName": "round_start",
@@ -24,7 +22,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [79] round_end:
   {
     "GameEventName": "round_end",
@@ -35,7 +32,6 @@
     "PlayerCount": 1,
     "Nomusic": 0
   }
-
 [460] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -43,7 +39,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [460] round_start:
   {
     "GameEventName": "round_start",
@@ -51,7 +46,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [24602] player_death:
   {
     "GameEventName": "player_death",
@@ -110,7 +104,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [26033] player_death:
   {
     "GameEventName": "player_death",
@@ -169,7 +162,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [29599] player_death:
   {
     "GameEventName": "player_death",
@@ -228,7 +220,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [29674] player_death:
   {
     "GameEventName": "player_death",
@@ -287,7 +278,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [29745] player_death:
   {
     "GameEventName": "player_death",
@@ -346,7 +336,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [29872] player_death:
   {
     "GameEventName": "player_death",
@@ -405,7 +394,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [30636] player_death:
   {
     "GameEventName": "player_death",
@@ -464,7 +452,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [30787] player_death:
   {
     "GameEventName": "player_death",
@@ -523,7 +510,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [30831] player_death:
   {
     "GameEventName": "player_death",
@@ -582,7 +568,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [30849] player_death:
   {
     "GameEventName": "player_death",
@@ -641,7 +626,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [31164] player_death:
   {
     "GameEventName": "player_death",
@@ -700,7 +684,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [31295] player_death:
   {
     "GameEventName": "player_death",
@@ -759,7 +742,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [31498] player_death:
   {
     "GameEventName": "player_death",
@@ -818,7 +800,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [31504] player_death:
   {
     "GameEventName": "player_death",
@@ -877,7 +858,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [32380] player_death:
   {
     "GameEventName": "player_death",
@@ -936,7 +916,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [32383] player_death:
   {
     "GameEventName": "player_death",
@@ -995,7 +974,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [32789] player_death:
   {
     "GameEventName": "player_death",
@@ -1054,7 +1032,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [32875] player_death:
   {
     "GameEventName": "player_death",
@@ -1113,7 +1090,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [33217] player_death:
   {
     "GameEventName": "player_death",
@@ -1172,7 +1148,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [33408] player_death:
   {
     "GameEventName": "player_death",
@@ -1231,7 +1206,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [33793] player_death:
   {
     "GameEventName": "player_death",
@@ -1290,7 +1264,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [33897] player_death:
   {
     "GameEventName": "player_death",
@@ -1349,7 +1322,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [34126] player_death:
   {
     "GameEventName": "player_death",
@@ -1408,7 +1380,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [34587] player_death:
   {
     "GameEventName": "player_death",
@@ -1467,7 +1438,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [34608] player_death:
   {
     "GameEventName": "player_death",
@@ -1526,7 +1496,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [34634] player_death:
   {
     "GameEventName": "player_death",
@@ -1585,7 +1554,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [34999] player_death:
   {
     "GameEventName": "player_death",
@@ -1644,7 +1612,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [35203] player_death:
   {
     "GameEventName": "player_death",
@@ -1703,7 +1670,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [35888] player_death:
   {
     "GameEventName": "player_death",
@@ -1777,7 +1743,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [36139] player_death:
   {
     "GameEventName": "player_death",
@@ -1836,7 +1801,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [36595] player_death:
   {
     "GameEventName": "player_death",
@@ -1895,7 +1859,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [36839] player_death:
   {
     "GameEventName": "player_death",
@@ -1954,7 +1917,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [37077] player_death:
   {
     "GameEventName": "player_death",
@@ -2013,7 +1975,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [37173] player_death:
   {
     "GameEventName": "player_death",
@@ -2072,7 +2033,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [37281] player_death:
   {
     "GameEventName": "player_death",
@@ -2131,7 +2091,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [37824] player_death:
   {
     "GameEventName": "player_death",
@@ -2190,7 +2149,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [38570] player_death:
   {
     "GameEventName": "player_death",
@@ -2249,7 +2207,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [38594] player_death:
   {
     "GameEventName": "player_death",
@@ -2308,7 +2265,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [38683] player_death:
   {
     "GameEventName": "player_death",
@@ -2367,7 +2323,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39206] player_death:
   {
     "GameEventName": "player_death",
@@ -2426,7 +2381,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [39288] player_death:
   {
     "GameEventName": "player_death",
@@ -2485,7 +2439,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39408] player_death:
   {
     "GameEventName": "player_death",
@@ -2559,7 +2512,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39599] player_death:
   {
     "GameEventName": "player_death",
@@ -2618,7 +2570,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39789] player_death:
   {
     "GameEventName": "player_death",
@@ -2677,7 +2628,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39854] player_death:
   {
     "GameEventName": "player_death",
@@ -2736,7 +2686,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39936] player_death:
   {
     "GameEventName": "player_death",
@@ -2795,7 +2744,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [39946] player_death:
   {
     "GameEventName": "player_death",
@@ -2854,7 +2802,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [40451] player_death:
   {
     "GameEventName": "player_death",
@@ -2913,7 +2860,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [40502] player_death:
   {
     "GameEventName": "player_death",
@@ -2972,7 +2918,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [40510] player_death:
   {
     "GameEventName": "player_death",
@@ -3031,7 +2976,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [41027] player_death:
   {
     "GameEventName": "player_death",
@@ -3090,7 +3034,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [41206] player_death:
   {
     "GameEventName": "player_death",
@@ -3149,7 +3092,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [41492] player_death:
   {
     "GameEventName": "player_death",
@@ -3223,7 +3165,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [41513] player_death:
   {
     "GameEventName": "player_death",
@@ -3282,7 +3223,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [41925] player_death:
   {
     "GameEventName": "player_death",
@@ -3341,7 +3281,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [42105] player_death:
   {
     "GameEventName": "player_death",
@@ -3400,7 +3339,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [42308] player_death:
   {
     "GameEventName": "player_death",
@@ -3459,7 +3397,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [42392] player_death:
   {
     "GameEventName": "player_death",
@@ -3518,7 +3455,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [42534] player_death:
   {
     "GameEventName": "player_death",
@@ -3577,7 +3513,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [42834] player_death:
   {
     "GameEventName": "player_death",
@@ -3636,7 +3571,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [43008] player_death:
   {
     "GameEventName": "player_death",
@@ -3695,7 +3629,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [43276] player_death:
   {
     "GameEventName": "player_death",
@@ -3754,7 +3687,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [43953] player_death:
   {
     "GameEventName": "player_death",
@@ -3813,7 +3745,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [44400] player_death:
   {
     "GameEventName": "player_death",
@@ -3872,7 +3803,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [44522] player_death:
   {
     "GameEventName": "player_death",
@@ -3931,7 +3861,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [44702] player_death:
   {
     "GameEventName": "player_death",
@@ -3990,7 +3919,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [44746] player_death:
   {
     "GameEventName": "player_death",
@@ -4049,7 +3977,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [44965] player_death:
   {
     "GameEventName": "player_death",
@@ -4108,7 +4035,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [45165] player_death:
   {
     "GameEventName": "player_death",
@@ -4167,7 +4093,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [45190] player_death:
   {
     "GameEventName": "player_death",
@@ -4226,7 +4151,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [45257] player_death:
   {
     "GameEventName": "player_death",
@@ -4285,7 +4209,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [45507] player_death:
   {
     "GameEventName": "player_death",
@@ -4344,7 +4267,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [45606] player_death:
   {
     "GameEventName": "player_death",
@@ -4403,7 +4325,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [45775] player_death:
   {
     "GameEventName": "player_death",
@@ -4462,7 +4383,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [46796] player_death:
   {
     "GameEventName": "player_death",
@@ -4521,7 +4441,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [46889] player_death:
   {
     "GameEventName": "player_death",
@@ -4580,7 +4499,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [46917] player_death:
   {
     "GameEventName": "player_death",
@@ -4639,7 +4557,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [46961] player_death:
   {
     "GameEventName": "player_death",
@@ -4698,7 +4615,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47176] player_death:
   {
     "GameEventName": "player_death",
@@ -4757,7 +4673,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47195] player_death:
   {
     "GameEventName": "player_death",
@@ -4816,7 +4731,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47216] player_death:
   {
     "GameEventName": "player_death",
@@ -4875,7 +4789,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47249] player_death:
   {
     "GameEventName": "player_death",
@@ -4934,7 +4847,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47577] player_death:
   {
     "GameEventName": "player_death",
@@ -4993,7 +4905,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47609] player_death:
   {
     "GameEventName": "player_death",
@@ -5052,7 +4963,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47637] player_death:
   {
     "GameEventName": "player_death",
@@ -5111,7 +5021,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [47685] player_death:
   {
     "GameEventName": "player_death",
@@ -5170,7 +5079,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48618] player_death:
   {
     "GameEventName": "player_death",
@@ -5229,7 +5137,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48640] player_death:
   {
     "GameEventName": "player_death",
@@ -5288,7 +5195,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48658] player_death:
   {
     "GameEventName": "player_death",
@@ -5347,7 +5253,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48701] player_death:
   {
     "GameEventName": "player_death",
@@ -5406,7 +5311,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48898] player_death:
   {
     "GameEventName": "player_death",
@@ -5465,7 +5369,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48923] player_death:
   {
     "GameEventName": "player_death",
@@ -5524,7 +5427,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48974] player_death:
   {
     "GameEventName": "player_death",
@@ -5583,7 +5485,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [48984] player_death:
   {
     "GameEventName": "player_death",
@@ -5642,7 +5543,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49196] player_death:
   {
     "GameEventName": "player_death",
@@ -5701,7 +5601,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49226] player_death:
   {
     "GameEventName": "player_death",
@@ -5760,7 +5659,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49260] player_death:
   {
     "GameEventName": "player_death",
@@ -5819,7 +5717,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49288] player_death:
   {
     "GameEventName": "player_death",
@@ -5878,7 +5775,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49465] player_death:
   {
     "GameEventName": "player_death",
@@ -5937,7 +5833,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49505] player_death:
   {
     "GameEventName": "player_death",
@@ -5996,7 +5891,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49523] player_death:
   {
     "GameEventName": "player_death",
@@ -6055,7 +5949,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49554] player_death:
   {
     "GameEventName": "player_death",
@@ -6114,7 +6007,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49787] player_death:
   {
     "GameEventName": "player_death",
@@ -6173,7 +6065,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49813] player_death:
   {
     "GameEventName": "player_death",
@@ -6232,7 +6123,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49836] player_death:
   {
     "GameEventName": "player_death",
@@ -6291,7 +6181,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [49868] player_death:
   {
     "GameEventName": "player_death",
@@ -6350,7 +6239,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50046] player_death:
   {
     "GameEventName": "player_death",
@@ -6409,7 +6297,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50072] player_death:
   {
     "GameEventName": "player_death",
@@ -6468,7 +6355,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50094] player_death:
   {
     "GameEventName": "player_death",
@@ -6527,7 +6413,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50133] player_death:
   {
     "GameEventName": "player_death",
@@ -6586,7 +6471,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50346] player_death:
   {
     "GameEventName": "player_death",
@@ -6645,7 +6529,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50395] player_death:
   {
     "GameEventName": "player_death",
@@ -6704,7 +6587,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50441] player_death:
   {
     "GameEventName": "player_death",
@@ -6763,7 +6645,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50473] player_death:
   {
     "GameEventName": "player_death",
@@ -6822,7 +6703,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50620] player_death:
   {
     "GameEventName": "player_death",
@@ -6881,7 +6761,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50656] player_death:
   {
     "GameEventName": "player_death",
@@ -6940,7 +6819,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50687] player_death:
   {
     "GameEventName": "player_death",
@@ -6999,7 +6877,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50727] player_death:
   {
     "GameEventName": "player_death",
@@ -7058,7 +6935,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50918] player_death:
   {
     "GameEventName": "player_death",
@@ -7117,7 +6993,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50936] player_death:
   {
     "GameEventName": "player_death",
@@ -7176,7 +7051,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50955] player_death:
   {
     "GameEventName": "player_death",
@@ -7235,7 +7109,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [50986] player_death:
   {
     "GameEventName": "player_death",
@@ -7294,7 +7167,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51177] player_death:
   {
     "GameEventName": "player_death",
@@ -7353,7 +7225,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51209] player_death:
   {
     "GameEventName": "player_death",
@@ -7412,7 +7283,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51232] player_death:
   {
     "GameEventName": "player_death",
@@ -7471,7 +7341,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51255] player_death:
   {
     "GameEventName": "player_death",
@@ -7530,7 +7399,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51434] player_death:
   {
     "GameEventName": "player_death",
@@ -7589,7 +7457,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51466] player_death:
   {
     "GameEventName": "player_death",
@@ -7648,7 +7515,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51497] player_death:
   {
     "GameEventName": "player_death",
@@ -7707,7 +7573,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51524] player_death:
   {
     "GameEventName": "player_death",
@@ -7766,7 +7631,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51732] player_death:
   {
     "GameEventName": "player_death",
@@ -7825,7 +7689,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51763] player_death:
   {
     "GameEventName": "player_death",
@@ -7884,7 +7747,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51818] player_death:
   {
     "GameEventName": "player_death",
@@ -7943,7 +7805,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [51852] player_death:
   {
     "GameEventName": "player_death",
@@ -8002,7 +7863,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52009] player_death:
   {
     "GameEventName": "player_death",
@@ -8061,7 +7921,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52072] player_death:
   {
     "GameEventName": "player_death",
@@ -8120,7 +7979,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52104] player_death:
   {
     "GameEventName": "player_death",
@@ -8179,7 +8037,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52113] player_death:
   {
     "GameEventName": "player_death",
@@ -8238,7 +8095,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52258] player_death:
   {
     "GameEventName": "player_death",
@@ -8297,7 +8153,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52326] player_death:
   {
     "GameEventName": "player_death",
@@ -8356,7 +8211,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52356] player_death:
   {
     "GameEventName": "player_death",
@@ -8415,7 +8269,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52393] player_death:
   {
     "GameEventName": "player_death",
@@ -8474,7 +8327,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52513] player_death:
   {
     "GameEventName": "player_death",
@@ -8533,7 +8385,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52586] player_death:
   {
     "GameEventName": "player_death",
@@ -8592,7 +8443,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52611] player_death:
   {
     "GameEventName": "player_death",
@@ -8651,7 +8501,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52657] player_death:
   {
     "GameEventName": "player_death",
@@ -8710,7 +8559,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52673] player_death:
   {
     "GameEventName": "player_death",
@@ -8769,7 +8617,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52756] player_death:
   {
     "GameEventName": "player_death",
@@ -8828,7 +8675,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [52833] player_death:
   {
     "GameEventName": "player_death",
@@ -8887,7 +8733,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [53369] player_death:
   {
     "GameEventName": "player_death",
@@ -8946,7 +8791,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [53425] player_death:
   {
     "GameEventName": "player_death",
@@ -9005,7 +8849,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [53437] player_death:
   {
     "GameEventName": "player_death",
@@ -9064,7 +8907,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [53508] player_death:
   {
     "GameEventName": "player_death",
@@ -9123,7 +8965,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [53647] player_death:
   {
     "GameEventName": "player_death",
@@ -9182,7 +9023,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [53818] player_death:
   {
     "GameEventName": "player_death",
@@ -9241,7 +9081,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [53860] player_death:
   {
     "GameEventName": "player_death",
@@ -9300,7 +9139,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [55843] player_death:
   {
     "GameEventName": "player_death",
@@ -9359,7 +9197,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [57296] player_death:
   {
     "GameEventName": "player_death",
@@ -9418,7 +9255,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [57347] player_death:
   {
     "GameEventName": "player_death",
@@ -9477,7 +9313,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [57354] player_death:
   {
     "GameEventName": "player_death",
@@ -9536,7 +9371,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [57402] player_death:
   {
     "GameEventName": "player_death",
@@ -9595,7 +9429,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [58225] player_death:
   {
     "GameEventName": "player_death",
@@ -9654,7 +9487,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [58807] player_death:
   {
     "GameEventName": "player_death",
@@ -9713,7 +9545,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [59446] player_death:
   {
     "GameEventName": "player_death",
@@ -9772,7 +9603,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [59843] player_death:
   {
     "GameEventName": "player_death",
@@ -9831,7 +9661,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [60164] player_death:
   {
     "GameEventName": "player_death",
@@ -9890,7 +9719,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [60635] player_death:
   {
     "GameEventName": "player_death",
@@ -9949,7 +9777,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [60930] player_death:
   {
     "GameEventName": "player_death",
@@ -10008,7 +9835,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [60952] player_death:
   {
     "GameEventName": "player_death",
@@ -10067,7 +9893,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [61338] player_death:
   {
     "GameEventName": "player_death",
@@ -10126,7 +9951,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [61878] player_death:
   {
     "GameEventName": "player_death",
@@ -10185,7 +10009,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [61943] player_death:
   {
     "GameEventName": "player_death",
@@ -10244,7 +10067,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [62133] player_death:
   {
     "GameEventName": "player_death",
@@ -10318,7 +10140,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [62156] player_death:
   {
     "GameEventName": "player_death",
@@ -10392,7 +10213,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [62189] player_death:
   {
     "GameEventName": "player_death",
@@ -10451,7 +10271,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [62434] player_death:
   {
     "GameEventName": "player_death",
@@ -10525,7 +10344,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [62714] player_death:
   {
     "GameEventName": "player_death",
@@ -10584,7 +10402,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-
 [62796] player_death:
   {
     "GameEventName": "player_death",
@@ -10643,7 +10460,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [62980] player_death:
   {
     "GameEventName": "player_death",
@@ -10702,7 +10518,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [63129] player_death:
   {
     "GameEventName": "player_death",
@@ -10761,7 +10576,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [63828] player_death:
   {
     "GameEventName": "player_death",
@@ -10820,7 +10634,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [64043] player_death:
   {
     "GameEventName": "player_death",
@@ -10879,7 +10692,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [64117] player_death:
   {
     "GameEventName": "player_death",
@@ -10953,7 +10765,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [64637] player_death:
   {
     "GameEventName": "player_death",
@@ -11012,7 +10823,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [64693] player_death:
   {
     "GameEventName": "player_death",
@@ -11071,7 +10881,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [64796] player_death:
   {
     "GameEventName": "player_death",
@@ -11130,7 +10939,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [64993] player_death:
   {
     "GameEventName": "player_death",
@@ -11189,7 +10997,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [65000] player_death:
   {
     "GameEventName": "player_death",
@@ -11248,7 +11055,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [65487] player_death:
   {
     "GameEventName": "player_death",
@@ -11307,7 +11113,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [65645] player_death:
   {
     "GameEventName": "player_death",
@@ -11366,7 +11171,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [66210] player_death:
   {
     "GameEventName": "player_death",
@@ -11425,7 +11229,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [66502] player_death:
   {
     "GameEventName": "player_death",
@@ -11484,7 +11287,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [66790] player_death:
   {
     "GameEventName": "player_death",
@@ -11543,7 +11345,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [66856] player_death:
   {
     "GameEventName": "player_death",
@@ -11602,7 +11403,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [66890] player_death:
   {
     "GameEventName": "player_death",
@@ -11661,7 +11461,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [66920] player_death:
   {
     "GameEventName": "player_death",
@@ -11720,7 +11519,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [67046] player_death:
   {
     "GameEventName": "player_death",
@@ -11779,7 +11577,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [67528] player_death:
   {
     "GameEventName": "player_death",
@@ -11853,7 +11650,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [67567] player_death:
   {
     "GameEventName": "player_death",
@@ -11912,7 +11708,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [67631] player_death:
   {
     "GameEventName": "player_death",
@@ -11971,7 +11766,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [67757] player_death:
   {
     "GameEventName": "player_death",
@@ -12030,7 +11824,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [67844] player_death:
   {
     "GameEventName": "player_death",
@@ -12089,7 +11882,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [67862] player_death:
   {
     "GameEventName": "player_death",
@@ -12163,7 +11955,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [68019] player_death:
   {
     "GameEventName": "player_death",
@@ -12222,7 +12013,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [68075] player_death:
   {
     "GameEventName": "player_death",
@@ -12281,7 +12071,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [68148] player_death:
   {
     "GameEventName": "player_death",
@@ -12340,7 +12129,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [68364] player_death:
   {
     "GameEventName": "player_death",
@@ -12399,7 +12187,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-
 [68436] player_death:
   {
     "GameEventName": "player_death",
@@ -12458,7 +12245,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [68658] player_death:
   {
     "GameEventName": "player_death",
@@ -12517,7 +12303,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [68685] player_death:
   {
     "GameEventName": "player_death",
@@ -12576,7 +12361,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [69096] player_death:
   {
     "GameEventName": "player_death",
@@ -12635,7 +12419,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [69296] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -12643,7 +12426,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [69296] round_start:
   {
     "GameEventName": "round_start",
@@ -12651,7 +12433,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [69428] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -12659,7 +12440,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [69428] round_start:
   {
     "GameEventName": "round_start",
@@ -12667,7 +12447,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [73427] player_death:
   {
     "GameEventName": "player_death",
@@ -12726,7 +12505,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [76293] player_death:
   {
     "GameEventName": "player_death",
@@ -12785,7 +12563,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [77345] player_death:
   {
     "GameEventName": "player_death",
@@ -12844,7 +12621,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [77481] player_death:
   {
     "GameEventName": "player_death",
@@ -12903,7 +12679,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [77921] player_death:
   {
     "GameEventName": "player_death",
@@ -12962,7 +12737,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [77921] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -12973,7 +12747,6 @@
     "PlayerCount": 14,
     "Nomusic": 0
   }
-
 [77921] round_end:
   {
     "GameEventName": "round_end",
@@ -12984,7 +12757,6 @@
     "PlayerCount": 14,
     "Nomusic": 0
   }
-
 [78369] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -12992,7 +12764,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [78369] round_start:
   {
     "GameEventName": "round_start",
@@ -13000,7 +12771,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [83028] player_death:
   {
     "GameEventName": "player_death",
@@ -13059,7 +12829,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [83195] player_death:
   {
     "GameEventName": "player_death",
@@ -13118,7 +12887,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-
 [83264] player_death:
   {
     "GameEventName": "player_death",
@@ -13177,7 +12945,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [84521] player_death:
   {
     "GameEventName": "player_death",
@@ -13251,7 +13018,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [84589] player_death:
   {
     "GameEventName": "player_death",
@@ -13310,7 +13076,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [84589] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -13321,7 +13086,6 @@
     "PlayerCount": 15,
     "Nomusic": 0
   }
-
 [84589] round_end:
   {
     "GameEventName": "round_end",
@@ -13332,7 +13096,6 @@
     "PlayerCount": 15,
     "Nomusic": 0
   }
-
 [85037] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -13340,7 +13103,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [85037] round_start:
   {
     "GameEventName": "round_start",
@@ -13348,7 +13110,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [87399] player_death:
   {
     "GameEventName": "player_death",
@@ -13407,7 +13168,6 @@
     "DmgArmor": 18,
     "Hitgroup": 1
   }
-
 [90396] player_death:
   {
     "GameEventName": "player_death",
@@ -13481,7 +13241,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [90486] player_death:
   {
     "GameEventName": "player_death",
@@ -13555,7 +13314,6 @@
     "DmgArmor": 5,
     "Hitgroup": 3
   }
-
 [90617] player_death:
   {
     "GameEventName": "player_death",
@@ -13629,7 +13387,6 @@
     "DmgArmor": 12,
     "Hitgroup": 0
   }
-
 [92302] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -13640,7 +13397,6 @@
     "PlayerCount": 15,
     "Nomusic": 1
   }
-
 [92302] round_end:
   {
     "GameEventName": "round_end",
@@ -13651,7 +13407,6 @@
     "PlayerCount": 15,
     "Nomusic": 1
   }
-
 [92750] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -13659,7 +13414,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [92750] round_start:
   {
     "GameEventName": "round_start",
@@ -13667,7 +13421,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [95336] player_death:
   {
     "GameEventName": "player_death",
@@ -13726,7 +13479,6 @@
     "DmgArmor": 4,
     "Hitgroup": 3
   }
-
 [95363] player_death:
   {
     "GameEventName": "player_death",
@@ -13785,7 +13537,6 @@
     "DmgArmor": 1,
     "Hitgroup": 5
   }
-
 [98432] player_death:
   {
     "GameEventName": "player_death",
@@ -13844,7 +13595,6 @@
     "DmgArmor": 17,
     "Hitgroup": 1
   }
-
 [98463] player_death:
   {
     "GameEventName": "player_death",
@@ -13918,7 +13668,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [99910] player_death:
   {
     "GameEventName": "player_death",
@@ -13992,7 +13741,6 @@
     "DmgArmor": 0,
     "Hitgroup": 7
   }
-
 [101719] player_death:
   {
     "GameEventName": "player_death",
@@ -14066,7 +13814,6 @@
     "DmgArmor": 0,
     "Hitgroup": 6
   }
-
 [102245] player_death:
   {
     "GameEventName": "player_death",
@@ -14125,7 +13872,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [103136] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -14136,7 +13882,6 @@
     "PlayerCount": 19,
     "Nomusic": 1
   }
-
 [103136] round_end:
   {
     "GameEventName": "round_end",
@@ -14147,7 +13892,6 @@
     "PlayerCount": 19,
     "Nomusic": 1
   }
-
 [103584] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -14155,7 +13899,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [103584] round_start:
   {
     "GameEventName": "round_start",
@@ -14163,7 +13906,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [112982] player_death:
   {
     "GameEventName": "player_death",
@@ -14222,7 +13964,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [113898] player_death:
   {
     "GameEventName": "player_death",
@@ -14281,7 +14022,6 @@
     "DmgArmor": 4,
     "Hitgroup": 3
   }
-
 [114122] player_death:
   {
     "GameEventName": "player_death",
@@ -14340,7 +14080,6 @@
     "DmgArmor": 19,
     "Hitgroup": 1
   }
-
 [114617] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -14351,7 +14090,6 @@
     "PlayerCount": 19,
     "Nomusic": 1
   }
-
 [114617] round_end:
   {
     "GameEventName": "round_end",
@@ -14362,7 +14100,6 @@
     "PlayerCount": 19,
     "Nomusic": 1
   }
-
 [115065] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -14370,7 +14107,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [115065] round_start:
   {
     "GameEventName": "round_start",
@@ -14378,7 +14114,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [117912] player_death:
   {
     "GameEventName": "player_death",
@@ -14437,7 +14172,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [118120] player_death:
   {
     "GameEventName": "player_death",
@@ -14496,7 +14230,6 @@
     "DmgArmor": 4,
     "Hitgroup": 3
   }
-
 [119807] player_death:
   {
     "GameEventName": "player_death",
@@ -14555,7 +14288,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [119907] player_death:
   {
     "GameEventName": "player_death",
@@ -14614,7 +14346,6 @@
     "DmgArmor": 0,
     "Hitgroup": 7
   }
-
 [121067] player_death:
   {
     "GameEventName": "player_death",
@@ -14673,7 +14404,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [121271] player_death:
   {
     "GameEventName": "player_death",
@@ -14732,7 +14462,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [121646] player_death:
   {
     "GameEventName": "player_death",
@@ -14791,7 +14520,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [122385] player_death:
   {
     "GameEventName": "player_death",
@@ -14850,7 +14578,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [122801] player_death:
   {
     "GameEventName": "player_death",
@@ -14924,7 +14651,6 @@
     "DmgArmor": 8,
     "Hitgroup": 2
   }
-
 [123304] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -14935,7 +14661,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [123304] round_end:
   {
     "GameEventName": "round_end",
@@ -14946,7 +14671,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [123752] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -14954,7 +14678,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [123752] round_start:
   {
     "GameEventName": "round_start",
@@ -14962,7 +14685,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [126613] player_death:
   {
     "GameEventName": "player_death",
@@ -15036,7 +14758,6 @@
     "DmgArmor": 13,
     "Hitgroup": 1
   }
-
 [126726] player_death:
   {
     "GameEventName": "player_death",
@@ -15110,7 +14831,6 @@
     "DmgArmor": 12,
     "Hitgroup": 1
   }
-
 [126934] player_death:
   {
     "GameEventName": "player_death",
@@ -15184,7 +14904,6 @@
     "DmgArmor": 5,
     "Hitgroup": 2
   }
-
 [127217] player_death:
   {
     "GameEventName": "player_death",
@@ -15243,7 +14962,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [127791] player_death:
   {
     "GameEventName": "player_death",
@@ -15317,7 +15035,6 @@
     "DmgArmor": 27,
     "Hitgroup": 1
   }
-
 [128735] player_death:
   {
     "GameEventName": "player_death",
@@ -15376,7 +15093,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [130067] player_death:
   {
     "GameEventName": "player_death",
@@ -15450,7 +15166,6 @@
     "DmgArmor": 1,
     "Hitgroup": 3
   }
-
 [130420] player_death:
   {
     "GameEventName": "player_death",
@@ -15524,7 +15239,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [130420] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -15535,7 +15249,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [130420] round_end:
   {
     "GameEventName": "round_end",
@@ -15546,7 +15259,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [130868] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -15554,7 +15266,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [130868] round_start:
   {
     "GameEventName": "round_start",
@@ -15562,7 +15273,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [134311] player_death:
   {
     "GameEventName": "player_death",
@@ -15621,7 +15331,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [134434] player_death:
   {
     "GameEventName": "player_death",
@@ -15680,7 +15389,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [136247] player_death:
   {
     "GameEventName": "player_death",
@@ -15739,7 +15447,6 @@
     "DmgArmor": 0,
     "Hitgroup": 3
   }
-
 [136410] player_death:
   {
     "GameEventName": "player_death",
@@ -15798,7 +15505,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [137968] player_death:
   {
     "GameEventName": "player_death",
@@ -15857,7 +15563,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [137968] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -15868,7 +15573,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [137968] round_end:
   {
     "GameEventName": "round_end",
@@ -15879,7 +15583,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [138416] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -15887,7 +15590,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [138416] round_start:
   {
     "GameEventName": "round_start",
@@ -15895,7 +15597,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [140475] player_death:
   {
     "GameEventName": "player_death",
@@ -15954,7 +15655,6 @@
     "DmgArmor": 5,
     "Hitgroup": 2
   }
-
 [140655] player_death:
   {
     "GameEventName": "player_death",
@@ -16013,7 +15713,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [140731] player_death:
   {
     "GameEventName": "player_death",
@@ -16072,7 +15771,6 @@
     "DmgArmor": 17,
     "Hitgroup": 1
   }
-
 [140742] player_death:
   {
     "GameEventName": "player_death",
@@ -16146,7 +15844,6 @@
     "DmgArmor": 5,
     "Hitgroup": 4
   }
-
 [144018] player_death:
   {
     "GameEventName": "player_death",
@@ -16205,7 +15902,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [144057] player_death:
   {
     "GameEventName": "player_death",
@@ -16279,7 +15975,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [145950] player_death:
   {
     "GameEventName": "player_death",
@@ -16338,7 +16033,6 @@
     "DmgArmor": 6,
     "Hitgroup": 3
   }
-
 [147157] player_death:
   {
     "GameEventName": "player_death",
@@ -16397,7 +16091,6 @@
     "DmgArmor": 5,
     "Hitgroup": 1
   }
-
 [148063] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -16408,7 +16101,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [148063] round_end:
   {
     "GameEventName": "round_end",
@@ -16419,7 +16111,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [148511] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -16427,7 +16118,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [148511] round_start:
   {
     "GameEventName": "round_start",
@@ -16435,7 +16125,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [151295] player_death:
   {
     "GameEventName": "player_death",
@@ -16509,7 +16198,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [154439] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -16520,7 +16208,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [154439] round_end:
   {
     "GameEventName": "round_end",
@@ -16531,7 +16218,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [154887] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -16539,7 +16225,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [154887] round_start:
   {
     "GameEventName": "round_start",
@@ -16547,7 +16232,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [157078] player_death:
   {
     "GameEventName": "player_death",
@@ -16621,7 +16305,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [157149] player_death:
   {
     "GameEventName": "player_death",
@@ -16680,7 +16363,6 @@
     "DmgArmor": 1,
     "Hitgroup": 3
   }
-
 [157509] player_death:
   {
     "GameEventName": "player_death",
@@ -16739,7 +16421,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [157749] player_death:
   {
     "GameEventName": "player_death",
@@ -16798,7 +16479,6 @@
     "DmgArmor": 25,
     "Hitgroup": 1
   }
-
 [158631] player_death:
   {
     "GameEventName": "player_death",
@@ -16857,7 +16537,6 @@
     "DmgArmor": 1,
     "Hitgroup": 3
   }
-
 [159120] player_death:
   {
     "GameEventName": "player_death",
@@ -16916,7 +16595,6 @@
     "DmgArmor": 19,
     "Hitgroup": 1
   }
-
 [159512] player_death:
   {
     "GameEventName": "player_death",
@@ -16990,7 +16668,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [159979] player_death:
   {
     "GameEventName": "player_death",
@@ -17064,7 +16741,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [160022] player_death:
   {
     "GameEventName": "player_death",
@@ -17138,7 +16814,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [160022] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -17149,7 +16824,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [160022] round_end:
   {
     "GameEventName": "round_end",
@@ -17160,7 +16834,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [160470] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -17168,7 +16841,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [160470] round_start:
   {
     "GameEventName": "round_start",
@@ -17176,7 +16848,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [162452] player_death:
   {
     "GameEventName": "player_death",
@@ -17250,7 +16921,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [162453] player_death:
   {
     "GameEventName": "player_death",
@@ -17309,7 +16979,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [162489] player_death:
   {
     "GameEventName": "player_death",
@@ -17368,7 +17037,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [168528] player_death:
   {
     "GameEventName": "player_death",
@@ -17427,7 +17095,6 @@
     "DmgArmor": 0,
     "Hitgroup": 6
   }
-
 [168575] player_death:
   {
     "GameEventName": "player_death",
@@ -17501,7 +17168,6 @@
     "DmgArmor": 4,
     "Hitgroup": 3
   }
-
 [168672] player_death:
   {
     "GameEventName": "player_death",
@@ -17560,7 +17226,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [169007] player_death:
   {
     "GameEventName": "player_death",
@@ -17634,7 +17299,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [169110] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -17645,7 +17309,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [169110] round_end:
   {
     "GameEventName": "round_end",
@@ -17656,7 +17319,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [169655] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -17664,7 +17326,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [169655] round_start:
   {
     "GameEventName": "round_start",
@@ -17672,7 +17333,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [177094] player_death:
   {
     "GameEventName": "player_death",
@@ -17731,7 +17391,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [177184] player_death:
   {
     "GameEventName": "player_death",
@@ -17790,7 +17449,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [177325] player_death:
   {
     "GameEventName": "player_death",
@@ -17849,7 +17507,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [177370] player_death:
   {
     "GameEventName": "player_death",
@@ -17908,7 +17565,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [177870] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -17919,7 +17575,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [177870] round_end:
   {
     "GameEventName": "round_end",
@@ -17930,7 +17585,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [178042] player_death:
   {
     "GameEventName": "player_death",
@@ -17989,7 +17643,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [178203] player_death:
   {
     "GameEventName": "player_death",
@@ -18063,7 +17716,6 @@
     "DmgArmor": 0,
     "Hitgroup": 6
   }
-
 [178318] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -18071,7 +17723,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [178318] round_start:
   {
     "GameEventName": "round_start",
@@ -18079,7 +17730,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [187485] player_death:
   {
     "GameEventName": "player_death",
@@ -18138,7 +17788,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [187813] player_death:
   {
     "GameEventName": "player_death",
@@ -18197,7 +17846,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [187873] player_death:
   {
     "GameEventName": "player_death",
@@ -18256,7 +17904,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [188015] player_death:
   {
     "GameEventName": "player_death",
@@ -18315,7 +17962,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [188053] player_death:
   {
     "GameEventName": "player_death",
@@ -18374,7 +18020,6 @@
     "DmgArmor": 13,
     "Hitgroup": 1
   }
-
 [188440] player_death:
   {
     "GameEventName": "player_death",
@@ -18433,7 +18078,6 @@
     "DmgArmor": 6,
     "Hitgroup": 3
   }
-
 [188507] player_death:
   {
     "GameEventName": "player_death",
@@ -18492,7 +18136,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [188857] player_death:
   {
     "GameEventName": "player_death",
@@ -18551,7 +18194,6 @@
     "DmgArmor": 13,
     "Hitgroup": 1
   }
-
 [188857] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -18562,7 +18204,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [188857] round_end:
   {
     "GameEventName": "round_end",
@@ -18573,7 +18214,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [189305] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -18581,7 +18221,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [189305] round_start:
   {
     "GameEventName": "round_start",
@@ -18589,7 +18228,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [194606] player_death:
   {
     "GameEventName": "player_death",
@@ -18648,7 +18286,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-
 [194613] player_death:
   {
     "GameEventName": "player_death",
@@ -18722,7 +18359,6 @@
     "DmgArmor": 28,
     "Hitgroup": 1
   }
-
 [197049] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -18733,7 +18369,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [197049] round_end:
   {
     "GameEventName": "round_end",
@@ -18744,7 +18379,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [197497] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -18752,7 +18386,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [197497] round_start:
   {
     "GameEventName": "round_start",
@@ -18760,7 +18393,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [202354] player_death:
   {
     "GameEventName": "player_death",
@@ -18819,7 +18451,6 @@
     "DmgArmor": 6,
     "Hitgroup": 3
   }
-
 [202364] player_death:
   {
     "GameEventName": "player_death",
@@ -18893,7 +18524,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [203745] player_death:
   {
     "GameEventName": "player_death",
@@ -18952,7 +18582,6 @@
     "DmgArmor": 7,
     "Hitgroup": 3
   }
-
 [203828] player_death:
   {
     "GameEventName": "player_death",
@@ -19026,7 +18655,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [204442] player_death:
   {
     "GameEventName": "player_death",
@@ -19085,7 +18713,6 @@
     "DmgArmor": 4,
     "Hitgroup": 3
   }
-
 [204562] player_death:
   {
     "GameEventName": "player_death",
@@ -19144,7 +18771,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [204706] player_death:
   {
     "GameEventName": "player_death",
@@ -19218,7 +18844,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [204799] player_death:
   {
     "GameEventName": "player_death",
@@ -19292,7 +18917,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-
 [205910] player_death:
   {
     "GameEventName": "player_death",
@@ -19351,7 +18975,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [205910] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -19362,7 +18985,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [205910] round_end:
   {
     "GameEventName": "round_end",
@@ -19373,7 +18995,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [206358] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -19381,7 +19002,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [206358] round_start:
   {
     "GameEventName": "round_start",
@@ -19389,7 +19009,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [211698] player_death:
   {
     "GameEventName": "player_death",
@@ -19448,7 +19067,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [211888] player_death:
   {
     "GameEventName": "player_death",
@@ -19507,7 +19125,6 @@
     "DmgArmor": 6,
     "Hitgroup": 3
   }
-
 [211912] player_death:
   {
     "GameEventName": "player_death",
@@ -19581,7 +19198,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [213541] player_death:
   {
     "GameEventName": "player_death",
@@ -19655,7 +19271,6 @@
     "DmgArmor": 5,
     "Hitgroup": 2
   }
-
 [213853] player_death:
   {
     "GameEventName": "player_death",
@@ -19714,7 +19329,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [214393] player_death:
   {
     "GameEventName": "player_death",
@@ -19773,7 +19387,6 @@
     "DmgArmor": 5,
     "Hitgroup": 3
   }
-
 [214957] player_death:
   {
     "GameEventName": "player_death",
@@ -19832,7 +19445,6 @@
     "DmgArmor": 5,
     "Hitgroup": 3
   }
-
 [214957] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -19843,7 +19455,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [214957] round_end:
   {
     "GameEventName": "round_end",
@@ -19854,7 +19465,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [215405] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -19862,7 +19472,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [215405] round_start:
   {
     "GameEventName": "round_start",
@@ -19870,7 +19479,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [217477] player_death:
   {
     "GameEventName": "player_death",
@@ -19929,7 +19537,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [217702] player_death:
   {
     "GameEventName": "player_death",
@@ -20003,7 +19610,6 @@
     "DmgArmor": 0,
     "Hitgroup": 7
   }
-
 [218160] player_death:
   {
     "GameEventName": "player_death",
@@ -20062,7 +19668,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [218232] player_death:
   {
     "GameEventName": "player_death",
@@ -20136,7 +19741,6 @@
     "DmgArmor": 0,
     "Hitgroup": 5
   }
-
 [218263] player_death:
   {
     "GameEventName": "player_death",
@@ -20210,7 +19814,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [218266] player_death:
   {
     "GameEventName": "player_death",
@@ -20269,7 +19872,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [218266] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -20280,7 +19882,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [218266] round_end:
   {
     "GameEventName": "round_end",
@@ -20291,7 +19892,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [218714] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -20299,7 +19899,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [218714] round_start:
   {
     "GameEventName": "round_start",
@@ -20307,7 +19906,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [225572] player_death:
   {
     "GameEventName": "player_death",
@@ -20366,7 +19964,6 @@
     "DmgArmor": 19,
     "Hitgroup": 1
   }
-
 [225579] player_death:
   {
     "GameEventName": "player_death",
@@ -20440,7 +20037,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [225877] player_death:
   {
     "GameEventName": "player_death",
@@ -20514,7 +20110,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [225965] player_death:
   {
     "GameEventName": "player_death",
@@ -20588,7 +20183,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [226219] player_death:
   {
     "GameEventName": "player_death",
@@ -20647,7 +20241,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [226284] player_death:
   {
     "GameEventName": "player_death",
@@ -20706,7 +20299,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [226469] player_death:
   {
     "GameEventName": "player_death",
@@ -20765,7 +20357,6 @@
     "DmgArmor": 3,
     "Hitgroup": 2
   }
-
 [226551] player_death:
   {
     "GameEventName": "player_death",
@@ -20824,7 +20415,6 @@
     "DmgArmor": 0,
     "Hitgroup": 0
   }
-
 [227354] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -20835,7 +20425,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [227354] round_end:
   {
     "GameEventName": "round_end",
@@ -20846,7 +20435,6 @@
     "PlayerCount": 20,
     "Nomusic": 1
   }
-
 [227357] player_death:
   {
     "GameEventName": "player_death",
@@ -20905,7 +20493,6 @@
     "DmgArmor": 4,
     "Hitgroup": 2
   }
-
 [227802] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -20913,7 +20500,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [227802] round_start:
   {
     "GameEventName": "round_start",
@@ -20921,7 +20507,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [232095] player_death:
   {
     "GameEventName": "player_death",
@@ -20980,7 +20565,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [232140] player_death:
   {
     "GameEventName": "player_death",
@@ -21039,7 +20623,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [232191] player_death:
   {
     "GameEventName": "player_death",
@@ -21098,7 +20681,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [232211] player_death:
   {
     "GameEventName": "player_death",
@@ -21157,7 +20739,6 @@
     "DmgArmor": 0,
     "Hitgroup": 2
   }
-
 [232344] player_death:
   {
     "GameEventName": "player_death",
@@ -21216,7 +20797,6 @@
     "DmgArmor": 5,
     "Hitgroup": 2
   }
-
 [232455] player_death:
   {
     "GameEventName": "player_death",
@@ -21290,7 +20870,6 @@
     "DmgArmor": 0,
     "Hitgroup": 1
   }
-
 [232455] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -21301,7 +20880,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [232455] round_end:
   {
     "GameEventName": "round_end",
@@ -21312,7 +20890,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [232903] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -21320,7 +20897,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [232903] round_start:
   {
     "GameEventName": "round_start",
@@ -21328,7 +20904,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [238144] player_death:
   {
     "GameEventName": "player_death",
@@ -21402,7 +20977,6 @@
     "DmgArmor": 4,
     "Hitgroup": 3
   }
-
 [238200] player_death:
   {
     "GameEventName": "player_death",
@@ -21461,7 +21035,6 @@
     "DmgArmor": 18,
     "Hitgroup": 1
   }
-
 [240992] player_death:
   {
     "GameEventName": "player_death",
@@ -21520,7 +21093,6 @@
     "DmgArmor": 17,
     "Hitgroup": 1
   }
-
 [241880] player_death:
   {
     "GameEventName": "player_death",
@@ -21579,7 +21151,6 @@
     "DmgArmor": 5,
     "Hitgroup": 3
   }
-
 [243164] player_death:
   {
     "GameEventName": "player_death",
@@ -21638,7 +21209,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [243173] player_death:
   {
     "GameEventName": "player_death",
@@ -21712,7 +21282,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [244050] player_death:
   {
     "GameEventName": "player_death",
@@ -21771,7 +21340,6 @@
     "DmgArmor": 19,
     "Hitgroup": 1
   }
-
 [244641] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -21782,7 +21350,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [244641] round_end:
   {
     "GameEventName": "round_end",
@@ -21793,7 +21360,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [245089] RoundStartCount change:
   {
     "GameEventName": "round_start",
@@ -21801,7 +21367,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [245089] round_start:
   {
     "GameEventName": "round_start",
@@ -21809,7 +21374,6 @@
     "Fraglimit": 0,
     "Objective": ""
   }
-
 [248385] player_death:
   {
     "GameEventName": "player_death",
@@ -21868,7 +21432,6 @@
     "DmgArmor": 19,
     "Hitgroup": 1
   }
-
 [248403] player_death:
   {
     "GameEventName": "player_death",
@@ -21927,7 +21490,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [248492] player_death:
   {
     "GameEventName": "player_death",
@@ -21986,7 +21548,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [248760] player_death:
   {
     "GameEventName": "player_death",
@@ -22060,7 +21621,6 @@
     "DmgArmor": 15,
     "Hitgroup": 1
   }
-
 [248845] player_death:
   {
     "GameEventName": "player_death",
@@ -22134,7 +21694,6 @@
     "DmgArmor": 6,
     "Hitgroup": 3
   }
-
 [251007] player_death:
   {
     "GameEventName": "player_death",
@@ -22193,7 +21752,6 @@
     "DmgArmor": 1,
     "Hitgroup": 2
   }
-
 [251007] RoundEndCount change:
   {
     "GameEventName": "round_end",
@@ -22204,7 +21762,6 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-
 [251007] round_end:
   {
     "GameEventName": "round_end",
@@ -22215,4 +21772,3 @@
     "PlayerCount": 20,
     "Nomusic": 0
   }
-

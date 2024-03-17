@@ -41,7 +41,12 @@ public class DemoSnapshot
         {
             foreach (var item in items)
             {
-                result.AppendLine($"[{tick}] {item}");
+                result.Append($"[{tick}] {item}");
+
+                if (item[^1] != '\n')
+                {
+                    result.AppendLine();
+                }
             }
         }
 
