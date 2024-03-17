@@ -3,106 +3,100 @@ using System.Text.Json;
 
 namespace DemoFile.Test.Integration;
 
-[TestFixture(true)]
-[TestFixture(false)]
+[TestFixtureSource(typeof(GlobalUtil), nameof(ParseModes))]
 public class PlayerPropsIntegrationTest
 {
-    private readonly bool _readAll;
+    private readonly ParseMode _mode;
 
-    public PlayerPropsIntegrationTest(bool readAll)
+    public PlayerPropsIntegrationTest(ParseMode mode)
     {
-        _readAll = readAll;
+        _mode = mode;
     }
 
     [Test]
     public async Task Position()
     {
         // Arrange
-        var snapshot = new StringBuilder();
-        var demo = new DemoParser();
-
-        demo.PacketEvents.SvcServerInfo += e =>
+        DemoSnapshot ParseSection(DemoParser demo)
         {
-            snapshot.AppendLine($"[{demo.CurrentGameTick.Value}] {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
-        };
+            var snapshot = new DemoSnapshot();
 
-        demo.Source1GameEvents.RoundEnd += e =>
-        {
-            snapshot.AppendLine($"[{demo.CurrentGameTick.Value}] Round end snapshot:");
-            SnapshotPlayerState();
-        };
-
-        void SnapshotPlayerState()
-        {
-            foreach (var player in demo.Players)
+            demo.Source1GameEvents.RoundEnd += e =>
             {
-                var pawn = player.PlayerPawn;
+                snapshot.Add(demo.CurrentDemoTick, $"GameTick: {demo.CurrentGameTick}, Round end snapshot:{Environment.NewLine}{SnapshotPlayerState()}");
+            };
 
-                var weapons = pawn?.Weapons.Select(wep => new
+            string SnapshotPlayerState()
+            {
+                var sb = new StringBuilder();
+
+                foreach (var player in demo.Players)
                 {
-                    Class = wep.ServerClass.Name,
-                    Weapon = wep.EconItem.Name,
-                    PaintKit = wep.EconItem.PaintKit,
-                    Quality = wep.EconItem.Quality,
-                    Rarity = wep.EconItem.Rarity,
-                    CustomName = wep.EconItem.CustomName,
-                    Clip1 = wep.Clip1,
-                    Clip2 = wep.Clip2,
-                    Reserve = wep.ReserveAmmo,
-                });
+                    var pawn = player.PlayerPawn;
 
-                var playerJson = JsonSerializer.Serialize(
-                        new
-                        {
-                            player.IsActive,
-                            PlayerName = player.PlayerName,
-                            Team = player.Team.ToString(),
-                            IsAlive = pawn?.IsAlive,
-                            ControllerHandle = player.EntityHandle,
-                            PawnHandle = player.PawnHandle,
-                            Kills = player.ActionTrackingServices?.MatchStats.Kills,
-                            Deaths = player.ActionTrackingServices?.MatchStats.Deaths,
-                            LastPlaceName = pawn?.LastPlaceName,
-                            ActiveWeapon = pawn?.ActiveWeapon?.ServerClass.Name,
-                            Origin = pawn?.Origin,
-                            Rotation = pawn?.Rotation,
-                            EyeAngles = pawn?.EyeAngles,
-                            Weapons = weapons
-                        },
-                        DemoJson.SerializerOptions)
-                    .ReplaceLineEndings(Environment.NewLine + "  ");
+                    var weapons = pawn?.Weapons.Select(wep => new
+                    {
+                        Class = wep.ServerClass.Name,
+                        Weapon = wep.EconItem.Name,
+                        PaintKit = wep.EconItem.PaintKit,
+                        Quality = wep.EconItem.Quality,
+                        Rarity = wep.EconItem.Rarity,
+                        CustomName = wep.EconItem.CustomName,
+                        Clip1 = wep.Clip1,
+                        Clip2 = wep.Clip2,
+                        Reserve = wep.ReserveAmmo,
+                    });
 
-                snapshot.AppendLine($"  {playerJson}");
+                    var playerJson = JsonSerializer.Serialize(
+                            new
+                            {
+                                player.IsActive,
+                                PlayerName = player.PlayerName,
+                                Team = player.Team.ToString(),
+                                IsAlive = pawn?.IsAlive,
+                                ControllerHandle = player.EntityHandle,
+                                PawnHandle = player.PawnHandle,
+                                Kills = player.ActionTrackingServices?.MatchStats.Kills,
+                                Deaths = player.ActionTrackingServices?.MatchStats.Deaths,
+                                LastPlaceName = pawn?.LastPlaceName,
+                                ActiveWeapon = pawn?.ActiveWeapon?.ServerClass.Name,
+                                Origin = pawn?.Origin,
+                                Rotation = pawn?.Rotation,
+                                EyeAngles = pawn?.EyeAngles,
+                                Weapons = weapons
+                            },
+                            DemoJson.SerializerOptions)
+                        .ReplaceLineEndings(Environment.NewLine + "  ");
+
+                    sb.AppendLine($"  {playerJson}");
+                }
+
+                return sb.ToString();
             }
+
+            var snapshotIntervalTicks = DemoTick.Zero + TimeSpan.FromMinutes(10);
+
+            void OnSnapshotTimer()
+            {
+                if (demo.CurrentDemoTick.Value % snapshotIntervalTicks.Value != 0)
+                    return;
+
+                snapshot.Add(demo.CurrentDemoTick, $"Interval snapshot:{Environment.NewLine}{SnapshotPlayerState()}");
+
+                demo.CreateTimer(
+                    demo.CurrentDemoTick + snapshotIntervalTicks,
+                    OnSnapshotTimer);
+            }
+
+            demo.CreateTimer(snapshotIntervalTicks, OnSnapshotTimer);
+
+            return snapshot;
         }
-
-        var playerSnapshotInterval = TimeSpan.FromMinutes(10);
-        void OnSnapshotTimer()
-        {
-            snapshot.AppendLine($"[{demo.CurrentGameTick.Value}] Interval snapshot:");
-            SnapshotPlayerState();
-
-            demo.CreateTimer(
-                demo.CurrentDemoTick + playerSnapshotInterval,
-                OnSnapshotTimer);
-        }
-
-        demo.CreateTimer(DemoTick.Zero + playerSnapshotInterval, OnSnapshotTimer);
 
         // Act
-        if (_readAll)
-        {
-            await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
-        }
-        else
-        {
-            await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
-            while (await demo.MoveNextAsync(default))
-            {
-            }
-        }
+        var snapshot = await Parse(_mode, GotvCompetitiveProtocol13963, ParseSection);
 
         // Assert
-        Snapshot.Assert(snapshot.ToString());
+        Snapshot.Assert(snapshot);
     }
 }

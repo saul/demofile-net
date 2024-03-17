@@ -48,4 +48,10 @@ public class DemoParserBenchmark
         await _demoParser.ReadAllAsync(_fileStream, default);
 #endif
     }
+
+    [Benchmark]
+    public async Task ParseDemoParallel()
+    {
+        await DemoParser.ReadAllParallelAsync(_demoBytes, _ => { },default);
+    }
 }

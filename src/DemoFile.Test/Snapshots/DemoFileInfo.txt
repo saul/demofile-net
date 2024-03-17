@@ -1,10 +1,9 @@
-[<pre record>/0] TickCount=217866
-[<pre record>/0] DemoFileInfo: {
+[<pre record>] GameTick: 0, TickCount: 217866, DemoFileInfo: {
   "PlaybackTime": 3404.1562,
   "PlaybackTicks": 217866,
   "PlaybackFrames": 217801
 }
-[<pre record>/119535] SvcServerInfo: {
+[<pre record>] GameTick: 119535, SvcServerInfo: {
   "Protocol": 13963,
   "ServerCount": 6,
   "IsDedicated": true,

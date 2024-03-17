@@ -52,12 +52,15 @@ See also the [examples/](./examples) folder.
 
 ## Benchmarks
 
-On an M1 MacBook Pro, DemoFile.Net can read a full competitive game (just under 1 hour of game time) in 1.5 seconds.
+On an M1 MacBook Pro, DemoFile.Net can read a full competitive game (just under 1 hour of game time) in 1.3 seconds.
+When parsing across multiple threads, using the `ReadAllParallelAsync` method, this drops to nearly 500 milliseconds.
 This includes parsing all entity data (player positions, velocities, weapon tracking, grenades, etc).
 
-| Method    | Runtime  |        Mean |    Error |   StdDev |
-|-----------|----------|------------:|---------:|---------:|
-| ParseDemo | .NET 8.0 | **1.501 s** | 0.0047 s | 0.0042 s |
+| Method            |           Mean | Error    | StdDev   | Allocated |
+|-------------------|---------------:|---------:|---------:|----------:|
+| ParseDemo         | **1,294.6 ms** |  3.68 ms |  2.88 ms | 491.48 MB |
+| ParseDemoParallel |   **540.1 ms** | 23.99 ms | 22.44 ms | 600.67 MB |
+
 
 ## Author and acknowledgements
 
