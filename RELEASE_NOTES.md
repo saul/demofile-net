@@ -1,3 +1,8 @@
+### 0.13.1 (2024-03-17)
+
+- Add `DemoParser.ReadAllParallelAsync` to read a demo across multiple threads. \
+  Many thanks to [@in0finite](https://github.com/in0finite) for the initial implementation. 
+
 ### 0.12.1 (2024-02-29)
 
 - Add support for seeking to arbitrary ticks with `DemoParser.SeekToTickAsync`. \

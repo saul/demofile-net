@@ -1,42 +1,4 @@
-[119535] {
-  "Protocol": 13963,
-  "ServerCount": 6,
-  "IsDedicated": true,
-  "IsHltv": true,
-  "COs": 108,
-  "MaxClients": 64,
-  "MaxClasses": 212,
-  "PlayerSlot": 0,
-  "TickInterval": 0.015625,
-  "GameDir": "/home/steam/cs2/game/csgo",
-  "MapName": "de_mirage",
-  "SkyName": "",
-  "HostName": "ESL GOTV",
-  "AddonName": "",
-  "GameSessionConfig": {
-    "IsMultiplayer": true,
-    "IsLoadsavegame": false,
-    "IsBackgroundMap": false,
-    "IsHeadless": false,
-    "MinClientLimit": 1,
-    "MaxClientLimit": 64,
-    "MaxClients": 64,
-    "TickInterval": 0,
-    "Hostname": "",
-    "Savegamename": "",
-    "S1Mapname": "de_mirage",
-    "Gamemode": "",
-    "ServerIpAddress": "138.199.37.129:0",
-    "Data": "\u003C576 bytes\u003E",
-    "IsLocalonly": false,
-    "NoSteamServer": false,
-    "IsTransition": false,
-    "Previouslevel": "",
-    "Landmarkname": ""
-  },
-  "GameSessionManifest": "\u003C7073 bytes\u003E"
-}
-[125014] Round end snapshot:
+[5478] GameTick: 125014, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -565,7 +527,8 @@
       }
     ]
   }
-[130341] Round end snapshot:
+
+[10805] GameTick: 130341, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -1141,7 +1104,8 @@
       }
     ]
   }
-[137690] Round end snapshot:
+
+[18154] GameTick: 137690, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -1770,7 +1734,8 @@
     },
     "Weapons": []
   }
-[144501] Round end snapshot:
+
+[24965] GameTick: 144501, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -2448,7 +2413,8 @@
     },
     "Weapons": []
   }
-[152578] Round end snapshot:
+
+[33042] GameTick: 152578, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -2920,7 +2886,8 @@
     },
     "Weapons": []
   }
-[157935] Interval snapshot:
+
+[38400] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -3704,7 +3671,8 @@
     },
     "Weapons": []
   }
-[160599] Round end snapshot:
+
+[41063] GameTick: 160599, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -4365,7 +4333,8 @@
     },
     "Weapons": []
   }
-[168997] Round end snapshot:
+
+[49461] GameTick: 168997, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -4960,7 +4929,8 @@
       }
     ]
   }
-[179620] Round end snapshot:
+
+[60084] GameTick: 179620, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -5621,7 +5591,8 @@
       }
     ]
   }
-[191160] Round end snapshot:
+
+[71624] GameTick: 191160, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -6067,7 +6038,8 @@
     },
     "Weapons": []
   }
-[196335] Interval snapshot:
+
+[76800] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -6968,7 +6940,8 @@
     },
     "Weapons": []
   }
-[199692] Round end snapshot:
+
+[80156] GameTick: 199692, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -7516,7 +7489,8 @@
     },
     "Weapons": []
   }
-[210737] Round end snapshot:
+
+[91201] GameTick: 210737, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -8078,7 +8052,8 @@
     },
     "Weapons": []
   }
-[219129] Round end snapshot:
+
+[99593] GameTick: 219129, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -8553,7 +8528,8 @@
     },
     "Weapons": []
   }
-[234735] Interval snapshot:
+
+[115200] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -9312,7 +9288,8 @@
       }
     ]
   }
-[238092] Round end snapshot:
+
+[118556] GameTick: 238092, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -9841,7 +9818,8 @@
       }
     ]
   }
-[244193] Round end snapshot:
+
+[124657] GameTick: 244193, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -10350,7 +10328,8 @@
     },
     "Weapons": []
   }
-[249869] Round end snapshot:
+
+[130333] GameTick: 249869, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -10925,7 +10904,8 @@
     },
     "Weapons": []
   }
-[258710] Round end snapshot:
+
+[139174] GameTick: 258710, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -11421,7 +11401,8 @@
       }
     ]
   }
-[269942] Round end snapshot:
+
+[150406] GameTick: 269942, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -11870,7 +11851,8 @@
     },
     "Weapons": []
   }
-[273135] Interval snapshot:
+
+[153600] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -12843,7 +12825,8 @@
       }
     ]
   }
-[277167] Round end snapshot:
+
+[157631] GameTick: 277167, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -13418,7 +13401,8 @@
     },
     "Weapons": []
   }
-[284347] Round end snapshot:
+
+[164811] GameTick: 284347, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -14071,7 +14055,8 @@
     },
     "Weapons": []
   }
-[292242] Round end snapshot:
+
+[172706] GameTick: 292242, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -14596,7 +14581,8 @@
     },
     "Weapons": []
   }
-[300173] Round end snapshot:
+
+[180637] GameTick: 300173, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -15184,7 +15170,8 @@
     },
     "Weapons": []
   }
-[310206] Round end snapshot:
+
+[190670] GameTick: 310206, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -15861,7 +15848,8 @@
     },
     "Weapons": []
   }
-[311535] Interval snapshot:
+
+[192000] Interval snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -16995,7 +16983,8 @@
       }
     ]
   }
-[321701] Round end snapshot:
+
+[202165] GameTick: 321701, Round end snapshot:
   {
     "IsActive": true,
     "PlayerName": "ESL GOTV",
@@ -17583,3 +17572,4 @@
     },
     "Weapons": []
   }
+

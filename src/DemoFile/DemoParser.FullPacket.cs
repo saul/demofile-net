@@ -10,11 +10,11 @@ public partial class DemoParser
     /// </summary>
     public bool IsSeeking { get; private set; }
 
-    private readonly struct SeekCookie : IDisposable
+    private readonly struct SeekScope : IDisposable
     {
         private readonly DemoParser _parser;
 
-        public SeekCookie(DemoParser parser)
+        public SeekScope(DemoParser parser)
         {
             _parser = parser;
             parser.IsSeeking = true;
@@ -29,10 +29,10 @@ public partial class DemoParser
     internal readonly record struct FullPacketRecord(
         DemoTick Tick,
         long StreamPosition,
-        ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>> StringTables)
+        ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>> StringTables)
         : IComparable<FullPacketRecord>
     {
-        public static FullPacketRecord ForTick(DemoTick tick) => new(tick, 0L, ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>>.Empty);
+        public static FullPacketRecord ForTick(DemoTick tick) => new(tick, 0L, ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>>.Empty);
 
         public int CompareTo(FullPacketRecord other) => Tick.CompareTo(other.Tick);
     }
@@ -80,7 +80,7 @@ public partial class DemoParser
     /// </remarks>
     public async ValueTask SeekToTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
     {
-        using var _ = new SeekCookie(this);
+        using var _ = new SeekScope(this);
 
         if (IsReading)
             throw new InvalidOperationException($"Cannot seek to tick while reading commands");

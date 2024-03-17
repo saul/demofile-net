@@ -1,51 +1,42 @@
-﻿using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace DemoFile.Test.Integration;
 
-[TestFixture(true)]
-[TestFixture(false)]
+[TestFixtureSource(typeof(GlobalUtil), nameof(ParseModes))]
 public class DemoEventsIntegrationTest
 {
-    private readonly bool _readAll;
+    private readonly ParseMode _mode;
 
-    public DemoEventsIntegrationTest(bool readAll)
+    public DemoEventsIntegrationTest(ParseMode mode)
     {
-        _readAll = readAll;
+        _mode = mode;
     }
 
     [Test]
     public async Task DemoFileInfo()
     {
         // Arrange
-        var snapshot = new StringBuilder();
-        var demo = new DemoParser();
-
-        demo.DemoEvents.DemoFileInfo += e =>
+        DemoSnapshot ParseSection(DemoParser demo)
         {
-            snapshot.AppendLine($"[{demo.CurrentDemoTick}/{demo.CurrentGameTick}] TickCount={demo.TickCount}");
-            snapshot.AppendLine($"[{demo.CurrentDemoTick}/{demo.CurrentGameTick}] DemoFileInfo: {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
-        };
+            var snapshot = new DemoSnapshot();
 
-        demo.PacketEvents.SvcServerInfo += e =>
-        {
-            snapshot.AppendLine($"[{demo.CurrentDemoTick}/{demo.CurrentGameTick}] SvcServerInfo: {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
-        };
+            demo.DemoEvents.DemoFileInfo += e =>
+            {
+                snapshot.Add(demo.CurrentDemoTick, $"GameTick: {demo.CurrentGameTick}, TickCount: {demo.TickCount}, DemoFileInfo: {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
+            };
+
+            demo.PacketEvents.SvcServerInfo += e =>
+            {
+                snapshot.Add(demo.CurrentDemoTick, $"GameTick: {demo.CurrentGameTick}, SvcServerInfo: {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
+            };
+
+            return snapshot;
+        }
 
         // Act
-        if (_readAll)
-        {
-            await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
-        }
-        else
-        {
-            await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
-            while (await demo.MoveNextAsync(default))
-            {
-            }
-        }
+        var snapshot = await Parse(_mode, GotvCompetitiveProtocol13963, ParseSection);
 
         // Assert
-        Snapshot.Assert(snapshot.ToString());
+        Snapshot.Assert(snapshot);
     }
 }

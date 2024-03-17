@@ -1,70 +1,69 @@
 ﻿using System.Diagnostics;
 using System.Text;
-using System.Text.Json;
 using DemoFile.Sdk;
 
 namespace DemoFile.Test.Integration;
 
-[TestFixture(true)]
-[TestFixture(false)]
+[TestFixtureSource(typeof(GlobalUtil), nameof(ParseModes))]
 public class StringTableIntegrationTest
 {
-    private readonly bool _readAll;
+    private readonly ParseMode _mode;
 
-    public StringTableIntegrationTest(bool readAll)
+    public StringTableIntegrationTest(ParseMode mode)
     {
-        _readAll = readAll;
+        _mode = mode;
     }
 
     [Test]
     public async Task PlayerInfo()
     {
         // Arrange
-        var snapshot = new StringBuilder();
-        var demo = new DemoParser();
-
-        void SnapshotPlayerInfos()
+        DemoSnapshot ParseSection(DemoParser demo)
         {
-            var playerInfos = demo.PlayerInfos.Reverse().SkipWhile(x => x == null).Reverse().ToList();
-            for (var index = 0; index < playerInfos.Count; index++)
+            var snapshot = new DemoSnapshot();
+
+            string SnapshotPlayerInfos()
             {
-                var playerInfo = demo.PlayerInfos[index];
-                snapshot.AppendLine($"  #{index}: {playerInfo?.ToString() ?? "<null>"}");
+                var sb = new StringBuilder();
+                var playerInfos = demo.PlayerInfos.Reverse().SkipWhile(x => x == null).Reverse().ToList();
 
-                var controllerIndex = new CEntityIndex((uint)(index + 1));
-                Debug.Assert(ReferenceEquals(
-                    demo.GetEntityByIndex<CCSPlayerController>(controllerIndex)?.PlayerInfo,
-                    playerInfo));
+                for (var index = 0; index < playerInfos.Count; index++)
+                {
+                    var playerInfo = demo.PlayerInfos[index];
+                    sb.AppendLine($"  #{index}: {playerInfo?.ToString() ?? "<null>"}");
+
+                    var controllerIndex = new CEntityIndex((uint) (index + 1));
+                    Debug.Assert(ReferenceEquals(
+                        demo.GetEntityByIndex<CCSPlayerController>(controllerIndex)?.PlayerInfo,
+                        playerInfo));
+                }
+
+                return sb.ToString();
             }
+
+            var snapshotIntervalTicks = DemoTick.Zero + TimeSpan.FromMinutes(1);
+
+            void OnSnapshotTimer()
+            {
+                if (demo.CurrentDemoTick.Value % snapshotIntervalTicks.Value != 0)
+                    return;
+
+                snapshot.Add(demo.CurrentDemoTick, $"Player infos:{Environment.NewLine}{SnapshotPlayerInfos()}");
+
+                demo.CreateTimer(
+                    demo.CurrentDemoTick + snapshotIntervalTicks,
+                    OnSnapshotTimer);
+            }
+
+            demo.CreateTimer(snapshotIntervalTicks, OnSnapshotTimer);
+
+            return snapshot;
         }
-
-        var playerSnapshotInterval = TimeSpan.FromMinutes(1);
-        void OnSnapshotTimer()
-        {
-            snapshot.AppendLine($"[{demo.CurrentGameTick.Value}] Player infos:");
-            SnapshotPlayerInfos();
-
-            demo.CreateTimer(
-                demo.CurrentDemoTick + playerSnapshotInterval,
-                OnSnapshotTimer);
-        }
-
-        demo.CreateTimer(DemoTick.Zero + playerSnapshotInterval, OnSnapshotTimer);
 
         // Act
-        if (_readAll)
-        {
-            await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
-        }
-        else
-        {
-            await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
-            while (await demo.MoveNextAsync(default))
-            {
-            }
-        }
+        var snapshot = await Parse(_mode, GotvCompetitiveProtocol13963, ParseSection);
 
         // Assert
-        Snapshot.Assert(snapshot.ToString());
+        Snapshot.Assert(snapshot);
     }
 }

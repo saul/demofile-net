@@ -327,7 +327,7 @@ public partial class DemoParser
                 // Grab the server class baseline and populate the entity with it
                 if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
                 {
-                    var baselineBuf = new BitBuffer(_instanceBaselines[baselineIndex].Value);
+                    var baselineBuf = new BitBuffer(_instanceBaselines[baselineIndex].Value.Span);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 
@@ -378,7 +378,7 @@ public partial class DemoParser
                     var (savedBaseline, baselineBytes) = _instanceBaselines[alternateBaseline];
                     Debug.Assert(savedBaseline.ServerClassId == entity.ServerClass.ServerClassId);
 
-                    var baselineBuf = new BitBuffer(baselineBytes);
+                    var baselineBuf = new BitBuffer(baselineBytes.Span);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 
