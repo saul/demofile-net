@@ -5,3 +5,4 @@ bin/
 .idea/
 .vs/
 *.DotSettings.user
+BenchmarkDotNet.Artifacts/

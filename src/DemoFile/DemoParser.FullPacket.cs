@@ -175,7 +175,7 @@ public partial class DemoParser
     {
         // CDemoFullPacket.string_table only contains tables that have changed
         // since the last CDemoFullPacket, so we need to read each one while seeking.
-        if (IsSeeking)
+        if (IsSeeking || CurrentDemoTick == _readFullPacketTick)
         {
             foreach (var snapshot in fullPacket.StringTable.Tables)
             {
