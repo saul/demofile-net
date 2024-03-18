@@ -20,6 +20,11 @@ public partial class DemoParser
             throw new Exception($"Unknown protocol in broadcast, expected 5, got {syncDto.Protocol}");
         }
 
+        if (!string.IsNullOrEmpty(syncDto.TokenRedirect))
+        {
+            baseUrl = AppendPath(baseUrl, syncDto.TokenRedirect);
+        }
+
         var signonUrl = AppendPath(baseUrl, $"{syncDto.SignupFragment}/start");
         var signonData = await httpClient.GetByteArrayAsync(signonUrl, cancellationToken).ConfigureAwait(false);
         ReadBroadcastFragment(signonData, -1);
