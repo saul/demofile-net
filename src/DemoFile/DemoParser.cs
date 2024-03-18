@@ -108,7 +108,11 @@ public sealed partial class DemoParser
     private void OnDemoPacket(CDemoPacket msg)
     {
         var buffer = new BitBuffer(msg.Data.Span);
+        OnDemoPacketCore(buffer);
+    }
 
+    private void OnDemoPacketCore(BitBuffer buffer)
+    {
         // Read all messages from the buffer. Messages are packed serially as
         // {type, size, data}. We keep reading until there's nothing left.
         var index = 0;
@@ -276,13 +280,24 @@ public sealed partial class DemoParser
     /// </summary>
     /// <param name="cancellationToken">A cancellation token to stop reading the command.</param>
     /// <returns><c>true</c> if more commands are available in the demo file, otherwise <c>false</c>.</returns>
-    public ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken)
+    public async ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken)
     {
         var cmd = ReadCommandHeader();
-        return MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken);
+        return await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false);
     }
 
     private async ValueTask<bool> MoveNextCoreAsync(EDemoCommands msgType, bool isCompressed, int size, CancellationToken cancellationToken)
+    {
+        var rented = _bytePool.Rent(size);
+        var buf = rented.AsMemory(..size);
+        await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
+
+        var canContinue = ReadCommand(msgType, isCompressed, buf.Span);
+        _bytePool.Return(rented);
+        return canContinue;
+    }
+
+    private bool ReadCommand(EDemoCommands msgType, bool isCompressed, ReadOnlySpan<byte> buffer)
     {
         IsReading = true;
 
@@ -294,11 +309,7 @@ public sealed partial class DemoParser
             timer.Invoke();
         }
 
-        var rented = _bytePool.Rent(size);
-        var buf = rented.AsMemory(..size);
-        await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
-
-        var canContinue = _demoEvents.ReadDemoCommand(msgType, buf.Span, isCompressed);
+        var canContinue = _demoEvents.ReadDemoCommand(msgType, buffer, isCompressed);
 
         if (OnCommandFinish is { } onCommandFinish)
         {
@@ -308,7 +319,6 @@ public sealed partial class DemoParser
         }
 
         IsReading = false;
-        _bytePool.Return(rented);
         return canContinue;
     }
 
