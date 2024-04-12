@@ -43,21 +43,6 @@ public sealed partial class CNetworkOriginCellCoordQuantizedVector : IEquatable<
         FieldEncodingInfo fieldEncodingInfo)
     {
         var decoder = FieldDecode.CreateDecoder_float(fieldEncodingInfo);
-
-        // Player pawns have m_vecX, m_vecY and m_vecZ overridden to be 32-bit floats,
-        // instead of the usual 15-bit quantized floats.
-        // Occasionally we see one or more of these fields encoded as all zeros.
-        // Ignore these to avoid pawn positions jittering.
-        // See https://github.com/saul/demofile-net/issues/27
-        if (fieldEncodingInfo.BitCount == 32)
-        {
-            return (CNetworkOriginCellCoordQuantizedVector @this, ref BitBuffer buffer) =>
-            {
-                var result = decoder(ref buffer);
-                return result == default ? @this.X : result;
-            };
-        }
-
         return (CNetworkOriginCellCoordQuantizedVector _, ref BitBuffer buffer) => decoder(ref buffer);
     }
 
@@ -65,16 +50,6 @@ public sealed partial class CNetworkOriginCellCoordQuantizedVector : IEquatable<
         FieldEncodingInfo fieldEncodingInfo)
     {
         var decoder = FieldDecode.CreateDecoder_float(fieldEncodingInfo);
-
-        if (fieldEncodingInfo.BitCount == 32)
-        {
-            return (CNetworkOriginCellCoordQuantizedVector @this, ref BitBuffer buffer) =>
-            {
-                var result = decoder(ref buffer);
-                return result == default ? @this.Y : result;
-            };
-        }
-
         return (CNetworkOriginCellCoordQuantizedVector _, ref BitBuffer buffer) => decoder(ref buffer);
     }
 
@@ -82,18 +57,6 @@ public sealed partial class CNetworkOriginCellCoordQuantizedVector : IEquatable<
         FieldEncodingInfo fieldEncodingInfo)
     {
         var decoder = FieldDecode.CreateDecoder_float(fieldEncodingInfo);
-
-        // Realistically Z pos could actually be 0, but this is
-        // the best we can do to avoid jittering positions.
-        if (fieldEncodingInfo.BitCount == 32)
-        {
-            return (CNetworkOriginCellCoordQuantizedVector @this, ref BitBuffer buffer) =>
-            {
-                var result = decoder(ref buffer);
-                return result == default ? @this.Z : result;
-            };
-        }
-
         return (CNetworkOriginCellCoordQuantizedVector _, ref BitBuffer buffer) => decoder(ref buffer);
     }
 

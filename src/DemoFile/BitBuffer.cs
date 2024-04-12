@@ -6,9 +6,22 @@ namespace DemoFile;
 
 internal ref struct BitBuffer
 {
+    private static readonly uint[] BitMask;
+
     private int _bitsAvail = 0;
     private uint _buf = 0;
     private ReadOnlySpan<byte> _pointer;
+
+    static BitBuffer()
+    {
+        BitMask = new uint[33];
+        for (var i = 1; i < BitMask.Length - 1; ++i)
+        {
+            BitMask[i] = (1u << i) - 1;
+        }
+
+        BitMask[^1] = uint.MaxValue;
+    }
 
     public BitBuffer(ReadOnlySpan<byte> pointer)
     {
@@ -28,7 +41,7 @@ internal ref struct BitBuffer
     {
         if (_bitsAvail >= numBits)
         {
-            var ret = (uint)(_buf & ((1 << numBits) - 1));
+            var ret = _buf & BitMask[numBits];
             _bitsAvail -= numBits;
             if (_bitsAvail != 0)
             {
@@ -48,7 +61,7 @@ internal ref struct BitBuffer
 
             UpdateBuffer();
 
-            ret |= (uint)((_buf & ((1 << numBits) - 1)) << _bitsAvail);
+            ret |= (_buf & BitMask[numBits]) << _bitsAvail;
             _bitsAvail = 32 - numBits;
             _buf >>= numBits;
 
