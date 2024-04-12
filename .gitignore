@@ -4,3 +4,4 @@ bin/
 *.dem
 .idea/
 *.DotSettings.user
+BenchmarkDotNet.Artifacts/

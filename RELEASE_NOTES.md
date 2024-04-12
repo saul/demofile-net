@@ -1,3 +1,7 @@
+### 0.12.2 (2024-04-12)
+
+- Fix player pawn positions occasionally jittering ([#37](https://github.com/saul/demofile-net/issues/37)). Thanks to [@in0finite](https://github.com/in0finite) for spotting the bug.
+
 ### 0.12.1 (2024-02-29)
 
 - Add support for seeking to arbitrary ticks with `DemoParser.SeekToTickAsync`. \
