@@ -3,61 +3,78 @@ using System.Text.Json;
 
 namespace DemoFile.Test.Integration;
 
-[TestFixture]
+[TestFixtureSource(typeof(GlobalUtil), nameof(ParseModes))]
 public class RoundEventsIntegrationTest
 {
-    private static readonly KeyValuePair<string, Stream>[] RoundCases =
+    private static readonly KeyValuePair<string, byte[]>[] RoundCases =
     {
         new("v13963", GotvCompetitiveProtocol13963),
         new("v13992", GotvCompetitiveProtocol13992)
     };
 
+    private readonly ParseMode _mode;
+
+    public RoundEventsIntegrationTest(ParseMode mode)
+    {
+        _mode = mode;
+    }
+
     [TestCaseSource(nameof(RoundCases))]
-    public async Task RoundStartEnd(KeyValuePair<string, Stream> testCase)
+    public async Task RoundStartEnd(KeyValuePair<string, byte[]> testCase)
     {
         // Arrange
-        var snapshot = new StringBuilder();
-        var demo = new DemoParser();
-
-        demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundStartCount, (_, _, _) =>
+        DemoSnapshot ParseSection(DemoParser demo)
         {
-            var syntheticEvent = new Source1RoundStartEvent(demo);
-            demo.OnCommandFinish += () => LogEvent("RoundStartCount change", syntheticEvent);
-        });
+            var snapshot = new DemoSnapshot();
 
-        demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundEndCount, (proxy, _, _) =>
-        {
-            var gameRules = proxy.GameRules!;
-            var syntheticEvent = new Source1RoundEndEvent(demo)
+            demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundStartCount,
+                (_, _, _) =>
+                {
+                    var syntheticEvent = new Source1RoundStartEvent(demo);
+                    demo.OnCommandFinish += () => LogEvent("RoundStartCount change", syntheticEvent);
+                });
+
+            demo.EntityEvents.CCSGameRulesProxy.AddChangeCallback(proxy => proxy.GameRules?.RoundEndCount,
+                (proxy, _, _) =>
+                {
+                    var gameRules = proxy.GameRules!;
+                    var syntheticEvent = new Source1RoundEndEvent(demo)
+                    {
+                        Legacy = gameRules.RoundEndLegacy,
+                        Message = gameRules.RoundEndMessage,
+                        Nomusic = gameRules.RoundEndNoMusic ? 1 : 0,
+                        Reason = gameRules.RoundEndReason,
+                        Winner = gameRules.RoundEndWinnerTeam,
+                        PlayerCount = gameRules.RoundEndPlayerCount,
+                    };
+
+                    demo.OnCommandFinish += () => LogEvent("RoundEndCount change", syntheticEvent);
+                });
+
+            demo.Source1GameEvents.RoundStart += e => LogEvent(e.GameEventName, e);
+            demo.Source1GameEvents.RoundEnd += e => LogEvent(e.GameEventName, e);
+            demo.Source1GameEvents.PlayerDeath += e => LogEvent(e.GameEventName, e);
+
+            return snapshot;
+
+            void LogEvent<T>(string eventName, T evt)
             {
-                Legacy = gameRules.RoundEndLegacy,
-                Message = gameRules.RoundEndMessage,
-                Nomusic = gameRules.RoundEndNoMusic ? 1 : 0,
-                Reason = gameRules.RoundEndReason,
-                Winner = gameRules.RoundEndWinnerTeam,
-                PlayerCount = gameRules.RoundEndPlayerCount,
-            };
+                var sb = new StringBuilder();
 
-            demo.OnCommandFinish += () => LogEvent("RoundEndCount change", syntheticEvent);
-        });
+                sb.AppendLine($"{eventName}:");
 
-        demo.Source1GameEvents.RoundStart += e => LogEvent(e.GameEventName, e);
-        demo.Source1GameEvents.RoundEnd += e => LogEvent(e.GameEventName, e);
-        demo.Source1GameEvents.PlayerDeath += e => LogEvent(e.GameEventName, e);
+                var eventJson = JsonSerializer.Serialize(evt, DemoJson.SerializerOptions)
+                    .ReplaceLineEndings(Environment.NewLine + "  ");
+                sb.AppendLine($"  {eventJson}");
+
+                snapshot.Add(demo.CurrentDemoTick, sb.ToString());
+            }
+        }
 
         // Act
-        await demo.ReadAllAsync(testCase.Value, default);
+        var snapshot = await Parse(_mode, testCase.Value, ParseSection);
 
         // Assert
-        Snapshot.Assert(snapshot.ToString());
-
-        void LogEvent<T>(string eventName, T evt)
-        {
-            snapshot.AppendLine($"[{demo.CurrentDemoTick.Value}] {eventName}:");
-
-            var eventJson = JsonSerializer.Serialize(evt, DemoJson.SerializerOptions)
-                .ReplaceLineEndings(Environment.NewLine + "  ");
-            snapshot.AppendLine($"  {eventJson}");
-        }
+        Snapshot.Assert(snapshot);
     }
 }

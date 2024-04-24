@@ -7,7 +7,7 @@ public class DemoParserIntegrationTest
     public async Task ReadAll()
     {
         var demo = new DemoParser();
-        await demo.ReadAllAsync(GotvCompetitiveProtocol13963, default);
+        await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), default);
         Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(217866));
     }
 
@@ -19,7 +19,7 @@ public class DemoParserIntegrationTest
         var tick = demo.CurrentDemoTick;
 
         // Act
-        await demo.StartReadingAsync(GotvCompetitiveProtocol13963, default);
+        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), default);
         while (await demo.MoveNextAsync(default))
         {
             // Tick is monotonic
@@ -31,7 +31,7 @@ public class DemoParserIntegrationTest
         Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(217866));
     }
 
-    private static readonly KeyValuePair<string, Stream>[] CompatibilityCases =
+    private static readonly KeyValuePair<string, byte[]>[] CompatibilityCases =
     {
         new("v13978", GotvProtocol13978),
         new("v13980", GotvProtocol13980),
@@ -40,11 +40,18 @@ public class DemoParserIntegrationTest
         new("v13990_dm", GotvProtocol13990Deathmatch),
     };
 
-    [TestCaseSource(nameof(CompatibilityCases))]
-    public async Task ReadAll_Compatibility(KeyValuePair<string, Stream> testCase)
+    [Test]
+    public async Task Compatibility(
+        [Values] ParseMode mode,
+        [ValueSource(nameof(CompatibilityCases))] KeyValuePair<string, byte[]> testCase)
     {
-        var demo = new DemoParser();
-        await demo.ReadAllAsync(testCase.Value, default);
+        DemoSnapshot ParseSection(DemoParser demo)
+        {
+            // no-op - we're just parsing the demo to the end
+            return new DemoSnapshot();
+        }
+
+        await Parse(mode, testCase.Value, ParseSection);
     }
 
     [Test]

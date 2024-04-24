@@ -16,7 +16,7 @@ public class SeekToTickIntegrationTest
         var demo = new DemoParser();
 
         // Act
-        await demo.StartReadingAsync(GotvCompetitiveProtocol13992, default);
+        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13992), default);
         await demo.SeekToTickAsync(startTick, default);
 
         while (await demo.MoveNextAsync(default))
@@ -52,7 +52,7 @@ public class SeekToTickIntegrationTest
         }
 
         // Act
-        await demo.StartReadingAsync(GotvCompetitiveProtocol13992, default);
+        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13992), default);
 
         phase = 0;
         timer = demo.CreateTimer(new DemoTick(1), OnSnapshotTimer);
@@ -113,7 +113,7 @@ public class SeekToTickIntegrationTest
         var skipInterval = TimeSpan.FromSeconds(77);
 
         // Act
-        await demo.StartReadingAsync(GotvCompetitiveProtocol13992, default);
+        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13992), default);
         demo.DemoEvents.DemoFileInfo += e =>
         {
             var x = demo;

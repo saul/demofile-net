@@ -32,11 +32,11 @@ public class TimerIntegrationTest
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
                 while (await demo.MoveNextAsync(cts.Token))
                 {
                 }
@@ -84,11 +84,11 @@ public class TimerIntegrationTest
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
                 while (await demo.MoveNextAsync(cts.Token))
                 {
                 }
@@ -125,11 +125,11 @@ public class TimerIntegrationTest
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
                 while (await demo.MoveNextAsync(cts.Token))
                 {
                 }
@@ -164,11 +164,11 @@ public class TimerIntegrationTest
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
                 while (await demo.MoveNextAsync(cts.Token))
                 {
                 }
@@ -216,11 +216,11 @@ public class TimerIntegrationTest
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
                 while (await demo.MoveNextAsync(cts.Token))
                 {
                 }
@@ -257,11 +257,11 @@ public class TimerIntegrationTest
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(GotvCompetitiveProtocol13963, cts.Token);
+                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
                 while (await demo.MoveNextAsync(cts.Token))
                 {
                 }
