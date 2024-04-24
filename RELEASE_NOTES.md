@@ -1,7 +1,11 @@
-### 0.13.1 (2024-03-17)
+### 0.13.1 (2024-04-25)
 
 - Add `DemoParser.ReadAllParallelAsync` to read a demo across multiple threads. \
-  Many thanks to [@in0finite](https://github.com/in0finite) for the initial implementation. 
+  Many thanks to [@in0finite](https://github.com/in0finite) for the initial implementation.
+
+### 0.12.2 (2024-04-12)
+
+- Fix player pawn positions occasionally jittering ([#37](https://github.com/saul/demofile-net/issues/37)). Thanks to [@in0finite](https://github.com/in0finite) for spotting the bug.
 
 ### 0.12.1 (2024-02-29)
 
