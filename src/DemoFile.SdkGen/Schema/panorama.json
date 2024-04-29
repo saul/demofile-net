@@ -5,124 +5,124 @@
       "items": [
         {
           "name": "ROOT",
-          "value": 0,
+          "value": 0
         },
         {
           "name": "STYLES",
-          "value": 1,
+          "value": 1
         },
         {
           "name": "SCRIPT_BODY",
-          "value": 2,
+          "value": 2
         },
         {
           "name": "SCRIPTS",
-          "value": 3,
+          "value": 3
         },
         {
           "name": "SNIPPETS",
-          "value": 4,
+          "value": 4
         },
         {
           "name": "INCLUDE",
-          "value": 5,
+          "value": 5
         },
         {
           "name": "SNIPPET",
-          "value": 6,
+          "value": 6
         },
         {
           "name": "PANEL",
-          "value": 7,
+          "value": 7
         },
         {
           "name": "PANEL_ATTRIBUTE",
-          "value": 8,
+          "value": 8
         },
         {
           "name": "PANEL_ATTRIBUTE_VALUE",
-          "value": 9,
+          "value": 9
         },
         {
           "name": "REFERENCE_CONTENT",
-          "value": 10,
+          "value": 10
         },
         {
           "name": "REFERENCE_COMPILED",
-          "value": 11,
+          "value": 11
         },
         {
           "name": "REFERENCE_PASSTHROUGH",
-          "value": 12,
-        },
-      ],
+          "value": 12
+        }
+      ]
     },
     "EStyleNodeType": {
       "align": 4,
       "items": [
         {
           "name": "ROOT",
-          "value": 0,
+          "value": 0
         },
         {
           "name": "EXPRESSION",
-          "value": 1,
+          "value": 1
         },
         {
           "name": "PROPERTY",
-          "value": 2,
+          "value": 2
         },
         {
           "name": "DEFINE",
-          "value": 3,
+          "value": 3
         },
         {
           "name": "IMPORT",
-          "value": 4,
+          "value": 4
         },
         {
           "name": "KEYFRAMES",
-          "value": 5,
+          "value": 5
         },
         {
           "name": "KEYFRAME_SELECTOR",
-          "value": 6,
+          "value": 6
         },
         {
           "name": "STYLE_SELECTOR",
-          "value": 7,
+          "value": 7
         },
         {
           "name": "WHITESPACE",
-          "value": 8,
+          "value": 8
         },
         {
           "name": "EXPRESSION_TEXT",
-          "value": 9,
+          "value": 9
         },
         {
           "name": "EXPRESSION_URL",
-          "value": 10,
+          "value": 10
         },
         {
           "name": "EXPRESSION_CONCAT",
-          "value": 11,
+          "value": 11
         },
         {
           "name": "REFERENCE_CONTENT",
-          "value": 12,
+          "value": 12
         },
         {
           "name": "REFERENCE_COMPILED",
-          "value": 13,
+          "value": 13
         },
         {
           "name": "REFERENCE_PASSTHROUGH",
-          "value": 14,
-        },
-      ],
-    },
+          "value": 14
+        }
+      ]
+    }
   },
   "classes": {
-  },
+  }
 }

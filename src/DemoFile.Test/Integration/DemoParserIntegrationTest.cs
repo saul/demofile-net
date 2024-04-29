@@ -38,6 +38,7 @@ public class DemoParserIntegrationTest
         new("v13987", GotvProtocol13987),
         new("v13990_armsrace", GotvProtocol13990ArmsRace),
         new("v13990_dm", GotvProtocol13990Deathmatch),
+        new("v14005", GotvProtocol14005),
     };
 
     [TestCaseSource(nameof(CompatibilityCases))]
