@@ -141,8 +141,16 @@
           "value": 2,
         },
         {
-          "name": "SOS_ACTION_SET_SOUNDEVENT_PARAM",
+          "name": "SOS_ACTION_TIME_BLOCK_LIMITER",
           "value": 3,
+        },
+        {
+          "name": "SOS_ACTION_SET_SOUNDEVENT_PARAM",
+          "value": 4,
+        },
+        {
+          "name": "SOS_ACTION_SOUNDEVENT_CLUSTER",
+          "value": 5,
         },
       ],
     },
@@ -547,7 +555,27 @@
       "fields": [
       ],
     },
+    "CSosGroupActionTimeBlockLimitSchema": {
+      "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CSosGroupActionSetSoundeventParameterSchema": {
+      "parent": "CSosGroupActionSchema",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CSosGroupActionSoundeventClusterSchema": {
       "parent": "CSosGroupActionSchema",
       "metadata": [
         {
@@ -652,6 +680,125 @@
         },
         {
           "name": "MVDataNodeType",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerDefault": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerWavFileReader": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerTestConstant": {
+      "parent": "CVoiceContainerWavFileReader",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerTestNestedDynamic": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerDecayingSineWave": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerAmpedDecayingSineWave": {
+      "parent": "CVoiceContainerDecayingSineWave",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerRealtimeFMSineWave": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerBlend": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerEngineSound": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerEnvelopeAnalyzer": {
+      "parent": "CVoiceContainerWavFileReader",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CVoiceContainerRandomSampler": {
+      "parent": "CVoiceContainerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
         },
       ],
       "fields": [

@@ -484,8 +484,8 @@
     "Deaths": 1,
     "LastPlaceName": "Catwalk",
     "Origin": {
-      "X": -1126.9736,
-      "Y": -457.4879,
+      "X": -1124.5272,
+      "Y": -457.5926,
       "Z": -167.96875
     },
     "Rotation": {
@@ -1219,8 +1219,8 @@
     "LastPlaceName": "Connector",
     "ActiveWeapon": "CKnife",
     "Origin": {
-      "X": -638.097,
-      "Y": -989.56744,
+      "X": -637.93164,
+      "Y": -985.80054,
       "Z": -215.96875
     },
     "Rotation": {
@@ -1848,8 +1848,8 @@
     "LastPlaceName": "CTSpawn",
     "ActiveWeapon": "CKnife",
     "Origin": {
-      "X": -1323.4896,
-      "Y": -972.37964,
+      "X": -1322.183,
+      "Y": -972.4595,
       "Z": -167.96875
     },
     "Rotation": {
@@ -2904,8 +2904,8 @@
     "Deaths": 3,
     "LastPlaceName": "TopofMid",
     "Origin": {
-      "X": 142.30609,
-      "Y": -561.48395,
+      "X": 142.0862,
+      "Y": -562.2657,
       "Z": -166.96875
     },
     "Rotation": {
@@ -3656,7 +3656,7 @@
         "Class": "CWeaponGalilAR",
         "Weapon": "weapon_galilar",
         "PaintKit": {
-          "Name": "default"
+          "Name": "hy_galil_signal_red"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -4028,9 +4028,9 @@
     "LastPlaceName": "CTSpawn",
     "ActiveWeapon": "CAK47",
     "Origin": {
-      "X": -2018.3505,
-      "Y": -1823.3798,
-      "Z": -297.2268
+      "X": -2018.3464,
+      "Y": -1823.381,
+      "Z": -297.2259
     },
     "Rotation": {
       "Pitch": 0,
@@ -5698,8 +5698,8 @@
     "Deaths": 6,
     "LastPlaceName": "BombsiteB",
     "Origin": {
-      "X": -1324.726,
-      "Y": 284.8755,
+      "X": -1325.0907,
+      "Y": 284.59473,
       "Z": -167.96875
     },
     "Rotation": {
@@ -6019,7 +6019,7 @@
     "Origin": {
       "X": -1314.4999,
       "Y": -967.75,
-      "Z": -168.49866
+      "Z": -167.96875
     },
     "Rotation": {
       "Pitch": 0,
@@ -8666,7 +8666,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -8867,7 +8867,7 @@
         "Class": "CKnife",
         "Weapon": "weapon_bayonet",
         "PaintKit": {
-          "Name": "default"
+          "Name": "am_doppler_phase3"
         },
         "Quality": "Unusual",
         "Rarity": "Common",
@@ -8883,7 +8883,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -8935,7 +8935,7 @@
         "Class": "CKnife",
         "Weapon": "weapon_knife_stiletto",
         "PaintKit": {
-          "Name": "default"
+          "Name": "am_marble_fade"
         },
         "Quality": "Unusual",
         "Rarity": "Common",
@@ -9389,8 +9389,8 @@
     "Deaths": 8,
     "LastPlaceName": "BombsiteA",
     "Origin": {
-      "X": -924.03253,
-      "Y": -2365.103,
+      "X": -924.5407,
+      "Y": -2364.9133,
       "Z": -167.96875
     },
     "Rotation": {
@@ -10644,7 +10644,7 @@
     "Origin": {
       "X": -1790.1093,
       "Y": 421.96622,
-      "Z": -166.28693
+      "Z": -165.71875
     },
     "Rotation": {
       "Pitch": 0,
@@ -11534,7 +11534,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -11983,7 +11983,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -12058,9 +12058,9 @@
     "LastPlaceName": "TopofMid",
     "ActiveWeapon": "CAK47",
     "Origin": {
-      "X": 499.50363,
-      "Y": -622.48334,
-      "Z": -160.11359
+      "X": 500.2508,
+      "Y": -623.4893,
+      "Z": -160.08948
     },
     "Rotation": {
       "Pitch": 0,
@@ -12278,9 +12278,9 @@
     "LastPlaceName": "SideAlley",
     "ActiveWeapon": "CAK47",
     "Origin": {
-      "X": 241.293,
-      "Y": 94.06733,
-      "Z": -222.78912
+      "X": 241.63953,
+      "Y": 96.95,
+      "Z": -223.56885
     },
     "Rotation": {
       "Pitch": 0,
@@ -12313,7 +12313,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -13334,9 +13334,9 @@
     "Deaths": 12,
     "LastPlaceName": "BombsiteB",
     "Origin": {
-      "X": -2265.3774,
-      "Y": -216.03796,
-      "Z": -167.19952
+      "X": -2263.1611,
+      "Y": -215.3404,
+      "Z": -167.1897
     },
     "Rotation": {
       "Pitch": 0,
@@ -13696,7 +13696,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -14268,7 +14268,7 @@
     "Origin": {
       "X": -1919.2693,
       "Y": 748.9163,
-      "Z": -45.391968
+      "Z": -47.96875
     },
     "Rotation": {
       "Pitch": 0,
@@ -14336,7 +14336,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -14410,9 +14410,9 @@
     "Deaths": 17,
     "LastPlaceName": "BombsiteB",
     "Origin": {
-      "X": -1550.7078,
-      "Y": -174.88373,
-      "Z": -161.92578
+      "X": -1550.7198,
+      "Y": -175.15076,
+      "Z": -161.89185
     },
     "Rotation": {
       "Pitch": 0,
@@ -14709,7 +14709,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -14911,7 +14911,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -14953,7 +14953,7 @@
         "Class": "CAK47",
         "Weapon": "weapon_ak47",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_ak47_cogthings"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -15475,7 +15475,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -15504,7 +15504,7 @@
         "Class": "CAK47",
         "Weapon": "weapon_ak47",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_ak47_cogthings"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -15648,7 +15648,7 @@
     "Origin": {
       "X": -500.89966,
       "Y": -2097.0513,
-      "Z": -179.83728
+      "Z": -179.96875
     },
     "Rotation": {
       "Pitch": 0,
@@ -15717,7 +15717,7 @@
     "Origin": {
       "X": 367.96875,
       "Y": -2178.7146,
-      "Z": -55.96875
+      "Z": -39.96875
     },
     "Rotation": {
       "Pitch": 0,
@@ -15974,7 +15974,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -16379,7 +16379,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -16408,7 +16408,7 @@
         "Class": "CAK47",
         "Weapon": "weapon_ak47",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_ak47_cogthings"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -17260,7 +17260,7 @@
         "Class": "CWeaponGlock",
         "Weapon": "weapon_glock",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_glock_eyecontact"
         },
         "Quality": "Unique",
         "Rarity": "Common",
@@ -17289,7 +17289,7 @@
         "Class": "CAK47",
         "Weapon": "weapon_ak47",
         "PaintKit": {
-          "Name": "default"
+          "Name": "cu_ak47_cogthings"
         },
         "Quality": "Unique",
         "Rarity": "Common",

@@ -220,12 +220,6 @@
       "fields": [
       ],
     },
-    "EventClientSendInput_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
     "EventClientPredictionPostNetupdate_t": {
       "metadata": [
       ],

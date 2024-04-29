@@ -1,4 +1,6 @@
-﻿namespace DemoFile;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace DemoFile;
 
 internal static class StreamExtensions
 {
@@ -12,7 +14,7 @@ internal static class StreamExtensions
         {
             b = stream.ReadByte() is >= 0 and var foo
                 ? (byte)foo
-                : InvalidDemoException.Throw<byte>("Unexpected EOF");
+                : Throw<byte>();
             
             if (c < 5)
                 result |= (uint)(b & 0x7f) << (7 * c);
@@ -20,5 +22,11 @@ internal static class StreamExtensions
         } while ((b & 0x80) != 0);
 
         return result;
+    }
+
+    [DoesNotReturn]
+    private static T Throw<T>()
+    {
+        throw new EndOfStreamException("Unexpected EOF");
     }
 }

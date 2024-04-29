@@ -54,8 +54,6 @@ public partial class Source1GameEvents
     public Action<Source1DifficultyChangedEvent>? DifficultyChanged;
     public Action<Source1GameMessageEvent>? GameMessage;
     public Action<Source1GameNewmapEvent>? GameNewmap;
-    public Action<Source1RoundStartEvent>? RoundStart;
-    public Action<Source1RoundEndEvent>? RoundEnd;
     public Action<Source1RoundStartPreEntityEvent>? RoundStartPreEntity;
     public Action<Source1RoundStartPostNavEvent>? RoundStartPostNav;
     public Action<Source1RoundFreezeEndEvent>? RoundFreezeEnd;

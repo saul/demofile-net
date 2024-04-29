@@ -1,3 +1,25 @@
+### 0.12.2 (2024-04-12)
+
+- Fix player pawn positions occasionally jittering ([#37](https://github.com/saul/demofile-net/issues/37)). Thanks to [@in0finite](https://github.com/in0finite) for spotting the bug.
+
+### 0.12.1 (2024-02-29)
+
+- Add support for seeking to arbitrary ticks with `DemoParser.SeekToTickAsync`. \
+  It supports seeking backwards and forwards, and makes use of Source 2 demo 'full packet' snapshots to do this efficiently.
+
+### 0.11.1 (2024-02-19)
+
+- Reading CDemoFileInfo is best effort
+- Throw EndOfStreamException when unable to read any more bytes from the demo
+
+### 0.10.1 (2024-02-17)
+
+- Synthesise `Source1GameEvents.RoundStart` and `Source1GameEvents.RoundEnds` events on newer demos
+
+### 0.9.1 (2024-02-09)
+
+- Update schema for v13987
+
 ### 0.8.1 (2023-12-30)
 
 - BREAKING CHANGE: `DemoParser.Start` is now `DemoParser.ReadAllAsync`

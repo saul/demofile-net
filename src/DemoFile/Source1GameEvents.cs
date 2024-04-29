@@ -27,6 +27,13 @@ public abstract partial class Source1GameEventBase
 
 public partial class Source1GameEvents
 {
+    private readonly DemoParser _demo;
+
+    internal Source1GameEvents(DemoParser demo)
+    {
+        _demo = demo;
+    }
+
     public Action<Source1GameEventBase>? Source1GameEvent;
 
     // todo(net8): store as a FrozenDictionary

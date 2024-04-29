@@ -278,7 +278,7 @@
           "value": 6,
         },
         {
-          "name": "ANIMPARAM_STRINGTOKEN",
+          "name": "ANIMPARAM_GLOBALSYMBOL",
           "value": 7,
         },
         {
@@ -425,53 +425,6 @@
         },
         {
           "name": "Relative",
-          "value": 1,
-        },
-      ],
-    },
-    "AnimVRHandMotionRange_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "MotionRange_WithController",
-          "value": 0,
-        },
-        {
-          "name": "MotionRange_WithoutController",
-          "value": 1,
-        },
-      ],
-    },
-    "AnimVrFingerSplay_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "AnimVrFingerSplay_Thumb_Index",
-          "value": 0,
-        },
-        {
-          "name": "AnimVrFingerSplay_Index_Middle",
-          "value": 1,
-        },
-        {
-          "name": "AnimVrFingerSplay_Middle_Ring",
-          "value": 2,
-        },
-        {
-          "name": "AnimVrFingerSplay_Ring_Pinky",
-          "value": 3,
-        },
-      ],
-    },
-    "AnimVrBoneTransformSource_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "AnimVrBoneTransformSource_LiveStream",
-          "value": 0,
-        },
-        {
-          "name": "AnimVrBoneTransformSource_GripLimit",
           "value": 1,
         },
       ],
@@ -948,41 +901,146 @@
         },
       ],
     },
-    "AnimVRHand_t": {
-      "align": 4,
+    "MovementGait_t": {
+      "align": 1,
       "items": [
         {
-          "name": "AnimVRHand_Left",
+          "name": "eInvalid",
+          "value": 18446744073709551615,
+        },
+        {
+          "name": "eWalk",
           "value": 0,
         },
         {
-          "name": "AnimVRHand_Right",
-          "value": 1,
-        },
-      ],
-    },
-    "AnimVRFinger_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "AnimVrFinger_Thumb",
-          "value": 0,
-        },
-        {
-          "name": "AnimVrFinger_Index",
+          "name": "eJog",
           "value": 1,
         },
         {
-          "name": "AnimVrFinger_Middle",
+          "name": "eRun",
           "value": 2,
         },
         {
-          "name": "AnimVrFinger_Ring",
+          "name": "eSprint",
+          "value": 3,
+        },
+      ],
+    },
+    "CNmBoneMask::WeightInfo_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "Zero",
+          "value": 0,
+        },
+        {
+          "name": "Mixed",
+          "value": 1,
+        },
+        {
+          "name": "One",
+          "value": 2,
+        },
+      ],
+    },
+    "NmFootPhase_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "LeftFootDown",
+          "value": 0,
+        },
+        {
+          "name": "RightFootPassing",
+          "value": 1,
+        },
+        {
+          "name": "RightFootDown",
+          "value": 2,
+        },
+        {
+          "name": "LeftFootPassing",
+          "value": 3,
+        },
+      ],
+    },
+    "NmFootPhaseCondition_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "LeftFootDown",
+          "value": 0,
+        },
+        {
+          "name": "LeftFootPassing",
+          "value": 1,
+        },
+        {
+          "name": "LeftPhase",
+          "value": 4,
+        },
+        {
+          "name": "RightFootDown",
+          "value": 2,
+        },
+        {
+          "name": "RightFootPassing",
           "value": 3,
         },
         {
-          "name": "AnimVrFinger_Pinky",
-          "value": 4,
+          "name": "RightPhase",
+          "value": 5,
+        },
+      ],
+    },
+    "NmTransitionRule_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "AllowTransition",
+          "value": 0,
+        },
+        {
+          "name": "ConditionallyAllowTransition",
+          "value": 1,
+        },
+        {
+          "name": "BlockTransition",
+          "value": 2,
+        },
+      ],
+    },
+    "NmTransitionRuleCondition_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "AnyAllowed",
+          "value": 0,
+        },
+        {
+          "name": "FullyAllowed",
+          "value": 1,
+        },
+        {
+          "name": "ConditionallyAllowed",
+          "value": 2,
+        },
+        {
+          "name": "Blocked",
+          "value": 3,
+        },
+      ],
+    },
+    "NmFrameSnapEventMode_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Floor",
+          "value": 0,
+        },
+        {
+          "name": "Round",
+          "value": 1,
         },
       ],
     },
@@ -2828,6 +2886,33 @@
       "fields": [
       ],
     },
+    "DynamicMeshDeformParams_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "RenderHairStrandInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CRenderGroom": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
     "CRenderMesh": {
       "metadata": [
         {
@@ -3159,7 +3244,7 @@
       "fields": [
       ],
     },
-    "CFingerSource": {
+    "SkeletonAnimCapture_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -3168,7 +3253,7 @@
       "fields": [
       ],
     },
-    "CFingerBone": {
+    "SkeletonAnimCapture_t::Bone_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -3177,7 +3262,7 @@
       "fields": [
       ],
     },
-    "CFingerChain": {
+    "SkeletonAnimCapture_t::FrameStamp_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -3186,7 +3271,7 @@
       "fields": [
       ],
     },
-    "CWristBone": {
+    "SkeletonAnimCapture_t::Frame_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -3195,7 +3280,228 @@
       "fields": [
       ],
     },
-    "CVrSkeletalInputSettings": {
+    "SkeletonAnimCapture_t::Camera_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "SkeletonDemoDb_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmBoneMask": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmRootMotionData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmCompressionSettings_t::QuantizationRange_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmCompressionSettings_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmEvent": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmSyncTrack": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmSkeleton": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmPercent_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmSyncTrackTime_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmClip": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmSyncTrack::EventMarker_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmSyncTrack::Event_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "NmSyncTrackTimeRange_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmLegacyEvent": {
+      "parent": "CNmEvent",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmFootEvent": {
+      "parent": "CNmEvent",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmIDEvent": {
+      "parent": "CNmEvent",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmTransitionEvent": {
+      "parent": "CNmEvent",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmFrameSnapEvent": {
+      "parent": "CNmEvent",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraphDataSet": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraph": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraph::ExternalGraphSlot_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraph::ChildGraphSlot_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CNmGraphVariation": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -3704,22 +4010,6 @@
       "fields": [
       ],
     },
-    "CMovementMode": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Movement Mode",
-        },
-        {
-          "name": "MPropertyElementNameFn",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "CMovementComponentUpdater": {
       "parent": "CAnimComponentUpdater",
       "metadata": [
@@ -3750,16 +4040,6 @@
       ],
     },
     "CSlopeComponentUpdater": {
-      "parent": "CAnimComponentUpdater",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CVRInputComponentUpdater": {
       "parent": "CAnimComponentUpdater",
       "metadata": [
         {
@@ -4176,51 +4456,6 @@
       "fields": [
       ],
     },
-    "FingerSource_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FingerBone_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FingerChain_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "WristBone_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "SkeletalInputOpFixedSettings_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
     "IKSolverSettings_t": {
       "metadata": [
       ],
@@ -4344,6 +4579,20 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Quaternion Parameter",
+        },
+      ],
+      "fields": [
+      ],
+    },
+    "CSymbolAnimParameter": {
+      "parent": "CConcreteAnimParameter",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Symbol Parameter",
         },
       ],
       "fields": [
@@ -4587,16 +4836,6 @@
       ],
     },
     "CPoseHandle": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CSkeletalInputUpdateNode": {
-      "parent": "CLeafUpdateNode",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",

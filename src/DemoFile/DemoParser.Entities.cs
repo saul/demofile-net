@@ -23,7 +23,6 @@ public partial class DemoParser
     private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
     private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
 
-    private bool _fullSnapshotRead;
     private CHandle<CCSGameRulesProxy> _gameRulesHandle;
     private CHandle<CCSPlayerResource> _playerResourceHandle;
 
@@ -125,7 +124,6 @@ public partial class DemoParser
     {
         Debug.Assert(_playerInfos[msg.PlayerSlot] != null);
         IsGotv = _playerInfos[msg.PlayerSlot]?.Ishltv ?? false;
-        _fullSnapshotRead = false;
 
         MaxPlayers = msg.MaxClients;
         _serverClassBits = (int)Math.Log2(msg.MaxClasses) + 1;
@@ -258,18 +256,8 @@ public partial class DemoParser
         var entityDeleteIdx = 0;
 
         // Clear out all entities - this is a full update.
-        if (!msg.IsDelta)
+        if (!msg.LegacyIsDelta)
         {
-            if (IsGotv)
-            {
-                // In GOTV recordings, we see a snapshot every 3840 ticks (60 seconds).
-                // After we've read the first one, we can ignore the rest.
-                if (_fullSnapshotRead)
-                    return;
-
-                _fullSnapshotRead = true;
-            }
-
             foreach (var entity in _entities)
             {
                 if (entity == null)
@@ -300,7 +288,7 @@ public partial class DemoParser
             var updateType = entityBitBuffer.ReadUBits(2);
             if ((updateType & 0b01) != 0)
             {
-                Debug.Assert(msg.IsDelta, "Deletion on full update");
+                Debug.Assert(msg.LegacyIsDelta, "Deletion on full update");
 
                 // FHDR_LEAVEPVS
                 var entity = _entities[entityIndex] ?? throw new Exception($"LeavePvs on non-existent entity {entityIndex}");
@@ -363,8 +351,17 @@ public partial class DemoParser
             }
             else
             {
+                if (msg.HasPvsVisBits > 0)
+                {
+                    var deltaCmd = entityBitBuffer.ReadUBits(2);
+                    if ((deltaCmd & 0x1) == 1)
+                    {
+                        continue;
+                    }
+                }
+
                 // DeltaEnt
-                Debug.Assert(msg.IsDelta, "Delta entity on full update");
+                Debug.Assert(msg.LegacyIsDelta, "Delta entity on full update");
 
                 var entity = _entities[entityIndex] ?? throw new Exception($"Delta on non-existent entity {entityIndex}");
 
