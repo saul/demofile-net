@@ -1,3 +1,7 @@
+### 0.13.1 (2024-04-30)
+
+- Update schema and demo format for v14005
+
 ### 0.12.2 (2024-04-12)
 
 - Fix player pawn positions occasionally jittering ([#37](https://github.com/saul/demofile-net/issues/37)). Thanks to [@in0finite](https://github.com/in0finite) for spotting the bug.

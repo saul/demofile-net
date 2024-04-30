@@ -60,6 +60,9 @@ public struct DemoEvents
             case EDemoCommands.DemAnimationData:
                 ReadDemoCommandCore(DemoAnimationData, CDemoAnimationData.Parser, buffer, isCompressed);
                 return true;
+            case EDemoCommands.DemAnimationHeader:
+                DemoAnimationHeader?.Invoke(CDemoAnimationHeader.Parser.ParseFrom(buffer));
+                return true;
             default:
                 throw new ArgumentOutOfRangeException(nameof(msgType), msgType, null);
         }
@@ -100,4 +103,5 @@ public struct DemoEvents
     public Action<CDemoSaveGame>? DemoSaveGame;
     public Action<CDemoSpawnGroups>? DemoSpawnGroups;
     public Action<CDemoAnimationData>? DemoAnimationData;
+    public Action<CDemoAnimationHeader>? DemoAnimationHeader;
 }

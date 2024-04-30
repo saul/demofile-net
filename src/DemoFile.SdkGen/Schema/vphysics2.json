@@ -1,826 +1,826 @@
 {
   "enums": {
-    "JointAxis_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "JOINT_AXIS_X",
-          "value": 0,
-        },
-        {
-          "name": "JOINT_AXIS_Y",
-          "value": 1,
-        },
-        {
-          "name": "JOINT_AXIS_Z",
-          "value": 2,
-        },
-        {
-          "name": "JOINT_AXIS_COUNT",
-          "value": 3,
-        },
-      ],
-    },
     "JointMotion_t": {
       "align": 4,
       "items": [
         {
           "name": "JOINT_MOTION_FREE",
-          "value": 0,
+          "value": 0
         },
         {
           "name": "JOINT_MOTION_LOCKED",
-          "value": 1,
+          "value": 1
         },
         {
           "name": "JOINT_MOTION_COUNT",
-          "value": 2,
-        },
-      ],
+          "value": 2
+        }
+      ]
     },
+    "JointAxis_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "JOINT_AXIS_X",
+          "value": 0
+        },
+        {
+          "name": "JOINT_AXIS_Y",
+          "value": 1
+        },
+        {
+          "name": "JOINT_AXIS_Z",
+          "value": 2
+        },
+        {
+          "name": "JOINT_AXIS_COUNT",
+          "value": 3
+        }
+      ]
+    }
   },
   "classes": {
-    "constraint_breakableparams_t": {
+    "RnSoftbodySpring_t": {
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
+      ]
+    },
+    "RnSoftbodyParticle_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
+      "fields": [
+      ]
+    },
+    "RnHull_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnSoftbodyCapsule_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnCapsule_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnShapeDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnMesh_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "PhysFeModelDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnBodyDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeBoxRigid_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CFeJiggleBone": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeBandBendLimit_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeTaperedCapsuleStretch_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
     },
     "constraint_axislimit_t": {
       "metadata": [
       ],
       "fields": [
-      ],
-    },
-    "constraint_hingeparams_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "IPhysicsPlayerController": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "CFeJiggleBone": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CFeNamedJiggleBone": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CFeIndexedJiggleBone": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "PhysFeModelDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FourVectors2D": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeEdgeDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "OldFeEdge_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeWeightedNode_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeKelagerBend2_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeStiffHingeBuild_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeTri_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSimdTri_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeQuad_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeNodeBase_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeNodeWindBase_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeNodeReverseOffset_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSimdQuad_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeAxialEdgeBend_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeBandBendLimit_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeRodConstraint_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeTwistConstraint_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSimdRodConstraint_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
+      ]
     },
     "FeSimdRodConstraintAnim_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-    "FeAnimStrayRadius_t": {
+    "FeSimdRodConstraint_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-    "FeSimdAnimStrayRadius_t": {
+    "constraint_breakableparams_t": {
       "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
       ],
       "fields": [
-      ],
-    },
-    "FeSimdNodeBase_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeNodeIntegrator_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSpringIntegrator_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSimdSpringIntegrator_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeCtrlOffset_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSoftParent_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeCtrlSoftOffset_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeCtrlOsOffset_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeFollowNode_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnPlane_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeWorldCollisionParams_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeTreeChildren_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeTaperedCapsuleRigid_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
+      ]
     },
     "FeSphereRigid_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-    "FeTaperedCapsuleStretch_t": {
+    "FeSimdAnimStrayRadius_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
-    },
-    "FeBoxRigid_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CovMatrix3": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FourCovMatrices3": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeFitWeight_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeFitInfluence_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeFitMatrix_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeRigidColliderIndices_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeBuildTaperedCapsuleRigid_t": {
-      "parent": "FeTaperedCapsuleRigid_t",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeBuildBoxRigid_t": {
-      "parent": "FeBoxRigid_t",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeBuildSphereRigid_t": {
-      "parent": "FeSphereRigid_t",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeSourceEdge_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeEffectDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeVertexMapBuild_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CFeVertexMapBuildArray": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeProxyVertexMap_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeVertexMapDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeMorphLayerDepr_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CFeMorphLayer": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "Dop26_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnCapsule_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "FeCollisionPlane_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnVertex_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnHalfEdge_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnFace_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CRegionSVM": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnHull_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
+      ]
     },
     "RnTriangle_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-    "RnWing_t": {
+    "FeProxyVertexMap_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-    "RnNode_t": {
+    "FeNodeIntegrator_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
-    },
-    "RnMesh_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnShapeDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnSphereDesc_t": {
-      "parent": "RnShapeDesc_t",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
+      ]
     },
     "RnCapsuleDesc_t": {
       "parent": "RnShapeDesc_t",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-    "RnHullDesc_t": {
-      "parent": "RnShapeDesc_t",
+    "CFeNamedJiggleBone": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
-    },
-    "RnMeshDesc_t": {
-      "parent": "RnShapeDesc_t",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnSoftbodyParticle_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnSoftbodySpring_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnSoftbodyCapsule_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnBlendVertex_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CastSphereSATParams_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "RnBodyDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "VertexPositionNormal_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
-    },
-    "VertexPositionColor_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ],
+      ]
     },
     "vphysics_save_cphysicsbody_t": {
       "parent": "RnBodyDesc_t",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-  },
+    "OldFeEdge_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeFollowNode_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnMeshDesc_t": {
+      "parent": "RnShapeDesc_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "VertexPositionNormal_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "RnBlendVertex_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CFeMorphLayer": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeCtrlSoftOffset_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeVertexMapDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeTaperedCapsuleRigid_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeAnimStrayRadius_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeEdgeDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeNodeReverseOffset_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnPlane_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CFeIndexedJiggleBone": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CRegionSVM": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeWorldCollisionParams_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnNode_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeFitMatrix_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSimdQuad_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSimdSpringIntegrator_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSimdNodeBase_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeQuad_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnWing_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeWeightedNode_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeEffectDesc_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSpringIntegrator_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FourVectors2D": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeKelagerBend2_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CastSphereSATParams_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeRigidColliderIndices_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeCollisionPlane_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeStiffHingeBuild_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeBuildBoxRigid_t": {
+      "parent": "FeBoxRigid_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeMorphLayerDepr_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeCtrlOffset_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "IPhysicsPlayerController": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "FeNodeBase_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeVertexMapBuild_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CFeVertexMapBuildArray": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeTri_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnHullDesc_t": {
+      "parent": "RnShapeDesc_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CovMatrix3": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnVertex_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "Dop26_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnFace_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeCtrlOsOffset_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSourceEdge_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeTwistConstraint_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeNodeWindBase_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeAxialEdgeBend_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FourCovMatrices3": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "constraint_hingeparams_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "FeBuildSphereRigid_t": {
+      "parent": "FeSphereRigid_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeBuildTaperedCapsuleRigid_t": {
+      "parent": "FeTaperedCapsuleRigid_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSoftParent_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnSphereDesc_t": {
+      "parent": "RnShapeDesc_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeTreeChildren_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeRodConstraint_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeFitWeight_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "RnHalfEdge_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeSimdTri_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "VertexPositionColor_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "FeFitInfluence_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    }
+  }
 }

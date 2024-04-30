@@ -1,414 +1,414 @@
 {
   "enums": {
-    "ThreeState_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "TRS_FALSE",
-          "value": 0,
-        },
-        {
-          "name": "TRS_TRUE",
-          "value": 1,
-        },
-        {
-          "name": "TRS_NONE",
-          "value": 2,
-        },
-      ],
-    },
     "fieldtype_t": {
       "align": 1,
       "items": [
         {
           "name": "FIELD_VOID",
-          "value": 0,
+          "value": 0
         },
         {
           "name": "FIELD_FLOAT32",
-          "value": 1,
+          "value": 1
         },
         {
           "name": "FIELD_STRING",
-          "value": 2,
+          "value": 2
         },
         {
           "name": "FIELD_VECTOR",
-          "value": 3,
+          "value": 3
         },
         {
           "name": "FIELD_QUATERNION",
-          "value": 4,
+          "value": 4
         },
         {
           "name": "FIELD_INT32",
-          "value": 5,
+          "value": 5
         },
         {
           "name": "FIELD_BOOLEAN",
-          "value": 6,
+          "value": 6
         },
         {
           "name": "FIELD_INT16",
-          "value": 7,
+          "value": 7
         },
         {
           "name": "FIELD_CHARACTER",
-          "value": 8,
+          "value": 8
         },
         {
           "name": "FIELD_COLOR32",
-          "value": 9,
+          "value": 9
         },
         {
           "name": "FIELD_EMBEDDED",
-          "value": 10,
+          "value": 10
         },
         {
           "name": "FIELD_CUSTOM",
-          "value": 11,
+          "value": 11
         },
         {
           "name": "FIELD_CLASSPTR",
-          "value": 12,
+          "value": 12
         },
         {
           "name": "FIELD_EHANDLE",
-          "value": 13,
+          "value": 13
         },
         {
           "name": "FIELD_POSITION_VECTOR",
-          "value": 14,
+          "value": 14
         },
         {
           "name": "FIELD_TIME",
-          "value": 15,
+          "value": 15
         },
         {
           "name": "FIELD_TICK",
-          "value": 16,
+          "value": 16
         },
         {
           "name": "FIELD_SOUNDNAME",
-          "value": 17,
+          "value": 17
         },
         {
           "name": "FIELD_INPUT",
-          "value": 18,
+          "value": 18
         },
         {
           "name": "FIELD_FUNCTION",
-          "value": 19,
+          "value": 19
         },
         {
           "name": "FIELD_VMATRIX",
-          "value": 20,
+          "value": 20
         },
         {
           "name": "FIELD_VMATRIX_WORLDSPACE",
-          "value": 21,
+          "value": 21
         },
         {
           "name": "FIELD_MATRIX3X4_WORLDSPACE",
-          "value": 22,
+          "value": 22
         },
         {
           "name": "FIELD_INTERVAL",
-          "value": 23,
+          "value": 23
         },
         {
           "name": "FIELD_UNUSED",
-          "value": 24,
+          "value": 24
         },
         {
           "name": "FIELD_VECTOR2D",
-          "value": 25,
+          "value": 25
         },
         {
           "name": "FIELD_INT64",
-          "value": 26,
+          "value": 26
         },
         {
           "name": "FIELD_VECTOR4D",
-          "value": 27,
+          "value": 27
         },
         {
           "name": "FIELD_RESOURCE",
-          "value": 28,
+          "value": 28
         },
         {
           "name": "FIELD_TYPEUNKNOWN",
-          "value": 29,
+          "value": 29
         },
         {
           "name": "FIELD_CSTRING",
-          "value": 30,
+          "value": 30
         },
         {
           "name": "FIELD_HSCRIPT",
-          "value": 31,
+          "value": 31
         },
         {
           "name": "FIELD_VARIANT",
-          "value": 32,
+          "value": 32
         },
         {
           "name": "FIELD_UINT64",
-          "value": 33,
+          "value": 33
         },
         {
           "name": "FIELD_FLOAT64",
-          "value": 34,
+          "value": 34
         },
         {
           "name": "FIELD_POSITIVEINTEGER_OR_NULL",
-          "value": 35,
+          "value": 35
         },
         {
           "name": "FIELD_HSCRIPT_NEW_INSTANCE",
-          "value": 36,
+          "value": 36
         },
         {
           "name": "FIELD_UINT32",
-          "value": 37,
+          "value": 37
         },
         {
           "name": "FIELD_UTLSTRINGTOKEN",
-          "value": 38,
+          "value": 38
         },
         {
           "name": "FIELD_QANGLE",
-          "value": 39,
+          "value": 39
         },
         {
           "name": "FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTOR",
-          "value": 40,
+          "value": 40
         },
         {
           "name": "FIELD_HMATERIAL",
-          "value": 41,
+          "value": 41
         },
         {
           "name": "FIELD_HMODEL",
-          "value": 42,
+          "value": 42
         },
         {
           "name": "FIELD_NETWORK_QUANTIZED_VECTOR",
-          "value": 43,
+          "value": 43
         },
         {
           "name": "FIELD_NETWORK_QUANTIZED_FLOAT",
-          "value": 44,
+          "value": 44
         },
         {
           "name": "FIELD_DIRECTION_VECTOR_WORLDSPACE",
-          "value": 45,
+          "value": 45
         },
         {
           "name": "FIELD_QANGLE_WORLDSPACE",
-          "value": 46,
+          "value": 46
         },
         {
           "name": "FIELD_QUATERNION_WORLDSPACE",
-          "value": 47,
+          "value": 47
         },
         {
           "name": "FIELD_HSCRIPT_LIGHTBINDING",
-          "value": 48,
+          "value": 48
         },
         {
           "name": "FIELD_V8_VALUE",
-          "value": 49,
+          "value": 49
         },
         {
           "name": "FIELD_V8_OBJECT",
-          "value": 50,
+          "value": 50
         },
         {
           "name": "FIELD_V8_ARRAY",
-          "value": 51,
+          "value": 51
         },
         {
           "name": "FIELD_V8_CALLBACK_INFO",
-          "value": 52,
+          "value": 52
         },
         {
           "name": "FIELD_UTLSTRING",
-          "value": 53,
+          "value": 53
         },
         {
           "name": "FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_POSITION_VECTOR",
-          "value": 54,
+          "value": 54
         },
         {
           "name": "FIELD_HRENDERTEXTURE",
-          "value": 55,
+          "value": 55
         },
         {
           "name": "FIELD_HPARTICLESYSTEMDEFINITION",
-          "value": 56,
+          "value": 56
         },
         {
           "name": "FIELD_UINT8",
-          "value": 57,
+          "value": 57
         },
         {
           "name": "FIELD_UINT16",
-          "value": 58,
+          "value": 58
         },
         {
           "name": "FIELD_CTRANSFORM",
-          "value": 59,
+          "value": 59
         },
         {
           "name": "FIELD_CTRANSFORM_WORLDSPACE",
-          "value": 60,
+          "value": 60
         },
         {
           "name": "FIELD_HPOSTPROCESSING",
-          "value": 61,
+          "value": 61
         },
         {
           "name": "FIELD_MATRIX3X4",
-          "value": 62,
+          "value": 62
         },
         {
           "name": "FIELD_SHIM",
-          "value": 63,
+          "value": 63
         },
         {
           "name": "FIELD_CMOTIONTRANSFORM",
-          "value": 64,
+          "value": 64
         },
         {
           "name": "FIELD_CMOTIONTRANSFORM_WORLDSPACE",
-          "value": 65,
+          "value": 65
         },
         {
           "name": "FIELD_ATTACHMENT_HANDLE",
-          "value": 66,
+          "value": 66
         },
         {
           "name": "FIELD_AMMO_INDEX",
-          "value": 67,
+          "value": 67
         },
         {
           "name": "FIELD_CONDITION_ID",
-          "value": 68,
+          "value": 68
         },
         {
           "name": "FIELD_AI_SCHEDULE_BITS",
-          "value": 69,
+          "value": 69
         },
         {
           "name": "FIELD_MODIFIER_HANDLE",
-          "value": 70,
+          "value": 70
         },
         {
           "name": "FIELD_ROTATION_VECTOR",
-          "value": 71,
+          "value": 71
         },
         {
           "name": "FIELD_ROTATION_VECTOR_WORLDSPACE",
-          "value": 72,
+          "value": 72
         },
         {
           "name": "FIELD_HVDATA",
-          "value": 73,
+          "value": 73
         },
         {
           "name": "FIELD_SCALE32",
-          "value": 74,
+          "value": 74
         },
         {
           "name": "FIELD_STRING_AND_TOKEN",
-          "value": 75,
+          "value": 75
         },
         {
           "name": "FIELD_ENGINE_TIME",
-          "value": 76,
+          "value": 76
         },
         {
           "name": "FIELD_ENGINE_TICK",
-          "value": 77,
+          "value": 77
         },
         {
           "name": "FIELD_WORLD_GROUP_ID",
-          "value": 78,
+          "value": 78
         },
         {
           "name": "FIELD_GLOBALSYMBOL",
-          "value": 79,
+          "value": 79
         },
         {
           "name": "FIELD_TYPECOUNT",
-          "value": 80,
-        },
-      ],
+          "value": 80
+        }
+      ]
     },
+    "ThreeState_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "TRS_FALSE",
+          "value": 0
+        },
+        {
+          "name": "TRS_TRUE",
+          "value": 1
+        },
+        {
+          "name": "TRS_NONE",
+          "value": 2
+        }
+      ]
+    }
   },
   "classes": {
+    "InfoForResourceTypeCResourceManifestInternal": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CSchemaSystemInternalRegistration": {
       "metadata": [
       ],
       "fields": [
-      ],
-    },
-    "InfoForResourceTypeCResourceManifestInternal": {
-      "metadata": [
-        {
-          "name": "MResourceTypeForInfoType",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "ResourceId_t": {
-      "metadata": [
-        {
-          "name": "MIsBoxedIntegerType",
-        },
-      ],
-      "fields": [
-      ],
-    },
-    "CExampleSchemaVData_Monomorphic": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-        },
-      ],
-      "fields": [
-      ],
+      ]
     },
     "CExampleSchemaVData_PolymorphicBase": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
     "CExampleSchemaVData_PolymorphicDerivedA": {
       "parent": "CExampleSchemaVData_PolymorphicBase",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
     "CExampleSchemaVData_PolymorphicDerivedB": {
       "parent": "CExampleSchemaVData_PolymorphicBase",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults",
-        },
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
-      ],
+      ]
     },
-  },
+    "ResourceId_t": {
+      "metadata": [
+        {
+          "name": "MIsBoxedIntegerType"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CExampleSchemaVData_Monomorphic": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    }
+  }
 }

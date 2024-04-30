@@ -110,6 +110,7 @@ public partial class Source1GameEvents
     public Action<Source1RoundAnnounceLastRoundHalfEvent>? RoundAnnounceLastRoundHalf;
     public Action<Source1RoundAnnounceMatchStartEvent>? RoundAnnounceMatchStart;
     public Action<Source1RoundAnnounceWarmupEvent>? RoundAnnounceWarmup;
+    public Action<Source1WarmupEndEvent>? WarmupEnd;
     public Action<Source1RoundEndUploadStatsEvent>? RoundEndUploadStats;
     public Action<Source1RoundOfficiallyEndedEvent>? RoundOfficiallyEnded;
     public Action<Source1RoundTimeWarningEvent>? RoundTimeWarning;
@@ -1653,6 +1654,8 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.DmgArmor = x.ValByte;
                         if (key.Name == "hitgroup")
                             return (@this, x) => @this.Hitgroup = x.ValByte;
+                        if (key.Name == "attackerinair")
+                            return (@this, x) => @this.Attackerinair = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -2946,6 +2949,27 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     RoundAnnounceWarmup?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "warmup_end")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1WarmupEndEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && WarmupEnd == null)
+                        return;
+                    var @this = new Source1WarmupEndEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    WarmupEnd?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -8121,6 +8145,8 @@ public partial class Source1PlayerDeathEvent : Source1GameEventBase
     public int DmgArmor { get; set; }
 
     public int Hitgroup { get; set; }
+
+    public bool Attackerinair { get; set; }
 }
 
 public partial class Source1PlayerFootstepEvent : Source1GameEventBase
@@ -8705,6 +8731,13 @@ public partial class Source1RoundAnnounceWarmupEvent : Source1GameEventBase
     internal Source1RoundAnnounceWarmupEvent(DemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_warmup";
+}
+
+public partial class Source1WarmupEndEvent : Source1GameEventBase
+{
+    internal Source1WarmupEndEvent(DemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "warmup_end";
 }
 
 public partial class Source1RoundEndUploadStatsEvent : Source1GameEventBase
@@ -11012,6 +11045,7 @@ public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1RoundAnnounceLastRoundHalfEvent))]
 [JsonDerivedType(typeof(Source1RoundAnnounceMatchStartEvent))]
 [JsonDerivedType(typeof(Source1RoundAnnounceWarmupEvent))]
+[JsonDerivedType(typeof(Source1WarmupEndEvent))]
 [JsonDerivedType(typeof(Source1RoundEndUploadStatsEvent))]
 [JsonDerivedType(typeof(Source1RoundOfficiallyEndedEvent))]
 [JsonDerivedType(typeof(Source1RoundTimeWarningEvent))]
