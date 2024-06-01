@@ -1,6 +1,110 @@
 {
   "enums": {
+    "DisableShadows_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "kDisableShadows_None",
+          "value": 0
+        },
+        {
+          "name": "kDisableShadows_All",
+          "value": 1
+        },
+        {
+          "name": "kDisableShadows_Baked",
+          "value": 2
+        },
+        {
+          "name": "kDisableShadows_Realtime",
+          "value": 3
+        }
+      ]
+    }
   },
   "classes": {
+    "CSSDSMsg_ViewTarget": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "SceneViewId_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSEndFrameViewInfo": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSMsg_LayerBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSMsg_PostLayer": {
+      "parent": "CSSDSMsg_LayerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSMsg_PreLayer": {
+      "parent": "CSSDSMsg_LayerBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSMsg_ViewTargetList": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSMsg_ViewRender": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CSSDSMsg_EndFrame": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    }
   }
 }

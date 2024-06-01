@@ -24,6 +24,237 @@
           "value": 4
         }
       ]
+    },
+    "CompositeMaterialInputLooseVariableType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "LOOSE_VARIABLE_TYPE_BOOLEAN",
+          "value": 0
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_INTEGER1",
+          "value": 1
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_INTEGER2",
+          "value": 2
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_INTEGER3",
+          "value": 3
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_INTEGER4",
+          "value": 4
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_FLOAT1",
+          "value": 5
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_FLOAT2",
+          "value": 6
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_FLOAT3",
+          "value": 7
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_FLOAT4",
+          "value": 8
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_COLOR4",
+          "value": 9
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_STRING",
+          "value": 10
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_SYSTEMVAR",
+          "value": 11
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_RESOURCE_MATERIAL",
+          "value": 12
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_RESOURCE_TEXTURE",
+          "value": 13
+        },
+        {
+          "name": "LOOSE_VARIABLE_TYPE_PANORAMA_RENDER",
+          "value": 14
+        }
+      ]
+    },
+    "CompositeMaterialInputTextureType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "INPUT_TEXTURE_TYPE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "INPUT_TEXTURE_TYPE_NORMALMAP",
+          "value": 1
+        },
+        {
+          "name": "INPUT_TEXTURE_TYPE_COLOR",
+          "value": 2
+        },
+        {
+          "name": "INPUT_TEXTURE_TYPE_MASKS",
+          "value": 3
+        },
+        {
+          "name": "INPUT_TEXTURE_TYPE_ROUGHNESS",
+          "value": 4
+        },
+        {
+          "name": "INPUT_TEXTURE_TYPE_PEARLESCENCE_MASK",
+          "value": 5
+        },
+        {
+          "name": "INPUT_TEXTURE_TYPE_AO",
+          "value": 6
+        }
+      ]
+    },
+    "CompositeMaterialInputContainerSourceType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "CONTAINER_SOURCE_TYPE_TARGET_MATERIAL",
+          "value": 0
+        },
+        {
+          "name": "CONTAINER_SOURCE_TYPE_MATERIAL_FROM_TARGET_ATTR",
+          "value": 1
+        },
+        {
+          "name": "CONTAINER_SOURCE_TYPE_SPECIFIC_MATERIAL",
+          "value": 2
+        },
+        {
+          "name": "CONTAINER_SOURCE_TYPE_LOOSE_VARIABLES",
+          "value": 3
+        },
+        {
+          "name": "CONTAINER_SOURCE_TYPE_VARIABLE_FROM_TARGET_ATTR",
+          "value": 4
+        },
+        {
+          "name": "CONTAINER_SOURCE_TYPE_TARGET_INSTANCE_MATERIAL",
+          "value": 5
+        }
+      ]
+    },
+    "CompMatPropertyMutatorType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_INIT",
+          "value": 0
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_COPY_MATCHING_KEYS",
+          "value": 1
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_COPY_KEYS_WITH_SUFFIX",
+          "value": 2
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_COPY_PROPERTY",
+          "value": 3
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_SET_VALUE",
+          "value": 4
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_GENERATE_TEXTURE",
+          "value": 5
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_CONDITIONAL_MUTATORS",
+          "value": 6
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_POP_INPUT_QUEUE",
+          "value": 7
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_DRAW_TEXT",
+          "value": 8
+        },
+        {
+          "name": "COMP_MAT_PROPERTY_MUTATOR_RANDOM_ROLL_INPUT_VARIABLES",
+          "value": 9
+        }
+      ]
+    },
+    "CompositeMaterialVarSystemVar_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "COMPMATSYSVAR_COMPOSITETIME",
+          "value": 0
+        },
+        {
+          "name": "COMPMATSYSVAR_EMPTY_RESOURCE_SPACER",
+          "value": 1
+        }
+      ]
+    },
+    "CompositeMaterialMatchFilterType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "MATCH_FILTER_MATERIAL_ATTRIBUTE_EXISTS",
+          "value": 0
+        },
+        {
+          "name": "MATCH_FILTER_MATERIAL_SHADER",
+          "value": 1
+        },
+        {
+          "name": "MATCH_FILTER_MATERIAL_NAME_SUBSTR",
+          "value": 2
+        },
+        {
+          "name": "MATCH_FILTER_MATERIAL_ATTRIBUTE_EQUALS",
+          "value": 3
+        },
+        {
+          "name": "MATCH_FILTER_MATERIAL_PROPERTY_EXISTS",
+          "value": 4
+        },
+        {
+          "name": "MATCH_FILTER_MATERIAL_PROPERTY_EQUALS",
+          "value": 5
+        }
+      ]
+    },
+    "CompMatPropertyMutatorConditionType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "COMP_MAT_MUTATOR_CONDITION_INPUT_CONTAINER_EXISTS",
+          "value": 0
+        },
+        {
+          "name": "COMP_MAT_MUTATOR_CONDITION_INPUT_CONTAINER_VALUE_EXISTS",
+          "value": 1
+        },
+        {
+          "name": "COMP_MAT_MUTATOR_CONDITION_INPUT_CONTAINER_VALUE_EQUALS",
+          "value": 2
+        }
+      ]
     }
   },
   "classes": {
@@ -76,6 +307,18 @@
             }
           ]
         }
+      ]
+    },
+    "C_IronSightController": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEntityComponent": {
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CGlowProperty": {
@@ -174,10 +417,346 @@
         }
       ]
     },
-    "CEntityComponent": {
+    "CPlayer_MovementServices": {
+      "parent": "CPlayerPawnComponent",
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_nToggleButtonDownMask",
+          "type": {
+            "name": "uint64",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_flMaxspeed",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkBitCount",
+              "value": 12
+            },
+            {
+              "name": "MNetworkMinValue",
+              "value": 0
+            },
+            {
+              "name": "MNetworkMaxValue",
+              "value": 2048
+            },
+            {
+              "name": "MNetworkEncodeFlags",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "m_arrForceSubtickMoveWhen",
+          "type": {
+            "name": "float32[4]",
+            "category": 3,
+            "arraySize": 4,
+            "inner": {
+              "name": "float32",
+              "category": 0
+            }
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "fogparams_t": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "dirPrimary",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkEncoder",
+              "value": "coord"
+            }
+          ]
+        },
+        {
+          "name": "colorPrimary",
+          "type": {
+            "name": "Color",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "colorSecondary",
+          "type": {
+            "name": "Color",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "colorPrimaryLerpTo",
+          "type": {
+            "name": "Color",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "colorSecondaryLerpTo",
+          "type": {
+            "name": "Color",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "start",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "end",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "farz",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "maxdensity",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "exponent",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "HDRColorScale",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "skyboxFogFactor",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "skyboxFogFactorLerpTo",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "startLerpTo",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "endLerpTo",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "maxdensityLerpTo",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "lerptime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "duration",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "blendtobackground",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "scattering",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "locallightscale",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "FogController"
+            }
+          ]
+        },
+        {
+          "name": "enable",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "blend",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bNoReflectionFog",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "C_BaseEntity": {
@@ -762,373 +1341,6 @@
         }
       ]
     },
-    "CPlayer_MovementServices": {
-      "parent": "CPlayerPawnComponent",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_nToggleButtonDownMask",
-          "type": {
-            "name": "uint64",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_flMaxspeed",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkBitCount",
-              "value": 12
-            },
-            {
-              "name": "MNetworkMinValue",
-              "value": 0
-            },
-            {
-              "name": "MNetworkMaxValue",
-              "value": 2048
-            },
-            {
-              "name": "MNetworkEncodeFlags",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "name": "m_arrForceSubtickMoveWhen",
-          "type": {
-            "name": "float32[4]",
-            "category": 3,
-            "arraySize": 4,
-            "inner": {
-              "name": "float32",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
-    "fogparams_t": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "dirPrimary",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkEncoder",
-              "value": "coord"
-            }
-          ]
-        },
-        {
-          "name": "colorPrimary",
-          "type": {
-            "name": "Color",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "colorSecondary",
-          "type": {
-            "name": "Color",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "colorPrimaryLerpTo",
-          "type": {
-            "name": "Color",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "colorSecondaryLerpTo",
-          "type": {
-            "name": "Color",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "start",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "end",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "farz",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "maxdensity",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "exponent",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "HDRColorScale",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "skyboxFogFactor",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "skyboxFogFactorLerpTo",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "startLerpTo",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "endLerpTo",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "maxdensityLerpTo",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "lerptime",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "duration",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "blendtobackground",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "scattering",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "locallightscale",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "FogController"
-            }
-          ]
-        },
-        {
-          "name": "enable",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "blend",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bNoReflectionFog",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
-    "CAttributeList": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_Attributes",
-          "type": {
-            "name": "C_UtlVectorEmbeddedNetworkVar< CEconItemAttribute >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "C_UtlVectorEmbeddedNetworkVar",
-            "inner": {
-              "name": "CEconItemAttribute",
-              "category": 5
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkTypeAlias",
-              "value": "CUtlVector< CEconItemAttribute >"
-            }
-          ]
-        }
-      ]
-    },
     "CAttributeManager": {
       "metadata": [
       ],
@@ -1490,113 +1702,27 @@
         }
       ]
     },
-    "C_EconItemView": {
-      "parent": "IEconItemInterface",
+    "CAttributeList": {
       "metadata": [
       ],
       "fields": [
         {
-          "name": "m_iItemDefinitionIndex",
+          "name": "m_Attributes",
           "type": {
-            "name": "uint16",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iEntityQuality",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iEntityLevel",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iItemIDHigh",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iItemIDLow",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iAccountID",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iInventoryPosition",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bInitialized",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_AttributeList",
-          "type": {
-            "name": "CAttributeList",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_NetworkedDynamicAttributes",
-          "type": {
-            "name": "CAttributeList",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_szCustomName",
-          "type": {
-            "name": "char[161]",
-            "category": 3,
-            "arraySize": 161,
+            "name": "C_UtlVectorEmbeddedNetworkVar< CEconItemAttribute >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "C_UtlVectorEmbeddedNetworkVar",
             "inner": {
-              "name": "char",
-              "category": 0
+              "name": "CEconItemAttribute",
+              "category": 5
             }
           },
           "metadata": [
+            {
+              "name": "MNetworkTypeAlias",
+              "value": "CUtlVector< CEconItemAttribute >"
+            }
           ]
         }
       ]
@@ -2098,32 +2224,111 @@
         }
       ]
     },
-    "C_AttributeContainer": {
-      "parent": "CAttributeManager",
+    "C_EconItemView": {
+      "parent": "IEconItemInterface",
       "metadata": [
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_ProviderType"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_hOuter"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_iReapplyProvisionParity"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_Item"
-        }
       ],
       "fields": [
         {
-          "name": "m_Item",
+          "name": "m_iItemDefinitionIndex",
           "type": {
-            "name": "C_EconItemView",
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iEntityQuality",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iEntityLevel",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iItemIDHigh",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iItemIDLow",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iAccountID",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iInventoryPosition",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bInitialized",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_AttributeList",
+          "type": {
+            "name": "CAttributeList",
             "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_NetworkedDynamicAttributes",
+          "type": {
+            "name": "CAttributeList",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_szCustomName",
+          "type": {
+            "name": "char[161]",
+            "category": 3,
+            "arraySize": 161,
+            "inner": {
+              "name": "char",
+              "category": 0
+            }
           },
           "metadata": [
           ]
@@ -2526,6 +2731,38 @@
       "fields": [
       ]
     },
+    "C_AttributeContainer": {
+      "parent": "CAttributeManager",
+      "metadata": [
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_ProviderType"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_hOuter"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_iReapplyProvisionParity"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_Item"
+        }
+      ],
+      "fields": [
+        {
+          "name": "m_Item",
+          "type": {
+            "name": "C_EconItemView",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "C_EconEntity": {
       "parent": "C_BaseFlex",
       "metadata": [
@@ -2592,6 +2829,131 @@
             "category": 0
           },
           "metadata": [
+          ]
+        }
+      ]
+    },
+    "C_PointEntity": {
+      "parent": "C_BaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "C_SceneEntity": {
+      "parent": "C_PointEntity",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bIsPlayingBack",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bPaused",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bMultiplayer",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bAutogenerated",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flForceClientTime",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnResetClientTime"
+            }
+          ]
+        },
+        {
+          "name": "m_nSceneStringIndex",
+          "type": {
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkPriority",
+              "value": 32
+            }
+          ]
+        },
+        {
+          "name": "m_hActorList",
+          "type": {
+            "name": "C_NetworkUtlVectorBase< CHandle< C_BaseFlex > >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "C_NetworkUtlVectorBase",
+            "inner": {
+              "name": "CHandle< C_BaseFlex >",
+              "category": 4,
+              "atomic": 1,
+              "inner": {
+                "name": "C_BaseFlex",
+                "category": 5
+              }
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkPriority",
+              "value": 32
+            }
+          ]
+        }
+      ]
+    },
+    "C_fogplayerparams_t": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_hCtrl",
+          "type": {
+            "name": "CHandle< C_FogController >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "C_FogController",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "PlayerFogController"
+            }
           ]
         }
       ]
@@ -2735,420 +3097,6 @@
         }
       ]
     },
-    "C_PointEntity": {
-      "parent": "C_BaseEntity",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "C_SceneEntity": {
-      "parent": "C_PointEntity",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_bIsPlayingBack",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bPaused",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bMultiplayer",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bAutogenerated",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flForceClientTime",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnResetClientTime"
-            }
-          ]
-        },
-        {
-          "name": "m_nSceneStringIndex",
-          "type": {
-            "name": "uint16",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkPriority",
-              "value": 32
-            }
-          ]
-        },
-        {
-          "name": "m_hActorList",
-          "type": {
-            "name": "C_NetworkUtlVectorBase< CHandle< C_BaseFlex > >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "C_NetworkUtlVectorBase",
-            "inner": {
-              "name": "CHandle< C_BaseFlex >",
-              "category": 4,
-              "atomic": 1,
-              "inner": {
-                "name": "C_BaseFlex",
-                "category": 5
-              }
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkPriority",
-              "value": 32
-            }
-          ]
-        }
-      ]
-    },
-    "C_fogplayerparams_t": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_hCtrl",
-          "type": {
-            "name": "CHandle< C_FogController >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "C_FogController",
-              "category": 5
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "PlayerFogController"
-            }
-          ]
-        }
-      ]
-    },
-    "C_CSWeaponBase": {
-      "parent": "C_BasePlayerWeapon",
-      "metadata": [
-        {
-          "name": "MNetworkExcludeByName",
-          "value": "m_flTimeWeaponIdle"
-        }
-      ],
-      "fields": [
-        {
-          "name": "m_flFireSequenceStartTime",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nFireSequenceStartTimeChange",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_ePlayerFireEvent",
-          "type": {
-            "name": "PlayerAnimEvent_t",
-            "category": 6
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_ePlayerFireEventAttackType",
-          "type": {
-            "name": "WeaponAttackType_t",
-            "category": 6
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iState",
-          "type": {
-            "name": "CSWeaponState_t",
-            "category": 6
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnWeaponStateNetworkChange"
-            }
-          ]
-        },
-        {
-          "name": "m_nViewModelIndex",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalWeaponExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_flTimeWeaponIdle",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalWeaponExclusive"
-            },
-            {
-              "name": "MNetworkPriority",
-              "value": 32
-            }
-          ]
-        },
-        {
-          "name": "m_weaponMode",
-          "type": {
-            "name": "CSWeaponMode",
-            "category": 6
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_fAccuracyPenalty",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iRecoilIndex",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flRecoilIndex",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bBurstMode",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnWeaponBurstModeNetworkChange"
-            }
-          ]
-        },
-        {
-          "name": "m_nPostponeFireReadyTicks",
-          "type": {
-            "name": "GameTick_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flPostponeFireReadyFrac",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bInReload",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bReloadVisuallyComplete",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flDroppedAtTime",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bIsHauledBack",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bSilencerOn",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flTimeSilencerSwitchComplete",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iOriginalTeamNumber",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iMostRecentTeamNumber",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bDroppedNearBuyZone",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_hPrevOwner",
-          "type": {
-            "name": "CHandle< C_CSPlayerPawn >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "C_CSPlayerPawn",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nDropTick",
-          "type": {
-            "name": "GameTick_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_fLastShotTime",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iIronSightMode",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iNumEmptyAttacks",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
     "C_FuncBrush": {
       "parent": "C_BaseModelEntity",
       "metadata": [
@@ -3272,122 +3220,10 @@
       "fields": [
       ]
     },
-    "C_LightGlow": {
-      "parent": "C_BaseModelEntity",
+    "CGlowOverlay": {
       "metadata": [
-        {
-          "name": "MNetworkIncludeByUserGroup",
-          "value": "Origin"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "CGameSceneNode::m_angRotation"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_clrRender"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "CGameSceneNode::m_hParent"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_spawnflags"
-        }
       ],
       "fields": [
-        {
-          "name": "m_nHorizontalSize",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nVerticalSize",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nMinDist",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nMaxDist",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nOuterMaxDist",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flGlowProxySize",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkBitCount",
-              "value": 6
-            },
-            {
-              "name": "MNetworkMinValue",
-              "value": 0
-            },
-            {
-              "name": "MNetworkMaxValue",
-              "value": 64
-            },
-            {
-              "name": "MNetworkEncodeFlags",
-              "value": 2
-            }
-          ]
-        },
-        {
-          "name": "m_flHDRColorScale",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkMinValue",
-              "value": 0
-            },
-            {
-              "name": "MNetworkMaxValue",
-              "value": 100
-            },
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnHDRColorScaleChanged"
-            }
-          ]
-        }
       ]
     },
     "CountdownTimer": {
@@ -4716,13 +4552,26 @@
         }
       ]
     },
-    "C_CSWeaponBaseGun": {
-      "parent": "C_CSWeaponBase",
+    "C_CSWeaponBase": {
+      "parent": "C_BasePlayerWeapon",
       "metadata": [
+        {
+          "name": "MNetworkExcludeByName",
+          "value": "m_flTimeWeaponIdle"
+        }
       ],
       "fields": [
         {
-          "name": "m_zoomLevel",
+          "name": "m_flFireSequenceStartTime",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nFireSequenceStartTimeChange",
           "type": {
             "name": "int32",
             "category": 0
@@ -4731,7 +4580,86 @@
           ]
         },
         {
-          "name": "m_iBurstShotsRemaining",
+          "name": "m_ePlayerFireEvent",
+          "type": {
+            "name": "PlayerAnimEvent_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_ePlayerFireEventAttackType",
+          "type": {
+            "name": "WeaponAttackType_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iState",
+          "type": {
+            "name": "CSWeaponState_t",
+            "category": 6
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnWeaponStateNetworkChange"
+            }
+          ]
+        },
+        {
+          "name": "m_nViewModelIndex",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalWeaponExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_flTimeWeaponIdle",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalWeaponExclusive"
+            },
+            {
+              "name": "MNetworkPriority",
+              "value": 32
+            }
+          ]
+        },
+        {
+          "name": "m_weaponMode",
+          "type": {
+            "name": "CSWeaponMode",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_fAccuracyPenalty",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iRecoilIndex",
           "type": {
             "name": "int32",
             "category": 0
@@ -4740,9 +4668,172 @@
           ]
         },
         {
-          "name": "m_bNeedsBoltAction",
+          "name": "m_flRecoilIndex",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bBurstMode",
           "type": {
             "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnWeaponBurstModeNetworkChange"
+            }
+          ]
+        },
+        {
+          "name": "m_nPostponeFireReadyTicks",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flPostponeFireReadyFrac",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bInReload",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bReloadVisuallyComplete",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flDroppedAtTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bIsHauledBack",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bSilencerOn",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flTimeSilencerSwitchComplete",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iOriginalTeamNumber",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iMostRecentTeamNumber",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bDroppedNearBuyZone",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hPrevOwner",
+          "type": {
+            "name": "CHandle< C_CSPlayerPawn >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "C_CSPlayerPawn",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nDropTick",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_fLastShotTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iIronSightMode",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iNumEmptyAttacks",
+          "type": {
+            "name": "int32",
             "category": 0
           },
           "metadata": [
@@ -4841,11 +4932,38 @@
       "fields": [
       ]
     },
-    "C_WeaponMag7": {
-      "parent": "C_CSWeaponBaseGun",
+    "C_CSWeaponBaseGun": {
+      "parent": "C_CSWeaponBase",
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_zoomLevel",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iBurstShotsRemaining",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bNeedsBoltAction",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "C_DEagle": {
@@ -8620,8 +8738,8 @@
       "fields": [
       ]
     },
-    "C_MolotovGrenade": {
-      "parent": "C_BaseCSGrenade",
+    "C_WeaponMag7": {
+      "parent": "C_CSWeaponBaseGun",
       "metadata": [
       ],
       "fields": [
@@ -8691,153 +8809,10 @@
         }
       ]
     },
-    "CBasePlayerController": {
-      "parent": "C_BaseEntity",
+    "C_CommandContext": {
       "metadata": [
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_pEntity"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_flSimulationTime"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_flCreateTime"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_iTeamNum"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_nNextThinkTick"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_fFlags"
-        },
-        {
-          "name": "MNetworkUserGroupProxy",
-          "value": "CBasePlayerController"
-        },
-        {
-          "name": "MNetworkUserGroupProxy",
-          "value": "CBasePlayerController"
-        },
-        {
-          "name": "MNetworkIncludeByUserGroup",
-          "value": "LocalPlayerExclusive"
-        },
-        {
-          "name": "MNetworkReplayCompatField",
-          "value": "m_skeletonInstance\\.m_vecOrigin\\..*|"
-        }
       ],
       "fields": [
-        {
-          "name": "m_nTickBase",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkPriority",
-              "value": 1
-            },
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_hPawn",
-          "type": {
-            "name": "CHandle< C_BasePlayerPawn >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "C_BasePlayerPawn",
-              "category": 5
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnPawnChanged"
-            }
-          ]
-        },
-        {
-          "name": "m_bKnownTeamMismatch",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iConnected",
-          "type": {
-            "name": "PlayerConnectedState",
-            "category": 6
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnConnectionStateChanged"
-            }
-          ]
-        },
-        {
-          "name": "m_iszPlayerName",
-          "type": {
-            "name": "char[128]",
-            "category": 3,
-            "arraySize": 128,
-            "inner": {
-              "name": "char",
-              "category": 0
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnPlayerControllerNameChanged"
-            }
-          ]
-        },
-        {
-          "name": "m_steamID",
-          "type": {
-            "name": "uint64",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkEncoder",
-              "value": "fixed64"
-            },
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnSteamIDChanged"
-            }
-          ]
-        },
-        {
-          "name": "m_iDesiredFOV",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "CPointTemplateAPI": {
@@ -9212,7 +9187,7 @@
       "fields": [
       ]
     },
-    "C_WeaponM249": {
+    "C_WeaponCZ75a": {
       "parent": "C_CSWeaponBaseGun",
       "metadata": [
       ],
@@ -10131,8 +10106,8 @@
       "fields": [
       ]
     },
-    "C_WeaponMP7": {
-      "parent": "C_CSWeaponBaseGun",
+    "C_MolotovGrenade": {
+      "parent": "C_BaseCSGrenade",
       "metadata": [
       ],
       "fields": [
@@ -10369,41 +10344,10 @@
       "fields": [
       ]
     },
-    "C_FireSmoke": {
-      "parent": "C_BaseFire",
+    "TimedEvent": {
       "metadata": [
-        {
-          "name": "MNetworkOverride",
-          "value": {
-            "type": "m_flScale"
-          }
-        },
-        {
-          "name": "MNetworkOverride",
-          "value": {
-            "type": "m_flScaleTime"
-          }
-        }
       ],
       "fields": [
-        {
-          "name": "m_nFlameModelIndex",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nFlameFromAboveModelIndex",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "C_WeaponRevolver": {
@@ -11915,7 +11859,7 @@
       "fields": [
       ]
     },
-    "C_WeaponCZ75a": {
+    "C_WeaponMP7": {
       "parent": "C_CSWeaponBaseGun",
       "metadata": [
       ],
@@ -19161,155 +19105,10 @@
         }
       ]
     },
-    "C_PlayerSprayDecal": {
-      "parent": "C_ModelPointEntity",
+    "CPlayerSprayDecalRenderHelper": {
       "metadata": [
       ],
       "fields": [
-        {
-          "name": "m_nUniqueID",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_unAccountID",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_unTraceID",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_rtGcTime",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_vecEndPos",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_vecStart",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_vecLeft",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_vecNormal",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nPlayer",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nEntity",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nHitbox",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flCreationTime",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nTintID",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nVersion",
-          "type": {
-            "name": "uint8",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_ubSignature",
-          "type": {
-            "name": "uint8[128]",
-            "category": 3,
-            "arraySize": 128,
-            "inner": {
-              "name": "uint8",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "EntityRenderAttribute_t": {
@@ -20976,250 +20775,62 @@
       "fields": [
       ]
     },
-    "CCSPlayerController": {
-      "parent": "CBasePlayerController",
+    "CBasePlayerController": {
+      "parent": "C_BaseEntity",
       "metadata": [
         {
-          "name": "MNetworkUserGroupProxy",
-          "value": "CCSPlayerController"
+          "name": "MNetworkIncludeByName",
+          "value": "m_pEntity"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_flSimulationTime"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_flCreateTime"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_iTeamNum"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_nNextThinkTick"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_fFlags"
         },
         {
           "name": "MNetworkUserGroupProxy",
-          "value": "CCSPlayerController"
+          "value": "CBasePlayerController"
         },
         {
           "name": "MNetworkUserGroupProxy",
-          "value": "CCSPlayerController"
+          "value": "CBasePlayerController"
+        },
+        {
+          "name": "MNetworkIncludeByUserGroup",
+          "value": "LocalPlayerExclusive"
+        },
+        {
+          "name": "MNetworkReplayCompatField",
+          "value": "m_skeletonInstance\\.m_vecOrigin\\..*|"
         }
       ],
       "fields": [
         {
-          "name": "m_pInGameMoneyServices",
-          "type": {
-            "name": "CCSPlayerController_InGameMoneyServices*",
-            "category": 1,
-            "inner": {
-              "name": "CCSPlayerController_InGameMoneyServices",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_pInventoryServices",
-          "type": {
-            "name": "CCSPlayerController_InventoryServices*",
-            "category": 1,
-            "inner": {
-              "name": "CCSPlayerController_InventoryServices",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_pActionTrackingServices",
-          "type": {
-            "name": "CCSPlayerController_ActionTrackingServices*",
-            "category": 1,
-            "inner": {
-              "name": "CCSPlayerController_ActionTrackingServices",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_pDamageServices",
-          "type": {
-            "name": "CCSPlayerController_DamageServices*",
-            "category": 1,
-            "inner": {
-              "name": "CCSPlayerController_DamageServices",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iPing",
+          "name": "m_nTickBase",
           "type": {
             "name": "uint32",
             "category": 0
           },
           "metadata": [
-          ]
-        },
-        {
-          "name": "m_bHasCommunicationAbuseMute",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_szCrosshairCodes",
-          "type": {
-            "name": "CUtlSymbolLarge",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iPendingTeamNum",
-          "type": {
-            "name": "uint8",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flForceTeamTime",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompTeammateColor",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
             {
-              "name": "MNetworkChangeCallback",
-              "value": "OnCompTeammateColorChanged"
-            }
-          ]
-        },
-        {
-          "name": "m_bEverPlayedOnTeam",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_szClan",
-          "type": {
-            "name": "CUtlSymbolLarge",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCoachingTeam",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nPlayerDominated",
-          "type": {
-            "name": "uint64",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nPlayerDominatingMe",
-          "type": {
-            "name": "uint64",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompetitiveRanking",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompetitiveWins",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompetitiveRankType",
-          "type": {
-            "name": "int8",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompetitiveRankingPredicted_Win",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompetitiveRankingPredicted_Loss",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iCompetitiveRankingPredicted_Tie",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nEndMatchNextMapVote",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_unActiveQuestId",
-          "type": {
-            "name": "uint16",
-            "category": 0
-          },
-          "metadata": [
+              "name": "MNetworkPriority",
+              "value": 1
+            },
             {
               "name": "MNetworkUserGroup",
               "value": "LocalPlayerExclusive"
@@ -21227,288 +20838,88 @@
           ]
         },
         {
-          "name": "m_nQuestProgressReason",
+          "name": "m_hPawn",
           "type": {
-            "name": "QuestProgress::Reason",
+            "name": "CHandle< C_BasePlayerPawn >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "C_BasePlayerPawn",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnPawnChanged"
+            }
+          ]
+        },
+        {
+          "name": "m_bKnownTeamMismatch",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iConnected",
+          "type": {
+            "name": "PlayerConnectedState",
             "category": 6
           },
           "metadata": [
             {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive"
+              "name": "MNetworkChangeCallback",
+              "value": "OnConnectionStateChanged"
             }
           ]
         },
         {
-          "name": "m_unPlayerTvControlFlags",
+          "name": "m_iszPlayerName",
           "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_nDisconnectionTick",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_bControllingBot",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bHasControlledBotThisRound",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bCanControlObservedBot",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_hPlayerPawn",
-          "type": {
-            "name": "CHandle< C_CSPlayerPawn >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
+            "name": "char[128]",
+            "category": 3,
+            "arraySize": 128,
             "inner": {
-              "name": "C_CSPlayerPawn",
-              "category": 5
+              "name": "char",
+              "category": 0
             }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_hObserverPawn",
-          "type": {
-            "name": "CHandle< C_CSObserverPawn >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "C_CSObserverPawn",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bPawnIsAlive",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iPawnHealth",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "TeammateAndSpectatorExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_iPawnArmor",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "TeammateAndSpectatorExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_bPawnHasDefuser",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "TeammateAndSpectatorExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_bPawnHasHelmet",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "TeammateAndSpectatorExclusive"
-            }
-          ]
-        },
-        {
-          "name": "m_nPawnCharacterDefIndex",
-          "type": {
-            "name": "uint16",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iPawnLifetimeStart",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iPawnLifetimeEnd",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iPawnBotDifficulty",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_hOriginalControllerOfCurrentPawn",
-          "type": {
-            "name": "CHandle< CCSPlayerController >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "CCSPlayerController",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iScore",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_vecKills",
-          "type": {
-            "name": "C_NetworkUtlVectorBase< EKillTypes_t >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "C_NetworkUtlVectorBase",
-            "inner": {
-              "name": "EKillTypes_t",
-              "category": 6
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bMvpNoMusic",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_eMvpReason",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iMusicKitID",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iMusicKitMVPs",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_iMVPs",
-          "type": {
-            "name": "int32",
-            "category": 0
           },
           "metadata": [
             {
               "name": "MNetworkChangeCallback",
-              "value": "OnMVPCountChanged"
+              "value": "OnPlayerControllerNameChanged"
             }
+          ]
+        },
+        {
+          "name": "m_steamID",
+          "type": {
+            "name": "uint64",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkEncoder",
+              "value": "fixed64"
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnSteamIDChanged"
+            }
+          ]
+        },
+        {
+          "name": "m_iDesiredFOV",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
           ]
         }
       ]
@@ -22734,6 +22145,1058 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "GeneratedTextureHandle_t": {
+      "metadata": [
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CompositeMaterialInputContainer_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        },
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CompositeMaterialAssemblyProcedure_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        },
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CDecalInfo": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CompositeMaterialInputLooseVariable_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        },
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "C_CSGO_PreviewModel_GraphController": {
+      "parent": "CAnimGraphControllerBase",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "C_LightGlowOverlay": {
+      "parent": "CGlowOverlay",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "C_SunGlowOverlay": {
+      "parent": "CGlowOverlay",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CInterpolatedValue": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "C_Chicken_GraphController": {
+      "parent": "CAnimGraphControllerBase",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "C_FireSmoke": {
+      "parent": "C_BaseFire",
+      "metadata": [
+        {
+          "name": "MNetworkOverride",
+          "value": {
+            "type": "m_flScale"
+          }
+        },
+        {
+          "name": "MNetworkOverride",
+          "value": {
+            "type": "m_flScaleTime"
+          }
+        }
+      ],
+      "fields": [
+        {
+          "name": "m_nFlameModelIndex",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nFlameFromAboveModelIndex",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "CFlashlightEffect": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CGlowSprite": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "C_CSGO_PreviewPlayer_GraphController": {
+      "parent": "CAnimGraphControllerBase",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCSPlayerController": {
+      "parent": "CBasePlayerController",
+      "metadata": [
+        {
+          "name": "MNetworkUserGroupProxy",
+          "value": "CCSPlayerController"
+        },
+        {
+          "name": "MNetworkUserGroupProxy",
+          "value": "CCSPlayerController"
+        },
+        {
+          "name": "MNetworkUserGroupProxy",
+          "value": "CCSPlayerController"
+        }
+      ],
+      "fields": [
+        {
+          "name": "m_pInGameMoneyServices",
+          "type": {
+            "name": "CCSPlayerController_InGameMoneyServices*",
+            "category": 1,
+            "inner": {
+              "name": "CCSPlayerController_InGameMoneyServices",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_pInventoryServices",
+          "type": {
+            "name": "CCSPlayerController_InventoryServices*",
+            "category": 1,
+            "inner": {
+              "name": "CCSPlayerController_InventoryServices",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_pActionTrackingServices",
+          "type": {
+            "name": "CCSPlayerController_ActionTrackingServices*",
+            "category": 1,
+            "inner": {
+              "name": "CCSPlayerController_ActionTrackingServices",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_pDamageServices",
+          "type": {
+            "name": "CCSPlayerController_DamageServices*",
+            "category": 1,
+            "inner": {
+              "name": "CCSPlayerController_DamageServices",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iPing",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bHasCommunicationAbuseMute",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_szCrosshairCodes",
+          "type": {
+            "name": "CUtlSymbolLarge",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iPendingTeamNum",
+          "type": {
+            "name": "uint8",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flForceTeamTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompTeammateColor",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnCompTeammateColorChanged"
+            }
+          ]
+        },
+        {
+          "name": "m_bEverPlayedOnTeam",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_szClan",
+          "type": {
+            "name": "CUtlSymbolLarge",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCoachingTeam",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nPlayerDominated",
+          "type": {
+            "name": "uint64",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nPlayerDominatingMe",
+          "type": {
+            "name": "uint64",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompetitiveRanking",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompetitiveWins",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompetitiveRankType",
+          "type": {
+            "name": "int8",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompetitiveRankingPredicted_Win",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompetitiveRankingPredicted_Loss",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iCompetitiveRankingPredicted_Tie",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nEndMatchNextMapVote",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_unActiveQuestId",
+          "type": {
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_nQuestProgressReason",
+          "type": {
+            "name": "QuestProgress::Reason",
+            "category": 6
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_unPlayerTvControlFlags",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_nDisconnectionTick",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_bControllingBot",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bHasControlledBotThisRound",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bCanControlObservedBot",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_hPlayerPawn",
+          "type": {
+            "name": "CHandle< C_CSPlayerPawn >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "C_CSPlayerPawn",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hObserverPawn",
+          "type": {
+            "name": "CHandle< C_CSObserverPawn >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "C_CSObserverPawn",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bPawnIsAlive",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iPawnHealth",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "TeammateAndSpectatorExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_iPawnArmor",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "TeammateAndSpectatorExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_bPawnHasDefuser",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "TeammateAndSpectatorExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_bPawnHasHelmet",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "TeammateAndSpectatorExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_nPawnCharacterDefIndex",
+          "type": {
+            "name": "uint16",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iPawnLifetimeStart",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iPawnLifetimeEnd",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iPawnBotDifficulty",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hOriginalControllerOfCurrentPawn",
+          "type": {
+            "name": "CHandle< CCSPlayerController >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CCSPlayerController",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iScore",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecKills",
+          "type": {
+            "name": "C_NetworkUtlVectorBase< EKillTypes_t >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "C_NetworkUtlVectorBase",
+            "inner": {
+              "name": "EKillTypes_t",
+              "category": 6
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bMvpNoMusic",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_eMvpReason",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iMusicKitID",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iMusicKitMVPs",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iMVPs",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnMVPCountChanged"
+            }
+          ]
+        }
+      ]
+    },
+    "CompositeMaterialEditorPoint_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "C_PlayerSprayDecal": {
+      "parent": "C_ModelPointEntity",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_nUniqueID",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_unAccountID",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_unTraceID",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_rtGcTime",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecEndPos",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecStart",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecLeft",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecNormal",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nPlayer",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nEntity",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nHitbox",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flCreationTime",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nTintID",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nVersion",
+          "type": {
+            "name": "uint8",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_ubSignature",
+          "type": {
+            "name": "uint8[128]",
+            "category": 3,
+            "arraySize": 128,
+            "inner": {
+              "name": "uint8",
+              "category": 0
+            }
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "C_WeaponM249": {
+      "parent": "C_CSWeaponBaseGun",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CFireOverlay": {
+      "parent": "CGlowOverlay",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CompMatMutatorCondition_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        },
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CompMatPropertyMutator_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        },
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCompositeMaterialEditorDoc": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "IClientAlphaProperty": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CClientGapTypeQueryRegistration": {
+      "metadata": [
+        {
+          "name": "MGapTypeQueriesForScopeSingleton"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CGlobalLightBase": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CClientAlphaProperty": {
+      "parent": "IClientAlphaProperty",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CompositeMaterialMatchFilter_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        },
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "C_LightGlow": {
+      "parent": "C_BaseModelEntity",
+      "metadata": [
+        {
+          "name": "MNetworkIncludeByUserGroup",
+          "value": "Origin"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "CGameSceneNode::m_angRotation"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_clrRender"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "CGameSceneNode::m_hParent"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_spawnflags"
+        }
+      ],
+      "fields": [
+        {
+          "name": "m_nHorizontalSize",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nVerticalSize",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nMinDist",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nMaxDist",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nOuterMaxDist",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flGlowProxySize",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkBitCount",
+              "value": 6
+            },
+            {
+              "name": "MNetworkMinValue",
+              "value": 0
+            },
+            {
+              "name": "MNetworkMaxValue",
+              "value": 64
+            },
+            {
+              "name": "MNetworkEncodeFlags",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "name": "m_flHDRColorScale",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkMinValue",
+              "value": 0
+            },
+            {
+              "name": "MNetworkMaxValue",
+              "value": 100
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnHDRColorScaleChanged"
+            }
+          ]
+        }
+      ]
+    },
+    "CompositeMaterial_t": {
+      "metadata": [
+        {
+          "name": "MPropertyElementNameFn"
+        }
+      ],
+      "fields": [
       ]
     }
   }

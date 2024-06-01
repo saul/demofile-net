@@ -1,5 +1,62 @@
 {
   "enums": {
+    "ObjectTypeFlags_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "OBJECT_TYPE_NONE",
+          "value": 0
+        },
+        {
+          "name": "OBJECT_TYPE_MODEL",
+          "value": 8
+        },
+        {
+          "name": "OBJECT_TYPE_BLOCK_LIGHT",
+          "value": 16
+        },
+        {
+          "name": "OBJECT_TYPE_NO_SHADOWS",
+          "value": 32
+        },
+        {
+          "name": "OBJECT_TYPE_WORLDSPACE_TEXURE_BLEND",
+          "value": 64
+        },
+        {
+          "name": "OBJECT_TYPE_DISABLED_IN_LOW_QUALITY",
+          "value": 128
+        },
+        {
+          "name": "OBJECT_TYPE_NO_SUN_SHADOWS",
+          "value": 256
+        },
+        {
+          "name": "OBJECT_TYPE_RENDER_WITH_DYNAMIC",
+          "value": 512
+        },
+        {
+          "name": "OBJECT_TYPE_RENDER_TO_CUBEMAPS",
+          "value": 1024
+        },
+        {
+          "name": "OBJECT_TYPE_MODEL_HAS_LODS",
+          "value": 2048
+        },
+        {
+          "name": "OBJECT_TYPE_OVERLAY",
+          "value": 8192
+        },
+        {
+          "name": "OBJECT_TYPE_PRECOMPUTED_VISMEMBERS",
+          "value": 16384
+        },
+        {
+          "name": "OBJECT_TYPE_STATIC_CUBE_MAP",
+          "value": 32768
+        }
+      ]
+    }
   },
   "classes": {
     "CEntityComponent": {
@@ -71,6 +128,212 @@
             }
           ]
         }
+      ]
+    },
+    "SceneObject_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "AggregateLODSetup_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "BaseSceneObjectOverride_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "ClutterTile_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "AggregateSceneObject_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "NodeData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "VMapResourceData_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "ClutterSceneObject_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "BakedLightingInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "PermEntityLumpData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "WorldNode_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "ExtraVertexStreamOverride_t": {
+      "parent": "BaseSceneObjectOverride_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "EntityIOConnectionData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "WorldBuilderParams_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "VoxelVisBlockOffset_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "InfoForResourceTypeVMapResourceData_t": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "WorldNodeOnDiskBufferData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "AggregateMeshInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "World_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "InfoOverlayData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "MaterialOverride_t": {
+      "parent": "BaseSceneObjectOverride_t",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "EntityKeyValueData_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CVoxelVisibility": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     }
   }

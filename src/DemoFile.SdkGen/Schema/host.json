@@ -2,5 +2,18 @@
   "enums": {
   },
   "classes": {
+    "CAnimScriptBase": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "EmptyTestScript": {
+      "parent": "CAnimScriptBase",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    }
   }
 }

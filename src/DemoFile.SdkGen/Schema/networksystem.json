@@ -2,5 +2,11 @@
   "enums": {
   },
   "classes": {
+    "ChangeAccessorFieldPathIndex_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    }
   }
 }
