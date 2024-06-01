@@ -107,6 +107,10 @@
         {
           "name": "RENDER_BUFFER_PER_FRAME_WRITE_ONCE",
           "value": 2048
+        },
+        {
+          "name": "RENDER_BUFFER_POOL_ALLOCATED",
+          "value": 4096
         }
       ]
     },
@@ -115,7 +119,7 @@
       "items": [
         {
           "name": "RENDER_MULTISAMPLE_INVALID",
-          "value": 18446744073709551615
+          "value": -1
         },
         {
           "name": "RENDER_MULTISAMPLE_NONE",
@@ -173,7 +177,7 @@
       "items": [
         {
           "name": "RENDER_SLOT_INVALID",
-          "value": 18446744073709551615
+          "value": -1
         },
         {
           "name": "RENDER_SLOT_PER_VERTEX",

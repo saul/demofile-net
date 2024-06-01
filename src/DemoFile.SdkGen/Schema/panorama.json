@@ -119,6 +119,10 @@
         {
           "name": "REFERENCE_PASSTHROUGH",
           "value": 14
+        },
+        {
+          "name": "COMPILER_CONDITIONAL",
+          "value": 15
         }
       ]
     }

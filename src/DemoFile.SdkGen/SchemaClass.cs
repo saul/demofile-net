@@ -34,10 +34,11 @@ public partial record SchemaClass(
             case ("CEnvProjectedTexture", "m_flRotation"): return "TextureRotation";
             case ("CSun", "m_flRotation"): return "SunRotation";
             case ("CTriggerPhysics", "m_gravityScale"): return "TriggerGravityScale";
+            case ("CBeam", "m_fSpeed"): return "BeamSpeed";
         }
 
         string CleanFieldName(string fieldName) =>
-            RemoveMemberPrefix(HungarianNotationRegex().Replace(fieldName, r => r.Groups["firstChar"].Value));
+            RemoveMemberPrefix(HungarianNotationRegex().Replace(fieldName.Replace("_Entity_", "_"), r => r.Groups["firstChar"].Value));
 
         _fieldsByCsPropertyName ??= Fields
             .GroupBy(x => CleanFieldName(x.Name))

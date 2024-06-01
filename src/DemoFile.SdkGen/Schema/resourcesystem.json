@@ -344,24 +344,6 @@
       "fields": [
       ]
     },
-    "InfoForResourceTypeCNmGraph": {
-      "metadata": [
-        {
-          "name": "MResourceTypeForInfoType"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "InfoForResourceTypeCDACGameDefsData": {
-      "metadata": [
-        {
-          "name": "MResourceTypeForInfoType"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "InfoForResourceTypeCPanoramaStyle": {
       "metadata": [
         {
@@ -380,7 +362,25 @@
       "fields": [
       ]
     },
+    "InfoForResourceTypeCNmGraphVariation": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "InfoForResourceTypeCCSGOEconItem": {
+      "metadata": [
+        {
+          "name": "MResourceTypeForInfoType"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "InfoForResourceTypeCNmGraphDefinition": {
       "metadata": [
         {
           "name": "MResourceTypeForInfoType"
@@ -519,15 +519,6 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "InfoForResourceTypeCNmGraphDataSet": {
-      "metadata": [
-        {
-          "name": "MResourceTypeForInfoType"
         }
       ],
       "fields": [

@@ -734,9 +734,9 @@ internal static class Program
         alignment switch
         {
             1 => "byte",
-            2 => "ushort",
-            4 => "uint",
-            8 => "ulong",
+            2 => "short",
+            4 => "int",
+            8 => "long",
             _ => throw new ArgumentOutOfRangeException(nameof(alignment), alignment, null)
         };
 
@@ -751,17 +751,23 @@ internal static class Program
         var maxValue = schemaEnum.Align switch
         {
             1 => byte.MaxValue,
-            2 => ushort.MaxValue,
-            4 => uint.MaxValue,
-            8 => ulong.MaxValue,
+            2 => short.MaxValue,
+            4 => int.MaxValue,
+            8 => long.MaxValue,
             _ => throw new ArgumentOutOfRangeException()
         };
 
         // Write enum items
         foreach (var enumItem in schemaEnum.Items)
         {
-            var value = enumItem.Value < maxValue ? enumItem.Value : maxValue;
-            builder.AppendLine($"    {enumItem.Name} = 0x{value:X},");
+            if (enumItem.Value < 0)
+            {
+                builder.AppendLine($"    {enumItem.Name} = {enumItem.Value},");
+            }
+            else
+            {
+                builder.AppendLine($"    {enumItem.Name} = 0x{enumItem.Value:X},");
+            }
         }
 
         builder.AppendLine("}");

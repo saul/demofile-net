@@ -22,7 +22,7 @@
       "items": [
         {
           "name": "ENTITY_IO_TARGET_INVALID",
-          "value": 18446744073709551615
+          "value": -1
         },
         {
           "name": "ENTITY_IO_TARGET_ENTITYNAME",
@@ -82,6 +82,77 @@
     }
   },
   "classes": {
+    "CEntityComponent": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CScriptComponent": {
+      "parent": "CEntityComponent",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEntityIdentity": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_nameStringableIndex",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "entityIdentityNameChanged"
+            }
+          ]
+        }
+      ]
+    },
+    "CEntityInstance": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_pEntity",
+          "type": {
+            "name": "CEntityIdentity*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityIdentity",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkPriority",
+              "value": 56
+            }
+          ]
+        },
+        {
+          "name": "m_CScriptComponent",
+          "type": {
+            "name": "CScriptComponent*",
+            "category": 1,
+            "inner": {
+              "name": "CScriptComponent",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkDisable"
+            }
+          ]
+        }
+      ]
+    },
     "EngineLoopState_t": {
       "metadata": [
       ],
@@ -170,12 +241,6 @@
       ]
     },
     "EventPreDataUpdate_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "EventClientPredictionPostNetupdate_t": {
       "metadata": [
       ],
       "fields": [
@@ -310,6 +375,12 @@
     },
     "EventClientPostSimulate_t": {
       "parent": "EventSimulate_t",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "EventClientAdvanceNonRenderedFrame_t": {
       "metadata": [
       ],
       "fields": [

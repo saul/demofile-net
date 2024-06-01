@@ -4,7 +4,7 @@ namespace DemoFile;
 
 public struct PacketEvents
 {
-    public Action<CNETMsg_Disconnect>? NetDisconnect;
+    public Action<CNETMsg_Disconnect_Legacy>? NetDisconnect;
     public Action<CNETMsg_SplitScreenUser>? NetSplitScreenUser;
     public Action<CNETMsg_Tick>? NetTick;
     public Action<CNETMsg_StringCmd>? NetStringCmd;
@@ -46,13 +46,14 @@ public struct PacketEvents
     public Action<CSVCMsg_HltvReplay>? SvcHltvReplay;
     public Action<CSVCMsg_Broadcast_Command>? SvcBroadcastCommand;
     public Action<CSVCMsg_HltvFixupOperatorStatus>? SvcHltvFixupOperatorStatus;
+    public Action<CSVCMsg_UserCommands>? SvcUserCmds;
 
     internal bool ParseNetMessage(int msgType, ReadOnlySpan<byte> buf)
     {
         switch (msgType)
         {
-            case (int)NET_Messages.NetDisconnect:
-                NetDisconnect?.Invoke(CNETMsg_Disconnect.Parser.ParseFrom(buf));
+            case (int)NET_Messages.NetDisconnectLegacy:
+                NetDisconnect?.Invoke(CNETMsg_Disconnect_Legacy.Parser.ParseFrom(buf));
                 return true;
             case (int)NET_Messages.NetSplitScreenUser:
                 NetSplitScreenUser?.Invoke(CNETMsg_SplitScreenUser.Parser.ParseFrom(buf));
@@ -176,6 +177,9 @@ public struct PacketEvents
                 return true;
             case (int)SVC_Messages.SvcHltvFixupOperatorStatus:
                 SvcHltvFixupOperatorStatus?.Invoke(CSVCMsg_HltvFixupOperatorStatus.Parser.ParseFrom(buf));
+                return true;
+            case (int)SVC_Messages.SvcUserCmds:
+                SvcUserCmds?.Invoke(CSVCMsg_UserCommands.Parser.ParseFrom(buf));
                 return true;
         }
 

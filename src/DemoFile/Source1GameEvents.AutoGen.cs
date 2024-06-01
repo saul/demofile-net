@@ -99,7 +99,6 @@ public partial class Source1GameEvents
     public Action<Source1ClientsideLessonClosedEvent>? ClientsideLessonClosed;
     public Action<Source1DynamicShadowLightChangedEvent>? DynamicShadowLightChanged;
     public Action<Source1GameuiHiddenEvent>? GameuiHidden;
-    public Action<Source1ItemsGiftedEvent>? ItemsGifted;
     public Action<Source1PlayerScoreEvent>? PlayerScore;
     public Action<Source1PlayerShootEvent>? PlayerShoot;
     public Action<Source1GameInitEvent>? GameInit;
@@ -167,7 +166,6 @@ public partial class Source1GameEvents
     public Action<Source1WeaponFireEvent>? WeaponFire;
     public Action<Source1WeaponFireOnEmptyEvent>? WeaponFireOnEmpty;
     public Action<Source1GrenadeThrownEvent>? GrenadeThrown;
-    public Action<Source1WeaponOutofammoEvent>? WeaponOutofammo;
     public Action<Source1WeaponReloadEvent>? WeaponReload;
     public Action<Source1WeaponZoomEvent>? WeaponZoom;
     public Action<Source1SilencerDetachEvent>? SilencerDetach;
@@ -243,13 +241,7 @@ public partial class Source1GameEvents
     public Action<Source1SfuieventEvent>? Sfuievent;
     public Action<Source1StartVoteEvent>? StartVote;
     public Action<Source1PlayerGivenC4Event>? PlayerGivenC4;
-    public Action<Source1TrPlayerFlashbangedEvent>? TrPlayerFlashbanged;
-    public Action<Source1TrMarkCompleteEvent>? TrMarkComplete;
-    public Action<Source1TrMarkBestTimeEvent>? TrMarkBestTime;
-    public Action<Source1TrExitHintTriggerEvent>? TrExitHintTrigger;
     public Action<Source1BotTakeoverEvent>? BotTakeover;
-    public Action<Source1TrShowFinishMsgboxEvent>? TrShowFinishMsgbox;
-    public Action<Source1TrShowExitMsgboxEvent>? TrShowExitMsgbox;
     public Action<Source1JointeamFailedEvent>? JointeamFailed;
     public Action<Source1TeamchangePendingEvent>? TeamchangePending;
     public Action<Source1MaterialDefaultCompleteEvent>? MaterialDefaultComplete;
@@ -285,6 +277,7 @@ public partial class Source1GameEvents
     public Action<Source1TeamIntroEndEvent>? TeamIntroEnd;
     public Action<Source1BulletFlightResolutionEvent>? BulletFlightResolution;
     public Action<Source1GamePhaseChangedEvent>? GamePhaseChanged;
+    public Action<Source1ClientsideReloadCustomEconEvent>? ClientsideReloadCustomEcon;
 
     internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)
     {
@@ -2685,37 +2678,6 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
-            if (descriptor.Name == "items_gifted")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1ItemsGiftedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "player")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        if (key.Name == "itemdef")
-                            return (@this, x) => @this.Itemdef = x.ValLong;
-                        if (key.Name == "numgifts")
-                            return (@this, x) => @this.Numgifts = x.ValShort;
-                        if (key.Name == "giftidx")
-                            return (@this, x) => @this.Giftidx = x.ValLong;
-                        if (key.Name == "accountid")
-                            return (@this, x) => @this.Accountid = x.ValLong;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && ItemsGifted == null)
-                        return;
-                    var @this = new Source1ItemsGiftedEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    ItemsGifted?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
             if (descriptor.Name == "player_score")
             {
                 var keys = descriptor.Keys.Select(Action<Source1PlayerScoreEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -4422,31 +4384,6 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     GrenadeThrown?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "weapon_outofammo")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1WeaponOutofammoEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && WeaponOutofammo == null)
-                        return;
-                    var @this = new Source1WeaponOutofammoEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    WeaponOutofammo?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -6419,96 +6356,6 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
-            if (descriptor.Name == "tr_player_flashbanged")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TrPlayerFlashbangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TrPlayerFlashbanged == null)
-                        return;
-                    var @this = new Source1TrPlayerFlashbangedEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TrPlayerFlashbanged?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "tr_mark_complete")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TrMarkCompleteEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "complete")
-                            return (@this, x) => @this.Complete = x.ValShort;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TrMarkComplete == null)
-                        return;
-                    var @this = new Source1TrMarkCompleteEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TrMarkComplete?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "tr_mark_best_time")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TrMarkBestTimeEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "time")
-                            return (@this, x) => @this.Time = x.ValLong;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TrMarkBestTime == null)
-                        return;
-                    var @this = new Source1TrMarkBestTimeEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TrMarkBestTime?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "tr_exit_hint_trigger")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TrExitHintTriggerEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TrExitHintTrigger == null)
-                        return;
-                    var @this = new Source1TrExitHintTriggerEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TrExitHintTrigger?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
             if (descriptor.Name == "bot_takeover")
             {
                 var keys = descriptor.Keys.Select(Action<Source1BotTakeoverEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -6539,48 +6386,6 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     BotTakeover?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "tr_show_finish_msgbox")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TrShowFinishMsgboxEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TrShowFinishMsgbox == null)
-                        return;
-                    var @this = new Source1TrShowFinishMsgboxEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TrShowFinishMsgbox?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "tr_show_exit_msgbox")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TrShowExitMsgboxEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TrShowExitMsgbox == null)
-                        return;
-                    var @this = new Source1TrShowExitMsgboxEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TrShowExitMsgbox?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -7460,6 +7265,29 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     GamePhaseChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "clientside_reload_custom_econ")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1ClientsideReloadCustomEconEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "steamid")
+                            return (@this, x) => @this.SteamId = x.ValString;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && ClientsideReloadCustomEcon == null)
+                        return;
+                    var @this = new Source1ClientsideReloadCustomEconEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    ClientsideReloadCustomEcon?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -8616,24 +8444,6 @@ public partial class Source1GameuiHiddenEvent : Source1GameEventBase
     public override string GameEventName => "gameui_hidden";
 }
 
-public partial class Source1ItemsGiftedEvent : Source1GameEventBase
-{
-    internal Source1ItemsGiftedEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "items_gifted";
-
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
-
-    public int Itemdef { get; set; }
-
-    public int Numgifts { get; set; }
-
-    public int Giftidx { get; set; }
-
-    public int Accountid { get; set; }
-}
-
 public partial class Source1PlayerScoreEvent : Source1GameEventBase
 {
     internal Source1PlayerScoreEvent(DemoParser demo) : base(demo) {}
@@ -9455,19 +9265,6 @@ public partial class Source1GrenadeThrownEvent : Source1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public string Weapon { get; set; } = "";
-}
-
-public partial class Source1WeaponOutofammoEvent : Source1GameEventBase
-{
-    internal Source1WeaponOutofammoEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "weapon_outofammo";
-
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
-
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
-    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
 public partial class Source1WeaponReloadEvent : Source1GameEventBase
@@ -10458,41 +10255,6 @@ public partial class Source1PlayerGivenC4Event : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1TrPlayerFlashbangedEvent : Source1GameEventBase
-{
-    internal Source1TrPlayerFlashbangedEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "tr_player_flashbanged";
-
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
-}
-
-public partial class Source1TrMarkCompleteEvent : Source1GameEventBase
-{
-    internal Source1TrMarkCompleteEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "tr_mark_complete";
-
-    public int Complete { get; set; }
-}
-
-public partial class Source1TrMarkBestTimeEvent : Source1GameEventBase
-{
-    internal Source1TrMarkBestTimeEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "tr_mark_best_time";
-
-    public int Time { get; set; }
-}
-
-public partial class Source1TrExitHintTriggerEvent : Source1GameEventBase
-{
-    internal Source1TrExitHintTriggerEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "tr_exit_hint_trigger";
-}
-
 public partial class Source1BotTakeoverEvent : Source1GameEventBase
 {
     internal Source1BotTakeoverEvent(DemoParser demo) : base(demo) {}
@@ -10513,20 +10275,6 @@ public partial class Source1BotTakeoverEvent : Source1GameEventBase
     public float Y { get; set; }
 
     public float R { get; set; }
-}
-
-public partial class Source1TrShowFinishMsgboxEvent : Source1GameEventBase
-{
-    internal Source1TrShowFinishMsgboxEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "tr_show_finish_msgbox";
-}
-
-public partial class Source1TrShowExitMsgboxEvent : Source1GameEventBase
-{
-    internal Source1TrShowExitMsgboxEvent(DemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "tr_show_exit_msgbox";
 }
 
 public partial class Source1JointeamFailedEvent : Source1GameEventBase
@@ -10942,6 +10690,15 @@ public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
     public int NewPhase { get; set; }
 }
 
+public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBase
+{
+    internal Source1ClientsideReloadCustomEconEvent(DemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "clientside_reload_custom_econ";
+
+    public string SteamId { get; set; } = "";
+}
+
 [JsonDerivedType(typeof(Source1ServerSpawnEvent))]
 [JsonDerivedType(typeof(Source1ServerPreShutdownEvent))]
 [JsonDerivedType(typeof(Source1ServerShutdownEvent))]
@@ -11034,7 +10791,6 @@ public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1ClientsideLessonClosedEvent))]
 [JsonDerivedType(typeof(Source1DynamicShadowLightChangedEvent))]
 [JsonDerivedType(typeof(Source1GameuiHiddenEvent))]
-[JsonDerivedType(typeof(Source1ItemsGiftedEvent))]
 [JsonDerivedType(typeof(Source1PlayerScoreEvent))]
 [JsonDerivedType(typeof(Source1PlayerShootEvent))]
 [JsonDerivedType(typeof(Source1GameInitEvent))]
@@ -11102,7 +10858,6 @@ public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1WeaponFireEvent))]
 [JsonDerivedType(typeof(Source1WeaponFireOnEmptyEvent))]
 [JsonDerivedType(typeof(Source1GrenadeThrownEvent))]
-[JsonDerivedType(typeof(Source1WeaponOutofammoEvent))]
 [JsonDerivedType(typeof(Source1WeaponReloadEvent))]
 [JsonDerivedType(typeof(Source1WeaponZoomEvent))]
 [JsonDerivedType(typeof(Source1SilencerDetachEvent))]
@@ -11178,13 +10933,7 @@ public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1SfuieventEvent))]
 [JsonDerivedType(typeof(Source1StartVoteEvent))]
 [JsonDerivedType(typeof(Source1PlayerGivenC4Event))]
-[JsonDerivedType(typeof(Source1TrPlayerFlashbangedEvent))]
-[JsonDerivedType(typeof(Source1TrMarkCompleteEvent))]
-[JsonDerivedType(typeof(Source1TrMarkBestTimeEvent))]
-[JsonDerivedType(typeof(Source1TrExitHintTriggerEvent))]
 [JsonDerivedType(typeof(Source1BotTakeoverEvent))]
-[JsonDerivedType(typeof(Source1TrShowFinishMsgboxEvent))]
-[JsonDerivedType(typeof(Source1TrShowExitMsgboxEvent))]
 [JsonDerivedType(typeof(Source1JointeamFailedEvent))]
 [JsonDerivedType(typeof(Source1TeamchangePendingEvent))]
 [JsonDerivedType(typeof(Source1MaterialDefaultCompleteEvent))]
@@ -11220,6 +10969,7 @@ public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1TeamIntroEndEvent))]
 [JsonDerivedType(typeof(Source1BulletFlightResolutionEvent))]
 [JsonDerivedType(typeof(Source1GamePhaseChangedEvent))]
+[JsonDerivedType(typeof(Source1ClientsideReloadCustomEconEvent))]
 public partial class Source1GameEventBase
 {
 }
