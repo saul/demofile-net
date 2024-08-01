@@ -94,7 +94,7 @@ public partial class DemoParser
         _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
         if (CurrentDemoTick < _readFullPacketTick)
         {
-            await SkipToFullPacketTickAsync(_readFullPacketTick, cancellationToken).ConfigureAwait(false);
+            await SkipToFullPacketTickAsync(cancellationToken).ConfigureAwait(false);
         }
 
         // Advance ticks until we get to the target tick
@@ -115,15 +115,24 @@ public partial class DemoParser
         }
     }
 
-    private async ValueTask SkipToFullPacketTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
+    private async ValueTask SkipToFullPacketTickAsync(CancellationToken cancellationToken)
     {
-        while (CurrentDemoTick <= targetTick)
+        while (true)
         {
             var cmd = ReadCommandHeader();
 
-            // If we're at the target tick, jump back to the start of the command
-            if (CurrentDemoTick == targetTick && cmd.Command == EDemoCommands.DemFullPacket)
+            // If we're at or after the target tick, jump back to the start of the command
+            if (CurrentDemoTick >= _readFullPacketTick && cmd.Command == EDemoCommands.DemFullPacket)
             {
+                // #72: some demos are missing full packets where they should be
+                // e.g. in this demo, expect a DemFullPacket at 192001, but all full packets
+                // after this point are offset by another 1 tick:
+                //   192000 - DemPacket
+                //   192002 - DemPacket
+                //   192002 - DemFullPacket
+                // Update the full tick to seek to accordingly
+                _readFullPacketTick = CurrentDemoTick;
+
                 _stream.Position = _commandStartPosition;
                 return;
             }
@@ -141,8 +150,6 @@ public partial class DemoParser
                 _stream.Position += cmd.Size;
             }
         }
-
-        throw new InvalidDemoException($"Could not find {nameof(EDemoCommands.DemFullPacket)} at tick {targetTick}");
     }
 
     private void OnDemoFullPacket(CDemoFullPacket fullPacket)
