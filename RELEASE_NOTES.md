@@ -1,3 +1,7 @@
+### 0.16.1 (2024-08-01)
+
+- Fixed seeking failing for some demos ([#72](https://github.com/saul/demofile-net/issues/72)). Thanks to [@in0finite](https://github.com/in0finite) for reporting.
+
 ### 0.15.1 (2024-06-01)
 
 - Update schema and demo format for v14011 
