@@ -1,3 +1,7 @@
+### 0.16.2 (2024-08-01)
+
+- Fixed CBaseCSGrenade.GrenadeCount always being 1 ([#71](https://github.com/saul/demofile-net/issues/71))
+
 ### 0.16.1 (2024-08-01)
 
 - Fixed seeking failing for some demos ([#72](https://github.com/saul/demofile-net/issues/72)). Thanks to [@in0finite](https://github.com/in0finite) for reporting.
