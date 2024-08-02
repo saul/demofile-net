@@ -69,14 +69,15 @@ public partial class DemoParser
         targetTick = new DemoTick(Math.Max(targetTick.Value, _fullPacketTickOffset));
 
         var hasFullPacket = TryFindFullPacketBefore(targetTick, out var fullPacket);
+        var movedToFullPacket = false;
         if (targetTick <= CurrentDemoTick)
         {
             if (!hasFullPacket)
                 throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick} from {CurrentDemoTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
 
             // Seeking backwards. Jump back to the full packet to read the snapshot
-            (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
-            RestoreStringTables(stringTables);
+            RestoreFullPacket(fullPacket);
+            movedToFullPacket = true;
         }
         else
         {
@@ -85,16 +86,19 @@ public partial class DemoParser
             // Only read the full packet if the jump is far enough ahead
             if (hasFullPacket && deltaTicks.Value >= FullPacketInterval)
             {
-                (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
-                RestoreStringTables(stringTables);
+                RestoreFullPacket(fullPacket);
+                movedToFullPacket = true;
             }
         }
 
         // Keep reading commands until we reach the full packet
-        _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
-        if (CurrentDemoTick < _readFullPacketTick)
+        if (!movedToFullPacket)
         {
-            await SkipToFullPacketTickAsync(cancellationToken).ConfigureAwait(false);
+            _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
+            if (CurrentDemoTick < _readFullPacketTick)
+            {
+                await SkipToFullPacketTickAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         // Advance ticks until we get to the target tick
@@ -113,6 +117,13 @@ public partial class DemoParser
                 throw new EndOfStreamException($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {targetTick}");
             }
         }
+    }
+
+    private void RestoreFullPacket(FullPacketRecord fullPacket)
+    {
+        _readFullPacketTick = fullPacket.Tick;
+        (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
+        RestoreStringTables(stringTables);
     }
 
     private async ValueTask SkipToFullPacketTickAsync(CancellationToken cancellationToken)

@@ -1,3 +1,7 @@
+### 0.16.3 (2024-08-02)
+
+- Fixed backwards seeking failing for some demos ([#76](https://github.com/saul/demofile-net/issues/76))
+
 ### 0.16.2 (2024-08-01)
 
 - Fixed CBaseCSGrenade.GrenadeCount always being 1 ([#71](https://github.com/saul/demofile-net/issues/71))
