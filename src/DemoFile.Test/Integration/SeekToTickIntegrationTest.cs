@@ -105,21 +105,28 @@ public class SeekToTickIntegrationTest
         }
     }
 
-    [Test]
-    public async Task SeekToTick_ForwardBackwards()
+    public record ForwardBackwardsCase(MemoryStream Stream, DemoTick ExpectedTick);
+
+    private static ForwardBackwardsCase[] ForwardBackwardsCases =
+    {
+        new(GotvCompetitiveProtocol13992, new DemoTick(251327)),
+        new(GotvCompetitiveProtocol14008, new DemoTick(208021))
+    };
+
+    [TestCaseSource(nameof(ForwardBackwardsCases))]
+    public async Task SeekToTick_ForwardBackwards(ForwardBackwardsCase testCase)
     {
         // Arrange
         var demo = new DemoParser();
         var skipInterval = TimeSpan.FromSeconds(77);
 
         // Act
-        await demo.StartReadingAsync(GotvCompetitiveProtocol13992, default);
+        await demo.StartReadingAsync(testCase.Stream, default);
         demo.DemoEvents.DemoFileInfo += e =>
         {
             var x = demo;
             Console.WriteLine(e);
         };
-
 
         var nextSkipTick = DemoTick.Zero + skipInterval;
         DemoTick? nextSkipBackTick = DemoTick.Zero + skipInterval.Divide(2);
@@ -143,6 +150,6 @@ public class SeekToTickIntegrationTest
         }
 
         // Assert
-        Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(251327));
+        Assert.That(demo.CurrentDemoTick, Is.EqualTo(testCase.ExpectedTick));
     }
 }

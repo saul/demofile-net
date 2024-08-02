@@ -10,6 +10,8 @@ public static class GlobalUtil
 
     public static MemoryStream GotvCompetitiveProtocol13992 => new(File.ReadAllBytes(Path.Combine(DemoBase, "virtus-pro-vs-natus-vincere-m1-ancient.dem")));
 
+    public static MemoryStream GotvCompetitiveProtocol14008 => new(File.ReadAllBytes(Path.Combine(DemoBase, "mouz-nxt-vs-space-m1-vertigo.dem")));
+
     public static MemoryStream MatchmakingProtocol13968 => new(File.ReadAllBytes(Path.Combine(DemoBase, "93n781.dem")));
 
     public static MemoryStream GotvProtocol13978 => new(File.ReadAllBytes(Path.Combine(DemoBase, "13978.dem")));
