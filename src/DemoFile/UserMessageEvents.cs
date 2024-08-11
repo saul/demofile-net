@@ -57,6 +57,7 @@ public struct UserMessageEvents
     {
         switch (msgType)
         {
+            /*
             case (int)EBaseUserMessages.UmAchievementEvent:
                 UserMessageAchievementEvent?.Invoke(CUserMessageAchievementEvent.Parser.ParseFrom(buf));
                 return true;
@@ -96,12 +97,14 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmRumble:
                 UserMessageRumble?.Invoke(CUserMessageRumble.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseUserMessages.UmSayText:
                 UserMessageSayText?.Invoke(CUserMessageSayText.Parser.ParseFrom(buf));
                 return true;
             case (int)EBaseUserMessages.UmSayText2:
                 UserMessageSayText2?.Invoke(CUserMessageSayText2.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseUserMessages.UmSayTextChannel:
                 UserMessageSayTextChannel?.Invoke(CUserMessageSayTextChannel.Parser.ParseFrom(buf));
                 return true;
@@ -111,9 +114,11 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmShakeDir:
                 UserMessageShakeDir?.Invoke(CUserMessageShakeDir.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseUserMessages.UmTextMsg:
                 UserMessageTextMsg?.Invoke(CUserMessageTextMsg.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseUserMessages.UmScreenTilt:
                 UserMessageScreenTilt?.Invoke(CUserMessageScreenTilt.Parser.ParseFrom(buf));
                 return true;
@@ -201,6 +206,7 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmPlayResponseConditional:
                 UserMessagePlayResponseConditional?.Invoke(CUserMessage_PlayResponseConditional.Parser.ParseFrom(buf));
                 return true;
+            */
         }
 
         return false;
