@@ -3,6 +3,7 @@
 - Add new `BulletDamage` Source1 game event
 - Parse `cs_gameevents.proto` messages (specifically CMsgTEFireBullets on `DemoFile.CsgoGameEvents.FireBullets`)
 - Parse `te.proto` (temporary entities) via `DemoFile.TempEntityEvents`
+- Don't try to parse messages that are never seen in demos (to improve performance)
 
 ### 0.16.3 (2024-08-02)
 
