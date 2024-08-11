@@ -1,3 +1,9 @@
+### 0.17.1 (2024-08-11)
+
+- Add new `BulletDamage` Source1 game event
+- Parse `cs_gameevents.proto` messages (specifically CMsgTEFireBullets on `DemoFile.CsgoGameEvents.FireBullets`)
+- Parse `te.proto` (temporary entities) via `DemoFile.TempEntityEvents`
+
 ### 0.16.3 (2024-08-02)
 
 - Fixed backwards seeking failing for some demos ([#76](https://github.com/saul/demofile-net/issues/76))

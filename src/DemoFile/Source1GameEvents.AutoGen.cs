@@ -138,6 +138,7 @@ public partial class Source1GameEvents
     public Action<Source1DoorBreakEvent>? DoorBreak;
     public Action<Source1AddBulletHitMarkerEvent>? AddBulletHitMarker;
     public Action<Source1OtherDeathEvent>? OtherDeath;
+    public Action<Source1BulletDamageEvent>? BulletDamage;
     public Action<Source1ItemPurchaseEvent>? ItemPurchase;
     public Action<Source1BombBeginplantEvent>? BombBeginplant;
     public Action<Source1BombAbortplantEvent>? BombAbortplant;
@@ -3664,6 +3665,49 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     OtherDeath?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "bullet_damage")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1BulletDamageEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "victim")
+                            return (@this, x) => @this.VictimIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
+                        if (key.Name == "victim_pawn")
+                            return (@this, x) => @this.VictimPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                        if (key.Name == "attacker")
+                            return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
+                        if (key.Name == "attacker_pawn")
+                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                        if (key.Name == "distance")
+                            return (@this, x) => @this.Distance = x.ValFloat;
+                        if (key.Name == "damage_dir_x")
+                            return (@this, x) => @this.DamageDirX = x.ValFloat;
+                        if (key.Name == "damage_dir_y")
+                            return (@this, x) => @this.DamageDirY = x.ValFloat;
+                        if (key.Name == "damage_dir_z")
+                            return (@this, x) => @this.DamageDirZ = x.ValFloat;
+                        if (key.Name == "num_penetrations")
+                            return (@this, x) => @this.NumPenetrations = x.ValByte;
+                        if (key.Name == "no_scope")
+                            return (@this, x) => @this.NoScope = x.ValBool;
+                        if (key.Name == "in_air")
+                            return (@this, x) => @this.InAir = x.ValBool;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && BulletDamage == null)
+                        return;
+                    var @this = new Source1BulletDamageEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    BulletDamage?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -8898,6 +8942,39 @@ public partial class Source1OtherDeathEvent : Source1GameEventBase
     public bool Attackerblind { get; set; }
 }
 
+public partial class Source1BulletDamageEvent : Source1GameEventBase
+{
+    internal Source1BulletDamageEvent(DemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "bullet_damage";
+
+    public CEntityIndex VictimIndex { get; set; }
+    public CCSPlayerController? Victim => _demo.GetEntityByIndex<CCSPlayerController>(VictimIndex);
+
+    public CHandle<CEntityInstance> VictimPawnHandle { get; set; }
+    public CCSPlayerPawn? VictimPawn => _demo.GetEntityByHandle(VictimPawnHandle) as CCSPlayerPawn;
+
+    public CEntityIndex AttackerIndex { get; set; }
+    public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
+
+    public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
+    public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
+
+    public float Distance { get; set; }
+
+    public float DamageDirX { get; set; }
+
+    public float DamageDirY { get; set; }
+
+    public float DamageDirZ { get; set; }
+
+    public int NumPenetrations { get; set; }
+
+    public bool NoScope { get; set; }
+
+    public bool InAir { get; set; }
+}
+
 public partial class Source1ItemPurchaseEvent : Source1GameEventBase
 {
     internal Source1ItemPurchaseEvent(DemoParser demo) : base(demo) {}
@@ -10830,6 +10907,7 @@ public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBa
 [JsonDerivedType(typeof(Source1DoorBreakEvent))]
 [JsonDerivedType(typeof(Source1AddBulletHitMarkerEvent))]
 [JsonDerivedType(typeof(Source1OtherDeathEvent))]
+[JsonDerivedType(typeof(Source1BulletDamageEvent))]
 [JsonDerivedType(typeof(Source1ItemPurchaseEvent))]
 [JsonDerivedType(typeof(Source1BombBeginplantEvent))]
 [JsonDerivedType(typeof(Source1BombAbortplantEvent))]
