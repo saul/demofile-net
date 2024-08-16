@@ -1,3 +1,7 @@
+### 0.18.1 (2024-08-16)
+
+- Update schema and demo format for v14026
+
 ### 0.17.1 (2024-08-11)
 
 - Add new `BulletDamage` Source1 game event
