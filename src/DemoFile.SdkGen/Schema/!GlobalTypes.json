@@ -3804,48 +3804,24 @@
           "value": 2
         },
         {
-          "name": "ColorBrightGreen",
+          "name": "ColorRedLVL2",
           "value": 3
         },
         {
-          "name": "EntityMech",
+          "name": "ColorRedLVL3",
           "value": 4
         },
         {
-          "name": "EntityAntlion",
+          "name": "ColorRedLVL4",
           "value": 5
         },
         {
-          "name": "EntityZombie",
+          "name": "ColorRedLVL5",
           "value": 6
         },
         {
-          "name": "EntityBlob",
-          "value": 7
-        },
-        {
-          "name": "EntityBlobFrozen",
-          "value": 8
-        },
-        {
-          "name": "ColorRedLVL2",
-          "value": 9
-        },
-        {
-          "name": "ColorRedLVL3",
-          "value": 10
-        },
-        {
-          "name": "ColorRedLVL4",
-          "value": 11
-        },
-        {
-          "name": "ColorRedLVL5",
-          "value": 12
-        },
-        {
           "name": "ColorRedLVL6",
-          "value": 13
+          "value": 7
         }
       ]
     },
@@ -7747,6 +7723,10 @@
         {
           "name": "WINGMAN_INTRO",
           "value": 8
+        },
+        {
+          "name": "BANNER",
+          "value": 9
         }
       ]
     },
@@ -11393,15 +11373,6 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCSGameModeScript_ConVars": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings"
         }
       ],
       "fields": [
@@ -21430,15 +21401,6 @@
     },
     "CPulseCell_Outflow_ScriptedSequence::CursorState_t": {
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCSDeathmatchScript_ConVars": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings"
-        }
       ],
       "fields": [
       ]
