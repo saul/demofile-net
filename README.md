@@ -13,13 +13,13 @@ Easy discoverability of available data through your IDE's inbuilt autocompletion
 
 ## Features
 
-| Feature                                           | Availability      |
-|---------------------------------------------------|-------------------|
-| CSTV / GOTV demos                                 | ✅ Full support    |
-| POV demos                                         | ➖ Support planned |
-| Game events (e.g. `player_death`)                 | ✅ Full support    |
-| Entity updates (player positions, grenades, etc.) | ✅ Full support    |
-| Seeking forwards/backwards through the demo       | ✅ Full support    |
+| Feature                                           | Availability   |
+|---------------------------------------------------|----------------|
+| CSTV / GOTV demos                                 | ✅ Full support |
+| POV demos                                         | ✅ Full support |
+| Game events (e.g. `player_death`)                 | ✅ Full support |
+| Entity updates (player positions, grenades, etc.) | ✅ Full support |
+| Seeking forwards/backwards through the demo       | ✅ Full support |
 
 ## Examples
 

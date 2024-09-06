@@ -1,3 +1,7 @@
+### 0.19.1 (2024-09-07)
+
+- Added support for POV demos
+
 ### 0.18.1 (2024-08-16)
 
 - Update schema and demo format for v14026
