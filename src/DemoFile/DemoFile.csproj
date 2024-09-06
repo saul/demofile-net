@@ -50,6 +50,11 @@
     <Protobuf Include="../../protos/gameevents.proto" />
     <Protobuf Include="../../protos/cs_gameevents.proto" />
     <Protobuf Include="../../protos/usermessages.proto" />
+    <Protobuf Include="../../protos/cstrike15_usermessages.proto" />
+    <Protobuf Include="../../protos/cstrike15_gcmessages.proto" />
+    <Protobuf Include="../../protos/steammessages.proto" />
+    <Protobuf Include="../../protos/engine_gcmessages.proto" />
+    <Protobuf Include="../../protos/gcsdk_gcmessages.proto" />
     <Protobuf Include="../../protos/te.proto" />
   </ItemGroup>
 

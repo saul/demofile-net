@@ -22,6 +22,7 @@ public sealed partial class DemoParser
     private PacketEvents _packetEvents;
     private Stream _stream;
     private UserMessageEvents _userMessageEvents;
+    private CsUserMessageEvents _csUserMessageEvents;
     private TempEntityEvents _tempEntityEvents;
     private CsgoGameEvents _csgoGameEvents;
 
@@ -76,6 +77,7 @@ public sealed partial class DemoParser
     public ref GameEvents GameEvents => ref _gameEvents;
     public ref PacketEvents PacketEvents => ref _packetEvents;
     public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
+    public ref CsUserMessageEvents CsUserMessageEvents => ref _csUserMessageEvents;
     public Source1GameEvents Source1GameEvents => _source1GameEvents;
     public ref EntityEvents EntityEvents => ref _entityEvents;
     public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
@@ -139,7 +141,8 @@ public sealed partial class DemoParser
                 && !_gameEvents.ParseGameEvent(queued.MsgType, msgBuf)
                 && !_userMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
                 && !_tempEntityEvents.ParseNetMessage(queued.MsgType, msgBuf)
-                && !_csgoGameEvents.ParseNetMessage(queued.MsgType, msgBuf))
+                && !_csgoGameEvents.ParseNetMessage(queued.MsgType, msgBuf)
+                && !_csUserMessageEvents.ParseUserMessage(queued.MsgType, msgBuf))
             {
             }
 
