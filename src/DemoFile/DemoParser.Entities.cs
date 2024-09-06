@@ -327,6 +327,7 @@ public partial class DemoParser
             else if (updateType == 0b10)
             {
                 // FHDR_ENTERPVS
+
                 Debug.Assert(!alternateBaselines.ContainsKey(entityIndex));
 
                 var classId = entityBitBuffer.ReadUBits(_serverClassBits);
@@ -362,9 +363,9 @@ public partial class DemoParser
                 }
 
                 // Grab the server class baseline and populate the entity with it
-                else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIdx))
+                else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
                 {
-                    instanceBaselineBytes = _instanceBaselines[baselineIdx].Value;
+                    instanceBaselineBytes = _instanceBaselines[baselineIndex].Value;
                     var baselineBuf = new BitBuffer(instanceBaselineBytes);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
