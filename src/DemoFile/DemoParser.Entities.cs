@@ -258,9 +258,9 @@ public partial class DemoParser
 
         var otherBaselineIdx = msg.Baseline == 0 ? 1 : 0;
 
-        IReadOnlyDictionary<int, uint> alternateBaselines = msg.AlternateBaselines.Count == 0
-            ? ImmutableDictionary<int, uint>.Empty
-            : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => (uint)x.BaselineIndex);
+        IReadOnlyDictionary<int, int> alternateBaselines = msg.AlternateBaselines.Count == 0
+            ? ImmutableDictionary<int, int>.Empty
+            : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => x.BaselineIndex);
 
         var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;
