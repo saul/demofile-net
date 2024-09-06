@@ -17,7 +17,7 @@ public partial class DemoParser
 {
     private readonly record struct EntityBaseline(
         uint ServerClassId,
-        ImmutableList<byte[]>? Baselines);
+        ImmutableList<byte[]> Baselines);
 
     // https://github.com/dotabuff/manta/blob/master/entity.go#L186-L190
     internal const int MaxEdictBits = 14;
@@ -256,6 +256,8 @@ public partial class DemoParser
             _serverClasses.Length > 0 && _serializers.Count > 0,
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
+        var otherBaselineIdx = msg.Baseline == 0 ? 1 : 0;
+
         IReadOnlyDictionary<int, uint> alternateBaselines = msg.AlternateBaselines.Count == 0
             ? ImmutableDictionary<int, uint>.Empty
             : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => (uint)x.BaselineIndex);
@@ -342,15 +344,11 @@ public partial class DemoParser
                 EntityBaseline existingEntityBaseline = default;
                 byte[]? instanceBaselineBytes = null;
 
-                // Does this entity have an alternate baseline?
-                if (alternateBaselines.TryGetValue(entityIndex, out var alternateBaseline))
-                {
-                    instanceBaselineBytes = _instanceBaselines[_instanceBaselineLookup[new BaselineKey(classId, alternateBaseline)]].Value;
-                }
-
-                else if (msg.LegacyIsDelta
-                     && _entityBaselines[msg.Baseline][entityIndex] is { ServerClassId: var baselineClassId, Baselines: not null } entityBaseline
-                     && baselineClassId == classId)
+                // Entity baselines are preferred over instance baselines
+                if (msg.LegacyIsDelta
+                    && _entityBaselines[msg.Baseline][entityIndex] is { ServerClassId: var baselineClassId } entityBaseline
+                    && baselineClassId == classId
+                    && classId > 0)
                 {
                     Debug.Assert(entityBaseline.Baselines != null);
 
@@ -367,16 +365,13 @@ public partial class DemoParser
                 else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIdx))
                 {
                     instanceBaselineBytes = _instanceBaselines[baselineIdx].Value;
-                }
-
-                if (instanceBaselineBytes != null)
-                {
                     var baselineBuf = new BitBuffer(instanceBaselineBytes);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 
                 if (msg.UpdateBaseline)
                 {
+                    // Take a copy of just the bits that represent the delta on this entity
                     var cloned = entityBitBuffer.Clone();
                     var prevBitsRead = entityBitBuffer.TellBits;
                     ReadNewEntity(ref entityBitBuffer, entity);
@@ -385,14 +380,24 @@ public partial class DemoParser
                     var newBaseline = new byte[(bitsRead + 7) / 8];
                     cloned.ReadBitsAsBytes(newBaseline, bitsRead);
 
-                    if (instanceBaselineBytes != null)
-                    {
-                        existingEntityBaseline = new EntityBaseline(classId, ImmutableList.Create<byte[]>(instanceBaselineBytes));
-                    }
+                    Debug.Assert(existingEntityBaseline != default || instanceBaselineBytes != null);
 
-                    _entityBaselines[msg.Baseline == 0 ? 1 : 0][entityIndex] = existingEntityBaseline == default
-                        ? new EntityBaseline(classId, ImmutableList.Create<byte[]>(newBaseline))
-                        : existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines!.Add(newBaseline)};
+                    // Over the course of a sample 35 min POV demo, the histogram of `Baselines.Count` is:
+                    // [2] = {int} 7365
+                    // [3] = {int} 2177
+                    // [4] = {int} 1053
+                    // [5] = {int} 853
+                    // [6] = {int} 394
+                    // [7] = {int} 262
+                    // [8] = {int} 37
+                    // [9] = {int} 13
+                    // [10] = {int} 15
+                    // [11] = {int} 5
+                    // [12] = {int} 8
+
+                    _entityBaselines[otherBaselineIdx][entityIndex] = instanceBaselineBytes != null
+                        ? new EntityBaseline(classId, ImmutableList.Create(instanceBaselineBytes, newBaseline))
+                        : existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines.Add(newBaseline)};
                 }
                 else
                 {
