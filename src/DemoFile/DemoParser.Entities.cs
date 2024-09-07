@@ -15,12 +15,22 @@ public readonly record struct EntityContext(
 
 public partial class DemoParser
 {
+    private readonly record struct EntityBaseline(
+        uint ServerClassId,
+        ImmutableList<byte[]> Baselines);
+
     // https://github.com/dotabuff/manta/blob/master/entity.go#L186-L190
     internal const int MaxEdictBits = 14;
     internal const int MaxEdicts = 1 << MaxEdictBits;
     internal const int NumEHandleSerialNumberBits = 17;
 
     private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
+    private readonly EntityBaseline[][] _entityBaselines =
+    {
+        new EntityBaseline[MaxEdicts],
+        new EntityBaseline[MaxEdicts],
+    };
+
     private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
 
     private CHandle<CCSGameRulesProxy> _gameRulesHandle;
@@ -246,7 +256,7 @@ public partial class DemoParser
             _serverClasses.Length > 0 && _serializers.Count > 0,
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
-        Debug.Assert(!msg.UpdateBaseline);
+        var otherBaselineIdx = msg.Baseline == 0 ? 1 : 0;
 
         IReadOnlyDictionary<int, int> alternateBaselines = msg.AlternateBaselines.Count == 0
             ? ImmutableDictionary<int, int>.Empty
@@ -267,6 +277,9 @@ public partial class DemoParser
                 entity.FireDeleteEvent();
                 entitiesToDelete[entityDeleteIdx++] = entity;
             }
+
+            ((Span<EntityBaseline>)_entityBaselines[0]).Clear();
+            ((Span<EntityBaseline>)_entityBaselines[1]).Clear();
         }
 
         var entityBitBuffer = new BitBuffer(msg.EntityData.Span);
@@ -291,19 +304,24 @@ public partial class DemoParser
                 Debug.Assert(msg.LegacyIsDelta, "Deletion on full update");
 
                 // FHDR_LEAVEPVS
-                var entity = _entities[entityIndex] ?? throw new Exception($"LeavePvs on non-existent entity {entityIndex}");
-                if (entity.IsActive)
-                {
-                    entity.IsActive = false;
-                    // todo: fire event: EntityLeavePvs
-                }
 
-                if (updateType == 0b11)
+                // In POV demos, we can see an entity be deleted on consecutive ticks,
+                // so check the entity exists first.
+                if (_entities[entityIndex] is {} entity)
                 {
-                    // FHDR_LEAVEPVS | FHDR_DELETE
-                    entity.IsActive = false;
-                    entity.FireDeleteEvent();
-                    entitiesToDelete[entityDeleteIdx++] = entity;
+                    if (entity.IsActive)
+                    {
+                        entity.IsActive = false;
+                        // todo: fire event: EntityLeavePvs
+                    }
+
+                    if (updateType == 0b11)
+                    {
+                        // FHDR_LEAVEPVS | FHDR_DELETE
+                        entity.IsActive = false;
+                        entity.FireDeleteEvent();
+                        entitiesToDelete[entityDeleteIdx++] = entity;
+                    }
                 }
             }
             else if (updateType == 0b10)
@@ -324,14 +342,68 @@ public partial class DemoParser
                 var context = new EntityContext(this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
                 var entity = serverClass.EntityFactory(context);
 
-                // Grab the server class baseline and populate the entity with it
-                if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
+                EntityBaseline existingEntityBaseline = default;
+                byte[]? instanceBaselineBytes = null;
+
+                // Entity baselines are preferred over instance baselines
+                if (msg.LegacyIsDelta
+                    && _entityBaselines[msg.Baseline][entityIndex] is { ServerClassId: var baselineClassId } entityBaseline
+                    && baselineClassId == classId
+                    && classId > 0)
                 {
-                    var baselineBuf = new BitBuffer(_instanceBaselines[baselineIndex].Value);
+                    Debug.Assert(entityBaseline.Baselines != null);
+
+                    foreach (var baseline in entityBaseline.Baselines)
+                    {
+                        var baselineBuf = new BitBuffer(baseline);
+                        ReadNewEntity(ref baselineBuf, entity);
+                    }
+
+                    existingEntityBaseline = entityBaseline;
+                }
+
+                // Grab the server class baseline and populate the entity with it
+                else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
+                {
+                    instanceBaselineBytes = _instanceBaselines[baselineIndex].Value;
+                    var baselineBuf = new BitBuffer(instanceBaselineBytes);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 
-                ReadNewEntity(ref entityBitBuffer, entity);
+                if (msg.UpdateBaseline)
+                {
+                    // Take a copy of just the bits that represent the delta on this entity
+                    var cloned = entityBitBuffer.Clone();
+                    var prevBitsRead = entityBitBuffer.TellBits;
+                    ReadNewEntity(ref entityBitBuffer, entity);
+                    var bitsRead = entityBitBuffer.TellBits - prevBitsRead;
+
+                    var newBaseline = new byte[(bitsRead + 7) / 8];
+                    cloned.ReadBitsAsBytes(newBaseline, bitsRead);
+
+                    Debug.Assert(existingEntityBaseline != default || instanceBaselineBytes != null);
+
+                    // Over the course of a sample 35 min POV demo, the histogram of `Baselines.Count` is:
+                    // [2] = {int} 7365
+                    // [3] = {int} 2177
+                    // [4] = {int} 1053
+                    // [5] = {int} 853
+                    // [6] = {int} 394
+                    // [7] = {int} 262
+                    // [8] = {int} 37
+                    // [9] = {int} 13
+                    // [10] = {int} 15
+                    // [11] = {int} 5
+                    // [12] = {int} 8
+
+                    _entityBaselines[otherBaselineIdx][entityIndex] = instanceBaselineBytes != null
+                        ? new EntityBaseline(classId, ImmutableList.Create(instanceBaselineBytes, newBaseline))
+                        : existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines.Add(newBaseline)};
+                }
+                else
+                {
+                    ReadNewEntity(ref entityBitBuffer, entity);
+                }
 
                 entity.IsActive = true;
 

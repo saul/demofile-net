@@ -40,6 +40,7 @@ public class DemoParserIntegrationTest
         new("v13990_dm", GotvProtocol13990Deathmatch),
         new("v14005", GotvProtocol14005),
         new("v14011", GotvProtocol14011),
+        new("pov_14000", Pov14000),
     };
 
     [TestCaseSource(nameof(CompatibilityCases))]
