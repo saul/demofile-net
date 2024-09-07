@@ -17,7 +17,7 @@ public partial class DemoParser
 {
     private readonly record struct EntityBaseline(
         uint ServerClassId,
-        ImmutableList<byte[]> Baselines);
+        ImmutableList<ReadOnlyMemory<byte>> Baselines);
 
     // https://github.com/dotabuff/manta/blob/master/entity.go#L186-L190
     internal const int MaxEdictBits = 14;
@@ -343,7 +343,7 @@ public partial class DemoParser
                 var entity = serverClass.EntityFactory(context);
 
                 EntityBaseline existingEntityBaseline = default;
-                byte[]? instanceBaselineBytes = null;
+                var instanceBaselineBytes = ReadOnlyMemory<byte>.Empty;
 
                 // Entity baselines are preferred over instance baselines
                 if (msg.LegacyIsDelta
@@ -355,7 +355,7 @@ public partial class DemoParser
 
                     foreach (var baseline in entityBaseline.Baselines)
                     {
-                        var baselineBuf = new BitBuffer(baseline);
+                        var baselineBuf = new BitBuffer(baseline.Span);
                         ReadNewEntity(ref baselineBuf, entity);
                     }
 
@@ -366,7 +366,7 @@ public partial class DemoParser
                 else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
                 {
                     instanceBaselineBytes = _instanceBaselines[baselineIndex].Value;
-                    var baselineBuf = new BitBuffer(instanceBaselineBytes);
+                    var baselineBuf = new BitBuffer(instanceBaselineBytes.Span);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 
@@ -381,7 +381,7 @@ public partial class DemoParser
                     var newBaseline = new byte[(bitsRead + 7) / 8];
                     cloned.ReadBitsAsBytes(newBaseline, bitsRead);
 
-                    Debug.Assert(existingEntityBaseline != default || instanceBaselineBytes != null);
+                    Debug.Assert(existingEntityBaseline != default || !instanceBaselineBytes.IsEmpty);
 
                     // Over the course of a sample 35 min POV demo, the histogram of `Baselines.Count` is:
                     // [2] = {int} 7365
@@ -396,9 +396,9 @@ public partial class DemoParser
                     // [11] = {int} 5
                     // [12] = {int} 8
 
-                    _entityBaselines[otherBaselineIdx][entityIndex] = instanceBaselineBytes != null
-                        ? new EntityBaseline(classId, ImmutableList.Create(instanceBaselineBytes, newBaseline))
-                        : existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines.Add(newBaseline)};
+                    _entityBaselines[otherBaselineIdx][entityIndex] = instanceBaselineBytes.IsEmpty
+                        ? existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines.Add(newBaseline)}
+                        : new EntityBaseline(classId, ImmutableList.Create(instanceBaselineBytes, newBaseline));
                 }
                 else
                 {
@@ -450,7 +450,7 @@ public partial class DemoParser
                     var (savedBaseline, baselineBytes) = _instanceBaselines[alternateBaseline];
                     Debug.Assert(savedBaseline.ServerClassId == entity.ServerClass.ServerClassId);
 
-                    var baselineBuf = new BitBuffer(baselineBytes);
+                    var baselineBuf = new BitBuffer(baselineBytes.Span);
                     ReadNewEntity(ref baselineBuf, entity);
                 }
 

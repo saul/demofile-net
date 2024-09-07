@@ -19,7 +19,7 @@ public partial class DemoParser
     private readonly List<StringTable> _stringTableList = new();
 
     private readonly Dictionary<BaselineKey, int> _instanceBaselineLookup = new();
-    private KeyValuePair<BaselineKey, byte[]>[] _instanceBaselines = new KeyValuePair<BaselineKey, byte[]>[64];
+    private KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[] _instanceBaselines = new KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[64];
     private CMsgPlayerInfo?[] _playerInfos = new CMsgPlayerInfo?[16];
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
@@ -62,7 +62,7 @@ public partial class DemoParser
         stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries);
     }
 
-    private void RestoreStringTables(ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>> snapshot)
+    private void RestoreStringTables(ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>> snapshot)
     {
         foreach (var stringTable in _stringTableList)
         {
@@ -83,13 +83,13 @@ public partial class DemoParser
         var stringTable = _stringTables[snapshot.TableName];
 
         var newEntries = snapshot.Items
-            .Select(item => KeyValuePair.Create(item.Str, item.Data.ToArray()))
+            .Select(item => KeyValuePair.Create(item.Str, item.Data.Memory))
             .ToImmutableList();
 
         stringTable.ReplaceWith(newEntries);
     }
 
-    private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, byte[]>? entry)
+    private void OnInstanceBaselineUpdate(int index, KeyValuePair<string, ReadOnlyMemory<byte>>? entry)
     {
         if (index >= _instanceBaselines.Length)
         {
@@ -126,7 +126,7 @@ public partial class DemoParser
         }
     }
 
-    private void OnUserInfoUpdate(int index, KeyValuePair<string, byte[]>? entry)
+    private void OnUserInfoUpdate(int index, KeyValuePair<string, ReadOnlyMemory<byte>>? entry)
     {
         if (index >= _playerInfos.Length)
         {
@@ -135,7 +135,7 @@ public partial class DemoParser
         }
 
         _playerInfos[index] = entry?.Value is {Length: >0} userInfo
-            ? CMsgPlayerInfo.Parser.ParseFrom(userInfo)
+            ? CMsgPlayerInfo.Parser.ParseFrom(userInfo.Span)
             : null;
     }
 }

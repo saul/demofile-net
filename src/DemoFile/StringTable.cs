@@ -1,16 +1,15 @@
 ﻿using System.Buffers;
 using System.Collections.Immutable;
 using System.Diagnostics;
-using System.Diagnostics.Contracts;
 using Snappier;
 
 namespace DemoFile;
 
 public class StringTable
 {
-    public delegate void UpdateCallback(int index, KeyValuePair<string, byte[]>? entry);
+    public delegate void UpdateCallback(int index, KeyValuePair<string, ReadOnlyMemory<byte>>? entry);
 
-    private readonly List<KeyValuePair<string, byte[]>> _entries = new();
+    private readonly List<KeyValuePair<string, ReadOnlyMemory<byte>>> _entries = new();
     private readonly int _flags;
     private readonly bool _isBitcountVarint;
     private readonly bool _isUserDataFixedSize;
@@ -31,7 +30,7 @@ public class StringTable
 
     public string Name { get; }
 
-    public IReadOnlyList<KeyValuePair<string, byte[]>> Entries => _entries.ToImmutableList();
+    public IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>> Entries => _entries.ToImmutableList();
 
     public override string ToString() => $"StringTable {{ {Name}, Entries = {_entries.Count} }}";
 
@@ -119,7 +118,7 @@ public class StringTable
                 }
             }
 
-            var entry = new KeyValuePair<string, byte[]>(key, value);
+            var entry = new KeyValuePair<string, ReadOnlyMemory<byte>>(key, value);
 
             if (index == _entries.Count)
                 _entries.Add(entry);
@@ -132,7 +131,7 @@ public class StringTable
         ArrayPool<string>.Shared.Return(keys);
     }
 
-    internal void ReplaceWith(IReadOnlyList<KeyValuePair<string, byte[]>> items)
+    internal void ReplaceWith(IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>> items)
     {
         for (var index = 0; index < items.Count; index++)
         {
@@ -150,7 +149,7 @@ public class StringTable
             Debug.Assert(existing.Key == entry.Key, "String table entry changed on snapshot");
 
             // If the user data has changed, invoke the change callback
-            if (!existing.Value.SequenceEqual(entry.Value))
+            if (!existing.Value.Span.SequenceEqual(entry.Value.Span))
             {
                 _entries[index] = entry;
                 _onUpdatedEntry?.Invoke(index, entry);

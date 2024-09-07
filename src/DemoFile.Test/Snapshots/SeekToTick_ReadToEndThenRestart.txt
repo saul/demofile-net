@@ -1,0 +1,1567 @@
+[1] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+[1] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Virtus.pro) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Natus Vincere) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #228: CCSMinimapBoundary (Index = 228, Serial = 576) { Active = True, Index = 228, Serial = 576 }
+  #229: CCSMinimapBoundary (Index = 229, Serial = 569) { Active = True, Index = 229, Serial = 569 }
+  #230: CCSMinimapBoundary (Index = 230, Serial = 261) { Active = True, Index = 230, Serial = 261 }
+  #231: CCSMinimapBoundary (Index = 231, Serial = 170) { Active = True, Index = 231, Serial = 170 }
+  #233: CPhysicsPropMultiplayer (Index = 233, Serial = 769) { Active = True, Index = 233, Serial = 769 }
+  #234: CPhysicsPropMultiplayer (Index = 234, Serial = 572) { Active = True, Index = 234, Serial = 572 }
+  #235: CPhysicsPropMultiplayer (Index = 235, Serial = 829) { Active = True, Index = 235, Serial = 829 }
+  #236: CPhysicsPropMultiplayer (Index = 236, Serial = 390) { Active = True, Index = 236, Serial = 390 }
+  #237: CPhysicsPropMultiplayer (Index = 237, Serial = 807) { Active = True, Index = 237, Serial = 807 }
+  #238: CPhysicsPropMultiplayer (Index = 238, Serial = 165) { Active = True, Index = 238, Serial = 165 }
+  #239: CPhysicsPropMultiplayer (Index = 239, Serial = 759) { Active = True, Index = 239, Serial = 759 }
+  #240: CPhysicsPropMultiplayer (Index = 240, Serial = 504) { Active = True, Index = 240, Serial = 504 }
+  #241: CPhysicsPropMultiplayer (Index = 241, Serial = 363) { Active = True, Index = 241, Serial = 363 }
+  #242: CDynamicProp (Index = 242, Serial = 1006) { Active = True, Index = 242, Serial = 1006 }
+  #243: CDynamicProp (Index = 243, Serial = 350) { Active = True, Index = 243, Serial = 350 }
+  #244: CDynamicProp (Index = 244, Serial = 260) { Active = True, Index = 244, Serial = 260 }
+  #245: CDynamicProp (Index = 245, Serial = 312) { Active = True, Index = 245, Serial = 312 }
+  #246: CDynamicProp (Index = 246, Serial = 185) { Active = True, Index = 246, Serial = 185 }
+  #247: CDynamicProp (Index = 247, Serial = 918) { Active = True, Index = 247, Serial = 918 }
+  #248: CParticleSystem (Index = 248, Serial = 375) { Active = True, Index = 248, Serial = 375 }
+  #249: CParticleSystem (Index = 249, Serial = 413) { Active = True, Index = 249, Serial = 413 }
+  #250: CParticleSystem (Index = 250, Serial = 375) { Active = True, Index = 250, Serial = 375 }
+  #251: CPhysicsPropMultiplayer (Index = 251, Serial = 1012) { Active = True, Index = 251, Serial = 1012 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #254: CPostProcessingVolume (Index = 254, Serial = 719) { Active = True, Index = 254, Serial = 719 }
+  #256: CFuncWater (Index = 256, Serial = 656) { Active = True, Index = 256, Serial = 656 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #265: CPlayerVisibility (Index = 265, Serial = 543) { Active = True, Index = 265, Serial = 543 }
+  #266: CDynamicProp (Index = 266, Serial = 313) { Active = True, Index = 266, Serial = 313 }
+  #267: CDynamicProp (Index = 267, Serial = 721) { Active = True, Index = 267, Serial = 721 }
+  #268: CDynamicProp (Index = 268, Serial = 247) { Active = True, Index = 268, Serial = 247 }
+  #269: CDynamicProp (Index = 269, Serial = 220) { Active = True, Index = 269, Serial = 220 }
+  #270: CDynamicProp (Index = 270, Serial = 978) { Active = True, Index = 270, Serial = 978 }
+  #271: CDynamicProp (Index = 271, Serial = 1018) { Active = True, Index = 271, Serial = 1018 }
+  #272: CFuncWater (Index = 272, Serial = 937) { Active = True, Index = 272, Serial = 937 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #278: CDynamicProp (Index = 278, Serial = 786) { Active = True, Index = 278, Serial = 786 }
+  #279: CDynamicProp (Index = 279, Serial = 938) { Active = True, Index = 279, Serial = 938 }
+  #280: CDynamicProp (Index = 280, Serial = 667) { Active = True, Index = 280, Serial = 667 }
+  #281: CDynamicProp (Index = 281, Serial = 106) { Active = True, Index = 281, Serial = 106 }
+  #282: CDynamicProp (Index = 282, Serial = 859) { Active = True, Index = 282, Serial = 859 }
+  #283: CDynamicProp (Index = 283, Serial = 574) { Active = True, Index = 283, Serial = 574 }
+  #284: CDynamicProp (Index = 284, Serial = 703) { Active = True, Index = 284, Serial = 703 }
+  #285: CDynamicProp (Index = 285, Serial = 259) { Active = True, Index = 285, Serial = 259 }
+  #286: CDynamicProp (Index = 286, Serial = 228) { Active = True, Index = 286, Serial = 228 }
+  #287: CDynamicProp (Index = 287, Serial = 682) { Active = True, Index = 287, Serial = 682 }
+  #288: CDynamicProp (Index = 288, Serial = 854) { Active = True, Index = 288, Serial = 854 }
+  #289: CDynamicProp (Index = 289, Serial = 603) { Active = True, Index = 289, Serial = 603 }
+  #290: CBaseModelEntity (Index = 290, Serial = 792) { Active = True, Index = 290, Serial = 792 }
+  #291: CBaseModelEntity (Index = 291, Serial = 685) { Active = True, Index = 291, Serial = 685 }
+  #292: CBaseModelEntity (Index = 292, Serial = 810) { Active = True, Index = 292, Serial = 810 }
+  #293: CBaseModelEntity (Index = 293, Serial = 316) { Active = True, Index = 293, Serial = 316 }
+  #294: CBaseModelEntity (Index = 294, Serial = 858) { Active = True, Index = 294, Serial = 858 }
+  #295: CBaseModelEntity (Index = 295, Serial = 741) { Active = True, Index = 295, Serial = 741 }
+  #296: CBaseModelEntity (Index = 296, Serial = 57) { Active = True, Index = 296, Serial = 57 }
+  #297: CBaseModelEntity (Index = 297, Serial = 472) { Active = True, Index = 297, Serial = 472 }
+  #298: CBaseModelEntity (Index = 298, Serial = 210) { Active = True, Index = 298, Serial = 210 }
+  #299: CBaseModelEntity (Index = 299, Serial = 167) { Active = True, Index = 299, Serial = 167 }
+  #300: CBaseModelEntity (Index = 300, Serial = 363) { Active = True, Index = 300, Serial = 363 }
+  #301: CBaseModelEntity (Index = 301, Serial = 484) { Active = True, Index = 301, Serial = 484 }
+  #302: CBaseModelEntity (Index = 302, Serial = 326) { Active = True, Index = 302, Serial = 326 }
+  #303: CBaseModelEntity (Index = 303, Serial = 267) { Active = True, Index = 303, Serial = 267 }
+  #304: CBaseModelEntity (Index = 304, Serial = 504) { Active = True, Index = 304, Serial = 504 }
+  #305: CBaseModelEntity (Index = 305, Serial = 358) { Active = True, Index = 305, Serial = 358 }
+  #306: CBaseModelEntity (Index = 306, Serial = 319) { Active = True, Index = 306, Serial = 319 }
+  #307: CBaseModelEntity (Index = 307, Serial = 504) { Active = True, Index = 307, Serial = 504 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = True, Index = 353, Serial = 394 }
+[38394] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "Aleksib", "xuid": "76561198013243326", "userid": 3, "steamid": "76561198013243326", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "n0rb3r7", "xuid": "76561198222442504", "userid": 4, "steamid": "76561198222442504", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "Jame", "xuid": "76561198036125584", "userid": 5, "steamid": "76561198036125584", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "w0nderful", "xuid": "76561199063068840", "userid": 6, "steamid": "76561199063068840", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "FL1T", "xuid": "76561197995817501", "userid": 7, "steamid": "76561197995817501", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "jL", "xuid": "76561198176878303", "userid": 8, "steamid": "76561198176878303", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "mir", "xuid": "76561198000827804", "userid": 9, "steamid": "76561198000827804", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "b1t", "xuid": "76561198246607476", "userid": 10, "steamid": "76561198246607476", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "iM", "xuid": "76561198050250233", "userid": 11, "steamid": "76561198050250233", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
+[38394] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #65: CWeaponM4A1 (Index = 65, Serial = 649) { Active = True, Index = 65, Serial = 649 }
+  #66: CDEagle (Index = 66, Serial = 687) { Active = True, Index = 66, Serial = 687 }
+  #67: CKnife (Index = 67, Serial = 734) { Active = True, Index = 67, Serial = 734 }
+  #68: CAK47 (Index = 68, Serial = 597) { Active = True, Index = 68, Serial = 597 }
+  #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
+  #70: CCSObserverPawn (Index = 70, Serial = 671) { Active = True, Index = 70, Serial = 671 }
+  #71: CDEagle (Index = 71, Serial = 91) { Active = True, Index = 71, Serial = 91 }
+  #72: CKnife (Index = 72, Serial = 673) { Active = True, Index = 72, Serial = 673 }
+  #73: CWeaponM4A1 (Index = 73, Serial = 865) { Active = True, Index = 73, Serial = 865 }
+  #74: CDEagle (Index = 74, Serial = 83) { Active = True, Index = 74, Serial = 83 }
+  #78: CAK47 (Index = 78, Serial = 398) { Active = True, Index = 78, Serial = 398 }
+  #79: CCSObserverPawn (Index = 79, Serial = 876) { Active = True, Index = 79, Serial = 876 }
+  #80: CAK47 (Index = 80, Serial = 319) { Active = True, Index = 80, Serial = 319 }
+  #81: [PAWN] w0nderful { Active = True, Index = 81, Serial = 342 }
+  #82: CCSGOViewModel (Index = 82, Serial = 621) { Active = True, Index = 82, Serial = 621 }
+  #85: CWeaponM4A1 (Index = 85, Serial = 200) { Active = True, Index = 85, Serial = 200 }
+  #86: CCSObserverPawn (Index = 86, Serial = 270) { Active = True, Index = 86, Serial = 270 }
+  #87: [PAWN] FL1T { Active = True, Index = 87, Serial = 85 }
+  #88: CCSGOViewModel (Index = 88, Serial = 547) { Active = True, Index = 88, Serial = 547 }
+  #91: CWeaponM4A1 (Index = 91, Serial = 130) { Active = True, Index = 91, Serial = 130 }
+  #93: CDEagle (Index = 93, Serial = 986) { Active = True, Index = 93, Serial = 986 }
+  #94: CWeaponM4A1 (Index = 94, Serial = 193) { Active = True, Index = 94, Serial = 193 }
+  #97: CAK47 (Index = 97, Serial = 387) { Active = True, Index = 97, Serial = 387 }
+  #100: CWeaponM4A1 (Index = 100, Serial = 769) { Active = True, Index = 100, Serial = 769 }
+  #101: CCSObserverPawn (Index = 101, Serial = 623) { Active = True, Index = 101, Serial = 623 }
+  #102: [PAWN] jL { Active = True, Index = 102, Serial = 513 }
+  #106: CAK47 (Index = 106, Serial = 53) { Active = True, Index = 106, Serial = 53 }
+  #109: CWeaponM4A1 (Index = 109, Serial = 239) { Active = True, Index = 109, Serial = 239 }
+  #110: CCSObserverPawn (Index = 110, Serial = 804) { Active = True, Index = 110, Serial = 804 }
+  #111: [PAWN] mir { Active = True, Index = 111, Serial = 495 }
+  #112: CCSGOViewModel (Index = 112, Serial = 100) { Active = True, Index = 112, Serial = 100 }
+  #115: CWeaponM4A1 (Index = 115, Serial = 168) { Active = True, Index = 115, Serial = 168 }
+  #117: CDEagle (Index = 117, Serial = 442) { Active = True, Index = 117, Serial = 442 }
+  #118: CWeaponM4A1 (Index = 118, Serial = 647) { Active = True, Index = 118, Serial = 647 }
+  #119: CKnife (Index = 119, Serial = 521) { Active = True, Index = 119, Serial = 521 }
+  #120: CDEagle (Index = 120, Serial = 526) { Active = True, Index = 120, Serial = 526 }
+  #121: CAK47 (Index = 121, Serial = 564) { Active = True, Index = 121, Serial = 564 }
+  #124: CWeaponM4A1 (Index = 124, Serial = 558) { Active = True, Index = 124, Serial = 558 }
+  #125: CCSGOViewModel (Index = 125, Serial = 39) { Active = True, Index = 125, Serial = 39 }
+  #126: CKnife (Index = 126, Serial = 371) { Active = True, Index = 126, Serial = 371 }
+  #127: CDEagle (Index = 127, Serial = 105) { Active = True, Index = 127, Serial = 105 }
+  #128: CAK47 (Index = 128, Serial = 856) { Active = True, Index = 128, Serial = 856 }
+  #131: CWeaponM4A1 (Index = 131, Serial = 218) { Active = True, Index = 131, Serial = 218 }
+  #134: CAK47 (Index = 134, Serial = 456) { Active = True, Index = 134, Serial = 456 }
+  #137: CAK47 (Index = 137, Serial = 253) { Active = True, Index = 137, Serial = 253 }
+  #138: CCSGOViewModel (Index = 138, Serial = 432) { Active = True, Index = 138, Serial = 432 }
+  #141: CWeaponM4A1 (Index = 141, Serial = 788) { Active = True, Index = 141, Serial = 788 }
+  #144: CWeaponM4A1 (Index = 144, Serial = 920) { Active = True, Index = 144, Serial = 920 }
+  #147: CWeaponM4A1 (Index = 147, Serial = 519) { Active = True, Index = 147, Serial = 519 }
+  #150: CWeaponM4A1 (Index = 150, Serial = 384) { Active = True, Index = 150, Serial = 384 }
+  #153: CAK47 (Index = 153, Serial = 248) { Active = True, Index = 153, Serial = 248 }
+  #154: CCSObserverPawn (Index = 154, Serial = 818) { Active = True, Index = 154, Serial = 818 }
+  #155: [PAWN] iM { Active = True, Index = 155, Serial = 213 }
+  #156: CCSGOViewModel (Index = 156, Serial = 583) { Active = True, Index = 156, Serial = 583 }
+  #157: CCSObserverPawn (Index = 157, Serial = 721) { Active = True, Index = 157, Serial = 721 }
+  #158: [PAWN] b1t { Active = True, Index = 158, Serial = 802 }
+  #159: CCSGOViewModel (Index = 159, Serial = 777) { Active = True, Index = 159, Serial = 777 }
+  #162: CWeaponM4A1 (Index = 162, Serial = 129) { Active = True, Index = 162, Serial = 129 }
+  #163: CKnife (Index = 163, Serial = 878) { Active = True, Index = 163, Serial = 878 }
+  #164: CDEagle (Index = 164, Serial = 398) { Active = True, Index = 164, Serial = 398 }
+  #165: CWeaponM4A1 (Index = 165, Serial = 510) { Active = True, Index = 165, Serial = 510 }
+  #168: CWeaponM4A1 (Index = 168, Serial = 322) { Active = True, Index = 168, Serial = 322 }
+  #171: CAK47 (Index = 171, Serial = 453) { Active = True, Index = 171, Serial = 453 }
+  #174: CWeaponM4A1 (Index = 174, Serial = 522) { Active = True, Index = 174, Serial = 522 }
+  #177: CAK47 (Index = 177, Serial = 597) { Active = True, Index = 177, Serial = 597 }
+  #180: CAK47 (Index = 180, Serial = 663) { Active = True, Index = 180, Serial = 663 }
+  #183: CWeaponM4A1 (Index = 183, Serial = 836) { Active = True, Index = 183, Serial = 836 }
+  #186: CWeaponM4A1 (Index = 186, Serial = 549) { Active = True, Index = 186, Serial = 549 }
+  #189: CWeaponM4A1 (Index = 189, Serial = 932) { Active = True, Index = 189, Serial = 932 }
+  #192: CAK47 (Index = 192, Serial = 196) { Active = True, Index = 192, Serial = 196 }
+  #193: CKnife (Index = 193, Serial = 839) { Active = True, Index = 193, Serial = 839 }
+  #194: CDEagle (Index = 194, Serial = 243) { Active = True, Index = 194, Serial = 243 }
+  #195: CAK47 (Index = 195, Serial = 461) { Active = True, Index = 195, Serial = 461 }
+  #198: CAK47 (Index = 198, Serial = 804) { Active = True, Index = 198, Serial = 804 }
+  #203: CWeaponM4A1 (Index = 203, Serial = 535) { Active = True, Index = 203, Serial = 535 }
+  #206: CAK47 (Index = 206, Serial = 449) { Active = True, Index = 206, Serial = 449 }
+  #207: CCSObserverPawn (Index = 207, Serial = 934) { Active = True, Index = 207, Serial = 934 }
+  #208: [PAWN] fame { Active = True, Index = 208, Serial = 65 }
+  #209: CCSGOViewModel (Index = 209, Serial = 907) { Active = True, Index = 209, Serial = 907 }
+  #210: CKnife (Index = 210, Serial = 496) { Active = True, Index = 210, Serial = 496 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Virtus.pro) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Natus Vincere) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #225: CBombTarget (Index = 225, Serial = 861) { Active = True, Index = 225, Serial = 861 }
+  #226: CBombTarget (Index = 226, Serial = 418) { Active = True, Index = 226, Serial = 418 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #228: CDEagle (Index = 228, Serial = 577) { Active = True, Index = 228, Serial = 577 }
+  #229: CWeaponM4A1 (Index = 229, Serial = 570) { Active = True, Index = 229, Serial = 570 }
+  #230: CKnife (Index = 230, Serial = 262) { Active = True, Index = 230, Serial = 262 }
+  #231: CDEagle (Index = 231, Serial = 171) { Active = True, Index = 231, Serial = 171 }
+  #232: CAK47 (Index = 232, Serial = 545) { Active = True, Index = 232, Serial = 545 }
+  #252: CKnife (Index = 252, Serial = 657) { Active = True, Index = 252, Serial = 657 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = False, Index = 353, Serial = 394 }
+  #354: CKnife (Index = 354, Serial = 280) { Active = True, Index = 354, Serial = 280 }
+  #355: CWeaponM4A1 (Index = 355, Serial = 13) { Active = True, Index = 355, Serial = 13 }
+  #356: CDEagle (Index = 356, Serial = 916) { Active = True, Index = 356, Serial = 916 }
+  #427: CPointEntity (Index = 427, Serial = 787) { Active = True, Index = 427, Serial = 787 }
+  #428: CPointEntity (Index = 428, Serial = 74) { Active = True, Index = 428, Serial = 74 }
+  #429: CCSMinimapBoundary (Index = 429, Serial = 1019) { Active = True, Index = 429, Serial = 1019 }
+  #430: CCSMinimapBoundary (Index = 430, Serial = 950) { Active = True, Index = 430, Serial = 950 }
+  #431: CCSMinimapBoundary (Index = 431, Serial = 298) { Active = True, Index = 431, Serial = 298 }
+  #432: CCSMinimapBoundary (Index = 432, Serial = 487) { Active = True, Index = 432, Serial = 487 }
+  #434: CPhysicsPropMultiplayer (Index = 434, Serial = 881) { Active = True, Index = 434, Serial = 881 }
+  #435: CPhysicsPropMultiplayer (Index = 435, Serial = 272) { Active = True, Index = 435, Serial = 272 }
+  #436: CPhysicsPropMultiplayer (Index = 436, Serial = 876) { Active = True, Index = 436, Serial = 876 }
+  #437: CPhysicsPropMultiplayer (Index = 437, Serial = 200) { Active = True, Index = 437, Serial = 200 }
+  #438: CPhysicsPropMultiplayer (Index = 438, Serial = 279) { Active = True, Index = 438, Serial = 279 }
+  #439: CPhysicsPropMultiplayer (Index = 439, Serial = 778) { Active = True, Index = 439, Serial = 778 }
+  #440: CPhysicsPropMultiplayer (Index = 440, Serial = 555) { Active = True, Index = 440, Serial = 555 }
+  #441: CPhysicsPropMultiplayer (Index = 441, Serial = 567) { Active = True, Index = 441, Serial = 567 }
+  #442: CPhysicsPropMultiplayer (Index = 442, Serial = 211) { Active = True, Index = 442, Serial = 211 }
+  #443: CDynamicProp (Index = 443, Serial = 367) { Active = True, Index = 443, Serial = 367 }
+  #444: CDynamicProp (Index = 444, Serial = 82) { Active = True, Index = 444, Serial = 82 }
+  #445: CDynamicProp (Index = 445, Serial = 256) { Active = True, Index = 445, Serial = 256 }
+  #446: CDynamicProp (Index = 446, Serial = 695) { Active = True, Index = 446, Serial = 695 }
+  #447: CDynamicProp (Index = 447, Serial = 493) { Active = True, Index = 447, Serial = 493 }
+  #448: CDynamicProp (Index = 448, Serial = 758) { Active = True, Index = 448, Serial = 758 }
+  #449: CParticleSystem (Index = 449, Serial = 408) { Active = True, Index = 449, Serial = 408 }
+  #450: CParticleSystem (Index = 450, Serial = 71) { Active = True, Index = 450, Serial = 71 }
+  #451: CParticleSystem (Index = 451, Serial = 981) { Active = True, Index = 451, Serial = 981 }
+  #452: CPhysicsPropMultiplayer (Index = 452, Serial = 469) { Active = True, Index = 452, Serial = 469 }
+  #454: CPostProcessingVolume (Index = 454, Serial = 415) { Active = True, Index = 454, Serial = 415 }
+  #455: CFuncWater (Index = 455, Serial = 945) { Active = True, Index = 455, Serial = 945 }
+  #456: CPlayerVisibility (Index = 456, Serial = 794) { Active = True, Index = 456, Serial = 794 }
+  #457: CDynamicProp (Index = 457, Serial = 160) { Active = True, Index = 457, Serial = 160 }
+  #458: CDynamicProp (Index = 458, Serial = 479) { Active = True, Index = 458, Serial = 479 }
+  #459: CDynamicProp (Index = 459, Serial = 755) { Active = True, Index = 459, Serial = 755 }
+  #460: CDynamicProp (Index = 460, Serial = 261) { Active = True, Index = 460, Serial = 261 }
+  #461: CDynamicProp (Index = 461, Serial = 527) { Active = True, Index = 461, Serial = 527 }
+  #462: CDynamicProp (Index = 462, Serial = 860) { Active = True, Index = 462, Serial = 860 }
+  #463: CFuncWater (Index = 463, Serial = 266) { Active = True, Index = 463, Serial = 266 }
+  #464: CDynamicProp (Index = 464, Serial = 482) { Active = True, Index = 464, Serial = 482 }
+  #465: CDynamicProp (Index = 465, Serial = 84) { Active = True, Index = 465, Serial = 84 }
+  #466: CDynamicProp (Index = 466, Serial = 498) { Active = True, Index = 466, Serial = 498 }
+  #467: CDynamicProp (Index = 467, Serial = 570) { Active = True, Index = 467, Serial = 570 }
+  #468: CDynamicProp (Index = 468, Serial = 780) { Active = True, Index = 468, Serial = 780 }
+  #469: CDynamicProp (Index = 469, Serial = 756) { Active = True, Index = 469, Serial = 756 }
+  #470: CDynamicProp (Index = 470, Serial = 756) { Active = True, Index = 470, Serial = 756 }
+  #471: CDynamicProp (Index = 471, Serial = 904) { Active = True, Index = 471, Serial = 904 }
+  #472: CDynamicProp (Index = 472, Serial = 199) { Active = True, Index = 472, Serial = 199 }
+  #473: CDynamicProp (Index = 473, Serial = 543) { Active = True, Index = 473, Serial = 543 }
+  #474: CDynamicProp (Index = 474, Serial = 870) { Active = True, Index = 474, Serial = 870 }
+  #475: CDynamicProp (Index = 475, Serial = 54) { Active = True, Index = 475, Serial = 54 }
+  #476: CBaseModelEntity (Index = 476, Serial = 755) { Active = True, Index = 476, Serial = 755 }
+  #477: CBaseModelEntity (Index = 477, Serial = 720) { Active = True, Index = 477, Serial = 720 }
+  #478: CBaseModelEntity (Index = 478, Serial = 531) { Active = True, Index = 478, Serial = 531 }
+  #479: CBaseModelEntity (Index = 479, Serial = 412) { Active = True, Index = 479, Serial = 412 }
+  #480: CBaseModelEntity (Index = 480, Serial = 893) { Active = True, Index = 480, Serial = 893 }
+  #481: CBaseModelEntity (Index = 481, Serial = 773) { Active = True, Index = 481, Serial = 773 }
+  #482: CBaseModelEntity (Index = 482, Serial = 288) { Active = True, Index = 482, Serial = 288 }
+  #483: CBaseModelEntity (Index = 483, Serial = 804) { Active = True, Index = 483, Serial = 804 }
+  #484: CBaseModelEntity (Index = 484, Serial = 955) { Active = True, Index = 484, Serial = 955 }
+  #485: CBaseModelEntity (Index = 485, Serial = 333) { Active = True, Index = 485, Serial = 333 }
+  #486: CBaseModelEntity (Index = 486, Serial = 910) { Active = True, Index = 486, Serial = 910 }
+  #487: CBaseModelEntity (Index = 487, Serial = 660) { Active = True, Index = 487, Serial = 660 }
+  #488: CBaseModelEntity (Index = 488, Serial = 151) { Active = True, Index = 488, Serial = 151 }
+  #489: CBaseModelEntity (Index = 489, Serial = 472) { Active = True, Index = 489, Serial = 472 }
+  #490: CBaseModelEntity (Index = 490, Serial = 983) { Active = True, Index = 490, Serial = 983 }
+  #491: CBaseModelEntity (Index = 491, Serial = 813) { Active = True, Index = 491, Serial = 813 }
+  #492: CBaseModelEntity (Index = 492, Serial = 400) { Active = True, Index = 492, Serial = 400 }
+  #493: CBaseModelEntity (Index = 493, Serial = 811) { Active = True, Index = 493, Serial = 811 }
+  #494: CCSObserverPawn (Index = 494, Serial = 594) { Active = True, Index = 494, Serial = 594 }
+  #495: [PAWN] Aleksib { Active = True, Index = 495, Serial = 711 }
+  #496: CCSGOViewModel (Index = 496, Serial = 133) { Active = True, Index = 496, Serial = 133 }
+  #498: CDEagle (Index = 498, Serial = 294) { Active = True, Index = 498, Serial = 294 }
+  #499: CAK47 (Index = 499, Serial = 933) { Active = True, Index = 499, Serial = 933 }
+  #502: CWeaponM4A1 (Index = 502, Serial = 860) { Active = True, Index = 502, Serial = 860 }
+  #503: CCSObserverPawn (Index = 503, Serial = 649) { Active = True, Index = 503, Serial = 649 }
+  #504: [PAWN] n0rb3r7 { Active = True, Index = 504, Serial = 845 }
+  #508: CAK47 (Index = 508, Serial = 163) { Active = True, Index = 508, Serial = 163 }
+  #509: CCSGOViewModel (Index = 509, Serial = 753) { Active = True, Index = 509, Serial = 753 }
+[76787] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "Aleksib", "xuid": "76561198013243326", "userid": 3, "steamid": "76561198013243326", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "n0rb3r7", "xuid": "76561198222442504", "userid": 4, "steamid": "76561198222442504", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "Jame", "xuid": "76561198036125584", "userid": 5, "steamid": "76561198036125584", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "w0nderful", "xuid": "76561199063068840", "userid": 6, "steamid": "76561199063068840", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "FL1T", "xuid": "76561197995817501", "userid": 7, "steamid": "76561197995817501", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "jL", "xuid": "76561198176878303", "userid": 8, "steamid": "76561198176878303", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "mir", "xuid": "76561198000827804", "userid": 9, "steamid": "76561198000827804", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "b1t", "xuid": "76561198246607476", "userid": 10, "steamid": "76561198246607476", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "iM", "xuid": "76561198050250233", "userid": 11, "steamid": "76561198050250233", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
+[76787] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #65: CKnife (Index = 65, Serial = 651) { Active = True, Index = 65, Serial = 651 }
+  #67: CPhysicsPropMultiplayer (Index = 67, Serial = 737) { Active = True, Index = 67, Serial = 737 }
+  #68: CBaseModelEntity (Index = 68, Serial = 599) { Active = True, Index = 68, Serial = 599 }
+  #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
+  #70: CCSObserverPawn (Index = 70, Serial = 671) { Active = True, Index = 70, Serial = 671 }
+  #72: CDynamicProp (Index = 72, Serial = 676) { Active = True, Index = 72, Serial = 676 }
+  #79: CCSObserverPawn (Index = 79, Serial = 876) { Active = True, Index = 79, Serial = 876 }
+  #81: [PAWN] w0nderful { Active = True, Index = 81, Serial = 342 }
+  #82: CCSGOViewModel (Index = 82, Serial = 621) { Active = True, Index = 82, Serial = 621 }
+  #86: CCSObserverPawn (Index = 86, Serial = 270) { Active = True, Index = 86, Serial = 270 }
+  #87: [PAWN] FL1T { Active = True, Index = 87, Serial = 85 }
+  #88: CCSGOViewModel (Index = 88, Serial = 547) { Active = True, Index = 88, Serial = 547 }
+  #97: CBaseModelEntity (Index = 97, Serial = 390) { Active = True, Index = 97, Serial = 390 }
+  #101: CCSObserverPawn (Index = 101, Serial = 623) { Active = True, Index = 101, Serial = 623 }
+  #102: [PAWN] jL { Active = True, Index = 102, Serial = 513 }
+  #110: CCSObserverPawn (Index = 110, Serial = 804) { Active = True, Index = 110, Serial = 804 }
+  #111: [PAWN] mir { Active = True, Index = 111, Serial = 495 }
+  #112: CCSGOViewModel (Index = 112, Serial = 100) { Active = True, Index = 112, Serial = 100 }
+  #120: CDynamicProp (Index = 120, Serial = 528) { Active = True, Index = 120, Serial = 528 }
+  #121: CParticleSystem (Index = 121, Serial = 566) { Active = True, Index = 121, Serial = 566 }
+  #124: CBaseModelEntity (Index = 124, Serial = 561) { Active = True, Index = 124, Serial = 561 }
+  #125: CCSGOViewModel (Index = 125, Serial = 39) { Active = True, Index = 125, Serial = 39 }
+  #127: CPhysicsPropMultiplayer (Index = 127, Serial = 108) { Active = True, Index = 127, Serial = 108 }
+  #128: CKnife (Index = 128, Serial = 858) { Active = True, Index = 128, Serial = 858 }
+  #131: CDynamicProp (Index = 131, Serial = 221) { Active = True, Index = 131, Serial = 221 }
+  #135: CPhysicsPropMultiplayer (Index = 135, Serial = 138) { Active = True, Index = 135, Serial = 138 }
+  #136: CPhysicsPropMultiplayer (Index = 136, Serial = 930) { Active = True, Index = 136, Serial = 930 }
+  #138: CCSGOViewModel (Index = 138, Serial = 432) { Active = True, Index = 138, Serial = 432 }
+  #147: CCSMinimapBoundary (Index = 147, Serial = 521) { Active = True, Index = 147, Serial = 521 }
+  #150: CPhysicsPropMultiplayer (Index = 150, Serial = 386) { Active = True, Index = 150, Serial = 386 }
+  #151: CPhysicsPropMultiplayer (Index = 151, Serial = 955) { Active = True, Index = 151, Serial = 955 }
+  #153: CPhysicsPropMultiplayer (Index = 153, Serial = 250) { Active = True, Index = 153, Serial = 250 }
+  #154: CCSObserverPawn (Index = 154, Serial = 818) { Active = True, Index = 154, Serial = 818 }
+  #155: [PAWN] iM { Active = True, Index = 155, Serial = 213 }
+  #156: CCSGOViewModel (Index = 156, Serial = 583) { Active = True, Index = 156, Serial = 583 }
+  #157: CCSObserverPawn (Index = 157, Serial = 721) { Active = True, Index = 157, Serial = 721 }
+  #158: [PAWN] b1t { Active = True, Index = 158, Serial = 802 }
+  #159: CCSGOViewModel (Index = 159, Serial = 777) { Active = True, Index = 159, Serial = 777 }
+  #162: CPhysicsPropMultiplayer (Index = 162, Serial = 131) { Active = True, Index = 162, Serial = 131 }
+  #163: CBaseModelEntity (Index = 163, Serial = 881) { Active = True, Index = 163, Serial = 881 }
+  #164: CBaseModelEntity (Index = 164, Serial = 401) { Active = True, Index = 164, Serial = 401 }
+  #168: CCSMinimapBoundary (Index = 168, Serial = 324) { Active = True, Index = 168, Serial = 324 }
+  #170: CPhysicsPropMultiplayer (Index = 170, Serial = 917) { Active = True, Index = 170, Serial = 917 }
+  #171: CBaseModelEntity (Index = 171, Serial = 455) { Active = True, Index = 171, Serial = 455 }
+  #172: CCSMinimapBoundary (Index = 172, Serial = 906) { Active = True, Index = 172, Serial = 906 }
+  #174: CPostProcessingVolume (Index = 174, Serial = 524) { Active = True, Index = 174, Serial = 524 }
+  #177: CPhysicsPropMultiplayer (Index = 177, Serial = 599) { Active = True, Index = 177, Serial = 599 }
+  #180: CDynamicProp (Index = 180, Serial = 665) { Active = True, Index = 180, Serial = 665 }
+  #183: CDynamicProp (Index = 183, Serial = 838) { Active = True, Index = 183, Serial = 838 }
+  #186: CDynamicProp (Index = 186, Serial = 551) { Active = True, Index = 186, Serial = 551 }
+  #187: CPointEntity (Index = 187, Serial = 305) { Active = True, Index = 187, Serial = 305 }
+  #188: CPointEntity (Index = 188, Serial = 1021) { Active = True, Index = 188, Serial = 1021 }
+  #189: CDynamicProp (Index = 189, Serial = 934) { Active = True, Index = 189, Serial = 934 }
+  #198: CDynamicProp (Index = 198, Serial = 806) { Active = True, Index = 198, Serial = 806 }
+  #203: CDynamicProp (Index = 203, Serial = 537) { Active = True, Index = 203, Serial = 537 }
+  #204: CDynamicProp (Index = 204, Serial = 210) { Active = True, Index = 204, Serial = 210 }
+  #206: CBaseModelEntity (Index = 206, Serial = 451) { Active = True, Index = 206, Serial = 451 }
+  #207: CCSObserverPawn (Index = 207, Serial = 934) { Active = True, Index = 207, Serial = 934 }
+  #208: [PAWN] <no controller> { Active = True, Index = 208, Serial = 65 }
+  #209: CCSGOViewModel (Index = 209, Serial = 907) { Active = False, Index = 209, Serial = 907 }
+  #210: CDynamicProp (Index = 210, Serial = 499) { Active = True, Index = 210, Serial = 499 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Virtus.pro) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Natus Vincere) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #225: CBombTarget (Index = 225, Serial = 861) { Active = True, Index = 225, Serial = 861 }
+  #226: CBombTarget (Index = 226, Serial = 418) { Active = True, Index = 226, Serial = 418 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #229: CBaseModelEntity (Index = 229, Serial = 572) { Active = True, Index = 229, Serial = 572 }
+  #231: CPlayerVisibility (Index = 231, Serial = 174) { Active = True, Index = 231, Serial = 174 }
+  #235: CBaseModelEntity (Index = 235, Serial = 832) { Active = True, Index = 235, Serial = 832 }
+  #237: CDynamicProp (Index = 237, Serial = 811) { Active = True, Index = 237, Serial = 811 }
+  #241: CKnife (Index = 241, Serial = 366) { Active = True, Index = 241, Serial = 366 }
+  #242: CDynamicProp (Index = 242, Serial = 1010) { Active = True, Index = 242, Serial = 1010 }
+  #244: CWeaponGlock (Index = 244, Serial = 263) { Active = True, Index = 244, Serial = 263 }
+  #246: CParticleSystem (Index = 246, Serial = 189) { Active = True, Index = 246, Serial = 189 }
+  #252: CDynamicProp (Index = 252, Serial = 660) { Active = True, Index = 252, Serial = 660 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #255: CKnife (Index = 255, Serial = 1021) { Active = True, Index = 255, Serial = 1021 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #267: CBaseModelEntity (Index = 267, Serial = 725) { Active = True, Index = 267, Serial = 725 }
+  #268: CBaseModelEntity (Index = 268, Serial = 251) { Active = True, Index = 268, Serial = 251 }
+  #270: CDynamicProp (Index = 270, Serial = 982) { Active = True, Index = 270, Serial = 982 }
+  #271: CDynamicProp (Index = 271, Serial = 1022) { Active = True, Index = 271, Serial = 1022 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #278: CWeaponElite (Index = 278, Serial = 790) { Active = True, Index = 278, Serial = 790 }
+  #280: CDynamicProp (Index = 280, Serial = 670) { Active = True, Index = 280, Serial = 670 }
+  #281: CWeaponGlock (Index = 281, Serial = 110) { Active = True, Index = 281, Serial = 110 }
+  #282: CKnife (Index = 282, Serial = 863) { Active = True, Index = 282, Serial = 863 }
+  #284: CBaseModelEntity (Index = 284, Serial = 707) { Active = True, Index = 284, Serial = 707 }
+  #285: CBaseModelEntity (Index = 285, Serial = 263) { Active = True, Index = 285, Serial = 263 }
+  #287: CWeaponHKP2000 (Index = 287, Serial = 686) { Active = True, Index = 287, Serial = 686 }
+  #290: CWeaponGlock (Index = 290, Serial = 796) { Active = True, Index = 290, Serial = 796 }
+  #291: CKnife (Index = 291, Serial = 689) { Active = True, Index = 291, Serial = 689 }
+  #293: CBaseModelEntity (Index = 293, Serial = 320) { Active = True, Index = 293, Serial = 320 }
+  #294: CBaseModelEntity (Index = 294, Serial = 862) { Active = True, Index = 294, Serial = 862 }
+  #299: CWeaponGlock (Index = 299, Serial = 171) { Active = True, Index = 299, Serial = 171 }
+  #301: CCSMinimapBoundary (Index = 301, Serial = 487) { Active = True, Index = 301, Serial = 487 }
+  #304: CFuncWater (Index = 304, Serial = 507) { Active = True, Index = 304, Serial = 507 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = False, Index = 353, Serial = 394 }
+  #355: CBaseModelEntity (Index = 355, Serial = 15) { Active = True, Index = 355, Serial = 15 }
+  #360: CParticleSystem (Index = 360, Serial = 10) { Active = True, Index = 360, Serial = 10 }
+  #366: CDynamicProp (Index = 366, Serial = 295) { Active = True, Index = 366, Serial = 295 }
+  #367: CWeaponHKP2000 (Index = 367, Serial = 1018) { Active = True, Index = 367, Serial = 1018 }
+  #368: CKnife (Index = 368, Serial = 193) { Active = True, Index = 368, Serial = 193 }
+  #372: CDynamicProp (Index = 372, Serial = 225) { Active = True, Index = 372, Serial = 225 }
+  #373: CBaseModelEntity (Index = 373, Serial = 962) { Active = True, Index = 373, Serial = 962 }
+  #374: CBaseModelEntity (Index = 374, Serial = 230) { Active = True, Index = 374, Serial = 230 }
+  #376: CWeaponHKP2000 (Index = 376, Serial = 110) { Active = True, Index = 376, Serial = 110 }
+  #377: CKnife (Index = 377, Serial = 351) { Active = True, Index = 377, Serial = 351 }
+  #378: CFuncWater (Index = 378, Serial = 330) { Active = True, Index = 378, Serial = 330 }
+  #382: CWeaponGlock (Index = 382, Serial = 407) { Active = True, Index = 382, Serial = 407 }
+  #383: CDynamicProp (Index = 383, Serial = 528) { Active = True, Index = 383, Serial = 528 }
+  #384: CC4 (Index = 384, Serial = 821) { Active = True, Index = 384, Serial = 821 }
+  #385: CDynamicProp (Index = 385, Serial = 160) { Active = True, Index = 385, Serial = 160 }
+  #390: CWeaponHKP2000 (Index = 390, Serial = 766) { Active = True, Index = 390, Serial = 766 }
+  #392: CDynamicProp (Index = 392, Serial = 308) { Active = True, Index = 392, Serial = 308 }
+  #393: CDynamicProp (Index = 393, Serial = 84) { Active = True, Index = 393, Serial = 84 }
+  #397: CDynamicProp (Index = 397, Serial = 849) { Active = True, Index = 397, Serial = 849 }
+  #408: CSmokeGrenade (Index = 408, Serial = 917) { Active = True, Index = 408, Serial = 917 }
+  #494: CCSObserverPawn (Index = 494, Serial = 594) { Active = True, Index = 494, Serial = 594 }
+  #495: [PAWN] Aleksib { Active = True, Index = 495, Serial = 711 }
+  #496: CCSGOViewModel (Index = 496, Serial = 133) { Active = True, Index = 496, Serial = 133 }
+  #503: CCSObserverPawn (Index = 503, Serial = 649) { Active = True, Index = 503, Serial = 649 }
+  #504: [PAWN] <no controller> { Active = True, Index = 504, Serial = 845 }
+  #508: CWeaponHKP2000 (Index = 508, Serial = 165) { Active = True, Index = 508, Serial = 165 }
+  #509: CCSGOViewModel (Index = 509, Serial = 753) { Active = False, Index = 509, Serial = 753 }
+[115180] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "Aleksib", "xuid": "76561198013243326", "userid": 3, "steamid": "76561198013243326", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "n0rb3r7", "xuid": "76561198222442504", "userid": 4, "steamid": "76561198222442504", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "Jame", "xuid": "76561198036125584", "userid": 5, "steamid": "76561198036125584", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "w0nderful", "xuid": "76561199063068840", "userid": 6, "steamid": "76561199063068840", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "FL1T", "xuid": "76561197995817501", "userid": 7, "steamid": "76561197995817501", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "jL", "xuid": "76561198176878303", "userid": 8, "steamid": "76561198176878303", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "mir", "xuid": "76561198000827804", "userid": 9, "steamid": "76561198000827804", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "b1t", "xuid": "76561198246607476", "userid": 10, "steamid": "76561198246607476", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "iM", "xuid": "76561198050250233", "userid": 11, "steamid": "76561198050250233", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
+[115180] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #66: CDynamicProp (Index = 66, Serial = 692) { Active = True, Index = 66, Serial = 692 }
+  #67: CPointEntity (Index = 67, Serial = 740) { Active = True, Index = 67, Serial = 740 }
+  #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
+  #70: CCSObserverPawn (Index = 70, Serial = 671) { Active = True, Index = 70, Serial = 671 }
+  #72: CBaseModelEntity (Index = 72, Serial = 679) { Active = True, Index = 72, Serial = 679 }
+  #73: CBaseModelEntity (Index = 73, Serial = 869) { Active = True, Index = 73, Serial = 869 }
+  #79: CCSObserverPawn (Index = 79, Serial = 876) { Active = True, Index = 79, Serial = 876 }
+  #81: [PAWN] w0nderful { Active = True, Index = 81, Serial = 342 }
+  #82: CCSGOViewModel (Index = 82, Serial = 621) { Active = True, Index = 82, Serial = 621 }
+  #84: CKnife (Index = 84, Serial = 305) { Active = True, Index = 84, Serial = 305 }
+  #86: CCSObserverPawn (Index = 86, Serial = 270) { Active = True, Index = 86, Serial = 270 }
+  #87: [PAWN] FL1T { Active = True, Index = 87, Serial = 85 }
+  #88: CCSGOViewModel (Index = 88, Serial = 547) { Active = True, Index = 88, Serial = 547 }
+  #92: CDynamicProp (Index = 92, Serial = 593) { Active = True, Index = 92, Serial = 593 }
+  #100: CCSMinimapBoundary (Index = 100, Serial = 773) { Active = True, Index = 100, Serial = 773 }
+  #101: CCSObserverPawn (Index = 101, Serial = 623) { Active = True, Index = 101, Serial = 623 }
+  #102: [PAWN] jL { Active = True, Index = 102, Serial = 513 }
+  #109: CBaseModelEntity (Index = 109, Serial = 244) { Active = True, Index = 109, Serial = 244 }
+  #110: CCSObserverPawn (Index = 110, Serial = 804) { Active = True, Index = 110, Serial = 804 }
+  #111: [PAWN] mir { Active = True, Index = 111, Serial = 495 }
+  #112: CCSGOViewModel (Index = 112, Serial = 100) { Active = True, Index = 112, Serial = 100 }
+  #120: CCSMinimapBoundary (Index = 120, Serial = 531) { Active = True, Index = 120, Serial = 531 }
+  #124: CDynamicProp (Index = 124, Serial = 564) { Active = True, Index = 124, Serial = 564 }
+  #125: CCSGOViewModel (Index = 125, Serial = 39) { Active = True, Index = 125, Serial = 39 }
+  #127: CWeaponTec9 (Index = 127, Serial = 109) { Active = True, Index = 127, Serial = 109 }
+  #133: CWeaponHKP2000 (Index = 133, Serial = 78) { Active = True, Index = 133, Serial = 78 }
+  #134: CKnife (Index = 134, Serial = 461) { Active = True, Index = 134, Serial = 461 }
+  #137: CPhysicsPropMultiplayer (Index = 137, Serial = 257) { Active = True, Index = 137, Serial = 257 }
+  #138: CCSGOViewModel (Index = 138, Serial = 432) { Active = True, Index = 138, Serial = 432 }
+  #139: CAK47 (Index = 139, Serial = 306) { Active = True, Index = 139, Serial = 306 }
+  #140: CMolotovGrenade (Index = 140, Serial = 299) { Active = True, Index = 140, Serial = 299 }
+  #146: CWeaponHKP2000 (Index = 146, Serial = 769) { Active = True, Index = 146, Serial = 769 }
+  #149: CKnife (Index = 149, Serial = 912) { Active = True, Index = 149, Serial = 912 }
+  #153: CKnife (Index = 153, Serial = 252) { Active = True, Index = 153, Serial = 252 }
+  #154: CCSObserverPawn (Index = 154, Serial = 818) { Active = True, Index = 154, Serial = 818 }
+  #155: [PAWN] iM { Active = True, Index = 155, Serial = 213 }
+  #156: CCSGOViewModel (Index = 156, Serial = 583) { Active = True, Index = 156, Serial = 583 }
+  #157: CCSObserverPawn (Index = 157, Serial = 721) { Active = True, Index = 157, Serial = 721 }
+  #158: [PAWN] b1t { Active = True, Index = 158, Serial = 802 }
+  #159: CCSGOViewModel (Index = 159, Serial = 777) { Active = True, Index = 159, Serial = 777 }
+  #160: CPostProcessingVolume (Index = 160, Serial = 107) { Active = True, Index = 160, Serial = 107 }
+  #167: CAK47 (Index = 167, Serial = 21) { Active = True, Index = 167, Serial = 21 }
+  #171: CPhysicsPropMultiplayer (Index = 171, Serial = 458) { Active = True, Index = 171, Serial = 458 }
+  #173: CDynamicProp (Index = 173, Serial = 462) { Active = True, Index = 173, Serial = 462 }
+  #175: CPhysicsPropMultiplayer (Index = 175, Serial = 143) { Active = True, Index = 175, Serial = 143 }
+  #178: CBaseModelEntity (Index = 178, Serial = 608) { Active = True, Index = 178, Serial = 608 }
+  #195: CBaseModelEntity (Index = 195, Serial = 464) { Active = True, Index = 195, Serial = 464 }
+  #200: CC4 (Index = 200, Serial = 735) { Active = True, Index = 200, Serial = 735 }
+  #203: CDynamicProp (Index = 203, Serial = 540) { Active = True, Index = 203, Serial = 540 }
+  #204: CBaseModelEntity (Index = 204, Serial = 213) { Active = True, Index = 204, Serial = 213 }
+  #207: CCSObserverPawn (Index = 207, Serial = 934) { Active = True, Index = 207, Serial = 934 }
+  #208: [PAWN] fame { Active = True, Index = 208, Serial = 65 }
+  #209: CCSGOViewModel (Index = 209, Serial = 907) { Active = True, Index = 209, Serial = 907 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Virtus.pro) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Natus Vincere) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #225: CBombTarget (Index = 225, Serial = 861) { Active = True, Index = 225, Serial = 861 }
+  #226: CBombTarget (Index = 226, Serial = 418) { Active = True, Index = 226, Serial = 418 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #228: CDynamicProp (Index = 228, Serial = 582) { Active = True, Index = 228, Serial = 582 }
+  #229: CBaseModelEntity (Index = 229, Serial = 575) { Active = True, Index = 229, Serial = 575 }
+  #236: CDynamicProp (Index = 236, Serial = 396) { Active = True, Index = 236, Serial = 396 }
+  #239: CWeaponAWP (Index = 239, Serial = 765) { Active = True, Index = 239, Serial = 765 }
+  #241: CParticleSystem (Index = 241, Serial = 367) { Active = True, Index = 241, Serial = 367 }
+  #247: CWeaponAWP (Index = 247, Serial = 922) { Active = True, Index = 247, Serial = 922 }
+  #252: CPointEntity (Index = 252, Serial = 663) { Active = True, Index = 252, Serial = 663 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #254: CPhysicsPropMultiplayer (Index = 254, Serial = 725) { Active = True, Index = 254, Serial = 725 }
+  #255: CKnife (Index = 255, Serial = 1023) { Active = True, Index = 255, Serial = 1023 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #265: CDynamicProp (Index = 265, Serial = 550) { Active = True, Index = 265, Serial = 550 }
+  #270: CPlayerVisibility (Index = 270, Serial = 985) { Active = True, Index = 270, Serial = 985 }
+  #271: CPhysicsPropMultiplayer (Index = 271, Serial = 1) { Active = True, Index = 271, Serial = 1 }
+  #272: CBaseModelEntity (Index = 272, Serial = 942) { Active = True, Index = 272, Serial = 942 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #278: CWeaponElite (Index = 278, Serial = 790) { Active = True, Index = 278, Serial = 790 }
+  #281: CHEGrenade (Index = 281, Serial = 111) { Active = True, Index = 281, Serial = 111 }
+  #284: CPhysicsPropMultiplayer (Index = 284, Serial = 710) { Active = True, Index = 284, Serial = 710 }
+  #285: CCSMinimapBoundary (Index = 285, Serial = 266) { Active = True, Index = 285, Serial = 266 }
+  #287: CParticleSystem (Index = 287, Serial = 687) { Active = True, Index = 287, Serial = 687 }
+  #289: CBaseModelEntity (Index = 289, Serial = 608) { Active = True, Index = 289, Serial = 608 }
+  #290: CWeaponHKP2000 (Index = 290, Serial = 798) { Active = True, Index = 290, Serial = 798 }
+  #295: CDynamicProp (Index = 295, Serial = 746) { Active = True, Index = 295, Serial = 746 }
+  #296: CBaseModelEntity (Index = 296, Serial = 63) { Active = True, Index = 296, Serial = 63 }
+  #297: CFlashbang (Index = 297, Serial = 476) { Active = True, Index = 297, Serial = 476 }
+  #303: CDynamicProp (Index = 303, Serial = 274) { Active = True, Index = 303, Serial = 274 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = False, Index = 353, Serial = 394 }
+  #358: CWeaponGlock (Index = 358, Serial = 1003) { Active = True, Index = 358, Serial = 1003 }
+  #359: CKnife (Index = 359, Serial = 965) { Active = True, Index = 359, Serial = 965 }
+  #365: CWeaponGlock (Index = 365, Serial = 114) { Active = True, Index = 365, Serial = 114 }
+  #366: CFuncWater (Index = 366, Serial = 298) { Active = True, Index = 366, Serial = 298 }
+  #367: CCSMinimapBoundary (Index = 367, Serial = 1021) { Active = True, Index = 367, Serial = 1021 }
+  #368: CKnife (Index = 368, Serial = 193) { Active = True, Index = 368, Serial = 193 }
+  #370: CKnife (Index = 370, Serial = 760) { Active = True, Index = 370, Serial = 760 }
+  #374: CDynamicProp (Index = 374, Serial = 233) { Active = True, Index = 374, Serial = 233 }
+  #375: CDynamicProp (Index = 375, Serial = 733) { Active = True, Index = 375, Serial = 733 }
+  #381: CPhysicsPropMultiplayer (Index = 381, Serial = 135) { Active = True, Index = 381, Serial = 135 }
+  #383: CDynamicProp (Index = 383, Serial = 531) { Active = True, Index = 383, Serial = 531 }
+  #384: CAK47 (Index = 384, Serial = 822) { Active = True, Index = 384, Serial = 822 }
+  #388: CFlashbang (Index = 388, Serial = 629) { Active = True, Index = 388, Serial = 629 }
+  #397: CParticleSystem (Index = 397, Serial = 852) { Active = True, Index = 397, Serial = 852 }
+  #405: CAK47 (Index = 405, Serial = 317) { Active = True, Index = 405, Serial = 317 }
+  #413: CHEGrenade (Index = 413, Serial = 614) { Active = True, Index = 413, Serial = 614 }
+  #414: CIncendiaryGrenade (Index = 414, Serial = 177) { Active = True, Index = 414, Serial = 177 }
+  #416: CBaseModelEntity (Index = 416, Serial = 672) { Active = True, Index = 416, Serial = 672 }
+  #417: CWeaponGlock (Index = 417, Serial = 194) { Active = True, Index = 417, Serial = 194 }
+  #420: CDynamicProp (Index = 420, Serial = 779) { Active = True, Index = 420, Serial = 779 }
+  #422: CDynamicProp (Index = 422, Serial = 296) { Active = True, Index = 422, Serial = 296 }
+  #423: CDynamicProp (Index = 423, Serial = 109) { Active = True, Index = 423, Serial = 109 }
+  #426: CWeaponGlock (Index = 426, Serial = 343) { Active = True, Index = 426, Serial = 343 }
+  #428: CSmokeGrenade (Index = 428, Serial = 77) { Active = True, Index = 428, Serial = 77 }
+  #429: CAK47 (Index = 429, Serial = 1021) { Active = True, Index = 429, Serial = 1021 }
+  #431: CBaseModelEntity (Index = 431, Serial = 301) { Active = True, Index = 431, Serial = 301 }
+  #432: CBaseModelEntity (Index = 432, Serial = 490) { Active = True, Index = 432, Serial = 490 }
+  #435: CBaseModelEntity (Index = 435, Serial = 275) { Active = True, Index = 435, Serial = 275 }
+  #439: CPhysicsPropMultiplayer (Index = 439, Serial = 781) { Active = True, Index = 439, Serial = 781 }
+  #440: CFlashbang (Index = 440, Serial = 557) { Active = True, Index = 440, Serial = 557 }
+  #443: CDynamicProp (Index = 443, Serial = 370) { Active = True, Index = 443, Serial = 370 }
+  #447: CDynamicProp (Index = 447, Serial = 496) { Active = True, Index = 447, Serial = 496 }
+  #449: CFuncWater (Index = 449, Serial = 411) { Active = True, Index = 449, Serial = 411 }
+  #451: CDynamicProp (Index = 451, Serial = 984) { Active = True, Index = 451, Serial = 984 }
+  #453: CKnife (Index = 453, Serial = 571) { Active = True, Index = 453, Serial = 571 }
+  #454: CDynamicProp (Index = 454, Serial = 418) { Active = True, Index = 454, Serial = 418 }
+  #458: CDynamicProp (Index = 458, Serial = 482) { Active = True, Index = 458, Serial = 482 }
+  #459: CDynamicProp (Index = 459, Serial = 758) { Active = True, Index = 459, Serial = 758 }
+  #462: CDynamicProp (Index = 462, Serial = 863) { Active = True, Index = 462, Serial = 863 }
+  #465: CBaseModelEntity (Index = 465, Serial = 87) { Active = True, Index = 465, Serial = 87 }
+  #470: CPhysicsPropMultiplayer (Index = 470, Serial = 759) { Active = True, Index = 470, Serial = 759 }
+  #472: CPhysicsPropMultiplayer (Index = 472, Serial = 202) { Active = True, Index = 472, Serial = 202 }
+  #478: CBaseModelEntity (Index = 478, Serial = 534) { Active = True, Index = 478, Serial = 534 }
+  #480: CDynamicProp (Index = 480, Serial = 896) { Active = True, Index = 480, Serial = 896 }
+  #481: CIncendiaryGrenade (Index = 481, Serial = 776) { Active = True, Index = 481, Serial = 776 }
+  #482: CBaseModelEntity (Index = 482, Serial = 291) { Active = True, Index = 482, Serial = 291 }
+  #494: CCSObserverPawn (Index = 494, Serial = 594) { Active = True, Index = 494, Serial = 594 }
+  #495: [PAWN] Aleksib { Active = True, Index = 495, Serial = 711 }
+  #496: CCSGOViewModel (Index = 496, Serial = 133) { Active = True, Index = 496, Serial = 133 }
+  #499: CBaseModelEntity (Index = 499, Serial = 936) { Active = True, Index = 499, Serial = 936 }
+  #503: CCSObserverPawn (Index = 503, Serial = 649) { Active = True, Index = 503, Serial = 649 }
+  #504: [PAWN] n0rb3r7 { Active = True, Index = 504, Serial = 845 }
+  #505: CWeaponHKP2000 (Index = 505, Serial = 201) { Active = True, Index = 505, Serial = 201 }
+  #506: CKnife (Index = 506, Serial = 856) { Active = True, Index = 506, Serial = 856 }
+  #509: CCSGOViewModel (Index = 509, Serial = 753) { Active = True, Index = 509, Serial = 753 }
+[153573] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "Aleksib", "xuid": "76561198013243326", "userid": 3, "steamid": "76561198013243326", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "n0rb3r7", "xuid": "76561198222442504", "userid": 4, "steamid": "76561198222442504", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "Jame", "xuid": "76561198036125584", "userid": 5, "steamid": "76561198036125584", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "w0nderful", "xuid": "76561199063068840", "userid": 6, "steamid": "76561199063068840", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "FL1T", "xuid": "76561197995817501", "userid": 7, "steamid": "76561197995817501", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "jL", "xuid": "76561198176878303", "userid": 8, "steamid": "76561198176878303", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "mir", "xuid": "76561198000827804", "userid": 9, "steamid": "76561198000827804", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "b1t", "xuid": "76561198246607476", "userid": 10, "steamid": "76561198246607476", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "iM", "xuid": "76561198050250233", "userid": 11, "steamid": "76561198050250233", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
+[153573] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #66: CWeaponGlock (Index = 66, Serial = 694) { Active = True, Index = 66, Serial = 694 }
+  #67: CDynamicProp (Index = 67, Serial = 742) { Active = True, Index = 67, Serial = 742 }
+  #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
+  #70: CCSObserverPawn (Index = 70, Serial = 671) { Active = True, Index = 70, Serial = 671 }
+  #72: CKnife (Index = 72, Serial = 681) { Active = True, Index = 72, Serial = 681 }
+  #73: CBaseModelEntity (Index = 73, Serial = 871) { Active = True, Index = 73, Serial = 871 }
+  #79: CCSObserverPawn (Index = 79, Serial = 876) { Active = True, Index = 79, Serial = 876 }
+  #81: [PAWN] <no controller> { Active = True, Index = 81, Serial = 342 }
+  #82: CCSGOViewModel (Index = 82, Serial = 621) { Active = False, Index = 82, Serial = 621 }
+  #83: CDynamicProp (Index = 83, Serial = 620) { Active = True, Index = 83, Serial = 620 }
+  #86: CCSObserverPawn (Index = 86, Serial = 270) { Active = True, Index = 86, Serial = 270 }
+  #87: [PAWN] FL1T { Active = True, Index = 87, Serial = 85 }
+  #88: CCSGOViewModel (Index = 88, Serial = 547) { Active = True, Index = 88, Serial = 547 }
+  #91: CAK47 (Index = 91, Serial = 137) { Active = True, Index = 91, Serial = 137 }
+  #92: CWeaponHKP2000 (Index = 92, Serial = 595) { Active = True, Index = 92, Serial = 595 }
+  #93: CDynamicProp (Index = 93, Serial = 994) { Active = True, Index = 93, Serial = 994 }
+  #95: CInfoOffscreenPanoramaTexture (Index = 95, Serial = 907) { Active = True, Index = 95, Serial = 907 }
+  #96: CDynamicProp (Index = 96, Serial = 154) { Active = True, Index = 96, Serial = 154 }
+  #97: CKnife (Index = 97, Serial = 395) { Active = True, Index = 97, Serial = 395 }
+  #101: CCSObserverPawn (Index = 101, Serial = 623) { Active = True, Index = 101, Serial = 623 }
+  #102: [PAWN] jL { Active = True, Index = 102, Serial = 513 }
+  #103: CKnife (Index = 103, Serial = 528) { Active = True, Index = 103, Serial = 528 }
+  #105: CPhysicsPropMultiplayer (Index = 105, Serial = 1004) { Active = True, Index = 105, Serial = 1004 }
+  #109: CPhysicsPropMultiplayer (Index = 109, Serial = 246) { Active = True, Index = 109, Serial = 246 }
+  #110: CCSObserverPawn (Index = 110, Serial = 804) { Active = True, Index = 110, Serial = 804 }
+  #111: [PAWN] mir { Active = True, Index = 111, Serial = 495 }
+  #112: CCSGOViewModel (Index = 112, Serial = 100) { Active = True, Index = 112, Serial = 100 }
+  #114: CFuncWater (Index = 114, Serial = 244) { Active = True, Index = 114, Serial = 244 }
+  #122: CBaseModelEntity (Index = 122, Serial = 212) { Active = True, Index = 122, Serial = 212 }
+  #124: CBaseModelEntity (Index = 124, Serial = 566) { Active = True, Index = 124, Serial = 566 }
+  #125: CCSGOViewModel (Index = 125, Serial = 39) { Active = True, Index = 125, Serial = 39 }
+  #127: CSmokeGrenade (Index = 127, Serial = 111) { Active = True, Index = 127, Serial = 111 }
+  #129: CBaseModelEntity (Index = 129, Serial = 225) { Active = True, Index = 129, Serial = 225 }
+  #130: CWeaponAWP (Index = 130, Serial = 5) { Active = True, Index = 130, Serial = 5 }
+  #132: CBaseModelEntity (Index = 132, Serial = 78) { Active = True, Index = 132, Serial = 78 }
+  #133: CKnife (Index = 133, Serial = 80) { Active = True, Index = 133, Serial = 80 }
+  #138: CCSGOViewModel (Index = 138, Serial = 432) { Active = True, Index = 138, Serial = 432 }
+  #139: CWeaponHKP2000 (Index = 139, Serial = 308) { Active = True, Index = 139, Serial = 308 }
+  #142: CDynamicProp (Index = 142, Serial = 118) { Active = True, Index = 142, Serial = 118 }
+  #148: CWeaponGlock (Index = 148, Serial = 876) { Active = True, Index = 148, Serial = 876 }
+  #151: CCSMinimapBoundary (Index = 151, Serial = 960) { Active = True, Index = 151, Serial = 960 }
+  #154: CCSObserverPawn (Index = 154, Serial = 818) { Active = True, Index = 154, Serial = 818 }
+  #155: [PAWN] iM { Active = True, Index = 155, Serial = 213 }
+  #156: CCSGOViewModel (Index = 156, Serial = 583) { Active = True, Index = 156, Serial = 583 }
+  #157: CCSObserverPawn (Index = 157, Serial = 721) { Active = True, Index = 157, Serial = 721 }
+  #158: [PAWN] b1t { Active = True, Index = 158, Serial = 802 }
+  #159: CCSGOViewModel (Index = 159, Serial = 777) { Active = True, Index = 159, Serial = 777 }
+  #165: CHEGrenade (Index = 165, Serial = 517) { Active = True, Index = 165, Serial = 517 }
+  #167: CDynamicProp (Index = 167, Serial = 23) { Active = True, Index = 167, Serial = 23 }
+  #171: CWeaponP250 (Index = 171, Serial = 460) { Active = True, Index = 171, Serial = 460 }
+  #175: CAK47 (Index = 175, Serial = 145) { Active = True, Index = 175, Serial = 145 }
+  #179: CBaseModelEntity (Index = 179, Serial = 214) { Active = True, Index = 179, Serial = 214 }
+  #182: CBaseModelEntity (Index = 182, Serial = 798) { Active = True, Index = 182, Serial = 798 }
+  #185: CDynamicProp (Index = 185, Serial = 545) { Active = True, Index = 185, Serial = 545 }
+  #193: CBaseModelEntity (Index = 193, Serial = 846) { Active = True, Index = 193, Serial = 846 }
+  #194: CBaseModelEntity (Index = 194, Serial = 250) { Active = True, Index = 194, Serial = 250 }
+  #202: CPhysicsPropMultiplayer (Index = 202, Serial = 508) { Active = True, Index = 202, Serial = 508 }
+  #206: CFlashbang (Index = 206, Serial = 456) { Active = True, Index = 206, Serial = 456 }
+  #207: CCSObserverPawn (Index = 207, Serial = 934) { Active = True, Index = 207, Serial = 934 }
+  #208: [PAWN] fame { Active = True, Index = 208, Serial = 65 }
+  #209: CCSGOViewModel (Index = 209, Serial = 907) { Active = True, Index = 209, Serial = 907 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Virtus.pro) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Natus Vincere) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #225: CBombTarget (Index = 225, Serial = 861) { Active = True, Index = 225, Serial = 861 }
+  #226: CBombTarget (Index = 226, Serial = 418) { Active = True, Index = 226, Serial = 418 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #228: CBaseModelEntity (Index = 228, Serial = 584) { Active = True, Index = 228, Serial = 584 }
+  #229: CBaseModelEntity (Index = 229, Serial = 577) { Active = True, Index = 229, Serial = 577 }
+  #231: CBaseModelEntity (Index = 231, Serial = 180) { Active = True, Index = 231, Serial = 180 }
+  #239: CWeaponAWP (Index = 239, Serial = 765) { Active = True, Index = 239, Serial = 765 }
+  #242: CWeaponFiveSeven (Index = 242, Serial = 1016) { Active = True, Index = 242, Serial = 1016 }
+  #247: CPointEntity (Index = 247, Serial = 924) { Active = True, Index = 247, Serial = 924 }
+  #252: CWeaponGlock (Index = 252, Serial = 665) { Active = True, Index = 252, Serial = 665 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #272: CPostProcessingVolume (Index = 272, Serial = 944) { Active = True, Index = 272, Serial = 944 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #280: CMolotovGrenade (Index = 280, Serial = 676) { Active = True, Index = 280, Serial = 676 }
+  #285: CDEagle (Index = 285, Serial = 268) { Active = True, Index = 285, Serial = 268 }
+  #289: CPhysicsPropMultiplayer (Index = 289, Serial = 610) { Active = True, Index = 289, Serial = 610 }
+  #299: CDynamicProp (Index = 299, Serial = 176) { Active = True, Index = 299, Serial = 176 }
+  #301: CBaseModelEntity (Index = 301, Serial = 492) { Active = True, Index = 301, Serial = 492 }
+  #307: CBaseModelEntity (Index = 307, Serial = 512) { Active = True, Index = 307, Serial = 512 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = False, Index = 353, Serial = 394 }
+  #354: CPlayerVisibility (Index = 354, Serial = 288) { Active = True, Index = 354, Serial = 288 }
+  #359: CFlashbang (Index = 359, Serial = 967) { Active = True, Index = 359, Serial = 967 }
+  #361: CPhysicsPropMultiplayer (Index = 361, Serial = 91) { Active = True, Index = 361, Serial = 91 }
+  #362: CPhysicsPropMultiplayer (Index = 362, Serial = 5) { Active = True, Index = 362, Serial = 5 }
+  #370: CFlashbang (Index = 370, Serial = 762) { Active = True, Index = 370, Serial = 762 }
+  #382: CDynamicProp (Index = 382, Serial = 413) { Active = True, Index = 382, Serial = 413 }
+  #384: CPointEntity (Index = 384, Serial = 824) { Active = True, Index = 384, Serial = 824 }
+  #385: CBaseModelEntity (Index = 385, Serial = 165) { Active = True, Index = 385, Serial = 165 }
+  #388: CDynamicProp (Index = 388, Serial = 632) { Active = True, Index = 388, Serial = 632 }
+  #390: CAK47 (Index = 390, Serial = 770) { Active = True, Index = 390, Serial = 770 }
+  #395: CWeaponTec9 (Index = 395, Serial = 482) { Active = True, Index = 395, Serial = 482 }
+  #400: CDynamicProp (Index = 400, Serial = 322) { Active = True, Index = 400, Serial = 322 }
+  #405: CCSMinimapBoundary (Index = 405, Serial = 319) { Active = True, Index = 405, Serial = 319 }
+  #409: CDynamicProp (Index = 409, Serial = 300) { Active = True, Index = 409, Serial = 300 }
+  #412: CDynamicProp (Index = 412, Serial = 701) { Active = True, Index = 412, Serial = 701 }
+  #413: CFuncWater (Index = 413, Serial = 617) { Active = True, Index = 413, Serial = 617 }
+  #416: CKnife (Index = 416, Serial = 674) { Active = True, Index = 416, Serial = 674 }
+  #423: CKnife (Index = 423, Serial = 111) { Active = True, Index = 423, Serial = 111 }
+  #424: CBaseModelEntity (Index = 424, Serial = 463) { Active = True, Index = 424, Serial = 463 }
+  #427: CPlantedC4 (Index = 427, Serial = 793) { Active = True, Index = 427, Serial = 793 }
+  #429: CCSMinimapBoundary (Index = 429, Serial = 1023) { Active = True, Index = 429, Serial = 1023 }
+  #431: CParticleSystem (Index = 431, Serial = 303) { Active = True, Index = 431, Serial = 303 }
+  #432: CCSMinimapBoundary (Index = 432, Serial = 492) { Active = True, Index = 432, Serial = 492 }
+  #433: CDynamicProp (Index = 433, Serial = 793) { Active = True, Index = 433, Serial = 793 }
+  #435: CDynamicProp (Index = 435, Serial = 277) { Active = True, Index = 435, Serial = 277 }
+  #436: CParticleSystem (Index = 436, Serial = 883) { Active = True, Index = 436, Serial = 883 }
+  #442: CBaseModelEntity (Index = 442, Serial = 218) { Active = True, Index = 442, Serial = 218 }
+  #443: CBaseModelEntity (Index = 443, Serial = 372) { Active = True, Index = 443, Serial = 372 }
+  #444: CKnife (Index = 444, Serial = 88) { Active = True, Index = 444, Serial = 88 }
+  #445: CDynamicProp (Index = 445, Serial = 261) { Active = True, Index = 445, Serial = 261 }
+  #446: CWeaponElite (Index = 446, Serial = 700) { Active = True, Index = 446, Serial = 700 }
+  #448: CParticleSystem (Index = 448, Serial = 764) { Active = True, Index = 448, Serial = 764 }
+  #449: CDynamicProp (Index = 449, Serial = 413) { Active = True, Index = 449, Serial = 413 }
+  #450: CDynamicProp (Index = 450, Serial = 77) { Active = True, Index = 450, Serial = 77 }
+  #456: CDynamicProp (Index = 456, Serial = 800) { Active = True, Index = 456, Serial = 800 }
+  #459: CWeaponHKP2000 (Index = 459, Serial = 760) { Active = True, Index = 459, Serial = 760 }
+  #462: CDynamicProp (Index = 462, Serial = 865) { Active = True, Index = 462, Serial = 865 }
+  #464: CPhysicsPropMultiplayer (Index = 464, Serial = 488) { Active = True, Index = 464, Serial = 488 }
+  #472: CAK47 (Index = 472, Serial = 204) { Active = True, Index = 472, Serial = 204 }
+  #478: CDynamicProp (Index = 478, Serial = 536) { Active = True, Index = 478, Serial = 536 }
+  #482: CWeaponHKP2000 (Index = 482, Serial = 293) { Active = True, Index = 482, Serial = 293 }
+  #484: CKnife (Index = 484, Serial = 959) { Active = True, Index = 484, Serial = 959 }
+  #485: CDynamicProp (Index = 485, Serial = 339) { Active = True, Index = 485, Serial = 339 }
+  #486: CPhysicsPropMultiplayer (Index = 486, Serial = 916) { Active = True, Index = 486, Serial = 916 }
+  #488: CPhysicsPropMultiplayer (Index = 488, Serial = 157) { Active = True, Index = 488, Serial = 157 }
+  #489: CWeaponGlock (Index = 489, Serial = 478) { Active = True, Index = 489, Serial = 478 }
+  #491: CPhysicsPropMultiplayer (Index = 491, Serial = 819) { Active = True, Index = 491, Serial = 819 }
+  #494: CCSObserverPawn (Index = 494, Serial = 594) { Active = True, Index = 494, Serial = 594 }
+  #495: [PAWN] Aleksib { Active = True, Index = 495, Serial = 711 }
+  #496: CCSGOViewModel (Index = 496, Serial = 133) { Active = True, Index = 496, Serial = 133 }
+  #501: CDynamicProp (Index = 501, Serial = 6) { Active = True, Index = 501, Serial = 6 }
+  #503: CCSObserverPawn (Index = 503, Serial = 649) { Active = True, Index = 503, Serial = 649 }
+  #504: [PAWN] n0rb3r7 { Active = True, Index = 504, Serial = 845 }
+  #506: CKnife (Index = 506, Serial = 859) { Active = True, Index = 506, Serial = 859 }
+  #509: CCSGOViewModel (Index = 509, Serial = 753) { Active = True, Index = 509, Serial = 753 }
+  #511: CDynamicProp (Index = 511, Serial = 763) { Active = True, Index = 511, Serial = 763 }
+[191966] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "Aleksib", "xuid": "76561198013243326", "userid": 3, "steamid": "76561198013243326", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "n0rb3r7", "xuid": "76561198222442504", "userid": 4, "steamid": "76561198222442504", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "Jame", "xuid": "76561198036125584", "userid": 5, "steamid": "76561198036125584", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "w0nderful", "xuid": "76561199063068840", "userid": 6, "steamid": "76561199063068840", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "FL1T", "xuid": "76561197995817501", "userid": 7, "steamid": "76561197995817501", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "jL", "xuid": "76561198176878303", "userid": 8, "steamid": "76561198176878303", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "mir", "xuid": "76561198000827804", "userid": 9, "steamid": "76561198000827804", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "b1t", "xuid": "76561198246607476", "userid": 10, "steamid": "76561198246607476", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "iM", "xuid": "76561198050250233", "userid": 11, "steamid": "76561198050250233", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
+[191966] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #66: CBaseModelEntity (Index = 66, Serial = 696) { Active = True, Index = 66, Serial = 696 }
+  #67: CParticleSystem (Index = 67, Serial = 744) { Active = True, Index = 67, Serial = 744 }
+  #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
+  #70: CCSObserverPawn (Index = 70, Serial = 671) { Active = True, Index = 70, Serial = 671 }
+  #71: CBaseModelEntity (Index = 71, Serial = 102) { Active = True, Index = 71, Serial = 102 }
+  #76: CSmokeGrenadeProjectile (Index = 76, Serial = 744) { Active = True, Index = 76, Serial = 744 }
+  #79: CCSObserverPawn (Index = 79, Serial = 876) { Active = True, Index = 79, Serial = 876 }
+  #81: [PAWN] w0nderful { Active = True, Index = 81, Serial = 342 }
+  #82: CCSGOViewModel (Index = 82, Serial = 621) { Active = True, Index = 82, Serial = 621 }
+  #83: CPhysicsPropMultiplayer (Index = 83, Serial = 622) { Active = True, Index = 83, Serial = 622 }
+  #86: CCSObserverPawn (Index = 86, Serial = 270) { Active = True, Index = 86, Serial = 270 }
+  #87: [PAWN] FL1T { Active = True, Index = 87, Serial = 85 }
+  #88: CCSGOViewModel (Index = 88, Serial = 547) { Active = True, Index = 88, Serial = 547 }
+  #91: CBaseModelEntity (Index = 91, Serial = 139) { Active = True, Index = 91, Serial = 139 }
+  #93: CFuncWater (Index = 93, Serial = 996) { Active = True, Index = 93, Serial = 996 }
+  #94: CKnife (Index = 94, Serial = 202) { Active = True, Index = 94, Serial = 202 }
+  #95: CPhysicsPropMultiplayer (Index = 95, Serial = 909) { Active = True, Index = 95, Serial = 909 }
+  #96: CParticleSystem (Index = 96, Serial = 156) { Active = True, Index = 96, Serial = 156 }
+  #98: CBaseModelEntity (Index = 98, Serial = 511) { Active = True, Index = 98, Serial = 511 }
+  #101: CCSObserverPawn (Index = 101, Serial = 623) { Active = True, Index = 101, Serial = 623 }
+  #102: [PAWN] jL { Active = True, Index = 102, Serial = 513 }
+  #110: CCSObserverPawn (Index = 110, Serial = 804) { Active = True, Index = 110, Serial = 804 }
+  #111: [PAWN] mir { Active = True, Index = 111, Serial = 495 }
+  #112: CCSGOViewModel (Index = 112, Serial = 100) { Active = True, Index = 112, Serial = 100 }
+  #115: CKnife (Index = 115, Serial = 178) { Active = True, Index = 115, Serial = 178 }
+  #118: CWeaponHKP2000 (Index = 118, Serial = 656) { Active = True, Index = 118, Serial = 656 }
+  #123: CDynamicProp (Index = 123, Serial = 236) { Active = True, Index = 123, Serial = 236 }
+  #125: CCSGOViewModel (Index = 125, Serial = 39) { Active = True, Index = 125, Serial = 39 }
+  #128: CFlashbang (Index = 128, Serial = 867) { Active = True, Index = 128, Serial = 867 }
+  #130: CDynamicProp (Index = 130, Serial = 6) { Active = True, Index = 130, Serial = 6 }
+  #132: CDynamicProp (Index = 132, Serial = 80) { Active = True, Index = 132, Serial = 80 }
+  #136: CBaseModelEntity (Index = 136, Serial = 938) { Active = True, Index = 136, Serial = 938 }
+  #138: CCSGOViewModel (Index = 138, Serial = 432) { Active = True, Index = 138, Serial = 432 }
+  #141: CDynamicProp (Index = 141, Serial = 797) { Active = True, Index = 141, Serial = 797 }
+  #144: CPhysicsPropMultiplayer (Index = 144, Serial = 930) { Active = True, Index = 144, Serial = 930 }
+  #146: CWeaponHKP2000 (Index = 146, Serial = 774) { Active = True, Index = 146, Serial = 774 }
+  #147: CDynamicProp (Index = 147, Serial = 528) { Active = True, Index = 147, Serial = 528 }
+  #149: CKnife (Index = 149, Serial = 917) { Active = True, Index = 149, Serial = 917 }
+  #154: CCSObserverPawn (Index = 154, Serial = 818) { Active = True, Index = 154, Serial = 818 }
+  #155: [PAWN] iM { Active = True, Index = 155, Serial = 213 }
+  #156: CCSGOViewModel (Index = 156, Serial = 583) { Active = True, Index = 156, Serial = 583 }
+  #157: CCSObserverPawn (Index = 157, Serial = 721) { Active = True, Index = 157, Serial = 721 }
+  #158: [PAWN] b1t { Active = True, Index = 158, Serial = 802 }
+  #159: CCSGOViewModel (Index = 159, Serial = 777) { Active = True, Index = 159, Serial = 777 }
+  #162: CDynamicProp (Index = 162, Serial = 139) { Active = True, Index = 162, Serial = 139 }
+  #163: CDynamicProp (Index = 163, Serial = 888) { Active = True, Index = 163, Serial = 888 }
+  #164: CPointEntity (Index = 164, Serial = 409) { Active = True, Index = 164, Serial = 409 }
+  #166: CBaseModelEntity (Index = 166, Serial = 726) { Active = True, Index = 166, Serial = 726 }
+  #167: CPhysicsPropMultiplayer (Index = 167, Serial = 25) { Active = True, Index = 167, Serial = 25 }
+  #168: CSmokeGrenade (Index = 168, Serial = 331) { Active = True, Index = 168, Serial = 331 }
+  #175: CBaseModelEntity (Index = 175, Serial = 147) { Active = True, Index = 175, Serial = 147 }
+  #176: CSmokeGrenade (Index = 176, Serial = 187) { Active = True, Index = 176, Serial = 187 }
+  #178: CKnife (Index = 178, Serial = 612) { Active = True, Index = 178, Serial = 612 }
+  #181: CWeaponHKP2000 (Index = 181, Serial = 842) { Active = True, Index = 181, Serial = 842 }
+  #185: CPhysicsPropMultiplayer (Index = 185, Serial = 547) { Active = True, Index = 185, Serial = 547 }
+  #188: CBaseModelEntity (Index = 188, Serial = 4) { Active = True, Index = 188, Serial = 4 }
+  #190: CPhysicsPropMultiplayer (Index = 190, Serial = 297) { Active = True, Index = 190, Serial = 297 }
+  #192: CPhysicsPropMultiplayer (Index = 192, Serial = 205) { Active = True, Index = 192, Serial = 205 }
+  #207: CCSObserverPawn (Index = 207, Serial = 934) { Active = True, Index = 207, Serial = 934 }
+  #208: [PAWN] fame { Active = True, Index = 208, Serial = 65 }
+  #209: CCSGOViewModel (Index = 209, Serial = 907) { Active = True, Index = 209, Serial = 907 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Natus Vincere) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Virtus.pro) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #225: CBombTarget (Index = 225, Serial = 861) { Active = True, Index = 225, Serial = 861 }
+  #226: CBombTarget (Index = 226, Serial = 418) { Active = True, Index = 226, Serial = 418 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #228: CKnife (Index = 228, Serial = 587) { Active = True, Index = 228, Serial = 587 }
+  #229: CDynamicProp (Index = 229, Serial = 579) { Active = True, Index = 229, Serial = 579 }
+  #230: CCSMinimapBoundary (Index = 230, Serial = 272) { Active = True, Index = 230, Serial = 272 }
+  #231: CWeaponTec9 (Index = 231, Serial = 182) { Active = True, Index = 231, Serial = 182 }
+  #232: CWeaponGlock (Index = 232, Serial = 554) { Active = True, Index = 232, Serial = 554 }
+  #238: CBaseModelEntity (Index = 238, Serial = 175) { Active = True, Index = 238, Serial = 175 }
+  #239: CKnife (Index = 239, Serial = 767) { Active = True, Index = 239, Serial = 767 }
+  #242: CFlashbang (Index = 242, Serial = 1018) { Active = True, Index = 242, Serial = 1018 }
+  #243: CKnife (Index = 243, Serial = 360) { Active = True, Index = 243, Serial = 360 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #254: CCSMinimapBoundary (Index = 254, Serial = 729) { Active = True, Index = 254, Serial = 729 }
+  #256: CPlayerVisibility (Index = 256, Serial = 668) { Active = True, Index = 256, Serial = 668 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #281: CDynamicProp (Index = 281, Serial = 115) { Active = True, Index = 281, Serial = 115 }
+  #282: CWeaponHKP2000 (Index = 282, Serial = 869) { Active = True, Index = 282, Serial = 869 }
+  #285: CDynamicProp (Index = 285, Serial = 270) { Active = True, Index = 285, Serial = 270 }
+  #287: CCSMinimapBoundary (Index = 287, Serial = 691) { Active = True, Index = 287, Serial = 691 }
+  #289: CWeaponHKP2000 (Index = 289, Serial = 613) { Active = True, Index = 289, Serial = 613 }
+  #295: CFlashbang (Index = 295, Serial = 751) { Active = True, Index = 295, Serial = 751 }
+  #303: CAK47 (Index = 303, Serial = 279) { Active = True, Index = 303, Serial = 279 }
+  #304: CMolotovGrenade (Index = 304, Serial = 516) { Active = True, Index = 304, Serial = 516 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = False, Index = 353, Serial = 394 }
+  #354: CKnife (Index = 354, Serial = 290) { Active = True, Index = 354, Serial = 290 }
+  #356: CMolotovGrenade (Index = 356, Serial = 926) { Active = True, Index = 356, Serial = 926 }
+  #360: CKnife (Index = 360, Serial = 17) { Active = True, Index = 360, Serial = 17 }
+  #364: CWeaponGlock (Index = 364, Serial = 835) { Active = True, Index = 364, Serial = 835 }
+  #370: CBaseModelEntity (Index = 370, Serial = 764) { Active = True, Index = 370, Serial = 764 }
+  #372: CBaseModelEntity (Index = 372, Serial = 231) { Active = True, Index = 372, Serial = 231 }
+  #374: CAK47 (Index = 374, Serial = 237) { Active = True, Index = 374, Serial = 237 }
+  #375: CDynamicProp (Index = 375, Serial = 737) { Active = True, Index = 375, Serial = 737 }
+  #377: CDynamicProp (Index = 377, Serial = 357) { Active = True, Index = 377, Serial = 357 }
+  #378: CWeaponM4A1 (Index = 378, Serial = 338) { Active = True, Index = 378, Serial = 338 }
+  #382: CParticleSystem (Index = 382, Serial = 415) { Active = True, Index = 382, Serial = 415 }
+  #383: CWeaponP250 (Index = 383, Serial = 536) { Active = True, Index = 383, Serial = 536 }
+  #387: CSmokeGrenade (Index = 387, Serial = 899) { Active = True, Index = 387, Serial = 899 }
+  #388: CDynamicProp (Index = 388, Serial = 634) { Active = True, Index = 388, Serial = 634 }
+  #389: CBaseModelEntity (Index = 389, Serial = 364) { Active = True, Index = 389, Serial = 364 }
+  #390: CBaseModelEntity (Index = 390, Serial = 772) { Active = True, Index = 390, Serial = 772 }
+  #392: CCSMinimapBoundary (Index = 392, Serial = 316) { Active = True, Index = 392, Serial = 316 }
+  #395: CSmokeGrenadeProjectile (Index = 395, Serial = 484) { Active = True, Index = 395, Serial = 484 }
+  #399: CDynamicProp (Index = 399, Serial = 740) { Active = True, Index = 399, Serial = 740 }
+  #400: CDynamicProp (Index = 400, Serial = 324) { Active = True, Index = 400, Serial = 324 }
+  #402: CFlashbang (Index = 402, Serial = 274) { Active = True, Index = 402, Serial = 274 }
+  #403: CBaseModelEntity (Index = 403, Serial = 836) { Active = True, Index = 403, Serial = 836 }
+  #408: CBaseModelEntity (Index = 408, Serial = 923) { Active = True, Index = 408, Serial = 923 }
+  #409: CPhysicsPropMultiplayer (Index = 409, Serial = 302) { Active = True, Index = 409, Serial = 302 }
+  #417: CPointEntity (Index = 417, Serial = 198) { Active = True, Index = 417, Serial = 198 }
+  #421: CWeaponGalilAR (Index = 421, Serial = 432) { Active = True, Index = 421, Serial = 432 }
+  #423: CWeaponP250 (Index = 423, Serial = 113) { Active = True, Index = 423, Serial = 113 }
+  #424: CDynamicProp (Index = 424, Serial = 465) { Active = True, Index = 424, Serial = 465 }
+  #427: CDynamicProp (Index = 427, Serial = 795) { Active = True, Index = 427, Serial = 795 }
+  #428: CMolotovGrenade (Index = 428, Serial = 81) { Active = True, Index = 428, Serial = 81 }
+  #429: CDynamicProp (Index = 429, Serial = 1) { Active = True, Index = 429, Serial = 1 }
+  #430: CDynamicProp (Index = 430, Serial = 958) { Active = True, Index = 430, Serial = 958 }
+  #433: CFuncWater (Index = 433, Serial = 795) { Active = True, Index = 433, Serial = 795 }
+  #435: CDynamicProp (Index = 435, Serial = 279) { Active = True, Index = 435, Serial = 279 }
+  #436: CWeaponGlock (Index = 436, Serial = 886) { Active = True, Index = 436, Serial = 886 }
+  #445: CPhysicsPropMultiplayer (Index = 445, Serial = 263) { Active = True, Index = 445, Serial = 263 }
+  #449: CDynamicProp (Index = 449, Serial = 415) { Active = True, Index = 449, Serial = 415 }
+  #450: CDynamicProp (Index = 450, Serial = 79) { Active = True, Index = 450, Serial = 79 }
+  #452: CWeaponP250 (Index = 452, Serial = 477) { Active = True, Index = 452, Serial = 477 }
+  #455: CC4 (Index = 455, Serial = 953) { Active = True, Index = 455, Serial = 953 }
+  #457: CWeaponGlock (Index = 457, Serial = 168) { Active = True, Index = 457, Serial = 168 }
+  #458: CDynamicProp (Index = 458, Serial = 487) { Active = True, Index = 458, Serial = 487 }
+  #462: CDynamicProp (Index = 462, Serial = 867) { Active = True, Index = 462, Serial = 867 }
+  #469: CBaseModelEntity (Index = 469, Serial = 764) { Active = True, Index = 469, Serial = 764 }
+  #472: CBaseModelEntity (Index = 472, Serial = 206) { Active = True, Index = 472, Serial = 206 }
+  #473: CMolotovGrenade (Index = 473, Serial = 551) { Active = True, Index = 473, Serial = 551 }
+  #475: CHEGrenade (Index = 475, Serial = 62) { Active = True, Index = 475, Serial = 62 }
+  #476: CAK47 (Index = 476, Serial = 762) { Active = True, Index = 476, Serial = 762 }
+  #479: CBaseModelEntity (Index = 479, Serial = 420) { Active = True, Index = 479, Serial = 420 }
+  #485: CPhysicsPropMultiplayer (Index = 485, Serial = 341) { Active = True, Index = 485, Serial = 341 }
+  #494: CCSObserverPawn (Index = 494, Serial = 594) { Active = True, Index = 494, Serial = 594 }
+  #495: [PAWN] Aleksib { Active = True, Index = 495, Serial = 711 }
+  #496: CCSGOViewModel (Index = 496, Serial = 133) { Active = True, Index = 496, Serial = 133 }
+  #499: CKnife (Index = 499, Serial = 940) { Active = True, Index = 499, Serial = 940 }
+  #503: CCSObserverPawn (Index = 503, Serial = 649) { Active = True, Index = 503, Serial = 649 }
+  #504: [PAWN] n0rb3r7 { Active = True, Index = 504, Serial = 845 }
+  #509: CCSGOViewModel (Index = 509, Serial = 753) { Active = True, Index = 509, Serial = 753 }
+  #511: CPostProcessingVolume (Index = 511, Serial = 765) { Active = True, Index = 511, Serial = 765 }
+[230359] Player infos:
+  #0: { "name": "CSTV", "xuid": "0", "userid": 0, "steamid": "90071996842377218", "fakeplayer": true, "ishltv": true }
+  #1: { "name": "CSTV", "xuid": "0", "userid": 1, "steamid": "90071996842377219", "fakeplayer": true, "ishltv": true }
+  #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
+  #3: { "name": "Aleksib", "xuid": "76561198013243326", "userid": 3, "steamid": "76561198013243326", "fakeplayer": false, "ishltv": false }
+  #4: { "name": "n0rb3r7", "xuid": "76561198222442504", "userid": 4, "steamid": "76561198222442504", "fakeplayer": false, "ishltv": false }
+  #5: { "name": "Jame", "xuid": "76561198036125584", "userid": 5, "steamid": "76561198036125584", "fakeplayer": false, "ishltv": false }
+  #6: { "name": "w0nderful", "xuid": "76561199063068840", "userid": 6, "steamid": "76561199063068840", "fakeplayer": false, "ishltv": false }
+  #7: { "name": "FL1T", "xuid": "76561197995817501", "userid": 7, "steamid": "76561197995817501", "fakeplayer": false, "ishltv": false }
+  #8: { "name": "jL", "xuid": "76561198176878303", "userid": 8, "steamid": "76561198176878303", "fakeplayer": false, "ishltv": false }
+  #9: { "name": "mir", "xuid": "76561198000827804", "userid": 9, "steamid": "76561198000827804", "fakeplayer": false, "ishltv": false }
+  #10: { "name": "b1t", "xuid": "76561198246607476", "userid": 10, "steamid": "76561198246607476", "fakeplayer": false, "ishltv": false }
+  #11: { "name": "iM", "xuid": "76561198050250233", "userid": 11, "steamid": "76561198050250233", "fakeplayer": false, "ishltv": false }
+  #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
+[230359] Entities:
+  #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
+  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #65: CIncendiaryGrenade (Index = 65, Serial = 662) { Active = True, Index = 65, Serial = 662 }
+  #67: CDynamicProp (Index = 67, Serial = 747) { Active = True, Index = 67, Serial = 747 }
+  #68: CInferno (Index = 68, Serial = 609) { Active = True, Index = 68, Serial = 609 }
+  #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
+  #70: CCSObserverPawn (Index = 70, Serial = 671) { Active = True, Index = 70, Serial = 671 }
+  #71: CDynamicProp (Index = 71, Serial = 105) { Active = True, Index = 71, Serial = 105 }
+  #73: CHEGrenadeProjectile (Index = 73, Serial = 877) { Active = True, Index = 73, Serial = 877 }
+  #74: CBaseModelEntity (Index = 74, Serial = 97) { Active = True, Index = 74, Serial = 97 }
+  #77: CInferno (Index = 77, Serial = 362) { Active = True, Index = 77, Serial = 362 }
+  #79: CCSObserverPawn (Index = 79, Serial = 876) { Active = True, Index = 79, Serial = 876 }
+  #81: [PAWN] w0nderful { Active = True, Index = 81, Serial = 342 }
+  #82: CCSGOViewModel (Index = 82, Serial = 621) { Active = True, Index = 82, Serial = 621 }
+  #86: CCSObserverPawn (Index = 86, Serial = 270) { Active = True, Index = 86, Serial = 270 }
+  #87: [PAWN] FL1T { Active = True, Index = 87, Serial = 85 }
+  #88: CCSGOViewModel (Index = 88, Serial = 547) { Active = True, Index = 88, Serial = 547 }
+  #90: CKnife (Index = 90, Serial = 314) { Active = True, Index = 90, Serial = 314 }
+  #98: CDynamicProp (Index = 98, Serial = 514) { Active = True, Index = 98, Serial = 514 }
+  #101: CCSObserverPawn (Index = 101, Serial = 623) { Active = True, Index = 101, Serial = 623 }
+  #102: [PAWN] jL { Active = True, Index = 102, Serial = 513 }
+  #105: CPhysicsPropMultiplayer (Index = 105, Serial = 1009) { Active = True, Index = 105, Serial = 1009 }
+  #106: CDynamicProp (Index = 106, Serial = 66) { Active = True, Index = 106, Serial = 66 }
+  #108: CBaseModelEntity (Index = 108, Serial = 36) { Active = True, Index = 108, Serial = 36 }
+  #109: CSmokeGrenade (Index = 109, Serial = 251) { Active = True, Index = 109, Serial = 251 }
+  #110: CCSObserverPawn (Index = 110, Serial = 804) { Active = True, Index = 110, Serial = 804 }
+  #111: [PAWN] mir { Active = True, Index = 111, Serial = 495 }
+  #112: CCSGOViewModel (Index = 112, Serial = 100) { Active = True, Index = 112, Serial = 100 }
+  #115: CFlashbang (Index = 115, Serial = 180) { Active = True, Index = 115, Serial = 180 }
+  #116: CKnife (Index = 116, Serial = 407) { Active = True, Index = 116, Serial = 407 }
+  #117: CKnife (Index = 117, Serial = 452) { Active = True, Index = 117, Serial = 452 }
+  #119: CPostProcessingVolume (Index = 119, Serial = 532) { Active = True, Index = 119, Serial = 532 }
+  #120: CDynamicProp (Index = 120, Serial = 539) { Active = True, Index = 120, Serial = 539 }
+  #121: CWeaponGlock (Index = 121, Serial = 577) { Active = True, Index = 121, Serial = 577 }
+  #122: CDynamicProp (Index = 122, Serial = 217) { Active = True, Index = 122, Serial = 217 }
+  #124: CDEagle (Index = 124, Serial = 571) { Active = True, Index = 124, Serial = 571 }
+  #125: CCSGOViewModel (Index = 125, Serial = 39) { Active = True, Index = 125, Serial = 39 }
+  #127: CBaseModelEntity (Index = 127, Serial = 116) { Active = True, Index = 127, Serial = 116 }
+  #136: CFuncWater (Index = 136, Serial = 941) { Active = True, Index = 136, Serial = 941 }
+  #138: CCSGOViewModel (Index = 138, Serial = 432) { Active = True, Index = 138, Serial = 432 }
+  #139: CBaseModelEntity (Index = 139, Serial = 313) { Active = True, Index = 139, Serial = 313 }
+  #149: CWeaponGlock (Index = 149, Serial = 919) { Active = True, Index = 149, Serial = 919 }
+  #150: CSmokeGrenade (Index = 150, Serial = 397) { Active = True, Index = 150, Serial = 397 }
+  #151: CDynamicProp (Index = 151, Serial = 965) { Active = True, Index = 151, Serial = 965 }
+  #153: CDynamicProp (Index = 153, Serial = 260) { Active = True, Index = 153, Serial = 260 }
+  #154: CCSObserverPawn (Index = 154, Serial = 818) { Active = True, Index = 154, Serial = 818 }
+  #155: [PAWN] iM { Active = True, Index = 155, Serial = 213 }
+  #156: CCSGOViewModel (Index = 156, Serial = 583) { Active = True, Index = 156, Serial = 583 }
+  #157: CCSObserverPawn (Index = 157, Serial = 721) { Active = True, Index = 157, Serial = 721 }
+  #158: [PAWN] b1t { Active = True, Index = 158, Serial = 802 }
+  #159: CCSGOViewModel (Index = 159, Serial = 777) { Active = True, Index = 159, Serial = 777 }
+  #169: CHEGrenadeProjectile (Index = 169, Serial = 918) { Active = True, Index = 169, Serial = 918 }
+  #172: CBaseModelEntity (Index = 172, Serial = 918) { Active = True, Index = 172, Serial = 918 }
+  #178: CWeaponM4A1 (Index = 178, Serial = 614) { Active = True, Index = 178, Serial = 614 }
+  #180: CHEGrenade (Index = 180, Serial = 676) { Active = True, Index = 180, Serial = 676 }
+  #183: CDynamicProp (Index = 183, Serial = 848) { Active = True, Index = 183, Serial = 848 }
+  #186: CWeaponGlock (Index = 186, Serial = 562) { Active = True, Index = 186, Serial = 562 }
+  #194: CWeaponP250 (Index = 194, Serial = 255) { Active = True, Index = 194, Serial = 255 }
+  #198: CPointEntity (Index = 198, Serial = 817) { Active = True, Index = 198, Serial = 817 }
+  #201: CParticleSystem (Index = 201, Serial = 283) { Active = True, Index = 201, Serial = 283 }
+  #202: CSmokeGrenade (Index = 202, Serial = 512) { Active = True, Index = 202, Serial = 512 }
+  #207: CCSObserverPawn (Index = 207, Serial = 934) { Active = True, Index = 207, Serial = 934 }
+  #208: [PAWN] fame { Active = True, Index = 208, Serial = 65 }
+  #209: CCSGOViewModel (Index = 209, Serial = 907) { Active = True, Index = 209, Serial = 907 }
+  #211: Unassigned { Active = True, Index = 211, Serial = 515 }
+  #212: Spectator { Active = True, Index = 212, Serial = 857 }
+  #213: TERRORIST (Natus Vincere) { Active = True, Index = 213, Serial = 395 }
+  #214: CT (Virtus.pro) { Active = True, Index = 214, Serial = 99 }
+  #216: CCSPlayerResource (Index = 216, Serial = 61) { Active = True, Index = 216, Serial = 61 }
+  #217: CCSGameRulesProxy (Index = 217, Serial = 961) { Active = True, Index = 217, Serial = 961 }
+  #218: CVoteController (Index = 218, Serial = 476) { Active = True, Index = 218, Serial = 476 }
+  #219: CVoteController (Index = 219, Serial = 58) { Active = True, Index = 219, Serial = 58 }
+  #220: CVoteController (Index = 220, Serial = 999) { Active = True, Index = 220, Serial = 999 }
+  #225: CBombTarget (Index = 225, Serial = 861) { Active = True, Index = 225, Serial = 861 }
+  #226: CBombTarget (Index = 226, Serial = 418) { Active = True, Index = 226, Serial = 418 }
+  #227: CEnvWind (Index = 227, Serial = 119) { Active = True, Index = 227, Serial = 119 }
+  #229: CDynamicProp (Index = 229, Serial = 582) { Active = True, Index = 229, Serial = 582 }
+  #232: CKnife (Index = 232, Serial = 556) { Active = True, Index = 232, Serial = 556 }
+  #240: CWeaponP250 (Index = 240, Serial = 519) { Active = True, Index = 240, Serial = 519 }
+  #243: CKnife (Index = 243, Serial = 362) { Active = True, Index = 243, Serial = 362 }
+  #244: CKnife (Index = 244, Serial = 273) { Active = True, Index = 244, Serial = 273 }
+  #245: CCSMinimapBoundary (Index = 245, Serial = 324) { Active = True, Index = 245, Serial = 324 }
+  #247: CWeaponHKP2000 (Index = 247, Serial = 929) { Active = True, Index = 247, Serial = 929 }
+  #248: CInferno (Index = 248, Serial = 390) { Active = True, Index = 248, Serial = 390 }
+  #253: CEnvCubemapFog (Index = 253, Serial = 593) { Active = True, Index = 253, Serial = 593 }
+  #256: CCSMinimapBoundary (Index = 256, Serial = 670) { Active = True, Index = 256, Serial = 670 }
+  #257: CFuncBrush (Index = 257, Serial = 225) { Active = True, Index = 257, Serial = 225 }
+  #258: CEnvSky (Index = 258, Serial = 873) { Active = True, Index = 258, Serial = 873 }
+  #260: CPointCamera (Index = 260, Serial = 940) { Active = True, Index = 260, Serial = 940 }
+  #261: CPointCamera (Index = 261, Serial = 449) { Active = True, Index = 261, Serial = 449 }
+  #262: CPointCamera (Index = 262, Serial = 87) { Active = True, Index = 262, Serial = 87 }
+  #263: CPointCamera (Index = 263, Serial = 199) { Active = True, Index = 263, Serial = 199 }
+  #264: CPointCamera (Index = 264, Serial = 636) { Active = True, Index = 264, Serial = 636 }
+  #273: CPointCamera (Index = 273, Serial = 922) { Active = True, Index = 273, Serial = 922 }
+  #274: CPointCamera (Index = 274, Serial = 60) { Active = True, Index = 274, Serial = 60 }
+  #275: CPointCamera (Index = 275, Serial = 537) { Active = True, Index = 275, Serial = 537 }
+  #276: CPointCamera (Index = 276, Serial = 613) { Active = True, Index = 276, Serial = 613 }
+  #277: CPointCamera (Index = 277, Serial = 552) { Active = True, Index = 277, Serial = 552 }
+  #278: CPhysicsPropMultiplayer (Index = 278, Serial = 797) { Active = True, Index = 278, Serial = 797 }
+  #280: CDynamicProp (Index = 280, Serial = 681) { Active = True, Index = 280, Serial = 681 }
+  #282: CWeaponM4A1 (Index = 282, Serial = 871) { Active = True, Index = 282, Serial = 871 }
+  #284: CPlayerVisibility (Index = 284, Serial = 718) { Active = True, Index = 284, Serial = 718 }
+  #285: CWeaponP250 (Index = 285, Serial = 273) { Active = True, Index = 285, Serial = 273 }
+  #294: CPhysicsPropMultiplayer (Index = 294, Serial = 873) { Active = True, Index = 294, Serial = 873 }
+  #296: CFlashbang (Index = 296, Serial = 70) { Active = True, Index = 296, Serial = 70 }
+  #298: CWeaponHKP2000 (Index = 298, Serial = 223) { Active = True, Index = 298, Serial = 223 }
+  #299: CBaseModelEntity (Index = 299, Serial = 181) { Active = True, Index = 299, Serial = 181 }
+  #303: CPhysicsPropMultiplayer (Index = 303, Serial = 281) { Active = True, Index = 303, Serial = 281 }
+  #305: CDynamicProp (Index = 305, Serial = 369) { Active = True, Index = 305, Serial = 369 }
+  #307: CWeaponM4A1 (Index = 307, Serial = 517) { Active = True, Index = 307, Serial = 517 }
+  #308: CCSGO_TeamSelectTerroristPosition (Index = 308, Serial = 990) { Active = True, Index = 308, Serial = 990 }
+  #309: CCSGO_TeamSelectTerroristPosition (Index = 309, Serial = 448) { Active = True, Index = 309, Serial = 448 }
+  #310: CCSGO_TeamSelectTerroristPosition (Index = 310, Serial = 714) { Active = True, Index = 310, Serial = 714 }
+  #311: CCSGO_TeamSelectTerroristPosition (Index = 311, Serial = 15) { Active = True, Index = 311, Serial = 15 }
+  #312: CCSGO_TeamSelectTerroristPosition (Index = 312, Serial = 440) { Active = True, Index = 312, Serial = 440 }
+  #313: CCSGO_TeamSelectTerroristPosition (Index = 313, Serial = 124) { Active = True, Index = 313, Serial = 124 }
+  #314: CCSGO_TeamSelectTerroristPosition (Index = 314, Serial = 813) { Active = True, Index = 314, Serial = 813 }
+  #315: CCSGO_TeamSelectTerroristPosition (Index = 315, Serial = 93) { Active = True, Index = 315, Serial = 93 }
+  #316: CCSGO_TeamSelectTerroristPosition (Index = 316, Serial = 87) { Active = True, Index = 316, Serial = 87 }
+  #317: CCSGO_TeamSelectCounterTerroristPosition (Index = 317, Serial = 805) { Active = True, Index = 317, Serial = 805 }
+  #318: CCSGO_TeamSelectCounterTerroristPosition (Index = 318, Serial = 393) { Active = True, Index = 318, Serial = 393 }
+  #319: CCSGO_TeamSelectCounterTerroristPosition (Index = 319, Serial = 173) { Active = True, Index = 319, Serial = 173 }
+  #320: CCSGO_TeamSelectCounterTerroristPosition (Index = 320, Serial = 912) { Active = True, Index = 320, Serial = 912 }
+  #321: CCSGO_TeamSelectCounterTerroristPosition (Index = 321, Serial = 10) { Active = True, Index = 321, Serial = 10 }
+  #322: CCSGO_TeamSelectCounterTerroristPosition (Index = 322, Serial = 771) { Active = True, Index = 322, Serial = 771 }
+  #323: CCSGO_TeamSelectCounterTerroristPosition (Index = 323, Serial = 147) { Active = True, Index = 323, Serial = 147 }
+  #324: CCSGO_TeamSelectCounterTerroristPosition (Index = 324, Serial = 824) { Active = True, Index = 324, Serial = 824 }
+  #325: CCSGO_TeamSelectCounterTerroristPosition (Index = 325, Serial = 728) { Active = True, Index = 325, Serial = 728 }
+  #326: CCSGO_TeamSelectCounterTerroristPosition (Index = 326, Serial = 105) { Active = True, Index = 326, Serial = 105 }
+  #327: CCSGO_TeamSelectTerroristPosition (Index = 327, Serial = 535) { Active = True, Index = 327, Serial = 535 }
+  #328: CCSGO_TeamIntroCounterTerroristPosition (Index = 328, Serial = 840) { Active = True, Index = 328, Serial = 840 }
+  #329: CCSGO_TeamIntroCounterTerroristPosition (Index = 329, Serial = 857) { Active = True, Index = 329, Serial = 857 }
+  #330: CCSGO_TeamIntroCounterTerroristPosition (Index = 330, Serial = 979) { Active = True, Index = 330, Serial = 979 }
+  #331: CCSGO_TeamIntroCounterTerroristPosition (Index = 331, Serial = 1012) { Active = True, Index = 331, Serial = 1012 }
+  #332: CCSGO_TeamIntroCounterTerroristPosition (Index = 332, Serial = 118) { Active = True, Index = 332, Serial = 118 }
+  #333: CCSGO_TeamIntroTerroristPosition (Index = 333, Serial = 999) { Active = True, Index = 333, Serial = 999 }
+  #334: CCSGO_TeamIntroTerroristPosition (Index = 334, Serial = 342) { Active = True, Index = 334, Serial = 342 }
+  #335: CCSGO_TeamIntroTerroristPosition (Index = 335, Serial = 376) { Active = True, Index = 335, Serial = 376 }
+  #336: CCSGO_TeamIntroTerroristPosition (Index = 336, Serial = 594) { Active = True, Index = 336, Serial = 594 }
+  #337: CCSGO_TeamIntroTerroristPosition (Index = 337, Serial = 915) { Active = True, Index = 337, Serial = 915 }
+  #338: CCSGO_TeamIntroCounterTerroristPosition (Index = 338, Serial = 734) { Active = True, Index = 338, Serial = 734 }
+  #339: CCSGO_TeamIntroCounterTerroristPosition (Index = 339, Serial = 299) { Active = True, Index = 339, Serial = 299 }
+  #340: CCSGO_TeamIntroCounterTerroristPosition (Index = 340, Serial = 577) { Active = True, Index = 340, Serial = 577 }
+  #341: CCSGO_TeamIntroCounterTerroristPosition (Index = 341, Serial = 474) { Active = True, Index = 341, Serial = 474 }
+  #342: CCSGO_TeamIntroCounterTerroristPosition (Index = 342, Serial = 768) { Active = True, Index = 342, Serial = 768 }
+  #343: CCSGO_TeamIntroTerroristPosition (Index = 343, Serial = 374) { Active = True, Index = 343, Serial = 374 }
+  #344: CCSGO_TeamIntroTerroristPosition (Index = 344, Serial = 430) { Active = True, Index = 344, Serial = 430 }
+  #345: CCSGO_TeamIntroTerroristPosition (Index = 345, Serial = 437) { Active = True, Index = 345, Serial = 437 }
+  #346: CCSGO_TeamIntroTerroristPosition (Index = 346, Serial = 697) { Active = True, Index = 346, Serial = 697 }
+  #347: CCSGO_TeamIntroTerroristPosition (Index = 347, Serial = 855) { Active = True, Index = 347, Serial = 855 }
+  #348: CSkyCamera (Index = 348, Serial = 604) { Active = True, Index = 348, Serial = 604 }
+  #349: CEnvSky (Index = 349, Serial = 215) { Active = True, Index = 349, Serial = 215 }
+  #350: CEnvSky (Index = 350, Serial = 354) { Active = True, Index = 350, Serial = 354 }
+  #351: CCSObserverPawn (Index = 351, Serial = 21) { Active = True, Index = 351, Serial = 21 }
+  #352: [PAWN] <no controller> { Active = True, Index = 352, Serial = 797 }
+  #353: CCSGOViewModel (Index = 353, Serial = 394) { Active = False, Index = 353, Serial = 394 }
+  #361: CBaseModelEntity (Index = 361, Serial = 96) { Active = True, Index = 361, Serial = 96 }
+  #367: CWeaponElite (Index = 367, Serial = 5) { Active = True, Index = 367, Serial = 5 }
+  #368: CKnife (Index = 368, Serial = 200) { Active = True, Index = 368, Serial = 200 }
+  #369: CWeaponHKP2000 (Index = 369, Serial = 756) { Active = True, Index = 369, Serial = 756 }
+  #378: CDynamicProp (Index = 378, Serial = 340) { Active = True, Index = 378, Serial = 340 }
+  #379: CKnife (Index = 379, Serial = 285) { Active = True, Index = 379, Serial = 285 }
+  #383: CWeaponM4A1 (Index = 383, Serial = 538) { Active = True, Index = 383, Serial = 538 }
+  #384: CBaseModelEntity (Index = 384, Serial = 829) { Active = True, Index = 384, Serial = 829 }
+  #385: CKnife (Index = 385, Serial = 170) { Active = True, Index = 385, Serial = 170 }
+  #386: CFlashbang (Index = 386, Serial = 537) { Active = True, Index = 386, Serial = 537 }
+  #388: CWeaponP250 (Index = 388, Serial = 637) { Active = True, Index = 388, Serial = 637 }
+  #393: CBaseModelEntity (Index = 393, Serial = 94) { Active = True, Index = 393, Serial = 94 }
+  #394: CPointEntity (Index = 394, Serial = 427) { Active = True, Index = 394, Serial = 427 }
+  #400: CFuncWater (Index = 400, Serial = 327) { Active = True, Index = 400, Serial = 327 }
+  #403: CDynamicProp (Index = 403, Serial = 839) { Active = True, Index = 403, Serial = 839 }
+  #404: CWeaponHKP2000 (Index = 404, Serial = 456) { Active = True, Index = 404, Serial = 456 }
+  #406: CWeaponGlock (Index = 406, Serial = 916) { Active = True, Index = 406, Serial = 916 }
+  #407: CSmokeGrenade (Index = 407, Serial = 395) { Active = True, Index = 407, Serial = 395 }
+  #408: CDynamicProp (Index = 408, Serial = 926) { Active = True, Index = 408, Serial = 926 }
+  #414: CParticleSystem (Index = 414, Serial = 184) { Active = True, Index = 414, Serial = 184 }
+  #415: CPhysicsPropMultiplayer (Index = 415, Serial = 74) { Active = True, Index = 415, Serial = 74 }
+  #416: CSmokeGrenadeProjectile (Index = 416, Serial = 679) { Active = True, Index = 416, Serial = 679 }
+  #418: CBaseModelEntity (Index = 418, Serial = 561) { Active = True, Index = 418, Serial = 561 }
+  #419: CDynamicProp (Index = 419, Serial = 1023) { Active = True, Index = 419, Serial = 1023 }
+  #421: CPhysicsPropMultiplayer (Index = 421, Serial = 434) { Active = True, Index = 421, Serial = 434 }
+  #423: CBaseModelEntity (Index = 423, Serial = 115) { Active = True, Index = 423, Serial = 115 }
+  #424: CWeaponAWP (Index = 424, Serial = 466) { Active = True, Index = 424, Serial = 466 }
+  #441: CKnife (Index = 441, Serial = 579) { Active = True, Index = 441, Serial = 579 }
+  #442: CC4 (Index = 442, Serial = 223) { Active = True, Index = 442, Serial = 223 }
+  #447: CDynamicProp (Index = 447, Serial = 504) { Active = True, Index = 447, Serial = 504 }
+  #450: CParticleSystem (Index = 450, Serial = 82) { Active = True, Index = 450, Serial = 82 }
+  #452: CDynamicProp (Index = 452, Serial = 479) { Active = True, Index = 452, Serial = 479 }
+  #453: CWeaponGlock (Index = 453, Serial = 579) { Active = True, Index = 453, Serial = 579 }
+  #462: CDynamicProp (Index = 462, Serial = 870) { Active = True, Index = 462, Serial = 870 }
+  #463: CPhysicsPropMultiplayer (Index = 463, Serial = 275) { Active = True, Index = 463, Serial = 275 }
+  #466: CDynamicProp (Index = 466, Serial = 508) { Active = True, Index = 466, Serial = 508 }
+  #468: CBaseModelEntity (Index = 468, Serial = 791) { Active = True, Index = 468, Serial = 791 }
+  #470: CDynamicProp (Index = 470, Serial = 766) { Active = True, Index = 470, Serial = 766 }
+  #474: CCSMinimapBoundary (Index = 474, Serial = 881) { Active = True, Index = 474, Serial = 881 }
+  #476: CPhysicsPropMultiplayer (Index = 476, Serial = 764) { Active = True, Index = 476, Serial = 764 }
+  #477: CInferno (Index = 477, Serial = 731) { Active = True, Index = 477, Serial = 731 }
+  #480: CBaseModelEntity (Index = 480, Serial = 903) { Active = True, Index = 480, Serial = 903 }
+  #483: CSmokeGrenade (Index = 483, Serial = 815) { Active = True, Index = 483, Serial = 815 }
+  #485: CDynamicProp (Index = 485, Serial = 344) { Active = True, Index = 485, Serial = 344 }
+  #486: CSmokeGrenadeProjectile (Index = 486, Serial = 921) { Active = True, Index = 486, Serial = 921 }
+  #487: CBaseModelEntity (Index = 487, Serial = 671) { Active = True, Index = 487, Serial = 671 }
+  #489: CWeaponHKP2000 (Index = 489, Serial = 482) { Active = True, Index = 489, Serial = 482 }
+  #492: CPhysicsPropMultiplayer (Index = 492, Serial = 411) { Active = True, Index = 492, Serial = 411 }
+  #493: CBaseModelEntity (Index = 493, Serial = 822) { Active = True, Index = 493, Serial = 822 }
+  #494: CCSObserverPawn (Index = 494, Serial = 594) { Active = True, Index = 494, Serial = 594 }
+  #495: [PAWN] Aleksib { Active = True, Index = 495, Serial = 711 }
+  #496: CCSGOViewModel (Index = 496, Serial = 133) { Active = True, Index = 496, Serial = 133 }
+  #497: CCSMinimapBoundary (Index = 497, Serial = 69) { Active = True, Index = 497, Serial = 69 }
+  #498: CPhysicsPropMultiplayer (Index = 498, Serial = 306) { Active = True, Index = 498, Serial = 306 }
+  #501: CBaseModelEntity (Index = 501, Serial = 11) { Active = True, Index = 501, Serial = 11 }
+  #502: CDynamicProp (Index = 502, Serial = 872) { Active = True, Index = 502, Serial = 872 }
+  #503: CCSObserverPawn (Index = 503, Serial = 649) { Active = True, Index = 503, Serial = 649 }
+  #504: [PAWN] n0rb3r7 { Active = True, Index = 504, Serial = 845 }
+  #505: CBaseModelEntity (Index = 505, Serial = 209) { Active = True, Index = 505, Serial = 209 }
+  #507: CBaseModelEntity (Index = 507, Serial = 838) { Active = True, Index = 507, Serial = 838 }
+  #509: CCSGOViewModel (Index = 509, Serial = 753) { Active = True, Index = 509, Serial = 753 }
+  #510: CDynamicProp (Index = 510, Serial = 19) { Active = True, Index = 510, Serial = 19 }
