@@ -52,6 +52,7 @@ public sealed partial class DemoParser
         _demoEvents.DemoSendTables += OnDemoSendTables;
         _demoEvents.DemoFileInfo += OnDemoFileInfo;
         _demoEvents.DemoFullPacket += OnDemoFullPacket;
+        _demoEvents.DemoStringTables += OnDemoStringTables;
 
         _packetEvents.SvcCreateStringTable += OnCreateStringTable;
         _packetEvents.SvcUpdateStringTable += OnUpdateStringTable;
@@ -168,7 +169,7 @@ public sealed partial class DemoParser
     /// </returns>
     public async ValueTask StartReadingAsync(Stream stream, CancellationToken cancellationToken)
     {
-        _fullPacketPositions.Clear();
+        _fullPackets.Clear();
         _stream = stream;
 
         var rented = _bytePool.Rent(16);
@@ -297,10 +298,13 @@ public sealed partial class DemoParser
 
         Debug.Assert(msgType is >= 0 and < EDemoCommands.DemMax, $"Unexpected demo command: {msgType}");
 
-        while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
+        if (!IsSeeking)
         {
-            _demoTickTimers.Dequeue();
-            timer.Invoke();
+            while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
+            {
+                _demoTickTimers.Dequeue();
+                timer.Invoke();
+            }
         }
 
         var rented = _bytePool.Rent(size);

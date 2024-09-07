@@ -4,13 +4,35 @@ namespace DemoFile;
 
 public partial class DemoParser
 {
-    private readonly record struct FullPacketRecord(
+    /// <summary>
+    /// <c>true</c> when the demo is seeking between ticks, for example
+    /// through <see cref="SeekToTickAsync"/>.
+    /// </summary>
+    public bool IsSeeking { get; private set; }
+
+    private readonly struct SeekScope : IDisposable
+    {
+        private readonly DemoParser _parser;
+
+        public SeekScope(DemoParser parser)
+        {
+            _parser = parser;
+            parser.IsSeeking = true;
+        }
+
+        public void Dispose()
+        {
+            _parser.IsSeeking = false;
+        }
+    }
+
+    internal readonly record struct FullPacketRecord(
         DemoTick Tick,
         long StreamPosition,
-        ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>> StringTables)
+        ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>> StringTables)
         : IComparable<FullPacketRecord>
     {
-        public static FullPacketRecord ForTick(DemoTick tick) => new(tick, 0L, ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, byte[]>>>.Empty);
+        public static FullPacketRecord ForTick(DemoTick tick) => new(tick, 0L, ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>>.Empty);
 
         public int CompareTo(FullPacketRecord other) => Tick.CompareTo(other.Tick);
     }
@@ -18,23 +40,25 @@ public partial class DemoParser
     /// Full packets occur every 60 seconds
     private const int FullPacketInterval = 64 * 60;
 
-    private readonly List<FullPacketRecord> _fullPacketPositions = new(64);
+    private readonly List<FullPacketRecord> _fullPackets = new(64);
     private DemoTick _readFullPacketTick = DemoTick.PreRecord;
     private int _fullPacketTickOffset;
 
+    internal IReadOnlyList<FullPacketRecord> FullPackets => _fullPackets;
+
     private bool TryFindFullPacketBefore(DemoTick demoTick, out FullPacketRecord fullPacket)
     {
-        var idx = _fullPacketPositions.BinarySearch(FullPacketRecord.ForTick(demoTick));
+        var idx = _fullPackets.BinarySearch(FullPacketRecord.ForTick(demoTick));
         if (idx >= 0)
         {
-            fullPacket = _fullPacketPositions[idx];
+            fullPacket = _fullPackets[idx];
             return true;
         }
 
         var fullPacketBeforeIdx = ~idx - 1;
-        if (fullPacketBeforeIdx >= 0 && fullPacketBeforeIdx < _fullPacketPositions.Count)
+        if (fullPacketBeforeIdx >= 0 && fullPacketBeforeIdx < _fullPackets.Count)
         {
-            fullPacket = _fullPacketPositions[fullPacketBeforeIdx];
+            fullPacket = _fullPackets[fullPacketBeforeIdx];
             return true;
         }
 
@@ -56,6 +80,8 @@ public partial class DemoParser
     /// </remarks>
     public async ValueTask SeekToTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
     {
+        using var _ = new SeekScope(this);
+
         if (IsReading)
             throw new InvalidOperationException($"Cannot seek to tick while reading commands");
 
@@ -165,31 +191,31 @@ public partial class DemoParser
 
     private void OnDemoFullPacket(CDemoFullPacket fullPacket)
     {
+        // CDemoFullPacket.string_table only contains tables that have changed
+        // since the last CDemoFullPacket, so we need to read each one while seeking.
+        if (IsSeeking || CurrentDemoTick == _readFullPacketTick)
+        {
+            foreach (var snapshot in fullPacket.StringTable.Tables)
+            {
+                OnDemoStringTable(snapshot);
+            }
+        }
+
         // DemoFullPackets are recorded in demos every 3,840 ticks (60 secs).
         // Keep track of where they are to allow for fast seeking through the demo.
-        var idx = _fullPacketPositions.BinarySearch(FullPacketRecord.ForTick(CurrentDemoTick));
+        var idx = _fullPackets.BinarySearch(FullPacketRecord.ForTick(CurrentDemoTick));
         if (idx < 0)
         {
-            _fullPacketPositions.Insert(~idx, new FullPacketRecord(
+            _fullPackets.Insert(~idx, new FullPacketRecord(
                 CurrentDemoTick,
                 _commandStartPosition,
                 _stringTables.ToImmutableDictionary(kvp => kvp.Key, kvp => kvp.Value.Entries)));
         }
 
-        if (CurrentDemoTick <= _readFullPacketTick)
+        // We only need to parse the entity snapshot if we're seeking to it
+        if (CurrentDemoTick == _readFullPacketTick)
         {
-            // CDemoFullPacket.string_table only contains tables that have changed
-            // since the last CDemoFullPacket, so we need to read each one while seeking.
-            foreach (var snapshot in fullPacket.StringTable.Tables)
-            {
-                OnDemoStringTable(snapshot);
-            }
-
-            // We only need to parse the entity snapshot if we're seeking to it
-            if (CurrentDemoTick == _readFullPacketTick)
-            {
-                OnDemoPacket(fullPacket.Packet);
-            }
+            OnDemoPacket(fullPacket.Packet);
         }
     }
 }
