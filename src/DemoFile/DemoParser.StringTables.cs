@@ -70,6 +70,14 @@ public partial class DemoParser
         }
     }
 
+    private void OnDemoStringTables(CDemoStringTables stringTables)
+    {
+        foreach (var table in stringTables.Tables)
+        {
+            OnDemoStringTable(table);
+        }
+    }
+
     private void OnDemoStringTable(CDemoStringTables.Types.table_t snapshot)
     {
         var stringTable = _stringTables[snapshot.TableName];

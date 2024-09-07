@@ -39,7 +39,6 @@ public struct UserMessageEvents
     public Action<CUserMessageAnimStateGraphState>? UserMessageAnimGraphUpdate;
     public Action<CUserMessageHapticsManagerPulse>? UserMessageHapticsManagerPulse;
     public Action<CUserMessageHapticsManagerEffect>? UserMessageHapticsManagerEffect;
-    public Action<CUserMessageCommandQueueState>? UserMessageCommandQueueState;
     public Action<CUserMessageUpdateCssClasses>? UserMessageUpdateCssClasses;
     public Action<CUserMessageServerFrameTime>? UserMessageServerFrameTime;
     public Action<CUserMessageLagCompensationError>? UserMessageLagCompensationError;
@@ -51,11 +50,14 @@ public struct UserMessageEvents
     public Action<CUserMessage_Inventory_Response>? UserMessageInventoryResponse;
     public Action<CUserMessageRequestDiagnostic>? UserMessageRequestDiagnostic;
     public Action<CUserMessage_ExtraUserData>? UserMessageExtraUserData;
+    public Action<CUserMessage_NotifyResponseFound>? UserMessageNotifyResponseFound;
+    public Action<CUserMessage_PlayResponseConditional>? UserMessagePlayResponseConditional;
 
     internal bool ParseUserMessage(int msgType, ReadOnlySpan<byte> buf)
     {
         switch (msgType)
         {
+            /*
             case (int)EBaseUserMessages.UmAchievementEvent:
                 UserMessageAchievementEvent?.Invoke(CUserMessageAchievementEvent.Parser.ParseFrom(buf));
                 return true;
@@ -95,12 +97,14 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmRumble:
                 UserMessageRumble?.Invoke(CUserMessageRumble.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseUserMessages.UmSayText:
                 UserMessageSayText?.Invoke(CUserMessageSayText.Parser.ParseFrom(buf));
                 return true;
             case (int)EBaseUserMessages.UmSayText2:
                 UserMessageSayText2?.Invoke(CUserMessageSayText2.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseUserMessages.UmSayTextChannel:
                 UserMessageSayTextChannel?.Invoke(CUserMessageSayTextChannel.Parser.ParseFrom(buf));
                 return true;
@@ -110,9 +114,11 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmShakeDir:
                 UserMessageShakeDir?.Invoke(CUserMessageShakeDir.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseUserMessages.UmTextMsg:
                 UserMessageTextMsg?.Invoke(CUserMessageTextMsg.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseUserMessages.UmScreenTilt:
                 UserMessageScreenTilt?.Invoke(CUserMessageScreenTilt.Parser.ParseFrom(buf));
                 return true;
@@ -161,9 +167,6 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmHapticsManagerEffect:
                 UserMessageHapticsManagerEffect?.Invoke(CUserMessageHapticsManagerEffect.Parser.ParseFrom(buf));
                 return true;
-            case (int)EBaseUserMessages.UmCommandQueueState:
-                UserMessageCommandQueueState?.Invoke(CUserMessageCommandQueueState.Parser.ParseFrom(buf));
-                return true;
             case (int)EBaseUserMessages.UmUpdateCssClasses:
                 UserMessageUpdateCssClasses?.Invoke(CUserMessageUpdateCssClasses.Parser.ParseFrom(buf));
                 return true;
@@ -197,6 +200,13 @@ public struct UserMessageEvents
             case (int)EBaseUserMessages.UmExtraUserData:
                 UserMessageExtraUserData?.Invoke(CUserMessage_ExtraUserData.Parser.ParseFrom(buf));
                 return true;
+            case (int)EBaseUserMessages.UmNotifyResponseFound:
+                UserMessageNotifyResponseFound?.Invoke(CUserMessage_NotifyResponseFound.Parser.ParseFrom(buf));
+                return true;
+            case (int)EBaseUserMessages.UmPlayResponseConditional:
+                UserMessagePlayResponseConditional?.Invoke(CUserMessage_PlayResponseConditional.Parser.ParseFrom(buf));
+                return true;
+            */
         }
 
         return false;

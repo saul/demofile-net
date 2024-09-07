@@ -22,6 +22,7 @@ public struct GameEvents
     {
         switch (msgType)
         {
+            /*
             case (int)EBaseGameEvents.GeVdebugGameSessionIdevent:
                 VDebugGameSessionIdEvent?.Invoke(CMsgVDebugGameSessionIDEvent.Parser.ParseFrom(buf));
                 return true;
@@ -38,12 +39,15 @@ public struct GameEvents
                 ClearDecalsForSkeletonInstanceEvent?.Invoke(CMsgClearDecalsForSkeletonInstanceEvent.Parser
                     .ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseGameEvents.GeSource1LegacyGameEventList:
                 Source1LegacyGameEventList?.Invoke(CMsgSource1LegacyGameEventList.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseGameEvents.GeSource1LegacyListenEvents:
                 Source1LegacyListenEvents?.Invoke(CMsgSource1LegacyListenEvents.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseGameEvents.GeSource1LegacyGameEvent:
                 Source1LegacyGameEvent?.Invoke(CMsgSource1LegacyGameEvent.Parser.ParseFrom(buf));
                 return true;
@@ -53,6 +57,7 @@ public struct GameEvents
             case (int)EBaseGameEvents.GeSosStopSoundEvent:
                 SosStopSoundEvent?.Invoke(CMsgSosStopSoundEvent.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseGameEvents.GeSosSetSoundEventParams:
                 SosSetSoundEventParams?.Invoke(CMsgSosSetSoundEventParams.Parser.ParseFrom(buf));
                 return true;
@@ -62,6 +67,7 @@ public struct GameEvents
             case (int)EBaseGameEvents.GeSosStopSoundEventHash:
                 SosStopSoundEventHash?.Invoke(CMsgSosStopSoundEventHash.Parser.ParseFrom(buf));
                 return true;
+            */
         }
 
         return false;

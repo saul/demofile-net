@@ -95,14 +95,15 @@ public partial class DemoParser
         targetTick = new DemoTick(Math.Max(targetTick.Value, _fullPacketTickOffset));
 
         var hasFullPacket = TryFindFullPacketBefore(targetTick, out var fullPacket);
+        var movedToFullPacket = false;
         if (targetTick <= CurrentDemoTick)
         {
             if (!hasFullPacket)
                 throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick} from {CurrentDemoTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
 
             // Seeking backwards. Jump back to the full packet to read the snapshot
-            (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
-            RestoreStringTables(stringTables);
+            RestoreFullPacket(fullPacket);
+            movedToFullPacket = true;
         }
         else
         {
@@ -111,16 +112,19 @@ public partial class DemoParser
             // Only read the full packet if the jump is far enough ahead
             if (hasFullPacket && deltaTicks.Value >= FullPacketInterval)
             {
-                (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
-                RestoreStringTables(stringTables);
+                RestoreFullPacket(fullPacket);
+                movedToFullPacket = true;
             }
         }
 
         // Keep reading commands until we reach the full packet
-        _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
-        if (CurrentDemoTick < _readFullPacketTick)
+        if (!movedToFullPacket)
         {
-            await SkipToFullPacketTickAsync(_readFullPacketTick, cancellationToken).ConfigureAwait(false);
+            _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
+            if (CurrentDemoTick < _readFullPacketTick)
+            {
+                await SkipToFullPacketTickAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         // Advance ticks until we get to the target tick
@@ -141,15 +145,31 @@ public partial class DemoParser
         }
     }
 
-    private async ValueTask SkipToFullPacketTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
+    private void RestoreFullPacket(FullPacketRecord fullPacket)
     {
-        while (CurrentDemoTick <= targetTick)
+        _readFullPacketTick = fullPacket.Tick;
+        (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
+        RestoreStringTables(stringTables);
+    }
+
+    private async ValueTask SkipToFullPacketTickAsync(CancellationToken cancellationToken)
+    {
+        while (true)
         {
             var cmd = ReadCommandHeader();
 
-            // If we're at the target tick, jump back to the start of the command
-            if (CurrentDemoTick == targetTick && cmd.Command == EDemoCommands.DemFullPacket)
+            // If we're at or after the target tick, jump back to the start of the command
+            if (CurrentDemoTick >= _readFullPacketTick && cmd.Command == EDemoCommands.DemFullPacket)
             {
+                // #72: some demos are missing full packets where they should be
+                // e.g. in this demo, expect a DemFullPacket at 192001, but all full packets
+                // after this point are offset by another 1 tick:
+                //   192000 - DemPacket
+                //   192002 - DemPacket
+                //   192002 - DemFullPacket
+                // Update the full tick to seek to accordingly
+                _readFullPacketTick = CurrentDemoTick;
+
                 _stream.Position = _commandStartPosition;
                 return;
             }
@@ -167,8 +187,6 @@ public partial class DemoParser
                 _stream.Position += cmd.Size;
             }
         }
-
-        throw new InvalidDemoException($"Could not find {nameof(EDemoCommands.DemFullPacket)} at tick {targetTick}");
     }
 
     private void OnDemoFullPacket(CDemoFullPacket fullPacket)

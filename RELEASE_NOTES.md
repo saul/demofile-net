@@ -1,7 +1,46 @@
-### 0.13.1 (2024-04-25)
+### 0.20.1 (2024-09-07)
 
 - Add `DemoParser.ReadAllParallelAsync` to read a demo across multiple threads. \
   Many thanks to [@in0finite](https://github.com/in0finite) for the initial implementation.
+
+### 0.19.1 (2024-09-07)
+
+- Added support for POV demos
+
+### 0.18.1 (2024-08-16)
+
+- Update schema and demo format for v14026
+
+### 0.17.1 (2024-08-11)
+
+- Add new `BulletDamage` Source1 game event
+- Parse `cs_gameevents.proto` messages (specifically CMsgTEFireBullets on `DemoFile.CsgoGameEvents.FireBullets`)
+- Parse `te.proto` (temporary entities) via `DemoFile.TempEntityEvents`
+- Don't try to parse messages that are never seen in demos (to improve performance)
+
+### 0.16.3 (2024-08-02)
+
+- Fixed backwards seeking failing for some demos ([#76](https://github.com/saul/demofile-net/issues/76))
+
+### 0.16.2 (2024-08-01)
+
+- Fixed CBaseCSGrenade.GrenadeCount always being 1 ([#71](https://github.com/saul/demofile-net/issues/71))
+
+### 0.16.1 (2024-08-01)
+
+- Fixed seeking failing for some demos ([#72](https://github.com/saul/demofile-net/issues/72)). Thanks to [@in0finite](https://github.com/in0finite) for reporting.
+
+### 0.15.1 (2024-06-01)
+
+- Update schema and demo format for v14011 
+
+### 0.14.1 (2024-05-26)
+
+- Fix parsing error since 2024-05-23 update (full schema update to follow)
+
+### 0.13.1 (2024-04-30)
+
+- Update schema and demo format for v14005
 
 ### 0.12.2 (2024-04-12)
 

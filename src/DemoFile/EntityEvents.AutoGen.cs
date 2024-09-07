@@ -36,6 +36,7 @@ public partial struct EntityEvents
     public Events<CBumpMineProjectile> CBumpMineProjectile;
     public Events<CC4> CC4;
     public Events<CChicken> CChicken;
+    public Events<CCitadelSoundOpvarSetOBB> CCitadelSoundOpvarSetOBB;
     public Events<CColorCorrection> CColorCorrection;
     public Events<CColorCorrectionVolume> CColorCorrectionVolume;
     public Events<CCSGameRulesProxy> CCSGameRulesProxy;
@@ -97,6 +98,7 @@ public partial struct EntityEvents
     public Events<CFuncLadder> CFuncLadder;
     public Events<CFuncMonitor> CFuncMonitor;
     public Events<CFuncMoveLinear> CFuncMoveLinear;
+    public Events<CFuncMover> CFuncMover;
     public Events<CFuncRotating> CFuncRotating;
     public Events<CFuncTrackTrain> CFuncTrackTrain;
     public Events<CFuncWater> CFuncWater;
@@ -132,8 +134,10 @@ public partial struct EntityEvents
     public Events<CModelPointEntity> CModelPointEntity;
     public Events<CMolotovGrenade> CMolotovGrenade;
     public Events<CMolotovProjectile> CMolotovProjectile;
+    public Events<CMoverPathNode> CMoverPathNode;
     public Events<COmniLight> COmniLight;
     public Events<CParticleSystem> CParticleSystem;
+    public Events<CPathMover> CPathMover;
     public Events<CPathParticleRope> CPathParticleRope;
     public Events<CPhysBox> CPhysBox;
     public Events<CPhysicsProp> CPhysicsProp;
@@ -171,6 +175,11 @@ public partial struct EntityEvents
     public Events<CSoundAreaEntityBase> CSoundAreaEntityBase;
     public Events<CSoundAreaEntityOrientedBox> CSoundAreaEntityOrientedBox;
     public Events<CSoundAreaEntitySphere> CSoundAreaEntitySphere;
+    public Events<CSoundEventAABBEntity> CSoundEventAABBEntity;
+    public Events<CSoundEventEntity> CSoundEventEntity;
+    public Events<CSoundEventOBBEntity> CSoundEventOBBEntity;
+    public Events<CSoundEventPathCornerEntity> CSoundEventPathCornerEntity;
+    public Events<CSoundEventSphereEntity> CSoundEventSphereEntity;
     public Events<CSoundOpvarSetAABBEntity> CSoundOpvarSetAABBEntity;
     public Events<CSoundOpvarSetAutoRoomEntity> CSoundOpvarSetAutoRoomEntity;
     public Events<CSoundOpvarSetOBBEntity> CSoundOpvarSetOBBEntity;

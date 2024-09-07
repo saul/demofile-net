@@ -11,7 +11,9 @@ public static class GlobalUtil
 
     public static byte[] GotvCompetitiveProtocol13992 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "virtus-pro-vs-natus-vincere-m1-ancient.dem"));
 
-    public static MemoryStream MatchmakingProtocol13968 => new(File.ReadAllBytes(Path.Combine(DemoBase, "93n781.dem")));
+    public static byte[] GotvCompetitiveProtocol14008 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "mouz-nxt-vs-space-m1-vertigo.dem"));
+
+    public static byte[] MatchmakingProtocol13968 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "93n781.dem"));
 
     public static byte[] GotvProtocol13978 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "13978.dem"));
 
@@ -22,6 +24,12 @@ public static class GlobalUtil
     public static byte[] GotvProtocol13990ArmsRace { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "13990_armsrace.dem"));
 
     public static byte[] GotvProtocol13990Deathmatch { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "13990_dm.dem"));
+
+    public static byte[] GotvProtocol14005 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "14005.dem"));
+
+    public static byte[] GotvProtocol14011 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "14011.dem"));
+
+    public static byte[] Pov14000 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "pov.dem"));
 
     public static byte[] ToBitStream(string input)
     {

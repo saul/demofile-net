@@ -38,6 +38,9 @@ public class DemoParserIntegrationTest
         new("v13987", GotvProtocol13987),
         new("v13990_armsrace", GotvProtocol13990ArmsRace),
         new("v13990_dm", GotvProtocol13990Deathmatch),
+        new("v14005", GotvProtocol14005),
+        new("v14011", GotvProtocol14011),
+        new("pov_14000", Pov14000),
     };
 
     [Test]
@@ -58,6 +61,6 @@ public class DemoParserIntegrationTest
     public async Task ReadAll_AlternateBaseline()
     {
         var demo = new DemoParser();
-        await demo.ReadAllAsync(MatchmakingProtocol13968, default);
+        await demo.ReadAllAsync(new MemoryStream(MatchmakingProtocol13968), default);
     }
 }

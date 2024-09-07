@@ -102,7 +102,8 @@
     "Distance": 0,
     "DmgHealth": 0,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [26033] player_death:
   {
@@ -160,7 +161,8 @@
     "Distance": 0,
     "DmgHealth": 0,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [29599] player_death:
   {
@@ -218,7 +220,8 @@
     "Distance": 10.080526,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [29674] player_death:
   {
@@ -276,7 +279,8 @@
     "Distance": 25.585176,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [29745] player_death:
   {
@@ -334,7 +338,8 @@
     "Distance": 0,
     "DmgHealth": 0,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [29872] player_death:
   {
@@ -392,7 +397,8 @@
     "Distance": 21.851307,
     "DmgHealth": 118,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [30636] player_death:
   {
@@ -450,7 +456,8 @@
     "Distance": 35.667793,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [30787] player_death:
   {
@@ -508,7 +515,8 @@
     "Distance": 0,
     "DmgHealth": 0,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [30831] player_death:
   {
@@ -566,7 +574,8 @@
     "Distance": 27.814957,
     "DmgHealth": 137,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [30849] player_death:
   {
@@ -624,7 +633,8 @@
     "Distance": 0,
     "DmgHealth": 0,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [31164] player_death:
   {
@@ -682,7 +692,8 @@
     "Distance": 0,
     "DmgHealth": 0,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [31295] player_death:
   {
@@ -740,7 +751,8 @@
     "Distance": 24.693851,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [31498] player_death:
   {
@@ -798,7 +810,8 @@
     "Distance": 9.919437,
     "DmgHealth": 125,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [31504] player_death:
   {
@@ -856,7 +869,8 @@
     "Distance": 22.091608,
     "DmgHealth": 118,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [32380] player_death:
   {
@@ -914,7 +928,8 @@
     "Distance": 16.116816,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [32383] player_death:
   {
@@ -972,7 +987,8 @@
     "Distance": 22.708216,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [32789] player_death:
   {
@@ -1030,7 +1046,8 @@
     "Distance": 37.57751,
     "DmgHealth": 135,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [32875] player_death:
   {
@@ -1088,7 +1105,8 @@
     "Distance": 36.993496,
     "DmgHealth": 39,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [33217] player_death:
   {
@@ -1146,7 +1164,8 @@
     "Distance": 30.196768,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [33408] player_death:
   {
@@ -1204,7 +1223,8 @@
     "Distance": 40.082928,
     "DmgHealth": 108,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [33793] player_death:
   {
@@ -1262,7 +1282,8 @@
     "Distance": 30.59873,
     "DmgHealth": 137,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [33897] player_death:
   {
@@ -1320,7 +1341,8 @@
     "Distance": 27.554247,
     "DmgHealth": 115,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [34126] player_death:
   {
@@ -1378,7 +1400,8 @@
     "Distance": 28.491545,
     "DmgHealth": 115,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [34587] player_death:
   {
@@ -1436,7 +1459,8 @@
     "Distance": 15.716593,
     "DmgHealth": 140,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [34608] player_death:
   {
@@ -1494,7 +1518,8 @@
     "Distance": 19.19539,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [34634] player_death:
   {
@@ -1552,7 +1577,8 @@
     "Distance": 20.519972,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [34999] player_death:
   {
@@ -1610,7 +1636,8 @@
     "Distance": 25.75796,
     "DmgHealth": 116,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [35203] player_death:
   {
@@ -1668,7 +1695,8 @@
     "Distance": 31.003319,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [35888] player_death:
   {
@@ -1741,7 +1769,8 @@
     "Distance": 10.294436,
     "DmgHealth": 36,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [36139] player_death:
   {
@@ -1799,7 +1828,8 @@
     "Distance": 26.358416,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [36595] player_death:
   {
@@ -1857,7 +1887,8 @@
     "Distance": 29.685202,
     "DmgHealth": 137,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [36839] player_death:
   {
@@ -1915,7 +1946,8 @@
     "Distance": 17.623844,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [37077] player_death:
   {
@@ -1973,7 +2005,8 @@
     "Distance": 13.976153,
     "DmgHealth": 44,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [37173] player_death:
   {
@@ -2031,7 +2064,8 @@
     "Distance": 7.0347495,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [37281] player_death:
   {
@@ -2089,7 +2123,8 @@
     "Distance": 15.6483,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [37824] player_death:
   {
@@ -2147,7 +2182,8 @@
     "Distance": 29.974691,
     "DmgHealth": 32,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [38570] player_death:
   {
@@ -2205,7 +2241,8 @@
     "Distance": 16.671177,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [38594] player_death:
   {
@@ -2263,7 +2300,8 @@
     "Distance": 10.683011,
     "DmgHealth": 125,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [38683] player_death:
   {
@@ -2321,7 +2359,8 @@
     "Distance": 16.848183,
     "DmgHealth": 140,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39206] player_death:
   {
@@ -2379,7 +2418,8 @@
     "Distance": 27.067265,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [39288] player_death:
   {
@@ -2437,7 +2477,8 @@
     "Distance": 37.912945,
     "DmgHealth": 135,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39408] player_death:
   {
@@ -2510,7 +2551,8 @@
     "Distance": 13.749087,
     "DmgHealth": 123,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39599] player_death:
   {
@@ -2568,7 +2610,8 @@
     "Distance": 33.024357,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39789] player_death:
   {
@@ -2626,7 +2669,8 @@
     "Distance": 35.380936,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39854] player_death:
   {
@@ -2684,7 +2728,8 @@
     "Distance": 16.990742,
     "DmgHealth": 121,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39936] player_death:
   {
@@ -2742,7 +2787,8 @@
     "Distance": 36.696907,
     "DmgHealth": 110,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [39946] player_death:
   {
@@ -2800,7 +2846,8 @@
     "Distance": 9.051045,
     "DmgHealth": 126,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [40451] player_death:
   {
@@ -2858,7 +2905,8 @@
     "Distance": 5.7081914,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [40502] player_death:
   {
@@ -2916,7 +2964,8 @@
     "Distance": 6.24092,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [40510] player_death:
   {
@@ -2974,7 +3023,8 @@
     "Distance": 5.5246916,
     "DmgHealth": 128,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [41027] player_death:
   {
@@ -3032,7 +3082,8 @@
     "Distance": 32.402596,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [41206] player_death:
   {
@@ -3090,7 +3141,8 @@
     "Distance": 18.840717,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [41492] player_death:
   {
@@ -3163,7 +3215,8 @@
     "Distance": 47.092148,
     "DmgHealth": 30,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [41513] player_death:
   {
@@ -3221,7 +3274,8 @@
     "Distance": 23.857391,
     "DmgHealth": 117,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [41925] player_death:
   {
@@ -3279,7 +3333,8 @@
     "Distance": 17.241404,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [42105] player_death:
   {
@@ -3337,7 +3392,8 @@
     "Distance": 6.174536,
     "DmgHealth": 128,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [42308] player_death:
   {
@@ -3395,7 +3451,8 @@
     "Distance": 14.066857,
     "DmgHealth": 44,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [42392] player_death:
   {
@@ -3453,7 +3510,8 @@
     "Distance": 19.30674,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [42534] player_death:
   {
@@ -3511,7 +3569,8 @@
     "Distance": 21.67729,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [42834] player_death:
   {
@@ -3569,7 +3628,8 @@
     "Distance": 25.321083,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [43008] player_death:
   {
@@ -3627,7 +3687,8 @@
     "Distance": 21.32033,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [43276] player_death:
   {
@@ -3685,7 +3746,8 @@
     "Distance": 38.201202,
     "DmgHealth": 135,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [43953] player_death:
   {
@@ -3743,7 +3805,8 @@
     "Distance": 23.199387,
     "DmgHealth": 118,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [44400] player_death:
   {
@@ -3801,7 +3864,8 @@
     "Distance": 11.317121,
     "DmgHealth": 36,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [44522] player_death:
   {
@@ -3859,7 +3923,8 @@
     "Distance": 33.633488,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [44702] player_death:
   {
@@ -3917,7 +3982,8 @@
     "Distance": 7.0187707,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [44746] player_death:
   {
@@ -3975,7 +4041,8 @@
     "Distance": 13.231949,
     "DmgHealth": 44,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [44965] player_death:
   {
@@ -4033,7 +4100,8 @@
     "Distance": 29.546146,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [45165] player_death:
   {
@@ -4091,7 +4159,8 @@
     "Distance": 24.946484,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [45190] player_death:
   {
@@ -4149,7 +4218,8 @@
     "Distance": 4.205664,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [45257] player_death:
   {
@@ -4207,7 +4277,8 @@
     "Distance": 17.665749,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [45507] player_death:
   {
@@ -4265,7 +4336,8 @@
     "Distance": 32.603626,
     "DmgHealth": 40,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [45606] player_death:
   {
@@ -4323,7 +4395,8 @@
     "Distance": 20.006084,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [45775] player_death:
   {
@@ -4381,7 +4454,8 @@
     "Distance": 9.089236,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [46796] player_death:
   {
@@ -4439,7 +4513,8 @@
     "Distance": 4.8430586,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [46889] player_death:
   {
@@ -4497,7 +4572,8 @@
     "Distance": 20.152685,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [46917] player_death:
   {
@@ -4555,7 +4631,8 @@
     "Distance": 18.668114,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [46961] player_death:
   {
@@ -4613,7 +4690,8 @@
     "Distance": 18.085424,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47176] player_death:
   {
@@ -4671,7 +4749,8 @@
     "Distance": 4.6211176,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47195] player_death:
   {
@@ -4729,7 +4808,8 @@
     "Distance": 9.758295,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47216] player_death:
   {
@@ -4787,7 +4867,8 @@
     "Distance": 7.738857,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47249] player_death:
   {
@@ -4845,7 +4926,8 @@
     "Distance": 10.153488,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47577] player_death:
   {
@@ -4903,7 +4985,8 @@
     "Distance": 25.934511,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47609] player_death:
   {
@@ -4961,7 +5044,8 @@
     "Distance": 26.176607,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47637] player_death:
   {
@@ -5019,7 +5103,8 @@
     "Distance": 25.579718,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [47685] player_death:
   {
@@ -5077,7 +5162,8 @@
     "Distance": 24.314636,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48618] player_death:
   {
@@ -5135,7 +5221,8 @@
     "Distance": 24.340096,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48640] player_death:
   {
@@ -5193,7 +5280,8 @@
     "Distance": 23.913578,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48658] player_death:
   {
@@ -5251,7 +5339,8 @@
     "Distance": 22.162815,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48701] player_death:
   {
@@ -5309,7 +5398,8 @@
     "Distance": 22.02688,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48898] player_death:
   {
@@ -5367,7 +5457,8 @@
     "Distance": 7.362759,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48923] player_death:
   {
@@ -5425,7 +5516,8 @@
     "Distance": 9.680935,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48974] player_death:
   {
@@ -5483,7 +5575,8 @@
     "Distance": 8.004408,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [48984] player_death:
   {
@@ -5541,7 +5634,8 @@
     "Distance": 10.572716,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49196] player_death:
   {
@@ -5599,7 +5693,8 @@
     "Distance": 9.333616,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49226] player_death:
   {
@@ -5657,7 +5752,8 @@
     "Distance": 10.874893,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49260] player_death:
   {
@@ -5715,7 +5811,8 @@
     "Distance": 11.356978,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49288] player_death:
   {
@@ -5773,7 +5870,8 @@
     "Distance": 11.6094885,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49465] player_death:
   {
@@ -5831,7 +5929,8 @@
     "Distance": 8.627282,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49505] player_death:
   {
@@ -5889,7 +5988,8 @@
     "Distance": 7.056993,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49523] player_death:
   {
@@ -5947,7 +6047,8 @@
     "Distance": 10.290469,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49554] player_death:
   {
@@ -6005,7 +6106,8 @@
     "Distance": 5.376795,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49787] player_death:
   {
@@ -6063,7 +6165,8 @@
     "Distance": 3.7873745,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49813] player_death:
   {
@@ -6121,7 +6224,8 @@
     "Distance": 8.86742,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49836] player_death:
   {
@@ -6179,7 +6283,8 @@
     "Distance": 5.742087,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [49868] player_death:
   {
@@ -6237,7 +6342,8 @@
     "Distance": 5.0469885,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50046] player_death:
   {
@@ -6295,7 +6401,8 @@
     "Distance": 3.2310574,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50072] player_death:
   {
@@ -6353,7 +6460,8 @@
     "Distance": 9.694546,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50094] player_death:
   {
@@ -6411,7 +6519,8 @@
     "Distance": 7.3335094,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50133] player_death:
   {
@@ -6469,7 +6578,8 @@
     "Distance": 11.163007,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50346] player_death:
   {
@@ -6527,7 +6637,8 @@
     "Distance": 8.662706,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50395] player_death:
   {
@@ -6585,7 +6696,8 @@
     "Distance": 7.031565,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50441] player_death:
   {
@@ -6643,7 +6755,8 @@
     "Distance": 10.280125,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50473] player_death:
   {
@@ -6701,7 +6814,8 @@
     "Distance": 5.4200053,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50620] player_death:
   {
@@ -6759,7 +6873,8 @@
     "Distance": 22.858025,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50656] player_death:
   {
@@ -6817,7 +6932,8 @@
     "Distance": 21.370956,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50687] player_death:
   {
@@ -6875,7 +6991,8 @@
     "Distance": 8.86742,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50727] player_death:
   {
@@ -6933,7 +7050,8 @@
     "Distance": 5.0469885,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50918] player_death:
   {
@@ -6991,7 +7109,8 @@
     "Distance": 3.0578966,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50936] player_death:
   {
@@ -7049,7 +7168,8 @@
     "Distance": 7.199,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50955] player_death:
   {
@@ -7107,7 +7227,8 @@
     "Distance": 9.609818,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [50986] player_death:
   {
@@ -7165,7 +7286,8 @@
     "Distance": 11.162491,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51177] player_death:
   {
@@ -7223,7 +7345,8 @@
     "Distance": 8.723988,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51209] player_death:
   {
@@ -7281,7 +7404,8 @@
     "Distance": 10.409653,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51232] player_death:
   {
@@ -7339,7 +7463,8 @@
     "Distance": 7.189772,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51255] player_death:
   {
@@ -7397,7 +7522,8 @@
     "Distance": 5.478439,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51434] player_death:
   {
@@ -7455,7 +7581,8 @@
     "Distance": 4.0203547,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51466] player_death:
   {
@@ -7513,7 +7640,8 @@
     "Distance": 6.1485767,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51497] player_death:
   {
@@ -7571,7 +7699,8 @@
     "Distance": 9.1591835,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51524] player_death:
   {
@@ -7629,7 +7758,8 @@
     "Distance": 4.816704,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51732] player_death:
   {
@@ -7687,7 +7817,8 @@
     "Distance": 3.0578964,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51763] player_death:
   {
@@ -7745,7 +7876,8 @@
     "Distance": 7.199,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51818] player_death:
   {
@@ -7803,7 +7935,8 @@
     "Distance": 9.609818,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [51852] player_death:
   {
@@ -7861,7 +7994,8 @@
     "Distance": 11.162491,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52009] player_death:
   {
@@ -7919,7 +8053,8 @@
     "Distance": 8.723988,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52072] player_death:
   {
@@ -7977,7 +8112,8 @@
     "Distance": 7.189772,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52104] player_death:
   {
@@ -8035,7 +8171,8 @@
     "Distance": 10.409653,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52113] player_death:
   {
@@ -8093,7 +8230,8 @@
     "Distance": 5.478439,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52258] player_death:
   {
@@ -8151,7 +8289,8 @@
     "Distance": 4.0203547,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52326] player_death:
   {
@@ -8209,7 +8348,8 @@
     "Distance": 6.1485767,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52356] player_death:
   {
@@ -8267,7 +8407,8 @@
     "Distance": 9.1591835,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52393] player_death:
   {
@@ -8325,7 +8466,8 @@
     "Distance": 4.816704,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52513] player_death:
   {
@@ -8383,7 +8525,8 @@
     "Distance": 3.0578964,
     "DmgHealth": 143,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52586] player_death:
   {
@@ -8441,7 +8584,8 @@
     "Distance": 9.609818,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52611] player_death:
   {
@@ -8499,7 +8643,8 @@
     "Distance": 7.199,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52657] player_death:
   {
@@ -8557,7 +8702,8 @@
     "Distance": 15.2058935,
     "DmgHealth": 140,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52673] player_death:
   {
@@ -8615,7 +8761,8 @@
     "Distance": 11.162491,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52756] player_death:
   {
@@ -8673,7 +8820,8 @@
     "Distance": 8.723988,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [52833] player_death:
   {
@@ -8731,7 +8879,8 @@
     "Distance": 10.409653,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [53369] player_death:
   {
@@ -8789,7 +8938,8 @@
     "Distance": 23.111034,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [53425] player_death:
   {
@@ -8847,7 +8997,8 @@
     "Distance": 21.612669,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [53437] player_death:
   {
@@ -8905,7 +9056,8 @@
     "Distance": 24.022976,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [53508] player_death:
   {
@@ -8963,7 +9115,8 @@
     "Distance": 23.067205,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [53647] player_death:
   {
@@ -9021,7 +9174,8 @@
     "Distance": 23.550499,
     "DmgHealth": 153,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [53818] player_death:
   {
@@ -9079,7 +9233,8 @@
     "Distance": 26.67199,
     "DmgHealth": 147,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [53860] player_death:
   {
@@ -9137,7 +9292,8 @@
     "Distance": 26.494473,
     "DmgHealth": 147,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [55843] player_death:
   {
@@ -9195,7 +9351,8 @@
     "Distance": 20.207516,
     "DmgHealth": 119,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [57296] player_death:
   {
@@ -9253,7 +9410,8 @@
     "Distance": 24.954544,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [57347] player_death:
   {
@@ -9311,7 +9469,8 @@
     "Distance": 24.878405,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [57354] player_death:
   {
@@ -9369,7 +9528,8 @@
     "Distance": 22.46045,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [57402] player_death:
   {
@@ -9427,7 +9587,8 @@
     "Distance": 16.710264,
     "DmgHealth": 121,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [58225] player_death:
   {
@@ -9485,7 +9646,8 @@
     "Distance": 33.27985,
     "DmgHealth": 112,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [58807] player_death:
   {
@@ -9543,7 +9705,8 @@
     "Distance": 6.968546,
     "DmgHealth": 127,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [59446] player_death:
   {
@@ -9601,7 +9764,8 @@
     "Distance": 14.785987,
     "DmgHealth": 123,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [59843] player_death:
   {
@@ -9659,7 +9823,8 @@
     "Distance": 9.689231,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [60164] player_death:
   {
@@ -9717,7 +9882,8 @@
     "Distance": 12.276992,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [60635] player_death:
   {
@@ -9775,7 +9941,8 @@
     "Distance": 36.98496,
     "DmgHealth": 110,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [60930] player_death:
   {
@@ -9833,7 +10000,8 @@
     "Distance": 12.772278,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [60952] player_death:
   {
@@ -9891,7 +10059,8 @@
     "Distance": 25.186441,
     "DmgHealth": 116,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [61338] player_death:
   {
@@ -9949,7 +10118,8 @@
     "Distance": 20.237068,
     "DmgHealth": 119,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [61878] player_death:
   {
@@ -10007,7 +10177,8 @@
     "Distance": 25.148489,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [61943] player_death:
   {
@@ -10065,7 +10236,8 @@
     "Distance": 10.083729,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [62133] player_death:
   {
@@ -10138,7 +10310,8 @@
     "Distance": 19.066141,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [62156] player_death:
   {
@@ -10211,7 +10384,8 @@
     "Distance": 26.456854,
     "DmgHealth": 33,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [62189] player_death:
   {
@@ -10269,7 +10443,8 @@
     "Distance": 27.010405,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [62434] player_death:
   {
@@ -10342,7 +10517,8 @@
     "Distance": 35.90006,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [62714] player_death:
   {
@@ -10400,7 +10576,8 @@
     "Distance": 36.01876,
     "DmgHealth": 31,
     "DmgArmor": 0,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [62796] player_death:
   {
@@ -10458,7 +10635,8 @@
     "Distance": 36.09942,
     "DmgHealth": 33,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [62980] player_death:
   {
@@ -10516,7 +10694,8 @@
     "Distance": 39.872574,
     "DmgHealth": 135,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [63129] player_death:
   {
@@ -10574,7 +10753,8 @@
     "Distance": 39.07758,
     "DmgHealth": 109,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [63828] player_death:
   {
@@ -10632,7 +10812,8 @@
     "Distance": 23.652826,
     "DmgHealth": 117,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [64043] player_death:
   {
@@ -10690,7 +10871,8 @@
     "Distance": 35.88575,
     "DmgHealth": 110,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [64117] player_death:
   {
@@ -10763,7 +10945,8 @@
     "Distance": 34.569252,
     "DmgHealth": 32,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [64637] player_death:
   {
@@ -10821,7 +11004,8 @@
     "Distance": 18.34431,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [64693] player_death:
   {
@@ -10879,7 +11063,8 @@
     "Distance": 4.855424,
     "DmgHealth": 129,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [64796] player_death:
   {
@@ -10937,7 +11122,8 @@
     "Distance": 37.22159,
     "DmgHealth": 110,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [64993] player_death:
   {
@@ -10995,7 +11181,8 @@
     "Distance": 26.94762,
     "DmgHealth": 146,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [65000] player_death:
   {
@@ -11053,7 +11240,8 @@
     "Distance": 30.135138,
     "DmgHealth": 137,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [65487] player_death:
   {
@@ -11111,7 +11299,8 @@
     "Distance": 12.045266,
     "DmgHealth": 141,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [65645] player_death:
   {
@@ -11169,7 +11358,8 @@
     "Distance": 21.21758,
     "DmgHealth": 119,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [66210] player_death:
   {
@@ -11227,7 +11417,8 @@
     "Distance": 7.8765945,
     "DmgHealth": 127,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [66502] player_death:
   {
@@ -11285,7 +11476,8 @@
     "Distance": 22.204542,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [66790] player_death:
   {
@@ -11343,7 +11535,8 @@
     "Distance": 17.447361,
     "DmgHealth": 121,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [66856] player_death:
   {
@@ -11401,7 +11594,8 @@
     "Distance": 23.92542,
     "DmgHealth": 42,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [66890] player_death:
   {
@@ -11459,7 +11653,8 @@
     "Distance": 36.77126,
     "DmgHealth": 110,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [66920] player_death:
   {
@@ -11517,7 +11712,8 @@
     "Distance": 10.622467,
     "DmgHealth": 45,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [67046] player_death:
   {
@@ -11575,7 +11771,8 @@
     "Distance": 33.870144,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [67528] player_death:
   {
@@ -11648,7 +11845,8 @@
     "Distance": 9.565951,
     "DmgHealth": 126,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [67567] player_death:
   {
@@ -11706,7 +11904,8 @@
     "Distance": 15.309396,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [67631] player_death:
   {
@@ -11764,7 +11963,8 @@
     "Distance": 20.58328,
     "DmgHealth": 42,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [67757] player_death:
   {
@@ -11822,7 +12022,8 @@
     "Distance": 20.371342,
     "DmgHealth": 119,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [67844] player_death:
   {
@@ -11880,7 +12081,8 @@
     "Distance": 27.699276,
     "DmgHealth": 137,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [67862] player_death:
   {
@@ -11953,7 +12155,8 @@
     "Distance": 19.624102,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [68019] player_death:
   {
@@ -12011,7 +12214,8 @@
     "Distance": 34.91106,
     "DmgHealth": 111,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [68075] player_death:
   {
@@ -12069,7 +12273,8 @@
     "Distance": 22.767525,
     "DmgHealth": 118,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [68148] player_death:
   {
@@ -12127,7 +12332,8 @@
     "Distance": 36.688286,
     "DmgHealth": 33,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [68364] player_death:
   {
@@ -12185,7 +12391,8 @@
     "Distance": 20.584818,
     "DmgHealth": 34,
     "DmgArmor": 0,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [68436] player_death:
   {
@@ -12243,7 +12450,8 @@
     "Distance": 7.254285,
     "DmgHealth": 36,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [68658] player_death:
   {
@@ -12301,7 +12509,8 @@
     "Distance": 12.461134,
     "DmgHealth": 44,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [68685] player_death:
   {
@@ -12359,7 +12568,8 @@
     "Distance": 20.990623,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [69096] player_death:
   {
@@ -12417,7 +12627,8 @@
     "Distance": 32.93648,
     "DmgHealth": 112,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [69296] RoundStartCount change:
   {
@@ -12503,7 +12714,8 @@
     "Distance": 15.765189,
     "DmgHealth": 124,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [76293] player_death:
   {
@@ -12561,7 +12773,8 @@
     "Distance": 5.4139533,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [77345] player_death:
   {
@@ -12619,7 +12832,8 @@
     "Distance": 27.91144,
     "DmgHealth": 114,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [77481] player_death:
   {
@@ -12677,7 +12891,8 @@
     "Distance": 23.146645,
     "DmgHealth": 118,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [77921] player_death:
   {
@@ -12735,7 +12950,8 @@
     "Distance": 17.092052,
     "DmgHealth": 123,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [77921] RoundEndCount change:
   {
@@ -12827,7 +13043,8 @@
     "Distance": 5.8922863,
     "DmgHealth": 97,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [83195] player_death:
   {
@@ -12885,7 +13102,8 @@
     "Distance": 26.031996,
     "DmgHealth": 27,
     "DmgArmor": 0,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [83264] player_death:
   {
@@ -12943,7 +13161,8 @@
     "Distance": 28.050737,
     "DmgHealth": 109,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [84521] player_death:
   {
@@ -13016,7 +13235,8 @@
     "Distance": 24.446207,
     "DmgHealth": 19,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [84589] player_death:
   {
@@ -13074,7 +13294,8 @@
     "Distance": 29.517729,
     "DmgHealth": 114,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [84589] RoundEndCount change:
   {
@@ -13166,7 +13387,8 @@
     "Distance": 16.226204,
     "DmgHealth": 85,
     "DmgArmor": 18,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [90396] player_death:
   {
@@ -13239,7 +13461,8 @@
     "Distance": 14.358679,
     "DmgHealth": 13,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [90486] player_death:
   {
@@ -13312,7 +13535,8 @@
     "Distance": 16.092419,
     "DmgHealth": 16,
     "DmgArmor": 5,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [90617] player_death:
   {
@@ -13385,7 +13609,8 @@
     "Distance": 20.93755,
     "DmgHealth": 18,
     "DmgArmor": 12,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [92302] RoundEndCount change:
   {
@@ -13477,7 +13702,8 @@
     "Distance": 22.997065,
     "DmgHealth": 33,
     "DmgArmor": 4,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [95363] player_death:
   {
@@ -13535,7 +13761,8 @@
     "Distance": 23.909613,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [98432] player_death:
   {
@@ -13593,7 +13820,8 @@
     "Distance": 26.188612,
     "DmgHealth": 81,
     "DmgArmor": 17,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [98463] player_death:
   {
@@ -13666,7 +13894,8 @@
     "Distance": 21.584225,
     "DmgHealth": 26,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [99910] player_death:
   {
@@ -13739,7 +13968,8 @@
     "Distance": 10.609655,
     "DmgHealth": 20,
     "DmgArmor": 0,
-    "Hitgroup": 7
+    "Hitgroup": 7,
+    "Attackerinair": false
   }
 [101719] player_death:
   {
@@ -13812,7 +14042,8 @@
     "Distance": 25.224072,
     "DmgHealth": 21,
     "DmgArmor": 0,
-    "Hitgroup": 6
+    "Hitgroup": 6,
+    "Attackerinair": false
   }
 [102245] player_death:
   {
@@ -13870,7 +14101,8 @@
     "Distance": 6.365945,
     "DmgHealth": 20,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [103136] RoundEndCount change:
   {
@@ -13962,7 +14194,8 @@
     "Distance": 27.942867,
     "DmgHealth": 106,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [113898] player_death:
   {
@@ -14020,7 +14253,8 @@
     "Distance": 11.671053,
     "DmgHealth": 34,
     "DmgArmor": 4,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [114122] player_death:
   {
@@ -14078,7 +14312,8 @@
     "Distance": 7.8854117,
     "DmgHealth": 89,
     "DmgArmor": 19,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [114617] RoundEndCount change:
   {
@@ -14170,7 +14405,8 @@
     "Distance": 16.43273,
     "DmgHealth": 108,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [118120] player_death:
   {
@@ -14228,7 +14464,8 @@
     "Distance": 11.54962,
     "DmgHealth": 34,
     "DmgArmor": 4,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [119807] player_death:
   {
@@ -14286,7 +14523,8 @@
     "Distance": 11.903434,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [119907] player_death:
   {
@@ -14344,7 +14582,8 @@
     "Distance": 11.993637,
     "DmgHealth": 26,
     "DmgArmor": 0,
-    "Hitgroup": 7
+    "Hitgroup": 7,
+    "Attackerinair": false
   }
 [121067] player_death:
   {
@@ -14402,7 +14641,8 @@
     "Distance": 13.959028,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [121271] player_death:
   {
@@ -14460,7 +14700,8 @@
     "Distance": 8.21176,
     "DmgHealth": 110,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [121646] player_death:
   {
@@ -14518,7 +14759,8 @@
     "Distance": 13.481103,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [122385] player_death:
   {
@@ -14576,7 +14818,8 @@
     "Distance": 15.350378,
     "DmgHealth": 108,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [122801] player_death:
   {
@@ -14649,7 +14892,8 @@
     "Distance": 6.01798,
     "DmgHealth": 16,
     "DmgArmor": 8,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [123304] RoundEndCount change:
   {
@@ -14756,7 +15000,8 @@
     "Distance": 22.293158,
     "DmgHealth": 89,
     "DmgArmor": 13,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [126726] player_death:
   {
@@ -14829,7 +15074,8 @@
     "Distance": 26.05307,
     "DmgHealth": 89,
     "DmgArmor": 12,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [126934] player_death:
   {
@@ -14902,7 +15148,8 @@
     "Distance": 17.775991,
     "DmgHealth": 24,
     "DmgArmor": 5,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [127217] player_death:
   {
@@ -14960,7 +15207,8 @@
     "Distance": 8.4156885,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [127791] player_death:
   {
@@ -15033,7 +15281,8 @@
     "Distance": 12.362631,
     "DmgHealth": 48,
     "DmgArmor": 27,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [128735] player_death:
   {
@@ -15091,7 +15340,8 @@
     "Distance": 16.129698,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [130067] player_death:
   {
@@ -15164,7 +15414,8 @@
     "Distance": 23.983425,
     "DmgHealth": 137,
     "DmgArmor": 1,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [130420] player_death:
   {
@@ -15237,7 +15488,8 @@
     "Distance": 20.65804,
     "DmgHealth": 108,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [130420] RoundEndCount change:
   {
@@ -15329,7 +15581,8 @@
     "Distance": 26.62595,
     "DmgHealth": 72,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [134434] player_death:
   {
@@ -15387,7 +15640,8 @@
     "Distance": 41.547398,
     "DmgHealth": 445,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [136247] player_death:
   {
@@ -15445,7 +15699,8 @@
     "Distance": 23.008526,
     "DmgHealth": 43,
     "DmgArmor": 0,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [136410] player_death:
   {
@@ -15503,7 +15758,8 @@
     "Distance": 31.631107,
     "DmgHealth": 113,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [137968] player_death:
   {
@@ -15561,7 +15817,8 @@
     "Distance": 31.754892,
     "DmgHealth": 448,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [137968] RoundEndCount change:
   {
@@ -15653,7 +15910,8 @@
     "Distance": 18.296474,
     "DmgHealth": 24,
     "DmgArmor": 5,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [140655] player_death:
   {
@@ -15711,7 +15969,8 @@
     "Distance": 7.7170396,
     "DmgHealth": 27,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [140731] player_death:
   {
@@ -15769,7 +16028,8 @@
     "Distance": 6.853273,
     "DmgHealth": 82,
     "DmgArmor": 17,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [140742] player_death:
   {
@@ -15842,7 +16102,8 @@
     "Distance": 20.92071,
     "DmgHealth": 23,
     "DmgArmor": 5,
-    "Hitgroup": 4
+    "Hitgroup": 4,
+    "Attackerinair": false
   }
 [144018] player_death:
   {
@@ -15900,7 +16161,8 @@
     "Distance": 8.013457,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [144057] player_death:
   {
@@ -15973,7 +16235,8 @@
     "Distance": 11.138056,
     "DmgHealth": 111,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [145950] player_death:
   {
@@ -16031,7 +16294,8 @@
     "Distance": 14.384917,
     "DmgHealth": 30,
     "DmgArmor": 6,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [147157] player_death:
   {
@@ -16089,7 +16353,8 @@
     "Distance": 22.771654,
     "DmgHealth": 440,
     "DmgArmor": 5,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [148063] RoundEndCount change:
   {
@@ -16196,7 +16461,8 @@
     "Distance": 18.063124,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [154439] RoundEndCount change:
   {
@@ -16303,7 +16569,8 @@
     "Distance": 19.895914,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [157149] player_death:
   {
@@ -16361,7 +16628,8 @@
     "Distance": 26.608992,
     "DmgHealth": 137,
     "DmgArmor": 1,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [157509] player_death:
   {
@@ -16419,7 +16687,8 @@
     "Distance": 17.238853,
     "DmgHealth": 108,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [157749] player_death:
   {
@@ -16477,7 +16746,8 @@
     "Distance": 6.620164,
     "DmgHealth": 92,
     "DmgArmor": 25,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [158631] player_death:
   {
@@ -16535,7 +16805,8 @@
     "Distance": 15.526238,
     "DmgHealth": 138,
     "DmgArmor": 1,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [159120] player_death:
   {
@@ -16593,7 +16864,8 @@
     "Distance": 7.489266,
     "DmgHealth": 89,
     "DmgArmor": 19,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [159512] player_death:
   {
@@ -16666,7 +16938,8 @@
     "Distance": 31.810392,
     "DmgHealth": 109,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [159979] player_death:
   {
@@ -16739,7 +17012,8 @@
     "Distance": 18.001774,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [160022] player_death:
   {
@@ -16812,7 +17086,8 @@
     "Distance": 5.481374,
     "DmgHealth": 27,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [160022] RoundEndCount change:
   {
@@ -16919,7 +17194,8 @@
     "Distance": 12.003162,
     "DmgHealth": 8,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [162453] player_death:
   {
@@ -16977,7 +17253,8 @@
     "Distance": 18.990719,
     "DmgHealth": 19,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [162489] player_death:
   {
@@ -17035,7 +17312,8 @@
     "Distance": 17.582644,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [168528] player_death:
   {
@@ -17093,7 +17371,8 @@
     "Distance": 10.160362,
     "DmgHealth": 17,
     "DmgArmor": 0,
-    "Hitgroup": 6
+    "Hitgroup": 6,
+    "Attackerinair": false
   }
 [168575] player_death:
   {
@@ -17166,7 +17445,8 @@
     "Distance": 12.353017,
     "DmgHealth": 34,
     "DmgArmor": 4,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [168672] player_death:
   {
@@ -17224,7 +17504,8 @@
     "Distance": 16.990704,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [169007] player_death:
   {
@@ -17297,7 +17578,8 @@
     "Distance": 15.947147,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [169110] RoundEndCount change:
   {
@@ -17389,7 +17671,8 @@
     "Distance": 31.725893,
     "DmgHealth": 110,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [177184] player_death:
   {
@@ -17447,7 +17730,8 @@
     "Distance": 15.152893,
     "DmgHealth": 99,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [177325] player_death:
   {
@@ -17505,7 +17789,8 @@
     "Distance": 9.791596,
     "DmgHealth": 130,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [177370] player_death:
   {
@@ -17563,7 +17848,8 @@
     "Distance": 3.7887454,
     "DmgHealth": 136,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [177870] RoundEndCount change:
   {
@@ -17641,7 +17927,8 @@
     "Distance": 21.34348,
     "DmgHealth": 91,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [178203] player_death:
   {
@@ -17714,7 +18001,8 @@
     "Distance": 10.959102,
     "DmgHealth": 19,
     "DmgArmor": 0,
-    "Hitgroup": 6
+    "Hitgroup": 6,
+    "Attackerinair": false
   }
 [178318] RoundStartCount change:
   {
@@ -17786,7 +18074,8 @@
     "Distance": 25.004646,
     "DmgHealth": 22,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [187813] player_death:
   {
@@ -17844,7 +18133,8 @@
     "Distance": 9.66784,
     "DmgHealth": 20,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [187873] player_death:
   {
@@ -17902,7 +18192,8 @@
     "Distance": 14.795673,
     "DmgHealth": 22,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [188015] player_death:
   {
@@ -17960,7 +18251,8 @@
     "Distance": 22.417288,
     "DmgHealth": 19,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [188053] player_death:
   {
@@ -18018,7 +18310,8 @@
     "Distance": 13.069574,
     "DmgHealth": 91,
     "DmgArmor": 13,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [188440] player_death:
   {
@@ -18076,7 +18369,8 @@
     "Distance": 9.661175,
     "DmgHealth": 31,
     "DmgArmor": 6,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [188507] player_death:
   {
@@ -18134,7 +18428,8 @@
     "Distance": 28.85801,
     "DmgHealth": 22,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [188857] player_death:
   {
@@ -18192,7 +18487,8 @@
     "Distance": 20.385744,
     "DmgHealth": 90,
     "DmgArmor": 13,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [188857] RoundEndCount change:
   {
@@ -18284,7 +18580,8 @@
     "Distance": 6.9584055,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [194613] player_death:
   {
@@ -18357,7 +18654,8 @@
     "Distance": 24.311716,
     "DmgHealth": 59,
     "DmgArmor": 28,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [197049] RoundEndCount change:
   {
@@ -18449,7 +18747,8 @@
     "Distance": 13.193748,
     "DmgHealth": 31,
     "DmgArmor": 6,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [202364] player_death:
   {
@@ -18522,7 +18821,8 @@
     "Distance": 14.960347,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [203745] player_death:
   {
@@ -18580,7 +18880,8 @@
     "Distance": 8.745689,
     "DmgHealth": 28,
     "DmgArmor": 7,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [203828] player_death:
   {
@@ -18653,7 +18954,8 @@
     "Distance": 7.5060945,
     "DmgHealth": 27,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [204442] player_death:
   {
@@ -18711,7 +19013,8 @@
     "Distance": 25.330946,
     "DmgHealth": 27,
     "DmgArmor": 4,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [204562] player_death:
   {
@@ -18769,7 +19072,8 @@
     "Distance": 17.197693,
     "DmgHealth": 140,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [204706] player_death:
   {
@@ -18842,7 +19146,8 @@
     "Distance": 7.27519,
     "DmgHealth": 22,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [204799] player_death:
   {
@@ -18915,7 +19220,8 @@
     "Distance": 16.126589,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [205910] player_death:
   {
@@ -18973,7 +19279,8 @@
     "Distance": 7.327476,
     "DmgHealth": 142,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [205910] RoundEndCount change:
   {
@@ -19065,7 +19372,8 @@
     "Distance": 18.645548,
     "DmgHealth": 139,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [211888] player_death:
   {
@@ -19123,7 +19431,8 @@
     "Distance": 18.718576,
     "DmgHealth": 30,
     "DmgArmor": 6,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [211912] player_death:
   {
@@ -19196,7 +19505,8 @@
     "Distance": 18.665066,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [213541] player_death:
   {
@@ -19269,7 +19579,8 @@
     "Distance": 10.88201,
     "DmgHealth": 25,
     "DmgArmor": 5,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [213853] player_death:
   {
@@ -19327,7 +19638,8 @@
     "Distance": 21.055412,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [214393] player_death:
   {
@@ -19385,7 +19697,8 @@
     "Distance": 12.701451,
     "DmgHealth": 16,
     "DmgArmor": 5,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [214957] player_death:
   {
@@ -19443,7 +19756,8 @@
     "Distance": 22.86791,
     "DmgHealth": 15,
     "DmgArmor": 5,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [214957] RoundEndCount change:
   {
@@ -19535,7 +19849,8 @@
     "Distance": 18.766302,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [217702] player_death:
   {
@@ -19608,7 +19923,8 @@
     "Distance": 14.716223,
     "DmgHealth": 26,
     "DmgArmor": 0,
-    "Hitgroup": 7
+    "Hitgroup": 7,
+    "Attackerinair": false
   }
 [218160] player_death:
   {
@@ -19666,7 +19982,8 @@
     "Distance": 14.091121,
     "DmgHealth": 35,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [218232] player_death:
   {
@@ -19739,7 +20056,8 @@
     "Distance": 9.422134,
     "DmgHealth": 36,
     "DmgArmor": 0,
-    "Hitgroup": 5
+    "Hitgroup": 5,
+    "Attackerinair": false
   }
 [218263] player_death:
   {
@@ -19812,7 +20130,8 @@
     "Distance": 16.947563,
     "DmgHealth": 26,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [218266] player_death:
   {
@@ -19870,7 +20189,8 @@
     "Distance": 25.589706,
     "DmgHealth": 138,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [218266] RoundEndCount change:
   {
@@ -19962,7 +20282,8 @@
     "Distance": 4.6900883,
     "DmgHealth": 90,
     "DmgArmor": 19,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [225579] player_death:
   {
@@ -20035,7 +20356,8 @@
     "Distance": 13.985586,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [225877] player_death:
   {
@@ -20108,7 +20430,8 @@
     "Distance": 11.753351,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [225965] player_death:
   {
@@ -20181,7 +20504,8 @@
     "Distance": 14.7302065,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [226219] player_death:
   {
@@ -20239,7 +20563,8 @@
     "Distance": 11.275874,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [226284] player_death:
   {
@@ -20297,7 +20622,8 @@
     "Distance": 10.899715,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [226469] player_death:
   {
@@ -20355,7 +20681,8 @@
     "Distance": 10.368045,
     "DmgHealth": 27,
     "DmgArmor": 3,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [226551] player_death:
   {
@@ -20413,7 +20740,8 @@
     "Distance": 10.531103,
     "DmgHealth": 8,
     "DmgArmor": 0,
-    "Hitgroup": 0
+    "Hitgroup": 0,
+    "Attackerinair": false
   }
 [227354] RoundEndCount change:
   {
@@ -20491,7 +20819,8 @@
     "Distance": 7.3062406,
     "DmgHealth": 27,
     "DmgArmor": 4,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [227802] RoundStartCount change:
   {
@@ -20563,7 +20892,8 @@
     "Distance": 7.7450147,
     "DmgHealth": 127,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [232140] player_death:
   {
@@ -20621,7 +20951,8 @@
     "Distance": 9.152943,
     "DmgHealth": 36,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [232191] player_death:
   {
@@ -20679,7 +21010,8 @@
     "Distance": 11.378129,
     "DmgHealth": 125,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [232211] player_death:
   {
@@ -20737,7 +21069,8 @@
     "Distance": 9.374701,
     "DmgHealth": 36,
     "DmgArmor": 0,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [232344] player_death:
   {
@@ -20795,7 +21128,8 @@
     "Distance": 17.647196,
     "DmgHealth": 20,
     "DmgArmor": 5,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [232455] player_death:
   {
@@ -20868,7 +21202,8 @@
     "Distance": 11.180402,
     "DmgHealth": 129,
     "DmgArmor": 0,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [232455] RoundEndCount change:
   {
@@ -20975,7 +21310,8 @@
     "Distance": 11.459353,
     "DmgHealth": 34,
     "DmgArmor": 4,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [238200] player_death:
   {
@@ -21033,7 +21369,8 @@
     "Distance": 19.241493,
     "DmgHealth": 84,
     "DmgArmor": 18,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [240992] player_death:
   {
@@ -21091,7 +21428,8 @@
     "Distance": 20.659365,
     "DmgHealth": 83,
     "DmgArmor": 17,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [241880] player_death:
   {
@@ -21149,7 +21487,8 @@
     "Distance": 17.809614,
     "DmgHealth": 27,
     "DmgArmor": 5,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [243164] player_death:
   {
@@ -21207,7 +21546,8 @@
     "Distance": 10.679539,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [243173] player_death:
   {
@@ -21280,7 +21620,8 @@
     "Distance": 15.171759,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [244050] player_death:
   {
@@ -21338,7 +21679,8 @@
     "Distance": 10.268942,
     "DmgHealth": 90,
     "DmgArmor": 19,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [244641] RoundEndCount change:
   {
@@ -21430,7 +21772,8 @@
     "Distance": 11.15782,
     "DmgHealth": 90,
     "DmgArmor": 19,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [248403] player_death:
   {
@@ -21488,7 +21831,8 @@
     "Distance": 13.614631,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [248492] player_death:
   {
@@ -21546,7 +21890,8 @@
     "Distance": 27.476791,
     "DmgHealth": 106,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [248760] player_death:
   {
@@ -21619,7 +21964,8 @@
     "Distance": 14.304254,
     "DmgHealth": 109,
     "DmgArmor": 15,
-    "Hitgroup": 1
+    "Hitgroup": 1,
+    "Attackerinair": false
   }
 [248845] player_death:
   {
@@ -21692,7 +22038,8 @@
     "Distance": 21.860773,
     "DmgHealth": 29,
     "DmgArmor": 6,
-    "Hitgroup": 3
+    "Hitgroup": 3,
+    "Attackerinair": false
   }
 [251007] player_death:
   {
@@ -21750,7 +22097,8 @@
     "Distance": 18.525574,
     "DmgHealth": 110,
     "DmgArmor": 1,
-    "Hitgroup": 2
+    "Hitgroup": 2,
+    "Attackerinair": false
   }
 [251007] RoundEndCount change:
   {

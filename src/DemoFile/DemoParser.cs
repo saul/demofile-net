@@ -22,6 +22,8 @@ public sealed partial class DemoParser
     private PacketEvents _packetEvents;
     private Stream _stream;
     private UserMessageEvents _userMessageEvents;
+    private TempEntityEvents _tempEntityEvents;
+    private CsgoGameEvents _csgoGameEvents;
 
     /// <summary>
     /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
@@ -49,6 +51,7 @@ public sealed partial class DemoParser
         _demoEvents.DemoSendTables += OnDemoSendTables;
         _demoEvents.DemoFileInfo += OnDemoFileInfo;
         _demoEvents.DemoFullPacket += OnDemoFullPacket;
+        _demoEvents.DemoStringTables += OnDemoStringTables;
 
         _packetEvents.SvcCreateStringTable += OnCreateStringTable;
         _packetEvents.SvcUpdateStringTable += OnUpdateStringTable;
@@ -76,6 +79,8 @@ public sealed partial class DemoParser
     public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
     public Source1GameEvents Source1GameEvents => _source1GameEvents;
     public ref EntityEvents EntityEvents => ref _entityEvents;
+    public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
+    public ref CsgoGameEvents CsgoGameEvents => ref _csgoGameEvents;
 
     public CDemoFileHeader FileHeader { get; private set; } = new();
 
@@ -133,7 +138,9 @@ public sealed partial class DemoParser
 
             if (!_packetEvents.ParseNetMessage(queued.MsgType, msgBuf)
                 && !_gameEvents.ParseGameEvent(queued.MsgType, msgBuf)
-                && !_userMessageEvents.ParseUserMessage(queued.MsgType, msgBuf))
+                && !_userMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
+                && !_tempEntityEvents.ParseNetMessage(queued.MsgType, msgBuf)
+                && !_csgoGameEvents.ParseNetMessage(queued.MsgType, msgBuf))
             {
             }
 

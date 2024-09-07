@@ -48,7 +48,9 @@
     <Protobuf Include="../../protos/networkbasetypes.proto" />
     <Protobuf Include="../../protos/network_connection.proto" />
     <Protobuf Include="../../protos/gameevents.proto" />
+    <Protobuf Include="../../protos/cs_gameevents.proto" />
     <Protobuf Include="../../protos/usermessages.proto" />
+    <Protobuf Include="../../protos/te.proto" />
   </ItemGroup>
 
 </Project>

@@ -8,8 +8,10 @@ internal ref struct BitBuffer
 {
     private static readonly uint[] BitMask;
 
+    private int _bitsRead = 0;
     private int _bitsAvail = 0;
     private uint _buf = 0;
+    private ReadOnlySpan<byte> _original;
     private ReadOnlySpan<byte> _pointer;
 
     static BitBuffer()
@@ -25,9 +27,20 @@ internal ref struct BitBuffer
 
     public BitBuffer(ReadOnlySpan<byte> pointer)
     {
+        _original = pointer;
         _pointer = pointer;
         FetchNext();
     }
+
+    public BitBuffer Clone()
+    {
+        var (fromByte, skipBits) = Math.DivRem(_bitsRead, 8);
+        var cloned = new BitBuffer(_original[fromByte..]);
+        cloned.ReadUBits(skipBits);
+        return cloned;
+    }
+
+    public int TellBits => _bitsRead;
 
     public int RemainingBytes => _pointer.Length + _bitsAvail / 8;
 
@@ -39,6 +52,8 @@ internal ref struct BitBuffer
 
     public uint ReadUBits(int numBits)
     {
+        _bitsRead += numBits;
+
         if (_bitsAvail >= numBits)
         {
             var ret = _buf & BitMask[numBits];
@@ -99,6 +114,8 @@ internal ref struct BitBuffer
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool ReadOneBit()
     {
+        _bitsRead += 1;
+
         var ret = _buf & 1;
         if (--_bitsAvail == 0)
         {

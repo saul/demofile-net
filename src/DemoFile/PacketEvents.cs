@@ -4,7 +4,7 @@ namespace DemoFile;
 
 public struct PacketEvents
 {
-    public Action<CNETMsg_Disconnect>? NetDisconnect;
+    public Action<CNETMsg_Disconnect_Legacy>? NetDisconnect;
     public Action<CNETMsg_SplitScreenUser>? NetSplitScreenUser;
     public Action<CNETMsg_Tick>? NetTick;
     public Action<CNETMsg_StringCmd>? NetStringCmd;
@@ -46,13 +46,14 @@ public struct PacketEvents
     public Action<CSVCMsg_HltvReplay>? SvcHltvReplay;
     public Action<CSVCMsg_Broadcast_Command>? SvcBroadcastCommand;
     public Action<CSVCMsg_HltvFixupOperatorStatus>? SvcHltvFixupOperatorStatus;
+    public Action<CSVCMsg_UserCommands>? SvcUserCmds;
 
     internal bool ParseNetMessage(int msgType, ReadOnlySpan<byte> buf)
     {
         switch (msgType)
         {
-            case (int)NET_Messages.NetDisconnect:
-                NetDisconnect?.Invoke(CNETMsg_Disconnect.Parser.ParseFrom(buf));
+            case (int)NET_Messages.NetDisconnectLegacy:
+                NetDisconnect?.Invoke(CNETMsg_Disconnect_Legacy.Parser.ParseFrom(buf));
                 return true;
             case (int)NET_Messages.NetSplitScreenUser:
                 NetSplitScreenUser?.Invoke(CNETMsg_SplitScreenUser.Parser.ParseFrom(buf));
@@ -90,9 +91,11 @@ public struct PacketEvents
             case (int)SVC_Messages.SvcServerInfo:
                 SvcServerInfo?.Invoke(CSVCMsg_ServerInfo.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)SVC_Messages.SvcFlattenedSerializer:
                 SvcFlattenedSerializer?.Invoke(CSVCMsg_FlattenedSerializer.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)SVC_Messages.SvcClassInfo:
                 SvcClassInfo?.Invoke(CSVCMsg_ClassInfo.Parser.ParseFrom(buf));
                 return true;
@@ -114,15 +117,18 @@ public struct PacketEvents
             case (int)SVC_Messages.SvcPrint:
                 SvcPrint?.Invoke(CSVCMsg_Print.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)SVC_Messages.SvcSounds:
                 SvcSounds?.Invoke(CSVCMsg_Sounds.Parser.ParseFrom(buf));
                 return true;
             case (int)SVC_Messages.SvcSetView:
                 SvcSetView?.Invoke(CSVCMsg_SetView.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)SVC_Messages.SvcClearAllStringTables:
                 SvcClearAllStringTables?.Invoke(CSVCMsg_ClearAllStringTables.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)SVC_Messages.SvcCmdKeyValues:
                 SvcCmdKeyValues?.Invoke(CSVCMsg_CmdKeyValues.Parser.ParseFrom(buf));
                 return true;
@@ -132,9 +138,11 @@ public struct PacketEvents
             case (int)SVC_Messages.SvcSplitScreen:
                 SvcSplitScreen?.Invoke(CSVCMsg_SplitScreen.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)SVC_Messages.SvcPacketEntities:
                 SvcPacketEntities?.Invoke(CSVCMsg_PacketEntities.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)SVC_Messages.SvcPrefetch:
                 SvcPrefetch?.Invoke(CSVCMsg_Prefetch.Parser.ParseFrom(buf));
                 return true;
@@ -153,9 +161,11 @@ public struct PacketEvents
             case (int)SVC_Messages.SvcPacketReliable:
                 SvcPacketReliable?.Invoke(CSVCMsg_PacketReliable.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)SVC_Messages.SvcHltvstatus:
                 SvcHltvStatus?.Invoke(CSVCMsg_HLTVStatus.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)SVC_Messages.SvcServerSteamId:
                 SvcServerSteamId?.Invoke(CSVCMsg_ServerSteamID.Parser.ParseFrom(buf));
                 return true;
@@ -176,6 +186,10 @@ public struct PacketEvents
                 return true;
             case (int)SVC_Messages.SvcHltvFixupOperatorStatus:
                 SvcHltvFixupOperatorStatus?.Invoke(CSVCMsg_HltvFixupOperatorStatus.Parser.ParseFrom(buf));
+                return true;
+            */
+            case (int)SVC_Messages.SvcUserCmds:
+                SvcUserCmds?.Invoke(CSVCMsg_UserCommands.Parser.ParseFrom(buf));
                 return true;
         }
 
