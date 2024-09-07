@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 
 namespace DemoFile.Test.Integration;
@@ -74,12 +75,12 @@ public class PlayerPropsIntegrationTest
                 return sb.ToString();
             }
 
-            var snapshotIntervalTicks = DemoTick.Zero + TimeSpan.FromMinutes(10);
+            var snapshotInterval = TimeSpan.FromMinutes(10);
+            var snapshotIntervalTicks = DemoTick.Zero + snapshotInterval;
 
             void OnSnapshotTimer()
             {
-                if (demo.CurrentDemoTick.Value % snapshotIntervalTicks.Value != 0)
-                    return;
+                Assert.That(demo.CurrentDemoTick.Value % snapshotIntervalTicks.Value, Is.EqualTo(0));
 
                 snapshot.Add(demo.CurrentDemoTick, $"Interval snapshot:{Environment.NewLine}{SnapshotPlayerState()}");
 
@@ -88,7 +89,9 @@ public class PlayerPropsIntegrationTest
                     OnSnapshotTimer);
             }
 
-            demo.CreateTimer(snapshotIntervalTicks, OnSnapshotTimer);
+            var startTick = demo.CurrentDemoTick == DemoTick.PreRecord ? DemoTick.Zero : demo.CurrentDemoTick;
+            var clampedStartTick = new DemoTick(startTick.Value / (int)(snapshotInterval.TotalSeconds * 64) * (int)(snapshotInterval.TotalSeconds * 64));
+            demo.CreateTimer(clampedStartTick + snapshotInterval, OnSnapshotTimer);
 
             return snapshot;
         }

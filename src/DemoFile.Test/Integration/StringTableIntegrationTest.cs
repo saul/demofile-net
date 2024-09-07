@@ -41,7 +41,8 @@ public class StringTableIntegrationTest
                 return sb.ToString();
             }
 
-            var snapshotIntervalTicks = DemoTick.Zero + TimeSpan.FromMinutes(1);
+            var snapshotInterval = TimeSpan.FromMinutes(1);
+            var snapshotIntervalTicks = DemoTick.Zero + snapshotInterval;
 
             void OnSnapshotTimer()
             {
@@ -55,7 +56,9 @@ public class StringTableIntegrationTest
                     OnSnapshotTimer);
             }
 
-            demo.CreateTimer(snapshotIntervalTicks, OnSnapshotTimer);
+            var startTick = demo.CurrentDemoTick == DemoTick.PreRecord ? DemoTick.Zero : demo.CurrentDemoTick;
+            var clampedStartTick = new DemoTick(startTick.Value / (int)(snapshotInterval.TotalSeconds * 64) * (int)(snapshotInterval.TotalSeconds * 64));
+            demo.CreateTimer(clampedStartTick + snapshotInterval, OnSnapshotTimer);
 
             return snapshot;
         }

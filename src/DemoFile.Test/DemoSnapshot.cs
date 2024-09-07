@@ -6,7 +6,7 @@ namespace DemoFile.Test;
 [DebuggerDisplay("Count = {Count}")]
 public class DemoSnapshot
 {
-    private Dictionary<DemoTick, List<string>> _items = new();
+    private readonly Dictionary<DemoTick, List<string>> _items = new();
 
     public int Count => _items.Count;
 
