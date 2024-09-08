@@ -20,7 +20,7 @@ public partial record SchemaClass(
         return $"{char.ToUpper(fieldName[0])}{fieldName[1..]}";
     }
 
-    public string CsPropertyNameForField(string className, SchemaField field)
+    public string CsPropertyNameForField(GameSdkInfo gameSdkInfo, string className, SchemaField field)
     {
         // When the hungarian notation prefix is removed, some fields shadow their parent's.
         // Because there are only a handful, we have some manual overrides.
@@ -52,7 +52,7 @@ public partial record SchemaClass(
             ? cleanName
             : RemoveMemberPrefix(field.Name);
 
-        return field.Type.TryGetEntityHandleType(out _)
+        return field.Type.TryGetEntityHandleType(gameSdkInfo, out _)
             ? uniqueName + "Handle"
             : uniqueName;
     }
