@@ -60,8 +60,6 @@ public abstract partial class DemoParser<TGameParser>
         _packetEvents.NetTick += OnNetTick;
     }
 
-    protected abstract IReadOnlyDictionary<string, EntityFactory<TGameParser>> EntityFactories { get; }
-
     /// <summary>
     /// Flag indicate whether the parser is currently reading a command.
     /// During reading, seeking (e.g. with <see cref="SeekToTickAsync"/>) is not possible.
@@ -73,7 +71,6 @@ public abstract partial class DemoParser<TGameParser>
     public ref PacketEvents PacketEvents => ref _packetEvents;
     public ref BaseUserMessageEvents BaseUserMessageEvents => ref _baseUserMessageEvents;
     public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
-    protected internal abstract ref EntityEvents<CEntityInstance<TGameParser>, TGameParser> EntityInstanceEvents { get; }
 
     public CDemoFileHeader FileHeader { get; private set; } = new();
 
@@ -98,8 +95,6 @@ public abstract partial class DemoParser<TGameParser>
     /// <c>false</c> if this is a POV demo.
     /// </summary>
     public bool IsTvRecording { get; private set; }
-
-    protected abstract DecoderSet CreateDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers);
 
     private void OnDemoFileInfo(CDemoFileInfo fileInfo)
     {
@@ -143,8 +138,6 @@ public abstract partial class DemoParser<TGameParser>
             _bytePool.Return(queued.RentedBuf);
         }
     }
-
-    protected abstract bool ParseNetMessage(int msgType, ReadOnlySpan<byte> msgBuf);
 
     private static int ReadDemoSize(Span<byte> bytes)
     {

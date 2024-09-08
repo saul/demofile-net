@@ -47,7 +47,7 @@ public class DemoParserBenchmark
     {
 #if BASELINE
         _demoParser = new DemoParser();
-        await _demoParser.Start(_fileStream, default);
+        await _demoParser.ReadAllAsync(_fileStream, default);
 #else
         _demoParser = new CsDemoParser();
         await _demoParser.ReadAllAsync(_fileStream, default);
@@ -57,6 +57,10 @@ public class DemoParserBenchmark
     [Benchmark]
     public async Task ParseDemoParallel()
     {
-        await CsDemoParser.ReadAllParallelAsync(_demoBytes, _ => { },default);
+#if BASELINE
+        await DemoParser.ReadAllParallelAsync(_demoBytes, _ => { }, default);
+#else
+        await CsDemoParser.ReadAllParallelAsync(_demoBytes, _ => { }, default);
+#endif
     }
 }

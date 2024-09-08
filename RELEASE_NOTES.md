@@ -7,6 +7,7 @@
 - BREAKING CHANGE: Renamed `DemoParser.GameEvents` to `DemoParser.BaseGameEvents`
 - BREAKING CHANGE: Renamed `DemoParser.UserMessageEvents` to `DemoParser.BaseUserMessageEvents`
 - BREAKING CHANGE: Renamed `DemoParser.CsgoGameEvents` to `CsDemoParser.GameEvents`
+- Reduce allocations for compressed packets (reduces total allocs for a typical demo by -10%)
 
 ### 0.20.1 (2024-09-07)
 

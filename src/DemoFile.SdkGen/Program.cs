@@ -740,7 +740,7 @@ internal static class Program
                 var eventField = isCEntityInstance ? "EntityInstanceEvents" : $"EntityEvents.{classNameCs}";
 
                 builder.AppendLine($"");
-                //builder.AppendLine("    [EditorBrowsable(EditorBrowsableState.Advanced)]");
+                builder.AppendLine("    [EditorBrowsable(EditorBrowsableState.Advanced)]");
                 builder.AppendLine($"    public {accessor} void Fire{eventName}Event()");
                 builder.AppendLine($"    {{");
                 builder.AppendLine($"        Demo.{eventField}.{eventName}?.Invoke(this);");
