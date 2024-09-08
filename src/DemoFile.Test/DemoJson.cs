@@ -16,8 +16,8 @@ public static class DemoJson
 
         public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
         {
-            var handleType = typeToConvert.GetGenericArguments()[0];
-            return Activator.CreateInstance(typeof(CHandleJsonConverter<,>).MakeGenericType(handleType)) as JsonConverter;
+            var genericArgs = typeToConvert.GetGenericArguments();
+            return Activator.CreateInstance(typeof(CHandleJsonConverter<,>).MakeGenericType(genericArgs)) as JsonConverter;
         }
     }
 
