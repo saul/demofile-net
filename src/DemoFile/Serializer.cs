@@ -2,9 +2,9 @@ using System.Text;
 
 namespace DemoFile;
 
-internal record Serializer(SerializerKey Key, SerializableField[] Fields);
+public record Serializer(SerializerKey Key, SerializableField[] Fields);
 
-internal record SerializableField(
+public record SerializableField(
     string VarName,
     FieldType VarType,
     ReadOnlyMemory<string> SendNode,
@@ -73,7 +73,7 @@ internal record SerializableField(
     }
 }
 
-internal readonly record struct SerializerKey(string Name, int Version)
+public readonly record struct SerializerKey(string Name, int Version)
 {
     public override string ToString() => Version != 0 ? $"{Name}#{Version}" : Name;
 }

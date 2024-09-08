@@ -13,14 +13,14 @@ internal readonly record struct BaselineKey(uint ServerClassId, uint AlternateBa
         : $"{ServerClassId}:{AlternateBaseline}";
 }
 
-public partial class DemoParser
+public partial class DemoParser<TGameParser>
 {
     private readonly Dictionary<string, StringTable> _stringTables = new();
     private readonly List<StringTable> _stringTableList = new();
 
     private readonly Dictionary<BaselineKey, int> _instanceBaselineLookup = new();
     private KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[] _instanceBaselines = new KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[64];
-    private CMsgPlayerInfo?[] _playerInfos = new CMsgPlayerInfo?[16];
+    private CMsgPlayerInfo?[] _playerInfos = Array.Empty<CMsgPlayerInfo?>();
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
         _stringTables.TryGetValue(tableName, out stringTable);
@@ -33,6 +33,11 @@ public partial class DemoParser
             "userinfo" => OnUserInfoUpdate,
             _ => null
         };
+
+        if (msg.Name == "userinfo")
+        {
+            _playerInfos = new CMsgPlayerInfo?[msg.NumEntries];
+        }
 
         var stringTable = new StringTable(
             msg.Name,
@@ -128,12 +133,6 @@ public partial class DemoParser
 
     private void OnUserInfoUpdate(int index, KeyValuePair<string, ReadOnlyMemory<byte>>? entry)
     {
-        if (index >= _playerInfos.Length)
-        {
-            var newSize = (int) BitOperations.RoundUpToPowerOf2((uint) index + 1);
-            Array.Resize(ref _playerInfos, newSize);
-        }
-
         _playerInfos[index] = entry?.Value is {Length: >0} userInfo
             ? CMsgPlayerInfo.Parser.ParseFrom(userInfo.Span)
             : null;

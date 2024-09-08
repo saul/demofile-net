@@ -7,14 +7,14 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public readonly record struct EntityContext(
-    DemoParser Demo,
-    CEntityIndex EntityIndex,
-    uint SerialNumber,
-    ServerClass ServerClass);
-
-public partial class DemoParser
+public partial class DemoParser<TGameParser>
 {
+    public readonly record struct EntityContext(
+        TGameParser Demo,
+        CEntityIndex EntityIndex,
+        uint SerialNumber,
+        ServerClass<TGameParser> ServerClass);
+
     private readonly record struct EntityBaseline(
         uint ServerClassId,
         ImmutableList<ReadOnlyMemory<byte>> Baselines);
@@ -24,23 +24,18 @@ public partial class DemoParser
     internal const int MaxEdicts = 1 << MaxEdictBits;
     internal const int NumEHandleSerialNumberBits = 17;
 
-    private readonly CEntityInstance?[] _entities = new CEntityInstance?[MaxEdicts];
+    protected readonly CEntityInstance<TGameParser>?[] _entities = new CEntityInstance<TGameParser>?[MaxEdicts];
     private readonly EntityBaseline[][] _entityBaselines =
     {
         new EntityBaseline[MaxEdicts],
         new EntityBaseline[MaxEdicts],
     };
 
-    private readonly CHandle<CCSTeam>[] _teamHandles = new CHandle<CCSTeam>[4];
-
-    private CHandle<CCSGameRulesProxy> _gameRulesHandle;
-    private CHandle<CCSPlayerResource> _playerResourceHandle;
-
     // todo(net8): use a frozen dictionary here
     private Dictionary<SerializerKey, Serializer> _serializers = new();
 
     private int _serverClassBits;
-    private ServerClass?[] _serverClasses = Array.Empty<ServerClass>();
+    private ServerClass<TGameParser>?[] _serverClasses = Array.Empty<ServerClass<TGameParser>>();
 
     /// <summary>
     /// Maximum number of players allowed on the server.
@@ -48,99 +43,23 @@ public partial class DemoParser
     public int MaxPlayers { get; private set; }
 
     /// <summary>
-    /// The <see cref="CCSTeam"/> entity representing the Spectators.
-    /// </summary>
-    /// <remarks>
-    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
-    /// </remarks>
-    public CCSTeam TeamSpectator => GetTeam(CSTeamNumber.Spectator);
-
-    /// <summary>
-    /// The <see cref="CCSTeam"/> entity representing the Terrorists.
-    /// </summary>
-    /// <remarks>
-    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
-    /// </remarks>
-    public CCSTeam TeamTerrorist => GetTeam(CSTeamNumber.Terrorist);
-
-    /// <summary>
-    /// The <see cref="CCSTeam"/> entity representing the Counter-Terrorists.
-    /// </summary>
-    /// <remarks>
-    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
-    /// </remarks>
-    public CCSTeam TeamCounterTerrorist => GetTeam(CSTeamNumber.CounterTerrorist);
-
-    public CCSPlayerResource PlayerResource => GetCachedSingletonEntity(ref _playerResourceHandle);
-
-    /// <summary>
-    /// The <see cref="CCSGameRules"/> entity representing the game rules
-    /// (e.g. freeze time, current game phase)
-    /// </summary>
-    /// <remarks>
-    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
-    /// </remarks>
-    public CCSGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
-
-    /// <summary>
     /// All entities in the game at this point in time.
     /// </summary>
-    public IEnumerable<CEntityInstance> Entities => _entities.WhereNotNull();
+    public IEnumerable<CEntityInstance<TGameParser>> Entities => _entities.WhereNotNull();
 
-    /// <summary>
-    /// All connected players.
-    /// </summary>
-    public IEnumerable<CCSPlayerController> Players
-    {
-        get
-        {
-            for (var i = 1; i <= MaxPlayers; ++i)
-            {
-                if (_entities[i] is CCSPlayerController { Connected: PlayerConnectedState.PlayerConnected } controller)
-                    yield return controller;
-            }
-        }
-    }
-
-    /// <summary>
-    /// All players - including those that have disconnected or are reconnecting.
-    /// </summary>
-    public IEnumerable<CCSPlayerController> PlayersIncludingDisconnected
-    {
-        get
-        {
-            for (var i = 1; i <= MaxPlayers; ++i)
-            {
-                if (_entities[i] is CCSPlayerController controller)
-                    yield return controller;
-            }
-        }
-    }
-
-    internal IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
-
-    /// <summary>
-    /// Get the <see cref="CCSTeam"/> entity representing a given team.
-    /// </summary>
-    /// <remarks>
-    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
-    /// </remarks>
-    public CCSTeam GetTeam(CSTeamNumber teamNumber) =>
-        GetCachedSingletonEntity(
-            ref _teamHandles[(int)teamNumber],
-            team => team.CSTeamNum == teamNumber);
+    public IReadOnlyList<CMsgPlayerInfo?> PlayerInfos => _playerInfos;
 
     private void OnServerInfo(CSVCMsg_ServerInfo msg)
     {
         Debug.Assert(_playerInfos[msg.PlayerSlot] != null);
-        IsGotv = _playerInfos[msg.PlayerSlot]?.Ishltv ?? false;
+        IsTvRecording = _playerInfos[msg.PlayerSlot]?.Ishltv ?? false;
 
         MaxPlayers = msg.MaxClients;
         _serverClassBits = (int)Math.Log2(msg.MaxClasses) + 1;
     }
 
-    private T GetCachedSingletonEntity<T>(ref CHandle<T> handle, Func<T, bool> predicate)
-        where T: CEntityInstance
+    protected T GetCachedSingletonEntity<T>(ref CHandle<T, TGameParser> handle, Func<T, bool> predicate)
+        where T: CEntityInstance<TGameParser>
     {
         if (GetEntityByHandle(handle) is { } entity)
             return entity;
@@ -152,47 +71,23 @@ public partial class DemoParser
         }
 
         Debug.Assert(entity.IsActive);
-        handle = CHandle<T>.FromIndexSerialNum(entity.EntityIndex, entity.SerialNumber);
+        handle = CHandle<T, TGameParser>.FromIndexSerialNum(entity.EntityIndex, entity.SerialNumber);
         return entity;
     }
 
-    private T GetCachedSingletonEntity<T>(ref CHandle<T> handle) where T : CEntityInstance =>
+    protected T GetCachedSingletonEntity<T>(ref CHandle<T, TGameParser> handle) where T : CEntityInstance<TGameParser> =>
         GetCachedSingletonEntity(ref handle, _ => true);
 
-    public T? GetEntityByHandle<T>(CHandle<T> handle) where T : CEntityInstance
+    public T? GetEntityByHandle<T>(CHandle<T, TGameParser> handle) where T : CEntityInstance<TGameParser>
     {
         return _entities[(int) handle.Index.Value] is T entity && entity.SerialNumber == handle.SerialNum
             ? entity
             : null;
     }
 
-    public T? GetEntityByIndex<T>(CEntityIndex index) where T : CEntityInstance
+    public T? GetEntityByIndex<T>(CEntityIndex index) where T : CEntityInstance<TGameParser>
     {
         return index.IsValid ? _entities[(int)index.Value] as T : null;
-    }
-
-    public CCSPlayerController? GetPlayerByUserId(ushort userId)
-    {
-        for (var slot = 0; slot < _playerInfos.Length; slot++)
-        {
-            var playerInfo = _playerInfos[slot];
-            if (playerInfo?.Userid == userId)
-                return _entities[slot + 1] as CCSPlayerController;
-        }
-
-        return null;
-    }
-
-    public CCSPlayerController? GetPlayerBySteamId(ulong steamId64)
-    {
-        for (var slot = 0; slot < _playerInfos.Length; slot++)
-        {
-            var playerInfo = _playerInfos[slot];
-            if (playerInfo?.Steamid == steamId64)
-                return _entities[slot + 1] as CCSPlayerController;
-        }
-
-        return null;
     }
 
     private void OnDemoSendTables(CDemoSendTables outerMsg)
@@ -223,15 +118,15 @@ public partial class DemoParser
     private void OnDemoClassInfo(CDemoClassInfo msg)
     {
         var maxClassIds = msg.Classes.Max(x => x.ClassId) + 1;
-        _serverClasses = new ServerClass[maxClassIds];
+        _serverClasses = new ServerClass<TGameParser>[maxClassIds];
 
-        var decoderSet = new DecoderSet(_serializers);
+        var decoderSet = CreateDecoderSet(_serializers);
 
         foreach (var @class in msg.Classes)
         {
-            if (!EntityFactories.All.TryGetValue(@class.NetworkName, out var entityFactory))
+            if (!EntityFactories.TryGetValue(@class.NetworkName, out var entityFactory))
             {
-                _serverClasses[@class.ClassId] = new ServerClass(
+                _serverClasses[@class.ClassId] = new ServerClass<TGameParser>(
                     @class.NetworkName,
                     @class.ClassId,
                     context => throw new Exception($"Attempted to create unknown entity: {@class.NetworkName}"));
@@ -241,7 +136,7 @@ public partial class DemoParser
 
             var decoder = decoderSet.GetDecoder(@class.NetworkName);
 
-            _serverClasses[@class.ClassId] = new ServerClass(
+            _serverClasses[@class.ClassId] = new ServerClass<TGameParser>(
                 @class.NetworkName,
                 @class.ClassId,
                 context => entityFactory(context, decoder));
@@ -262,7 +157,7 @@ public partial class DemoParser
             ? ImmutableDictionary<int, int>.Empty
             : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => x.BaselineIndex);
 
-        var entitiesToDelete = ArrayPool<CEntityInstance>.Shared.Rent(_entities.Length);
+        var entitiesToDelete = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;
 
         // Clear out all entities - this is a full update.
@@ -288,10 +183,10 @@ public partial class DemoParser
         // Fire create/post update events after all entities have been read.
         // Otherwise things like handle props may refer to entities that
         // haven't been created yet.
-        var createEvents = ArrayPool<CEntityInstance>.Shared.Rent(msg.UpdatedEntries);
+        var createEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(msg.UpdatedEntries);
         var createEventIdx = 0;
 
-        var postUpdateEvents = ArrayPool<CEntityInstance>.Shared.Rent(msg.UpdatedEntries);
+        var postUpdateEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(msg.UpdatedEntries);
         var postEventIdx = 0;
 
         for (var i = 0; i < msg.UpdatedEntries; ++i)
@@ -339,7 +234,7 @@ public partial class DemoParser
                 var serverClass = _serverClasses[classId];
                 Debug.Assert(serverClass != null, $"Missing server class {classId}");
 
-                var context = new EntityContext(this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
+                var context = new EntityContext((TGameParser) this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
                 var entity = serverClass.EntityFactory(context);
 
                 EntityBaseline existingEntityBaseline = default;
@@ -484,13 +379,13 @@ public partial class DemoParser
             postUpdateEvents[idx] = null!;
         }
 
-        ArrayPool<CEntityInstance>.Shared.Return(entitiesToDelete);
-        ArrayPool<CEntityInstance>.Shared.Return(createEvents);
-        ArrayPool<CEntityInstance>.Shared.Return(postUpdateEvents);
+        ArrayPool<CEntityInstance<TGameParser>>.Shared.Return(entitiesToDelete);
+        ArrayPool<CEntityInstance<TGameParser>>.Shared.Return(createEvents);
+        ArrayPool<CEntityInstance<TGameParser>>.Shared.Return(postUpdateEvents);
     }
 
     [SkipLocalsInit]
-    private static void ReadNewEntity(ref BitBuffer entityBitBuffer, CEntityInstance entity)
+    private static void ReadNewEntity(ref BitBuffer entityBitBuffer, CEntityInstance<TGameParser> entity)
     {
         Span<FieldPath> fieldPaths = stackalloc FieldPath[512];
 

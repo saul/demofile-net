@@ -3,7 +3,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-internal static class FallbackDecoder
+public static class FallbackDecoder
 {
     public readonly record struct Unit;
 
@@ -204,7 +204,7 @@ internal static class FallbackDecoder
         DecoderSet decoderSet,
         [NotNullWhen(true)] out SendNodeDecoder<Unit>? decoder)
     {
-        if (!decoderSet.TryGetDecoder(fieldType.Name, out var classType, out var innerDecoder))
+        if (!decoderSet.TryGetDecoderByName(fieldType.Name, out var classType, out var innerDecoder))
         {
             decoder = null;
             return false;

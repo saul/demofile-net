@@ -5,7 +5,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-internal static class FieldDecode
+public static class FieldDecode
 {
     // Note: some encodings for atomic types are defined in:
     //   game/core/tools/demoinfo2/demoinfo2.txt
@@ -113,9 +113,10 @@ internal static class FieldDecode
     public static FieldDecoder<CStrongHandle<T>> CreateDecoder_CStrongHandle<T>(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => new CStrongHandle<T>(buffer.ReadUVarInt64());
 
-    public static FieldDecoder<CHandle<T>> CreateDecoder_CHandle<T>(FieldEncodingInfo fieldEncodingInfo)
-        where T : CEntityInstance =>
-        (ref BitBuffer buffer) => new CHandle<T>(buffer.ReadUVarInt64());
+    public static FieldDecoder<CHandle<T, TGameParser>> CreateDecoder_CHandle<T, TGameParser>(FieldEncodingInfo fieldEncodingInfo)
+        where T : CEntityInstance<TGameParser>
+        where TGameParser : DemoParser<TGameParser>, new() =>
+        (ref BitBuffer buffer) => new CHandle<T, TGameParser>(buffer.ReadUVarInt64());
 
     public static FieldDecoder<Color> CreateDecoder_Color(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
@@ -239,13 +240,13 @@ internal static class FieldDecode
         }
     }
 
-    internal static float DecodeSimulationTime(ref BitBuffer buffer)
+    public static float DecodeSimulationTime(ref BitBuffer buffer)
     {
         var ticks = new GameTick(buffer.ReadUVarInt32());
         return ticks.ToGameTime().Value;
     }
 
-    internal static float DecodeFloatNoscale(ref BitBuffer buffer) => buffer.ReadFloat();
+    public static float DecodeFloatNoscale(ref BitBuffer buffer) => buffer.ReadFloat();
 
     public static FieldDecoder<bool> CreateDecoder_bool(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => buffer.ReadOneBit();

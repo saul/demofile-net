@@ -551,32 +551,32 @@ public partial class AudioParams
 
 public partial class CAK47 : CCSWeaponBaseGun
 {
-    internal CAK47(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CAK47(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CAK47> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CAK47.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CAK47.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CAK47.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CAK47.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -1223,7 +1223,7 @@ public partial class CAttributeManager
 {
     public Int32 ReapplyProvisionParity { get; private set; }
 
-    public CHandle<CBaseEntity> OuterHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> OuterHandle { get; private set; }
 
     public AttributeProviderTypes ProviderType { get; private set; }
 
@@ -1239,7 +1239,7 @@ public partial class CAttributeManager
         }
         if (field.VarName == "m_hOuter")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CAttributeManager @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OuterHandle = decoder(ref buffer);
@@ -1269,7 +1269,7 @@ public partial class CAttributeManager
 
 public partial class CBarnLight : CBaseModelEntity
 {
-    internal CBarnLight(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBarnLight(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "RenderingChanged"
     public bool Enabled { get; private set; }
@@ -1314,7 +1314,7 @@ public partial class CBarnLight : CBaseModelEntity
 
     public NetworkedVector<NetworkedString> LightStyleEvents { get; private set; } = new NetworkedVector<NetworkedString>();
 
-    public NetworkedVector<CHandle<CBaseModelEntity>> LightStyleTargets { get; private set; } = new NetworkedVector<CHandle<CBaseModelEntity>>();
+    public NetworkedVector<CHandle<CBaseModelEntity, CsDemoParser>> LightStyleTargets { get; private set; } = new NetworkedVector<CHandle<CBaseModelEntity, CsDemoParser>>();
 
     // MNetworkChangeCallback "RenderingChanged"
     public CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; private set; }
@@ -1567,7 +1567,7 @@ public partial class CBarnLight : CBaseModelEntity
         }
         if (field.VarName == "m_LightStyleTargets")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBarnLight @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -1860,25 +1860,25 @@ public partial class CBarnLight : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBarnLight.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBarnLight.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBarnLight.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBarnLight.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -1888,7 +1888,7 @@ public partial class CBarnLight : CBaseModelEntity
 // MNetworkIncludeByName "m_bClientSideRagdoll"
 public partial class CBaseAnimGraph : CBaseModelEntity
 {
-    internal CBaseAnimGraph(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseAnimGraph(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool InitiallyPopulateInterpHistory { get; private set; }
 
@@ -1967,25 +1967,25 @@ public partial class CBaseAnimGraph : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseAnimGraph.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseAnimGraph.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseAnimGraph.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseAnimGraph.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2077,9 +2077,9 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
 
 public partial class CBaseButton : CBaseToggle
 {
-    internal CBaseButton(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseButton(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseModelEntity> GlowEntityHandle { get; private set; }
+    public CHandle<CBaseModelEntity, CsDemoParser> GlowEntityHandle { get; private set; }
     public CBaseModelEntity? GlowEntity => GlowEntityHandle.Get(Demo);
 
     public bool Usable { get; private set; }
@@ -2090,7 +2090,7 @@ public partial class CBaseButton : CBaseToggle
     {
         if (field.VarName == "m_glowEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseButton @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.GlowEntityHandle = decoder(ref buffer);
@@ -2115,25 +2115,25 @@ public partial class CBaseButton : CBaseToggle
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseButton.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseButton.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseButton.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseButton.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2142,7 +2142,7 @@ public partial class CBaseButton : CBaseToggle
 
 public partial class CBaseClientUIEntity : CBaseModelEntity
 {
-    internal CBaseClientUIEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseClientUIEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Enabled { get; private set; }
 
@@ -2189,25 +2189,25 @@ public partial class CBaseClientUIEntity : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseClientUIEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseClientUIEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseClientUIEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseClientUIEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2217,9 +2217,9 @@ public partial class CBaseClientUIEntity : CBaseModelEntity
 // MNetworkExcludeByUserGroup "LocalPlayerExclusive"
 public partial class CBaseCombatCharacter : CBaseFlex
 {
-    internal CBaseCombatCharacter(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseCombatCharacter(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public NetworkedVector<CHandle<CEconWearable>> MyWearables { get; private set; } = new NetworkedVector<CHandle<CEconWearable>>();
+    public NetworkedVector<CHandle<CEconWearable, CsDemoParser>> MyWearables { get; private set; } = new NetworkedVector<CHandle<CEconWearable, CsDemoParser>>();
 
     public float FieldOfView { get; private set; }
 
@@ -2227,7 +2227,7 @@ public partial class CBaseCombatCharacter : CBaseFlex
     {
         if (field.VarName == "m_hMyWearables")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CEconWearable>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CEconWearable, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseCombatCharacter @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -2256,25 +2256,25 @@ public partial class CBaseCombatCharacter : CBaseFlex
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseCombatCharacter.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseCombatCharacter.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseCombatCharacter.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseCombatCharacter.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2283,7 +2283,7 @@ public partial class CBaseCombatCharacter : CBaseFlex
 
 public partial class CBaseCSGrenade : CCSWeaponBase
 {
-    internal CBaseCSGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseCSGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Redraw { get; private set; }
 
@@ -2313,7 +2313,7 @@ public partial class CBaseCSGrenade : CCSWeaponBase
 
     public float NextHoldFrac { get; private set; }
 
-    public CHandle<CCSWeaponBase> SwitchToWeaponAfterThrowHandle { get; private set; }
+    public CHandle<CCSWeaponBase, CsDemoParser> SwitchToWeaponAfterThrowHandle { get; private set; }
     public CCSWeaponBase? SwitchToWeaponAfterThrow => SwitchToWeaponAfterThrowHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBaseCSGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -2424,7 +2424,7 @@ public partial class CBaseCSGrenade : CCSWeaponBase
         }
         if (field.VarName == "m_hSwitchToWeaponAfterThrow")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSWeaponBase>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSWeaponBase, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseCSGrenade @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.SwitchToWeaponAfterThrowHandle = decoder(ref buffer);
@@ -2433,25 +2433,25 @@ public partial class CBaseCSGrenade : CCSWeaponBase
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseCSGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseCSGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseCSGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseCSGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2460,7 +2460,7 @@ public partial class CBaseCSGrenade : CCSWeaponBase
 
 public partial class CBaseCSGrenadeProjectile : CBaseGrenade
 {
-    internal CBaseCSGrenadeProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseCSGrenadeProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector InitialPosition { get; private set; }
 
@@ -2527,25 +2527,25 @@ public partial class CBaseCSGrenadeProjectile : CBaseGrenade
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseCSGrenadeProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseCSGrenadeProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseCSGrenadeProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseCSGrenadeProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2554,7 +2554,7 @@ public partial class CBaseCSGrenadeProjectile : CBaseGrenade
 
 public partial class CBaseDoor : CBaseToggle
 {
-    internal CBaseDoor(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseDoor(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool IsUsable { get; private set; }
 
@@ -2571,25 +2571,25 @@ public partial class CBaseDoor : CBaseToggle
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseDoor.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseDoor.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseDoor.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseDoor.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -2605,9 +2605,9 @@ public partial class CBaseDoor : CBaseToggle
 // MNetworkExcludeByName "m_bTakesDamage"
 // MNetworkExcludeByName "m_nTakeDamageFlags"
 // MNetworkExcludeByName "m_flSpeed"
-public partial class CBaseEntity : CEntityInstance
+public partial class CBaseEntity : CEntityInstance<CsDemoParser>
 {
-    internal CBaseEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "CBodyComponent"
     // MNetworkAlias "CBodyComponent"
@@ -2675,11 +2675,11 @@ public partial class CBaseEntity : CEntityInstance
     // MNetworkUserGroup "LocalPlayerExclusive"
     public Vector BaseVelocity { get; private set; }
 
-    public CHandle<CBaseEntity> EffectEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> EffectEntityHandle { get; private set; }
     public CBaseEntity? EffectEntity => EffectEntityHandle.Get(Demo);
 
     // MNetworkPriority 32
-    public CHandle<CBaseEntity> OwnerEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> OwnerEntityHandle { get; private set; }
     public CBaseEntity? OwnerEntity => OwnerEntityHandle.Get(Demo);
 
     // MNetworkChangeCallback "OnEffectsChanged"
@@ -2687,7 +2687,7 @@ public partial class CBaseEntity : CEntityInstance
 
     // MNetworkPriority 32
     // MNetworkUserGroup "Player"
-    public CHandle<CBaseEntity> GroundEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> GroundEntityHandle { get; private set; }
     public CBaseEntity? GroundEntity => GroundEntityHandle.Get(Demo);
 
     // MNetworkPriority 32
@@ -2914,7 +2914,7 @@ public partial class CBaseEntity : CEntityInstance
         }
         if (field.VarName == "m_hEffectEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EffectEntityHandle = decoder(ref buffer);
@@ -2922,7 +2922,7 @@ public partial class CBaseEntity : CEntityInstance
         }
         if (field.VarName == "m_hOwnerEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OwnerEntityHandle = decoder(ref buffer);
@@ -2938,7 +2938,7 @@ public partial class CBaseEntity : CEntityInstance
         }
         if (field.VarName == "m_hGroundEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.GroundEntityHandle = decoder(ref buffer);
@@ -3016,28 +3016,28 @@ public partial class CBaseEntity : CEntityInstance
                 @this.BloodType = decoder(ref buffer);
             };
         }
-        return CEntityInstance.CreateFieldDecoder(field, decoderSet);
+        return CEntityInstance<CsDemoParser>.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -3046,7 +3046,7 @@ public partial class CBaseEntity : CEntityInstance
 
 public partial class CBaseFire : CBaseEntity
 {
-    internal CBaseFire(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseFire(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float Scale { get; private set; }
 
@@ -3093,25 +3093,25 @@ public partial class CBaseFire : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseFire.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseFire.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseFire.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseFire.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -3120,7 +3120,7 @@ public partial class CBaseFire : CBaseEntity
 
 public partial class CBaseFlex : CBaseAnimGraph
 {
-    internal CBaseFlex(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseFlex(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkBitCount 12
     // MNetworkMinValue 0
@@ -3174,25 +3174,25 @@ public partial class CBaseFlex : CBaseAnimGraph
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseFlex.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseFlex.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseFlex.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseFlex.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -3213,7 +3213,7 @@ public partial class CBaseFlex : CBaseAnimGraph
 // MNetworkExcludeByName "m_nNewSequenceParity"
 public partial class CBaseGrenade : CBaseFlex
 {
-    internal CBaseGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool IsLive { get; private set; }
 
@@ -3231,7 +3231,7 @@ public partial class CBaseGrenade : CBaseFlex
     // MNetworkEncodeFlags 1
     public float Damage { get; private set; }
 
-    public CHandle<CCSPlayerPawn> ThrowerHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> ThrowerHandle { get; private set; }
     public CCSPlayerPawn? Thrower => ThrowerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBaseGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -3270,7 +3270,7 @@ public partial class CBaseGrenade : CBaseFlex
         }
         if (field.VarName == "m_hThrower")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseGrenade @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ThrowerHandle = decoder(ref buffer);
@@ -3279,25 +3279,25 @@ public partial class CBaseGrenade : CBaseFlex
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -3306,7 +3306,7 @@ public partial class CBaseGrenade : CBaseFlex
 
 public partial class CBaseModelEntity : CBaseEntity
 {
-    internal CBaseModelEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseModelEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "CRenderComponent"
     // MNetworkAlias "CRenderComponent"
@@ -3356,7 +3356,7 @@ public partial class CBaseModelEntity : CBaseEntity
 
     public float DecalHealHeightRate { get; private set; }
 
-    public NetworkedVector<CHandle<CBaseModelEntity>> ConfigEntitiesToPropagateMaterialDecalsTo { get; private set; } = new NetworkedVector<CHandle<CBaseModelEntity>>();
+    public NetworkedVector<CHandle<CBaseModelEntity, CsDemoParser>> ConfigEntitiesToPropagateMaterialDecalsTo { get; private set; } = new NetworkedVector<CHandle<CBaseModelEntity, CsDemoParser>>();
 
     // MNetworkPriority 32
     // MNetworkUserGroup "Player"
@@ -3549,7 +3549,7 @@ public partial class CBaseModelEntity : CBaseEntity
         }
         if (field.VarName == "m_ConfigEntitiesToPropagateMaterialDecalsTo")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseModelEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -3578,25 +3578,25 @@ public partial class CBaseModelEntity : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseModelEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseModelEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseModelEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseModelEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -3614,14 +3614,14 @@ public partial class CBaseModelEntity : CBaseEntity
 // MNetworkIncludeByUserGroup "LocalPlayerExclusive"
 public partial class CBasePlayerController : CBaseEntity
 {
-    internal CBasePlayerController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBasePlayerController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkPriority 1
     // MNetworkUserGroup "LocalPlayerExclusive"
     public UInt32 TickBase { get; private set; }
 
     // MNetworkChangeCallback "OnPawnChanged"
-    public CHandle<CBasePlayerPawn> PawnHandle { get; private set; }
+    public CHandle<CBasePlayerPawn, CsDemoParser> PawnHandle { get; private set; }
     public CBasePlayerPawn? Pawn => PawnHandle.Get(Demo);
 
     public bool KnownTeamMismatch { get; private set; }
@@ -3650,7 +3650,7 @@ public partial class CBasePlayerController : CBaseEntity
         }
         if (field.VarName == "m_hPawn")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CBasePlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PawnHandle = decoder(ref buffer);
@@ -3699,25 +3699,25 @@ public partial class CBasePlayerController : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBasePlayerController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBasePlayerController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBasePlayerController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBasePlayerController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -3745,7 +3745,7 @@ public partial class CBasePlayerController : CBaseEntity
 // MNetworkUserGroupProxy "CBasePlayerPawn"
 public partial class CBasePlayerPawn : CBaseCombatCharacter
 {
-    internal CBasePlayerPawn(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBasePlayerPawn(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CPlayer_WeaponServices? WeaponServices { get; private set; }
 
@@ -3777,7 +3777,7 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
 
     public GameTime DeathTime { get; private set; } = new();
 
-    public CHandle<CBasePlayerController> ControllerHandle { get; private set; }
+    public CHandle<CBasePlayerController, CsDemoParser> ControllerHandle { get; private set; }
     public CBasePlayerController? Controller => ControllerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBasePlayerPawn> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -3999,7 +3999,7 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
         }
         if (field.VarName == "m_hController")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerController, CsDemoParser>(field.FieldEncodingInfo);
             return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ControllerHandle = decoder(ref buffer);
@@ -4008,25 +4008,25 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
         return CBaseCombatCharacter.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBasePlayerPawn.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBasePlayerPawn.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBasePlayerPawn.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBasePlayerPawn.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4042,7 +4042,7 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
 // MNetworkUserGroupProxy "CBasePlayerWeapon"
 public partial class CBasePlayerWeapon : CEconEntity
 {
-    internal CBasePlayerWeapon(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBasePlayerWeapon(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "LocalWeaponExclusive"
     public GameTick NextPrimaryAttackTick { get; private set; } = new();
@@ -4130,25 +4130,25 @@ public partial class CBasePlayerWeapon : CEconEntity
         return CEconEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBasePlayerWeapon.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBasePlayerWeapon.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBasePlayerWeapon.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBasePlayerWeapon.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4157,32 +4157,32 @@ public partial class CBasePlayerWeapon : CEconEntity
 
 public partial class CBaseProp : CBaseAnimGraph
 {
-    internal CBaseProp(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseProp(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CBaseProp> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseProp.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseProp.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseProp.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseProp.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4198,7 +4198,7 @@ public partial class CBaseProp : CBaseAnimGraph
 // MNetworkIncludeByName "m_spawnflags"
 public partial class CBasePropDoor : CDynamicProp
 {
-    internal CBasePropDoor(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBasePropDoor(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public DoorState DoorState { get; private set; }
 
@@ -4208,7 +4208,7 @@ public partial class CBasePropDoor : CDynamicProp
 
     public QAngle ClosedAngles { get; private set; }
 
-    public CHandle<CBasePropDoor> MasterHandle { get; private set; }
+    public CHandle<CBasePropDoor, CsDemoParser> MasterHandle { get; private set; }
     public CBasePropDoor? Master => MasterHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBasePropDoor> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -4247,7 +4247,7 @@ public partial class CBasePropDoor : CDynamicProp
         }
         if (field.VarName == "m_hMaster")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePropDoor>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePropDoor, CsDemoParser>(field.FieldEncodingInfo);
             return (CBasePropDoor @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.MasterHandle = decoder(ref buffer);
@@ -4256,25 +4256,25 @@ public partial class CBasePropDoor : CDynamicProp
         return CDynamicProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBasePropDoor.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBasePropDoor.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBasePropDoor.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBasePropDoor.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4283,32 +4283,32 @@ public partial class CBasePropDoor : CDynamicProp
 
 public partial class CBaseToggle : CBaseModelEntity
 {
-    internal CBaseToggle(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseToggle(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CBaseToggle> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseToggle.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseToggle.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseToggle.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseToggle.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4318,7 +4318,7 @@ public partial class CBaseToggle : CBaseModelEntity
 // MNetworkIncludeByName "m_spawnflags"
 public partial class CBaseTrigger : CBaseToggle
 {
-    internal CBaseTrigger(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseTrigger(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Disabled { get; private set; }
 
@@ -4345,25 +4345,25 @@ public partial class CBaseTrigger : CBaseToggle
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseTrigger.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseTrigger.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseTrigger.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseTrigger.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4386,7 +4386,7 @@ public partial class CBaseTrigger : CBaseToggle
 // MNetworkIncludeByName "m_clrRender"
 public partial class CBaseViewModel : CBaseAnimGraph
 {
-    internal CBaseViewModel(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBaseViewModel(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public UInt32 ViewModelIndex { get; private set; }
 
@@ -4394,10 +4394,10 @@ public partial class CBaseViewModel : CBaseAnimGraph
 
     public float AnimationStartTime { get; private set; }
 
-    public CHandle<CBasePlayerWeapon> WeaponHandle { get; private set; }
+    public CHandle<CBasePlayerWeapon, CsDemoParser> WeaponHandle { get; private set; }
     public CBasePlayerWeapon? Weapon => WeaponHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> ControlPanelHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ControlPanelHandle { get; private set; }
     public CBaseEntity? ControlPanel => ControlPanelHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CBaseViewModel> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -4428,7 +4428,7 @@ public partial class CBaseViewModel : CBaseAnimGraph
         }
         if (field.VarName == "m_hWeapon")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseViewModel @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.WeaponHandle = decoder(ref buffer);
@@ -4436,7 +4436,7 @@ public partial class CBaseViewModel : CBaseAnimGraph
         }
         if (field.VarName == "m_hControlPanel")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBaseViewModel @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ControlPanelHandle = decoder(ref buffer);
@@ -4445,25 +4445,25 @@ public partial class CBaseViewModel : CBaseAnimGraph
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBaseViewModel.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBaseViewModel.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBaseViewModel.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBaseViewModel.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4479,7 +4479,7 @@ public partial class CBaseViewModel : CBaseAnimGraph
 // MNetworkOverride "m_clrRender "
 public partial class CBeam : CBaseModelEntity
 {
-    internal CBeam(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBeam(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkBitCount 10
     // MNetworkMinValue -25
@@ -4499,7 +4499,7 @@ public partial class CBeam : CBaseModelEntity
 
     public UInt32 BeamFlags { get; private set; }
 
-    public CHandle<CBaseEntity>[] AttachEntity { get; private set; } = Array.Empty<CHandle<CBaseEntity>>();
+    public CHandle<CBaseEntity, CsDemoParser>[] AttachEntity { get; private set; } = Array.Empty<CHandle<CBaseEntity, CsDemoParser>>();
 
     public AttachmentHandle[] AttachIndex { get; private set; } = Array.Empty<AttachmentHandle>();
 
@@ -4611,10 +4611,10 @@ public partial class CBeam : CBaseModelEntity
         if (field.VarName == "m_hAttachEntity")
         {
             var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                if (@this.AttachEntity.Length == 0) @this.AttachEntity = new CHandle<CBaseEntity>[fixedArraySize];
+                if (@this.AttachEntity.Length == 0) @this.AttachEntity = new CHandle<CBaseEntity, CsDemoParser>[fixedArraySize];
                 @this.AttachEntity[path[1]] = decoder(ref buffer);
             };
         }
@@ -4719,25 +4719,25 @@ public partial class CBeam : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBeam.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBeam.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBeam.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBeam.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4870,7 +4870,7 @@ public partial class CBodyComponentSkeletonInstance : CBodyComponent
 
 public partial class CBombTarget : CBaseTrigger
 {
-    internal CBombTarget(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBombTarget(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool BombPlantedHere { get; private set; }
 
@@ -4887,25 +4887,25 @@ public partial class CBombTarget : CBaseTrigger
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBombTarget.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBombTarget.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBombTarget.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBombTarget.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4914,32 +4914,32 @@ public partial class CBombTarget : CBaseTrigger
 
 public partial class CBreachCharge : CCSWeaponBase
 {
-    internal CBreachCharge(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBreachCharge(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CBreachCharge> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBreachCharge.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBreachCharge.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBreachCharge.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBreachCharge.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4948,32 +4948,32 @@ public partial class CBreachCharge : CCSWeaponBase
 
 public partial class CBreachChargeProjectile : CBaseGrenade
 {
-    internal CBreachChargeProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBreachChargeProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CBreachChargeProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBreachChargeProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBreachChargeProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBreachChargeProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBreachChargeProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -4982,7 +4982,7 @@ public partial class CBreachChargeProjectile : CBaseGrenade
 
 public partial class CBreakable : CBaseModelEntity
 {
-    internal CBreakable(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBreakable(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "CPropDataComponent"
     // MNetworkAlias "CPropDataComponent"
@@ -5002,25 +5002,25 @@ public partial class CBreakable : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBreakable.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBreakable.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBreakable.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBreakable.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5029,7 +5029,7 @@ public partial class CBreakable : CBaseModelEntity
 
 public partial class CBreakableProp : CBaseProp
 {
-    internal CBreakableProp(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBreakableProp(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "CPropDataComponent"
     // MNetworkAlias "CPropDataComponent"
@@ -5059,25 +5059,25 @@ public partial class CBreakableProp : CBaseProp
         return CBaseProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBreakableProp.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBreakableProp.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBreakableProp.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBreakableProp.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5086,32 +5086,32 @@ public partial class CBreakableProp : CBaseProp
 
 public partial class CBumpMine : CCSWeaponBase
 {
-    internal CBumpMine(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBumpMine(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CBumpMine> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBumpMine.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBumpMine.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBumpMine.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBumpMine.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5120,32 +5120,32 @@ public partial class CBumpMine : CCSWeaponBase
 
 public partial class CBumpMineProjectile : CBaseGrenade
 {
-    internal CBumpMineProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CBumpMineProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CBumpMineProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CBumpMineProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CBumpMineProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CBumpMineProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CBumpMineProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5154,7 +5154,7 @@ public partial class CBumpMineProjectile : CBaseGrenade
 
 public partial class CC4 : CCSWeaponBase
 {
-    internal CC4(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CC4(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool StartedArming { get; private set; }
 
@@ -5211,25 +5211,25 @@ public partial class CC4 : CCSWeaponBase
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CC4.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CC4.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CC4.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CC4.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5238,13 +5238,13 @@ public partial class CC4 : CCSWeaponBase
 
 public partial class CChicken : CDynamicProp
 {
-    internal CChicken(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CChicken(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CAttributeContainer AttributeManager { get; private set; } = new();
 
     public bool JumpedThisFrame { get; private set; }
 
-    public CHandle<CCSPlayerPawn> LeaderHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> LeaderHandle { get; private set; }
     public CCSPlayerPawn? Leader => LeaderHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CChicken> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -5267,7 +5267,7 @@ public partial class CChicken : CDynamicProp
         }
         if (field.VarName == "m_leader")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CChicken @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.LeaderHandle = decoder(ref buffer);
@@ -5276,25 +5276,25 @@ public partial class CChicken : CDynamicProp
         return CDynamicProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CChicken.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CChicken.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CChicken.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CChicken.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5303,7 +5303,7 @@ public partial class CChicken : CDynamicProp
 
 public partial class CCitadelSoundOpvarSetOBB : CBaseEntity
 {
-    internal CCitadelSoundOpvarSetOBB(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCitadelSoundOpvarSetOBB(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString StackName { get; private set; }
 
@@ -5390,25 +5390,25 @@ public partial class CCitadelSoundOpvarSetOBB : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCitadelSoundOpvarSetOBB.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCitadelSoundOpvarSetOBB.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCitadelSoundOpvarSetOBB.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadelSoundOpvarSetOBB.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5589,7 +5589,7 @@ public partial class CCollisionProperty
 // MNetworkIncludeByUserGroup "Origin"
 public partial class CColorCorrection : CBaseEntity
 {
-    internal CColorCorrection(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CColorCorrection(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float FadeInDuration { get; private set; }
 
@@ -5706,25 +5706,25 @@ public partial class CColorCorrection : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CColorCorrection.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CColorCorrection.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CColorCorrection.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CColorCorrection.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -5733,7 +5733,7 @@ public partial class CColorCorrection : CBaseEntity
 
 public partial class CColorCorrectionVolume : CBaseTrigger
 {
-    internal CColorCorrectionVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CColorCorrectionVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Enabled { get; private set; }
 
@@ -5790,25 +5790,25 @@ public partial class CColorCorrectionVolume : CBaseTrigger
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CColorCorrectionVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CColorCorrectionVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CColorCorrectionVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CColorCorrectionVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -6981,7 +6981,7 @@ public partial class CCSGameRules : CTeamplayRules
 
 public partial class CCSGameRulesProxy : CGameRulesProxy
 {
-    internal CCSGameRulesProxy(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGameRulesProxy(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkTypeAlias "CCSGameRules*"
     // MNetworkPriority 32
@@ -7011,25 +7011,25 @@ public partial class CCSGameRulesProxy : CGameRulesProxy
         return CGameRulesProxy.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGameRulesProxy.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGameRulesProxy.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGameRulesProxy.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGameRulesProxy.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7038,32 +7038,32 @@ public partial class CCSGameRulesProxy : CGameRulesProxy
 
 public partial class CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCharacterPosition
 {
-    internal CCSGO_TeamIntroCharacterPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamIntroCharacterPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_TeamIntroCharacterPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamPreviewCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCharacterPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7072,32 +7072,32 @@ public partial class CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCharact
 
 public partial class CCSGO_TeamIntroCounterTerroristPosition : CCSGO_TeamIntroCharacterPosition
 {
-    internal CCSGO_TeamIntroCounterTerroristPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamIntroCounterTerroristPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_TeamIntroCounterTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroCounterTerroristPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7106,32 +7106,32 @@ public partial class CCSGO_TeamIntroCounterTerroristPosition : CCSGO_TeamIntroCh
 
 public partial class CCSGO_TeamIntroTerroristPosition : CCSGO_TeamIntroCharacterPosition
 {
-    internal CCSGO_TeamIntroTerroristPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamIntroTerroristPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_TeamIntroTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamIntroTerroristPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7140,7 +7140,7 @@ public partial class CCSGO_TeamIntroTerroristPosition : CCSGO_TeamIntroCharacter
 
 public partial class CCSGO_TeamPreviewCharacterPosition : CBaseEntity
 {
-    internal CCSGO_TeamPreviewCharacterPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamPreviewCharacterPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 Variant { get; private set; }
 
@@ -7227,25 +7227,25 @@ public partial class CCSGO_TeamPreviewCharacterPosition : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamPreviewCharacterPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7254,32 +7254,32 @@ public partial class CCSGO_TeamPreviewCharacterPosition : CBaseEntity
 
 public partial class CCSGO_TeamSelectCharacterPosition : CCSGO_TeamPreviewCharacterPosition
 {
-    internal CCSGO_TeamSelectCharacterPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamSelectCharacterPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_TeamSelectCharacterPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamPreviewCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCharacterPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7288,32 +7288,32 @@ public partial class CCSGO_TeamSelectCharacterPosition : CCSGO_TeamPreviewCharac
 
 public partial class CCSGO_TeamSelectCounterTerroristPosition : CCSGO_TeamSelectCharacterPosition
 {
-    internal CCSGO_TeamSelectCounterTerroristPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamSelectCounterTerroristPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_TeamSelectCounterTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamSelectCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectCounterTerroristPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7322,32 +7322,32 @@ public partial class CCSGO_TeamSelectCounterTerroristPosition : CCSGO_TeamSelect
 
 public partial class CCSGO_TeamSelectTerroristPosition : CCSGO_TeamSelectCharacterPosition
 {
-    internal CCSGO_TeamSelectTerroristPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_TeamSelectTerroristPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_TeamSelectTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamSelectCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_TeamSelectTerroristPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7356,32 +7356,32 @@ public partial class CCSGO_TeamSelectTerroristPosition : CCSGO_TeamSelectCharact
 
 public partial class CCSGO_WingmanIntroCharacterPosition : CCSGO_TeamIntroCharacterPosition
 {
-    internal CCSGO_WingmanIntroCharacterPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_WingmanIntroCharacterPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_WingmanIntroCharacterPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCharacterPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7390,32 +7390,32 @@ public partial class CCSGO_WingmanIntroCharacterPosition : CCSGO_TeamIntroCharac
 
 public partial class CCSGO_WingmanIntroCounterTerroristPosition : CCSGO_WingmanIntroCharacterPosition
 {
-    internal CCSGO_WingmanIntroCounterTerroristPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_WingmanIntroCounterTerroristPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_WingmanIntroCounterTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_WingmanIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroCounterTerroristPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7424,32 +7424,32 @@ public partial class CCSGO_WingmanIntroCounterTerroristPosition : CCSGO_WingmanI
 
 public partial class CCSGO_WingmanIntroTerroristPosition : CCSGO_WingmanIntroCharacterPosition
 {
-    internal CCSGO_WingmanIntroTerroristPosition(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGO_WingmanIntroTerroristPosition(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSGO_WingmanIntroTerroristPosition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSGO_WingmanIntroCharacterPosition.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGO_WingmanIntroTerroristPosition.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7459,7 +7459,7 @@ public partial class CCSGO_WingmanIntroTerroristPosition : CCSGO_WingmanIntroCha
 // MNetworkOverride "m_hWeapon "
 public partial class CCSGOViewModel : CPredictedViewModel
 {
-    internal CCSGOViewModel(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSGOViewModel(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool ShouldIgnoreOffsetAndAccuracy { get; private set; }
 
@@ -7486,25 +7486,25 @@ public partial class CCSGOViewModel : CPredictedViewModel
         return CPredictedViewModel.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSGOViewModel.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSGOViewModel.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSGOViewModel.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSGOViewModel.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7513,32 +7513,32 @@ public partial class CCSGOViewModel : CPredictedViewModel
 
 public partial class CCSMinimapBoundary : CBaseEntity
 {
-    internal CCSMinimapBoundary(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSMinimapBoundary(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CCSMinimapBoundary> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSMinimapBoundary.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSMinimapBoundary.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSMinimapBoundary.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSMinimapBoundary.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7597,7 +7597,7 @@ public partial class CCSObserver_ViewModelServices : CPlayer_ViewModelServices
 // MNetworkIncludeByName "m_pViewModelServices"
 public partial class CCSObserverPawn : CCSPlayerPawnBase
 {
-    internal CCSObserverPawn(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSObserverPawn(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public new CCSObserver_ObserverServices? ObserverServices
     {
@@ -7629,25 +7629,25 @@ public partial class CCSObserverPawn : CCSPlayerPawnBase
         return CCSPlayerPawnBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSObserverPawn.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSObserverPawn.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSObserverPawn.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSObserverPawn.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -7790,15 +7790,15 @@ public partial class CCSPlayer_HostageServices : CPlayerPawnComponent
         throw new NotImplementedException($"Unknown derived class of CCSPlayer_HostageServices: {serializerKey}");
     }
 
-    public CHandle<CBaseEntity> CarriedHostageHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> CarriedHostageHandle { get; private set; }
 
-    public CHandle<CBaseEntity> CarriedHostagePropHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> CarriedHostagePropHandle { get; private set; }
 
     internal new static SendNodeDecoder<CCSPlayer_HostageServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_hCarriedHostage")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayer_HostageServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.CarriedHostageHandle = decoder(ref buffer);
@@ -7806,7 +7806,7 @@ public partial class CCSPlayer_HostageServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hCarriedHostageProp")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayer_HostageServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.CarriedHostagePropHandle = decoder(ref buffer);
@@ -8081,13 +8081,13 @@ public partial class CCSPlayer_PingServices : CPlayerPawnComponent
         throw new NotImplementedException($"Unknown derived class of CCSPlayer_PingServices: {serializerKey}");
     }
 
-    public CHandle<CBaseEntity> PlayerPingHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> PlayerPingHandle { get; private set; }
 
     internal new static SendNodeDecoder<CCSPlayer_PingServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_hPlayerPing")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayer_PingServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerPingHandle = decoder(ref buffer);
@@ -8107,17 +8107,17 @@ public partial class CCSPlayer_UseServices : CPlayer_UseServices
 
 public partial class CCSPlayer_ViewModelServices : CPlayer_ViewModelServices
 {
-    public CHandle<CBaseViewModel>[] ViewModel { get; private set; } = Array.Empty<CHandle<CBaseViewModel>>();
+    public CHandle<CBaseViewModel, CsDemoParser>[] ViewModel { get; private set; } = Array.Empty<CHandle<CBaseViewModel, CsDemoParser>>();
 
     internal new static SendNodeDecoder<CCSPlayer_ViewModelServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_hViewModel")
         {
             var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseViewModel>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseViewModel, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayer_ViewModelServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                if (@this.ViewModel.Length == 0) @this.ViewModel = new CHandle<CBaseViewModel>[fixedArraySize];
+                if (@this.ViewModel.Length == 0) @this.ViewModel = new CHandle<CBaseViewModel, CsDemoParser>[fixedArraySize];
                 @this.ViewModel[path[1]] = decoder(ref buffer);
             };
         }
@@ -8183,7 +8183,7 @@ public partial class CCSPlayerBase_CameraServices : CPlayer_CameraServices
     // MNetworkUserGroup "LocalPlayerExclusive"
     public float FOVRate { get; private set; }
 
-    public CHandle<CBaseEntity> ZoomOwnerHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ZoomOwnerHandle { get; private set; }
 
     internal new static SendNodeDecoder<CCSPlayerBase_CameraServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -8221,7 +8221,7 @@ public partial class CCSPlayerBase_CameraServices : CPlayer_CameraServices
         }
         if (field.VarName == "m_hZoomOwner")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayerBase_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ZoomOwnerHandle = decoder(ref buffer);
@@ -8236,7 +8236,7 @@ public partial class CCSPlayerBase_CameraServices : CPlayer_CameraServices
 // MNetworkUserGroupProxy "CCSPlayerController"
 public partial class CCSPlayerController : CBasePlayerController
 {
-    internal CCSPlayerController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSPlayerController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CCSPlayerController_InGameMoneyServices? InGameMoneyServices { get; private set; }
 
@@ -8302,10 +8302,10 @@ public partial class CCSPlayerController : CBasePlayerController
     // MNetworkUserGroup "LocalPlayerExclusive"
     public bool CanControlObservedBot { get; private set; }
 
-    public CHandle<CCSPlayerPawn> PlayerPawnHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> PlayerPawnHandle { get; private set; }
     public CCSPlayerPawn? PlayerPawn => PlayerPawnHandle.Get(Demo);
 
-    public CHandle<CCSObserverPawn> ObserverPawnHandle { get; private set; }
+    public CHandle<CCSObserverPawn, CsDemoParser> ObserverPawnHandle { get; private set; }
     public CCSObserverPawn? ObserverPawn => ObserverPawnHandle.Get(Demo);
 
     public bool PawnIsAlive { get; private set; }
@@ -8330,7 +8330,7 @@ public partial class CCSPlayerController : CBasePlayerController
 
     public Int32 PawnBotDifficulty { get; private set; }
 
-    public CHandle<CCSPlayerController> OriginalControllerOfCurrentPawnHandle { get; private set; }
+    public CHandle<CCSPlayerController, CsDemoParser> OriginalControllerOfCurrentPawnHandle { get; private set; }
     public CCSPlayerController? OriginalControllerOfCurrentPawn => OriginalControllerOfCurrentPawnHandle.Get(Demo);
 
     public Int32 Score { get; private set; }
@@ -8628,7 +8628,7 @@ public partial class CCSPlayerController : CBasePlayerController
         }
         if (field.VarName == "m_hPlayerPawn")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerPawnHandle = decoder(ref buffer);
@@ -8636,7 +8636,7 @@ public partial class CCSPlayerController : CBasePlayerController
         }
         if (field.VarName == "m_hObserverPawn")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSObserverPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSObserverPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ObserverPawnHandle = decoder(ref buffer);
@@ -8716,7 +8716,7 @@ public partial class CCSPlayerController : CBasePlayerController
         }
         if (field.VarName == "m_hOriginalControllerOfCurrentPawn")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OriginalControllerOfCurrentPawnHandle = decoder(ref buffer);
@@ -8793,25 +8793,25 @@ public partial class CCSPlayerController : CBasePlayerController
         return CBasePlayerController.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSPlayerController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSPlayerController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -9138,7 +9138,7 @@ public partial class CCSPlayerController_InventoryServices : CPlayerControllerCo
 // MNetworkIncludeByName "m_pCameraServices"
 public partial class CCSPlayerPawn : CCSPlayerPawnBase
 {
-    internal CCSPlayerPawn(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSPlayerPawn(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public new CCSPlayer_WeaponServices? WeaponServices
     {
@@ -9926,25 +9926,25 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
         return CCSPlayerPawnBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSPlayerPawn.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSPlayerPawn.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerPawn.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerPawn.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -9958,7 +9958,7 @@ public partial class CCSPlayerPawn : CCSPlayerPawnBase
 // MNetworkExcludeByName "m_animationController.m_flPlaybackRate"
 public partial class CCSPlayerPawnBase : CBasePlayerPawn
 {
-    internal CCSPlayerPawnBase(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSPlayerPawnBase(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "CTouchExpansionComponent"
     // MNetworkAlias "CTouchExpansionComponent"
@@ -9991,7 +9991,7 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
     // MNetworkPriority 32
     public QAngle EyeAngles { get; private set; }
 
-    public CHandle<CCSPlayerController> OriginalControllerHandle { get; private set; }
+    public CHandle<CCSPlayerController, CsDemoParser> OriginalControllerHandle { get; private set; }
     public CCSPlayerController? OriginalController => OriginalControllerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CCSPlayerPawnBase> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -10124,7 +10124,7 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
         }
         if (field.VarName == "m_hOriginalController")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSPlayerPawnBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OriginalControllerHandle = decoder(ref buffer);
@@ -10133,25 +10133,25 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
         return CBasePlayerPawn.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSPlayerPawnBase.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSPlayerPawnBase.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerPawnBase.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerPawnBase.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -10160,7 +10160,7 @@ public partial class CCSPlayerPawnBase : CBasePlayerPawn
 
 public partial class CCSPlayerResource : CBaseEntity
 {
-    internal CCSPlayerResource(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSPlayerResource(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool[] HostageAlive { get; private set; } = Array.Empty<bool>();
 
@@ -10269,25 +10269,25 @@ public partial class CCSPlayerResource : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSPlayerResource.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSPlayerResource.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerResource.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSPlayerResource.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -10296,7 +10296,7 @@ public partial class CCSPlayerResource : CBaseEntity
 
 public partial class CCSTeam : CTeam
 {
-    internal CCSTeam(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSTeam(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Surrendered { get; private set; }
 
@@ -10403,25 +10403,25 @@ public partial class CCSTeam : CTeam
         return CTeam.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSTeam.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSTeam.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSTeam.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSTeam.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -10431,7 +10431,7 @@ public partial class CCSTeam : CTeam
 // MNetworkExcludeByName "m_flTimeWeaponIdle"
 public partial class CCSWeaponBase : CBasePlayerWeapon
 {
-    internal CCSWeaponBase(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSWeaponBase(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float FireSequenceStartTime { get; private set; }
 
@@ -10484,7 +10484,7 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
 
     public bool DroppedNearBuyZone { get; private set; }
 
-    public CHandle<CCSPlayerPawn> PrevOwnerHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> PrevOwnerHandle { get; private set; }
     public CCSPlayerPawn? PrevOwner => PrevOwnerHandle.Get(Demo);
 
     public GameTick DropTick { get; private set; } = new();
@@ -10683,7 +10683,7 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
         }
         if (field.VarName == "m_hPrevOwner")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CCSWeaponBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PrevOwnerHandle = decoder(ref buffer);
@@ -10724,25 +10724,25 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
         return CBasePlayerWeapon.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSWeaponBase.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSWeaponBase.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSWeaponBase.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSWeaponBase.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -10751,7 +10751,7 @@ public partial class CCSWeaponBase : CBasePlayerWeapon
 
 public partial class CCSWeaponBaseGun : CCSWeaponBase
 {
-    internal CCSWeaponBaseGun(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCSWeaponBaseGun(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 ZoomLevel { get; private set; }
 
@@ -10788,25 +10788,25 @@ public partial class CCSWeaponBaseGun : CCSWeaponBase
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CCSWeaponBaseGun.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CCSWeaponBaseGun.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CCSWeaponBaseGun.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCSWeaponBaseGun.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -10815,13 +10815,13 @@ public partial class CCSWeaponBaseGun : CCSWeaponBase
 
 public partial class CDamageRecord
 {
-    public CHandle<CCSPlayerPawn> PlayerDamagerHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> PlayerDamagerHandle { get; private set; }
 
-    public CHandle<CCSPlayerPawn> PlayerRecipientHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> PlayerRecipientHandle { get; private set; }
 
-    public CHandle<CCSPlayerController> PlayerControllerDamagerHandle { get; private set; }
+    public CHandle<CCSPlayerController, CsDemoParser> PlayerControllerDamagerHandle { get; private set; }
 
-    public CHandle<CCSPlayerController> PlayerControllerRecipientHandle { get; private set; }
+    public CHandle<CCSPlayerController, CsDemoParser> PlayerControllerRecipientHandle { get; private set; }
 
     public NetworkedString PlayerDamagerName { get; private set; }
 
@@ -10847,7 +10847,7 @@ public partial class CDamageRecord
     {
         if (field.VarName == "m_PlayerDamager")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerDamagerHandle = decoder(ref buffer);
@@ -10855,7 +10855,7 @@ public partial class CDamageRecord
         }
         if (field.VarName == "m_PlayerRecipient")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerRecipientHandle = decoder(ref buffer);
@@ -10863,7 +10863,7 @@ public partial class CDamageRecord
         }
         if (field.VarName == "m_hPlayerControllerDamager")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController, CsDemoParser>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerControllerDamagerHandle = decoder(ref buffer);
@@ -10871,7 +10871,7 @@ public partial class CDamageRecord
         }
         if (field.VarName == "m_hPlayerControllerRecipient")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerController, CsDemoParser>(field.FieldEncodingInfo);
             return (CDamageRecord @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerControllerRecipientHandle = decoder(ref buffer);
@@ -10973,32 +10973,32 @@ public partial class CDamageRecord
 
 public partial class CDEagle : CCSWeaponBaseGun
 {
-    internal CDEagle(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CDEagle(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CDEagle> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CDEagle.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CDEagle.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CDEagle.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CDEagle.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11007,32 +11007,32 @@ public partial class CDEagle : CCSWeaponBaseGun
 
 public partial class CDecoyGrenade : CBaseCSGrenade
 {
-    internal CDecoyGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CDecoyGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CDecoyGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CDecoyGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CDecoyGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CDecoyGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CDecoyGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11041,7 +11041,7 @@ public partial class CDecoyGrenade : CBaseCSGrenade
 
 public partial class CDecoyProjectile : CBaseCSGrenadeProjectile
 {
-    internal CDecoyProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CDecoyProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 DecoyShotTick { get; private set; }
 
@@ -11058,25 +11058,25 @@ public partial class CDecoyProjectile : CBaseCSGrenadeProjectile
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CDecoyProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CDecoyProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CDecoyProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CDecoyProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11085,7 +11085,7 @@ public partial class CDecoyProjectile : CBaseCSGrenadeProjectile
 
 public partial class CDynamicLight : CBaseModelEntity
 {
-    internal CDynamicLight(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CDynamicLight(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public byte DynamicLightFlags { get; private set; }
 
@@ -11168,25 +11168,25 @@ public partial class CDynamicLight : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CDynamicLight.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CDynamicLight.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CDynamicLight.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CDynamicLight.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11195,7 +11195,7 @@ public partial class CDynamicLight : CBaseModelEntity
 
 public partial class CDynamicProp : CBreakableProp
 {
-    internal CDynamicProp(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CDynamicProp(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool UseHitboxesForRenderBox { get; private set; }
 
@@ -11222,25 +11222,25 @@ public partial class CDynamicProp : CBreakableProp
         return CBreakableProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CDynamicProp.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CDynamicProp.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CDynamicProp.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CDynamicProp.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11249,7 +11249,7 @@ public partial class CDynamicProp : CBreakableProp
 
 public partial class CEconEntity : CBaseFlex
 {
-    internal CEconEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEconEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CAttributeContainer AttributeManager { get; private set; } = new();
 
@@ -11326,25 +11326,25 @@ public partial class CEconEntity : CBaseFlex
         return CBaseFlex.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEconEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEconEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEconEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEconEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11540,59 +11540,41 @@ public partial class CEconItemView : IEconItemInterface
 
 public partial class CEconWearable : CEconEntity
 {
-    internal CEconWearable(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEconWearable(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CEconWearable> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CEconEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEconWearable.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEconWearable.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEconWearable.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEconWearable.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
 
-public partial class CEntityComponent
-{
-    internal static SendNodeDecoder<CEntityComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
-        {
-            return (CEntityComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-#if DEBUG
-                var _field = field;
-#endif
-                fallback(default, path, ref buffer);
-            };
-        }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
-    }
-}
-
 public partial class CEntityDissolve : CBaseModelEntity
 {
-    internal CEntityDissolve(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEntityDissolve(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float FadeInStart { get; private set; }
 
@@ -11699,25 +11681,25 @@ public partial class CEntityDissolve : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEntityDissolve.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEntityDissolve.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEntityDissolve.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEntityDissolve.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -11726,9 +11708,9 @@ public partial class CEntityDissolve : CBaseModelEntity
 
 public partial class CEntityFlame : CBaseEntity
 {
-    internal CEntityFlame(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEntityFlame(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseEntity> EntAttachedHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> EntAttachedHandle { get; private set; }
     public CBaseEntity? EntAttached => EntAttachedHandle.Get(Demo);
 
     public bool CheapEffect { get; private set; }
@@ -11737,7 +11719,7 @@ public partial class CEntityFlame : CBaseEntity
     {
         if (field.VarName == "m_hEntAttached")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CEntityFlame @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EntAttachedHandle = decoder(ref buffer);
@@ -11754,155 +11736,34 @@ public partial class CEntityFlame : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEntityFlame.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEntityFlame.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEntityFlame.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEntityFlame.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
 
-public partial class CEntityIdentity
-{
-    internal static SendNodeDecoder<CEntityIdentity> CreateDowncastDecoder(SerializerKey serializerKey, DecoderSet decoderSet, out Func<CEntityIdentity> factory)
-    {
-        if (serializerKey.Name == "CEntityIdentity")
-        {
-            factory = () => new CEntityIdentity();
-            return decoderSet.GetDecoder<CEntityIdentity>(serializerKey);
-        }
-        throw new NotImplementedException($"Unknown derived class of CEntityIdentity: {serializerKey}");
-    }
-
-    // MNetworkChangeCallback "entityIdentityNameChanged"
-    public Int32 NameStringableIndex { get; private set; }
-
-    internal static SendNodeDecoder<CEntityIdentity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        if (field.VarName == "m_nameStringableIndex")
-        {
-            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
-            return (CEntityIdentity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.NameStringableIndex = decoder(ref buffer);
-            };
-        }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
-        {
-            return (CEntityIdentity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-#if DEBUG
-                var _field = field;
-#endif
-                fallback(default, path, ref buffer);
-            };
-        }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
-    }
-}
-
-public partial class CEntityInstance
-{
-    // MNetworkPriority 56
-    public CEntityIdentity? Entity { get; private set; }
-
-    // MNetworkDisable
-    public CScriptComponent? CScriptComponent { get; private set; }
-
-    internal static SendNodeDecoder<CEntityInstance> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        if (field.VarName == "m_pEntity")
-        {
-            Debug.Assert(field.FieldSerializerKey.HasValue);
-            var serializerKey = field.FieldSerializerKey.Value;
-            var innerDecoder = CEntityIdentity.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
-            return (CEntityInstance @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var isSet = buffer.ReadOneBit();
-                    @this.Entity = isSet ? factory() : null;
-                }
-                else
-                {
-                    var inner = @this.Entity ??= factory();
-                    innerDecoder(inner, path[1..], ref buffer);
-                }
-            };
-        }
-        if (field.VarName == "m_CScriptComponent")
-        {
-            Debug.Assert(field.FieldSerializerKey.HasValue);
-            var serializerKey = field.FieldSerializerKey.Value;
-            var innerDecoder = CScriptComponent.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
-            return (CEntityInstance @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var isSet = buffer.ReadOneBit();
-                    @this.CScriptComponent = isSet ? factory() : null;
-                }
-                else
-                {
-                    var inner = @this.CScriptComponent ??= factory();
-                    innerDecoder(inner, path[1..], ref buffer);
-                }
-            };
-        }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
-        {
-            return (CEntityInstance @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-#if DEBUG
-                var _field = field;
-#endif
-                fallback(default, path, ref buffer);
-            };
-        }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
-    }
-
-    internal virtual void FireCreateEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.Create?.Invoke(this);
-    }
-
-    internal virtual void FireDeleteEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.Delete?.Invoke(this);
-    }
-
-    internal virtual void FirePreUpdateEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.PreUpdate?.Invoke(this);
-    }
-
-    internal virtual void FirePostUpdateEvent()
-    {
-        Demo.EntityEvents.CEntityInstance.PostUpdate?.Invoke(this);
-    }
-}
-
 public partial class CEnvCombinedLightProbeVolume : CBaseEntity
 {
-    internal CEnvCombinedLightProbeVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvCombinedLightProbeVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "StateChanged"
     public Color Color { get; private set; }
@@ -12151,25 +12012,25 @@ public partial class CEnvCombinedLightProbeVolume : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvCombinedLightProbeVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvCombinedLightProbeVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvCombinedLightProbeVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvCombinedLightProbeVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -12178,7 +12039,7 @@ public partial class CEnvCombinedLightProbeVolume : CBaseEntity
 
 public partial class CEnvCubemap : CBaseEntity
 {
-    internal CEnvCubemap(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvCubemap(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CStrongHandle<InfoForResourceTypeCTextureBase> CubemapTexture { get; private set; }
 
@@ -12365,25 +12226,25 @@ public partial class CEnvCubemap : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvCubemap.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvCubemap.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvCubemap.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvCubemap.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -12392,32 +12253,32 @@ public partial class CEnvCubemap : CBaseEntity
 
 public partial class CEnvCubemapBox : CEnvCubemap
 {
-    internal CEnvCubemapBox(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvCubemapBox(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CEnvCubemapBox> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CEnvCubemap.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvCubemapBox.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvCubemapBox.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvCubemapBox.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvCubemapBox.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -12426,7 +12287,7 @@ public partial class CEnvCubemapBox : CEnvCubemap
 
 public partial class CEnvCubemapFog : CBaseEntity
 {
-    internal CEnvCubemapFog(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvCubemapFog(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float EndDistance { get; private set; }
 
@@ -12603,25 +12464,25 @@ public partial class CEnvCubemapFog : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvCubemapFog.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvCubemapFog.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvCubemapFog.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvCubemapFog.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -12630,7 +12491,7 @@ public partial class CEnvCubemapFog : CBaseEntity
 
 public partial class CEnvDecal : CBaseModelEntity
 {
-    internal CEnvDecal(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvDecal(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CStrongHandle<InfoForResourceTypeIMaterial2> DecalMaterial { get; private set; }
 
@@ -12730,25 +12591,25 @@ public partial class CEnvDecal : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvDecal.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvDecal.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvDecal.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvDecal.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -12757,7 +12618,7 @@ public partial class CEnvDecal : CBaseModelEntity
 
 public partial class CEnvDetailController : CBaseEntity
 {
-    internal CEnvDetailController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvDetailController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float FadeStartDist { get; private set; }
 
@@ -12784,25 +12645,25 @@ public partial class CEnvDetailController : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvDetailController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvDetailController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvDetailController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvDetailController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -12811,7 +12672,7 @@ public partial class CEnvDetailController : CBaseEntity
 
 public partial class CEnvLightProbeVolume : CBaseEntity
 {
-    internal CEnvLightProbeVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvLightProbeVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture { get; private set; }
 
@@ -12988,25 +12849,25 @@ public partial class CEnvLightProbeVolume : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvLightProbeVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvLightProbeVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvLightProbeVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvLightProbeVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -13015,7 +12876,7 @@ public partial class CEnvLightProbeVolume : CBaseEntity
 
 public partial class CEnvParticleGlow : CParticleSystem
 {
-    internal CEnvParticleGlow(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvParticleGlow(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float AlphaScale { get; private set; }
 
@@ -13072,25 +12933,25 @@ public partial class CEnvParticleGlow : CParticleSystem
         return CParticleSystem.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvParticleGlow.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvParticleGlow.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvParticleGlow.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvParticleGlow.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -13099,9 +12960,9 @@ public partial class CEnvParticleGlow : CParticleSystem
 
 public partial class CEnvProjectedTexture : CModelPointEntity
 {
-    internal CEnvProjectedTexture(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvProjectedTexture(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseEntity> TargetEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> TargetEntityHandle { get; private set; }
     public CBaseEntity? TargetEntity => TargetEntityHandle.Get(Demo);
 
     public bool State { get; private set; }
@@ -13174,7 +13035,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
     {
         if (field.VarName == "m_hTargetEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CEnvProjectedTexture @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.TargetEntityHandle = decoder(ref buffer);
@@ -13415,25 +13276,25 @@ public partial class CEnvProjectedTexture : CModelPointEntity
         return CModelPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvProjectedTexture.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvProjectedTexture.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvProjectedTexture.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvProjectedTexture.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -13442,7 +13303,7 @@ public partial class CEnvProjectedTexture : CModelPointEntity
 
 public partial class CEnvScreenOverlay : CPointEntity
 {
-    internal CEnvScreenOverlay(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvScreenOverlay(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString[] OverlayNames { get; private set; } = Array.Empty<NetworkedString>();
 
@@ -13506,25 +13367,25 @@ public partial class CEnvScreenOverlay : CPointEntity
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvScreenOverlay.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvScreenOverlay.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvScreenOverlay.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvScreenOverlay.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -13533,7 +13394,7 @@ public partial class CEnvScreenOverlay : CPointEntity
 
 public partial class CEnvSky : CBaseModelEntity
 {
-    internal CEnvSky(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvSky(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "SkyStateChanged"
     public CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; private set; }
@@ -13672,25 +13533,25 @@ public partial class CEnvSky : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvSky.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvSky.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvSky.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvSky.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -13699,7 +13560,7 @@ public partial class CEnvSky : CBaseModelEntity
 
 public partial class CEnvVolumetricFogController : CBaseEntity
 {
-    internal CEnvVolumetricFogController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvVolumetricFogController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float Scattering { get; private set; }
 
@@ -14016,25 +13877,25 @@ public partial class CEnvVolumetricFogController : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14043,7 +13904,7 @@ public partial class CEnvVolumetricFogController : CBaseEntity
 
 public partial class CEnvVolumetricFogVolume : CBaseEntity
 {
-    internal CEnvVolumetricFogVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvVolumetricFogVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Active { get; private set; }
 
@@ -14200,25 +14061,25 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvVolumetricFogVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14227,7 +14088,7 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
 
 public partial class CEnvWind : CBaseEntity
 {
-    internal CEnvWind(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CEnvWind(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CEnvWindShared EnvWindShared { get; private set; } = new();
 
@@ -14244,25 +14105,25 @@ public partial class CEnvWind : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CEnvWind.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CEnvWind.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CEnvWind.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CEnvWind.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14430,32 +14291,32 @@ public partial class CEnvWindShared
 
 public partial class CFireCrackerBlast : CInferno
 {
-    internal CFireCrackerBlast(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFireCrackerBlast(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFireCrackerBlast> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CInferno.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFireCrackerBlast.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFireCrackerBlast.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFireCrackerBlast.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFireCrackerBlast.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14464,7 +14325,7 @@ public partial class CFireCrackerBlast : CInferno
 
 public partial class CFireSmoke : CBaseFire
 {
-    internal CFireSmoke(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFireSmoke(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 FlameModelIndex { get; private set; }
 
@@ -14491,25 +14352,25 @@ public partial class CFireSmoke : CBaseFire
         return CBaseFire.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFireSmoke.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFireSmoke.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFireSmoke.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFireSmoke.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14520,7 +14381,7 @@ public partial class CFireSmoke : CBaseFire
 // MNetworkIncludeByName "m_lifeState"
 public partial class CFish : CBaseAnimGraph
 {
-    internal CFish(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFish(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkSerializer "fish_pos_x"
     public float X { get; private set; }
@@ -14596,25 +14457,25 @@ public partial class CFish : CBaseAnimGraph
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFish.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFish.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFish.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFish.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14623,7 +14484,7 @@ public partial class CFish : CBaseAnimGraph
 
 public partial class CFists : CCSWeaponBase
 {
-    internal CFists(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFists(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool PlayingUninterruptableAct { get; private set; }
 
@@ -14651,25 +14512,25 @@ public partial class CFists : CCSWeaponBase
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFists.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFists.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFists.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFists.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14678,32 +14539,32 @@ public partial class CFists : CCSWeaponBase
 
 public partial class CFlashbang : CBaseCSGrenade
 {
-    internal CFlashbang(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFlashbang(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFlashbang> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFlashbang.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFlashbang.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFlashbang.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFlashbang.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14712,32 +14573,32 @@ public partial class CFlashbang : CBaseCSGrenade
 
 public partial class CFlashbangProjectile : CBaseCSGrenadeProjectile
 {
-    internal CFlashbangProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFlashbangProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFlashbangProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFlashbangProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFlashbangProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFlashbangProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFlashbangProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14746,7 +14607,7 @@ public partial class CFlashbangProjectile : CBaseCSGrenadeProjectile
 
 public partial class CFogController : CBaseEntity
 {
-    internal CFogController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFogController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public FogParams Fog { get; private set; } = new();
 
@@ -14763,25 +14624,25 @@ public partial class CFogController : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFogController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFogController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFogController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFogController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14790,7 +14651,7 @@ public partial class CFogController : CBaseEntity
 
 public partial class CFootstepControl : CBaseTrigger
 {
-    internal CFootstepControl(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFootstepControl(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString Source { get; private set; }
 
@@ -14817,25 +14678,25 @@ public partial class CFootstepControl : CBaseTrigger
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFootstepControl.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFootstepControl.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFootstepControl.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFootstepControl.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14844,32 +14705,32 @@ public partial class CFootstepControl : CBaseTrigger
 
 public partial class CFuncBrush : CBaseModelEntity
 {
-    internal CFuncBrush(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncBrush(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFuncBrush> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncBrush.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncBrush.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncBrush.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncBrush.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14884,7 +14745,7 @@ public partial class CFuncBrush : CBaseModelEntity
 // MNetworkOverride "m_angRotation CGameSceneNode"
 public partial class CFuncConveyor : CBaseModelEntity
 {
-    internal CFuncConveyor(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncConveyor(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector MoveDirEntitySpace { get; private set; }
 
@@ -14896,7 +14757,7 @@ public partial class CFuncConveyor : CBaseModelEntity
 
     public float TransitionStartSpeed { get; private set; }
 
-    public NetworkedVector<CHandle<CBaseEntity>> ConveyorModels { get; private set; } = new NetworkedVector<CHandle<CBaseEntity>>();
+    public NetworkedVector<CHandle<CBaseEntity, CsDemoParser>> ConveyorModels { get; private set; } = new NetworkedVector<CHandle<CBaseEntity, CsDemoParser>>();
 
     internal new static SendNodeDecoder<CFuncConveyor> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -14942,7 +14803,7 @@ public partial class CFuncConveyor : CBaseModelEntity
         }
         if (field.VarName == "m_hConveyorModels")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CFuncConveyor @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -14963,25 +14824,25 @@ public partial class CFuncConveyor : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncConveyor.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncConveyor.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncConveyor.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncConveyor.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -14990,7 +14851,7 @@ public partial class CFuncConveyor : CBaseModelEntity
 
 public partial class CFuncElectrifiedVolume : CFuncBrush
 {
-    internal CFuncElectrifiedVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncElectrifiedVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString EffectName { get; private set; }
 
@@ -15007,25 +14868,25 @@ public partial class CFuncElectrifiedVolume : CFuncBrush
         return CFuncBrush.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncElectrifiedVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncElectrifiedVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncElectrifiedVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncElectrifiedVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15034,7 +14895,7 @@ public partial class CFuncElectrifiedVolume : CFuncBrush
 
 public partial class CFuncLadder : CBaseModelEntity
 {
-    internal CFuncLadder(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncLadder(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkEncoder "coord"
     public Vector LadderDir { get; private set; }
@@ -15094,25 +14955,25 @@ public partial class CFuncLadder : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncLadder.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncLadder.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncLadder.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncLadder.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15121,7 +14982,7 @@ public partial class CFuncLadder : CBaseModelEntity
 
 public partial class CFuncMonitor : CFuncBrush
 {
-    internal CFuncMonitor(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncMonitor(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString TargetCamera { get; private set; }
 
@@ -15133,7 +14994,7 @@ public partial class CFuncMonitor : CFuncBrush
 
     public NetworkedString BrushModelName { get; private set; }
 
-    public CHandle<CBaseEntity> HTargetCameraHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> HTargetCameraHandle { get; private set; }
     public CBaseEntity? HTargetCamera => HTargetCameraHandle.Get(Demo);
 
     public bool Enabled { get; private set; }
@@ -15184,7 +15045,7 @@ public partial class CFuncMonitor : CFuncBrush
         }
         if (field.VarName == "m_hTargetCamera")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CFuncMonitor @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.HTargetCameraHandle = decoder(ref buffer);
@@ -15209,25 +15070,25 @@ public partial class CFuncMonitor : CFuncBrush
         return CFuncBrush.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncMonitor.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncMonitor.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncMonitor.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncMonitor.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15239,32 +15100,32 @@ public partial class CFuncMonitor : CFuncBrush
 // MNetworkOverride "m_fFlags CBaseEntity"
 public partial class CFuncMoveLinear : CBaseToggle
 {
-    internal CFuncMoveLinear(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncMoveLinear(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFuncMoveLinear> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseToggle.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncMoveLinear.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncMoveLinear.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncMoveLinear.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncMoveLinear.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15273,32 +15134,32 @@ public partial class CFuncMoveLinear : CBaseToggle
 
 public partial class CFuncMover : CBaseModelEntity
 {
-    internal CFuncMover(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncMover(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFuncMover> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncMover.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncMover.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncMover.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncMover.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15309,32 +15170,32 @@ public partial class CFuncMover : CBaseModelEntity
 // MNetworkOverride "m_flSimulationTime CBaseEntity"
 public partial class CFuncRotating : CBaseModelEntity
 {
-    internal CFuncRotating(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncRotating(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFuncRotating> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncRotating.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncRotating.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncRotating.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncRotating.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15343,32 +15204,32 @@ public partial class CFuncRotating : CBaseModelEntity
 
 public partial class CFuncTrackTrain : CBaseModelEntity
 {
-    internal CFuncTrackTrain(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncTrackTrain(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFuncTrackTrain> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncTrackTrain.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncTrackTrain.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncTrackTrain.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncTrackTrain.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15377,32 +15238,32 @@ public partial class CFuncTrackTrain : CBaseModelEntity
 
 public partial class CFuncWater : CBaseModelEntity
 {
-    internal CFuncWater(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CFuncWater(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CFuncWater> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CFuncWater.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CFuncWater.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CFuncWater.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CFuncWater.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15459,32 +15320,32 @@ public partial class CGameRules
 
 public partial class CGameRulesProxy : CBaseEntity
 {
-    internal CGameRulesProxy(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CGameRulesProxy(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CGameRulesProxy> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CGameRulesProxy.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CGameRulesProxy.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CGameRulesProxy.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CGameRulesProxy.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15695,7 +15556,7 @@ public partial class CGlowProperty
 
 public partial class CGradientFog : CBaseEntity
 {
-    internal CGradientFog(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CGradientFog(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CStrongHandle<InfoForResourceTypeCTextureBase> GradientFogTexture { get; private set; }
 
@@ -15864,25 +15725,25 @@ public partial class CGradientFog : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CGradientFog.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CGradientFog.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CGradientFog.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CGradientFog.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15891,9 +15752,9 @@ public partial class CGradientFog : CBaseEntity
 
 public partial class CHandleTest : CBaseEntity
 {
-    internal CHandleTest(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHandleTest(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CBaseEntity> HandleHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> HandleHandle { get; private set; }
     public CBaseEntity? Handle => HandleHandle.Get(Demo);
 
     public bool SendHandle { get; private set; }
@@ -15902,7 +15763,7 @@ public partial class CHandleTest : CBaseEntity
     {
         if (field.VarName == "m_Handle")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CHandleTest @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.HandleHandle = decoder(ref buffer);
@@ -15919,25 +15780,25 @@ public partial class CHandleTest : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHandleTest.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHandleTest.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHandleTest.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHandleTest.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15946,32 +15807,32 @@ public partial class CHandleTest : CBaseEntity
 
 public partial class CHEGrenade : CBaseCSGrenade
 {
-    internal CHEGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHEGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CHEGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHEGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHEGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHEGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHEGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -15980,32 +15841,32 @@ public partial class CHEGrenade : CBaseCSGrenade
 
 public partial class CHEGrenadeProjectile : CBaseCSGrenadeProjectile
 {
-    internal CHEGrenadeProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHEGrenadeProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CHEGrenadeProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHEGrenadeProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHEGrenadeProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHEGrenadeProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHEGrenadeProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16039,7 +15900,7 @@ public partial class CHitboxComponent : CEntityComponent
 // MNetworkIncludeByName "m_vecViewOffset"
 public partial class CHostage : CHostageExpresserShim
 {
-    internal CHostage(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHostage(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public EntitySpottedState EntitySpottedState { get; private set; } = new();
 
@@ -16051,14 +15912,14 @@ public partial class CHostage : CHostageExpresserShim
 
     public Int32 HostageState { get; private set; }
 
-    public CHandle<CBaseEntity> LeaderHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> LeaderHandle { get; private set; }
     public CBaseEntity? Leader => LeaderHandle.Get(Demo);
 
     public CountdownTimer ReuseTimer { get; private set; } = new();
 
     public bool HandsHaveBeenCut { get; private set; }
 
-    public CHandle<CCSPlayerPawn> HostageGrabberHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> HostageGrabberHandle { get; private set; }
     public CCSPlayerPawn? HostageGrabber => HostageGrabberHandle.Get(Demo);
 
     public GameTime RescueStartTime { get; private set; } = new();
@@ -16111,7 +15972,7 @@ public partial class CHostage : CHostageExpresserShim
         }
         if (field.VarName == "m_leader")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CHostage @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.LeaderHandle = decoder(ref buffer);
@@ -16135,7 +15996,7 @@ public partial class CHostage : CHostageExpresserShim
         }
         if (field.VarName == "m_hHostageGrabber")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CHostage @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.HostageGrabberHandle = decoder(ref buffer);
@@ -16168,25 +16029,25 @@ public partial class CHostage : CHostageExpresserShim
         return CHostageExpresserShim.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHostage.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHostage.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHostage.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHostage.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16195,32 +16056,32 @@ public partial class CHostage : CHostageExpresserShim
 
 public partial class CHostageCarriableProp : CBaseAnimGraph
 {
-    internal CHostageCarriableProp(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHostageCarriableProp(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CHostageCarriableProp> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHostageCarriableProp.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHostageCarriableProp.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHostageCarriableProp.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHostageCarriableProp.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16229,32 +16090,32 @@ public partial class CHostageCarriableProp : CBaseAnimGraph
 
 public partial class CHostageExpresserShim : CBaseCombatCharacter
 {
-    internal CHostageExpresserShim(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHostageExpresserShim(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CHostageExpresserShim> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCombatCharacter.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHostageExpresserShim.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHostageExpresserShim.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHostageExpresserShim.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHostageExpresserShim.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16263,32 +16124,32 @@ public partial class CHostageExpresserShim : CBaseCombatCharacter
 
 public partial class CHostageRescueZone : CHostageRescueZoneShim
 {
-    internal CHostageRescueZone(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHostageRescueZone(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CHostageRescueZone> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CHostageRescueZoneShim.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHostageRescueZone.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHostageRescueZone.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHostageRescueZone.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHostageRescueZone.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16297,32 +16158,32 @@ public partial class CHostageRescueZone : CHostageRescueZoneShim
 
 public partial class CHostageRescueZoneShim : CBaseTrigger
 {
-    internal CHostageRescueZoneShim(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CHostageRescueZoneShim(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CHostageRescueZoneShim> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CHostageRescueZoneShim.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CHostageRescueZoneShim.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CHostageRescueZoneShim.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CHostageRescueZoneShim.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16331,32 +16192,32 @@ public partial class CHostageRescueZoneShim : CBaseTrigger
 
 public partial class CIncendiaryGrenade : CMolotovGrenade
 {
-    internal CIncendiaryGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CIncendiaryGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CIncendiaryGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CMolotovGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CIncendiaryGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CIncendiaryGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CIncendiaryGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CIncendiaryGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16365,7 +16226,7 @@ public partial class CIncendiaryGrenade : CMolotovGrenade
 
 public partial class CInferno : CBaseModelEntity
 {
-    internal CInferno(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CInferno(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector[] FirePositions { get; private set; } = Array.Empty<Vector>();
 
@@ -16470,25 +16331,25 @@ public partial class CInferno : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CInferno.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CInferno.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CInferno.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CInferno.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16497,32 +16358,32 @@ public partial class CInferno : CBaseModelEntity
 
 public partial class CInfoInstructorHintHostageRescueZone : CPointEntity
 {
-    internal CInfoInstructorHintHostageRescueZone(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CInfoInstructorHintHostageRescueZone(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CInfoInstructorHintHostageRescueZone> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CInfoInstructorHintHostageRescueZone.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16531,32 +16392,32 @@ public partial class CInfoInstructorHintHostageRescueZone : CPointEntity
 
 public partial class CInfoLadderDismount : CBaseEntity
 {
-    internal CInfoLadderDismount(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CInfoLadderDismount(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CInfoLadderDismount> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CInfoLadderDismount.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CInfoLadderDismount.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CInfoLadderDismount.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CInfoLadderDismount.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16565,7 +16426,7 @@ public partial class CInfoLadderDismount : CBaseEntity
 
 public partial class CInfoOffscreenPanoramaTexture : CPointEntity
 {
-    internal CInfoOffscreenPanoramaTexture(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CInfoOffscreenPanoramaTexture(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Disabled { get; private set; }
 
@@ -16577,7 +16438,7 @@ public partial class CInfoOffscreenPanoramaTexture : CPointEntity
 
     public NetworkedString RenderAttrName { get; private set; }
 
-    public NetworkedVector<CHandle<CBaseModelEntity>> TargetEntities { get; private set; } = new NetworkedVector<CHandle<CBaseModelEntity>>();
+    public NetworkedVector<CHandle<CBaseModelEntity, CsDemoParser>> TargetEntities { get; private set; } = new NetworkedVector<CHandle<CBaseModelEntity, CsDemoParser>>();
 
     public Int32 TargetChangeCount { get; private set; }
 
@@ -16627,7 +16488,7 @@ public partial class CInfoOffscreenPanoramaTexture : CPointEntity
         }
         if (field.VarName == "m_TargetEntities")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CInfoOffscreenPanoramaTexture @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -16676,25 +16537,25 @@ public partial class CInfoOffscreenPanoramaTexture : CPointEntity
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CInfoOffscreenPanoramaTexture.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CInfoOffscreenPanoramaTexture.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CInfoOffscreenPanoramaTexture.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CInfoOffscreenPanoramaTexture.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16703,7 +16564,7 @@ public partial class CInfoOffscreenPanoramaTexture : CPointEntity
 
 public partial class CInfoVisibilityBox : CBaseEntity
 {
-    internal CInfoVisibilityBox(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CInfoVisibilityBox(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 Mode { get; private set; }
 
@@ -16740,25 +16601,25 @@ public partial class CInfoVisibilityBox : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CInfoVisibilityBox.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CInfoVisibilityBox.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CInfoVisibilityBox.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CInfoVisibilityBox.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16767,7 +16628,7 @@ public partial class CInfoVisibilityBox : CBaseEntity
 
 public partial class CInfoWorldLayer : CBaseEntity
 {
-    internal CInfoWorldLayer(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CInfoWorldLayer(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString WorldName { get; private set; }
 
@@ -16814,25 +16675,25 @@ public partial class CInfoWorldLayer : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CInfoWorldLayer.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CInfoWorldLayer.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CInfoWorldLayer.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CInfoWorldLayer.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16841,32 +16702,32 @@ public partial class CInfoWorldLayer : CBaseEntity
 
 public partial class CItem : CBaseAnimGraph
 {
-    internal CItem(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CItem(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CItem> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CItem.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CItem.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CItem.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CItem.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16875,32 +16736,32 @@ public partial class CItem : CBaseAnimGraph
 
 public partial class CItem_Healthshot : CWeaponBaseItem
 {
-    internal CItem_Healthshot(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CItem_Healthshot(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CItem_Healthshot> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CWeaponBaseItem.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CItem_Healthshot.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CItem_Healthshot.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CItem_Healthshot.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CItem_Healthshot.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16909,19 +16770,19 @@ public partial class CItem_Healthshot : CWeaponBaseItem
 
 public partial class CItemDogtags : CItem
 {
-    internal CItemDogtags(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CItemDogtags(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CCSPlayerPawn> OwningPlayerHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> OwningPlayerHandle { get; private set; }
     public CCSPlayerPawn? OwningPlayer => OwningPlayerHandle.Get(Demo);
 
-    public CHandle<CCSPlayerPawn> KillingPlayerHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> KillingPlayerHandle { get; private set; }
     public CCSPlayerPawn? KillingPlayer => KillingPlayerHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CItemDogtags> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_OwningPlayer")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CItemDogtags @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OwningPlayerHandle = decoder(ref buffer);
@@ -16929,7 +16790,7 @@ public partial class CItemDogtags : CItem
         }
         if (field.VarName == "m_KillingPlayer")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CItemDogtags @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.KillingPlayerHandle = decoder(ref buffer);
@@ -16938,25 +16799,25 @@ public partial class CItemDogtags : CItem
         return CItem.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CItemDogtags.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CItemDogtags.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CItemDogtags.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CItemDogtags.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -16965,32 +16826,32 @@ public partial class CItemDogtags : CItem
 
 public partial class CKnife : CCSWeaponBase
 {
-    internal CKnife(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CKnife(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CKnife> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CKnife.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CKnife.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CKnife.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CKnife.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -17716,32 +17577,32 @@ public partial class CLightComponent : CEntityComponent
 
 public partial class CLightDirectionalEntity : CLightEntity
 {
-    internal CLightDirectionalEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CLightDirectionalEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CLightDirectionalEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CLightEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CLightDirectionalEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CLightDirectionalEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CLightDirectionalEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CLightDirectionalEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -17750,7 +17611,7 @@ public partial class CLightDirectionalEntity : CLightEntity
 
 public partial class CLightEntity : CBaseModelEntity
 {
-    internal CLightEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CLightEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "CLightComponent"
     // MNetworkAlias "CLightComponent"
@@ -17781,25 +17642,25 @@ public partial class CLightEntity : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CLightEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CLightEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CLightEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CLightEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -17808,32 +17669,32 @@ public partial class CLightEntity : CBaseModelEntity
 
 public partial class CLightEnvironmentEntity : CLightDirectionalEntity
 {
-    internal CLightEnvironmentEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CLightEnvironmentEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CLightEnvironmentEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CLightDirectionalEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CLightEnvironmentEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CLightEnvironmentEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CLightEnvironmentEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CLightEnvironmentEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -17847,7 +17708,7 @@ public partial class CLightEnvironmentEntity : CLightDirectionalEntity
 // MNetworkIncludeByName "m_spawnflags"
 public partial class CLightGlow : CBaseModelEntity
 {
-    internal CLightGlow(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CLightGlow(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public UInt32 HorizontalSize { get; private set; }
 
@@ -17930,25 +17791,25 @@ public partial class CLightGlow : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CLightGlow.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CLightGlow.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CLightGlow.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CLightGlow.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -17957,32 +17818,32 @@ public partial class CLightGlow : CBaseModelEntity
 
 public partial class CLightOrthoEntity : CLightEntity
 {
-    internal CLightOrthoEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CLightOrthoEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CLightOrthoEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CLightEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CLightOrthoEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CLightOrthoEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CLightOrthoEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CLightOrthoEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -17991,32 +17852,32 @@ public partial class CLightOrthoEntity : CLightEntity
 
 public partial class CLightSpotEntity : CLightEntity
 {
-    internal CLightSpotEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CLightSpotEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CLightSpotEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CLightEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CLightSpotEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CLightSpotEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CLightSpotEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CLightSpotEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18025,7 +17886,7 @@ public partial class CLightSpotEntity : CLightEntity
 
 public partial class CMapVetoPickController : CBaseEntity
 {
-    internal CMapVetoPickController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CMapVetoPickController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 DraftType { get; private set; }
 
@@ -18202,25 +18063,25 @@ public partial class CMapVetoPickController : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CMapVetoPickController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CMapVetoPickController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CMapVetoPickController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CMapVetoPickController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18229,32 +18090,32 @@ public partial class CMapVetoPickController : CBaseEntity
 
 public partial class CMelee : CCSWeaponBase
 {
-    internal CMelee(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CMelee(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CMelee> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CMelee.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CMelee.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CMelee.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CMelee.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18263,32 +18124,32 @@ public partial class CMelee : CCSWeaponBase
 
 public partial class CModelPointEntity : CBaseModelEntity
 {
-    internal CModelPointEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CModelPointEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CModelPointEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CModelPointEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CModelPointEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CModelPointEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CModelPointEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18358,32 +18219,32 @@ public partial class CModelState
 
 public partial class CMolotovGrenade : CBaseCSGrenade
 {
-    internal CMolotovGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CMolotovGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CMolotovGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CMolotovGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CMolotovGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CMolotovGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CMolotovGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18392,7 +18253,7 @@ public partial class CMolotovGrenade : CBaseCSGrenade
 
 public partial class CMolotovProjectile : CBaseCSGrenadeProjectile
 {
-    internal CMolotovProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CMolotovProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool IsIncGrenade { get; private set; }
 
@@ -18409,25 +18270,25 @@ public partial class CMolotovProjectile : CBaseCSGrenadeProjectile
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CMolotovProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CMolotovProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CMolotovProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CMolotovProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18436,32 +18297,32 @@ public partial class CMolotovProjectile : CBaseCSGrenadeProjectile
 
 public partial class CMoverPathNode : CPointEntity
 {
-    internal CMoverPathNode(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CMoverPathNode(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CMoverPathNode> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CMoverPathNode.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CMoverPathNode.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CMoverPathNode.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CMoverPathNode.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18725,7 +18586,7 @@ public partial class CNetworkViewOffsetVector
 
 public partial class COmniLight : CBarnLight
 {
-    internal COmniLight(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal COmniLight(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "RenderingChanged"
     public float InnerAngle { get; private set; }
@@ -18765,25 +18626,25 @@ public partial class COmniLight : CBarnLight
         return CBarnLight.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.COmniLight.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.COmniLight.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.COmniLight.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.COmniLight.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -18856,7 +18717,7 @@ public partial class CountdownTimer
 // MNetworkIncludeByName "m_nameStringableIndex"
 public partial class CParticleSystem : CBaseModelEntity
 {
-    internal CParticleSystem(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CParticleSystem(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public string SnapshotFileName { get; private set; } = "";
 
@@ -18880,7 +18741,7 @@ public partial class CParticleSystem : CBaseModelEntity
 
     public byte[] ServerControlPointAssignments { get; private set; } = Array.Empty<byte>();
 
-    public CHandle<CBaseEntity>[] ControlPointEnts { get; private set; } = Array.Empty<CHandle<CBaseEntity>>();
+    public CHandle<CBaseEntity, CsDemoParser>[] ControlPointEnts { get; private set; } = Array.Empty<CHandle<CBaseEntity, CsDemoParser>>();
 
     public bool NoSave { get; private set; }
 
@@ -18985,10 +18846,10 @@ public partial class CParticleSystem : CBaseModelEntity
         if (field.VarName == "m_hControlPointEnts")
         {
             var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CParticleSystem @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                if (@this.ControlPointEnts.Length == 0) @this.ControlPointEnts = new CHandle<CBaseEntity>[fixedArraySize];
+                if (@this.ControlPointEnts.Length == 0) @this.ControlPointEnts = new CHandle<CBaseEntity, CsDemoParser>[fixedArraySize];
                 @this.ControlPointEnts[path[1]] = decoder(ref buffer);
             };
         }
@@ -19019,25 +18880,25 @@ public partial class CParticleSystem : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CParticleSystem.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CParticleSystem.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CParticleSystem.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CParticleSystem.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19046,32 +18907,32 @@ public partial class CParticleSystem : CBaseModelEntity
 
 public partial class CPathMover : CBaseEntity
 {
-    internal CPathMover(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPathMover(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPathMover> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPathMover.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPathMover.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPathMover.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPathMover.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19080,7 +18941,7 @@ public partial class CPathMover : CBaseEntity
 
 public partial class CPathParticleRope : CBaseEntity
 {
-    internal CPathParticleRope(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPathParticleRope(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float ParticleSpacing { get; private set; }
 
@@ -19284,25 +19145,25 @@ public partial class CPathParticleRope : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPathParticleRope.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPathParticleRope.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPathParticleRope.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPathParticleRope.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19311,32 +19172,32 @@ public partial class CPathParticleRope : CBaseEntity
 
 public partial class CPhysBox : CBreakable
 {
-    internal CPhysBox(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPhysBox(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPhysBox> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBreakable.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPhysBox.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPhysBox.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPhysBox.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPhysBox.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19352,7 +19213,7 @@ public partial class CPhysBox : CBreakable
 // MNetworkIncludeByName "m_spawnflags"
 public partial class CPhysicsProp : CBreakableProp
 {
-    internal CPhysicsProp(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPhysicsProp(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Awake { get; private set; }
 
@@ -19369,25 +19230,25 @@ public partial class CPhysicsProp : CBreakableProp
         return CBreakableProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPhysicsProp.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPhysicsProp.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPhysicsProp.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPhysicsProp.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19396,32 +19257,32 @@ public partial class CPhysicsProp : CBreakableProp
 
 public partial class CPhysicsPropMultiplayer : CPhysicsProp
 {
-    internal CPhysicsPropMultiplayer(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPhysicsPropMultiplayer(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPhysicsPropMultiplayer> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CPhysicsProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPhysicsPropMultiplayer.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPhysicsPropMultiplayer.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPhysicsPropMultiplayer.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPhysicsPropMultiplayer.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19430,32 +19291,32 @@ public partial class CPhysicsPropMultiplayer : CPhysicsProp
 
 public partial class CPhysMagnet : CBaseAnimGraph
 {
-    internal CPhysMagnet(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPhysMagnet(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPhysMagnet> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPhysMagnet.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPhysMagnet.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPhysMagnet.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPhysMagnet.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19464,7 +19325,7 @@ public partial class CPhysMagnet : CBaseAnimGraph
 
 public partial class CPlantedC4 : CBaseAnimGraph
 {
-    internal CPlantedC4(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPlantedC4(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool BombTicking { get; private set; }
 
@@ -19490,10 +19351,10 @@ public partial class CPlantedC4 : CBaseAnimGraph
 
     public bool BombDefused { get; private set; }
 
-    public CHandle<CCSPlayerPawn> BombDefuserHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> BombDefuserHandle { get; private set; }
     public CCSPlayerPawn? BombDefuser => BombDefuserHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> ControlPanelHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ControlPanelHandle { get; private set; }
     public CBaseEntity? ControlPanel => ControlPanelHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CPlantedC4> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -19596,7 +19457,7 @@ public partial class CPlantedC4 : CBaseAnimGraph
         }
         if (field.VarName == "m_hBombDefuser")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlantedC4 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.BombDefuserHandle = decoder(ref buffer);
@@ -19604,7 +19465,7 @@ public partial class CPlantedC4 : CBaseAnimGraph
         }
         if (field.VarName == "m_hControlPanel")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlantedC4 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ControlPanelHandle = decoder(ref buffer);
@@ -19613,25 +19474,25 @@ public partial class CPlantedC4 : CBaseAnimGraph
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPlantedC4.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPlantedC4.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPlantedC4.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPlantedC4.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -19710,18 +19571,18 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
 
     public FogPlayerParams PlayerFog { get; private set; } = new();
 
-    public CHandle<CColorCorrection> ColorCorrectionCtrlHandle { get; private set; }
+    public CHandle<CColorCorrection, CsDemoParser> ColorCorrectionCtrlHandle { get; private set; }
 
-    public CHandle<CBaseEntity> ViewEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ViewEntityHandle { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerAndObserversExclusive"
-    public CHandle<CTonemapController2> TonemapControllerHandle { get; private set; }
+    public CHandle<CTonemapController2, CsDemoParser> TonemapControllerHandle { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerAndObserversExclusive"
     public AudioParams Audio { get; private set; } = new();
 
     // MNetworkUserGroup "LocalPlayerAndObserversExclusive"
-    public NetworkedVector<CHandle<CPostProcessingVolume>> PostProcessingVolumes { get; private set; } = new NetworkedVector<CHandle<CPostProcessingVolume>>();
+    public NetworkedVector<CHandle<CPostProcessingVolume, CsDemoParser>> PostProcessingVolumes { get; private set; } = new NetworkedVector<CHandle<CPostProcessingVolume, CsDemoParser>>();
 
     internal new static SendNodeDecoder<CPlayer_CameraServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -19759,7 +19620,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hColorCorrectionCtrl")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CColorCorrection>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CColorCorrection, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ColorCorrectionCtrlHandle = decoder(ref buffer);
@@ -19767,7 +19628,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hViewEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ViewEntityHandle = decoder(ref buffer);
@@ -19775,7 +19636,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hTonemapController")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CTonemapController2>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CTonemapController2, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.TonemapControllerHandle = decoder(ref buffer);
@@ -19791,7 +19652,7 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_PostProcessingVolumes")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CPostProcessingVolume>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CPostProcessingVolume, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -20064,7 +19925,7 @@ public partial class CPlayer_ObserverServices : CPlayerPawnComponent
     public byte ObserverMode { get; private set; }
 
     // MNetworkChangeCallback "OnObserverTargetChanged"
-    public CHandle<CBaseEntity> ObserverTargetHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ObserverTargetHandle { get; private set; }
 
     internal new static SendNodeDecoder<CPlayer_ObserverServices> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -20078,7 +19939,7 @@ public partial class CPlayer_ObserverServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hObserverTarget")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_ObserverServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ObserverTargetHandle = decoder(ref buffer);
@@ -20220,12 +20081,12 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
         throw new NotImplementedException($"Unknown derived class of CPlayer_WeaponServices: {serializerKey}");
     }
 
-    public NetworkedVector<CHandle<CBasePlayerWeapon>> MyWeapons { get; private set; } = new NetworkedVector<CHandle<CBasePlayerWeapon>>();
+    public NetworkedVector<CHandle<CBasePlayerWeapon, CsDemoParser>> MyWeapons { get; private set; } = new NetworkedVector<CHandle<CBasePlayerWeapon, CsDemoParser>>();
 
-    public CHandle<CBasePlayerWeapon> ActiveWeaponHandle { get; private set; }
+    public CHandle<CBasePlayerWeapon, CsDemoParser> ActiveWeaponHandle { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerExclusive"
-    public CHandle<CBasePlayerWeapon> LastWeaponHandle { get; private set; }
+    public CHandle<CBasePlayerWeapon, CsDemoParser> LastWeaponHandle { get; private set; }
 
     public UInt16[] Ammo { get; private set; } = Array.Empty<UInt16>();
 
@@ -20233,7 +20094,7 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
     {
         if (field.VarName == "m_hMyWeapons")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_WeaponServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -20253,7 +20114,7 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hActiveWeapon")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_WeaponServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ActiveWeaponHandle = decoder(ref buffer);
@@ -20261,7 +20122,7 @@ public partial class CPlayer_WeaponServices : CPlayerPawnComponent
         }
         if (field.VarName == "m_hLastWeapon")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerWeapon, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayer_WeaponServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.LastWeaponHandle = decoder(ref buffer);
@@ -20319,12 +20180,12 @@ public partial class CPlayerPawnComponent
 
 public partial class CPlayerPing : CBaseEntity
 {
-    internal CPlayerPing(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPlayerPing(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CHandle<CCSPlayerPawn> PlayerHandle { get; private set; }
+    public CHandle<CCSPlayerPawn, CsDemoParser> PlayerHandle { get; private set; }
     public CCSPlayerPawn? Player => PlayerHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> PingedEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> PingedEntityHandle { get; private set; }
     public CBaseEntity? PingedEntity => PingedEntityHandle.Get(Demo);
 
     public Int32 Type { get; private set; }
@@ -20337,7 +20198,7 @@ public partial class CPlayerPing : CBaseEntity
     {
         if (field.VarName == "m_hPlayer")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCSPlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayerPing @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerHandle = decoder(ref buffer);
@@ -20345,7 +20206,7 @@ public partial class CPlayerPing : CBaseEntity
         }
         if (field.VarName == "m_hPingedEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPlayerPing @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PingedEntityHandle = decoder(ref buffer);
@@ -20378,25 +20239,25 @@ public partial class CPlayerPing : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPlayerPing.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPlayerPing.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPlayerPing.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPlayerPing.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -20405,7 +20266,7 @@ public partial class CPlayerPing : CBaseEntity
 
 public partial class CPlayerSprayDecal : CModelPointEntity
 {
-    internal CPlayerSprayDecal(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPlayerSprayDecal(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 UniqueID { get; private set; }
 
@@ -20564,25 +20425,25 @@ public partial class CPlayerSprayDecal : CModelPointEntity
         return CModelPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPlayerSprayDecal.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPlayerSprayDecal.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPlayerSprayDecal.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPlayerSprayDecal.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -20591,7 +20452,7 @@ public partial class CPlayerSprayDecal : CModelPointEntity
 
 public partial class CPlayerVisibility : CBaseEntity
 {
-    internal CPlayerVisibility(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPlayerVisibility(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "PlayerVisibilityStateChanged"
     public float VisibilityStrength { get; private set; }
@@ -20662,25 +20523,25 @@ public partial class CPlayerVisibility : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPlayerVisibility.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPlayerVisibility.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPlayerVisibility.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPlayerVisibility.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -20689,7 +20550,7 @@ public partial class CPlayerVisibility : CBaseEntity
 
 public partial class CPointCamera : CBaseEntity
 {
-    internal CPointCamera(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointCamera(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float FOV { get; private set; }
 
@@ -20906,25 +20767,25 @@ public partial class CPointCamera : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointCamera.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointCamera.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointCamera.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointCamera.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -20933,17 +20794,17 @@ public partial class CPointCamera : CBaseEntity
 
 public partial class CPointClientUIDialog : CBaseClientUIEntity
 {
-    internal CPointClientUIDialog(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointClientUIDialog(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "OnDialogActivatorChanged"
-    public CHandle<CBaseEntity> ActivatorHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ActivatorHandle { get; private set; }
     public CBaseEntity? Activator => ActivatorHandle.Get(Demo);
 
     internal new static SendNodeDecoder<CPointClientUIDialog> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_hActivator")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPointClientUIDialog @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ActivatorHandle = decoder(ref buffer);
@@ -20952,25 +20813,25 @@ public partial class CPointClientUIDialog : CBaseClientUIEntity
         return CBaseClientUIEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointClientUIDialog.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointClientUIDialog.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointClientUIDialog.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointClientUIDialog.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -20979,7 +20840,7 @@ public partial class CPointClientUIDialog : CBaseClientUIEntity
 
 public partial class CPointClientUIWorldPanel : CBaseClientUIEntity
 {
-    internal CPointClientUIWorldPanel(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointClientUIWorldPanel(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool IgnoreInput { get; private set; }
 
@@ -21228,25 +21089,25 @@ public partial class CPointClientUIWorldPanel : CBaseClientUIEntity
         return CBaseClientUIEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldPanel.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldPanel.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldPanel.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldPanel.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -21255,7 +21116,7 @@ public partial class CPointClientUIWorldPanel : CBaseClientUIEntity
 
 public partial class CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
 {
-    internal CPointClientUIWorldTextPanel(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointClientUIWorldTextPanel(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public string MessageText { get; private set; } = "";
 
@@ -21272,25 +21133,25 @@ public partial class CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
         return CPointClientUIWorldPanel.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldTextPanel.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldTextPanel.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldTextPanel.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointClientUIWorldTextPanel.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -21299,11 +21160,11 @@ public partial class CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
 
 public partial class CPointCommentaryNode : CBaseAnimGraph
 {
-    internal CPointCommentaryNode(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointCommentaryNode(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString CommentaryFile { get; private set; }
 
-    public CHandle<CBaseEntity> ViewPositionHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> ViewPositionHandle { get; private set; }
     public CBaseEntity? ViewPosition => ViewPositionHandle.Get(Demo);
 
     public bool Active { get; private set; }
@@ -21334,7 +21195,7 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
         }
         if (field.VarName == "m_hViewPosition")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPointCommentaryNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ViewPositionHandle = decoder(ref buffer);
@@ -21407,25 +21268,25 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointCommentaryNode.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointCommentaryNode.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointCommentaryNode.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointCommentaryNode.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -21434,32 +21295,32 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
 
 public partial class CPointEntity : CBaseEntity
 {
-    internal CPointEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPointEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -21468,7 +21329,7 @@ public partial class CPointEntity : CBaseEntity
 
 public partial class CPointValueRemapper : CBaseEntity
 {
-    internal CPointValueRemapper(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointValueRemapper(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Disabled { get; private set; }
 
@@ -21476,10 +21337,10 @@ public partial class CPointValueRemapper : CBaseEntity
 
     public ValueRemapperInputType InputType { get; private set; }
 
-    public CHandle<CBaseEntity> RemapLineStartHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> RemapLineStartHandle { get; private set; }
     public CBaseEntity? RemapLineStart => RemapLineStartHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> RemapLineEndHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> RemapLineEndHandle { get; private set; }
     public CBaseEntity? RemapLineEnd => RemapLineEndHandle.Get(Demo);
 
     public float MaximumChangePerSecond { get; private set; }
@@ -21492,7 +21353,7 @@ public partial class CPointValueRemapper : CBaseEntity
 
     public ValueRemapperOutputType OutputType { get; private set; }
 
-    public NetworkedVector<CHandle<CBaseEntity>> OutputEntities { get; private set; } = new NetworkedVector<CHandle<CBaseEntity>>();
+    public NetworkedVector<CHandle<CBaseEntity, CsDemoParser>> OutputEntities { get; private set; } = new NetworkedVector<CHandle<CBaseEntity, CsDemoParser>>();
 
     public ValueRemapperHapticsType HapticsType { get; private set; }
 
@@ -21534,7 +21395,7 @@ public partial class CPointValueRemapper : CBaseEntity
         }
         if (field.VarName == "m_hRemapLineStart")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPointValueRemapper @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.RemapLineStartHandle = decoder(ref buffer);
@@ -21542,7 +21403,7 @@ public partial class CPointValueRemapper : CBaseEntity
         }
         if (field.VarName == "m_hRemapLineEnd")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPointValueRemapper @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.RemapLineEndHandle = decoder(ref buffer);
@@ -21590,7 +21451,7 @@ public partial class CPointValueRemapper : CBaseEntity
         }
         if (field.VarName == "m_hOutputEntities")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CPointValueRemapper @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -21659,25 +21520,25 @@ public partial class CPointValueRemapper : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointValueRemapper.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointValueRemapper.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointValueRemapper.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointValueRemapper.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -21686,7 +21547,7 @@ public partial class CPointValueRemapper : CBaseEntity
 
 public partial class CPointWorldText : CModelPointEntity
 {
-    internal CPointWorldText(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPointWorldText(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public string MessageText { get; private set; } = "";
 
@@ -21803,25 +21664,25 @@ public partial class CPointWorldText : CModelPointEntity
         return CModelPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPointWorldText.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPointWorldText.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPointWorldText.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPointWorldText.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -21830,7 +21691,7 @@ public partial class CPointWorldText : CModelPointEntity
 
 public partial class CPostProcessingVolume : CBaseTrigger
 {
-    internal CPostProcessingVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPostProcessingVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostSettings { get; private set; }
 
@@ -21997,25 +21858,25 @@ public partial class CPostProcessingVolume : CBaseTrigger
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPostProcessingVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPostProcessingVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPostProcessingVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPostProcessingVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22024,32 +21885,32 @@ public partial class CPostProcessingVolume : CBaseTrigger
 
 public partial class CPrecipitation : CBaseTrigger
 {
-    internal CPrecipitation(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPrecipitation(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPrecipitation> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPrecipitation.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPrecipitation.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPrecipitation.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPrecipitation.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22058,32 +21919,32 @@ public partial class CPrecipitation : CBaseTrigger
 
 public partial class CPrecipitationBlocker : CBaseModelEntity
 {
-    internal CPrecipitationBlocker(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPrecipitationBlocker(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPrecipitationBlocker> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPrecipitationBlocker.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPrecipitationBlocker.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPrecipitationBlocker.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPrecipitationBlocker.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22092,32 +21953,32 @@ public partial class CPrecipitationBlocker : CBaseModelEntity
 
 public partial class CPredictedViewModel : CBaseViewModel
 {
-    internal CPredictedViewModel(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPredictedViewModel(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPredictedViewModel> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseViewModel.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPredictedViewModel.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPredictedViewModel.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPredictedViewModel.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPredictedViewModel.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22134,32 +21995,32 @@ public partial class CPropDataComponent : CEntityComponent
 
 public partial class CPropDoorRotating : CBasePropDoor
 {
-    internal CPropDoorRotating(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CPropDoorRotating(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CPropDoorRotating> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBasePropDoor.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CPropDoorRotating.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CPropDoorRotating.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CPropDoorRotating.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CPropDoorRotating.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22168,7 +22029,7 @@ public partial class CPropDoorRotating : CBasePropDoor
 
 public partial class CRagdollManager : CBaseEntity
 {
-    internal CRagdollManager(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CRagdollManager(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public sbyte CurrentMaxRagdollCount { get; private set; }
 
@@ -22185,25 +22046,25 @@ public partial class CRagdollManager : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CRagdollManager.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CRagdollManager.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CRagdollManager.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CRagdollManager.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22212,7 +22073,7 @@ public partial class CRagdollManager : CBaseEntity
 
 public partial class CRagdollProp : CBaseAnimGraph
 {
-    internal CRagdollProp(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CRagdollProp(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkEncoder "coord"
     public NetworkedVector<Vector> RagPos { get; private set; } = new NetworkedVector<Vector>();
@@ -22221,7 +22082,7 @@ public partial class CRagdollProp : CBaseAnimGraph
     // MNetworkBitCount 13
     public NetworkedVector<QAngle> RagAngles { get; private set; } = new NetworkedVector<QAngle>();
 
-    public CHandle<CBaseEntity> RagdollSourceHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> RagdollSourceHandle { get; private set; }
     public CBaseEntity? RagdollSource => RagdollSourceHandle.Get(Demo);
 
     // MNetworkBitCount 8
@@ -22274,7 +22135,7 @@ public partial class CRagdollProp : CBaseAnimGraph
         }
         if (field.VarName == "m_hRagdollSource")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CRagdollProp @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.RagdollSourceHandle = decoder(ref buffer);
@@ -22291,25 +22152,25 @@ public partial class CRagdollProp : CBaseAnimGraph
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CRagdollProp.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CRagdollProp.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CRagdollProp.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CRagdollProp.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22318,7 +22179,7 @@ public partial class CRagdollProp : CBaseAnimGraph
 
 public partial class CRagdollPropAttached : CRagdollProp
 {
-    internal CRagdollPropAttached(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CRagdollPropAttached(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public UInt32 BoneIndexAttached { get; private set; }
 
@@ -22367,25 +22228,25 @@ public partial class CRagdollPropAttached : CRagdollProp
         return CRagdollProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CRagdollPropAttached.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CRagdollPropAttached.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CRagdollPropAttached.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CRagdollPropAttached.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22394,7 +22255,7 @@ public partial class CRagdollPropAttached : CRagdollProp
 
 public partial class CRectLight : CBarnLight
 {
-    internal CRectLight(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CRectLight(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkChangeCallback "RenderingChanged"
     public bool ShowLight { get; private set; }
@@ -22412,25 +22273,25 @@ public partial class CRectLight : CBarnLight
         return CBarnLight.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CRectLight.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CRectLight.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CRectLight.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CRectLight.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22532,7 +22393,7 @@ public partial class CRetakeGameRules
 // MNetworkIncludeByName "m_nMaxGPULevel"
 public partial class CRopeKeyframe : CBaseModelEntity
 {
-    internal CRopeKeyframe(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CRopeKeyframe(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public UInt16 RopeFlags { get; private set; }
 
@@ -22561,10 +22422,10 @@ public partial class CRopeKeyframe : CBaseModelEntity
 
     public float ScrollSpeed { get; private set; }
 
-    public CHandle<CBaseEntity> StartPointHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> StartPointHandle { get; private set; }
     public CBaseEntity? StartPoint => StartPointHandle.Get(Demo);
 
-    public CHandle<CBaseEntity> EndPointHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> EndPointHandle { get; private set; }
     public CBaseEntity? EndPoint => EndPointHandle.Get(Demo);
 
     public AttachmentHandle StartAttachment { get; private set; } = new();
@@ -22671,7 +22532,7 @@ public partial class CRopeKeyframe : CBaseModelEntity
         }
         if (field.VarName == "m_hStartPoint")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.StartPointHandle = decoder(ref buffer);
@@ -22679,7 +22540,7 @@ public partial class CRopeKeyframe : CBaseModelEntity
         }
         if (field.VarName == "m_hEndPoint")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EndPointHandle = decoder(ref buffer);
@@ -22704,25 +22565,25 @@ public partial class CRopeKeyframe : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CRopeKeyframe.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CRopeKeyframe.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CRopeKeyframe.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CRopeKeyframe.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22731,7 +22592,7 @@ public partial class CRopeKeyframe : CBaseModelEntity
 
 public partial class CSceneEntity : CPointEntity
 {
-    internal CSceneEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSceneEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool IsPlayingBack { get; private set; }
 
@@ -22743,7 +22604,7 @@ public partial class CSceneEntity : CPointEntity
 
     public float ForceClientTime { get; private set; }
 
-    public NetworkedVector<CHandle<CBaseFlex>> ActorList { get; private set; } = new NetworkedVector<CHandle<CBaseFlex>>();
+    public NetworkedVector<CHandle<CBaseFlex, CsDemoParser>> ActorList { get; private set; } = new NetworkedVector<CHandle<CBaseFlex, CsDemoParser>>();
 
     public UInt16 SceneStringIndex { get; private set; }
 
@@ -22791,7 +22652,7 @@ public partial class CSceneEntity : CPointEntity
         }
         if (field.VarName == "m_hActorList")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseFlex>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseFlex, CsDemoParser>(field.FieldEncodingInfo);
             return (CSceneEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -22820,77 +22681,59 @@ public partial class CSceneEntity : CPointEntity
         return CPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSceneEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSceneEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSceneEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSceneEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
 
-public partial class CScriptComponent : CEntityComponent
-{
-    internal static SendNodeDecoder<CScriptComponent> CreateDowncastDecoder(SerializerKey serializerKey, DecoderSet decoderSet, out Func<CScriptComponent> factory)
-    {
-        if (serializerKey.Name == "CScriptComponent")
-        {
-            factory = () => new CScriptComponent();
-            return decoderSet.GetDecoder<CScriptComponent>(serializerKey);
-        }
-        throw new NotImplementedException($"Unknown derived class of CScriptComponent: {serializerKey}");
-    }
-
-    internal new static SendNodeDecoder<CScriptComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        return CEntityComponent.CreateFieldDecoder(field, decoderSet);
-    }
-}
-
 public partial class CSensorGrenade : CBaseCSGrenade
 {
-    internal CSensorGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSensorGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSensorGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSensorGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSensorGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSensorGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSensorGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22899,32 +22742,32 @@ public partial class CSensorGrenade : CBaseCSGrenade
 
 public partial class CSensorGrenadeProjectile : CBaseCSGrenadeProjectile
 {
-    internal CSensorGrenadeProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSensorGrenadeProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSensorGrenadeProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSensorGrenadeProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSensorGrenadeProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSensorGrenadeProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSensorGrenadeProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -22934,7 +22777,7 @@ public partial class CSensorGrenadeProjectile : CBaseCSGrenadeProjectile
 // MNetworkExcludeByName "m_hModel"
 public partial class CShatterGlassShardPhysics : CPhysicsProp
 {
-    internal CShatterGlassShardPhysics(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CShatterGlassShardPhysics(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public SharedModelDesc ShardDesc { get; private set; } = new();
 
@@ -22951,25 +22794,25 @@ public partial class CShatterGlassShardPhysics : CPhysicsProp
         return CPhysicsProp.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CShatterGlassShardPhysics.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CShatterGlassShardPhysics.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CShatterGlassShardPhysics.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CShatterGlassShardPhysics.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23045,7 +22888,7 @@ public partial class CSkeletonInstance : CGameSceneNode
 
 public partial class CSkyCamera : CBaseEntity
 {
-    internal CSkyCamera(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSkyCamera(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Sky3DParams SkyboxData { get; private set; } = new();
 
@@ -23072,25 +22915,25 @@ public partial class CSkyCamera : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSkyCamera.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSkyCamera.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSkyCamera.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSkyCamera.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23157,32 +23000,32 @@ public partial class CSMatchStats : CSPerRoundStats
 
 public partial class CSmokeGrenade : CBaseCSGrenade
 {
-    internal CSmokeGrenade(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSmokeGrenade(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSmokeGrenade> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSmokeGrenade.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSmokeGrenade.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSmokeGrenade.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSmokeGrenade.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23191,7 +23034,7 @@ public partial class CSmokeGrenade : CBaseCSGrenade
 
 public partial class CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile
 {
-    internal CSmokeGrenadeProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSmokeGrenadeProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 SmokeEffectTickBegin { get; private set; }
 
@@ -23270,25 +23113,25 @@ public partial class CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile
         return CBaseCSGrenadeProjectile.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSmokeGrenadeProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSmokeGrenadeProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSmokeGrenadeProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSmokeGrenadeProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23297,7 +23140,7 @@ public partial class CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile
 
 public partial class CSoundAreaEntityBase : CBaseEntity
 {
-    internal CSoundAreaEntityBase(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundAreaEntityBase(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Disabled { get; private set; }
 
@@ -23334,25 +23177,25 @@ public partial class CSoundAreaEntityBase : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityBase.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityBase.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityBase.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityBase.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23361,7 +23204,7 @@ public partial class CSoundAreaEntityBase : CBaseEntity
 
 public partial class CSoundAreaEntityOrientedBox : CSoundAreaEntityBase
 {
-    internal CSoundAreaEntityOrientedBox(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundAreaEntityOrientedBox(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector Min { get; private set; }
 
@@ -23388,25 +23231,25 @@ public partial class CSoundAreaEntityOrientedBox : CSoundAreaEntityBase
         return CSoundAreaEntityBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityOrientedBox.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityOrientedBox.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityOrientedBox.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntityOrientedBox.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23415,7 +23258,7 @@ public partial class CSoundAreaEntityOrientedBox : CSoundAreaEntityBase
 
 public partial class CSoundAreaEntitySphere : CSoundAreaEntityBase
 {
-    internal CSoundAreaEntitySphere(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundAreaEntitySphere(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float Radius { get; private set; }
 
@@ -23432,25 +23275,25 @@ public partial class CSoundAreaEntitySphere : CSoundAreaEntityBase
         return CSoundAreaEntityBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntitySphere.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundAreaEntitySphere.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntitySphere.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundAreaEntitySphere.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23459,7 +23302,7 @@ public partial class CSoundAreaEntitySphere : CSoundAreaEntityBase
 
 public partial class CSoundEventAABBEntity : CSoundEventEntity
 {
-    internal CSoundEventAABBEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundEventAABBEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector Mins { get; private set; }
 
@@ -23486,25 +23329,25 @@ public partial class CSoundEventAABBEntity : CSoundEventEntity
         return CSoundEventEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundEventAABBEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundEventAABBEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventAABBEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventAABBEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23513,32 +23356,32 @@ public partial class CSoundEventAABBEntity : CSoundEventEntity
 
 public partial class CSoundEventEntity : CBaseEntity
 {
-    internal CSoundEventEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundEventEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundEventEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundEventEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundEventEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23547,7 +23390,7 @@ public partial class CSoundEventEntity : CBaseEntity
 
 public partial class CSoundEventOBBEntity : CSoundEventEntity
 {
-    internal CSoundEventOBBEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundEventOBBEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector Mins { get; private set; }
 
@@ -23574,25 +23417,25 @@ public partial class CSoundEventOBBEntity : CSoundEventEntity
         return CSoundEventEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundEventOBBEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundEventOBBEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventOBBEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventOBBEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23601,7 +23444,7 @@ public partial class CSoundEventOBBEntity : CSoundEventEntity
 
 public partial class CSoundEventPathCornerEntity : CSoundEventEntity
 {
-    internal CSoundEventPathCornerEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundEventPathCornerEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedVector<SoundeventPathCornerPairNetworked> CornerPairsNetworked { get; private set; } = new NetworkedVector<SoundeventPathCornerPairNetworked>();
 
@@ -23630,25 +23473,25 @@ public partial class CSoundEventPathCornerEntity : CSoundEventEntity
         return CSoundEventEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundEventPathCornerEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundEventPathCornerEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventPathCornerEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventPathCornerEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23657,7 +23500,7 @@ public partial class CSoundEventPathCornerEntity : CSoundEventEntity
 
 public partial class CSoundEventSphereEntity : CSoundEventEntity
 {
-    internal CSoundEventSphereEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundEventSphereEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float Radius { get; private set; }
 
@@ -23674,25 +23517,25 @@ public partial class CSoundEventSphereEntity : CSoundEventEntity
         return CSoundEventEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundEventSphereEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundEventSphereEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventSphereEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundEventSphereEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23701,32 +23544,32 @@ public partial class CSoundEventSphereEntity : CSoundEventEntity
 
 public partial class CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity
 {
-    internal CSoundOpvarSetAABBEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetAABBEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundOpvarSetAABBEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAABBEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAABBEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAABBEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAABBEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23735,32 +23578,32 @@ public partial class CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity
 
 public partial class CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity
 {
-    internal CSoundOpvarSetAutoRoomEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetAutoRoomEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundOpvarSetAutoRoomEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAutoRoomEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAutoRoomEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAutoRoomEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetAutoRoomEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23769,32 +23612,32 @@ public partial class CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity
 
 public partial class CSoundOpvarSetOBBEntity : CSoundOpvarSetAABBEntity
 {
-    internal CSoundOpvarSetOBBEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetOBBEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundOpvarSetOBBEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetAABBEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23803,32 +23646,32 @@ public partial class CSoundOpvarSetOBBEntity : CSoundOpvarSetAABBEntity
 
 public partial class CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase
 {
-    internal CSoundOpvarSetOBBWindEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetOBBWindEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundOpvarSetOBBWindEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetOBBWindEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23837,32 +23680,32 @@ public partial class CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase
 
 public partial class CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity
 {
-    internal CSoundOpvarSetPathCornerEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetPathCornerEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundOpvarSetPathCornerEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPathCornerEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23871,7 +23714,7 @@ public partial class CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity
 
 public partial class CSoundOpvarSetPointBase : CBaseEntity
 {
-    internal CSoundOpvarSetPointBase(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetPointBase(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public NetworkedString StackName { get; private set; }
 
@@ -23928,25 +23771,25 @@ public partial class CSoundOpvarSetPointBase : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointBase.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointBase.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointBase.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointBase.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -23955,32 +23798,32 @@ public partial class CSoundOpvarSetPointBase : CBaseEntity
 
 public partial class CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase
 {
-    internal CSoundOpvarSetPointEntity(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSoundOpvarSetPointEntity(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSoundOpvarSetPointEntity> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSoundOpvarSetPointBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointEntity.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointEntity.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointEntity.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSoundOpvarSetPointEntity.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24145,7 +23988,7 @@ public partial class CSPerRoundStats
 
 public partial class CSpotlightEnd : CBaseModelEntity
 {
-    internal CSpotlightEnd(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSpotlightEnd(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float LightScale { get; private set; }
 
@@ -24172,25 +24015,25 @@ public partial class CSpotlightEnd : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSpotlightEnd.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSpotlightEnd.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSpotlightEnd.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSpotlightEnd.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24199,11 +24042,11 @@ public partial class CSpotlightEnd : CBaseModelEntity
 
 public partial class CSprite : CBaseModelEntity
 {
-    internal CSprite(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSprite(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CStrongHandle<InfoForResourceTypeIMaterial2> SpriteMaterial { get; private set; }
 
-    public CHandle<CBaseEntity> AttachedToEntityHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> AttachedToEntityHandle { get; private set; }
     public CBaseEntity? AttachedToEntity => AttachedToEntityHandle.Get(Demo);
 
     public AttachmentHandle Attachment { get; private set; } = new();
@@ -24251,7 +24094,7 @@ public partial class CSprite : CBaseModelEntity
         }
         if (field.VarName == "m_hAttachedToEntity")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (CSprite @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AttachedToEntityHandle = decoder(ref buffer);
@@ -24340,25 +24183,25 @@ public partial class CSprite : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSprite.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSprite.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSprite.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSprite.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24367,32 +24210,32 @@ public partial class CSprite : CBaseModelEntity
 
 public partial class CSpriteOriented : CSprite
 {
-    internal CSpriteOriented(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSpriteOriented(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CSpriteOriented> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CSprite.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSpriteOriented.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSpriteOriented.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSpriteOriented.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSpriteOriented.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24402,7 +24245,7 @@ public partial class CSpriteOriented : CSprite
 // MNetworkIncludeByName "m_clrRender"
 public partial class CSun : CBaseModelEntity
 {
-    internal CSun(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CSun(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Vector Direction { get; private set; }
 
@@ -24565,25 +24408,25 @@ public partial class CSun : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CSun.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CSun.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CSun.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CSun.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24592,32 +24435,32 @@ public partial class CSun : CBaseModelEntity
 
 public partial class CTablet : CCSWeaponBase
 {
-    internal CTablet(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTablet(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CTablet> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTablet.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTablet.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTablet.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTablet.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24627,13 +24470,13 @@ public partial class CTablet : CCSWeaponBase
 // MNetworkIncludeByName "m_iTeamNum"
 public partial class CTeam : CBaseEntity
 {
-    internal CTeam(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTeam(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkAlias "m_aPlayers"
-    public NetworkedVector<CHandle<CBasePlayerController>> PlayerControllers { get; private set; } = new NetworkedVector<CHandle<CBasePlayerController>>();
+    public NetworkedVector<CHandle<CBasePlayerController, CsDemoParser>> PlayerControllers { get; private set; } = new NetworkedVector<CHandle<CBasePlayerController, CsDemoParser>>();
 
     // MNetworkAlias "m_aPawns"
-    public NetworkedVector<CHandle<CBasePlayerPawn>> Players { get; private set; } = new NetworkedVector<CHandle<CBasePlayerPawn>>();
+    public NetworkedVector<CHandle<CBasePlayerPawn, CsDemoParser>> Players { get; private set; } = new NetworkedVector<CHandle<CBasePlayerPawn, CsDemoParser>>();
 
     public Int32 Score { get; private set; }
 
@@ -24643,7 +24486,7 @@ public partial class CTeam : CBaseEntity
     {
         if (field.VarName == "m_aPlayers")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerController, CsDemoParser>(field.FieldEncodingInfo);
             return (CTeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -24663,7 +24506,7 @@ public partial class CTeam : CBaseEntity
         }
         if (field.VarName == "m_aPawns")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerPawn>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerPawn, CsDemoParser>(field.FieldEncodingInfo);
             return (CTeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -24700,25 +24543,25 @@ public partial class CTeam : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTeam.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTeam.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTeam.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTeam.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24735,7 +24578,7 @@ public partial class CTeamplayRules : CMultiplayRules
 
 public partial class CTextureBasedAnimatable : CBaseModelEntity
 {
-    internal CTextureBasedAnimatable(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTextureBasedAnimatable(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public bool Loop { get; private set; }
 
@@ -24822,25 +24665,25 @@ public partial class CTextureBasedAnimatable : CBaseModelEntity
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTextureBasedAnimatable.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTextureBasedAnimatable.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTextureBasedAnimatable.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTextureBasedAnimatable.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24849,7 +24692,7 @@ public partial class CTextureBasedAnimatable : CBaseModelEntity
 
 public partial class CTonemapController2 : CBaseEntity
 {
-    internal CTonemapController2(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTonemapController2(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float AutoExposureMin { get; private set; }
 
@@ -24936,25 +24779,25 @@ public partial class CTonemapController2 : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTonemapController2.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTonemapController2.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTonemapController2.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTonemapController2.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -24971,7 +24814,7 @@ public partial class CTouchExpansionComponent : CEntityComponent
 
 public partial class CTriggerBuoyancy : CBaseTrigger
 {
-    internal CTriggerBuoyancy(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTriggerBuoyancy(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float FluidDensity { get; private set; }
 
@@ -24988,25 +24831,25 @@ public partial class CTriggerBuoyancy : CBaseTrigger
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTriggerBuoyancy.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTriggerBuoyancy.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTriggerBuoyancy.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTriggerBuoyancy.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25015,7 +24858,7 @@ public partial class CTriggerBuoyancy : CBaseTrigger
 
 public partial class CTriggerPhysics : CBaseTrigger
 {
-    internal CTriggerPhysics(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTriggerPhysics(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float TriggerGravityScale { get; private set; }
 
@@ -25152,25 +24995,25 @@ public partial class CTriggerPhysics : CBaseTrigger
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTriggerPhysics.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTriggerPhysics.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTriggerPhysics.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTriggerPhysics.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25179,32 +25022,32 @@ public partial class CTriggerPhysics : CBaseTrigger
 
 public partial class CTriggerTripWire : CBaseTrigger
 {
-    internal CTriggerTripWire(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTriggerTripWire(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CTriggerTripWire> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTriggerTripWire.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTriggerTripWire.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTriggerTripWire.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTriggerTripWire.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25213,32 +25056,32 @@ public partial class CTriggerTripWire : CBaseTrigger
 
 public partial class CTriggerVolume : CBaseModelEntity
 {
-    internal CTriggerVolume(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTriggerVolume(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CTriggerVolume> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTriggerVolume.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTriggerVolume.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTriggerVolume.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTriggerVolume.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25247,32 +25090,32 @@ public partial class CTriggerVolume : CBaseModelEntity
 
 public partial class CTripWireFire : CBaseCSGrenade
 {
-    internal CTripWireFire(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTripWireFire(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CTripWireFire> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseCSGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTripWireFire.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTripWireFire.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTripWireFire.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTripWireFire.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25281,32 +25124,32 @@ public partial class CTripWireFire : CBaseCSGrenade
 
 public partial class CTripWireFireProjectile : CBaseGrenade
 {
-    internal CTripWireFireProjectile(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CTripWireFireProjectile(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CTripWireFireProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseGrenade.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CTripWireFireProjectile.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CTripWireFireProjectile.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CTripWireFireProjectile.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CTripWireFireProjectile.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25315,7 +25158,7 @@ public partial class CTripWireFireProjectile : CBaseGrenade
 
 public partial class CVoteController : CBaseEntity
 {
-    internal CVoteController(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CVoteController(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public Int32 ActiveIssueIndex { get; private set; }
 
@@ -25374,25 +25217,25 @@ public partial class CVoteController : CBaseEntity
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CVoteController.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CVoteController.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CVoteController.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CVoteController.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25401,32 +25244,32 @@ public partial class CVoteController : CBaseEntity
 
 public partial class CWaterBullet : CBaseAnimGraph
 {
-    internal CWaterBullet(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWaterBullet(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWaterBullet> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWaterBullet.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWaterBullet.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWaterBullet.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWaterBullet.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25435,32 +25278,32 @@ public partial class CWaterBullet : CBaseAnimGraph
 
 public partial class CWeaponAug : CCSWeaponBaseGun
 {
-    internal CWeaponAug(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponAug(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponAug> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponAug.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponAug.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponAug.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponAug.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25469,32 +25312,32 @@ public partial class CWeaponAug : CCSWeaponBaseGun
 
 public partial class CWeaponAWP : CCSWeaponBaseGun
 {
-    internal CWeaponAWP(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponAWP(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponAWP> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponAWP.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponAWP.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponAWP.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponAWP.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25503,7 +25346,7 @@ public partial class CWeaponAWP : CCSWeaponBaseGun
 
 public partial class CWeaponBaseItem : CCSWeaponBase
 {
-    internal CWeaponBaseItem(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponBaseItem(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public CountdownTimer SequenceCompleteTimer { get; private set; } = new();
 
@@ -25530,25 +25373,25 @@ public partial class CWeaponBaseItem : CCSWeaponBase
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponBaseItem.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponBaseItem.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponBaseItem.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponBaseItem.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25557,32 +25400,32 @@ public partial class CWeaponBaseItem : CCSWeaponBase
 
 public partial class CWeaponBizon : CCSWeaponBaseGun
 {
-    internal CWeaponBizon(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponBizon(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponBizon> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponBizon.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponBizon.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponBizon.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponBizon.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25591,32 +25434,32 @@ public partial class CWeaponBizon : CCSWeaponBaseGun
 
 public partial class CWeaponCZ75a : CCSWeaponBaseGun
 {
-    internal CWeaponCZ75a(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponCZ75a(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponCZ75a> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponCZ75a.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponCZ75a.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponCZ75a.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponCZ75a.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25625,32 +25468,32 @@ public partial class CWeaponCZ75a : CCSWeaponBaseGun
 
 public partial class CWeaponElite : CCSWeaponBaseGun
 {
-    internal CWeaponElite(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponElite(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponElite> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponElite.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponElite.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponElite.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponElite.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25659,32 +25502,32 @@ public partial class CWeaponElite : CCSWeaponBaseGun
 
 public partial class CWeaponFamas : CCSWeaponBaseGun
 {
-    internal CWeaponFamas(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponFamas(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponFamas> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponFamas.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponFamas.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponFamas.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponFamas.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25693,32 +25536,32 @@ public partial class CWeaponFamas : CCSWeaponBaseGun
 
 public partial class CWeaponFiveSeven : CCSWeaponBaseGun
 {
-    internal CWeaponFiveSeven(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponFiveSeven(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponFiveSeven> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponFiveSeven.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponFiveSeven.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponFiveSeven.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponFiveSeven.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25727,32 +25570,32 @@ public partial class CWeaponFiveSeven : CCSWeaponBaseGun
 
 public partial class CWeaponG3SG1 : CCSWeaponBaseGun
 {
-    internal CWeaponG3SG1(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponG3SG1(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponG3SG1> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponG3SG1.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponG3SG1.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponG3SG1.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponG3SG1.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25761,32 +25604,32 @@ public partial class CWeaponG3SG1 : CCSWeaponBaseGun
 
 public partial class CWeaponGalilAR : CCSWeaponBaseGun
 {
-    internal CWeaponGalilAR(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponGalilAR(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponGalilAR> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponGalilAR.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponGalilAR.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponGalilAR.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponGalilAR.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25795,32 +25638,32 @@ public partial class CWeaponGalilAR : CCSWeaponBaseGun
 
 public partial class CWeaponGlock : CCSWeaponBaseGun
 {
-    internal CWeaponGlock(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponGlock(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponGlock> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponGlock.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponGlock.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponGlock.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponGlock.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25829,32 +25672,32 @@ public partial class CWeaponGlock : CCSWeaponBaseGun
 
 public partial class CWeaponHKP2000 : CCSWeaponBaseGun
 {
-    internal CWeaponHKP2000(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponHKP2000(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponHKP2000> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponHKP2000.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponHKP2000.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponHKP2000.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponHKP2000.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25863,32 +25706,32 @@ public partial class CWeaponHKP2000 : CCSWeaponBaseGun
 
 public partial class CWeaponM249 : CCSWeaponBaseGun
 {
-    internal CWeaponM249(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponM249(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponM249> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponM249.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponM249.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponM249.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponM249.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25897,32 +25740,32 @@ public partial class CWeaponM249 : CCSWeaponBaseGun
 
 public partial class CWeaponM4A1 : CCSWeaponBaseGun
 {
-    internal CWeaponM4A1(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponM4A1(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponM4A1> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponM4A1.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponM4A1.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponM4A1.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponM4A1.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25931,32 +25774,32 @@ public partial class CWeaponM4A1 : CCSWeaponBaseGun
 
 public partial class CWeaponM4A1Silencer : CCSWeaponBaseGun
 {
-    internal CWeaponM4A1Silencer(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponM4A1Silencer(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponM4A1Silencer> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponM4A1Silencer.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponM4A1Silencer.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponM4A1Silencer.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponM4A1Silencer.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25965,32 +25808,32 @@ public partial class CWeaponM4A1Silencer : CCSWeaponBaseGun
 
 public partial class CWeaponMAC10 : CCSWeaponBaseGun
 {
-    internal CWeaponMAC10(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponMAC10(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponMAC10> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponMAC10.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponMAC10.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMAC10.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMAC10.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -25999,32 +25842,32 @@ public partial class CWeaponMAC10 : CCSWeaponBaseGun
 
 public partial class CWeaponMag7 : CCSWeaponBaseGun
 {
-    internal CWeaponMag7(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponMag7(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponMag7> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponMag7.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponMag7.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMag7.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMag7.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26033,32 +25876,32 @@ public partial class CWeaponMag7 : CCSWeaponBaseGun
 
 public partial class CWeaponMP5SD : CCSWeaponBaseGun
 {
-    internal CWeaponMP5SD(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponMP5SD(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponMP5SD> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponMP5SD.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponMP5SD.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMP5SD.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMP5SD.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26067,32 +25910,32 @@ public partial class CWeaponMP5SD : CCSWeaponBaseGun
 
 public partial class CWeaponMP7 : CCSWeaponBaseGun
 {
-    internal CWeaponMP7(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponMP7(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponMP7> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponMP7.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponMP7.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMP7.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMP7.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26101,32 +25944,32 @@ public partial class CWeaponMP7 : CCSWeaponBaseGun
 
 public partial class CWeaponMP9 : CCSWeaponBaseGun
 {
-    internal CWeaponMP9(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponMP9(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponMP9> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponMP9.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponMP9.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMP9.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponMP9.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26135,32 +25978,32 @@ public partial class CWeaponMP9 : CCSWeaponBaseGun
 
 public partial class CWeaponNegev : CCSWeaponBaseGun
 {
-    internal CWeaponNegev(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponNegev(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponNegev> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponNegev.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponNegev.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponNegev.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponNegev.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26169,32 +26012,32 @@ public partial class CWeaponNegev : CCSWeaponBaseGun
 
 public partial class CWeaponNOVA : CCSWeaponBase
 {
-    internal CWeaponNOVA(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponNOVA(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponNOVA> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponNOVA.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponNOVA.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponNOVA.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponNOVA.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26203,32 +26046,32 @@ public partial class CWeaponNOVA : CCSWeaponBase
 
 public partial class CWeaponP250 : CCSWeaponBaseGun
 {
-    internal CWeaponP250(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponP250(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponP250> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponP250.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponP250.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponP250.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponP250.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26237,32 +26080,32 @@ public partial class CWeaponP250 : CCSWeaponBaseGun
 
 public partial class CWeaponP90 : CCSWeaponBaseGun
 {
-    internal CWeaponP90(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponP90(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponP90> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponP90.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponP90.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponP90.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponP90.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26271,32 +26114,32 @@ public partial class CWeaponP90 : CCSWeaponBaseGun
 
 public partial class CWeaponRevolver : CCSWeaponBaseGun
 {
-    internal CWeaponRevolver(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponRevolver(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponRevolver> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponRevolver.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponRevolver.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponRevolver.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponRevolver.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26305,32 +26148,32 @@ public partial class CWeaponRevolver : CCSWeaponBaseGun
 
 public partial class CWeaponSawedoff : CCSWeaponBase
 {
-    internal CWeaponSawedoff(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponSawedoff(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponSawedoff> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponSawedoff.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponSawedoff.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSawedoff.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSawedoff.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26339,32 +26182,32 @@ public partial class CWeaponSawedoff : CCSWeaponBase
 
 public partial class CWeaponSCAR20 : CCSWeaponBaseGun
 {
-    internal CWeaponSCAR20(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponSCAR20(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponSCAR20> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponSCAR20.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponSCAR20.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSCAR20.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSCAR20.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26373,32 +26216,32 @@ public partial class CWeaponSCAR20 : CCSWeaponBaseGun
 
 public partial class CWeaponSG556 : CCSWeaponBaseGun
 {
-    internal CWeaponSG556(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponSG556(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponSG556> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponSG556.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponSG556.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSG556.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSG556.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26407,7 +26250,7 @@ public partial class CWeaponSG556 : CCSWeaponBaseGun
 
 public partial class CWeaponShield : CCSWeaponBaseGun
 {
-    internal CWeaponShield(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponShield(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public float DisplayHealth { get; private set; }
 
@@ -26424,25 +26267,25 @@ public partial class CWeaponShield : CCSWeaponBaseGun
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponShield.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponShield.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponShield.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponShield.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26451,32 +26294,32 @@ public partial class CWeaponShield : CCSWeaponBaseGun
 
 public partial class CWeaponSSG08 : CCSWeaponBaseGun
 {
-    internal CWeaponSSG08(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponSSG08(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponSSG08> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponSSG08.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponSSG08.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSSG08.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponSSG08.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26485,7 +26328,7 @@ public partial class CWeaponSSG08 : CCSWeaponBaseGun
 
 public partial class CWeaponTaser : CCSWeaponBaseGun
 {
-    internal CWeaponTaser(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponTaser(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     public GameTime FireTime { get; private set; } = new();
 
@@ -26502,25 +26345,25 @@ public partial class CWeaponTaser : CCSWeaponBaseGun
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponTaser.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponTaser.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponTaser.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponTaser.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26529,32 +26372,32 @@ public partial class CWeaponTaser : CCSWeaponBaseGun
 
 public partial class CWeaponTec9 : CCSWeaponBaseGun
 {
-    internal CWeaponTec9(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponTec9(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponTec9> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponTec9.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponTec9.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponTec9.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponTec9.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26563,32 +26406,32 @@ public partial class CWeaponTec9 : CCSWeaponBaseGun
 
 public partial class CWeaponUMP45 : CCSWeaponBaseGun
 {
-    internal CWeaponUMP45(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponUMP45(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponUMP45> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponUMP45.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponUMP45.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponUMP45.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponUMP45.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26597,32 +26440,32 @@ public partial class CWeaponUMP45 : CCSWeaponBaseGun
 
 public partial class CWeaponUSPSilencer : CCSWeaponBaseGun
 {
-    internal CWeaponUSPSilencer(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponUSPSilencer(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponUSPSilencer> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponUSPSilencer.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponUSPSilencer.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponUSPSilencer.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponUSPSilencer.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26631,32 +26474,32 @@ public partial class CWeaponUSPSilencer : CCSWeaponBaseGun
 
 public partial class CWeaponXM1014 : CCSWeaponBase
 {
-    internal CWeaponXM1014(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponXM1014(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponXM1014> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBase.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponXM1014.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponXM1014.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponXM1014.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponXM1014.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26665,32 +26508,32 @@ public partial class CWeaponXM1014 : CCSWeaponBase
 
 public partial class CWeaponZoneRepulsor : CCSWeaponBaseGun
 {
-    internal CWeaponZoneRepulsor(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWeaponZoneRepulsor(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWeaponZoneRepulsor> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCSWeaponBaseGun.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWeaponZoneRepulsor.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWeaponZoneRepulsor.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWeaponZoneRepulsor.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWeaponZoneRepulsor.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -26699,32 +26542,32 @@ public partial class CWeaponZoneRepulsor : CCSWeaponBaseGun
 
 public partial class CWorld : CBaseModelEntity
 {
-    internal CWorld(EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CWorld(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     internal new static SendNodeDecoder<CWorld> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
-    internal override void FireCreateEvent()
+    public override void FireCreateEvent()
     {
         Demo.EntityEvents.CWorld.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
-    internal override void FireDeleteEvent()
+    public override void FireDeleteEvent()
     {
         Demo.EntityEvents.CWorld.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
-    internal override void FirePreUpdateEvent()
+    public override void FirePreUpdateEvent()
     {
         Demo.EntityEvents.CWorld.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
-    internal override void FirePostUpdateEvent()
+    public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CWorld.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
@@ -27086,13 +26929,13 @@ public partial class FogParams
 public partial class FogPlayerParams
 {
     // MNetworkUserGroup "PlayerFogController"
-    public CHandle<CFogController> CtrlHandle { get; private set; }
+    public CHandle<CFogController, CsDemoParser> CtrlHandle { get; private set; }
 
     internal static SendNodeDecoder<FogPlayerParams> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_hCtrl")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CFogController>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CFogController, CsDemoParser>(field.FieldEncodingInfo);
             return (FogPlayerParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.CtrlHandle = decoder(ref buffer);
@@ -27258,7 +27101,7 @@ public partial class PhysicsRagdollPose
     // MNetworkChangeCallback "OnTransformChanged"
     public NetworkedVector<CTransform> Transforms { get; private set; } = new NetworkedVector<CTransform>();
 
-    public CHandle<CBaseEntity> OwnerHandle { get; private set; }
+    public CHandle<CBaseEntity, CsDemoParser> OwnerHandle { get; private set; }
 
     internal static SendNodeDecoder<PhysicsRagdollPose> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -27284,7 +27127,7 @@ public partial class PhysicsRagdollPose
         }
         if (field.VarName == "m_hOwner")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, CsDemoParser>(field.FieldEncodingInfo);
             return (PhysicsRagdollPose @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OwnerHandle = decoder(ref buffer);
@@ -27372,7 +27215,7 @@ public partial class SellbackPurchaseEntry
 
     public bool PrevHelmet { get; private set; }
 
-    public CHandle<CEntityInstance> ItemHandle { get; private set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> ItemHandle { get; private set; }
 
     internal static SendNodeDecoder<SellbackPurchaseEntry> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -27410,7 +27253,7 @@ public partial class SellbackPurchaseEntry
         }
         if (field.VarName == "m_hItem")
         {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CEntityInstance>(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>(field.FieldEncodingInfo);
             return (SellbackPurchaseEntry @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ItemHandle = decoder(ref buffer);
@@ -27950,1613 +27793,13 @@ public partial class WeaponPurchaseTracker
     }
 }
 
-internal static class SendNodeDecoders
+internal sealed class CsDecoderSet : DecoderSet
 {
-    public static SendNodeDecoderFactory<T> GetFactory<T>()
+    internal CsDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers) : base(serializers)
     {
-        if (typeof(T) == typeof(AudioParams))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<AudioParams>(AudioParams.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CAK47))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAK47>(CAK47.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CAnimGraphNetworkedVariables))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAnimGraphNetworkedVariables>(CAnimGraphNetworkedVariables.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CAttributeContainer))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAttributeContainer>(CAttributeContainer.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CAttributeList))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAttributeList>(CAttributeList.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CAttributeManager))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAttributeManager>(CAttributeManager.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBarnLight))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBarnLight>(CBarnLight.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseAnimGraph))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseAnimGraph>(CBaseAnimGraph.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseAnimGraphController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseAnimGraphController>(CBaseAnimGraphController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseButton))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseButton>(CBaseButton.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseClientUIEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseClientUIEntity>(CBaseClientUIEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseCombatCharacter))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseCombatCharacter>(CBaseCombatCharacter.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseCSGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseCSGrenade>(CBaseCSGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseCSGrenadeProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseCSGrenadeProjectile>(CBaseCSGrenadeProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseDoor))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseDoor>(CBaseDoor.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseEntity>(CBaseEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseFire))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseFire>(CBaseFire.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseFlex))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseFlex>(CBaseFlex.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseGrenade>(CBaseGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseModelEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseModelEntity>(CBaseModelEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBasePlayerController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePlayerController>(CBasePlayerController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBasePlayerPawn))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePlayerPawn>(CBasePlayerPawn.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBasePlayerWeapon))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePlayerWeapon>(CBasePlayerWeapon.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseProp))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseProp>(CBaseProp.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBasePropDoor))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePropDoor>(CBasePropDoor.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseToggle))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseToggle>(CBaseToggle.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseTrigger))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseTrigger>(CBaseTrigger.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBaseViewModel))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseViewModel>(CBaseViewModel.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBeam))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBeam>(CBeam.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBodyComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponent>(CBodyComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBodyComponentBaseAnimGraph))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentBaseAnimGraph>(CBodyComponentBaseAnimGraph.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBodyComponentBaseModelEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentBaseModelEntity>(CBodyComponentBaseModelEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBodyComponentPoint))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentPoint>(CBodyComponentPoint.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBodyComponentSkeletonInstance))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentSkeletonInstance>(CBodyComponentSkeletonInstance.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBombTarget))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBombTarget>(CBombTarget.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBreachCharge))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreachCharge>(CBreachCharge.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBreachChargeProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreachChargeProjectile>(CBreachChargeProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBreakable))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreakable>(CBreakable.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBreakableProp))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreakableProp>(CBreakableProp.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBumpMine))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBumpMine>(CBumpMine.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CBumpMineProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBumpMineProjectile>(CBumpMineProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CC4))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CC4>(CC4.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CChicken))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CChicken>(CChicken.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCitadelSoundOpvarSetOBB))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadelSoundOpvarSetOBB>(CCitadelSoundOpvarSetOBB.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCollisionProperty))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCollisionProperty>(CCollisionProperty.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CColorCorrection))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CColorCorrection>(CColorCorrection.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CColorCorrectionVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CColorCorrectionVolume>(CColorCorrectionVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameModeRules))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules>(CCSGameModeRules.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameModeRules_ArmsRace))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_ArmsRace>(CCSGameModeRules_ArmsRace.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameModeRules_Deathmatch))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_Deathmatch>(CCSGameModeRules_Deathmatch.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameModeRules_Noop))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_Noop>(CCSGameModeRules_Noop.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameModeRules_Scripted))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_Scripted>(CCSGameModeRules_Scripted.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameRules))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameRules>(CCSGameRules.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGameRulesProxy))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameRulesProxy>(CCSGameRulesProxy.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamIntroCharacterPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamIntroCharacterPosition>(CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamIntroCounterTerroristPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamIntroCounterTerroristPosition>(CCSGO_TeamIntroCounterTerroristPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamIntroTerroristPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamIntroTerroristPosition>(CCSGO_TeamIntroTerroristPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamPreviewCharacterPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamPreviewCharacterPosition>(CCSGO_TeamPreviewCharacterPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamSelectCharacterPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamSelectCharacterPosition>(CCSGO_TeamSelectCharacterPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamSelectCounterTerroristPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamSelectCounterTerroristPosition>(CCSGO_TeamSelectCounterTerroristPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_TeamSelectTerroristPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamSelectTerroristPosition>(CCSGO_TeamSelectTerroristPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_WingmanIntroCharacterPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_WingmanIntroCharacterPosition>(CCSGO_WingmanIntroCharacterPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_WingmanIntroCounterTerroristPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_WingmanIntroCounterTerroristPosition>(CCSGO_WingmanIntroCounterTerroristPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGO_WingmanIntroTerroristPosition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_WingmanIntroTerroristPosition>(CCSGO_WingmanIntroTerroristPosition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSGOViewModel))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGOViewModel>(CCSGOViewModel.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSMinimapBoundary))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSMinimapBoundary>(CCSMinimapBoundary.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSObserver_CameraServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_CameraServices>(CCSObserver_CameraServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSObserver_MovementServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_MovementServices>(CCSObserver_MovementServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSObserver_ObserverServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_ObserverServices>(CCSObserver_ObserverServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSObserver_UseServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_UseServices>(CCSObserver_UseServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSObserver_ViewModelServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_ViewModelServices>(CCSObserver_ViewModelServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSObserverPawn))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserverPawn>(CCSObserverPawn.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_ActionTrackingServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_ActionTrackingServices>(CCSPlayer_ActionTrackingServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_BulletServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_BulletServices>(CCSPlayer_BulletServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_BuyServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_BuyServices>(CCSPlayer_BuyServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_CameraServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_CameraServices>(CCSPlayer_CameraServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_HostageServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_HostageServices>(CCSPlayer_HostageServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_ItemServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_ItemServices>(CCSPlayer_ItemServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_MovementServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_MovementServices>(CCSPlayer_MovementServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_PingServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_PingServices>(CCSPlayer_PingServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_UseServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_UseServices>(CCSPlayer_UseServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_ViewModelServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_ViewModelServices>(CCSPlayer_ViewModelServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_WaterServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_WaterServices>(CCSPlayer_WaterServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayer_WeaponServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_WeaponServices>(CCSPlayer_WeaponServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerBase_CameraServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerBase_CameraServices>(CCSPlayerBase_CameraServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController>(CCSPlayerController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerController_ActionTrackingServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_ActionTrackingServices>(CCSPlayerController_ActionTrackingServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerController_DamageServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_DamageServices>(CCSPlayerController_DamageServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerController_InGameMoneyServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_InGameMoneyServices>(CCSPlayerController_InGameMoneyServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerController_InventoryServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_InventoryServices>(CCSPlayerController_InventoryServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerPawn))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerPawn>(CCSPlayerPawn.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerPawnBase))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerPawnBase>(CCSPlayerPawnBase.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSPlayerResource))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerResource>(CCSPlayerResource.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSTeam))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSTeam>(CCSTeam.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSWeaponBase))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSWeaponBase>(CCSWeaponBase.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCSWeaponBaseGun))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSWeaponBaseGun>(CCSWeaponBaseGun.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CDamageRecord))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDamageRecord>(CDamageRecord.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CDEagle))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDEagle>(CDEagle.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CDecoyGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDecoyGrenade>(CDecoyGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CDecoyProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDecoyProjectile>(CDecoyProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CDynamicLight))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDynamicLight>(CDynamicLight.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CDynamicProp))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDynamicProp>(CDynamicProp.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEconEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconEntity>(CEconEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEconItemAttribute))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconItemAttribute>(CEconItemAttribute.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEconItemView))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconItemView>(CEconItemView.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEconWearable))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconWearable>(CEconWearable.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEntityComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityComponent>(CEntityComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEntityDissolve))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityDissolve>(CEntityDissolve.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEntityFlame))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityFlame>(CEntityFlame.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEntityIdentity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityIdentity>(CEntityIdentity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEntityInstance))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityInstance>(CEntityInstance.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvCombinedLightProbeVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCombinedLightProbeVolume>(CEnvCombinedLightProbeVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvCubemap))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCubemap>(CEnvCubemap.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvCubemapBox))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCubemapBox>(CEnvCubemapBox.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvCubemapFog))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCubemapFog>(CEnvCubemapFog.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvDecal))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvDecal>(CEnvDecal.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvDetailController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvDetailController>(CEnvDetailController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvLightProbeVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvLightProbeVolume>(CEnvLightProbeVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvParticleGlow))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvParticleGlow>(CEnvParticleGlow.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvProjectedTexture))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvProjectedTexture>(CEnvProjectedTexture.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvScreenOverlay))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvScreenOverlay>(CEnvScreenOverlay.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvSky))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvSky>(CEnvSky.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvVolumetricFogController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvVolumetricFogController>(CEnvVolumetricFogController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvVolumetricFogVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvVolumetricFogVolume>(CEnvVolumetricFogVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvWind))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvWind>(CEnvWind.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CEnvWindShared))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvWindShared>(CEnvWindShared.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFireCrackerBlast))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFireCrackerBlast>(CFireCrackerBlast.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFireSmoke))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFireSmoke>(CFireSmoke.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFish))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFish>(CFish.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFists))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFists>(CFists.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFlashbang))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbang>(CFlashbang.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFlashbangProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbangProjectile>(CFlashbangProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFogController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFogController>(CFogController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFootstepControl))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFootstepControl>(CFootstepControl.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncBrush))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncBrush>(CFuncBrush.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncConveyor))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncConveyor>(CFuncConveyor.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncElectrifiedVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncElectrifiedVolume>(CFuncElectrifiedVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncLadder))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncLadder>(CFuncLadder.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncMonitor))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncMonitor>(CFuncMonitor.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncMoveLinear))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncMoveLinear>(CFuncMoveLinear.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncMover))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncMover>(CFuncMover.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncRotating))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncRotating>(CFuncRotating.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncTrackTrain))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncTrackTrain>(CFuncTrackTrain.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CFuncWater))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncWater>(CFuncWater.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CGameRules))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGameRules>(CGameRules.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CGameRulesProxy))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGameRulesProxy>(CGameRulesProxy.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CGameSceneNode))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGameSceneNode>(CGameSceneNode.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CGlowProperty))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGlowProperty>(CGlowProperty.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CGradientFog))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGradientFog>(CGradientFog.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHandleTest))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHandleTest>(CHandleTest.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHEGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHEGrenade>(CHEGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHEGrenadeProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHEGrenadeProjectile>(CHEGrenadeProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHitboxComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHitboxComponent>(CHitboxComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHostage))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostage>(CHostage.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHostageCarriableProp))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageCarriableProp>(CHostageCarriableProp.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHostageExpresserShim))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageExpresserShim>(CHostageExpresserShim.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHostageRescueZone))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageRescueZone>(CHostageRescueZone.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CHostageRescueZoneShim))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageRescueZoneShim>(CHostageRescueZoneShim.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CIncendiaryGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CIncendiaryGrenade>(CIncendiaryGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CInferno))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInferno>(CInferno.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CInfoInstructorHintHostageRescueZone))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoInstructorHintHostageRescueZone>(CInfoInstructorHintHostageRescueZone.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CInfoLadderDismount))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoLadderDismount>(CInfoLadderDismount.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CInfoOffscreenPanoramaTexture))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoOffscreenPanoramaTexture>(CInfoOffscreenPanoramaTexture.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CInfoVisibilityBox))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoVisibilityBox>(CInfoVisibilityBox.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CInfoWorldLayer))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoWorldLayer>(CInfoWorldLayer.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CItem))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem>(CItem.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CItem_Healthshot))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_Healthshot>(CItem_Healthshot.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CItemDogtags))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItemDogtags>(CItemDogtags.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CKnife))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CKnife>(CKnife.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightComponent>(CLightComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightDirectionalEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightDirectionalEntity>(CLightDirectionalEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightEntity>(CLightEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightEnvironmentEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightEnvironmentEntity>(CLightEnvironmentEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightGlow))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightGlow>(CLightGlow.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightOrthoEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightOrthoEntity>(CLightOrthoEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLightSpotEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightSpotEntity>(CLightSpotEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CMapVetoPickController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMapVetoPickController>(CMapVetoPickController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CMelee))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMelee>(CMelee.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CModelPointEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CModelPointEntity>(CModelPointEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CModelState))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CModelState>(CModelState.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CMolotovGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMolotovGrenade>(CMolotovGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CMolotovProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMolotovProjectile>(CMolotovProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CMoverPathNode))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMoverPathNode>(CMoverPathNode.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CMultiplayRules))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMultiplayRules>(CMultiplayRules.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CNetworkOriginCellCoordQuantizedVector))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CNetworkOriginCellCoordQuantizedVector>(CNetworkOriginCellCoordQuantizedVector.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CNetworkVelocityVector))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CNetworkVelocityVector>(CNetworkVelocityVector.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CNetworkViewOffsetVector))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CNetworkViewOffsetVector>(CNetworkViewOffsetVector.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(COmniLight))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<COmniLight>(COmniLight.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CountdownTimer))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CountdownTimer>(CountdownTimer.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CParticleSystem))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CParticleSystem>(CParticleSystem.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPathMover))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPathMover>(CPathMover.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPathParticleRope))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPathParticleRope>(CPathParticleRope.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPhysBox))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysBox>(CPhysBox.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPhysicsProp))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysicsProp>(CPhysicsProp.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPhysicsPropMultiplayer))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysicsPropMultiplayer>(CPhysicsPropMultiplayer.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPhysMagnet))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysMagnet>(CPhysMagnet.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlantedC4))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlantedC4>(CPlantedC4.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_AutoaimServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_AutoaimServices>(CPlayer_AutoaimServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_CameraServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_CameraServices>(CPlayer_CameraServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_FlashlightServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_FlashlightServices>(CPlayer_FlashlightServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_ItemServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_ItemServices>(CPlayer_ItemServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_MovementServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_MovementServices>(CPlayer_MovementServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_MovementServices_Humanoid))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_MovementServices_Humanoid>(CPlayer_MovementServices_Humanoid.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_ObserverServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_ObserverServices>(CPlayer_ObserverServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_UseServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_UseServices>(CPlayer_UseServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_ViewModelServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_ViewModelServices>(CPlayer_ViewModelServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_WaterServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_WaterServices>(CPlayer_WaterServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayer_WeaponServices))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_WeaponServices>(CPlayer_WeaponServices.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayerControllerComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerControllerComponent>(CPlayerControllerComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayerPawnComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerPawnComponent>(CPlayerPawnComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayerPing))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerPing>(CPlayerPing.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayerSprayDecal))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerSprayDecal>(CPlayerSprayDecal.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPlayerVisibility))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerVisibility>(CPlayerVisibility.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointCamera))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointCamera>(CPointCamera.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointClientUIDialog))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointClientUIDialog>(CPointClientUIDialog.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointClientUIWorldPanel))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointClientUIWorldPanel>(CPointClientUIWorldPanel.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointClientUIWorldTextPanel))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointClientUIWorldTextPanel>(CPointClientUIWorldTextPanel.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointCommentaryNode))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointCommentaryNode>(CPointCommentaryNode.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointEntity>(CPointEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointValueRemapper))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointValueRemapper>(CPointValueRemapper.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPointWorldText))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointWorldText>(CPointWorldText.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPostProcessingVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPostProcessingVolume>(CPostProcessingVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPrecipitation))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPrecipitation>(CPrecipitation.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPrecipitationBlocker))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPrecipitationBlocker>(CPrecipitationBlocker.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPredictedViewModel))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPredictedViewModel>(CPredictedViewModel.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPropDataComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPropDataComponent>(CPropDataComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CPropDoorRotating))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPropDoorRotating>(CPropDoorRotating.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRagdollManager))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRagdollManager>(CRagdollManager.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRagdollProp))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRagdollProp>(CRagdollProp.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRagdollPropAttached))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRagdollPropAttached>(CRagdollPropAttached.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRectLight))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRectLight>(CRectLight.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRenderComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRenderComponent>(CRenderComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRetakeGameRules))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRetakeGameRules>(CRetakeGameRules.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CRopeKeyframe))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRopeKeyframe>(CRopeKeyframe.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSceneEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSceneEntity>(CSceneEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CScriptComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CScriptComponent>(CScriptComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSensorGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSensorGrenade>(CSensorGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSensorGrenadeProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSensorGrenadeProjectile>(CSensorGrenadeProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CShatterGlassShardPhysics))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CShatterGlassShardPhysics>(CShatterGlassShardPhysics.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSkeletonAnimationController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSkeletonAnimationController>(CSkeletonAnimationController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSkeletonInstance))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSkeletonInstance>(CSkeletonInstance.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSkyCamera))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSkyCamera>(CSkyCamera.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSMatchStats))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSMatchStats>(CSMatchStats.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSmokeGrenade))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSmokeGrenade>(CSmokeGrenade.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSmokeGrenadeProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSmokeGrenadeProjectile>(CSmokeGrenadeProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundAreaEntityBase))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundAreaEntityBase>(CSoundAreaEntityBase.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundAreaEntityOrientedBox))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundAreaEntityOrientedBox>(CSoundAreaEntityOrientedBox.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundAreaEntitySphere))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundAreaEntitySphere>(CSoundAreaEntitySphere.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundEventAABBEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventAABBEntity>(CSoundEventAABBEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundEventEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventEntity>(CSoundEventEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundEventOBBEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventOBBEntity>(CSoundEventOBBEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundEventPathCornerEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventPathCornerEntity>(CSoundEventPathCornerEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundEventSphereEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventSphereEntity>(CSoundEventSphereEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetAABBEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetAABBEntity>(CSoundOpvarSetAABBEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetAutoRoomEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetAutoRoomEntity>(CSoundOpvarSetAutoRoomEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetOBBEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetOBBEntity>(CSoundOpvarSetOBBEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetOBBWindEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetOBBWindEntity>(CSoundOpvarSetOBBWindEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetPathCornerEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetPathCornerEntity>(CSoundOpvarSetPathCornerEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetPointBase))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetPointBase>(CSoundOpvarSetPointBase.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSoundOpvarSetPointEntity))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetPointEntity>(CSoundOpvarSetPointEntity.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSPerRoundStats))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSPerRoundStats>(CSPerRoundStats.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSpotlightEnd))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSpotlightEnd>(CSpotlightEnd.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSprite))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSprite>(CSprite.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSpriteOriented))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSpriteOriented>(CSpriteOriented.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CSun))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSun>(CSun.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTablet))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTablet>(CTablet.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTeam))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTeam>(CTeam.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTeamplayRules))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTeamplayRules>(CTeamplayRules.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTextureBasedAnimatable))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTextureBasedAnimatable>(CTextureBasedAnimatable.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTonemapController2))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTonemapController2>(CTonemapController2.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTouchExpansionComponent))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTouchExpansionComponent>(CTouchExpansionComponent.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTriggerBuoyancy))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerBuoyancy>(CTriggerBuoyancy.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTriggerPhysics))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerPhysics>(CTriggerPhysics.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTriggerTripWire))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerTripWire>(CTriggerTripWire.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTriggerVolume))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerVolume>(CTriggerVolume.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTripWireFire))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTripWireFire>(CTripWireFire.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CTripWireFireProjectile))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTripWireFireProjectile>(CTripWireFireProjectile.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CVoteController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CVoteController>(CVoteController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWaterBullet))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWaterBullet>(CWaterBullet.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponAug))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponAug>(CWeaponAug.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponAWP))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponAWP>(CWeaponAWP.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponBaseItem))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponBaseItem>(CWeaponBaseItem.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponBizon))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponBizon>(CWeaponBizon.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponCZ75a))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponCZ75a>(CWeaponCZ75a.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponElite))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponElite>(CWeaponElite.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponFamas))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponFamas>(CWeaponFamas.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponFiveSeven))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponFiveSeven>(CWeaponFiveSeven.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponG3SG1))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponG3SG1>(CWeaponG3SG1.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponGalilAR))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponGalilAR>(CWeaponGalilAR.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponGlock))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponGlock>(CWeaponGlock.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponHKP2000))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponHKP2000>(CWeaponHKP2000.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponM249))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponM249>(CWeaponM249.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponM4A1))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponM4A1>(CWeaponM4A1.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponM4A1Silencer))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponM4A1Silencer>(CWeaponM4A1Silencer.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponMAC10))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMAC10>(CWeaponMAC10.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponMag7))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMag7>(CWeaponMag7.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponMP5SD))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMP5SD>(CWeaponMP5SD.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponMP7))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMP7>(CWeaponMP7.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponMP9))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMP9>(CWeaponMP9.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponNegev))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponNegev>(CWeaponNegev.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponNOVA))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponNOVA>(CWeaponNOVA.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponP250))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponP250>(CWeaponP250.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponP90))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponP90>(CWeaponP90.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponRevolver))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponRevolver>(CWeaponRevolver.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponSawedoff))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSawedoff>(CWeaponSawedoff.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponSCAR20))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSCAR20>(CWeaponSCAR20.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponSG556))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSG556>(CWeaponSG556.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponShield))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponShield>(CWeaponShield.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponSSG08))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSSG08>(CWeaponSSG08.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponTaser))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponTaser>(CWeaponTaser.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponTec9))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponTec9>(CWeaponTec9.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponUMP45))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponUMP45>(CWeaponUMP45.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponUSPSilencer))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponUSPSilencer>(CWeaponUSPSilencer.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponXM1014))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponXM1014>(CWeaponXM1014.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWeaponZoneRepulsor))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponZoneRepulsor>(CWeaponZoneRepulsor.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CWorld))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWorld>(CWorld.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(EntityRenderAttribute))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<EntityRenderAttribute>(EntityRenderAttribute.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(EntitySpottedState))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<EntitySpottedState>(EntitySpottedState.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(FogParams))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<FogParams>(FogParams.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(FogPlayerParams))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<FogPlayerParams>(FogPlayerParams.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(IEconItemInterface))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<IEconItemInterface>(IEconItemInterface.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(InfoForResourceTypeCModel))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCModel>(InfoForResourceTypeCModel.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(InfoForResourceTypeCPostProcessingResource))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCPostProcessingResource>(InfoForResourceTypeCPostProcessingResource.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(InfoForResourceTypeCTextureBase))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCTextureBase>(InfoForResourceTypeCTextureBase.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(InfoForResourceTypeIMaterial2))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeIMaterial2>(InfoForResourceTypeIMaterial2.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(InfoForResourceTypeIParticleSystemDefinition))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeIParticleSystemDefinition>(InfoForResourceTypeIParticleSystemDefinition.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(ISkeletonAnimationController))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ISkeletonAnimationController>(ISkeletonAnimationController.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(PhysicsRagdollPose))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<PhysicsRagdollPose>(PhysicsRagdollPose.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(PredictedDamageTag))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<PredictedDamageTag>(PredictedDamageTag.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(SellbackPurchaseEntry))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SellbackPurchaseEntry>(SellbackPurchaseEntry.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(ServerAuthoritativeWeaponSlot))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ServerAuthoritativeWeaponSlot>(ServerAuthoritativeWeaponSlot.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(SharedModelDesc))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SharedModelDesc>(SharedModelDesc.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(Sky3DParams))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<Sky3DParams>(Sky3DParams.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(SoundeventPathCornerPairNetworked))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SoundeventPathCornerPairNetworked>(SoundeventPathCornerPairNetworked.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(ViewAngleServerChange))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ViewAngleServerChange>(ViewAngleServerChange.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(VPhysicsCollisionAttribute))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<VPhysicsCollisionAttribute>(VPhysicsCollisionAttribute.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(WeaponPurchaseCount))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<WeaponPurchaseCount>(WeaponPurchaseCount.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(WeaponPurchaseTracker))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<WeaponPurchaseTracker>(WeaponPurchaseTracker.CreateFieldDecoder);
-        }
-
-        throw new NotImplementedException($"Unknown send node class: {typeof(T)}");
     }
-}
 
-internal static class EntityFactories
-{
-    public static readonly IReadOnlyDictionary<string, EntityFactory> All = new Dictionary<string, EntityFactory>
-    {
-        {"CAK47", (context, decoder) => new CAK47(context, decoder)},
-        {"CBarnLight", (context, decoder) => new CBarnLight(context, decoder)},
-        {"CBaseAnimGraph", (context, decoder) => new CBaseAnimGraph(context, decoder)},
-        {"CBaseButton", (context, decoder) => new CBaseButton(context, decoder)},
-        {"CBaseClientUIEntity", (context, decoder) => new CBaseClientUIEntity(context, decoder)},
-        {"CBaseCombatCharacter", (context, decoder) => new CBaseCombatCharacter(context, decoder)},
-        {"CBaseCSGrenade", (context, decoder) => new CBaseCSGrenade(context, decoder)},
-        {"CBaseCSGrenadeProjectile", (context, decoder) => new CBaseCSGrenadeProjectile(context, decoder)},
-        {"CBaseDoor", (context, decoder) => new CBaseDoor(context, decoder)},
-        {"CBaseEntity", (context, decoder) => new CBaseEntity(context, decoder)},
-        {"CBaseFire", (context, decoder) => new CBaseFire(context, decoder)},
-        {"CBaseFlex", (context, decoder) => new CBaseFlex(context, decoder)},
-        {"CBaseGrenade", (context, decoder) => new CBaseGrenade(context, decoder)},
-        {"CBaseModelEntity", (context, decoder) => new CBaseModelEntity(context, decoder)},
-        {"CBasePlayerController", (context, decoder) => new CBasePlayerController(context, decoder)},
-        {"CBasePlayerPawn", (context, decoder) => new CBasePlayerPawn(context, decoder)},
-        {"CBasePlayerWeapon", (context, decoder) => new CBasePlayerWeapon(context, decoder)},
-        {"CBaseProp", (context, decoder) => new CBaseProp(context, decoder)},
-        {"CBasePropDoor", (context, decoder) => new CBasePropDoor(context, decoder)},
-        {"CBaseToggle", (context, decoder) => new CBaseToggle(context, decoder)},
-        {"CBaseTrigger", (context, decoder) => new CBaseTrigger(context, decoder)},
-        {"CBaseViewModel", (context, decoder) => new CBaseViewModel(context, decoder)},
-        {"CBeam", (context, decoder) => new CBeam(context, decoder)},
-        {"CBombTarget", (context, decoder) => new CBombTarget(context, decoder)},
-        {"CBreachCharge", (context, decoder) => new CBreachCharge(context, decoder)},
-        {"CBreachChargeProjectile", (context, decoder) => new CBreachChargeProjectile(context, decoder)},
-        {"CBreakable", (context, decoder) => new CBreakable(context, decoder)},
-        {"CBreakableProp", (context, decoder) => new CBreakableProp(context, decoder)},
-        {"CBumpMine", (context, decoder) => new CBumpMine(context, decoder)},
-        {"CBumpMineProjectile", (context, decoder) => new CBumpMineProjectile(context, decoder)},
-        {"CC4", (context, decoder) => new CC4(context, decoder)},
-        {"CChicken", (context, decoder) => new CChicken(context, decoder)},
-        {"CCitadelSoundOpvarSetOBB", (context, decoder) => new CCitadelSoundOpvarSetOBB(context, decoder)},
-        {"CColorCorrection", (context, decoder) => new CColorCorrection(context, decoder)},
-        {"CColorCorrectionVolume", (context, decoder) => new CColorCorrectionVolume(context, decoder)},
-        {"CCSGameRulesProxy", (context, decoder) => new CCSGameRulesProxy(context, decoder)},
-        {"CCSGO_TeamIntroCharacterPosition", (context, decoder) => new CCSGO_TeamIntroCharacterPosition(context, decoder)},
-        {"CCSGO_TeamIntroCounterTerroristPosition", (context, decoder) => new CCSGO_TeamIntroCounterTerroristPosition(context, decoder)},
-        {"CCSGO_TeamIntroTerroristPosition", (context, decoder) => new CCSGO_TeamIntroTerroristPosition(context, decoder)},
-        {"CCSGO_TeamPreviewCharacterPosition", (context, decoder) => new CCSGO_TeamPreviewCharacterPosition(context, decoder)},
-        {"CCSGO_TeamSelectCharacterPosition", (context, decoder) => new CCSGO_TeamSelectCharacterPosition(context, decoder)},
-        {"CCSGO_TeamSelectCounterTerroristPosition", (context, decoder) => new CCSGO_TeamSelectCounterTerroristPosition(context, decoder)},
-        {"CCSGO_TeamSelectTerroristPosition", (context, decoder) => new CCSGO_TeamSelectTerroristPosition(context, decoder)},
-        {"CCSGO_WingmanIntroCharacterPosition", (context, decoder) => new CCSGO_WingmanIntroCharacterPosition(context, decoder)},
-        {"CCSGO_WingmanIntroCounterTerroristPosition", (context, decoder) => new CCSGO_WingmanIntroCounterTerroristPosition(context, decoder)},
-        {"CCSGO_WingmanIntroTerroristPosition", (context, decoder) => new CCSGO_WingmanIntroTerroristPosition(context, decoder)},
-        {"CCSGOViewModel", (context, decoder) => new CCSGOViewModel(context, decoder)},
-        {"CCSMinimapBoundary", (context, decoder) => new CCSMinimapBoundary(context, decoder)},
-        {"CCSObserverPawn", (context, decoder) => new CCSObserverPawn(context, decoder)},
-        {"CCSPlayerController", (context, decoder) => new CCSPlayerController(context, decoder)},
-        {"CCSPlayerPawn", (context, decoder) => new CCSPlayerPawn(context, decoder)},
-        {"CCSPlayerPawnBase", (context, decoder) => new CCSPlayerPawnBase(context, decoder)},
-        {"CCSPlayerResource", (context, decoder) => new CCSPlayerResource(context, decoder)},
-        {"CCSTeam", (context, decoder) => new CCSTeam(context, decoder)},
-        {"CCSWeaponBase", (context, decoder) => new CCSWeaponBase(context, decoder)},
-        {"CCSWeaponBaseGun", (context, decoder) => new CCSWeaponBaseGun(context, decoder)},
-        {"CDEagle", (context, decoder) => new CDEagle(context, decoder)},
-        {"CDecoyGrenade", (context, decoder) => new CDecoyGrenade(context, decoder)},
-        {"CDecoyProjectile", (context, decoder) => new CDecoyProjectile(context, decoder)},
-        {"CDynamicLight", (context, decoder) => new CDynamicLight(context, decoder)},
-        {"CDynamicProp", (context, decoder) => new CDynamicProp(context, decoder)},
-        {"CEconEntity", (context, decoder) => new CEconEntity(context, decoder)},
-        {"CEconWearable", (context, decoder) => new CEconWearable(context, decoder)},
-        {"CEntityDissolve", (context, decoder) => new CEntityDissolve(context, decoder)},
-        {"CEntityFlame", (context, decoder) => new CEntityFlame(context, decoder)},
-        {"CEntityInstance", (context, decoder) => new CEntityInstance(context, decoder)},
-        {"CEnvCombinedLightProbeVolume", (context, decoder) => new CEnvCombinedLightProbeVolume(context, decoder)},
-        {"CEnvCubemap", (context, decoder) => new CEnvCubemap(context, decoder)},
-        {"CEnvCubemapBox", (context, decoder) => new CEnvCubemapBox(context, decoder)},
-        {"CEnvCubemapFog", (context, decoder) => new CEnvCubemapFog(context, decoder)},
-        {"CEnvDecal", (context, decoder) => new CEnvDecal(context, decoder)},
-        {"CEnvDetailController", (context, decoder) => new CEnvDetailController(context, decoder)},
-        {"CEnvLightProbeVolume", (context, decoder) => new CEnvLightProbeVolume(context, decoder)},
-        {"CEnvParticleGlow", (context, decoder) => new CEnvParticleGlow(context, decoder)},
-        {"CEnvProjectedTexture", (context, decoder) => new CEnvProjectedTexture(context, decoder)},
-        {"CEnvScreenOverlay", (context, decoder) => new CEnvScreenOverlay(context, decoder)},
-        {"CEnvSky", (context, decoder) => new CEnvSky(context, decoder)},
-        {"CEnvVolumetricFogController", (context, decoder) => new CEnvVolumetricFogController(context, decoder)},
-        {"CEnvVolumetricFogVolume", (context, decoder) => new CEnvVolumetricFogVolume(context, decoder)},
-        {"CEnvWind", (context, decoder) => new CEnvWind(context, decoder)},
-        {"CFireCrackerBlast", (context, decoder) => new CFireCrackerBlast(context, decoder)},
-        {"CFireSmoke", (context, decoder) => new CFireSmoke(context, decoder)},
-        {"CFish", (context, decoder) => new CFish(context, decoder)},
-        {"CFists", (context, decoder) => new CFists(context, decoder)},
-        {"CFlashbang", (context, decoder) => new CFlashbang(context, decoder)},
-        {"CFlashbangProjectile", (context, decoder) => new CFlashbangProjectile(context, decoder)},
-        {"CFogController", (context, decoder) => new CFogController(context, decoder)},
-        {"CFootstepControl", (context, decoder) => new CFootstepControl(context, decoder)},
-        {"CFuncBrush", (context, decoder) => new CFuncBrush(context, decoder)},
-        {"CFuncConveyor", (context, decoder) => new CFuncConveyor(context, decoder)},
-        {"CFuncElectrifiedVolume", (context, decoder) => new CFuncElectrifiedVolume(context, decoder)},
-        {"CFuncLadder", (context, decoder) => new CFuncLadder(context, decoder)},
-        {"CFuncMonitor", (context, decoder) => new CFuncMonitor(context, decoder)},
-        {"CFuncMoveLinear", (context, decoder) => new CFuncMoveLinear(context, decoder)},
-        {"CFuncMover", (context, decoder) => new CFuncMover(context, decoder)},
-        {"CFuncRotating", (context, decoder) => new CFuncRotating(context, decoder)},
-        {"CFuncTrackTrain", (context, decoder) => new CFuncTrackTrain(context, decoder)},
-        {"CFuncWater", (context, decoder) => new CFuncWater(context, decoder)},
-        {"CGameRulesProxy", (context, decoder) => new CGameRulesProxy(context, decoder)},
-        {"CGradientFog", (context, decoder) => new CGradientFog(context, decoder)},
-        {"CHandleTest", (context, decoder) => new CHandleTest(context, decoder)},
-        {"CHEGrenade", (context, decoder) => new CHEGrenade(context, decoder)},
-        {"CHEGrenadeProjectile", (context, decoder) => new CHEGrenadeProjectile(context, decoder)},
-        {"CHostage", (context, decoder) => new CHostage(context, decoder)},
-        {"CHostageCarriableProp", (context, decoder) => new CHostageCarriableProp(context, decoder)},
-        {"CHostageExpresserShim", (context, decoder) => new CHostageExpresserShim(context, decoder)},
-        {"CHostageRescueZone", (context, decoder) => new CHostageRescueZone(context, decoder)},
-        {"CHostageRescueZoneShim", (context, decoder) => new CHostageRescueZoneShim(context, decoder)},
-        {"CIncendiaryGrenade", (context, decoder) => new CIncendiaryGrenade(context, decoder)},
-        {"CInferno", (context, decoder) => new CInferno(context, decoder)},
-        {"CInfoInstructorHintHostageRescueZone", (context, decoder) => new CInfoInstructorHintHostageRescueZone(context, decoder)},
-        {"CInfoLadderDismount", (context, decoder) => new CInfoLadderDismount(context, decoder)},
-        {"CInfoOffscreenPanoramaTexture", (context, decoder) => new CInfoOffscreenPanoramaTexture(context, decoder)},
-        {"CInfoVisibilityBox", (context, decoder) => new CInfoVisibilityBox(context, decoder)},
-        {"CInfoWorldLayer", (context, decoder) => new CInfoWorldLayer(context, decoder)},
-        {"CItem", (context, decoder) => new CItem(context, decoder)},
-        {"CItem_Healthshot", (context, decoder) => new CItem_Healthshot(context, decoder)},
-        {"CItemDogtags", (context, decoder) => new CItemDogtags(context, decoder)},
-        {"CKnife", (context, decoder) => new CKnife(context, decoder)},
-        {"CLightDirectionalEntity", (context, decoder) => new CLightDirectionalEntity(context, decoder)},
-        {"CLightEntity", (context, decoder) => new CLightEntity(context, decoder)},
-        {"CLightEnvironmentEntity", (context, decoder) => new CLightEnvironmentEntity(context, decoder)},
-        {"CLightGlow", (context, decoder) => new CLightGlow(context, decoder)},
-        {"CLightOrthoEntity", (context, decoder) => new CLightOrthoEntity(context, decoder)},
-        {"CLightSpotEntity", (context, decoder) => new CLightSpotEntity(context, decoder)},
-        {"CMapVetoPickController", (context, decoder) => new CMapVetoPickController(context, decoder)},
-        {"CMelee", (context, decoder) => new CMelee(context, decoder)},
-        {"CModelPointEntity", (context, decoder) => new CModelPointEntity(context, decoder)},
-        {"CMolotovGrenade", (context, decoder) => new CMolotovGrenade(context, decoder)},
-        {"CMolotovProjectile", (context, decoder) => new CMolotovProjectile(context, decoder)},
-        {"CMoverPathNode", (context, decoder) => new CMoverPathNode(context, decoder)},
-        {"COmniLight", (context, decoder) => new COmniLight(context, decoder)},
-        {"CParticleSystem", (context, decoder) => new CParticleSystem(context, decoder)},
-        {"CPathMover", (context, decoder) => new CPathMover(context, decoder)},
-        {"CPathParticleRope", (context, decoder) => new CPathParticleRope(context, decoder)},
-        {"CPhysBox", (context, decoder) => new CPhysBox(context, decoder)},
-        {"CPhysicsProp", (context, decoder) => new CPhysicsProp(context, decoder)},
-        {"CPhysicsPropMultiplayer", (context, decoder) => new CPhysicsPropMultiplayer(context, decoder)},
-        {"CPhysMagnet", (context, decoder) => new CPhysMagnet(context, decoder)},
-        {"CPlantedC4", (context, decoder) => new CPlantedC4(context, decoder)},
-        {"CPlayerPing", (context, decoder) => new CPlayerPing(context, decoder)},
-        {"CPlayerSprayDecal", (context, decoder) => new CPlayerSprayDecal(context, decoder)},
-        {"CPlayerVisibility", (context, decoder) => new CPlayerVisibility(context, decoder)},
-        {"CPointCamera", (context, decoder) => new CPointCamera(context, decoder)},
-        {"CPointClientUIDialog", (context, decoder) => new CPointClientUIDialog(context, decoder)},
-        {"CPointClientUIWorldPanel", (context, decoder) => new CPointClientUIWorldPanel(context, decoder)},
-        {"CPointClientUIWorldTextPanel", (context, decoder) => new CPointClientUIWorldTextPanel(context, decoder)},
-        {"CPointCommentaryNode", (context, decoder) => new CPointCommentaryNode(context, decoder)},
-        {"CPointEntity", (context, decoder) => new CPointEntity(context, decoder)},
-        {"CPointValueRemapper", (context, decoder) => new CPointValueRemapper(context, decoder)},
-        {"CPointWorldText", (context, decoder) => new CPointWorldText(context, decoder)},
-        {"CPostProcessingVolume", (context, decoder) => new CPostProcessingVolume(context, decoder)},
-        {"CPrecipitation", (context, decoder) => new CPrecipitation(context, decoder)},
-        {"CPrecipitationBlocker", (context, decoder) => new CPrecipitationBlocker(context, decoder)},
-        {"CPredictedViewModel", (context, decoder) => new CPredictedViewModel(context, decoder)},
-        {"CPropDoorRotating", (context, decoder) => new CPropDoorRotating(context, decoder)},
-        {"CRagdollManager", (context, decoder) => new CRagdollManager(context, decoder)},
-        {"CRagdollProp", (context, decoder) => new CRagdollProp(context, decoder)},
-        {"CRagdollPropAttached", (context, decoder) => new CRagdollPropAttached(context, decoder)},
-        {"CRectLight", (context, decoder) => new CRectLight(context, decoder)},
-        {"CRopeKeyframe", (context, decoder) => new CRopeKeyframe(context, decoder)},
-        {"CSceneEntity", (context, decoder) => new CSceneEntity(context, decoder)},
-        {"CSensorGrenade", (context, decoder) => new CSensorGrenade(context, decoder)},
-        {"CSensorGrenadeProjectile", (context, decoder) => new CSensorGrenadeProjectile(context, decoder)},
-        {"CShatterGlassShardPhysics", (context, decoder) => new CShatterGlassShardPhysics(context, decoder)},
-        {"CSkyCamera", (context, decoder) => new CSkyCamera(context, decoder)},
-        {"CSmokeGrenade", (context, decoder) => new CSmokeGrenade(context, decoder)},
-        {"CSmokeGrenadeProjectile", (context, decoder) => new CSmokeGrenadeProjectile(context, decoder)},
-        {"CSoundAreaEntityBase", (context, decoder) => new CSoundAreaEntityBase(context, decoder)},
-        {"CSoundAreaEntityOrientedBox", (context, decoder) => new CSoundAreaEntityOrientedBox(context, decoder)},
-        {"CSoundAreaEntitySphere", (context, decoder) => new CSoundAreaEntitySphere(context, decoder)},
-        {"CSoundEventAABBEntity", (context, decoder) => new CSoundEventAABBEntity(context, decoder)},
-        {"CSoundEventEntity", (context, decoder) => new CSoundEventEntity(context, decoder)},
-        {"CSoundEventOBBEntity", (context, decoder) => new CSoundEventOBBEntity(context, decoder)},
-        {"CSoundEventPathCornerEntity", (context, decoder) => new CSoundEventPathCornerEntity(context, decoder)},
-        {"CSoundEventSphereEntity", (context, decoder) => new CSoundEventSphereEntity(context, decoder)},
-        {"CSoundOpvarSetAABBEntity", (context, decoder) => new CSoundOpvarSetAABBEntity(context, decoder)},
-        {"CSoundOpvarSetAutoRoomEntity", (context, decoder) => new CSoundOpvarSetAutoRoomEntity(context, decoder)},
-        {"CSoundOpvarSetOBBEntity", (context, decoder) => new CSoundOpvarSetOBBEntity(context, decoder)},
-        {"CSoundOpvarSetOBBWindEntity", (context, decoder) => new CSoundOpvarSetOBBWindEntity(context, decoder)},
-        {"CSoundOpvarSetPathCornerEntity", (context, decoder) => new CSoundOpvarSetPathCornerEntity(context, decoder)},
-        {"CSoundOpvarSetPointBase", (context, decoder) => new CSoundOpvarSetPointBase(context, decoder)},
-        {"CSoundOpvarSetPointEntity", (context, decoder) => new CSoundOpvarSetPointEntity(context, decoder)},
-        {"CSpotlightEnd", (context, decoder) => new CSpotlightEnd(context, decoder)},
-        {"CSprite", (context, decoder) => new CSprite(context, decoder)},
-        {"CSpriteOriented", (context, decoder) => new CSpriteOriented(context, decoder)},
-        {"CSun", (context, decoder) => new CSun(context, decoder)},
-        {"CTablet", (context, decoder) => new CTablet(context, decoder)},
-        {"CTeam", (context, decoder) => new CTeam(context, decoder)},
-        {"CTextureBasedAnimatable", (context, decoder) => new CTextureBasedAnimatable(context, decoder)},
-        {"CTonemapController2", (context, decoder) => new CTonemapController2(context, decoder)},
-        {"CTriggerBuoyancy", (context, decoder) => new CTriggerBuoyancy(context, decoder)},
-        {"CTriggerPhysics", (context, decoder) => new CTriggerPhysics(context, decoder)},
-        {"CTriggerTripWire", (context, decoder) => new CTriggerTripWire(context, decoder)},
-        {"CTriggerVolume", (context, decoder) => new CTriggerVolume(context, decoder)},
-        {"CTripWireFire", (context, decoder) => new CTripWireFire(context, decoder)},
-        {"CTripWireFireProjectile", (context, decoder) => new CTripWireFireProjectile(context, decoder)},
-        {"CVoteController", (context, decoder) => new CVoteController(context, decoder)},
-        {"CWaterBullet", (context, decoder) => new CWaterBullet(context, decoder)},
-        {"CWeaponAug", (context, decoder) => new CWeaponAug(context, decoder)},
-        {"CWeaponAWP", (context, decoder) => new CWeaponAWP(context, decoder)},
-        {"CWeaponBaseItem", (context, decoder) => new CWeaponBaseItem(context, decoder)},
-        {"CWeaponBizon", (context, decoder) => new CWeaponBizon(context, decoder)},
-        {"CWeaponCZ75a", (context, decoder) => new CWeaponCZ75a(context, decoder)},
-        {"CWeaponElite", (context, decoder) => new CWeaponElite(context, decoder)},
-        {"CWeaponFamas", (context, decoder) => new CWeaponFamas(context, decoder)},
-        {"CWeaponFiveSeven", (context, decoder) => new CWeaponFiveSeven(context, decoder)},
-        {"CWeaponG3SG1", (context, decoder) => new CWeaponG3SG1(context, decoder)},
-        {"CWeaponGalilAR", (context, decoder) => new CWeaponGalilAR(context, decoder)},
-        {"CWeaponGlock", (context, decoder) => new CWeaponGlock(context, decoder)},
-        {"CWeaponHKP2000", (context, decoder) => new CWeaponHKP2000(context, decoder)},
-        {"CWeaponM249", (context, decoder) => new CWeaponM249(context, decoder)},
-        {"CWeaponM4A1", (context, decoder) => new CWeaponM4A1(context, decoder)},
-        {"CWeaponM4A1Silencer", (context, decoder) => new CWeaponM4A1Silencer(context, decoder)},
-        {"CWeaponMAC10", (context, decoder) => new CWeaponMAC10(context, decoder)},
-        {"CWeaponMag7", (context, decoder) => new CWeaponMag7(context, decoder)},
-        {"CWeaponMP5SD", (context, decoder) => new CWeaponMP5SD(context, decoder)},
-        {"CWeaponMP7", (context, decoder) => new CWeaponMP7(context, decoder)},
-        {"CWeaponMP9", (context, decoder) => new CWeaponMP9(context, decoder)},
-        {"CWeaponNegev", (context, decoder) => new CWeaponNegev(context, decoder)},
-        {"CWeaponNOVA", (context, decoder) => new CWeaponNOVA(context, decoder)},
-        {"CWeaponP250", (context, decoder) => new CWeaponP250(context, decoder)},
-        {"CWeaponP90", (context, decoder) => new CWeaponP90(context, decoder)},
-        {"CWeaponRevolver", (context, decoder) => new CWeaponRevolver(context, decoder)},
-        {"CWeaponSawedoff", (context, decoder) => new CWeaponSawedoff(context, decoder)},
-        {"CWeaponSCAR20", (context, decoder) => new CWeaponSCAR20(context, decoder)},
-        {"CWeaponSG556", (context, decoder) => new CWeaponSG556(context, decoder)},
-        {"CWeaponShield", (context, decoder) => new CWeaponShield(context, decoder)},
-        {"CWeaponSSG08", (context, decoder) => new CWeaponSSG08(context, decoder)},
-        {"CWeaponTaser", (context, decoder) => new CWeaponTaser(context, decoder)},
-        {"CWeaponTec9", (context, decoder) => new CWeaponTec9(context, decoder)},
-        {"CWeaponUMP45", (context, decoder) => new CWeaponUMP45(context, decoder)},
-        {"CWeaponUSPSilencer", (context, decoder) => new CWeaponUSPSilencer(context, decoder)},
-        {"CWeaponXM1014", (context, decoder) => new CWeaponXM1014(context, decoder)},
-        {"CWeaponZoneRepulsor", (context, decoder) => new CWeaponZoneRepulsor(context, decoder)},
-        {"CWorld", (context, decoder) => new CWorld(context, decoder)},
-    };
-}
-
-internal partial class DecoderSet
-{
-    public bool TryGetDecoder(string className, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor), NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)
+    public override bool TryGetDecoderByName(string className, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor), NotNullWhen(true)] out Type? classType, [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)
     {
         switch (className)
         {
@@ -30864,18 +29107,6 @@ internal partial class DecoderSet
             {
                 Debug.Assert(instance is CEntityIdentity);
                 var @this = Unsafe.As<CEntityIdentity>(instance);
-                innerDecoder(@this, path, ref buffer);
-            };
-            return true;
-        }
-        case "CEntityInstance":
-        {
-            var innerDecoder = GetDecoder<CEntityInstance>(new SerializerKey(className, 0));
-            classType = typeof(CEntityInstance);
-            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                Debug.Assert(instance is CEntityInstance);
-                var @this = Unsafe.As<CEntityInstance>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -33610,4 +31841,1600 @@ internal partial class DecoderSet
             return false;
         }
     }
+
+    protected override SendNodeDecoderFactory<T> GetFactory<T>()
+    {
+        if (typeof(T) == typeof(AudioParams))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<AudioParams>(AudioParams.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CAK47))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAK47>(CAK47.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CAnimGraphNetworkedVariables))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAnimGraphNetworkedVariables>(CAnimGraphNetworkedVariables.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CAttributeContainer))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAttributeContainer>(CAttributeContainer.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CAttributeList))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAttributeList>(CAttributeList.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CAttributeManager))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CAttributeManager>(CAttributeManager.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBarnLight))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBarnLight>(CBarnLight.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseAnimGraph))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseAnimGraph>(CBaseAnimGraph.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseAnimGraphController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseAnimGraphController>(CBaseAnimGraphController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseButton))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseButton>(CBaseButton.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseClientUIEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseClientUIEntity>(CBaseClientUIEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseCombatCharacter))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseCombatCharacter>(CBaseCombatCharacter.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseCSGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseCSGrenade>(CBaseCSGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseCSGrenadeProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseCSGrenadeProjectile>(CBaseCSGrenadeProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseDoor))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseDoor>(CBaseDoor.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseEntity>(CBaseEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseFire))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseFire>(CBaseFire.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseFlex))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseFlex>(CBaseFlex.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseGrenade>(CBaseGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseModelEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseModelEntity>(CBaseModelEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBasePlayerController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePlayerController>(CBasePlayerController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBasePlayerPawn))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePlayerPawn>(CBasePlayerPawn.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBasePlayerWeapon))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePlayerWeapon>(CBasePlayerWeapon.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseProp))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseProp>(CBaseProp.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBasePropDoor))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBasePropDoor>(CBasePropDoor.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseToggle))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseToggle>(CBaseToggle.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseTrigger))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseTrigger>(CBaseTrigger.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBaseViewModel))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBaseViewModel>(CBaseViewModel.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBeam))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBeam>(CBeam.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBodyComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponent>(CBodyComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBodyComponentBaseAnimGraph))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentBaseAnimGraph>(CBodyComponentBaseAnimGraph.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBodyComponentBaseModelEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentBaseModelEntity>(CBodyComponentBaseModelEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBodyComponentPoint))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentPoint>(CBodyComponentPoint.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBodyComponentSkeletonInstance))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBodyComponentSkeletonInstance>(CBodyComponentSkeletonInstance.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBombTarget))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBombTarget>(CBombTarget.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBreachCharge))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreachCharge>(CBreachCharge.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBreachChargeProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreachChargeProjectile>(CBreachChargeProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBreakable))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreakable>(CBreakable.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBreakableProp))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBreakableProp>(CBreakableProp.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBumpMine))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBumpMine>(CBumpMine.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CBumpMineProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CBumpMineProjectile>(CBumpMineProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CC4))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CC4>(CC4.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CChicken))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CChicken>(CChicken.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadelSoundOpvarSetOBB))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadelSoundOpvarSetOBB>(CCitadelSoundOpvarSetOBB.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCollisionProperty))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCollisionProperty>(CCollisionProperty.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CColorCorrection))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CColorCorrection>(CColorCorrection.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CColorCorrectionVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CColorCorrectionVolume>(CColorCorrectionVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameModeRules))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules>(CCSGameModeRules.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameModeRules_ArmsRace))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_ArmsRace>(CCSGameModeRules_ArmsRace.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameModeRules_Deathmatch))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_Deathmatch>(CCSGameModeRules_Deathmatch.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameModeRules_Noop))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_Noop>(CCSGameModeRules_Noop.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameModeRules_Scripted))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameModeRules_Scripted>(CCSGameModeRules_Scripted.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameRules))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameRules>(CCSGameRules.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGameRulesProxy))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGameRulesProxy>(CCSGameRulesProxy.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamIntroCharacterPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamIntroCharacterPosition>(CCSGO_TeamIntroCharacterPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamIntroCounterTerroristPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamIntroCounterTerroristPosition>(CCSGO_TeamIntroCounterTerroristPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamIntroTerroristPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamIntroTerroristPosition>(CCSGO_TeamIntroTerroristPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamPreviewCharacterPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamPreviewCharacterPosition>(CCSGO_TeamPreviewCharacterPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamSelectCharacterPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamSelectCharacterPosition>(CCSGO_TeamSelectCharacterPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamSelectCounterTerroristPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamSelectCounterTerroristPosition>(CCSGO_TeamSelectCounterTerroristPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_TeamSelectTerroristPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_TeamSelectTerroristPosition>(CCSGO_TeamSelectTerroristPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_WingmanIntroCharacterPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_WingmanIntroCharacterPosition>(CCSGO_WingmanIntroCharacterPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_WingmanIntroCounterTerroristPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_WingmanIntroCounterTerroristPosition>(CCSGO_WingmanIntroCounterTerroristPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGO_WingmanIntroTerroristPosition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGO_WingmanIntroTerroristPosition>(CCSGO_WingmanIntroTerroristPosition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSGOViewModel))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSGOViewModel>(CCSGOViewModel.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSMinimapBoundary))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSMinimapBoundary>(CCSMinimapBoundary.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSObserver_CameraServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_CameraServices>(CCSObserver_CameraServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSObserver_MovementServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_MovementServices>(CCSObserver_MovementServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSObserver_ObserverServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_ObserverServices>(CCSObserver_ObserverServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSObserver_UseServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_UseServices>(CCSObserver_UseServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSObserver_ViewModelServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserver_ViewModelServices>(CCSObserver_ViewModelServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSObserverPawn))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSObserverPawn>(CCSObserverPawn.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_ActionTrackingServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_ActionTrackingServices>(CCSPlayer_ActionTrackingServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_BulletServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_BulletServices>(CCSPlayer_BulletServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_BuyServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_BuyServices>(CCSPlayer_BuyServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_CameraServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_CameraServices>(CCSPlayer_CameraServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_HostageServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_HostageServices>(CCSPlayer_HostageServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_ItemServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_ItemServices>(CCSPlayer_ItemServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_MovementServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_MovementServices>(CCSPlayer_MovementServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_PingServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_PingServices>(CCSPlayer_PingServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_UseServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_UseServices>(CCSPlayer_UseServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_ViewModelServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_ViewModelServices>(CCSPlayer_ViewModelServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_WaterServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_WaterServices>(CCSPlayer_WaterServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayer_WeaponServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayer_WeaponServices>(CCSPlayer_WeaponServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerBase_CameraServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerBase_CameraServices>(CCSPlayerBase_CameraServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController>(CCSPlayerController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerController_ActionTrackingServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_ActionTrackingServices>(CCSPlayerController_ActionTrackingServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerController_DamageServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_DamageServices>(CCSPlayerController_DamageServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerController_InGameMoneyServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_InGameMoneyServices>(CCSPlayerController_InGameMoneyServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerController_InventoryServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerController_InventoryServices>(CCSPlayerController_InventoryServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerPawn))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerPawn>(CCSPlayerPawn.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerPawnBase))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerPawnBase>(CCSPlayerPawnBase.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSPlayerResource))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSPlayerResource>(CCSPlayerResource.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSTeam))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSTeam>(CCSTeam.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSWeaponBase))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSWeaponBase>(CCSWeaponBase.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCSWeaponBaseGun))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCSWeaponBaseGun>(CCSWeaponBaseGun.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDamageRecord))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDamageRecord>(CDamageRecord.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDEagle))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDEagle>(CDEagle.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDecoyGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDecoyGrenade>(CDecoyGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDecoyProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDecoyProjectile>(CDecoyProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDynamicLight))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDynamicLight>(CDynamicLight.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDynamicProp))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDynamicProp>(CDynamicProp.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEconEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconEntity>(CEconEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEconItemAttribute))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconItemAttribute>(CEconItemAttribute.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEconItemView))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconItemView>(CEconItemView.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEconWearable))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEconWearable>(CEconWearable.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEntityComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityComponent>(CEntityComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEntityDissolve))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityDissolve>(CEntityDissolve.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEntityFlame))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityFlame>(CEntityFlame.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEntityIdentity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEntityIdentity>(CEntityIdentity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvCombinedLightProbeVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCombinedLightProbeVolume>(CEnvCombinedLightProbeVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvCubemap))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCubemap>(CEnvCubemap.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvCubemapBox))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCubemapBox>(CEnvCubemapBox.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvCubemapFog))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvCubemapFog>(CEnvCubemapFog.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvDecal))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvDecal>(CEnvDecal.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvDetailController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvDetailController>(CEnvDetailController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvLightProbeVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvLightProbeVolume>(CEnvLightProbeVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvParticleGlow))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvParticleGlow>(CEnvParticleGlow.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvProjectedTexture))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvProjectedTexture>(CEnvProjectedTexture.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvScreenOverlay))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvScreenOverlay>(CEnvScreenOverlay.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvSky))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvSky>(CEnvSky.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvVolumetricFogController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvVolumetricFogController>(CEnvVolumetricFogController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvVolumetricFogVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvVolumetricFogVolume>(CEnvVolumetricFogVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvWind))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvWind>(CEnvWind.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CEnvWindShared))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CEnvWindShared>(CEnvWindShared.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFireCrackerBlast))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFireCrackerBlast>(CFireCrackerBlast.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFireSmoke))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFireSmoke>(CFireSmoke.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFish))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFish>(CFish.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFists))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFists>(CFists.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFlashbang))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbang>(CFlashbang.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFlashbangProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFlashbangProjectile>(CFlashbangProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFogController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFogController>(CFogController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFootstepControl))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFootstepControl>(CFootstepControl.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncBrush))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncBrush>(CFuncBrush.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncConveyor))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncConveyor>(CFuncConveyor.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncElectrifiedVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncElectrifiedVolume>(CFuncElectrifiedVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncLadder))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncLadder>(CFuncLadder.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncMonitor))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncMonitor>(CFuncMonitor.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncMoveLinear))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncMoveLinear>(CFuncMoveLinear.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncMover))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncMover>(CFuncMover.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncRotating))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncRotating>(CFuncRotating.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncTrackTrain))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncTrackTrain>(CFuncTrackTrain.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CFuncWater))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CFuncWater>(CFuncWater.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CGameRules))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGameRules>(CGameRules.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CGameRulesProxy))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGameRulesProxy>(CGameRulesProxy.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CGameSceneNode))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGameSceneNode>(CGameSceneNode.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CGlowProperty))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGlowProperty>(CGlowProperty.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CGradientFog))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CGradientFog>(CGradientFog.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHandleTest))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHandleTest>(CHandleTest.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHEGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHEGrenade>(CHEGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHEGrenadeProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHEGrenadeProjectile>(CHEGrenadeProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHitboxComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHitboxComponent>(CHitboxComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHostage))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostage>(CHostage.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHostageCarriableProp))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageCarriableProp>(CHostageCarriableProp.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHostageExpresserShim))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageExpresserShim>(CHostageExpresserShim.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHostageRescueZone))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageRescueZone>(CHostageRescueZone.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CHostageRescueZoneShim))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CHostageRescueZoneShim>(CHostageRescueZoneShim.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CIncendiaryGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CIncendiaryGrenade>(CIncendiaryGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CInferno))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInferno>(CInferno.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CInfoInstructorHintHostageRescueZone))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoInstructorHintHostageRescueZone>(CInfoInstructorHintHostageRescueZone.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CInfoLadderDismount))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoLadderDismount>(CInfoLadderDismount.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CInfoOffscreenPanoramaTexture))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoOffscreenPanoramaTexture>(CInfoOffscreenPanoramaTexture.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CInfoVisibilityBox))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoVisibilityBox>(CInfoVisibilityBox.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CInfoWorldLayer))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CInfoWorldLayer>(CInfoWorldLayer.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CItem))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem>(CItem.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CItem_Healthshot))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_Healthshot>(CItem_Healthshot.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CItemDogtags))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItemDogtags>(CItemDogtags.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CKnife))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CKnife>(CKnife.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightComponent>(CLightComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightDirectionalEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightDirectionalEntity>(CLightDirectionalEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightEntity>(CLightEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightEnvironmentEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightEnvironmentEntity>(CLightEnvironmentEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightGlow))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightGlow>(CLightGlow.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightOrthoEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightOrthoEntity>(CLightOrthoEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CLightSpotEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLightSpotEntity>(CLightSpotEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CMapVetoPickController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMapVetoPickController>(CMapVetoPickController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CMelee))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMelee>(CMelee.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CModelPointEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CModelPointEntity>(CModelPointEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CModelState))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CModelState>(CModelState.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CMolotovGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMolotovGrenade>(CMolotovGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CMolotovProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMolotovProjectile>(CMolotovProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CMoverPathNode))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMoverPathNode>(CMoverPathNode.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CMultiplayRules))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CMultiplayRules>(CMultiplayRules.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CNetworkOriginCellCoordQuantizedVector))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CNetworkOriginCellCoordQuantizedVector>(CNetworkOriginCellCoordQuantizedVector.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CNetworkVelocityVector))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CNetworkVelocityVector>(CNetworkVelocityVector.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CNetworkViewOffsetVector))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CNetworkViewOffsetVector>(CNetworkViewOffsetVector.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(COmniLight))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<COmniLight>(COmniLight.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CountdownTimer))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CountdownTimer>(CountdownTimer.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CParticleSystem))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CParticleSystem>(CParticleSystem.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPathMover))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPathMover>(CPathMover.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPathParticleRope))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPathParticleRope>(CPathParticleRope.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPhysBox))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysBox>(CPhysBox.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPhysicsProp))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysicsProp>(CPhysicsProp.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPhysicsPropMultiplayer))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysicsPropMultiplayer>(CPhysicsPropMultiplayer.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPhysMagnet))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPhysMagnet>(CPhysMagnet.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlantedC4))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlantedC4>(CPlantedC4.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_AutoaimServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_AutoaimServices>(CPlayer_AutoaimServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_CameraServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_CameraServices>(CPlayer_CameraServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_FlashlightServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_FlashlightServices>(CPlayer_FlashlightServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_ItemServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_ItemServices>(CPlayer_ItemServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_MovementServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_MovementServices>(CPlayer_MovementServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_MovementServices_Humanoid))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_MovementServices_Humanoid>(CPlayer_MovementServices_Humanoid.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_ObserverServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_ObserverServices>(CPlayer_ObserverServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_UseServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_UseServices>(CPlayer_UseServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_ViewModelServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_ViewModelServices>(CPlayer_ViewModelServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_WaterServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_WaterServices>(CPlayer_WaterServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayer_WeaponServices))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayer_WeaponServices>(CPlayer_WeaponServices.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayerControllerComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerControllerComponent>(CPlayerControllerComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayerPawnComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerPawnComponent>(CPlayerPawnComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayerPing))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerPing>(CPlayerPing.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayerSprayDecal))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerSprayDecal>(CPlayerSprayDecal.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPlayerVisibility))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPlayerVisibility>(CPlayerVisibility.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointCamera))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointCamera>(CPointCamera.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointClientUIDialog))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointClientUIDialog>(CPointClientUIDialog.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointClientUIWorldPanel))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointClientUIWorldPanel>(CPointClientUIWorldPanel.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointClientUIWorldTextPanel))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointClientUIWorldTextPanel>(CPointClientUIWorldTextPanel.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointCommentaryNode))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointCommentaryNode>(CPointCommentaryNode.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointEntity>(CPointEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointValueRemapper))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointValueRemapper>(CPointValueRemapper.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPointWorldText))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPointWorldText>(CPointWorldText.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPostProcessingVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPostProcessingVolume>(CPostProcessingVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPrecipitation))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPrecipitation>(CPrecipitation.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPrecipitationBlocker))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPrecipitationBlocker>(CPrecipitationBlocker.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPredictedViewModel))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPredictedViewModel>(CPredictedViewModel.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPropDataComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPropDataComponent>(CPropDataComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CPropDoorRotating))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPropDoorRotating>(CPropDoorRotating.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRagdollManager))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRagdollManager>(CRagdollManager.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRagdollProp))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRagdollProp>(CRagdollProp.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRagdollPropAttached))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRagdollPropAttached>(CRagdollPropAttached.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRectLight))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRectLight>(CRectLight.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRenderComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRenderComponent>(CRenderComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRetakeGameRules))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRetakeGameRules>(CRetakeGameRules.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CRopeKeyframe))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CRopeKeyframe>(CRopeKeyframe.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSceneEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSceneEntity>(CSceneEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CScriptComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CScriptComponent>(CScriptComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSensorGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSensorGrenade>(CSensorGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSensorGrenadeProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSensorGrenadeProjectile>(CSensorGrenadeProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CShatterGlassShardPhysics))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CShatterGlassShardPhysics>(CShatterGlassShardPhysics.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSkeletonAnimationController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSkeletonAnimationController>(CSkeletonAnimationController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSkeletonInstance))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSkeletonInstance>(CSkeletonInstance.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSkyCamera))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSkyCamera>(CSkyCamera.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSMatchStats))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSMatchStats>(CSMatchStats.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSmokeGrenade))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSmokeGrenade>(CSmokeGrenade.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSmokeGrenadeProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSmokeGrenadeProjectile>(CSmokeGrenadeProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundAreaEntityBase))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundAreaEntityBase>(CSoundAreaEntityBase.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundAreaEntityOrientedBox))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundAreaEntityOrientedBox>(CSoundAreaEntityOrientedBox.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundAreaEntitySphere))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundAreaEntitySphere>(CSoundAreaEntitySphere.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundEventAABBEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventAABBEntity>(CSoundEventAABBEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundEventEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventEntity>(CSoundEventEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundEventOBBEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventOBBEntity>(CSoundEventOBBEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundEventPathCornerEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventPathCornerEntity>(CSoundEventPathCornerEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundEventSphereEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundEventSphereEntity>(CSoundEventSphereEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetAABBEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetAABBEntity>(CSoundOpvarSetAABBEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetAutoRoomEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetAutoRoomEntity>(CSoundOpvarSetAutoRoomEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetOBBEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetOBBEntity>(CSoundOpvarSetOBBEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetOBBWindEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetOBBWindEntity>(CSoundOpvarSetOBBWindEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetPathCornerEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetPathCornerEntity>(CSoundOpvarSetPathCornerEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetPointBase))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetPointBase>(CSoundOpvarSetPointBase.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSoundOpvarSetPointEntity))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSoundOpvarSetPointEntity>(CSoundOpvarSetPointEntity.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSPerRoundStats))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSPerRoundStats>(CSPerRoundStats.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSpotlightEnd))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSpotlightEnd>(CSpotlightEnd.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSprite))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSprite>(CSprite.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSpriteOriented))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSpriteOriented>(CSpriteOriented.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSun))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSun>(CSun.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTablet))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTablet>(CTablet.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTeam))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTeam>(CTeam.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTeamplayRules))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTeamplayRules>(CTeamplayRules.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTextureBasedAnimatable))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTextureBasedAnimatable>(CTextureBasedAnimatable.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTonemapController2))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTonemapController2>(CTonemapController2.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTouchExpansionComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTouchExpansionComponent>(CTouchExpansionComponent.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTriggerBuoyancy))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerBuoyancy>(CTriggerBuoyancy.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTriggerPhysics))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerPhysics>(CTriggerPhysics.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTriggerTripWire))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerTripWire>(CTriggerTripWire.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTriggerVolume))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTriggerVolume>(CTriggerVolume.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTripWireFire))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTripWireFire>(CTripWireFire.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CTripWireFireProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CTripWireFireProjectile>(CTripWireFireProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CVoteController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CVoteController>(CVoteController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWaterBullet))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWaterBullet>(CWaterBullet.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponAug))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponAug>(CWeaponAug.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponAWP))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponAWP>(CWeaponAWP.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponBaseItem))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponBaseItem>(CWeaponBaseItem.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponBizon))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponBizon>(CWeaponBizon.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponCZ75a))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponCZ75a>(CWeaponCZ75a.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponElite))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponElite>(CWeaponElite.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponFamas))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponFamas>(CWeaponFamas.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponFiveSeven))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponFiveSeven>(CWeaponFiveSeven.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponG3SG1))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponG3SG1>(CWeaponG3SG1.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponGalilAR))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponGalilAR>(CWeaponGalilAR.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponGlock))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponGlock>(CWeaponGlock.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponHKP2000))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponHKP2000>(CWeaponHKP2000.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponM249))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponM249>(CWeaponM249.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponM4A1))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponM4A1>(CWeaponM4A1.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponM4A1Silencer))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponM4A1Silencer>(CWeaponM4A1Silencer.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponMAC10))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMAC10>(CWeaponMAC10.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponMag7))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMag7>(CWeaponMag7.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponMP5SD))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMP5SD>(CWeaponMP5SD.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponMP7))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMP7>(CWeaponMP7.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponMP9))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponMP9>(CWeaponMP9.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponNegev))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponNegev>(CWeaponNegev.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponNOVA))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponNOVA>(CWeaponNOVA.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponP250))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponP250>(CWeaponP250.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponP90))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponP90>(CWeaponP90.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponRevolver))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponRevolver>(CWeaponRevolver.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponSawedoff))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSawedoff>(CWeaponSawedoff.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponSCAR20))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSCAR20>(CWeaponSCAR20.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponSG556))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSG556>(CWeaponSG556.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponShield))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponShield>(CWeaponShield.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponSSG08))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponSSG08>(CWeaponSSG08.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponTaser))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponTaser>(CWeaponTaser.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponTec9))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponTec9>(CWeaponTec9.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponUMP45))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponUMP45>(CWeaponUMP45.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponUSPSilencer))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponUSPSilencer>(CWeaponUSPSilencer.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponXM1014))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponXM1014>(CWeaponXM1014.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWeaponZoneRepulsor))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWeaponZoneRepulsor>(CWeaponZoneRepulsor.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CWorld))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CWorld>(CWorld.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(EntityRenderAttribute))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<EntityRenderAttribute>(EntityRenderAttribute.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(EntitySpottedState))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<EntitySpottedState>(EntitySpottedState.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(FogParams))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<FogParams>(FogParams.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(FogPlayerParams))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<FogPlayerParams>(FogPlayerParams.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(IEconItemInterface))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<IEconItemInterface>(IEconItemInterface.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(InfoForResourceTypeCModel))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCModel>(InfoForResourceTypeCModel.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(InfoForResourceTypeCPostProcessingResource))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCPostProcessingResource>(InfoForResourceTypeCPostProcessingResource.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(InfoForResourceTypeCTextureBase))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCTextureBase>(InfoForResourceTypeCTextureBase.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(InfoForResourceTypeIMaterial2))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeIMaterial2>(InfoForResourceTypeIMaterial2.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(InfoForResourceTypeIParticleSystemDefinition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeIParticleSystemDefinition>(InfoForResourceTypeIParticleSystemDefinition.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(ISkeletonAnimationController))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ISkeletonAnimationController>(ISkeletonAnimationController.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(PhysicsRagdollPose))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<PhysicsRagdollPose>(PhysicsRagdollPose.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(PredictedDamageTag))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<PredictedDamageTag>(PredictedDamageTag.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(SellbackPurchaseEntry))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SellbackPurchaseEntry>(SellbackPurchaseEntry.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(ServerAuthoritativeWeaponSlot))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ServerAuthoritativeWeaponSlot>(ServerAuthoritativeWeaponSlot.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(SharedModelDesc))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SharedModelDesc>(SharedModelDesc.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(Sky3DParams))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<Sky3DParams>(Sky3DParams.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(SoundeventPathCornerPairNetworked))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SoundeventPathCornerPairNetworked>(SoundeventPathCornerPairNetworked.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(ViewAngleServerChange))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ViewAngleServerChange>(ViewAngleServerChange.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(VPhysicsCollisionAttribute))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<VPhysicsCollisionAttribute>(VPhysicsCollisionAttribute.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(WeaponPurchaseCount))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<WeaponPurchaseCount>(WeaponPurchaseCount.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(WeaponPurchaseTracker))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<WeaponPurchaseTracker>(WeaponPurchaseTracker.CreateFieldDecoder);
+        }
+
+        throw new NotImplementedException($"Unknown send node class: {typeof(T)}");
+    }
+}
+
+internal static class CsEntityFactories
+{
+    public static readonly IReadOnlyDictionary<string, EntityFactory<CsDemoParser>> All = new Dictionary<string, EntityFactory<CsDemoParser>>
+    {
+        {"CAK47", (context, decoder) => new CAK47(context, decoder)},
+        {"CBarnLight", (context, decoder) => new CBarnLight(context, decoder)},
+        {"CBaseAnimGraph", (context, decoder) => new CBaseAnimGraph(context, decoder)},
+        {"CBaseButton", (context, decoder) => new CBaseButton(context, decoder)},
+        {"CBaseClientUIEntity", (context, decoder) => new CBaseClientUIEntity(context, decoder)},
+        {"CBaseCombatCharacter", (context, decoder) => new CBaseCombatCharacter(context, decoder)},
+        {"CBaseCSGrenade", (context, decoder) => new CBaseCSGrenade(context, decoder)},
+        {"CBaseCSGrenadeProjectile", (context, decoder) => new CBaseCSGrenadeProjectile(context, decoder)},
+        {"CBaseDoor", (context, decoder) => new CBaseDoor(context, decoder)},
+        {"CBaseEntity", (context, decoder) => new CBaseEntity(context, decoder)},
+        {"CBaseFire", (context, decoder) => new CBaseFire(context, decoder)},
+        {"CBaseFlex", (context, decoder) => new CBaseFlex(context, decoder)},
+        {"CBaseGrenade", (context, decoder) => new CBaseGrenade(context, decoder)},
+        {"CBaseModelEntity", (context, decoder) => new CBaseModelEntity(context, decoder)},
+        {"CBasePlayerController", (context, decoder) => new CBasePlayerController(context, decoder)},
+        {"CBasePlayerPawn", (context, decoder) => new CBasePlayerPawn(context, decoder)},
+        {"CBasePlayerWeapon", (context, decoder) => new CBasePlayerWeapon(context, decoder)},
+        {"CBaseProp", (context, decoder) => new CBaseProp(context, decoder)},
+        {"CBasePropDoor", (context, decoder) => new CBasePropDoor(context, decoder)},
+        {"CBaseToggle", (context, decoder) => new CBaseToggle(context, decoder)},
+        {"CBaseTrigger", (context, decoder) => new CBaseTrigger(context, decoder)},
+        {"CBaseViewModel", (context, decoder) => new CBaseViewModel(context, decoder)},
+        {"CBeam", (context, decoder) => new CBeam(context, decoder)},
+        {"CBombTarget", (context, decoder) => new CBombTarget(context, decoder)},
+        {"CBreachCharge", (context, decoder) => new CBreachCharge(context, decoder)},
+        {"CBreachChargeProjectile", (context, decoder) => new CBreachChargeProjectile(context, decoder)},
+        {"CBreakable", (context, decoder) => new CBreakable(context, decoder)},
+        {"CBreakableProp", (context, decoder) => new CBreakableProp(context, decoder)},
+        {"CBumpMine", (context, decoder) => new CBumpMine(context, decoder)},
+        {"CBumpMineProjectile", (context, decoder) => new CBumpMineProjectile(context, decoder)},
+        {"CC4", (context, decoder) => new CC4(context, decoder)},
+        {"CChicken", (context, decoder) => new CChicken(context, decoder)},
+        {"CCitadelSoundOpvarSetOBB", (context, decoder) => new CCitadelSoundOpvarSetOBB(context, decoder)},
+        {"CColorCorrection", (context, decoder) => new CColorCorrection(context, decoder)},
+        {"CColorCorrectionVolume", (context, decoder) => new CColorCorrectionVolume(context, decoder)},
+        {"CCSGameRulesProxy", (context, decoder) => new CCSGameRulesProxy(context, decoder)},
+        {"CCSGO_TeamIntroCharacterPosition", (context, decoder) => new CCSGO_TeamIntroCharacterPosition(context, decoder)},
+        {"CCSGO_TeamIntroCounterTerroristPosition", (context, decoder) => new CCSGO_TeamIntroCounterTerroristPosition(context, decoder)},
+        {"CCSGO_TeamIntroTerroristPosition", (context, decoder) => new CCSGO_TeamIntroTerroristPosition(context, decoder)},
+        {"CCSGO_TeamPreviewCharacterPosition", (context, decoder) => new CCSGO_TeamPreviewCharacterPosition(context, decoder)},
+        {"CCSGO_TeamSelectCharacterPosition", (context, decoder) => new CCSGO_TeamSelectCharacterPosition(context, decoder)},
+        {"CCSGO_TeamSelectCounterTerroristPosition", (context, decoder) => new CCSGO_TeamSelectCounterTerroristPosition(context, decoder)},
+        {"CCSGO_TeamSelectTerroristPosition", (context, decoder) => new CCSGO_TeamSelectTerroristPosition(context, decoder)},
+        {"CCSGO_WingmanIntroCharacterPosition", (context, decoder) => new CCSGO_WingmanIntroCharacterPosition(context, decoder)},
+        {"CCSGO_WingmanIntroCounterTerroristPosition", (context, decoder) => new CCSGO_WingmanIntroCounterTerroristPosition(context, decoder)},
+        {"CCSGO_WingmanIntroTerroristPosition", (context, decoder) => new CCSGO_WingmanIntroTerroristPosition(context, decoder)},
+        {"CCSGOViewModel", (context, decoder) => new CCSGOViewModel(context, decoder)},
+        {"CCSMinimapBoundary", (context, decoder) => new CCSMinimapBoundary(context, decoder)},
+        {"CCSObserverPawn", (context, decoder) => new CCSObserverPawn(context, decoder)},
+        {"CCSPlayerController", (context, decoder) => new CCSPlayerController(context, decoder)},
+        {"CCSPlayerPawn", (context, decoder) => new CCSPlayerPawn(context, decoder)},
+        {"CCSPlayerPawnBase", (context, decoder) => new CCSPlayerPawnBase(context, decoder)},
+        {"CCSPlayerResource", (context, decoder) => new CCSPlayerResource(context, decoder)},
+        {"CCSTeam", (context, decoder) => new CCSTeam(context, decoder)},
+        {"CCSWeaponBase", (context, decoder) => new CCSWeaponBase(context, decoder)},
+        {"CCSWeaponBaseGun", (context, decoder) => new CCSWeaponBaseGun(context, decoder)},
+        {"CDEagle", (context, decoder) => new CDEagle(context, decoder)},
+        {"CDecoyGrenade", (context, decoder) => new CDecoyGrenade(context, decoder)},
+        {"CDecoyProjectile", (context, decoder) => new CDecoyProjectile(context, decoder)},
+        {"CDynamicLight", (context, decoder) => new CDynamicLight(context, decoder)},
+        {"CDynamicProp", (context, decoder) => new CDynamicProp(context, decoder)},
+        {"CEconEntity", (context, decoder) => new CEconEntity(context, decoder)},
+        {"CEconWearable", (context, decoder) => new CEconWearable(context, decoder)},
+        {"CEntityDissolve", (context, decoder) => new CEntityDissolve(context, decoder)},
+        {"CEntityFlame", (context, decoder) => new CEntityFlame(context, decoder)},
+        {"CEnvCombinedLightProbeVolume", (context, decoder) => new CEnvCombinedLightProbeVolume(context, decoder)},
+        {"CEnvCubemap", (context, decoder) => new CEnvCubemap(context, decoder)},
+        {"CEnvCubemapBox", (context, decoder) => new CEnvCubemapBox(context, decoder)},
+        {"CEnvCubemapFog", (context, decoder) => new CEnvCubemapFog(context, decoder)},
+        {"CEnvDecal", (context, decoder) => new CEnvDecal(context, decoder)},
+        {"CEnvDetailController", (context, decoder) => new CEnvDetailController(context, decoder)},
+        {"CEnvLightProbeVolume", (context, decoder) => new CEnvLightProbeVolume(context, decoder)},
+        {"CEnvParticleGlow", (context, decoder) => new CEnvParticleGlow(context, decoder)},
+        {"CEnvProjectedTexture", (context, decoder) => new CEnvProjectedTexture(context, decoder)},
+        {"CEnvScreenOverlay", (context, decoder) => new CEnvScreenOverlay(context, decoder)},
+        {"CEnvSky", (context, decoder) => new CEnvSky(context, decoder)},
+        {"CEnvVolumetricFogController", (context, decoder) => new CEnvVolumetricFogController(context, decoder)},
+        {"CEnvVolumetricFogVolume", (context, decoder) => new CEnvVolumetricFogVolume(context, decoder)},
+        {"CEnvWind", (context, decoder) => new CEnvWind(context, decoder)},
+        {"CFireCrackerBlast", (context, decoder) => new CFireCrackerBlast(context, decoder)},
+        {"CFireSmoke", (context, decoder) => new CFireSmoke(context, decoder)},
+        {"CFish", (context, decoder) => new CFish(context, decoder)},
+        {"CFists", (context, decoder) => new CFists(context, decoder)},
+        {"CFlashbang", (context, decoder) => new CFlashbang(context, decoder)},
+        {"CFlashbangProjectile", (context, decoder) => new CFlashbangProjectile(context, decoder)},
+        {"CFogController", (context, decoder) => new CFogController(context, decoder)},
+        {"CFootstepControl", (context, decoder) => new CFootstepControl(context, decoder)},
+        {"CFuncBrush", (context, decoder) => new CFuncBrush(context, decoder)},
+        {"CFuncConveyor", (context, decoder) => new CFuncConveyor(context, decoder)},
+        {"CFuncElectrifiedVolume", (context, decoder) => new CFuncElectrifiedVolume(context, decoder)},
+        {"CFuncLadder", (context, decoder) => new CFuncLadder(context, decoder)},
+        {"CFuncMonitor", (context, decoder) => new CFuncMonitor(context, decoder)},
+        {"CFuncMoveLinear", (context, decoder) => new CFuncMoveLinear(context, decoder)},
+        {"CFuncMover", (context, decoder) => new CFuncMover(context, decoder)},
+        {"CFuncRotating", (context, decoder) => new CFuncRotating(context, decoder)},
+        {"CFuncTrackTrain", (context, decoder) => new CFuncTrackTrain(context, decoder)},
+        {"CFuncWater", (context, decoder) => new CFuncWater(context, decoder)},
+        {"CGameRulesProxy", (context, decoder) => new CGameRulesProxy(context, decoder)},
+        {"CGradientFog", (context, decoder) => new CGradientFog(context, decoder)},
+        {"CHandleTest", (context, decoder) => new CHandleTest(context, decoder)},
+        {"CHEGrenade", (context, decoder) => new CHEGrenade(context, decoder)},
+        {"CHEGrenadeProjectile", (context, decoder) => new CHEGrenadeProjectile(context, decoder)},
+        {"CHostage", (context, decoder) => new CHostage(context, decoder)},
+        {"CHostageCarriableProp", (context, decoder) => new CHostageCarriableProp(context, decoder)},
+        {"CHostageExpresserShim", (context, decoder) => new CHostageExpresserShim(context, decoder)},
+        {"CHostageRescueZone", (context, decoder) => new CHostageRescueZone(context, decoder)},
+        {"CHostageRescueZoneShim", (context, decoder) => new CHostageRescueZoneShim(context, decoder)},
+        {"CIncendiaryGrenade", (context, decoder) => new CIncendiaryGrenade(context, decoder)},
+        {"CInferno", (context, decoder) => new CInferno(context, decoder)},
+        {"CInfoInstructorHintHostageRescueZone", (context, decoder) => new CInfoInstructorHintHostageRescueZone(context, decoder)},
+        {"CInfoLadderDismount", (context, decoder) => new CInfoLadderDismount(context, decoder)},
+        {"CInfoOffscreenPanoramaTexture", (context, decoder) => new CInfoOffscreenPanoramaTexture(context, decoder)},
+        {"CInfoVisibilityBox", (context, decoder) => new CInfoVisibilityBox(context, decoder)},
+        {"CInfoWorldLayer", (context, decoder) => new CInfoWorldLayer(context, decoder)},
+        {"CItem", (context, decoder) => new CItem(context, decoder)},
+        {"CItem_Healthshot", (context, decoder) => new CItem_Healthshot(context, decoder)},
+        {"CItemDogtags", (context, decoder) => new CItemDogtags(context, decoder)},
+        {"CKnife", (context, decoder) => new CKnife(context, decoder)},
+        {"CLightDirectionalEntity", (context, decoder) => new CLightDirectionalEntity(context, decoder)},
+        {"CLightEntity", (context, decoder) => new CLightEntity(context, decoder)},
+        {"CLightEnvironmentEntity", (context, decoder) => new CLightEnvironmentEntity(context, decoder)},
+        {"CLightGlow", (context, decoder) => new CLightGlow(context, decoder)},
+        {"CLightOrthoEntity", (context, decoder) => new CLightOrthoEntity(context, decoder)},
+        {"CLightSpotEntity", (context, decoder) => new CLightSpotEntity(context, decoder)},
+        {"CMapVetoPickController", (context, decoder) => new CMapVetoPickController(context, decoder)},
+        {"CMelee", (context, decoder) => new CMelee(context, decoder)},
+        {"CModelPointEntity", (context, decoder) => new CModelPointEntity(context, decoder)},
+        {"CMolotovGrenade", (context, decoder) => new CMolotovGrenade(context, decoder)},
+        {"CMolotovProjectile", (context, decoder) => new CMolotovProjectile(context, decoder)},
+        {"CMoverPathNode", (context, decoder) => new CMoverPathNode(context, decoder)},
+        {"COmniLight", (context, decoder) => new COmniLight(context, decoder)},
+        {"CParticleSystem", (context, decoder) => new CParticleSystem(context, decoder)},
+        {"CPathMover", (context, decoder) => new CPathMover(context, decoder)},
+        {"CPathParticleRope", (context, decoder) => new CPathParticleRope(context, decoder)},
+        {"CPhysBox", (context, decoder) => new CPhysBox(context, decoder)},
+        {"CPhysicsProp", (context, decoder) => new CPhysicsProp(context, decoder)},
+        {"CPhysicsPropMultiplayer", (context, decoder) => new CPhysicsPropMultiplayer(context, decoder)},
+        {"CPhysMagnet", (context, decoder) => new CPhysMagnet(context, decoder)},
+        {"CPlantedC4", (context, decoder) => new CPlantedC4(context, decoder)},
+        {"CPlayerPing", (context, decoder) => new CPlayerPing(context, decoder)},
+        {"CPlayerSprayDecal", (context, decoder) => new CPlayerSprayDecal(context, decoder)},
+        {"CPlayerVisibility", (context, decoder) => new CPlayerVisibility(context, decoder)},
+        {"CPointCamera", (context, decoder) => new CPointCamera(context, decoder)},
+        {"CPointClientUIDialog", (context, decoder) => new CPointClientUIDialog(context, decoder)},
+        {"CPointClientUIWorldPanel", (context, decoder) => new CPointClientUIWorldPanel(context, decoder)},
+        {"CPointClientUIWorldTextPanel", (context, decoder) => new CPointClientUIWorldTextPanel(context, decoder)},
+        {"CPointCommentaryNode", (context, decoder) => new CPointCommentaryNode(context, decoder)},
+        {"CPointEntity", (context, decoder) => new CPointEntity(context, decoder)},
+        {"CPointValueRemapper", (context, decoder) => new CPointValueRemapper(context, decoder)},
+        {"CPointWorldText", (context, decoder) => new CPointWorldText(context, decoder)},
+        {"CPostProcessingVolume", (context, decoder) => new CPostProcessingVolume(context, decoder)},
+        {"CPrecipitation", (context, decoder) => new CPrecipitation(context, decoder)},
+        {"CPrecipitationBlocker", (context, decoder) => new CPrecipitationBlocker(context, decoder)},
+        {"CPredictedViewModel", (context, decoder) => new CPredictedViewModel(context, decoder)},
+        {"CPropDoorRotating", (context, decoder) => new CPropDoorRotating(context, decoder)},
+        {"CRagdollManager", (context, decoder) => new CRagdollManager(context, decoder)},
+        {"CRagdollProp", (context, decoder) => new CRagdollProp(context, decoder)},
+        {"CRagdollPropAttached", (context, decoder) => new CRagdollPropAttached(context, decoder)},
+        {"CRectLight", (context, decoder) => new CRectLight(context, decoder)},
+        {"CRopeKeyframe", (context, decoder) => new CRopeKeyframe(context, decoder)},
+        {"CSceneEntity", (context, decoder) => new CSceneEntity(context, decoder)},
+        {"CSensorGrenade", (context, decoder) => new CSensorGrenade(context, decoder)},
+        {"CSensorGrenadeProjectile", (context, decoder) => new CSensorGrenadeProjectile(context, decoder)},
+        {"CShatterGlassShardPhysics", (context, decoder) => new CShatterGlassShardPhysics(context, decoder)},
+        {"CSkyCamera", (context, decoder) => new CSkyCamera(context, decoder)},
+        {"CSmokeGrenade", (context, decoder) => new CSmokeGrenade(context, decoder)},
+        {"CSmokeGrenadeProjectile", (context, decoder) => new CSmokeGrenadeProjectile(context, decoder)},
+        {"CSoundAreaEntityBase", (context, decoder) => new CSoundAreaEntityBase(context, decoder)},
+        {"CSoundAreaEntityOrientedBox", (context, decoder) => new CSoundAreaEntityOrientedBox(context, decoder)},
+        {"CSoundAreaEntitySphere", (context, decoder) => new CSoundAreaEntitySphere(context, decoder)},
+        {"CSoundEventAABBEntity", (context, decoder) => new CSoundEventAABBEntity(context, decoder)},
+        {"CSoundEventEntity", (context, decoder) => new CSoundEventEntity(context, decoder)},
+        {"CSoundEventOBBEntity", (context, decoder) => new CSoundEventOBBEntity(context, decoder)},
+        {"CSoundEventPathCornerEntity", (context, decoder) => new CSoundEventPathCornerEntity(context, decoder)},
+        {"CSoundEventSphereEntity", (context, decoder) => new CSoundEventSphereEntity(context, decoder)},
+        {"CSoundOpvarSetAABBEntity", (context, decoder) => new CSoundOpvarSetAABBEntity(context, decoder)},
+        {"CSoundOpvarSetAutoRoomEntity", (context, decoder) => new CSoundOpvarSetAutoRoomEntity(context, decoder)},
+        {"CSoundOpvarSetOBBEntity", (context, decoder) => new CSoundOpvarSetOBBEntity(context, decoder)},
+        {"CSoundOpvarSetOBBWindEntity", (context, decoder) => new CSoundOpvarSetOBBWindEntity(context, decoder)},
+        {"CSoundOpvarSetPathCornerEntity", (context, decoder) => new CSoundOpvarSetPathCornerEntity(context, decoder)},
+        {"CSoundOpvarSetPointBase", (context, decoder) => new CSoundOpvarSetPointBase(context, decoder)},
+        {"CSoundOpvarSetPointEntity", (context, decoder) => new CSoundOpvarSetPointEntity(context, decoder)},
+        {"CSpotlightEnd", (context, decoder) => new CSpotlightEnd(context, decoder)},
+        {"CSprite", (context, decoder) => new CSprite(context, decoder)},
+        {"CSpriteOriented", (context, decoder) => new CSpriteOriented(context, decoder)},
+        {"CSun", (context, decoder) => new CSun(context, decoder)},
+        {"CTablet", (context, decoder) => new CTablet(context, decoder)},
+        {"CTeam", (context, decoder) => new CTeam(context, decoder)},
+        {"CTextureBasedAnimatable", (context, decoder) => new CTextureBasedAnimatable(context, decoder)},
+        {"CTonemapController2", (context, decoder) => new CTonemapController2(context, decoder)},
+        {"CTriggerBuoyancy", (context, decoder) => new CTriggerBuoyancy(context, decoder)},
+        {"CTriggerPhysics", (context, decoder) => new CTriggerPhysics(context, decoder)},
+        {"CTriggerTripWire", (context, decoder) => new CTriggerTripWire(context, decoder)},
+        {"CTriggerVolume", (context, decoder) => new CTriggerVolume(context, decoder)},
+        {"CTripWireFire", (context, decoder) => new CTripWireFire(context, decoder)},
+        {"CTripWireFireProjectile", (context, decoder) => new CTripWireFireProjectile(context, decoder)},
+        {"CVoteController", (context, decoder) => new CVoteController(context, decoder)},
+        {"CWaterBullet", (context, decoder) => new CWaterBullet(context, decoder)},
+        {"CWeaponAug", (context, decoder) => new CWeaponAug(context, decoder)},
+        {"CWeaponAWP", (context, decoder) => new CWeaponAWP(context, decoder)},
+        {"CWeaponBaseItem", (context, decoder) => new CWeaponBaseItem(context, decoder)},
+        {"CWeaponBizon", (context, decoder) => new CWeaponBizon(context, decoder)},
+        {"CWeaponCZ75a", (context, decoder) => new CWeaponCZ75a(context, decoder)},
+        {"CWeaponElite", (context, decoder) => new CWeaponElite(context, decoder)},
+        {"CWeaponFamas", (context, decoder) => new CWeaponFamas(context, decoder)},
+        {"CWeaponFiveSeven", (context, decoder) => new CWeaponFiveSeven(context, decoder)},
+        {"CWeaponG3SG1", (context, decoder) => new CWeaponG3SG1(context, decoder)},
+        {"CWeaponGalilAR", (context, decoder) => new CWeaponGalilAR(context, decoder)},
+        {"CWeaponGlock", (context, decoder) => new CWeaponGlock(context, decoder)},
+        {"CWeaponHKP2000", (context, decoder) => new CWeaponHKP2000(context, decoder)},
+        {"CWeaponM249", (context, decoder) => new CWeaponM249(context, decoder)},
+        {"CWeaponM4A1", (context, decoder) => new CWeaponM4A1(context, decoder)},
+        {"CWeaponM4A1Silencer", (context, decoder) => new CWeaponM4A1Silencer(context, decoder)},
+        {"CWeaponMAC10", (context, decoder) => new CWeaponMAC10(context, decoder)},
+        {"CWeaponMag7", (context, decoder) => new CWeaponMag7(context, decoder)},
+        {"CWeaponMP5SD", (context, decoder) => new CWeaponMP5SD(context, decoder)},
+        {"CWeaponMP7", (context, decoder) => new CWeaponMP7(context, decoder)},
+        {"CWeaponMP9", (context, decoder) => new CWeaponMP9(context, decoder)},
+        {"CWeaponNegev", (context, decoder) => new CWeaponNegev(context, decoder)},
+        {"CWeaponNOVA", (context, decoder) => new CWeaponNOVA(context, decoder)},
+        {"CWeaponP250", (context, decoder) => new CWeaponP250(context, decoder)},
+        {"CWeaponP90", (context, decoder) => new CWeaponP90(context, decoder)},
+        {"CWeaponRevolver", (context, decoder) => new CWeaponRevolver(context, decoder)},
+        {"CWeaponSawedoff", (context, decoder) => new CWeaponSawedoff(context, decoder)},
+        {"CWeaponSCAR20", (context, decoder) => new CWeaponSCAR20(context, decoder)},
+        {"CWeaponSG556", (context, decoder) => new CWeaponSG556(context, decoder)},
+        {"CWeaponShield", (context, decoder) => new CWeaponShield(context, decoder)},
+        {"CWeaponSSG08", (context, decoder) => new CWeaponSSG08(context, decoder)},
+        {"CWeaponTaser", (context, decoder) => new CWeaponTaser(context, decoder)},
+        {"CWeaponTec9", (context, decoder) => new CWeaponTec9(context, decoder)},
+        {"CWeaponUMP45", (context, decoder) => new CWeaponUMP45(context, decoder)},
+        {"CWeaponUSPSilencer", (context, decoder) => new CWeaponUSPSilencer(context, decoder)},
+        {"CWeaponXM1014", (context, decoder) => new CWeaponXM1014(context, decoder)},
+        {"CWeaponZoneRepulsor", (context, decoder) => new CWeaponZoneRepulsor(context, decoder)},
+        {"CWorld", (context, decoder) => new CWorld(context, decoder)},
+    };
 }

@@ -3,7 +3,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public partial class Source1GameEvents
+public partial class CsSource1GameEvents
 {
     public Action<Source1RoundEndEvent>? _onRoundEnd;
     private EntityEventRegistration<CCSGameRulesProxy> _roundEndRegistration;

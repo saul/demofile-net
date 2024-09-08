@@ -1,6 +1,5 @@
 ﻿using System.Collections.Immutable;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using DemoFile.Extensions;
 using DemoFile.Sdk;
 
@@ -18,75 +17,73 @@ public struct EntityEventRegistration<T>
     }
 }
 
-[StructLayout(LayoutKind.Auto)]
-public partial struct EntityEvents
+public struct EntityEvents<T, TGameParser>
+    where T : CEntityInstance<TGameParser>
+    where TGameParser : DemoParser<TGameParser>, new()
 {
-    public struct Events<T> where T : CEntityInstance
+    public Action<T>? Create;
+    public Action<T>? Delete;
+    public Action<T>? PreUpdate;
+    public Action<T>? PostUpdate;
+
+    public EntityEventRegistration<T> AddChangeCallback<TState>(
+        Func<T, TState> read,
+        Action<T, TState, TState> onChange,
+        IEqualityComparer<TState>? equalityComparer = null)
     {
-        public Action<T>? Create;
-        public Action<T>? Delete;
-        public Action<T>? PreUpdate;
-        public Action<T>? PostUpdate;
+        equalityComparer ??= EqualityComparer<TState>.Default;
 
-        public EntityEventRegistration<T> AddChangeCallback<TState>(
-            Func<T, TState> read,
-            Action<T, TState, TState> onChange,
-            IEqualityComparer<TState>? equalityComparer = null)
+        var oldValues = new Queue<(T Entity, TState State)>();
+
+        Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity)));
+        Action<T> postFunc = entity =>
         {
-            equalityComparer ??= EqualityComparer<TState>.Default;
+            // Invariant: postFunc will be called in the same order that preFunc was
+            var (queuedEnt, oldValue) = oldValues.Dequeue();
+            Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
 
-            var oldValues = new Queue<(T Entity, TState State)>();
-
-            Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity)));
-            Action<T> postFunc = entity =>
+            var newValue = read(entity);
+            if (!equalityComparer.Equals(oldValue, newValue))
             {
-                // Invariant: postFunc will be called in the same order that preFunc was
-                var (queuedEnt, oldValue) = oldValues.Dequeue();
-                Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
+                onChange(entity, oldValue, newValue);
+            }
+        };
 
-                var newValue = read(entity);
-                if (!equalityComparer.Equals(oldValue, newValue))
-                {
-                    onChange(entity, oldValue, newValue);
-                }
-            };
+        PreUpdate += preFunc;
+        PostUpdate += postFunc;
 
-            PreUpdate += preFunc;
-            PostUpdate += postFunc;
+        return new EntityEventRegistration<T>(preFunc, postFunc);
+    }
 
-            return new EntityEventRegistration<T>(preFunc, postFunc);
-        }
+    public EntityEventRegistration<T> AddCollectionChangeCallback<TState>(
+        Func<T, IEnumerable<TState>> read,
+        Action<T, IReadOnlyList<TState>, IReadOnlyList<TState>> onChange)
+    {
+        var oldValues = new Queue<(T Entity, ImmutableList<TState> State)>();
 
-        public EntityEventRegistration<T> AddCollectionChangeCallback<TState>(
-            Func<T, IEnumerable<TState>> read,
-            Action<T, IReadOnlyList<TState>, IReadOnlyList<TState>> onChange)
+        Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity).ToImmutableList()));
+        Action<T> postFunc = entity =>
         {
-            var oldValues = new Queue<(T Entity, ImmutableList<TState> State)>();
+            // Invariant: postFunc will be called in the same order that preFunc was
+            var (queuedEnt, oldValue) = oldValues.Dequeue();
+            Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
 
-            Action<T> preFunc = entity => oldValues.Enqueue((entity, read(entity).ToImmutableList()));
-            Action<T> postFunc = entity =>
+            var newValue = read(entity).ToImmutableList();
+            if (!StructuralEqualityComparer<TState>.Instance.Equals(oldValue, newValue))
             {
-                // Invariant: postFunc will be called in the same order that preFunc was
-                var (queuedEnt, oldValue) = oldValues.Dequeue();
-                Debug.Assert(queuedEnt.EntityIndex == entity.EntityIndex && queuedEnt.SerialNumber == entity.SerialNumber);
+                onChange(entity, oldValue, newValue);
+            }
+        };
 
-                var newValue = read(entity).ToImmutableList();
-                if (!StructuralEqualityComparer<TState>.Instance.Equals(oldValue, newValue))
-                {
-                    onChange(entity, oldValue, newValue);
-                }
-            };
+        PreUpdate += preFunc;
+        PostUpdate += postFunc;
 
-            PreUpdate += preFunc;
-            PostUpdate += postFunc;
+        return new EntityEventRegistration<T>(preFunc, postFunc);
+    }
 
-            return new EntityEventRegistration<T>(preFunc, postFunc);
-        }
-
-        public void RemoveChangeCallback(EntityEventRegistration<T> registration)
-        {
-            PreUpdate -= registration.PreFunc;
-            PostUpdate -= registration.PostFunc;
-        }
+    public void RemoveChangeCallback(EntityEventRegistration<T> registration)
+    {
+        PreUpdate -= registration.PreFunc;
+        PostUpdate -= registration.PostFunc;
     }
 }

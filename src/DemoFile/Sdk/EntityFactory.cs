@@ -1,3 +1,6 @@
 namespace DemoFile.Sdk;
 
-internal delegate CEntityInstance EntityFactory(EntityContext context, SendNodeDecoder<object> decoder);
+public delegate CEntityInstance<TGameParser> EntityFactory<TGameParser>(
+    DemoParser<TGameParser>.EntityContext context,
+    SendNodeDecoder<object> decoder)
+    where TGameParser : DemoParser<TGameParser>, new();

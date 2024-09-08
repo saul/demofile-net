@@ -3,20 +3,20 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public readonly record struct CHandle<T>(ulong Value)
-    where T : CEntityInstance
+public readonly record struct CHandle<T, TGameParser>(ulong Value)
+    where T : CEntityInstance<TGameParser> where TGameParser : DemoParser<TGameParser>, new()
 {
     public override string ToString() => IsValid ? $"Index = {Index.Value}, Serial = {SerialNum}" : "<invalid>";
 
-    public bool IsValid => this != default && Index.Value != (DemoParser.MaxEdicts - 1);
+    public bool IsValid => this != default && Index.Value != (DemoParser<TGameParser>.MaxEdicts - 1);
 
-    public CEntityIndex Index => new((uint) (Value & (DemoParser.MaxEdicts - 1)));
-    public uint SerialNum => (uint)(Value >> DemoParser.MaxEdictBits);
+    public CEntityIndex Index => new((uint) (Value & (DemoParser<TGameParser>.MaxEdicts - 1)));
+    public uint SerialNum => (uint)(Value >> DemoParser<TGameParser>.MaxEdictBits);
 
-    public static CHandle<T> FromIndexSerialNum(CEntityIndex index, uint serialNum) =>
-        new(((ulong)index.Value) | (serialNum << DemoParser.MaxEdictBits));
+    public static CHandle<T, TGameParser> FromIndexSerialNum(CEntityIndex index, uint serialNum) =>
+        new(((ulong)index.Value) | (serialNum << DemoParser<TGameParser>.MaxEdictBits));
 
-    public static CHandle<T> FromEventStrictEHandle(uint value)
+    public static CHandle<T, TGameParser> FromEventStrictEHandle(uint value)
     {
         // EHandles in events are serialised differently than networked handles.
         //
@@ -30,13 +30,13 @@ public readonly record struct CHandle<T>(ulong Value)
 
         Debug.Assert(value == uint.MaxValue || (value & (1 << 14)) == 0);
 
-        var index = value & (DemoParser.MaxEdicts - 1);
+        var index = value & (DemoParser<TGameParser>.MaxEdicts - 1);
         var serialNum = (value >> 15) & ((1 << 10) - 1);
 
         return FromIndexSerialNum(new CEntityIndex(index), serialNum);
     }
 
-    public T? Get(DemoParser demo) => demo.GetEntityByHandle(this);
+    public T? Get(TGameParser demo) => demo.GetEntityByHandle(this);
 
-    public TEntity? Get<TEntity>(DemoParser demo) where TEntity : T => demo.GetEntityByHandle(this) as TEntity;
+    public TEntity? Get<TEntity>(TGameParser demo) where TEntity : T => demo.GetEntityByHandle(this) as TEntity;
 }

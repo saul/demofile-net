@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(Baseline)' != 'true' ">
-    <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
+    <ProjectReference Include="..\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Baseline)' == 'true' ">
     <PackageReference Include="DemoFile" Version="*" />

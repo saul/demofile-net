@@ -1,18 +1,27 @@
-﻿namespace DemoFile.Sdk;
+﻿using System.Diagnostics.CodeAnalysis;
 
-internal partial class DecoderSet
+namespace DemoFile.Sdk;
+
+public abstract class DecoderSet
 {
+    private readonly Dictionary<SerializerKey, object?> _cache = new(512);
     private readonly IReadOnlyDictionary<SerializerKey, Serializer> _serializers;
-    private readonly Dictionary<SerializerKey, object?> _decoders = new(512);
 
-    public DecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers)
+    protected DecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers)
     {
         _serializers = serializers;
     }
 
+    public abstract bool TryGetDecoderByName(
+        string className,
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor), NotNullWhen(true)] out Type? classType,
+        [NotNullWhen(true)] out SendNodeDecoder<object>? decoder);
+
+    protected abstract SendNodeDecoderFactory<T> GetFactory<T>();
+
     public SendNodeDecoder<object> GetDecoder(string className)
     {
-        if (!TryGetDecoder(className, out _, out var decoder))
+        if (!TryGetDecoderByName(className, out _, out var decoder))
             throw new NotImplementedException($"Unknown send node class: {className}");
 
         return decoder;
@@ -20,13 +29,13 @@ internal partial class DecoderSet
 
     public SendNodeDecoder<T> GetDecoder<T>(SerializerKey serializerKey)
     {
-        if (!_decoders.TryGetValue(serializerKey, out var decoder))
+        if (!_cache.TryGetValue(serializerKey, out var decoder))
         {
             // null sentinel so that we're aware of cycles when calling GetDecoder
-            _decoders[serializerKey] = null;
+            _cache[serializerKey] = null;
 
             decoder = CreateDecoder<T>(serializerKey);
-            _decoders[serializerKey] = decoder;
+            _cache[serializerKey] = decoder;
         }
 
         if (decoder == null)
@@ -47,7 +56,7 @@ internal partial class DecoderSet
             };
         }
 
-        var decoderFactory = SendNodeDecoders.GetFactory<T>();
+        var decoderFactory = GetFactory<T>();
         var fieldDecodersByIndex = serializer.Fields.Select(field => decoderFactory(field, this)).ToArray();
 
         return (T instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>

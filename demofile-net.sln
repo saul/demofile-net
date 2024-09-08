@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.TickByTick
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Chat", "examples\DemoFile.Example.Chat\DemoFile.Example.Chat.csproj", "{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Game.Cs", "src\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj", "{60C8B576-35CB-4BB5-AB82-1862FF7A1493}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +94,10 @@ Global
 		{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}

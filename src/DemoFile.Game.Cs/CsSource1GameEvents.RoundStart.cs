@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public partial class Source1GameEvents
+public partial class CsSource1GameEvents
 {
     private Action<Source1RoundStartEvent>? _onRoundStart;
     private EntityEventRegistration<CCSGameRulesProxy> _roundStartRegistration;

@@ -1,3 +1,8 @@
+### 0.21.1 (2024-09-08)
+
+- Laying foundation for supporting multiple games. \
+  Split CS-specific code out of DemoFile project into `DemoFile.Game.Cs2`  
+
 ### 0.20.1 (2024-09-07)
 
 - Add `DemoParser.ReadAllParallelAsync` to read a demo across multiple threads. \

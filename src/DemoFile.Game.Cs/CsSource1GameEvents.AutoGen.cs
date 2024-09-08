@@ -7,7 +7,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public partial class Source1GameEvents
+public partial class CsSource1GameEvents
 {
     public Action<Source1ServerSpawnEvent>? ServerSpawn;
     public Action<Source1ServerPreShutdownEvent>? ServerPreShutdown;
@@ -282,7 +282,7 @@ public partial class Source1GameEvents
 
     internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)
     {
-        _handlers = new Dictionary<int, Action<DemoParser, CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);
+        _handlers = new Dictionary<int, Action<CsDemoParser, CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);
         foreach (var descriptor in eventList.Descriptors)
         {
             if (descriptor.Name == "server_spawn")
@@ -593,7 +593,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -618,7 +618,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "team")
                             return (@this, x) => @this.Team = x.ValByte;
                         if (key.Name == "oldteam")
@@ -722,11 +722,11 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "attacker")
                             return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "health")
                             return (@this, x) => @this.Health = x.ValByte;
                         if (key.Name == "armor")
@@ -1603,15 +1603,15 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "attacker")
                             return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "assister")
                             return (@this, x) => @this.AssisterIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "assister_pawn")
-                            return (@this, x) => @this.AssisterPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.AssisterPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "assistedflash")
                             return (@this, x) => @this.Assistedflash = x.ValBool;
                         if (key.Name == "weapon")
@@ -1674,7 +1674,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1722,7 +1722,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "material")
                             return (@this, x) => @this.Material = x.ValByte;
                         return (@this, x) => { };
@@ -1749,7 +1749,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "material")
                             return (@this, x) => @this.Material = x.ValByte;
                         return (@this, x) => { };
@@ -1776,7 +1776,7 @@ public partial class Source1GameEvents
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -1828,7 +1828,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorCloseEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "checkpoint")
                             return (@this, x) => @this.Checkpoint = x.ValBool;
                         return (@this, x) => { };
@@ -2119,7 +2119,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "target")
                             return (@this, x) => @this.Target = x.ValLong;
                         return (@this, x) => { };
@@ -2715,7 +2715,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValByte;
                         if (key.Name == "mode")
@@ -3192,7 +3192,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1PlayerDecalEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3286,7 +3286,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "mode")
                             return (@this, x) => @this.Mode = x.ValByte;
                         if (key.Name == "entindex")
@@ -3508,7 +3508,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorOpenEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -3533,7 +3533,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DoorClosedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -3675,11 +3675,11 @@ public partial class Source1GameEvents
                         if (key.Name == "victim")
                             return (@this, x) => @this.VictimIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "victim_pawn")
-                            return (@this, x) => @this.VictimPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.VictimPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "attacker")
                             return (@this, x) => @this.AttackerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "attacker_pawn")
-                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.AttackerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "distance")
                             return (@this, x) => @this.Distance = x.ValFloat;
                         if (key.Name == "damage_dir_x")
@@ -3747,7 +3747,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3774,7 +3774,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3801,7 +3801,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3828,7 +3828,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3855,7 +3855,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
                         return (@this, x) => { };
@@ -3882,7 +3882,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -3907,7 +3907,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1BombPickupEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3957,7 +3957,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4024,7 +4024,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "haskit")
                             return (@this, x) => @this.Haskit = x.ValBool;
                         return (@this, x) => { };
@@ -4051,7 +4051,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4076,7 +4076,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4103,7 +4103,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4130,7 +4130,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4157,7 +4157,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         if (key.Name == "site")
@@ -4186,7 +4186,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "hostage")
                             return (@this, x) => @this.Hostage = x.ValShort;
                         return (@this, x) => { };
@@ -4305,7 +4305,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "slot")
                             return (@this, x) => @this.Slot = x.ValShort;
                         return (@this, x) => { };
@@ -4355,7 +4355,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         if (key.Name == "silenced")
@@ -4384,7 +4384,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         return (@this, x) => { };
@@ -4411,7 +4411,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "weapon")
                             return (@this, x) => @this.Weapon = x.ValString;
                         return (@this, x) => { };
@@ -4438,7 +4438,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4463,7 +4463,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4488,7 +4488,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4513,7 +4513,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4538,7 +4538,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -4563,7 +4563,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "inrestart")
                             return (@this, x) => @this.Inrestart = x.ValBool;
                         return (@this, x) => { };
@@ -5071,7 +5071,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -5096,7 +5096,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5129,7 +5129,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5162,7 +5162,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5195,7 +5195,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5228,7 +5228,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "x")
                             return (@this, x) => @this.X = x.ValFloat;
                         if (key.Name == "y")
@@ -5259,7 +5259,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5290,7 +5290,7 @@ public partial class Source1GameEvents
                 var keys = descriptor.Keys.Select(Action<Source1DecoyStartedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5441,7 +5441,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -5474,7 +5474,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "x")
                             return (@this, x) => @this.X = x.ValFloat;
                         if (key.Name == "y")
@@ -5557,7 +5557,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "damage")
                             return (@this, x) => @this.Damage = x.ValFloat;
                         return (@this, x) => { };
@@ -5584,7 +5584,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entindex")
                             return (@this, x) => @this.Entindex = x.ValLong;
                         return (@this, x) => { };
@@ -5912,7 +5912,7 @@ public partial class Source1GameEvents
                         if (key.Name == "victim")
                             return (@this, x) => @this.VictimIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "victim_pawn")
-                            return (@this, x) => @this.VictimPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.VictimPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "killer")
                             return (@this, x) => @this.Killer = x.ValLong;
                         if (key.Name == "killer_controller")
@@ -6109,7 +6109,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6407,7 +6407,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "botid")
                             return (@this, x) => @this.BotidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "p")
@@ -7101,7 +7101,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "entityid")
                             return (@this, x) => @this.Entityid = x.ValShort;
                         if (key.Name == "x")
@@ -7159,7 +7159,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "radius")
                             return (@this, x) => @this.Radius = x.ValLong;
                         if (key.Name == "duration")
@@ -7253,7 +7253,7 @@ public partial class Source1GameEvents
                         if (key.Name == "userid")
                             return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
                         if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong);
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "pos_x")
                             return (@this, x) => @this.PosX = x.ValShort;
                         if (key.Name == "pos_y")
@@ -7339,9 +7339,9 @@ public partial class Source1GameEvents
     }
 }
 
-public partial class Source1ServerSpawnEvent : Source1GameEventBase
+public partial class Source1ServerSpawnEvent : CsSource1GameEventBase
 {
-    internal Source1ServerSpawnEvent(DemoParser demo) : base(demo) {}
+    internal Source1ServerSpawnEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "server_spawn";
 
@@ -7366,36 +7366,36 @@ public partial class Source1ServerSpawnEvent : Source1GameEventBase
     public bool Password { get; set; }
 }
 
-public partial class Source1ServerPreShutdownEvent : Source1GameEventBase
+public partial class Source1ServerPreShutdownEvent : CsSource1GameEventBase
 {
-    internal Source1ServerPreShutdownEvent(DemoParser demo) : base(demo) {}
+    internal Source1ServerPreShutdownEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "server_pre_shutdown";
 
     public string Reason { get; set; } = "";
 }
 
-public partial class Source1ServerShutdownEvent : Source1GameEventBase
+public partial class Source1ServerShutdownEvent : CsSource1GameEventBase
 {
-    internal Source1ServerShutdownEvent(DemoParser demo) : base(demo) {}
+    internal Source1ServerShutdownEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "server_shutdown";
 
     public string Reason { get; set; } = "";
 }
 
-public partial class Source1ServerMessageEvent : Source1GameEventBase
+public partial class Source1ServerMessageEvent : CsSource1GameEventBase
 {
-    internal Source1ServerMessageEvent(DemoParser demo) : base(demo) {}
+    internal Source1ServerMessageEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "server_message";
 
     public string Text { get; set; } = "";
 }
 
-public partial class Source1ServerCvarEvent : Source1GameEventBase
+public partial class Source1ServerCvarEvent : CsSource1GameEventBase
 {
-    internal Source1ServerCvarEvent(DemoParser demo) : base(demo) {}
+    internal Source1ServerCvarEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "server_cvar";
 
@@ -7404,9 +7404,9 @@ public partial class Source1ServerCvarEvent : Source1GameEventBase
     public string Cvarvalue { get; set; } = "";
 }
 
-public partial class Source1PlayerActivateEvent : Source1GameEventBase
+public partial class Source1PlayerActivateEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerActivateEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerActivateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_activate";
 
@@ -7414,9 +7414,9 @@ public partial class Source1PlayerActivateEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
+public partial class Source1PlayerConnectFullEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerConnectFullEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerConnectFullEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_connect_full";
 
@@ -7424,9 +7424,9 @@ public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
+public partial class Source1PlayerFullUpdateEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerFullUpdateEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerFullUpdateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_full_update";
 
@@ -7436,9 +7436,9 @@ public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
     public int Count { get; set; }
 }
 
-public partial class Source1PlayerConnectEvent : Source1GameEventBase
+public partial class Source1PlayerConnectEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerConnectEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerConnectEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_connect";
 
@@ -7456,9 +7456,9 @@ public partial class Source1PlayerConnectEvent : Source1GameEventBase
     public bool Bot { get; set; }
 }
 
-public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
+public partial class Source1PlayerDisconnectEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerDisconnectEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerDisconnectEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_disconnect";
 
@@ -7476,9 +7476,9 @@ public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
     public int PlayerID { get; set; }
 }
 
-public partial class Source1PlayerInfoEvent : Source1GameEventBase
+public partial class Source1PlayerInfoEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerInfoEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerInfoEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_info";
 
@@ -7492,29 +7492,29 @@ public partial class Source1PlayerInfoEvent : Source1GameEventBase
     public bool Bot { get; set; }
 }
 
-public partial class Source1PlayerSpawnEvent : Source1GameEventBase
+public partial class Source1PlayerSpawnEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerSpawnEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerSpawnEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_spawn";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1PlayerTeamEvent : Source1GameEventBase
+public partial class Source1PlayerTeamEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerTeamEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerTeamEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_team";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Team { get; set; }
@@ -7528,23 +7528,23 @@ public partial class Source1PlayerTeamEvent : Source1GameEventBase
     public bool Isbot { get; set; }
 }
 
-public partial class Source1LocalPlayerTeamEvent : Source1GameEventBase
+public partial class Source1LocalPlayerTeamEvent : CsSource1GameEventBase
 {
-    internal Source1LocalPlayerTeamEvent(DemoParser demo) : base(demo) {}
+    internal Source1LocalPlayerTeamEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "local_player_team";
 }
 
-public partial class Source1LocalPlayerControllerTeamEvent : Source1GameEventBase
+public partial class Source1LocalPlayerControllerTeamEvent : CsSource1GameEventBase
 {
-    internal Source1LocalPlayerControllerTeamEvent(DemoParser demo) : base(demo) {}
+    internal Source1LocalPlayerControllerTeamEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "local_player_controller_team";
 }
 
-public partial class Source1PlayerChangenameEvent : Source1GameEventBase
+public partial class Source1PlayerChangenameEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerChangenameEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerChangenameEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_changename";
 
@@ -7556,22 +7556,22 @@ public partial class Source1PlayerChangenameEvent : Source1GameEventBase
     public string Newname { get; set; } = "";
 }
 
-public partial class Source1PlayerHurtEvent : Source1GameEventBase
+public partial class Source1PlayerHurtEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerHurtEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerHurtEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_hurt";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public CEntityIndex AttackerIndex { get; set; }
     public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
 
-    public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> AttackerPawnHandle { get; set; }
     public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
 
     public int Health { get; set; }
@@ -7587,9 +7587,9 @@ public partial class Source1PlayerHurtEvent : Source1GameEventBase
     public int Hitgroup { get; set; }
 }
 
-public partial class Source1PlayerChatEvent : Source1GameEventBase
+public partial class Source1PlayerChatEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerChatEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerChatEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_chat";
 
@@ -7600,16 +7600,16 @@ public partial class Source1PlayerChatEvent : Source1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1LocalPlayerPawnChangedEvent : Source1GameEventBase
+public partial class Source1LocalPlayerPawnChangedEvent : CsSource1GameEventBase
 {
-    internal Source1LocalPlayerPawnChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1LocalPlayerPawnChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "local_player_pawn_changed";
 }
 
-public partial class Source1TeamplayBroadcastAudioEvent : Source1GameEventBase
+public partial class Source1TeamplayBroadcastAudioEvent : CsSource1GameEventBase
 {
-    internal Source1TeamplayBroadcastAudioEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamplayBroadcastAudioEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "teamplay_broadcast_audio";
 
@@ -7618,43 +7618,43 @@ public partial class Source1TeamplayBroadcastAudioEvent : Source1GameEventBase
     public string Sound { get; set; } = "";
 }
 
-public partial class Source1FinaleStartEvent : Source1GameEventBase
+public partial class Source1FinaleStartEvent : CsSource1GameEventBase
 {
-    internal Source1FinaleStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1FinaleStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "finale_start";
 
     public int Rushes { get; set; }
 }
 
-public partial class Source1PlayerStatsUpdatedEvent : Source1GameEventBase
+public partial class Source1PlayerStatsUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerStatsUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerStatsUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_stats_updated";
 
     public bool Forceupload { get; set; }
 }
 
-public partial class Source1UserDataDownloadedEvent : Source1GameEventBase
+public partial class Source1UserDataDownloadedEvent : CsSource1GameEventBase
 {
-    internal Source1UserDataDownloadedEvent(DemoParser demo) : base(demo) {}
+    internal Source1UserDataDownloadedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "user_data_downloaded";
 }
 
-public partial class Source1RagdollDissolvedEvent : Source1GameEventBase
+public partial class Source1RagdollDissolvedEvent : CsSource1GameEventBase
 {
-    internal Source1RagdollDissolvedEvent(DemoParser demo) : base(demo) {}
+    internal Source1RagdollDissolvedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ragdoll_dissolved";
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1TeamInfoEvent : Source1GameEventBase
+public partial class Source1TeamInfoEvent : CsSource1GameEventBase
 {
-    internal Source1TeamInfoEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamInfoEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "team_info";
 
@@ -7663,9 +7663,9 @@ public partial class Source1TeamInfoEvent : Source1GameEventBase
     public string Teamname { get; set; } = "";
 }
 
-public partial class Source1TeamScoreEvent : Source1GameEventBase
+public partial class Source1TeamScoreEvent : CsSource1GameEventBase
 {
-    internal Source1TeamScoreEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamScoreEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "team_score";
 
@@ -7674,9 +7674,9 @@ public partial class Source1TeamScoreEvent : Source1GameEventBase
     public int Score { get; set; }
 }
 
-public partial class Source1HltvCameramanEvent : Source1GameEventBase
+public partial class Source1HltvCameramanEvent : CsSource1GameEventBase
 {
-    internal Source1HltvCameramanEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvCameramanEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_cameraman";
 
@@ -7684,9 +7684,9 @@ public partial class Source1HltvCameramanEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1HltvChaseEvent : Source1GameEventBase
+public partial class Source1HltvChaseEvent : CsSource1GameEventBase
 {
-    internal Source1HltvChaseEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvChaseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_chase";
 
@@ -7707,9 +7707,9 @@ public partial class Source1HltvChaseEvent : Source1GameEventBase
     public int Ineye { get; set; }
 }
 
-public partial class Source1HltvRankCameraEvent : Source1GameEventBase
+public partial class Source1HltvRankCameraEvent : CsSource1GameEventBase
 {
-    internal Source1HltvRankCameraEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvRankCameraEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_rank_camera";
 
@@ -7721,9 +7721,9 @@ public partial class Source1HltvRankCameraEvent : Source1GameEventBase
     public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
-public partial class Source1HltvRankEntityEvent : Source1GameEventBase
+public partial class Source1HltvRankEntityEvent : CsSource1GameEventBase
 {
-    internal Source1HltvRankEntityEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvRankEntityEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_rank_entity";
 
@@ -7736,9 +7736,9 @@ public partial class Source1HltvRankEntityEvent : Source1GameEventBase
     public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
-public partial class Source1HltvFixedEvent : Source1GameEventBase
+public partial class Source1HltvFixedEvent : CsSource1GameEventBase
 {
-    internal Source1HltvFixedEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvFixedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_fixed";
 
@@ -7760,18 +7760,18 @@ public partial class Source1HltvFixedEvent : Source1GameEventBase
     public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
-public partial class Source1HltvMessageEvent : Source1GameEventBase
+public partial class Source1HltvMessageEvent : CsSource1GameEventBase
 {
-    internal Source1HltvMessageEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvMessageEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_message";
 
     public string Text { get; set; } = "";
 }
 
-public partial class Source1HltvStatusEvent : Source1GameEventBase
+public partial class Source1HltvStatusEvent : CsSource1GameEventBase
 {
-    internal Source1HltvStatusEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvStatusEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_status";
 
@@ -7784,18 +7784,18 @@ public partial class Source1HltvStatusEvent : Source1GameEventBase
     public string Master { get; set; } = "";
 }
 
-public partial class Source1HltvTitleEvent : Source1GameEventBase
+public partial class Source1HltvTitleEvent : CsSource1GameEventBase
 {
-    internal Source1HltvTitleEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvTitleEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_title";
 
     public string Text { get; set; } = "";
 }
 
-public partial class Source1HltvChatEvent : Source1GameEventBase
+public partial class Source1HltvChatEvent : CsSource1GameEventBase
 {
-    internal Source1HltvChatEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvChatEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_chat";
 
@@ -7804,18 +7804,18 @@ public partial class Source1HltvChatEvent : Source1GameEventBase
     public ulong SteamId { get; set; }
 }
 
-public partial class Source1HltvVersioninfoEvent : Source1GameEventBase
+public partial class Source1HltvVersioninfoEvent : CsSource1GameEventBase
 {
-    internal Source1HltvVersioninfoEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvVersioninfoEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_versioninfo";
 
     public int Version { get; set; }
 }
 
-public partial class Source1HltvReplayEvent : Source1GameEventBase
+public partial class Source1HltvReplayEvent : CsSource1GameEventBase
 {
-    internal Source1HltvReplayEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvReplayEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_replay";
 
@@ -7824,48 +7824,48 @@ public partial class Source1HltvReplayEvent : Source1GameEventBase
     public int Reason { get; set; }
 }
 
-public partial class Source1HltvReplayStatusEvent : Source1GameEventBase
+public partial class Source1HltvReplayStatusEvent : CsSource1GameEventBase
 {
-    internal Source1HltvReplayStatusEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvReplayStatusEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_replay_status";
 
     public int Reason { get; set; }
 }
 
-public partial class Source1DemoStopEvent : Source1GameEventBase
+public partial class Source1DemoStopEvent : CsSource1GameEventBase
 {
-    internal Source1DemoStopEvent(DemoParser demo) : base(demo) {}
+    internal Source1DemoStopEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "demo_stop";
 }
 
-public partial class Source1MapShutdownEvent : Source1GameEventBase
+public partial class Source1MapShutdownEvent : CsSource1GameEventBase
 {
-    internal Source1MapShutdownEvent(DemoParser demo) : base(demo) {}
+    internal Source1MapShutdownEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "map_shutdown";
 }
 
-public partial class Source1MapTransitionEvent : Source1GameEventBase
+public partial class Source1MapTransitionEvent : CsSource1GameEventBase
 {
-    internal Source1MapTransitionEvent(DemoParser demo) : base(demo) {}
+    internal Source1MapTransitionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "map_transition";
 }
 
-public partial class Source1HostnameChangedEvent : Source1GameEventBase
+public partial class Source1HostnameChangedEvent : CsSource1GameEventBase
 {
-    internal Source1HostnameChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostnameChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostname_changed";
 
     public string Hostname { get; set; } = "";
 }
 
-public partial class Source1DifficultyChangedEvent : Source1GameEventBase
+public partial class Source1DifficultyChangedEvent : CsSource1GameEventBase
 {
-    internal Source1DifficultyChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DifficultyChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "difficulty_changed";
 
@@ -7876,9 +7876,9 @@ public partial class Source1DifficultyChangedEvent : Source1GameEventBase
     public string StrDifficulty { get; set; } = "";
 }
 
-public partial class Source1GameMessageEvent : Source1GameEventBase
+public partial class Source1GameMessageEvent : CsSource1GameEventBase
 {
-    internal Source1GameMessageEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameMessageEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_message";
 
@@ -7887,18 +7887,18 @@ public partial class Source1GameMessageEvent : Source1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1GameNewmapEvent : Source1GameEventBase
+public partial class Source1GameNewmapEvent : CsSource1GameEventBase
 {
-    internal Source1GameNewmapEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameNewmapEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_newmap";
 
     public string Mapname { get; set; } = "";
 }
 
-public partial class Source1RoundStartEvent : Source1GameEventBase
+public partial class Source1RoundStartEvent : CsSource1GameEventBase
 {
-    internal Source1RoundStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_start";
 
@@ -7909,9 +7909,9 @@ public partial class Source1RoundStartEvent : Source1GameEventBase
     public string Objective { get; set; } = "";
 }
 
-public partial class Source1RoundEndEvent : Source1GameEventBase
+public partial class Source1RoundEndEvent : CsSource1GameEventBase
 {
-    internal Source1RoundEndEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_end";
 
@@ -7928,58 +7928,58 @@ public partial class Source1RoundEndEvent : Source1GameEventBase
     public int Nomusic { get; set; }
 }
 
-public partial class Source1RoundStartPreEntityEvent : Source1GameEventBase
+public partial class Source1RoundStartPreEntityEvent : CsSource1GameEventBase
 {
-    internal Source1RoundStartPreEntityEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundStartPreEntityEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_start_pre_entity";
 }
 
-public partial class Source1RoundStartPostNavEvent : Source1GameEventBase
+public partial class Source1RoundStartPostNavEvent : CsSource1GameEventBase
 {
-    internal Source1RoundStartPostNavEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundStartPostNavEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_start_post_nav";
 }
 
-public partial class Source1RoundFreezeEndEvent : Source1GameEventBase
+public partial class Source1RoundFreezeEndEvent : CsSource1GameEventBase
 {
-    internal Source1RoundFreezeEndEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundFreezeEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_freeze_end";
 }
 
-public partial class Source1TeamplayRoundStartEvent : Source1GameEventBase
+public partial class Source1TeamplayRoundStartEvent : CsSource1GameEventBase
 {
-    internal Source1TeamplayRoundStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamplayRoundStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "teamplay_round_start";
 
     public bool FullReset { get; set; }
 }
 
-public partial class Source1PlayerDeathEvent : Source1GameEventBase
+public partial class Source1PlayerDeathEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerDeathEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerDeathEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_death";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public CEntityIndex AttackerIndex { get; set; }
     public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
 
-    public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> AttackerPawnHandle { get; set; }
     public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
 
     public CEntityIndex AssisterIndex { get; set; }
     public CCSPlayerController? Assister => _demo.GetEntityByIndex<CCSPlayerController>(AssisterIndex);
 
-    public CHandle<CEntityInstance> AssisterPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> AssisterPawnHandle { get; set; }
     public CCSPlayerPawn? AssisterPawn => _demo.GetEntityByHandle(AssisterPawnHandle) as CCSPlayerPawn;
 
     public bool Assistedflash { get; set; }
@@ -8021,71 +8021,71 @@ public partial class Source1PlayerDeathEvent : Source1GameEventBase
     public bool Attackerinair { get; set; }
 }
 
-public partial class Source1PlayerFootstepEvent : Source1GameEventBase
+public partial class Source1PlayerFootstepEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerFootstepEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerFootstepEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_footstep";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1PlayerHintmessageEvent : Source1GameEventBase
+public partial class Source1PlayerHintmessageEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerHintmessageEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerHintmessageEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_hintmessage";
 
     public string Hintmessage { get; set; } = "";
 }
 
-public partial class Source1BreakBreakableEvent : Source1GameEventBase
+public partial class Source1BreakBreakableEvent : CsSource1GameEventBase
 {
-    internal Source1BreakBreakableEvent(DemoParser demo) : base(demo) {}
+    internal Source1BreakBreakableEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "break_breakable";
 
     public int Entindex { get; set; }
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Material { get; set; }
 }
 
-public partial class Source1BrokenBreakableEvent : Source1GameEventBase
+public partial class Source1BrokenBreakableEvent : CsSource1GameEventBase
 {
-    internal Source1BrokenBreakableEvent(DemoParser demo) : base(demo) {}
+    internal Source1BrokenBreakableEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "broken_breakable";
 
     public int Entindex { get; set; }
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Material { get; set; }
 }
 
-public partial class Source1BreakPropEvent : Source1GameEventBase
+public partial class Source1BreakPropEvent : CsSource1GameEventBase
 {
-    internal Source1BreakPropEvent(DemoParser demo) : base(demo) {}
+    internal Source1BreakPropEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "break_prop";
 
     public int Entindex { get; set; }
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1EntityKilledEvent : Source1GameEventBase
+public partial class Source1EntityKilledEvent : CsSource1GameEventBase
 {
-    internal Source1EntityKilledEvent(DemoParser demo) : base(demo) {}
+    internal Source1EntityKilledEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "entity_killed";
 
@@ -8098,21 +8098,21 @@ public partial class Source1EntityKilledEvent : Source1GameEventBase
     public int Damagebits { get; set; }
 }
 
-public partial class Source1DoorCloseEvent : Source1GameEventBase
+public partial class Source1DoorCloseEvent : CsSource1GameEventBase
 {
-    internal Source1DoorCloseEvent(DemoParser demo) : base(demo) {}
+    internal Source1DoorCloseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "door_close";
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public bool Checkpoint { get; set; }
 }
 
-public partial class Source1VoteStartedEvent : Source1GameEventBase
+public partial class Source1VoteStartedEvent : CsSource1GameEventBase
 {
-    internal Source1VoteStartedEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteStartedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_started";
 
@@ -8125,18 +8125,18 @@ public partial class Source1VoteStartedEvent : Source1GameEventBase
     public int Initiator { get; set; }
 }
 
-public partial class Source1VoteFailedEvent : Source1GameEventBase
+public partial class Source1VoteFailedEvent : CsSource1GameEventBase
 {
-    internal Source1VoteFailedEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteFailedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_failed";
 
     public int Team { get; set; }
 }
 
-public partial class Source1VotePassedEvent : Source1GameEventBase
+public partial class Source1VotePassedEvent : CsSource1GameEventBase
 {
-    internal Source1VotePassedEvent(DemoParser demo) : base(demo) {}
+    internal Source1VotePassedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_passed";
 
@@ -8147,9 +8147,9 @@ public partial class Source1VotePassedEvent : Source1GameEventBase
     public int Team { get; set; }
 }
 
-public partial class Source1VoteChangedEvent : Source1GameEventBase
+public partial class Source1VoteChangedEvent : CsSource1GameEventBase
 {
-    internal Source1VoteChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_changed";
 
@@ -8166,9 +8166,9 @@ public partial class Source1VoteChangedEvent : Source1GameEventBase
     public int PotentialVotes { get; set; }
 }
 
-public partial class Source1VoteCastYesEvent : Source1GameEventBase
+public partial class Source1VoteCastYesEvent : CsSource1GameEventBase
 {
-    internal Source1VoteCastYesEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteCastYesEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_cast_yes";
 
@@ -8177,9 +8177,9 @@ public partial class Source1VoteCastYesEvent : Source1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1VoteCastNoEvent : Source1GameEventBase
+public partial class Source1VoteCastNoEvent : CsSource1GameEventBase
 {
-    internal Source1VoteCastNoEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteCastNoEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_cast_no";
 
@@ -8188,9 +8188,9 @@ public partial class Source1VoteCastNoEvent : Source1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1AchievementEventEvent : Source1GameEventBase
+public partial class Source1AchievementEventEvent : CsSource1GameEventBase
 {
-    internal Source1AchievementEventEvent(DemoParser demo) : base(demo) {}
+    internal Source1AchievementEventEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_event";
 
@@ -8201,9 +8201,9 @@ public partial class Source1AchievementEventEvent : Source1GameEventBase
     public int MaxVal { get; set; }
 }
 
-public partial class Source1AchievementEarnedEvent : Source1GameEventBase
+public partial class Source1AchievementEarnedEvent : CsSource1GameEventBase
 {
-    internal Source1AchievementEarnedEvent(DemoParser demo) : base(demo) {}
+    internal Source1AchievementEarnedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_earned";
 
@@ -8213,16 +8213,16 @@ public partial class Source1AchievementEarnedEvent : Source1GameEventBase
     public int Achievement { get; set; }
 }
 
-public partial class Source1AchievementWriteFailedEvent : Source1GameEventBase
+public partial class Source1AchievementWriteFailedEvent : CsSource1GameEventBase
 {
-    internal Source1AchievementWriteFailedEvent(DemoParser demo) : base(demo) {}
+    internal Source1AchievementWriteFailedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_write_failed";
 }
 
-public partial class Source1BonusUpdatedEvent : Source1GameEventBase
+public partial class Source1BonusUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1BonusUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1BonusUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bonus_updated";
 
@@ -8235,24 +8235,24 @@ public partial class Source1BonusUpdatedEvent : Source1GameEventBase
     public int Numgold { get; set; }
 }
 
-public partial class Source1SpecTargetUpdatedEvent : Source1GameEventBase
+public partial class Source1SpecTargetUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1SpecTargetUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1SpecTargetUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "spec_target_updated";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Target { get; set; }
 }
 
-public partial class Source1SpecModeUpdatedEvent : Source1GameEventBase
+public partial class Source1SpecModeUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1SpecModeUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1SpecModeUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "spec_mode_updated";
 
@@ -8260,9 +8260,9 @@ public partial class Source1SpecModeUpdatedEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1EntityVisibleEvent : Source1GameEventBase
+public partial class Source1EntityVisibleEvent : CsSource1GameEventBase
 {
-    internal Source1EntityVisibleEvent(DemoParser demo) : base(demo) {}
+    internal Source1EntityVisibleEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "entity_visible";
 
@@ -8276,97 +8276,97 @@ public partial class Source1EntityVisibleEvent : Source1GameEventBase
     public string Entityname { get; set; } = "";
 }
 
-public partial class Source1GameinstructorDrawEvent : Source1GameEventBase
+public partial class Source1GameinstructorDrawEvent : CsSource1GameEventBase
 {
-    internal Source1GameinstructorDrawEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameinstructorDrawEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gameinstructor_draw";
 }
 
-public partial class Source1GameinstructorNodrawEvent : Source1GameEventBase
+public partial class Source1GameinstructorNodrawEvent : CsSource1GameEventBase
 {
-    internal Source1GameinstructorNodrawEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameinstructorNodrawEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gameinstructor_nodraw";
 }
 
-public partial class Source1FlareIgniteNpcEvent : Source1GameEventBase
+public partial class Source1FlareIgniteNpcEvent : CsSource1GameEventBase
 {
-    internal Source1FlareIgniteNpcEvent(DemoParser demo) : base(demo) {}
+    internal Source1FlareIgniteNpcEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "flare_ignite_npc";
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1HelicopterGrenadePuntMissEvent : Source1GameEventBase
+public partial class Source1HelicopterGrenadePuntMissEvent : CsSource1GameEventBase
 {
-    internal Source1HelicopterGrenadePuntMissEvent(DemoParser demo) : base(demo) {}
+    internal Source1HelicopterGrenadePuntMissEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "helicopter_grenade_punt_miss";
 }
 
-public partial class Source1PhysgunPickupEvent : Source1GameEventBase
+public partial class Source1PhysgunPickupEvent : CsSource1GameEventBase
 {
-    internal Source1PhysgunPickupEvent(DemoParser demo) : base(demo) {}
+    internal Source1PhysgunPickupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "physgun_pickup";
 
     public int Target { get; set; }
 }
 
-public partial class Source1InventoryUpdatedEvent : Source1GameEventBase
+public partial class Source1InventoryUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1InventoryUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1InventoryUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "inventory_updated";
 }
 
-public partial class Source1CartUpdatedEvent : Source1GameEventBase
+public partial class Source1CartUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1CartUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1CartUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cart_updated";
 }
 
-public partial class Source1StorePricesheetUpdatedEvent : Source1GameEventBase
+public partial class Source1StorePricesheetUpdatedEvent : CsSource1GameEventBase
 {
-    internal Source1StorePricesheetUpdatedEvent(DemoParser demo) : base(demo) {}
+    internal Source1StorePricesheetUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "store_pricesheet_updated";
 }
 
-public partial class Source1ItemSchemaInitializedEvent : Source1GameEventBase
+public partial class Source1ItemSchemaInitializedEvent : CsSource1GameEventBase
 {
-    internal Source1ItemSchemaInitializedEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemSchemaInitializedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_schema_initialized";
 }
 
-public partial class Source1DropRateModifiedEvent : Source1GameEventBase
+public partial class Source1DropRateModifiedEvent : CsSource1GameEventBase
 {
-    internal Source1DropRateModifiedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DropRateModifiedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "drop_rate_modified";
 }
 
-public partial class Source1EventTicketModifiedEvent : Source1GameEventBase
+public partial class Source1EventTicketModifiedEvent : CsSource1GameEventBase
 {
-    internal Source1EventTicketModifiedEvent(DemoParser demo) : base(demo) {}
+    internal Source1EventTicketModifiedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "event_ticket_modified";
 }
 
-public partial class Source1GcConnectedEvent : Source1GameEventBase
+public partial class Source1GcConnectedEvent : CsSource1GameEventBase
 {
-    internal Source1GcConnectedEvent(DemoParser demo) : base(demo) {}
+    internal Source1GcConnectedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gc_connected";
 }
 
-public partial class Source1InstructorStartLessonEvent : Source1GameEventBase
+public partial class Source1InstructorStartLessonEvent : CsSource1GameEventBase
 {
-    internal Source1InstructorStartLessonEvent(DemoParser demo) : base(demo) {}
+    internal Source1InstructorStartLessonEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "instructor_start_lesson";
 
@@ -8384,9 +8384,9 @@ public partial class Source1InstructorStartLessonEvent : Source1GameEventBase
     public int VrControllerType { get; set; }
 }
 
-public partial class Source1InstructorCloseLessonEvent : Source1GameEventBase
+public partial class Source1InstructorCloseLessonEvent : CsSource1GameEventBase
 {
-    internal Source1InstructorCloseLessonEvent(DemoParser demo) : base(demo) {}
+    internal Source1InstructorCloseLessonEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "instructor_close_lesson";
 
@@ -8396,9 +8396,9 @@ public partial class Source1InstructorCloseLessonEvent : Source1GameEventBase
     public string HintName { get; set; } = "";
 }
 
-public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBase
+public partial class Source1InstructorServerHintCreateEvent : CsSource1GameEventBase
 {
-    internal Source1InstructorServerHintCreateEvent(DemoParser demo) : base(demo) {}
+    internal Source1InstructorServerHintCreateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "instructor_server_hint_create";
 
@@ -8445,18 +8445,18 @@ public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBa
     public bool HintLocalPlayerOnly { get; set; }
 }
 
-public partial class Source1InstructorServerHintStopEvent : Source1GameEventBase
+public partial class Source1InstructorServerHintStopEvent : CsSource1GameEventBase
 {
-    internal Source1InstructorServerHintStopEvent(DemoParser demo) : base(demo) {}
+    internal Source1InstructorServerHintStopEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "instructor_server_hint_stop";
 
     public string HintName { get; set; } = "";
 }
 
-public partial class Source1SetInstructorGroupEnabledEvent : Source1GameEventBase
+public partial class Source1SetInstructorGroupEnabledEvent : CsSource1GameEventBase
 {
-    internal Source1SetInstructorGroupEnabledEvent(DemoParser demo) : base(demo) {}
+    internal Source1SetInstructorGroupEnabledEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "set_instructor_group_enabled";
 
@@ -8465,32 +8465,32 @@ public partial class Source1SetInstructorGroupEnabledEvent : Source1GameEventBas
     public int Enabled { get; set; }
 }
 
-public partial class Source1ClientsideLessonClosedEvent : Source1GameEventBase
+public partial class Source1ClientsideLessonClosedEvent : CsSource1GameEventBase
 {
-    internal Source1ClientsideLessonClosedEvent(DemoParser demo) : base(demo) {}
+    internal Source1ClientsideLessonClosedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "clientside_lesson_closed";
 
     public string LessonName { get; set; } = "";
 }
 
-public partial class Source1DynamicShadowLightChangedEvent : Source1GameEventBase
+public partial class Source1DynamicShadowLightChangedEvent : CsSource1GameEventBase
 {
-    internal Source1DynamicShadowLightChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DynamicShadowLightChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "dynamic_shadow_light_changed";
 }
 
-public partial class Source1GameuiHiddenEvent : Source1GameEventBase
+public partial class Source1GameuiHiddenEvent : CsSource1GameEventBase
 {
-    internal Source1GameuiHiddenEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameuiHiddenEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gameui_hidden";
 }
 
-public partial class Source1PlayerScoreEvent : Source1GameEventBase
+public partial class Source1PlayerScoreEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerScoreEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerScoreEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_score";
 
@@ -8504,16 +8504,16 @@ public partial class Source1PlayerScoreEvent : Source1GameEventBase
     public int Score { get; set; }
 }
 
-public partial class Source1PlayerShootEvent : Source1GameEventBase
+public partial class Source1PlayerShootEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerShootEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerShootEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_shoot";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Weapon { get; set; }
@@ -8521,16 +8521,16 @@ public partial class Source1PlayerShootEvent : Source1GameEventBase
     public int Mode { get; set; }
 }
 
-public partial class Source1GameInitEvent : Source1GameEventBase
+public partial class Source1GameInitEvent : CsSource1GameEventBase
 {
-    internal Source1GameInitEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameInitEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_init";
 }
 
-public partial class Source1GameStartEvent : Source1GameEventBase
+public partial class Source1GameStartEvent : CsSource1GameEventBase
 {
-    internal Source1GameStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_start";
 
@@ -8543,99 +8543,99 @@ public partial class Source1GameStartEvent : Source1GameEventBase
     public string Objective { get; set; } = "";
 }
 
-public partial class Source1GameEndEvent : Source1GameEventBase
+public partial class Source1GameEndEvent : CsSource1GameEventBase
 {
-    internal Source1GameEndEvent(DemoParser demo) : base(demo) {}
+    internal Source1GameEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_end";
 
     public int Winner { get; set; }
 }
 
-public partial class Source1RoundAnnounceMatchPointEvent : Source1GameEventBase
+public partial class Source1RoundAnnounceMatchPointEvent : CsSource1GameEventBase
 {
-    internal Source1RoundAnnounceMatchPointEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundAnnounceMatchPointEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_match_point";
 }
 
-public partial class Source1RoundAnnounceFinalEvent : Source1GameEventBase
+public partial class Source1RoundAnnounceFinalEvent : CsSource1GameEventBase
 {
-    internal Source1RoundAnnounceFinalEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundAnnounceFinalEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_final";
 }
 
-public partial class Source1RoundAnnounceLastRoundHalfEvent : Source1GameEventBase
+public partial class Source1RoundAnnounceLastRoundHalfEvent : CsSource1GameEventBase
 {
-    internal Source1RoundAnnounceLastRoundHalfEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundAnnounceLastRoundHalfEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_last_round_half";
 }
 
-public partial class Source1RoundAnnounceMatchStartEvent : Source1GameEventBase
+public partial class Source1RoundAnnounceMatchStartEvent : CsSource1GameEventBase
 {
-    internal Source1RoundAnnounceMatchStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundAnnounceMatchStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_match_start";
 }
 
-public partial class Source1RoundAnnounceWarmupEvent : Source1GameEventBase
+public partial class Source1RoundAnnounceWarmupEvent : CsSource1GameEventBase
 {
-    internal Source1RoundAnnounceWarmupEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundAnnounceWarmupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_warmup";
 }
 
-public partial class Source1WarmupEndEvent : Source1GameEventBase
+public partial class Source1WarmupEndEvent : CsSource1GameEventBase
 {
-    internal Source1WarmupEndEvent(DemoParser demo) : base(demo) {}
+    internal Source1WarmupEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "warmup_end";
 }
 
-public partial class Source1RoundEndUploadStatsEvent : Source1GameEventBase
+public partial class Source1RoundEndUploadStatsEvent : CsSource1GameEventBase
 {
-    internal Source1RoundEndUploadStatsEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundEndUploadStatsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_end_upload_stats";
 }
 
-public partial class Source1RoundOfficiallyEndedEvent : Source1GameEventBase
+public partial class Source1RoundOfficiallyEndedEvent : CsSource1GameEventBase
 {
-    internal Source1RoundOfficiallyEndedEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundOfficiallyEndedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_officially_ended";
 }
 
-public partial class Source1RoundTimeWarningEvent : Source1GameEventBase
+public partial class Source1RoundTimeWarningEvent : CsSource1GameEventBase
 {
-    internal Source1RoundTimeWarningEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundTimeWarningEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_time_warning";
 }
 
-public partial class Source1UgcMapInfoReceivedEvent : Source1GameEventBase
+public partial class Source1UgcMapInfoReceivedEvent : CsSource1GameEventBase
 {
-    internal Source1UgcMapInfoReceivedEvent(DemoParser demo) : base(demo) {}
+    internal Source1UgcMapInfoReceivedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ugc_map_info_received";
 
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1UgcMapUnsubscribedEvent : Source1GameEventBase
+public partial class Source1UgcMapUnsubscribedEvent : CsSource1GameEventBase
 {
-    internal Source1UgcMapUnsubscribedEvent(DemoParser demo) : base(demo) {}
+    internal Source1UgcMapUnsubscribedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ugc_map_unsubscribed";
 
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1UgcMapDownloadErrorEvent : Source1GameEventBase
+public partial class Source1UgcMapDownloadErrorEvent : CsSource1GameEventBase
 {
-    internal Source1UgcMapDownloadErrorEvent(DemoParser demo) : base(demo) {}
+    internal Source1UgcMapDownloadErrorEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ugc_map_download_error";
 
@@ -8644,18 +8644,18 @@ public partial class Source1UgcMapDownloadErrorEvent : Source1GameEventBase
     public int ErrorCode { get; set; }
 }
 
-public partial class Source1UgcFileDownloadFinishedEvent : Source1GameEventBase
+public partial class Source1UgcFileDownloadFinishedEvent : CsSource1GameEventBase
 {
-    internal Source1UgcFileDownloadFinishedEvent(DemoParser demo) : base(demo) {}
+    internal Source1UgcFileDownloadFinishedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ugc_file_download_finished";
 
     public ulong Hcontent { get; set; }
 }
 
-public partial class Source1UgcFileDownloadStartEvent : Source1GameEventBase
+public partial class Source1UgcFileDownloadStartEvent : CsSource1GameEventBase
 {
-    internal Source1UgcFileDownloadStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1UgcFileDownloadStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ugc_file_download_start";
 
@@ -8664,16 +8664,16 @@ public partial class Source1UgcFileDownloadStartEvent : Source1GameEventBase
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1BeginNewMatchEvent : Source1GameEventBase
+public partial class Source1BeginNewMatchEvent : CsSource1GameEventBase
 {
-    internal Source1BeginNewMatchEvent(DemoParser demo) : base(demo) {}
+    internal Source1BeginNewMatchEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "begin_new_match";
 }
 
-public partial class Source1DmBonusWeaponStartEvent : Source1GameEventBase
+public partial class Source1DmBonusWeaponStartEvent : CsSource1GameEventBase
 {
-    internal Source1DmBonusWeaponStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1DmBonusWeaponStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "dm_bonus_weapon_start";
 
@@ -8682,62 +8682,62 @@ public partial class Source1DmBonusWeaponStartEvent : Source1GameEventBase
     public int Pos { get; set; }
 }
 
-public partial class Source1SurvivalAnnouncePhaseEvent : Source1GameEventBase
+public partial class Source1SurvivalAnnouncePhaseEvent : CsSource1GameEventBase
 {
-    internal Source1SurvivalAnnouncePhaseEvent(DemoParser demo) : base(demo) {}
+    internal Source1SurvivalAnnouncePhaseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "survival_announce_phase";
 
     public int Phase { get; set; }
 }
 
-public partial class Source1PlayerDecalEvent : Source1GameEventBase
+public partial class Source1PlayerDecalEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerDecalEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerDecalEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_decal";
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1ReadGameTitledataEvent : Source1GameEventBase
+public partial class Source1ReadGameTitledataEvent : CsSource1GameEventBase
 {
-    internal Source1ReadGameTitledataEvent(DemoParser demo) : base(demo) {}
+    internal Source1ReadGameTitledataEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "read_game_titledata";
 
     public int ControllerId { get; set; }
 }
 
-public partial class Source1WriteGameTitledataEvent : Source1GameEventBase
+public partial class Source1WriteGameTitledataEvent : CsSource1GameEventBase
 {
-    internal Source1WriteGameTitledataEvent(DemoParser demo) : base(demo) {}
+    internal Source1WriteGameTitledataEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "write_game_titledata";
 
     public int ControllerId { get; set; }
 }
 
-public partial class Source1ResetGameTitledataEvent : Source1GameEventBase
+public partial class Source1ResetGameTitledataEvent : CsSource1GameEventBase
 {
-    internal Source1ResetGameTitledataEvent(DemoParser demo) : base(demo) {}
+    internal Source1ResetGameTitledataEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "reset_game_titledata";
 
     public int ControllerId { get; set; }
 }
 
-public partial class Source1WeaponhudSelectionEvent : Source1GameEventBase
+public partial class Source1WeaponhudSelectionEvent : CsSource1GameEventBase
 {
-    internal Source1WeaponhudSelectionEvent(DemoParser demo) : base(demo) {}
+    internal Source1WeaponhudSelectionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "weaponhud_selection";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Mode { get; set; }
@@ -8745,16 +8745,16 @@ public partial class Source1WeaponhudSelectionEvent : Source1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1VoteEndedEvent : Source1GameEventBase
+public partial class Source1VoteEndedEvent : CsSource1GameEventBase
 {
-    internal Source1VoteEndedEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteEndedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_ended";
 }
 
-public partial class Source1VoteCastEvent : Source1GameEventBase
+public partial class Source1VoteCastEvent : CsSource1GameEventBase
 {
-    internal Source1VoteCastEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteCastEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_cast";
 
@@ -8766,9 +8766,9 @@ public partial class Source1VoteCastEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1VoteOptionsEvent : Source1GameEventBase
+public partial class Source1VoteOptionsEvent : CsSource1GameEventBase
 {
-    internal Source1VoteOptionsEvent(DemoParser demo) : base(demo) {}
+    internal Source1VoteOptionsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_options";
 
@@ -8785,9 +8785,9 @@ public partial class Source1VoteOptionsEvent : Source1GameEventBase
     public string Option5 { get; set; } = "";
 }
 
-public partial class Source1EndmatchMapvoteSelectingMapEvent : Source1GameEventBase
+public partial class Source1EndmatchMapvoteSelectingMapEvent : CsSource1GameEventBase
 {
-    internal Source1EndmatchMapvoteSelectingMapEvent(DemoParser demo) : base(demo) {}
+    internal Source1EndmatchMapvoteSelectingMapEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "endmatch_mapvote_selecting_map";
 
@@ -8814,23 +8814,23 @@ public partial class Source1EndmatchMapvoteSelectingMapEvent : Source1GameEventB
     public int Slot10 { get; set; }
 }
 
-public partial class Source1EndmatchCmmStartRevealItemsEvent : Source1GameEventBase
+public partial class Source1EndmatchCmmStartRevealItemsEvent : CsSource1GameEventBase
 {
-    internal Source1EndmatchCmmStartRevealItemsEvent(DemoParser demo) : base(demo) {}
+    internal Source1EndmatchCmmStartRevealItemsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "endmatch_cmm_start_reveal_items";
 }
 
-public partial class Source1ClientLoadoutChangedEvent : Source1GameEventBase
+public partial class Source1ClientLoadoutChangedEvent : CsSource1GameEventBase
 {
-    internal Source1ClientLoadoutChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1ClientLoadoutChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "client_loadout_changed";
 }
 
-public partial class Source1AddPlayerSonarIconEvent : Source1GameEventBase
+public partial class Source1AddPlayerSonarIconEvent : CsSource1GameEventBase
 {
-    internal Source1AddPlayerSonarIconEvent(DemoParser demo) : base(demo) {}
+    internal Source1AddPlayerSonarIconEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "add_player_sonar_icon";
 
@@ -8844,33 +8844,33 @@ public partial class Source1AddPlayerSonarIconEvent : Source1GameEventBase
     public float PosZ { get; set; }
 }
 
-public partial class Source1DoorOpenEvent : Source1GameEventBase
+public partial class Source1DoorOpenEvent : CsSource1GameEventBase
 {
-    internal Source1DoorOpenEvent(DemoParser demo) : base(demo) {}
+    internal Source1DoorOpenEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "door_open";
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1DoorClosedEvent : Source1GameEventBase
+public partial class Source1DoorClosedEvent : CsSource1GameEventBase
 {
-    internal Source1DoorClosedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DoorClosedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "door_closed";
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1DoorBreakEvent : Source1GameEventBase
+public partial class Source1DoorBreakEvent : CsSource1GameEventBase
 {
-    internal Source1DoorBreakEvent(DemoParser demo) : base(demo) {}
+    internal Source1DoorBreakEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "door_break";
 
@@ -8879,9 +8879,9 @@ public partial class Source1DoorBreakEvent : Source1GameEventBase
     public int Dmgstate { get; set; }
 }
 
-public partial class Source1AddBulletHitMarkerEvent : Source1GameEventBase
+public partial class Source1AddBulletHitMarkerEvent : CsSource1GameEventBase
 {
-    internal Source1AddBulletHitMarkerEvent(DemoParser demo) : base(demo) {}
+    internal Source1AddBulletHitMarkerEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "add_bullet_hit_marker";
 
@@ -8911,9 +8911,9 @@ public partial class Source1AddBulletHitMarkerEvent : Source1GameEventBase
     public bool Hit { get; set; }
 }
 
-public partial class Source1OtherDeathEvent : Source1GameEventBase
+public partial class Source1OtherDeathEvent : CsSource1GameEventBase
 {
-    internal Source1OtherDeathEvent(DemoParser demo) : base(demo) {}
+    internal Source1OtherDeathEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "other_death";
 
@@ -8942,22 +8942,22 @@ public partial class Source1OtherDeathEvent : Source1GameEventBase
     public bool Attackerblind { get; set; }
 }
 
-public partial class Source1BulletDamageEvent : Source1GameEventBase
+public partial class Source1BulletDamageEvent : CsSource1GameEventBase
 {
-    internal Source1BulletDamageEvent(DemoParser demo) : base(demo) {}
+    internal Source1BulletDamageEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bullet_damage";
 
     public CEntityIndex VictimIndex { get; set; }
     public CCSPlayerController? Victim => _demo.GetEntityByIndex<CCSPlayerController>(VictimIndex);
 
-    public CHandle<CEntityInstance> VictimPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> VictimPawnHandle { get; set; }
     public CCSPlayerPawn? VictimPawn => _demo.GetEntityByHandle(VictimPawnHandle) as CCSPlayerPawn;
 
     public CEntityIndex AttackerIndex { get; set; }
     public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
 
-    public CHandle<CEntityInstance> AttackerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> AttackerPawnHandle { get; set; }
     public CCSPlayerPawn? AttackerPawn => _demo.GetEntityByHandle(AttackerPawnHandle) as CCSPlayerPawn;
 
     public float Distance { get; set; }
@@ -8975,9 +8975,9 @@ public partial class Source1BulletDamageEvent : Source1GameEventBase
     public bool InAir { get; set; }
 }
 
-public partial class Source1ItemPurchaseEvent : Source1GameEventBase
+public partial class Source1ItemPurchaseEvent : CsSource1GameEventBase
 {
-    internal Source1ItemPurchaseEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemPurchaseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_purchase";
 
@@ -8991,118 +8991,118 @@ public partial class Source1ItemPurchaseEvent : Source1GameEventBase
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1BombBeginplantEvent : Source1GameEventBase
+public partial class Source1BombBeginplantEvent : CsSource1GameEventBase
 {
-    internal Source1BombBeginplantEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombBeginplantEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_beginplant";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
 }
 
-public partial class Source1BombAbortplantEvent : Source1GameEventBase
+public partial class Source1BombAbortplantEvent : CsSource1GameEventBase
 {
-    internal Source1BombAbortplantEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombAbortplantEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_abortplant";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
 }
 
-public partial class Source1BombPlantedEvent : Source1GameEventBase
+public partial class Source1BombPlantedEvent : CsSource1GameEventBase
 {
-    internal Source1BombPlantedEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombPlantedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_planted";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
 }
 
-public partial class Source1BombDefusedEvent : Source1GameEventBase
+public partial class Source1BombDefusedEvent : CsSource1GameEventBase
 {
-    internal Source1BombDefusedEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombDefusedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_defused";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
 }
 
-public partial class Source1BombExplodedEvent : Source1GameEventBase
+public partial class Source1BombExplodedEvent : CsSource1GameEventBase
 {
-    internal Source1BombExplodedEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombExplodedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_exploded";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
 }
 
-public partial class Source1BombDroppedEvent : Source1GameEventBase
+public partial class Source1BombDroppedEvent : CsSource1GameEventBase
 {
-    internal Source1BombDroppedEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombDroppedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_dropped";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1BombPickupEvent : Source1GameEventBase
+public partial class Source1BombPickupEvent : CsSource1GameEventBase
 {
-    internal Source1BombPickupEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombPickupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_pickup";
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1DefuserDroppedEvent : Source1GameEventBase
+public partial class Source1DefuserDroppedEvent : CsSource1GameEventBase
 {
-    internal Source1DefuserDroppedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DefuserDroppedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "defuser_dropped";
 
     public int Entityid { get; set; }
 }
 
-public partial class Source1DefuserPickupEvent : Source1GameEventBase
+public partial class Source1DefuserPickupEvent : CsSource1GameEventBase
 {
-    internal Source1DefuserPickupEvent(DemoParser demo) : base(demo) {}
+    internal Source1DefuserPickupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "defuser_pickup";
 
@@ -9111,107 +9111,107 @@ public partial class Source1DefuserPickupEvent : Source1GameEventBase
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1AnnouncePhaseEndEvent : Source1GameEventBase
+public partial class Source1AnnouncePhaseEndEvent : CsSource1GameEventBase
 {
-    internal Source1AnnouncePhaseEndEvent(DemoParser demo) : base(demo) {}
+    internal Source1AnnouncePhaseEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "announce_phase_end";
 }
 
-public partial class Source1CsIntermissionEvent : Source1GameEventBase
+public partial class Source1CsIntermissionEvent : CsSource1GameEventBase
 {
-    internal Source1CsIntermissionEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsIntermissionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_intermission";
 }
 
-public partial class Source1BombBegindefuseEvent : Source1GameEventBase
+public partial class Source1BombBegindefuseEvent : CsSource1GameEventBase
 {
-    internal Source1BombBegindefuseEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombBegindefuseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_begindefuse";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public bool Haskit { get; set; }
 }
 
-public partial class Source1BombAbortdefuseEvent : Source1GameEventBase
+public partial class Source1BombAbortdefuseEvent : CsSource1GameEventBase
 {
-    internal Source1BombAbortdefuseEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombAbortdefuseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_abortdefuse";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1HostageFollowsEvent : Source1GameEventBase
+public partial class Source1HostageFollowsEvent : CsSource1GameEventBase
 {
-    internal Source1HostageFollowsEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageFollowsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_follows";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageHurtEvent : Source1GameEventBase
+public partial class Source1HostageHurtEvent : CsSource1GameEventBase
 {
-    internal Source1HostageHurtEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageHurtEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_hurt";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageKilledEvent : Source1GameEventBase
+public partial class Source1HostageKilledEvent : CsSource1GameEventBase
 {
-    internal Source1HostageKilledEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageKilledEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_killed";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageRescuedEvent : Source1GameEventBase
+public partial class Source1HostageRescuedEvent : CsSource1GameEventBase
 {
-    internal Source1HostageRescuedEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageRescuedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_rescued";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Hostage { get; set; }
@@ -9219,40 +9219,40 @@ public partial class Source1HostageRescuedEvent : Source1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1HostageStopsFollowingEvent : Source1GameEventBase
+public partial class Source1HostageStopsFollowingEvent : CsSource1GameEventBase
 {
-    internal Source1HostageStopsFollowingEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageStopsFollowingEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_stops_following";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageRescuedAllEvent : Source1GameEventBase
+public partial class Source1HostageRescuedAllEvent : CsSource1GameEventBase
 {
-    internal Source1HostageRescuedAllEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageRescuedAllEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_rescued_all";
 }
 
-public partial class Source1HostageCallForHelpEvent : Source1GameEventBase
+public partial class Source1HostageCallForHelpEvent : CsSource1GameEventBase
 {
-    internal Source1HostageCallForHelpEvent(DemoParser demo) : base(demo) {}
+    internal Source1HostageCallForHelpEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_call_for_help";
 
     public int Hostage { get; set; }
 }
 
-public partial class Source1VipEscapedEvent : Source1GameEventBase
+public partial class Source1VipEscapedEvent : CsSource1GameEventBase
 {
-    internal Source1VipEscapedEvent(DemoParser demo) : base(demo) {}
+    internal Source1VipEscapedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vip_escaped";
 
@@ -9260,9 +9260,9 @@ public partial class Source1VipEscapedEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1VipKilledEvent : Source1GameEventBase
+public partial class Source1VipKilledEvent : CsSource1GameEventBase
 {
-    internal Source1VipKilledEvent(DemoParser demo) : base(demo) {}
+    internal Source1VipKilledEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vip_killed";
 
@@ -9273,40 +9273,40 @@ public partial class Source1VipKilledEvent : Source1GameEventBase
     public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
 }
 
-public partial class Source1PlayerRadioEvent : Source1GameEventBase
+public partial class Source1PlayerRadioEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerRadioEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerRadioEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_radio";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Slot { get; set; }
 }
 
-public partial class Source1BombBeepEvent : Source1GameEventBase
+public partial class Source1BombBeepEvent : CsSource1GameEventBase
 {
-    internal Source1BombBeepEvent(DemoParser demo) : base(demo) {}
+    internal Source1BombBeepEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bomb_beep";
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1WeaponFireEvent : Source1GameEventBase
+public partial class Source1WeaponFireEvent : CsSource1GameEventBase
 {
-    internal Source1WeaponFireEvent(DemoParser demo) : base(demo) {}
+    internal Source1WeaponFireEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "weapon_fire";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public string Weapon { get; set; } = "";
@@ -9314,119 +9314,119 @@ public partial class Source1WeaponFireEvent : Source1GameEventBase
     public bool Silenced { get; set; }
 }
 
-public partial class Source1WeaponFireOnEmptyEvent : Source1GameEventBase
+public partial class Source1WeaponFireOnEmptyEvent : CsSource1GameEventBase
 {
-    internal Source1WeaponFireOnEmptyEvent(DemoParser demo) : base(demo) {}
+    internal Source1WeaponFireOnEmptyEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "weapon_fire_on_empty";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1GrenadeThrownEvent : Source1GameEventBase
+public partial class Source1GrenadeThrownEvent : CsSource1GameEventBase
 {
-    internal Source1GrenadeThrownEvent(DemoParser demo) : base(demo) {}
+    internal Source1GrenadeThrownEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "grenade_thrown";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1WeaponReloadEvent : Source1GameEventBase
+public partial class Source1WeaponReloadEvent : CsSource1GameEventBase
 {
-    internal Source1WeaponReloadEvent(DemoParser demo) : base(demo) {}
+    internal Source1WeaponReloadEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "weapon_reload";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1WeaponZoomEvent : Source1GameEventBase
+public partial class Source1WeaponZoomEvent : CsSource1GameEventBase
 {
-    internal Source1WeaponZoomEvent(DemoParser demo) : base(demo) {}
+    internal Source1WeaponZoomEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "weapon_zoom";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1SilencerDetachEvent : Source1GameEventBase
+public partial class Source1SilencerDetachEvent : CsSource1GameEventBase
 {
-    internal Source1SilencerDetachEvent(DemoParser demo) : base(demo) {}
+    internal Source1SilencerDetachEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "silencer_detach";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1InspectWeaponEvent : Source1GameEventBase
+public partial class Source1InspectWeaponEvent : CsSource1GameEventBase
 {
-    internal Source1InspectWeaponEvent(DemoParser demo) : base(demo) {}
+    internal Source1InspectWeaponEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "inspect_weapon";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1WeaponZoomRifleEvent : Source1GameEventBase
+public partial class Source1WeaponZoomRifleEvent : CsSource1GameEventBase
 {
-    internal Source1WeaponZoomRifleEvent(DemoParser demo) : base(demo) {}
+    internal Source1WeaponZoomRifleEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "weapon_zoom_rifle";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1PlayerSpawnedEvent : Source1GameEventBase
+public partial class Source1PlayerSpawnedEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerSpawnedEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerSpawnedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_spawned";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public bool Inrestart { get; set; }
 }
 
-public partial class Source1ItemPickupEvent : Source1GameEventBase
+public partial class Source1ItemPickupEvent : CsSource1GameEventBase
 {
-    internal Source1ItemPickupEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemPickupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_pickup";
 
@@ -9440,9 +9440,9 @@ public partial class Source1ItemPickupEvent : Source1GameEventBase
     public int Defindex { get; set; }
 }
 
-public partial class Source1ItemPickupSlerpEvent : Source1GameEventBase
+public partial class Source1ItemPickupSlerpEvent : CsSource1GameEventBase
 {
-    internal Source1ItemPickupSlerpEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemPickupSlerpEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_pickup_slerp";
 
@@ -9454,9 +9454,9 @@ public partial class Source1ItemPickupSlerpEvent : Source1GameEventBase
     public int Behavior { get; set; }
 }
 
-public partial class Source1ItemPickupFailedEvent : Source1GameEventBase
+public partial class Source1ItemPickupFailedEvent : CsSource1GameEventBase
 {
-    internal Source1ItemPickupFailedEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemPickupFailedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_pickup_failed";
 
@@ -9470,9 +9470,9 @@ public partial class Source1ItemPickupFailedEvent : Source1GameEventBase
     public int Limit { get; set; }
 }
 
-public partial class Source1ItemRemoveEvent : Source1GameEventBase
+public partial class Source1ItemRemoveEvent : CsSource1GameEventBase
 {
-    internal Source1ItemRemoveEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemRemoveEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_remove";
 
@@ -9484,9 +9484,9 @@ public partial class Source1ItemRemoveEvent : Source1GameEventBase
     public int Defindex { get; set; }
 }
 
-public partial class Source1AmmoPickupEvent : Source1GameEventBase
+public partial class Source1AmmoPickupEvent : CsSource1GameEventBase
 {
-    internal Source1AmmoPickupEvent(DemoParser demo) : base(demo) {}
+    internal Source1AmmoPickupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ammo_pickup";
 
@@ -9498,9 +9498,9 @@ public partial class Source1AmmoPickupEvent : Source1GameEventBase
     public int Index { get; set; }
 }
 
-public partial class Source1ItemEquipEvent : Source1GameEventBase
+public partial class Source1ItemEquipEvent : CsSource1GameEventBase
 {
-    internal Source1ItemEquipEvent(DemoParser demo) : base(demo) {}
+    internal Source1ItemEquipEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_equip";
 
@@ -9524,9 +9524,9 @@ public partial class Source1ItemEquipEvent : Source1GameEventBase
     public bool Ispainted { get; set; }
 }
 
-public partial class Source1EnterBuyzoneEvent : Source1GameEventBase
+public partial class Source1EnterBuyzoneEvent : CsSource1GameEventBase
 {
-    internal Source1EnterBuyzoneEvent(DemoParser demo) : base(demo) {}
+    internal Source1EnterBuyzoneEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "enter_buyzone";
 
@@ -9536,9 +9536,9 @@ public partial class Source1EnterBuyzoneEvent : Source1GameEventBase
     public bool Canbuy { get; set; }
 }
 
-public partial class Source1ExitBuyzoneEvent : Source1GameEventBase
+public partial class Source1ExitBuyzoneEvent : CsSource1GameEventBase
 {
-    internal Source1ExitBuyzoneEvent(DemoParser demo) : base(demo) {}
+    internal Source1ExitBuyzoneEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "exit_buyzone";
 
@@ -9548,16 +9548,16 @@ public partial class Source1ExitBuyzoneEvent : Source1GameEventBase
     public bool Canbuy { get; set; }
 }
 
-public partial class Source1BuytimeEndedEvent : Source1GameEventBase
+public partial class Source1BuytimeEndedEvent : CsSource1GameEventBase
 {
-    internal Source1BuytimeEndedEvent(DemoParser demo) : base(demo) {}
+    internal Source1BuytimeEndedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "buytime_ended";
 }
 
-public partial class Source1EnterBombzoneEvent : Source1GameEventBase
+public partial class Source1EnterBombzoneEvent : CsSource1GameEventBase
 {
-    internal Source1EnterBombzoneEvent(DemoParser demo) : base(demo) {}
+    internal Source1EnterBombzoneEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "enter_bombzone";
 
@@ -9569,9 +9569,9 @@ public partial class Source1EnterBombzoneEvent : Source1GameEventBase
     public bool Isplanted { get; set; }
 }
 
-public partial class Source1ExitBombzoneEvent : Source1GameEventBase
+public partial class Source1ExitBombzoneEvent : CsSource1GameEventBase
 {
-    internal Source1ExitBombzoneEvent(DemoParser demo) : base(demo) {}
+    internal Source1ExitBombzoneEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "exit_bombzone";
 
@@ -9583,9 +9583,9 @@ public partial class Source1ExitBombzoneEvent : Source1GameEventBase
     public bool Isplanted { get; set; }
 }
 
-public partial class Source1EnterRescueZoneEvent : Source1GameEventBase
+public partial class Source1EnterRescueZoneEvent : CsSource1GameEventBase
 {
-    internal Source1EnterRescueZoneEvent(DemoParser demo) : base(demo) {}
+    internal Source1EnterRescueZoneEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "enter_rescue_zone";
 
@@ -9593,9 +9593,9 @@ public partial class Source1EnterRescueZoneEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
+public partial class Source1ExitRescueZoneEvent : CsSource1GameEventBase
 {
-    internal Source1ExitRescueZoneEvent(DemoParser demo) : base(demo) {}
+    internal Source1ExitRescueZoneEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "exit_rescue_zone";
 
@@ -9603,9 +9603,9 @@ public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SilencerOffEvent : Source1GameEventBase
+public partial class Source1SilencerOffEvent : CsSource1GameEventBase
 {
-    internal Source1SilencerOffEvent(DemoParser demo) : base(demo) {}
+    internal Source1SilencerOffEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "silencer_off";
 
@@ -9613,9 +9613,9 @@ public partial class Source1SilencerOffEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SilencerOnEvent : Source1GameEventBase
+public partial class Source1SilencerOnEvent : CsSource1GameEventBase
 {
-    internal Source1SilencerOnEvent(DemoParser demo) : base(demo) {}
+    internal Source1SilencerOnEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "silencer_on";
 
@@ -9623,16 +9623,16 @@ public partial class Source1SilencerOnEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1BuymenuOpenEvent : Source1GameEventBase
+public partial class Source1BuymenuOpenEvent : CsSource1GameEventBase
 {
-    internal Source1BuymenuOpenEvent(DemoParser demo) : base(demo) {}
+    internal Source1BuymenuOpenEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "buymenu_open";
 }
 
-public partial class Source1BuymenuCloseEvent : Source1GameEventBase
+public partial class Source1BuymenuCloseEvent : CsSource1GameEventBase
 {
-    internal Source1BuymenuCloseEvent(DemoParser demo) : base(demo) {}
+    internal Source1BuymenuCloseEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "buymenu_close";
 
@@ -9640,43 +9640,43 @@ public partial class Source1BuymenuCloseEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1RoundPrestartEvent : Source1GameEventBase
+public partial class Source1RoundPrestartEvent : CsSource1GameEventBase
 {
-    internal Source1RoundPrestartEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundPrestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_prestart";
 }
 
-public partial class Source1RoundPoststartEvent : Source1GameEventBase
+public partial class Source1RoundPoststartEvent : CsSource1GameEventBase
 {
-    internal Source1RoundPoststartEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundPoststartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_poststart";
 }
 
-public partial class Source1GrenadeBounceEvent : Source1GameEventBase
+public partial class Source1GrenadeBounceEvent : CsSource1GameEventBase
 {
-    internal Source1GrenadeBounceEvent(DemoParser demo) : base(demo) {}
+    internal Source1GrenadeBounceEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "grenade_bounce";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1HegrenadeDetonateEvent : Source1GameEventBase
+public partial class Source1HegrenadeDetonateEvent : CsSource1GameEventBase
 {
-    internal Source1HegrenadeDetonateEvent(DemoParser demo) : base(demo) {}
+    internal Source1HegrenadeDetonateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hegrenade_detonate";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9688,16 +9688,16 @@ public partial class Source1HegrenadeDetonateEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1FlashbangDetonateEvent : Source1GameEventBase
+public partial class Source1FlashbangDetonateEvent : CsSource1GameEventBase
 {
-    internal Source1FlashbangDetonateEvent(DemoParser demo) : base(demo) {}
+    internal Source1FlashbangDetonateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "flashbang_detonate";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9709,16 +9709,16 @@ public partial class Source1FlashbangDetonateEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1SmokegrenadeDetonateEvent : Source1GameEventBase
+public partial class Source1SmokegrenadeDetonateEvent : CsSource1GameEventBase
 {
-    internal Source1SmokegrenadeDetonateEvent(DemoParser demo) : base(demo) {}
+    internal Source1SmokegrenadeDetonateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "smokegrenade_detonate";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9730,16 +9730,16 @@ public partial class Source1SmokegrenadeDetonateEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1SmokegrenadeExpiredEvent : Source1GameEventBase
+public partial class Source1SmokegrenadeExpiredEvent : CsSource1GameEventBase
 {
-    internal Source1SmokegrenadeExpiredEvent(DemoParser demo) : base(demo) {}
+    internal Source1SmokegrenadeExpiredEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "smokegrenade_expired";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9751,16 +9751,16 @@ public partial class Source1SmokegrenadeExpiredEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1MolotovDetonateEvent : Source1GameEventBase
+public partial class Source1MolotovDetonateEvent : CsSource1GameEventBase
 {
-    internal Source1MolotovDetonateEvent(DemoParser demo) : base(demo) {}
+    internal Source1MolotovDetonateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "molotov_detonate";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public float X { get; set; }
@@ -9770,16 +9770,16 @@ public partial class Source1MolotovDetonateEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyDetonateEvent : Source1GameEventBase
+public partial class Source1DecoyDetonateEvent : CsSource1GameEventBase
 {
-    internal Source1DecoyDetonateEvent(DemoParser demo) : base(demo) {}
+    internal Source1DecoyDetonateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "decoy_detonate";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9791,13 +9791,13 @@ public partial class Source1DecoyDetonateEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyStartedEvent : Source1GameEventBase
+public partial class Source1DecoyStartedEvent : CsSource1GameEventBase
 {
-    internal Source1DecoyStartedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DecoyStartedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "decoy_started";
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9809,9 +9809,9 @@ public partial class Source1DecoyStartedEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1TagrenadeDetonateEvent : Source1GameEventBase
+public partial class Source1TagrenadeDetonateEvent : CsSource1GameEventBase
 {
-    internal Source1TagrenadeDetonateEvent(DemoParser demo) : base(demo) {}
+    internal Source1TagrenadeDetonateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "tagrenade_detonate";
 
@@ -9827,9 +9827,9 @@ public partial class Source1TagrenadeDetonateEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1InfernoStartburnEvent : Source1GameEventBase
+public partial class Source1InfernoStartburnEvent : CsSource1GameEventBase
 {
-    internal Source1InfernoStartburnEvent(DemoParser demo) : base(demo) {}
+    internal Source1InfernoStartburnEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "inferno_startburn";
 
@@ -9842,9 +9842,9 @@ public partial class Source1InfernoStartburnEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1InfernoExpireEvent : Source1GameEventBase
+public partial class Source1InfernoExpireEvent : CsSource1GameEventBase
 {
-    internal Source1InfernoExpireEvent(DemoParser demo) : base(demo) {}
+    internal Source1InfernoExpireEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "inferno_expire";
 
@@ -9857,9 +9857,9 @@ public partial class Source1InfernoExpireEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1InfernoExtinguishEvent : Source1GameEventBase
+public partial class Source1InfernoExtinguishEvent : CsSource1GameEventBase
 {
-    internal Source1InfernoExtinguishEvent(DemoParser demo) : base(demo) {}
+    internal Source1InfernoExtinguishEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "inferno_extinguish";
 
@@ -9872,16 +9872,16 @@ public partial class Source1InfernoExtinguishEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyFiringEvent : Source1GameEventBase
+public partial class Source1DecoyFiringEvent : CsSource1GameEventBase
 {
-    internal Source1DecoyFiringEvent(DemoParser demo) : base(demo) {}
+    internal Source1DecoyFiringEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "decoy_firing";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -9893,16 +9893,16 @@ public partial class Source1DecoyFiringEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1BulletImpactEvent : Source1GameEventBase
+public partial class Source1BulletImpactEvent : CsSource1GameEventBase
 {
-    internal Source1BulletImpactEvent(DemoParser demo) : base(demo) {}
+    internal Source1BulletImpactEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bullet_impact";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public float X { get; set; }
@@ -9912,9 +9912,9 @@ public partial class Source1BulletImpactEvent : Source1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1PlayerJumpEvent : Source1GameEventBase
+public partial class Source1PlayerJumpEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerJumpEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerJumpEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_jump";
 
@@ -9922,9 +9922,9 @@ public partial class Source1PlayerJumpEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerBlindEvent : Source1GameEventBase
+public partial class Source1PlayerBlindEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerBlindEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerBlindEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_blind";
 
@@ -9939,53 +9939,53 @@ public partial class Source1PlayerBlindEvent : Source1GameEventBase
     public float BlindDuration { get; set; }
 }
 
-public partial class Source1PlayerFalldamageEvent : Source1GameEventBase
+public partial class Source1PlayerFalldamageEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerFalldamageEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerFalldamageEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_falldamage";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public float Damage { get; set; }
 }
 
-public partial class Source1DoorMovingEvent : Source1GameEventBase
+public partial class Source1DoorMovingEvent : CsSource1GameEventBase
 {
-    internal Source1DoorMovingEvent(DemoParser demo) : base(demo) {}
+    internal Source1DoorMovingEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "door_moving";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entindex { get; set; }
 }
 
-public partial class Source1MbInputLockSuccessEvent : Source1GameEventBase
+public partial class Source1MbInputLockSuccessEvent : CsSource1GameEventBase
 {
-    internal Source1MbInputLockSuccessEvent(DemoParser demo) : base(demo) {}
+    internal Source1MbInputLockSuccessEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "mb_input_lock_success";
 }
 
-public partial class Source1MbInputLockCancelEvent : Source1GameEventBase
+public partial class Source1MbInputLockCancelEvent : CsSource1GameEventBase
 {
-    internal Source1MbInputLockCancelEvent(DemoParser demo) : base(demo) {}
+    internal Source1MbInputLockCancelEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "mb_input_lock_cancel";
 }
 
-public partial class Source1NavBlockedEvent : Source1GameEventBase
+public partial class Source1NavBlockedEvent : CsSource1GameEventBase
 {
-    internal Source1NavBlockedEvent(DemoParser demo) : base(demo) {}
+    internal Source1NavBlockedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "nav_blocked";
 
@@ -9994,23 +9994,23 @@ public partial class Source1NavBlockedEvent : Source1GameEventBase
     public bool Blocked { get; set; }
 }
 
-public partial class Source1NavGenerateEvent : Source1GameEventBase
+public partial class Source1NavGenerateEvent : CsSource1GameEventBase
 {
-    internal Source1NavGenerateEvent(DemoParser demo) : base(demo) {}
+    internal Source1NavGenerateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "nav_generate";
 }
 
-public partial class Source1AchievementInfoLoadedEvent : Source1GameEventBase
+public partial class Source1AchievementInfoLoadedEvent : CsSource1GameEventBase
 {
-    internal Source1AchievementInfoLoadedEvent(DemoParser demo) : base(demo) {}
+    internal Source1AchievementInfoLoadedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_info_loaded";
 }
 
-public partial class Source1HltvChangedModeEvent : Source1GameEventBase
+public partial class Source1HltvChangedModeEvent : CsSource1GameEventBase
 {
-    internal Source1HltvChangedModeEvent(DemoParser demo) : base(demo) {}
+    internal Source1HltvChangedModeEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hltv_changed_mode";
 
@@ -10021,30 +10021,30 @@ public partial class Source1HltvChangedModeEvent : Source1GameEventBase
     public int ObsTarget { get; set; }
 }
 
-public partial class Source1CsGameDisconnectedEvent : Source1GameEventBase
+public partial class Source1CsGameDisconnectedEvent : CsSource1GameEventBase
 {
-    internal Source1CsGameDisconnectedEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsGameDisconnectedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_game_disconnected";
 }
 
-public partial class Source1CsRoundFinalBeepEvent : Source1GameEventBase
+public partial class Source1CsRoundFinalBeepEvent : CsSource1GameEventBase
 {
-    internal Source1CsRoundFinalBeepEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsRoundFinalBeepEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_round_final_beep";
 }
 
-public partial class Source1CsRoundStartBeepEvent : Source1GameEventBase
+public partial class Source1CsRoundStartBeepEvent : CsSource1GameEventBase
 {
-    internal Source1CsRoundStartBeepEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsRoundStartBeepEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_round_start_beep";
 }
 
-public partial class Source1CsWinPanelRoundEvent : Source1GameEventBase
+public partial class Source1CsWinPanelRoundEvent : CsSource1GameEventBase
 {
-    internal Source1CsWinPanelRoundEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsWinPanelRoundEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_win_panel_round";
 
@@ -10068,37 +10068,37 @@ public partial class Source1CsWinPanelRoundEvent : Source1GameEventBase
     public int FunfactData3 { get; set; }
 }
 
-public partial class Source1CsWinPanelMatchEvent : Source1GameEventBase
+public partial class Source1CsWinPanelMatchEvent : CsSource1GameEventBase
 {
-    internal Source1CsWinPanelMatchEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsWinPanelMatchEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_win_panel_match";
 }
 
-public partial class Source1CsMatchEndRestartEvent : Source1GameEventBase
+public partial class Source1CsMatchEndRestartEvent : CsSource1GameEventBase
 {
-    internal Source1CsMatchEndRestartEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsMatchEndRestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_match_end_restart";
 }
 
-public partial class Source1CsPreRestartEvent : Source1GameEventBase
+public partial class Source1CsPreRestartEvent : CsSource1GameEventBase
 {
-    internal Source1CsPreRestartEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsPreRestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_pre_restart";
 }
 
-public partial class Source1ShowDeathpanelEvent : Source1GameEventBase
+public partial class Source1ShowDeathpanelEvent : CsSource1GameEventBase
 {
-    internal Source1ShowDeathpanelEvent(DemoParser demo) : base(demo) {}
+    internal Source1ShowDeathpanelEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "show_deathpanel";
 
     public CEntityIndex VictimIndex { get; set; }
     public CCSPlayerController? Victim => _demo.GetEntityByIndex<CCSPlayerController>(VictimIndex);
 
-    public CHandle<CEntityInstance> VictimPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> VictimPawnHandle { get; set; }
     public CCSPlayerPawn? VictimPawn => _demo.GetEntityByHandle(VictimPawnHandle) as CCSPlayerPawn;
 
     public int Killer { get; set; }
@@ -10115,16 +10115,16 @@ public partial class Source1ShowDeathpanelEvent : Source1GameEventBase
     public int DamageGiven { get; set; }
 }
 
-public partial class Source1HideDeathpanelEvent : Source1GameEventBase
+public partial class Source1HideDeathpanelEvent : CsSource1GameEventBase
 {
-    internal Source1HideDeathpanelEvent(DemoParser demo) : base(demo) {}
+    internal Source1HideDeathpanelEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hide_deathpanel";
 }
 
-public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
+public partial class Source1PlayerAvengedTeammateEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerAvengedTeammateEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerAvengedTeammateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_avenged_teammate";
 
@@ -10135,9 +10135,9 @@ public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
     public CCSPlayerController? AvengedPlayer => _demo.GetEntityByIndex<CCSPlayerController>(AvengedPlayerIndex);
 }
 
-public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
+public partial class Source1AchievementEarnedLocalEvent : CsSource1GameEventBase
 {
-    internal Source1AchievementEarnedLocalEvent(DemoParser demo) : base(demo) {}
+    internal Source1AchievementEarnedLocalEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_earned_local";
 
@@ -10146,18 +10146,18 @@ public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
     public int Splitscreenplayer { get; set; }
 }
 
-public partial class Source1RepostXboxAchievementsEvent : Source1GameEventBase
+public partial class Source1RepostXboxAchievementsEvent : CsSource1GameEventBase
 {
-    internal Source1RepostXboxAchievementsEvent(DemoParser demo) : base(demo) {}
+    internal Source1RepostXboxAchievementsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "repost_xbox_achievements";
 
     public int Splitscreenplayer { get; set; }
 }
 
-public partial class Source1MatchEndConditionsEvent : Source1GameEventBase
+public partial class Source1MatchEndConditionsEvent : CsSource1GameEventBase
 {
-    internal Source1MatchEndConditionsEvent(DemoParser demo) : base(demo) {}
+    internal Source1MatchEndConditionsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "match_end_conditions";
 
@@ -10170,9 +10170,9 @@ public partial class Source1MatchEndConditionsEvent : Source1GameEventBase
     public int Time { get; set; }
 }
 
-public partial class Source1RoundMvpEvent : Source1GameEventBase
+public partial class Source1RoundMvpEvent : CsSource1GameEventBase
 {
-    internal Source1RoundMvpEvent(DemoParser demo) : base(demo) {}
+    internal Source1RoundMvpEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_mvp";
 
@@ -10190,9 +10190,9 @@ public partial class Source1RoundMvpEvent : Source1GameEventBase
     public int Musickitid { get; set; }
 }
 
-public partial class Source1ShowSurvivalRespawnStatusEvent : Source1GameEventBase
+public partial class Source1ShowSurvivalRespawnStatusEvent : CsSource1GameEventBase
 {
-    internal Source1ShowSurvivalRespawnStatusEvent(DemoParser demo) : base(demo) {}
+    internal Source1ShowSurvivalRespawnStatusEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "show_survival_respawn_status";
 
@@ -10203,20 +10203,20 @@ public partial class Source1ShowSurvivalRespawnStatusEvent : Source1GameEventBas
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1ClientDisconnectEvent : Source1GameEventBase
+public partial class Source1ClientDisconnectEvent : CsSource1GameEventBase
 {
-    internal Source1ClientDisconnectEvent(DemoParser demo) : base(demo) {}
+    internal Source1ClientDisconnectEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "client_disconnect";
 }
 
-public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
+public partial class Source1GgKilledEnemyEvent : CsSource1GameEventBase
 {
-    internal Source1GgKilledEnemyEvent(DemoParser demo) : base(demo) {}
+    internal Source1GgKilledEnemyEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gg_killed_enemy";
 
@@ -10233,9 +10233,9 @@ public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
     public bool Bonus { get; set; }
 }
 
-public partial class Source1SwitchTeamEvent : Source1GameEventBase
+public partial class Source1SwitchTeamEvent : CsSource1GameEventBase
 {
-    internal Source1SwitchTeamEvent(DemoParser demo) : base(demo) {}
+    internal Source1SwitchTeamEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "switch_team";
 
@@ -10250,16 +10250,16 @@ public partial class Source1SwitchTeamEvent : Source1GameEventBase
     public int NumCTSlotsFree { get; set; }
 }
 
-public partial class Source1WriteProfileDataEvent : Source1GameEventBase
+public partial class Source1WriteProfileDataEvent : CsSource1GameEventBase
 {
-    internal Source1WriteProfileDataEvent(DemoParser demo) : base(demo) {}
+    internal Source1WriteProfileDataEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "write_profile_data";
 }
 
-public partial class Source1TrialTimeExpiredEvent : Source1GameEventBase
+public partial class Source1TrialTimeExpiredEvent : CsSource1GameEventBase
 {
-    internal Source1TrialTimeExpiredEvent(DemoParser demo) : base(demo) {}
+    internal Source1TrialTimeExpiredEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "trial_time_expired";
 
@@ -10267,16 +10267,16 @@ public partial class Source1TrialTimeExpiredEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1UpdateMatchmakingStatsEvent : Source1GameEventBase
+public partial class Source1UpdateMatchmakingStatsEvent : CsSource1GameEventBase
 {
-    internal Source1UpdateMatchmakingStatsEvent(DemoParser demo) : base(demo) {}
+    internal Source1UpdateMatchmakingStatsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "update_matchmaking_stats";
 }
 
-public partial class Source1PlayerResetVoteEvent : Source1GameEventBase
+public partial class Source1PlayerResetVoteEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerResetVoteEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerResetVoteEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_reset_vote";
 
@@ -10286,18 +10286,18 @@ public partial class Source1PlayerResetVoteEvent : Source1GameEventBase
     public bool Vote { get; set; }
 }
 
-public partial class Source1EnableRestartVotingEvent : Source1GameEventBase
+public partial class Source1EnableRestartVotingEvent : CsSource1GameEventBase
 {
-    internal Source1EnableRestartVotingEvent(DemoParser demo) : base(demo) {}
+    internal Source1EnableRestartVotingEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "enable_restart_voting";
 
     public bool Enable { get; set; }
 }
 
-public partial class Source1SfuieventEvent : Source1GameEventBase
+public partial class Source1SfuieventEvent : CsSource1GameEventBase
 {
-    internal Source1SfuieventEvent(DemoParser demo) : base(demo) {}
+    internal Source1SfuieventEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "sfuievent";
 
@@ -10308,9 +10308,9 @@ public partial class Source1SfuieventEvent : Source1GameEventBase
     public int Slot { get; set; }
 }
 
-public partial class Source1StartVoteEvent : Source1GameEventBase
+public partial class Source1StartVoteEvent : CsSource1GameEventBase
 {
-    internal Source1StartVoteEvent(DemoParser demo) : base(demo) {}
+    internal Source1StartVoteEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "start_vote";
 
@@ -10322,9 +10322,9 @@ public partial class Source1StartVoteEvent : Source1GameEventBase
     public int VoteParameter { get; set; }
 }
 
-public partial class Source1PlayerGivenC4Event : Source1GameEventBase
+public partial class Source1PlayerGivenC4Event : CsSource1GameEventBase
 {
-    internal Source1PlayerGivenC4Event(DemoParser demo) : base(demo) {}
+    internal Source1PlayerGivenC4Event(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_given_c4";
 
@@ -10332,16 +10332,16 @@ public partial class Source1PlayerGivenC4Event : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1BotTakeoverEvent : Source1GameEventBase
+public partial class Source1BotTakeoverEvent : CsSource1GameEventBase
 {
-    internal Source1BotTakeoverEvent(DemoParser demo) : base(demo) {}
+    internal Source1BotTakeoverEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bot_takeover";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public CEntityIndex BotidIndex { get; set; }
@@ -10354,9 +10354,9 @@ public partial class Source1BotTakeoverEvent : Source1GameEventBase
     public float R { get; set; }
 }
 
-public partial class Source1JointeamFailedEvent : Source1GameEventBase
+public partial class Source1JointeamFailedEvent : CsSource1GameEventBase
 {
-    internal Source1JointeamFailedEvent(DemoParser demo) : base(demo) {}
+    internal Source1JointeamFailedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "jointeam_failed";
 
@@ -10366,9 +10366,9 @@ public partial class Source1JointeamFailedEvent : Source1GameEventBase
     public int Reason { get; set; }
 }
 
-public partial class Source1TeamchangePendingEvent : Source1GameEventBase
+public partial class Source1TeamchangePendingEvent : CsSource1GameEventBase
 {
-    internal Source1TeamchangePendingEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamchangePendingEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "teamchange_pending";
 
@@ -10378,25 +10378,25 @@ public partial class Source1TeamchangePendingEvent : Source1GameEventBase
     public int Toteam { get; set; }
 }
 
-public partial class Source1MaterialDefaultCompleteEvent : Source1GameEventBase
+public partial class Source1MaterialDefaultCompleteEvent : CsSource1GameEventBase
 {
-    internal Source1MaterialDefaultCompleteEvent(DemoParser demo) : base(demo) {}
+    internal Source1MaterialDefaultCompleteEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "material_default_complete";
 }
 
-public partial class Source1CsPrevNextSpectatorEvent : Source1GameEventBase
+public partial class Source1CsPrevNextSpectatorEvent : CsSource1GameEventBase
 {
-    internal Source1CsPrevNextSpectatorEvent(DemoParser demo) : base(demo) {}
+    internal Source1CsPrevNextSpectatorEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_prev_next_spectator";
 
     public bool Next { get; set; }
 }
 
-public partial class Source1NextlevelChangedEvent : Source1GameEventBase
+public partial class Source1NextlevelChangedEvent : CsSource1GameEventBase
 {
-    internal Source1NextlevelChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1NextlevelChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "nextlevel_changed";
 
@@ -10407,9 +10407,9 @@ public partial class Source1NextlevelChangedEvent : Source1GameEventBase
     public string Skirmishmode { get; set; } = "";
 }
 
-public partial class Source1SeasoncoinLevelupEvent : Source1GameEventBase
+public partial class Source1SeasoncoinLevelupEvent : CsSource1GameEventBase
 {
-    internal Source1SeasoncoinLevelupEvent(DemoParser demo) : base(demo) {}
+    internal Source1SeasoncoinLevelupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "seasoncoin_levelup";
 
@@ -10421,9 +10421,9 @@ public partial class Source1SeasoncoinLevelupEvent : Source1GameEventBase
     public int Rank { get; set; }
 }
 
-public partial class Source1TournamentRewardEvent : Source1GameEventBase
+public partial class Source1TournamentRewardEvent : CsSource1GameEventBase
 {
-    internal Source1TournamentRewardEvent(DemoParser demo) : base(demo) {}
+    internal Source1TournamentRewardEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "tournament_reward";
 
@@ -10434,16 +10434,16 @@ public partial class Source1TournamentRewardEvent : Source1GameEventBase
     public int Accountid { get; set; }
 }
 
-public partial class Source1StartHalftimeEvent : Source1GameEventBase
+public partial class Source1StartHalftimeEvent : CsSource1GameEventBase
 {
-    internal Source1StartHalftimeEvent(DemoParser demo) : base(demo) {}
+    internal Source1StartHalftimeEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "start_halftime";
 }
 
-public partial class Source1AmmoRefillEvent : Source1GameEventBase
+public partial class Source1AmmoRefillEvent : CsSource1GameEventBase
 {
-    internal Source1AmmoRefillEvent(DemoParser demo) : base(demo) {}
+    internal Source1AmmoRefillEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "ammo_refill";
 
@@ -10453,9 +10453,9 @@ public partial class Source1AmmoRefillEvent : Source1GameEventBase
     public bool Success { get; set; }
 }
 
-public partial class Source1ParachutePickupEvent : Source1GameEventBase
+public partial class Source1ParachutePickupEvent : CsSource1GameEventBase
 {
-    internal Source1ParachutePickupEvent(DemoParser demo) : base(demo) {}
+    internal Source1ParachutePickupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "parachute_pickup";
 
@@ -10463,9 +10463,9 @@ public partial class Source1ParachutePickupEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1ParachuteDeployEvent : Source1GameEventBase
+public partial class Source1ParachuteDeployEvent : CsSource1GameEventBase
 {
-    internal Source1ParachuteDeployEvent(DemoParser demo) : base(demo) {}
+    internal Source1ParachuteDeployEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "parachute_deploy";
 
@@ -10473,9 +10473,9 @@ public partial class Source1ParachuteDeployEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1DronegunAttackEvent : Source1GameEventBase
+public partial class Source1DronegunAttackEvent : CsSource1GameEventBase
 {
-    internal Source1DronegunAttackEvent(DemoParser demo) : base(demo) {}
+    internal Source1DronegunAttackEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "dronegun_attack";
 
@@ -10483,9 +10483,9 @@ public partial class Source1DronegunAttackEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1DroneDispatchedEvent : Source1GameEventBase
+public partial class Source1DroneDispatchedEvent : CsSource1GameEventBase
 {
-    internal Source1DroneDispatchedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DroneDispatchedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "drone_dispatched";
 
@@ -10497,9 +10497,9 @@ public partial class Source1DroneDispatchedEvent : Source1GameEventBase
     public int DroneDispatched { get; set; }
 }
 
-public partial class Source1LootCrateVisibleEvent : Source1GameEventBase
+public partial class Source1LootCrateVisibleEvent : CsSource1GameEventBase
 {
-    internal Source1LootCrateVisibleEvent(DemoParser demo) : base(demo) {}
+    internal Source1LootCrateVisibleEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "loot_crate_visible";
 
@@ -10511,9 +10511,9 @@ public partial class Source1LootCrateVisibleEvent : Source1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1LootCrateOpenedEvent : Source1GameEventBase
+public partial class Source1LootCrateOpenedEvent : CsSource1GameEventBase
 {
-    internal Source1LootCrateOpenedEvent(DemoParser demo) : base(demo) {}
+    internal Source1LootCrateOpenedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "loot_crate_opened";
 
@@ -10523,9 +10523,9 @@ public partial class Source1LootCrateOpenedEvent : Source1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1OpenCrateInstrEvent : Source1GameEventBase
+public partial class Source1OpenCrateInstrEvent : CsSource1GameEventBase
 {
-    internal Source1OpenCrateInstrEvent(DemoParser demo) : base(demo) {}
+    internal Source1OpenCrateInstrEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "open_crate_instr";
 
@@ -10537,9 +10537,9 @@ public partial class Source1OpenCrateInstrEvent : Source1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1SmokeBeaconParadropEvent : Source1GameEventBase
+public partial class Source1SmokeBeaconParadropEvent : CsSource1GameEventBase
 {
-    internal Source1SmokeBeaconParadropEvent(DemoParser demo) : base(demo) {}
+    internal Source1SmokeBeaconParadropEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "smoke_beacon_paradrop";
 
@@ -10549,27 +10549,27 @@ public partial class Source1SmokeBeaconParadropEvent : Source1GameEventBase
     public int Paradrop { get; set; }
 }
 
-public partial class Source1SurvivalParadropSpawnEvent : Source1GameEventBase
+public partial class Source1SurvivalParadropSpawnEvent : CsSource1GameEventBase
 {
-    internal Source1SurvivalParadropSpawnEvent(DemoParser demo) : base(demo) {}
+    internal Source1SurvivalParadropSpawnEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "survival_paradrop_spawn";
 
     public int Entityid { get; set; }
 }
 
-public partial class Source1SurvivalParadropBreakEvent : Source1GameEventBase
+public partial class Source1SurvivalParadropBreakEvent : CsSource1GameEventBase
 {
-    internal Source1SurvivalParadropBreakEvent(DemoParser demo) : base(demo) {}
+    internal Source1SurvivalParadropBreakEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "survival_paradrop_break";
 
     public int Entityid { get; set; }
 }
 
-public partial class Source1DroneCargoDetachedEvent : Source1GameEventBase
+public partial class Source1DroneCargoDetachedEvent : CsSource1GameEventBase
 {
-    internal Source1DroneCargoDetachedEvent(DemoParser demo) : base(demo) {}
+    internal Source1DroneCargoDetachedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "drone_cargo_detached";
 
@@ -10581,9 +10581,9 @@ public partial class Source1DroneCargoDetachedEvent : Source1GameEventBase
     public bool Delivered { get; set; }
 }
 
-public partial class Source1DroneAboveRoofEvent : Source1GameEventBase
+public partial class Source1DroneAboveRoofEvent : CsSource1GameEventBase
 {
-    internal Source1DroneAboveRoofEvent(DemoParser demo) : base(demo) {}
+    internal Source1DroneAboveRoofEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "drone_above_roof";
 
@@ -10593,27 +10593,27 @@ public partial class Source1DroneAboveRoofEvent : Source1GameEventBase
     public int Cargo { get; set; }
 }
 
-public partial class Source1ChoppersIncomingWarningEvent : Source1GameEventBase
+public partial class Source1ChoppersIncomingWarningEvent : CsSource1GameEventBase
 {
-    internal Source1ChoppersIncomingWarningEvent(DemoParser demo) : base(demo) {}
+    internal Source1ChoppersIncomingWarningEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "choppers_incoming_warning";
 
     public bool Global { get; set; }
 }
 
-public partial class Source1FirstbombsIncomingWarningEvent : Source1GameEventBase
+public partial class Source1FirstbombsIncomingWarningEvent : CsSource1GameEventBase
 {
-    internal Source1FirstbombsIncomingWarningEvent(DemoParser demo) : base(demo) {}
+    internal Source1FirstbombsIncomingWarningEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "firstbombs_incoming_warning";
 
     public bool Global { get; set; }
 }
 
-public partial class Source1DzItemInteractionEvent : Source1GameEventBase
+public partial class Source1DzItemInteractionEvent : CsSource1GameEventBase
 {
-    internal Source1DzItemInteractionEvent(DemoParser demo) : base(demo) {}
+    internal Source1DzItemInteractionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "dz_item_interaction";
 
@@ -10625,9 +10625,9 @@ public partial class Source1DzItemInteractionEvent : Source1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1SurvivalTeammateRespawnEvent : Source1GameEventBase
+public partial class Source1SurvivalTeammateRespawnEvent : CsSource1GameEventBase
 {
-    internal Source1SurvivalTeammateRespawnEvent(DemoParser demo) : base(demo) {}
+    internal Source1SurvivalTeammateRespawnEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "survival_teammate_respawn";
 
@@ -10635,9 +10635,9 @@ public partial class Source1SurvivalTeammateRespawnEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBase
+public partial class Source1SurvivalNoRespawnsWarningEvent : CsSource1GameEventBase
 {
-    internal Source1SurvivalNoRespawnsWarningEvent(DemoParser demo) : base(demo) {}
+    internal Source1SurvivalNoRespawnsWarningEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "survival_no_respawns_warning";
 
@@ -10645,9 +10645,9 @@ public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBas
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
+public partial class Source1SurvivalNoRespawnsFinalEvent : CsSource1GameEventBase
 {
-    internal Source1SurvivalNoRespawnsFinalEvent(DemoParser demo) : base(demo) {}
+    internal Source1SurvivalNoRespawnsFinalEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "survival_no_respawns_final";
 
@@ -10655,16 +10655,16 @@ public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerPingEvent : Source1GameEventBase
+public partial class Source1PlayerPingEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerPingEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerPingEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_ping";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Entityid { get; set; }
@@ -10678,25 +10678,25 @@ public partial class Source1PlayerPingEvent : Source1GameEventBase
     public bool Urgent { get; set; }
 }
 
-public partial class Source1PlayerPingStopEvent : Source1GameEventBase
+public partial class Source1PlayerPingStopEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerPingStopEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerPingStopEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_ping_stop";
 
     public int Entityid { get; set; }
 }
 
-public partial class Source1PlayerSoundEvent : Source1GameEventBase
+public partial class Source1PlayerSoundEvent : CsSource1GameEventBase
 {
-    internal Source1PlayerSoundEvent(DemoParser demo) : base(demo) {}
+    internal Source1PlayerSoundEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_sound";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Radius { get; set; }
@@ -10706,37 +10706,37 @@ public partial class Source1PlayerSoundEvent : Source1GameEventBase
     public bool Step { get; set; }
 }
 
-public partial class Source1GuardianWaveRestartEvent : Source1GameEventBase
+public partial class Source1GuardianWaveRestartEvent : CsSource1GameEventBase
 {
-    internal Source1GuardianWaveRestartEvent(DemoParser demo) : base(demo) {}
+    internal Source1GuardianWaveRestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "guardian_wave_restart";
 }
 
-public partial class Source1TeamIntroStartEvent : Source1GameEventBase
+public partial class Source1TeamIntroStartEvent : CsSource1GameEventBase
 {
-    internal Source1TeamIntroStartEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamIntroStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "team_intro_start";
 }
 
-public partial class Source1TeamIntroEndEvent : Source1GameEventBase
+public partial class Source1TeamIntroEndEvent : CsSource1GameEventBase
 {
-    internal Source1TeamIntroEndEvent(DemoParser demo) : base(demo) {}
+    internal Source1TeamIntroEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "team_intro_end";
 }
 
-public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
+public partial class Source1BulletFlightResolutionEvent : CsSource1GameEventBase
 {
-    internal Source1BulletFlightResolutionEvent(DemoParser demo) : base(demo) {}
+    internal Source1BulletFlightResolutionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "bullet_flight_resolution";
 
     public CEntityIndex PlayerIndex { get; set; }
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 
-    public CHandle<CEntityInstance> PlayerPawnHandle { get; set; }
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int PosX { get; set; }
@@ -10758,18 +10758,18 @@ public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
     public int StartZ { get; set; }
 }
 
-public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
+public partial class Source1GamePhaseChangedEvent : CsSource1GameEventBase
 {
-    internal Source1GamePhaseChangedEvent(DemoParser demo) : base(demo) {}
+    internal Source1GamePhaseChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_phase_changed";
 
     public int NewPhase { get; set; }
 }
 
-public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBase
+public partial class Source1ClientsideReloadCustomEconEvent : CsSource1GameEventBase
 {
-    internal Source1ClientsideReloadCustomEconEvent(DemoParser demo) : base(demo) {}
+    internal Source1ClientsideReloadCustomEconEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "clientside_reload_custom_econ";
 
@@ -11048,6 +11048,6 @@ public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBa
 [JsonDerivedType(typeof(Source1BulletFlightResolutionEvent))]
 [JsonDerivedType(typeof(Source1GamePhaseChangedEvent))]
 [JsonDerivedType(typeof(Source1ClientsideReloadCustomEconEvent))]
-public partial class Source1GameEventBase
+public partial class CsSource1GameEventBase
 {
 }

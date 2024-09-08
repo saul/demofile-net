@@ -1,7 +1,12 @@
 # DemoFile.Net ![NuGet](https://img.shields.io/nuget/v/DemoFile) ![Build status](https://github.com/saul/demofile-net/actions/workflows/dotnet.yml/badge.svg)
 
-DemoFile.Net is a blazing fast demo parser library for Counter-Strike 2, written in C#. It is cross platform, and can be
-used from Windows, Mac or Linux.
+DemoFile.Net is a blazing fast demo parser library for Source 2 games, written in C#. It is cross-platform, and can be
+used on Windows, Mac or Linux. This parser currently supports:
+
+| Game                 |
+|----------------------|
+| ✅ Counter-Strike 2   |
+| ⌛ Deadlock (planned) |
 
 ![Screenshot of DemoFile.Net](./assets/screenshot-2x.png)
 
@@ -35,7 +40,7 @@ internal class Program
     {
         var path = args.SingleOrDefault() ?? throw new Exception("Expected a single argument: <path to .dem>");
 
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         demo.Source1GameEvents.PlayerDeath += e =>
         {
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");

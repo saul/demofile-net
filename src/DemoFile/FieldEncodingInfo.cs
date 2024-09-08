@@ -2,7 +2,7 @@ using System.Text;
 
 namespace DemoFile;
 
-internal readonly record struct FieldEncodingInfo(
+public readonly record struct FieldEncodingInfo(
     string? VarEncoder,
     int BitCount,
     int EncodeFlags,
