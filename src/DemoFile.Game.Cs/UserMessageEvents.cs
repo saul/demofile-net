@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public struct CsUserMessageEvents
+public struct UserMessageEvents
 {
     public Action<CCSUsrMsg_VGUIMenu>? VguiMenu;
     public Action<CCSUsrMsg_Geiger>? Geiger;

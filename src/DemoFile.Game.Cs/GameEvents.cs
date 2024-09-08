@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public struct CsGameEvents
+public struct GameEvents
 {
     public Action<CMsgTEPlayerAnimEvent>? PlayerAnimEvent;
     public Action<CMsgTERadioIcon>? RadioIcon;

@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public struct UserMessageEvents
+public struct BaseUserMessageEvents
 {
     public Action<CUserMessageAchievementEvent>? UserMessageAchievementEvent;
     public Action<CUserMessageCloseCaption>? UserMessageCloseCaption;

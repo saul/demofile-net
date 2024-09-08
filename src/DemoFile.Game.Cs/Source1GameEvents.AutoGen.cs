@@ -7,7 +7,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public partial class CsSource1GameEvents
+public partial class Source1GameEvents
 {
     public Action<Source1ServerSpawnEvent>? ServerSpawn;
     public Action<Source1ServerPreShutdownEvent>? ServerPreShutdown;
@@ -7339,7 +7339,7 @@ public partial class CsSource1GameEvents
     }
 }
 
-public partial class Source1ServerSpawnEvent : CsSource1GameEventBase
+public partial class Source1ServerSpawnEvent : Source1GameEventBase
 {
     internal Source1ServerSpawnEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7366,7 +7366,7 @@ public partial class Source1ServerSpawnEvent : CsSource1GameEventBase
     public bool Password { get; set; }
 }
 
-public partial class Source1ServerPreShutdownEvent : CsSource1GameEventBase
+public partial class Source1ServerPreShutdownEvent : Source1GameEventBase
 {
     internal Source1ServerPreShutdownEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7375,7 +7375,7 @@ public partial class Source1ServerPreShutdownEvent : CsSource1GameEventBase
     public string Reason { get; set; } = "";
 }
 
-public partial class Source1ServerShutdownEvent : CsSource1GameEventBase
+public partial class Source1ServerShutdownEvent : Source1GameEventBase
 {
     internal Source1ServerShutdownEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7384,7 +7384,7 @@ public partial class Source1ServerShutdownEvent : CsSource1GameEventBase
     public string Reason { get; set; } = "";
 }
 
-public partial class Source1ServerMessageEvent : CsSource1GameEventBase
+public partial class Source1ServerMessageEvent : Source1GameEventBase
 {
     internal Source1ServerMessageEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7393,7 +7393,7 @@ public partial class Source1ServerMessageEvent : CsSource1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1ServerCvarEvent : CsSource1GameEventBase
+public partial class Source1ServerCvarEvent : Source1GameEventBase
 {
     internal Source1ServerCvarEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7404,7 +7404,7 @@ public partial class Source1ServerCvarEvent : CsSource1GameEventBase
     public string Cvarvalue { get; set; } = "";
 }
 
-public partial class Source1PlayerActivateEvent : CsSource1GameEventBase
+public partial class Source1PlayerActivateEvent : Source1GameEventBase
 {
     internal Source1PlayerActivateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7414,7 +7414,7 @@ public partial class Source1PlayerActivateEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerConnectFullEvent : CsSource1GameEventBase
+public partial class Source1PlayerConnectFullEvent : Source1GameEventBase
 {
     internal Source1PlayerConnectFullEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7424,7 +7424,7 @@ public partial class Source1PlayerConnectFullEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerFullUpdateEvent : CsSource1GameEventBase
+public partial class Source1PlayerFullUpdateEvent : Source1GameEventBase
 {
     internal Source1PlayerFullUpdateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7436,7 +7436,7 @@ public partial class Source1PlayerFullUpdateEvent : CsSource1GameEventBase
     public int Count { get; set; }
 }
 
-public partial class Source1PlayerConnectEvent : CsSource1GameEventBase
+public partial class Source1PlayerConnectEvent : Source1GameEventBase
 {
     internal Source1PlayerConnectEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7456,7 +7456,7 @@ public partial class Source1PlayerConnectEvent : CsSource1GameEventBase
     public bool Bot { get; set; }
 }
 
-public partial class Source1PlayerDisconnectEvent : CsSource1GameEventBase
+public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
 {
     internal Source1PlayerDisconnectEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7476,7 +7476,7 @@ public partial class Source1PlayerDisconnectEvent : CsSource1GameEventBase
     public int PlayerID { get; set; }
 }
 
-public partial class Source1PlayerInfoEvent : CsSource1GameEventBase
+public partial class Source1PlayerInfoEvent : Source1GameEventBase
 {
     internal Source1PlayerInfoEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7492,7 +7492,7 @@ public partial class Source1PlayerInfoEvent : CsSource1GameEventBase
     public bool Bot { get; set; }
 }
 
-public partial class Source1PlayerSpawnEvent : CsSource1GameEventBase
+public partial class Source1PlayerSpawnEvent : Source1GameEventBase
 {
     internal Source1PlayerSpawnEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7505,7 +7505,7 @@ public partial class Source1PlayerSpawnEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1PlayerTeamEvent : CsSource1GameEventBase
+public partial class Source1PlayerTeamEvent : Source1GameEventBase
 {
     internal Source1PlayerTeamEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7528,21 +7528,21 @@ public partial class Source1PlayerTeamEvent : CsSource1GameEventBase
     public bool Isbot { get; set; }
 }
 
-public partial class Source1LocalPlayerTeamEvent : CsSource1GameEventBase
+public partial class Source1LocalPlayerTeamEvent : Source1GameEventBase
 {
     internal Source1LocalPlayerTeamEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "local_player_team";
 }
 
-public partial class Source1LocalPlayerControllerTeamEvent : CsSource1GameEventBase
+public partial class Source1LocalPlayerControllerTeamEvent : Source1GameEventBase
 {
     internal Source1LocalPlayerControllerTeamEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "local_player_controller_team";
 }
 
-public partial class Source1PlayerChangenameEvent : CsSource1GameEventBase
+public partial class Source1PlayerChangenameEvent : Source1GameEventBase
 {
     internal Source1PlayerChangenameEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7556,7 +7556,7 @@ public partial class Source1PlayerChangenameEvent : CsSource1GameEventBase
     public string Newname { get; set; } = "";
 }
 
-public partial class Source1PlayerHurtEvent : CsSource1GameEventBase
+public partial class Source1PlayerHurtEvent : Source1GameEventBase
 {
     internal Source1PlayerHurtEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7587,7 +7587,7 @@ public partial class Source1PlayerHurtEvent : CsSource1GameEventBase
     public int Hitgroup { get; set; }
 }
 
-public partial class Source1PlayerChatEvent : CsSource1GameEventBase
+public partial class Source1PlayerChatEvent : Source1GameEventBase
 {
     internal Source1PlayerChatEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7600,14 +7600,14 @@ public partial class Source1PlayerChatEvent : CsSource1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1LocalPlayerPawnChangedEvent : CsSource1GameEventBase
+public partial class Source1LocalPlayerPawnChangedEvent : Source1GameEventBase
 {
     internal Source1LocalPlayerPawnChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "local_player_pawn_changed";
 }
 
-public partial class Source1TeamplayBroadcastAudioEvent : CsSource1GameEventBase
+public partial class Source1TeamplayBroadcastAudioEvent : Source1GameEventBase
 {
     internal Source1TeamplayBroadcastAudioEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7618,7 +7618,7 @@ public partial class Source1TeamplayBroadcastAudioEvent : CsSource1GameEventBase
     public string Sound { get; set; } = "";
 }
 
-public partial class Source1FinaleStartEvent : CsSource1GameEventBase
+public partial class Source1FinaleStartEvent : Source1GameEventBase
 {
     internal Source1FinaleStartEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7627,7 +7627,7 @@ public partial class Source1FinaleStartEvent : CsSource1GameEventBase
     public int Rushes { get; set; }
 }
 
-public partial class Source1PlayerStatsUpdatedEvent : CsSource1GameEventBase
+public partial class Source1PlayerStatsUpdatedEvent : Source1GameEventBase
 {
     internal Source1PlayerStatsUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7636,14 +7636,14 @@ public partial class Source1PlayerStatsUpdatedEvent : CsSource1GameEventBase
     public bool Forceupload { get; set; }
 }
 
-public partial class Source1UserDataDownloadedEvent : CsSource1GameEventBase
+public partial class Source1UserDataDownloadedEvent : Source1GameEventBase
 {
     internal Source1UserDataDownloadedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "user_data_downloaded";
 }
 
-public partial class Source1RagdollDissolvedEvent : CsSource1GameEventBase
+public partial class Source1RagdollDissolvedEvent : Source1GameEventBase
 {
     internal Source1RagdollDissolvedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7652,7 +7652,7 @@ public partial class Source1RagdollDissolvedEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1TeamInfoEvent : CsSource1GameEventBase
+public partial class Source1TeamInfoEvent : Source1GameEventBase
 {
     internal Source1TeamInfoEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7663,7 +7663,7 @@ public partial class Source1TeamInfoEvent : CsSource1GameEventBase
     public string Teamname { get; set; } = "";
 }
 
-public partial class Source1TeamScoreEvent : CsSource1GameEventBase
+public partial class Source1TeamScoreEvent : Source1GameEventBase
 {
     internal Source1TeamScoreEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7674,7 +7674,7 @@ public partial class Source1TeamScoreEvent : CsSource1GameEventBase
     public int Score { get; set; }
 }
 
-public partial class Source1HltvCameramanEvent : CsSource1GameEventBase
+public partial class Source1HltvCameramanEvent : Source1GameEventBase
 {
     internal Source1HltvCameramanEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7684,7 +7684,7 @@ public partial class Source1HltvCameramanEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1HltvChaseEvent : CsSource1GameEventBase
+public partial class Source1HltvChaseEvent : Source1GameEventBase
 {
     internal Source1HltvChaseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7707,7 +7707,7 @@ public partial class Source1HltvChaseEvent : CsSource1GameEventBase
     public int Ineye { get; set; }
 }
 
-public partial class Source1HltvRankCameraEvent : CsSource1GameEventBase
+public partial class Source1HltvRankCameraEvent : Source1GameEventBase
 {
     internal Source1HltvRankCameraEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7721,7 +7721,7 @@ public partial class Source1HltvRankCameraEvent : CsSource1GameEventBase
     public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
-public partial class Source1HltvRankEntityEvent : CsSource1GameEventBase
+public partial class Source1HltvRankEntityEvent : Source1GameEventBase
 {
     internal Source1HltvRankEntityEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7736,7 +7736,7 @@ public partial class Source1HltvRankEntityEvent : CsSource1GameEventBase
     public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
-public partial class Source1HltvFixedEvent : CsSource1GameEventBase
+public partial class Source1HltvFixedEvent : Source1GameEventBase
 {
     internal Source1HltvFixedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7760,7 +7760,7 @@ public partial class Source1HltvFixedEvent : CsSource1GameEventBase
     public CCSPlayerController? Target => _demo.GetEntityByIndex<CCSPlayerController>(TargetIndex);
 }
 
-public partial class Source1HltvMessageEvent : CsSource1GameEventBase
+public partial class Source1HltvMessageEvent : Source1GameEventBase
 {
     internal Source1HltvMessageEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7769,7 +7769,7 @@ public partial class Source1HltvMessageEvent : CsSource1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1HltvStatusEvent : CsSource1GameEventBase
+public partial class Source1HltvStatusEvent : Source1GameEventBase
 {
     internal Source1HltvStatusEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7784,7 +7784,7 @@ public partial class Source1HltvStatusEvent : CsSource1GameEventBase
     public string Master { get; set; } = "";
 }
 
-public partial class Source1HltvTitleEvent : CsSource1GameEventBase
+public partial class Source1HltvTitleEvent : Source1GameEventBase
 {
     internal Source1HltvTitleEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7793,7 +7793,7 @@ public partial class Source1HltvTitleEvent : CsSource1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1HltvChatEvent : CsSource1GameEventBase
+public partial class Source1HltvChatEvent : Source1GameEventBase
 {
     internal Source1HltvChatEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7804,7 +7804,7 @@ public partial class Source1HltvChatEvent : CsSource1GameEventBase
     public ulong SteamId { get; set; }
 }
 
-public partial class Source1HltvVersioninfoEvent : CsSource1GameEventBase
+public partial class Source1HltvVersioninfoEvent : Source1GameEventBase
 {
     internal Source1HltvVersioninfoEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7813,7 +7813,7 @@ public partial class Source1HltvVersioninfoEvent : CsSource1GameEventBase
     public int Version { get; set; }
 }
 
-public partial class Source1HltvReplayEvent : CsSource1GameEventBase
+public partial class Source1HltvReplayEvent : Source1GameEventBase
 {
     internal Source1HltvReplayEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7824,7 +7824,7 @@ public partial class Source1HltvReplayEvent : CsSource1GameEventBase
     public int Reason { get; set; }
 }
 
-public partial class Source1HltvReplayStatusEvent : CsSource1GameEventBase
+public partial class Source1HltvReplayStatusEvent : Source1GameEventBase
 {
     internal Source1HltvReplayStatusEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7833,28 +7833,28 @@ public partial class Source1HltvReplayStatusEvent : CsSource1GameEventBase
     public int Reason { get; set; }
 }
 
-public partial class Source1DemoStopEvent : CsSource1GameEventBase
+public partial class Source1DemoStopEvent : Source1GameEventBase
 {
     internal Source1DemoStopEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "demo_stop";
 }
 
-public partial class Source1MapShutdownEvent : CsSource1GameEventBase
+public partial class Source1MapShutdownEvent : Source1GameEventBase
 {
     internal Source1MapShutdownEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "map_shutdown";
 }
 
-public partial class Source1MapTransitionEvent : CsSource1GameEventBase
+public partial class Source1MapTransitionEvent : Source1GameEventBase
 {
     internal Source1MapTransitionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "map_transition";
 }
 
-public partial class Source1HostnameChangedEvent : CsSource1GameEventBase
+public partial class Source1HostnameChangedEvent : Source1GameEventBase
 {
     internal Source1HostnameChangedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7863,7 +7863,7 @@ public partial class Source1HostnameChangedEvent : CsSource1GameEventBase
     public string Hostname { get; set; } = "";
 }
 
-public partial class Source1DifficultyChangedEvent : CsSource1GameEventBase
+public partial class Source1DifficultyChangedEvent : Source1GameEventBase
 {
     internal Source1DifficultyChangedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7876,7 +7876,7 @@ public partial class Source1DifficultyChangedEvent : CsSource1GameEventBase
     public string StrDifficulty { get; set; } = "";
 }
 
-public partial class Source1GameMessageEvent : CsSource1GameEventBase
+public partial class Source1GameMessageEvent : Source1GameEventBase
 {
     internal Source1GameMessageEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7887,7 +7887,7 @@ public partial class Source1GameMessageEvent : CsSource1GameEventBase
     public string Text { get; set; } = "";
 }
 
-public partial class Source1GameNewmapEvent : CsSource1GameEventBase
+public partial class Source1GameNewmapEvent : Source1GameEventBase
 {
     internal Source1GameNewmapEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7896,7 +7896,7 @@ public partial class Source1GameNewmapEvent : CsSource1GameEventBase
     public string Mapname { get; set; } = "";
 }
 
-public partial class Source1RoundStartEvent : CsSource1GameEventBase
+public partial class Source1RoundStartEvent : Source1GameEventBase
 {
     internal Source1RoundStartEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7909,7 +7909,7 @@ public partial class Source1RoundStartEvent : CsSource1GameEventBase
     public string Objective { get; set; } = "";
 }
 
-public partial class Source1RoundEndEvent : CsSource1GameEventBase
+public partial class Source1RoundEndEvent : Source1GameEventBase
 {
     internal Source1RoundEndEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7928,28 +7928,28 @@ public partial class Source1RoundEndEvent : CsSource1GameEventBase
     public int Nomusic { get; set; }
 }
 
-public partial class Source1RoundStartPreEntityEvent : CsSource1GameEventBase
+public partial class Source1RoundStartPreEntityEvent : Source1GameEventBase
 {
     internal Source1RoundStartPreEntityEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_start_pre_entity";
 }
 
-public partial class Source1RoundStartPostNavEvent : CsSource1GameEventBase
+public partial class Source1RoundStartPostNavEvent : Source1GameEventBase
 {
     internal Source1RoundStartPostNavEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_start_post_nav";
 }
 
-public partial class Source1RoundFreezeEndEvent : CsSource1GameEventBase
+public partial class Source1RoundFreezeEndEvent : Source1GameEventBase
 {
     internal Source1RoundFreezeEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_freeze_end";
 }
 
-public partial class Source1TeamplayRoundStartEvent : CsSource1GameEventBase
+public partial class Source1TeamplayRoundStartEvent : Source1GameEventBase
 {
     internal Source1TeamplayRoundStartEvent(CsDemoParser demo) : base(demo) {}
 
@@ -7958,7 +7958,7 @@ public partial class Source1TeamplayRoundStartEvent : CsSource1GameEventBase
     public bool FullReset { get; set; }
 }
 
-public partial class Source1PlayerDeathEvent : CsSource1GameEventBase
+public partial class Source1PlayerDeathEvent : Source1GameEventBase
 {
     internal Source1PlayerDeathEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8021,7 +8021,7 @@ public partial class Source1PlayerDeathEvent : CsSource1GameEventBase
     public bool Attackerinair { get; set; }
 }
 
-public partial class Source1PlayerFootstepEvent : CsSource1GameEventBase
+public partial class Source1PlayerFootstepEvent : Source1GameEventBase
 {
     internal Source1PlayerFootstepEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8034,7 +8034,7 @@ public partial class Source1PlayerFootstepEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1PlayerHintmessageEvent : CsSource1GameEventBase
+public partial class Source1PlayerHintmessageEvent : Source1GameEventBase
 {
     internal Source1PlayerHintmessageEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8043,7 +8043,7 @@ public partial class Source1PlayerHintmessageEvent : CsSource1GameEventBase
     public string Hintmessage { get; set; } = "";
 }
 
-public partial class Source1BreakBreakableEvent : CsSource1GameEventBase
+public partial class Source1BreakBreakableEvent : Source1GameEventBase
 {
     internal Source1BreakBreakableEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8057,7 +8057,7 @@ public partial class Source1BreakBreakableEvent : CsSource1GameEventBase
     public int Material { get; set; }
 }
 
-public partial class Source1BrokenBreakableEvent : CsSource1GameEventBase
+public partial class Source1BrokenBreakableEvent : Source1GameEventBase
 {
     internal Source1BrokenBreakableEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8071,7 +8071,7 @@ public partial class Source1BrokenBreakableEvent : CsSource1GameEventBase
     public int Material { get; set; }
 }
 
-public partial class Source1BreakPropEvent : CsSource1GameEventBase
+public partial class Source1BreakPropEvent : Source1GameEventBase
 {
     internal Source1BreakPropEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8083,7 +8083,7 @@ public partial class Source1BreakPropEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1EntityKilledEvent : CsSource1GameEventBase
+public partial class Source1EntityKilledEvent : Source1GameEventBase
 {
     internal Source1EntityKilledEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8098,7 +8098,7 @@ public partial class Source1EntityKilledEvent : CsSource1GameEventBase
     public int Damagebits { get; set; }
 }
 
-public partial class Source1DoorCloseEvent : CsSource1GameEventBase
+public partial class Source1DoorCloseEvent : Source1GameEventBase
 {
     internal Source1DoorCloseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8110,7 +8110,7 @@ public partial class Source1DoorCloseEvent : CsSource1GameEventBase
     public bool Checkpoint { get; set; }
 }
 
-public partial class Source1VoteStartedEvent : CsSource1GameEventBase
+public partial class Source1VoteStartedEvent : Source1GameEventBase
 {
     internal Source1VoteStartedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8125,7 +8125,7 @@ public partial class Source1VoteStartedEvent : CsSource1GameEventBase
     public int Initiator { get; set; }
 }
 
-public partial class Source1VoteFailedEvent : CsSource1GameEventBase
+public partial class Source1VoteFailedEvent : Source1GameEventBase
 {
     internal Source1VoteFailedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8134,7 +8134,7 @@ public partial class Source1VoteFailedEvent : CsSource1GameEventBase
     public int Team { get; set; }
 }
 
-public partial class Source1VotePassedEvent : CsSource1GameEventBase
+public partial class Source1VotePassedEvent : Source1GameEventBase
 {
     internal Source1VotePassedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8147,7 +8147,7 @@ public partial class Source1VotePassedEvent : CsSource1GameEventBase
     public int Team { get; set; }
 }
 
-public partial class Source1VoteChangedEvent : CsSource1GameEventBase
+public partial class Source1VoteChangedEvent : Source1GameEventBase
 {
     internal Source1VoteChangedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8166,7 +8166,7 @@ public partial class Source1VoteChangedEvent : CsSource1GameEventBase
     public int PotentialVotes { get; set; }
 }
 
-public partial class Source1VoteCastYesEvent : CsSource1GameEventBase
+public partial class Source1VoteCastYesEvent : Source1GameEventBase
 {
     internal Source1VoteCastYesEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8177,7 +8177,7 @@ public partial class Source1VoteCastYesEvent : CsSource1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1VoteCastNoEvent : CsSource1GameEventBase
+public partial class Source1VoteCastNoEvent : Source1GameEventBase
 {
     internal Source1VoteCastNoEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8188,7 +8188,7 @@ public partial class Source1VoteCastNoEvent : CsSource1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1AchievementEventEvent : CsSource1GameEventBase
+public partial class Source1AchievementEventEvent : Source1GameEventBase
 {
     internal Source1AchievementEventEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8201,7 +8201,7 @@ public partial class Source1AchievementEventEvent : CsSource1GameEventBase
     public int MaxVal { get; set; }
 }
 
-public partial class Source1AchievementEarnedEvent : CsSource1GameEventBase
+public partial class Source1AchievementEarnedEvent : Source1GameEventBase
 {
     internal Source1AchievementEarnedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8213,14 +8213,14 @@ public partial class Source1AchievementEarnedEvent : CsSource1GameEventBase
     public int Achievement { get; set; }
 }
 
-public partial class Source1AchievementWriteFailedEvent : CsSource1GameEventBase
+public partial class Source1AchievementWriteFailedEvent : Source1GameEventBase
 {
     internal Source1AchievementWriteFailedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_write_failed";
 }
 
-public partial class Source1BonusUpdatedEvent : CsSource1GameEventBase
+public partial class Source1BonusUpdatedEvent : Source1GameEventBase
 {
     internal Source1BonusUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8235,7 +8235,7 @@ public partial class Source1BonusUpdatedEvent : CsSource1GameEventBase
     public int Numgold { get; set; }
 }
 
-public partial class Source1SpecTargetUpdatedEvent : CsSource1GameEventBase
+public partial class Source1SpecTargetUpdatedEvent : Source1GameEventBase
 {
     internal Source1SpecTargetUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8250,7 +8250,7 @@ public partial class Source1SpecTargetUpdatedEvent : CsSource1GameEventBase
     public int Target { get; set; }
 }
 
-public partial class Source1SpecModeUpdatedEvent : CsSource1GameEventBase
+public partial class Source1SpecModeUpdatedEvent : Source1GameEventBase
 {
     internal Source1SpecModeUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8260,7 +8260,7 @@ public partial class Source1SpecModeUpdatedEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1EntityVisibleEvent : CsSource1GameEventBase
+public partial class Source1EntityVisibleEvent : Source1GameEventBase
 {
     internal Source1EntityVisibleEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8276,21 +8276,21 @@ public partial class Source1EntityVisibleEvent : CsSource1GameEventBase
     public string Entityname { get; set; } = "";
 }
 
-public partial class Source1GameinstructorDrawEvent : CsSource1GameEventBase
+public partial class Source1GameinstructorDrawEvent : Source1GameEventBase
 {
     internal Source1GameinstructorDrawEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gameinstructor_draw";
 }
 
-public partial class Source1GameinstructorNodrawEvent : CsSource1GameEventBase
+public partial class Source1GameinstructorNodrawEvent : Source1GameEventBase
 {
     internal Source1GameinstructorNodrawEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gameinstructor_nodraw";
 }
 
-public partial class Source1FlareIgniteNpcEvent : CsSource1GameEventBase
+public partial class Source1FlareIgniteNpcEvent : Source1GameEventBase
 {
     internal Source1FlareIgniteNpcEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8299,14 +8299,14 @@ public partial class Source1FlareIgniteNpcEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1HelicopterGrenadePuntMissEvent : CsSource1GameEventBase
+public partial class Source1HelicopterGrenadePuntMissEvent : Source1GameEventBase
 {
     internal Source1HelicopterGrenadePuntMissEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "helicopter_grenade_punt_miss";
 }
 
-public partial class Source1PhysgunPickupEvent : CsSource1GameEventBase
+public partial class Source1PhysgunPickupEvent : Source1GameEventBase
 {
     internal Source1PhysgunPickupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8315,56 +8315,56 @@ public partial class Source1PhysgunPickupEvent : CsSource1GameEventBase
     public int Target { get; set; }
 }
 
-public partial class Source1InventoryUpdatedEvent : CsSource1GameEventBase
+public partial class Source1InventoryUpdatedEvent : Source1GameEventBase
 {
     internal Source1InventoryUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "inventory_updated";
 }
 
-public partial class Source1CartUpdatedEvent : CsSource1GameEventBase
+public partial class Source1CartUpdatedEvent : Source1GameEventBase
 {
     internal Source1CartUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cart_updated";
 }
 
-public partial class Source1StorePricesheetUpdatedEvent : CsSource1GameEventBase
+public partial class Source1StorePricesheetUpdatedEvent : Source1GameEventBase
 {
     internal Source1StorePricesheetUpdatedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "store_pricesheet_updated";
 }
 
-public partial class Source1ItemSchemaInitializedEvent : CsSource1GameEventBase
+public partial class Source1ItemSchemaInitializedEvent : Source1GameEventBase
 {
     internal Source1ItemSchemaInitializedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "item_schema_initialized";
 }
 
-public partial class Source1DropRateModifiedEvent : CsSource1GameEventBase
+public partial class Source1DropRateModifiedEvent : Source1GameEventBase
 {
     internal Source1DropRateModifiedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "drop_rate_modified";
 }
 
-public partial class Source1EventTicketModifiedEvent : CsSource1GameEventBase
+public partial class Source1EventTicketModifiedEvent : Source1GameEventBase
 {
     internal Source1EventTicketModifiedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "event_ticket_modified";
 }
 
-public partial class Source1GcConnectedEvent : CsSource1GameEventBase
+public partial class Source1GcConnectedEvent : Source1GameEventBase
 {
     internal Source1GcConnectedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gc_connected";
 }
 
-public partial class Source1InstructorStartLessonEvent : CsSource1GameEventBase
+public partial class Source1InstructorStartLessonEvent : Source1GameEventBase
 {
     internal Source1InstructorStartLessonEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8384,7 +8384,7 @@ public partial class Source1InstructorStartLessonEvent : CsSource1GameEventBase
     public int VrControllerType { get; set; }
 }
 
-public partial class Source1InstructorCloseLessonEvent : CsSource1GameEventBase
+public partial class Source1InstructorCloseLessonEvent : Source1GameEventBase
 {
     internal Source1InstructorCloseLessonEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8396,7 +8396,7 @@ public partial class Source1InstructorCloseLessonEvent : CsSource1GameEventBase
     public string HintName { get; set; } = "";
 }
 
-public partial class Source1InstructorServerHintCreateEvent : CsSource1GameEventBase
+public partial class Source1InstructorServerHintCreateEvent : Source1GameEventBase
 {
     internal Source1InstructorServerHintCreateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8445,7 +8445,7 @@ public partial class Source1InstructorServerHintCreateEvent : CsSource1GameEvent
     public bool HintLocalPlayerOnly { get; set; }
 }
 
-public partial class Source1InstructorServerHintStopEvent : CsSource1GameEventBase
+public partial class Source1InstructorServerHintStopEvent : Source1GameEventBase
 {
     internal Source1InstructorServerHintStopEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8454,7 +8454,7 @@ public partial class Source1InstructorServerHintStopEvent : CsSource1GameEventBa
     public string HintName { get; set; } = "";
 }
 
-public partial class Source1SetInstructorGroupEnabledEvent : CsSource1GameEventBase
+public partial class Source1SetInstructorGroupEnabledEvent : Source1GameEventBase
 {
     internal Source1SetInstructorGroupEnabledEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8465,7 +8465,7 @@ public partial class Source1SetInstructorGroupEnabledEvent : CsSource1GameEventB
     public int Enabled { get; set; }
 }
 
-public partial class Source1ClientsideLessonClosedEvent : CsSource1GameEventBase
+public partial class Source1ClientsideLessonClosedEvent : Source1GameEventBase
 {
     internal Source1ClientsideLessonClosedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8474,21 +8474,21 @@ public partial class Source1ClientsideLessonClosedEvent : CsSource1GameEventBase
     public string LessonName { get; set; } = "";
 }
 
-public partial class Source1DynamicShadowLightChangedEvent : CsSource1GameEventBase
+public partial class Source1DynamicShadowLightChangedEvent : Source1GameEventBase
 {
     internal Source1DynamicShadowLightChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "dynamic_shadow_light_changed";
 }
 
-public partial class Source1GameuiHiddenEvent : CsSource1GameEventBase
+public partial class Source1GameuiHiddenEvent : Source1GameEventBase
 {
     internal Source1GameuiHiddenEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "gameui_hidden";
 }
 
-public partial class Source1PlayerScoreEvent : CsSource1GameEventBase
+public partial class Source1PlayerScoreEvent : Source1GameEventBase
 {
     internal Source1PlayerScoreEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8504,7 +8504,7 @@ public partial class Source1PlayerScoreEvent : CsSource1GameEventBase
     public int Score { get; set; }
 }
 
-public partial class Source1PlayerShootEvent : CsSource1GameEventBase
+public partial class Source1PlayerShootEvent : Source1GameEventBase
 {
     internal Source1PlayerShootEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8521,14 +8521,14 @@ public partial class Source1PlayerShootEvent : CsSource1GameEventBase
     public int Mode { get; set; }
 }
 
-public partial class Source1GameInitEvent : CsSource1GameEventBase
+public partial class Source1GameInitEvent : Source1GameEventBase
 {
     internal Source1GameInitEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "game_init";
 }
 
-public partial class Source1GameStartEvent : CsSource1GameEventBase
+public partial class Source1GameStartEvent : Source1GameEventBase
 {
     internal Source1GameStartEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8543,7 +8543,7 @@ public partial class Source1GameStartEvent : CsSource1GameEventBase
     public string Objective { get; set; } = "";
 }
 
-public partial class Source1GameEndEvent : CsSource1GameEventBase
+public partial class Source1GameEndEvent : Source1GameEventBase
 {
     internal Source1GameEndEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8552,70 +8552,70 @@ public partial class Source1GameEndEvent : CsSource1GameEventBase
     public int Winner { get; set; }
 }
 
-public partial class Source1RoundAnnounceMatchPointEvent : CsSource1GameEventBase
+public partial class Source1RoundAnnounceMatchPointEvent : Source1GameEventBase
 {
     internal Source1RoundAnnounceMatchPointEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_match_point";
 }
 
-public partial class Source1RoundAnnounceFinalEvent : CsSource1GameEventBase
+public partial class Source1RoundAnnounceFinalEvent : Source1GameEventBase
 {
     internal Source1RoundAnnounceFinalEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_final";
 }
 
-public partial class Source1RoundAnnounceLastRoundHalfEvent : CsSource1GameEventBase
+public partial class Source1RoundAnnounceLastRoundHalfEvent : Source1GameEventBase
 {
     internal Source1RoundAnnounceLastRoundHalfEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_last_round_half";
 }
 
-public partial class Source1RoundAnnounceMatchStartEvent : CsSource1GameEventBase
+public partial class Source1RoundAnnounceMatchStartEvent : Source1GameEventBase
 {
     internal Source1RoundAnnounceMatchStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_match_start";
 }
 
-public partial class Source1RoundAnnounceWarmupEvent : CsSource1GameEventBase
+public partial class Source1RoundAnnounceWarmupEvent : Source1GameEventBase
 {
     internal Source1RoundAnnounceWarmupEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_announce_warmup";
 }
 
-public partial class Source1WarmupEndEvent : CsSource1GameEventBase
+public partial class Source1WarmupEndEvent : Source1GameEventBase
 {
     internal Source1WarmupEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "warmup_end";
 }
 
-public partial class Source1RoundEndUploadStatsEvent : CsSource1GameEventBase
+public partial class Source1RoundEndUploadStatsEvent : Source1GameEventBase
 {
     internal Source1RoundEndUploadStatsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_end_upload_stats";
 }
 
-public partial class Source1RoundOfficiallyEndedEvent : CsSource1GameEventBase
+public partial class Source1RoundOfficiallyEndedEvent : Source1GameEventBase
 {
     internal Source1RoundOfficiallyEndedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_officially_ended";
 }
 
-public partial class Source1RoundTimeWarningEvent : CsSource1GameEventBase
+public partial class Source1RoundTimeWarningEvent : Source1GameEventBase
 {
     internal Source1RoundTimeWarningEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_time_warning";
 }
 
-public partial class Source1UgcMapInfoReceivedEvent : CsSource1GameEventBase
+public partial class Source1UgcMapInfoReceivedEvent : Source1GameEventBase
 {
     internal Source1UgcMapInfoReceivedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8624,7 +8624,7 @@ public partial class Source1UgcMapInfoReceivedEvent : CsSource1GameEventBase
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1UgcMapUnsubscribedEvent : CsSource1GameEventBase
+public partial class Source1UgcMapUnsubscribedEvent : Source1GameEventBase
 {
     internal Source1UgcMapUnsubscribedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8633,7 +8633,7 @@ public partial class Source1UgcMapUnsubscribedEvent : CsSource1GameEventBase
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1UgcMapDownloadErrorEvent : CsSource1GameEventBase
+public partial class Source1UgcMapDownloadErrorEvent : Source1GameEventBase
 {
     internal Source1UgcMapDownloadErrorEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8644,7 +8644,7 @@ public partial class Source1UgcMapDownloadErrorEvent : CsSource1GameEventBase
     public int ErrorCode { get; set; }
 }
 
-public partial class Source1UgcFileDownloadFinishedEvent : CsSource1GameEventBase
+public partial class Source1UgcFileDownloadFinishedEvent : Source1GameEventBase
 {
     internal Source1UgcFileDownloadFinishedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8653,7 +8653,7 @@ public partial class Source1UgcFileDownloadFinishedEvent : CsSource1GameEventBas
     public ulong Hcontent { get; set; }
 }
 
-public partial class Source1UgcFileDownloadStartEvent : CsSource1GameEventBase
+public partial class Source1UgcFileDownloadStartEvent : Source1GameEventBase
 {
     internal Source1UgcFileDownloadStartEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8664,14 +8664,14 @@ public partial class Source1UgcFileDownloadStartEvent : CsSource1GameEventBase
     public ulong PublishedFileId { get; set; }
 }
 
-public partial class Source1BeginNewMatchEvent : CsSource1GameEventBase
+public partial class Source1BeginNewMatchEvent : Source1GameEventBase
 {
     internal Source1BeginNewMatchEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "begin_new_match";
 }
 
-public partial class Source1DmBonusWeaponStartEvent : CsSource1GameEventBase
+public partial class Source1DmBonusWeaponStartEvent : Source1GameEventBase
 {
     internal Source1DmBonusWeaponStartEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8682,7 +8682,7 @@ public partial class Source1DmBonusWeaponStartEvent : CsSource1GameEventBase
     public int Pos { get; set; }
 }
 
-public partial class Source1SurvivalAnnouncePhaseEvent : CsSource1GameEventBase
+public partial class Source1SurvivalAnnouncePhaseEvent : Source1GameEventBase
 {
     internal Source1SurvivalAnnouncePhaseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8691,7 +8691,7 @@ public partial class Source1SurvivalAnnouncePhaseEvent : CsSource1GameEventBase
     public int Phase { get; set; }
 }
 
-public partial class Source1PlayerDecalEvent : CsSource1GameEventBase
+public partial class Source1PlayerDecalEvent : Source1GameEventBase
 {
     internal Source1PlayerDecalEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8701,7 +8701,7 @@ public partial class Source1PlayerDecalEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1ReadGameTitledataEvent : CsSource1GameEventBase
+public partial class Source1ReadGameTitledataEvent : Source1GameEventBase
 {
     internal Source1ReadGameTitledataEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8710,7 +8710,7 @@ public partial class Source1ReadGameTitledataEvent : CsSource1GameEventBase
     public int ControllerId { get; set; }
 }
 
-public partial class Source1WriteGameTitledataEvent : CsSource1GameEventBase
+public partial class Source1WriteGameTitledataEvent : Source1GameEventBase
 {
     internal Source1WriteGameTitledataEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8719,7 +8719,7 @@ public partial class Source1WriteGameTitledataEvent : CsSource1GameEventBase
     public int ControllerId { get; set; }
 }
 
-public partial class Source1ResetGameTitledataEvent : CsSource1GameEventBase
+public partial class Source1ResetGameTitledataEvent : Source1GameEventBase
 {
     internal Source1ResetGameTitledataEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8728,7 +8728,7 @@ public partial class Source1ResetGameTitledataEvent : CsSource1GameEventBase
     public int ControllerId { get; set; }
 }
 
-public partial class Source1WeaponhudSelectionEvent : CsSource1GameEventBase
+public partial class Source1WeaponhudSelectionEvent : Source1GameEventBase
 {
     internal Source1WeaponhudSelectionEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8745,14 +8745,14 @@ public partial class Source1WeaponhudSelectionEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1VoteEndedEvent : CsSource1GameEventBase
+public partial class Source1VoteEndedEvent : Source1GameEventBase
 {
     internal Source1VoteEndedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "vote_ended";
 }
 
-public partial class Source1VoteCastEvent : CsSource1GameEventBase
+public partial class Source1VoteCastEvent : Source1GameEventBase
 {
     internal Source1VoteCastEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8766,7 +8766,7 @@ public partial class Source1VoteCastEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1VoteOptionsEvent : CsSource1GameEventBase
+public partial class Source1VoteOptionsEvent : Source1GameEventBase
 {
     internal Source1VoteOptionsEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8785,7 +8785,7 @@ public partial class Source1VoteOptionsEvent : CsSource1GameEventBase
     public string Option5 { get; set; } = "";
 }
 
-public partial class Source1EndmatchMapvoteSelectingMapEvent : CsSource1GameEventBase
+public partial class Source1EndmatchMapvoteSelectingMapEvent : Source1GameEventBase
 {
     internal Source1EndmatchMapvoteSelectingMapEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8814,21 +8814,21 @@ public partial class Source1EndmatchMapvoteSelectingMapEvent : CsSource1GameEven
     public int Slot10 { get; set; }
 }
 
-public partial class Source1EndmatchCmmStartRevealItemsEvent : CsSource1GameEventBase
+public partial class Source1EndmatchCmmStartRevealItemsEvent : Source1GameEventBase
 {
     internal Source1EndmatchCmmStartRevealItemsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "endmatch_cmm_start_reveal_items";
 }
 
-public partial class Source1ClientLoadoutChangedEvent : CsSource1GameEventBase
+public partial class Source1ClientLoadoutChangedEvent : Source1GameEventBase
 {
     internal Source1ClientLoadoutChangedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "client_loadout_changed";
 }
 
-public partial class Source1AddPlayerSonarIconEvent : CsSource1GameEventBase
+public partial class Source1AddPlayerSonarIconEvent : Source1GameEventBase
 {
     internal Source1AddPlayerSonarIconEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8844,7 +8844,7 @@ public partial class Source1AddPlayerSonarIconEvent : CsSource1GameEventBase
     public float PosZ { get; set; }
 }
 
-public partial class Source1DoorOpenEvent : CsSource1GameEventBase
+public partial class Source1DoorOpenEvent : Source1GameEventBase
 {
     internal Source1DoorOpenEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8856,7 +8856,7 @@ public partial class Source1DoorOpenEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1DoorClosedEvent : CsSource1GameEventBase
+public partial class Source1DoorClosedEvent : Source1GameEventBase
 {
     internal Source1DoorClosedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8868,7 +8868,7 @@ public partial class Source1DoorClosedEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1DoorBreakEvent : CsSource1GameEventBase
+public partial class Source1DoorBreakEvent : Source1GameEventBase
 {
     internal Source1DoorBreakEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8879,7 +8879,7 @@ public partial class Source1DoorBreakEvent : CsSource1GameEventBase
     public int Dmgstate { get; set; }
 }
 
-public partial class Source1AddBulletHitMarkerEvent : CsSource1GameEventBase
+public partial class Source1AddBulletHitMarkerEvent : Source1GameEventBase
 {
     internal Source1AddBulletHitMarkerEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8911,7 +8911,7 @@ public partial class Source1AddBulletHitMarkerEvent : CsSource1GameEventBase
     public bool Hit { get; set; }
 }
 
-public partial class Source1OtherDeathEvent : CsSource1GameEventBase
+public partial class Source1OtherDeathEvent : Source1GameEventBase
 {
     internal Source1OtherDeathEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8942,7 +8942,7 @@ public partial class Source1OtherDeathEvent : CsSource1GameEventBase
     public bool Attackerblind { get; set; }
 }
 
-public partial class Source1BulletDamageEvent : CsSource1GameEventBase
+public partial class Source1BulletDamageEvent : Source1GameEventBase
 {
     internal Source1BulletDamageEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8975,7 +8975,7 @@ public partial class Source1BulletDamageEvent : CsSource1GameEventBase
     public bool InAir { get; set; }
 }
 
-public partial class Source1ItemPurchaseEvent : CsSource1GameEventBase
+public partial class Source1ItemPurchaseEvent : Source1GameEventBase
 {
     internal Source1ItemPurchaseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -8991,7 +8991,7 @@ public partial class Source1ItemPurchaseEvent : CsSource1GameEventBase
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1BombBeginplantEvent : CsSource1GameEventBase
+public partial class Source1BombBeginplantEvent : Source1GameEventBase
 {
     internal Source1BombBeginplantEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9006,7 +9006,7 @@ public partial class Source1BombBeginplantEvent : CsSource1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1BombAbortplantEvent : CsSource1GameEventBase
+public partial class Source1BombAbortplantEvent : Source1GameEventBase
 {
     internal Source1BombAbortplantEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9021,7 +9021,7 @@ public partial class Source1BombAbortplantEvent : CsSource1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1BombPlantedEvent : CsSource1GameEventBase
+public partial class Source1BombPlantedEvent : Source1GameEventBase
 {
     internal Source1BombPlantedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9036,7 +9036,7 @@ public partial class Source1BombPlantedEvent : CsSource1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1BombDefusedEvent : CsSource1GameEventBase
+public partial class Source1BombDefusedEvent : Source1GameEventBase
 {
     internal Source1BombDefusedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9051,7 +9051,7 @@ public partial class Source1BombDefusedEvent : CsSource1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1BombExplodedEvent : CsSource1GameEventBase
+public partial class Source1BombExplodedEvent : Source1GameEventBase
 {
     internal Source1BombExplodedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9066,7 +9066,7 @@ public partial class Source1BombExplodedEvent : CsSource1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1BombDroppedEvent : CsSource1GameEventBase
+public partial class Source1BombDroppedEvent : Source1GameEventBase
 {
     internal Source1BombDroppedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9081,7 +9081,7 @@ public partial class Source1BombDroppedEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1BombPickupEvent : CsSource1GameEventBase
+public partial class Source1BombPickupEvent : Source1GameEventBase
 {
     internal Source1BombPickupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9091,7 +9091,7 @@ public partial class Source1BombPickupEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1DefuserDroppedEvent : CsSource1GameEventBase
+public partial class Source1DefuserDroppedEvent : Source1GameEventBase
 {
     internal Source1DefuserDroppedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9100,7 +9100,7 @@ public partial class Source1DefuserDroppedEvent : CsSource1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1DefuserPickupEvent : CsSource1GameEventBase
+public partial class Source1DefuserPickupEvent : Source1GameEventBase
 {
     internal Source1DefuserPickupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9115,21 +9115,21 @@ public partial class Source1DefuserPickupEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1AnnouncePhaseEndEvent : CsSource1GameEventBase
+public partial class Source1AnnouncePhaseEndEvent : Source1GameEventBase
 {
     internal Source1AnnouncePhaseEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "announce_phase_end";
 }
 
-public partial class Source1CsIntermissionEvent : CsSource1GameEventBase
+public partial class Source1CsIntermissionEvent : Source1GameEventBase
 {
     internal Source1CsIntermissionEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_intermission";
 }
 
-public partial class Source1BombBegindefuseEvent : CsSource1GameEventBase
+public partial class Source1BombBegindefuseEvent : Source1GameEventBase
 {
     internal Source1BombBegindefuseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9144,7 +9144,7 @@ public partial class Source1BombBegindefuseEvent : CsSource1GameEventBase
     public bool Haskit { get; set; }
 }
 
-public partial class Source1BombAbortdefuseEvent : CsSource1GameEventBase
+public partial class Source1BombAbortdefuseEvent : Source1GameEventBase
 {
     internal Source1BombAbortdefuseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9157,7 +9157,7 @@ public partial class Source1BombAbortdefuseEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1HostageFollowsEvent : CsSource1GameEventBase
+public partial class Source1HostageFollowsEvent : Source1GameEventBase
 {
     internal Source1HostageFollowsEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9172,7 +9172,7 @@ public partial class Source1HostageFollowsEvent : CsSource1GameEventBase
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageHurtEvent : CsSource1GameEventBase
+public partial class Source1HostageHurtEvent : Source1GameEventBase
 {
     internal Source1HostageHurtEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9187,7 +9187,7 @@ public partial class Source1HostageHurtEvent : CsSource1GameEventBase
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageKilledEvent : CsSource1GameEventBase
+public partial class Source1HostageKilledEvent : Source1GameEventBase
 {
     internal Source1HostageKilledEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9202,7 +9202,7 @@ public partial class Source1HostageKilledEvent : CsSource1GameEventBase
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageRescuedEvent : CsSource1GameEventBase
+public partial class Source1HostageRescuedEvent : Source1GameEventBase
 {
     internal Source1HostageRescuedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9219,7 +9219,7 @@ public partial class Source1HostageRescuedEvent : CsSource1GameEventBase
     public int Site { get; set; }
 }
 
-public partial class Source1HostageStopsFollowingEvent : CsSource1GameEventBase
+public partial class Source1HostageStopsFollowingEvent : Source1GameEventBase
 {
     internal Source1HostageStopsFollowingEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9234,14 +9234,14 @@ public partial class Source1HostageStopsFollowingEvent : CsSource1GameEventBase
     public int Hostage { get; set; }
 }
 
-public partial class Source1HostageRescuedAllEvent : CsSource1GameEventBase
+public partial class Source1HostageRescuedAllEvent : Source1GameEventBase
 {
     internal Source1HostageRescuedAllEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hostage_rescued_all";
 }
 
-public partial class Source1HostageCallForHelpEvent : CsSource1GameEventBase
+public partial class Source1HostageCallForHelpEvent : Source1GameEventBase
 {
     internal Source1HostageCallForHelpEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9250,7 +9250,7 @@ public partial class Source1HostageCallForHelpEvent : CsSource1GameEventBase
     public int Hostage { get; set; }
 }
 
-public partial class Source1VipEscapedEvent : CsSource1GameEventBase
+public partial class Source1VipEscapedEvent : Source1GameEventBase
 {
     internal Source1VipEscapedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9260,7 +9260,7 @@ public partial class Source1VipEscapedEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1VipKilledEvent : CsSource1GameEventBase
+public partial class Source1VipKilledEvent : Source1GameEventBase
 {
     internal Source1VipKilledEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9273,7 +9273,7 @@ public partial class Source1VipKilledEvent : CsSource1GameEventBase
     public CCSPlayerController? Attacker => _demo.GetEntityByIndex<CCSPlayerController>(AttackerIndex);
 }
 
-public partial class Source1PlayerRadioEvent : CsSource1GameEventBase
+public partial class Source1PlayerRadioEvent : Source1GameEventBase
 {
     internal Source1PlayerRadioEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9288,7 +9288,7 @@ public partial class Source1PlayerRadioEvent : CsSource1GameEventBase
     public int Slot { get; set; }
 }
 
-public partial class Source1BombBeepEvent : CsSource1GameEventBase
+public partial class Source1BombBeepEvent : Source1GameEventBase
 {
     internal Source1BombBeepEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9297,7 +9297,7 @@ public partial class Source1BombBeepEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1WeaponFireEvent : CsSource1GameEventBase
+public partial class Source1WeaponFireEvent : Source1GameEventBase
 {
     internal Source1WeaponFireEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9314,7 +9314,7 @@ public partial class Source1WeaponFireEvent : CsSource1GameEventBase
     public bool Silenced { get; set; }
 }
 
-public partial class Source1WeaponFireOnEmptyEvent : CsSource1GameEventBase
+public partial class Source1WeaponFireOnEmptyEvent : Source1GameEventBase
 {
     internal Source1WeaponFireOnEmptyEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9329,7 +9329,7 @@ public partial class Source1WeaponFireOnEmptyEvent : CsSource1GameEventBase
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1GrenadeThrownEvent : CsSource1GameEventBase
+public partial class Source1GrenadeThrownEvent : Source1GameEventBase
 {
     internal Source1GrenadeThrownEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9344,7 +9344,7 @@ public partial class Source1GrenadeThrownEvent : CsSource1GameEventBase
     public string Weapon { get; set; } = "";
 }
 
-public partial class Source1WeaponReloadEvent : CsSource1GameEventBase
+public partial class Source1WeaponReloadEvent : Source1GameEventBase
 {
     internal Source1WeaponReloadEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9357,7 +9357,7 @@ public partial class Source1WeaponReloadEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1WeaponZoomEvent : CsSource1GameEventBase
+public partial class Source1WeaponZoomEvent : Source1GameEventBase
 {
     internal Source1WeaponZoomEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9370,7 +9370,7 @@ public partial class Source1WeaponZoomEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1SilencerDetachEvent : CsSource1GameEventBase
+public partial class Source1SilencerDetachEvent : Source1GameEventBase
 {
     internal Source1SilencerDetachEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9383,7 +9383,7 @@ public partial class Source1SilencerDetachEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1InspectWeaponEvent : CsSource1GameEventBase
+public partial class Source1InspectWeaponEvent : Source1GameEventBase
 {
     internal Source1InspectWeaponEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9396,7 +9396,7 @@ public partial class Source1InspectWeaponEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1WeaponZoomRifleEvent : CsSource1GameEventBase
+public partial class Source1WeaponZoomRifleEvent : Source1GameEventBase
 {
     internal Source1WeaponZoomRifleEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9409,7 +9409,7 @@ public partial class Source1WeaponZoomRifleEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1PlayerSpawnedEvent : CsSource1GameEventBase
+public partial class Source1PlayerSpawnedEvent : Source1GameEventBase
 {
     internal Source1PlayerSpawnedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9424,7 +9424,7 @@ public partial class Source1PlayerSpawnedEvent : CsSource1GameEventBase
     public bool Inrestart { get; set; }
 }
 
-public partial class Source1ItemPickupEvent : CsSource1GameEventBase
+public partial class Source1ItemPickupEvent : Source1GameEventBase
 {
     internal Source1ItemPickupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9440,7 +9440,7 @@ public partial class Source1ItemPickupEvent : CsSource1GameEventBase
     public int Defindex { get; set; }
 }
 
-public partial class Source1ItemPickupSlerpEvent : CsSource1GameEventBase
+public partial class Source1ItemPickupSlerpEvent : Source1GameEventBase
 {
     internal Source1ItemPickupSlerpEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9454,7 +9454,7 @@ public partial class Source1ItemPickupSlerpEvent : CsSource1GameEventBase
     public int Behavior { get; set; }
 }
 
-public partial class Source1ItemPickupFailedEvent : CsSource1GameEventBase
+public partial class Source1ItemPickupFailedEvent : Source1GameEventBase
 {
     internal Source1ItemPickupFailedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9470,7 +9470,7 @@ public partial class Source1ItemPickupFailedEvent : CsSource1GameEventBase
     public int Limit { get; set; }
 }
 
-public partial class Source1ItemRemoveEvent : CsSource1GameEventBase
+public partial class Source1ItemRemoveEvent : Source1GameEventBase
 {
     internal Source1ItemRemoveEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9484,7 +9484,7 @@ public partial class Source1ItemRemoveEvent : CsSource1GameEventBase
     public int Defindex { get; set; }
 }
 
-public partial class Source1AmmoPickupEvent : CsSource1GameEventBase
+public partial class Source1AmmoPickupEvent : Source1GameEventBase
 {
     internal Source1AmmoPickupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9498,7 +9498,7 @@ public partial class Source1AmmoPickupEvent : CsSource1GameEventBase
     public int Index { get; set; }
 }
 
-public partial class Source1ItemEquipEvent : CsSource1GameEventBase
+public partial class Source1ItemEquipEvent : Source1GameEventBase
 {
     internal Source1ItemEquipEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9524,7 +9524,7 @@ public partial class Source1ItemEquipEvent : CsSource1GameEventBase
     public bool Ispainted { get; set; }
 }
 
-public partial class Source1EnterBuyzoneEvent : CsSource1GameEventBase
+public partial class Source1EnterBuyzoneEvent : Source1GameEventBase
 {
     internal Source1EnterBuyzoneEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9536,7 +9536,7 @@ public partial class Source1EnterBuyzoneEvent : CsSource1GameEventBase
     public bool Canbuy { get; set; }
 }
 
-public partial class Source1ExitBuyzoneEvent : CsSource1GameEventBase
+public partial class Source1ExitBuyzoneEvent : Source1GameEventBase
 {
     internal Source1ExitBuyzoneEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9548,14 +9548,14 @@ public partial class Source1ExitBuyzoneEvent : CsSource1GameEventBase
     public bool Canbuy { get; set; }
 }
 
-public partial class Source1BuytimeEndedEvent : CsSource1GameEventBase
+public partial class Source1BuytimeEndedEvent : Source1GameEventBase
 {
     internal Source1BuytimeEndedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "buytime_ended";
 }
 
-public partial class Source1EnterBombzoneEvent : CsSource1GameEventBase
+public partial class Source1EnterBombzoneEvent : Source1GameEventBase
 {
     internal Source1EnterBombzoneEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9569,7 +9569,7 @@ public partial class Source1EnterBombzoneEvent : CsSource1GameEventBase
     public bool Isplanted { get; set; }
 }
 
-public partial class Source1ExitBombzoneEvent : CsSource1GameEventBase
+public partial class Source1ExitBombzoneEvent : Source1GameEventBase
 {
     internal Source1ExitBombzoneEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9583,7 +9583,7 @@ public partial class Source1ExitBombzoneEvent : CsSource1GameEventBase
     public bool Isplanted { get; set; }
 }
 
-public partial class Source1EnterRescueZoneEvent : CsSource1GameEventBase
+public partial class Source1EnterRescueZoneEvent : Source1GameEventBase
 {
     internal Source1EnterRescueZoneEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9593,7 +9593,7 @@ public partial class Source1EnterRescueZoneEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1ExitRescueZoneEvent : CsSource1GameEventBase
+public partial class Source1ExitRescueZoneEvent : Source1GameEventBase
 {
     internal Source1ExitRescueZoneEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9603,7 +9603,7 @@ public partial class Source1ExitRescueZoneEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SilencerOffEvent : CsSource1GameEventBase
+public partial class Source1SilencerOffEvent : Source1GameEventBase
 {
     internal Source1SilencerOffEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9613,7 +9613,7 @@ public partial class Source1SilencerOffEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SilencerOnEvent : CsSource1GameEventBase
+public partial class Source1SilencerOnEvent : Source1GameEventBase
 {
     internal Source1SilencerOnEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9623,14 +9623,14 @@ public partial class Source1SilencerOnEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1BuymenuOpenEvent : CsSource1GameEventBase
+public partial class Source1BuymenuOpenEvent : Source1GameEventBase
 {
     internal Source1BuymenuOpenEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "buymenu_open";
 }
 
-public partial class Source1BuymenuCloseEvent : CsSource1GameEventBase
+public partial class Source1BuymenuCloseEvent : Source1GameEventBase
 {
     internal Source1BuymenuCloseEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9640,21 +9640,21 @@ public partial class Source1BuymenuCloseEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1RoundPrestartEvent : CsSource1GameEventBase
+public partial class Source1RoundPrestartEvent : Source1GameEventBase
 {
     internal Source1RoundPrestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_prestart";
 }
 
-public partial class Source1RoundPoststartEvent : CsSource1GameEventBase
+public partial class Source1RoundPoststartEvent : Source1GameEventBase
 {
     internal Source1RoundPoststartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "round_poststart";
 }
 
-public partial class Source1GrenadeBounceEvent : CsSource1GameEventBase
+public partial class Source1GrenadeBounceEvent : Source1GameEventBase
 {
     internal Source1GrenadeBounceEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9667,7 +9667,7 @@ public partial class Source1GrenadeBounceEvent : CsSource1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1HegrenadeDetonateEvent : CsSource1GameEventBase
+public partial class Source1HegrenadeDetonateEvent : Source1GameEventBase
 {
     internal Source1HegrenadeDetonateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9688,7 +9688,7 @@ public partial class Source1HegrenadeDetonateEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1FlashbangDetonateEvent : CsSource1GameEventBase
+public partial class Source1FlashbangDetonateEvent : Source1GameEventBase
 {
     internal Source1FlashbangDetonateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9709,7 +9709,7 @@ public partial class Source1FlashbangDetonateEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1SmokegrenadeDetonateEvent : CsSource1GameEventBase
+public partial class Source1SmokegrenadeDetonateEvent : Source1GameEventBase
 {
     internal Source1SmokegrenadeDetonateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9730,7 +9730,7 @@ public partial class Source1SmokegrenadeDetonateEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1SmokegrenadeExpiredEvent : CsSource1GameEventBase
+public partial class Source1SmokegrenadeExpiredEvent : Source1GameEventBase
 {
     internal Source1SmokegrenadeExpiredEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9751,7 +9751,7 @@ public partial class Source1SmokegrenadeExpiredEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1MolotovDetonateEvent : CsSource1GameEventBase
+public partial class Source1MolotovDetonateEvent : Source1GameEventBase
 {
     internal Source1MolotovDetonateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9770,7 +9770,7 @@ public partial class Source1MolotovDetonateEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyDetonateEvent : CsSource1GameEventBase
+public partial class Source1DecoyDetonateEvent : Source1GameEventBase
 {
     internal Source1DecoyDetonateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9791,7 +9791,7 @@ public partial class Source1DecoyDetonateEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyStartedEvent : CsSource1GameEventBase
+public partial class Source1DecoyStartedEvent : Source1GameEventBase
 {
     internal Source1DecoyStartedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9809,7 +9809,7 @@ public partial class Source1DecoyStartedEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1TagrenadeDetonateEvent : CsSource1GameEventBase
+public partial class Source1TagrenadeDetonateEvent : Source1GameEventBase
 {
     internal Source1TagrenadeDetonateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9827,7 +9827,7 @@ public partial class Source1TagrenadeDetonateEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1InfernoStartburnEvent : CsSource1GameEventBase
+public partial class Source1InfernoStartburnEvent : Source1GameEventBase
 {
     internal Source1InfernoStartburnEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9842,7 +9842,7 @@ public partial class Source1InfernoStartburnEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1InfernoExpireEvent : CsSource1GameEventBase
+public partial class Source1InfernoExpireEvent : Source1GameEventBase
 {
     internal Source1InfernoExpireEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9857,7 +9857,7 @@ public partial class Source1InfernoExpireEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1InfernoExtinguishEvent : CsSource1GameEventBase
+public partial class Source1InfernoExtinguishEvent : Source1GameEventBase
 {
     internal Source1InfernoExtinguishEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9872,7 +9872,7 @@ public partial class Source1InfernoExtinguishEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1DecoyFiringEvent : CsSource1GameEventBase
+public partial class Source1DecoyFiringEvent : Source1GameEventBase
 {
     internal Source1DecoyFiringEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9893,7 +9893,7 @@ public partial class Source1DecoyFiringEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1BulletImpactEvent : CsSource1GameEventBase
+public partial class Source1BulletImpactEvent : Source1GameEventBase
 {
     internal Source1BulletImpactEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9912,7 +9912,7 @@ public partial class Source1BulletImpactEvent : CsSource1GameEventBase
     public float Z { get; set; }
 }
 
-public partial class Source1PlayerJumpEvent : CsSource1GameEventBase
+public partial class Source1PlayerJumpEvent : Source1GameEventBase
 {
     internal Source1PlayerJumpEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9922,7 +9922,7 @@ public partial class Source1PlayerJumpEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerBlindEvent : CsSource1GameEventBase
+public partial class Source1PlayerBlindEvent : Source1GameEventBase
 {
     internal Source1PlayerBlindEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9939,7 +9939,7 @@ public partial class Source1PlayerBlindEvent : CsSource1GameEventBase
     public float BlindDuration { get; set; }
 }
 
-public partial class Source1PlayerFalldamageEvent : CsSource1GameEventBase
+public partial class Source1PlayerFalldamageEvent : Source1GameEventBase
 {
     internal Source1PlayerFalldamageEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9954,7 +9954,7 @@ public partial class Source1PlayerFalldamageEvent : CsSource1GameEventBase
     public float Damage { get; set; }
 }
 
-public partial class Source1DoorMovingEvent : CsSource1GameEventBase
+public partial class Source1DoorMovingEvent : Source1GameEventBase
 {
     internal Source1DoorMovingEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9969,21 +9969,21 @@ public partial class Source1DoorMovingEvent : CsSource1GameEventBase
     public int Entindex { get; set; }
 }
 
-public partial class Source1MbInputLockSuccessEvent : CsSource1GameEventBase
+public partial class Source1MbInputLockSuccessEvent : Source1GameEventBase
 {
     internal Source1MbInputLockSuccessEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "mb_input_lock_success";
 }
 
-public partial class Source1MbInputLockCancelEvent : CsSource1GameEventBase
+public partial class Source1MbInputLockCancelEvent : Source1GameEventBase
 {
     internal Source1MbInputLockCancelEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "mb_input_lock_cancel";
 }
 
-public partial class Source1NavBlockedEvent : CsSource1GameEventBase
+public partial class Source1NavBlockedEvent : Source1GameEventBase
 {
     internal Source1NavBlockedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -9994,21 +9994,21 @@ public partial class Source1NavBlockedEvent : CsSource1GameEventBase
     public bool Blocked { get; set; }
 }
 
-public partial class Source1NavGenerateEvent : CsSource1GameEventBase
+public partial class Source1NavGenerateEvent : Source1GameEventBase
 {
     internal Source1NavGenerateEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "nav_generate";
 }
 
-public partial class Source1AchievementInfoLoadedEvent : CsSource1GameEventBase
+public partial class Source1AchievementInfoLoadedEvent : Source1GameEventBase
 {
     internal Source1AchievementInfoLoadedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "achievement_info_loaded";
 }
 
-public partial class Source1HltvChangedModeEvent : CsSource1GameEventBase
+public partial class Source1HltvChangedModeEvent : Source1GameEventBase
 {
     internal Source1HltvChangedModeEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10021,28 +10021,28 @@ public partial class Source1HltvChangedModeEvent : CsSource1GameEventBase
     public int ObsTarget { get; set; }
 }
 
-public partial class Source1CsGameDisconnectedEvent : CsSource1GameEventBase
+public partial class Source1CsGameDisconnectedEvent : Source1GameEventBase
 {
     internal Source1CsGameDisconnectedEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_game_disconnected";
 }
 
-public partial class Source1CsRoundFinalBeepEvent : CsSource1GameEventBase
+public partial class Source1CsRoundFinalBeepEvent : Source1GameEventBase
 {
     internal Source1CsRoundFinalBeepEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_round_final_beep";
 }
 
-public partial class Source1CsRoundStartBeepEvent : CsSource1GameEventBase
+public partial class Source1CsRoundStartBeepEvent : Source1GameEventBase
 {
     internal Source1CsRoundStartBeepEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_round_start_beep";
 }
 
-public partial class Source1CsWinPanelRoundEvent : CsSource1GameEventBase
+public partial class Source1CsWinPanelRoundEvent : Source1GameEventBase
 {
     internal Source1CsWinPanelRoundEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10068,28 +10068,28 @@ public partial class Source1CsWinPanelRoundEvent : CsSource1GameEventBase
     public int FunfactData3 { get; set; }
 }
 
-public partial class Source1CsWinPanelMatchEvent : CsSource1GameEventBase
+public partial class Source1CsWinPanelMatchEvent : Source1GameEventBase
 {
     internal Source1CsWinPanelMatchEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_win_panel_match";
 }
 
-public partial class Source1CsMatchEndRestartEvent : CsSource1GameEventBase
+public partial class Source1CsMatchEndRestartEvent : Source1GameEventBase
 {
     internal Source1CsMatchEndRestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_match_end_restart";
 }
 
-public partial class Source1CsPreRestartEvent : CsSource1GameEventBase
+public partial class Source1CsPreRestartEvent : Source1GameEventBase
 {
     internal Source1CsPreRestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "cs_pre_restart";
 }
 
-public partial class Source1ShowDeathpanelEvent : CsSource1GameEventBase
+public partial class Source1ShowDeathpanelEvent : Source1GameEventBase
 {
     internal Source1ShowDeathpanelEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10115,14 +10115,14 @@ public partial class Source1ShowDeathpanelEvent : CsSource1GameEventBase
     public int DamageGiven { get; set; }
 }
 
-public partial class Source1HideDeathpanelEvent : CsSource1GameEventBase
+public partial class Source1HideDeathpanelEvent : Source1GameEventBase
 {
     internal Source1HideDeathpanelEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "hide_deathpanel";
 }
 
-public partial class Source1PlayerAvengedTeammateEvent : CsSource1GameEventBase
+public partial class Source1PlayerAvengedTeammateEvent : Source1GameEventBase
 {
     internal Source1PlayerAvengedTeammateEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10135,7 +10135,7 @@ public partial class Source1PlayerAvengedTeammateEvent : CsSource1GameEventBase
     public CCSPlayerController? AvengedPlayer => _demo.GetEntityByIndex<CCSPlayerController>(AvengedPlayerIndex);
 }
 
-public partial class Source1AchievementEarnedLocalEvent : CsSource1GameEventBase
+public partial class Source1AchievementEarnedLocalEvent : Source1GameEventBase
 {
     internal Source1AchievementEarnedLocalEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10146,7 +10146,7 @@ public partial class Source1AchievementEarnedLocalEvent : CsSource1GameEventBase
     public int Splitscreenplayer { get; set; }
 }
 
-public partial class Source1RepostXboxAchievementsEvent : CsSource1GameEventBase
+public partial class Source1RepostXboxAchievementsEvent : Source1GameEventBase
 {
     internal Source1RepostXboxAchievementsEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10155,7 +10155,7 @@ public partial class Source1RepostXboxAchievementsEvent : CsSource1GameEventBase
     public int Splitscreenplayer { get; set; }
 }
 
-public partial class Source1MatchEndConditionsEvent : CsSource1GameEventBase
+public partial class Source1MatchEndConditionsEvent : Source1GameEventBase
 {
     internal Source1MatchEndConditionsEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10170,7 +10170,7 @@ public partial class Source1MatchEndConditionsEvent : CsSource1GameEventBase
     public int Time { get; set; }
 }
 
-public partial class Source1RoundMvpEvent : CsSource1GameEventBase
+public partial class Source1RoundMvpEvent : Source1GameEventBase
 {
     internal Source1RoundMvpEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10190,7 +10190,7 @@ public partial class Source1RoundMvpEvent : CsSource1GameEventBase
     public int Musickitid { get; set; }
 }
 
-public partial class Source1ShowSurvivalRespawnStatusEvent : CsSource1GameEventBase
+public partial class Source1ShowSurvivalRespawnStatusEvent : Source1GameEventBase
 {
     internal Source1ShowSurvivalRespawnStatusEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10207,14 +10207,14 @@ public partial class Source1ShowSurvivalRespawnStatusEvent : CsSource1GameEventB
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 }
 
-public partial class Source1ClientDisconnectEvent : CsSource1GameEventBase
+public partial class Source1ClientDisconnectEvent : Source1GameEventBase
 {
     internal Source1ClientDisconnectEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "client_disconnect";
 }
 
-public partial class Source1GgKilledEnemyEvent : CsSource1GameEventBase
+public partial class Source1GgKilledEnemyEvent : Source1GameEventBase
 {
     internal Source1GgKilledEnemyEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10233,7 +10233,7 @@ public partial class Source1GgKilledEnemyEvent : CsSource1GameEventBase
     public bool Bonus { get; set; }
 }
 
-public partial class Source1SwitchTeamEvent : CsSource1GameEventBase
+public partial class Source1SwitchTeamEvent : Source1GameEventBase
 {
     internal Source1SwitchTeamEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10250,14 +10250,14 @@ public partial class Source1SwitchTeamEvent : CsSource1GameEventBase
     public int NumCTSlotsFree { get; set; }
 }
 
-public partial class Source1WriteProfileDataEvent : CsSource1GameEventBase
+public partial class Source1WriteProfileDataEvent : Source1GameEventBase
 {
     internal Source1WriteProfileDataEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "write_profile_data";
 }
 
-public partial class Source1TrialTimeExpiredEvent : CsSource1GameEventBase
+public partial class Source1TrialTimeExpiredEvent : Source1GameEventBase
 {
     internal Source1TrialTimeExpiredEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10267,14 +10267,14 @@ public partial class Source1TrialTimeExpiredEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1UpdateMatchmakingStatsEvent : CsSource1GameEventBase
+public partial class Source1UpdateMatchmakingStatsEvent : Source1GameEventBase
 {
     internal Source1UpdateMatchmakingStatsEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "update_matchmaking_stats";
 }
 
-public partial class Source1PlayerResetVoteEvent : CsSource1GameEventBase
+public partial class Source1PlayerResetVoteEvent : Source1GameEventBase
 {
     internal Source1PlayerResetVoteEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10286,7 +10286,7 @@ public partial class Source1PlayerResetVoteEvent : CsSource1GameEventBase
     public bool Vote { get; set; }
 }
 
-public partial class Source1EnableRestartVotingEvent : CsSource1GameEventBase
+public partial class Source1EnableRestartVotingEvent : Source1GameEventBase
 {
     internal Source1EnableRestartVotingEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10295,7 +10295,7 @@ public partial class Source1EnableRestartVotingEvent : CsSource1GameEventBase
     public bool Enable { get; set; }
 }
 
-public partial class Source1SfuieventEvent : CsSource1GameEventBase
+public partial class Source1SfuieventEvent : Source1GameEventBase
 {
     internal Source1SfuieventEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10308,7 +10308,7 @@ public partial class Source1SfuieventEvent : CsSource1GameEventBase
     public int Slot { get; set; }
 }
 
-public partial class Source1StartVoteEvent : CsSource1GameEventBase
+public partial class Source1StartVoteEvent : Source1GameEventBase
 {
     internal Source1StartVoteEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10322,7 +10322,7 @@ public partial class Source1StartVoteEvent : CsSource1GameEventBase
     public int VoteParameter { get; set; }
 }
 
-public partial class Source1PlayerGivenC4Event : CsSource1GameEventBase
+public partial class Source1PlayerGivenC4Event : Source1GameEventBase
 {
     internal Source1PlayerGivenC4Event(CsDemoParser demo) : base(demo) {}
 
@@ -10332,7 +10332,7 @@ public partial class Source1PlayerGivenC4Event : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1BotTakeoverEvent : CsSource1GameEventBase
+public partial class Source1BotTakeoverEvent : Source1GameEventBase
 {
     internal Source1BotTakeoverEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10354,7 +10354,7 @@ public partial class Source1BotTakeoverEvent : CsSource1GameEventBase
     public float R { get; set; }
 }
 
-public partial class Source1JointeamFailedEvent : CsSource1GameEventBase
+public partial class Source1JointeamFailedEvent : Source1GameEventBase
 {
     internal Source1JointeamFailedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10366,7 +10366,7 @@ public partial class Source1JointeamFailedEvent : CsSource1GameEventBase
     public int Reason { get; set; }
 }
 
-public partial class Source1TeamchangePendingEvent : CsSource1GameEventBase
+public partial class Source1TeamchangePendingEvent : Source1GameEventBase
 {
     internal Source1TeamchangePendingEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10378,14 +10378,14 @@ public partial class Source1TeamchangePendingEvent : CsSource1GameEventBase
     public int Toteam { get; set; }
 }
 
-public partial class Source1MaterialDefaultCompleteEvent : CsSource1GameEventBase
+public partial class Source1MaterialDefaultCompleteEvent : Source1GameEventBase
 {
     internal Source1MaterialDefaultCompleteEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "material_default_complete";
 }
 
-public partial class Source1CsPrevNextSpectatorEvent : CsSource1GameEventBase
+public partial class Source1CsPrevNextSpectatorEvent : Source1GameEventBase
 {
     internal Source1CsPrevNextSpectatorEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10394,7 +10394,7 @@ public partial class Source1CsPrevNextSpectatorEvent : CsSource1GameEventBase
     public bool Next { get; set; }
 }
 
-public partial class Source1NextlevelChangedEvent : CsSource1GameEventBase
+public partial class Source1NextlevelChangedEvent : Source1GameEventBase
 {
     internal Source1NextlevelChangedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10407,7 +10407,7 @@ public partial class Source1NextlevelChangedEvent : CsSource1GameEventBase
     public string Skirmishmode { get; set; } = "";
 }
 
-public partial class Source1SeasoncoinLevelupEvent : CsSource1GameEventBase
+public partial class Source1SeasoncoinLevelupEvent : Source1GameEventBase
 {
     internal Source1SeasoncoinLevelupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10421,7 +10421,7 @@ public partial class Source1SeasoncoinLevelupEvent : CsSource1GameEventBase
     public int Rank { get; set; }
 }
 
-public partial class Source1TournamentRewardEvent : CsSource1GameEventBase
+public partial class Source1TournamentRewardEvent : Source1GameEventBase
 {
     internal Source1TournamentRewardEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10434,14 +10434,14 @@ public partial class Source1TournamentRewardEvent : CsSource1GameEventBase
     public int Accountid { get; set; }
 }
 
-public partial class Source1StartHalftimeEvent : CsSource1GameEventBase
+public partial class Source1StartHalftimeEvent : Source1GameEventBase
 {
     internal Source1StartHalftimeEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "start_halftime";
 }
 
-public partial class Source1AmmoRefillEvent : CsSource1GameEventBase
+public partial class Source1AmmoRefillEvent : Source1GameEventBase
 {
     internal Source1AmmoRefillEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10453,7 +10453,7 @@ public partial class Source1AmmoRefillEvent : CsSource1GameEventBase
     public bool Success { get; set; }
 }
 
-public partial class Source1ParachutePickupEvent : CsSource1GameEventBase
+public partial class Source1ParachutePickupEvent : Source1GameEventBase
 {
     internal Source1ParachutePickupEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10463,7 +10463,7 @@ public partial class Source1ParachutePickupEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1ParachuteDeployEvent : CsSource1GameEventBase
+public partial class Source1ParachuteDeployEvent : Source1GameEventBase
 {
     internal Source1ParachuteDeployEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10473,7 +10473,7 @@ public partial class Source1ParachuteDeployEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1DronegunAttackEvent : CsSource1GameEventBase
+public partial class Source1DronegunAttackEvent : Source1GameEventBase
 {
     internal Source1DronegunAttackEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10483,7 +10483,7 @@ public partial class Source1DronegunAttackEvent : CsSource1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1DroneDispatchedEvent : CsSource1GameEventBase
+public partial class Source1DroneDispatchedEvent : Source1GameEventBase
 {
     internal Source1DroneDispatchedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10497,7 +10497,7 @@ public partial class Source1DroneDispatchedEvent : CsSource1GameEventBase
     public int DroneDispatched { get; set; }
 }
 
-public partial class Source1LootCrateVisibleEvent : CsSource1GameEventBase
+public partial class Source1LootCrateVisibleEvent : Source1GameEventBase
 {
     internal Source1LootCrateVisibleEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10511,7 +10511,7 @@ public partial class Source1LootCrateVisibleEvent : CsSource1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1LootCrateOpenedEvent : CsSource1GameEventBase
+public partial class Source1LootCrateOpenedEvent : Source1GameEventBase
 {
     internal Source1LootCrateOpenedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10523,7 +10523,7 @@ public partial class Source1LootCrateOpenedEvent : CsSource1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1OpenCrateInstrEvent : CsSource1GameEventBase
+public partial class Source1OpenCrateInstrEvent : Source1GameEventBase
 {
     internal Source1OpenCrateInstrEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10537,7 +10537,7 @@ public partial class Source1OpenCrateInstrEvent : CsSource1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1SmokeBeaconParadropEvent : CsSource1GameEventBase
+public partial class Source1SmokeBeaconParadropEvent : Source1GameEventBase
 {
     internal Source1SmokeBeaconParadropEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10549,7 +10549,7 @@ public partial class Source1SmokeBeaconParadropEvent : CsSource1GameEventBase
     public int Paradrop { get; set; }
 }
 
-public partial class Source1SurvivalParadropSpawnEvent : CsSource1GameEventBase
+public partial class Source1SurvivalParadropSpawnEvent : Source1GameEventBase
 {
     internal Source1SurvivalParadropSpawnEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10558,7 +10558,7 @@ public partial class Source1SurvivalParadropSpawnEvent : CsSource1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1SurvivalParadropBreakEvent : CsSource1GameEventBase
+public partial class Source1SurvivalParadropBreakEvent : Source1GameEventBase
 {
     internal Source1SurvivalParadropBreakEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10567,7 +10567,7 @@ public partial class Source1SurvivalParadropBreakEvent : CsSource1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1DroneCargoDetachedEvent : CsSource1GameEventBase
+public partial class Source1DroneCargoDetachedEvent : Source1GameEventBase
 {
     internal Source1DroneCargoDetachedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10581,7 +10581,7 @@ public partial class Source1DroneCargoDetachedEvent : CsSource1GameEventBase
     public bool Delivered { get; set; }
 }
 
-public partial class Source1DroneAboveRoofEvent : CsSource1GameEventBase
+public partial class Source1DroneAboveRoofEvent : Source1GameEventBase
 {
     internal Source1DroneAboveRoofEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10593,7 +10593,7 @@ public partial class Source1DroneAboveRoofEvent : CsSource1GameEventBase
     public int Cargo { get; set; }
 }
 
-public partial class Source1ChoppersIncomingWarningEvent : CsSource1GameEventBase
+public partial class Source1ChoppersIncomingWarningEvent : Source1GameEventBase
 {
     internal Source1ChoppersIncomingWarningEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10602,7 +10602,7 @@ public partial class Source1ChoppersIncomingWarningEvent : CsSource1GameEventBas
     public bool Global { get; set; }
 }
 
-public partial class Source1FirstbombsIncomingWarningEvent : CsSource1GameEventBase
+public partial class Source1FirstbombsIncomingWarningEvent : Source1GameEventBase
 {
     internal Source1FirstbombsIncomingWarningEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10611,7 +10611,7 @@ public partial class Source1FirstbombsIncomingWarningEvent : CsSource1GameEventB
     public bool Global { get; set; }
 }
 
-public partial class Source1DzItemInteractionEvent : CsSource1GameEventBase
+public partial class Source1DzItemInteractionEvent : Source1GameEventBase
 {
     internal Source1DzItemInteractionEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10625,7 +10625,7 @@ public partial class Source1DzItemInteractionEvent : CsSource1GameEventBase
     public string Type { get; set; } = "";
 }
 
-public partial class Source1SurvivalTeammateRespawnEvent : CsSource1GameEventBase
+public partial class Source1SurvivalTeammateRespawnEvent : Source1GameEventBase
 {
     internal Source1SurvivalTeammateRespawnEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10635,7 +10635,7 @@ public partial class Source1SurvivalTeammateRespawnEvent : CsSource1GameEventBas
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SurvivalNoRespawnsWarningEvent : CsSource1GameEventBase
+public partial class Source1SurvivalNoRespawnsWarningEvent : Source1GameEventBase
 {
     internal Source1SurvivalNoRespawnsWarningEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10645,7 +10645,7 @@ public partial class Source1SurvivalNoRespawnsWarningEvent : CsSource1GameEventB
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1SurvivalNoRespawnsFinalEvent : CsSource1GameEventBase
+public partial class Source1SurvivalNoRespawnsFinalEvent : Source1GameEventBase
 {
     internal Source1SurvivalNoRespawnsFinalEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10655,7 +10655,7 @@ public partial class Source1SurvivalNoRespawnsFinalEvent : CsSource1GameEventBas
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1PlayerPingEvent : CsSource1GameEventBase
+public partial class Source1PlayerPingEvent : Source1GameEventBase
 {
     internal Source1PlayerPingEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10678,7 +10678,7 @@ public partial class Source1PlayerPingEvent : CsSource1GameEventBase
     public bool Urgent { get; set; }
 }
 
-public partial class Source1PlayerPingStopEvent : CsSource1GameEventBase
+public partial class Source1PlayerPingStopEvent : Source1GameEventBase
 {
     internal Source1PlayerPingStopEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10687,7 +10687,7 @@ public partial class Source1PlayerPingStopEvent : CsSource1GameEventBase
     public int Entityid { get; set; }
 }
 
-public partial class Source1PlayerSoundEvent : CsSource1GameEventBase
+public partial class Source1PlayerSoundEvent : Source1GameEventBase
 {
     internal Source1PlayerSoundEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10706,28 +10706,28 @@ public partial class Source1PlayerSoundEvent : CsSource1GameEventBase
     public bool Step { get; set; }
 }
 
-public partial class Source1GuardianWaveRestartEvent : CsSource1GameEventBase
+public partial class Source1GuardianWaveRestartEvent : Source1GameEventBase
 {
     internal Source1GuardianWaveRestartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "guardian_wave_restart";
 }
 
-public partial class Source1TeamIntroStartEvent : CsSource1GameEventBase
+public partial class Source1TeamIntroStartEvent : Source1GameEventBase
 {
     internal Source1TeamIntroStartEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "team_intro_start";
 }
 
-public partial class Source1TeamIntroEndEvent : CsSource1GameEventBase
+public partial class Source1TeamIntroEndEvent : Source1GameEventBase
 {
     internal Source1TeamIntroEndEvent(CsDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "team_intro_end";
 }
 
-public partial class Source1BulletFlightResolutionEvent : CsSource1GameEventBase
+public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
 {
     internal Source1BulletFlightResolutionEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10758,7 +10758,7 @@ public partial class Source1BulletFlightResolutionEvent : CsSource1GameEventBase
     public int StartZ { get; set; }
 }
 
-public partial class Source1GamePhaseChangedEvent : CsSource1GameEventBase
+public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 {
     internal Source1GamePhaseChangedEvent(CsDemoParser demo) : base(demo) {}
 
@@ -10767,7 +10767,7 @@ public partial class Source1GamePhaseChangedEvent : CsSource1GameEventBase
     public int NewPhase { get; set; }
 }
 
-public partial class Source1ClientsideReloadCustomEconEvent : CsSource1GameEventBase
+public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBase
 {
     internal Source1ClientsideReloadCustomEconEvent(CsDemoParser demo) : base(demo) {}
 
@@ -11048,6 +11048,6 @@ public partial class Source1ClientsideReloadCustomEconEvent : CsSource1GameEvent
 [JsonDerivedType(typeof(Source1BulletFlightResolutionEvent))]
 [JsonDerivedType(typeof(Source1GamePhaseChangedEvent))]
 [JsonDerivedType(typeof(Source1ClientsideReloadCustomEconEvent))]
-public partial class CsSource1GameEventBase
+public partial class Source1GameEventBase
 {
 }

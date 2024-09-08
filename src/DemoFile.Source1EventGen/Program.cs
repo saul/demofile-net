@@ -20,7 +20,7 @@ internal static class Program
         var cts = new CancellationTokenSource();
         var demo = new DemoParser();
 
-        demo.GameEvents.Source1LegacyGameEventList += events =>
+        demo.BaseGameEvents.Source1LegacyGameEventList += events =>
         {
             var builder = new StringBuilder();
             WriteDescriptors(builder, events.Descriptors);

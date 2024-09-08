@@ -6,24 +6,23 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
 {
     private readonly CHandle<CCSTeam, CsDemoParser>[] _teamHandles = new CHandle<CCSTeam, CsDemoParser>[4];
     private CsEntityEvents _csEntityEvents;
-    private CsGameEvents _csGameEvents;
-    private CsUserMessageEvents _csUserMessageEvents;
-
+    private GameEvents _gameEvents;
+    private UserMessageEvents _userMessageEvents;
     private CHandle<CCSGameRulesProxy, CsDemoParser> _gameRulesHandle;
     private CHandle<CCSPlayerResource, CsDemoParser> _playerResourceHandle;
 
     public CsDemoParser()
     {
-        Source1GameEvents = new CsSource1GameEvents(this);
-        GameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
-        GameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
+        Source1GameEvents = new Source1GameEvents(this);
+        BaseGameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
+        BaseGameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
     }
 
-    public CsSource1GameEvents Source1GameEvents { get; }
+    public Source1GameEvents Source1GameEvents { get; }
 
-    public ref CsUserMessageEvents CsUserMessageEvents => ref _csUserMessageEvents;
+    public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
     public ref CsEntityEvents EntityEvents => ref _csEntityEvents;
-    public ref CsGameEvents CsGameEvents => ref _csGameEvents;
+    public ref GameEvents GameEvents => ref _gameEvents;
 
     /// <summary>
     /// The <see cref="CCSTeam"/> entity representing the Spectators.
@@ -137,7 +136,7 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
 
     protected override bool ParseNetMessage(int msgType, ReadOnlySpan<byte> msgBuf)
     {
-        return _csGameEvents.ParseNetMessage(msgType, msgBuf)
-               || _csUserMessageEvents.ParseUserMessage(msgType, msgBuf);
+        return _gameEvents.ParseNetMessage(msgType, msgBuf)
+               || _userMessageEvents.ParseUserMessage(msgType, msgBuf);
     }
 }

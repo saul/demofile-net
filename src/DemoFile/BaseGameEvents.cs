@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public struct GameEvents
+public struct BaseGameEvents
 {
     public Action<CMsgVDebugGameSessionIDEvent>? VDebugGameSessionIdEvent;
     public Action<CMsgPlaceDecalEvent>? PlaceDecalEvent;

@@ -9,8 +9,8 @@ internal class Program
     {
         var path = args.SingleOrDefault() ?? throw new Exception("Expected a single argument: <path to .dem>");
 
-        var demo = new DemoParser();
-        demo.UserMessageEvents.UserMessageTextMsg += um =>
+        var demo = new CsDemoParser();
+        demo.BaseUserMessageEvents.UserMessageTextMsg += um =>
         {
             // 3 = HUD_PRINTTALK
             if (um.Dest == 3u)
@@ -29,12 +29,12 @@ internal class Program
             }
         };
 
-        demo.UserMessageEvents.UserMessageSayText += um =>
+        demo.BaseUserMessageEvents.UserMessageSayText += um =>
         {
             WriteColourChat(um.Text, teamColour: null);
         };
 
-        demo.UserMessageEvents.UserMessageSayText2 += um =>
+        demo.BaseUserMessageEvents.UserMessageSayText2 += um =>
         {
             var entity = um.Entityindex >= 0
                 ? demo.GetEntityByIndex<CBaseEntity>(new CEntityIndex((uint) um.Entityindex))

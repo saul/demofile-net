@@ -1,7 +1,12 @@
-### 0.21.1 (2024-09-08)
+### 0.21.1 (2024-09-08) - Significant API change
 
-- Laying foundation for supporting multiple games. \
-  Split CS-specific code out of DemoFile project into `DemoFile.Game.Cs2`  
+- BREAKING CHANGE: Laying foundation for supporting multiple games. \
+  Split CS-specific code out of DemoFile project into `DemoFile.Game.Cs2`
+- BREAKING CHANGE: `DemoParser` is now abstract - use `new CsDemoParser()` instead
+- BREAKING CHANGE: Renamed `DemoParser.IsGotv` to `DemoParser.IsTvRecording`
+- BREAKING CHANGE: Renamed `DemoParser.GameEvents` to `DemoParser.BaseGameEvents`
+- BREAKING CHANGE: Renamed `DemoParser.UserMessageEvents` to `DemoParser.BaseUserMessageEvents`
+- BREAKING CHANGE: Renamed `DemoParser.CsgoGameEvents` to `CsDemoParser.GameEvents`
 
 ### 0.20.1 (2024-09-07)
 

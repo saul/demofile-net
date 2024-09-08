@@ -17,11 +17,11 @@ public abstract partial class DemoParser<TGameParser>
 
     private long _commandStartPosition;
     private DemoEvents _demoEvents;
-    private GameEvents _gameEvents;
+    private BaseGameEvents _baseGameEvents;
     private PacketEvents _packetEvents;
     private Stream _stream;
     private TempEntityEvents _tempEntityEvents;
-    private UserMessageEvents _userMessageEvents;
+    private BaseUserMessageEvents _baseUserMessageEvents;
 
     /// <summary>
     /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
@@ -69,9 +69,9 @@ public abstract partial class DemoParser<TGameParser>
     public bool IsReading { get; private set; }
 
     public ref DemoEvents DemoEvents => ref _demoEvents;
-    public ref GameEvents GameEvents => ref _gameEvents;
+    public ref BaseGameEvents BaseGameEvents => ref _baseGameEvents;
     public ref PacketEvents PacketEvents => ref _packetEvents;
-    public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
+    public ref BaseUserMessageEvents BaseUserMessageEvents => ref _baseUserMessageEvents;
     public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
     protected internal abstract ref EntityEvents<CEntityInstance<TGameParser>, TGameParser> EntityInstanceEvents { get; }
 
@@ -133,8 +133,8 @@ public abstract partial class DemoParser<TGameParser>
             var msgBuf = queued.MsgBuffer;
 
             if (!_packetEvents.ParseNetMessage(queued.MsgType, msgBuf)
-                && !_gameEvents.ParseGameEvent(queued.MsgType, msgBuf)
-                && !_userMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
+                && !_baseGameEvents.ParseGameEvent(queued.MsgType, msgBuf)
+                && !_baseUserMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
                 && !_tempEntityEvents.ParseNetMessage(queued.MsgType, msgBuf)
                 && !ParseNetMessage(queued.MsgType, msgBuf))
             {

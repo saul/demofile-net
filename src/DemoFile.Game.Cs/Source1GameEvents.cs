@@ -13,11 +13,11 @@ public enum GameEventKeyType
     PlayerController = 9,
 }
 
-public abstract partial class CsSource1GameEventBase
+public abstract partial class Source1GameEventBase
 {
     protected readonly DemoParser<CsDemoParser> _demo;
 
-    protected CsSource1GameEventBase(DemoParser<CsDemoParser> demo)
+    protected Source1GameEventBase(DemoParser<CsDemoParser> demo)
     {
         _demo = demo;
     }
@@ -25,16 +25,16 @@ public abstract partial class CsSource1GameEventBase
     public abstract string GameEventName { get; }
 }
 
-public partial class CsSource1GameEvents
+public partial class Source1GameEvents
 {
     private readonly CsDemoParser _demo;
 
     // todo(net8): store as a FrozenDictionary
     private Dictionary<int, Action<CsDemoParser, CMsgSource1LegacyGameEvent>> _handlers = new();
 
-    public Action<CsSource1GameEventBase>? Source1GameEvent;
+    public Action<Source1GameEventBase>? Source1GameEvent;
 
-    internal CsSource1GameEvents(CsDemoParser demo)
+    internal Source1GameEvents(CsDemoParser demo)
     {
         _demo = demo;
     }
