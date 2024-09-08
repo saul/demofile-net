@@ -79,7 +79,7 @@ public struct DemoEvents
             var uncompressedSize = Snappy.GetUncompressedLength(buffer);
             var rented = ArrayPool<byte>.Shared.Rent(uncompressedSize);
             Snappy.Decompress(buffer, rented);
-            callback(parser.ParseFrom(rented[..uncompressedSize]));
+            callback(parser.ParseFrom(rented.AsSpan()[..uncompressedSize]));
             ArrayPool<byte>.Shared.Return(rented);
         }
         else
