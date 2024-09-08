@@ -5,11 +5,11 @@ namespace DemoFile;
 public sealed class CsDemoParser : DemoParser<CsDemoParser>
 {
     private readonly CHandle<CCSTeam, CsDemoParser>[] _teamHandles = new CHandle<CCSTeam, CsDemoParser>[4];
-    private CsEntityEvents _csEntityEvents;
+    private EntityEvents _entityEvents;
     private GameEvents _gameEvents;
-    private UserMessageEvents _userMessageEvents;
     private CHandle<CCSGameRulesProxy, CsDemoParser> _gameRulesHandle;
     private CHandle<CCSPlayerResource, CsDemoParser> _playerResourceHandle;
+    private UserMessageEvents _userMessageEvents;
 
     public CsDemoParser()
     {
@@ -21,7 +21,7 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
     public Source1GameEvents Source1GameEvents { get; }
 
     public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
-    public ref CsEntityEvents EntityEvents => ref _csEntityEvents;
+    public ref EntityEvents EntityEvents => ref _entityEvents;
     public ref GameEvents GameEvents => ref _gameEvents;
 
     /// <summary>

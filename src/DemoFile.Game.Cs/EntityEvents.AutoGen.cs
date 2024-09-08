@@ -2,7 +2,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public struct CsEntityEvents
+public struct EntityEvents
 {
     public EntityEvents<CAK47, CsDemoParser> CAK47;
     public EntityEvents<CBarnLight, CsDemoParser> CBarnLight;
