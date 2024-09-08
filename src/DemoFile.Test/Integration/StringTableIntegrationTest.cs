@@ -18,7 +18,7 @@ public class StringTableIntegrationTest
     public async Task PlayerInfo()
     {
         // Arrange
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             var snapshot = new DemoSnapshot();
 

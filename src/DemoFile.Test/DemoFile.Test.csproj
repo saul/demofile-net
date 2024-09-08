@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
+    <ProjectReference Include="..\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj" />
   </ItemGroup>
 
   <ItemGroup>

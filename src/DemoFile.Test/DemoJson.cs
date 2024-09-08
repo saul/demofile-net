@@ -12,21 +12,22 @@ public static class DemoJson
     {
         public override bool CanConvert(Type typeToConvert) =>
             typeToConvert.IsGenericType
-            && typeToConvert.GetGenericTypeDefinition() == typeof(CHandle<>);
+            && typeToConvert.GetGenericTypeDefinition() == typeof(CHandle<,>);
 
         public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
         {
             var handleType = typeToConvert.GetGenericArguments()[0];
-            return Activator.CreateInstance(typeof(CHandleJsonConverter<>).MakeGenericType(handleType)) as JsonConverter;
+            return Activator.CreateInstance(typeof(CHandleJsonConverter<,>).MakeGenericType(handleType)) as JsonConverter;
         }
     }
 
-    private class CHandleJsonConverter<T> : JsonConverter<CHandle<T>>
-        where T : CEntityInstance
+    private class CHandleJsonConverter<T, TGameParser> : JsonConverter<CHandle<T, TGameParser>>
+        where T : CEntityInstance<TGameParser>
+        where TGameParser : DemoParser<TGameParser>, new()
     {
-        public override CHandle<T> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotImplementedException();
+        public override CHandle<T, TGameParser> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotImplementedException();
 
-        public override void Write(Utf8JsonWriter writer, CHandle<T> value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, CHandle<T, TGameParser> value, JsonSerializerOptions options)
         {
             if (!value.IsValid)
             {
@@ -36,7 +37,7 @@ public static class DemoJson
 
             writer.WriteStartObject();
 
-            if (typeof(T) != typeof(CEntityInstance))
+            if (typeof(T) != typeof(CEntityInstance<TGameParser>))
                 writer.WriteString("type", typeof(T).Name);
 
             writer.WriteNumber("index", value.Index.Value);
@@ -46,14 +47,14 @@ public static class DemoJson
         }
     }
 
-    private class CEntityInstanceJsonConverter : JsonConverter<CEntityInstance>
+    private class CEntityInstanceJsonConverter : JsonConverter<CEntityInstance<CsDemoParser>>
     {
         public override bool CanConvert(Type typeToConvert) =>
-            typeToConvert.IsAssignableTo(typeof(CEntityInstance));
+            typeToConvert.IsAssignableTo(typeof(CEntityInstance<CsDemoParser>));
 
-        public override CEntityInstance Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotImplementedException();
+        public override CEntityInstance<CsDemoParser> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotImplementedException();
 
-        public override void Write(Utf8JsonWriter writer, CEntityInstance entity, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, CEntityInstance<CsDemoParser> entity, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
             writer.WriteString("type", entity.ServerClass.Name);

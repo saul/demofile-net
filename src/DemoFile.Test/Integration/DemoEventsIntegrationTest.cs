@@ -16,7 +16,7 @@ public class DemoEventsIntegrationTest
     public async Task DemoFileInfo()
     {
         // Arrange
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             var snapshot = new DemoSnapshot();
 

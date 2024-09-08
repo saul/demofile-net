@@ -15,6 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="DemoFile.Test" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
   </ItemGroup>
 

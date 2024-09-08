@@ -52,11 +52,11 @@ public static class GlobalUtil
 
     public static ParseMode[] ParseModes => Enum.GetValues<ParseMode>();
 
-    public static async Task<string> Parse(ParseMode mode, byte[] demoFileBytes, Func<DemoParser, DemoSnapshot> parseSection)
+    public static async Task<string> Parse(ParseMode mode, byte[] demoFileBytes, Func<CsDemoParser, DemoSnapshot> parseSection)
     {
         if (mode == ParseMode.ReadAll)
         {
-            var demo = new DemoParser();
+            var demo = new CsDemoParser();
             var stream = new MemoryStream(demoFileBytes);
 
             var result = parseSection(demo);
@@ -66,7 +66,7 @@ public static class GlobalUtil
         }
         else if (mode == ParseMode.ByTick)
         {
-            var demo = new DemoParser();
+            var demo = new CsDemoParser();
             var stream = new MemoryStream(demoFileBytes);
 
             var result = parseSection(demo);
@@ -80,7 +80,7 @@ public static class GlobalUtil
         }
         else if (mode == ParseMode.ReadAllParallel)
         {
-            var results = await DemoParser.ReadAllParallelAsync(demoFileBytes, parseSection, default);
+            var results = await CsDemoParser.ReadAllParallelAsync(demoFileBytes, parseSection, default);
 
             var acc = results.Aggregate(new DemoSnapshot(), (acc, snapshot) =>
             {

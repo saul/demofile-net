@@ -18,7 +18,7 @@ public class PlayerPropsIntegrationTest
     public async Task Position()
     {
         // Arrange
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             var snapshot = new DemoSnapshot();
 

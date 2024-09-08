@@ -6,7 +6,7 @@ public class DemoParserIntegrationTest
     [Test]
     public async Task ReadAll()
     {
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), default);
         Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(217866));
     }
@@ -15,7 +15,7 @@ public class DemoParserIntegrationTest
     public async Task ByTick()
     {
         // Arrange
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         var tick = demo.CurrentDemoTick;
 
         // Act
@@ -48,7 +48,7 @@ public class DemoParserIntegrationTest
         [Values] ParseMode mode,
         [ValueSource(nameof(CompatibilityCases))] KeyValuePair<string, byte[]> testCase)
     {
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             // no-op - we're just parsing the demo to the end
             return new DemoSnapshot();
@@ -60,7 +60,7 @@ public class DemoParserIntegrationTest
     [Test]
     public async Task ReadAll_AlternateBaseline()
     {
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         await demo.ReadAllAsync(new MemoryStream(MatchmakingProtocol13968), default);
     }
 }
