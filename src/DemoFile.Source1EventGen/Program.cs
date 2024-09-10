@@ -5,21 +5,18 @@ namespace DemoFile.Source1EventGen;
 
 internal static class Program
 {
-    private static readonly IReadOnlySet<string> SyntheticEvents = new HashSet<string>
-    {
-        "round_start",
-        "round_end"
-    };
-
     public static async Task Main(string[] args)
     {
-        var gameSdkInfo = new GameSdkInfo("Cs");
-
-        var (demoPath, outputPath) = args switch
+        var (demoPath, outputDir) = args switch
         {
             [var fst, var snd] => (fst, snd),
-            _ => throw new Exception("Expected format: <path to .dem> <path to output .cs>")
+            _ => throw new Exception("Expected format: <path to .dem> <path to output dir for .cs file>")
         };
+
+        Console.WriteLine($"Writing output to: {outputDir}");
+        var gameName = Path.GetExtension(outputDir)[1..];
+        Console.WriteLine($"Using game name: {gameName}");
+        var gameSdkInfo = new GameSdkInfo(gameName);
 
         var cts = new CancellationTokenSource();
         var demo = new DummyDemoParser();
@@ -30,6 +27,7 @@ internal static class Program
             WriteDescriptors(gameSdkInfo, builder, events.Descriptors);
             cts.Cancel();
 
+            var outputPath = Path.Combine(outputDir, "Source1GameEvents.Autogen.cs");
             File.WriteAllText(outputPath, builder.ToString());
         };
 
@@ -107,7 +105,7 @@ internal static class Program
 
         foreach (var descriptor in descriptors)
         {
-            if (SyntheticEvents.Contains(descriptor.Name))
+            if (gameSdkInfo.SyntheticEvents.Contains(descriptor.Name))
                 continue;
 
             builder.AppendLine($"    public Action<{EventNameToCsClass(descriptor.Name)}>? {SnakeCaseToPascalCase(descriptor.Name)};");
@@ -180,11 +178,11 @@ internal static class Program
 
                 if ((GameEventKeyType) key.Type == GameEventKeyType.PlayerController)
                 {
-                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^5]} => _demo.GetEntityByIndex<CCSPlayerController>({csPropertyName});");
+                    builder.AppendLine($"    public {gameSdkInfo.PlayerControllerClass}? {csPropertyName[..^5]} => _demo.GetEntityByIndex<{gameSdkInfo.PlayerControllerClass}>({csPropertyName});");
                 }
                 else if ((GameEventKeyType) key.Type == GameEventKeyType.StrictEHandle && key.Name.EndsWith("_pawn"))
                 {
-                    builder.AppendLine($"    public CCSPlayerPawn? {csPropertyName[..^6]} => _demo.GetEntityByHandle({csPropertyName}) as CCSPlayerPawn;");
+                    builder.AppendLine($"    public {gameSdkInfo.PlayerPawnClass}? {csPropertyName[..^6]} => _demo.GetEntityByHandle({csPropertyName}) as {gameSdkInfo.PlayerPawnClass};");
                 }
             }
 

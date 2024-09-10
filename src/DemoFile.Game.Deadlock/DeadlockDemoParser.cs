@@ -5,8 +5,32 @@ namespace DemoFile;
 public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
 {
     private EntityEvents _entityEvents;
+    private GameEvents _gameEvents;
+    private UserMessageEvents _userMessageEvents;
+    private readonly CHandle<CCitadelTeam, DeadlockDemoParser>[] _teamHandles = new CHandle<CCitadelTeam, DeadlockDemoParser>[4];
+    private CHandle<CCitadelGameRulesProxy, DeadlockDemoParser> _gameRulesHandle;
 
+    public DeadlockDemoParser()
+    {
+        Source1GameEvents = new Source1GameEvents(this);
+        BaseGameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
+        BaseGameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
+    }
+
+    public Source1GameEvents Source1GameEvents { get; }
+
+    public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
     public ref EntityEvents EntityEvents => ref _entityEvents;
+    public ref GameEvents GameEvents => ref _gameEvents;
+
+    /// <summary>
+    /// The <see cref="CCitadelGameRules"/> entity representing the game rules
+    /// (e.g. current game state)
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
+    public CCitadelGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
 
     /// <summary>
     /// All connected players.
@@ -38,6 +62,8 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
         }
     }
 
+    // Amber Hand or Sapphire Flame
+
     protected override IReadOnlyDictionary<string, EntityFactory<DeadlockDemoParser>> EntityFactories =>
         DeadlockEntityFactories.All;
 
@@ -48,8 +74,44 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
         return new DeadlockDecoderSet(serializers);
     }
 
+    /// <summary>
+    /// Get the <see cref="CCitadelTeam"/> entity representing a given team.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
+    public CCitadelTeam GetTeam(TeamNumber teamNumber) =>
+        GetCachedSingletonEntity(
+            ref _teamHandles[(int)teamNumber],
+            team => team.CitadelTeamNum == teamNumber);
+
+    public CCitadelPlayerController? GetPlayerByUserId(ushort userId)
+    {
+        for (var slot = 0; slot < PlayerInfos.Count; slot++)
+        {
+            var playerInfo = PlayerInfos[slot];
+            if (playerInfo?.Userid == userId)
+                return _entities[slot + 1] as CCitadelPlayerController;
+        }
+
+        return null;
+    }
+
+    public CCitadelPlayerController? GetPlayerBySteamId(ulong steamId64)
+    {
+        for (var slot = 0; slot < PlayerInfos.Count; slot++)
+        {
+            var playerInfo = PlayerInfos[slot];
+            if (playerInfo?.Steamid == steamId64)
+                return _entities[slot + 1] as CCitadelPlayerController;
+        }
+
+        return null;
+    }
+
     protected override bool ParseNetMessage(int msgType, ReadOnlySpan<byte> msgBuf)
     {
-        return false;
+        return _gameEvents.ParseNetMessage(msgType, msgBuf)
+               || _userMessageEvents.ParseUserMessage(msgType, msgBuf);
     }
 }

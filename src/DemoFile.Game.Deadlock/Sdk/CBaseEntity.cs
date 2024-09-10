@@ -6,6 +6,10 @@ public partial class CBaseEntity
 
     public bool IsAlive => LifeState == 0;
 
+    public TeamNumber CitadelTeamNum => (TeamNumber) TeamNum;
+
+    public CCitadelTeam Team => Demo.GetTeam(CitadelTeamNum);
+
     /// Position of this entity in the game world.
     public Vector Origin => CBodyComponent is CBodyComponentSkeletonInstance body
         ? body.SkeletonInstance.Origin.Vector

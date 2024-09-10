@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 import "networkbasetypes.proto";
 import "citadel_gcmessages_common.proto";
 import "gameevents.proto";

@@ -899,18 +899,10 @@ public partial class AbilityResource
 }
 
 // MIsBoxedIntegerType
-public record AttachmentHandle(int Value)
-{
-    public AttachmentHandle() : this(0) {}
-}
-
+public readonly record struct AttachmentHandle(int Value);
 
 // MIsBoxedIntegerType
-public record attrib_definition_index(int Value)
-{
-    public attrib_definition_index() : this(0) {}
-}
-
+public readonly record struct attrib_definition_index(int Value);
 
 public partial class AudioParams
 {
@@ -29964,11 +29956,7 @@ public partial class CInWorldKeyBindPanel : CPointClientUIWorldPanel
 }
 
 // MIsBoxedIntegerType
-public record CitadelLobbyPlayerSlot(int Value)
-{
-    public CitadelLobbyPlayerSlot() : this(0) {}
-}
-
+public readonly record struct CitadelLobbyPlayerSlot(int Value);
 
 public partial class CItem : CBaseAnimGraph
 {
@@ -39752,11 +39740,7 @@ public partial class FullSellPriceAbilityUpgrades
 }
 
 // MIsBoxedIntegerType
-public record HeroID(int Value)
-{
-    public HeroID() : this(0) {}
-}
-
+public readonly record struct HeroID(int Value);
 
 public partial class ice_path_shard_model_desc
 {
@@ -39970,18 +39954,10 @@ public partial class ISkeletonAnimationController
 }
 
 // MIsBoxedIntegerType
-public record item_definition_index(int Value)
-{
-    public item_definition_index() : this(0) {}
-}
-
+public readonly record struct item_definition_index(int Value);
 
 // MIsBoxedIntegerType
-public record itemid(int Value)
-{
-    public itemid() : this(0) {}
-}
-
+public readonly record struct itemid(int Value);
 
 public partial class ItemImbuementPair
 {
@@ -40072,11 +40048,7 @@ public partial class LockonTarget
 }
 
 // MIsBoxedIntegerType
-public record MatchID(int Value)
-{
-    public MatchID() : this(0) {}
-}
-
+public readonly record struct MatchID(int Value);
 
 public partial class PhysicsRagdollPose
 {
@@ -41105,11 +41077,7 @@ public partial class STrooperFOWEntity
 }
 
 // MIsBoxedIntegerType
-public record style_index(int Value)
-{
-    public style_index() : this(0) {}
-}
-
+public readonly record struct style_index(int Value);
 
 public partial class ViewAngleServerChange
 {

@@ -19,6 +19,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protobufs/citadel_clientmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/citadel_gameevents.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/citadel_gcmessages_common.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/citadel_usermessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/gcsdk_gcmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/steammessages_steamlearn.steamworkssdk.proto" ProtoRoot="Protobufs" GrpcServices="None" />
+    <Protobuf Include="Protobufs/steammessages_unified_base.steamworkssdk.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/steammessages.proto" ProtoRoot="Protobufs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
   </ItemGroup>
 

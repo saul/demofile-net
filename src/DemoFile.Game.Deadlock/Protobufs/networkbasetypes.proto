@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 import "network_connection.proto";
 
 enum SignonState_t {

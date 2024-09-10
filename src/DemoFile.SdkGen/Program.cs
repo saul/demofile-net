@@ -15,7 +15,6 @@ internal static class Program
     {
         "GameTime_t",
         "GameTick_t",
-        "AttachmentHandle_t",
         "CGameSceneNodeHandle",
         "HSequence"
     };
@@ -30,9 +29,6 @@ internal static class Program
 
     public static async Task Main(string[] args)
     {
-        // Hard coded
-        var gameSdkInfo = new GameSdkInfo("Cs");
-
         var (demoPath, outputPath) = args switch
         {
             [var fst, var snd] => (Path.GetFullPath(fst), Path.GetFullPath(snd)),
@@ -40,6 +36,9 @@ internal static class Program
         };
 
         Console.WriteLine($"Writing output to: {outputPath}");
+        var gameName = Path.GetExtension(outputPath)[1..];
+        Console.WriteLine($"Using game name: {gameName}");
+        var gameSdkInfo = new GameSdkInfo(gameName);
 
         var (protocolVersion, networkClasses) = await ReadNetworkClasses(demoPath);
 
@@ -51,7 +50,7 @@ internal static class Program
 
         foreach (var schemaFile in schemaFiles)
         {
-            var schemaPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Schema", schemaFile);
+            var schemaPath = Path.Combine(outputPath, "Schema", schemaFile);
 
             var schema = JsonSerializer.Deserialize<SchemaModule>(
                 File.ReadAllText(schemaPath),
@@ -158,6 +157,7 @@ internal static class Program
         builder.AppendLine("#nullable enable");
         builder.AppendLine("#pragma warning disable CS1591");
         builder.AppendLine();
+        builder.AppendLine("using System.ComponentModel;");
         builder.AppendLine("using System.Diagnostics;");
         builder.AppendLine("using System.Diagnostics.CodeAnalysis;");
         builder.AppendLine("using System.Drawing;");
@@ -194,7 +194,7 @@ internal static class Program
                 visitedEntityClasses.Add(className);
         }
 
-        WriteDecoderSet(gameSdkInfo, builder, visitedClassNames);
+        WriteDecoderSet(gameSdkInfo, builder, visitedClassNames, allClasses);
 
         WriteEntityFactoriesLookup(gameSdkInfo, visitedEntityClasses, builder);
 
@@ -291,7 +291,8 @@ internal static class Program
     private static void WriteDecoderSet(
         GameSdkInfo gameSdkInfo,
         StringBuilder builder,
-        IEnumerable<string> classNames)
+        IEnumerable<string> classNames,
+        SortedDictionary<string, SchemaClass> classMap)
     {
         builder.AppendLine();
         builder.AppendLine($"internal sealed class {gameSdkInfo.GameName}DecoderSet : DecoderSet");
@@ -308,6 +309,9 @@ internal static class Program
         foreach (var className in classNames)
         {
             if (className == "CEntityInstance")
+                continue;
+
+            if (classMap.TryGetValue(className, out var schemaClass) && schemaClass.IsBoxedIntegerType)
                 continue;
 
             var schemaType = SchemaFieldType.FromDeclaredClass(className);
@@ -336,11 +340,14 @@ internal static class Program
         builder.AppendLine("    protected override SendNodeDecoderFactory<T> GetFactory<T>()");
         builder.AppendLine("    {");
 
-        var hardcodedClasses = BackCompat.HardcodedChildClasses.Values.SelectMany(x => x);
+        var hardcodedClasses = gameSdkInfo.HardcodedChildClasses.Values.SelectMany(x => x);
 
         foreach (var className in classNames.Concat(hardcodedClasses).Order())
         {
             if (className == "CEntityInstance")
+                continue;
+
+            if (classMap.TryGetValue(className, out var schemaClass) && schemaClass.IsBoxedIntegerType)
                 continue;
 
             var schemaType = SchemaFieldType.FromDeclaredClass(className);
@@ -376,6 +383,13 @@ internal static class Program
         {
             builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
         }
+
+        if (schemaClass.IsBoxedIntegerType)
+        {
+            builder.AppendLine($"public readonly record struct {classNameCs}(int Value);");
+            return;
+        }
+
         builder.Append($"public partial class {classType.GetCsTypeName(gameSdkInfo)}");
 
         var parentType = schemaClass.Parent == null
@@ -410,7 +424,7 @@ internal static class Program
 
             if (parentToChildMap.TryGetValue(schemaClassName, out var directChildren))
             {
-                var hardcodedChildren = BackCompat.HardcodedChildClasses.GetValueOrDefault(
+                var hardcodedChildren = gameSdkInfo.HardcodedChildClasses.GetValueOrDefault(
                     schemaClassName,
                     ArraySegment<string>.Empty);
 
@@ -517,20 +531,24 @@ internal static class Program
         {
             var fieldCsTypeName = field.Type.GetCsTypeName(gameSdkInfo);
             var fieldCsPropertyName = schemaClass.CsPropertyNameForField(gameSdkInfo, schemaClassName, field);
+            var fieldClass = classMap.GetValueOrDefault(field.Type.Name);
             
             field.TryGetMetadata("MNetworkSerializer", out var serializer);
             field.TryGetMetadata("MNetworkAlias", out var alias);
 
-            if (field.Type.Category == SchemaTypeCategory.DeclaredClass && !IgnoreClasses.Contains(field.Type.Name))
+            if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.IsBoxedIntegerType != true)
             {
-                builder.AppendLine($"        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == \"{field.Name}\")");
-                builder.AppendLine($"        {{");
-                builder.AppendLine($"            var innerDecoder = {fieldCsTypeName}.CreateFieldDecoder(field with {{SendNode = field.SendNode[1..]}}, decoderSet);");
-                builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-                builder.AppendLine($"            {{");
-                builder.AppendLine($"                innerDecoder(@this.{fieldCsPropertyName}, path, ref buffer);");
-                builder.AppendLine($"            }};");
-                builder.AppendLine($"        }}");
+                if (!IgnoreClasses.Contains(field.Type.Name))
+                {
+                    builder.AppendLine($"        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == \"{field.Name}\")");
+                    builder.AppendLine($"        {{");
+                    builder.AppendLine($"            var innerDecoder = {fieldCsTypeName}.CreateFieldDecoder(field with {{SendNode = field.SendNode[1..]}}, decoderSet);");
+                    builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                    builder.AppendLine($"            {{");
+                    builder.AppendLine($"                innerDecoder(@this.{fieldCsPropertyName}, path, ref buffer);");
+                    builder.AppendLine($"            }};");
+                    builder.AppendLine($"        }}");
+                }
             }
             else
             {
@@ -599,18 +617,31 @@ internal static class Program
                     // This field is a fixed array
 
                     var elementCsTypeName = elementType.GetCsTypeName(gameSdkInfo);
+                    var elementClass = classMap.GetValueOrDefault(elementType.Name);
 
-                    var decoderMethod = elementType.Category == SchemaTypeCategory.DeclaredEnum
-                        ? $"CreateDecoder_enum<{elementCsTypeName}>"
-                        : $"CreateDecoder_{elementCsTypeName}";
+                    if (elementClass?.IsBoxedIntegerType == true)
+                    {
+                        builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
+                        builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                        builder.AppendLine($"            {{");
+                        builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
+                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = new {elementCsTypeName}(buffer.ReadVarInt32());");
+                        builder.AppendLine($"            }};");
+                    }
+                    else
+                    {
+                        var decoderMethod = elementType.Category == SchemaTypeCategory.DeclaredEnum
+                            ? $"CreateDecoder_enum<{elementCsTypeName}>"
+                            : $"CreateDecoder_{elementCsTypeName}";
 
-                    builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
-                    builder.AppendLine($"            var decoder = FieldDecode.{decoderMethod}(field.FieldEncodingInfo);");
-                    builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-                    builder.AppendLine($"            {{");
-                    builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
-                    builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = decoder(ref buffer);");
-                    builder.AppendLine($"            }};");
+                        builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
+                        builder.AppendLine($"            var decoder = FieldDecode.{decoderMethod}(field.FieldEncodingInfo);");
+                        builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                        builder.AppendLine($"            {{");
+                        builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
+                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = decoder(ref buffer);");
+                        builder.AppendLine($"            }};");
+                    }
                 }
                 else if (field.Type.Category == SchemaTypeCategory.Ptr)
                 {
@@ -678,6 +709,13 @@ internal static class Program
 
                     builder.AppendLine($"                    innerDecoder(inner, path[1..], ref buffer);");
                     builder.AppendLine($"                }}");
+                    builder.AppendLine($"            }};");
+                }
+                else if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.IsBoxedIntegerType == true)
+                {
+                    builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                    builder.AppendLine($"            {{");
+                    builder.AppendLine($"                @this.{fieldCsPropertyName} = new {fieldCsTypeName}(buffer.ReadVarInt32());");
                     builder.AppendLine($"            }};");
                 }
                 else
