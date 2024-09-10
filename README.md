@@ -3,10 +3,10 @@
 DemoFile.Net is a blazing fast demo parser library for Source 2 games, written in C#. It is cross-platform, and can be
 used on Windows, Mac or Linux. This parser currently supports:
 
-| Game                 |
-|----------------------|
-| ✅ Counter-Strike 2   |
-| ⌛ Deadlock (planned) |
+| Game             | NuGet package            |
+|------------------|--------------------------|
+| Counter-Strike 2 | ✅ DemoFile.Game.Cs       |
+| Deadlock         | ✅ DemoFile.Game.Deadlock |
 
 ![Screenshot of DemoFile.Net](./assets/screenshot-2x.png)
 
@@ -61,11 +61,10 @@ On an M1 MacBook Pro, DemoFile.Net can read a full competitive game (just under 
 When parsing across multiple threads, using the `ReadAllParallelAsync` method, this drops to nearly 500 milliseconds.
 This includes parsing all entity data (player positions, velocities, weapon tracking, grenades, etc).
 
-| Method            |           Mean | Error    | StdDev   | Allocated |
+| Method            |           Mean |    Error |   StdDev | Allocated |
 |-------------------|---------------:|---------:|---------:|----------:|
 | ParseDemo         | **1,294.6 ms** |  3.68 ms |  2.88 ms | 491.48 MB |
 | ParseDemoParallel |   **540.1 ms** | 23.99 ms | 22.44 ms | 600.67 MB |
-
 
 ## Author and acknowledgements
 

@@ -1,7 +1,7 @@
-### 0.21.1 (2024-09-08) - Significant API change
+### 0.21.1 (2024-09-10) - Significant API change
 
 - BREAKING CHANGE: Laying foundation for supporting multiple games. \
-  Split CS-specific code out of DemoFile project into `DemoFile.Game.Cs2`
+  Split CS-specific code out of DemoFile into a new `DemoFile.Game.Cs2` NuGet package
 - BREAKING CHANGE: `DemoParser` is now abstract - use `new CsDemoParser()` instead
 - BREAKING CHANGE: Renamed `DemoParser.IsGotv` to `DemoParser.IsTvRecording`
 - BREAKING CHANGE: Renamed `DemoParser.GameEvents` to `DemoParser.BaseGameEvents`
