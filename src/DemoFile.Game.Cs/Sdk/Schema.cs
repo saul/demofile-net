@@ -479,6 +479,12 @@ public enum WeaponAttackType : int
     eCount = 0x2,
 }
 
+// MIsBoxedIntegerType
+public readonly record struct AttachmentHandle(int Value)
+{
+    public static AttachmentHandle Decode(ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadVarInt32());
+}
+
 public partial class AudioParams
 {
     // MNetworkEncoder "coord"
@@ -4710,11 +4716,10 @@ public partial class CBeam : CBaseModelEntity
         if (field.VarName == "m_nAttachIndex")
         {
             var fixedArraySize = field.VarType.ArrayLength;
-            var decoder = FieldDecode.CreateDecoder_AttachmentHandle(field.FieldEncodingInfo);
             return (CBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (@this.AttachIndex.Length == 0) @this.AttachIndex = new AttachmentHandle[fixedArraySize];
-                @this.AttachIndex[path[1]] = decoder(ref buffer);
+                @this.AttachIndex[path[1]] = AttachmentHandle.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_fWidth")
@@ -23185,18 +23190,16 @@ public partial class CRopeKeyframe : CBaseModelEntity
         }
         if (field.VarName == "m_iStartAttachment")
         {
-            var decoder = FieldDecode.CreateDecoder_AttachmentHandle(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.StartAttachment = decoder(ref buffer);
+                @this.StartAttachment = AttachmentHandle.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_iEndAttachment")
         {
-            var decoder = FieldDecode.CreateDecoder_AttachmentHandle(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EndAttachment = decoder(ref buffer);
+                @this.EndAttachment = AttachmentHandle.Decode(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -24835,10 +24838,9 @@ public partial class CSprite : CBaseModelEntity
         }
         if (field.VarName == "m_nAttachment")
         {
-            var decoder = FieldDecode.CreateDecoder_AttachmentHandle(field.FieldEncodingInfo);
             return (CSprite @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Attachment = decoder(ref buffer);
+                @this.Attachment = AttachmentHandle.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_flSpriteFramerate")

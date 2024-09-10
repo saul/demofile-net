@@ -2,6 +2,12 @@
 
 namespace DemoFile.SdkGen;
 
+public enum BoxedPrimitiveType
+{
+    Integer,
+    Float
+}
+
 public partial record SchemaClass(
     string? Parent,
     IReadOnlyList<SchemaMetadata> Metadata,
@@ -9,9 +15,21 @@ public partial record SchemaClass(
 {
     private Dictionary<string, SchemaField[]>? _fieldsByCsPropertyName = null;
 
-    public bool IsBoxedIntegerType => Metadata.Any(x => x.Name == "MIsBoxedIntegerType");
+    public BoxedPrimitiveType? BoxedPrimitive
+    {
+        get
+        {
+            if (Metadata.Any(x => x.Name == "MIsBoxedIntegerType"))
+                return BoxedPrimitiveType.Integer;
 
-    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|bv|e|s)(?<firstChar>[A-Z])")]
+            if (Metadata.Any(x => x.Name == "MIsBoxedFloatType"))
+                return BoxedPrimitiveType.Float;
+
+            return default;
+        }
+    }
+
+    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|ar|bv|e|s|t)(?<firstChar>[A-Z])")]
     private static partial Regex HungarianNotationRegex();
 
     private static string RemoveMemberPrefix(string fieldName)

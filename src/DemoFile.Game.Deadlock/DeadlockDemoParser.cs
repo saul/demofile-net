@@ -4,11 +4,11 @@ namespace DemoFile;
 
 public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
 {
+    private readonly CHandle<CCitadelTeam, DeadlockDemoParser>[] _teamHandles = new CHandle<CCitadelTeam, DeadlockDemoParser>[4];
     private EntityEvents _entityEvents;
     private GameEvents _gameEvents;
-    private UserMessageEvents _userMessageEvents;
-    private readonly CHandle<CCitadelTeam, DeadlockDemoParser>[] _teamHandles = new CHandle<CCitadelTeam, DeadlockDemoParser>[4];
     private CHandle<CCitadelGameRulesProxy, DeadlockDemoParser> _gameRulesHandle;
+    private UserMessageEvents _userMessageEvents;
 
     public DeadlockDemoParser()
     {
@@ -68,6 +68,8 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
         DeadlockEntityFactories.All;
 
     protected override ref EntityEvents<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser> EntityInstanceEvents => ref EntityEvents.CEntityInstance;
+
+    public static int TickRate => 60;
 
     protected override DecoderSet CreateDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers)
     {

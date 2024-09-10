@@ -1,9 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.Json;
-using DemoFile.Sdk;
 using QuickGraph;
 using QuickGraph.Algorithms.Search;
 
@@ -311,7 +309,7 @@ internal static class Program
             if (className == "CEntityInstance")
                 continue;
 
-            if (classMap.TryGetValue(className, out var schemaClass) && schemaClass.IsBoxedIntegerType)
+            if (classMap.TryGetValue(className, out var schemaClass) && schemaClass.BoxedPrimitive.HasValue)
                 continue;
 
             var schemaType = SchemaFieldType.FromDeclaredClass(className);
@@ -347,7 +345,7 @@ internal static class Program
             if (className == "CEntityInstance")
                 continue;
 
-            if (classMap.TryGetValue(className, out var schemaClass) && schemaClass.IsBoxedIntegerType)
+            if (classMap.TryGetValue(className, out var schemaClass) && schemaClass.BoxedPrimitive.HasValue)
                 continue;
 
             var schemaType = SchemaFieldType.FromDeclaredClass(className);
@@ -384,9 +382,19 @@ internal static class Program
             builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
         }
 
-        if (schemaClass.IsBoxedIntegerType)
+        if (schemaClass.BoxedPrimitive is {} boxedPrimitiveType)
         {
-            builder.AppendLine($"public readonly record struct {classNameCs}(int Value);");
+            var (csType, decoder) = boxedPrimitiveType switch
+            {
+                BoxedPrimitiveType.Integer => ("int", "buffer.ReadVarInt32()"),
+                BoxedPrimitiveType.Float => ("float", "buffer.ReadFloat()"),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            builder.AppendLine($"public readonly record struct {classNameCs}({csType} Value)");
+            builder.AppendLine("{");
+            builder.AppendLine($"    public static {classNameCs} Decode(ref BitBuffer buffer) => new {classNameCs}({decoder});");
+            builder.AppendLine("}");
             return;
         }
 
@@ -536,19 +544,16 @@ internal static class Program
             field.TryGetMetadata("MNetworkSerializer", out var serializer);
             field.TryGetMetadata("MNetworkAlias", out var alias);
 
-            if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.IsBoxedIntegerType != true)
+            if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.BoxedPrimitive.HasValue != true && !IgnoreClasses.Contains(field.Type.Name))
             {
-                if (!IgnoreClasses.Contains(field.Type.Name))
-                {
-                    builder.AppendLine($"        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == \"{field.Name}\")");
-                    builder.AppendLine($"        {{");
-                    builder.AppendLine($"            var innerDecoder = {fieldCsTypeName}.CreateFieldDecoder(field with {{SendNode = field.SendNode[1..]}}, decoderSet);");
-                    builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-                    builder.AppendLine($"            {{");
-                    builder.AppendLine($"                innerDecoder(@this.{fieldCsPropertyName}, path, ref buffer);");
-                    builder.AppendLine($"            }};");
-                    builder.AppendLine($"        }}");
-                }
+                builder.AppendLine($"        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == \"{field.Name}\")");
+                builder.AppendLine($"        {{");
+                builder.AppendLine($"            var innerDecoder = {fieldCsTypeName}.CreateFieldDecoder(field with {{SendNode = field.SendNode[1..]}}, decoderSet);");
+                builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                builder.AppendLine($"            {{");
+                builder.AppendLine($"                innerDecoder(@this.{fieldCsPropertyName}, path, ref buffer);");
+                builder.AppendLine($"            }};");
+                builder.AppendLine($"        }}");
             }
             else
             {
@@ -619,13 +624,13 @@ internal static class Program
                     var elementCsTypeName = elementType.GetCsTypeName(gameSdkInfo);
                     var elementClass = classMap.GetValueOrDefault(elementType.Name);
 
-                    if (elementClass?.IsBoxedIntegerType == true)
+                    if (elementClass?.BoxedPrimitive.HasValue == true)
                     {
                         builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");
                         builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
-                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = new {elementCsTypeName}(buffer.ReadVarInt32());");
+                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = {elementCsTypeName}.Decode(ref buffer);");
                         builder.AppendLine($"            }};");
                     }
                     else
@@ -711,11 +716,11 @@ internal static class Program
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"            }};");
                 }
-                else if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.IsBoxedIntegerType == true)
+                else if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.BoxedPrimitive.HasValue == true)
                 {
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                @this.{fieldCsPropertyName} = new {fieldCsTypeName}(buffer.ReadVarInt32());");
+                    builder.AppendLine($"                @this.{fieldCsPropertyName} = {fieldCsTypeName}.Decode(ref buffer);");
                     builder.AppendLine($"            }};");
                 }
                 else

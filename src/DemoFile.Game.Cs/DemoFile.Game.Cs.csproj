@@ -32,12 +32,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="../../protos/cs_gameevents.proto" />
-    <Protobuf Include="../../protos/cstrike15_usermessages.proto" />
-    <Protobuf Include="../../protos/cstrike15_gcmessages.proto" />
-    <Protobuf Include="../../protos/steammessages.proto" />
-    <Protobuf Include="../../protos/engine_gcmessages.proto" />
-    <Protobuf Include="../../protos/gcsdk_gcmessages.proto" />
+    <Protobuf Include="Protobufs/cs_gameevents.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/cstrike15_usermessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/cstrike15_gcmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/steammessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/engine_gcmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/gcsdk_gcmessages.proto" ProtoRoot="Protobufs" />
   </ItemGroup>
 
 </Project>

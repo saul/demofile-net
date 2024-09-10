@@ -876,6 +876,14 @@ public partial class AbilityResource
 
     internal static SendNodeDecoder<AbilityResource> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flLatchTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (AbilityResource @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LatchTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flLatchValue")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -899,10 +907,16 @@ public partial class AbilityResource
 }
 
 // MIsBoxedIntegerType
-public readonly record struct AttachmentHandle(int Value);
+public readonly record struct AttachmentHandle(int Value)
+{
+    public static AttachmentHandle Decode(ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadVarInt32());
+}
 
 // MIsBoxedIntegerType
-public readonly record struct attrib_definition_index(int Value);
+public readonly record struct AttribDefinitionIndex(int Value)
+{
+    public static AttribDefinitionIndex Decode(ref BitBuffer buffer) => new AttribDefinitionIndex(buffer.ReadVarInt32());
+}
 
 public partial class AudioParams
 {
@@ -2732,6 +2746,14 @@ public partial class CBarnLight : CBaseModelEntity
                 @this.LightStyleString = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flLightStyleStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CBarnLight @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightStyleStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_QueuedLightStyleStrings")
         {
             var decoder = FieldDecode.CreateDecoder_NetworkedString(field.FieldEncodingInfo);
@@ -3415,6 +3437,22 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
                 innerDecoder(@this.AnimGraphNetworkedVars, path, ref buffer);
             };
         }
+        if (field.VarName == "m_hSequence")
+        {
+            var decoder = CreateDecoder_minusone(field.FieldEncodingInfo);
+            return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Sequence = decoder(@this, ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSeqStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SeqStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flSeqFixedCycle")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -3932,6 +3970,14 @@ public partial class CBaseEntity : CEntityInstance<DeadlockDemoParser>
                 @this.SimulationTime = decoder(@this, ref buffer);
             };
         }
+        if (field.VarName == "m_flCreateTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CreateTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bClientSideRagdoll")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -3970,6 +4016,14 @@ public partial class CBaseEntity : CEntityInstance<DeadlockDemoParser>
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Spawnflags = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_nNextThinkTick")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTick(field.FieldEncodingInfo);
+            return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextThinkTick = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_fFlags")
@@ -4093,6 +4147,14 @@ public partial class CBaseEntity : CEntityInstance<DeadlockDemoParser>
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AnimatedEveryTick = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNavIgnoreUntilTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NavIgnoreUntilTime = decoder(ref buffer);
             };
         }
         return CEntityInstance<DeadlockDemoParser>.CreateFieldDecoder(field, decoderSet);
@@ -4993,6 +5055,14 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
                 innerDecoder(@this.Skybox3d, path, ref buffer);
             };
         }
+        if (field.VarName == "m_flDeathTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DeathTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_hController")
         {
             var decoder = FieldDecode.CreateDecoder_CHandle<CBasePlayerController, DeadlockDemoParser>(field.FieldEncodingInfo);
@@ -5069,12 +5139,28 @@ public partial class CBasePlayerWeapon : CBaseAnimGraph
 
     internal new static SendNodeDecoder<CBasePlayerWeapon> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_nNextPrimaryAttackTick")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTick(field.FieldEncodingInfo);
+            return (CBasePlayerWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextPrimaryAttackTick = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flNextPrimaryAttackTickRatio")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CBasePlayerWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.NextPrimaryAttackTickRatio = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_nNextSecondaryAttackTick")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTick(field.FieldEncodingInfo);
+            return (CBasePlayerWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextSecondaryAttackTick = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flNextSecondaryAttackTickRatio")
@@ -5528,7 +5614,7 @@ public partial class CBeam : CBaseModelEntity
             return (CBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (@this.AttachIndex.Length == 0) @this.AttachIndex = new AttachmentHandle[fixedArraySize];
-                @this.AttachIndex[path[1]] = new AttachmentHandle(buffer.ReadVarInt32());
+                @this.AttachIndex[path[1]] = AttachmentHandle.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_fWidth")
@@ -6328,6 +6414,22 @@ public partial class CCitadel_Ability_Bull_Charge : CCitadelBaseAbility
                 @this.AnglesCharging = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flChargeStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Bull_Charge @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ChargeStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flFastChargeEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Bull_Charge @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FastChargeEndTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -6451,6 +6553,14 @@ public partial class CCitadel_Ability_Bull_Leap : CCitadelBaseAbility
                 @this.LeapState = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flStateEnterTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Bull_Leap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StateEnterTime = decoder(ref buffer);
+            };
+        }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_flNextStateTime")
         {
             var innerDecoder = CCitadelAutoScaledTime.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
@@ -6555,6 +6665,14 @@ public partial class CCitadel_Ability_Burrow : CCitadelBaseAbility
             return (CCitadel_Ability_Burrow @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.InGround = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_SpinEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Burrow @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SpinEndTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -6973,6 +7091,22 @@ public partial class CCitadel_Ability_ChargedTackle : CCitadelBaseAbility
                 @this.Tackling = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flTackleStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ChargedTackle @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TackleStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flPrepareStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ChargedTackle @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PrepareStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_vecTackleDir")
         {
             var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
@@ -7042,12 +7176,36 @@ public partial class CCitadel_Ability_Chrono_KineticCarbine : CCitadelBaseAbilit
                 @this.WantsSlow = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flLatchedTimeScaleFracChangeTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Chrono_KineticCarbine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LatchedTimeScaleFracChangeTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flLatchedTimeScaleFrac")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CCitadel_Ability_Chrono_KineticCarbine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.LatchedTimeScaleFrac = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSpeedBoostEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Chrono_KineticCarbine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SpeedBoostEndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flShotTimeScaleEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Chrono_KineticCarbine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ShotTimeScaleEndTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -7264,6 +7422,22 @@ public partial class CCitadel_Ability_Climb_Rope : CCitadelBaseAbility
                 @this.RequestJumpToRoof = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flLastMoveTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Climb_Rope @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LastMoveTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flMoveDownStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Climb_Rope @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.MoveDownStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_eClimbState")
         {
             var decoder = FieldDecode.CreateDecoder_enum<EClimbRopeState>(field.FieldEncodingInfo);
@@ -7390,12 +7564,36 @@ public partial class CCitadel_Ability_Dash : CCitadelBaseAbility
                 @this.LastGroundDashTick = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flGroundDashCastTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Dash @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GroundDashCastTime = decoder(ref buffer);
+            };
+        }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_flGroundDashEndTime")
         {
             var innerDecoder = CCitadelAutoScaledTime.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
             return (CCitadel_Ability_Dash @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 innerDecoder(@this.GroundDashEndTime, path, ref buffer);
+            };
+        }
+        if (field.VarName == "m_flAirDashCastTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Dash @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AirDashCastTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flAirDashDragStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Dash @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AirDashDragStartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_nConsecutiveAirDashes")
@@ -7702,6 +7900,14 @@ public partial class CCitadel_Ability_FireBomb : CCitadelBaseAbility
                 innerDecoder(@this.DetonateTime, path, ref buffer);
             };
         }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FireBomb @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -7780,6 +7986,14 @@ public partial class CCitadel_Ability_FissureWall : CCitadelBaseAbility
             return (CCitadel_Ability_FissureWall @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.InitialPosition = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_CastTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FissureWall @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CastTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_vecDirection")
@@ -7985,12 +8199,52 @@ public partial class CCitadel_Ability_FlyingStrike : CCitadelBaseYamatoAbility
                 @this.DashStartAng = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flDashStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FlyingStrike @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DashStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flEndAttackTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FlyingStrike @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.EndAttackTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGrappleStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FlyingStrike @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GrappleStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGrappleArriveTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FlyingStrike @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GrappleArriveTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_hTarget")
         {
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, DeadlockDemoParser>(field.FieldEncodingInfo);
             return (CCitadel_Ability_FlyingStrike @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.TargetHandle = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGrappleShotAttackTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_FlyingStrike @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GrappleShotAttackTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_rgTargetPos")
@@ -8393,6 +8647,38 @@ public partial class CCitadel_Ability_GooBowlingBall : CCitadelBaseAbility
                 @this.RollingState = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flNextStateTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_GooBowlingBall @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextStateTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextWallCheck")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_GooBowlingBall @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextWallCheck = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flRollStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_GooBowlingBall @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RollStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flWallExitTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_GooBowlingBall @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.WallExitTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_vecWallExitVelocity")
         {
             var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
@@ -8560,6 +8846,14 @@ public partial class CCitadel_Ability_GuidedArrow : CCitadelBaseAbility
             return (CCitadel_Ability_GuidedArrow @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ArrowSpeed = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSnapAnglesBackTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_GuidedArrow @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SnapAnglesBackTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_nBonusTechPower")
@@ -8735,6 +9029,14 @@ public partial class CCitadel_Ability_HealthSwap : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_HealthSwap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flPostCastHoldEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_HealthSwap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PostCastHoldEndTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -8832,6 +9134,38 @@ public partial class CCitadel_Ability_HoldMelee : CCitadel_Ability_Melee_Base
 
     internal new static SendNodeDecoder<CCitadel_Ability_HoldMelee> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flParryWindowEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_HoldMelee @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ParryWindowEndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextParryTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_HoldMelee @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextParryTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStateStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_HoldMelee @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StateStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flDashStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_HoldMelee @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DashStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_eCurrentAttackState")
         {
             var decoder = FieldDecode.CreateDecoder_enum<EMeleeHold_AttackState>(field.FieldEncodingInfo);
@@ -9007,6 +9341,14 @@ public partial class CCitadel_Ability_Hornet_Snipe : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_Hornet_Snipe> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flScopeStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Hornet_Snipe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ScopeStartTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -9055,6 +9397,14 @@ public partial class CCitadel_Ability_HornetLeap : CCitadelBaseAbility
             return (CCitadel_Ability_HornetLeap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Leaping = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLeapStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_HornetLeap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LeapStartTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -9466,6 +9816,22 @@ public partial class CCitadel_Ability_InfinitySlash : CCitadelBaseYamatoAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_InfinitySlash> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flExplodeEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_InfinitySlash @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ExplodeEndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flBuffEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_InfinitySlash @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BuffEndTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseYamatoAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -9818,6 +10184,30 @@ public partial class CCitadel_Ability_Lash_Ultimate : CCitadelBaseLockonAbility
                 @this.EGrappleState = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flStateEnterTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Lash_Ultimate @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StateEnterTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextStateTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Lash_Ultimate @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextStateTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flBoostEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Lash_Ultimate @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BoostEndTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseLockonAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -9914,10 +10304,18 @@ public partial class CCitadel_Ability_LifeDrain : CCitadelBaseAbility
 {
     internal CCitadel_Ability_LifeDrain(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public GameTime TDrainLifeStopTime { get; private set; } = new();
+    public GameTime DrainLifeStopTime { get; private set; } = new();
 
     internal new static SendNodeDecoder<CCitadel_Ability_LifeDrain> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_tDrainLifeStopTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_LifeDrain @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DrainLifeStopTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -10101,6 +10499,14 @@ public partial class CCitadel_Ability_Mantle : CCitadelBaseAbility
                 @this.MantleTypeIndex = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Mantle @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -10219,6 +10625,30 @@ public partial class CCitadel_Ability_Melee_Base : CCitadelBaseAbility
                 @this.HitWithThisAttack = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flLastActivateTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Melee_Base @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LastActivateTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextAttackAllowedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Melee_Base @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextAttackAllowedTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flAttackTriggeredTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Melee_Base @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AttackTriggeredTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -10263,12 +10693,28 @@ public partial class CCitadel_Ability_MeleeParry : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_MeleeParry> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flParryStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_MeleeParry @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ParryStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bAttackParried")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
             return (CCitadel_Ability_MeleeParry @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AttackParried = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flParrySuccessTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_MeleeParry @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ParrySuccessTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -10420,6 +10866,22 @@ public partial class CCitadel_Ability_Nano_Pounce : CCitadelBaseAbility
             return (CCitadel_Ability_Nano_Pounce @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AttackTarget = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flPounceStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Nano_Pounce @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PounceStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flToTargetStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Nano_Pounce @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ToTargetStartTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -10876,6 +11338,14 @@ public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_PrimaryWeapon> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flNextPrimaryAttack")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextPrimaryAttack = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_iClip")
         {
             var decoder = CreateDecoder_minusone(field.FieldEncodingInfo);
@@ -10900,6 +11370,22 @@ public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
                 @this.SpreadPenalty = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flZoomTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ZoomTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flZoomOutTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ZoomOutTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_iSpreadIndex")
         {
             var decoder = FieldDecode.CreateDecoder_sbyte(field.FieldEncodingInfo);
@@ -10914,6 +11400,14 @@ public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
             return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ShotRecoilIndex = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextShotRecoilRecoveryTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextShotRecoilRecoveryTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bIsZoomed")
@@ -10956,6 +11450,22 @@ public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
                 @this.SingleShotReloadFirstBullet = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_reloadQueuedStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ReloadQueuedStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flReloadAvailableTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ReloadAvailableTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bCanActiveReload")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -10964,12 +11474,44 @@ public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
                 @this.CanActiveReload = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flLastAttackTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LastAttackTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextAttackDelayStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextAttackDelayStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextAttackDelayEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextAttackDelayEndTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flAttackDelayPauseTotalTime")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
             return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AttackDelayPauseTotalTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flAttackDelayPauseEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AttackDelayPauseEndTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_eNextAttackDelayReason")
@@ -11078,6 +11620,22 @@ public partial class CCitadel_Ability_PrimaryWeapon_Bebop : CCitadel_Ability_Pri
 
     internal new static SendNodeDecoder<CCitadel_Ability_PrimaryWeapon_Bebop> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flStartWindUpTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon_Bebop @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartWindUpTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartFiringTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon_Bebop @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartFiringTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bFiring")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -12153,6 +12711,14 @@ public partial class CCitadel_Ability_Shiv_KillingBlow : CCitadelBaseShivAbility
                 innerDecoder(@this.ArrivalTime, path, ref buffer);
             };
         }
+        if (field.VarName == "m_flDrainSuppressEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Shiv_KillingBlow @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DrainSuppressEndTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseShivAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -12549,6 +13115,14 @@ public partial class CCitadel_Ability_Slide : CCitadelBaseAbility
                 innerDecoder(@this.GroundDashSlideTime, path, ref buffer);
             };
         }
+        if (field.VarName == "m_flSlowGetupStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SlowGetupStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bShouldTriggerSlowGetup")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -12589,6 +13163,14 @@ public partial class CCitadel_Ability_Slide : CCitadelBaseAbility
                 @this.SpeedAdjust = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flDuckPressedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DuckPressedTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flVelocityAtDuckPressedTime")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -12597,12 +13179,44 @@ public partial class CCitadel_Ability_Slide : CCitadelBaseAbility
                 @this.VelocityAtDuckPressedTime = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flSlideChangeTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SlideChangeTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSlidingOnFlatStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SlidingOnFlatStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_nJumpsThisSlideSession")
         {
             var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
             return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.JumpsThisSlideSession = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flOnGroundStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.OnGroundStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flDashSlideStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Slide @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DashSlideStartTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -12892,6 +13506,30 @@ public partial class CCitadel_Ability_Sprint : CCitadelBaseAbility
                 @this.Sprinting = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flInCombatStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Sprint @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.InCombatStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flInCombatEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Sprint @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.InCombatEndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSprintStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Sprint @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SprintStartTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -13156,6 +13794,14 @@ public partial class CCitadel_Ability_SuperNeutralCharge : CCitadelBaseAbility
                 @this.Tackling = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flTackleStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_SuperNeutralCharge @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TackleStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flTackleDuration")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -13350,12 +13996,44 @@ public partial class CCitadel_Ability_TangoTether : CCitadelBaseAbility
                 @this.DashStartAng = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flDashStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_TangoTether @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DashStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGrappleStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_TangoTether @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GrappleStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGrappleArriveTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_TangoTether @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GrappleArriveTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_hTarget")
         {
             var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, DeadlockDemoParser>(field.FieldEncodingInfo);
             return (CCitadel_Ability_TangoTether @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.TargetHandle = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGrappleShotAttackTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_TangoTether @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GrappleShotAttackTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_rgTargetPos")
@@ -13902,6 +14580,22 @@ public partial class CCitadel_Ability_Tengu_StoneForm : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_Tengu_StoneForm> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Tengu_StoneForm @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLandedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Tengu_StoneForm @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LandedTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bLanded")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -14585,6 +15279,30 @@ public partial class CCitadel_Ability_Tokamak_HeatSinks_Inherent : CCitadelBaseA
                 @this.DissipationRate = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flDissipationTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Tokamak_HeatSinks_Inherent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DissipationTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flHeatTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Tokamak_HeatSinks_Inherent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.HeatTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flOverheatSoundTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Tokamak_HeatSinks_Inherent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.OverheatSoundTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bOverheating")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -15112,6 +15830,14 @@ public partial class CCitadel_Ability_Viscous_Telepunch : CCitadelBaseAbility
                 @this.TelepunchState = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flNextStateTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Viscous_Telepunch @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextStateTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -15565,6 +16291,14 @@ public partial class CCitadel_Ability_WreckerTeleport : CCitadelBaseAbility
                 @this.ArrowSpeed = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flSnapAnglesBackTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_WreckerTeleport @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SnapAnglesBackTime = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -15769,6 +16503,30 @@ public partial class CCitadel_Ability_ZipLine : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_ZipLine> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flTimeStartZipping")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeStartZipping = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flTimeForKnockdownProtection")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeForKnockdownProtection = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flTimeStopZipping")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeStopZipping = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flCasterSpeed")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -15807,6 +16565,30 @@ public partial class CCitadel_Ability_ZipLine : CCitadelBaseAbility
             return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.NextNodeHandle = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flTimeEnterState")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeEnterState = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLatchTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LatchTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flDamagedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DamagedTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_eAttachState")
@@ -17390,6 +18172,14 @@ public partial class CCitadel_Ice_Dome_Blocker : CBaseAnimGraph
 
     internal new static SendNodeDecoder<CCitadel_Ice_Dome_Blocker> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flTurnSolidTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ice_Dome_Blocker @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TurnSolidTime = decoder(ref buffer);
+            };
+        }
         return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -17453,6 +18243,22 @@ public partial class CCitadel_Ice_Path_Shard_Physics : CBaseModelEntity
             return (CCitadel_Ice_Path_Shard_Physics @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Forward = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ice_Path_Shard_Physics @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ice_Path_Shard_Physics @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.EndTime = decoder(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -17747,6 +18553,14 @@ public partial class CCitadel_Item_Bubble : CCitadel_Item
 
     internal new static SendNodeDecoder<CCitadel_Item_Bubble> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Item_Bubble @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.EndTime = decoder(ref buffer);
+            };
+        }
         return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -20191,6 +21005,14 @@ public partial class CCitadel_UtilityUpgrade_RocketBooster : CCitadel_UtilityUpg
 
     internal new static SendNodeDecoder<CCitadel_UtilityUpgrade_RocketBooster> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flCastTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_UtilityUpgrade_RocketBooster @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CastTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bCrashingDown")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -20339,6 +21161,14 @@ public partial class CCitadel_WeaponUpgrade_BurstFire : CCitadel_Item
 
     internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_BurstFire> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_nFastFireEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_WeaponUpgrade_BurstFire @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FastFireEndTime = decoder(ref buffer);
+            };
+        }
         return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -20756,11 +21586,11 @@ public partial class CCitadelAbilityComponent : CEntityComponent
 
     // MNetworkUserGroup "Abilities"
     // MNetworkPriority 32
-    public NetworkedVector<Int32> ArPendingAsyncAbilityReservationSlots { get; private set; } = new NetworkedVector<Int32>();
+    public NetworkedVector<Int32> PendingAsyncAbilityReservationSlots { get; private set; } = new NetworkedVector<Int32>();
 
     // MNetworkUserGroup "Abilities"
     // MNetworkPriority 32
-    public NetworkedVector<Int32> ArPendingAsyncAbilityReservationAbilityIDs { get; private set; } = new NetworkedVector<Int32>();
+    public NetworkedVector<Int32> PendingAsyncAbilityReservationAbilityIDs { get; private set; } = new NetworkedVector<Int32>();
 
     // MNetworkChangeCallback "AbiCompSelectedAbilityChanged"
     public CHandle<CBaseEntity, DeadlockDemoParser> SelectedAbilityHandle { get; private set; }
@@ -20836,15 +21666,15 @@ public partial class CCitadelAbilityComponent : CEntityComponent
                 if (path.Length == 1)
                 {
                     var newSize = (int)buffer.ReadUVarInt32();
-                    @this.ArPendingAsyncAbilityReservationSlots.Resize(newSize);
+                    @this.PendingAsyncAbilityReservationSlots.Resize(newSize);
                 }
                 else
                 {
                     Debug.Assert(path.Length == 2);
                     var index = path[1];
-                    @this.ArPendingAsyncAbilityReservationSlots.EnsureSize(index + 1);
+                    @this.PendingAsyncAbilityReservationSlots.EnsureSize(index + 1);
                     var element = decoder(ref buffer);
-                    @this.ArPendingAsyncAbilityReservationSlots[index] = element;
+                    @this.PendingAsyncAbilityReservationSlots[index] = element;
                 }
             };
         }
@@ -20856,15 +21686,15 @@ public partial class CCitadelAbilityComponent : CEntityComponent
                 if (path.Length == 1)
                 {
                     var newSize = (int)buffer.ReadUVarInt32();
-                    @this.ArPendingAsyncAbilityReservationAbilityIDs.Resize(newSize);
+                    @this.PendingAsyncAbilityReservationAbilityIDs.Resize(newSize);
                 }
                 else
                 {
                     Debug.Assert(path.Length == 2);
                     var index = path[1];
-                    @this.ArPendingAsyncAbilityReservationAbilityIDs.EnsureSize(index + 1);
+                    @this.PendingAsyncAbilityReservationAbilityIDs.EnsureSize(index + 1);
                     var element = decoder(ref buffer);
-                    @this.ArPendingAsyncAbilityReservationAbilityIDs[index] = element;
+                    @this.PendingAsyncAbilityReservationAbilityIDs[index] = element;
                 }
             };
         }
@@ -20995,6 +21825,14 @@ public partial class CCitadelAutoScaledTime
 
     internal static SendNodeDecoder<CCitadelAutoScaledTime> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelAutoScaledTime @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Time = decoder(ref buffer);
+            };
+        }
         if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
         {
             return (CCitadelAutoScaledTime @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
@@ -21166,6 +22004,46 @@ public partial class CCitadelBaseAbility : CBaseEntity
                 @this.ToggleState = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flToggledTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ToggledTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flCooldownStart")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CooldownStart = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flCooldownEnd")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CooldownEnd = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flChannelStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ChannelStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flCastDelayStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CastDelayStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_eAbilitySlot")
         {
             var decoder = FieldDecode.CreateDecoder_enum<EAbilitySlots>(field.FieldEncodingInfo);
@@ -21174,12 +22052,60 @@ public partial class CCitadelBaseAbility : CBaseEntity
                 @this.AbilitySlot = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flPostCastDelayEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PostCastDelayEndTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_iRemainingCharges")
         {
             var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
             return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.RemainingCharges = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flChargeRechargeStart")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ChargeRechargeStart = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flChargeRechargeEnd")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ChargeRechargeEnd = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flMovementControlActiveTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.MovementControlActiveTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSelectedChangedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SelectedChangedTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flAltCastHoldStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AltCastHoldStartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_nImbuedAbilityID")
@@ -21272,6 +22198,14 @@ public partial class CCitadelBaseDashCastAbility : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadelBaseDashCastAbility> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flDashCastStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseDashCastAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DashCastStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_vDashCastDir")
         {
             var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
@@ -21341,6 +22275,14 @@ public partial class CCitadelBaseLockonAbility : CCitadelBaseAbility
                     var element = @this.LockonTargets[index] ??= new LockonTarget();
                     innerDecoder(element, path[2..], ref buffer);
                 }
+            };
+        }
+        if (field.VarName == "m_LockOnStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseLockonAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LockOnStartTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -21432,6 +22374,14 @@ public partial class CCitadelBaseTriggerAbility : CCitadelBaseAbility
             return (CCitadelBaseTriggerAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AbilityToTriggerHandle = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_SwappedToTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBaseTriggerAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SwappedToTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -21570,6 +22520,14 @@ public partial class CCitadelBulletTimeWarp : CBaseModelEntity
             return (CCitadelBulletTimeWarp @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ProjectileTimeScale = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flExpireTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelBulletTimeWarp @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ExpireTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flStopDuration")
@@ -21917,6 +22875,30 @@ public partial class CCitadelGameRules : CTeamplayRules
                 @this.FreezePeriod = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_fLevelStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LevelStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flGameStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GameStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flRoundStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RoundStartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_eGameState")
         {
             var decoder = FieldDecode.CreateDecoder_enum<EGameState>(field.FieldEncodingInfo);
@@ -22117,11 +23099,19 @@ public partial class CCitadelGameRules : CTeamplayRules
                 @this.GGTeam = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flGGEndsAtTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.GGEndsAtTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_unMatchID")
         {
             return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.MatchID = new MatchID(buffer.ReadVarInt32());
+                @this.MatchID = MatchID.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_nExperimentalGameplayState")
@@ -22130,6 +23120,14 @@ public partial class CCitadelGameRules : CTeamplayRules
             return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ExperimentalGameplayState = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flHeroDiedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.HeroDiedTime = decoder(ref buffer);
             };
         }
         return CTeamplayRules.CreateFieldDecoder(field, decoderSet);
@@ -22211,14 +23209,14 @@ public partial class CCitadelHeroComponent : CEntityComponent
         {
             return (CCitadelHeroComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.HeroID = new HeroID(buffer.ReadVarInt32());
+                @this.HeroID = HeroID.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_nHeroLoading")
         {
             return (CCitadelHeroComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.HeroLoading = new HeroID(buffer.ReadVarInt32());
+                @this.HeroLoading = HeroID.Decode(ref buffer);
             };
         }
         return CEntityComponent.CreateFieldDecoder(field, decoderSet);
@@ -23174,7 +24172,7 @@ public partial class CCitadelPlayerController : CBasePlayerController
         {
             return (CCitadelPlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.LobbyPlayerSlot = new CitadelLobbyPlayerSlot(buffer.ReadVarInt32());
+                @this.LobbyPlayerSlot = CitadelLobbyPlayerSlot.Decode(ref buffer);
             };
         }
         return CBasePlayerController.CreateFieldDecoder(field, decoderSet);
@@ -23407,6 +24405,22 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
                 @this.SpentCurrencies[path[1]] = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flRespawnTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RespawnTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLastSpawnTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LastSpawnTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bInRegenerationZone")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -23421,6 +24435,14 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
             return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.InItemShopZone = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_timeRevealedOnMinimapByNPC")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeRevealedOnMinimapByNPC = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_vecFullSellPriceItems")
@@ -23615,6 +24637,22 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
                 @this.AnimGraphMovementDirectAirControl = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flPredTimeSlowedStart")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PredTimeSlowedStart = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flPredTimeSlowedEnd")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PredTimeSlowedEnd = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flPredSlowSpeed")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -23651,6 +24689,14 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
             {
                 if (@this.SlowSpeed.Length == 0) @this.SlowSpeed = new float[fixedArraySize];
                 @this.SlowSpeed[path[1]] = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSprintAnimSuppressEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SprintAnimSuppressEndTime = decoder(ref buffer);
             };
         }
         return CCitadelPlayerPawnBase.CreateFieldDecoder(field, decoderSet);
@@ -24465,6 +25511,14 @@ public partial class CCitadelTrooperMinimap : CBaseEntity
 
     internal new static SendNodeDecoder<CCitadelTrooperMinimap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_timeLastUpdate")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelTrooperMinimap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeLastUpdate = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_vecFOWEntities")
         {
             var innerDecoder = decoderSet.GetDecoder<STrooperFOWEntity>(field.FieldSerializerKey!.Value);
@@ -25434,7 +26488,7 @@ public partial class CEconEntity : CBaseFlex
 
 public partial class CEconItemAttribute
 {
-    public attrib_definition_index AttributeDefinitionIndex { get; private set; } = new();
+    public AttribDefinitionIndex AttributeDefinitionIndex { get; private set; } = new();
 
     // MNetworkAlias "m_iRawValue32"
     public float Value { get; private set; }
@@ -25445,7 +26499,7 @@ public partial class CEconItemAttribute
         {
             return (CEconItemAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.AttributeDefinitionIndex = new attrib_definition_index(buffer.ReadVarInt32());
+                @this.AttributeDefinitionIndex = AttribDefinitionIndex.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_iRawValue32")
@@ -25472,13 +26526,13 @@ public partial class CEconItemAttribute
 
 public partial class CEconItemView : IEconItemInterface
 {
-    public item_definition_index ItemDefinitionIndex { get; private set; } = new();
+    public ItemDefinitionIndex ItemDefinitionIndex { get; private set; } = new();
 
     public Int32 EntityQuality { get; private set; }
 
     public UInt32 EntityLevel { get; private set; }
 
-    public itemid ItemID { get; private set; } = new();
+    public ItemID ItemID { get; private set; } = new();
 
     public UInt32 AccountID { get; private set; }
 
@@ -25486,7 +26540,7 @@ public partial class CEconItemView : IEconItemInterface
 
     public bool Initialized { get; private set; }
 
-    public style_index OverrideStyle { get; private set; } = new();
+    public StyleIndex OverrideStyle { get; private set; } = new();
 
     public CAttributeList AttributeList { get; private set; } = new();
 
@@ -25496,7 +26550,7 @@ public partial class CEconItemView : IEconItemInterface
         {
             return (CEconItemView @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ItemDefinitionIndex = new item_definition_index(buffer.ReadVarInt32());
+                @this.ItemDefinitionIndex = ItemDefinitionIndex.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_iEntityQuality")
@@ -25519,7 +26573,7 @@ public partial class CEconItemView : IEconItemInterface
         {
             return (CEconItemView @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ItemID = new itemid(buffer.ReadVarInt32());
+                @this.ItemID = ItemID.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_iAccountID")
@@ -25550,7 +26604,7 @@ public partial class CEconItemView : IEconItemInterface
         {
             return (CEconItemView @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.OverrideStyle = new style_index(buffer.ReadVarInt32());
+                @this.OverrideStyle = StyleIndex.Decode(ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_AttributeList")
@@ -25676,6 +26730,14 @@ public partial class CEntityDissolve : CBaseModelEntity
             return (CEntityDissolve @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.FadeOutLength = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CEntityDissolve @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_nDissolveType")
@@ -27373,6 +28435,14 @@ public partial class CEnvScreenOverlay : CPointEntity
                 @this.OverlayTimes[path[1]] = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CEnvScreenOverlay @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_iDesiredOverlay")
         {
             var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
@@ -27783,6 +28853,30 @@ public partial class CEnvVolumetricFogController : CBaseEntity
             return (CEnvVolumetricFogController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Active = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartAnisoTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CEnvVolumetricFogController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartAnisoTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartScatterTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CEnvVolumetricFogController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartScatterTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartDrawDistanceTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CEnvVolumetricFogController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartDrawDistanceTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flStartAnisotropy")
@@ -28217,6 +29311,14 @@ public partial class CEnvWindShared
 
     internal static SendNodeDecoder<CEnvWindShared> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CEnvWindShared @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_iWindSeed")
         {
             var decoder = FieldDecode.CreateDecoder_UInt32(field.FieldEncodingInfo);
@@ -29120,6 +30222,14 @@ public partial class CGameSceneNode
 
     internal static SendNodeDecoder<CGameSceneNode> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_hParent")
+        {
+            var decoder = CreateDecoder_gameSceneNode(field.FieldEncodingInfo);
+            return (CGameSceneNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Parent = decoder(@this, ref buffer);
+            };
+        }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_vecOrigin")
         {
             var innerDecoder = CNetworkOriginCellCoordQuantizedVector.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
@@ -29956,7 +31066,10 @@ public partial class CInWorldKeyBindPanel : CPointClientUIWorldPanel
 }
 
 // MIsBoxedIntegerType
-public readonly record struct CitadelLobbyPlayerSlot(int Value);
+public readonly record struct CitadelLobbyPlayerSlot(int Value)
+{
+    public static CitadelLobbyPlayerSlot Decode(ref BitBuffer buffer) => new CitadelLobbyPlayerSlot(buffer.ReadVarInt32());
+}
 
 public partial class CItem : CBaseAnimGraph
 {
@@ -30344,6 +31457,14 @@ public partial class CItemXP : CBaseModelEntity
 
     internal new static SendNodeDecoder<CItemXP> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_timeLaunch")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CItemXP @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeLaunch = decoder(ref buffer);
+            };
+        }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -31139,6 +32260,14 @@ public partial class CLightComponent : CEntityComponent
             return (CLightComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.MixedShadows = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLightStyleStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CLightComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightStyleStartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flCapsuleLength")
@@ -32197,6 +33326,22 @@ public partial class CNPC_Boss_Tier2 : CAI_CitadelNPC
                 @this.TargetedEnemyHandle = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flFadeOutStart")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CNPC_Boss_Tier2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FadeOutStart = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flFadeOutEnd")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CNPC_Boss_Tier2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FadeOutEnd = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_vecElectricBeamLookTarget")
         {
             var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
@@ -33067,6 +34212,22 @@ public partial class CNPC_TrooperBoss : CNPC_Trooper
                 innerDecoder(@this.CCitadelPlayerClipComponent, path, ref buffer);
             };
         }
+        if (field.VarName == "m_flFadeOutStart")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CNPC_TrooperBoss @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FadeOutStart = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flFadeOutEnd")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CNPC_TrooperBoss @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FadeOutEnd = decoder(ref buffer);
+            };
+        }
         return CNPC_Trooper.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -33401,6 +34562,14 @@ public partial class CParticleSystem : CBaseModelEntity
             return (CParticleSystem @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EffectIndex = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CParticleSystem @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flPreSimTime")
@@ -34036,6 +35205,14 @@ public partial class CPlayer_CameraServices : CPlayerPawnComponent
                 @this.PunchAngleVel = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_nPunchAngleJoltTick")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTick(field.FieldEncodingInfo);
+            return (CPlayer_CameraServices @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PunchAngleJoltTick = decoder(ref buffer);
+            };
+        }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_PlayerFog")
         {
             var innerDecoder = FogPlayerParams.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
@@ -34275,6 +35452,14 @@ public partial class CPlayer_MovementServices_Humanoid : CPlayer_MovementService
             return (CPlayer_MovementServices_Humanoid @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.CrouchState = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flCrouchTransitionStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CPlayer_MovementServices_Humanoid @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CrouchTransitionStartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_bDucked")
@@ -35274,6 +36459,14 @@ public partial class CPointCommentaryNode : CBaseAnimGraph
                 @this.Active = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CPointCommentaryNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.StartTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flStartTimeInCommentary")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -36117,7 +37310,7 @@ public partial class CProjectile_Stomp_Projectile : CCitadelProjectile
 
     public float Width { get; private set; }
 
-    public GameTime TDieTime { get; private set; } = new();
+    public GameTime DieTime { get; private set; } = new();
 
     internal new static SendNodeDecoder<CProjectile_Stomp_Projectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -36127,6 +37320,14 @@ public partial class CProjectile_Stomp_Projectile : CCitadelProjectile
             return (CProjectile_Stomp_Projectile @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Width = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_tDieTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CProjectile_Stomp_Projectile @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DieTime = decoder(ref buffer);
             };
         }
         return CCitadelProjectile.CreateFieldDecoder(field, decoderSet);
@@ -36914,14 +38115,14 @@ public partial class CRopeKeyframe : CBaseModelEntity
         {
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.StartAttachment = new AttachmentHandle(buffer.ReadVarInt32());
+                @this.StartAttachment = AttachmentHandle.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_iEndAttachment")
         {
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EndAttachment = new AttachmentHandle(buffer.ReadVarInt32());
+                @this.EndAttachment = AttachmentHandle.Decode(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -38124,7 +39325,7 @@ public partial class CSprite : CBaseModelEntity
         {
             return (CSprite @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Attachment = new AttachmentHandle(buffer.ReadVarInt32());
+                @this.Attachment = AttachmentHandle.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_flSpriteFramerate")
@@ -39621,6 +40822,14 @@ public partial class FogParams
                 @this.MaxdensityLerpTo = decoder(ref buffer);
             };
         }
+        if (field.VarName == "lerptime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (FogParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Lerptime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "duration")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -39740,7 +40949,10 @@ public partial class FullSellPriceAbilityUpgrades
 }
 
 // MIsBoxedIntegerType
-public readonly record struct HeroID(int Value);
+public readonly record struct HeroID(int Value)
+{
+    public static HeroID Decode(ref BitBuffer buffer) => new HeroID(buffer.ReadVarInt32());
+}
 
 public partial class ice_path_shard_model_desc
 {
@@ -39954,10 +41166,16 @@ public partial class ISkeletonAnimationController
 }
 
 // MIsBoxedIntegerType
-public readonly record struct item_definition_index(int Value);
+public readonly record struct ItemDefinitionIndex(int Value)
+{
+    public static ItemDefinitionIndex Decode(ref BitBuffer buffer) => new ItemDefinitionIndex(buffer.ReadVarInt32());
+}
 
 // MIsBoxedIntegerType
-public readonly record struct itemid(int Value);
+public readonly record struct ItemID(int Value)
+{
+    public static ItemID Decode(ref BitBuffer buffer) => new ItemID(buffer.ReadVarInt32());
+}
 
 public partial class ItemImbuementPair
 {
@@ -40017,6 +41235,14 @@ public partial class LockonTarget
                 @this.LatchedValue = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flLatchedTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (LockonTarget @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LatchedTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_eLockonState")
         {
             var decoder = FieldDecode.CreateDecoder_enum<ELockonState>(field.FieldEncodingInfo);
@@ -40048,7 +41274,10 @@ public partial class LockonTarget
 }
 
 // MIsBoxedIntegerType
-public readonly record struct MatchID(int Value);
+public readonly record struct MatchID(int Value)
+{
+    public static MatchID Decode(ref BitBuffer buffer) => new MatchID(buffer.ReadVarInt32());
+}
 
 public partial class PhysicsRagdollPose
 {
@@ -40186,7 +41415,7 @@ public partial class PlayerDataGlobal
 
     // MNetworkUserGroup "Abilities"
     // MNetworkChangeCallback "pdgUpgradesChanged"
-    public CUtlStringToken THeldItem { get; private set; }
+    public CUtlStringToken HeldItem { get; private set; }
 
     public NetworkedVector<ItemImbuementPair> Imbuements { get; private set; } = new NetworkedVector<ItemImbuementPair>();
 
@@ -40228,11 +41457,19 @@ public partial class PlayerDataGlobal
                 @this.HealthRegen = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flRespawnTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RespawnTime = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_nHeroID")
         {
             return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.HeroID = new HeroID(buffer.ReadVarInt32());
+                @this.HeroID = HeroID.Decode(ref buffer);
             };
         }
         if (field.VarName == "m_iGoldNetWorth")
@@ -40387,6 +41624,22 @@ public partial class PlayerDataGlobal
                 @this.UltimateTrained = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_flUltimateCooldownStart")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.UltimateCooldownStart = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flUltimateCooldownEnd")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.UltimateCooldownEnd = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_bHasRejuvenator")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -40510,7 +41763,7 @@ public partial class PlayerDataGlobal
             var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
             return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.THeldItem = decoder(ref buffer);
+                @this.HeldItem = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_vecImbuements")
@@ -40988,6 +42241,14 @@ public partial class STeamFOWEntity
                 @this.BackdoorProtectionActive = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_nTickHidden")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTick(field.FieldEncodingInfo);
+            return (STeamFOWEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TickHidden = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_nHealthPercent")
         {
             var decoder = FieldDecode.CreateDecoder_byte(field.FieldEncodingInfo);
@@ -41077,7 +42338,10 @@ public partial class STrooperFOWEntity
 }
 
 // MIsBoxedIntegerType
-public readonly record struct style_index(int Value);
+public readonly record struct StyleIndex(int Value)
+{
+    public static StyleIndex Decode(ref BitBuffer buffer) => new StyleIndex(buffer.ReadVarInt32());
+}
 
 public partial class ViewAngleServerChange
 {

@@ -57,7 +57,7 @@ public class StringTableIntegrationTest
             }
 
             var startTick = demo.CurrentDemoTick == DemoTick.PreRecord ? DemoTick.Zero : demo.CurrentDemoTick;
-            var clampedStartTick = new DemoTick(startTick.Value / (int)(snapshotInterval.TotalSeconds * 64) * (int)(snapshotInterval.TotalSeconds * 64));
+            var clampedStartTick = new DemoTick(startTick.Value / (int)(snapshotInterval.TotalSeconds * CsDemoParser.TickRate) * (int)(snapshotInterval.TotalSeconds * CsDemoParser.TickRate));
             demo.CreateTimer(clampedStartTick + snapshotInterval, OnSnapshotTimer);
 
             return snapshot;

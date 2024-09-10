@@ -94,6 +94,8 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
 
     protected override ref EntityEvents<CEntityInstance<CsDemoParser>, CsDemoParser> EntityInstanceEvents => ref EntityEvents.CEntityInstance;
 
+    public static int TickRate => 64;
+
     protected override DecoderSet CreateDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers)
     {
         return new CsDecoderSet(serializers);

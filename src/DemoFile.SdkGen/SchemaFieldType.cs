@@ -128,5 +128,9 @@ public record SchemaFieldType(
         { "loadout_slot_t", "LoadoutSlot" },
         { "attributeprovidertypes_t", "AttributeProviderTypes" },
         { "sky3dparams_t", "Sky3DParams" },
+        { "attrib_definition_index_t", "AttribDefinitionIndex" },
+        { "item_definition_index_t", "ItemDefinitionIndex" },
+        { "itemid_t", "ItemID" },
+        { "style_index_t", "StyleIndex" },
     };
 }

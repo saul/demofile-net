@@ -43,13 +43,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="../../protos/demo.proto" />
-    <Protobuf Include="../../protos/netmessages.proto" />
-    <Protobuf Include="../../protos/networkbasetypes.proto" />
-    <Protobuf Include="../../protos/network_connection.proto" />
-    <Protobuf Include="../../protos/gameevents.proto" />
-    <Protobuf Include="../../protos/usermessages.proto" />
-    <Protobuf Include="../../protos/te.proto" />
+    <Protobuf Include="Protobufs/demo.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/netmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/networkbasetypes.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/network_connection.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/gameevents.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/usermessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/te.proto" ProtoRoot="Protobufs" />
   </ItemGroup>
 
 </Project>
