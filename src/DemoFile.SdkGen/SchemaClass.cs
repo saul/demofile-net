@@ -9,6 +9,8 @@ public partial record SchemaClass(
 {
     private Dictionary<string, SchemaField[]>? _fieldsByCsPropertyName = null;
 
+    public bool IsBoxedIntegerType => Metadata.Any(x => x.Name == "MIsBoxedIntegerType");
+
     [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|bv|e|s)(?<firstChar>[A-Z])")]
     private static partial Regex HungarianNotationRegex();
 

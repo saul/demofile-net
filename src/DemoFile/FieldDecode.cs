@@ -272,9 +272,6 @@ public static class FieldDecode
     public static FieldDecoder<WorldGroupId> CreateDecoder_WorldGroupId(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => new WorldGroupId(buffer.ReadUVarInt32());
 
-    public static FieldDecoder<AttachmentHandle> CreateDecoder_AttachmentHandle(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadUVarInt64());
-
     public static FieldDecoder<CTransform> CreateDecoder_CTransform(FieldEncodingInfo fieldFieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {
