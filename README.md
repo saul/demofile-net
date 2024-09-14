@@ -12,13 +12,13 @@ used on Windows, Mac or Linux. This parser currently supports:
 > `DemoFile` is the base, core library and does not provide support for parsing any specific game.
 > Add a reference to one of the `DemoFile.Game.*` packages instead.
 
-![Screenshot of DemoFile.Net](./assets/screenshot-2x.png)
+![Screenshot of DemoFile.Net](https://github.com/saul/demofile-net/raw/main/assets/screenshot-2x.png)
 
 Easy discoverability of available data through your IDE's inbuilt autocompletion:
 
-| ![](./assets/ide-1.png) | ![](./assets/ide-2.png) |
+| ![](https://github.com/saul/demofile-net/raw/main/assets/ide-1.png) | ![](https://github.com/saul/demofile-net/raw/main/assets/ide-2.png) |
 |-------------------------|-------------------------|
-| ![](./assets/ide-3.png) | ![](./assets/ide-4.png) |
+| ![](https://github.com/saul/demofile-net/raw/main/assets/ide-3.png) | ![](https://github.com/saul/demofile-net/raw/main/assets/ide-4.png) |
 
 ## Features
 
@@ -58,7 +58,7 @@ internal class Program
 }
 ```
 
-See also the [examples/](./examples) folder.
+See also the [examples/](https://github.com/saul/demofile-net/tree/main/examples) folder.
 
 ## Benchmarks
 
