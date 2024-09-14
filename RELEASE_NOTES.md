@@ -1,3 +1,15 @@
+### 0.21.1 (2024-09-14) - Significant API change
+
+- BREAKING CHANGE: Split CS-specific code out of DemoFile into a new NuGet package called [`DemoFile.Game.Cs`](https://www.nuget.org/packages/DemoFile.Game.Cs)
+- BREAKING CHANGE: `DemoParser` class is now abstract - port your code to `new CsDemoParser()` instead
+- BREAKING CHANGE: Renamed `DemoParser.IsGotv` to `DemoParser.IsTvRecording`
+- BREAKING CHANGE: Renamed `DemoParser.GameEvents` to `DemoParser.BaseGameEvents`
+- BREAKING CHANGE: Renamed `DemoParser.UserMessageEvents` to `DemoParser.BaseUserMessageEvents`
+- BREAKING CHANGE: Renamed `DemoParser.CsgoGameEvents` to `CsDemoParser.GameEvents`
+- Added `CsDemoParser.UserMessageEvents` for CS2-specific user messages ([#81](https://github.com/saul/demofile-net/issues/81))
+- Added preliminary support for Deadlock in the new [`DemoFile.Game.Deadlock`](https://www.nuget.org/packages/DemoFile.Game.Deadlock) package - use `new DeadlockDemoParser()` 
+- Reduce allocations for compressed packets (reduces total allocs for a typical demo by -10%)
+
 ### 0.20.1 (2024-09-07)
 
 - Add `DemoParser.ReadAllParallelAsync` to read a demo across multiple threads. \

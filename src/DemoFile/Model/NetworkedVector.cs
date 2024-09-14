@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Numerics;
 
@@ -57,7 +58,7 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
     public T? this[int index]
     {
         get => _values[index];
-        internal set
+        [EditorBrowsable(EditorBrowsableState.Advanced)] set
         {
             Debug.Assert(index < _values.Count);
             Version++;
@@ -65,7 +66,8 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
         }
     }
 
-    internal void EnsureSize(int length)
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public void EnsureSize(int length)
     {
         if (length > _values.Count)
         {
@@ -74,7 +76,8 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
         }
     }
 
-    internal void Resize(int length)
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public void Resize(int length)
     {
         Version++;
 

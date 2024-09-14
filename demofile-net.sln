@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		RELEASE_NOTES.md = RELEASE_NOTES.md
 		demos\download.sh = demos\download.sh
+		version.json = version.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{20EAA685-6916-4B0C-8D0C-E407B072E28F}"
@@ -37,6 +38,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.TickByTick", "examples\DemoFile.Example.TickByTick\DemoFile.Example.TickByTick.csproj", "{2C6DF000-2878-454F-8C4C-0EB68E3C2B3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Chat", "examples\DemoFile.Example.Chat\DemoFile.Example.Chat.csproj", "{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Game.Cs", "src\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj", "{60C8B576-35CB-4BB5-AB82-1862FF7A1493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Game.Deadlock", "src\DemoFile.Game.Deadlock\DemoFile.Game.Deadlock.csproj", "{5F42D3CA-2231-4157-B3A3-E8F355931B2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +97,14 @@ Global
 		{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3C48E0A-FE9D-47C1-A0D4-186B18FB33D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C8B576-35CB-4BB5-AB82-1862FF7A1493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F42D3CA-2231-4157-B3A3-E8F355931B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F42D3CA-2231-4157-B3A3-E8F355931B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F42D3CA-2231-4157-B3A3-E8F355931B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F42D3CA-2231-4157-B3A3-E8F355931B2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}

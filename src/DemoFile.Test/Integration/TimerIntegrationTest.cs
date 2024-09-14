@@ -18,7 +18,7 @@ public class TimerIntegrationTest
         DemoTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         demo.CreateTimer(
             new DemoTick(128),
             () =>
@@ -57,7 +57,7 @@ public class TimerIntegrationTest
         DemoTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         var disposable = demo.CreateTimer(
             new DemoTick(128),
             () =>
@@ -110,7 +110,7 @@ public class TimerIntegrationTest
         DemoTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         demo.CreateTimer(
             new DemoTick(128),
             demo,
@@ -150,7 +150,7 @@ public class TimerIntegrationTest
         GameTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         demo.CreateTimer(
             new GameTick(120_000u),
             () =>
@@ -189,7 +189,7 @@ public class TimerIntegrationTest
         GameTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         var disposable = demo.CreateTimer(
             new GameTick(119_999u),
             () =>
@@ -242,7 +242,7 @@ public class TimerIntegrationTest
         GameTick timerTick1 = default;
 
         var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         demo.CreateTimer(
             new GameTick(120_000u),
             demo,

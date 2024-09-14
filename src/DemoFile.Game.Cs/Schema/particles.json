@@ -1,0 +1,25 @@
+{
+  "enums": {
+  },
+  "classes": {
+    "CParticleBindingRealPulse": {
+      "parent": "CParticleCollectionBindingInstance",
+      "metadata": [
+        {
+          "name": "MPulseInstanceDomainInfo"
+        },
+        {
+          "name": "MPulseDomainHookInfo"
+        },
+        {
+          "name": "MPulseLibraryBindings"
+        },
+        {
+          "name": "MPulseDomainHiddenInTool"
+        }
+      ],
+      "fields": [
+      ]
+    }
+  }
+}

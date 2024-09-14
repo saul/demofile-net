@@ -3,27 +3,25 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-using Snappier;
+using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public sealed partial class DemoParser
+public abstract partial class DemoParser<TGameParser>
+    where TGameParser : DemoParser<TGameParser>, new()
 {
     private readonly ArrayPool<byte> _bytePool = ArrayPool<byte>.Create();
     private readonly PriorityQueue<ITickTimer, int> _demoTickTimers = new();
     private readonly PriorityQueue<QueuedPacket, (int, int)> _packetQueue = new(128);
     private readonly PriorityQueue<ITickTimer, uint> _serverTickTimers = new();
-    private readonly Source1GameEvents _source1GameEvents;
 
     private long _commandStartPosition;
     private DemoEvents _demoEvents;
-    private EntityEvents _entityEvents;
-    private GameEvents _gameEvents;
+    private BaseGameEvents _baseGameEvents;
     private PacketEvents _packetEvents;
     private Stream _stream;
-    private UserMessageEvents _userMessageEvents;
     private TempEntityEvents _tempEntityEvents;
-    private CsgoGameEvents _csgoGameEvents;
+    private BaseUserMessageEvents _baseUserMessageEvents;
 
     /// <summary>
     /// Event fired when the current demo command has finished (e.g, just before <see cref="MoveNextAsync"/> returns).
@@ -39,9 +37,12 @@ public sealed partial class DemoParser
     /// </remarks>
     public Action<DemoProgressEvent>? OnProgress;
 
-    public DemoParser()
+    protected DemoParser()
     {
-        _source1GameEvents = new Source1GameEvents(this);
+        if (this is not TGameParser)
+        {
+            throw new InvalidOperationException($"{GetType()} must derive from {typeof(TGameParser)}");
+        }
 
         _stream = null!;
 
@@ -62,9 +63,6 @@ public sealed partial class DemoParser
             OnServerInfo(msg);
         };
         _packetEvents.NetTick += OnNetTick;
-
-        _gameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
-        _gameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
     }
 
     /// <summary>
@@ -74,13 +72,10 @@ public sealed partial class DemoParser
     public bool IsReading { get; private set; }
 
     public ref DemoEvents DemoEvents => ref _demoEvents;
-    public ref GameEvents GameEvents => ref _gameEvents;
+    public ref BaseGameEvents BaseGameEvents => ref _baseGameEvents;
     public ref PacketEvents PacketEvents => ref _packetEvents;
-    public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
-    public Source1GameEvents Source1GameEvents => _source1GameEvents;
-    public ref EntityEvents EntityEvents => ref _entityEvents;
+    public ref BaseUserMessageEvents BaseUserMessageEvents => ref _baseUserMessageEvents;
     public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
-    public ref CsgoGameEvents CsgoGameEvents => ref _csgoGameEvents;
 
     public CDemoFileHeader FileHeader { get; private set; } = new();
 
@@ -101,9 +96,10 @@ public sealed partial class DemoParser
     public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
 
     /// <summary>
-    /// <c>true</c> if the recording client is GOTV. <c>false</c> if this is a POV demo.
+    /// <c>true</c> if the demo was recorded on the game server, or a TV relay with full state.
+    /// <c>false</c> if this is a POV demo.
     /// </summary>
-    public bool IsGotv { get; private set; }
+    public bool IsTvRecording { get; private set; }
 
     private void OnDemoFileInfo(CDemoFileInfo fileInfo)
     {
@@ -137,10 +133,10 @@ public sealed partial class DemoParser
             var msgBuf = queued.MsgBuffer;
 
             if (!_packetEvents.ParseNetMessage(queued.MsgType, msgBuf)
-                && !_gameEvents.ParseGameEvent(queued.MsgType, msgBuf)
-                && !_userMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
+                && !_baseGameEvents.ParseGameEvent(queued.MsgType, msgBuf)
+                && !_baseUserMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
                 && !_tempEntityEvents.ParseNetMessage(queued.MsgType, msgBuf)
-                && !_csgoGameEvents.ParseNetMessage(queued.MsgType, msgBuf))
+                && !ParseNetMessage(queued.MsgType, msgBuf))
             {
             }
 

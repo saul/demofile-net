@@ -2,10 +2,11 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-public record ServerClass(
+public record ServerClass<TGameParser>(
     string Name,
     int ServerClassId,
-    Func<EntityContext, CEntityInstance> EntityFactory)
+    Func<DemoParser<TGameParser>.EntityContext, CEntityInstance<TGameParser>> EntityFactory)
+    where TGameParser : DemoParser<TGameParser>, new()
 {
     public override string ToString() => $"{Name} ({ServerClassId})";
 }

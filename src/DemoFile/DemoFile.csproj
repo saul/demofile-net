@@ -15,14 +15,6 @@
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
-  <!-- NuGet package settings -->
-  <PropertyGroup>
-    <Authors>Saul Rennison</Authors>
-    <Description>DemoFile.Net is a blazing fast demo parser library for Counter-Strike 2.</Description>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-  </PropertyGroup>
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
@@ -43,14 +35,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="../../protos/demo.proto" />
-    <Protobuf Include="../../protos/netmessages.proto" />
-    <Protobuf Include="../../protos/networkbasetypes.proto" />
-    <Protobuf Include="../../protos/network_connection.proto" />
-    <Protobuf Include="../../protos/gameevents.proto" />
-    <Protobuf Include="../../protos/cs_gameevents.proto" />
-    <Protobuf Include="../../protos/usermessages.proto" />
-    <Protobuf Include="../../protos/te.proto" />
+    <Protobuf Include="Protobufs/demo.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/netmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/networkbasetypes.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/network_connection.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/gameevents.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/usermessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/te.proto" ProtoRoot="Protobufs" />
   </ItemGroup>
 
 </Project>

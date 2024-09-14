@@ -1,15 +1,24 @@
 # DemoFile.Net ![NuGet](https://img.shields.io/nuget/v/DemoFile) ![Build status](https://github.com/saul/demofile-net/actions/workflows/dotnet.yml/badge.svg)
 
-DemoFile.Net is a blazing fast demo parser library for Counter-Strike 2, written in C#. It is cross platform, and can be
-used from Windows, Mac or Linux.
+DemoFile.Net is a blazing fast demo parser library for Source 2 games, written in C#. It is cross-platform, and can be
+used on Windows, Mac or Linux. This parser currently supports:
 
-![Screenshot of DemoFile.Net](./assets/screenshot-2x.png)
+| Game             | NuGet package                                                                     | Getting started            |
+|------------------|-----------------------------------------------------------------------------------|----------------------------|
+| Counter-Strike 2 | ✅ [DemoFile.Game.Cs](https://www.nuget.org/packages/DemoFile.Game.Cs)             | `new CsDemoParser()`       |
+| Deadlock         | ✅ [DemoFile.Game.Deadlock](https://www.nuget.org/packages/DemoFile.Game.Deadlock) | `new DeadlockDemoParser()` |
+
+> [!IMPORTANT]
+> `DemoFile` is the base, core library and does not provide support for parsing any specific game.
+> Add a reference to one of the `DemoFile.Game.*` packages instead.
+
+![Screenshot of DemoFile.Net](https://github.com/saul/demofile-net/raw/main/assets/screenshot-2x.png)
 
 Easy discoverability of available data through your IDE's inbuilt autocompletion:
 
-| ![](./assets/ide-1.png) | ![](./assets/ide-2.png) |
+| ![](https://github.com/saul/demofile-net/raw/main/assets/ide-1.png) | ![](https://github.com/saul/demofile-net/raw/main/assets/ide-2.png) |
 |-------------------------|-------------------------|
-| ![](./assets/ide-3.png) | ![](./assets/ide-4.png) |
+| ![](https://github.com/saul/demofile-net/raw/main/assets/ide-3.png) | ![](https://github.com/saul/demofile-net/raw/main/assets/ide-4.png) |
 
 ## Features
 
@@ -17,14 +26,15 @@ Easy discoverability of available data through your IDE's inbuilt autocompletion
 |---------------------------------------------------|----------------|
 | CSTV / GOTV demos                                 | ✅ Full support |
 | POV demos                                         | ✅ Full support |
+| HTTP broadcasts                                   | ⌛ Coming soon  |
 | Game events (e.g. `player_death`)                 | ✅ Full support |
 | Entity updates (player positions, grenades, etc.) | ✅ Full support |
 | Seeking forwards/backwards through the demo       | ✅ Full support |
 
 ## Examples
 
-> Note:
-> This library is still under heavy development and the API is likely to change significantly before v1.0
+> [!WARNING]
+> This library is still under development and the API is liable to change until v1.0
 
 ```c#
 using DemoFile;
@@ -35,7 +45,7 @@ internal class Program
     {
         var path = args.SingleOrDefault() ?? throw new Exception("Expected a single argument: <path to .dem>");
 
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         demo.Source1GameEvents.PlayerDeath += e =>
         {
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
@@ -48,7 +58,7 @@ internal class Program
 }
 ```
 
-See also the [examples/](./examples) folder.
+See also the [examples/](https://github.com/saul/demofile-net/tree/main/examples) folder.
 
 ## Benchmarks
 
@@ -56,11 +66,10 @@ On an M1 MacBook Pro, DemoFile.Net can read a full competitive game (just under 
 When parsing across multiple threads, using the `ReadAllParallelAsync` method, this drops to nearly 500 milliseconds.
 This includes parsing all entity data (player positions, velocities, weapon tracking, grenades, etc).
 
-| Method            |           Mean | Error    | StdDev   | Allocated |
+| Method            |           Mean |    Error |   StdDev | Allocated |
 |-------------------|---------------:|---------:|---------:|----------:|
 | ParseDemo         | **1,294.6 ms** |  3.68 ms |  2.88 ms | 491.48 MB |
 | ParseDemoParallel |   **540.1 ms** | 23.99 ms | 22.44 ms | 600.67 MB |
-
 
 ## Author and acknowledgements
 

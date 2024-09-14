@@ -13,7 +13,7 @@ public class SeekToTickIntegrationTest
     public async Task SeekToTick_StartAtTick(DemoTick startTick)
     {
         // Arrange
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
 
         // Act
         await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13992), default);
@@ -32,7 +32,7 @@ public class SeekToTickIntegrationTest
     {
         // Arrange
         var phase = 0;
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
 
         var snapshot = new StringBuilder[] {new(), new()};
 
@@ -117,7 +117,7 @@ public class SeekToTickIntegrationTest
     public async Task SeekToTick_ForwardBackwards(ForwardBackwardsCase testCase)
     {
         // Arrange
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
         var skipInterval = TimeSpan.FromSeconds(77);
 
         // Act

@@ -6,4 +6,12 @@
     <PackageReference Include="NerdBank.GitVersioning" Version="3.6.133" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
+  <!-- NuGet package settings -->
+  <PropertyGroup>
+    <Authors>Saul Rennison</Authors>
+    <Description>DemoFile is a blazing fast Source 2 demo parser library.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
 </Project>

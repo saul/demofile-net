@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DemoFile;
 
-internal ref struct BitBuffer
+public ref struct BitBuffer
 {
     private static readonly uint[] BitMask;
 

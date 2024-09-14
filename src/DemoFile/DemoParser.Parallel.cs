@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public partial class DemoParser
+public partial class DemoParser<TGameParser>
 {
     /// <summary>
     /// Parse the entire demo in <paramref name="demoFileBytes"/> from start to end.
@@ -15,7 +15,7 @@ public partial class DemoParser
     /// <param name="cancellationToken">Cancellation token to interrupt parsing.</param>
     public static Task ReadAllParallelAsync(
         byte[] demoFileBytes,
-        Action<DemoParser> setupSection,
+        Action<TGameParser> setupSection,
         CancellationToken cancellationToken)
     {
         return ReadAllParallelAsync(demoFileBytes, demo =>
@@ -40,10 +40,10 @@ public partial class DemoParser
     /// <returns>Concatenated list of all return values of <paramref name="setupSection"/>.</returns>
     public static async Task<IReadOnlyList<TResult>> ReadAllParallelAsync<TResult>(
         byte[] demoFileBytes,
-        Func<DemoParser, TResult> setupSection,
+        Func<TGameParser, TResult> setupSection,
         CancellationToken cancellationToken)
     {
-        var demo = new DemoParser();
+        var demo = new TGameParser();
         var stream = new MemoryStream(demoFileBytes);
 
         // Read all CDemoFullPackets
@@ -96,7 +96,7 @@ public partial class DemoParser
                 ? demo.FullPackets[endFullPacketIdx].StreamPosition
                 : demoFileBytes.Length;
 
-            var backgroundParser = new DemoParser();
+            var backgroundParser = new TGameParser();
 
             tasks[parserIdx + 1] = Task.Run(() => backgroundParser.ParseRangeAsync(demoFileBytes, fullPacket, endPosition, setupSection, cancellationToken));
         }
@@ -108,7 +108,7 @@ public partial class DemoParser
         byte[] demoFileBytes,
         FullPacketRecord fullPacket,
         long endPosition,
-        Func<DemoParser, TResult> setupAction,
+        Func<TGameParser, TResult> setupAction,
         CancellationToken cancellationToken)
     {
         await StartReadingAsync(new MemoryStream(demoFileBytes), cancellationToken).ConfigureAwait(false);
@@ -122,7 +122,7 @@ public partial class DemoParser
         await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false);
 
         // Caller sets up actions after the demo is restored to the full packet state
-        var result = setupAction(this);
+        var result = setupAction((TGameParser) this);
 
         while (_stream.Position < endPosition)
         {

@@ -1,7 +1,7 @@
 namespace DemoFile;
 
 /// <summary>
-/// Fired after every command is read during <see cref="DemoParser.ReadAllAsync(System.IO.Stream)"/>.
+/// Fired after every command is read during <see cref="DemoParser{TGameParser}.ReadAllAsync(System.IO.Stream)"/>.
 /// </summary>
 /// <param name="ProgressRatio">
 /// A value between [0..1] indicating progress through the demo file.

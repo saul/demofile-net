@@ -2,6 +2,12 @@
 
 namespace DemoFile.SdkGen;
 
+public enum BoxedPrimitiveType
+{
+    Integer,
+    Float
+}
+
 public partial record SchemaClass(
     string? Parent,
     IReadOnlyList<SchemaMetadata> Metadata,
@@ -9,7 +15,21 @@ public partial record SchemaClass(
 {
     private Dictionary<string, SchemaField[]>? _fieldsByCsPropertyName = null;
 
-    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|bv|e|s)(?<firstChar>[A-Z])")]
+    public BoxedPrimitiveType? BoxedPrimitive
+    {
+        get
+        {
+            if (Metadata.Any(x => x.Name == "MIsBoxedIntegerType"))
+                return BoxedPrimitiveType.Integer;
+
+            if (Metadata.Any(x => x.Name == "MIsBoxedFloatType"))
+                return BoxedPrimitiveType.Float;
+
+            return default;
+        }
+    }
+
+    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|ar|bv|e|s|t)(?<firstChar>[A-Z])")]
     private static partial Regex HungarianNotationRegex();
 
     private static string RemoveMemberPrefix(string fieldName)
@@ -20,7 +40,7 @@ public partial record SchemaClass(
         return $"{char.ToUpper(fieldName[0])}{fieldName[1..]}";
     }
 
-    public string CsPropertyNameForField(string className, SchemaField field)
+    public string CsPropertyNameForField(GameSdkInfo gameSdkInfo, string className, SchemaField field)
     {
         // When the hungarian notation prefix is removed, some fields shadow their parent's.
         // Because there are only a handful, we have some manual overrides.
@@ -52,7 +72,7 @@ public partial record SchemaClass(
             ? cleanName
             : RemoveMemberPrefix(field.Name);
 
-        return field.Type.TryGetEntityHandleType(out _)
+        return field.Type.TryGetEntityHandleType(gameSdkInfo, out _)
             ? uniqueName + "Handle"
             : uniqueName;
     }

@@ -8,7 +8,7 @@ internal class Program
     {
         var path = args.SingleOrDefault() ?? throw new Exception("Expected a single argument: <path to .dem>");
 
-        var demo = new DemoParser();
+        var demo = new CsDemoParser();
 
         demo.Source1GameEvents.RoundEnd += e =>
         {
@@ -38,7 +38,7 @@ internal class Program
         await demo.ReadAllAsync(File.OpenRead(path));
     }
 
-    private static void AddTeamRows(DemoParser demo, Table table, CCSTeam team)
+    private static void AddTeamRows(CsDemoParser demo, Table table, CCSTeam team)
     {
         var orderedPlayers = team.CSPlayerControllers
             .OrderByDescending(player => player.ActionTrackingServices!.MatchStats.Damage)

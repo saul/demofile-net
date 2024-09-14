@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace DemoFile;
 
-internal partial record FieldType(string Name, FieldType? GenericParameter, bool IsPointer, int ArrayLength)
+public partial record FieldType(string Name, FieldType? GenericParameter, bool IsPointer, int ArrayLength)
 {
     private static readonly ConcurrentDictionary<string, FieldType> FieldTypeCache = new();
 

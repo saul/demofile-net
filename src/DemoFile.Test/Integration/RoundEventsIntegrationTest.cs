@@ -23,7 +23,7 @@ public class RoundEventsIntegrationTest
     public async Task RoundStartEnd(KeyValuePair<string, byte[]> testCase)
     {
         // Arrange
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             var snapshot = new DemoSnapshot();
 

@@ -5,16 +5,17 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <DefineConstants Condition=" '$(Configuration)' == 'Baseline' ">$(DefineConstants);BASELINE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.13.9" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(Baseline)' != 'true' ">
-    <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
+  <ItemGroup Condition=" '$(Configuration)' != 'Baseline' ">
+    <ProjectReference Include="..\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Baseline)' == 'true' ">
+  <ItemGroup Condition=" '$(Configuration)' == 'Baseline' ">
     <PackageReference Include="DemoFile" Version="*" />
   </ItemGroup>
 

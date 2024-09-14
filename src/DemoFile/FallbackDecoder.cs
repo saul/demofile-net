@@ -3,7 +3,7 @@ using DemoFile.Sdk;
 
 namespace DemoFile;
 
-internal static class FallbackDecoder
+public static class FallbackDecoder
 {
     public readonly record struct Unit;
 
@@ -110,7 +110,7 @@ internal static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType":
+            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle":
             {
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     buffer.ReadUVarInt64();
@@ -204,7 +204,7 @@ internal static class FallbackDecoder
         DecoderSet decoderSet,
         [NotNullWhen(true)] out SendNodeDecoder<Unit>? decoder)
     {
-        if (!decoderSet.TryGetDecoder(fieldType.Name, out var classType, out var innerDecoder))
+        if (!decoderSet.TryGetDecoderByName(fieldType.Name, out var classType, out var innerDecoder))
         {
             decoder = null;
             return false;

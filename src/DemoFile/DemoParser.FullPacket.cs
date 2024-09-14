@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace DemoFile;
 
-public partial class DemoParser
+public partial class DemoParser<TGameParser>
 {
     /// <summary>
     /// <c>true</c> when the demo is seeking between ticks, for example
@@ -12,9 +12,9 @@ public partial class DemoParser
 
     private readonly struct SeekScope : IDisposable
     {
-        private readonly DemoParser _parser;
+        private readonly DemoParser<TGameParser> _parser;
 
-        public SeekScope(DemoParser parser)
+        public SeekScope(DemoParser<TGameParser> parser)
         {
             _parser = parser;
             parser.IsSeeking = true;

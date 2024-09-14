@@ -17,7 +17,7 @@ public class Source1GameEventIntegrationTest
     public async Task GameEvent()
     {
         // Arrange
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             var snapshot = new DemoSnapshot();
 
@@ -50,7 +50,7 @@ public class Source1GameEventIntegrationTest
     [Test]
     public async Task PlayerProperties()
     {
-        DemoSnapshot ParseSection(DemoParser demo)
+        DemoSnapshot ParseSection(CsDemoParser demo)
         {
             demo.Source1GameEvents.PlayerHurt += e =>
             {

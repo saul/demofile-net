@@ -1,11 +1,12 @@
 ﻿namespace DemoFile.Sdk;
 
-public partial class CEntityInstance
+public partial class CEntityInstance<TGameParser>
+    where TGameParser : DemoParser<TGameParser>, new()
 {
     private readonly SendNodeDecoder<object> _decoder;
-    protected readonly DemoParser Demo;
+    protected readonly TGameParser Demo;
 
-    internal CEntityInstance(EntityContext context, SendNodeDecoder<object> decoder)
+    public CEntityInstance(DemoParser<TGameParser>.EntityContext context, SendNodeDecoder<object> decoder)
     {
         _decoder = decoder;
         Demo = context.Demo;
@@ -16,7 +17,7 @@ public partial class CEntityInstance
 
     public CEntityIndex EntityIndex { get; }
 
-    public CHandle<CEntityInstance> EntityHandle => CHandle<CEntityInstance>.FromIndexSerialNum(EntityIndex, SerialNumber);
+    public CHandle<CEntityInstance<TGameParser>, TGameParser> EntityHandle => CHandle<CEntityInstance<TGameParser>, TGameParser>.FromIndexSerialNum(EntityIndex, SerialNumber);
 
     /// <summary>
     /// Is this entity within the recording player's PVS?
@@ -24,7 +25,7 @@ public partial class CEntityInstance
     /// </summary>
     public bool IsActive { get; internal set; }
 
-    public ServerClass ServerClass { get; }
+    public ServerClass<TGameParser> ServerClass { get; }
     public uint SerialNumber { get; }
 
     internal void ReadField(ReadOnlySpan<int> fieldPath, ref BitBuffer buffer)

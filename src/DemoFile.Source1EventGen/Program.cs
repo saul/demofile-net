@@ -1,31 +1,33 @@
 ﻿using System.Text;
 using DemoFile;
 
+namespace DemoFile.Source1EventGen;
+
 internal static class Program
 {
-    private static readonly IReadOnlySet<string> SyntheticEvents = new HashSet<string>
-    {
-        "round_start",
-        "round_end"
-    };
-
     public static async Task Main(string[] args)
     {
-        var (demoPath, outputPath) = args switch
+        var (demoPath, outputDir) = args switch
         {
             [var fst, var snd] => (fst, snd),
-            _ => throw new Exception("Expected format: <path to .dem> <path to output .cs>")
+            _ => throw new Exception("Expected format: <path to .dem> <path to output dir for .cs file>")
         };
 
-        var cts = new CancellationTokenSource();
-        var demo = new DemoParser();
+        Console.WriteLine($"Writing output to: {outputDir}");
+        var gameName = Path.GetExtension(outputDir)[1..];
+        Console.WriteLine($"Using game name: {gameName}");
+        var gameSdkInfo = new GameSdkInfo(gameName);
 
-        demo.GameEvents.Source1LegacyGameEventList += events =>
+        var cts = new CancellationTokenSource();
+        var demo = new DummyDemoParser();
+
+        demo.BaseGameEvents.Source1LegacyGameEventList += events =>
         {
             var builder = new StringBuilder();
-            WriteDescriptors(builder, events.Descriptors);
+            WriteDescriptors(gameSdkInfo, builder, events.Descriptors);
             cts.Cancel();
 
+            var outputPath = Path.Combine(outputDir, "Source1GameEvents.Autogen.cs");
             File.WriteAllText(outputPath, builder.ToString());
         };
 
@@ -84,6 +86,7 @@ internal static class Program
         $"Source1{SnakeCaseToPascalCase(name)}Event";
 
     private static void WriteDescriptors(
+        GameSdkInfo gameSdkInfo,
         StringBuilder builder,
         IReadOnlyList<CMsgSource1LegacyGameEventList.Types.descriptor_t> descriptors)
     {
@@ -102,7 +105,7 @@ internal static class Program
 
         foreach (var descriptor in descriptors)
         {
-            if (SyntheticEvents.Contains(descriptor.Name))
+            if (gameSdkInfo.SyntheticEvents.Contains(descriptor.Name))
                 continue;
 
             builder.AppendLine($"    public Action<{EventNameToCsClass(descriptor.Name)}>? {SnakeCaseToPascalCase(descriptor.Name)};");
@@ -111,7 +114,7 @@ internal static class Program
         builder.AppendLine("");
         builder.AppendLine($"    internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)");
         builder.AppendLine($"    {{");
-        builder.AppendLine($"        _handlers = new Dictionary<int, Action<DemoParser, CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);");
+        builder.AppendLine($"        _handlers = new Dictionary<int, Action<{gameSdkInfo.DemoParserClass}, CMsgSource1LegacyGameEvent>>(eventList.Descriptors.Count);");
         builder.AppendLine($"        foreach (var descriptor in eventList.Descriptors)");
         builder.AppendLine($"        {{");
 
@@ -125,7 +128,7 @@ internal static class Program
             foreach (var key in descriptor.Keys)
             {
                 builder.AppendLine($"                        if (key.Name == \"{key.Name}\")");
-                builder.AppendLine($"                            return (@this, x) => @this.{EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name)} = {CSharpEventKeyParser((GameEventKeyType) key.Type)};");
+                builder.AppendLine($"                            return (@this, x) => @this.{EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name)} = {CSharpEventKeyParser(gameSdkInfo, (GameEventKeyType) key.Type)};");
             }
 
             builder.AppendLine($"                        return (@this, x) => {{ }};");
@@ -157,7 +160,7 @@ internal static class Program
             builder.AppendLine($"public partial class {EventNameToCsClass(descriptor.Name)} : Source1GameEventBase");
             builder.AppendLine($"{{");
 
-            builder.AppendLine($"    internal {EventNameToCsClass(descriptor.Name)}(DemoParser demo) : base(demo) {{}}");
+            builder.AppendLine($"    internal {EventNameToCsClass(descriptor.Name)}({gameSdkInfo.DemoParserClass} demo) : base(demo) {{}}");
             builder.AppendLine($"");
             builder.AppendLine($"    public override string GameEventName => \"{descriptor.Name}\";");
 
@@ -166,7 +169,7 @@ internal static class Program
                 builder.AppendLine($"");
 
                 var csPropertyName = EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name);
-                builder.Append($"    public {CSharpEventTypeName((GameEventKeyType) key.Type)} {csPropertyName} {{ get; set; }}");
+                builder.Append($"    public {CSharpEventTypeName(gameSdkInfo, (GameEventKeyType) key.Type)} {csPropertyName} {{ get; set; }}");
 
                 if ((GameEventKeyType)key.Type == GameEventKeyType.String)
                     builder.AppendLine(" = \"\";");
@@ -175,11 +178,11 @@ internal static class Program
 
                 if ((GameEventKeyType) key.Type == GameEventKeyType.PlayerController)
                 {
-                    builder.AppendLine($"    public CCSPlayerController? {csPropertyName[..^5]} => _demo.GetEntityByIndex<CCSPlayerController>({csPropertyName});");
+                    builder.AppendLine($"    public {gameSdkInfo.PlayerControllerClass}? {csPropertyName[..^5]} => _demo.GetEntityByIndex<{gameSdkInfo.PlayerControllerClass}>({csPropertyName});");
                 }
                 else if ((GameEventKeyType) key.Type == GameEventKeyType.StrictEHandle && key.Name.EndsWith("_pawn"))
                 {
-                    builder.AppendLine($"    public CCSPlayerPawn? {csPropertyName[..^6]} => _demo.GetEntityByHandle({csPropertyName}) as CCSPlayerPawn;");
+                    builder.AppendLine($"    public {gameSdkInfo.PlayerPawnClass}? {csPropertyName[..^6]} => _demo.GetEntityByHandle({csPropertyName}) as {gameSdkInfo.PlayerPawnClass};");
                 }
             }
 
@@ -197,7 +200,7 @@ internal static class Program
         builder.AppendLine($"}}");
     }
 
-    private static string CSharpEventTypeName(GameEventKeyType keyType)
+    private static string CSharpEventTypeName(GameSdkInfo gameSdkInfo, GameEventKeyType keyType)
     {
         return keyType switch
         {
@@ -208,13 +211,13 @@ internal static class Program
             GameEventKeyType.Byte => $"int",
             GameEventKeyType.Bool => $"bool",
             GameEventKeyType.UInt64 => $"ulong",
-            GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance>",
+            GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance<{gameSdkInfo.DemoParserClass}>, {gameSdkInfo.DemoParserClass}>",
             GameEventKeyType.PlayerController => $"CEntityIndex",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
     }
 
-    private static string CSharpEventKeyParser(GameEventKeyType keyType)
+    private static string CSharpEventKeyParser(GameSdkInfo gameSdkInfo, GameEventKeyType keyType)
     {
         return keyType switch
         {
@@ -225,7 +228,7 @@ internal static class Program
             GameEventKeyType.Byte => $"x.ValByte",
             GameEventKeyType.Bool => $"x.ValBool",
             GameEventKeyType.UInt64 => $"x.ValUint64",
-            GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance>.FromEventStrictEHandle((uint) x.ValLong)",
+            GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance<{gameSdkInfo.DemoParserClass}>, {gameSdkInfo.DemoParserClass}>.FromEventStrictEHandle((uint) x.ValLong)",
             GameEventKeyType.PlayerController => $"x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1)",
             _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
         };
