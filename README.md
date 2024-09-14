@@ -3,10 +3,10 @@
 DemoFile.Net is a blazing fast demo parser library for Source 2 games, written in C#. It is cross-platform, and can be
 used on Windows, Mac or Linux. This parser currently supports:
 
-| Game             | NuGet package            | Getting started            |
-|------------------|--------------------------|----------------------------|
-| Counter-Strike 2 | ✅ DemoFile.Game.Cs       | `new CsDemoParser()`       |
-| Deadlock         | ✅ DemoFile.Game.Deadlock | `new DeadlockDemoParser()` |
+| Game             | NuGet package                                                                     | Getting started            |
+|------------------|-----------------------------------------------------------------------------------|----------------------------|
+| Counter-Strike 2 | ✅ [DemoFile.Game.Cs](https://www.nuget.org/packages/DemoFile.Game.Cs)             | `new CsDemoParser()`       |
+| Deadlock         | ✅ [DemoFile.Game.Deadlock](https://www.nuget.org/packages/DemoFile.Game.Deadlock) | `new DeadlockDemoParser()` |
 
 > [!IMPORTANT]
 > `DemoFile` is the base, core library and does not provide support for parsing any specific game.
