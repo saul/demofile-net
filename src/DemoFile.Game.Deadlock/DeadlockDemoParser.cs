@@ -24,6 +24,30 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
     public ref GameEvents GameEvents => ref _gameEvents;
 
     /// <summary>
+    /// The <see cref="CCitadelTeam"/> entity representing the Spectators.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
+    public CCitadelTeam TeamSpectator => GetTeam(TeamNumber.Spectator);
+
+    /// <summary>
+    /// The <see cref="CCitadelTeam"/> entity representing the Amber Hand.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
+    public CCitadelTeam TeamAmber => GetTeam(TeamNumber.Amber);
+
+    /// <summary>
+    /// The <see cref="CCitadelTeam"/> entity representing the Sapphire Flame.
+    /// </summary>
+    /// <remarks>
+    /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
+    /// </remarks>
+    public CCitadelTeam TeamSapphire => GetTeam(TeamNumber.Sapphire);
+
+    /// <summary>
     /// The <see cref="CCitadelGameRules"/> entity representing the game rules
     /// (e.g. current game state)
     /// </summary>
@@ -61,8 +85,6 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
             }
         }
     }
-
-    // Amber Hand or Sapphire Flame
 
     protected override IReadOnlyDictionary<string, EntityFactory<DeadlockDemoParser>> EntityFactories =>
         DeadlockEntityFactories.All;

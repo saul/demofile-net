@@ -16,7 +16,7 @@ public class DemoParserBenchmark
         {
             var baseJob = Job.Default;
 
-            AddJob(baseJob.WithArguments(new[] { new MsBuildArgument("/p:Baseline=true") }).AsBaseline().WithId("Baseline"));
+            AddJob(baseJob.WithCustomBuildConfiguration("Baseline").AsBaseline().WithId("Baseline"));
             AddJob(baseJob);
             //AddJob(baseJob.WithArguments(new[] { new MsBuildArgument("/p:ClearBuf=true") }).WithId("ClearBuf"));
         }

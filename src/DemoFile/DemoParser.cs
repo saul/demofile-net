@@ -39,6 +39,11 @@ public abstract partial class DemoParser<TGameParser>
 
     protected DemoParser()
     {
+        if (this is not TGameParser)
+        {
+            throw new InvalidOperationException($"{GetType()} must derive from {typeof(TGameParser)}");
+        }
+
         _stream = null!;
 
         _demoEvents.DemoFileHeader += msg => { FileHeader = msg; };
