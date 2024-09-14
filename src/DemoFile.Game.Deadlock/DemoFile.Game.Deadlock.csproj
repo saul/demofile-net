@@ -14,6 +14,13 @@
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Description>DemoFile.Game.Deadlock is a blazing fast demo parser for Valve's Deadlock.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
   <ItemGroup>
     <InternalsVisibleTo Include="DemoFile.Test" />
   </ItemGroup>

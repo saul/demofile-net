@@ -14,6 +14,13 @@
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Description>DemoFile.Game.Cs is a blazing fast Counter-Strike 2 demo parser library.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
   <ItemGroup>
     <InternalsVisibleTo Include="DemoFile.Test" />
   </ItemGroup>
