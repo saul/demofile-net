@@ -26,7 +26,7 @@ Easy discoverability of available data through your IDE's inbuilt autocompletion
 |---------------------------------------------------|----------------|
 | CSTV / GOTV demos                                 | ✅ Full support |
 | POV demos                                         | ✅ Full support |
-| HTTP broadcasts                                   | ⌛ Coming soon  |
+| HTTP broadcasts                                   | ✅ Full support  |
 | Game events (e.g. `player_death`)                 | ✅ Full support |
 | Entity updates (player positions, grenades, etc.) | ✅ Full support |
 | Seeking forwards/backwards through the demo       | ✅ Full support |
@@ -51,7 +51,8 @@ internal class Program
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
         };
 
-        await demo.ReadAllAsync(File.OpenRead(path));
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
+        await reader.ReadAllAsync();
 
         Console.WriteLine("\nFinished!");
     }

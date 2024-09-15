@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace DemoFile;
 
-public partial class DemoParser<TGameParser>
+public partial class DemoFileReader<TGameParser>
 {
     /// <summary>
     /// <c>true</c> when the demo is seeking between ticks, for example
@@ -12,17 +12,17 @@ public partial class DemoParser<TGameParser>
 
     private readonly struct SeekScope : IDisposable
     {
-        private readonly DemoParser<TGameParser> _parser;
+        private readonly DemoFileReader<TGameParser> _reader;
 
-        public SeekScope(DemoParser<TGameParser> parser)
+        public SeekScope(DemoFileReader<TGameParser> reader)
         {
-            _parser = parser;
-            parser.IsSeeking = true;
+            _reader = reader;
+            reader.IsSeeking = true;
         }
 
         public void Dispose()
         {
-            _parser.IsSeeking = false;
+            _reader.IsSeeking = false;
         }
     }
 
@@ -38,7 +38,7 @@ public partial class DemoParser<TGameParser>
     }
 
     /// Full packets occur every 60 seconds
-    private const int FullPacketInterval = 64 * 60;
+    private const int FullPacketInterval = 64 * 60; // todo: fix hardcoded tickrate
 
     private readonly List<FullPacketRecord> _fullPackets = new(64);
     private DemoTick _readFullPacketTick = DemoTick.PreRecord;
@@ -76,30 +76,30 @@ public partial class DemoParser<TGameParser>
     /// <exception cref="InvalidOperationException">Tick is invalid, or attempting to seek while reading commands.</exception>
     /// <exception cref="EndOfStreamException">EOF before reaching <paramref name="targetTick"/>.</exception>
     /// <remarks>
-    /// Seeking is not allowed while reading commands. See <see cref="IsReading"/>.
+    /// Seeking is not allowed while reading commands. See <see cref="DemoParser{TGameParser}.IsReading"/>.
     /// </remarks>
     public async ValueTask SeekToTickAsync(DemoTick targetTick, CancellationToken cancellationToken)
     {
         using var _ = new SeekScope(this);
 
-        if (IsReading)
+        if (_demo.IsReading)
             throw new InvalidOperationException($"Cannot seek to tick while reading commands");
 
-        if (TickCount < DemoTick.Zero)
+        if (_demo.TickCount < DemoTick.Zero)
             throw new InvalidOperationException($"Cannot seek to tick {targetTick}");
 
-        if (TickCount != default && targetTick > TickCount)
-            throw new InvalidOperationException($"Cannot seek to tick {targetTick}. The demo only contains data for {TickCount} ticks");
+        if (_demo.TickCount != default && targetTick > _demo.TickCount)
+            throw new InvalidOperationException($"Cannot seek to tick {targetTick}. The demo only contains data for {_demo.TickCount} ticks");
 
         // Can never seek before the first tick of the demo
         targetTick = new DemoTick(Math.Max(targetTick.Value, _fullPacketTickOffset));
 
         var hasFullPacket = TryFindFullPacketBefore(targetTick, out var fullPacket);
         var movedToFullPacket = false;
-        if (targetTick <= CurrentDemoTick)
+        if (targetTick <= _demo.CurrentDemoTick)
         {
             if (!hasFullPacket)
-                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick} from {CurrentDemoTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
+                throw new InvalidOperationException($"Cannot seek backwards to tick {targetTick} from {_demo.CurrentDemoTick}. No {nameof(EDemoCommands.DemFullPacket)} has been read");
 
             // Seeking backwards. Jump back to the full packet to read the snapshot
             RestoreFullPacket(fullPacket);
@@ -107,7 +107,7 @@ public partial class DemoParser<TGameParser>
         }
         else
         {
-            var deltaTicks = fullPacket.Tick - CurrentDemoTick;
+            var deltaTicks = fullPacket.Tick - _demo.CurrentDemoTick;
 
             // Only read the full packet if the jump is far enough ahead
             if (hasFullPacket && deltaTicks.Value >= FullPacketInterval)
@@ -121,18 +121,18 @@ public partial class DemoParser<TGameParser>
         if (!movedToFullPacket)
         {
             _readFullPacketTick = new DemoTick((targetTick.Value - _fullPacketTickOffset) / FullPacketInterval * FullPacketInterval + _fullPacketTickOffset);
-            if (CurrentDemoTick < _readFullPacketTick)
+            if (_demo.CurrentDemoTick < _readFullPacketTick)
             {
                 await SkipToFullPacketTickAsync(cancellationToken).ConfigureAwait(false);
             }
         }
 
         // Advance ticks until we get to the target tick
-        while (CurrentDemoTick < targetTick)
+        while (_demo.CurrentDemoTick < targetTick)
         {
             var cmd = ReadCommandHeader();
 
-            if (CurrentDemoTick == targetTick)
+            if (_demo.CurrentDemoTick == targetTick)
             {
                 _stream.Position = _commandStartPosition;
                 break;
@@ -140,7 +140,7 @@ public partial class DemoParser<TGameParser>
 
             if (!await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false))
             {
-                throw new EndOfStreamException($"Reached EOF at tick {CurrentDemoTick} while seeking to tick {targetTick}");
+                throw new EndOfStreamException($"Reached EOF at tick {_demo.CurrentDemoTick} while seeking to tick {targetTick}");
             }
         }
     }
@@ -148,8 +148,8 @@ public partial class DemoParser<TGameParser>
     private void RestoreFullPacket(FullPacketRecord fullPacket)
     {
         _readFullPacketTick = fullPacket.Tick;
-        (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
-        RestoreStringTables(stringTables);
+        (_demo.CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
+        _demo.RestoreStringTables(stringTables);
     }
 
     private async ValueTask SkipToFullPacketTickAsync(CancellationToken cancellationToken)
@@ -159,7 +159,7 @@ public partial class DemoParser<TGameParser>
             var cmd = ReadCommandHeader();
 
             // If we're at or after the target tick, jump back to the start of the command
-            if (CurrentDemoTick >= _readFullPacketTick && cmd.Command == EDemoCommands.DemFullPacket)
+            if (_demo.CurrentDemoTick >= _readFullPacketTick && cmd.Command == EDemoCommands.DemFullPacket)
             {
                 // #72: some demos are missing full packets where they should be
                 // e.g. in this demo, expect a DemFullPacket at 192001, but all full packets
@@ -168,7 +168,7 @@ public partial class DemoParser<TGameParser>
                 //   192002 - DemPacket
                 //   192002 - DemFullPacket
                 // Update the full tick to seek to accordingly
-                _readFullPacketTick = CurrentDemoTick;
+                _readFullPacketTick = _demo.CurrentDemoTick;
 
                 _stream.Position = _commandStartPosition;
                 return;
@@ -193,29 +193,29 @@ public partial class DemoParser<TGameParser>
     {
         // CDemoFullPacket.string_table only contains tables that have changed
         // since the last CDemoFullPacket, so we need to read each one while seeking.
-        if (IsSeeking || CurrentDemoTick == _readFullPacketTick)
+        if (IsSeeking || _demo.CurrentDemoTick == _readFullPacketTick)
         {
             foreach (var snapshot in fullPacket.StringTable.Tables)
             {
-                OnDemoStringTable(snapshot);
+                _demo.OnDemoStringTable(snapshot);
             }
         }
 
         // DemoFullPackets are recorded in demos every 3,840 ticks (60 secs).
         // Keep track of where they are to allow for fast seeking through the demo.
-        var idx = _fullPackets.BinarySearch(FullPacketRecord.ForTick(CurrentDemoTick));
+        var idx = _fullPackets.BinarySearch(FullPacketRecord.ForTick(_demo.CurrentDemoTick));
         if (idx < 0)
         {
             _fullPackets.Insert(~idx, new FullPacketRecord(
-                CurrentDemoTick,
+                _demo.CurrentDemoTick,
                 _commandStartPosition,
-                _stringTables.ToImmutableDictionary(kvp => kvp.Key, kvp => kvp.Value.Entries)));
+                _demo.StringTables.ToImmutableDictionary(kvp => kvp.Key, kvp => kvp.Value.Entries)));
         }
 
         // We only need to parse the entity snapshot if we're seeking to it
-        if (CurrentDemoTick == _readFullPacketTick)
+        if (_demo.CurrentDemoTick == _readFullPacketTick)
         {
-            OnDemoPacket(fullPacket.Packet);
+            _demo.OnDemoPacket(new BitBuffer(fullPacket.Packet.Data.Span));
         }
     }
 }

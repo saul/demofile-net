@@ -2,7 +2,7 @@
 
 namespace DemoFile;
 
-public partial class DemoParser<TGameParser>
+public partial class DemoFileReader<TGameParser>
 {
     /// <summary>
     /// Parse the entire demo in <paramref name="demoFileBytes"/> from start to end.
@@ -45,25 +45,26 @@ public partial class DemoParser<TGameParser>
     {
         var demo = new TGameParser();
         var stream = new MemoryStream(demoFileBytes);
+        var reader = new DemoFileReader<TGameParser>(demo, stream);
 
         // Read all CDemoFullPackets
         TResult initialResult;
-        using (new SeekScope(demo))
+        using (new SeekScope(reader))
         {
             // Only section that is attached before `StartReadingAsync`, enabling
             // callbacks on e.g. DemoEvents.DemoFileInfo
             initialResult = setupSection(demo);
-            await demo.StartReadingAsync(stream, cancellationToken).ConfigureAwait(false);
+            await reader.StartReadingAsync(cancellationToken).ConfigureAwait(false);
 
             while (true)
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var cmd = demo.ReadCommandHeader();
+                var cmd = reader.ReadCommandHeader();
 
                 if (cmd.Command == EDemoCommands.DemFullPacket)
                 {
-                    await demo.MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken)
+                    await reader.MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken)
                         .ConfigureAwait(false);
                 }
                 else if (cmd.Command == EDemoCommands.DemStop)
@@ -79,7 +80,7 @@ public partial class DemoParser<TGameParser>
         }
 
         var maxParallelism = Environment.ProcessorCount;
-        var numSections = demo.FullPackets.Count;
+        var numSections = reader.FullPackets.Count;
         var numSectionsPerParser = Math.Max(1, (numSections + maxParallelism - 1) / maxParallelism);
         var numParsers = (numSections + numSectionsPerParser - 1) / numSectionsPerParser;
 
@@ -91,38 +92,38 @@ public partial class DemoParser<TGameParser>
             var startFullPacketIdx = parserIdx * numSectionsPerParser;
             var endFullPacketIdx = startFullPacketIdx + numSectionsPerParser;
 
-            var fullPacket = demo.FullPackets[startFullPacketIdx];
-            var endPosition = endFullPacketIdx < demo.FullPackets.Count
-                ? demo.FullPackets[endFullPacketIdx].StreamPosition
+            var fullPacket = reader.FullPackets[startFullPacketIdx];
+            var endPosition = endFullPacketIdx < reader.FullPackets.Count
+                ? reader.FullPackets[endFullPacketIdx].StreamPosition
                 : demoFileBytes.Length;
 
             var backgroundParser = new TGameParser();
+            var backgroundReader = new DemoFileReader<TGameParser>(backgroundParser, new MemoryStream(demoFileBytes));
 
-            tasks[parserIdx + 1] = Task.Run(() => backgroundParser.ParseRangeAsync(demoFileBytes, fullPacket, endPosition, setupSection, cancellationToken));
+            tasks[parserIdx + 1] = Task.Run(() => backgroundReader.ParseRangeAsync(fullPacket, endPosition, setupSection, cancellationToken));
         }
 
         return await Task.WhenAll(tasks).ConfigureAwait(false);
     }
 
     private async Task<TResult> ParseRangeAsync<TResult>(
-        byte[] demoFileBytes,
         FullPacketRecord fullPacket,
         long endPosition,
         Func<TGameParser, TResult> setupAction,
         CancellationToken cancellationToken)
     {
-        await StartReadingAsync(new MemoryStream(demoFileBytes), cancellationToken).ConfigureAwait(false);
+        await StartReadingAsync(cancellationToken).ConfigureAwait(false);
 
-        (CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
-        RestoreStringTables(stringTables);
-        _readFullPacketTick = CurrentDemoTick;
+        (_demo.CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
+        _demo.RestoreStringTables(stringTables);
+        _readFullPacketTick = _demo.CurrentDemoTick;
 
         var cmd = ReadCommandHeader();
         Debug.Assert(cmd.Command == EDemoCommands.DemFullPacket);
         await MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken).ConfigureAwait(false);
 
         // Caller sets up actions after the demo is restored to the full packet state
-        var result = setupAction((TGameParser) this);
+        var result = setupAction(_demo);
 
         while (_stream.Position < endPosition)
         {
