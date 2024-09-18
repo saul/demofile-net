@@ -31,9 +31,10 @@ internal static class Program
             File.WriteAllText(outputPath, builder.ToString());
         };
 
+        var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
         try
         {
-            await demo.ReadAllAsync(File.OpenRead(demoPath), cts.Token);
+            await reader.ReadAllAsync(cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {

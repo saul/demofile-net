@@ -54,7 +54,8 @@ internal class Program
                 teamColour);
         };
 
-        await demo.ReadAllAsync(File.OpenRead(path));
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
+        await reader.ReadAllAsync();
 
         Console.WriteLine("\nFinished!");
 

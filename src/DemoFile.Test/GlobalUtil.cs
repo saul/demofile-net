@@ -61,7 +61,8 @@ public static class GlobalUtil
 
             var result = parseSection(demo);
 
-            await demo.ReadAllAsync(stream, default);
+            var reader = DemoFileReader.Create(demo, stream);
+            await reader.ReadAllAsync(default);
             return result.ToString();
         }
         else if (mode == ParseMode.ByTick)
@@ -71,8 +72,9 @@ public static class GlobalUtil
 
             var result = parseSection(demo);
 
-            await demo.StartReadingAsync(stream, default);
-            while (await demo.MoveNextAsync(default))
+            var reader = DemoFileReader.Create(demo, stream);
+            await reader.StartReadingAsync(default);
+            while (await reader.MoveNextAsync(default))
             {
             }
 
@@ -80,7 +82,7 @@ public static class GlobalUtil
         }
         else if (mode == ParseMode.ReadAllParallel)
         {
-            var results = await CsDemoParser.ReadAllParallelAsync(demoFileBytes, parseSection, default);
+            var results = await DemoFileReader<CsDemoParser>.ReadAllParallelAsync(demoFileBytes, parseSection, default);
 
             var acc = results.Aggregate(new DemoSnapshot(), (acc, snapshot) =>
             {

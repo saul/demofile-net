@@ -5,6 +5,7 @@
   - Old `DemoParser.ReadAllAsync` (static) => now `DemoFileReader.ReadAllAsync` (instance)
   - Old `DemoParser.StartReadingAsync` => now `DemoFileReader.StartReadingAsync`
   - Old `DemoParser.MoveNextAsync` => now `DemoFileReader.MoveNextAsync`
+  - Old `DemoParser.OnProgress` => now `DemoFileReader.OnProgress`
 - Added support for reading HTTP broadcasts, see [DemoFile.Example.HttpBroadcast](./examples/DemoFile.Example.HttpBroadcast)
 
 ### 0.21.1 (2024-09-14) - Significant API change
