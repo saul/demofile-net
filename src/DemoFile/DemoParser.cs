@@ -133,8 +133,6 @@ public abstract partial class DemoParser<TGameParser>
 
         Debug.Assert(msgType is >= 0 and < EDemoCommands.DemMax, $"Unexpected demo command: {msgType}");
 
-        //Console.WriteLine($"{msgType}({(int)msgType}) - {buffer.Length:N0} bytes");
-
         if (fireTimers)
         {
             while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
