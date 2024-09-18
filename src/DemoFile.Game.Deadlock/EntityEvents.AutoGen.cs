@@ -18,6 +18,7 @@ public struct EntityEvents
     public EntityEvents<CAbility_Synth_Pulse, DeadlockDemoParser> CAbility_Synth_Pulse;
     public EntityEvents<CAI_BaseNPC, DeadlockDemoParser> CAI_BaseNPC;
     public EntityEvents<CAI_CitadelNPC, DeadlockDemoParser> CAI_CitadelNPC;
+    public EntityEvents<CAnimGraph2TestProp, DeadlockDemoParser> CAnimGraph2TestProp;
     public EntityEvents<CAssignedLaneParticle, DeadlockDemoParser> CAssignedLaneParticle;
     public EntityEvents<CBarnLight, DeadlockDemoParser> CBarnLight;
     public EntityEvents<CBaseAnimGraph, DeadlockDemoParser> CBaseAnimGraph;
@@ -60,7 +61,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_Cadence_Lullaby, DeadlockDemoParser> CCitadel_Ability_Cadence_Lullaby;
     public EntityEvents<CCitadel_Ability_Cadence_SilenceContraptions, DeadlockDemoParser> CCitadel_Ability_Cadence_SilenceContraptions;
     public EntityEvents<CCitadel_Ability_CardToss, DeadlockDemoParser> CCitadel_Ability_CardToss;
-    public EntityEvents<CCitadel_Ability_CatBullet, DeadlockDemoParser> CCitadel_Ability_CatBullet;
     public EntityEvents<CCitadel_Ability_Charged_Bomb, DeadlockDemoParser> CCitadel_Ability_Charged_Bomb;
     public EntityEvents<CCitadel_Ability_ChargedShot, DeadlockDemoParser> CCitadel_Ability_ChargedShot;
     public EntityEvents<CCitadel_Ability_ChargedTackle, DeadlockDemoParser> CCitadel_Ability_ChargedTackle;
@@ -126,10 +126,11 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_MedicHeal, DeadlockDemoParser> CCitadel_Ability_MedicHeal;
     public EntityEvents<CCitadel_Ability_Melee_Base, DeadlockDemoParser> CCitadel_Ability_Melee_Base;
     public EntityEvents<CCitadel_Ability_MeleeParry, DeadlockDemoParser> CCitadel_Ability_MeleeParry;
+    public EntityEvents<CCitadel_Ability_Mirage_DjinnBomb, DeadlockDemoParser> CCitadel_Ability_Mirage_DjinnBomb;
     public EntityEvents<CCitadel_Ability_Mirage_FireBeetles, DeadlockDemoParser> CCitadel_Ability_Mirage_FireBeetles;
     public EntityEvents<CCitadel_Ability_MobileResupply, DeadlockDemoParser> CCitadel_Ability_MobileResupply;
     public EntityEvents<CCitadel_Ability_Nano_Pounce, DeadlockDemoParser> CCitadel_Ability_Nano_Pounce;
-    public EntityEvents<CCitadel_Ability_Nano_Warp, DeadlockDemoParser> CCitadel_Ability_Nano_Warp;
+    public EntityEvents<CCitadel_Ability_Nano_Shadow, DeadlockDemoParser> CCitadel_Ability_Nano_Shadow;
     public EntityEvents<CCitadel_Ability_Nikuman, DeadlockDemoParser> CCitadel_Ability_Nikuman;
     public EntityEvents<CCitadel_Ability_PassiveBeefy, DeadlockDemoParser> CCitadel_Ability_PassiveBeefy;
     public EntityEvents<CCitadel_Ability_Perched_Predator, DeadlockDemoParser> CCitadel_Ability_Perched_Predator;
@@ -225,7 +226,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_TrooperGrenade, DeadlockDemoParser> CCitadel_Ability_TrooperGrenade;
     public EntityEvents<CCitadel_Ability_TrooperNeutralGrenade, DeadlockDemoParser> CCitadel_Ability_TrooperNeutralGrenade;
     public EntityEvents<CCitadel_Ability_TrooperZipLine, DeadlockDemoParser> CCitadel_Ability_TrooperZipLine;
-    public EntityEvents<CCitadel_Ability_Ult_Shadow, DeadlockDemoParser> CCitadel_Ability_Ult_Shadow;
     public EntityEvents<CCitadel_Ability_UltCombo, DeadlockDemoParser> CCitadel_Ability_UltCombo;
     public EntityEvents<CCitadel_Ability_Uppercut, DeadlockDemoParser> CCitadel_Ability_Uppercut;
     public EntityEvents<CCitadel_Ability_Viscous_Telepunch, DeadlockDemoParser> CCitadel_Ability_Viscous_Telepunch;
@@ -324,8 +324,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Projectile_Cyclone, DeadlockDemoParser> CCitadel_Projectile_Cyclone;
     public EntityEvents<CCitadel_Projectile_DustStorm, DeadlockDemoParser> CCitadel_Projectile_DustStorm;
     public EntityEvents<CCitadel_Projectile_Guided_Arrow, DeadlockDemoParser> CCitadel_Projectile_Guided_Arrow;
-    public EntityEvents<CCitadel_Projectile_Mirage_DjinnsReach, DeadlockDemoParser> CCitadel_Projectile_Mirage_DjinnsReach;
-    public EntityEvents<CCitadel_Projectile_ProximityRitual, DeadlockDemoParser> CCitadel_Projectile_ProximityRitual;
+    public EntityEvents<CCitadel_Projectile_Mirage_DjinnBomb, DeadlockDemoParser> CCitadel_Projectile_Mirage_DjinnBomb;
     public EntityEvents<CCitadel_Projectile_Riptide, DeadlockDemoParser> CCitadel_Projectile_Riptide;
     public EntityEvents<CCitadel_Projectile_RocketLauncher_Rocket, DeadlockDemoParser> CCitadel_Projectile_RocketLauncher_Rocket;
     public EntityEvents<CCitadel_Projectile_SettingSun, DeadlockDemoParser> CCitadel_Projectile_SettingSun;
@@ -380,6 +379,7 @@ public struct EntityEvents
     public EntityEvents<CCitadelItemPickupRejuv, DeadlockDemoParser> CCitadelItemPickupRejuv;
     public EntityEvents<CCitadelMinimapBoundary, DeadlockDemoParser> CCitadelMinimapBoundary;
     public EntityEvents<CCitadelModelEntity, DeadlockDemoParser> CCitadelModelEntity;
+    public EntityEvents<CCitadelNanoPredatoryStatueTrigger, DeadlockDemoParser> CCitadelNanoPredatoryStatueTrigger;
     public EntityEvents<CCitadelObserverPawn, DeadlockDemoParser> CCitadelObserverPawn;
     public EntityEvents<CCitadelPayload, DeadlockDemoParser> CCitadelPayload;
     public EntityEvents<CCitadelPlayerBotNPCBrain, DeadlockDemoParser> CCitadelPlayerBotNPCBrain;
@@ -474,6 +474,7 @@ public struct EntityEvents
     public EntityEvents<CNPC_HeroCloneTrooper, DeadlockDemoParser> CNPC_HeroCloneTrooper;
     public EntityEvents<CNPC_HeroDecoy, DeadlockDemoParser> CNPC_HeroDecoy;
     public EntityEvents<CNPC_MidBoss, DeadlockDemoParser> CNPC_MidBoss;
+    public EntityEvents<CNPC_MidBossHeroTest, DeadlockDemoParser> CNPC_MidBossHeroTest;
     public EntityEvents<CNPC_MortarSentry, DeadlockDemoParser> CNPC_MortarSentry;
     public EntityEvents<CNPC_NanoRollermine, DeadlockDemoParser> CNPC_NanoRollermine;
     public EntityEvents<CNPC_PestilenceDrone, DeadlockDemoParser> CNPC_PestilenceDrone;

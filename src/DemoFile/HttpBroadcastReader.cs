@@ -74,8 +74,17 @@ public class HttpBroadcastReader<TGameParser>
         }
     }
 
+    /// <summary>
+    /// Advance the broadcast by a single tick.
+    /// In HTTP broadcasts, the tick rate is defined by the `tv_snapshotrate` cvar on the server,
+    /// which defaults to 20 for Deadlock.
+    /// This means that a single call to <c>MoveNextAsync</c> can advance multiple game ticks (typically 3 ticks per <c>MoveNextAsync</c> call).
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public async Task<bool> MoveNextAsync(CancellationToken cancellationToken = default)
     {
+        //Console.WriteLine($"reading at {_demo.CurrentDemoTick}");
         var readingTick = default(DemoTick?);
         while (await _channel.Reader.WaitToReadAsync(cancellationToken).ConfigureAwait(false))
         {
@@ -193,6 +202,7 @@ public class HttpBroadcastReader<TGameParser>
 
 // CS2: {"tick":52599,"rtdelay":10,"rcvage":0,"fragment":816,"signup_fragment":0,"tps":64,"protocol":5}
 // Deadlock: {"tick":44955,"endtick":45135,"maxtick":46395,"rtdelay":21.904,"rcvage":0.957,"fragment":239,"signup_fragment":0,"tps":60,"keyframe_interval":3,"map":"street_test","protocol":5}
+//  keyframe_interval => The frequency, in seconds, of sending keyframes and delta fragments to the broadcast relay server
 class BroadcastSyncDto
 {
     [JsonPropertyName("rtdelay")]

@@ -228,9 +228,10 @@ internal static class Program
 
         Console.WriteLine($"Reading class information from: {demoPath}");
 
+        var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
         try
         {
-            await demo.ReadAllAsync(File.OpenRead(demoPath), cts.Token);
+            await reader.ReadAllAsync(cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {

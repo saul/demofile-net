@@ -16,42 +16,63 @@ internal class Program
 
         demo.Source1GameEvents.Source1GameEvent += e =>
         {
-            Console.WriteLine(e.GameEventName);
+            Console.WriteLine($"Source1GameEvent: {e}");
+        };
+
+        var tickInterval = TimeSpan.Zero;
+        demo.PacketEvents.SvcServerInfo += e =>
+        {
+            tickInterval = TimeSpan.FromSeconds(e.TickInterval);
+            Console.WriteLine($"[*] server info. tick rate = {1 / e.TickInterval:N0}");
         };
 
         var httpClient = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip })
         {
             BaseAddress = new Uri(url)
         };
-        var broadcastClient = HttpBroadcastReader.Create(demo, httpClient);
-        await broadcastClient.StartReadingAsync(default);
+        var httpReader = HttpBroadcastReader.Create(demo, httpClient);
 
-        const int tickRate = 60; // todo: replace fixed tickrate
-        var tickInterval = TimeSpan.FromSeconds(1.0 / tickRate);
-        var tickTimer = Stopwatch.StartNew();
+        Console.WriteLine("Starting stream...");
+        await httpReader.StartReadingAsync(default);
+        await httpReader.MoveNextAsync(default);
 
-        var bufferTicks = tickRate * 6;
-        while (broadcastClient.BufferTailTick <= demo.CurrentDemoTick + bufferTicks)
-        {
-            // Ensure we have at least `bufferTicks` worth of data buffered,
-            // to avoid stalls during reading
-            Console.WriteLine("[*] buffering...");
-            await Task.Delay(1000);
-        }
+        // Max duration to adjust sleep interval by to correct drift between our clock and the game clock
+        const double maxAdjustSecs = 0.200;
 
-        // Read a tick every `tickInterval`
+        var startTime = Stopwatch.GetTimestamp();
+        var firstTick = demo.CurrentDemoTick;
+
+        Console.WriteLine("Playing broadcast in realtime...");
         while (true)
         {
-            tickTimer.Restart();
-            if (!await broadcastClient.MoveNextAsync(default))
+            var prevTick = demo.CurrentDemoTick;
+
+            var sw = Stopwatch.StartNew();
+            if (!await httpReader.MoveNextAsync(default))
             {
                 break;
             }
 
-            var waitUntilNextTick = tickInterval - tickTimer.Elapsed;
+            var gameElapsed = (demo.CurrentDemoTick - firstTick).Value * tickInterval;
+            var wallClockElapsed = Stopwatch.GetElapsedTime(startTime);
+
+            // +ve = we're ahead, -ve = we're behind
+            var drift = gameElapsed - wallClockElapsed;
+            var driftRatio = Math.Clamp(drift.TotalSeconds / maxAdjustSecs, -1.0, 1.0);
+            var adjust = TimeSpan.FromSeconds(drift.TotalSeconds * maxAdjustSecs * driftRatio);
+
+            if (adjust != default)
+            {
+                Console.WriteLine($"  {gameElapsed.TotalSeconds:N3} game secs over {wallClockElapsed.TotalSeconds:N3} secs ({drift.TotalSeconds:N3} secs ahead, adjusting by {adjust.TotalSeconds:N3} secs)");
+            }
+
+            var ticksAdvanced = (demo.CurrentDemoTick - prevTick).Value;
+
+            var waitUntilNextTick = tickInterval * ticksAdvanced - sw.Elapsed + adjust;
             if (waitUntilNextTick > TimeSpan.Zero)
             {
-                Console.WriteLine($"[*] sleeping for {waitUntilNextTick} (buffer health = {broadcastClient.BufferTailTick - demo.CurrentDemoTick})");
+                var health = httpReader.BufferTailTick - demo.CurrentDemoTick;
+                Console.WriteLine($"[*] advanced {ticksAdvanced} ticks, sleeping.  current = {demo.CurrentDemoTick}, tail = {httpReader.BufferTailTick}, health = {health} ticks ({health.Value * tickInterval.TotalSeconds:N3} secs)");
                 await Task.Delay(waitUntilNextTick);
             }
         }
