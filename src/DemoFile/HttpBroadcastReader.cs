@@ -55,7 +55,6 @@ public class HttpBroadcastReader<TGameParser>
                 continue;
             }
 
-            Console.WriteLine($"[*] read fragment {fragmentUrl}...");
             if (!EnqueueBroadcastFragment(fragmentBytes, 0))
             {
                 // Fragment signifies end of the stream
@@ -84,7 +83,6 @@ public class HttpBroadcastReader<TGameParser>
     /// <returns></returns>
     public async Task<bool> MoveNextAsync(CancellationToken cancellationToken = default)
     {
-        //Console.WriteLine($"reading at {_demo.CurrentDemoTick}");
         var readingTick = default(DemoTick?);
         while (await _channel.Reader.WaitToReadAsync(cancellationToken).ConfigureAwait(false))
         {
@@ -123,29 +121,19 @@ public class HttpBroadcastReader<TGameParser>
 
     public async Task StartReadingAsync(CancellationToken cancellationToken)
     {
-        Console.WriteLine("[*] sync...");
         var syncDto = (await _httpClient.GetFromJsonAsync("sync", BroadcastJsonSerializerContext.Default.BroadcastSyncDto, cancellationToken).ConfigureAwait(false))!;
         if (syncDto.Protocol != 5)
         {
             throw new Exception($"Unknown protocol in broadcast, expected 5, got {syncDto.Protocol}");
         }
 
-        Console.WriteLine($"    {JsonSerializer.Serialize(syncDto, BroadcastJsonSerializerContext.Default.BroadcastSyncDto)}");
-
         var urlPrefix = string.IsNullOrEmpty(syncDto.TokenRedirect)
             ? ""
             : syncDto.TokenRedirect.TrimEnd('/') + "/";
 
         var signonUrl = $"{urlPrefix}{syncDto.SignupFragment}/start";
+        var signonData = await _httpClient.GetByteArrayAsync(signonUrl, cancellationToken).ConfigureAwait(false);
 
-        Console.WriteLine($"[*] signon: {signonUrl}");
-        //var signonData = await _httpClient.GetByteArrayAsync(signonUrl, cancellationToken).ConfigureAwait(false);
-        var signonResponse = await _httpClient.GetAsync(signonUrl, cancellationToken).ConfigureAwait(false);
-        signonResponse.EnsureSuccessStatusCode();
-
-        var signonData = await signonResponse.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
-
-        Console.WriteLine("[*] read signon...");
         EnqueueBroadcastFragment(signonData, -1);
 
         // Start the fetch worker in the background
@@ -161,11 +149,9 @@ public class HttpBroadcastReader<TGameParser>
             var command = byteBuf.ReadUVarInt32();
             var isCompressed = (command & (uint) EDemoCommands.DemIsCompressed) != 0;
             var msgType = (EDemoCommands)(command & ~(uint) EDemoCommands.DemIsCompressed);
-            //Console.WriteLine($"    msgType = {msgType} (compressed = {isCompressed})");
 
             var rawTickBytes = byteBuf.ReadBytes(4);
             var rawTick = (int)BinaryPrimitives.ReadUInt32LittleEndian(rawTickBytes);
-            //Console.WriteLine($"    tick = {gameTick}");
             var demoTick = new DemoTick(rawTick + tickOffset);
 
             var unknown = byteBuf.ReadByte();
@@ -179,7 +165,6 @@ public class HttpBroadcastReader<TGameParser>
 
             var sizeBytes = byteBuf.ReadBytes(4);
             var size = (int)BinaryPrimitives.ReadUInt32LittleEndian(sizeBytes);
-            //Console.WriteLine($"    size = {size:N0} bytes");
 
             var packet = fragment[byteBuf.Position..(byteBuf.Position + size)];
             byteBuf.Position += size;

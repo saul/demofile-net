@@ -56,24 +56,20 @@ internal class Program
             var gameElapsed = (demo.CurrentDemoTick - firstTick).Value * tickInterval;
             var wallClockElapsed = Stopwatch.GetElapsedTime(startTime);
 
-            // +ve = we're ahead, -ve = we're behind
+            // +ve = we're ahead, -ve = we're behind the stream
             var drift = gameElapsed - wallClockElapsed;
-            var driftRatio = Math.Clamp(drift.TotalSeconds / maxAdjustSecs, -1.0, 1.0);
-            var adjust = TimeSpan.FromSeconds(drift.TotalSeconds * maxAdjustSecs * driftRatio);
 
-            if (adjust != default)
-            {
-                Console.WriteLine($"  {gameElapsed.TotalSeconds:N3} game secs over {wallClockElapsed.TotalSeconds:N3} secs ({drift.TotalSeconds:N3} secs ahead, adjusting by {adjust.TotalSeconds:N3} secs)");
-            }
+            // Only adjust by maxAdjustSecs every call to MoveNextAsync
+            var adjustmentRatio = Math.Clamp(drift.TotalSeconds / maxAdjustSecs, -1.0, 1.0);
+            var adjust = TimeSpan.FromSeconds(maxAdjustSecs * adjustmentRatio);
 
+            // Calculate how much game time elapsed during MoveNextAsync
             var ticksAdvanced = (demo.CurrentDemoTick - prevTick).Value;
 
-            var waitUntilNextTick = tickInterval * ticksAdvanced - sw.Elapsed + adjust;
-            if (waitUntilNextTick > TimeSpan.Zero)
+            var sleepUntilNextTick = tickInterval * ticksAdvanced - sw.Elapsed + adjust;
+            if (sleepUntilNextTick > TimeSpan.Zero)
             {
-                var health = httpReader.BufferTailTick - demo.CurrentDemoTick;
-                Console.WriteLine($"[*] advanced {ticksAdvanced} ticks, sleeping.  current = {demo.CurrentDemoTick}, tail = {httpReader.BufferTailTick}, health = {health} ticks ({health.Value * tickInterval.TotalSeconds:N3} secs)");
-                await Task.Delay(waitUntilNextTick);
+                await Task.Delay(sleepUntilNextTick);
             }
         }
 
