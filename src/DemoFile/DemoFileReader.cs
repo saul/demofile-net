@@ -206,6 +206,8 @@ public partial class DemoFileReader<TGameParser>
     /// <returns><c>true</c> if more commands are available in the demo file, otherwise <c>false</c>.</returns>
     public ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken)
     {
+        cancellationToken.ThrowIfCancellationRequested();
+
         var cmd = ReadCommandHeader();
         return MoveNextCoreAsync(cmd.Command, cmd.IsCompressed, cmd.Size, cancellationToken);
     }
