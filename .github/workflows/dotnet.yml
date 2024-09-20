@@ -37,8 +37,13 @@ jobs:
         run: |
           dirs=($(find . -mindepth 1 -maxdepth 1 -type d))
           for dir in "${dirs[@]}"; do
-            echo "Running example: $dir..."
-            dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem
+            if [[ "$dir" == "./DemoFile.Example.HttpBroadcast" ]]; then
+              echo "Building example: $dir..."
+              dotnet build -v quiet -c Release --project "$dir"
+            else
+              echo "Running example: $dir..."
+              dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem
+            fi
           done
       - name: Benchmark
         if: github.ref != 'refs/heads/main'
