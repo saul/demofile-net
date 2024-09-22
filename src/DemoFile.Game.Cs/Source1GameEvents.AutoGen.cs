@@ -5,7 +5,7 @@
 using System.Text.Json.Serialization;
 using DemoFile.Sdk;
 
-namespace DemoFile;
+namespace DemoFile.Game.Cs;
 
 public partial class Source1GameEvents
 {

@@ -1,3 +1,15 @@
+### 0.22.1 (2024-09-22) - Significant API change
+
+- BREAKING CHANGE: Stream reading logic has been split out of `DemoParser` into `DemoFileReader`. \
+  This change enables different sources of demo data, e.g. HTTP broadcasts.
+  - Old `DemoParser.ReadAllAsync` (static) => now `DemoFileReader.ReadAllAsync` (instance)
+  - Old `DemoParser.StartReadingAsync` => now `DemoFileReader.StartReadingAsync`
+  - Old `DemoParser.MoveNextAsync` => now `DemoFileReader.MoveNextAsync`
+  - Old `DemoParser.OnProgress` => now `DemoFileReader.OnProgress`
+- Game-specific SDK types have moved out of the `DemoFile` namespace into `DemoFile.Game.Cs` and `DemoFile.Game.Deadlock`. \
+  You may need to add some `using DemoFile.Game.Cs;` to your existing code.
+- Added support for reading HTTP broadcasts, see [DemoFile.Example.HttpBroadcast](./examples/DemoFile.Example.HttpBroadcast)
+
 ### 0.21.1 (2024-09-14) - Significant API change
 
 - BREAKING CHANGE: Split CS-specific code out of DemoFile into a new NuGet package called [`DemoFile.Game.Cs`](https://www.nuget.org/packages/DemoFile.Game.Cs)

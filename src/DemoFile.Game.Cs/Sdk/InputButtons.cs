@@ -1,4 +1,4 @@
-namespace DemoFile.Sdk;
+namespace DemoFile.Game.Cs;
 
 // Ripped from the InputBitMask_t schema enum
 

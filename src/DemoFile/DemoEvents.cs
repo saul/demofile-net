@@ -1,4 +1,5 @@
 ﻿using System.Buffers;
+using System.Diagnostics;
 using Google.Protobuf;
 using Snappier;
 
@@ -64,7 +65,7 @@ public struct DemoEvents
                 DemoAnimationHeader?.Invoke(CDemoAnimationHeader.Parser.ParseFrom(buffer));
                 return true;
             default:
-                throw new ArgumentOutOfRangeException(nameof(msgType), msgType, null);
+                throw new ArgumentOutOfRangeException(nameof(msgType), msgType, $"Unknown demo command: {msgType}");
         }
     }
 

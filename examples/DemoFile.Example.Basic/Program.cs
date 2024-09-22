@@ -12,7 +12,8 @@ internal class Program
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
         };
 
-        await demo.ReadAllAsync(File.OpenRead(path));
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
+        await reader.ReadAllAsync();
 
         Console.WriteLine("\nFinished!");
     }

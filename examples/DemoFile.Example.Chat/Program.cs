@@ -1,6 +1,7 @@
 ﻿using System.Buffers;
 using System.Text.RegularExpressions;
 using DemoFile;
+using DemoFile.Game.Cs;
 using DemoFile.Sdk;
 
 internal class Program
@@ -54,7 +55,8 @@ internal class Program
                 teamColour);
         };
 
-        await demo.ReadAllAsync(File.OpenRead(path));
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
+        await reader.ReadAllAsync();
 
         Console.WriteLine("\nFinished!");
 

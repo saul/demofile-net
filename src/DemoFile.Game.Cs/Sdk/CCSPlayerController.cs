@@ -1,6 +1,6 @@
 using DemoFile.GameStatic;
 
-namespace DemoFile.Sdk;
+namespace DemoFile.Game.Cs;
 
 public partial class CCSPlayerController
 {

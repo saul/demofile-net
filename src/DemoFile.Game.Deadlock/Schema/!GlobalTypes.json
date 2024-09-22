@@ -792,6 +792,23 @@
         }
       ]
     },
+    "CDebugOverlayCombinedTypes_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ALL",
+          "value": 0
+        },
+        {
+          "name": "ANY",
+          "value": 1
+        },
+        {
+          "name": "COUNT",
+          "value": 2
+        }
+      ]
+    },
     "ECitadelGameMessages": {
       "align": 4,
       "items": [
@@ -1003,91 +1020,91 @@
           "value": 2199023255552
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_MUST_BE_CAST_ON_GROUND",
+          "name": "CITADEL_ABILITY_BEHAVIOR_COOLDOWN_REFILLS_ALL_CHARGES",
           "value": 4398046511104
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_COOLDOWN_REFILLS_ALL_CHARGES",
+          "name": "CITADEL_ABILITY_BEHAVIOR_SHOW_CAST_RANGE_AS_SAT_SPHERE_WHILE_CASTING",
           "value": 8796093022208
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_ONLY_CAST_IN_FALSE_DEATH",
+          "name": "CITADEL_ABILITY_BEHAVIOR_IGNORE_SELECTION_MASH_PROTECTION",
           "value": 17592186044416
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_SHOW_CAST_RANGE_AS_SAT_SPHERE_WHILE_CASTING",
+          "name": "CITADEL_ABILITY_BEHAVIOR_PREVENT_TRAINING_BOT_USAGE",
           "value": 35184372088832
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_IGNORE_SELECTION_MASH_PROTECTION",
+          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_CANCEL_DURING_CAST_DELAY",
           "value": 70368744177664
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_PREVENT_TRAINING_BOT_USAGE",
+          "name": "CITADEL_ABILITY_BEHAVIOR_CANNOT_CANCEL_DURING_CHANNEL",
           "value": 140737488355328
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_CANCEL_DURING_CAST_DELAY",
+          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_CAST_ON_ZIPLINE",
           "value": 281474976710656
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_CANNOT_CANCEL_DURING_CHANNEL",
+          "name": "CITADEL_ABILITY_BEHAVIOR_STARTS_ON_COOLDOWN",
           "value": 562949953421312
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_CAST_ON_ZIPLINE",
+          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_HEAL_PLAYERS",
           "value": 1125899906842624
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_STARTS_ON_COOLDOWN",
+          "name": "CITADEL_ABILITY_BEHAVIOR_SWITCH_AWAY_ON_FAILED_CAST",
           "value": 2251799813685248
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_CAN_HEAL_PLAYERS",
+          "name": "CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_DODGING",
           "value": 4503599627370496
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_SWITCH_AWAY_ON_FAILED_CAST",
+          "name": "CITADEL_ABILITY_BEHAVIOR_TRIGGER",
           "value": 9007199254740992
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_DODGING",
+          "name": "CITADEL_ABILITY_BEHAVIOR_IS_ALTERNATIVE_WEAPON",
           "value": 18014398509481984
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_TRIGGER",
+          "name": "CITADEL_ABILITY_BEHAVIOR_PROJECTILE_FIRED_AS_BULLET",
           "value": 36028797018963968
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_IS_ALTERNATIVE_WEAPON",
+          "name": "CITADEL_ABILITY_BEHAVIOR_COOLDOWN_ON_CHANNEL_END",
           "value": 72057594037927936
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_PROJECTILE_FIRED_AS_BULLET",
+          "name": "CITADEL_ABILITY_BEHAVIOR_DONT_CONSUME_ABILITY_RESOURCE_ON_CAST",
           "value": 144115188075855872
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_COOLDOWN_ON_CHANNEL_END",
+          "name": "CITADEL_ABILITY_BEHAVIOR_ALLOW_ALT_CAST",
           "value": 288230376151711744
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_DONT_CONSUME_ABILITY_RESOURCE_ON_CAST",
+          "name": "CITADEL_ABILITY_BEHAVIOR_DONT_TRIGGER_POST_CAST_ON_CAST_COMPLETE",
           "value": 576460752303423488
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_ALLOW_ALT_CAST",
+          "name": "CITADEL_ABILITY_BEHAVIOR_USE_INSTANT_CAST_UNIT_TARGET_UI",
           "value": 1152921504606846976
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_DONT_TRIGGER_POST_CAST_ON_CAST_COMPLETE",
+          "name": "CITADEL_ABILITY_BEHAVIOR_MOVEMENT",
           "value": 2305843009213693952
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_USE_INSTANT_CAST_UNIT_TARGET_UI",
+          "name": "CITADEL_ABILITY_BEHAVIOR_TRIGGER_CANCEL_MASH_PROTECTION_ON_CAST",
           "value": 4611686018427387904
         },
         {
-          "name": "CITADEL_ABILITY_BEHAVIOR_MOVEMENT",
+          "name": "CITADEL_ABILITY_BEHAVIOR_REQUIRE_ABILITY_BUTTON_TO_CANCEL",
           "value": -9223372036854775808
         }
       ]
@@ -1250,6 +1267,23 @@
         },
         {
           "name": "JOINT_MOTION_COUNT",
+          "value": 2
+        }
+      ]
+    },
+    "EHUDElementButtonHintLocType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "EButtonHintLocType_Cast",
+          "value": 0
+        },
+        {
+          "name": "EButtonHintLocType_AltCast",
+          "value": 1
+        },
+        {
+          "name": "EButtonHintLocType_Custom",
           "value": 2
         }
       ]
@@ -1630,7 +1664,7 @@
           "value": 1
         },
         {
-          "name": "k_ELaneColor_Orange",
+          "name": "k_ELaneColor_Green",
           "value": 3
         },
         {
@@ -2168,7 +2202,7 @@
           "value": 1
         },
         {
-          "name": "GlobalSpace",
+          "name": "ModelSpace",
           "value": 2
         }
       ]
@@ -2187,6 +2221,19 @@
         {
           "name": "VIEW_FADE_MOD2X",
           "value": 2
+        }
+      ]
+    },
+    "CameraParamMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "k_EParamMode_AllowInOneContext",
+          "value": 0
+        },
+        {
+          "name": "k_EParamMode_AllowInMultipleContexts",
+          "value": 1
         }
       ]
     },
@@ -2543,12 +2590,8 @@
           "value": 2
         },
         {
-          "name": "EAltCast_SelectThenAltCastKey",
-          "value": 3
-        },
-        {
           "name": "EAltCastMaxValue",
-          "value": 3
+          "value": 2
         }
       ]
     },
@@ -2987,6 +3030,27 @@
         {
           "name": "k_eSandboxViaHeroPage",
           "value": 55
+        }
+      ]
+    },
+    "ECancelAbilityMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "ECancelAbilityMode_AbilityKey",
+          "value": 0
+        },
+        {
+          "name": "ECancelAbilityMode_CancelKey",
+          "value": 1
+        },
+        {
+          "name": "ECancelAbilityMode_Either",
+          "value": 2
+        },
+        {
+          "name": "ECancelAbilityModeMaxValue",
+          "value": 2
         }
       ]
     },
@@ -4404,272 +4468,276 @@
           "value": 2
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_KILLED_BROADCAST",
+          "name": "MODIFIER_EVENT_KILLED_BROADCAST",
           "value": 3
         },
         {
-          "name": "MODIFIER_EVENT_NPC_KILLED_BROADCAST",
+          "name": "MODIFIER_EVENT_PLAYER_KILLED_BROADCAST",
           "value": 4
         },
         {
-          "name": "MODIFIER_EVENT_TELEPORT_USED_BROADCAST",
+          "name": "MODIFIER_EVENT_NPC_KILLED_BROADCAST",
           "value": 5
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_GAINED_BROADCAST",
+          "name": "MODIFIER_EVENT_TELEPORT_USED_BROADCAST",
           "value": 6
         },
         {
-          "name": "MODIFIER_EVENT_TIME_SCALE_CHANGED_BROADCAST",
+          "name": "MODIFIER_EVENT_ABILITY_GAINED_BROADCAST",
           "value": 7
         },
         {
-          "name": "MODIFIER_EVENT_UNIT_SHIELD_ABSORBED_DAMAGE_BROADCAST",
+          "name": "MODIFIER_EVENT_TIME_SCALE_CHANGED_BROADCAST",
           "value": 8
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_EXECUTED_BROADCAST",
+          "name": "MODIFIER_EVENT_UNIT_SHIELD_ABSORBED_DAMAGE_BROADCAST",
           "value": 9
         },
         {
+          "name": "MODIFIER_EVENT_ABILITY_EXECUTED_BROADCAST",
+          "value": 10
+        },
+        {
           "name": "MODIFIER_EVENT_BROADCAST_EVENT_COUNT",
-          "value": 10
-        },
-        {
-          "name": "MODIFIER_EVENT_MODIFIER_GAINED",
-          "value": 10
-        },
-        {
-          "name": "MODIFIER_EVENT_MODIFIER_LOST",
           "value": 11
         },
         {
-          "name": "MODIFIER_EVENT_SCRIPTED_EVENT",
+          "name": "MODIFIER_EVENT_MODIFIER_GAINED",
+          "value": 11
+        },
+        {
+          "name": "MODIFIER_EVENT_MODIFIER_LOST",
           "value": 12
         },
         {
-          "name": "MODIFIER_EVENT_PRE_DAMAGE_TAKEN",
+          "name": "MODIFIER_EVENT_SCRIPTED_EVENT",
           "value": 13
         },
         {
-          "name": "MODIFIER_EVENT_DAMAGE_TAKEN",
+          "name": "MODIFIER_EVENT_PRE_DAMAGE_TAKEN",
           "value": 14
         },
         {
-          "name": "MODIFIER_EVENT_HEALTH_TAKEN",
+          "name": "MODIFIER_EVENT_DAMAGE_TAKEN",
           "value": 15
         },
         {
-          "name": "MODIFIER_EVENT_PARENT_ACTIVATED",
+          "name": "MODIFIER_EVENT_HEALTH_TAKEN",
           "value": 16
         },
         {
-          "name": "MODIFIER_EVENT_MODEL_CHANGED",
+          "name": "MODIFIER_EVENT_PARENT_ACTIVATED",
           "value": 17
         },
         {
-          "name": "MODIFIER_EVENT_START_TOUCH",
+          "name": "MODIFIER_EVENT_MODEL_CHANGED",
           "value": 18
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_CAST_STARTED",
+          "name": "MODIFIER_EVENT_START_TOUCH",
           "value": 19
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_EXECUTED",
+          "name": "MODIFIER_EVENT_ABILITY_CAST_STARTED",
           "value": 20
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_SELECTED",
+          "name": "MODIFIER_EVENT_ABILITY_EXECUTED",
           "value": 21
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_ADDED",
+          "name": "MODIFIER_EVENT_ABILITY_SELECTED",
           "value": 22
         },
         {
-          "name": "MODIFIER_EVENT_ITEM_REMOVED",
+          "name": "MODIFIER_EVENT_ABILITY_ADDED",
           "value": 23
         },
         {
-          "name": "MODIFIER_EVENT_GUN_FIRED",
+          "name": "MODIFIER_EVENT_ITEM_REMOVED",
           "value": 24
         },
         {
-          "name": "MODIFIER_EVENT_BULLET_CREATED",
+          "name": "MODIFIER_EVENT_GUN_FIRED",
           "value": 25
         },
         {
-          "name": "MODIFIER_EVENT_BULLET_HIT",
+          "name": "MODIFIER_EVENT_BULLET_CREATED",
           "value": 26
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_AS_BULLET_HIT",
+          "name": "MODIFIER_EVENT_BULLET_HIT",
           "value": 27
         },
         {
-          "name": "MODIFIER_EVENT_FIRED_LAST_SHOT_IN_CLIP",
+          "name": "MODIFIER_EVENT_ABILITY_AS_BULLET_HIT",
           "value": 28
         },
         {
-          "name": "MODIFIER_EVENT_ON_CANCEL_ABILITY_BUTTON_PRESSED",
+          "name": "MODIFIER_EVENT_FIRED_LAST_SHOT_IN_CLIP",
           "value": 29
         },
         {
-          "name": "MODIFIER_EVENT_ON_PRE_ABILITY_CHANNEL_STARTED",
+          "name": "MODIFIER_EVENT_CANCEL_MODIFIERS_UNASSOCIATED_WITH_CASTER_ABILITIES",
           "value": 30
         },
         {
-          "name": "MODIFIER_EVENT_ON_ABILITY_CHANNEL_FINISHED",
+          "name": "MODIFIER_EVENT_ON_PRE_ABILITY_CHANNEL_STARTED",
           "value": 31
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_KILLED",
+          "name": "MODIFIER_EVENT_ON_ABILITY_CHANNEL_FINISHED",
           "value": 32
         },
         {
-          "name": "MODIFIER_EVENT_NPC_KILLED",
+          "name": "MODIFIER_EVENT_PLAYER_KILLED",
           "value": 33
         },
         {
-          "name": "MODIFIER_EVENT_LANDED_ON_GROUND",
+          "name": "MODIFIER_EVENT_NPC_KILLED",
           "value": 34
         },
         {
-          "name": "MODIFIER_EVENT_ATTACHED_TO_ZIPLINE",
+          "name": "MODIFIER_EVENT_LANDED_ON_GROUND",
           "value": 35
         },
         {
-          "name": "MODIFIER_EVENT_FIRED_LAST_SHOT_IN_BURST",
+          "name": "MODIFIER_EVENT_ATTACHED_TO_ZIPLINE",
           "value": 36
         },
         {
-          "name": "MODIFIER_EVENT_BULLET_REMOVED",
+          "name": "MODIFIER_EVENT_FIRED_LAST_SHOT_IN_BURST",
           "value": 37
         },
         {
-          "name": "MODIFIER_EVENT_ATTACK_REFLECTED",
+          "name": "MODIFIER_EVENT_BULLET_REMOVED",
           "value": 38
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_GROUND_DASH_STARTED",
+          "name": "MODIFIER_EVENT_ATTACK_REFLECTED",
           "value": 39
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_GROUND_DASH_FINISHED",
+          "name": "MODIFIER_EVENT_PLAYER_GROUND_DASH_STARTED",
           "value": 40
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_RELOAD_STARTED",
+          "name": "MODIFIER_EVENT_PLAYER_GROUND_DASH_FINISHED",
           "value": 41
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_RELOAD_FINISHED",
+          "name": "MODIFIER_EVENT_PLAYER_RELOAD_STARTED",
           "value": 42
         },
         {
-          "name": "MODIFIER_EVENT_UNIT_HEALED",
+          "name": "MODIFIER_EVENT_PLAYER_RELOAD_FINISHED",
           "value": 43
         },
         {
-          "name": "MODIFIER_EVENT_PRE_OWNER_TAKE_ADJUSTED_DAMAGE",
+          "name": "MODIFIER_EVENT_UNIT_HEALED",
           "value": 44
         },
         {
-          "name": "MODIFIER_EVENT_UNIT_SHIELD_REMOVED",
+          "name": "MODIFIER_EVENT_PRE_OWNER_TAKE_ADJUSTED_DAMAGE",
           "value": 45
         },
         {
-          "name": "MODIFIER_EVENT_UNIT_SHIELD_ABSORBED_DAMAGE",
+          "name": "MODIFIER_EVENT_UNIT_SHIELD_REMOVED",
           "value": 46
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_PURCHASED_ITEM",
+          "name": "MODIFIER_EVENT_UNIT_SHIELD_ABSORBED_DAMAGE",
           "value": 47
         },
         {
-          "name": "MODIFIER_EVENT_ADD_ABILITY_BONUS",
+          "name": "MODIFIER_EVENT_PLAYER_PURCHASED_ITEM",
           "value": 48
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_INTERRUPTED",
+          "name": "MODIFIER_EVENT_ADD_ABILITY_BONUS",
           "value": 49
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_ENTERED_FOUNTAIN",
+          "name": "MODIFIER_EVENT_ABILITY_INTERRUPTED",
           "value": 50
         },
         {
-          "name": "MODIFIER_EVENT_BOUNCE_PAD_ACTIVATED",
+          "name": "MODIFIER_EVENT_PLAYER_ENTERED_FOUNTAIN",
           "value": 51
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_RESPAWNED",
+          "name": "MODIFIER_EVENT_BOUNCE_PAD_ACTIVATED",
           "value": 52
         },
         {
-          "name": "MODIFIER_EVENT_DASH_JUMP_EXECUTED",
+          "name": "MODIFIER_EVENT_PLAYER_RESPAWNED",
           "value": 53
         },
         {
-          "name": "MODIFIER_EVENT_AIR_JUMP_EXECUTED",
+          "name": "MODIFIER_EVENT_DASH_JUMP_EXECUTED",
           "value": 54
         },
         {
-          "name": "MODIFIER_EVENT_CHECK_FOR_PARRY",
+          "name": "MODIFIER_EVENT_AIR_JUMP_EXECUTED",
           "value": 55
         },
         {
-          "name": "MODIFIER_EVENT_HERO_LEVEL_CHANGED",
+          "name": "MODIFIER_EVENT_CHECK_FOR_PARRY",
           "value": 56
         },
         {
-          "name": "MODIFIER_EVENT_PRE_FATAL_DAMAGE",
+          "name": "MODIFIER_EVENT_HERO_LEVEL_CHANGED",
           "value": 57
         },
         {
-          "name": "MODIFIER_EVENT_OVERRIDE_SHOT_PARAMS",
+          "name": "MODIFIER_EVENT_PRE_FATAL_DAMAGE",
           "value": 58
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_TRIGGER_ACTIVATED",
+          "name": "MODIFIER_EVENT_OVERRIDE_SHOT_PARAMS",
           "value": 59
         },
         {
-          "name": "MODIFIER_EVENT_VISCOUS_CUBE_DESTROYED",
+          "name": "MODIFIER_EVENT_ABILITY_TRIGGER_ACTIVATED",
           "value": 60
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_DASHCAST_HIT",
+          "name": "MODIFIER_EVENT_VISCOUS_CUBE_DESTROYED",
           "value": 61
         },
         {
-          "name": "MODIFIER_EVENT_ABILITY_DASHCAST_MISS",
+          "name": "MODIFIER_EVENT_ABILITY_DASHCAST_HIT",
           "value": 62
         },
         {
-          "name": "MODIFIER_EVENT_PRE_BULLET_FIRED",
+          "name": "MODIFIER_EVENT_ABILITY_DASHCAST_MISS",
           "value": 63
         },
         {
-          "name": "MODIFIER_EVENT_BULLET_EVADED",
+          "name": "MODIFIER_EVENT_PRE_BULLET_FIRED",
           "value": 64
         },
         {
-          "name": "MODIFIER_EVENT_MELEE_ATTACK",
+          "name": "MODIFIER_EVENT_BULLET_EVADED",
           "value": 65
         },
         {
-          "name": "MODIFIER_EVENT_PLAYER_MOVE_COLLIDE",
+          "name": "MODIFIER_EVENT_MELEE_ATTACK",
           "value": 66
         },
         {
-          "name": "MODIFIER_EVENT_ORB_CLAIMED",
+          "name": "MODIFIER_EVENT_PLAYER_MOVE_COLLIDE",
           "value": 67
         },
         {
-          "name": "MODIFIER_EVENT_COUNT",
+          "name": "MODIFIER_EVENT_ORB_CLAIMED",
           "value": 68
+        },
+        {
+          "name": "MODIFIER_EVENT_COUNT",
+          "value": 69
         },
         {
           "name": "MODIFIER_EVENT_INVALID",
@@ -5157,6 +5225,19 @@
         }
       ]
     },
+    "BaseNPC_DestructiblePartData_DamagePassthroughType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Absorb",
+          "value": 1
+        }
+      ]
+    },
     "AimMatrixBlendMode": {
       "align": 4,
       "items": [
@@ -5288,6 +5369,31 @@
         },
         {
           "name": "k_ECitadelRecipients_GlobalAllChat",
+          "value": 4
+        }
+      ]
+    },
+    "ECatStatueState_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "ECatStatue_None",
+          "value": 0
+        },
+        {
+          "name": "ECatStatue_Shoulder",
+          "value": 1
+        },
+        {
+          "name": "ECatStatue_ProjectileOut",
+          "value": 2
+        },
+        {
+          "name": "ECatStatue_InWorld",
+          "value": 3
+        },
+        {
+          "name": "ECatStatue_InCooldown",
           "value": 4
         }
       ]
@@ -7577,7 +7683,7 @@
           "value": 0
         },
         {
-          "name": "EButtonHintType_TwoButtonCombination",
+          "name": "EButtonHintType_TwoDifferentButtons",
           "value": 1
         }
       ]
@@ -7649,8 +7755,12 @@
           "value": 4
         },
         {
-          "name": "EButtonHint_Cancel",
+          "name": "EButtonHint_JumpKey",
           "value": 5
+        },
+        {
+          "name": "EButtonHint_CancelKey",
+          "value": 6
         }
       ]
     },
@@ -9665,6 +9775,23 @@
         }
       ]
     },
+    "EBannedFeature": {
+      "align": 4,
+      "items": [
+        {
+          "name": "k_eBannedFeature_Invalid",
+          "value": 0
+        },
+        {
+          "name": "k_eBannedFeature_LowPriorityMatchmaking",
+          "value": 1
+        },
+        {
+          "name": "k_eBannedFeature_CommsRestricted",
+          "value": 2
+        }
+      ]
+    },
     "TextureRepetitionMode_t": {
       "align": 4,
       "items": [
@@ -10927,6 +11054,35 @@
         }
       ]
     },
+    "CDebugOverlayFilterType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "TEXT",
+          "value": 1
+        },
+        {
+          "name": "ENTITY",
+          "value": 2
+        },
+        {
+          "name": "COUNT",
+          "value": 3
+        },
+        {
+          "name": "TACTICAL_SEARCH",
+          "value": 4
+        },
+        {
+          "name": "COMBINED",
+          "value": -1
+        }
+      ]
+    },
     "ESprintAnimState": {
       "align": 4,
       "items": [
@@ -11150,443 +11306,443 @@
           "value": 3
         },
         {
-          "name": "MODIFIER_STATE_IMMOBILIZED",
+          "name": "MODIFIER_STATE_DISABLE_SQUAD",
           "value": 4
         },
         {
-          "name": "MODIFIER_STATE_DISARMED",
+          "name": "MODIFIER_STATE_IMMOBILIZED",
           "value": 5
         },
         {
-          "name": "MODIFIER_STATE_MUTED",
+          "name": "MODIFIER_STATE_DISARMED",
           "value": 6
         },
         {
-          "name": "MODIFIER_STATE_SILENCED",
+          "name": "MODIFIER_STATE_MUTED",
           "value": 7
         },
         {
-          "name": "MODIFIER_STATE_SILENCE_MOVEMENT_ABILITES",
+          "name": "MODIFIER_STATE_SILENCED",
           "value": 8
         },
         {
-          "name": "MODIFIER_STATE_SILENCED_HIDDEN",
+          "name": "MODIFIER_STATE_SILENCE_MOVEMENT_ABILITES",
           "value": 9
         },
         {
-          "name": "MODIFIER_STATE_STUNNED",
+          "name": "MODIFIER_STATE_SILENCED_HIDDEN",
           "value": 10
         },
         {
-          "name": "MODIFIER_STATE_INVULNERABLE",
+          "name": "MODIFIER_STATE_STUNNED",
           "value": 11
         },
         {
-          "name": "MODIFIER_STATE_TECH_INVULNERABLE",
+          "name": "MODIFIER_STATE_INVULNERABLE",
           "value": 12
         },
         {
-          "name": "MODIFIER_STATE_TECH_DAMAGE_INVULNERABLE",
+          "name": "MODIFIER_STATE_TECH_INVULNERABLE",
           "value": 13
         },
         {
-          "name": "MODIFIER_STATE_TECH_UNTARGETABLE_BY_ENEMIES",
+          "name": "MODIFIER_STATE_TECH_DAMAGE_INVULNERABLE",
           "value": 14
         },
         {
-          "name": "MODIFIER_STATE_STATUS_IMMUNE",
+          "name": "MODIFIER_STATE_TECH_UNTARGETABLE_BY_ENEMIES",
           "value": 15
         },
         {
-          "name": "MODIFIER_STATE_UNSTOPPABLE",
+          "name": "MODIFIER_STATE_STATUS_IMMUNE",
           "value": 16
         },
         {
-          "name": "MODIFIER_STATE_OUT_OF_GAME",
+          "name": "MODIFIER_STATE_UNSTOPPABLE",
           "value": 17
         },
         {
-          "name": "MODIFIER_STATE_COMMAND_RESTRICTED",
+          "name": "MODIFIER_STATE_OUT_OF_GAME",
           "value": 18
         },
         {
-          "name": "MODIFIER_STATE_CHARGING",
+          "name": "MODIFIER_STATE_COMMAND_RESTRICTED",
           "value": 19
         },
         {
-          "name": "MODIFIER_STATE_OBSCURED",
+          "name": "MODIFIER_STATE_CHARGING",
           "value": 20
         },
         {
-          "name": "MODIFIER_STATE_INVISIBLE_TO_ENEMY",
+          "name": "MODIFIER_STATE_OBSCURED",
           "value": 21
         },
         {
-          "name": "MODIFIER_STATE_IGNORED_BY_NPC_TARGETING",
+          "name": "MODIFIER_STATE_INVISIBLE_TO_ENEMY",
           "value": 22
         },
         {
-          "name": "MODIFIER_STATE_NPC_TARGETABLE_WHILE_INVULNERABLE",
+          "name": "MODIFIER_STATE_IGNORED_BY_NPC_TARGETING",
           "value": 23
         },
         {
-          "name": "MODIFIER_STATE_SPRINTING",
+          "name": "MODIFIER_STATE_NPC_TARGETABLE_WHILE_INVULNERABLE",
           "value": 24
         },
         {
-          "name": "MODIFIER_STATE_UNKILLABLE",
+          "name": "MODIFIER_STATE_SPRINTING",
           "value": 25
         },
         {
-          "name": "MODIFIER_STATE_GROUND_DASHING",
+          "name": "MODIFIER_STATE_UNKILLABLE",
           "value": 26
         },
         {
-          "name": "MODIFIER_STATE_ADDITIONAL_AIR_MOVES",
+          "name": "MODIFIER_STATE_GROUND_DASHING",
           "value": 27
         },
         {
-          "name": "MODIFIER_STATE_UNLIMITED_AIR_DASHES",
+          "name": "MODIFIER_STATE_ADDITIONAL_AIR_MOVES",
           "value": 28
         },
         {
-          "name": "MODIFIER_STATE_AIR_DASHING",
+          "name": "MODIFIER_STATE_UNLIMITED_AIR_DASHES",
           "value": 29
         },
         {
-          "name": "MODIFIER_STATE_MOVEMENT_ABILITY_RESTRICTED",
+          "name": "MODIFIER_STATE_AIR_DASHING",
           "value": 30
         },
         {
-          "name": "MODIFIER_STATE_SPRINT_NO_INTERRUPT",
+          "name": "MODIFIER_STATE_MOVEMENT_ABILITY_RESTRICTED",
           "value": 31
         },
         {
-          "name": "MODIFIER_STATE_SPRINT_DISABLED",
+          "name": "MODIFIER_STATE_SPRINT_NO_INTERRUPT",
           "value": 32
         },
         {
-          "name": "MODIFIER_STATE_IN_SHOP",
+          "name": "MODIFIER_STATE_SPRINT_DISABLED",
           "value": 33
         },
         {
-          "name": "MODIFIER_STATE_IN_FOUNTAIN",
+          "name": "MODIFIER_STATE_IN_SHOP",
           "value": 34
         },
         {
-          "name": "MODIFIER_STATE_IN_ENEMY_BASE",
+          "name": "MODIFIER_STATE_IN_FOUNTAIN",
           "value": 35
         },
         {
-          "name": "MODIFIER_STATE_IN_FRIENDLY_BASE",
+          "name": "MODIFIER_STATE_IN_ENEMY_BASE",
           "value": 36
         },
         {
-          "name": "MODIFIER_STATE_IN_MID_BOSS_TEMPLE",
+          "name": "MODIFIER_STATE_IN_FRIENDLY_BASE",
           "value": 37
         },
         {
-          "name": "MODIFIER_STATE_IN_SHOPTUNNEL_SAPPHIRE",
+          "name": "MODIFIER_STATE_IN_MID_BOSS_TEMPLE",
           "value": 38
         },
         {
-          "name": "MODIFIER_STATE_IN_SHOPTUNNEL_AMBER",
+          "name": "MODIFIER_STATE_IN_SHOPTUNNEL_SAPPHIRE",
           "value": 39
         },
         {
-          "name": "MODIFIER_STATE_DASH_DISABLED",
+          "name": "MODIFIER_STATE_IN_SHOPTUNNEL_AMBER",
           "value": 40
         },
         {
-          "name": "MODIFIER_STATE_DASH_DISABLED_DEBUFF",
+          "name": "MODIFIER_STATE_DASH_DISABLED",
           "value": 41
         },
         {
-          "name": "MODIFIER_STATE_BURNING",
+          "name": "MODIFIER_STATE_DASH_DISABLED_DEBUFF",
           "value": 42
         },
         {
-          "name": "MODIFIER_STATE_HEALTH_REGEN_DISABLED",
+          "name": "MODIFIER_STATE_BURNING",
           "value": 43
         },
         {
-          "name": "MODIFIER_STATE_HEALING_DISABLED",
+          "name": "MODIFIER_STATE_HEALTH_REGEN_DISABLED",
           "value": 44
         },
         {
-          "name": "MODIFIER_STATE_DAMAGE_MOVEMENT_PENALTY_IMMUNE",
+          "name": "MODIFIER_STATE_HEALING_DISABLED",
           "value": 45
         },
         {
-          "name": "MODIFIER_STATE_BUSY_WITH_ACTION",
+          "name": "MODIFIER_STATE_DAMAGE_MOVEMENT_PENALTY_IMMUNE",
           "value": 46
         },
         {
-          "name": "MODIFIER_STATE_SLOWED",
+          "name": "MODIFIER_STATE_BUSY_WITH_ACTION",
           "value": 47
         },
         {
-          "name": "MODIFIER_STATE_SHOOTING_DISABLED",
+          "name": "MODIFIER_STATE_SLOWED",
           "value": 48
         },
         {
-          "name": "MODIFIER_STATE_SHOOTING_FORCED_ON",
+          "name": "MODIFIER_STATE_SHOOTING_DISABLED",
           "value": 49
         },
         {
-          "name": "MODIFIER_STATE_MELEE_ATTACKS_ONLY",
+          "name": "MODIFIER_STATE_SHOOTING_FORCED_ON",
           "value": 50
         },
         {
-          "name": "MODIFIER_STATE_SLIDING",
+          "name": "MODIFIER_STATE_MELEE_ATTACKS_ONLY",
           "value": 51
         },
         {
-          "name": "MODIFIER_STATE_VISIBLE_TO_ENEMY",
+          "name": "MODIFIER_STATE_SLIDING",
           "value": 52
         },
         {
-          "name": "MODIFIER_STATE_INFINITE_CLIP",
+          "name": "MODIFIER_STATE_VISIBLE_TO_ENEMY",
           "value": 53
         },
         {
-          "name": "MODIFIER_STATE_KNOCKDOWN_IMMUNE",
+          "name": "MODIFIER_STATE_INFINITE_CLIP",
           "value": 54
         },
         {
-          "name": "MODIFIER_STATE_JUMP_DISABLED",
+          "name": "MODIFIER_STATE_KNOCKDOWN_IMMUNE",
           "value": 55
         },
         {
-          "name": "MODIFIER_STATE_DUCKING_DISABLED",
+          "name": "MODIFIER_STATE_JUMP_DISABLED",
           "value": 56
         },
         {
-          "name": "MODIFIER_STATE_DUCKING_FORCED",
+          "name": "MODIFIER_STATE_DUCKING_DISABLED",
           "value": 57
         },
         {
-          "name": "MODIFIER_STATE_AIR_DUCKING_FORCED",
+          "name": "MODIFIER_STATE_DUCKING_FORCED",
           "value": 58
         },
         {
-          "name": "MODIFIER_STATE_IS_ASLEEP",
+          "name": "MODIFIER_STATE_AIR_DUCKING_FORCED",
           "value": 59
         },
         {
-          "name": "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_ENEMY",
+          "name": "MODIFIER_STATE_IS_ASLEEP",
           "value": 60
         },
         {
-          "name": "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_PROVIDER",
+          "name": "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_ENEMY",
           "value": 61
         },
         {
-          "name": "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_PROVIDER_TEAMMATES_WITHIN_RANGE",
+          "name": "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_PROVIDER",
           "value": 62
         },
         {
-          "name": "MODIFIER_STATE_GLOW_TO_PROVIDER",
+          "name": "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_PROVIDER_TEAMMATES_WITHIN_RANGE",
           "value": 63
         },
         {
-          "name": "MODIFIER_STATE_GLOW_IN_LOS_TO_ENEMY",
+          "name": "MODIFIER_STATE_GLOW_TO_PROVIDER",
           "value": 64
         },
         {
-          "name": "MODIFIER_STATE_DISABLE_AIR_SPREAD_PENALTY",
+          "name": "MODIFIER_STATE_GLOW_IN_LOS_TO_ENEMY",
           "value": 65
         },
         {
-          "name": "MODIFIER_STATE_ZIPLINE_MASTERY",
+          "name": "MODIFIER_STATE_DISABLE_AIR_SPREAD_PENALTY",
           "value": 66
         },
         {
-          "name": "MODIFIER_STATE_USING_ZIPLINE",
+          "name": "MODIFIER_STATE_ZIPLINE_MASTERY",
           "value": 67
         },
         {
-          "name": "MODIFIER_STATE_IN_ALTERNATE_DIMENSION",
+          "name": "MODIFIER_STATE_USING_ZIPLINE",
           "value": 68
         },
         {
-          "name": "MODIFIER_STATE_ANIMGRAPH_CONTROLLED_MOVEMENT",
+          "name": "MODIFIER_STATE_IN_ALTERNATE_DIMENSION",
           "value": 69
         },
         {
-          "name": "MODIFIER_STATE_COMBAT_ABILITIES_DISABLED",
+          "name": "MODIFIER_STATE_ANIMGRAPH_CONTROLLED_MOVEMENT",
           "value": 70
         },
         {
-          "name": "MODIFIER_STATE_CHAINED",
+          "name": "MODIFIER_STATE_COMBAT_ABILITIES_DISABLED",
           "value": 71
         },
         {
-          "name": "MODIFIER_STATE_ALL_ARMOR_DISABLED",
+          "name": "MODIFIER_STATE_CHAINED",
           "value": 72
         },
         {
-          "name": "MODIFIER_STATE_BULLET_INVULNERABLE",
+          "name": "MODIFIER_STATE_ALL_ARMOR_DISABLED",
           "value": 73
         },
         {
-          "name": "MODIFIER_STATE_BREAK_ICE_PATH",
+          "name": "MODIFIER_STATE_BULLET_INVULNERABLE",
           "value": 74
         },
         {
-          "name": "MODIFIER_STATE_REFLECT_ATTACKS",
+          "name": "MODIFIER_STATE_BREAK_ICE_PATH",
           "value": 75
         },
         {
-          "name": "MODIFIER_STATE_MANTLE_DISABLED",
+          "name": "MODIFIER_STATE_REFLECT_ATTACKS",
           "value": 76
         },
         {
-          "name": "MODIFIER_STATE_AI_FORCE_AGGRO",
+          "name": "MODIFIER_STATE_MANTLE_DISABLED",
           "value": 77
         },
         {
-          "name": "MODIFIER_STATE_AI_FORCE_CALM",
+          "name": "MODIFIER_STATE_AI_FORCE_AGGRO",
           "value": 78
         },
         {
-          "name": "MODIFIER_STATE_DRONE_ATTACHED",
+          "name": "MODIFIER_STATE_AI_FORCE_CALM",
           "value": 79
         },
         {
-          "name": "MODIFIER_STATE_AIM_FORWARD",
+          "name": "MODIFIER_STATE_DRONE_ATTACHED",
           "value": 80
         },
         {
-          "name": "MODIFIER_STATE_AIM_FORWARD_WITH_PITCH",
+          "name": "MODIFIER_STATE_AIM_FORWARD",
           "value": 81
         },
         {
-          "name": "MODIFIER_STATE_ZIPLINE_DISABLED",
+          "name": "MODIFIER_STATE_AIM_FORWARD_WITH_PITCH",
           "value": 82
         },
         {
-          "name": "MODIFIER_STATE_ZIPLINE_INTRO",
+          "name": "MODIFIER_STATE_ZIPLINE_DISABLED",
           "value": 83
         },
         {
-          "name": "MODIFIER_STATE_RESPAWN_CREDIT",
+          "name": "MODIFIER_STATE_ZIPLINE_INTRO",
           "value": 84
         },
         {
-          "name": "MODIFIER_STATE_RESPAWN_CREDIT_PERSONAL",
+          "name": "MODIFIER_STATE_RESPAWN_CREDIT",
           "value": 85
         },
         {
-          "name": "MODIFIER_STATE_DISPLAY_LIFETIME",
+          "name": "MODIFIER_STATE_RESPAWN_CREDIT_PERSONAL",
           "value": 86
         },
         {
-          "name": "MODIFIER_STATE_MELEE_DISABLED",
+          "name": "MODIFIER_STATE_DISPLAY_LIFETIME",
           "value": 87
         },
         {
-          "name": "MODIFIER_STATE_MELEE_DISABLED_DEBUFF",
+          "name": "MODIFIER_STATE_MELEE_DISABLED",
           "value": 88
         },
         {
-          "name": "MODIFIER_STATE_GLITCHED",
+          "name": "MODIFIER_STATE_MELEE_DISABLED_DEBUFF",
           "value": 89
         },
         {
-          "name": "MODIFIER_STATE_SLIDING_DISABLED",
+          "name": "MODIFIER_STATE_GLITCHED",
           "value": 90
         },
         {
-          "name": "MODIFIER_STATE_RELOAD_DISABLED",
+          "name": "MODIFIER_STATE_SLIDING_DISABLED",
           "value": 91
         },
         {
-          "name": "MODIFIER_STATE_RELOAD_MELEE_FULL_SPEED",
+          "name": "MODIFIER_STATE_RELOAD_DISABLED",
           "value": 92
         },
         {
-          "name": "MODIFIER_STATE_MANUAL_RELOAD_DISABLED",
+          "name": "MODIFIER_STATE_RELOAD_MELEE_FULL_SPEED",
           "value": 93
         },
         {
-          "name": "MODIFIER_STATE_UNIT_STATUS_HEALTH_HIDDEN",
+          "name": "MODIFIER_STATE_MANUAL_RELOAD_DISABLED",
           "value": 94
         },
         {
-          "name": "MODIFIER_STATE_UNIT_STATUS_HIDDEN",
+          "name": "MODIFIER_STATE_UNIT_STATUS_HEALTH_HIDDEN",
           "value": 95
         },
         {
-          "name": "MODIFIER_STATE_FADE_ALPHA_TO_ZERO",
+          "name": "MODIFIER_STATE_UNIT_STATUS_HIDDEN",
           "value": 96
         },
         {
-          "name": "MODIFIER_STATE_FRIENDLY_FIRE_ENABLED",
+          "name": "MODIFIER_STATE_FADE_ALPHA_TO_ZERO",
           "value": 97
         },
         {
-          "name": "MODIFIER_STATE_FLYING",
+          "name": "MODIFIER_STATE_FRIENDLY_FIRE_ENABLED",
           "value": 98
         },
         {
-          "name": "MODIFIER_STATE_SCOPED",
+          "name": "MODIFIER_STATE_FLYING",
           "value": 99
         },
         {
-          "name": "MODIFIER_STATE_ROLLING_BALL",
+          "name": "MODIFIER_STATE_SCOPED",
           "value": 100
         },
         {
-          "name": "MODIFIER_STATE_VISCOUS_CUBED",
+          "name": "MODIFIER_STATE_ROLLING_BALL",
           "value": 101
         },
         {
-          "name": "MODIFIER_STATE_SLOW_IMMUNE",
+          "name": "MODIFIER_STATE_VISCOUS_CUBED",
           "value": 102
         },
         {
-          "name": "MODIFIER_STATE_ROOT_IMMUNE",
+          "name": "MODIFIER_STATE_SLOW_IMMUNE",
           "value": 103
         },
         {
-          "name": "MODIFIER_STATE_IS_MELEE_TARGET",
+          "name": "MODIFIER_STATE_ROOT_IMMUNE",
           "value": 104
         },
         {
-          "name": "MODIFIER_STATE_GLOW_TO_ALLIES_AS_ENEMY",
+          "name": "MODIFIER_STATE_IS_MELEE_TARGET",
           "value": 105
         },
         {
-          "name": "MODIFIER_STATE_LADDER_DISABLE",
+          "name": "MODIFIER_STATE_GLOW_TO_ALLIES_AS_ENEMY",
           "value": 106
         },
         {
-          "name": "MODIFIER_STATE_IGNORE_BULLETS",
+          "name": "MODIFIER_STATE_LADDER_DISABLE",
           "value": 107
         },
         {
-          "name": "MODIFIER_STATE_IGNORE_MELEE",
+          "name": "MODIFIER_STATE_IGNORE_BULLETS",
           "value": 108
         },
         {
-          "name": "MODIFIER_STATE_HIDE_CROSSHAIR",
+          "name": "MODIFIER_STATE_IGNORE_MELEE",
           "value": 109
         },
         {
-          "name": "MODIFIER_STATE_HIDE_STAMINA",
+          "name": "MODIFIER_STATE_HIDE_CROSSHAIR",
           "value": 110
         },
         {
-          "name": "MODIFIER_STATE_HIDE_AMMO",
+          "name": "MODIFIER_STATE_HIDE_STAMINA",
           "value": 111
         },
         {
-          "name": "MODIFIER_STATE_APPLY_VERTICAL_DRAG",
+          "name": "MODIFIER_STATE_HIDE_AMMO",
           "value": 112
         },
         {
-          "name": "MODIFIER_STATE_FALSE_DEATH",
+          "name": "MODIFIER_STATE_APPLY_VERTICAL_DRAG",
           "value": 113
         },
         {
@@ -11594,19 +11750,19 @@
           "value": 114
         },
         {
-          "name": "MODIFIER_STATE_TITAN_LASER_VALID_TARGET",
+          "name": "MODIFIER_STATE_NO_SHOOTLOCKOUT_ON_JUMP",
           "value": 115
         },
         {
-          "name": "MODIFIER_STATE_HAS_HOLLOW_POINT_BULLETS",
+          "name": "MODIFIER_STATE_TITAN_LASER_VALID_TARGET",
           "value": 116
         },
         {
-          "name": "MODIFIER_STATE_SUPPRESS_AIR_DRAG",
+          "name": "MODIFIER_STATE_HAS_HOLLOW_POINT_BULLETS",
           "value": 117
         },
         {
-          "name": "MODIFIER_STATE_GROUND_DASH_EARLY_OUT_WINDOW",
+          "name": "MODIFIER_STATE_SUPPRESS_AIR_DRAG",
           "value": 118
         },
         {
@@ -11614,192 +11770,196 @@
           "value": 119
         },
         {
-          "name": "MODIFIER_STATE_IN_ALLY_SMOKE",
+          "name": "MODIFIER_STATE_POWER_SLASHING",
           "value": 120
         },
         {
-          "name": "MODIFIER_STATE_IN_ENEMY_SMOKE",
+          "name": "MODIFIER_STATE_IN_ALLY_SMOKE",
           "value": 121
         },
         {
-          "name": "MODIFIER_STATE_NIKUMAN_ACTIVE",
+          "name": "MODIFIER_STATE_IN_ENEMY_SMOKE",
           "value": 122
         },
         {
-          "name": "MODIFIER_STATE_NO_OUTGOING_DAMAGE",
+          "name": "MODIFIER_STATE_NIKUMAN_ACTIVE",
           "value": 123
         },
         {
-          "name": "MODIFIER_STATE_NO_INCOMING_DAMAGE",
+          "name": "MODIFIER_STATE_NO_OUTGOING_DAMAGE",
           "value": 124
         },
         {
-          "name": "MODIFIER_STATE_CHRONO_SWAPPING",
+          "name": "MODIFIER_STATE_NO_INCOMING_DAMAGE",
           "value": 125
         },
         {
-          "name": "MODIFIER_STATE_BOUNCE_PAD_STOMPING",
+          "name": "MODIFIER_STATE_CHRONO_SWAPPING",
           "value": 126
         },
         {
-          "name": "MODIFIER_STATE_FLYING_BEETLE_TARGET",
+          "name": "MODIFIER_STATE_BOUNCE_PAD_STOMPING",
           "value": 127
         },
         {
-          "name": "MODIFIER_STATE_DREAMWEAVER_SLEEP",
+          "name": "MODIFIER_STATE_FLYING_BEETLE_TARGET",
           "value": 128
         },
         {
-          "name": "MODIFIER_STATE_HOLDING_IDOL",
+          "name": "MODIFIER_STATE_DREAMWEAVER_SLEEP",
           "value": 129
         },
         {
-          "name": "MODIFIER_STATE_RETURN_IDOL_AREA",
+          "name": "MODIFIER_STATE_HOLDING_IDOL",
           "value": 130
         },
         {
-          "name": "MODIFIER_STATE_RETURNING_IDOL",
+          "name": "MODIFIER_STATE_RETURN_IDOL_AREA",
           "value": 131
         },
         {
-          "name": "MODIFIER_STATE_GALVANIC_STORM_BUFF",
+          "name": "MODIFIER_STATE_RETURNING_IDOL",
           "value": 132
         },
         {
-          "name": "MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM",
+          "name": "MODIFIER_STATE_GALVANIC_STORM_BUFF",
           "value": 133
         },
         {
-          "name": "MODIFIER_STATE_IN_ABILITY_DISABLE_ZOOM",
+          "name": "MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM",
           "value": 134
         },
         {
-          "name": "MODIFIER_STATE_STAMINA_REGEN_PAUSED",
+          "name": "MODIFIER_STATE_IN_ABILITY_DISABLE_ZOOM",
           "value": 135
         },
         {
-          "name": "MODIFIER_STATE_PREMATCH",
+          "name": "MODIFIER_STATE_STAMINA_REGEN_PAUSED",
           "value": 136
         },
         {
-          "name": "MODIFIER_STATE_SELF_DESTRUCT",
+          "name": "MODIFIER_STATE_PREMATCH",
           "value": 137
         },
         {
-          "name": "MODIFIER_STATE_COOP_TETHER_ACTIVE",
+          "name": "MODIFIER_STATE_SELF_DESTRUCT",
           "value": 138
         },
         {
-          "name": "MODIFIER_STATE_COOP_TETHER_LOCKED_TARGET",
+          "name": "MODIFIER_STATE_COOP_TETHER_ACTIVE",
           "value": 139
         },
         {
-          "name": "MODIFIER_STATE_LOCKED_AIM_ANGLES",
+          "name": "MODIFIER_STATE_COOP_TETHER_LOCKED_TARGET",
           "value": 140
         },
         {
-          "name": "MODIFIER_STATE_ICEPATHING",
+          "name": "MODIFIER_STATE_LOCKED_AIM_ANGLES",
           "value": 141
         },
         {
-          "name": "MODIFIER_STATE_BACKDOOR_PROTECTED",
+          "name": "MODIFIER_STATE_ICEPATHING",
           "value": 142
         },
         {
-          "name": "MODIFIER_STATE_IN_COMBAT",
+          "name": "MODIFIER_STATE_BACKDOOR_PROTECTED",
           "value": 143
         },
         {
-          "name": "MODIFIER_STATE_DASHJUMP_STAMINA_FREE",
+          "name": "MODIFIER_STATE_IN_COMBAT",
           "value": 144
         },
         {
-          "name": "MODIFIER_STATE_YAMATO_SHADOW_FORM",
+          "name": "MODIFIER_STATE_DASHJUMP_STAMINA_FREE",
           "value": 145
         },
         {
-          "name": "MODIFIER_STATE_IN_MID_BOSS_PIT",
+          "name": "MODIFIER_STATE_YAMATO_SHADOW_FORM",
           "value": 146
         },
         {
-          "name": "MODIFIER_STATE_CASTS_IGNORE_CHANNELING",
+          "name": "MODIFIER_STATE_IN_MID_BOSS_PIT",
           "value": 147
         },
         {
-          "name": "MODIFIER_STATE_CAN_ACTIVE_RELOAD",
+          "name": "MODIFIER_STATE_CASTS_IGNORE_CHANNELING",
           "value": 148
         },
         {
-          "name": "MODIFIER_STATE_DIGGER_BURROW_CHANNEL",
+          "name": "MODIFIER_STATE_CAN_ACTIVE_RELOAD",
           "value": 149
         },
         {
-          "name": "MODIFIER_STATE_DIGGER_SPIN",
+          "name": "MODIFIER_STATE_DIGGER_BURROW_CHANNEL",
           "value": 150
         },
         {
-          "name": "MODIFIER_STATE_NEAR_REJUVINATOR",
+          "name": "MODIFIER_STATE_DIGGER_SPIN",
           "value": 151
         },
         {
-          "name": "MODIFIER_STATE_IN_TIER3_PHASE2_BOSS_PIT",
+          "name": "MODIFIER_STATE_NEAR_REJUVINATOR",
           "value": 152
         },
         {
-          "name": "MODIFIER_STATE_TAKES_FULLDAMAGE_NO_FALLOFF",
+          "name": "MODIFIER_STATE_IN_TIER3_PHASE2_BOSS_PIT",
           "value": 153
         },
         {
-          "name": "MODIFIER_STATE_PREDATORY_STATUE_TARGET",
+          "name": "MODIFIER_STATE_TAKES_FULLDAMAGE_NO_FALLOFF",
           "value": 154
         },
         {
-          "name": "MODIFIER_STATE_FOOTSTEP_SOUNDS_DISABLE",
+          "name": "MODIFIER_STATE_PREDATORY_STATUE_TARGET",
           "value": 155
         },
         {
-          "name": "MODIFIER_STATE_MOVEMENT_FOLEY_SOUNDS_DISABLE",
+          "name": "MODIFIER_STATE_FOOTSTEP_SOUNDS_DISABLE",
           "value": 156
         },
         {
-          "name": "MODIFIER_STATE_DO_NOT_DRAW_MODEL",
+          "name": "MODIFIER_STATE_MOVEMENT_FOLEY_SOUNDS_DISABLE",
           "value": 157
         },
         {
-          "name": "MODIFIER_STATE_SHIV_FRENZIED",
+          "name": "MODIFIER_STATE_DO_NOT_DRAW_MODEL",
           "value": 158
         },
         {
-          "name": "MODIFIER_STATE_FORCE_ANIM_DUCK",
+          "name": "MODIFIER_STATE_SHIV_FRENZIED",
           "value": 159
         },
         {
-          "name": "MODIFIER_STATE_FORCE_ANIM_KEEP_STILL",
+          "name": "MODIFIER_STATE_FORCE_ANIM_DUCK",
           "value": 160
         },
         {
-          "name": "MODIFIER_STATE_SIPHON_BULLET_LOSS",
+          "name": "MODIFIER_STATE_FORCE_ANIM_KEEP_STILL",
           "value": 161
         },
         {
-          "name": "MODIFIER_STATE_APPLY_FOV_MOUSE_SENSITIVITY_SCALE",
+          "name": "MODIFIER_STATE_SIPHON_BULLET_LOSS",
           "value": 162
         },
         {
-          "name": "MODIFIER_STATE_NEAR_CLIMBABLE_ROPE",
+          "name": "MODIFIER_STATE_APPLY_FOV_MOUSE_SENSITIVITY_SCALE",
           "value": 163
         },
         {
-          "name": "MODIFIER_STATE_IS_CLIMBING_ROPE",
+          "name": "MODIFIER_STATE_NEAR_CLIMBABLE_ROPE",
           "value": 164
         },
         {
-          "name": "MODIFIER_STATE_HYPER_BEAMING",
+          "name": "MODIFIER_STATE_IS_CLIMBING_ROPE",
           "value": 165
         },
         {
-          "name": "MODIFIER_STATE_COUNT",
+          "name": "MODIFIER_STATE_HYPER_BEAMING",
           "value": 166
+        },
+        {
+          "name": "MODIFIER_STATE_COUNT",
+          "value": 167
         },
         {
           "name": "MODIFIER_STATE_INVALID",
@@ -14762,7 +14922,7 @@
           "value": 0
         },
         {
-          "name": "EFlexSlot_Tier2",
+          "name": "EFlexSlot_Kill2Tier2",
           "value": 1
         },
         {
@@ -14862,308 +15022,320 @@
           "value": 7
         },
         {
-          "name": "CLASS_SIEGE",
+          "name": "CLASS_SUPER_NEUTRAL_HEROTEST",
           "value": 8
         },
         {
-          "name": "CLASS_GUN",
+          "name": "CLASS_SIEGE",
           "value": 9
         },
         {
-          "name": "CLASS_CAP_POINT",
+          "name": "CLASS_GUN",
           "value": 10
         },
         {
-          "name": "CLASS_ITEM_SHOP",
+          "name": "CLASS_CAP_POINT",
           "value": 11
         },
         {
-          "name": "CLASS_ABILITY_SHOP",
+          "name": "CLASS_ITEM_SHOP",
           "value": 12
         },
         {
-          "name": "CLASS_MINI_MAP_MARKER",
+          "name": "CLASS_ABILITY_SHOP",
           "value": 13
         },
         {
-          "name": "CLASS_ABILITY",
+          "name": "CLASS_MINI_MAP_MARKER",
           "value": 14
         },
         {
-          "name": "CLASS_ABILITY_PROJECTILE",
+          "name": "CLASS_ABILITY",
           "value": 15
         },
         {
-          "name": "CLASS_CRATE",
+          "name": "CLASS_ABILITY_PROJECTILE",
           "value": 16
         },
         {
-          "name": "CLASS_CRATE_SPAWN",
+          "name": "CLASS_CRATE",
           "value": 17
         },
         {
-          "name": "CLASS_PICKUP_SPAWN",
+          "name": "CLASS_CRATE_SPAWN",
           "value": 18
         },
         {
-          "name": "CLASS_VEHICLE",
+          "name": "CLASS_PICKUP_SPAWN",
           "value": 19
         },
         {
-          "name": "CLASS_FLARE",
+          "name": "CLASS_VEHICLE",
           "value": 20
         },
         {
-          "name": "CLASS_SPAWNED_DRONE",
+          "name": "CLASS_FLARE",
           "value": 21
         },
         {
-          "name": "CLASS_ROLLERMINE",
+          "name": "CLASS_SPAWNED_DRONE",
           "value": 22
         },
         {
-          "name": "CLASS_PERCHED_PREDATOR_PROJECTILE",
+          "name": "CLASS_ROLLERMINE",
           "value": 23
         },
         {
-          "name": "CLASS_PARACHUTE",
+          "name": "CLASS_PERCHED_PREDATOR_PROJECTILE",
           "value": 24
         },
         {
-          "name": "CLASS_SENTRY",
+          "name": "CLASS_PARACHUTE",
           "value": 25
         },
         {
-          "name": "CLASS_BASE_SENTRY",
+          "name": "CLASS_SENTRY",
           "value": 26
         },
         {
-          "name": "CLASS_DISPENSER",
+          "name": "CLASS_BASE_SENTRY",
           "value": 27
         },
         {
-          "name": "CLASS_SPY_DRONE",
+          "name": "CLASS_DISPENSER",
           "value": 28
         },
         {
-          "name": "CLASS_GOLD_ORB",
+          "name": "CLASS_SPY_DRONE",
           "value": 29
         },
         {
-          "name": "CLASS_LANE_NODE",
+          "name": "CLASS_GOLD_ORB",
           "value": 30
         },
         {
-          "name": "CLASS_WARD",
+          "name": "CLASS_LANE_NODE",
           "value": 31
         },
         {
-          "name": "CLASS_ZIP_LINE_NODE",
+          "name": "CLASS_WARD",
           "value": 32
         },
         {
-          "name": "CLASS_DESTROYABLE_BUILDING",
+          "name": "CLASS_ZIP_LINE_NODE",
           "value": 33
         },
         {
-          "name": "CLASS_BOSS_TIER_2",
+          "name": "CLASS_DESTROYABLE_BUILDING",
           "value": 34
         },
         {
-          "name": "CLASS_BOSS_BARRACKS",
+          "name": "CLASS_BOSS_TIER_2",
           "value": 35
         },
         {
-          "name": "CLASS_BOSS_TIER_3",
+          "name": "CLASS_BOSS_BARRACKS",
           "value": 36
         },
         {
-          "name": "CLASS_BOSS_TIER_3_DRONE",
+          "name": "CLASS_BOSS_TIER_3",
           "value": 37
         },
         {
-          "name": "CLASS_ANNOUNCER",
+          "name": "CLASS_BOSS_TIER_3_DRONE",
           "value": 38
         },
         {
-          "name": "CLASS_WEAK_NEUTRAL_CAMP",
+          "name": "CLASS_ANNOUNCER",
           "value": 39
         },
         {
-          "name": "CLASS_MEDIUM_NEUTRAL_CAMP",
+          "name": "CLASS_WEAK_NEUTRAL_CAMP",
           "value": 40
         },
         {
-          "name": "CLASS_STRONG_NEUTRAL_CAMP",
+          "name": "CLASS_MEDIUM_NEUTRAL_CAMP",
           "value": 41
         },
         {
-          "name": "CLASS_VAULT_NEUTRAL_CAMP",
+          "name": "CLASS_STRONG_NEUTRAL_CAMP",
           "value": 42
         },
         {
-          "name": "CLASS_SUPER_NEUTRAL_CAMP",
+          "name": "CLASS_VAULT_NEUTRAL_CAMP",
           "value": 43
         },
         {
-          "name": "CLASS_LADDER",
+          "name": "CLASS_SUPER_NEUTRAL_CAMP",
           "value": 44
         },
         {
-          "name": "CLASS_EXPLOSIVE_BARREL",
+          "name": "CLASS_SUPER_NEUTRAL_CAMP_HEROTEST",
           "value": 45
         },
         {
-          "name": "CLASS_PAYLOAD",
+          "name": "CLASS_LADDER",
           "value": 46
         },
         {
-          "name": "CLASS_BULLET_TIME_WARP",
+          "name": "CLASS_EXPLOSIVE_BARREL",
           "value": 47
         },
         {
-          "name": "CLASS_BREAKABLE_PROP_PICKUP",
+          "name": "CLASS_PAYLOAD",
           "value": 48
         },
         {
-          "name": "CLASS_ITEM_PICKUP",
+          "name": "CLASS_BULLET_TIME_WARP",
           "value": 49
         },
         {
-          "name": "CLASS_GOLDEN_IDOL_PICKUP",
+          "name": "CLASS_BREAKABLE_PROP_PICKUP",
           "value": 50
         },
         {
-          "name": "CLASS_HERO_CLONE",
+          "name": "CLASS_ITEM_PICKUP",
           "value": 51
         },
         {
-          "name": "CLASS_TRIGGER_HURT",
+          "name": "CLASS_GOLDEN_IDOL_PICKUP",
           "value": 52
         },
         {
-          "name": "CLASS_DRONE_DISPENSER",
+          "name": "CLASS_HERO_CLONE",
           "value": 53
         },
         {
-          "name": "CLASS_HERO_MINION",
+          "name": "CLASS_TRIGGER_HURT",
           "value": 54
         },
         {
-          "name": "CLASS_PING_MARKER",
+          "name": "CLASS_DRONE_DISPENSER",
           "value": 55
         },
         {
-          "name": "CLASS_PING_LOCATION_TRIGGER",
+          "name": "CLASS_HERO_MINION",
           "value": 56
         },
         {
-          "name": "CLASS_TESLA_COIL",
+          "name": "CLASS_PING_MARKER",
           "value": 57
         },
         {
-          "name": "CLASS_FARADAY_CAGE",
+          "name": "CLASS_PING_LOCATION_TRIGGER",
           "value": 58
         },
         {
-          "name": "CLASS_DIRECTOR_CAMERA",
+          "name": "CLASS_TESLA_COIL",
           "value": 59
         },
         {
-          "name": "CLASS_BREAKABLE_PROP",
+          "name": "CLASS_FARADAY_CAGE",
           "value": 60
         },
         {
-          "name": "CLASS_TRIGGER_IDOL_RETURN",
+          "name": "CLASS_DIRECTOR_CAMERA",
           "value": 61
         },
         {
-          "name": "CLASS_TRIGGER_SHOP_TUNNEL",
+          "name": "CLASS_BREAKABLE_PROP",
           "value": 62
         },
         {
-          "name": "CLASS_TRIGGER_TELEPORT",
+          "name": "CLASS_TRIGGER_IDOL_RETURN",
           "value": 63
         },
         {
-          "name": "CLASS_TRIGGER_MODIFIER",
+          "name": "CLASS_TRIGGER_SHOP_TUNNEL",
           "value": 64
         },
         {
-          "name": "CLASS_TRIGGER_OBSCURED_VOLUME",
+          "name": "CLASS_TRIGGER_TELEPORT",
           "value": 65
         },
         {
-          "name": "CLASS_TRIGGER_ZIPLINE_CAPTURE",
+          "name": "CLASS_TRIGGER_MODIFIER",
           "value": 66
         },
         {
-          "name": "CLASS_TRIGGER_CATAPULT",
+          "name": "CLASS_TRIGGER_OBSCURED_VOLUME",
           "value": 67
         },
         {
-          "name": "CLASS_TRIGGER_CLIMB_ROPE",
+          "name": "CLASS_TRIGGER_ZIPLINE_CAPTURE",
           "value": 68
         },
         {
-          "name": "CLASS_BALLISTA_BOMB",
+          "name": "CLASS_TRIGGER_CATAPULT",
           "value": 69
         },
         {
-          "name": "CLASS_BALLISTA_MINE",
+          "name": "CLASS_TRIGGER_CLIMB_ROPE",
           "value": 70
         },
         {
-          "name": "CLASS_TOMBSTONE",
+          "name": "CLASS_BALLISTA_BOMB",
           "value": 71
         },
         {
-          "name": "CLASS_ICEPATH_SHARD",
+          "name": "CLASS_BALLISTA_MINE",
           "value": 72
         },
         {
-          "name": "CLASS_TRICKSHOT_TARGET",
+          "name": "CLASS_TOMBSTONE",
           "value": 73
         },
         {
-          "name": "CLASS_GUIDED_ARROW",
+          "name": "CLASS_ICEPATH_SHARD",
           "value": 74
         },
         {
-          "name": "CLASS_PING_LOCATION",
+          "name": "CLASS_TRICKSHOT_TARGET",
           "value": 75
         },
         {
-          "name": "CLASS_DUSTSTORM_PROJECTILE",
+          "name": "CLASS_GUIDED_ARROW",
           "value": 76
         },
         {
-          "name": "CLASS_CYCLONE_PROJECTILE",
+          "name": "CLASS_PING_LOCATION",
           "value": 77
         },
         {
-          "name": "CLASS_FIELD_SENTRY",
+          "name": "CLASS_DUSTSTORM_PROJECTILE",
           "value": 78
         },
         {
-          "name": "CLASS_RIPTIDE_PROJECTILE",
+          "name": "CLASS_CYCLONE_PROJECTILE",
           "value": 79
         },
         {
-          "name": "CLASS_ZAP_TRIGGER",
+          "name": "CLASS_FIELD_SENTRY",
           "value": 80
         },
         {
-          "name": "CLASS_VISCOUS_CUBE",
+          "name": "CLASS_RIPTIDE_PROJECTILE",
           "value": 81
         },
         {
-          "name": "CLASS_FISSURE_WALL_SEGMENT",
+          "name": "CLASS_ZAP_TRIGGER",
           "value": 82
         },
         {
-          "name": "NUM_CLASSIFY_CLASSES",
+          "name": "CLASS_VISCOUS_CUBE",
           "value": 83
+        },
+        {
+          "name": "CLASS_FISSURE_WALL_SEGMENT",
+          "value": 84
+        },
+        {
+          "name": "CLASS_NANO_STATUE",
+          "value": 85
+        },
+        {
+          "name": "NUM_CLASSIFY_CLASSES",
+          "value": 86
         }
       ]
     },
@@ -15217,6 +15389,10 @@
         {
           "name": "CITADEL_CHAT_MESSAGE_NOTEAMPAUSESLEFT",
           "value": 12
+        },
+        {
+          "name": "CITADEL_CHAT_MESSAGE_COMMS_RESTRICTED",
+          "value": 13
         }
       ]
     },
@@ -17267,6 +17443,10 @@
         {
           "name": "NEUTRAL_VAULT",
           "value": 12
+        },
+        {
+          "name": "NEUTRAL_SUPER_HEROTEST",
+          "value": 13
         }
       ]
     },
@@ -19542,143 +19722,143 @@
           "value": 104
         },
         {
-          "name": "MODIFIER_VALUE_CAN_CANCEL",
+          "name": "MODIFIER_VALUE_TELEPORT_COOLDOWN_REDUCTION_PERCENT",
           "value": 105
         },
         {
-          "name": "MODIFIER_VALUE_TELEPORT_COOLDOWN_REDUCTION_PERCENT",
+          "name": "MODIFIER_VALUE_FALL_SPEED_MAX",
           "value": 106
         },
         {
-          "name": "MODIFIER_VALUE_FALL_SPEED_MAX",
+          "name": "MODIFIER_VALUE_AIR_SPEED_MAX",
           "value": 107
         },
         {
-          "name": "MODIFIER_VALUE_AIR_SPEED_MAX",
+          "name": "MODIFIER_VALUE_AIR_SPEED_VERTICAL_MOVE",
           "value": 108
         },
         {
-          "name": "MODIFIER_VALUE_AIR_SPEED_VERTICAL_MOVE",
+          "name": "MODIFIER_VALUE_GRAVITY_SCALE",
           "value": 109
         },
         {
-          "name": "MODIFIER_VALUE_GRAVITY_SCALE",
+          "name": "MODIFIER_VALUE_BULLET_EVASION",
           "value": 110
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_EVASION",
+          "name": "MODIFIER_VALUE_TECH_SHIELD_HEALTH",
           "value": 111
         },
         {
-          "name": "MODIFIER_VALUE_TECH_SHIELD_HEALTH",
+          "name": "MODIFIER_VALUE_TECH_SHIELD_HEALTH_MAX",
           "value": 112
         },
         {
-          "name": "MODIFIER_VALUE_TECH_SHIELD_HEALTH_MAX",
+          "name": "MODIFIER_VALUE_TECH_SHIELD_HEALTH_TEMP",
           "value": 113
         },
         {
-          "name": "MODIFIER_VALUE_TECH_SHIELD_HEALTH_TEMP",
+          "name": "MODIFIER_VALUE_TECH_SHIELD_DAMAGE_PERCENT",
           "value": 114
         },
         {
-          "name": "MODIFIER_VALUE_TECH_SHIELD_DAMAGE_PERCENT",
+          "name": "MODIFIER_VALUE_TECH_SHIELD_DAMAGE_REGEN_COOLDOWN",
           "value": 115
         },
         {
-          "name": "MODIFIER_VALUE_TECH_SHIELD_DAMAGE_REGEN_COOLDOWN",
+          "name": "MODIFIER_VALUE_TECH_SHIELD_BREAK_REGEN_COOLDOWN",
           "value": 116
         },
         {
-          "name": "MODIFIER_VALUE_TECH_SHIELD_BREAK_REGEN_COOLDOWN",
+          "name": "MODIFIER_VALUE_BULLET_SHIELD_HEALTH",
           "value": 117
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_SHIELD_HEALTH",
+          "name": "MODIFIER_VALUE_BULLET_SHIELD_HEALTH_MAX",
           "value": 118
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_SHIELD_HEALTH_MAX",
+          "name": "MODIFIER_VALUE_BULLET_SHIELD_HEALTH_TEMP",
           "value": 119
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_SHIELD_HEALTH_TEMP",
+          "name": "MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_PERCENT",
           "value": 120
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_PERCENT",
+          "name": "MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_REGEN_COOLDOWN",
           "value": 121
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_REGEN_COOLDOWN",
+          "name": "MODIFIER_VALUE_BULLET_SHIELD_BREAK_REGEN_COOLDOWN",
           "value": 122
         },
         {
-          "name": "MODIFIER_VALUE_BULLET_SHIELD_BREAK_REGEN_COOLDOWN",
+          "name": "MODIFIER_VALUE_BONUS_CRIT_DAMAGE_PERCENT",
           "value": 123
         },
         {
-          "name": "MODIFIER_VALUE_BONUS_CRIT_DAMAGE_PERCENT",
+          "name": "MODIFIER_VALUE_HEIGHT_ADVANTAGE_BONUS_BASE_DAMAGE_PERCENT",
           "value": 124
         },
         {
-          "name": "MODIFIER_VALUE_HEIGHT_ADVANTAGE_BONUS_BASE_DAMAGE_PERCENT",
+          "name": "MODIFIER_VALUE_CLOSE_RANGE_BONUS_BASE_DAMAGE_PERCENT",
           "value": 125
         },
         {
-          "name": "MODIFIER_VALUE_CLOSE_RANGE_BONUS_BASE_DAMAGE_PERCENT",
+          "name": "MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_CLOSE_RANGE_MAX_RANGE",
           "value": 126
         },
         {
-          "name": "MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_CLOSE_RANGE_MAX_RANGE",
+          "name": "MODIFIER_VALUE_LONG_RANGE_BONUS_BASE_DAMAGE_PERCENT",
           "value": 127
         },
         {
-          "name": "MODIFIER_VALUE_LONG_RANGE_BONUS_BASE_DAMAGE_PERCENT",
+          "name": "MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_LONG_RANGE_MIN_RANGE",
           "value": 128
         },
         {
-          "name": "MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_LONG_RANGE_MIN_RANGE",
+          "name": "MODIFIER_VALUE_TECH_RANGE_ADDITIVE",
           "value": 129
         },
         {
-          "name": "MODIFIER_VALUE_TECH_RANGE_ADDITIVE",
+          "name": "MODIFIER_VALUE_TECH_RANGE_PERCENT",
           "value": 130
         },
         {
-          "name": "MODIFIER_VALUE_TECH_RANGE_PERCENT",
+          "name": "MODIFIER_VALUE_TECH_RANGE_CLAMP",
           "value": 131
         },
         {
-          "name": "MODIFIER_VALUE_TECH_RANGE_CLAMP",
+          "name": "MODIFIER_VALUE_TECH_RADIUS_ADDITIVE",
           "value": 132
         },
         {
-          "name": "MODIFIER_VALUE_TECH_RADIUS_ADDITIVE",
+          "name": "MODIFIER_VALUE_TECH_RADIUS_PERCENT",
           "value": 133
         },
         {
-          "name": "MODIFIER_VALUE_TECH_RADIUS_PERCENT",
+          "name": "MODIFIER_VALUE_TURN_ANGLE_PER_SECOND_MAX",
           "value": 134
         },
         {
-          "name": "MODIFIER_VALUE_TURN_ANGLE_PER_SECOND_MAX",
+          "name": "MODIFIER_VALUE_BONUS_JUMP_VERTICAL_SPEED_PERCENT",
           "value": 135
         },
         {
-          "name": "MODIFIER_VALUE_BONUS_JUMP_VERTICAL_SPEED_PERCENT",
+          "name": "MODIFIER_VALUE_AIR_JUMPS",
           "value": 136
         },
         {
-          "name": "MODIFIER_VALUE_AIR_JUMPS",
+          "name": "MODIFIER_VALUE_ZIP_LINE_SPEED_ADDITIVE",
           "value": 137
         },
         {
-          "name": "MODIFIER_VALUE_ZIP_LINE_SPEED_ADDITIVE",
+          "name": "MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE",
           "value": 138
         },
         {
-          "name": "MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE",
+          "name": "MODIFIER_VALUE_CLIMB_ROPE_SPEED_PERCENTAGE",
           "value": 139
         },
         {
@@ -21511,6 +21691,10 @@
         {
           "name": "AI_NAV_ORIENTED",
           "value": 7
+        },
+        {
+          "name": "AI_NAV_SMART_GOAL",
+          "value": 8
         }
       ]
     },
@@ -23064,10 +23248,6 @@
       "align": 4,
       "items": [
         {
-          "name": "CITADEL_CM_CancelAbility",
-          "value": 1001
-        },
-        {
           "name": "CITADEL_CM_MapPing",
           "value": 1002
         },
@@ -23110,6 +23290,27 @@
         {
           "name": "CITADEL_CM_GetDamageStats",
           "value": 1012
+        }
+      ]
+    },
+    "EFeatureBanReason": {
+      "align": 4,
+      "items": [
+        {
+          "name": "k_eFeatureBanReason_Invalid",
+          "value": 0
+        },
+        {
+          "name": "k_eFeatureBanReason_DevCommand",
+          "value": 1
+        },
+        {
+          "name": "k_eFeatureBanReason_PlayerReports",
+          "value": 2
+        },
+        {
+          "name": "k_eFeatureBanReason_MatchAbandons",
+          "value": 3
         }
       ]
     },
@@ -23237,6 +23438,12 @@
     },
     "CNmPoseNode::CDefinition": {
       "parent": "CNmGraphNode::CDefinition",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CWorldCompositionChunkReferenceElement_t": {
       "metadata": [
       ],
       "fields": [
@@ -27460,6 +27667,12 @@
       "fields": [
       ]
     },
+    "INavSmartGoal": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_OP_EndCapTimedDecay": {
       "parent": "CParticleFunctionOperator",
       "metadata": [
@@ -27877,6 +28090,15 @@
     },
     "ResponseFollowup": {
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "WaterWheelFrictionScale_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -30173,6 +30395,15 @@
       "fields": [
       ]
     },
+    "FeAntiTunnelProbeBuild_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CAnimEventDefinition": {
       "metadata": [
         {
@@ -30187,6 +30418,13 @@
         {
           "name": "MPropertyEditClassAsString"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_MedicHeal_GraphController": {
+      "parent": "CCitadelBaseAbilityGraphController",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -30378,6 +30616,16 @@
       "fields": [
       ]
     },
+    "CTargetWarpUpdateNode": {
+      "parent": "CUnaryUpdateNode",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CNmSyncTrack::Event_t": {
       "metadata": [
         {
@@ -30514,6 +30762,16 @@
       ]
     },
     "CAnimUser": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CTargetSelectorUpdateNode": {
+      "parent": "CAnimUpdateNodeBase",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -31396,7 +31654,8 @@
       "fields": [
       ]
     },
-    "INavSmartGoal": {
+    "CNavSmartGoal_PrimaryTest": {
+      "parent": "INavSmartGoal",
       "metadata": [
       ],
       "fields": [
@@ -31444,6 +31703,12 @@
         {
           "name": "MIsBoxedIntegerType"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CAnimGraph2ControllerBase": {
+      "metadata": [
       ],
       "fields": [
       ]
@@ -31500,6 +31765,15 @@
       "metadata": [
         {
           "name": "MResourceTypeForInfoType"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "WaterWheelDrag_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
         }
       ],
       "fields": [
@@ -31734,6 +32008,15 @@
       ]
     },
     "CPulseGraphDef": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeHingeLimitBuild_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -32029,6 +32312,13 @@
       "fields": [
       ]
     },
+    "CNPC_Trooper_GraphController2": {
+      "parent": "CAnimGraph2ControllerBase",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "ResponseContext_t": {
       "metadata": [
       ],
@@ -32269,6 +32559,15 @@
     },
     "CPairedSequenceComponentUpdater": {
       "parent": "CAnimComponentUpdater",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CGameScriptedMoveDef_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -33212,6 +33511,15 @@
     },
     "C_OP_CurlNoiseForce": {
       "parent": "CParticleFunctionForce",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeAntiTunnelProbe_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -36104,7 +36412,8 @@
       "fields": [
       ]
     },
-    "CAnimGraph2ControllerBase": {
+    "CAnimGraph2TestPropGraphController": {
+      "parent": "CAnimGraph2ControllerBase",
       "metadata": [
       ],
       "fields": [
@@ -36424,6 +36733,15 @@
         {
           "name": "MVDataRoot"
         },
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CAI_BaseNPC_DestructiblePartHitGroupInfoAndData": {
+      "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
         }
@@ -39182,6 +39500,15 @@
       "fields": [
       ]
     },
+    "CAI_BaseNPC_DestructiblePartRuntimeDataVector": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "InfoForResourceTypeCAnimationGroup": {
       "metadata": [
         {
@@ -39666,6 +39993,15 @@
     },
     "C_INIT_RemapNamedModelMeshGroupToScalar": {
       "parent": "C_INIT_RemapNamedModelElementToScalar",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "FeHingeLimit_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"

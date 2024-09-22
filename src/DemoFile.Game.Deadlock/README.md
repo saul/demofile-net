@@ -13,7 +13,7 @@ used on Windows, Mac or Linux.
 |----------------------------------------------------|----------------|
 | TV demos                                           | ✅ Full support |
 | POV demos                                          | ✅ Full support |
-| HTTP broadcasts                                    | ⌛ Coming soon  |
+| HTTP broadcasts                                    | ✅ Full support  |
 | Game events (e.g. `zipline_player_attached`)       | ✅ Full support |
 | Entity updates (player positions, abilities, etc.) | ✅ Full support |
 | Seeking forwards/backwards through the demo        | ✅ Full support |
@@ -35,7 +35,8 @@ internal class Program
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
         };
 
-        await demo.ReadAllAsync(File.OpenRead(path));
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
+        await reader.ReadAllAsync();
 
         Console.WriteLine("\nFinished!");
     }

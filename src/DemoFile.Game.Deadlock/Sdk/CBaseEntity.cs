@@ -1,4 +1,4 @@
-namespace DemoFile.Sdk;
+namespace DemoFile.Game.Deadlock;
 
 public partial class CBaseEntity
 {

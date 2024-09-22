@@ -15,10 +15,11 @@ internal class Program
         // Read 20 minutes of gameplay before stopping
         var readUntilTicks = DemoTick.Zero + TimeSpan.FromMinutes(20);
 
-        await demo.StartReadingAsync(File.OpenRead(path), default(CancellationToken));
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
+        await reader.StartReadingAsync(default(CancellationToken));
         while (demo.CurrentDemoTick < readUntilTicks)
         {
-            if (!await demo.MoveNextAsync(default(CancellationToken)))
+            if (!await reader.MoveNextAsync(default(CancellationToken)))
             {
                 // We've reached the end of the demo file
                 break;

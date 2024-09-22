@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
     <LangVersion>11</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>CS8981</NoWarn>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>

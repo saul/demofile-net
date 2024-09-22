@@ -1,6 +1,6 @@
 using DemoFile.Extensions;
 
-namespace DemoFile.Sdk;
+namespace DemoFile.Game.Cs;
 
 public partial class CCSTeam
 {

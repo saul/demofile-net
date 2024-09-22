@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using DemoFile;
+using DemoFile.Game.Cs;
 using DemoFile.Sdk;
 using Spectre.Console;
 
@@ -82,10 +83,11 @@ internal class Program
         }
 
         // Now that we've attached the event listeners, start reading the demo
+        var reader = DemoFileReader.Create(demo, File.OpenRead(path));
         var sw = Stopwatch.StartNew();
         try
         {
-            await demo.ReadAllAsync(File.OpenRead(path), cts.Token);
+            await reader.ReadAllAsync(cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {

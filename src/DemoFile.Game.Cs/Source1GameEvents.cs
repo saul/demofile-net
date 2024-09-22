@@ -1,4 +1,4 @@
-﻿namespace DemoFile;
+﻿namespace DemoFile.Game.Cs;
 
 public abstract partial class Source1GameEventBase
 {

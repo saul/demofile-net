@@ -160,9 +160,9 @@ internal static class Program
         builder.AppendLine("using System.Diagnostics.CodeAnalysis;");
         builder.AppendLine("using System.Drawing;");
         builder.AppendLine("using System.Runtime.CompilerServices;");
-        builder.AppendLine("using DemoFile;");
+        builder.AppendLine("using DemoFile.Sdk;");
         builder.AppendLine();
-        builder.AppendLine("namespace DemoFile.Sdk;");
+        builder.AppendLine($"namespace DemoFile.Game.{gameSdkInfo.GameName};");
 
         foreach (var (enumName, schemaEnum) in allEnums)
         {
@@ -228,9 +228,10 @@ internal static class Program
 
         Console.WriteLine($"Reading class information from: {demoPath}");
 
+        var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
         try
         {
-            await demo.ReadAllAsync(File.OpenRead(demoPath), cts.Token);
+            await reader.ReadAllAsync(cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {
@@ -247,7 +248,7 @@ internal static class Program
 
         builder.AppendLine($"using DemoFile.Sdk;");
         builder.AppendLine($"");
-        builder.AppendLine($"namespace DemoFile;");
+        builder.AppendLine($"namespace DemoFile.Game.{gameSdkInfo.GameName};");
         builder.AppendLine($"");
         builder.AppendLine($"public struct EntityEvents");
         builder.AppendLine($"{{");
