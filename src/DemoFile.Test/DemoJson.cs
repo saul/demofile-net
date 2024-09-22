@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using DemoFile.Sdk;
@@ -47,14 +48,46 @@ public static class DemoJson
         }
     }
 
-    private class CEntityInstanceJsonConverter : JsonConverter<CEntityInstance<CsDemoParser>>
+    private class CEntityInstanceJsonConverterFactory : JsonConverterFactory
+    {
+        public override bool CanConvert(Type typeToConvert)
+        {
+            return TryGetEntityInstance(typeToConvert, out var type);
+        }
+
+        private static bool TryGetEntityInstance(Type typeToConvert, [NotNullWhen(true)] out Type? type)
+        {
+            type = typeToConvert;
+            while (type != null)
+            {
+                if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(CEntityInstance<>))
+                    return true;
+
+                type = type.BaseType;
+            }
+
+            return false;
+        }
+
+        public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (!TryGetEntityInstance(typeToConvert, out var type))
+                return null;
+
+            var genericArgs = type.GetGenericArguments();
+            return Activator.CreateInstance(typeof(CEntityInstanceJsonConverter<>).MakeGenericType(genericArgs)) as JsonConverter;
+        }
+    }
+
+    private class CEntityInstanceJsonConverter<TGameParser> : JsonConverter<CEntityInstance<TGameParser>>
+        where TGameParser : DemoParser<TGameParser>, new()
     {
         public override bool CanConvert(Type typeToConvert) =>
-            typeToConvert.IsAssignableTo(typeof(CEntityInstance<CsDemoParser>));
+            typeToConvert.IsAssignableTo(typeof(CEntityInstance<TGameParser>));
 
-        public override CEntityInstance<CsDemoParser> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotImplementedException();
+        public override CEntityInstance<TGameParser> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotImplementedException();
 
-        public override void Write(Utf8JsonWriter writer, CEntityInstance<CsDemoParser> entity, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, CEntityInstance<TGameParser> entity, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
             writer.WriteString("type", entity.ServerClass.Name);
@@ -108,7 +141,7 @@ public static class DemoJson
             new CEntityIndexJsonConverter(),
             new ByteStringJsonConverter(),
             new JsonStringEnumConverter(),
-            new CEntityInstanceJsonConverter()
+            new CEntityInstanceJsonConverterFactory()
         },
         TypeInfoResolver = new DefaultJsonTypeInfoResolver
         {

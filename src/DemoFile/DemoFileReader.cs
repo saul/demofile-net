@@ -218,7 +218,8 @@ public partial class DemoFileReader<TGameParser>
         var buf = rented.AsMemory(..size);
         await _stream.ReadExactlyAsync(buf, cancellationToken).ConfigureAwait(false);
 
-        var canContinue = _demo.ReadCommand(msgType, isCompressed, buf.Span, !IsSeeking);
+        using var _ = _demo.StartReadCommandScope(fireTimers: !IsSeeking);
+        var canContinue = _demo.DemoEvents.ReadDemoCommand(msgType, buf.Span, isCompressed);
         _bytePool.Return(rented);
         return canContinue;
     }

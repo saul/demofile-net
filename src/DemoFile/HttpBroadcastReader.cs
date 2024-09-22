@@ -33,7 +33,12 @@ public class HttpBroadcastReader<TGameParser>
         _channel = Channel.CreateUnbounded<QueuedCommand>();
     }
 
+    /// <summary>
+    /// The most recently received tick over the HTTP broadcast.
+    /// </summary>
     public DemoTick BufferTailTick => new(Volatile.Read(ref _tailTick));
+
+    internal Func<int, CancellationToken, Task> DelayAsync { get; set; } = Task.Delay;
 
     private async Task FetchWorkerAsync(string urlPrefix, int startFragment, CancellationToken cancellationToken)
     {
@@ -51,7 +56,8 @@ public class HttpBroadcastReader<TGameParser>
             }
             catch (HttpRequestException exc) when (exc.StatusCode == HttpStatusCode.NotFound)
             {
-                await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
+                // todo(net8): use time provider
+                await DelayAsync(1000, cancellationToken).ConfigureAwait(false);
                 continue;
             }
 
@@ -74,7 +80,7 @@ public class HttpBroadcastReader<TGameParser>
     }
 
     /// <summary>
-    /// Advance the broadcast by a single tick.
+    /// Advance the broadcast by a single HTTP fragment.
     /// In HTTP broadcasts, the tick rate is defined by the `tv_snapshotrate` cvar on the server,
     /// which defaults to 20 for Deadlock.
     /// This means that a single call to <c>MoveNextAsync</c> can advance multiple game ticks (typically 3 ticks per <c>MoveNextAsync</c> call).
@@ -106,13 +112,14 @@ public class HttpBroadcastReader<TGameParser>
             }
 
             _demo.CurrentDemoTick = msg.Tick;
+            using var _ = _demo.StartReadCommandScope(fireTimers: true);
             if (msg.Type is EDemoCommands.DemSignonPacket or EDemoCommands.DemPacket)
             {
                 _demo.OnDemoPacket(new BitBuffer(msg.Data.Span));
             }
             else
             {
-                _demo.ReadCommand(msg.Type, msg.IsCompressed, msg.Data.Span, fireTimers: true);
+                _demo.DemoEvents.ReadDemoCommand(msg.Type, msg.Data.Span, msg.IsCompressed);
             }
         }
 

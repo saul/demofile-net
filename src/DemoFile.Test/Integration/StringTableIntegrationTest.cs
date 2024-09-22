@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text;
+using DemoFile.Game.Cs;
 using DemoFile.Sdk;
 
 namespace DemoFile.Test.Integration;

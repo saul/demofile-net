@@ -127,33 +127,39 @@ public abstract partial class DemoParser<TGameParser>
         }
     }
 
-    internal bool ReadCommand(EDemoCommands msgType, bool isCompressed, ReadOnlySpan<byte> buffer, bool fireTimers)
+    internal struct ReadCommandScope : IDisposable
     {
-        IsReading = true;
+        private readonly DemoParser<TGameParser> _demo;
 
-        Debug.Assert(msgType is >= 0 and < EDemoCommands.DemMax, $"Unexpected demo command: {msgType}");
-
-        if (fireTimers)
+        public ReadCommandScope(DemoParser<TGameParser> demo, bool fireTimers)
         {
-            while (_demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= CurrentDemoTick.Value)
+            _demo = demo;
+            _demo.IsReading = true;
+
+            if (fireTimers)
             {
-                _demoTickTimers.Dequeue();
-                timer.Invoke();
+                while (_demo._demoTickTimers.TryPeek(out var timer, out var timerTick) && timerTick <= _demo.CurrentDemoTick.Value)
+                {
+                    _demo._demoTickTimers.Dequeue();
+                    timer.Invoke();
+                }
             }
         }
 
-        var canContinue = _demoEvents.ReadDemoCommand(msgType, buffer, isCompressed);
-
-        if (OnCommandFinish is { } onCommandFinish)
+        public void Dispose()
         {
-            // Reset to null before invoking to allow any callbacks to re-register
-            OnCommandFinish = null;
-            onCommandFinish();
-        }
+            if (_demo.OnCommandFinish is { } onCommandFinish)
+            {
+                // Reset to null before invoking to allow any callbacks to re-register
+                _demo.OnCommandFinish = null;
+                onCommandFinish();
+            }
 
-        IsReading = false;
-        return canContinue;
+            _demo.IsReading = false;
+        }
     }
+
+    internal ReadCommandScope StartReadCommandScope(bool fireTimers) => new(this, fireTimers);
 
     /// <summary>
     /// Schedule a callback at demo tick <paramref name="tick"/>.
