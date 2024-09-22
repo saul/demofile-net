@@ -57,6 +57,39 @@ public class DemoParserIntegrationTest
         await Parse(mode, testCase.Value, ParseSection);
     }
 
+    [TestCaseSource(nameof(CompatibilityCases))]
+    public async Task CreateDeleteEvents(KeyValuePair<string, byte[]> testCase)
+    {
+        var demo = new CsDemoParser();
+        var snapshot = new DemoSnapshot();
+        var cts = new CancellationTokenSource();
+
+        demo.EntityEvents.CEntityInstance.Create += e =>
+        {
+            snapshot.Add(demo.CurrentDemoTick, $"Create: {e.EntityHandle}");
+        };
+        demo.EntityEvents.CEntityInstance.Delete += e =>
+        {
+            snapshot.Add(demo.CurrentDemoTick, $"Delete: {e.EntityHandle}");
+        };
+
+        // Stop after 10 minutes
+        demo.CreateTimer(new DemoTick(1), () =>
+        {
+            demo.CreateTimer(demo.CurrentDemoTick + TimeSpan.FromMinutes(5), () => cts.Cancel());
+        });
+
+        try
+        {
+            await demo.ReadAllAsync(new MemoryStream(testCase.Value), cts.Token);
+        }
+        catch (OperationCanceledException) when (cts.IsCancellationRequested)
+        {
+        }
+
+        Snapshot.Assert(snapshot.ToString());
+    }
+
     [Test]
     public async Task ReadAll_AlternateBaseline()
     {

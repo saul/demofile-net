@@ -160,19 +160,8 @@ public partial class DemoParser<TGameParser>
         var entitiesToDelete = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(_entities.Length);
         var entityDeleteIdx = 0;
 
-        // Clear out all entities - this is a full update.
         if (!msg.LegacyIsDelta)
         {
-            foreach (var entity in _entities)
-            {
-                if (entity == null)
-                    continue;
-
-                entity.IsActive = false;
-                entity.FireDeleteEvent();
-                entitiesToDelete[entityDeleteIdx++] = entity;
-            }
-
             ((Span<EntityBaseline>)_entityBaselines[0]).Clear();
             ((Span<EntityBaseline>)_entityBaselines[1]).Clear();
         }
@@ -189,9 +178,21 @@ public partial class DemoParser<TGameParser>
         var postUpdateEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(msg.UpdatedEntries);
         var postEventIdx = 0;
 
+
+        Console.WriteLine($"[*] IsDelta={msg.LegacyIsDelta}");
         for (var i = 0; i < msg.UpdatedEntries; ++i)
         {
+            var lastEntityIndex = entityIndex;
             entityIndex += 1 + (int)entityBitBuffer.ReadUBitVar();
+
+            // Clear out all intermediate entities on a full update
+            if (entityIndex > lastEntityIndex + 1)
+            {
+                Console.WriteLine($"  deleting [{lastEntityIndex + 1}, {entityIndex})");
+                DeleteEntityFullUpdateRange(_entities.AsSpan(lastEntityIndex + 1, entityIndex));
+            }
+
+            Console.WriteLine($"  update on #{entityIndex}");
 
             var updateType = entityBitBuffer.ReadUBits(2);
             if ((updateType & 0b01) != 0)
@@ -303,18 +304,31 @@ public partial class DemoParser<TGameParser>
                 entity.IsActive = true;
 
                 // If this entity already exists with the same serial number,
-                // treat it as an entity update as well as entity creation.
-                // This allows AddChangeCallback to track changes on snapshot.
-                if (_entities[entityIndex] is { } previousEnt
-                    && previousEnt.SerialNumber == entity.SerialNumber
+                // treat it as an entity update. This allows AddChangeCallback
+                // to track changes on snapshot.
+                var previousEnt = _entities[entityIndex];
+                if (previousEnt?.SerialNumber == entity.SerialNumber
                     && previousEnt.ServerClass.ServerClassId == entity.ServerClass.ServerClassId)
                 {
+                    previousEnt.IsActive = false;
                     previousEnt.FirePreUpdateEvent();
                     postUpdateEvents[postEventIdx++] = entity;
                 }
+                else
+                {
+                    // Delete any existing entity - the slot is being reused,
+                    // but it's a new entity
+                    if (previousEnt != null)
+                    {
+                        previousEnt.IsActive = false;
+                        previousEnt.FireDeleteEvent();
+                        entitiesToDelete[entityDeleteIdx++] = previousEnt;
+                    }
+
+                    createEvents[createEventIdx++] = entity;
+                }
 
                 _entities[entityIndex] = entity;
-                createEvents[createEventIdx++] = entity;
             }
             else
             {
@@ -355,6 +369,8 @@ public partial class DemoParser<TGameParser>
             }
         }
 
+        DeleteEntityFullUpdateRange(_entities.AsSpan(entityIndex + 1));
+
         for (var idx = 0; idx < entityDeleteIdx; ++idx)
         {
             var entity = entitiesToDelete[idx];
@@ -382,6 +398,27 @@ public partial class DemoParser<TGameParser>
         ArrayPool<CEntityInstance<TGameParser>>.Shared.Return(entitiesToDelete);
         ArrayPool<CEntityInstance<TGameParser>>.Shared.Return(createEvents);
         ArrayPool<CEntityInstance<TGameParser>>.Shared.Return(postUpdateEvents);
+
+        return;
+
+        void DeleteEntityFullUpdateRange(ReadOnlySpan<CEntityInstance<TGameParser>?> entities)
+        {
+            // Clear out all intermediate entities on a full update
+            if (msg.LegacyIsDelta)
+                return;
+
+            foreach (var entity in entities)
+            {
+                if (entity == null)
+                    continue;
+
+                Console.WriteLine($"    delete #{entity.EntityIndex.Value}");
+
+                entity.IsActive = false;
+                entity.FireDeleteEvent();
+                entitiesToDelete[entityDeleteIdx++] = entity;
+            }
+        }
     }
 
     [SkipLocalsInit]
