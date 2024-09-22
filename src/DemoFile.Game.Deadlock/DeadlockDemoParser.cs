@@ -19,7 +19,7 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
 
         PacketEvents.SvcServerInfo += e =>
         {
-            var gameDirParts = e.GameDir.Split('/', '\\', StringSplitOptions.RemoveEmptyEntries);
+            var gameDirParts = e.GameDir.Split(new[] {'/', '\\'}, StringSplitOptions.RemoveEmptyEntries);
             if (gameDirParts[^1] != "citadel")
             {
                 throw new InvalidDemoException($"Cannot use {nameof(DeadlockDemoParser)} to read a '{gameDirParts[^1]}' demo (expected 'citadel').");

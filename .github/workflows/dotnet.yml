@@ -40,6 +40,9 @@ jobs:
             if [[ "$dir" == "./DemoFile.Example.HttpBroadcast" ]]; then
               echo "Building example: $dir..."
               dotnet build -v quiet -c Release "$dir"
+            elif [[ "$dir" == *.Deadlock ]]; then
+              echo "[!] Skipping Deadlock example: $dir..."
+              dotnet build -v quiet -c Release "$dir"
             else
               echo "Running example: $dir..."
               dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem

@@ -20,7 +20,7 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
 
         PacketEvents.SvcServerInfo += e =>
         {
-            var gameDirParts = e.GameDir.Split('/', '\\', StringSplitOptions.RemoveEmptyEntries);
+            var gameDirParts = e.GameDir.Split(new[] {'/', '\\'}, StringSplitOptions.RemoveEmptyEntries);
             if (gameDirParts[^1] != "csgo")
             {
                 throw new InvalidDemoException($"Cannot use {nameof(CsDemoParser)} to read a '{gameDirParts[^1]}' demo (expected 'csgo').");
