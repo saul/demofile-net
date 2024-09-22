@@ -178,8 +178,6 @@ public partial class DemoParser<TGameParser>
         var postUpdateEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(msg.UpdatedEntries);
         var postEventIdx = 0;
 
-
-        Console.WriteLine($"[*] IsDelta={msg.LegacyIsDelta}");
         for (var i = 0; i < msg.UpdatedEntries; ++i)
         {
             var lastEntityIndex = entityIndex;
@@ -188,11 +186,8 @@ public partial class DemoParser<TGameParser>
             // Clear out all intermediate entities on a full update
             if (entityIndex > lastEntityIndex + 1)
             {
-                Console.WriteLine($"  deleting [{lastEntityIndex + 1}, {entityIndex})");
                 DeleteEntityFullUpdateRange(_entities.AsSpan(lastEntityIndex + 1, entityIndex));
             }
-
-            Console.WriteLine($"  update on #{entityIndex}");
 
             var updateType = entityBitBuffer.ReadUBits(2);
             if ((updateType & 0b01) != 0)
@@ -316,8 +311,7 @@ public partial class DemoParser<TGameParser>
                 }
                 else
                 {
-                    // Delete any existing entity - the slot is being reused,
-                    // but it's a new entity
+                    // Delete any existing entity - the slot is being reused, but it's a new entity
                     if (previousEnt != null)
                     {
                         previousEnt.IsActive = false;
@@ -411,8 +405,6 @@ public partial class DemoParser<TGameParser>
             {
                 if (entity == null)
                     continue;
-
-                Console.WriteLine($"    delete #{entity.EntityIndex.Value}");
 
                 entity.IsActive = false;
                 entity.FireDeleteEvent();

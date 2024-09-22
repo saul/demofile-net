@@ -16,6 +16,15 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
         Source1GameEvents = new Source1GameEvents(this);
         BaseGameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
         BaseGameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
+
+        PacketEvents.SvcServerInfo += e =>
+        {
+            var gameName = Path.GetFileName(e.GameDir);
+            if (gameName != "citadel")
+            {
+                throw new InvalidDemoException($"Cannot use {nameof(DeadlockDemoParser)} to read a '{gameName}' demo (expected 'citadel').");
+            }
+        };
     }
 
     public Source1GameEvents Source1GameEvents { get; }

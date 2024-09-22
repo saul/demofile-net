@@ -17,6 +17,15 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
         Source1GameEvents = new Source1GameEvents(this);
         BaseGameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
         BaseGameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
+
+        PacketEvents.SvcServerInfo += e =>
+        {
+            var gameName = Path.GetFileName(e.GameDir);
+            if (gameName != "csgo")
+            {
+                throw new InvalidDemoException($"Cannot use {nameof(CsDemoParser)} to read a '{gameName}' demo (expected 'csgo').");
+            }
+        };
     }
 
     public Source1GameEvents Source1GameEvents { get; }

@@ -59,8 +59,8 @@ public class DemoParserIntegrationTest
         await Parse(mode, testCase.Value, ParseSection);
     }
 
-    [TestCaseSource(nameof(CompatibilityCases))]
-    public async Task CreateDeleteEvents(KeyValuePair<string, byte[]> testCase)
+    [TestCase]
+    public async Task CreateDeleteEvents()
     {
         var demo = new CsDemoParser();
         var snapshot = new DemoSnapshot();
@@ -68,22 +68,24 @@ public class DemoParserIntegrationTest
 
         demo.EntityEvents.CEntityInstance.Create += e =>
         {
-            snapshot.Add(demo.CurrentDemoTick, $"Create: {e.EntityHandle}");
+            snapshot.Add(demo.CurrentDemoTick, $"Create: {e.ServerClass.Name} - {e.EntityHandle}");
         };
         demo.EntityEvents.CEntityInstance.Delete += e =>
         {
-            snapshot.Add(demo.CurrentDemoTick, $"Delete: {e.EntityHandle}");
+            snapshot.Add(demo.CurrentDemoTick, $"Delete: {e.ServerClass.Name} -{e.EntityHandle}");
         };
 
-        // Stop after 10 minutes
-        demo.CreateTimer(new DemoTick(1), () =>
+        var roundEnds = 0;
+        demo.Source1GameEvents.RoundEnd += e =>
         {
-            demo.CreateTimer(demo.CurrentDemoTick + TimeSpan.FromMinutes(5), () => cts.Cancel());
-        });
+            if (roundEnds++ == 4)
+                cts.Cancel();
+        };
 
+        var reader = DemoFileReader.Create(demo, new MemoryStream(Pov14000));
         try
         {
-            await demo.ReadAllAsync(new MemoryStream(testCase.Value), cts.Token);
+            await reader.ReadAllAsync(cts.Token);
         }
         catch (OperationCanceledException) when (cts.IsCancellationRequested)
         {

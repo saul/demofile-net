@@ -6,7 +6,13 @@ internal class Program
     {
         var path = args.SingleOrDefault() ?? throw new Exception("Expected a single argument: <path to .dem>");
 
-        var demo = new CsDemoParser();
+        var demo = new DeadlockDemoParser();
+
+        demo.PacketEvents.SvcServerInfo += e =>
+        {
+            Console.WriteLine($"{e}");
+        };
+
         demo.Source1GameEvents.PlayerDeath += e =>
         {
             Console.WriteLine($"{e.Attacker?.PlayerName} [{e.Weapon}] {e.Player?.PlayerName}");
