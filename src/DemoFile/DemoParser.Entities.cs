@@ -186,7 +186,7 @@ public partial class DemoParser<TGameParser>
             // Clear out all intermediate entities on a full update
             if (entityIndex > lastEntityIndex + 1)
             {
-                DeleteEntityFullUpdateRange(_entities.AsSpan(lastEntityIndex + 1, entityIndex));
+                DeleteEntityFullUpdateRange(_entities.AsSpan(lastEntityIndex + 1, entityIndex - lastEntityIndex - 1));
             }
 
             var updateType = entityBitBuffer.ReadUBits(2);
