@@ -1,4 +1,4 @@
-### 0.22.1 (2024-09-15) - Significant API change
+### 0.22.1 (2024-09-22) - Significant API change
 
 - BREAKING CHANGE: Stream reading logic has been split out of `DemoParser` into `DemoFileReader`. \
   This change enables different sources of demo data, e.g. HTTP broadcasts.
