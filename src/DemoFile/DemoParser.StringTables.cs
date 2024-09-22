@@ -15,12 +15,13 @@ internal readonly record struct BaselineKey(uint ServerClassId, uint AlternateBa
 
 public partial class DemoParser<TGameParser>
 {
-    private readonly Dictionary<string, StringTable> _stringTables = new();
-    private readonly List<StringTable> _stringTableList = new();
-
     private readonly Dictionary<BaselineKey, int> _instanceBaselineLookup = new();
+    private readonly List<StringTable> _stringTableList = new();
+    private readonly Dictionary<string, StringTable> _stringTables = new();
     private KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[] _instanceBaselines = new KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[64];
     private CMsgPlayerInfo?[] _playerInfos = Array.Empty<CMsgPlayerInfo?>();
+
+    internal IReadOnlyDictionary<string, StringTable> StringTables => _stringTables;
 
     public bool TryGetStringTable(string tableName, [NotNullWhen(true)] out StringTable? stringTable) =>
         _stringTables.TryGetValue(tableName, out stringTable);
@@ -61,13 +62,22 @@ public partial class DemoParser<TGameParser>
         _stringTables.Add(msg.Name, stringTable);
     }
 
+    public void OnClearStringTables(CSVCMsg_ClearAllStringTables msg)
+    {
+        _stringTables.Clear();
+        _stringTableList.Clear();
+        _instanceBaselineLookup.Clear();
+        _instanceBaselines = new KeyValuePair<BaselineKey, ReadOnlyMemory<byte>>[64];
+        _playerInfos = Array.Empty<CMsgPlayerInfo?>();
+    }
+
     private void OnUpdateStringTable(CSVCMsg_UpdateStringTable msg)
     {
         var stringTable = _stringTableList[msg.TableId];
         stringTable.ReadUpdate(msg.StringData.Span, msg.NumChangedEntries);
     }
 
-    private void RestoreStringTables(ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>> snapshot)
+    internal void RestoreStringTables(ImmutableDictionary<string, IReadOnlyList<KeyValuePair<string, ReadOnlyMemory<byte>>>> snapshot)
     {
         foreach (var stringTable in _stringTableList)
         {
@@ -83,7 +93,7 @@ public partial class DemoParser<TGameParser>
         }
     }
 
-    private void OnDemoStringTable(CDemoStringTables.Types.table_t snapshot)
+    internal void OnDemoStringTable(CDemoStringTables.Types.table_t snapshot)
     {
         var stringTable = _stringTables[snapshot.TableName];
 

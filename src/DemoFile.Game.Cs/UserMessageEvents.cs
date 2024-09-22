@@ -1,6 +1,6 @@
 ﻿#pragma warning disable CS1591
 
-namespace DemoFile;
+namespace DemoFile.Game.Cs;
 
 public struct UserMessageEvents
 {

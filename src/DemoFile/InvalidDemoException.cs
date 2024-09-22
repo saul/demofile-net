@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace DemoFile;
+﻿namespace DemoFile;
 
 public class InvalidDemoException : Exception
 {

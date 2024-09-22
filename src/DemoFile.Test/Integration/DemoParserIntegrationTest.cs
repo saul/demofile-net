@@ -7,7 +7,8 @@ public class DemoParserIntegrationTest
     public async Task ReadAll()
     {
         var demo = new CsDemoParser();
-        await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), default);
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
+        await reader.ReadAllAsync(default);
         Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(217866));
     }
 
@@ -19,8 +20,9 @@ public class DemoParserIntegrationTest
         var tick = demo.CurrentDemoTick;
 
         // Act
-        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), default);
-        while (await demo.MoveNextAsync(default))
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
+        await reader.StartReadingAsync(default);
+        while (await reader.MoveNextAsync(default))
         {
             // Tick is monotonic
             Assert.That(demo.CurrentDemoTick.Value, Is.GreaterThanOrEqualTo(tick.Value));
@@ -94,6 +96,7 @@ public class DemoParserIntegrationTest
     public async Task ReadAll_AlternateBaseline()
     {
         var demo = new CsDemoParser();
-        await demo.ReadAllAsync(new MemoryStream(MatchmakingProtocol13968), default);
+        var reader = DemoFileReader.Create(demo, new MemoryStream(MatchmakingProtocol13968));
+        await reader.ReadAllAsync(default);
     }
 }

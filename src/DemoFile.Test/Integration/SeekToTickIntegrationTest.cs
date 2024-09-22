@@ -16,10 +16,11 @@ public class SeekToTickIntegrationTest
         var demo = new CsDemoParser();
 
         // Act
-        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13992), default);
-        await demo.SeekToTickAsync(startTick, default);
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13992));
+        await reader.StartReadingAsync(default);
+        await reader.SeekToTickAsync(startTick, default);
 
-        while (await demo.MoveNextAsync(default))
+        while (await reader.MoveNextAsync(default))
         {
         }
 
@@ -52,12 +53,13 @@ public class SeekToTickIntegrationTest
         }
 
         // Act
-        await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13992), default);
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13992));
+        await reader.StartReadingAsync(default);
 
         phase = 0;
         timer = demo.CreateTimer(new DemoTick(1), OnSnapshotTimer);
 
-        while (await demo.MoveNextAsync(default))
+        while (await reader.MoveNextAsync(default))
         {
         }
 
@@ -65,11 +67,11 @@ public class SeekToTickIntegrationTest
         timer?.Dispose();
         phase = 1;
 
-        await demo.SeekToTickAsync(DemoTick.Zero, default(CancellationToken));
+        await reader.SeekToTickAsync(DemoTick.Zero, default(CancellationToken));
         Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(0));
         timer = demo.CreateTimer(new DemoTick(1), OnSnapshotTimer);
 
-        while (await demo.MoveNextAsync(default))
+        while (await reader.MoveNextAsync(default))
         {
         }
 
@@ -121,7 +123,8 @@ public class SeekToTickIntegrationTest
         var skipInterval = TimeSpan.FromSeconds(77);
 
         // Act
-        await demo.StartReadingAsync(new MemoryStream(testCase.Bytes), default);
+        var reader = DemoFileReader.Create(demo, new MemoryStream(testCase.Bytes));
+        await reader.StartReadingAsync(default);
 
         demo.DemoEvents.DemoFileInfo += e =>
         {
@@ -132,12 +135,12 @@ public class SeekToTickIntegrationTest
         var nextSkipTick = DemoTick.Zero + skipInterval;
         DemoTick? nextSkipBackTick = DemoTick.Zero + skipInterval.Divide(2);
 
-        while (await demo.MoveNextAsync(default))
+        while (await reader.MoveNextAsync(default))
         {
             if (nextSkipTick <= demo.CurrentDemoTick && demo.CurrentDemoTick + skipInterval < demo.TickCount)
             {
                 Console.WriteLine($"Fast forward to {demo.CurrentDemoTick + skipInterval}...");
-                await demo.SeekToTickAsync(demo.CurrentDemoTick + skipInterval, default);
+                await reader.SeekToTickAsync(demo.CurrentDemoTick + skipInterval, default);
                 nextSkipTick = demo.CurrentDemoTick + skipInterval;
                 nextSkipBackTick = demo.CurrentDemoTick + skipInterval.Divide(2);
             }
@@ -145,7 +148,7 @@ public class SeekToTickIntegrationTest
             if (nextSkipBackTick <= demo.CurrentDemoTick)
             {
                 Console.WriteLine($"Rewind to {demo.CurrentDemoTick - skipInterval.Divide(4)}...");
-                await demo.SeekToTickAsync(demo.CurrentDemoTick - skipInterval.Divide(4), default);
+                await reader.SeekToTickAsync(demo.CurrentDemoTick - skipInterval.Divide(4), default);
                 nextSkipBackTick = default(DemoTick?);
             }
         }

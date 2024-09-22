@@ -28,16 +28,17 @@ public class TimerIntegrationTest
             });
 
         // Act
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
         try
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
+                await reader.ReadAllAsync(cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
-                while (await demo.MoveNextAsync(cts.Token))
+                await reader.StartReadingAsync(cts.Token);
+                while (await reader.MoveNextAsync(cts.Token))
                 {
                 }
             }
@@ -80,16 +81,17 @@ public class TimerIntegrationTest
             });
 
         // Act
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
         try
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
+                await reader.ReadAllAsync(cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
-                while (await demo.MoveNextAsync(cts.Token))
+                await reader.StartReadingAsync(cts.Token);
+                while (await reader.MoveNextAsync(cts.Token))
                 {
                 }
             }
@@ -121,16 +123,17 @@ public class TimerIntegrationTest
             });
 
         // Act
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
         try
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
+                await reader.ReadAllAsync(cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
-                while (await demo.MoveNextAsync(cts.Token))
+                await reader.StartReadingAsync(cts.Token);
+                while (await reader.MoveNextAsync(cts.Token))
                 {
                 }
             }
@@ -160,16 +163,17 @@ public class TimerIntegrationTest
             });
 
         // Act
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
         try
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
+                await reader.ReadAllAsync(cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
-                while (await demo.MoveNextAsync(cts.Token))
+                await reader.StartReadingAsync(cts.Token);
+                while (await reader.MoveNextAsync(cts.Token))
                 {
                 }
             }
@@ -212,16 +216,17 @@ public class TimerIntegrationTest
             });
 
         // Act
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
         try
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
+                await reader.ReadAllAsync(cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
-                while (await demo.MoveNextAsync(cts.Token))
+                await reader.StartReadingAsync(cts.Token);
+                while (await reader.MoveNextAsync(cts.Token))
                 {
                 }
             }
@@ -253,16 +258,17 @@ public class TimerIntegrationTest
             });
 
         // Act
+        var reader = DemoFileReader.Create(demo, new MemoryStream(GotvCompetitiveProtocol13963));
         try
         {
             if (_readAll)
             {
-                await demo.ReadAllAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
+                await reader.ReadAllAsync(cts.Token);
             }
             else
             {
-                await demo.StartReadingAsync(new MemoryStream(GotvCompetitiveProtocol13963), cts.Token);
-                while (await demo.MoveNextAsync(cts.Token))
+                await reader.StartReadingAsync(cts.Token);
+                while (await reader.MoveNextAsync(cts.Token))
                 {
                 }
             }

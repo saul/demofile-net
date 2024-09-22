@@ -1,6 +1,6 @@
 ﻿#pragma warning disable CS1591
 
-namespace DemoFile;
+namespace DemoFile.Game.Deadlock;
 
 public struct GameEvents
 {

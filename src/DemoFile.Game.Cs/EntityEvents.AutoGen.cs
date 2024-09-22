@@ -1,6 +1,6 @@
 using DemoFile.Sdk;
 
-namespace DemoFile;
+namespace DemoFile.Game.Cs;
 
 public struct EntityEvents
 {

@@ -1,4 +1,4 @@
-﻿namespace DemoFile.Sdk;
+﻿namespace DemoFile.Game.Cs;
 
 public partial class CBaseEntity
 {
