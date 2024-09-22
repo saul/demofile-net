@@ -110,12 +110,12 @@ public class HttpBroadcastReaderTest
                 .ReplaceLineEndings(Environment.NewLine + "  ");
             sb.AppendLine($"  {eventJson}");
 
-            snapshot.Add(demo.CurrentDemoTick, $"{clock:O}: {sb}");
+            snapshot.Add(demo.CurrentDemoTick, sb.ToString());
         };
 
         demo.PacketEvents.SvcServerInfo += e =>
         {
-            snapshot.Add(demo.CurrentDemoTick, $"{clock:O}: GameTick: {demo.CurrentGameTick}, SvcServerInfo: {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
+            snapshot.Add(demo.CurrentDemoTick, $"GameTick: {demo.CurrentGameTick}, SvcServerInfo: {JsonSerializer.Serialize(e, DemoJson.SerializerOptions)}");
         };
 
         string SnapshotPlayerState()
