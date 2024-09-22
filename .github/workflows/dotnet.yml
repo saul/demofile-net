@@ -39,7 +39,7 @@ jobs:
           for dir in "${dirs[@]}"; do
             if [[ "$dir" == "./DemoFile.Example.HttpBroadcast" ]]; then
               echo "Building example: $dir..."
-              dotnet build -v quiet -c Release --project "$dir"
+              dotnet build -v quiet -c Release "$dir"
             else
               echo "Running example: $dir..."
               dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem
