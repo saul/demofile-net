@@ -98,7 +98,7 @@ internal static class Program
         builder.AppendLine("using System.Text.Json.Serialization;");
         builder.AppendLine("using DemoFile.Sdk;");
         builder.AppendLine();
-        builder.AppendLine("namespace DemoFile;");
+        builder.AppendLine($"namespace DemoFile.Game.{gameSdkInfo.GameName};");
         builder.AppendLine();
 
         builder.AppendLine($"public partial class Source1GameEvents");

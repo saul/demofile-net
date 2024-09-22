@@ -1,4 +1,6 @@
-﻿namespace DemoFile.Sdk;
+﻿using DemoFile.Sdk;
+
+namespace DemoFile.Game.Cs;
 
 // Backwards compatability for pre v13987 demos
 

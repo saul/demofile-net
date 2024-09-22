@@ -6,6 +6,8 @@
   - Old `DemoParser.StartReadingAsync` => now `DemoFileReader.StartReadingAsync`
   - Old `DemoParser.MoveNextAsync` => now `DemoFileReader.MoveNextAsync`
   - Old `DemoParser.OnProgress` => now `DemoFileReader.OnProgress`
+- Game-specific SDK types have moved out of the `DemoFile` namespace into `DemoFile.Game.Cs` and `DemoFile.Game.Deadlock`. \
+  You may need to add some `using DemoFile.Game.Cs;` to your existing code.
 - Added support for reading HTTP broadcasts, see [DemoFile.Example.HttpBroadcast](./examples/DemoFile.Example.HttpBroadcast)
 
 ### 0.21.1 (2024-09-14) - Significant API change

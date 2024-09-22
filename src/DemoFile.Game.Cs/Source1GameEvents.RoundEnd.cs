@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using DemoFile.Sdk;
 
-namespace DemoFile;
+namespace DemoFile.Game.Cs;
 
 public partial class Source1GameEvents
 {

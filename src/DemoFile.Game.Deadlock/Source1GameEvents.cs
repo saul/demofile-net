@@ -1,4 +1,4 @@
-﻿namespace DemoFile;
+﻿namespace DemoFile.Game.Deadlock;
 
 public abstract partial class Source1GameEventBase
 {

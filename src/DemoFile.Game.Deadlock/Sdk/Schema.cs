@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Runtime.CompilerServices;
-using DemoFile;
+using DemoFile.Sdk;
 
-namespace DemoFile.Sdk;
+namespace DemoFile.Game.Deadlock;
 
 public enum AnimLoopMode : int
 {
