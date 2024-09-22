@@ -1,6 +1,7 @@
 ﻿using System.Buffers;
 using System.Text.RegularExpressions;
 using DemoFile;
+using DemoFile.Game.Cs;
 using DemoFile.Sdk;
 
 internal class Program

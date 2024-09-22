@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);CS1591;CS8981</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NerdBank.GitVersioning" Version="3.6.133" />
