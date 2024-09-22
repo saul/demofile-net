@@ -85,9 +85,10 @@ public class HttpBroadcastReaderTest
         var clock = new DateTimeOffset(2024, 09, 22, 14, 00, 00, TimeSpan.Zero);
         var snapshot = new DemoSnapshot();
         var demo = new DeadlockDemoParser();
+        var httpRequestLog = new StringBuilder();
 
         var mockMessageHandler = new MockHttpMessageHandler(
-            line => snapshot.Add(demo.CurrentDemoTick, $"{clock:O}: {line}"),
+            line => httpRequestLog.AppendLine($"{clock:O}: {line}"),
             new Dictionary<string, int>
             {
                 {"DeadlockHttpBroadcast/23/delta", 3},
@@ -191,15 +192,15 @@ public class HttpBroadcastReaderTest
         };
 
         await httpReader.StartReadingAsync(default);
-        snapshot.Add(demo.CurrentDemoTick, $"{clock:O}: after StartReadingAsync");
+        snapshot.Add(demo.CurrentDemoTick, $"After StartReadingAsync");
 
         var count = 0;
         while (await httpReader.MoveNextAsync(default))
         {
-            snapshot.Add(demo.CurrentDemoTick, $"{clock:O}: MoveNextAsync #{++count}");
+            snapshot.Add(demo.CurrentDemoTick, $"MoveNextAsync #{++count}");
         }
 
-        snapshot.Add(demo.CurrentDemoTick, $"{clock:O}: Finished");
+        snapshot.Add(demo.CurrentDemoTick, $"Finished. HTTP logs follow:{Environment.NewLine}  {httpRequestLog.ToString().ReplaceLineEndings(Environment.NewLine + "  ")}");
 
         // Assert
         mockMessageHandler.AssertAllUrlsHit();
