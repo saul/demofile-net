@@ -1,5 +1,5 @@
 [<pre record>] After StartReadingAsync
-[<pre record>] 2024-09-22T14:00:23.0000000+00:00: GameTick: 3464, SvcServerInfo: {
+[<pre record>] GameTick: 3464, SvcServerInfo: {
   "Protocol": 1,
   "ServerCount": 5,
   "IsDedicated": true,
@@ -69,7 +69,7 @@
 [7328] MoveNextAsync #29
 [7331] MoveNextAsync #30
 [7334] MoveNextAsync #31
-[7337] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@7340:
+[7337] Event player_used_ability@7340:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1339,
@@ -97,7 +97,7 @@
 [7391] MoveNextAsync #50
 [7394] MoveNextAsync #51
 [7397] MoveNextAsync #52
-[7400] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@7403:
+[7400] Event player_used_ability@7403:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1335,
@@ -108,7 +108,7 @@
 [7403] MoveNextAsync #54
 [7406] MoveNextAsync #55
 [7409] MoveNextAsync #56
-[7412] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@7415:
+[7412] Event player_used_ability@7415:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1342,
@@ -165,7 +165,7 @@
 [7553] MoveNextAsync #104
 [7556] MoveNextAsync #105
 [7559] MoveNextAsync #106
-[7562] 2024-09-22T14:00:23.0000000+00:00: Event citadeltv_chase_hero@7565:
+[7562] Event citadeltv_chase_hero@7565:
   {
     "GameEventName": "citadeltv_chase_hero",
     "Target1": -1145273096,
@@ -198,7 +198,7 @@
 [7592] MoveNextAsync #117
 [7595] MoveNextAsync #118
 [7598] MoveNextAsync #119
-[7601] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@7604:
+[7601] Event player_used_ability@7604:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1341,
@@ -3839,7 +3839,7 @@
 [7913] MoveNextAsync #224
 [7916] MoveNextAsync #225
 [7919] MoveNextAsync #226
-[7922] 2024-09-22T14:00:23.0000000+00:00: Event citadeltv_chase_hero@7925:
+[7922] Event citadeltv_chase_hero@7925:
   {
     "GameEventName": "citadeltv_chase_hero",
     "Target1": -1145273096,
@@ -3898,7 +3898,7 @@
 [8030] MoveNextAsync #263
 [8033] MoveNextAsync #264
 [8036] MoveNextAsync #265
-[8039] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8042:
+[8039] Event player_used_ability@8042:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1336,
@@ -3907,7 +3907,7 @@
   }
 [8039] MoveNextAsync #266
 [8042] MoveNextAsync #267
-[8045] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8048:
+[8045] Event player_used_ability@8048:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1272,
@@ -3922,7 +3922,7 @@
 [8060] MoveNextAsync #273
 [8063] MoveNextAsync #274
 [8066] MoveNextAsync #275
-[8069] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8072:
+[8069] Event player_used_ability@8072:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1327,
@@ -3940,7 +3940,7 @@
 [8093] MoveNextAsync #284
 [8096] MoveNextAsync #285
 [8099] MoveNextAsync #286
-[8102] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8105:
+[8102] Event player_used_ability@8105:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1341,
@@ -3962,7 +3962,7 @@
 [8138] MoveNextAsync #299
 [8141] MoveNextAsync #300
 [8144] MoveNextAsync #301
-[8147] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8150:
+[8147] Event player_used_ability@8150:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1459,
@@ -3986,7 +3986,7 @@
 [8189] MoveNextAsync #316
 [8192] MoveNextAsync #317
 [8195] MoveNextAsync #318
-[8198] 2024-09-22T14:00:23.0000000+00:00: Event boss_damaged@8201:
+[8198] Event boss_damaged@8201:
   {
     "GameEventName": "boss_damaged",
     "ObjectiveTeam": 2,
@@ -4005,7 +4005,7 @@
 [8225] MoveNextAsync #328
 [8228] MoveNextAsync #329
 [8231] MoveNextAsync #330
-[8234] 2024-09-22T14:00:23.0000000+00:00: Event boss_damaged@8237:
+[8234] Event boss_damaged@8237:
   {
     "GameEventName": "boss_damaged",
     "ObjectiveTeam": 2,
@@ -4028,7 +4028,7 @@
 [8273] MoveNextAsync #344
 [8276] MoveNextAsync #345
 [8279] MoveNextAsync #346
-[8282] 2024-09-22T14:00:23.0000000+00:00: Event citadeltv_chase_hero@8285:
+[8282] Event citadeltv_chase_hero@8285:
   {
     "GameEventName": "citadeltv_chase_hero",
     "Target1": -1145273096,
@@ -4097,7 +4097,7 @@
 [8420] MoveNextAsync #393
 [8423] MoveNextAsync #394
 [8426] MoveNextAsync #395
-[8429] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8432:
+[8429] Event player_used_ability@8432:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1337,
@@ -4105,7 +4105,7 @@
     "CasterEntindex": 0
   }
 [8429] MoveNextAsync #396
-[8432] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8435:
+[8432] Event player_used_ability@8435:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1341,
@@ -7680,7 +7680,7 @@
 [8498] MoveNextAsync #419
 [8501] MoveNextAsync #420
 [8504] MoveNextAsync #421
-[8507] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8510:
+[8507] Event player_used_ability@8510:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1334,
@@ -7695,7 +7695,7 @@
 [8522] MoveNextAsync #427
 [8525] MoveNextAsync #428
 [8528] MoveNextAsync #429
-[8531] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8534:
+[8531] Event player_used_ability@8534:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1338,
@@ -7724,7 +7724,7 @@
 [8588] MoveNextAsync #449
 [8591] MoveNextAsync #450
 [8594] MoveNextAsync #451
-[8597] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8600:
+[8597] Event player_used_ability@8600:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1341,
@@ -7742,14 +7742,14 @@
 [8621] MoveNextAsync #460
 [8624] MoveNextAsync #461
 [8627] MoveNextAsync #462
-[8630] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8633:
+[8630] Event player_used_ability@8633:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1459,
     "Abilityname": "citadel_ability_healing_slash",
     "CasterEntindex": 0
   }
-[8630] 2024-09-22T14:00:23.0000000+00:00: Event player_death@8633:
+[8630] Event player_death@8633:
   {
     "GameEventName": "player_death",
     "PlayerIndex": {
@@ -7818,7 +7818,7 @@
 [8633] MoveNextAsync #464
 [8636] MoveNextAsync #465
 [8639] MoveNextAsync #466
-[8642] 2024-09-22T14:00:23.0000000+00:00: Event citadeltv_chase_hero@8645:
+[8642] Event citadeltv_chase_hero@8645:
   {
     "GameEventName": "citadeltv_chase_hero",
     "Target1": -1659173577,
@@ -7865,7 +7865,7 @@
 [8714] MoveNextAsync #491
 [8717] MoveNextAsync #492
 [8720] MoveNextAsync #493
-[8723] 2024-09-22T14:00:23.0000000+00:00: Event player_used_ability@8726:
+[8723] Event player_used_ability@8726:
   {
     "GameEventName": "player_used_ability",
     "EntindexPlayer": 1334,
