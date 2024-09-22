@@ -1,3 +1,8 @@
+### 0.22.2 (2024-09-22)
+
+- Fix entities being re-created multiple times ([#91](https://github.com/saul/demofile-net/issues/91))
+- Added check to ensure demos are for the correct game (e.g. CsDemoParser reads 'csgo' demos, DeadlockDemoParser reads 'citadel' demos)
+
 ### 0.22.1 (2024-09-22) - Significant API change
 
 - BREAKING CHANGE: Stream reading logic has been split out of `DemoParser` into `DemoFileReader`. \
