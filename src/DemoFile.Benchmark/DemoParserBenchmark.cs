@@ -40,23 +40,14 @@ public class DemoParserBenchmark
     [Benchmark]
     public async Task ParseDemo()
     {
-#if BASELINE
-        var demo = new DemoParser();
-        await demo.ReadAllAsync(_fileStream, default);
-#else
         var demo = new CsDemoParser();
         var reader = DemoFileReader.Create(demo, _fileStream);
         await reader.ReadAllAsync(default);
-#endif
     }
 
     [Benchmark]
     public async Task ParseDemoParallel()
     {
-#if BASELINE
-        await DemoParser.ReadAllParallelAsync(_demoBytes, _ => { }, default);
-#else
         await DemoFileReader<CsDemoParser>.ReadAllParallelAsync(_demoBytes, _ => { }, default);
-#endif
     }
 }
