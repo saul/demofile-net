@@ -79,6 +79,21 @@ public partial class DemoFileReader<TGameParser>
             }
         }
 
+        if (reader.FullPackets.Count == 0)
+        {
+            var backgroundParser = new TGameParser();
+            var backgroundReader = new DemoFileReader<TGameParser>(backgroundParser, new MemoryStream(demoFileBytes));
+
+            await backgroundReader.StartReadingAsync(cancellationToken).ConfigureAwait(false);
+            var result = setupSection(backgroundParser);
+
+            while (await backgroundReader.MoveNextAsync(cancellationToken).ConfigureAwait(false))
+            {
+            }
+
+            return new[] {result};
+        }
+
         var maxParallelism = Environment.ProcessorCount;
         var numSections = reader.FullPackets.Count;
         var numSectionsPerParser = Math.Max(1, (numSections + maxParallelism - 1) / maxParallelism);
