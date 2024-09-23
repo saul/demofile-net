@@ -16,7 +16,7 @@
     <ProjectReference Include="..\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Baseline' ">
-    <PackageReference Include="DemoFile" Version="*" />
+    <PackageReference Include="DemoFile.Game.Cs" Version="*" />
   </ItemGroup>
 
   <ItemGroup>

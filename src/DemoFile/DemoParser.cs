@@ -100,6 +100,8 @@ public abstract partial class DemoParser<TGameParser>
         {
             var msgType = (int) buffer.ReadUBitVar();
             var size = (int) buffer.ReadUVarInt32();
+            if (msgType == (int)NET_Messages.NetNop)
+                continue;
 
             var rentedBuffer = _bytePool.Rent(size);
             var msgBuf = rentedBuffer.AsSpan(..size);

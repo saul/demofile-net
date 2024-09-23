@@ -59,6 +59,41 @@ public class DemoParserIntegrationTest
         await Parse(mode, testCase.Value, ParseSection);
     }
 
+    [TestCase]
+    public async Task CreateDeleteEvents()
+    {
+        var demo = new CsDemoParser();
+        var snapshot = new DemoSnapshot();
+        var cts = new CancellationTokenSource();
+
+        demo.EntityEvents.CEntityInstance.Create += e =>
+        {
+            snapshot.Add(demo.CurrentDemoTick, $"Create: {e.ServerClass.Name} - {e.EntityHandle}");
+        };
+        demo.EntityEvents.CEntityInstance.Delete += e =>
+        {
+            snapshot.Add(demo.CurrentDemoTick, $"Delete: {e.ServerClass.Name} -{e.EntityHandle}");
+        };
+
+        var roundEnds = 0;
+        demo.Source1GameEvents.RoundEnd += e =>
+        {
+            if (roundEnds++ == 4)
+                cts.Cancel();
+        };
+
+        var reader = DemoFileReader.Create(demo, new MemoryStream(Pov14000));
+        try
+        {
+            await reader.ReadAllAsync(cts.Token);
+        }
+        catch (OperationCanceledException) when (cts.IsCancellationRequested)
+        {
+        }
+
+        Snapshot.Assert(snapshot.ToString());
+    }
+
     [Test]
     public async Task ReadAll_AlternateBaseline()
     {
