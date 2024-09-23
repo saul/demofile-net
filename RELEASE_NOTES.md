@@ -1,4 +1,8 @@
-### 0.22.2 (2024-09-22)
+### 0.22.3 (2024-09-23)
+
+- Fixed parallel parsing of POV demos ([#92](https://github.com/saul/demofile-net/issues/92))
+
+### 0.22.2 (2024-09-23)
 
 - Fix entities being re-created multiple times ([#91](https://github.com/saul/demofile-net/issues/91))
 - Added check to ensure demos are for the correct game (e.g. CsDemoParser reads 'csgo' demos, DeadlockDemoParser reads 'citadel' demos)

@@ -33,30 +33,85 @@ public class DemoParserIntegrationTest
         Assert.That(demo.CurrentDemoTick.Value, Is.EqualTo(217866));
     }
 
-    private static readonly KeyValuePair<string, byte[]>[] CompatibilityCases =
+    public record CompatibilityTestCase(
+        string Name,
+        byte[] DemoFileBytes,
+        DemoTick ExpectedLastTick)
     {
-        new("v13978", GotvProtocol13978),
-        new("v13980", GotvProtocol13980),
-        new("v13987", GotvProtocol13987),
-        new("v13990_armsrace", GotvProtocol13990ArmsRace),
-        new("v13990_dm", GotvProtocol13990Deathmatch),
-        new("v14005", GotvProtocol14005),
-        new("v14011", GotvProtocol14011),
-        new("pov_14000", Pov14000),
+        public override string ToString() => Name;
+    }
+
+    private static readonly CompatibilityTestCase[] CompatibilityCases =
+    {
+        new("v13978", GotvProtocol13978, new DemoTick(164)),
+        new("v13980", GotvProtocol13980, new DemoTick(134)),
+        new("v13987", GotvProtocol13987, new DemoTick(1106)),
+        new("v13990_armsrace", GotvProtocol13990ArmsRace, new DemoTick(219)),
+        new("v13990_dm", GotvProtocol13990Deathmatch, new DemoTick(303)),
+        new("v14005", GotvProtocol14005, new DemoTick(293)),
+        new("v14011", GotvProtocol14011, new DemoTick(391)),
+        new("pov_14000", Pov14000, new DemoTick(127743)),
     };
 
     [Test]
     public async Task Compatibility(
         [Values] ParseMode mode,
-        [ValueSource(nameof(CompatibilityCases))] KeyValuePair<string, byte[]> testCase)
+        [ValueSource(nameof(CompatibilityCases))] CompatibilityTestCase testCase)
     {
-        DemoSnapshot ParseSection(CsDemoParser demo)
+        Func<DemoTick> ParseSection(CsDemoParser demo)
         {
-            // no-op - we're just parsing the demo to the end
-            return new DemoSnapshot();
+            var lastTick = DemoTick.PreRecord;
+            demo.OnCommandFinish += OnCommandFinish;
+
+            return () => lastTick;
+
+            void OnCommandFinish()
+            {
+                demo.OnCommandFinish += OnCommandFinish;
+                lastTick = demo.CurrentDemoTick;
+            }
         }
 
-        await Parse(mode, testCase.Value, ParseSection);
+        DemoTick lastTick;
+        if (mode == ParseMode.ReadAll)
+        {
+            var demo = new CsDemoParser();
+            var stream = new MemoryStream(testCase.DemoFileBytes);
+
+            var getLastTick = ParseSection(demo);
+
+            var reader = DemoFileReader.Create(demo, stream);
+            await reader.ReadAllAsync(default);
+
+            lastTick = getLastTick();
+        }
+        else if (mode == ParseMode.ByTick)
+        {
+            var demo = new CsDemoParser();
+            var stream = new MemoryStream(testCase.DemoFileBytes);
+
+            var getLastTick = ParseSection(demo);
+
+            var reader = DemoFileReader.Create(demo, stream);
+            await reader.StartReadingAsync(default);
+            while (await reader.MoveNextAsync(default))
+            {
+            }
+
+            lastTick = getLastTick();
+        }
+        else if (mode == ParseMode.ReadAllParallel)
+        {
+            var results = await DemoFileReader<CsDemoParser>.ReadAllParallelAsync(testCase.DemoFileBytes, ParseSection, default);
+
+            lastTick = results.Select(x => x()).Max();
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException(nameof(mode), mode, "Unknown parse mode");
+        }
+
+        Assert.That(lastTick, Is.EqualTo(testCase.ExpectedLastTick));
     }
 
     [TestCase]
