@@ -61,6 +61,9 @@ internal class Program
 
 See also the [examples/](https://github.com/saul/demofile-net/tree/main/examples) folder.
 
+For maximum performance, a given demo file can be parsed in sections in parallel.
+This utilises all available CPU cores. For example usage, take a look at [DemoFile.Example.MultiThreaded](./examples/DemoFile.Example.MultiThreaded/Program.cs).  
+
 ## Benchmarks
 
 On an M1 MacBook Pro, DemoFile.Net can read a full competitive game (just under 1 hour of game time) in 1.3 seconds.
