@@ -4,7 +4,6 @@ namespace DemoFile.Game.Deadlock;
 
 public struct EntityEvents
 {
-    public EntityEvents<CAbility_Mirage_DjinnsReach, DeadlockDemoParser> CAbility_Mirage_DjinnsReach;
     public EntityEvents<CAbility_Mirage_SandPhantom, DeadlockDemoParser> CAbility_Mirage_SandPhantom;
     public EntityEvents<CAbility_Mirage_Tornado, DeadlockDemoParser> CAbility_Mirage_Tornado;
     public EntityEvents<CAbility_Rutger_CheatDeath, DeadlockDemoParser> CAbility_Rutger_CheatDeath;
@@ -126,8 +125,8 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_MedicHeal, DeadlockDemoParser> CCitadel_Ability_MedicHeal;
     public EntityEvents<CCitadel_Ability_Melee_Base, DeadlockDemoParser> CCitadel_Ability_Melee_Base;
     public EntityEvents<CCitadel_Ability_MeleeParry, DeadlockDemoParser> CCitadel_Ability_MeleeParry;
-    public EntityEvents<CCitadel_Ability_Mirage_DjinnBomb, DeadlockDemoParser> CCitadel_Ability_Mirage_DjinnBomb;
     public EntityEvents<CCitadel_Ability_Mirage_FireBeetles, DeadlockDemoParser> CCitadel_Ability_Mirage_FireBeetles;
+    public EntityEvents<CCitadel_Ability_Mirage_Teleport, DeadlockDemoParser> CCitadel_Ability_Mirage_Teleport;
     public EntityEvents<CCitadel_Ability_MobileResupply, DeadlockDemoParser> CCitadel_Ability_MobileResupply;
     public EntityEvents<CCitadel_Ability_Nano_Pounce, DeadlockDemoParser> CCitadel_Ability_Nano_Pounce;
     public EntityEvents<CCitadel_Ability_Nano_Shadow, DeadlockDemoParser> CCitadel_Ability_Nano_Shadow;
@@ -255,6 +254,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_ArmorUpgrade_DebuffReducer, DeadlockDemoParser> CCitadel_ArmorUpgrade_DebuffReducer;
     public EntityEvents<CCitadel_ArmorUpgrade_DoubleJump, DeadlockDemoParser> CCitadel_ArmorUpgrade_DoubleJump;
     public EntityEvents<CCitadel_ArmorUpgrade_Frenzy, DeadlockDemoParser> CCitadel_ArmorUpgrade_Frenzy;
+    public EntityEvents<CCitadel_ArmorUpgrade_HealOnLevel, DeadlockDemoParser> CCitadel_ArmorUpgrade_HealOnLevel;
     public EntityEvents<CCitadel_ArmorUpgrade_HighImpactArmor, DeadlockDemoParser> CCitadel_ArmorUpgrade_HighImpactArmor;
     public EntityEvents<CCitadel_ArmorUpgrade_MetalSkin, DeadlockDemoParser> CCitadel_ArmorUpgrade_MetalSkin;
     public EntityEvents<CCitadel_ArmorUpgrade_PersonalRejuvenator, DeadlockDemoParser> CCitadel_ArmorUpgrade_PersonalRejuvenator;
@@ -262,6 +262,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_ArmorUpgrade_RegenerativeArmor, DeadlockDemoParser> CCitadel_ArmorUpgrade_RegenerativeArmor;
     public EntityEvents<CCitadel_ArmorUpgrade_ReturnFire, DeadlockDemoParser> CCitadel_ArmorUpgrade_ReturnFire;
     public EntityEvents<CCitadel_ArmorUpgrade_SlowImmunity, DeadlockDemoParser> CCitadel_ArmorUpgrade_SlowImmunity;
+    public EntityEvents<CCitadel_ArmorUpgrade_SpellShield, DeadlockDemoParser> CCitadel_ArmorUpgrade_SpellShield;
     public EntityEvents<CCitadel_ArmorUpgrade_Stimpak, DeadlockDemoParser> CCitadel_ArmorUpgrade_Stimpak;
     public EntityEvents<CCitadel_ArmorUpgrade_VexBarrier, DeadlockDemoParser> CCitadel_ArmorUpgrade_VexBarrier;
     public EntityEvents<CCitadel_Bounce_Pad, DeadlockDemoParser> CCitadel_Bounce_Pad;
@@ -313,7 +314,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Item_TechDamagePulse, DeadlockDemoParser> CCitadel_Item_TechDamagePulse;
     public EntityEvents<CCitadel_Item_TrackingProjectileApplyModifier, DeadlockDemoParser> CCitadel_Item_TrackingProjectileApplyModifier;
     public EntityEvents<CCitadel_Item_WarpStone, DeadlockDemoParser> CCitadel_Item_WarpStone;
-    public EntityEvents<CCitadel_Item_ZiplineMastery, DeadlockDemoParser> CCitadel_Item_ZiplineMastery;
     public EntityEvents<CCitadel_MobileResupply, DeadlockDemoParser> CCitadel_MobileResupply;
     public EntityEvents<CCitadel_Nano_Predatory_Statue, DeadlockDemoParser> CCitadel_Nano_Predatory_Statue;
     public EntityEvents<CCitadel_PestilenceDroneDispenser, DeadlockDemoParser> CCitadel_PestilenceDroneDispenser;
@@ -324,7 +324,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Projectile_Cyclone, DeadlockDemoParser> CCitadel_Projectile_Cyclone;
     public EntityEvents<CCitadel_Projectile_DustStorm, DeadlockDemoParser> CCitadel_Projectile_DustStorm;
     public EntityEvents<CCitadel_Projectile_Guided_Arrow, DeadlockDemoParser> CCitadel_Projectile_Guided_Arrow;
-    public EntityEvents<CCitadel_Projectile_Mirage_DjinnBomb, DeadlockDemoParser> CCitadel_Projectile_Mirage_DjinnBomb;
     public EntityEvents<CCitadel_Projectile_Riptide, DeadlockDemoParser> CCitadel_Projectile_Riptide;
     public EntityEvents<CCitadel_Projectile_RocketLauncher_Rocket, DeadlockDemoParser> CCitadel_Projectile_RocketLauncher_Rocket;
     public EntityEvents<CCitadel_Projectile_SettingSun, DeadlockDemoParser> CCitadel_Projectile_SettingSun;
@@ -336,6 +335,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Shield, DeadlockDemoParser> CCitadel_Shield;
     public EntityEvents<CCitadel_Slork_Raging_Current, DeadlockDemoParser> CCitadel_Slork_Raging_Current;
     public EntityEvents<CCitadel_TechUpgrade_Infuser, DeadlockDemoParser> CCitadel_TechUpgrade_Infuser;
+    public EntityEvents<CCitadel_TechUpgrade_SuperAcolyteGloves, DeadlockDemoParser> CCitadel_TechUpgrade_SuperAcolyteGloves;
     public EntityEvents<CCitadel_Upgrade_AerialAssault, DeadlockDemoParser> CCitadel_Upgrade_AerialAssault;
     public EntityEvents<CCitadel_Upgrade_AmmoScavenger, DeadlockDemoParser> CCitadel_Upgrade_AmmoScavenger;
     public EntityEvents<CCitadel_Upgrade_MagicCarpet, DeadlockDemoParser> CCitadel_Upgrade_MagicCarpet;
@@ -377,6 +377,7 @@ public struct EntityEvents
     public EntityEvents<CCitadelItemPickup, DeadlockDemoParser> CCitadelItemPickup;
     public EntityEvents<CCitadelItemPickupIdol, DeadlockDemoParser> CCitadelItemPickupIdol;
     public EntityEvents<CCitadelItemPickupRejuv, DeadlockDemoParser> CCitadelItemPickupRejuv;
+    public EntityEvents<CCitadelItemPickupRejuvHeroTest, DeadlockDemoParser> CCitadelItemPickupRejuvHeroTest;
     public EntityEvents<CCitadelMinimapBoundary, DeadlockDemoParser> CCitadelMinimapBoundary;
     public EntityEvents<CCitadelModelEntity, DeadlockDemoParser> CCitadelModelEntity;
     public EntityEvents<CCitadelNanoPredatoryStatueTrigger, DeadlockDemoParser> CCitadelNanoPredatoryStatueTrigger;
@@ -464,7 +465,6 @@ public struct EntityEvents
     public EntityEvents<CLightSpotEntity, DeadlockDemoParser> CLightSpotEntity;
     public EntityEvents<CMiniMapMarker, DeadlockDemoParser> CMiniMapMarker;
     public EntityEvents<CModelPointEntity, DeadlockDemoParser> CModelPointEntity;
-    public EntityEvents<CMoverPathNode, DeadlockDemoParser> CMoverPathNode;
     public EntityEvents<CNPC_BaseDefenseSentry, DeadlockDemoParser> CNPC_BaseDefenseSentry;
     public EntityEvents<CNPC_Boss_Tier2, DeadlockDemoParser> CNPC_Boss_Tier2;
     public EntityEvents<CNPC_Boss_Tier3, DeadlockDemoParser> CNPC_Boss_Tier3;
@@ -489,7 +489,6 @@ public struct EntityEvents
     public EntityEvents<CNPC_YakuzaGangster, DeadlockDemoParser> CNPC_YakuzaGangster;
     public EntityEvents<COmniLight, DeadlockDemoParser> COmniLight;
     public EntityEvents<CParticleSystem, DeadlockDemoParser> CParticleSystem;
-    public EntityEvents<CPathMover, DeadlockDemoParser> CPathMover;
     public EntityEvents<CPathParticleRope, DeadlockDemoParser> CPathParticleRope;
     public EntityEvents<CPathSimple, DeadlockDemoParser> CPathSimple;
     public EntityEvents<CPhysBox, DeadlockDemoParser> CPhysBox;
