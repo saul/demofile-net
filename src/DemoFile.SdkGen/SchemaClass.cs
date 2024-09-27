@@ -29,7 +29,7 @@ public partial record SchemaClass(
         }
     }
 
-    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|ar|bv|e|s|t)(?<firstChar>[A-Z])")]
+    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|ar|bv|e|s|t|rg)(?<firstChar>[A-Z])")]
     private static partial Regex HungarianNotationRegex();
 
     private static string RemoveMemberPrefix(string fieldName)

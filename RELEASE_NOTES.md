@@ -1,3 +1,7 @@
+### 0.23.1 (2024-09-27)
+
+- Update to Deadlock schema v48
+
 ### 0.22.3 (2024-09-23)
 
 - Fixed parallel parsing of POV demos ([#92](https://github.com/saul/demofile-net/issues/92))
