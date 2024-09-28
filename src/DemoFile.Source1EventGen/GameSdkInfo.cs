@@ -16,14 +16,21 @@ public class GameSdkInfo
                 "round_end"
             };
         }
+        else if (gameName == "Dota")
+        {
+            HasPlayerId = true;
+        }
 
         (PlayerControllerClass, PlayerPawnClass) = gameName switch
         {
             "Cs" => ("CCSPlayerController", "CCSPlayerPawn"),
             "Deadlock" => ("CCitadelPlayerController", "CCitadelPlayerPawn"),
+            "Dota" => ("CDOTAPlayerController", "CDOTAPlayerPawn"),
             _ => throw new ArgumentOutOfRangeException(nameof(gameName), gameName, null)
         };
     }
+
+    public bool HasPlayerId { get; }
 
     public string PlayerControllerClass { get; }
 

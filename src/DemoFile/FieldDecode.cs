@@ -177,6 +177,12 @@ public static class FieldDecode
             return new NetworkedString(buffer.ReadStringUtf8());
         };
 
+    public static FieldDecoder<HSequence> CreateDecoder_HSequence(FieldEncodingInfo fieldEncodingInfo) =>
+        (ref BitBuffer buffer) =>
+        {
+            return new HSequence((long) buffer.ReadUVarInt64());
+        };
+
     public static FieldDecoder<QAngle> CreateDecoder_QAngle(FieldEncodingInfo fieldEncodingInfo)
     {
         if (fieldEncodingInfo.VarEncoder == "qangle_pitch_yaw")
@@ -262,6 +268,9 @@ public static class FieldDecode
 
     public static FieldDecoder<uint> CreateDecoder_UInt32(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => buffer.ReadUVarInt32();
+
+    public static FieldDecoder<long> CreateDecoder_Int64(FieldEncodingInfo fieldEncodingInfo) =>
+        (ref BitBuffer buffer) => buffer.ReadVarInt64();
 
     public static FieldDecoder<short> CreateDecoder_Int16(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => (short)buffer.ReadVarInt32();

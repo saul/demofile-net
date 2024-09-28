@@ -7,6 +7,7 @@ used on Windows, Mac or Linux. This parser currently supports:
 |------------------|-----------------------------------------------------------------------------------|----------------------------|
 | Counter-Strike 2 | ✅ [DemoFile.Game.Cs](https://www.nuget.org/packages/DemoFile.Game.Cs)             | `new CsDemoParser()`       |
 | Deadlock         | ✅ [DemoFile.Game.Deadlock](https://www.nuget.org/packages/DemoFile.Game.Deadlock) | `new DeadlockDemoParser()` |
+| Dota 2           | ✅ [DemoFile.Game.Dota](https://www.nuget.org/packages/DemoFile.Game.Dota)         | `new DotaDemoParser()`     |
 
 > [!IMPORTANT]
 > `DemoFile` is the base, core library and does not provide support for parsing any specific game.

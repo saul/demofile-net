@@ -568,7 +568,13 @@ internal static class Program
                     // This field is a variable array for a declared class
                     // (i.e. we'll need to delegate deserialisation of the child elements)
 
-                    builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{inner.GetCsTypeName(gameSdkInfo)}>(field.FieldSerializerKey!.Value);");
+                    var elementCsTypeName = inner.GetCsTypeName(gameSdkInfo);
+                    var elementClass = classMap.GetValueOrDefault(inner.Name);
+
+                    if (elementClass?.BoxedPrimitive.HasValue != true)
+                    {
+                        builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{inner.GetCsTypeName(gameSdkInfo)}>(field.FieldSerializerKey!.Value);");
+                    }
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
                     builder.AppendLine($"                if (path.Length == 1)");
@@ -578,11 +584,16 @@ internal static class Program
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"                else");
                     builder.AppendLine($"                {{");
-                    builder.AppendLine($"                    Debug.Assert(path.Length > 2);");
-                    builder.AppendLine($"                    var index = path[1];");
-                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
-                    builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[index] ??= new {inner.GetCsTypeName(gameSdkInfo)}();");
-                    builder.AppendLine($"                    innerDecoder(element, path[2..], ref buffer);");
+                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(path[1] + 1);");
+                    if (elementClass?.BoxedPrimitive.HasValue == true)
+                    {
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}[path[1]] = DemoFile.Game.{gameSdkInfo.GameName}.{elementCsTypeName}.Decode(ref buffer);");
+                    }
+                    else
+                    {
+                        builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[path[1]] ??= new {inner.GetCsTypeName(gameSdkInfo)}();");
+                        builder.AppendLine($"                    innerDecoder(element, path[2..], ref buffer);");
+                    }
                     builder.AppendLine($"                }}");
                     builder.AppendLine($"            }};");
                 }
@@ -625,13 +636,24 @@ internal static class Program
                     var elementCsTypeName = elementType.GetCsTypeName(gameSdkInfo);
                     var elementClass = classMap.GetValueOrDefault(elementType.Name);
 
+                    builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
+
                     if (elementClass?.BoxedPrimitive.HasValue == true)
                     {
-                        builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");
                         builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
                         builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = {elementCsTypeName}.Decode(ref buffer);");
+                        builder.AppendLine($"            }};");
+                    }
+                    else if (elementClass != null)
+                    {
+                        builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{elementCsTypeName}>(field.FieldSerializerKey!.Value);");
+                        builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                        builder.AppendLine($"            {{");
+                        builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
+                        builder.AppendLine($"                var element = @this.{fieldCsPropertyName}[path[1]] ??= new {elementCsTypeName}();");
+                        builder.AppendLine($"                innerDecoder(element, path[2..], ref buffer);");
                         builder.AppendLine($"            }};");
                     }
                     else
@@ -640,7 +662,6 @@ internal static class Program
                             ? $"CreateDecoder_enum<{elementCsTypeName}>"
                             : $"CreateDecoder_{elementCsTypeName}";
 
-                        builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
                         builder.AppendLine($"            var decoder = FieldDecode.{decoderMethod}(field.FieldEncodingInfo);");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");

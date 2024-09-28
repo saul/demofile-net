@@ -128,8 +128,10 @@ internal static class Program
 
             foreach (var key in descriptor.Keys)
             {
+                var csPropertyName = EventKeyToCsPropertyName((GameEventKeyType)key.Type, key.Name);
+                var parser = CSharpEventKeyParser(gameSdkInfo, key);
                 builder.AppendLine($"                        if (key.Name == \"{key.Name}\")");
-                builder.AppendLine($"                            return (@this, x) => @this.{EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name)} = {CSharpEventKeyParser(gameSdkInfo, (GameEventKeyType) key.Type)};");
+                builder.AppendLine($"                            return (@this, x) => @this.{csPropertyName} = {parser};");
             }
 
             builder.AppendLine($"                        return (@this, x) => {{ }};");
@@ -170,7 +172,7 @@ internal static class Program
                 builder.AppendLine($"");
 
                 var csPropertyName = EventKeyToCsPropertyName((GameEventKeyType) key.Type, key.Name);
-                builder.Append($"    public {CSharpEventTypeName(gameSdkInfo, (GameEventKeyType) key.Type)} {csPropertyName} {{ get; set; }}");
+                builder.Append($"    public {CSharpEventTypeName(gameSdkInfo, key)} {csPropertyName} {{ get; set; }}");
 
                 if ((GameEventKeyType)key.Type == GameEventKeyType.String)
                     builder.AppendLine(" = \"\";");
@@ -184,6 +186,18 @@ internal static class Program
                 else if ((GameEventKeyType) key.Type == GameEventKeyType.StrictEHandle && key.Name.EndsWith("_pawn"))
                 {
                     builder.AppendLine($"    public {gameSdkInfo.PlayerPawnClass}? {csPropertyName[..^6]} => _demo.GetEntityByHandle({csPropertyName}) as {gameSdkInfo.PlayerPawnClass};");
+                }
+                else if (key.TryGetPlayerId(gameSdkInfo, out var playerIdName))
+                {
+                    // player_id and PlayerID in a single event
+                    if (key.Name == "player_id" && descriptor.Name == "dota_player_gained_level")
+                        continue;
+
+                    builder.AppendLine($"    public {gameSdkInfo.PlayerControllerClass}? {EventKeyToCsPropertyName((GameEventKeyType) key.Type, playerIdName)}Controller => _demo.GetPlayerById({csPropertyName});");
+                }
+                else if (key.TryGetEntityIndex(out var entIndexName))
+                {
+                    builder.AppendLine($"    public CEntityInstance<{gameSdkInfo.DemoParserClass}>? {EventKeyToCsPropertyName((GameEventKeyType) key.Type, entIndexName)} => _demo.GetEntityByIndex<CEntityInstance<{gameSdkInfo.DemoParserClass}>>({csPropertyName});");
                 }
             }
 
@@ -201,9 +215,15 @@ internal static class Program
         builder.AppendLine($"}}");
     }
 
-    private static string CSharpEventTypeName(GameSdkInfo gameSdkInfo, GameEventKeyType keyType)
+    private static string CSharpEventTypeName(GameSdkInfo gameSdkInfo, CMsgSource1LegacyGameEventList.Types.key_t key)
     {
-        return keyType switch
+        if (key.TryGetPlayerId(gameSdkInfo, out _))
+            return "PlayerID";
+
+        if (key.TryGetEntityIndex(out _))
+            return "CEntityIndex";
+
+        return (GameEventKeyType)key.Type switch
         {
             GameEventKeyType.String => $"string",
             GameEventKeyType.Float => $"float",
@@ -214,13 +234,19 @@ internal static class Program
             GameEventKeyType.UInt64 => $"ulong",
             GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance<{gameSdkInfo.DemoParserClass}>, {gameSdkInfo.DemoParserClass}>",
             GameEventKeyType.PlayerController => $"CEntityIndex",
-            _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
+            _ => throw new ArgumentOutOfRangeException(nameof(key.Type), key.Type, null)
         };
     }
 
-    private static string CSharpEventKeyParser(GameSdkInfo gameSdkInfo, GameEventKeyType keyType)
+    private static string CSharpEventKeyParser(GameSdkInfo gameSdkInfo, CMsgSource1LegacyGameEventList.Types.key_t key)
     {
-        return keyType switch
+        var (prefix, suffix) = key.TryGetPlayerId(gameSdkInfo, out _)
+            ? ("new PlayerID(", ")")
+            : key.TryGetEntityIndex(out _)
+            ? ("new CEntityIndex((uint) ", ")")
+            : ("", "");
+
+        var parser = (GameEventKeyType)key.Type switch
         {
             GameEventKeyType.String => $"x.ValString",
             GameEventKeyType.Float => $"x.ValFloat",
@@ -231,7 +257,9 @@ internal static class Program
             GameEventKeyType.UInt64 => $"x.ValUint64",
             GameEventKeyType.StrictEHandle => $"CHandle<CEntityInstance<{gameSdkInfo.DemoParserClass}>, {gameSdkInfo.DemoParserClass}>.FromEventStrictEHandle((uint) x.ValLong)",
             GameEventKeyType.PlayerController => $"x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1)",
-            _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
+            _ => throw new ArgumentOutOfRangeException(nameof(key.Type), key.Type, null)
         };
+
+        return prefix + parser + suffix;
     }
 }

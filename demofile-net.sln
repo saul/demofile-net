@@ -50,6 +50,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Basic.Coun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.MultiThreaded", "examples\DemoFile.Example.MultiThreaded\DemoFile.Example.MultiThreaded.csproj", "{014CF79F-F046-407D-8A20-DC5634633188}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Game.Dota", "src\DemoFile.Game.Dota\DemoFile.Game.Dota.csproj", "{275A4B92-9391-40B2-A57F-9F4A100A9DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Dota", "examples\DemoFile.Example.Dota\DemoFile.Example.Dota.csproj", "{6BD47662-BA5D-4D03-84B2-FFCF8215C9E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +128,14 @@ Global
 		{014CF79F-F046-407D-8A20-DC5634633188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{014CF79F-F046-407D-8A20-DC5634633188}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{014CF79F-F046-407D-8A20-DC5634633188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275A4B92-9391-40B2-A57F-9F4A100A9DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275A4B92-9391-40B2-A57F-9F4A100A9DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275A4B92-9391-40B2-A57F-9F4A100A9DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275A4B92-9391-40B2-A57F-9F4A100A9DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD47662-BA5D-4D03-84B2-FFCF8215C9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD47662-BA5D-4D03-84B2-FFCF8215C9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD47662-BA5D-4D03-84B2-FFCF8215C9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD47662-BA5D-4D03-84B2-FFCF8215C9E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
@@ -135,5 +147,6 @@ Global
 		{AE2FD960-2970-42F8-904D-F3C6B9E10623} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 		{6CDE3A80-C8B5-4007-83F4-0FDFB9FF4B87} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 		{014CF79F-F046-407D-8A20-DC5634633188} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
+		{6BD47662-BA5D-4D03-84B2-FFCF8215C9E6} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 	EndGlobalSection
 EndGlobal

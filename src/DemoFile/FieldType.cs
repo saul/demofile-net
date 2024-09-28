@@ -27,6 +27,12 @@ public partial record FieldType(string Name, FieldType? GenericParameter, bool I
         return fieldType;
     }
 
+    private static readonly Dictionary<string, int> WellKnownConstants = new()
+    {
+        {"MAX_ITEM_STOCKS", 8},
+        {"MAX_ABILITY_DRAFT_ABILITIES", 48},
+    };
+
     private static FieldType ParseCore(string typeName)
     {
         var match = TypeNameRegex().Match(typeName);
@@ -42,7 +48,7 @@ public partial record FieldType(string Name, FieldType? GenericParameter, bool I
         var isPointer = match.Groups["ptr"].Success;
 
         var count = match.Groups["count"] is { Success: true, Value: var countStr }
-            ? int.Parse(countStr)
+            ? WellKnownConstants.TryGetValue(countStr, out var wellKnownCount) ? wellKnownCount : int.Parse(countStr)
             : 0;
 
         return new FieldType(Name: name, GenericParameter: genericParam, IsPointer: isPointer, ArrayLength: count);

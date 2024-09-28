@@ -1,3 +1,7 @@
+### 0.24.1 (2024-09-28)
+
+- Added preliminary support for Dota 2 in the new [`DemoFile.Game.Dota`](https://www.nuget.org/packages/DemoFile.Game.Dota) package - use `new DotaDemoParser()`
+
 ### 0.23.1 (2024-09-27)
 
 - Update to Deadlock schema v48

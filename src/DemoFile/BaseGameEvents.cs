@@ -57,17 +57,17 @@ public struct BaseGameEvents
             case (int)EBaseGameEvents.GeSosStopSoundEvent:
                 SosStopSoundEvent?.Invoke(CMsgSosStopSoundEvent.Parser.ParseFrom(buf));
                 return true;
-            /*
             case (int)EBaseGameEvents.GeSosSetSoundEventParams:
                 SosSetSoundEventParams?.Invoke(CMsgSosSetSoundEventParams.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseGameEvents.GeSosSetLibraryStackFields:
                 SosSetLibraryStackFields?.Invoke(CMsgSosSetLibraryStackFields.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseGameEvents.GeSosStopSoundEventHash:
                 SosStopSoundEventHash?.Invoke(CMsgSosStopSoundEventHash.Parser.ParseFrom(buf));
                 return true;
-            */
         }
 
         return false;

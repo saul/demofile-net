@@ -55,6 +55,8 @@ public partial record SchemaClass(
             case ("CSun", "m_flRotation"): return "SunRotation";
             case ("CTriggerPhysics", "m_gravityScale"): return "TriggerGravityScale";
             case ("CBeam", "m_fSpeed"): return "BeamSpeed";
+            case ("CEnvDeferredLight", "m_nFlags"): return "LightFlags";
+            case ("CTeamTrackedStatsEntity", "m_nTeam"): return "StatsTeam";
         }
 
         string CleanFieldName(string fieldName) =>
