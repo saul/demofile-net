@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>DemoFile</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <!-- Missing XML comment for publicly visible type or member -->
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);CS1591</WarningsNotAsErrors>
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Description>DemoFile.Game.Dota is a blazing fast Dota 2 demo/replay parser library.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DemoFile\DemoFile.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.1" />
+    <PackageReference Include="protobuf-net" Version="3.2.16" />
+    <PackageReference Include="Grpc.Tools" Version="2.40.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protobufs/dota_commonmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_shared_enums.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_usermessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_match_metadata.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/base_gcmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_gcmessages_common.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_gcmessages_common_lobby.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_gcmessages_common_overworld.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/dota_gcmessages_common_match_management.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/gcsdk_gcmessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/steammessages.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/steammessages_steamlearn.steamworkssdk.proto" ProtoRoot="Protobufs" GrpcServices="None" />
+    <Protobuf Include="Protobufs/steammessages_unified_base.steamworkssdk.proto" ProtoRoot="Protobufs" />
+  </ItemGroup>
+
+</Project>

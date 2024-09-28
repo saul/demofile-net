@@ -122,12 +122,14 @@ public struct BaseUserMessageEvents
             case (int)EBaseUserMessages.UmScreenTilt:
                 UserMessageScreenTilt?.Invoke(CUserMessageScreenTilt.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseUserMessages.UmVoiceMask:
                 UserMessageVoiceMask?.Invoke(CUserMessageVoiceMask.Parser.ParseFrom(buf));
                 return true;
             case (int)EBaseUserMessages.UmSendAudio:
                 UserMessageSendAudio?.Invoke(CUserMessageSendAudio.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseUserMessages.UmItemPickup:
                 UserMessageItemPickup?.Invoke(CUserMessageItemPickup.Parser.ParseFrom(buf));
                 return true;
@@ -149,9 +151,11 @@ public struct BaseUserMessageEvents
             case (int)EBaseUserMessages.UmAudioParameter:
                 UserMessageAudioParameter?.Invoke(CUserMessageAudioParameter.Parser.ParseFrom(buf));
                 return true;
+            */
             case (int)EBaseUserMessages.UmParticleManager:
                 UserMessageParticleManager?.Invoke(CUserMsg_ParticleManager.Parser.ParseFrom(buf));
                 return true;
+            /*
             case (int)EBaseUserMessages.UmHudError:
                 UserMessageHudError?.Invoke(CUserMsg_HudError.Parser.ParseFrom(buf));
                 return true;
