@@ -185,7 +185,6 @@ public partial class DemoFileReader<TGameParser>
     {
         if (_demo.IsIncompleteFile && _stream.Position >= _demo.IncompleteFileLastStreamPosition)
         {
-            Console.WriteLine($"\n\nIsIncompleteFile hit\n\n");
             return (EDemoCommands.DemStop, false, 0);
         }
 
@@ -244,8 +243,6 @@ public partial class DemoFileReader<TGameParser>
         // performance for MemoryStream: 15 ms for 200K ticks
         // performance for FileStream: 80 ms for 200K ticks
 
-        Stopwatch stopwatch = Stopwatch.StartNew();
-
         var lastTick = DemoTick.Zero;
         var oldStreamPosition = _stream.Position;
         var lastStreamPosition = oldStreamPosition;
@@ -282,10 +279,5 @@ public partial class DemoFileReader<TGameParser>
         _demo.DemoEvents.DemoFileInfo?.Invoke(new CDemoFileInfo() { PlaybackTicks = lastTick.Value });
 
         _stream.Position = oldStreamPosition;
-
-
-
-
-        Console.WriteLine($"elapsed {stopwatch.Elapsed.TotalMilliseconds} ms, for {lastTick.Value / 1000} K ticks");
     }
 }
