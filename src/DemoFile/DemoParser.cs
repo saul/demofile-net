@@ -24,6 +24,11 @@ public abstract partial class DemoParser<TGameParser>
     /// </summary>
     public Action? OnCommandFinish;
 
+    /// <summary>
+    /// Event fired when the current demo command has finished.
+    /// </summary>
+    public Action? OnCommandFinishPersistent;
+
     protected DemoParser()
     {
         if (this is not TGameParser)
@@ -62,7 +67,7 @@ public abstract partial class DemoParser<TGameParser>
     public ref BaseUserMessageEvents BaseUserMessageEvents => ref _baseUserMessageEvents;
     public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
 
-    public CDemoFileHeader FileHeader { get; private set; } = new();
+    public CDemoFileHeader? FileHeader { get; private set; }
 
     public GameTick CurrentGameTick { get; private set; }
     public GameTime CurrentGameTime => CurrentGameTick.ToGameTime();
@@ -78,7 +83,7 @@ public abstract partial class DemoParser<TGameParser>
 
     public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
 
-    public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
+    public CSVCMsg_ServerInfo? ServerInfo { get; private set; }
 
     /// <summary>
     /// <c>true</c> if the demo was recorded on the game server, or a TV relay with full state.
@@ -156,6 +161,8 @@ public abstract partial class DemoParser<TGameParser>
                 _demo.OnCommandFinish = null;
                 onCommandFinish();
             }
+
+            _demo.OnCommandFinishPersistent?.Invoke();
 
             _demo.IsReading = false;
         }

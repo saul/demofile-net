@@ -13,16 +13,18 @@ public partial class DemoFileReader<TGameParser>
     /// <param name="demoFileBytes">The contents of the demo file.</param>
     /// <param name="setupSection">Function to attach callbacks for each section.</param>
     /// <param name="cancellationToken">Cancellation token to interrupt parsing.</param>
+    /// <param name="maxThreadCount">Maximum number of threads to use.</param>
     public static Task ReadAllParallelAsync(
         byte[] demoFileBytes,
         Action<TGameParser> setupSection,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ushort maxThreadCount = 0)
     {
         return ReadAllParallelAsync(demoFileBytes, demo =>
         {
             setupSection(demo);
             return 0;
-        }, cancellationToken);
+        }, cancellationToken, maxThreadCount);
     }
 
     /// <summary>
@@ -36,12 +38,14 @@ public partial class DemoFileReader<TGameParser>
     /// Function to attach callbacks for each section, and to build a result.
     /// </param>
     /// <param name="cancellationToken">Cancellation token to interrupt parsing.</param>
+    /// <param name="maxThreadCount">Maximum number of threads to use.</param>
     /// <typeparam name="TResult">Caller defined per-section result.</typeparam>
     /// <returns>Concatenated list of all return values of <paramref name="setupSection"/>.</returns>
     public static async Task<IReadOnlyList<TResult>> ReadAllParallelAsync<TResult>(
         byte[] demoFileBytes,
         Func<TGameParser, TResult> setupSection,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ushort maxThreadCount = 0)
     {
         var demo = new TGameParser();
         var stream = new MemoryStream(demoFileBytes);
@@ -91,10 +95,10 @@ public partial class DemoFileReader<TGameParser>
             {
             }
 
-            return new[] {result};
+            return new[] {initialResult, result};
         }
 
-        var maxParallelism = Environment.ProcessorCount;
+        var maxParallelism = maxThreadCount == 0 ? Environment.ProcessorCount : Math.Min(maxThreadCount, Environment.ProcessorCount);
         var numSections = reader.FullPackets.Count;
         var numSectionsPerParser = Math.Max(1, (numSections + maxParallelism - 1) / maxParallelism);
         var numParsers = (numSections + numSectionsPerParser - 1) / numSectionsPerParser;

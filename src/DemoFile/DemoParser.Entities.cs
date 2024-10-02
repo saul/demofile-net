@@ -85,6 +85,16 @@ public partial class DemoParser<TGameParser>
             : null;
     }
 
+    /// <summary>
+    /// Fastest way to check if entity handle exists.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool EntityHandleExists(CEntityIndex entityIndex, uint serialNumber)
+    {
+        var e = _entities[entityIndex.Value];
+        return e != null && e.SerialNumber == serialNumber;
+    }
+
     public T? GetEntityByIndex<T>(CEntityIndex index) where T : CEntityInstance<TGameParser>
     {
         return index.IsValid ? _entities[(int)index.Value] as T : null;
