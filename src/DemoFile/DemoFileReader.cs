@@ -103,6 +103,7 @@ public partial class DemoFileReader<TGameParser>
         // from this point (i.e. 16 bytes into the file).
 
         var isComplete = sizeBytes > 0;
+        bool hasDemoFileInfo = false;
         if (_stream.CanSeek && isComplete)
         {
             var oldPosition = _stream.Position;
@@ -111,12 +112,18 @@ public partial class DemoFileReader<TGameParser>
             try
             {
                 await ReadFileInfo(cancellationToken).ConfigureAwait(false);
+                hasDemoFileInfo = true;
             }
             catch (Exception)
             {
                 // Swallow any exceptions during ReadFileInfo - it's best effort
             }
             _stream.Position = oldPosition;
+        }
+
+        if (!hasDemoFileInfo)
+        {
+            HandleMissingDemoFileInfo();
         }
 
         // Keep reading commands until we've passed the PreRecord tick
@@ -176,6 +183,12 @@ public partial class DemoFileReader<TGameParser>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private (EDemoCommands Command, bool IsCompressed, int Size) ReadCommandHeader()
     {
+        if (_demo.IsIncompleteFile && _stream.Position >= _demo.IncompleteFileLastStreamPosition)
+        {
+            Console.WriteLine($"\n\nIsIncompleteFile hit\n\n");
+            return (EDemoCommands.DemStop, false, 0);
+        }
+
         _commandStartPosition = _stream.Position;
         var command = _stream.ReadUVarInt32();
         var tick = (int) _stream.ReadUVarInt32();
@@ -222,5 +235,57 @@ public partial class DemoFileReader<TGameParser>
         var canContinue = _demo.DemoEvents.ReadDemoCommand(msgType, buf.Span, isCompressed);
         _bytePool.Return(rented);
         return canContinue;
+    }
+
+    private void HandleMissingDemoFileInfo()
+    {
+        // Manually discover `PlaybackTicks` by reading all commands till end of file, until a failure happens.
+
+        // performance for MemoryStream: 15 ms for 200K ticks
+        // performance for FileStream: 80 ms for 200K ticks
+
+        Stopwatch stopwatch = Stopwatch.StartNew();
+
+        var lastTick = DemoTick.Zero;
+        var oldStreamPosition = _stream.Position;
+        var lastStreamPosition = oldStreamPosition;
+        
+        try
+        {
+            while (true)
+            {
+                var streamPositionBeforeCommand = _stream.Position;
+
+                var cmd = ReadCommandHeader();
+
+                lastTick = _demo.CurrentDemoTick;
+                lastStreamPosition = streamPositionBeforeCommand;
+
+                if (cmd.Command == EDemoCommands.DemStop)
+                    break;
+
+                _stream.Position += cmd.Size;
+            }
+        }
+        catch
+        {
+        }
+
+        _demo.IsIncompleteFile = true;
+        _demo.IncompleteFileLastStreamPosition = lastStreamPosition;
+
+        // invoke event
+
+        // Always treat DemoFileInfo as being at 'pre-record'
+        _demo.CurrentDemoTick = DemoTick.PreRecord;
+
+        _demo.DemoEvents.DemoFileInfo?.Invoke(new CDemoFileInfo() { PlaybackTicks = lastTick.Value });
+
+        _stream.Position = oldStreamPosition;
+
+
+
+
+        Console.WriteLine($"elapsed {stopwatch.Elapsed.TotalMilliseconds} ms, for {lastTick.Value / 1000} K ticks");
     }
 }

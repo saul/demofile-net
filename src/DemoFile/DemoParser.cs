@@ -76,6 +76,12 @@ public abstract partial class DemoParser<TGameParser>
     /// </summary>
     public DemoTick TickCount { get; private set; }
 
+    /// <summary>
+    /// Incomplete demo files have several commands missing at end of file, due to server abruptly shutting down.
+    /// </summary>
+    public bool IsIncompleteFile { get; internal set; }
+    public long IncompleteFileLastStreamPosition { get; internal set; }
+
     public TimeSpan Elapsed => TimeSpan.FromSeconds(Math.Max(0, CurrentDemoTick.Value) / 64.0f);
 
     public CSVCMsg_ServerInfo ServerInfo { get; private set; } = new();
