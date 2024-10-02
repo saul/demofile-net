@@ -30,6 +30,12 @@ public partial class DemoFileReader<TGameParser>
     private long _commandStartPosition;
 
     /// <summary>
+    /// Incomplete demo files have several commands missing at end of file, due to server abruptly shutting down.
+    /// </summary>
+    public bool IsIncompleteFile { get; internal set; }
+    public long IncompleteFileLastStreamPosition { get; internal set; }
+
+    /// <summary>
     /// Event fired every time a demo command is parsed during <see cref="ReadAllAsync(System.Threading.CancellationToken)"/>.
     /// </summary>
     /// <remarks>
@@ -183,7 +189,7 @@ public partial class DemoFileReader<TGameParser>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private (EDemoCommands Command, bool IsCompressed, int Size) ReadCommandHeader()
     {
-        if (_demo.IsIncompleteFile && _stream.Position >= _demo.IncompleteFileLastStreamPosition)
+        if (IsIncompleteFile && _stream.Position >= IncompleteFileLastStreamPosition)
         {
             return (EDemoCommands.DemStop, false, 0);
         }
@@ -268,8 +274,8 @@ public partial class DemoFileReader<TGameParser>
         {
         }
 
-        _demo.IsIncompleteFile = true;
-        _demo.IncompleteFileLastStreamPosition = lastStreamPosition;
+        IsIncompleteFile = true;
+        IncompleteFileLastStreamPosition = lastStreamPosition;
 
         // invoke event
 
