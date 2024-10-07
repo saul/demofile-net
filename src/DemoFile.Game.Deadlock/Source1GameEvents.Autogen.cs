@@ -102,6 +102,7 @@ public partial class Source1GameEvents
     public Action<Source1GameuiActivatedEvent>? GameuiActivated;
     public Action<Source1GameuiHiddenEvent>? GameuiHidden;
     public Action<Source1GameuiFreeCursorChangedEvent>? GameuiFreeCursorChanged;
+    public Action<Source1SpectateFowViewTeamChangedEvent>? SpectateFowViewTeamChanged;
     public Action<Source1ClientDisconnectEvent>? ClientDisconnect;
     public Action<Source1PlayerRespawnedEvent>? PlayerRespawned;
     public Action<Source1CitadelHintChangedEvent>? CitadelHintChanged;
@@ -115,11 +116,7 @@ public partial class Source1GameEvents
     public Action<Source1MatchClockEvent>? MatchClock;
     public Action<Source1ItemPickupEvent>? ItemPickup;
     public Action<Source1GrenadeBounceEvent>? GrenadeBounce;
-    public Action<Source1TeamMsgEvent>? TeamMsg;
-    public Action<Source1RejuvStatusMsgEvent>? RejuvStatusMsg;
     public Action<Source1GameStateChangedEvent>? GameStateChanged;
-    public Action<Source1BossKilledEvent>? BossKilled;
-    public Action<Source1BossDamagedEvent>? BossDamaged;
     public Action<Source1HeroAssignedLaneChangedEvent>? HeroAssignedLaneChanged;
     public Action<Source1HeroDraftOrderChangedEvent>? HeroDraftOrderChanged;
     public Action<Source1PlayerDamageIncreasedEvent>? PlayerDamageIncreased;
@@ -171,11 +168,10 @@ public partial class Source1GameEvents
     public Action<Source1PlayerLevelChangedEvent>? PlayerLevelChanged;
     public Action<Source1CurrencyMissedEvent>? CurrencyMissed;
     public Action<Source1CurrencyDeniedEvent>? CurrencyDenied;
+    public Action<Source1CurrencyClaimedDisplayEvent>? CurrencyClaimedDisplay;
     public Action<Source1LocalPlayerShotHitEvent>? LocalPlayerShotHit;
     public Action<Source1ZiplinePlayerAttachedEvent>? ZiplinePlayerAttached;
     public Action<Source1ZiplinePlayerDetachedEvent>? ZiplinePlayerDetached;
-    public Action<Source1PlayerKillStreakEvent>? PlayerKillStreak;
-    public Action<Source1PlayerKillStreakNewEvent>? PlayerKillStreakNew;
     public Action<Source1ClientPlayerHeroChangedEvent>? ClientPlayerHeroChanged;
     public Action<Source1CrateSpawnEvent>? CrateSpawn;
     public Action<Source1CrateSpawnNotificationEvent>? CrateSpawnNotification;
@@ -186,9 +182,10 @@ public partial class Source1GameEvents
     public Action<Source1PlayerClosedItemShopEvent>? PlayerClosedItemShop;
     public Action<Source1SpectateHomeTeamChangedEvent>? SpectateHomeTeamChanged;
     public Action<Source1PlayerStatsChangedEvent>? PlayerStatsChanged;
-    public Action<Source1MidBossSpawnedEvent>? MidBossSpawned;
     public Action<Source1TitanTransformingStartEvent>? TitanTransformingStart;
     public Action<Source1TitanTransformingCompleteEvent>? TitanTransformingComplete;
+    public Action<Source1KeybindChangedEvent>? KeybindChanged;
+    public Action<Source1QuickCastModeChangedEvent>? QuickCastModeChanged;
 
     internal void ParseSource1GameEventList(CMsgSource1LegacyGameEventList eventList)
     {
@@ -2612,6 +2609,27 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
+            if (descriptor.Name == "spectate_fow_view_team_changed")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1SpectateFowViewTeamChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && SpectateFowViewTeamChanged == null)
+                        return;
+                    var @this = new Source1SpectateFowViewTeamChangedEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    SpectateFowViewTeamChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
             if (descriptor.Name == "client_disconnect")
             {
                 var keys = descriptor.Keys.Select(Action<Source1ClientDisconnectEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -2949,64 +2967,6 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
-            if (descriptor.Name == "team_msg")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1TeamMsgEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "event_type")
-                            return (@this, x) => @this.EventType = x.ValShort;
-                        if (key.Name == "team")
-                            return (@this, x) => @this.Team = x.ValByte;
-                        if (key.Name == "lane_color")
-                            return (@this, x) => @this.LaneColor = x.ValShort;
-                        if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && TeamMsg == null)
-                        return;
-                    var @this = new Source1TeamMsgEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    TeamMsg?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "rejuv_status_msg")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1RejuvStatusMsgEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "killing_team")
-                            return (@this, x) => @this.KillingTeam = x.ValByte;
-                        if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
-                        if (key.Name == "user_team")
-                            return (@this, x) => @this.UserTeam = x.ValShort;
-                        if (key.Name == "event_type")
-                            return (@this, x) => @this.EventType = x.ValByte;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && RejuvStatusMsg == null)
-                        return;
-                    var @this = new Source1RejuvStatusMsgEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    RejuvStatusMsg?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
             if (descriptor.Name == "game_state_changed")
             {
                 var keys = descriptor.Keys.Select(Action<Source1GameStateChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -3027,64 +2987,6 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     GameStateChanged?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "boss_killed")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1BossKilledEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "objective_team")
-                            return (@this, x) => @this.ObjectiveTeam = x.ValShort;
-                        if (key.Name == "objective_mask_change")
-                            return (@this, x) => @this.ObjectiveMaskChange = x.ValShort;
-                        if (key.Name == "entity_killed")
-                            return (@this, x) => @this.EntityKilled = x.ValLong;
-                        if (key.Name == "entity_killer")
-                            return (@this, x) => @this.EntityKiller = x.ValLong;
-                        if (key.Name == "gametime")
-                            return (@this, x) => @this.Gametime = x.ValFloat;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && BossKilled == null)
-                        return;
-                    var @this = new Source1BossKilledEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    BossKilled?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "boss_damaged")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1BossDamagedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "objective_team")
-                            return (@this, x) => @this.ObjectiveTeam = x.ValShort;
-                        if (key.Name == "objective_id")
-                            return (@this, x) => @this.ObjectiveId = x.ValShort;
-                        if (key.Name == "entity_damaged")
-                            return (@this, x) => @this.EntityDamaged = x.ValLong;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && BossDamaged == null)
-                        return;
-                    var @this = new Source1BossDamagedEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    BossDamaged?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -4292,8 +4194,6 @@ public partial class Source1GameEvents
             {
                 var keys = descriptor.Keys.Select(Action<Source1CurrencyDeniedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
                     {
-                        if (key.Name == "entindex_player")
-                            return (@this, x) => @this.EntindexPlayer = x.ValLong;
                         if (key.Name == "type")
                             return (@this, x) => @this.Type = x.ValShort;
                         if (key.Name == "amount")
@@ -4322,6 +4222,43 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     CurrencyDenied?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "currency_claimed_display")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1CurrencyClaimedDisplayEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "entindex_player")
+                            return (@this, x) => @this.EntindexPlayer = x.ValLong;
+                        if (key.Name == "type")
+                            return (@this, x) => @this.Type = x.ValShort;
+                        if (key.Name == "millisecondTime")
+                            return (@this, x) => @this.MillisecondTime = x.ValLong;
+                        if (key.Name == "is_denier")
+                            return (@this, x) => @this.IsDenier = x.ValBool;
+                        if (key.Name == "pos_x")
+                            return (@this, x) => @this.PosX = x.ValFloat;
+                        if (key.Name == "pos_y")
+                            return (@this, x) => @this.PosY = x.ValFloat;
+                        if (key.Name == "pos_z")
+                            return (@this, x) => @this.PosZ = x.ValFloat;
+                        if (key.Name == "entindex_orb")
+                            return (@this, x) => @this.EntindexOrb = x.ValLong;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && CurrencyClaimedDisplay == null)
+                        return;
+                    var @this = new Source1CurrencyClaimedDisplayEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    CurrencyClaimedDisplay?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -4389,62 +4326,6 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     ZiplinePlayerDetached?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "player_kill_streak")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1PlayerKillStreakEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "entindex_player")
-                            return (@this, x) => @this.EntindexPlayer = x.ValLong;
-                        if (key.Name == "kills")
-                            return (@this, x) => @this.Kills = x.ValShort;
-                        if (key.Name == "firstblood")
-                            return (@this, x) => @this.Firstblood = x.ValBool;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && PlayerKillStreak == null)
-                        return;
-                    var @this = new Source1PlayerKillStreakEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    PlayerKillStreak?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
-            if (descriptor.Name == "player_kill_streak_new")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1PlayerKillStreakNewEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "entindex_player")
-                            return (@this, x) => @this.EntindexPlayer = x.ValLong;
-                        if (key.Name == "kills")
-                            return (@this, x) => @this.Kills = x.ValShort;
-                        if (key.Name == "firstblood")
-                            return (@this, x) => @this.Firstblood = x.ValBool;
-                        if (key.Name == "duration")
-                            return (@this, x) => @this.Duration = x.ValFloat;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && PlayerKillStreakNew == null)
-                        return;
-                    var @this = new Source1PlayerKillStreakNewEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    PlayerKillStreakNew?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -4684,27 +4565,6 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
-            if (descriptor.Name == "mid_boss_spawned")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1MidBossSpawnedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && MidBossSpawned == null)
-                        return;
-                    var @this = new Source1MidBossSpawnedEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    MidBossSpawned?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
             if (descriptor.Name == "titan_transforming_start")
             {
                 var keys = descriptor.Keys.Select(Action<Source1TitanTransformingStartEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -4748,6 +4608,48 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     TitanTransformingComplete?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "keybind_changed")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1KeybindChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && KeybindChanged == null)
+                        return;
+                    var @this = new Source1KeybindChangedEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    KeybindChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "quick_cast_mode_changed")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1QuickCastModeChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && QuickCastModeChanged == null)
+                        return;
+                    var @this = new Source1QuickCastModeChangedEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    QuickCastModeChanged?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -5913,6 +5815,13 @@ public partial class Source1GameuiFreeCursorChangedEvent : Source1GameEventBase
     public override string GameEventName => "gameui_free_cursor_changed";
 }
 
+public partial class Source1SpectateFowViewTeamChangedEvent : Source1GameEventBase
+{
+    internal Source1SpectateFowViewTeamChangedEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "spectate_fow_view_team_changed";
+}
+
 public partial class Source1ClientDisconnectEvent : Source1GameEventBase
 {
     internal Source1ClientDisconnectEvent(DeadlockDemoParser demo) : base(demo) {}
@@ -6073,38 +5982,6 @@ public partial class Source1GrenadeBounceEvent : Source1GameEventBase
     public CCitadelPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCitadelPlayerPawn;
 }
 
-public partial class Source1TeamMsgEvent : Source1GameEventBase
-{
-    internal Source1TeamMsgEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "team_msg";
-
-    public int EventType { get; set; }
-
-    public int Team { get; set; }
-
-    public int LaneColor { get; set; }
-
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCitadelPlayerController? Player => _demo.GetEntityByIndex<CCitadelPlayerController>(PlayerIndex);
-}
-
-public partial class Source1RejuvStatusMsgEvent : Source1GameEventBase
-{
-    internal Source1RejuvStatusMsgEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "rejuv_status_msg";
-
-    public int KillingTeam { get; set; }
-
-    public CHandle<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser> PlayerPawnHandle { get; set; }
-    public CCitadelPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCitadelPlayerPawn;
-
-    public int UserTeam { get; set; }
-
-    public int EventType { get; set; }
-}
-
 public partial class Source1GameStateChangedEvent : Source1GameEventBase
 {
     internal Source1GameStateChangedEvent(DeadlockDemoParser demo) : base(demo) {}
@@ -6112,36 +5989,6 @@ public partial class Source1GameStateChangedEvent : Source1GameEventBase
     public override string GameEventName => "game_state_changed";
 
     public int GameStateNew { get; set; }
-}
-
-public partial class Source1BossKilledEvent : Source1GameEventBase
-{
-    internal Source1BossKilledEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "boss_killed";
-
-    public int ObjectiveTeam { get; set; }
-
-    public int ObjectiveMaskChange { get; set; }
-
-    public int EntityKilled { get; set; }
-
-    public int EntityKiller { get; set; }
-
-    public float Gametime { get; set; }
-}
-
-public partial class Source1BossDamagedEvent : Source1GameEventBase
-{
-    internal Source1BossDamagedEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "boss_damaged";
-
-    public int ObjectiveTeam { get; set; }
-
-    public int ObjectiveId { get; set; }
-
-    public int EntityDamaged { get; set; }
 }
 
 public partial class Source1HeroAssignedLaneChangedEvent : Source1GameEventBase
@@ -6666,11 +6513,32 @@ public partial class Source1CurrencyDeniedEvent : Source1GameEventBase
 
     public override string GameEventName => "currency_denied";
 
+    public int Type { get; set; }
+
+    public int Amount { get; set; }
+
+    public bool IsDenier { get; set; }
+
+    public float PosX { get; set; }
+
+    public float PosY { get; set; }
+
+    public float PosZ { get; set; }
+
+    public int EntindexOrb { get; set; }
+}
+
+public partial class Source1CurrencyClaimedDisplayEvent : Source1GameEventBase
+{
+    internal Source1CurrencyClaimedDisplayEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "currency_claimed_display";
+
     public int EntindexPlayer { get; set; }
 
     public int Type { get; set; }
 
-    public int Amount { get; set; }
+    public int MillisecondTime { get; set; }
 
     public bool IsDenier { get; set; }
 
@@ -6708,34 +6576,6 @@ public partial class Source1ZiplinePlayerDetachedEvent : Source1GameEventBase
 
     public CHandle<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser> PlayerPawnHandle { get; set; }
     public CCitadelPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCitadelPlayerPawn;
-}
-
-public partial class Source1PlayerKillStreakEvent : Source1GameEventBase
-{
-    internal Source1PlayerKillStreakEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "player_kill_streak";
-
-    public int EntindexPlayer { get; set; }
-
-    public int Kills { get; set; }
-
-    public bool Firstblood { get; set; }
-}
-
-public partial class Source1PlayerKillStreakNewEvent : Source1GameEventBase
-{
-    internal Source1PlayerKillStreakNewEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "player_kill_streak_new";
-
-    public int EntindexPlayer { get; set; }
-
-    public int Kills { get; set; }
-
-    public bool Firstblood { get; set; }
-
-    public float Duration { get; set; }
 }
 
 public partial class Source1ClientPlayerHeroChangedEvent : Source1GameEventBase
@@ -6838,13 +6678,6 @@ public partial class Source1PlayerStatsChangedEvent : Source1GameEventBase
     public CCitadelPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCitadelPlayerPawn;
 }
 
-public partial class Source1MidBossSpawnedEvent : Source1GameEventBase
-{
-    internal Source1MidBossSpawnedEvent(DeadlockDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "mid_boss_spawned";
-}
-
 public partial class Source1TitanTransformingStartEvent : Source1GameEventBase
 {
     internal Source1TitanTransformingStartEvent(DeadlockDemoParser demo) : base(demo) {}
@@ -6861,6 +6694,20 @@ public partial class Source1TitanTransformingCompleteEvent : Source1GameEventBas
     public override string GameEventName => "titan_transforming_complete";
 
     public int Entindex { get; set; }
+}
+
+public partial class Source1KeybindChangedEvent : Source1GameEventBase
+{
+    internal Source1KeybindChangedEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "keybind_changed";
+}
+
+public partial class Source1QuickCastModeChangedEvent : Source1GameEventBase
+{
+    internal Source1QuickCastModeChangedEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "quick_cast_mode_changed";
 }
 
 [JsonDerivedType(typeof(Source1ServerSpawnEvent))]
@@ -6956,6 +6803,7 @@ public partial class Source1TitanTransformingCompleteEvent : Source1GameEventBas
 [JsonDerivedType(typeof(Source1GameuiActivatedEvent))]
 [JsonDerivedType(typeof(Source1GameuiHiddenEvent))]
 [JsonDerivedType(typeof(Source1GameuiFreeCursorChangedEvent))]
+[JsonDerivedType(typeof(Source1SpectateFowViewTeamChangedEvent))]
 [JsonDerivedType(typeof(Source1ClientDisconnectEvent))]
 [JsonDerivedType(typeof(Source1PlayerRespawnedEvent))]
 [JsonDerivedType(typeof(Source1CitadelHintChangedEvent))]
@@ -6969,11 +6817,7 @@ public partial class Source1TitanTransformingCompleteEvent : Source1GameEventBas
 [JsonDerivedType(typeof(Source1MatchClockEvent))]
 [JsonDerivedType(typeof(Source1ItemPickupEvent))]
 [JsonDerivedType(typeof(Source1GrenadeBounceEvent))]
-[JsonDerivedType(typeof(Source1TeamMsgEvent))]
-[JsonDerivedType(typeof(Source1RejuvStatusMsgEvent))]
 [JsonDerivedType(typeof(Source1GameStateChangedEvent))]
-[JsonDerivedType(typeof(Source1BossKilledEvent))]
-[JsonDerivedType(typeof(Source1BossDamagedEvent))]
 [JsonDerivedType(typeof(Source1HeroAssignedLaneChangedEvent))]
 [JsonDerivedType(typeof(Source1HeroDraftOrderChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerDamageIncreasedEvent))]
@@ -7025,11 +6869,10 @@ public partial class Source1TitanTransformingCompleteEvent : Source1GameEventBas
 [JsonDerivedType(typeof(Source1PlayerLevelChangedEvent))]
 [JsonDerivedType(typeof(Source1CurrencyMissedEvent))]
 [JsonDerivedType(typeof(Source1CurrencyDeniedEvent))]
+[JsonDerivedType(typeof(Source1CurrencyClaimedDisplayEvent))]
 [JsonDerivedType(typeof(Source1LocalPlayerShotHitEvent))]
 [JsonDerivedType(typeof(Source1ZiplinePlayerAttachedEvent))]
 [JsonDerivedType(typeof(Source1ZiplinePlayerDetachedEvent))]
-[JsonDerivedType(typeof(Source1PlayerKillStreakEvent))]
-[JsonDerivedType(typeof(Source1PlayerKillStreakNewEvent))]
 [JsonDerivedType(typeof(Source1ClientPlayerHeroChangedEvent))]
 [JsonDerivedType(typeof(Source1CrateSpawnEvent))]
 [JsonDerivedType(typeof(Source1CrateSpawnNotificationEvent))]
@@ -7040,9 +6883,10 @@ public partial class Source1TitanTransformingCompleteEvent : Source1GameEventBas
 [JsonDerivedType(typeof(Source1PlayerClosedItemShopEvent))]
 [JsonDerivedType(typeof(Source1SpectateHomeTeamChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerStatsChangedEvent))]
-[JsonDerivedType(typeof(Source1MidBossSpawnedEvent))]
 [JsonDerivedType(typeof(Source1TitanTransformingStartEvent))]
 [JsonDerivedType(typeof(Source1TitanTransformingCompleteEvent))]
+[JsonDerivedType(typeof(Source1KeybindChangedEvent))]
+[JsonDerivedType(typeof(Source1QuickCastModeChangedEvent))]
 public partial class Source1GameEventBase
 {
 }

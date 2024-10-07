@@ -31,6 +31,8 @@ public static class GlobalUtil
 
     public static byte[] Pov14000 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "pov.dem"));
 
+    public static byte[] GotvProtocol14034 { get; } = File.ReadAllBytes(Path.Combine(DemoBase, "14034.dem"));
+
     public static byte[] ToBitStream(string input)
     {
         var bitArray = new BitArray(input.Length);
