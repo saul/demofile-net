@@ -134,11 +134,10 @@ public struct EntityEvents
     public EntityEvents<CModelPointEntity, CsDemoParser> CModelPointEntity;
     public EntityEvents<CMolotovGrenade, CsDemoParser> CMolotovGrenade;
     public EntityEvents<CMolotovProjectile, CsDemoParser> CMolotovProjectile;
-    public EntityEvents<CMoverPathNode, CsDemoParser> CMoverPathNode;
     public EntityEvents<COmniLight, CsDemoParser> COmniLight;
     public EntityEvents<CParticleSystem, CsDemoParser> CParticleSystem;
-    public EntityEvents<CPathMover, CsDemoParser> CPathMover;
     public EntityEvents<CPathParticleRope, CsDemoParser> CPathParticleRope;
+    public EntityEvents<CPathSimple, CsDemoParser> CPathSimple;
     public EntityEvents<CPhysBox, CsDemoParser> CPhysBox;
     public EntityEvents<CPhysicsProp, CsDemoParser> CPhysicsProp;
     public EntityEvents<CPhysicsPropMultiplayer, CsDemoParser> CPhysicsPropMultiplayer;

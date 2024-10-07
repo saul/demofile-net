@@ -18,6 +18,12 @@ public class GameSdkInfo
                         // Removed in v13987
                         "CCSGameModeRules_Scripted"
                     }
+                },
+                {
+                    "PhysicsRagdollPose_t", new[]
+                    {
+                        "PhysicsRagdollPose_t"
+                    }
                 }
             };
         }

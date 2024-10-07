@@ -110,7 +110,7 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle":
+            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle" or "ShatterPanelMode":
             {
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     buffer.ReadUVarInt64();
@@ -159,6 +159,13 @@ public static class FallbackDecoder
             case "CEntityIndex":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_CEntityIndex(encodingInfo);
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    fieldDecoder(ref buffer);
+                return true;
+            }
+            case "CTransform":
+            {
+                var fieldDecoder = FieldDecode.CreateDecoder_CTransform(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     fieldDecoder(ref buffer);
                 return true;

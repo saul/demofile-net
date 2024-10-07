@@ -137,13 +137,33 @@ public partial class CEntityInstance<TGameParser>
         }
         if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
         {
-            return (CEntityInstance<TGameParser> @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            if (field.VarType.IsPointer)
             {
+                return (CEntityInstance<TGameParser> @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                {
 #if DEBUG
-                var _field = field;
+                    var _field = field;
 #endif
-                fallback(default, path, ref buffer);
-            };
+                    if (path.Length == 1)
+                    {
+                        var isSet = buffer.ReadOneBit();
+                    }
+                    else
+                    {
+                        fallback(default, path[1..], ref buffer);
+                    }
+                };
+            }
+            else
+            {
+                return (CEntityInstance<TGameParser> @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                {
+#if DEBUG
+                    var _field = field;
+#endif
+                    fallback(default, path, ref buffer);
+                };
+            }
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
     }
