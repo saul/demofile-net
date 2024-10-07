@@ -3986,13 +3986,6 @@
 [8189] MoveNextAsync #316
 [8192] MoveNextAsync #317
 [8195] MoveNextAsync #318
-[8198] Event boss_damaged@8201:
-  {
-    "GameEventName": "boss_damaged",
-    "ObjectiveTeam": 2,
-    "ObjectiveId": 2,
-    "EntityDamaged": -45120431
-  }
 [8198] MoveNextAsync #319
 [8201] MoveNextAsync #320
 [8204] MoveNextAsync #321
@@ -4005,13 +3998,6 @@
 [8225] MoveNextAsync #328
 [8228] MoveNextAsync #329
 [8231] MoveNextAsync #330
-[8234] Event boss_damaged@8237:
-  {
-    "GameEventName": "boss_damaged",
-    "ObjectiveTeam": 2,
-    "ObjectiveId": 3,
-    "EntityDamaged": -1688959920
-  }
 [8234] MoveNextAsync #331
 [8237] MoveNextAsync #332
 [8240] MoveNextAsync #333
