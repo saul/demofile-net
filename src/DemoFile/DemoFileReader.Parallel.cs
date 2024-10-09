@@ -22,7 +22,7 @@ public partial class DemoFileReader<TGameParser>
         {
             setupSection(demo);
             return 0;
-        }, cancellationToken);
+        }, 0, cancellationToken);
     }
 
     /// <summary>
@@ -38,11 +38,37 @@ public partial class DemoFileReader<TGameParser>
     /// <param name="cancellationToken">Cancellation token to interrupt parsing.</param>
     /// <typeparam name="TResult">Caller defined per-section result.</typeparam>
     /// <returns>Concatenated list of all return values of <paramref name="setupSection"/>.</returns>
-    public static async Task<IReadOnlyList<TResult>> ReadAllParallelAsync<TResult>(
+    public static Task<IReadOnlyList<TResult>> ReadAllParallelAsync<TResult>(
         byte[] demoFileBytes,
         Func<TGameParser, TResult> setupSection,
         CancellationToken cancellationToken)
     {
+        return ReadAllParallelAsync(demoFileBytes, setupSection, 0, cancellationToken);
+    }
+
+    /// <summary>
+    /// Parse the entire demo in <paramref name="demoFileBytes"/> from start to end.
+    /// The demo is divided into sections, with each section parsed in parallel.
+    /// <paramref name="setupSection"/> is called for each section, and the results
+    /// are concatenated together to create the return value.
+    /// </summary>
+    /// <param name="demoFileBytes">The contents of the demo file.</param>
+    /// <param name="setupSection">
+    /// Function to attach callbacks for each section, and to build a result.
+    /// </param>
+    /// <param name="cancellationToken">Cancellation token to interrupt parsing.</param>
+    /// <param name="maxParallelism">Maximum number of threads to use.</param>
+    /// <typeparam name="TResult">Caller defined per-section result.</typeparam>
+    /// <returns>Concatenated list of all return values of <paramref name="setupSection"/>.</returns>
+    public static async Task<IReadOnlyList<TResult>> ReadAllParallelAsync<TResult>(
+        byte[] demoFileBytes,
+        Func<TGameParser, TResult> setupSection,
+        int maxParallelism,
+        CancellationToken cancellationToken)
+    {
+        if (maxParallelism < 0)
+            throw new ArgumentOutOfRangeException(nameof(maxParallelism));
+
         var demo = new TGameParser();
         var stream = new MemoryStream(demoFileBytes);
         var reader = new DemoFileReader<TGameParser>(demo, stream);
@@ -91,10 +117,10 @@ public partial class DemoFileReader<TGameParser>
             {
             }
 
-            return new[] {result};
+            return new[] {initialResult, result};
         }
 
-        var maxParallelism = Environment.ProcessorCount;
+        maxParallelism = maxParallelism == 0 ? Environment.ProcessorCount : Math.Min(maxParallelism, Environment.ProcessorCount);
         var numSections = reader.FullPackets.Count;
         var numSectionsPerParser = Math.Max(1, (numSections + maxParallelism - 1) / maxParallelism);
         var numParsers = (numSections + numSectionsPerParser - 1) / numSectionsPerParser;
