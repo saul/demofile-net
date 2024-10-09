@@ -45,7 +45,7 @@ public partial class DemoFileReader<TGameParser>
     private int _fullPacketTickOffset;
 
     internal IReadOnlyList<FullPacketRecord> FullPackets => _fullPackets;
-    public int NumFullPackets => _fullPackets.Count;
+    public int FullPacketCount => _fullPackets.Count;
 
     private bool TryFindFullPacketBefore(DemoTick demoTick, out FullPacketRecord fullPacket)
     {
