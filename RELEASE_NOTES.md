@@ -1,3 +1,7 @@
+### 0.25.1 (2024-10-12)
+
+- Update to latest Deadlock schema
+
 ### 0.24.1 (2024-10-07)
 
 - Update to Counter-Strike 2 schema v14034
