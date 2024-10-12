@@ -66,6 +66,11 @@ public class NetworkedVector<T> : IReadOnlyList<T?>
         }
     }
 
+    public void CopyTo(Span<T?> destination)
+    {
+        _values.AsSpan().CopyTo(destination);
+    }
+
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public void EnsureSize(int length)
     {

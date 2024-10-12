@@ -1,4 +1,6 @@
-﻿namespace DemoFile.Test.Integration;
+﻿using System.Text;
+
+namespace DemoFile.Test.Integration;
 
 [TestFixture]
 public class DemoParserIntegrationTest
@@ -156,5 +158,25 @@ public class DemoParserIntegrationTest
         var demo = new CsDemoParser();
         var reader = DemoFileReader.Create(demo, new MemoryStream(MatchmakingProtocol13968));
         await reader.ReadAllAsync(default);
+    }
+
+    [Test]
+    public async Task POV_Parallel_InitialSectionProcessed()
+    {
+        var list = await DemoFileReader<CsDemoParser>.ReadAllParallelAsync(
+            Pov14000,
+            demo =>
+            {
+                var sb = new StringBuilder();
+                demo.DemoEvents.DemoFileInfo += e => sb.Append(e.PlaybackTicks + " ");
+                demo.DemoEvents.DemoFileHeader += e => sb.Append(e.NetworkProtocol + " ");
+                demo.PacketEvents.SvcServerInfo += e => sb.Append(e.MapName + " ");
+                return sb;
+            },
+            CancellationToken.None);
+        
+        Assert.That(list, Has.Count.EqualTo(2));
+        Assert.That(list[0].ToString(), Is.EqualTo("127743 "));
+        Assert.That(list[1].ToString(), Is.EqualTo("14000 de_inferno "));
     }
 }
