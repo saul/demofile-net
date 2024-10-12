@@ -139,7 +139,6 @@ public class HttpBroadcastReaderTest
                         ability.CooldownStart,
                         ability.CooldownEnd,
                         ability.RemainingCharges,
-                        ability.ToggledTime,
                         ability.ToggleState,
                         ability.Channeling
                     };
