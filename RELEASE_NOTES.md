@@ -1,6 +1,10 @@
 ### 0.25.1 (2024-10-12)
 
 - Update to latest Deadlock schema
+- Fixed bug where `ReadAllParallelAsync` could miss some data when reading a demo with no full packets (thanks [@in0finite](https://github.com/in0finite))
+- Improved incomplete demo file parsing (thanks [@in0finite](https://github.com/in0finite))
+- Added `DemoFileReader.FullPacketCount`, `IsIncompleteFile` and `IncompleteFileLastStreamPosition` properties
+- Added `maxParallelism` parameter to `ReadAllParallelAsync`
 
 ### 0.24.1 (2024-10-07)
 
