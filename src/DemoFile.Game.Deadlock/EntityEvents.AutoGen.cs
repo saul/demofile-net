@@ -156,6 +156,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_Riptide, DeadlockDemoParser> CCitadel_Ability_Riptide;
     public EntityEvents<CCitadel_Ability_RocketBarrage, DeadlockDemoParser> CCitadel_Ability_RocketBarrage;
     public EntityEvents<CCitadel_Ability_RocketLauncher, DeadlockDemoParser> CCitadel_Ability_RocketLauncher;
+    public EntityEvents<CCitadel_Ability_Rolling_FireBall, DeadlockDemoParser> CCitadel_Ability_Rolling_FireBall;
     public EntityEvents<CCitadel_Ability_Running_Decoy, DeadlockDemoParser> CCitadel_Ability_Running_Decoy;
     public EntityEvents<CCitadel_Ability_Rutger_Pulse, DeadlockDemoParser> CCitadel_Ability_Rutger_Pulse;
     public EntityEvents<CCitadel_Ability_SelfVacuum, DeadlockDemoParser> CCitadel_Ability_SelfVacuum;
@@ -163,6 +164,10 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_Shakedown_Target, DeadlockDemoParser> CCitadel_Ability_Shakedown_Target;
     public EntityEvents<CCitadel_Ability_Shield, DeadlockDemoParser> CCitadel_Ability_Shield;
     public EntityEvents<CCitadel_Ability_ShieldedSentry, DeadlockDemoParser> CCitadel_Ability_ShieldedSentry;
+    public EntityEvents<CCitadel_Ability_ShieldGuy_Ability01, DeadlockDemoParser> CCitadel_Ability_ShieldGuy_Ability01;
+    public EntityEvents<CCitadel_Ability_ShieldGuy_Ability02, DeadlockDemoParser> CCitadel_Ability_ShieldGuy_Ability02;
+    public EntityEvents<CCitadel_Ability_ShieldGuy_Ability03, DeadlockDemoParser> CCitadel_Ability_ShieldGuy_Ability03;
+    public EntityEvents<CCitadel_Ability_ShieldGuy_Ability04, DeadlockDemoParser> CCitadel_Ability_ShieldGuy_Ability04;
     public EntityEvents<CCitadel_Ability_Shiv_Defer_Damage, DeadlockDemoParser> CCitadel_Ability_Shiv_Defer_Damage;
     public EntityEvents<CCitadel_Ability_Shiv_KillingBlow, DeadlockDemoParser> CCitadel_Ability_Shiv_KillingBlow;
     public EntityEvents<CCitadel_Ability_ShivDagger, DeadlockDemoParser> CCitadel_Ability_ShivDagger;
@@ -380,7 +385,6 @@ public struct EntityEvents
     public EntityEvents<CCitadelItemPickupRejuvHeroTest, DeadlockDemoParser> CCitadelItemPickupRejuvHeroTest;
     public EntityEvents<CCitadelMinimapBoundary, DeadlockDemoParser> CCitadelMinimapBoundary;
     public EntityEvents<CCitadelModelEntity, DeadlockDemoParser> CCitadelModelEntity;
-    public EntityEvents<CCitadelNanoPredatoryStatueTrigger, DeadlockDemoParser> CCitadelNanoPredatoryStatueTrigger;
     public EntityEvents<CCitadelObserverPawn, DeadlockDemoParser> CCitadelObserverPawn;
     public EntityEvents<CCitadelPayload, DeadlockDemoParser> CCitadelPayload;
     public EntityEvents<CCitadelPlayerBotNPCBrain, DeadlockDemoParser> CCitadelPlayerBotNPCBrain;
@@ -441,7 +445,6 @@ public struct EntityEvents
     public EntityEvents<CHandleTest, DeadlockDemoParser> CHandleTest;
     public EntityEvents<CInfoLadderDismount, DeadlockDemoParser> CInfoLadderDismount;
     public EntityEvents<CInfoOffscreenPanoramaTexture, DeadlockDemoParser> CInfoOffscreenPanoramaTexture;
-    public EntityEvents<CInfoPortalLink, DeadlockDemoParser> CInfoPortalLink;
     public EntityEvents<CInfoVisibilityBox, DeadlockDemoParser> CInfoVisibilityBox;
     public EntityEvents<CInfoWorldLayer, DeadlockDemoParser> CInfoWorldLayer;
     public EntityEvents<CInWorldKeyBindPanel, DeadlockDemoParser> CInWorldKeyBindPanel;
@@ -508,6 +511,7 @@ public struct EntityEvents
     public EntityEvents<CPrecipitationBlocker, DeadlockDemoParser> CPrecipitationBlocker;
     public EntityEvents<CProjectile_Mirage_Tornado, DeadlockDemoParser> CProjectile_Mirage_Tornado;
     public EntityEvents<CProjectile_Perched_Predator, DeadlockDemoParser> CProjectile_Perched_Predator;
+    public EntityEvents<CProjectile_Rolling_FireBall, DeadlockDemoParser> CProjectile_Rolling_FireBall;
     public EntityEvents<CProjectile_Rutger_Rocket, DeadlockDemoParser> CProjectile_Rutger_Rocket;
     public EntityEvents<CProjectile_Stomp_Projectile, DeadlockDemoParser> CProjectile_Stomp_Projectile;
     public EntityEvents<CProjectile_Synth_Barrage, DeadlockDemoParser> CProjectile_Synth_Barrage;
@@ -518,7 +522,6 @@ public struct EntityEvents
     public EntityEvents<CRagdollProp, DeadlockDemoParser> CRagdollProp;
     public EntityEvents<CRagdollPropAttached, DeadlockDemoParser> CRagdollPropAttached;
     public EntityEvents<CRectLight, DeadlockDemoParser> CRectLight;
-    public EntityEvents<CRenderPortal, DeadlockDemoParser> CRenderPortal;
     public EntityEvents<CRopeKeyframe, DeadlockDemoParser> CRopeKeyframe;
     public EntityEvents<CSceneEntity, DeadlockDemoParser> CSceneEntity;
     public EntityEvents<CShatterGlassShardPhysics, DeadlockDemoParser> CShatterGlassShardPhysics;

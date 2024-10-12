@@ -140,6 +140,27 @@
         {
           "name": "ORIENTATION_FACE_PLAYER",
           "value": 5
+        },
+        {
+          "name": "ORIENTATION_FORWARD_MOVEMENT_DIRECTION",
+          "value": 6
+        }
+      ]
+    },
+    "CFuncMover::TransitionToPathNodeAction_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "TRANSITION_TO_PATH_NODE_ACTION_NONE",
+          "value": 0
+        },
+        {
+          "name": "TRANSITION_TO_PATH_NODE_ACTION_START_FORWARD",
+          "value": 1
+        },
+        {
+          "name": "TRANSITION_TO_PATH_NODE_ACTION_START_REVERSE",
+          "value": 2
         }
       ]
     }
@@ -2046,19 +2067,6 @@
           ]
         },
         {
-          "name": "m_bSelected",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
-            }
-          ]
-        },
-        {
           "name": "m_vecImbuedByAbilitiyIDs",
           "type": {
             "name": "CNetworkUtlVectorBase< CUtlStringToken >",
@@ -2109,15 +2117,6 @@
           "type": {
             "name": "bool",
             "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flToggledTime",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
           },
           "metadata": [
           ]
@@ -2739,6 +2738,23 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_ShieldGuy_Ability03": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_InvisVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_PowerSurge": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -2994,6 +3010,13 @@
       ]
     },
     "CCitadel_Modifier_PowerUp": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CGameModifier_PlayEffectOnDeath": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -3482,6 +3505,21 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_hDummyForCamera",
+          "type": {
+            "name": "CHandle< CBaseEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CCitadel_Modifier_Warden_RiotProtocol": {
@@ -5590,6 +5628,38 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_eState",
+          "type": {
+            "name": "ECatStatueState_t",
+            "category": 6
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_hStatue",
+          "type": {
+            "name": "CHandle< CBaseEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerExclusive"
+            }
+          ]
+        }
       ]
     },
     "CCitadel_Modifier_BaseBulletPreRollProc": {
@@ -5794,12 +5864,12 @@
         {
           "name": "m_hSelectedAbility",
           "type": {
-            "name": "CHandle< CBaseEntity >",
+            "name": "CHandle< CCitadelBaseAbility >",
             "category": 4,
             "atomic": 1,
             "outer": "CHandle",
             "inner": {
-              "name": "CBaseEntity",
+              "name": "CCitadelBaseAbility",
               "category": 5
             }
           },
@@ -6980,6 +7050,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Guiding_Arrow_KillCheck": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -13034,6 +13111,13 @@
       "fields": [
       ]
     },
+    "CProjectile_Rolling_FireBall": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Hero_Testing_Damage_Aura": {
       "parent": "CCitadelModifierAura",
       "metadata": [
@@ -13321,13 +13405,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_ImmobilizeTrapDOT_Thinker": {
-      "parent": "CCitadelModifier",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -15922,16 +15999,6 @@
         }
       ]
     },
-    "CCitadel_Modifier_InvisVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CModifier_WarpStone_Caster": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -16634,6 +16701,15 @@
         },
         {
           "name": "m_bHasRebirth",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bFlaggedAsCheater",
           "type": {
             "name": "bool",
             "category": 0
@@ -18209,6 +18285,21 @@
           },
           "metadata": [
           ]
+        },
+        {
+          "name": "m_hDefaultController",
+          "type": {
+            "name": "CHandle< CBasePlayerController >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBasePlayerController",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
         }
       ]
     },
@@ -19536,6 +19627,13 @@
         }
       ]
     },
+    "CCitadel_Ability_Rolling_FireBall": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Forge_MiniTurret_InnateModifier": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -19564,7 +19662,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Nano_ShadowVData": {
+    "CCitadelModifierShadowStepVData": {
       "parent": "CCitadel_Modifier_InvisVData",
       "metadata": [
         {
@@ -19846,26 +19944,6 @@
       "fields": [
       ]
     },
-    "CCitadelNanoPredatoryStatueTrigger": {
-      "parent": "CCitadelBaseTriggerAbility",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_flActiveRadius",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
-            }
-          ]
-        }
-      ]
-    },
     "CCitadel_WeaponUpgrade_GlassCannon": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -20086,6 +20164,16 @@
       ]
     },
     "CAbilityTargetdummy1VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CAbilityRollingFireBallVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
         {
@@ -22513,6 +22601,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_DummyUnit": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CNPC_MidBoss": {
       "parent": "CAI_CitadelNPC",
       "metadata": [
@@ -23262,6 +23357,16 @@
     "CCitadel_Ability_HornetMark": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_UtilityUpgrade_HealthNova_VData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -26528,6 +26633,13 @@
         }
       ]
     },
+    "CCitadel_Ability_ShieldGuy_Ability01": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_WreckingBall": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -27771,6 +27883,13 @@
     },
     "CCitadel_Modifier_AirLift_ExplodeAura": {
       "parent": "CCitadelModifierAura",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_ShieldGuy_Ability02": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -29865,99 +29984,6 @@
           "type": {
             "name": "bool",
             "category": 0
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
-    "CRenderPortal": {
-      "parent": "CBaseModelEntity",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_hLocalPortalLink",
-          "type": {
-            "name": "CHandle< CBaseEntity >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "CBaseEntity",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_hRemotePortalLink",
-          "type": {
-            "name": "CHandle< CBaseEntity >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "CBaseEntity",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_brushModelName",
-          "type": {
-            "name": "CUtlString",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flFadeStartDist",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flFadeEndDist",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flFadeStartAngle",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flFadeEndAngle",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_fadeToColor",
-          "type": {
-            "name": "Color",
-            "category": 4,
-            "atomic": 0
           },
           "metadata": [
           ]
@@ -32915,6 +32941,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Shadow_Step": {
+      "parent": "CCitadel_Modifier_Invis",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityHatTrickVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -33065,6 +33098,13 @@
     },
     "CCitadel_Item_DPS_Aura": {
       "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CGameModifier_FireConCommand": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -33471,6 +33511,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_TeleportVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityChargedTackleVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -33819,6 +33869,21 @@
           ]
         },
         {
+          "name": "m_hLastCastTarget",
+          "type": {
+            "name": "CHandle< CBaseEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_vStartPosition",
           "type": {
             "name": "Vector",
@@ -33855,14 +33920,25 @@
           },
           "metadata": [
           ]
+        },
+        {
+          "name": "m_bIsFirstCastCompleted",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_tDoubleCastWindow",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
         }
-      ]
-    },
-    "CInfoPortalLink": {
-      "parent": "CPointEntity",
-      "metadata": [
-      ],
-      "fields": [
       ]
     },
     "CCitadel_Item_AOERoot": {
@@ -34368,6 +34444,19 @@
           ]
         },
         {
+          "name": "m_unHeroBuildID",
+          "type": {
+            "name": "HeroBuildID_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
           "name": "m_hHeroPawn",
           "type": {
             "name": "CHandle< CCitadelPlayerPawn >",
@@ -34622,6 +34711,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_ShieldGuy_Ability04": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Nano_Shadow": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -34701,16 +34797,6 @@
     "CCitadel_Modifier_Warden_HighAlert": {
       "parent": "CCitadelModifier",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_ImmobilizeTrapDOT_ThinkerVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -34986,6 +35072,16 @@
     "CLightCapsuleEntity": {
       "parent": "CLightEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CGameModifier_FireConCommandVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -35839,13 +35935,6 @@
     },
     "CCitadel_Item_Charge_Mastery": {
       "parent": "CCitadel_Item",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Ult_Shadow": {
-      "parent": "CCitadel_Modifier_Invis",
       "metadata": [
       ],
       "fields": [
@@ -37427,6 +37516,13 @@
     },
     "CCitadel_Modifier_HoldingGoldenIdol": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadelInteriorTrigger": {
+      "parent": "CTriggerModifier",
       "metadata": [
       ],
       "fields": [
