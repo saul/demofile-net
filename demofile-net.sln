@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# 
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42F3F9ED-D28F-4560-95E9-054FA9424DB6}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -49,6 +50,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.Basic.CounterStrike", "examples\DemoFile.Example.Basic.CounterStrike\DemoFile.Example.Basic.CounterStrike.csproj", "{6CDE3A80-C8B5-4007-83F4-0FDFB9FF4B87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.MultiThreaded", "examples\DemoFile.Example.MultiThreaded\DemoFile.Example.MultiThreaded.csproj", "{014CF79F-F046-407D-8A20-DC5634633188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.VoiceExtraction", "examples\DemoFile.Example.VoiceExtraction\DemoFile.Example.VoiceExtraction.csproj", "{462546EB-6090-4585-A641-2FCEC22A3BD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,6 +127,10 @@ Global
 		{014CF79F-F046-407D-8A20-DC5634633188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{014CF79F-F046-407D-8A20-DC5634633188}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{014CF79F-F046-407D-8A20-DC5634633188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
@@ -135,5 +142,6 @@ Global
 		{AE2FD960-2970-42F8-904D-F3C6B9E10623} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 		{6CDE3A80-C8B5-4007-83F4-0FDFB9FF4B87} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 		{014CF79F-F046-407D-8A20-DC5634633188} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
+		{462546EB-6090-4585-A641-2FCEC22A3BD9} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
 	EndGlobalSection
 EndGlobal
