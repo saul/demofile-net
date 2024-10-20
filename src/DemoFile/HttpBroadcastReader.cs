@@ -49,7 +49,7 @@ public class HttpBroadcastReader<TGameParser>
 
     public int FetchDelayIntervalMs { get; init; } = 1000;
 
-    public int MaxNumConsecutiveFetchErrors { get; init; } = 10;
+    public int MaxNumConsecutiveFetchErrors { get; init; } = 15;
     private int _numConsecutiveFetchErrors = 0;
 
     private async Task FetchWorkerAsync(string urlPrefix, int startFragment, CancellationToken cancellationToken)
