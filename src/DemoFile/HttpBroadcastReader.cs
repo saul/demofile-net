@@ -41,6 +41,7 @@ public class HttpBroadcastReader<TGameParser>
     public DemoTick BufferTailTick => new(Volatile.Read(ref _tailTick));
 
     public int EnqueuedFragmentsCount => _channel.Reader.Count;
+    public bool CurrentlyHasDataForReading => EnqueuedFragmentsCount > 0;
 
     private bool _fetchWorkerIsFullFragment;
     private int _fetchWorkerFragment = 0;
@@ -133,12 +134,10 @@ public class HttpBroadcastReader<TGameParser>
     public async ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken = default)
     {
         var readingTick = default(DemoTick?);
-        while (await _channel.Reader.WaitToReadAsync(cancellationToken).ConfigureAwait(false))
+        while (_channel.Reader.Count > 0)
         {
-            if (!_channel.Reader.TryPeek(out var queued))
-            {
-                continue;
-            }
+            bool peeked = _channel.Reader.TryPeek(out var queued);
+            Debug.Assert(peeked);
 
             if (readingTick.HasValue && queued.Tick > readingTick.Value)
             {
@@ -166,7 +165,19 @@ public class HttpBroadcastReader<TGameParser>
             }
         }
 
-        return false;
+        var completionTask = _channel.Reader.Completion;
+
+        // if the Channel is empty and worker failed, we fail with the same exception
+        var workerException = completionTask.Exception;
+        if (workerException != null)
+            throw workerException;
+
+        return !completionTask.IsCompleted;
+    }
+
+    public ValueTask<bool> WaitForAvailableDataAsync(CancellationToken cancellationToken)
+    {
+        return _channel.Reader.WaitToReadAsync(cancellationToken);
     }
 
     public async ValueTask StartReadingAsync(CancellationToken cancellationToken)
