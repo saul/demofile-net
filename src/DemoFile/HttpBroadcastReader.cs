@@ -70,7 +70,7 @@ public class HttpBroadcastReader<TGameParser>
             {
                 // Possible causes:
                 // - connection to server lost
-                // - game server abruptly shutting down (but TV http server still running)
+                // - game server shutting down (but TV http server still running)
                 // - received corrupt fragment data from server
 
                 // Complete the Channel so that reader can be unblocked.
