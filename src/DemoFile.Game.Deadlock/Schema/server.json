@@ -144,6 +144,10 @@
         {
           "name": "ORIENTATION_FORWARD_MOVEMENT_DIRECTION",
           "value": 6
+        },
+        {
+          "name": "ORIENTATION_FORWARD_MOVEMENT_DIRECTION_AND_UP_CONTROL_POINT",
+          "value": 7
         }
       ]
     },
@@ -196,6 +200,13 @@
       ]
     },
     "CBaseModifier": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadelModifier": {
+      "parent": "CBaseModifier",
       "metadata": [
       ],
       "fields": [
@@ -288,8 +299,8 @@
         }
       ]
     },
-    "CCitadelModifier": {
-      "parent": "CBaseModifier",
+    "CBaseModifierAura": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -2196,7 +2207,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2257,7 +2268,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2270,7 +2281,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2283,7 +2294,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2306,10 +2317,27 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_Vandal_Pillar": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Viper_DebuffDaggerVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CModifier_CloakingDevice_Active_Ambush_VData": {
@@ -2542,7 +2570,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2555,7 +2583,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -2563,13 +2591,6 @@
     },
     "CBaseFilter": {
       "parent": "CLogicalEntity",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Chomp_Grapple": {
-      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -2738,8 +2759,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_ShieldGuy_Ability03": {
-      "parent": "CCitadelBaseAbility",
+    "CCitadel_Modifier_AirDamping": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -2747,6 +2768,23 @@
     },
     "CCitadel_Modifier_InvisVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_ShieldGuy_Ability03": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadelModifierShadowStepVData": {
+      "parent": "CCitadel_Modifier_InvisVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -2804,7 +2842,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2817,7 +2855,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2830,7 +2868,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2859,7 +2897,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2878,7 +2916,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2891,7 +2929,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2913,7 +2951,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2948,7 +2986,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -2962,7 +3000,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -3107,6 +3145,13 @@
     },
     "CCitadel_Modifier_BulletArmorReduction": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CScaleFunctionAbilityProperty_TechRange": {
+      "parent": "CScaleFunctionBase",
       "metadata": [
       ],
       "fields": [
@@ -3327,7 +3372,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -3420,7 +3465,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -3433,7 +3478,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -3446,7 +3491,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -3459,7 +3504,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -3472,7 +3517,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -3485,7 +3530,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -3775,6 +3820,16 @@
         }
       ]
     },
+    "CAbility_Fathom_ReefdwellerHarpoon_VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Mirage_SandPhantom_WhirlwindEvasion": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -3892,6 +3947,22 @@
       "fields": [
       ]
     },
+    "CEnvSoundscape": {
+      "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_soundEventHash",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CCitadel_Ability_Cadence_Crescendo": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -3922,13 +3993,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CEnvSoundscape": {
-      "parent": "CServerOnlyEntity",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -4343,6 +4407,9 @@
             }
           },
           "metadata": [
+            {
+              "name": "MNetworkSendProxyRecipientsFilter"
+            }
           ]
         },
         {
@@ -4352,6 +4419,9 @@
             "category": 0
           },
           "metadata": [
+            {
+              "name": "MNetworkSendProxyRecipientsFilter"
+            }
           ]
         }
       ]
@@ -4418,6 +4488,16 @@
     "CCitadel_Ability_Wrecker_Salvage": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CAbilityCrackshotVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -4563,6 +4643,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_SnakeDash": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Running_Decoy": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -4663,7 +4750,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -4676,7 +4763,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -4862,7 +4949,30 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Fathom_Breach": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bInFlight",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CCitadel_Modifier_RapidFire_AirJuggle": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Stunned": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -5616,6 +5726,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_SnakeDashVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Intimidate": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -5637,7 +5757,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -5656,7 +5776,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -6115,8 +6235,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Stunned": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Modifier_Knockdown": {
+      "parent": "CCitadel_Modifier_Stunned",
       "metadata": [
       ],
       "fields": [
@@ -6213,7 +6333,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -6459,7 +6579,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -6472,7 +6592,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -6485,7 +6605,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -6498,7 +6618,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -6511,7 +6631,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -6563,6 +6683,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Magician_ShadowClone": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -6931,13 +7058,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Ambush": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_Burning": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -6951,6 +7071,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_ViperVenom": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -7037,6 +7164,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_ViperVenomVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Stomp": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -7061,7 +7198,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Knockdown": {
+    "CCitadel_Modifier_Pillar": {
       "parent": "CCitadel_Modifier_Stunned",
       "metadata": [
       ],
@@ -7136,8 +7273,8 @@
         }
       ]
     },
-    "CBaseModifierAura": {
-      "parent": "CCitadelModifier",
+    "CCitadelModifierAura": {
+      "parent": "CBaseModifierAura",
       "metadata": [
       ],
       "fields": [
@@ -7466,6 +7603,25 @@
           },
           "metadata": [
           ]
+        },
+        {
+          "name": "m_fWindSpeed",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vWindDirection",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
         }
       ]
     },
@@ -7599,6 +7755,13 @@
         }
       ]
     },
+    "CEnvSoundscapeProxy": {
+      "parent": "CEnvSoundscape",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Item_ColdFront": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -7620,15 +7783,15 @@
       "fields": [
       ]
     },
-    "CEnvSoundscapeProxy": {
-      "parent": "CEnvSoundscape",
+    "CPhysConstraint": {
+      "parent": "CLogicalEntity",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CPhysConstraint": {
-      "parent": "CLogicalEntity",
+    "CCitadel_Modifier_Fathom_ScaldingSpray_Target": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -7681,7 +7844,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -7707,7 +7870,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -7720,7 +7883,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8102,8 +8265,8 @@
         }
       ]
     },
-    "CCitadelModifierAura": {
-      "parent": "CBaseModifierAura",
+    "CCitadel_Modifier_AirLift_ExplodeAura": {
+      "parent": "CCitadelModifierAura",
       "metadata": [
       ],
       "fields": [
@@ -8297,7 +8460,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8310,7 +8473,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8323,7 +8486,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8336,7 +8499,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8362,7 +8525,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8375,7 +8538,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -8527,6 +8690,13 @@
       ]
     },
     "CCitadel_Modifier_IdolReturnTimer": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_ShadowClone": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -8686,16 +8856,6 @@
     },
     "CCitadel_BreakablePropPickupVData": {
       "parent": "CEntitySubclassVDataBase",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Slork_Raging_Current_CountdownVData": {
-      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -10173,6 +10333,15 @@
           ]
         },
         {
+          "name": "m_bNoNPCs",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_closedPosition",
           "type": {
             "name": "Vector",
@@ -10253,6 +10422,16 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Modifier_AnimalCurseVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Modifier_Lash_Flog_Debuff": {
@@ -10375,6 +10554,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Petrify": {
+      "parent": "CCitadel_Modifier_Stunned",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -10641,6 +10827,16 @@
     },
     "CNPC_SimpleAnimatingAIVData": {
       "parent": "CEntitySubclassVDataBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_ViperHookBladeVData": {
+      "parent": "CitadelAbilityVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -11059,8 +11255,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_RagingCurrentVData": {
-      "parent": "CCitadel_Modifier_StunnedVData",
+    "CAbilityThumper2VData": {
+      "parent": "CitadelAbilityVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -11069,8 +11265,8 @@
       "fields": [
       ]
     },
-    "CAbilityThumper2VData": {
-      "parent": "CitadelAbilityVData",
+    "CCitadel_Modifier_HauntWatcherVData": {
+      "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -11199,6 +11395,16 @@
       "fields": [
       ]
     },
+    "CModifierRiotCastDelayVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_TangoTether": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -11214,7 +11420,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11228,7 +11434,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11242,7 +11448,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11256,7 +11462,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11269,7 +11475,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11315,7 +11521,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11334,7 +11540,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             },
             {
               "name": "MNetworkEncoder",
@@ -11356,7 +11562,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -11445,6 +11651,16 @@
         }
       ]
     },
+    "CCitadel_Ability_MageWalkVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_UltCombo_Target": {
       "parent": "CCitadel_Modifier_Stunned",
       "metadata": [
@@ -11531,7 +11747,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -11544,7 +11760,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -11966,6 +12182,16 @@
     },
     "CModifierRiotProtocolEnemyDebuffVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CAbilityVandalOverflowVData": {
+      "parent": "CitadelAbilityVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -12548,7 +12774,7 @@
             },
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -12561,7 +12787,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -12574,7 +12800,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -12587,7 +12813,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -13507,6 +13733,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_PetrifyVData": {
+      "parent": "CCitadel_Modifier_StunnedVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_IceDomeVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -13968,6 +14204,16 @@
       "fields": [
       ]
     },
+    "CAbilityVandalSurgeVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_StaticCharge": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -14081,6 +14327,16 @@
     "CCitadel_ArmorUpgrade_RegenerativeArmor": {
       "parent": "CCitadel_Item",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Fathom_Breach_VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -14221,6 +14477,13 @@
       "fields": [
       ]
     },
+    "CEnvSoundscapeAlias_snd_soundscape": {
+      "parent": "CEnvSoundscape",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_FlameDashGroundAuraVData": {
       "parent": "CCitadelModifierAuraVData",
       "metadata": [
@@ -14247,13 +14510,6 @@
     },
     "CGameModifier_SetMoveType": {
       "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CEnvSoundscapeAlias_snd_soundscape": {
-      "parent": "CEnvSoundscape",
       "metadata": [
       ],
       "fields": [
@@ -14811,6 +15067,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_VandalSurge": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_DisarmProcWatcher": {
       "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
@@ -14886,6 +15149,13 @@
             }
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_Magician_AnimalCurse": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CAbilityDistruptiveChargeVData": {
@@ -14991,13 +15261,6 @@
       ]
     },
     "CCitadel_Modifier_TechCleave::DamageTaken_t": {
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Slork_Gun_Poison": {
-      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -15229,6 +15492,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Projectile_Pillar": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CTriggerIcePathVolume": {
       "parent": "CBaseTrigger",
       "metadata": [
@@ -15267,6 +15537,13 @@
       ]
     },
     "CCitadel_Ability_Kobun": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_MageWalk": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
@@ -15364,23 +15641,6 @@
           "metadata": [
           ]
         }
-      ]
-    },
-    "CAbilityRiptideVData": {
-      "parent": "CitadelAbilityVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Ability_Slork_Invis": {
-      "parent": "CCitadelBaseAbility",
-      "metadata": [
-      ],
-      "fields": [
       ]
     },
     "CModifierChargedTackleActiveVData": {
@@ -15622,6 +15882,23 @@
     },
     "CScriptedSequence": {
       "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CModifierVandalSurgeVData": {
+      "parent": "CCitadel_Modifier_StunnedVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Viper_Ability04": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -15999,6 +16276,16 @@
         }
       ]
     },
+    "CPointOrient": {
+      "parent": "CBaseEntity",
+      "metadata": [
+        {
+          "name": "MEntityAllowsPortraitWorldSpawn"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_WarpStone_Caster": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -16107,6 +16394,16 @@
     "CNPCSpawnDestination": {
       "parent": "CPointEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Base_BuildupVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -16246,6 +16543,13 @@
     },
     "CCitadel_Modifier_CheaterCurse": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CDynamicNavConnectionsVolume": {
+      "parent": "CTriggerMultiple",
       "metadata": [
       ],
       "fields": [
@@ -16985,6 +17289,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_AnimalCurse": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Synth_Barrage_Caster": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -17097,6 +17408,13 @@
     },
     "CFuncTimescale": {
       "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_HauntWatcher": {
+      "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
       ],
       "fields": [
@@ -17467,6 +17785,16 @@
       "fields": [
       ]
     },
+    "CModifierVandalOverflowVData": {
+      "parent": "CCitadel_Modifier_StunnedVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_FleetfootBoots_BonusClip": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -17491,6 +17819,16 @@
     "CCitadelHeroLoader": {
       "parent": "CBaseEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Fathom_ScaldingSpray_Aura_VData": {
+      "parent": "CCitadelModifierAura_ConeVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -17947,6 +18285,13 @@
         }
       ]
     },
+    "CEnvSoundscapeTriggerable": {
+      "parent": "CEnvSoundscape",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CLightOrthoEntity": {
       "parent": "CLightEntity",
       "metadata": [
@@ -17964,15 +18309,8 @@
       "fields": [
       ]
     },
-    "CEnvSoundscapeTriggerable": {
-      "parent": "CEnvSoundscape",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_LastBreath": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Ability_Crackshot": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -18303,13 +18641,6 @@
         }
       ]
     },
-    "CCitadel_Projectile_Riptide": {
-      "parent": "CCitadelProjectile",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_ArmorUpgrade_Stimpak": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -18336,6 +18667,68 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CAbility_Fathom_ReefdwellerHarpoon": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bIsVisibleOnMinimap",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bLatched",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vHarpoonTarget",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flLatchedYaw",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flCloseEnoughStartTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flStuckStartTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CAbility_Synth_Grasp": {
@@ -18673,6 +19066,13 @@
         }
       ]
     },
+    "CCitadel_Modifier_ReefdwellerHarpoon_Latched": {
+      "parent": "CCitadel_Modifier_Invis",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityThumper4VData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -18834,10 +19234,17 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
+      ]
+    },
+    "CCitadel_Modifier_VandalOverflow": {
+      "parent": "CCitadel_Modifier_Stunned",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Modifier_SleepDagger_Drowsy": {
@@ -18882,7 +19289,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -18896,7 +19303,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -19453,7 +19860,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -19538,6 +19945,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_TurretClone": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Mirage_FireBeetles_Debuff": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -19567,6 +19981,13 @@
     },
     "CCitadel_Ability_SleepBomb": {
       "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CMapSharedEnvironment": {
+      "parent": "CLogicalEntity",
       "metadata": [
       ],
       "fields": [
@@ -19662,7 +20083,7 @@
       "fields": [
       ]
     },
-    "CCitadelModifierShadowStepVData": {
+    "CCitadel_Modifier_ReefdwellerHarpoon_LatchedVData": {
       "parent": "CCitadel_Modifier_InvisVData",
       "metadata": [
         {
@@ -19796,6 +20217,13 @@
     },
     "CCitadel_Ability_CrowdControl": {
       "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_VandalSurge": {
+      "parent": "CCitadel_Modifier_Stunned",
       "metadata": [
       ],
       "fields": [
@@ -20232,7 +20660,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -20535,16 +20963,6 @@
       "fields": [
       ]
     },
-    "CModifierChompHobbledVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CAbility_Synth_Affliction_VData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -20569,7 +20987,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -20582,7 +21000,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -20595,7 +21013,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -20608,7 +21026,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -20621,10 +21039,20 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_Viper_Ability04VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Modifier_VoidSphereBuffVData": {
@@ -20666,6 +21094,13 @@
     },
     "CRenderComponent": {
       "parent": "CEntityComponent",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
+      "parent": "CEnvSoundscapeProxy",
       "metadata": [
       ],
       "fields": [
@@ -20817,13 +21252,6 @@
           "metadata": [
           ]
         }
-      ]
-    },
-    "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
-      "parent": "CEnvSoundscapeProxy",
-      "metadata": [
-      ],
-      "fields": [
       ]
     },
     "CLightComponent": {
@@ -21844,7 +22272,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -21999,7 +22427,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -22012,7 +22440,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -22036,6 +22464,13 @@
       ]
     },
     "CScaleFunctionAbilityProperty_BaseWeaponDamage": {
+      "parent": "CScaleFunctionBase",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CScaleFunctionAbilityProperty_TechDuration": {
       "parent": "CScaleFunctionBase",
       "metadata": [
       ],
@@ -22151,7 +22586,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -22360,23 +22795,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_PrimaryWeapon_Slork": {
-      "parent": "CCitadel_Ability_PrimaryWeapon",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_angAimAngles",
-          "type": {
-            "name": "QAngle",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
     "CModifier_Mirage_FireBeetles_Debuff_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -22434,6 +22852,13 @@
     },
     "CCitadel_Projectile_Tier2Boss_RocketBarrage": {
       "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
+      "parent": "CEnvSoundscapeTriggerable",
       "metadata": [
       ],
       "fields": [
@@ -22553,13 +22978,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
-      "parent": "CEnvSoundscapeTriggerable",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -23532,7 +23950,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -23546,7 +23964,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -23559,7 +23977,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -23572,7 +23990,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -24165,6 +24583,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Haunt_Damage": {
+      "parent": "CCitadel_Modifier_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_PsychicDagger_MakeDaggers_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -24316,13 +24741,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Raging_Current_Damp": {
-      "parent": "CCitadel_Modifier_Stunned",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CAbilityGangActivityVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -24339,6 +24757,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Vandal_Ability03": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -24778,23 +25203,6 @@
       "fields": [
       ]
     },
-    "CModifierSlorkAmbushVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Slork_Invis": {
-      "parent": "CCitadel_Modifier_Invis",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_Cadence_Crescendo_PostAOE": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -24984,7 +25392,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -25269,7 +25677,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -25406,9 +25814,12 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Scald": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Modifier_ShadowCloneVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -25471,7 +25882,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25485,7 +25896,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             },
             {
               "name": "MNetworkEncoder",
@@ -25503,7 +25914,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             },
             {
               "name": "MNetworkEncoder",
@@ -25520,7 +25931,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25533,7 +25944,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25564,7 +25975,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25578,7 +25989,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25606,7 +26017,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25625,7 +26036,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             },
             {
               "name": "MNetworkEncoder",
@@ -25646,7 +26057,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25659,7 +26070,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25672,7 +26083,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25686,7 +26097,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -25699,7 +26110,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -25748,14 +26159,14 @@
         }
       ]
     },
-    "CCitadel_Modifier_Slork_Raging_Current": {
+    "CCitadel_Modifier_Cadence_Crescendo_InAOE": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Cadence_Crescendo_InAOE": {
+    "CCitadel_Modifier_Viper_SlideBuff": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -25831,6 +26242,13 @@
     },
     "CNPC_SuperTrooper": {
       "parent": "CNPC_Trooper",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadelTrackedProjectile": {
+      "parent": "CCitadelProjectile",
       "metadata": [
       ],
       "fields": [
@@ -26408,6 +26826,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Projectile_Petrify": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Item_Bubble": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -26422,7 +26847,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -26640,6 +27065,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Nano_Pounce_InstantVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_WreckingBall": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -26765,6 +27200,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Vandal_PillarVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CFuncMoveLinear": {
       "parent": "CBaseToggle",
       "metadata": [
@@ -26814,8 +27259,8 @@
       "fields": [
       ]
     },
-    "CCitadelTrackedProjectile": {
-      "parent": "CCitadelProjectile",
+    "CCitadel_Projectile_HookBlade": {
+      "parent": "CCitadelTrackedProjectile",
       "metadata": [
       ],
       "fields": [
@@ -26910,6 +27355,16 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Modifier_Fathom_ScaldingSpray_Target_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CAbility_Mirage_Teleport_VData": {
@@ -27297,7 +27752,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27310,7 +27765,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27323,7 +27778,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27345,7 +27800,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27358,7 +27813,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27371,7 +27826,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27384,7 +27839,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -27397,7 +27852,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -27749,7 +28204,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -27881,8 +28336,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_AirLift_ExplodeAura": {
-      "parent": "CCitadelModifierAura",
+    "CCitadel_Modifier_Mirage_FireScarabs_Watcher": {
+      "parent": "CCitadel_Modifier_StatStealBase",
       "metadata": [
       ],
       "fields": [
@@ -28519,16 +28974,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Invis_VData": {
-      "parent": "CCitadel_Modifier_InvisVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Ability_GenericPerson_1": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -28542,6 +28987,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Viper_Venom": {
+      "parent": "CCitadel_Modifier_Base_Buildup",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -28987,7 +29439,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -29237,8 +29689,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Mirage_FireScarabs_Watcher": {
-      "parent": "CCitadel_Modifier_StatStealBase",
+    "CCitadel_Modifier_Warden_RiotProtocol_CastDelay": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -29441,6 +29893,16 @@
     "FilterTeam": {
       "parent": "CBaseFilter",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Fathom_ScaldingSpray_VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -29680,14 +30142,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Chomp_LowHealth_Glow": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Ability_Slork_Chomp": {
+    "CCitadel_Ability_Fathom_ScaldingSpray": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
@@ -29749,16 +30204,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_Slork_InvisVData": {
-      "parent": "CitadelAbilityVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CAbility_Synth_Blitz": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -29773,7 +30218,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -29786,7 +30231,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -30121,6 +30566,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Viper_DebuffDagger": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Item_CheatDeathVData": {
       "parent": "CitadelItemVData",
       "metadata": [
@@ -30305,6 +30757,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Fathom_ReefdwellerHarpoon_Move_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Spin": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -30418,7 +30880,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30431,7 +30893,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30444,7 +30906,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30457,7 +30919,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30470,7 +30932,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30483,7 +30945,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -30701,7 +31163,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30714,7 +31176,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30727,7 +31189,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30740,7 +31202,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30753,7 +31215,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30766,7 +31228,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30780,7 +31242,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -30793,7 +31255,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -30994,13 +31456,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Raging_Current_Countdown": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Ability_IcePathVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -31148,16 +31603,6 @@
       "fields": [
       ]
     },
-    "CModifierLastBreathVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_Nano_PredatoryStatueTargetVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -31301,16 +31746,6 @@
       "fields": [
       ]
     },
-    "CAbilitySlorkScaldVData": {
-      "parent": "CitadelAbilityVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CModifierAirLiftGrabVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -31384,7 +31819,7 @@
             },
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -31397,7 +31832,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -31410,7 +31845,20 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_bCanCrash",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -31424,7 +31872,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -31438,7 +31886,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -31743,6 +32191,20 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Fathom_ReefdwellerHarpoon_Move": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Fathom_ScaldingSpray_WeaponDamage": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Spinning_BladeVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -31957,6 +32419,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Haunt_Damage_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityShivDeferDamageVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -32101,6 +32573,15 @@
           ]
         },
         {
+          "name": "m_bDrawBackground",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_Color",
           "type": {
             "name": "Color",
@@ -32187,7 +32668,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -32593,7 +33074,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -32606,7 +33087,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -32619,7 +33100,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -32632,7 +33113,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -32645,7 +33126,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -32658,7 +33139,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -32832,6 +33313,16 @@
     "CEnvSplash": {
       "parent": "CPointEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Magician_MagicBoltVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -33140,6 +33631,16 @@
         }
       ]
     },
+    "CCitadel_Modifier_MageWalkVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Mirage_FireBeetles_VData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -33224,20 +33725,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Riptide": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Slork_Raging_Current": {
-      "parent": "CCitadelBaseAbility",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_Rutger_CheatDeath": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -33284,7 +33771,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -33297,7 +33784,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -33310,7 +33797,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -33323,7 +33810,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -33336,7 +33823,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -33349,7 +33836,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -33362,7 +33849,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -33521,6 +34008,23 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_TurretClone_VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_VandalOverflow": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityChargedTackleVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -33575,16 +34079,6 @@
     "CGameText": {
       "parent": "CRulePointEntity",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Chomp_LowHealth_GlowVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -33829,16 +34323,6 @@
         }
       ]
     },
-    "CCitadel_Modifier_Slork_RagingCurrentVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Ability_Nano_Pounce": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -33944,6 +34428,16 @@
     "CCitadel_Item_AOERoot": {
       "parent": "CCitadel_Item",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CNPC_TrooperBarrackBossVData": {
+      "parent": "CNPC_TrooperBossVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -34167,7 +34661,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -34180,7 +34674,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -34378,6 +34872,15 @@
           ]
         },
         {
+          "name": "m_nCurrentRank",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_nAssignedLane",
           "type": {
             "name": "int8",
@@ -34489,7 +34992,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -34701,12 +35204,9 @@
         }
       ]
     },
-    "CCitadel_Ability_PrimaryWeapon_SlorkVData": {
-      "parent": "CCitadel_Ability_PrimaryWeaponVData",
+    "CCitadel_Ability_ViperHookblade": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -35204,7 +35704,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -35280,8 +35780,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Base_BuildupVData": {
-      "parent": "CCitadelModifierVData",
+    "CCitadel_Modifier_Viper_VenomVData": {
+      "parent": "CCitadel_Modifier_Base_BuildupVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -35328,13 +35828,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_Slork_Scald": {
-      "parent": "CCitadelBaseAbility",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_LashGrappleTarget": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -35373,16 +35866,6 @@
     "CCitadel_Modifier_Drone_Tracker": {
       "parent": "CCitadelModifier",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CAbilitySlorkChompVData": {
-      "parent": "CitadelAbilityVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -35940,6 +36423,108 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Nano_Pounce_Instant": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bActive",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hCurrentTarget",
+          "type": {
+            "name": "CHandle< CBaseEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hLastCastTarget",
+          "type": {
+            "name": "CHandle< CBaseEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vStartPosition",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vDeparturePosition",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flDepartureTime",
+          "type": {
+            "name": "CCitadelAutoScaledTime",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flArrivalTime",
+          "type": {
+            "name": "CCitadelAutoScaledTime",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bIsFirstCastCompleted",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_tDoubleCastWindow",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CCitadel_Modifier_Infuser_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -36127,6 +36712,13 @@
     },
     "CCitadel_WeaponUpgrade_HeadshotBooster": {
       "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Magician_MagicBolt": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -37699,7 +38291,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -37712,7 +38304,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -37726,7 +38318,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -37740,7 +38332,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -37754,7 +38346,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -37767,7 +38359,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -37780,7 +38372,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -37833,7 +38425,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_Slork_LastBreathVData": {
+    "CCitadel_Ability_Magician_AnimalCurseVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
         {
@@ -38740,13 +39332,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_Slork_LastBreath": {
-      "parent": "CCitadelBaseAbility",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_Synth_Blitz": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -38806,23 +39391,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Chomp_Hobbled": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CModifierChompGrappleVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_AirLift_Explode_Target": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -38854,7 +39422,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -38936,13 +39504,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Ability_Riptide": {
-      "parent": "CCitadelBaseAbility",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CModifier_Mirage_Tornado_Lift": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -38980,7 +39541,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -38993,7 +39554,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39006,7 +39567,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39019,7 +39580,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39041,7 +39602,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39054,7 +39615,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39067,7 +39628,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39080,7 +39641,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39093,7 +39654,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39106,7 +39667,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         },
@@ -39119,7 +39680,7 @@
           "metadata": [
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerExclusive"
+              "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
         }
@@ -39144,6 +39705,13 @@
     },
     "CFuncPropRespawnZone": {
       "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_MageWalk": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -39253,6 +39821,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_PillarVData": {
+      "parent": "CCitadel_Modifier_StunnedVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_WingBlastApply": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -39262,6 +39840,13 @@
     },
     "CCitadel_Modifier_ImmobilizeTrap_Debuff": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Fathom_ScaldingSpray_Aura": {
+      "parent": "CCitadelModifierAura_Cone",
       "metadata": [
       ],
       "fields": [
@@ -39623,14 +40208,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Slork_Visible": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Slork_Raging_CurrentVData": {
+    "CCitadel_Ability_Magician_ShadowCloneVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
         {

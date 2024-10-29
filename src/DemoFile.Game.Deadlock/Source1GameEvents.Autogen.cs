@@ -176,6 +176,7 @@ public partial class Source1GameEvents
     public Action<Source1CrateSpawnEvent>? CrateSpawn;
     public Action<Source1CrateSpawnNotificationEvent>? CrateSpawnNotification;
     public Action<Source1CitadelPauseEventEvent>? CitadelPauseEvent;
+    public Action<Source1CitadelPregameTimerEvent>? CitadelPregameTimer;
     public Action<Source1BreakPieceSpawnedEvent>? BreakPieceSpawned;
     public Action<Source1SandboxPlayerMovedEvent>? SandboxPlayerMoved;
     public Action<Source1LaneTestStateUpdatedEvent>? LaneTestStateUpdated;
@@ -4429,6 +4430,29 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
+            if (descriptor.Name == "citadel_pregame_timer")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1CitadelPregameTimerEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "value")
+                            return (@this, x) => @this.Value = x.ValShort;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && CitadelPregameTimer == null)
+                        return;
+                    var @this = new Source1CitadelPregameTimerEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    CitadelPregameTimer?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
             if (descriptor.Name == "break_piece_spawned")
             {
                 var keys = descriptor.Keys.Select(Action<Source1BreakPieceSpawnedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -6624,6 +6648,15 @@ public partial class Source1CitadelPauseEventEvent : Source1GameEventBase
     public int Message { get; set; }
 }
 
+public partial class Source1CitadelPregameTimerEvent : Source1GameEventBase
+{
+    internal Source1CitadelPregameTimerEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "citadel_pregame_timer";
+
+    public int Value { get; set; }
+}
+
 public partial class Source1BreakPieceSpawnedEvent : Source1GameEventBase
 {
     internal Source1BreakPieceSpawnedEvent(DeadlockDemoParser demo) : base(demo) {}
@@ -6877,6 +6910,7 @@ public partial class Source1QuickCastModeChangedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1CrateSpawnEvent))]
 [JsonDerivedType(typeof(Source1CrateSpawnNotificationEvent))]
 [JsonDerivedType(typeof(Source1CitadelPauseEventEvent))]
+[JsonDerivedType(typeof(Source1CitadelPregameTimerEvent))]
 [JsonDerivedType(typeof(Source1BreakPieceSpawnedEvent))]
 [JsonDerivedType(typeof(Source1SandboxPlayerMovedEvent))]
 [JsonDerivedType(typeof(Source1LaneTestStateUpdatedEvent))]

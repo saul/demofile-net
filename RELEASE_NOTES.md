@@ -1,3 +1,7 @@
+### 0.26.1 (2024-10-29)
+
+- Update to latest Deadlock schema
+
 ### 0.25.1 (2024-10-12)
 
 - Update to latest Deadlock schema

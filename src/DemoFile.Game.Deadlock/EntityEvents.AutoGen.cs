@@ -4,6 +4,7 @@ namespace DemoFile.Game.Deadlock;
 
 public struct EntityEvents
 {
+    public EntityEvents<CAbility_Fathom_ReefdwellerHarpoon, DeadlockDemoParser> CAbility_Fathom_ReefdwellerHarpoon;
     public EntityEvents<CAbility_Mirage_SandPhantom, DeadlockDemoParser> CAbility_Mirage_SandPhantom;
     public EntityEvents<CAbility_Mirage_Tornado, DeadlockDemoParser> CAbility_Mirage_Tornado;
     public EntityEvents<CAbility_Rutger_CheatDeath, DeadlockDemoParser> CAbility_Rutger_CheatDeath;
@@ -68,6 +69,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_Chrono_TimeWall, DeadlockDemoParser> CCitadel_Ability_Chrono_TimeWall;
     public EntityEvents<CCitadel_Ability_ChronoSwap, DeadlockDemoParser> CCitadel_Ability_ChronoSwap;
     public EntityEvents<CCitadel_Ability_Climb_Rope, DeadlockDemoParser> CCitadel_Ability_Climb_Rope;
+    public EntityEvents<CCitadel_Ability_Crackshot, DeadlockDemoParser> CCitadel_Ability_Crackshot;
     public EntityEvents<CCitadel_Ability_CrowdControl, DeadlockDemoParser> CCitadel_Ability_CrowdControl;
     public EntityEvents<CCitadel_Ability_Dash, DeadlockDemoParser> CCitadel_Ability_Dash;
     public EntityEvents<CCitadel_Ability_DeathTax, DeadlockDemoParser> CCitadel_Ability_DeathTax;
@@ -75,6 +77,8 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_Dust_Storm, DeadlockDemoParser> CCitadel_Ability_Dust_Storm;
     public EntityEvents<CCitadel_Ability_Empty, DeadlockDemoParser> CCitadel_Ability_Empty;
     public EntityEvents<CCitadel_Ability_ExplosiveBarrel, DeadlockDemoParser> CCitadel_Ability_ExplosiveBarrel;
+    public EntityEvents<CCitadel_Ability_Fathom_Breach, DeadlockDemoParser> CCitadel_Ability_Fathom_Breach;
+    public EntityEvents<CCitadel_Ability_Fathom_ScaldingSpray, DeadlockDemoParser> CCitadel_Ability_Fathom_ScaldingSpray;
     public EntityEvents<CCitadel_Ability_Fealty, DeadlockDemoParser> CCitadel_Ability_Fealty;
     public EntityEvents<CCitadel_Ability_FireBomb, DeadlockDemoParser> CCitadel_Ability_FireBomb;
     public EntityEvents<CCitadel_Ability_FissureWall, DeadlockDemoParser> CCitadel_Ability_FissureWall;
@@ -121,6 +125,10 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_LifeDrain, DeadlockDemoParser> CCitadel_Ability_LifeDrain;
     public EntityEvents<CCitadel_Ability_LightningBall, DeadlockDemoParser> CCitadel_Ability_LightningBall;
     public EntityEvents<CCitadel_Ability_LockDown, DeadlockDemoParser> CCitadel_Ability_LockDown;
+    public EntityEvents<CCitadel_Ability_MageWalk, DeadlockDemoParser> CCitadel_Ability_MageWalk;
+    public EntityEvents<CCitadel_Ability_Magician_AnimalCurse, DeadlockDemoParser> CCitadel_Ability_Magician_AnimalCurse;
+    public EntityEvents<CCitadel_Ability_Magician_MagicBolt, DeadlockDemoParser> CCitadel_Ability_Magician_MagicBolt;
+    public EntityEvents<CCitadel_Ability_Magician_ShadowClone, DeadlockDemoParser> CCitadel_Ability_Magician_ShadowClone;
     public EntityEvents<CCitadel_Ability_Mantle, DeadlockDemoParser> CCitadel_Ability_Mantle;
     public EntityEvents<CCitadel_Ability_MedicHeal, DeadlockDemoParser> CCitadel_Ability_MedicHeal;
     public EntityEvents<CCitadel_Ability_Melee_Base, DeadlockDemoParser> CCitadel_Ability_Melee_Base;
@@ -129,6 +137,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_Mirage_Teleport, DeadlockDemoParser> CCitadel_Ability_Mirage_Teleport;
     public EntityEvents<CCitadel_Ability_MobileResupply, DeadlockDemoParser> CCitadel_Ability_MobileResupply;
     public EntityEvents<CCitadel_Ability_Nano_Pounce, DeadlockDemoParser> CCitadel_Ability_Nano_Pounce;
+    public EntityEvents<CCitadel_Ability_Nano_Pounce_Instant, DeadlockDemoParser> CCitadel_Ability_Nano_Pounce_Instant;
     public EntityEvents<CCitadel_Ability_Nano_Shadow, DeadlockDemoParser> CCitadel_Ability_Nano_Shadow;
     public EntityEvents<CCitadel_Ability_Nikuman, DeadlockDemoParser> CCitadel_Ability_Nikuman;
     public EntityEvents<CCitadel_Ability_PassiveBeefy, DeadlockDemoParser> CCitadel_Ability_PassiveBeefy;
@@ -142,7 +151,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_PrimaryWeapon_Bebop, DeadlockDemoParser> CCitadel_Ability_PrimaryWeapon_Bebop;
     public EntityEvents<CCitadel_Ability_PrimaryWeapon_Cadence, DeadlockDemoParser> CCitadel_Ability_PrimaryWeapon_Cadence;
     public EntityEvents<CCitadel_Ability_PrimaryWeapon_Empty, DeadlockDemoParser> CCitadel_Ability_PrimaryWeapon_Empty;
-    public EntityEvents<CCitadel_Ability_PrimaryWeapon_Slork, DeadlockDemoParser> CCitadel_Ability_PrimaryWeapon_Slork;
     public EntityEvents<CCitadel_Ability_ProjectMind, DeadlockDemoParser> CCitadel_Ability_ProjectMind;
     public EntityEvents<CCitadel_Ability_Protection_Racket, DeadlockDemoParser> CCitadel_Ability_Protection_Racket;
     public EntityEvents<CCitadel_Ability_ProximityRitual, DeadlockDemoParser> CCitadel_Ability_ProximityRitual;
@@ -153,7 +161,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_RapidFire, DeadlockDemoParser> CCitadel_Ability_RapidFire;
     public EntityEvents<CCitadel_Ability_RestorativeGoo, DeadlockDemoParser> CCitadel_Ability_RestorativeGoo;
     public EntityEvents<CCitadel_Ability_RiotProtocol, DeadlockDemoParser> CCitadel_Ability_RiotProtocol;
-    public EntityEvents<CCitadel_Ability_Riptide, DeadlockDemoParser> CCitadel_Ability_Riptide;
     public EntityEvents<CCitadel_Ability_RocketBarrage, DeadlockDemoParser> CCitadel_Ability_RocketBarrage;
     public EntityEvents<CCitadel_Ability_RocketLauncher, DeadlockDemoParser> CCitadel_Ability_RocketLauncher;
     public EntityEvents<CCitadel_Ability_Rolling_FireBall, DeadlockDemoParser> CCitadel_Ability_Rolling_FireBall;
@@ -178,11 +185,8 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_SleepBomb, DeadlockDemoParser> CCitadel_Ability_SleepBomb;
     public EntityEvents<CCitadel_Ability_SleepDagger, DeadlockDemoParser> CCitadel_Ability_SleepDagger;
     public EntityEvents<CCitadel_Ability_Slide, DeadlockDemoParser> CCitadel_Ability_Slide;
-    public EntityEvents<CCitadel_Ability_Slork_Chomp, DeadlockDemoParser> CCitadel_Ability_Slork_Chomp;
-    public EntityEvents<CCitadel_Ability_Slork_Invis, DeadlockDemoParser> CCitadel_Ability_Slork_Invis;
-    public EntityEvents<CCitadel_Ability_Slork_LastBreath, DeadlockDemoParser> CCitadel_Ability_Slork_LastBreath;
-    public EntityEvents<CCitadel_Ability_Slork_Scald, DeadlockDemoParser> CCitadel_Ability_Slork_Scald;
     public EntityEvents<CCitadel_Ability_SmokeBomb, DeadlockDemoParser> CCitadel_Ability_SmokeBomb;
+    public EntityEvents<CCitadel_Ability_SnakeDash, DeadlockDemoParser> CCitadel_Ability_SnakeDash;
     public EntityEvents<CCitadel_Ability_Spinning_Blade, DeadlockDemoParser> CCitadel_Ability_Spinning_Blade;
     public EntityEvents<CCitadel_Ability_Sprint, DeadlockDemoParser> CCitadel_Ability_Sprint;
     public EntityEvents<CCitadel_Ability_StaticCharge, DeadlockDemoParser> CCitadel_Ability_StaticCharge;
@@ -230,8 +234,17 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_TrooperGrenade, DeadlockDemoParser> CCitadel_Ability_TrooperGrenade;
     public EntityEvents<CCitadel_Ability_TrooperNeutralGrenade, DeadlockDemoParser> CCitadel_Ability_TrooperNeutralGrenade;
     public EntityEvents<CCitadel_Ability_TrooperZipLine, DeadlockDemoParser> CCitadel_Ability_TrooperZipLine;
+    public EntityEvents<CCitadel_Ability_TurretClone, DeadlockDemoParser> CCitadel_Ability_TurretClone;
     public EntityEvents<CCitadel_Ability_UltCombo, DeadlockDemoParser> CCitadel_Ability_UltCombo;
     public EntityEvents<CCitadel_Ability_Uppercut, DeadlockDemoParser> CCitadel_Ability_Uppercut;
+    public EntityEvents<CCitadel_Ability_Vandal_Ability03, DeadlockDemoParser> CCitadel_Ability_Vandal_Ability03;
+    public EntityEvents<CCitadel_Ability_Vandal_Pillar, DeadlockDemoParser> CCitadel_Ability_Vandal_Pillar;
+    public EntityEvents<CCitadel_Ability_VandalOverflow, DeadlockDemoParser> CCitadel_Ability_VandalOverflow;
+    public EntityEvents<CCitadel_Ability_VandalSurge, DeadlockDemoParser> CCitadel_Ability_VandalSurge;
+    public EntityEvents<CCitadel_Ability_Viper_Ability04, DeadlockDemoParser> CCitadel_Ability_Viper_Ability04;
+    public EntityEvents<CCitadel_Ability_Viper_DebuffDagger, DeadlockDemoParser> CCitadel_Ability_Viper_DebuffDagger;
+    public EntityEvents<CCitadel_Ability_ViperHookblade, DeadlockDemoParser> CCitadel_Ability_ViperHookblade;
+    public EntityEvents<CCitadel_Ability_ViperVenom, DeadlockDemoParser> CCitadel_Ability_ViperVenom;
     public EntityEvents<CCitadel_Ability_Viscous_Telepunch, DeadlockDemoParser> CCitadel_Ability_Viscous_Telepunch;
     public EntityEvents<CCitadel_Ability_ViscousWeapon_Alt, DeadlockDemoParser> CCitadel_Ability_ViscousWeapon_Alt;
     public EntityEvents<CCitadel_Ability_VoidSphere, DeadlockDemoParser> CCitadel_Ability_VoidSphere;
@@ -329,7 +342,9 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Projectile_Cyclone, DeadlockDemoParser> CCitadel_Projectile_Cyclone;
     public EntityEvents<CCitadel_Projectile_DustStorm, DeadlockDemoParser> CCitadel_Projectile_DustStorm;
     public EntityEvents<CCitadel_Projectile_Guided_Arrow, DeadlockDemoParser> CCitadel_Projectile_Guided_Arrow;
-    public EntityEvents<CCitadel_Projectile_Riptide, DeadlockDemoParser> CCitadel_Projectile_Riptide;
+    public EntityEvents<CCitadel_Projectile_HookBlade, DeadlockDemoParser> CCitadel_Projectile_HookBlade;
+    public EntityEvents<CCitadel_Projectile_Petrify, DeadlockDemoParser> CCitadel_Projectile_Petrify;
+    public EntityEvents<CCitadel_Projectile_Pillar, DeadlockDemoParser> CCitadel_Projectile_Pillar;
     public EntityEvents<CCitadel_Projectile_RocketLauncher_Rocket, DeadlockDemoParser> CCitadel_Projectile_RocketLauncher_Rocket;
     public EntityEvents<CCitadel_Projectile_SettingSun, DeadlockDemoParser> CCitadel_Projectile_SettingSun;
     public EntityEvents<CCitadel_Projectile_Tier2Boss_RocketBarrage, DeadlockDemoParser> CCitadel_Projectile_Tier2Boss_RocketBarrage;
@@ -338,7 +353,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Projectile_WreckingBall, DeadlockDemoParser> CCitadel_Projectile_WreckingBall;
     public EntityEvents<CCitadel_RestorativeGooCube, DeadlockDemoParser> CCitadel_RestorativeGooCube;
     public EntityEvents<CCitadel_Shield, DeadlockDemoParser> CCitadel_Shield;
-    public EntityEvents<CCitadel_Slork_Raging_Current, DeadlockDemoParser> CCitadel_Slork_Raging_Current;
     public EntityEvents<CCitadel_TechUpgrade_Infuser, DeadlockDemoParser> CCitadel_TechUpgrade_Infuser;
     public EntityEvents<CCitadel_TechUpgrade_SuperAcolyteGloves, DeadlockDemoParser> CCitadel_TechUpgrade_SuperAcolyteGloves;
     public EntityEvents<CCitadel_Upgrade_AerialAssault, DeadlockDemoParser> CCitadel_Upgrade_AerialAssault;
@@ -426,6 +440,7 @@ public struct EntityEvents
     public EntityEvents<CEnvProjectedTexture, DeadlockDemoParser> CEnvProjectedTexture;
     public EntityEvents<CEnvScreenOverlay, DeadlockDemoParser> CEnvScreenOverlay;
     public EntityEvents<CEnvSky, DeadlockDemoParser> CEnvSky;
+    public EntityEvents<CEnvSoundscape, DeadlockDemoParser> CEnvSoundscape;
     public EntityEvents<CEnvVolumetricFogController, DeadlockDemoParser> CEnvVolumetricFogController;
     public EntityEvents<CEnvVolumetricFogVolume, DeadlockDemoParser> CEnvVolumetricFogVolume;
     public EntityEvents<CEnvWind, DeadlockDemoParser> CEnvWind;
@@ -486,6 +501,7 @@ public struct EntityEvents
     public EntityEvents<CNPC_SurveillanceDrone, DeadlockDemoParser> CNPC_SurveillanceDrone;
     public EntityEvents<CNPC_TeslaCoil, DeadlockDemoParser> CNPC_TeslaCoil;
     public EntityEvents<CNPC_Trooper, DeadlockDemoParser> CNPC_Trooper;
+    public EntityEvents<CNPC_TrooperBarrackBoss, DeadlockDemoParser> CNPC_TrooperBarrackBoss;
     public EntityEvents<CNPC_TrooperBoss, DeadlockDemoParser> CNPC_TrooperBoss;
     public EntityEvents<CNPC_TrooperNeutral, DeadlockDemoParser> CNPC_TrooperNeutral;
     public EntityEvents<CNPC_TrooperNeutralNodeMover, DeadlockDemoParser> CNPC_TrooperNeutralNodeMover;
@@ -504,6 +520,7 @@ public struct EntityEvents
     public EntityEvents<CPointClientUIWorldTextPanel, DeadlockDemoParser> CPointClientUIWorldTextPanel;
     public EntityEvents<CPointCommentaryNode, DeadlockDemoParser> CPointCommentaryNode;
     public EntityEvents<CPointEntity, DeadlockDemoParser> CPointEntity;
+    public EntityEvents<CPointOrient, DeadlockDemoParser> CPointOrient;
     public EntityEvents<CPointValueRemapper, DeadlockDemoParser> CPointValueRemapper;
     public EntityEvents<CPointWorldText, DeadlockDemoParser> CPointWorldText;
     public EntityEvents<CPostProcessingVolume, DeadlockDemoParser> CPostProcessingVolume;
