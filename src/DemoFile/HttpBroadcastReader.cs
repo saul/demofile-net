@@ -48,9 +48,14 @@ public class HttpBroadcastReader<TGameParser>
 
     internal Func<int, CancellationToken, Task> DelayAsync { get; set; } = Task.Delay;
 
-    public int FetchDelayIntervalMs { get; init; } = 1000;
+    public int FetchDelayIntervalMs { get; set; } = 1000;
+    /// <summary>
+    /// Even when fetch is successful, there should be a pause between requests, otherwise you could get rate-limited by server.
+    /// This is especially important during initial requests, when worker fetches 20-30 seconds of data.
+    /// </summary>
+    public int FetchSuccessfulDelayIntervalMs { get; set; } = 1000;
 
-    public int MaxNumConsecutiveFetchErrors { get; init; } = 15;
+    public int MaxNumConsecutiveFetchErrors { get; set; } = 15;
     private int _numConsecutiveFetchErrors = 0;
 
     private async Task FetchWorkerAsync(string urlPrefix, int startFragment, CancellationToken cancellationToken)
@@ -109,6 +114,11 @@ public class HttpBroadcastReader<TGameParser>
         {
             // Fragment signifies end of the stream
             return false;
+        }
+
+        if (!_fetchWorkerIsFullFragment && FetchSuccessfulDelayIntervalMs > 0)
+        {
+            await DelayAsync(FetchSuccessfulDelayIntervalMs, cancellationToken).ConfigureAwait(false);
         }
 
         if (_fetchWorkerIsFullFragment)

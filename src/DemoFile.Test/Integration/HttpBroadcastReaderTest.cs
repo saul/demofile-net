@@ -181,6 +181,7 @@ public class HttpBroadcastReaderTest
 
         // Act
         var httpReader = HttpBroadcastReader.Create(demo, httpClient);
+        httpReader.FetchSuccessfulDelayIntervalMs = 0;
         httpReader.DelayAsync = async (msecs, ct) =>
         {
             ct.ThrowIfCancellationRequested();
