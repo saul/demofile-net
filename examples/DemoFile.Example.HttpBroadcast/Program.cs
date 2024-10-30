@@ -34,6 +34,7 @@ internal class Program
 
         Console.WriteLine("Starting stream...");
         await httpReader.StartReadingAsync(default);
+        await httpReader.WaitForAvailableDataAsync(default);
         await httpReader.MoveNextAsync(default);
 
         // Max duration to adjust sleep interval by to correct drift between our clock and the game clock
@@ -48,6 +49,9 @@ internal class Program
             var prevTick = demo.CurrentDemoTick;
 
             var sw = Stopwatch.StartNew();
+
+            await httpReader.WaitForAvailableDataAsync(default);
+
             if (!await httpReader.MoveNextAsync(default))
             {
                 break;

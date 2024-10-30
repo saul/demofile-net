@@ -33,50 +33,104 @@ public class HttpBroadcastReader<TGameParser>
         _channel = Channel.CreateUnbounded<QueuedCommand>();
     }
 
+    public BroadcastSyncDto? BroadcastSyncDto { get; private set; }
+
     /// <summary>
     /// The most recently received tick over the HTTP broadcast.
     /// </summary>
     public DemoTick BufferTailTick => new(Volatile.Read(ref _tailTick));
 
+    public int EnqueuedFragmentsCount => _channel.Reader.Count;
+    public bool CurrentlyHasDataForReading => EnqueuedFragmentsCount > 0;
+
+    private bool _fetchWorkerIsFullFragment;
+    private int _fetchWorkerFragment = 0;
+
     internal Func<int, CancellationToken, Task> DelayAsync { get; set; } = Task.Delay;
+
+    public int FetchDelayIntervalMs { get; set; } = 1000;
+    /// <summary>
+    /// Even when fetch is successful, there should be a pause between requests, otherwise you could get rate-limited by server.
+    /// This is especially important during initial requests, when worker fetches 20-30 seconds of data.
+    /// </summary>
+    public int FetchSuccessfulDelayIntervalMs { get; set; } = 1000;
+
+    public int MaxNumConsecutiveFetchErrors { get; set; } = 15;
+    private int _numConsecutiveFetchErrors = 0;
 
     private async Task FetchWorkerAsync(string urlPrefix, int startFragment, CancellationToken cancellationToken)
     {
-        var isFullFragment = true;
-        var fragment = startFragment;
+        _fetchWorkerIsFullFragment = true;
+        _fetchWorkerFragment = startFragment;
 
         while (!cancellationToken.IsCancellationRequested)
         {
-            var fragmentUrl = $"{urlPrefix}{fragment}/{(isFullFragment ? "full" : "delta")}";
-
-            byte[] fragmentBytes;
             try
             {
-                fragmentBytes = await _httpClient.GetByteArrayAsync(fragmentUrl, cancellationToken).ConfigureAwait(false);
+                bool hasNext = await FetchNextAsync(urlPrefix, cancellationToken).ConfigureAwait(false);
+                if (!hasNext)
+                    break;
             }
-            catch (HttpRequestException exc) when (exc.StatusCode == HttpStatusCode.NotFound)
+            catch (Exception ex)
             {
-                // todo(net8): use time provider
-                await DelayAsync(1000, cancellationToken).ConfigureAwait(false);
-                continue;
-            }
+                // Possible causes:
+                // - connection to server lost
+                // - game server shutting down (but TV http server still running)
+                // - received corrupt fragment data from server
 
-            if (!EnqueueBroadcastFragment(fragmentBytes, 0))
-            {
-                // Fragment signifies end of the stream
-                _channel.Writer.Complete();
-                return;
-            }
-
-            if (isFullFragment)
-            {
-                isFullFragment = false;
-            }
-            else
-            {
-                fragment += 1;
+                // Complete the Channel so that reader can be unblocked.
+                // Note that exception is passed to the function, so reader will fail with same exception when trying to wait on empty Channel.
+                _channel.Writer.Complete(ex);
+                throw;
             }
         }
+
+        _channel.Writer.Complete();
+    }
+
+    private async ValueTask<bool> FetchNextAsync(string urlPrefix, CancellationToken cancellationToken)
+    {
+        var fragmentUrl = $"{urlPrefix}{_fetchWorkerFragment}/{(_fetchWorkerIsFullFragment ? "full" : "delta")}";
+
+        byte[] fragmentBytes;
+        try
+        {
+            fragmentBytes = await _httpClient.GetByteArrayAsync(fragmentUrl, cancellationToken).ConfigureAwait(false);
+        }
+        catch (HttpRequestException exc) when (exc.StatusCode == HttpStatusCode.NotFound)
+        {
+            _numConsecutiveFetchErrors++;
+            if (_numConsecutiveFetchErrors >= MaxNumConsecutiveFetchErrors)
+                throw new EndOfStreamException($"Failed to fetch next fragment after {_numConsecutiveFetchErrors} retries, assuming that server was shut down");
+
+            // todo(net8): use time provider
+            await DelayAsync(FetchDelayIntervalMs, cancellationToken).ConfigureAwait(false);
+            return true;
+        }
+
+        _numConsecutiveFetchErrors = 0;
+
+        if (!EnqueueBroadcastFragment(fragmentBytes, 0))
+        {
+            // Fragment signifies end of the stream
+            return false;
+        }
+
+        if (!_fetchWorkerIsFullFragment && FetchSuccessfulDelayIntervalMs > 0)
+        {
+            await DelayAsync(FetchSuccessfulDelayIntervalMs, cancellationToken).ConfigureAwait(false);
+        }
+
+        if (_fetchWorkerIsFullFragment)
+        {
+            _fetchWorkerIsFullFragment = false;
+        }
+        else
+        {
+            _fetchWorkerFragment += 1;
+        }
+
+        return true;
     }
 
     /// <summary>
@@ -87,15 +141,13 @@ public class HttpBroadcastReader<TGameParser>
     /// </summary>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async Task<bool> MoveNextAsync(CancellationToken cancellationToken = default)
+    public async ValueTask<bool> MoveNextAsync(CancellationToken cancellationToken = default)
     {
         var readingTick = default(DemoTick?);
-        while (await _channel.Reader.WaitToReadAsync(cancellationToken).ConfigureAwait(false))
+        while (_channel.Reader.Count > 0)
         {
-            if (!_channel.Reader.TryPeek(out var queued))
-            {
-                continue;
-            }
+            bool peeked = _channel.Reader.TryPeek(out var queued);
+            Debug.Assert(peeked);
 
             if (readingTick.HasValue && queued.Tick > readingTick.Value)
             {
@@ -123,16 +175,30 @@ public class HttpBroadcastReader<TGameParser>
             }
         }
 
-        return false;
+        var completionTask = _channel.Reader.Completion;
+
+        // if the Channel is empty and worker failed, we fail with the same exception
+        var workerException = completionTask.Exception;
+        if (workerException != null)
+            throw workerException;
+
+        return !completionTask.IsCompleted;
     }
 
-    public async Task StartReadingAsync(CancellationToken cancellationToken)
+    public ValueTask<bool> WaitForAvailableDataAsync(CancellationToken cancellationToken)
+    {
+        return _channel.Reader.WaitToReadAsync(cancellationToken);
+    }
+
+    public async ValueTask StartReadingAsync(CancellationToken cancellationToken)
     {
         var syncDto = (await _httpClient.GetFromJsonAsync("sync", BroadcastJsonSerializerContext.Default.BroadcastSyncDto, cancellationToken).ConfigureAwait(false))!;
         if (syncDto.Protocol != 5)
         {
             throw new Exception($"Unknown protocol in broadcast, expected 5, got {syncDto.Protocol}");
         }
+
+        BroadcastSyncDto = syncDto;
 
         var urlPrefix = string.IsNullOrEmpty(syncDto.TokenRedirect)
             ? ""
@@ -195,7 +261,7 @@ public class HttpBroadcastReader<TGameParser>
 // CS2: {"tick":52599,"rtdelay":10,"rcvage":0,"fragment":816,"signup_fragment":0,"tps":64,"protocol":5}
 // Deadlock: {"tick":44955,"endtick":45135,"maxtick":46395,"rtdelay":21.904,"rcvage":0.957,"fragment":239,"signup_fragment":0,"tps":60,"keyframe_interval":3,"map":"street_test","protocol":5}
 //  keyframe_interval => The frequency, in seconds, of sending keyframes and delta fragments to the broadcast relay server
-class BroadcastSyncDto
+public class BroadcastSyncDto
 {
     [JsonPropertyName("rtdelay")]
     public double RetransmitDelaySeconds { get; set; }
@@ -220,5 +286,5 @@ class BroadcastSyncDto
 }
 
 [JsonSerializable(typeof(BroadcastSyncDto))]
-partial class BroadcastJsonSerializerContext : JsonSerializerContext
+public partial class BroadcastJsonSerializerContext : JsonSerializerContext
 {}
