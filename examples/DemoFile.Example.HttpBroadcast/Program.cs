@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Net;
 using DemoFile;
 
 internal class Program
@@ -26,11 +25,7 @@ internal class Program
             Console.WriteLine($"[*] server info. tick rate = {1 / e.TickInterval:N0}");
         };
 
-        var httpClient = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip })
-        {
-            BaseAddress = new Uri(url)
-        };
-        var httpReader = HttpBroadcastReader.Create(demo, httpClient);
+        var httpReader = HttpBroadcastReader.Create(demo, new Uri(url));
 
         Console.WriteLine("Starting stream...");
         await httpReader.StartReadingAsync(default);
@@ -56,7 +51,7 @@ internal class Program
             var gameElapsed = (demo.CurrentDemoTick - firstTick).Value * tickInterval;
             var wallClockElapsed = Stopwatch.GetElapsedTime(startTime);
 
-            // +ve = we're ahead, -ve = we're behind the stream
+            // Positive -> we're ahead. Negative -> we're behind the stream
             var drift = gameElapsed - wallClockElapsed;
 
             // Only adjust by maxAdjustSecs every call to MoveNextAsync

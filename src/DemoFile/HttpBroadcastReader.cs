@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http.Json;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Channels;
 
@@ -15,6 +14,12 @@ public static class HttpBroadcastReader
     {
         return new HttpBroadcastReader<TGameParser>(demo, httpClient);
     }
+
+    public static HttpBroadcastReader<TGameParser> Create<TGameParser>(DemoParser<TGameParser> demo, Uri baseAddress)
+        where TGameParser : DemoParser<TGameParser>, new()
+    {
+        return new HttpBroadcastReader<TGameParser>(demo, baseAddress);
+    }
 }
 
 public class HttpBroadcastReader<TGameParser>
@@ -25,20 +30,45 @@ public class HttpBroadcastReader<TGameParser>
     private readonly HttpClient _httpClient;
     private int _tailTick = -1;
 
+    public HttpBroadcastReader(DemoParser<TGameParser> demo, Uri baseAddress)
+        : this(
+            demo,
+            new HttpClient(new RetryingBroadcastHttpHandler(
+                new HttpClientHandler
+                {
+                    AutomaticDecompression = DecompressionMethods.GZip
+                }))
+            {
+                BaseAddress = baseAddress
+            })
+    {
+    }
+
     public HttpBroadcastReader(DemoParser<TGameParser> demo, HttpClient httpClient)
     {
         _httpClient = httpClient;
         _demo = demo;
 
-        _channel = Channel.CreateUnbounded<QueuedCommand>();
+        _channel = Channel.CreateUnbounded<QueuedCommand>(new UnboundedChannelOptions
+        {
+            SingleReader = true
+        });
     }
+
+    /// <summary>
+    /// Sync DTO as retrieved from the <c>/sync</c> endpoint
+    /// </summary>
+    public BroadcastSyncDto? BroadcastSyncDto { get; private set; }
 
     /// <summary>
     /// The most recently received tick over the HTTP broadcast.
     /// </summary>
     public DemoTick BufferTailTick => new(Volatile.Read(ref _tailTick));
 
-    internal Func<int, CancellationToken, Task> DelayAsync { get; set; } = Task.Delay;
+    /// <summary>
+    /// Number of enqueued fragments that are ready to read in <see cref="MoveNextAsync"/>.
+    /// </summary>
+    public int EnqueuedFragmentsCount => _channel.Reader.Count;
 
     private async Task FetchWorkerAsync(string urlPrefix, int startFragment, CancellationToken cancellationToken)
     {
@@ -54,11 +84,10 @@ public class HttpBroadcastReader<TGameParser>
             {
                 fragmentBytes = await _httpClient.GetByteArrayAsync(fragmentUrl, cancellationToken).ConfigureAwait(false);
             }
-            catch (HttpRequestException exc) when (exc.StatusCode == HttpStatusCode.NotFound)
+            catch (Exception exc)
             {
-                // todo(net8): use time provider
-                await DelayAsync(1000, cancellationToken).ConfigureAwait(false);
-                continue;
+                _channel.Writer.Complete(exc);
+                return;
             }
 
             if (!EnqueueBroadcastFragment(fragmentBytes, 0))
@@ -134,6 +163,8 @@ public class HttpBroadcastReader<TGameParser>
             throw new Exception($"Unknown protocol in broadcast, expected 5, got {syncDto.Protocol}");
         }
 
+        BroadcastSyncDto = syncDto;
+
         var urlPrefix = string.IsNullOrEmpty(syncDto.TokenRedirect)
             ? ""
             : syncDto.TokenRedirect.TrimEnd('/') + "/";
@@ -195,7 +226,7 @@ public class HttpBroadcastReader<TGameParser>
 // CS2: {"tick":52599,"rtdelay":10,"rcvage":0,"fragment":816,"signup_fragment":0,"tps":64,"protocol":5}
 // Deadlock: {"tick":44955,"endtick":45135,"maxtick":46395,"rtdelay":21.904,"rcvage":0.957,"fragment":239,"signup_fragment":0,"tps":60,"keyframe_interval":3,"map":"street_test","protocol":5}
 //  keyframe_interval => The frequency, in seconds, of sending keyframes and delta fragments to the broadcast relay server
-class BroadcastSyncDto
+public class BroadcastSyncDto
 {
     [JsonPropertyName("rtdelay")]
     public double RetransmitDelaySeconds { get; set; }
@@ -220,5 +251,5 @@ class BroadcastSyncDto
 }
 
 [JsonSerializable(typeof(BroadcastSyncDto))]
-partial class BroadcastJsonSerializerContext : JsonSerializerContext
+public partial class BroadcastJsonSerializerContext : JsonSerializerContext
 {}

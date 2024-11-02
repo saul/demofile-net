@@ -1,3 +1,13 @@
+### 0.27.1 (2024-11-02)
+
+- BREAKING CHANGE: Exceptions when fetching data from the broadcast server are now immediately propagated to `MoveNextAsync`. You must handle retries and rate limiting in your `HttpClient`, e.g. by using `RetryingBroadcastHttpHandler`
+- Added `RetryingBroadcastHttpHandler`:
+  - Handles automatic (limited) retries of HTTP 404 responses for `/delta` requests. This logic has been removed from `HttpBroadcastReader`
+  - Throttles successful `/delta` requests (rolling 1-second window)
+- Added `Uri baseAddress` parameter to `HttpBroadcastReader` constructor to simplify instantiation by using `RetryingBroadcastHttpHandler`.
+- Added `HttpBroadcastReader.BroadcastSyncDto` (Sync DTO as retrieved from the `/sync` endpoint)
+- Added `HttpBroadcastReader.EnqueuedFragmentsCount` (Number of enqueued fragments that are ready to read in `MoveNextAsync`)
+
 ### 0.26.1 (2024-10-29)
 
 - Update to latest Deadlock schema
