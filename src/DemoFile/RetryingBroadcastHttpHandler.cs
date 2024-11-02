@@ -33,6 +33,8 @@ public class RetryingBroadcastHttpHandler : DelegatingHandler
     /// </summary>
     public TimeSpan DeltaRequestInterval { get; set; } = TimeSpan.FromMilliseconds(1000);
 
+    internal Func<TimeSpan, CancellationToken, Task> DelayAsync { get; set; } = Task.Delay;
+
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         var isDeltaRequest = request.RequestUri != null && request.RequestUri.AbsolutePath.EndsWith("/delta", StringComparison.OrdinalIgnoreCase);
@@ -62,7 +64,7 @@ public class RetryingBroadcastHttpHandler : DelegatingHandler
                 throw new HttpRequestException($"Stopping after {MaxRetries} consecutive '404 Not Found' errors");
             }
 
-            await Task.Delay(RetryInterval, cancellationToken).ConfigureAwait(false);
+            await DelayAsync(RetryInterval, cancellationToken).ConfigureAwait(false);
         }
     }
 
@@ -74,6 +76,6 @@ public class RetryingBroadcastHttpHandler : DelegatingHandler
         if (timeToSleep <= TimeSpan.Zero)
             return;
 
-        await Task.Delay(timeToSleep, cancellationToken).ConfigureAwait(false);
+        await DelayAsync(timeToSleep, cancellationToken).ConfigureAwait(false);
     }
 }

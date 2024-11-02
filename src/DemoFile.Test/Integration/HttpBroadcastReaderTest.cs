@@ -96,7 +96,19 @@ public class HttpBroadcastReaderTest
                 {"DeadlockHttpBroadcast/30/delta", 10},
             });
 
-        var httpClient = new HttpClient(mockMessageHandler)
+        var messageHandler = new RetryingBroadcastHttpHandler(mockMessageHandler);
+        messageHandler.MaxRetries = 11;
+        messageHandler.DeltaRequestInterval = TimeSpan.Zero;
+        messageHandler.DelayAsync = async (delay, ct) =>
+        {
+            ct.ThrowIfCancellationRequested();
+            clock = clock.Add(delay);
+
+            // Avoid hot-looping on the thread pool
+            await Task.Yield();
+        };
+
+        var httpClient = new HttpClient(messageHandler)
         {
             BaseAddress = new("http://localhost/DeadlockHttpBroadcast/")
         };
@@ -128,7 +140,7 @@ public class HttpBroadcastReaderTest
 
                 var abilities = pawn?.CCitadelAbilityComponent.Abilities.Select(handle =>
                 {
-                    var ability = demo.GetEntityByHandle(handle) as CCitadelBaseAbility;
+                    var ability = demo.GetEntityByHandle(handle);
                     if (ability == null)
                         return null;
 
@@ -181,22 +193,22 @@ public class HttpBroadcastReaderTest
 
         // Act
         var httpReader = HttpBroadcastReader.Create(demo, httpClient);
-        httpReader.DelayAsync = async (msecs, ct) =>
-        {
-            ct.ThrowIfCancellationRequested();
-            clock = clock.AddMilliseconds(msecs);
-
-            // Avoid hot-looping on the thread pool
-            await Task.Yield();
-        };
 
         await httpReader.StartReadingAsync(default);
         snapshot.Add(demo.CurrentDemoTick, $"After StartReadingAsync");
 
         var count = 0;
-        while (await httpReader.MoveNextAsync(default))
+        try
         {
-            snapshot.Add(demo.CurrentDemoTick, $"MoveNextAsync #{++count}");
+            while (await httpReader.MoveNextAsync(default))
+            {
+                snapshot.Add(demo.CurrentDemoTick, $"MoveNextAsync #{++count}");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
         }
 
         snapshot.Add(demo.CurrentDemoTick, $"Finished. HTTP logs follow:{Environment.NewLine}  {httpRequestLog.ToString().ReplaceLineEndings(Environment.NewLine + "  ")}");
