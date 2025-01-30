@@ -1,4 +1,4 @@
-option optimize_for = SPEED;
+﻿option optimize_for = SPEED;
 option cc_generic_services = false;
 
 message CMsgSteamNetworkingIdentityLegacyBinary {

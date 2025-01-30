@@ -1,4 +1,4 @@
-import "steammessages_unified_base.steamworkssdk.proto";
+﻿import "steammessages_unified_base.steamworkssdk.proto";
 
 option cc_generic_services = true;
 

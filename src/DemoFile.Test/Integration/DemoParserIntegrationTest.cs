@@ -54,6 +54,7 @@ public class DemoParserIntegrationTest
         new("v14011", GotvProtocol14011, new DemoTick(391)),
         new("pov_14000", Pov14000, new DemoTick(127743)),
         new("v14034", GotvProtocol14034, new DemoTick(210)),
+        new("v14065", GotvProtocol14065, new DemoTick(185)),
     };
 
     [Test]

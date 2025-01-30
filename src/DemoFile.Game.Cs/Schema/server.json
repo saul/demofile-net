@@ -2179,6 +2179,13 @@
       "fields": [
       ]
     },
+    "CEnvSoundscape": {
+      "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CBtActionAim": {
       "parent": "CBtNode",
       "metadata": [
@@ -2216,13 +2223,6 @@
             }
           ]
         }
-      ]
-    },
-    "CEnvSoundscape": {
-      "parent": "CServerOnlyEntity",
-      "metadata": [
-      ],
-      "fields": [
       ]
     },
     "fogplayerparams_t": {
@@ -4148,6 +4148,15 @@
           "type": {
             "name": "bool",
             "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nextPrevOwnerUseTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
           },
           "metadata": [
           ]
@@ -8494,6 +8503,15 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_bFirstAttack",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CFuncTrackTrain": {
@@ -9258,15 +9276,15 @@
       "fields": [
       ]
     },
-    "CInfoInstructorHintHostageRescueZone": {
-      "parent": "CPointEntity",
+    "CEnvSoundscapeAlias_snd_soundscape": {
+      "parent": "CEnvSoundscape",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CEnvSoundscapeAlias_snd_soundscape": {
-      "parent": "CEnvSoundscape",
+    "CInfoInstructorHintHostageRescueZone": {
+      "parent": "CPointEntity",
       "metadata": [
       ],
       "fields": [
@@ -11283,15 +11301,15 @@
       "fields": [
       ]
     },
-    "CLightOrthoEntity": {
-      "parent": "CLightEntity",
+    "CEnvSoundscapeTriggerable": {
+      "parent": "CEnvSoundscape",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CEnvSoundscapeTriggerable": {
-      "parent": "CEnvSoundscape",
+    "CLightOrthoEntity": {
+      "parent": "CLightEntity",
       "metadata": [
       ],
       "fields": [
@@ -13053,6 +13071,13 @@
       "fields": [
       ]
     },
+    "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
+      "parent": "CEnvSoundscapeProxy",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CSoundEventPathCornerEntity": {
       "parent": "CSoundEventEntity",
       "metadata": [
@@ -13073,13 +13098,6 @@
           "metadata": [
           ]
         }
-      ]
-    },
-    "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
-      "parent": "CEnvSoundscapeProxy",
-      "metadata": [
-      ],
-      "fields": [
       ]
     },
     "CLightComponent": {
@@ -13941,14 +13959,32 @@
         {
           "name": "m_VoxelFrameData",
           "type": {
-            "name": "CUtlVector< uint8 >",
+            "name": "CNetworkUtlVectorBase< uint8 >",
             "category": 4,
             "atomic": 2,
-            "outer": "CUtlVector",
+            "outer": "CNetworkUtlVectorBase",
             "inner": {
               "name": "uint8",
               "category": 0
             }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nVoxelFrameDataSize",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nVoxelUpdate",
+          "type": {
+            "name": "int32",
+            "category": 0
           },
           "metadata": [
           ]
@@ -14275,15 +14311,6 @@
       ],
       "fields": [
         {
-          "name": "m_flMaxFallVelocity",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_vecLadderNormal",
           "type": {
             "name": "Vector",
@@ -14421,24 +14448,6 @@
           ]
         },
         {
-          "name": "m_flJumpUntil",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flJumpVel",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_fStashGrenadeParameterWhen",
           "type": {
             "name": "GameTime_t",
@@ -14506,19 +14515,19 @@
       "fields": [
       ]
     },
+    "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
+      "parent": "CEnvSoundscapeTriggerable",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CBasePlayerVData": {
       "parent": "CEntitySubclassVDataBase",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
-      "parent": "CEnvSoundscapeTriggerable",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -19050,6 +19059,20 @@
           ]
         },
         {
+          "name": "m_BackgroundMaterialName",
+          "type": {
+            "name": "char[64]",
+            "category": 3,
+            "arraySize": 64,
+            "inner": {
+              "name": "char",
+              "category": 0
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_bEnabled",
           "type": {
             "name": "bool",
@@ -19087,6 +19110,42 @@
         },
         {
           "name": "m_flDepthOffset",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bDrawBackground",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBackgroundBorderWidth",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBackgroundBorderHeight",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBackgroundWorldToUV",
           "type": {
             "name": "float32",
             "category": 0
@@ -22208,16 +22267,33 @@
           ]
         },
         {
-          "name": "m_vecKills",
+          "name": "m_recentKillQueue",
           "type": {
-            "name": "CNetworkUtlVectorBase< EKillTypes_t >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "CNetworkUtlVectorBase",
+            "name": "uint8[8]",
+            "category": 3,
+            "arraySize": 8,
             "inner": {
-              "name": "EKillTypes_t",
-              "category": 6
+              "name": "uint8",
+              "category": 0
             }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nFirstKill",
+          "type": {
+            "name": "uint8",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nKillCount",
+          "type": {
+            "name": "uint8",
+            "category": 0
           },
           "metadata": [
           ]
@@ -22268,6 +22344,19 @@
             {
               "name": "MNetworkChangeCallback",
               "value": "OnMVPCountChanged"
+            }
+          ]
+        },
+        {
+          "name": "m_bFireBulletsSeedSynchronized",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
             }
           ]
         }
@@ -22958,13 +23047,6 @@
       "fields": [
       ]
     },
-    "CCSPlayer_DamageReactServices": {
-      "parent": "CPlayerPawnComponent",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "ServerAuthoritativeWeaponSlot_t": {
       "metadata": [
       ],
@@ -22996,6 +23078,13 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCSPlayer_DamageReactServices": {
+      "parent": "CPlayerPawnComponent",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCSGameRules": {

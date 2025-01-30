@@ -1,4 +1,4 @@
-message CUIFontFilePB {
+﻿message CUIFontFilePB {
 	optional string font_file_name = 1;
 	optional bytes opentype_font_data = 2;
 }

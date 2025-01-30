@@ -1,4 +1,4 @@
-enum EBaseClientMessages {
+﻿enum EBaseClientMessages {
 	CM_CustomGameEvent = 280;
 	CM_CustomGameEventBounce = 281;
 	CM_ClientUIEvent = 282;

@@ -2493,6 +2493,13 @@
         }
       ]
     },
+    "CEnvSoundscape": {
+      "parent": "C_BaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_SoundEventEntity": {
       "parent": "C_BaseEntity",
       "metadata": [
@@ -3460,6 +3467,15 @@
           "type": {
             "name": "bool",
             "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nextPrevOwnerUseTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
           },
           "metadata": [
           ]
@@ -5743,6 +5759,13 @@
       "fields": [
       ]
     },
+    "CEnvSoundscapeProxy": {
+      "parent": "CEnvSoundscape",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_BaseClientUIEntity": {
       "parent": "C_BaseModelEntity",
       "metadata": [
@@ -7327,6 +7350,22 @@
               "name": "MNetworkUserGroup",
               "value": "AllPlayersDuringFreezePeriodOrMatchEnd"
             }
+          ]
+        }
+      ]
+    },
+    "CRagdollManager": {
+      "parent": "C_BaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iCurrentMaxRagdollCount",
+          "type": {
+            "name": "int8",
+            "category": 0
+          },
+          "metadata": [
           ]
         }
       ]
@@ -9253,6 +9292,13 @@
     },
     "C_WeaponP90": {
       "parent": "C_CSWeaponBaseGun",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEnvSoundscapeAlias_snd_soundscape": {
+      "parent": "CEnvSoundscape",
       "metadata": [
       ],
       "fields": [
@@ -13397,6 +13443,13 @@
       "fields": [
       ]
     },
+    "CEnvSoundscapeTriggerable": {
+      "parent": "CEnvSoundscape",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_CSGameRulesProxy": {
       "parent": "C_GameRulesProxy",
       "metadata": [
@@ -14147,6 +14200,13 @@
     },
     "CRenderComponent": {
       "parent": "CEntityComponent",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
+      "parent": "CEnvSoundscapeProxy",
       "metadata": [
       ],
       "fields": [
@@ -15120,15 +15180,6 @@
       ],
       "fields": [
         {
-          "name": "m_flMaxFallVelocity",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_vecLadderNormal",
           "type": {
             "name": "Vector",
@@ -15266,24 +15317,6 @@
           ]
         },
         {
-          "name": "m_flJumpUntil",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flJumpVel",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_fStashGrenadeParameterWhen",
           "type": {
             "name": "GameTime_t",
@@ -15328,6 +15361,13 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
+      "parent": "CEnvSoundscapeTriggerable",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CBasePlayerVData": {
@@ -17478,10 +17518,10 @@
         {
           "name": "m_VoxelFrameData",
           "type": {
-            "name": "CUtlVector< uint8 >",
+            "name": "C_NetworkUtlVectorBase< uint8 >",
             "category": 4,
             "atomic": 2,
-            "outer": "CUtlVector",
+            "outer": "C_NetworkUtlVectorBase",
             "inner": {
               "name": "uint8",
               "category": 0
@@ -17492,6 +17532,24 @@
               "name": "MNetworkChangeCallback",
               "value": "OnSimulationChanged"
             }
+          ]
+        },
+        {
+          "name": "m_nVoxelFrameDataSize",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nVoxelUpdate",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
           ]
         }
       ]
@@ -19095,6 +19153,15 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_bFirstAttack",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "C_EnvCubemapBox": {
@@ -19918,22 +19985,6 @@
       "metadata": [
       ],
       "fields": [
-      ]
-    },
-    "C_RagdollManager": {
-      "parent": "C_BaseEntity",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_iCurrentMaxRagdollCount",
-          "type": {
-            "name": "int8",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "C_EnvSky": {
@@ -21325,6 +21376,20 @@
           ]
         },
         {
+          "name": "m_BackgroundMaterialName",
+          "type": {
+            "name": "char[64]",
+            "category": 3,
+            "arraySize": 64,
+            "inner": {
+              "name": "char",
+              "category": 0
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_bEnabled",
           "type": {
             "name": "bool",
@@ -21362,6 +21427,42 @@
         },
         {
           "name": "m_flDepthOffset",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bDrawBackground",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBackgroundBorderWidth",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBackgroundBorderHeight",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBackgroundWorldToUV",
           "type": {
             "name": "float32",
             "category": 0
@@ -21887,16 +21988,33 @@
           ]
         },
         {
-          "name": "m_vecKills",
+          "name": "m_recentKillQueue",
           "type": {
-            "name": "C_NetworkUtlVectorBase< EKillTypes_t >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "C_NetworkUtlVectorBase",
+            "name": "uint8[8]",
+            "category": 3,
+            "arraySize": 8,
             "inner": {
-              "name": "EKillTypes_t",
-              "category": 6
+              "name": "uint8",
+              "category": 0
             }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nFirstKill",
+          "type": {
+            "name": "uint8",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nKillCount",
+          "type": {
+            "name": "uint8",
+            "category": 0
           },
           "metadata": [
           ]
@@ -21947,6 +22065,19 @@
             {
               "name": "MNetworkChangeCallback",
               "value": "OnMVPCountChanged"
+            }
+          ]
+        },
+        {
+          "name": "m_bFireBulletsSeedSynchronized",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
             }
           ]
         }
@@ -22362,6 +22493,13 @@
         }
       ]
     },
+    "CCSPlayer_DamageReactServices": {
+      "parent": "CPlayerPawnComponent",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_CSGOViewModel": {
       "parent": "C_PredictedViewModel",
       "metadata": [
@@ -22765,6 +22903,13 @@
     },
     "C_WeaponM4A1Silencer": {
       "parent": "C_CSWeaponBaseGun",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CMapInfo": {
+      "parent": "C_PointEntity",
       "metadata": [
       ],
       "fields": [

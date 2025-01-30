@@ -1,4 +1,4 @@
-import "networkbasetypes.proto";
+﻿import "networkbasetypes.proto";
 
 enum EHitGroup {
 	EHG_Generic = 0;

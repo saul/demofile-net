@@ -1,4 +1,4 @@
-import "steamnetworkingsockets_messages.proto";
+﻿import "steamnetworkingsockets_messages.proto";
 import "steamdatagram_messages_sdr.proto";
 
 option optimize_for = SPEED;
