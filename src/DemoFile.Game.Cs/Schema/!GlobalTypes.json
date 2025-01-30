@@ -609,6 +609,19 @@
         }
       ]
     },
+    "EDestructiblePartDamagePassThroughType": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Absorb",
+          "value": 1
+        }
+      ]
+    },
     "StateActionBehavior": {
       "align": 4,
       "items": [
@@ -4504,6 +4517,31 @@
         {
           "name": "PF_RANDOM_MODE_COUNT",
           "value": 2
+        }
+      ]
+    },
+    "EIKEndEffectorRotationFixUpMode": {
+      "align": 4,
+      "items": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MatchTargetOrientation",
+          "value": 1
+        },
+        {
+          "name": "LookAtTargetForward",
+          "value": 2
+        },
+        {
+          "name": "MaintainParentOrientation",
+          "value": 3
+        },
+        {
+          "name": "Count",
+          "value": 4
         }
       ]
     },
@@ -11928,6 +11966,15 @@
     }
   },
   "classes": {
+    "CSkillInt": {
+      "metadata": [
+        {
+          "name": "MPropertyCustomEditor"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CPulseGraphComponentBase": {
       "metadata": [
       ],
@@ -18027,6 +18074,15 @@
       "fields": [
       ]
     },
+    "CDestructiblePartsSystemData_HitGroupInfoAndPartData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "C_INIT_RemapScalar": {
       "parent": "CParticleFunctionInitializer",
       "metadata": [
@@ -19115,6 +19171,15 @@
     },
     "CRR_Response": {
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CDestructiblePartRuntimeData": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -20881,10 +20946,10 @@
       "fields": [
       ]
     },
-    "CSkillInt": {
+    "CDestructiblePartsSystemData_PartData": {
       "metadata": [
         {
-          "name": "MPropertyCustomEditor"
+          "name": "MGetKV3ClassDefaults"
         }
       ],
       "fields": [
@@ -26158,6 +26223,15 @@
       "fields": [
       ]
     },
+    "CDestructiblePartRuntimeDataVector": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "C_INIT_InitFloatCollection": {
       "parent": "CParticleFunctionInitializer",
       "metadata": [
@@ -26283,6 +26357,18 @@
       "metadata": [
         {
           "name": "MResourceTypeForInfoType"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CDestructiblePartsSystemData": {
+      "metadata": [
+        {
+          "name": "MModelGameData"
+        },
+        {
+          "name": "MGetKV3ClassDefaults"
         }
       ],
       "fields": [

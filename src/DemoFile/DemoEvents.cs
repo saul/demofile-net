@@ -64,6 +64,9 @@ public struct DemoEvents
             case EDemoCommands.DemAnimationHeader:
                 DemoAnimationHeader?.Invoke(CDemoAnimationHeader.Parser.ParseFrom(buffer));
                 return true;
+            case EDemoCommands.DemRecovery:
+                DemoRecovery?.Invoke(CDemoRecovery.Parser.ParseFrom(buffer));
+                return true;
             default:
                 throw new ArgumentOutOfRangeException(nameof(msgType), msgType, $"Unknown demo command: {msgType}");
         }
@@ -105,4 +108,5 @@ public struct DemoEvents
     public Action<CDemoSpawnGroups>? DemoSpawnGroups;
     public Action<CDemoAnimationData>? DemoAnimationData;
     public Action<CDemoAnimationHeader>? DemoAnimationHeader;
+    public Action<CDemoRecovery>? DemoRecovery;
 }

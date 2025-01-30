@@ -1,4 +1,4 @@
-import "netmessages.proto";
+﻿import "netmessages.proto";
 
 message C2S_CONNECT_Message {
 	optional uint32 host_version = 1;

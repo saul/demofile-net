@@ -4,7 +4,6 @@ namespace DemoFile;
 
 public struct PacketEvents
 {
-    public Action<CNETMsg_Disconnect_Legacy>? NetDisconnect;
     public Action<CNETMsg_SplitScreenUser>? NetSplitScreenUser;
     public Action<CNETMsg_Tick>? NetTick;
     public Action<CNETMsg_StringCmd>? NetStringCmd;
@@ -52,9 +51,6 @@ public struct PacketEvents
     {
         switch (msgType)
         {
-            case (int)NET_Messages.NetDisconnectLegacy:
-                NetDisconnect?.Invoke(CNETMsg_Disconnect_Legacy.Parser.ParseFrom(buf));
-                return true;
             case (int)NET_Messages.NetSplitScreenUser:
                 NetSplitScreenUser?.Invoke(CNETMsg_SplitScreenUser.Parser.ParseFrom(buf));
                 return true;

@@ -1,3 +1,8 @@
+### 0.28.1 (2025-01-30)
+
+- Update to latest CS2 schema (v14065)
+- Add support for new `DemRecovery` message
+
 ### 0.27.1 (2024-11-02)
 
 - BREAKING CHANGE: Exceptions when fetching data from the broadcast server are now immediately propagated to `MoveNextAsync`. You must handle retries and rate limiting in your `HttpClient`, e.g. by using `RetryingBroadcastHttpHandler`

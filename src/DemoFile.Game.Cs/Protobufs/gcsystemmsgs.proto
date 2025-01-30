@@ -1,4 +1,4 @@
-enum EGCSystemMsg {
+﻿enum EGCSystemMsg {
 	k_EGCMsgInvalid = 0;
 	k_EGCMsgMulti = 1;
 	k_EGCMsgGenericReply = 10;

@@ -1,4 +1,4 @@
-import "steammessages_unified_base.steamworkssdk.proto";
+﻿import "steammessages_unified_base.steamworkssdk.proto";
 
 message COAuthToken_ImplicitGrantNoPrompt_Request {
 	optional string clientid = 1 [(description) = "Client ID for which to count the number of issued tokens"];
