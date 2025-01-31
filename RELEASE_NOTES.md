@@ -1,4 +1,4 @@
-### 0.28.1 (2025-01-30)
+### 0.28.1 (2025-01-31)
 
 - Update to latest CS2 schema (v14065)
 - Add support for new `DemRecovery` message
