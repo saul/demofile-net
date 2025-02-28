@@ -91,9 +91,9 @@ public class HttpBroadcastReaderTest
             line => httpRequestLog.AppendLine($"{clock:O}: {line}"),
             new Dictionary<string, int>
             {
-                {"DeadlockHttpBroadcast/23/delta", 3},
-                {"DeadlockHttpBroadcast/28/delta", 10},
-                {"DeadlockHttpBroadcast/30/delta", 10},
+                {"DeadlockHttpBroadcast_2025-02-27/36/delta", 3},
+                {"DeadlockHttpBroadcast_2025-02-27/37/delta", 10},
+                {"DeadlockHttpBroadcast_2025-02-27/38/delta", 10},
             });
 
         var messageHandler = new RetryingBroadcastHttpHandler(mockMessageHandler);
@@ -110,7 +110,7 @@ public class HttpBroadcastReaderTest
 
         var httpClient = new HttpClient(messageHandler)
         {
-            BaseAddress = new("http://localhost/DeadlockHttpBroadcast/")
+            BaseAddress = new("http://localhost/DeadlockHttpBroadcast_2025-02-27/")
         };
 
         demo.Source1GameEvents.Source1GameEvent += e =>
@@ -200,7 +200,7 @@ public class HttpBroadcastReaderTest
         var count = 0;
         try
         {
-            while (await httpReader.MoveNextAsync(default))
+            while (demo.CurrentDemoTick.Value <= 15580 && await httpReader.MoveNextAsync(default))
             {
                 snapshot.Add(demo.CurrentDemoTick, $"MoveNextAsync #{++count}");
             }
