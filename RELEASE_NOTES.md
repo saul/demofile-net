@@ -1,3 +1,7 @@
+### 0.30.1 (2025-06-01)
+
+- Update to latest Deadlock schema (v10423.dem)
+
 ### 0.29.1 (2025-03-01)
 
 - Update to latest Deadlock schema

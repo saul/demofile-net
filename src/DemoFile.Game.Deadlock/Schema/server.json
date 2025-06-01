@@ -165,6 +165,10 @@
         {
           "name": "TRANSITION_TO_PATH_NODE_ACTION_START_REVERSE",
           "value": 2
+        },
+        {
+          "name": "TRANSITION_TO_PATH_NODE_TRANSITIONING",
+          "value": 3
         }
       ]
     }
@@ -313,13 +317,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Rutger_ForceField_PushOut": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadelModifierVData": {
       "parent": "CModifierVData",
       "metadata": [
@@ -331,6 +328,30 @@
         },
         {
           "name": "MPropertySuppressBaseClassField"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Rutger_ForceField_PushOut": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_BloodTribute": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_BaseEventProcVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
         }
       ],
       "fields": [
@@ -432,13 +453,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Base": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_HollowPoint_Proc": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -446,8 +460,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_BaseEventProcVData": {
-      "parent": "CCitadelModifierVData",
+    "CCitadel_Modifier_TechOverflowProcWatcherVData": {
+      "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -1695,6 +1709,19 @@
           ]
         },
         {
+          "name": "m_pDestructiblePartsSystemComponent",
+          "type": {
+            "name": "CDestructiblePartsSystemComponent*",
+            "category": 1,
+            "inner": {
+              "name": "CDestructiblePartsSystemComponent",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_nRenderMode",
           "type": {
             "name": "RenderMode_t",
@@ -2458,6 +2485,16 @@
       "fields": [
       ]
     },
+    "CitadelItemVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_BaseBulletPreRollProcVData": {
       "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
@@ -2552,6 +2589,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_CrushingFists_Debuff": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CLogicalEntity": {
       "parent": "CServerOnlyEntity",
       "metadata": [
@@ -2640,6 +2684,13 @@
         }
       ]
     },
+    "CCitadel_Modifier_VampireBat_LoveBitesProc": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Bull_Leap_Boosting_Crash": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -2667,9 +2718,26 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_InfiniteMagazineActive": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Item_Bleeding_Bullets_DamageOverTime": {
       "parent": "CCitadelModifier",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Trooper_Damage_ReductionVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -3003,10 +3071,6 @@
             "category": 6
           },
           "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "ZiplingAttachStateChanged"
-            }
           ]
         },
         {
@@ -3057,6 +3121,62 @@
               "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
+        },
+        {
+          "name": "m_vPendulumVelocity",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_vPendulumPosition",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_vVelocityHistory1",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_vVelocityHistory2",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
         }
       ]
     },
@@ -3094,13 +3214,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Silenced": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CGameModifier_PlayEffectOnDeath": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -3110,6 +3223,13 @@
     },
     "FilterHealth": {
       "parent": "CBaseFilter",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Swan_Ability04": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -3127,6 +3247,16 @@
     },
     "CCitadel_Ability_BulletFlurryVData": {
       "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Intrinsic_BaseVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -3180,8 +3310,8 @@
       "fields": [
       ]
     },
-    "CitadelItemVData": {
-      "parent": "CitadelAbilityVData",
+    "CCitadel_Item_TechDamagePulseVData": {
+      "parent": "CitadelItemVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -3296,7 +3426,28 @@
         }
       ]
     },
+    "CCitadel_Modifier_ArcticBlast_Freeze": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CFogTrigger": {
+      "parent": "CBaseTrigger",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadelHotelExitTrigger": {
+      "parent": "CBaseTrigger",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CTriggerTrooperDamageReductionDetector": {
       "parent": "CBaseTrigger",
       "metadata": [
       ],
@@ -3333,6 +3484,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_BaseEventProc": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -3399,38 +3557,54 @@
       "fields": [
       ]
     },
-    "CCitadel_Item": {
-      "parent": "CCitadelBaseAbility",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_vecComponentsConsumed",
-          "type": {
-            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "CNetworkUtlVectorBase",
-            "inner": {
-              "name": "CUtlStringToken",
-              "category": 4,
-              "atomic": 0
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerAndObserversExclusive"
-            }
-          ]
-        }
-      ]
-    },
     "CPointTeleport": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CCitadel_Ability_VampireBat_BatBlink": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iRemainingCasts",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bIsBlinking",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_RecastEndTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_BlinkEndTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CCitadel_Modifier_Cadence_Crescendo_PostAOE_VData": {
@@ -3567,19 +3741,6 @@
           ]
         },
         {
-          "name": "m_flLastMoveTime",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerAndObserversExclusive"
-            }
-          ]
-        },
-        {
           "name": "m_flMoveDownStartTime",
           "type": {
             "name": "GameTime_t",
@@ -3601,6 +3762,13 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_Swan_Acrobat": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Ability_Mirage_Teleport": {
@@ -3642,8 +3810,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Intrinsic_BaseVData": {
-      "parent": "CCitadelModifierVData",
+    "CCitadel_Modifier_ReinforcingCasingsVData": {
+      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -3984,8 +4152,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_BaseEventProc": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Modifier_TechBurst_Proc": {
+      "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
       ],
       "fields": [
@@ -3998,8 +4166,22 @@
       "fields": [
       ]
     },
+    "CCitadel_Projectile_FeatherBoomerang": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_WreckingBallThrow": {
       "parent": "CCitadelBaseTriggerAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -4033,6 +4215,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_APRoundsVData": {
+      "parent": "CCitadel_Modifier_BaseBulletPreRollProcVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Upgrade_StabilizingTripodVData": {
       "parent": "CitadelItemVData",
       "metadata": [
@@ -4049,6 +4241,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_ArcticBlast": {
+      "parent": "CCitadel_Item",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -4103,6 +4302,16 @@
     "CModifier_SiphonBullets": {
       "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_ArmorUpgrade_WeaponShieldingVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -4280,16 +4489,6 @@
       "fields": [
       ]
     },
-    "CCitadel_WeaponUpgrade_BansheeSlugs_VData": {
-      "parent": "CitadelItemVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_TechDefenderShreddersProcVData": {
       "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
@@ -4316,13 +4515,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_BaseShield": {
-      "parent": "CCitadelModifier",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -4495,6 +4687,34 @@
           ]
         },
         {
+          "name": "m_hAnimGraph2DefinitionNetVar",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCNmGraphDefinition >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCNmGraphDefinition",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "animGraph2DefinitionChanged"
+            }
+          ]
+        },
+        {
+          "name": "m_animGraph2FlagsNetVar",
+          "type": {
+            "name": "uint8",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_animGraph2SerializeData",
           "type": {
             "name": "CNetworkUtlVectorBase< uint8 >",
@@ -4507,9 +4727,6 @@
             }
           },
           "metadata": [
-            {
-              "name": "MNetworkSendProxyRecipientsFilter"
-            }
           ]
         },
         {
@@ -4519,9 +4736,6 @@
             "category": 0
           },
           "metadata": [
-            {
-              "name": "MNetworkSendProxyRecipientsFilter"
-            }
           ]
         },
         {
@@ -4576,6 +4790,23 @@
     "CInfoTrooperBossSpawn": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Boho_Ability03": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Bookworm_AOEMagicVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -4637,13 +4868,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_RegeneratingTechShield": {
-      "parent": "CCitadel_Modifier_BaseShield",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -4776,13 +5000,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Intrinsic_Base": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Item_DPS_Aura_VData": {
       "parent": "CitadelItemVData",
       "metadata": [
@@ -4822,6 +5039,26 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CCitadel_Item_Mystic_Regeneration": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iRegenStacks",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        }
       ]
     },
     "CCitadel_Item_TrackingProjectileApplyModifier": {
@@ -5011,6 +5248,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_VampireBat_BatSwarmDoTVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_SpiderAnimatingVData": {
       "parent": "CEntitySubclassVDataBase",
       "metadata": [
@@ -5075,6 +5322,77 @@
       "fields": [
       ]
     },
+    "ConsumedComponentState_t": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_unComponentID",
+          "type": {
+            "name": "CUtlStringToken",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_nRefCount",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_bPurchased",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        }
+      ]
+    },
+    "CCitadel_Ability_Frank_Revive": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bReviveIsActive",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_TimeOfDeath",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CCitadel_Ability_Fathom_Breach": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -5124,6 +5442,27 @@
     },
     "CAI_NetworkManager": {
       "parent": "CPointEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Bookworm_Ability01": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_SelfHeal": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_VampireBat_DoubleDagger": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -5824,7 +6163,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Item_Savior": {
+    "CCitadel_WeaponUpgrade_CultistSacrifice": {
       "parent": "CCitadel_Item",
       "metadata": [
       ],
@@ -5841,6 +6180,16 @@
     "CCitadel_Modifier_BossInvuln": {
       "parent": "CCitadelModifier",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Swan_AcrobatVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -5901,19 +6250,16 @@
         }
       ]
     },
-    "CCitadel_Modifier_BaseBulletPreRollProc": {
-      "parent": "CCitadel_Modifier_BaseEventProc",
+    "CCitadel_Modifier_FuryTrance": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CCitadel_Modifier_GalvanicStormTechShieldVData": {
-      "parent": "CCitadelModifierVData",
+    "CCitadel_Modifier_BaseBulletPreRollProc": {
+      "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -5925,8 +6271,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_TechOverflowProcWatcherVData": {
-      "parent": "CCitadel_Modifier_BaseEventProcVData",
+    "CCitadel_Modifier_Swan_AcrobatVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -6027,34 +6373,6 @@
                 "name": "CCitadelBaseAbility",
                 "category": 5
               }
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "Abilities"
-            },
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "abilitiesChanged"
-            },
-            {
-              "name": "MNetworkPriority",
-              "value": 32
-            }
-          ]
-        },
-        {
-          "name": "m_vecUniversalItems",
-          "type": {
-            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "CNetworkUtlVectorBase",
-            "inner": {
-              "name": "CUtlStringToken",
-              "category": 4,
-              "atomic": 0
             }
           },
           "metadata": [
@@ -6229,6 +6547,25 @@
               "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
+        },
+        {
+          "name": "m_vecConsumedComponents",
+          "type": {
+            "name": "CUtlVectorEmbeddedNetworkVar< ConsumedComponentState_t >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "CUtlVectorEmbeddedNetworkVar",
+            "inner": {
+              "name": "ConsumedComponentState_t",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
         }
       ]
     },
@@ -6279,6 +6616,19 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_bHasVictims",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        }
       ]
     },
     "CCitadel_Modifier_ThrowSandDebuffVData": {
@@ -6403,10 +6753,13 @@
     "CFuncMoverAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -6700,6 +7053,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_VampireBat_BatBlinkVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_SalvoBullet": {
       "parent": "CCitadel_Modifier_BaseBulletPreRollProc",
       "metadata": [
@@ -6839,6 +7202,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Bookworm_KnightCharge": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_CopyUltVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -6946,6 +7316,16 @@
     },
     "CCitadel_WeaponUpgrade_BurstFireVData": {
       "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Spellbreaker_VData": {
+      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -7217,6 +7597,31 @@
         }
       ]
     },
+    "CNPC_BaseDefenseSentry": {
+      "parent": "CNPC_SimpleAnimatingAI",
+      "metadata": [
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_bTakesDamage"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_nTakeDamageFlags"
+        }
+      ],
+      "fields": [
+        {
+          "name": "m_vecUnitStatusOffset",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CModifierSleepBombAuraVData": {
       "parent": "CCitadelModifierAuraVData",
       "metadata": [
@@ -7338,6 +7743,16 @@
       ]
     },
     "CModifierGlitchVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_DecayingShieldTrackerVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
         {
@@ -7531,6 +7946,26 @@
     "CSoundEventEntity": {
       "parent": "CBaseEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Doorman_Wall_VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_WeaponSwapVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -7822,15 +8257,6 @@
         },
         {
           "name": "m_bEnableIndirect",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bIndirectUseLPVs",
           "type": {
             "name": "bool",
             "category": 0
@@ -8316,6 +8742,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Bookworm_KnightBarrier": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Mirage_SandPhantom_Passive_Victim_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -8333,8 +8766,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_WeaponEaterStack": {
-      "parent": "CCitadel_Modifier_Intrinsic_Base",
+    "CCitadel_Modifier_Intrinsic_Base": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -8517,93 +8950,30 @@
       "fields": [
       ]
     },
-    "CRagdollProp": {
-      "parent": "CBaseAnimGraph",
+    "CDynamicProp": {
+      "parent": "CBreakableProp",
       "metadata": [
+        {
+          "name": "MEntityAllowsPortraitWorldSpawn"
+        }
       ],
       "fields": [
         {
-          "name": "m_ragPos",
+          "name": "m_bUseHitboxesForRenderBox",
           "type": {
-            "name": "CNetworkUtlVectorBase< Vector >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "CNetworkUtlVectorBase",
-            "inner": {
-              "name": "Vector",
-              "category": 4,
-              "atomic": 0
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkEncoder",
-              "value": "coord"
-            }
-          ]
-        },
-        {
-          "name": "m_ragAngles",
-          "type": {
-            "name": "CNetworkUtlVectorBase< QAngle >",
-            "category": 4,
-            "atomic": 2,
-            "outer": "CNetworkUtlVectorBase",
-            "inner": {
-              "name": "QAngle",
-              "category": 4,
-              "atomic": 0
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkEncoder",
-              "value": "qangle"
-            },
-            {
-              "name": "MNetworkBitCount",
-              "value": 13
-            }
-          ]
-        },
-        {
-          "name": "m_hRagdollSource",
-          "type": {
-            "name": "CHandle< CBaseEntity >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "CBaseEntity",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flBlendWeight",
-          "type": {
-            "name": "float32",
+            "name": "bool",
             "category": 0
           },
           "metadata": [
-            {
-              "name": "MNetworkBitCount",
-              "value": 8
-            },
-            {
-              "name": "MNetworkMinValue",
-              "value": 0
-            },
-            {
-              "name": "MNetworkMaxValue",
-              "value": 1
-            },
-            {
-              "name": "MNetworkEncodeFlags",
-              "value": 1
-            }
+          ]
+        },
+        {
+          "name": "m_bUseAnimGraph",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
           ]
         }
       ]
@@ -8650,6 +9020,19 @@
       "fields": [
         {
           "name": "m_flNextPrimaryAttack",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_flNextPrimaryAttackStartTime",
           "type": {
             "name": "GameTime_t",
             "category": 5
@@ -9086,6 +9469,41 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Priest_WeaponSwap": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_SwapFinishTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_eWeaponSwapState",
+          "type": {
+            "name": "EWeaponSwapState_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "CCitadel_Modifier_Frank_PainAuraVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_ShadowClone": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -9134,35 +9552,27 @@
       "fields": [
       ]
     },
+    "CItem_ResonantHealing_VData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CItemXP::AssignedEarner_t": {
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CNPC_BaseDefenseSentry": {
-      "parent": "CNPC_SimpleAnimatingAI",
+    "CItem": {
+      "parent": "CBaseAnimGraph",
       "metadata": [
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_bTakesDamage"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_nTakeDamageFlags"
-        }
       ],
       "fields": [
-        {
-          "name": "m_vecUnitStatusOffset",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "CCitadelModifierIdolReturnTimerVData": {
@@ -9171,6 +9581,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_VampireBat_LoveBites": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -9188,6 +9605,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_HealBuff": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -9247,16 +9671,6 @@
     "CCitadel_Modifier_PermanentPickup": {
       "parent": "CCitadel_Modifier_PowerUp",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_BreakablePropPickupVData": {
-      "parent": "CEntitySubclassVDataBase",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -9332,13 +9746,26 @@
       "fields": [
       ]
     },
+    "CCitadel_BreakablePropPickupVData": {
+      "parent": "CEntitySubclassVDataBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CAI_BaseNPCAPI": {
       "metadata": [
+        {
+          "name": "MPulseLibraryBindings"
+        },
         {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -9351,16 +9778,50 @@
       "fields": [
       ]
     },
-    "CDynamicProp": {
-      "parent": "CBreakableProp",
+    "CBasePropDoor": {
+      "parent": "CDynamicProp",
       "metadata": [
         {
-          "name": "MEntityAllowsPortraitWorldSpawn"
+          "name": "MNetworkExcludeByName",
+          "value": "m_flAnimTime"
+        },
+        {
+          "name": "MNetworkExcludeByName",
+          "value": "m_flexWeight"
+        },
+        {
+          "name": "MNetworkExcludeByName",
+          "value": "m_blinktoggle"
+        },
+        {
+          "name": "MNetworkExcludeByUserGroup",
+          "value": "m_flPoseParameter"
+        },
+        {
+          "name": "MNetworkExcludeByName",
+          "value": "m_animationController.m_flPlaybackRate"
+        },
+        {
+          "name": "MNetworkExcludeByUserGroup",
+          "value": "overlay_vars"
+        },
+        {
+          "name": "MNetworkIncludeByName",
+          "value": "m_spawnflags"
         }
       ],
       "fields": [
         {
-          "name": "m_bUseHitboxesForRenderBox",
+          "name": "m_eDoorState",
+          "type": {
+            "name": "DoorState_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bLocked",
           "type": {
             "name": "bool",
             "category": 0
@@ -9369,10 +9830,45 @@
           ]
         },
         {
-          "name": "m_bUseAnimGraph",
+          "name": "m_bNoNPCs",
           "type": {
             "name": "bool",
             "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_closedPosition",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_closedAngles",
+          "type": {
+            "name": "QAngle",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hMaster",
+          "type": {
+            "name": "CHandle< CBasePropDoor >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBasePropDoor",
+              "category": 5
+            }
           },
           "metadata": [
           ]
@@ -9621,6 +10117,16 @@
     },
     "CCitadel_ArmorUpgrade_PersonalRejuvenatorVData": {
       "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_EtherealBulletsVData": {
+      "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -10713,104 +11219,66 @@
       "fields": [
       ]
     },
-    "CCitadel_ModifierTempTechShield": {
-      "parent": "CCitadel_Modifier_RegeneratingTechShield",
+    "CCitadel_BreakablePropPickup": {
+      "parent": "CBaseAnimGraph",
       "metadata": [
       ],
       "fields": [
-      ]
-    },
-    "CBasePropDoor": {
-      "parent": "CDynamicProp",
-      "metadata": [
         {
-          "name": "MNetworkExcludeByName",
-          "value": "m_flAnimTime"
-        },
-        {
-          "name": "MNetworkExcludeByName",
-          "value": "m_flexWeight"
-        },
-        {
-          "name": "MNetworkExcludeByName",
-          "value": "m_blinktoggle"
-        },
-        {
-          "name": "MNetworkExcludeByUserGroup",
-          "value": "m_flPoseParameter"
-        },
-        {
-          "name": "MNetworkExcludeByName",
-          "value": "m_animationController.m_flPlaybackRate"
-        },
-        {
-          "name": "MNetworkExcludeByUserGroup",
-          "value": "overlay_vars"
-        },
-        {
-          "name": "MNetworkIncludeByName",
-          "value": "m_spawnflags"
-        }
-      ],
-      "fields": [
-        {
-          "name": "m_eDoorState",
+          "name": "m_CCitadelMinimapComponent",
           "type": {
-            "name": "DoorState_t",
-            "category": 6
+            "name": "CCitadelMinimapComponent",
+            "category": 5
           },
           "metadata": [
-          ]
-        },
-        {
-          "name": "m_bLocked",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bNoNPCs",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_closedPosition",
-          "type": {
-            "name": "Vector",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_closedAngles",
-          "type": {
-            "name": "QAngle",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_hMaster",
-          "type": {
-            "name": "CHandle< CBasePropDoor >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "CBasePropDoor",
-              "category": 5
+            {
+              "name": "MNetworkUserGroup",
+              "value": "CCitadelMinimapComponent"
+            },
+            {
+              "name": "MNetworkAlias",
+              "value": "CCitadelMinimapComponent"
+            },
+            {
+              "name": "MNetworkTypeAlias",
+              "value": "CCitadelMinimapComponent"
             }
+          ]
+        },
+        {
+          "name": "m_bActive",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_sPickupName",
+          "type": {
+            "name": "CUtlString",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nNameOffset",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_sAmbientNoise",
+          "type": {
+            "name": "CUtlString",
+            "category": 4,
+            "atomic": 0
           },
           "metadata": [
           ]
@@ -10966,6 +11434,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Frank_ReviveVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Fear_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -10978,6 +11456,13 @@
     },
     "CCitadel_Ability_Magician_BigBolt": {
       "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_SpiritResilience": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
       "metadata": [
       ],
       "fields": [
@@ -11081,6 +11566,13 @@
     },
     "CPhysicsWire": {
       "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Boho_Ability02": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -11392,70 +11884,11 @@
         }
       ]
     },
-    "CCitadel_BreakablePropPickup": {
-      "parent": "CBaseAnimGraph",
+    "CCitadel_BreakablePropHealthPickup": {
+      "parent": "CCitadel_BreakablePropPickup",
       "metadata": [
       ],
       "fields": [
-        {
-          "name": "m_CCitadelMinimapComponent",
-          "type": {
-            "name": "CCitadelMinimapComponent",
-            "category": 5
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "CCitadelMinimapComponent"
-            },
-            {
-              "name": "MNetworkAlias",
-              "value": "CCitadelMinimapComponent"
-            },
-            {
-              "name": "MNetworkTypeAlias",
-              "value": "CCitadelMinimapComponent"
-            }
-          ]
-        },
-        {
-          "name": "m_bActive",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_sPickupName",
-          "type": {
-            "name": "CUtlString",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nNameOffset",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_sAmbientNoise",
-          "type": {
-            "name": "CUtlString",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "CCitadel_Item_HealthRegenAura": {
@@ -11563,6 +11996,13 @@
         }
       ]
     },
+    "CCitadel_Ability_Boho_Ability04": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Magician_EscapeVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -11612,16 +12052,6 @@
     },
     "CCitadel_Upgrade_AmmoScavenger_VData": {
       "parent": "CitadelItemVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_ShieldTracker_BaseVData": {
-      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -11686,7 +12116,16 @@
           ]
         },
         {
-          "name": "m_bPushTowardsEntity",
+          "name": "m_bPushTowardsInfoTarget",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bPushAwayFromInfoTarget",
           "type": {
             "name": "bool",
             "category": 0
@@ -11803,6 +12242,16 @@
       ]
     },
     "CModifierBullChargingVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_GuardianWard_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
         {
@@ -12104,6 +12553,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_FuryTrance_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CNPC_FieldSentry": {
       "parent": "CNPC_SimpleAnimatingAI",
       "metadata": [
@@ -12226,6 +12685,20 @@
       "fields": [
       ]
     },
+    "CModifier_Item_DPS_Aura_Active": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_EtherealBullets_BulletBuff": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Item_DivinersKevlar_VData": {
       "parent": "CitadelItemVData",
       "metadata": [
@@ -12243,8 +12716,8 @@
       "fields": [
       ]
     },
-    "CItem": {
-      "parent": "CBaseAnimGraph",
+    "CItemGeneric": {
+      "parent": "CItem",
       "metadata": [
       ],
       "fields": [
@@ -12594,6 +13067,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Frank_PainAura": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Trapper_FearVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -12607,6 +13087,16 @@
     "CCitadel_Modifier_IceDomeFriendly": {
       "parent": "CCitadel_Modifier_IceDome_AuraModifierBase",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_WeaponUpgrade_ExpressShot_VData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -12841,6 +13331,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Item_DivineBarrier_VData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_KnockbackAura": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -12879,6 +13379,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Drifter_Ability02": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_BullCharging": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -12895,6 +13402,23 @@
     },
     "CCitadel_Modifier_Passive_CloakVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_EnchantedHolsters_Watcher": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_ArcticBlast_VData": {
+      "parent": "CitadelItemVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -13267,8 +13791,22 @@
       "fields": [
       ]
     },
+    "CCitadel_WeaponUpgrade_InfiniteMagazine": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_NeutralAgro": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_PunkGoat_Ability04": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -13281,8 +13819,8 @@
       "fields": [
       ]
     },
-    "CModifier_Synth_Blitz_TechAmp": {
-      "parent": "CCitadel_Modifier_Base",
+    "CCitadel_Modifier_Base": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -13454,8 +13992,8 @@
         }
       ]
     },
-    "CItemGeneric": {
-      "parent": "CItem",
+    "CItemFlare": {
+      "parent": "CItemGeneric",
       "metadata": [
       ],
       "fields": [
@@ -13638,6 +14176,19 @@
           ]
         },
         {
+          "name": "m_bNoClipEnabled",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNoClipEnableChanged"
+            }
+          ]
+        },
+        {
           "name": "m_iDesiredFOV",
           "type": {
             "name": "uint32",
@@ -13672,8 +14223,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Targeted_Silence_Debuff": {
-      "parent": "CCitadel_Modifier_Silenced",
+    "CCitadel_Modifier_Silenced": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -13706,10 +14257,13 @@
     "CPointTemplateAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -13765,6 +14319,13 @@
     },
     "CFogVolume": {
       "parent": "CServerOnlyModelEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_FocusLens": {
+      "parent": "CCitadel_Item_TrackingProjectileApplyModifier",
       "metadata": [
       ],
       "fields": [
@@ -13932,6 +14493,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Item_TrackingProjectileApplyModifierVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Push": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -13942,10 +14513,13 @@
     "CNPCMakerAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -13961,6 +14535,16 @@
     "CProjectile_Rolling_FireBall": {
       "parent": "CCitadelProjectile",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_BackstabberAura_VData": {
+      "parent": "CCitadelModifierAuraVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -14205,8 +14789,15 @@
       "fields": [
       ]
     },
-    "CItemFlare": {
-      "parent": "CItemGeneric",
+    "CCitadel_Doorman_Wall_Section": {
+      "parent": "CBaseAnimGraph",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_ArmorUpgrade_WeaponShielding": {
+      "parent": "CCitadel_Item",
       "metadata": [
       ],
       "fields": [
@@ -14280,35 +14871,38 @@
       "fields": [
       ]
     },
-    "CRagdollPropAttached": {
-      "parent": "CRagdollProp",
+    "CRagdollProp": {
+      "parent": "CBaseAnimGraph",
       "metadata": [
       ],
       "fields": [
         {
-          "name": "m_boneIndexAttached",
+          "name": "m_ragEnabled",
           "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_ragdollAttachedObjectIndex",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_attachmentPointBoneSpace",
-          "type": {
-            "name": "Vector",
+            "name": "CNetworkUtlVectorBase< bool >",
             "category": 4,
-            "atomic": 0
+            "atomic": 2,
+            "outer": "CNetworkUtlVectorBase",
+            "inner": {
+              "name": "bool",
+              "category": 0
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_ragPos",
+          "type": {
+            "name": "CNetworkUtlVectorBase< Vector >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "CNetworkUtlVectorBase",
+            "inner": {
+              "name": "Vector",
+              "category": 4,
+              "atomic": 0
+            }
           },
           "metadata": [
             {
@@ -14318,16 +14912,66 @@
           ]
         },
         {
-          "name": "m_attachmentPointRagdollSpace",
+          "name": "m_ragAngles",
           "type": {
-            "name": "Vector",
+            "name": "CNetworkUtlVectorBase< QAngle >",
             "category": 4,
-            "atomic": 0
+            "atomic": 2,
+            "outer": "CNetworkUtlVectorBase",
+            "inner": {
+              "name": "QAngle",
+              "category": 4,
+              "atomic": 0
+            }
           },
           "metadata": [
             {
               "name": "MNetworkEncoder",
-              "value": "coord"
+              "value": "qangle"
+            },
+            {
+              "name": "MNetworkBitCount",
+              "value": 13
+            }
+          ]
+        },
+        {
+          "name": "m_hRagdollSource",
+          "type": {
+            "name": "CHandle< CBaseEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBlendWeight",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkBitCount",
+              "value": 8
+            },
+            {
+              "name": "MNetworkMinValue",
+              "value": 0
+            },
+            {
+              "name": "MNetworkMaxValue",
+              "value": 1
+            },
+            {
+              "name": "MNetworkEncodeFlags",
+              "value": 1
             }
           ]
         }
@@ -14349,6 +14993,13 @@
     },
     "CCitadel_Modifier_MobileResupplyAura": {
       "parent": "CCitadelModifierAura",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_SkyRunner_FlakShot": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -14394,10 +15045,13 @@
     "CBasePlayerControllerAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -14464,13 +15118,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_BulletShieldImpact": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_PullDownToGroundVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -14484,6 +15131,16 @@
     "CCitadel_Modifier_Backdoor_Protection": {
       "parent": "CCitadelModifier",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CModifierNonPlayerCameraSettingsVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -14601,6 +15258,22 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CCitadel_Item_TrophyCollector": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iTrophyCount",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CCitadel_Ability_GoldenIdol": {
@@ -14828,6 +15501,26 @@
         }
       ]
     },
+    "CCitadel_Ability_Priest_StackingDefenseVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Frank_PrimaryWeaponVData": {
+      "parent": "CCitadel_Ability_PrimaryWeaponVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Targetdummy_3": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -15027,6 +15720,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_SkyRunner_Ability04": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Wrecker_Ultimate_ThrowEnemy": {
       "parent": "CCitadel_Modifier_Stunned",
       "metadata": [
@@ -15036,6 +15736,13 @@
     },
     "CCitadel_Modifier_WreckerSalvage_Buff": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Bebop_StickyBomb2": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -15122,13 +15829,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Item_QuickSilver": {
-      "parent": "CCitadel_Item",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Item_AOE_Tech_Shield": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -15163,6 +15863,23 @@
     "CCitadel_Modifier_PristineEmblem": {
       "parent": "CCitadelModifier",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_SpiritBurnEnemyTracker": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_FocusLens_Damage_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -15370,6 +16087,13 @@
     },
     "CCitadel_UtilityUpgrade_HealthNova": {
       "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_Discord_Aura": {
+      "parent": "CCitadelModifierAura",
       "metadata": [
       ],
       "fields": [
@@ -15691,6 +16415,16 @@
         }
       ]
     },
+    "CCitadel_Ability_VampireBat_DoubleDaggerVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Targetdummy_1": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -15732,8 +16466,22 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_CapacitorSlowDebuff": {
+      "parent": "CCitadel_Modifier_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_DisarmProcWatcher": {
       "parent": "CCitadel_Modifier_BaseEventProc",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_ApplyModifierOnDamageTaken": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -15756,7 +16504,7 @@
     "CPulseRuntimeLibModuleLocalTypeQueryRegistration": {
       "metadata": [
         {
-          "name": "MGapTypeQueriesForScopeSingleton"
+          "name": "MPulseTypeQueriesForScopeSingleton"
         }
       ],
       "fields": [
@@ -15844,6 +16592,16 @@
     },
     "CCitadel_Modifier_MutedVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Backstabber_Watcher_VData": {
+      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -16015,6 +16773,26 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Skyrunner_MagicBeamVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_SkyRunner_FlakShotVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Disruptive_Charge": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -16125,6 +16903,13 @@
         }
       ]
     },
+    "CCitadel_Modifier_APRounds": {
+      "parent": "CCitadel_Modifier_BaseBulletPreRollProc",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_LifestrikeGauntlets": {
       "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
@@ -16168,6 +16953,13 @@
     },
     "CCitadel_Projectile_Pillar": {
       "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Doorman_Ability03": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -16352,6 +17144,13 @@
       ]
     },
     "CCitadel_Modifier_Item_HealthNova": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_AbsorbingArmor": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -16624,6 +17423,16 @@
     },
     "CCitadel_Modifier_ChainLightningEffectVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_TrophyCollectorVData": {
+      "parent": "CitadelItemVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -16987,6 +17796,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_FocusLens_Damage": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Succor_MoveVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -17033,6 +17849,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_VampireBat_BatCloudVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Trapper_StealSpiritDebuff": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -17050,6 +17876,16 @@
     "CCitadel_Ability_TrooperZipLine": {
       "parent": "CCitadel_Ability_ZipLine",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_WeaponUpgrade_BloodTributeVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -17106,6 +17942,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Drifter_Ability04": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Viper_VenomVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -17125,6 +17968,13 @@
     },
     "CCitadel_Modifier_FlameDash": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Slide_Debuff": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
       "metadata": [
       ],
       "fields": [
@@ -17338,6 +18188,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Frank_PainAura_Target": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifierIntimidatedVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -17386,6 +18243,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_DivineBarrier": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -17444,6 +18308,13 @@
     },
     "CLogicCompare": {
       "parent": "CLogicalEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_PunkGoat_Ability01": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -17926,6 +18797,45 @@
           ]
         },
         {
+          "name": "m_vecBonusCounterModifiers",
+          "type": {
+            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "CNetworkUtlVectorBase",
+            "inner": {
+              "name": "CUtlStringToken",
+              "category": 4,
+              "atomic": 0
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecModifierBonusCounterValues",
+          "type": {
+            "name": "CNetworkUtlVectorBase< int32 >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "CNetworkUtlVectorBase",
+            "inner": {
+              "name": "int32",
+              "category": 0
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "Abilities"
+            },
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "pdgBonusCounterChanged"
+            }
+          ]
+        },
+        {
           "name": "m_tHeldItem",
           "type": {
             "name": "CUtlStringToken",
@@ -18065,14 +18975,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_Skirmish_Respawn_Reduction": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_MagicCarpet_Shields": {
+    "CModifier_Synth_Blitz_TechAmp": {
       "parent": "CCitadel_Modifier_Base",
       "metadata": [
       ],
@@ -18093,6 +18996,13 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_WeaponUpgrade_CooldownOnMiss": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCitadel_ArmorUpgrade_HealOnLevel": {
@@ -18195,6 +19105,16 @@
       "fields": [
       ]
     },
+    "CCitadel_WeaponUpgrade_InfiniteMagazineVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Upgrade_ArcaneSurge_AbilityWatcher_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -18243,6 +19163,20 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Drifter_Hunger": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Drifter_Ability01": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_HauntWatcher": {
       "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
@@ -18277,7 +19211,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Item_TechDamagePulseVData": {
+    "CCitadel_WeaponUpgrade_HeadshotDamage_VData": {
       "parent": "CitadelItemVData",
       "metadata": [
         {
@@ -18327,33 +19261,6 @@
         },
         {
           "name": "m_flAutoExposureMax",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flTonemapPercentTarget",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flTonemapPercentBrightPixels",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flTonemapMinAvgLum",
           "type": {
             "name": "float32",
             "category": 0
@@ -18417,7 +19324,7 @@
       "fields": [
       ]
     },
-    "CCitadel_ArmorUpgrade_ReturnFireVData": {
+    "CCitadel_WeaponUpgrade_SplitShotVData": {
       "parent": "CitadelItemVData",
       "metadata": [
         {
@@ -18427,9 +19334,22 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_TechShieldImpact": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Item_GuardianWard_VData": {
+      "parent": "CitadelItemVData",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_ArmorUpgrade_ReturnFireVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -18597,6 +19517,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_VampireBat_BatSwarmDoT": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_SmokeBomb": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -18707,6 +19634,23 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Doorman_Ability04": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Bookworm_KnightChargeVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Wrecker_UltimateVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -18720,6 +19664,16 @@
     "CCitadel_Modifier_Low_Health_Glow": {
       "parent": "CCitadelModifier",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_CrushingFistsDebuff_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -19066,6 +20020,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Doorman_Wall": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Thumper_3": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -19196,10 +20157,6 @@
     "CBasePlayerPawn": {
       "parent": "CBaseCombatCharacter",
       "metadata": [
-        {
-          "name": "MNetworkUserGroupProxy",
-          "value": "CBasePlayerPawn"
-        },
         {
           "name": "MNetworkUserGroupProxy",
           "value": "CBasePlayerPawn"
@@ -19615,6 +20572,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_NonPlayerCamera": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CPlayer_ObserverServices": {
       "parent": "CPlayerPawnComponent",
       "metadata": [
@@ -19735,7 +20699,67 @@
           ]
         },
         {
-          "name": "m_Entity_hLightProbeTexture",
+          "name": "m_Entity_hLightProbeTexture_AmbientCube",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_DC",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_R",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_G",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_B",
           "type": {
             "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
             "category": 4,
@@ -19943,6 +20967,31 @@
         }
       ]
     },
+    "CCitadel_Ability_Frank_ShockTarget": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_flBonusDamage",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_NextBonusDamageDecayTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CAbilityThumper4VData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -19977,9 +21026,12 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_IncendiaryThinker": {
-      "parent": "CCitadelModifier",
+    "CModifier_Headshot_Damage_DebuffVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -20135,13 +21187,6 @@
       ]
     },
     "CCitadel_Modifier_SleepDagger_Drowsy": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_ShieldTracker_Base": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -20367,6 +21412,16 @@
         }
       ]
     },
+    "CCitadel_Ability_Bookworm_KnightBarrierVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Mirage_Traveler_FireRate": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -20396,6 +21451,19 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_bBraceParamTriggered",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
+        },
         {
           "name": "m_flBoostYaw",
           "type": {
@@ -20484,6 +21552,23 @@
     "CPointModifierThinker": {
       "parent": "CBaseEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_DivineBarrier": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Bookworm_AOEMagic_AreaModifierVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -20581,6 +21666,13 @@
       ]
     },
     "CCitadel_Modifier_Passive_Camouflage": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Trooper_Damage_Reduction": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -20854,6 +21946,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_MagicShock_Proc_ImmuneWatcher": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_SiphonBullets_VData": {
       "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
@@ -20975,6 +22074,15 @@
     "CMapSharedEnvironment": {
       "parent": "CLogicalEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CSharedPulseTypeQueryRegistration": {
+      "metadata": [
+        {
+          "name": "MPulseTypeQueriesForScopeSingleton"
+        }
       ],
       "fields": [
       ]
@@ -21299,6 +22407,31 @@
       "fields": [
       ]
     },
+    "CCitadel_WeaponUpgrade_ExpressShot": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iShotsToCreate",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bIsInExpressShot",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CCitadel_Upgrade_StabilizingTripod": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -21337,6 +22470,16 @@
     "CAI_Motor": {
       "parent": "CAI_Component",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_BarrageVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -21408,7 +22551,67 @@
       ],
       "fields": [
         {
-          "name": "m_Entity_hLightProbeTexture",
+          "name": "m_Entity_hLightProbeTexture_AmbientCube",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_DC",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_R",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_G",
+          "type": {
+            "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CStrongHandle",
+            "inner": {
+              "name": "InfoForResourceTypeCTextureBase",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_Entity_hLightProbeTexture_SH2_B",
           "type": {
             "name": "CStrongHandle< InfoForResourceTypeCTextureBase >",
             "category": 4,
@@ -21653,21 +22856,6 @@
           ]
         },
         {
-          "name": "m_hProjectile",
-          "type": {
-            "name": "CHandle< CBaseEntity >",
-            "category": 4,
-            "atomic": 1,
-            "outer": "CHandle",
-            "inner": {
-              "name": "CBaseEntity",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_vecHookTargetStartPos",
           "type": {
             "name": "Vector",
@@ -21679,6 +22867,33 @@
               "name": "MNetworkUserGroup",
               "value": "LocalPlayerOwnerAndObserversExclusive"
             }
+          ]
+        },
+        {
+          "name": "m_flCancelHookTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBeginReelHookTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flBulletShouldExpireTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
           ]
         }
       ]
@@ -22147,6 +23362,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Spellbreaker": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Tier3_DamagePulseVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -22256,6 +23478,13 @@
     },
     "CCitadel_Modifier_SuperAcolytesGlove": {
       "parent": "CCitadel_Modifier_BaseEventProc",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_ConeWaveProjectile": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
       "metadata": [
       ],
       "fields": [
@@ -23199,13 +24428,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_IcePath_Buff": {
-      "parent": "CCitadelModifier",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_ProjectMind": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -23421,6 +24643,16 @@
         }
       ]
     },
+    "CCitadel_Modifier_EnchantedHolsters_Watcher_VData": {
+      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_SuperAcolytesGlove_VData": {
       "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
@@ -23452,6 +24684,20 @@
       "fields": [
       ]
     },
+    "CCitadel_WeaponUpgrade_BloodTribute": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_Barrage": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Operative_Blindside_EnemyDebuff": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -23468,6 +24714,13 @@
     },
     "CCitadel_Modifier_Hornet_Sting": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Backstabber_Watcher": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
       "metadata": [
       ],
       "fields": [
@@ -23545,6 +24798,13 @@
         }
       ]
     },
+    "CCitadel_Ability_Swan_FeatherBoomerang": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_LurkersAmbush_InvisVData": {
       "parent": "CCitadel_Modifier_InvisVData",
       "metadata": [
@@ -23618,8 +24878,18 @@
       "fields": [
       ]
     },
-    "CCitadel_Item_TrackingProjectileApplyModifierVData": {
-      "parent": "CitadelItemVData",
+    "CCitadel_Modifier_RebuttalWatcherVData": {
+      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_Disarm_VData": {
+      "parent": "CCitadel_Item_TrackingProjectileApplyModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -23733,6 +25003,13 @@
     },
     "CInfoSpawnGroupLandmark": {
       "parent": "CPointEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Swan_Leap": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -23967,6 +25244,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Frank_ShockTargetVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Mirage_FireBeetles_Debuff_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -23980,16 +25267,6 @@
     "CCitadel_Modifier_TangoTether_TetherReceiver": {
       "parent": "CCitadelModifier",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_IncendiaryThinkerVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -24020,6 +25297,31 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CProjectile_KnightCharge_Projectile": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_flWidth",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_tDieTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CCitadel_Projectile_Tier2Boss_RocketBarrage": {
@@ -24159,6 +25461,15 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_flBarrageEndTime",
+          "type": {
+            "name": "CCitadelAutoScaledTime",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CAbilityBloodShardsVData": {
@@ -24408,6 +25719,13 @@
         }
       ]
     },
+    "CCitadel_Ability_VampireBat_BatCloud": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityTokamakBreachVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -24506,10 +25824,13 @@
     "CBaseTriggerAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -24922,7 +26243,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_TechBurst_Proc": {
+    "CCitadel_Modifier_EtherealBullets_Watcher": {
       "parent": "CCitadel_Modifier_BaseEventProc",
       "metadata": [
       ],
@@ -25425,6 +26746,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Drifter_HungerVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Rutger_Pulse_Target": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -25606,13 +26937,6 @@
         }
       ]
     },
-    "CLaneNode": {
-      "parent": "CCitadelModelEntity",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CEnvFireSource": {
       "parent": "CBaseEntity",
       "metadata": [
@@ -25626,6 +26950,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Bookworm_AOEMagic": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -25655,6 +26986,23 @@
     },
     "CCitadel_Modifier_Cadence_Sleeping": {
       "parent": "CCitadel_Modifier_Sleep",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_SpiritBurnDOT_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_ArcticBlastAOE": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -25789,6 +27137,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_SpiritBurnEnemyTrackerVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_HalloweenMask": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -25861,6 +27219,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_HealBuffVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_AmmoScavenger": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -25925,6 +27293,13 @@
             "name": "CBaseEntity"
           }
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Frank_PainAura": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -26034,13 +27409,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CModifier_BansheeSlugs_Headshot": {
-      "parent": "CCitadelModifier",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -26324,15 +27692,6 @@
       "fields": [
       ]
     },
-    "CSharedGapTypeQueryRegistration": {
-      "metadata": [
-        {
-          "name": "MGapTypeQueriesForScopeSingleton"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_PowerUp_Survival": {
       "parent": "CCitadel_Modifier_ScalingPowerUp",
       "metadata": [
@@ -26379,6 +27738,15 @@
         },
         {
           "name": "m_bStartDisabled",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bIndirectUseLPVs",
           "type": {
             "name": "bool",
             "category": 0
@@ -26503,15 +27871,6 @@
           },
           "metadata": [
           ]
-        },
-        {
-          "name": "m_bAllowLPVIndirect",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
         }
       ]
     },
@@ -26521,6 +27880,20 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Bookworm_KnightCharge_Buff": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Frank_Reviving": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -26541,6 +27914,13 @@
     },
     "CCitadel_Modifier_MobileResupply": {
       "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_HeadshotBoosterWatcher": {
+      "parent": "CCitadel_Modifier_BaseBulletPreRollProc",
       "metadata": [
       ],
       "fields": [
@@ -26575,6 +27955,26 @@
             "category": 0
           },
           "metadata": [
+          ]
+        }
+      ]
+    },
+    "CItem_ResonantHealing": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iRegenStacks",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
           ]
         }
       ]
@@ -27118,6 +28518,15 @@
               "value": "OnEndTimeChanged"
             }
           ]
+        },
+        {
+          "name": "m_flShardWidth",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
         }
       ]
     },
@@ -27214,6 +28623,16 @@
     },
     "CAbilityMeleeParryVData": {
       "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_WeaponUpgrade_CultistSacrifice_VData": {
+      "parent": "CitadelItemVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -27626,16 +29045,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_NapalmProjectileVData": {
-      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_WeaponUpgrade_WeaponEaterVData": {
       "parent": "CitadelItemVData",
       "metadata": [
@@ -27663,7 +29072,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Item_Disarm_VData": {
+    "CCitadel_Item_SpiritSap_VData": {
       "parent": "CCitadel_Item_TrackingProjectileApplyModifierVData",
       "metadata": [
         {
@@ -27841,6 +29250,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_SplitShotBonusDamage": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -28123,6 +29539,15 @@
           },
           "metadata": [
           ]
+        },
+        {
+          "name": "m_tDeactivationTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
         }
       ]
     },
@@ -28151,7 +29576,7 @@
       ]
     },
     "CCitadel_Modifier_Wraith_ProjectMind_Shield": {
-      "parent": "CCitadel_Modifier_BaseShield",
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -28166,6 +29591,23 @@
     },
     "CCitadel_Ability_ZipLineBoost_VData": {
       "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_UltimateBurst_DelayedEffect": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_FocusLens_VData": {
+      "parent": "CCitadel_Item_TrackingProjectileApplyModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -28279,10 +29721,13 @@
     "CLogicRelayAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -28461,6 +29906,22 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Doorman_Doorway": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bHasPendingDoor",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CModifierTangoTetherTargetVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -28626,6 +30087,20 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_PunkGoat_Ability02": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_MagicBeam": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Modifier_Fathom_ScaldingSpray_Target_VData": {
@@ -29342,18 +30817,6 @@
       "fields": [
       ]
     },
-    "CTestInputOutputCombinationsAPI": {
-      "metadata": [
-        {
-          "name": "MPulseProvideFeatureTag"
-        },
-        {
-          "name": "MPulseLibraryBindings"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_PointTalker_Base": {
       "parent": "CBaseCombatCharacter",
       "metadata": [
@@ -29385,6 +30848,16 @@
     "CInfoTrooperNeutralSpawn": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_SelfHealVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -29523,6 +30996,15 @@
           ]
         },
         {
+          "name": "m_flFastChargeStartTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_flFastChargeEndTime",
           "type": {
             "name": "GameTime_t",
@@ -29621,6 +31103,26 @@
     "CFilterEnemy": {
       "parent": "CBaseFilter",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_SwingLineVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Frank_PainAura_TargetVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -29958,8 +31460,71 @@
         }
       ]
     },
+    "CCitadel_Ability_SkyRunner_SwingLine": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_eSwingState",
+          "type": {
+            "name": "ESwingState_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_SwingStartTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_SwingEndTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_vecSwingPoint",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flIdealSpringLength",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CAbilityTeleportToGangsterVData": {
       "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_EtherealBulletsBulletDamageBuffVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -29975,7 +31540,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_NapalmProjectile": {
+    "CCitadel_Modifier_WeaponEaterStack": {
       "parent": "CCitadel_Modifier_Intrinsic_Base",
       "metadata": [
       ],
@@ -30057,8 +31622,8 @@
         }
       ]
     },
-    "CCitadel_ArmorUpgrade_RegeneratingBulletShieldVData": {
-      "parent": "CitadelItemVData",
+    "CCitadel_Modifier_DivineBarrier_VData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -30090,10 +31655,13 @@
     "CFilterMultipleAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -30167,6 +31735,23 @@
       ]
     },
     "CCitadel_Modifier_Decoy_Tracker": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadelAbilityIncendiaryProjectileVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_GuardianWard": {
       "parent": "CCitadelModifier",
       "metadata": [
       ],
@@ -30351,6 +31936,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Bebop_StickyBomb2VData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CAbilityPsychicPulseVData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -30364,16 +31959,6 @@
     "CCitadel_Modifier_Hornet_Chain_Connection": {
       "parent": "CCitadelModifier",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Item_Savior_VData": {
-      "parent": "CitadelItemVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -30634,7 +32219,7 @@
       ]
     },
     "CCitadel_Modifier_BulletFlurry": {
-      "parent": "CCitadel_Modifier_BaseBulletPreRollProc",
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -30991,13 +32576,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_ThrowSandProjectile": {
-      "parent": "CCitadel_Modifier_Intrinsic_Base",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Ability_ShadowPulse": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -31286,10 +32864,6 @@
             "category": 5
           },
           "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnLaunchTimeChanged"
-            }
           ]
         },
         {
@@ -31297,6 +32871,24 @@
           "type": {
             "name": "GameTime_t",
             "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flEndAttackableTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nLaunchNum",
+          "type": {
+            "name": "int32",
+            "category": 0
           },
           "metadata": [
           ]
@@ -31445,6 +33037,16 @@
       "fields": [
       ]
     },
+    "CItemCapacitorVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_BoxingGloveVData": {
       "parent": "CCitadel_Modifier_BaseEventProcVData",
       "metadata": [
@@ -31492,6 +33094,13 @@
     },
     "CLogicDistanceAutosave": {
       "parent": "CLogicalEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_StackingDefense": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -31610,6 +33219,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Swan_Acrobat": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CAbility_Synth_Blitz": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -31666,10 +33282,13 @@
     "CTakeDamageInfoAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -31834,6 +33453,21 @@
         }
       ]
     },
+    "CTestPulseIOAPI": {
+      "metadata": [
+        {
+          "name": "MPulseLibraryBindings"
+        },
+        {
+          "name": "MPulseProvideFeatureTag"
+        },
+        {
+          "name": "MPulseDomainHookInfo"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadelTeleportTrigger": {
       "parent": "CTriggerModifier",
       "metadata": [
@@ -31898,6 +33532,31 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CCitadel_Ability_VampireBat_BatSwarm": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_iBonusBats",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_iBatCountOnCast",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CModifier_Mirage_FireBeetles_StatStealDebuff": {
@@ -32226,6 +33885,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Item_ContainmentVData": {
+      "parent": "CCitadel_Item_TrackingProjectileApplyModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CNPC_HeroDecoy": {
       "parent": "CNPC_HeroCloneTrooper",
       "metadata": [
@@ -32243,6 +33912,23 @@
         {
           "name": "MNetworkIncludeByName",
           "value": "m_iHealth"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Priest_Knockback": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Frank_PainAuraVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
         }
       ],
       "fields": [
@@ -32278,6 +33964,16 @@
     "CCitadelTriggerHurt": {
       "parent": "CTriggerHurt",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_VampireBat_BatCloud_SelfVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -32324,7 +34020,7 @@
       ]
     },
     "CCitadel_WeaponUpgrade_HeadshotBooster_VData": {
-      "parent": "CitadelItemVData",
+      "parent": "CCitadel_Modifier_BaseBulletPreRollProcVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -32545,6 +34241,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_VampireBat_BatCloud_Self": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Gunslinger_WallStunVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -32568,10 +34271,13 @@
     "CPathSimpleAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -33369,6 +35075,13 @@
       "fields": [
       ]
     },
+    "CPathMover": {
+      "parent": "CPathSimple",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Ability_Gunslinger_KnockbackBlast": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
@@ -33422,34 +35135,6 @@
       "metadata": [
       ],
       "fields": [
-      ]
-    },
-    "CPathMover": {
-      "parent": "CBaseEntity",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_CPathQueryComponent",
-          "type": {
-            "name": "CPathQueryComponent",
-            "category": 5
-          },
-          "metadata": [
-            {
-              "name": "MNetworkUserGroup",
-              "value": "CPathQueryComponent"
-            },
-            {
-              "name": "MNetworkAlias",
-              "value": "CPathQueryComponent"
-            },
-            {
-              "name": "MNetworkTypeAlias",
-              "value": "CPathQueryComponent"
-            }
-          ]
-        }
       ]
     },
     "CCitadel_UtilityUpgrade_RocketBooster": {
@@ -33543,6 +35228,13 @@
         }
       ]
     },
+    "CCitadel_Ability_SkyRunner_PrimaryWeapon": {
+      "parent": "CCitadel_Ability_PrimaryWeapon",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_CopyUlt": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -33614,6 +35306,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_TrophyCollectorPassiveGold": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CChangeLevel": {
       "parent": "CBaseTrigger",
       "metadata": [
@@ -33656,6 +35355,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Backstabber_Aura": {
+      "parent": "CCitadelModifierAura",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_ArmorUpgrade_DoubleJump": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -33693,6 +35399,16 @@
     },
     "CCitadel_BreakablePropHealthPickupVData": {
       "parent": "CCitadel_BreakablePropPickupVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Frank_SelfZapVData": {
+      "parent": "CitadelAbilityVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -33762,6 +35478,23 @@
     "CCitadel_Modifier_ExplosiveBullets": {
       "parent": "CCitadel_Modifier_BaseBulletPreRollProc",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_CounterspellWatcher": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_ArmorUpgrade_SpiritBubbleVData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -33893,6 +35626,16 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_DeflectingArmorVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Hero_Clone": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -33902,6 +35645,13 @@
     },
     "CTriggerBrush": {
       "parent": "CBaseModelEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CTestPulseIO": {
+      "parent": "CLogicalEntity",
       "metadata": [
       ],
       "fields": [
@@ -34058,6 +35808,13 @@
     },
     "CInfoCoverPoint": {
       "parent": "CServerOnlyPointEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Hunger_Hungry": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -34380,16 +36137,6 @@
         }
       ]
     },
-    "CCitadel_Modifier_ThrowSandProjectileVData": {
-      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCitadel_Modifier_Intimidated_Debuff": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -34696,6 +36443,23 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Boho_Ability01": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_VampireBat_BatSwarmVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_FealtyTarget": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -34754,6 +36518,16 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Item_Discord_AuraVData": {
+      "parent": "CCitadelModifierAuraVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CNodeEnt_InfoNodeAir": {
@@ -34929,6 +36703,13 @@
         }
       ]
     },
+    "CCitadel_Ability_PunkGoat_Ability03": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CAbility_Synth_Grasp_VData": {
       "parent": "CitadelAbilityVData",
       "metadata": [
@@ -35003,15 +36784,15 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_ShieldTracker_Bullet": {
-      "parent": "CCitadel_Modifier_ShieldTracker_Base",
+    "CCitadel_Modifier_IceBeam_Stacking_Slow": {
+      "parent": "CCitadel_Modifier_Base_Buildup",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CCitadel_Modifier_IceBeam_Stacking_Slow": {
-      "parent": "CCitadel_Modifier_Base_Buildup",
+    "CCitadel_DoorwayPortal": {
+      "parent": "CBaseAnimGraph",
       "metadata": [
       ],
       "fields": [
@@ -35045,6 +36826,13 @@
     },
     "CEnvSplash": {
       "parent": "CPointEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Skyrunner_MagicBeam": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -35162,6 +36950,13 @@
         }
       ]
     },
+    "CCitadel_Ability_Frank_SelfZap": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Shadow_Step": {
       "parent": "CCitadel_Modifier_Invis",
       "metadata": [
@@ -35196,6 +36991,13 @@
       "fields": [
       ]
     },
+    "CModifier_Headshot_Damage_Debuff": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Upgrade_OverdriveClip_Reload": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -35213,9 +37015,12 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_SpiritBurn": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Modifier_ArcticBlast_Freeze_VData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -35280,6 +37085,13 @@
     },
     "CCitadel_Modifier_Tier3_DamagePulse": {
       "parent": "CCitadel_Modifier_Tier3Boss_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_BarrierTracker": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -35375,6 +37187,23 @@
         }
       ]
     },
+    "CCitadel_Modifier_Bookworm_AOEMagic_AreaModifier": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_VampireBat_LoveBitesProc_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_MageWalkVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -35461,10 +37290,13 @@
     "CPointTeleportAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -35476,13 +37308,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Item_Discord_Aura_Enemy": {
-      "parent": "CCitadelModifierAura",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -35511,6 +37336,16 @@
     "CCitadel_Ability_Tokamak_Breach": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_ArcticBlastAOE_VData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -35628,6 +37463,19 @@
               "value": "LocalPlayerOwnerAndObserversExclusive"
             }
           ]
+        },
+        {
+          "name": "m_flLateralInputSuppressEndTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerAndObserversExclusive"
+            }
+          ]
         }
       ]
     },
@@ -35709,10 +37557,13 @@
     "CPhysMotorAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -35774,6 +37625,51 @@
           "type": {
             "name": "GameTime_t",
             "category": 5
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "CDestructiblePartsSystemComponent": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_DamageLevelTakenByHitGroup",
+          "type": {
+            "name": "CNetworkUtlVectorBase< uint16 >",
+            "category": 4,
+            "atomic": 2,
+            "outer": "CNetworkUtlVectorBase",
+            "inner": {
+              "name": "uint16",
+              "category": 0
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_hOwner",
+          "type": {
+            "name": "CHandle< CBaseModelEntity >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CBaseModelEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nLastHitDamageLevel",
+          "type": {
+            "name": "int32",
+            "category": 0
           },
           "metadata": [
           ]
@@ -35886,6 +37782,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_PriestKnockback": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifierGravityLassoEnemyVData": {
       "parent": "CCitadel_Modifier_StunnedVData",
       "metadata": [
@@ -35898,6 +37801,16 @@
     },
     "CCitadel_Ability_Wraith_RapidFireVData": {
       "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_AbsorbingArmorVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -36040,11 +37953,23 @@
       "fields": [
       ]
     },
-    "CCitadel_Item_Discord_AuraVData_Enemy": {
-      "parent": "CCitadelModifierAuraVData",
+    "CCitadel_Modifier_DeflectingArmor": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CBaseModelEntityAPI": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MPulseLibraryBindings"
+        },
+        {
+          "name": "MPulseProvideFeatureTag"
+        },
+        {
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -36134,6 +38059,26 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_Swan_FeatherBoomerangVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_VampireBat_LoveBitesVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Ability_Nano_Pounce": {
@@ -36255,6 +38200,23 @@
       "fields": [
       ]
     },
+    "CLaneMarkerPath": {
+      "parent": "CServerOnlyEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_SwingLine_SwingingVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Wrecker_UltimateGrabEnemyVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -36265,8 +38227,8 @@
       "fields": [
       ]
     },
-    "CLaneMarkerPath": {
-      "parent": "CServerOnlyEntity",
+    "CCitadel_Modifier_HeadhunterWatcher": {
+      "parent": "CCitadel_Modifier_HeadshotBoosterWatcher",
       "metadata": [
       ],
       "fields": [
@@ -36402,8 +38364,32 @@
       "fields": [
       ]
     },
+    "CCitadel_Projectile_BatSwarmProjectile": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_SpiritSap": {
+      "parent": "CCitadel_Item_TrackingProjectileApplyModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_BreakablePropGoldPickupVData": {
       "parent": "CCitadel_BreakablePropPickupVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_SkyRunner_PrimaryWeaponVData": {
+      "parent": "CCitadel_Ability_PrimaryWeaponVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -36421,6 +38407,16 @@
     },
     "CAbilityHornetLeapVData": {
       "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Item_Mystic_RegenerationVData": {
+      "parent": "CitadelItemVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -36501,6 +38497,13 @@
             }
           ]
         }
+      ]
+    },
+    "CCitadel_Modifier_EtherealBullets_Buff": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCitadelModifierProjectilePitchingLoopSoundThinker": {
@@ -36861,6 +38864,10 @@
             }
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnHeroPawnChanged"
+            }
           ]
         },
         {
@@ -37161,6 +39168,28 @@
       "fields": [
       ]
     },
+    "CCitadelPortalTrigger": {
+      "parent": "CBaseTrigger",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_hOtherPortal",
+          "type": {
+            "name": "CHandle< CCitadelPortalTrigger >",
+            "category": 4,
+            "atomic": 1,
+            "outer": "CHandle",
+            "inner": {
+              "name": "CCitadelPortalTrigger",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CInfoVisibilityBox": {
       "parent": "CBaseEntity",
       "metadata": [
@@ -37194,6 +39223,16 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Ability_Priest_KnockbackVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Modifier_Rutger_CheatDeath_Activated": {
@@ -37260,6 +39299,13 @@
     },
     "CInfoTargetServerOnly": {
       "parent": "CServerOnlyPointEntity",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Bookworm_KnightBarrier": {
+      "parent": "CCitadelBaseAbility",
       "metadata": [
       ],
       "fields": [
@@ -37392,6 +39438,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_Priest_StackingDefense": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Mirage_SandPhantom_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -37454,13 +39507,6 @@
       "fields": [
       ]
     },
-    "CTestInputOutputCombinations": {
-      "parent": "CLogicalEntity",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CEntityFlame": {
       "parent": "CBaseEntity",
       "metadata": [
@@ -37500,6 +39546,16 @@
       ]
     },
     "CGameModifier_FireConCommandVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Bookworm_KnightBarrierVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
         {
@@ -37553,6 +39609,16 @@
     "CCitadel_Ability_StaticCharge": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_CrushingFistsWatcher_VData": {
+      "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -37642,6 +39708,13 @@
         }
       ]
     },
+    "CItem_GreaterWitheringWhip": {
+      "parent": "CCitadel_Item_TrackingProjectileApplyModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadelModifierItemPickupTimerVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -37723,6 +39796,16 @@
     "CMarkupVolumeTagged_NavGame": {
       "parent": "CMarkupVolumeWithRef",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_PriestKnockbackVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -37993,8 +40076,8 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_RegeneratingBulletShield": {
-      "parent": "CCitadel_Modifier_BaseShield",
+    "CCitadel_Modifier_ShieldImpact": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -38178,6 +40261,13 @@
       "fields": [
       ]
     },
+    "CCitadel_WeaponUpgrade_HeadshotDamage": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadelModifierAura_Default": {
       "parent": "CCitadelModifierAura",
       "metadata": [
@@ -38195,16 +40285,6 @@
     "CCitadel_Ability_Wraith_RapidFire": {
       "parent": "CCitadelBaseAbility",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_ShieldImpactVData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -38268,6 +40348,13 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CItemCapacitor": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Item_Charge_Mastery": {
@@ -38438,6 +40525,13 @@
       "fields": [
       ]
     },
+    "CProjectile_Doorman_Wall_Projectile": {
+      "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Thumper_PullAOE_VData": {
       "parent": "CCitadelModifierAuraVData",
       "metadata": [
@@ -38520,9 +40614,19 @@
       "fields": [
       ]
     },
-    "CCitadel_WeaponUpgrade_HeadshotBooster": {
+    "CCitadel_ArmorUpgrade_SpiritBubble": {
       "parent": "CCitadel_Item",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_MagicBeamVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -38825,6 +40929,19 @@
           ]
         },
         {
+          "name": "m_bInHideoutZone",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
+            }
+          ]
+        },
+        {
           "name": "m_timeRevealedOnMinimapByNPC",
           "type": {
             "name": "GameTime_t",
@@ -39068,6 +41185,19 @@
             {
               "name": "MNetworkTypeAlias",
               "value": "CCitadelMinimapComponent"
+            }
+          ]
+        },
+        {
+          "name": "m_flLastCombatTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerExclusive"
             }
           ]
         },
@@ -39441,13 +41571,6 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_ShieldTracker_Magic": {
-      "parent": "CCitadel_Modifier_ShieldTracker_Base",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CCitadelItemMetal": {
       "parent": "CItemGeneric",
       "metadata": [
@@ -39457,6 +41580,20 @@
     },
     "CCitadel_Projectile_DustStorm": {
       "parent": "CCitadelProjectile",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Frank_PrimaryWeapon": {
+      "parent": "CCitadel_Ability_PrimaryWeapon",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Frank_SelfZap": {
+      "parent": "CCitadelModifier",
       "metadata": [
       ],
       "fields": [
@@ -39699,6 +41836,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_SwingLine_Swinging": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CModifier_Mirage_FireScarabs_HealthLoss": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -39729,16 +41873,6 @@
     "CCitadel_Modifier_CritShot": {
       "parent": "CCitadel_Modifier_BaseBulletPreRollProc",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Savior_VData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
       ],
       "fields": [
       ]
@@ -39781,6 +41915,13 @@
       "fields": [
       ]
     },
+    "CCitadel_WeaponUpgrade_FuryTrance": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_GarbageAuraTargetModifierVData": {
       "parent": "CCitadel_Modifier_StunnedVData",
       "metadata": [
@@ -39807,13 +41948,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_Savior": {
-      "parent": "CCitadelModifier",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -39943,6 +42077,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_EnchantedHolsters_Buff": {
+      "parent": "CCitadel_Modifier_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Tech_Bleed": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -40050,6 +42191,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_RebuttalWatcher": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_NearDeathFX": {
       "parent": "CCitadelModifier",
       "metadata": [
@@ -40094,6 +42242,13 @@
         }
       ]
     },
+    "CCitadel_Item_GuardianWard": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CGameModifier_FireUserEntityIOVData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -40106,6 +42261,16 @@
     },
     "CModifierBossInvulnVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Ability_Doorman_Doorway_VData": {
+      "parent": "CitadelAbilityVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -40282,6 +42447,13 @@
         }
       ]
     },
+    "CCitadel_Modifier_Spiritburn_DOT": {
+      "parent": "CCitadel_Modifier_Burning",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CLogicLineToEntity": {
       "parent": "CLogicalEntity",
       "metadata": [
@@ -40292,6 +42464,16 @@
     "CAI_CitadelPlayerBotNavigator": {
       "parent": "CAI_Navigator",
       "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Priest_StackingDefenseVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -40372,9 +42554,12 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_VexBarrier_Shield": {
-      "parent": "CCitadelModifier",
+    "CCitadel_Modifier_EtherealBulletsBuffVData": {
+      "parent": "CCitadelModifierVData",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
       ],
       "fields": [
       ]
@@ -40789,6 +42974,22 @@
         }
       ]
     },
+    "CCitadel_WeaponUpgrade_SplitShot": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_bSplitShotActive",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CCitadel_ArmorUpgrade_Frenzy": {
       "parent": "CCitadel_Item",
       "metadata": [
@@ -40998,7 +43199,7 @@
       "fields": [
       ]
     },
-    "CCitadel_Modifier_ReinforcingCasingsVData": {
+    "CCitadel_Modifier_CounterspellWatcherVData": {
       "parent": "CCitadel_Modifier_Intrinsic_BaseVData",
       "metadata": [
         {
@@ -41178,10 +43379,13 @@
     "CBaseEntityAPI": {
       "metadata": [
         {
+          "name": "MPulseLibraryBindings"
+        },
+        {
           "name": "MPulseProvideFeatureTag"
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseDomainHookInfo"
         }
       ],
       "fields": [
@@ -41193,6 +43397,13 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Hunger_Satiated": {
+      "parent": "CCitadelModifier",
+      "metadata": [
       ],
       "fields": [
       ]
@@ -41219,6 +43430,16 @@
     },
     "CCitadel_Modifier_GhostBloodShardDebuffVData": {
       "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_WeaponUpgrade_FuryTrance_VData": {
+      "parent": "CitadelItemVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -41277,6 +43498,22 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CCitadel_Magic_Beam_Blocker": {
+      "parent": "CBaseAnimGraph",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_flTurnSolidTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
       ]
     },
     "CCitadel_Modifier_Dust_Storm_Aura": {
@@ -41371,6 +43608,23 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CCitadel_Modifier_BulletResilience": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CModifierApplyModifierOnDamageTakenVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
       ]
     },
     "CCitadel_Modifier_LearningHeroAbility": {
@@ -41785,6 +44039,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_CrushingFists_Watcher": {
+      "parent": "CCitadel_Modifier_Intrinsic_Base",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CNpcFootSweep": {
       "parent": "CBaseTrigger",
       "metadata": [
@@ -41794,13 +44055,6 @@
     },
     "CCitadel_Modifier_Fathom_ScaldingSpray_Aura": {
       "parent": "CCitadelModifierAura_Cone",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_WeaponUpgrade_Headhunter": {
-      "parent": "CCitadel_WeaponUpgrade_HeadshotBooster",
       "metadata": [
       ],
       "fields": [
@@ -41912,6 +44166,23 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Swan_LeapVData": {
+      "parent": "CitadelAbilityVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CCitadel_Modifier_Hunger_Target": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_Rutger_Pulse_VData": {
       "parent": "CCitadelModifierVData",
       "metadata": [
@@ -41980,13 +44251,6 @@
       "fields": [
       ]
     },
-    "CCitadel_WeaponUpgrade_BansheeSlugs": {
-      "parent": "CCitadel_Item",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CAbilityCadenceSilenceContraptionsVData": {
       "parent": "CBaseDashCastAbilityVData",
       "metadata": [
@@ -42047,30 +44311,6 @@
         {
           "name": "MGetKV3ClassDefaults"
         }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_SpiritBurn_VData": {
-      "parent": "CCitadelModifierVData",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_GalvanicStormTechShield": {
-      "parent": "CCitadel_Modifier_BaseShield",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CCitadel_Modifier_TempBulletShield": {
-      "parent": "CCitadel_Modifier_RegeneratingBulletShield",
-      "metadata": [
       ],
       "fields": [
       ]
@@ -42227,7 +44467,7 @@
       ]
     },
     "CCitadel_Modifier_BulletFlurryVData": {
-      "parent": "CCitadel_Modifier_BaseBulletPreRollProcVData",
+      "parent": "CCitadelModifierVData",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults"
@@ -42296,11 +44536,57 @@
         }
       ]
     },
-    "CCitadel_BreakablePropHealthPickup": {
-      "parent": "CCitadel_BreakablePropPickup",
+    "CRagdollPropAttached": {
+      "parent": "CRagdollProp",
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_boneIndexAttached",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_ragdollAttachedObjectIndex",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_attachmentPointBoneSpace",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkEncoder",
+              "value": "coord"
+            }
+          ]
+        },
+        {
+          "name": "m_attachmentPointRagdollSpace",
+          "type": {
+            "name": "Vector",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkEncoder",
+              "value": "coord"
+            }
+          ]
+        }
       ]
     }
   }

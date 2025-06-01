@@ -101,7 +101,7 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
 
     protected override ref EntityEvents<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser> EntityInstanceEvents => ref EntityEvents.CEntityInstance;
 
-    public static int TickRate => 60;
+    public static int TickRate => 64;
 
     protected override DecoderSet CreateDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers)
     {

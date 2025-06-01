@@ -145,6 +145,7 @@ public partial class Source1GameEvents
     public Action<Source1PlayerOpenedItemShopEvent>? PlayerOpenedItemShop;
     public Action<Source1ToolsContentChangedEvent>? ToolsContentChanged;
     public Action<Source1PlayerShopZoneChangedEvent>? PlayerShopZoneChanged;
+    public Action<Source1PlayerHideoutZoneChangedEvent>? PlayerHideoutZoneChanged;
     public Action<Source1PlayerHealedEvent>? PlayerHealed;
     public Action<Source1PlayerHealPreventedEvent>? PlayerHealPrevented;
     public Action<Source1PlayerGivenShieldEvent>? PlayerGivenShield;
@@ -416,8 +417,6 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.Networkid = x.ValString;
                         if (key.Name == "xuid")
                             return (@this, x) => @this.SteamId = x.ValUint64;
-                        if (key.Name == "address")
-                            return (@this, x) => @this.Address = x.ValString;
                         if (key.Name == "bot")
                             return (@this, x) => @this.Bot = x.ValBool;
                         return (@this, x) => { };
@@ -3666,6 +3665,27 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
+            if (descriptor.Name == "player_hideout_zone_changed")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1PlayerHideoutZoneChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && PlayerHideoutZoneChanged == null)
+                        return;
+                    var @this = new Source1PlayerHideoutZoneChangedEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    PlayerHideoutZoneChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
             if (descriptor.Name == "player_healed")
             {
                 var keys = descriptor.Keys.Select(Action<Source1PlayerHealedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -4922,8 +4942,6 @@ public partial class Source1PlayerConnectEvent : Source1GameEventBase
     public string Networkid { get; set; } = "";
 
     public ulong SteamId { get; set; }
-
-    public string Address { get; set; } = "";
 
     public bool Bot { get; set; }
 }
@@ -6438,6 +6456,13 @@ public partial class Source1PlayerShopZoneChangedEvent : Source1GameEventBase
     public override string GameEventName => "player_shop_zone_changed";
 }
 
+public partial class Source1PlayerHideoutZoneChangedEvent : Source1GameEventBase
+{
+    internal Source1PlayerHideoutZoneChangedEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "player_hideout_zone_changed";
+}
+
 public partial class Source1PlayerHealedEvent : Source1GameEventBase
 {
     internal Source1PlayerHealedEvent(DeadlockDemoParser demo) : base(demo) {}
@@ -7070,6 +7095,7 @@ public partial class Source1MidbossRespawnedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1PlayerOpenedItemShopEvent))]
 [JsonDerivedType(typeof(Source1ToolsContentChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerShopZoneChangedEvent))]
+[JsonDerivedType(typeof(Source1PlayerHideoutZoneChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerHealedEvent))]
 [JsonDerivedType(typeof(Source1PlayerHealPreventedEvent))]
 [JsonDerivedType(typeof(Source1PlayerGivenShieldEvent))]
