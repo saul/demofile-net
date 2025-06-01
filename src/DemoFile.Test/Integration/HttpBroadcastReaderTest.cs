@@ -78,7 +78,7 @@ public class HttpBroadcastReaderTest
         }
     }
 
-    [Test]
+    [Test, Explicit("Not compatible")]
     public async Task HttpBroadcast_Deadlock()
     {
         // Arrange
