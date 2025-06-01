@@ -79,69 +79,71 @@ public enum Class_T : int
     CLASS_DISPENSER = 0x1C,
     CLASS_SPY_DRONE = 0x1D,
     CLASS_GOLD_ORB = 0x1E,
-    CLASS_LANE_NODE = 0x1F,
-    CLASS_WARD = 0x20,
-    CLASS_ZIP_LINE_NODE = 0x21,
-    CLASS_DESTROYABLE_BUILDING = 0x22,
-    CLASS_BOSS_TIER_2 = 0x23,
-    CLASS_BOSS_BARRACKS = 0x24,
-    CLASS_BOSS_TIER_3 = 0x25,
-    CLASS_BOSS_TIER_3_DRONE = 0x26,
-    CLASS_ANNOUNCER = 0x27,
-    CLASS_WEAK_NEUTRAL_CAMP = 0x28,
-    CLASS_MEDIUM_NEUTRAL_CAMP = 0x29,
-    CLASS_STRONG_NEUTRAL_CAMP = 0x2A,
-    CLASS_VAULT_NEUTRAL_CAMP = 0x2B,
-    CLASS_SUPER_NEUTRAL_CAMP = 0x2C,
-    CLASS_SUPER_NEUTRAL_CAMP_HEROTEST = 0x2D,
-    CLASS_LADDER = 0x2E,
-    CLASS_EXPLOSIVE_BARREL = 0x2F,
-    CLASS_PAYLOAD = 0x30,
-    CLASS_BULLET_TIME_WARP = 0x31,
-    CLASS_BREAKABLE_PROP_PICKUP = 0x32,
-    CLASS_PUNCHABLE_POWERUP = 0x33,
-    CLASS_ITEM_PICKUP = 0x34,
-    CLASS_GOLDEN_IDOL_PICKUP = 0x35,
-    CLASS_HERO_CLONE = 0x36,
-    CLASS_TRIGGER_HURT = 0x37,
-    CLASS_DRONE_DISPENSER = 0x38,
-    CLASS_HERO_MINION = 0x39,
-    CLASS_PING_MARKER = 0x3A,
-    CLASS_PING_LOCATION_TRIGGER = 0x3B,
-    CLASS_TESLA_COIL = 0x3C,
-    CLASS_FARADAY_CAGE = 0x3D,
-    CLASS_DIRECTOR_CAMERA = 0x3E,
-    CLASS_BREAKABLE_PROP = 0x3F,
-    CLASS_TRIGGER_IDOL_RETURN = 0x40,
-    CLASS_TRIGGER_SHOP_TUNNEL = 0x41,
-    CLASS_TRIGGER_TELEPORT = 0x42,
-    CLASS_TRIGGER_MODIFIER = 0x43,
-    CLASS_TRIGGER_OBSCURED_VOLUME = 0x44,
-    CLASS_TRIGGER_ZIPLINE_CAPTURE = 0x45,
-    CLASS_TRIGGER_CATAPULT = 0x46,
-    CLASS_TRIGGER_CLIMB_ROPE = 0x47,
-    CLASS_BALLISTA_BOMB = 0x48,
-    CLASS_BALLISTA_MINE = 0x49,
-    CLASS_TOMBSTONE = 0x4A,
-    CLASS_ICEPATH_SHARD = 0x4B,
-    CLASS_TRICKSHOT_TARGET = 0x4C,
-    CLASS_GUIDED_ARROW = 0x4D,
-    CLASS_PING_LOCATION = 0x4E,
-    CLASS_DUSTSTORM_PROJECTILE = 0x4F,
-    CLASS_CYCLONE_PROJECTILE = 0x50,
-    CLASS_FIELD_SENTRY = 0x51,
-    CLASS_RIPTIDE_PROJECTILE = 0x52,
-    CLASS_ZAP_TRIGGER = 0x53,
-    CLASS_VISCOUS_CUBE = 0x54,
-    CLASS_FISSURE_WALL_SEGMENT = 0x55,
-    CLASS_NANO_STATUE = 0x56,
-    CLASS_TRAPPER_SPIDER = 0x57,
-    CLASS_TRAPPER_WEBWALL = 0x58,
-    CLASS_IMMOBILIZE_TRAP_PROJECTILE = 0x59,
-    CLASS_MAGICIAN_TURRET = 0x5A,
-    CLASS_MID_STAIRS = 0x5B,
-    CLASS_PROP_MIDBOSS_INDICATOR = 0x5C,
-    NUM_CLASSIFY_CLASSES = 0x5D,
+    CLASS_WARD = 0x1F,
+    CLASS_ZIP_LINE_NODE = 0x20,
+    CLASS_DESTROYABLE_BUILDING = 0x21,
+    CLASS_BOSS_TIER_2 = 0x22,
+    CLASS_BOSS_BARRACKS = 0x23,
+    CLASS_BOSS_TIER_3 = 0x24,
+    CLASS_BOSS_TIER_3_DRONE = 0x25,
+    CLASS_ANNOUNCER = 0x26,
+    CLASS_WEAK_NEUTRAL_CAMP = 0x27,
+    CLASS_MEDIUM_NEUTRAL_CAMP = 0x28,
+    CLASS_STRONG_NEUTRAL_CAMP = 0x29,
+    CLASS_VAULT_NEUTRAL_CAMP = 0x2A,
+    CLASS_SUPER_NEUTRAL_CAMP = 0x2B,
+    CLASS_SUPER_NEUTRAL_CAMP_HEROTEST = 0x2C,
+    CLASS_LADDER = 0x2D,
+    CLASS_EXPLOSIVE_BARREL = 0x2E,
+    CLASS_PAYLOAD = 0x2F,
+    CLASS_BULLET_TIME_WARP = 0x30,
+    CLASS_BREAKABLE_PROP_PICKUP = 0x31,
+    CLASS_PUNCHABLE_POWERUP = 0x32,
+    CLASS_ITEM_PICKUP = 0x33,
+    CLASS_GOLDEN_IDOL_PICKUP = 0x34,
+    CLASS_HERO_CLONE = 0x35,
+    CLASS_TRIGGER_HURT = 0x36,
+    CLASS_DRONE_DISPENSER = 0x37,
+    CLASS_HERO_MINION = 0x38,
+    CLASS_PING_MARKER = 0x39,
+    CLASS_PING_LOCATION_TRIGGER = 0x3A,
+    CLASS_TESLA_COIL = 0x3B,
+    CLASS_FARADAY_CAGE = 0x3C,
+    CLASS_DIRECTOR_CAMERA = 0x3D,
+    CLASS_BREAKABLE_PROP = 0x3E,
+    CLASS_TRIGGER_IDOL_RETURN = 0x3F,
+    CLASS_TRIGGER_SHOP_TUNNEL = 0x40,
+    CLASS_TRIGGER_TELEPORT = 0x41,
+    CLASS_TRIGGER_MODIFIER = 0x42,
+    CLASS_TRIGGER_OBSCURED_VOLUME = 0x43,
+    CLASS_TRIGGER_ZIPLINE_CAPTURE = 0x44,
+    CLASS_TRIGGER_CATAPULT = 0x45,
+    CLASS_TRIGGER_CLIMB_ROPE = 0x46,
+    CLASS_BALLISTA_BOMB = 0x47,
+    CLASS_BALLISTA_MINE = 0x48,
+    CLASS_TOMBSTONE = 0x49,
+    CLASS_ICEPATH_SHARD = 0x4A,
+    CLASS_TRICKSHOT_TARGET = 0x4B,
+    CLASS_GUIDED_ARROW = 0x4C,
+    CLASS_PING_LOCATION = 0x4D,
+    CLASS_DUSTSTORM_PROJECTILE = 0x4E,
+    CLASS_CYCLONE_PROJECTILE = 0x4F,
+    CLASS_FIELD_SENTRY = 0x50,
+    CLASS_RIPTIDE_PROJECTILE = 0x51,
+    CLASS_ZAP_TRIGGER = 0x52,
+    CLASS_VISCOUS_CUBE = 0x53,
+    CLASS_FISSURE_WALL_SEGMENT = 0x54,
+    CLASS_NANO_STATUE = 0x55,
+    CLASS_TRAPPER_SPIDER = 0x56,
+    CLASS_TRAPPER_WEBWALL = 0x57,
+    CLASS_IMMOBILIZE_TRAP_PROJECTILE = 0x58,
+    CLASS_MAGICIAN_TURRET = 0x59,
+    CLASS_MID_STAIRS = 0x5A,
+    CLASS_PROP_MIDBOSS_INDICATOR = 0x5B,
+    CLASS_VAMPIREBAT_BATSWARM = 0x5C,
+    CLASS_HIDEOUT = 0x5D,
+    CLASS_SWAN_FEATHERBOOMERANG = 0x5E,
+    NUM_CLASSIFY_CLASSES = 0x5F,
 }
 
 public enum CMsgLaneColor : int
@@ -260,8 +262,8 @@ public enum EFlexSlotTypes : short
     EFlexSlot_Invalid = 0x0,
     EFlexSlot_Kill2Tier1 = 0x1,
     EFlexSlot_Kill1Tier2 = 0x2,
-    EFlexSlot_AllTier2 = 0x4,
-    EFlexSlot_Generator = 0x8,
+    EFlexSlot_Kill2Tier2 = 0x4,
+    EFlexSlot_BaseGuardians = 0x8,
 }
 
 public enum EFlightState : byte
@@ -390,39 +392,39 @@ public enum EModifierValue : int
     MODIFIER_VALUE_HEALTH_REGEN_PER_SECOND_PERCENT = 0x1D,
     MODIFIER_VALUE_REGEN_MAX_HEALTH_PERCENT_PER_SECOND = 0x1E,
     MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND = 0x1F,
-    MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT = 0x20,
-    MODIFIER_VALUE_HEAL_AMP_RECEIVE_PERCENT = 0x21,
-    MODIFIER_VALUE_HEAL_AMP_REGEN_PERCENT = 0x22,
-    MODIFIER_VALUE_HEAL_DEGEN_RESISTANCE = 0x23,
-    MODIFIER_VALUE_AMMO_CLIP_SIZE = 0x24,
-    MODIFIER_VALUE_AMMO_CLIP_SIZE_PERCENT = 0x25,
-    MODIFIER_VALUE_AMMO_CLIP_SIZE_OVERRIDE = 0x26,
-    MODIFIER_VALUE_RELOAD_SPEED = 0x27,
-    MODIFIER_VALUE_RELOAD_SPEED_CONSTANT = 0x28,
-    MODIFIER_VALUE_MOVE_SPEED_LIMIT = 0x29,
-    MODIFIER_VALUE_MOVEMENT_SPEED_MAX = 0x2A,
-    MODIFIER_VALUE_MOVEMENT_SPEED_MAX_PERCENT = 0x2B,
-    MODIFIER_VALUE_MOVEMENT_SPEED_WHILE_ZOOMED_PENALTY_REDUCTION_PERCENT = 0x2C,
-    MODIFIER_VALUE_MOVEMENT_SPEED_WHILE_SHOOTING_PENALTY_REDUCTION_PERCENT = 0x2D,
-    MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT = 0x2E,
-    MODIFIER_VALUE_MOVEMENT_GROUND_DASH_REDUCTION_PERCENT = 0x2F,
-    MODIFIER_VALUE_MOVEMENT_GROUND_DASH_INCREASE_PERCENT = 0x30,
-    MODIFIER_VALUE_AIR_MOVE_DISTANCE_INCREASE_PERCENT = 0x31,
-    MODIFIER_VALUE_MOVEMENT_SLIDE_DISTANCE_SCALE = 0x32,
-    MODIFIER_VALUE_MOVEMENT_SLOW_RESISTANCE = 0x33,
-    MODIFIER_VALUE_BONUS_ATTACK_RANGE = 0x34,
-    MODIFIER_VALUE_BONUS_ATTACK_RANGE_PERCENT = 0x35,
-    MODIFIER_VALUE_ZOOM_INCREASE_PERCENT = 0x36,
-    MODIFIER_VALUE_ZOOM_POSITION = 0x37,
-    MODIFIER_VALUE_WEAPON_RECOIL_REDUCTION_PERCENT = 0x38,
-    MODIFIER_VALUE_SPRINT_SPEED_BONUS = 0x39,
-    MODIFIER_VALUE_SPRINT_SPEED_MAX_PERCENT = 0x3A,
-    MODIFIER_VALUE_SPRINT_DURATION = 0x3B,
-    MODIFIER_VALUE_SPRINT_ACCELERATION = 0x3C,
-    MODIFIER_VALUE_DISPLAY_SPEED_CURRENT = 0x3D,
-    MODIFIER_VALUE_DISPLAY_SPEED_MAX = 0x3E,
-    MODIFIER_VALUE_AVOID_SPELL = 0x3F,
-    MODIFIER_VALUE_SHOT_SHOULD_PENETRATE = 0x40,
+    MODIFIER_VALUE_OUT_OF_COMBAT_HEALTH_REGEN = 0x20,
+    MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT = 0x21,
+    MODIFIER_VALUE_HEAL_AMP_RECEIVE_PERCENT = 0x22,
+    MODIFIER_VALUE_HEAL_AMP_REGEN_PERCENT = 0x23,
+    MODIFIER_VALUE_HEAL_DEGEN_RESISTANCE = 0x24,
+    MODIFIER_VALUE_AMMO_CLIP_SIZE = 0x25,
+    MODIFIER_VALUE_AMMO_CLIP_SIZE_PERCENT = 0x26,
+    MODIFIER_VALUE_AMMO_CLIP_SIZE_OVERRIDE = 0x27,
+    MODIFIER_VALUE_RELOAD_SPEED = 0x28,
+    MODIFIER_VALUE_RELOAD_SPEED_CONSTANT = 0x29,
+    MODIFIER_VALUE_MOVE_SPEED_LIMIT = 0x2A,
+    MODIFIER_VALUE_MOVEMENT_SPEED_MAX = 0x2B,
+    MODIFIER_VALUE_MOVEMENT_SPEED_MAX_PERCENT = 0x2C,
+    MODIFIER_VALUE_MOVEMENT_SPEED_WHILE_ZOOMED_PENALTY_REDUCTION_PERCENT = 0x2D,
+    MODIFIER_VALUE_MOVEMENT_SPEED_WHILE_SHOOTING_PENALTY_REDUCTION_PERCENT = 0x2E,
+    MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT = 0x2F,
+    MODIFIER_VALUE_MOVEMENT_GROUND_DASH_REDUCTION_PERCENT = 0x30,
+    MODIFIER_VALUE_MOVEMENT_GROUND_DASH_INCREASE_PERCENT = 0x31,
+    MODIFIER_VALUE_AIR_MOVE_DISTANCE_INCREASE_PERCENT = 0x32,
+    MODIFIER_VALUE_MOVEMENT_SLIDE_DISTANCE_SCALE = 0x33,
+    MODIFIER_VALUE_MOVEMENT_SLOW_RESISTANCE = 0x34,
+    MODIFIER_VALUE_BONUS_ATTACK_RANGE = 0x35,
+    MODIFIER_VALUE_BONUS_ATTACK_RANGE_PERCENT = 0x36,
+    MODIFIER_VALUE_ZOOM_INCREASE_PERCENT = 0x37,
+    MODIFIER_VALUE_ZOOM_POSITION = 0x38,
+    MODIFIER_VALUE_WEAPON_RECOIL_REDUCTION_PERCENT = 0x39,
+    MODIFIER_VALUE_SPRINT_SPEED_BONUS = 0x3A,
+    MODIFIER_VALUE_SPRINT_SPEED_MAX_PERCENT = 0x3B,
+    MODIFIER_VALUE_SPRINT_DURATION = 0x3C,
+    MODIFIER_VALUE_SPRINT_ACCELERATION = 0x3D,
+    MODIFIER_VALUE_DISPLAY_SPEED_CURRENT = 0x3E,
+    MODIFIER_VALUE_DISPLAY_SPEED_MAX = 0x3F,
+    MODIFIER_VALUE_AVOID_SPELL = 0x40,
     MODIFIER_VALUE_FIRE_RATE = 0x41,
     MODIFIER_VALUE_FIRE_RATE_SLOW = 0x42,
     MODIFIER_VALUE_CYCLE_TIME_PERCENTAGE = 0x43,
@@ -462,119 +464,115 @@ public enum EModifierValue : int
     MODIFIER_VALUE_MELEEATTACK_DAMAGE_PERCENTAGE = 0x65,
     MODIFIER_VALUE_MELEEATTACK_SPEED = 0x66,
     MODIFIER_VALUE_MELEE_TRAVEL_DISTANCE_PERCENTAGE = 0x67,
-    MODIFIER_VALUE_FIREARM_ACCURACY_PERCENTAGE = 0x68,
-    MODIFIER_VALUE_TURN_SIDEMOVE_PERCENTAGE = 0x69,
-    MODIFIER_VALUE_CHARGE_SPEED = 0x6A,
-    MODIFIER_VALUE_TELEPORT_COOLDOWN_REDUCTION_PERCENT = 0x6B,
-    MODIFIER_VALUE_FALL_SPEED_MAX = 0x6C,
-    MODIFIER_VALUE_AIR_SPEED_MAX = 0x6D,
-    MODIFIER_VALUE_GRAVITY_SCALE = 0x6E,
-    MODIFIER_VALUE_BULLET_EVASION = 0x6F,
-    MODIFIER_VALUE_TECH_SHIELD_HEALTH = 0x70,
-    MODIFIER_VALUE_TECH_SHIELD_HEALTH_MAX = 0x71,
-    MODIFIER_VALUE_TECH_SHIELD_HEALTH_TEMP = 0x72,
-    MODIFIER_VALUE_TECH_SHIELD_DAMAGE_PERCENT = 0x73,
-    MODIFIER_VALUE_TECH_SHIELD_DAMAGE_REGEN_COOLDOWN = 0x74,
-    MODIFIER_VALUE_TECH_SHIELD_BREAK_REGEN_COOLDOWN = 0x75,
-    MODIFIER_VALUE_BULLET_SHIELD_HEALTH = 0x76,
-    MODIFIER_VALUE_BULLET_SHIELD_HEALTH_MAX = 0x77,
-    MODIFIER_VALUE_BULLET_SHIELD_HEALTH_TEMP = 0x78,
-    MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_PERCENT = 0x79,
-    MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_REGEN_COOLDOWN = 0x7A,
-    MODIFIER_VALUE_BULLET_SHIELD_BREAK_REGEN_COOLDOWN = 0x7B,
-    MODIFIER_VALUE_BONUS_CRIT_DAMAGE_PERCENT = 0x7C,
-    MODIFIER_VALUE_HEIGHT_ADVANTAGE_BONUS_BASE_DAMAGE_PERCENT = 0x7D,
-    MODIFIER_VALUE_CLOSE_RANGE_BONUS_BASE_DAMAGE_PERCENT = 0x7E,
-    MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_CLOSE_RANGE_MAX_RANGE = 0x7F,
-    MODIFIER_VALUE_LONG_RANGE_BONUS_BASE_DAMAGE_PERCENT = 0x80,
-    MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_LONG_RANGE_MIN_RANGE = 0x81,
-    MODIFIER_VALUE_TECH_RANGE_ADDITIVE = 0x82,
-    MODIFIER_VALUE_TECH_RANGE_PERCENT = 0x83,
-    MODIFIER_VALUE_TECH_RANGE_CLAMP = 0x84,
-    MODIFIER_VALUE_TECH_RADIUS_ADDITIVE = 0x85,
-    MODIFIER_VALUE_TECH_RADIUS_PERCENT = 0x86,
-    MODIFIER_VALUE_TURN_ANGLE_PER_SECOND_MAX = 0x87,
-    MODIFIER_VALUE_BONUS_JUMP_VERTICAL_SPEED_PERCENT = 0x88,
-    MODIFIER_VALUE_AIR_JUMPS = 0x89,
-    MODIFIER_VALUE_ZIP_LINE_SPEED_ADDITIVE = 0x8A,
-    MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE = 0x8B,
-    MODIFIER_VALUE_CLIMB_ROPE_SPEED_PERCENTAGE = 0x8C,
-    MODIFIER_VALUE_GROUND_FRICTION_PERCENTAGE = 0x8D,
-    MODIFIER_VALUE_GROUND_ACCELERATION_PERCENTAGE = 0x8E,
-    MODIFIER_VALUE_INVISIBILITY_LEVEL = 0x8F,
-    MODIFIER_VALUE_CLOAK_FACTOR = 0x90,
-    MODIFIER_VALUE_CLOAK_DESAT_FACTOR = 0x91,
-    MODIFIER_VALUE_PARTICLE_TINT_OVERRIDE = 0x92,
-    MODIFIER_VALUE_PARTICLE_DESAT_OVERRIDE = 0x93,
-    MODIFIER_VALUE_DIMENSION_TYPE = 0x94,
-    MODIFIER_VALUE_GAMEPLAY_TIME_SCALE_ADDITIVE = 0x95,
-    MODIFIER_VALUE_GAMEPLAY_TIME_SCALE_PERCENT = 0x96,
-    MODIFIER_VALUE_ANIMATION_TIME_SCALE_ADDITIVE = 0x97,
-    MODIFIER_VALUE_ANIMATION_TIME_SCALE_PERCENT = 0x98,
-    MODIFIER_VALUE_ANIMATION_FRAME_SKIP_RATE = 0x99,
-    MODIFIER_VALUE_MOVEMENT_TIME_SCALE_ADDITIVE = 0x9A,
-    MODIFIER_VALUE_MOVEMENT_TIME_SCALE_PERCENT = 0x9B,
-    MODIFIER_VALUE_PARTICLE_TIME_SCALE_ADDITIVE = 0x9C,
-    MODIFIER_VALUE_PARTICLE_TIME_SCALE_PERCENT = 0x9D,
-    MODIFIER_VALUE_STAMINA = 0x9E,
-    MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_ADDITIVE = 0x9F,
-    MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_PERCENTAGE = 0xA0,
-    MODIFIER_VALUE_WEAPON_POWER = 0xA1,
-    MODIFIER_VALUE_ARMOR_POWER = 0xA2,
-    MODIFIER_VALUE_TECH_POWER = 0xA3,
-    MODIFIER_VALUE_TECH_POWER_PERCENT = 0xA4,
-    MODIFIER_VALUE_WEAPON_POWER_PERCENT = 0xA5,
-    MODIFIER_VALUE_AIR_CONTROL_PERCENT = 0xA6,
-    MODIFIER_VALUE_AIR_CONTROL_ACCEL_PERCENT = 0xA7,
-    MODIFIER_VALUE_ABILITY_PROJECTILE_SPEED_PERCENT = 0xA8,
-    MODIFIER_VALUE_BONUS_BULLET_SPEED_PERCENT = 0xA9,
-    MODIFIER_VALUE_BASE_BULLET_SPEED_OVERRIDE = 0xAA,
-    MODIFIER_VALUE_BULLET_SHOOT_SOUND = 0xAB,
-    MODIFIER_VALUE_BULLET_SHOOT_SOUND_FRIENDLY = 0xAC,
-    MODIFIER_VALUE_BULLET_SHOOT_SOUND_ENEMY = 0xAD,
-    MODIFIER_VALUE_BULLET_SHOOT_SOUND_WHIZ = 0xAE,
-    MODIFIER_VALUE_BULLET_SHOOT_SOUND_WHIZ_LEFT_TO_RIGHT = 0xAF,
-    MODIFIER_VALUE_BULLET_SHOOT_SOUND_WHIZ_RIGHT_TO_LEFT = 0xB0,
-    MODIFIER_VALUE_TRACER_REPLACEMENT = 0xB1,
-    MODIFIER_VALUE_TRACER_ADDITIONAL = 0xB2,
-    MODIFIER_VALUE_CAMERA_TARGET_OVERRIDE = 0xB3,
-    MODIFIER_VALUE_SPECTATING_SPEED_OVERRIDE = 0xB4,
-    MODIFIER_NON_PLAYER_BONUS_BASE_DAMAGE_PERCENT = 0xB5,
-    MODIFIER_VALUE_AIR_DRAG = 0xB6,
-    MODIFIER_VALUE_TECH_DAMAGE_TAKEN_HEALS_ATTACKER = 0xB7,
-    MODIFIER_VALUE_BULLET_DAMAGE_TAKEN_HEALS_ATTACKER = 0xB8,
-    MODIFIER_VALUE_TECH_LIFESTEAL = 0xB9,
-    MODIFIER_VALUE_BULLET_LIFESTEAL = 0xBA,
-    MODIFIER_VALUE_OVERRIDE_BULLET_ATTACKER = 0xBB,
-    MODIFIER_VALUE_OVERRIDE_MELEE_HIT_SOUND = 0xBC,
-    MODIFIER_VALUE_OVERRIDE_MELEE_MISS_SOUND = 0xBD,
-    MODIFIER_VALUE_IMBUED_BONUS_DAMAGE = 0xBE,
-    MODIFIER_VALUE_IMBUED_BONUS_DURATION = 0xBF,
-    MODIFIER_VALUE_INTRA_BURST_SHOT_CYCLE_TIME_OVERRIDE = 0xC0,
-    MODIFIER_VALUE_BONUS_BURST_SHOT_PERCENT = 0xC1,
-    MODIFIER_VALUE_BONUS_BURST_SHOT_CONSTANT = 0xC2,
-    MODIFIER_VALUE_SPIN_UP_RATE_OVERRIDE = 0xC3,
-    MODIFIER_VALUE_SPIN_UP_DECAY_OVERRIDE = 0xC4,
-    MODIFIER_VALUE_SPIN_UP_MAX_CYCLE_TIME_OVERRIDE = 0xC5,
-    MODIFIER_VALUE_SPIN_UP_MAX_BURST_FIRE_COOLDOWN_OVERRIDE = 0xC6,
-    MODIFIER_VALUE_SPIN_UP_SOUND_OVERRIDE = 0xC7,
-    MODIFIER_VALUE_SPIN_DOWN_SOUND_OVERRIDE = 0xC8,
-    MODIFIER_VALUE_SPIN_LOOP_SOUND_OVERRIDE = 0xC9,
-    MODIFIER_VALUE_BONUS_CHANNEL_TIME_PERCENTAGE = 0xCA,
-    MODIFIER_VALUE_ABILITY_RESOURCE_MAX_ADDITIVE = 0xCB,
-    MODIFIER_VALUE_ABILITY_RESOURCE_REGEN_PER_SECOND_ADDITIVE = 0xCC,
-    MODIFIER_VALUE_ABILITY_RESOURCE_REGEN_PER_SECOND_PERCENTAGE = 0xCD,
-    MODIFIER_VALUE_PENDING_INCOMING_DAMAGE = 0xCE,
-    MODIFIER_VALUE_CAMERA_WOBBLE_INTENSITY = 0xCF,
-    MODIFIER_VALUE_CAMERA_WOBBLE_SPEED = 0xD0,
-    MODIFIER_VALUE_RESPAWN_TIME_ADDITIVE = 0xD1,
-    MODIFIER_VALUE_RESPAWN_RAMP_TIME_REDUCTION_PERCENT = 0xD2,
-    MODIFIER_VALUE_BOON_COUNT = 0xD3,
-    MODIFIER_VALUE_FOOTSTEP_ADDITIONAL = 0xD4,
-    MODIFIER_VALUE_FOOTSTEP_OVERRIDE = 0xD5,
-    MODIFIER_VALUE_MODEL_SCALE = 0xD6,
-    MODIFIER_VALUE_MODEL_CHANGE = 0xD7,
-    MODIFIER_VALUE_COUNT = 0xD8,
+    MODIFIER_VALUE_PARRY_COOLDOWN_REDUCTION_FIXED = 0x68,
+    MODIFIER_VALUE_FIREARM_ACCURACY_PERCENTAGE = 0x69,
+    MODIFIER_VALUE_TURN_SIDEMOVE_PERCENTAGE = 0x6A,
+    MODIFIER_VALUE_CHARGE_SPEED = 0x6B,
+    MODIFIER_VALUE_TELEPORT_COOLDOWN_REDUCTION_PERCENT = 0x6C,
+    MODIFIER_VALUE_FALL_SPEED_MAX = 0x6D,
+    MODIFIER_VALUE_AIR_SPEED_MAX = 0x6E,
+    MODIFIER_VALUE_GRAVITY_SCALE = 0x6F,
+    MODIFIER_VALUE_BULLET_EVASION = 0x70,
+    MODIFIER_VALUE_BULLET_SHIELD_HEALTH = 0x71,
+    MODIFIER_VALUE_BULLET_SHIELD_HEALTH_MAX = 0x72,
+    MODIFIER_VALUE_BULLET_SHIELD_DAMAGE_PERCENT = 0x73,
+    MODIFIER_VALUE_BARRIER_HEALTH = 0x74,
+    MODIFIER_VALUE_BONUS_CRIT_DAMAGE_PERCENT = 0x75,
+    MODIFIER_VALUE_HEIGHT_ADVANTAGE_BONUS_BASE_DAMAGE_PERCENT = 0x76,
+    MODIFIER_VALUE_CLOSE_RANGE_BONUS_BASE_DAMAGE_PERCENT = 0x77,
+    MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_CLOSE_RANGE_MAX_RANGE = 0x78,
+    MODIFIER_VALUE_LONG_RANGE_BONUS_BASE_DAMAGE_PERCENT = 0x79,
+    MODIFIER_VALUE_BONUS_WEAPON_DAMAGE_LONG_RANGE_MIN_RANGE = 0x7A,
+    MODIFIER_VALUE_TECH_RANGE_ADDITIVE = 0x7B,
+    MODIFIER_VALUE_TECH_RANGE_PERCENT = 0x7C,
+    MODIFIER_VALUE_TECH_RANGE_CLAMP = 0x7D,
+    MODIFIER_VALUE_TECH_RADIUS_ADDITIVE = 0x7E,
+    MODIFIER_VALUE_TECH_RADIUS_PERCENT = 0x7F,
+    MODIFIER_VALUE_TURN_ANGLE_PER_SECOND_MAX = 0x80,
+    MODIFIER_VALUE_BONUS_JUMP_VERTICAL_SPEED_PERCENT = 0x81,
+    MODIFIER_VALUE_AIR_JUMPS = 0x82,
+    MODIFIER_VALUE_ZIP_LINE_SPEED_ADDITIVE = 0x83,
+    MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE = 0x84,
+    MODIFIER_VALUE_CLIMB_ROPE_SPEED_PERCENTAGE = 0x85,
+    MODIFIER_VALUE_GROUND_FRICTION_PERCENTAGE = 0x86,
+    MODIFIER_VALUE_GROUND_ACCELERATION_PERCENTAGE = 0x87,
+    MODIFIER_VALUE_INVISIBILITY_LEVEL = 0x88,
+    MODIFIER_VALUE_CLOAK_FACTOR = 0x89,
+    MODIFIER_VALUE_CLOAK_DESAT_FACTOR = 0x8A,
+    MODIFIER_VALUE_PARTICLE_TINT_OVERRIDE = 0x8B,
+    MODIFIER_VALUE_PARTICLE_DESAT_OVERRIDE = 0x8C,
+    MODIFIER_VALUE_DIMENSION_TYPE = 0x8D,
+    MODIFIER_VALUE_GAMEPLAY_TIME_SCALE_ADDITIVE = 0x8E,
+    MODIFIER_VALUE_GAMEPLAY_TIME_SCALE_PERCENT = 0x8F,
+    MODIFIER_VALUE_ANIMATION_TIME_SCALE_ADDITIVE = 0x90,
+    MODIFIER_VALUE_ANIMATION_TIME_SCALE_PERCENT = 0x91,
+    MODIFIER_VALUE_ANIMATION_FRAME_SKIP_RATE = 0x92,
+    MODIFIER_VALUE_MOVEMENT_TIME_SCALE_ADDITIVE = 0x93,
+    MODIFIER_VALUE_MOVEMENT_TIME_SCALE_PERCENT = 0x94,
+    MODIFIER_VALUE_PARTICLE_TIME_SCALE_ADDITIVE = 0x95,
+    MODIFIER_VALUE_PARTICLE_TIME_SCALE_PERCENT = 0x96,
+    MODIFIER_VALUE_STAMINA = 0x97,
+    MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_ADDITIVE = 0x98,
+    MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_PERCENTAGE = 0x99,
+    MODIFIER_VALUE_WEAPON_POWER = 0x9A,
+    MODIFIER_VALUE_ARMOR_POWER = 0x9B,
+    MODIFIER_VALUE_TECH_POWER = 0x9C,
+    MODIFIER_VALUE_TECH_POWER_PERCENT = 0x9D,
+    MODIFIER_VALUE_WEAPON_POWER_PERCENT = 0x9E,
+    MODIFIER_VALUE_AIR_CONTROL_PERCENT = 0x9F,
+    MODIFIER_VALUE_AIR_CONTROL_ACCEL_PERCENT = 0xA0,
+    MODIFIER_VALUE_ABILITY_PROJECTILE_SPEED_PERCENT = 0xA1,
+    MODIFIER_VALUE_BONUS_BULLET_SPEED_PERCENT = 0xA2,
+    MODIFIER_VALUE_BASE_BULLET_SPEED_OVERRIDE = 0xA3,
+    MODIFIER_VALUE_BULLET_SHOOT_SOUND = 0xA4,
+    MODIFIER_VALUE_BULLET_SHOOT_SOUND_FRIENDLY = 0xA5,
+    MODIFIER_VALUE_BULLET_SHOOT_SOUND_ENEMY = 0xA6,
+    MODIFIER_VALUE_BULLET_SHOOT_SOUND_WHIZ = 0xA7,
+    MODIFIER_VALUE_BULLET_SHOOT_SOUND_WHIZ_LEFT_TO_RIGHT = 0xA8,
+    MODIFIER_VALUE_BULLET_SHOOT_SOUND_WHIZ_RIGHT_TO_LEFT = 0xA9,
+    MODIFIER_VALUE_TRACER_REPLACEMENT = 0xAA,
+    MODIFIER_VALUE_TRACER_ADDITIONAL = 0xAB,
+    MODIFIER_VALUE_CAMERA_TARGET_OVERRIDE = 0xAC,
+    MODIFIER_VALUE_SPECTATING_SPEED_OVERRIDE = 0xAD,
+    MODIFIER_NON_PLAYER_BONUS_BASE_DAMAGE_PERCENT = 0xAE,
+    MODIFIER_VALUE_AIR_DRAG = 0xAF,
+    MODIFIER_VALUE_TECH_DAMAGE_TAKEN_HEALS_ATTACKER = 0xB0,
+    MODIFIER_VALUE_BULLET_DAMAGE_TAKEN_HEALS_ATTACKER = 0xB1,
+    MODIFIER_VALUE_TECH_LIFESTEAL = 0xB2,
+    MODIFIER_VALUE_BULLET_LIFESTEAL = 0xB3,
+    MODIFIER_VALUE_OVERRIDE_BULLET_ATTACKER = 0xB4,
+    MODIFIER_VALUE_OVERRIDE_MELEE_HIT_SOUND = 0xB5,
+    MODIFIER_VALUE_OVERRIDE_MELEE_MISS_SOUND = 0xB6,
+    MODIFIER_VALUE_IMBUED_BONUS_DAMAGE = 0xB7,
+    MODIFIER_VALUE_IMBUED_BONUS_DURATION = 0xB8,
+    MODIFIER_VALUE_INTRA_BURST_SHOT_CYCLE_TIME_OVERRIDE = 0xB9,
+    MODIFIER_VALUE_BONUS_BURST_SHOT_PERCENT = 0xBA,
+    MODIFIER_VALUE_BONUS_BURST_SHOT_CONSTANT = 0xBB,
+    MODIFIER_VALUE_SPIN_UP_RATE_OVERRIDE = 0xBC,
+    MODIFIER_VALUE_SPIN_UP_DECAY_OVERRIDE = 0xBD,
+    MODIFIER_VALUE_SPIN_UP_MAX_CYCLE_TIME_OVERRIDE = 0xBE,
+    MODIFIER_VALUE_SPIN_UP_MAX_BURST_FIRE_COOLDOWN_OVERRIDE = 0xBF,
+    MODIFIER_VALUE_SPIN_UP_SOUND_OVERRIDE = 0xC0,
+    MODIFIER_VALUE_SPIN_DOWN_SOUND_OVERRIDE = 0xC1,
+    MODIFIER_VALUE_SPIN_LOOP_SOUND_OVERRIDE = 0xC2,
+    MODIFIER_VALUE_BONUS_CHANNEL_TIME_PERCENTAGE = 0xC3,
+    MODIFIER_VALUE_ABILITY_RESOURCE_MAX_ADDITIVE = 0xC4,
+    MODIFIER_VALUE_ABILITY_RESOURCE_REGEN_PER_SECOND_ADDITIVE = 0xC5,
+    MODIFIER_VALUE_ABILITY_RESOURCE_REGEN_PER_SECOND_PERCENTAGE = 0xC6,
+    MODIFIER_VALUE_PENDING_INCOMING_DAMAGE = 0xC7,
+    MODIFIER_VALUE_CAMERA_WOBBLE_INTENSITY = 0xC8,
+    MODIFIER_VALUE_CAMERA_WOBBLE_SPEED = 0xC9,
+    MODIFIER_VALUE_RESPAWN_TIME_ADDITIVE = 0xCA,
+    MODIFIER_VALUE_RESPAWN_RAMP_TIME_REDUCTION_PERCENT = 0xCB,
+    MODIFIER_VALUE_BOON_COUNT = 0xCC,
+    MODIFIER_VALUE_FOOTSTEP_ADDITIONAL = 0xCD,
+    MODIFIER_VALUE_FOOTSTEP_OVERRIDE = 0xCE,
+    MODIFIER_VALUE_MODEL_SCALE = 0xCF,
+    MODIFIER_VALUE_MODEL_CHANGE = 0xD0,
+    MODIFIER_VALUE_HERO_BULLET_LIFESTEAL_EFFECTIVENESS = 0xD1,
+    MODIFIER_VALUE_HERO_SPIRIT_LIFESTEAL_EFFECTIVENESS = 0xD2,
+    MODIFIER_VALUE_PARRY_FX_OVERRIDE = 0xD3,
+    MODIFIER_VALUE_COUNT = 0xD4,
     MODIFIER_VALUE_INVALID = 0xFF,
 }
 
@@ -585,7 +583,8 @@ public enum ENextAttackDelayReason : int
     EDelayReason_ViscousChargeShotRecovery = 0x2,
     EDelayReason_WraithSpinUp = 0x3,
     EDelayReason_Disarmed = 0x4,
-    EDelayReasonCount = 0x5,
+    EDelayReason_Stunned = 0x5,
+    EDelayReasonCount = 0x6,
 }
 
 public enum EntityDisolveType : int
@@ -611,6 +610,13 @@ public enum EPlayerPlayState : int
     EPlayerAwaitingHeroAssignment = 0x1,
     EPlayerChoosingHero = 0x2,
     EPlayerPlayStateCount = 0x3,
+}
+
+public enum ESwingState : byte
+{
+    ESwingState_None = 0x0,
+    ESwingState_StartupDelay = 0x1,
+    ESwingState_Swinging = 0x2,
 }
 
 public enum ETelepunchState : byte
@@ -649,6 +655,14 @@ public enum EViscousChargedGunState : int
     EViscousChargedGunState_Idle = 0x0,
     EViscousChargedGunState_Charging = 0x1,
     EViscousChargedGunState_Shoot = 0x2,
+}
+
+public enum EWeaponSwapState : byte
+{
+    EWeaponSwapState_None = 0x0,
+    EWeaponSwapState_StartDelay = 0x1,
+    EWeaponSwapState_Swapped = 0x2,
+    EWeaponSwapState_EndDelay = 0x3,
 }
 
 public enum FixAngleSet : byte
@@ -859,37 +873,41 @@ public enum TakeDamageFlags : long
     DFLAG_RADIUS_DMG = 0x400,
     DFLAG_FORCEREDUCEARMOR_DMG = 0x800,
     DFLAG_SUPPRESS_INTERRUPT_FLINCH = 0x1000,
-    DMG_LASTDFLAG = 0x1000,
-    DFLAG_ALLOW_SUICIDE = 0x2000,
-    DFLAG_BOUNTY_ALL_DIRECT = 0x4000,
-    DFLAG_SUPPRESS_DIRECT_GOLD_BOUNTY = 0x8000,
-    DFLAG_SUPPRESS_COINS_GOLD_BOUNTY = 0x10000,
-    DFLAG_SUPPRESS_KILL_CREDIT = 0x20000,
-    DFLAG_SUPPRESS_DEATH_CREDIT = 0x40000,
-    DFLAG_SUPPRESS_AP_BOUNTY = 0x80000,
-    DFLAG_SUPPRESS_DAMAGE_RECORD = 0x100000,
-    DFLAG_SUPPRESS_DEATH_EVENT = 0x200000,
-    DFLAG_MITIGATION_DUE_TO_NO_NEARBY_TROOPERS = 0x400000,
-    DFLAG_TRIGGER_FLINCH = 0x800000,
-    DFLAG_DO_NOT_BATCH_DAMAGE_NUMBER = 0x1000000,
-    DFLAG_SUPPRESS_HIT_INDICATOR_SOUND = 0x2000000,
-    DFLAG_DO_NOT_PROC = 0x4000000,
-    DFLAG_RICOCHET = 0x8000000,
-    DFLAG_PURE_DMG = 0x10000000,
-    DFLAG_HEAVY_MELEE = 0x20000000,
-    DFLAG_LIGHT_MELEE = 0x40000000,
-    DFLAG_BONUS_DAMAGE = 0x80000000,
-    DFLAG_KILL_CREATES_RAGDOLL = 0x100000000,
-    DFLAG_IS_HEALTH_TRANSFER = 0x200000000,
-    DFLAG_DO_NOT_RICOCHET = 0x400000000,
-    DFLAG_NOT_IN_MIDBOSS_PIT = 0x800000000,
-    DFLAG_NOT_IN_TIER3_PIT = 0x1000000000,
-    DFLAG_DO_NOT_TRIGGER_DAMAGE_FLASH = 0x2000000000,
-    DFLAG_TOO_FAR = 0x4000000000,
-    DFLAG_DO_NOT_DISRUPT_HEALING_RITE = 0x8000000000,
-    DFLAG_DO_NOT_CRIT = 0x10000000000,
-    DFLAG_TOO_LOW = 0x20000000000,
-    DFLAG_SUPPRESS_CRIT_RESISTANCE = 0x40000000000,
+    DFLAG_IGNORE_DESTRUCTIBLE_PARTS = 0x2000,
+    DMG_LASTDFLAG = 0x2000,
+    DFLAG_ALLOW_SUICIDE = 0x4000,
+    DFLAG_BOUNTY_ALL_DIRECT = 0x8000,
+    DFLAG_SUPPRESS_DIRECT_GOLD_BOUNTY = 0x10000,
+    DFLAG_SUPPRESS_COINS_GOLD_BOUNTY = 0x20000,
+    DFLAG_SUPPRESS_KILL_CREDIT = 0x40000,
+    DFLAG_SUPPRESS_DEATH_CREDIT = 0x80000,
+    DFLAG_SUPPRESS_AP_BOUNTY = 0x100000,
+    DFLAG_SUPPRESS_DAMAGE_RECORD = 0x200000,
+    DFLAG_SUPPRESS_DEATH_EVENT = 0x400000,
+    DFLAG_MITIGATION_DUE_TO_NO_NEARBY_TROOPERS = 0x800000,
+    DFLAG_TRIGGER_FLINCH = 0x1000000,
+    DFLAG_DO_NOT_BATCH_DAMAGE_NUMBER = 0x2000000,
+    DFLAG_SUPPRESS_HIT_INDICATOR_SOUND = 0x4000000,
+    DFLAG_DO_NOT_PROC = 0x8000000,
+    DFLAG_RICOCHET = 0x10000000,
+    DFLAG_PURE_DMG = 0x20000000,
+    DFLAG_HEAVY_MELEE = 0x40000000,
+    DFLAG_LIGHT_MELEE = 0x80000000,
+    DFLAG_BONUS_DAMAGE = 0x100000000,
+    DFLAG_KILL_CREATES_RAGDOLL = 0x200000000,
+    DFLAG_IS_HEALTH_TRANSFER = 0x400000000,
+    DFLAG_DO_NOT_RICOCHET = 0x800000000,
+    DFLAG_NOT_IN_MIDBOSS_PIT = 0x1000000000,
+    DFLAG_NOT_IN_TIER3_PIT = 0x2000000000,
+    DFLAG_DO_NOT_TRIGGER_DAMAGE_FLASH = 0x4000000000,
+    DFLAG_TOO_FAR = 0x8000000000,
+    DFLAG_DO_NOT_DISRUPT_HEALING_RITE = 0x10000000000,
+    DFLAG_DO_NOT_CRIT = 0x20000000000,
+    DFLAG_TOO_LOW = 0x40000000000,
+    DFLAG_SUPPRESS_CRIT_RESISTANCE = 0x80000000000,
+    DFLAG_SKYRUNNER_RICOCHET = 0x100000000000,
+    DFLAG_VAMPIREBAT_LOVEBITEPROC = 0x200000000000,
+    DFLAG_ABILITY_DAMAGE_IGNORE_FALLOFF = 0x400000000000,
 }
 
 public enum ValueRemapperHapticsType : int
@@ -1227,8 +1245,19 @@ public partial class CAbility_Mirage_SandPhantom : CCitadelBaseAbility
 {
     internal CAbility_Mirage_SandPhantom(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public bool HasVictims { get; private set; }
+
     internal new static SendNodeDecoder<CAbility_Mirage_SandPhantom> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_bHasVictims")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CAbility_Mirage_SandPhantom @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.HasVictims = decoder(ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -3634,10 +3663,13 @@ public partial class CBaseAnimGraph : CBaseModelEntity
     // MNetworkChangeCallback "OnClientRagdollChanged"
     public bool RagdollClientSide { get; private set; }
 
-    // MNetworkSendProxyRecipientsFilter
+    // MNetworkChangeCallback "animGraph2DefinitionChanged"
+    public CStrongHandle<InfoForResourceTypeCNmGraphDefinition> AnimGraph2DefinitionNetVar { get; private set; }
+
+    public byte AnimGraph2FlagsNetVar { get; private set; }
+
     public NetworkedVector<byte> AnimGraph2SerializeData { get; private set; } = new NetworkedVector<byte>();
 
-    // MNetworkSendProxyRecipientsFilter
     public Int32 AnimGraph2SerializeDataSizeBytes { get; private set; }
 
     public Int32 AnimGraph2ReloadCountSV { get; private set; }
@@ -3698,6 +3730,22 @@ public partial class CBaseAnimGraph : CBaseModelEntity
             return (CBaseAnimGraph @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.RagdollClientSide = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_hAnimGraph2DefinitionNetVar")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCNmGraphDefinition>(field.FieldEncodingInfo);
+            return (CBaseAnimGraph @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AnimGraph2DefinitionNetVar = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_animGraph2FlagsNetVar")
+        {
+            var decoder = FieldDecode.CreateDecoder_byte(field.FieldEncodingInfo);
+            return (CBaseAnimGraph @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.AnimGraph2FlagsNetVar = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_animGraph2SerializeData")
@@ -4736,6 +4784,8 @@ public partial class CBaseModelEntity : CBaseEntity
     // MNetworkTypeAlias "CHitboxComponent"
     public CHitboxComponent CHitboxComponent { get; private set; } = new();
 
+    public CDestructiblePartsSystemComponent? DestructiblePartsSystemComponent { get; private set; }
+
     public RenderMode RenderMode { get; private set; }
 
     public RenderFx RenderFX { get; private set; }
@@ -4809,6 +4859,25 @@ public partial class CBaseModelEntity : CBaseEntity
             return (CBaseModelEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 innerDecoder(@this.CHitboxComponent, path, ref buffer);
+            };
+        }
+        if (field.VarName == "m_pDestructiblePartsSystemComponent")
+        {
+            Debug.Assert(field.FieldSerializerKey.HasValue);
+            var serializerKey = field.FieldSerializerKey.Value;
+            var innerDecoder = CDestructiblePartsSystemComponent.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
+            return (CBaseModelEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var isSet = buffer.ReadOneBit();
+                    @this.DestructiblePartsSystemComponent = isSet ? factory() : null;
+                }
+                else
+                {
+                    var inner = @this.DestructiblePartsSystemComponent ??= factory();
+                    innerDecoder(inner, path[1..], ref buffer);
+                }
             };
         }
         if (field.VarName == "m_nRenderMode")
@@ -5068,6 +5137,9 @@ public partial class CBasePlayerController : CBaseEntity
     // MNetworkChangeCallback "OnSteamIDChanged"
     public UInt64 SteamID { get; private set; }
 
+    // MNetworkChangeCallback "OnNoClipEnableChanged"
+    public bool NoClipEnabled { get; private set; }
+
     public UInt32 DesiredFOV { get; private set; }
 
     internal new static SendNodeDecoder<CBasePlayerController> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -5120,6 +5192,14 @@ public partial class CBasePlayerController : CBaseEntity
                 @this.SteamID = decoder(ref buffer);
             };
         }
+        if (field.VarName == "m_bNoClipEnabled")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CBasePlayerController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NoClipEnabled = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_iDesiredFOV")
         {
             var decoder = FieldDecode.CreateDecoder_UInt32(field.FieldEncodingInfo);
@@ -5160,7 +5240,6 @@ public partial class CBasePlayerController : CBaseEntity
     }
 }
 
-// MNetworkUserGroupProxy "CBasePlayerPawn"
 // MNetworkUserGroupProxy "CBasePlayerPawn"
 // MNetworkExcludeByUserGroup "FogController"
 // MNetworkIncludeByUserGroup "Player"
@@ -6554,6 +6633,44 @@ public partial class CCitadel_Ability_Bebop_LaserBeam : CCitadelBaseAbility
     }
 }
 
+public partial class CCitadel_Ability_Bebop_StickyBomb2 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Bebop_StickyBomb2(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Bebop_StickyBomb2> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bebop_StickyBomb2.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bebop_StickyBomb2.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bebop_StickyBomb2.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bebop_StickyBomb2.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_BloodBomb : CCitadelBaseAbility
 {
     internal CCitadel_Ability_BloodBomb(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -6588,6 +6705,158 @@ public partial class CCitadel_Ability_BloodBomb : CCitadelBaseAbility
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Ability_BloodBomb.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Boho_Ability01 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Boho_Ability01(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Boho_Ability01> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability01.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability01.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability01.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability01.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Boho_Ability02 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Boho_Ability02(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Boho_Ability02> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability02.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability02.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability02.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability02.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Boho_Ability03 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Boho_Ability03(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Boho_Ability03> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability03.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability03.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability03.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability03.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Boho_Ability04 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Boho_Ability04(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Boho_Ability04> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability04.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability04.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability04.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Boho_Ability04.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -6706,6 +6975,158 @@ public partial class CCitadel_Ability_Bomber_ULT : CCitadelBaseAbility
     }
 }
 
+public partial class CCitadel_Ability_Bookworm_Ability01 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Bookworm_Ability01(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Bookworm_Ability01> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_Ability01.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_Ability01.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_Ability01.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_Ability01.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Bookworm_AOEMagic : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Bookworm_AOEMagic(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Bookworm_AOEMagic> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_AOEMagic.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_AOEMagic.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_AOEMagic.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_AOEMagic.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Bookworm_KnightBarrier : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Bookworm_KnightBarrier(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Bookworm_KnightBarrier> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightBarrier.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightBarrier.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightBarrier.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightBarrier.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Bookworm_KnightCharge : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Bookworm_KnightCharge(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Bookworm_KnightCharge> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightCharge.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightCharge.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightCharge.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Bookworm_KnightCharge.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_Bounce_Pad : CCitadelBaseAbility
 {
     internal CCitadel_Ability_Bounce_Pad(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -6763,6 +7184,8 @@ public partial class CCitadel_Ability_Bull_Charge : CCitadelBaseAbility
     // MNetworkChangeCallback "OnChargingStateChanged"
     public GameTime ChargeStartTime { get; private set; } = new();
 
+    public GameTime FastChargeStartTime { get; private set; } = new();
+
     public GameTime FastChargeEndTime { get; private set; } = new();
 
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
@@ -6784,6 +7207,14 @@ public partial class CCitadel_Ability_Bull_Charge : CCitadelBaseAbility
             return (CCitadel_Ability_Bull_Charge @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ChargeStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flFastChargeStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Bull_Charge @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.FastChargeStartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flFastChargeEndTime")
@@ -6876,6 +7307,9 @@ public partial class CCitadel_Ability_Bull_Leap : CCitadelBaseAbility
 {
     internal CCitadel_Ability_Bull_Leap(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public bool BraceParamTriggered { get; private set; }
+
     public float BoostYaw { get; private set; }
 
     public Vector CrashPosition { get; private set; }
@@ -6893,6 +7327,14 @@ public partial class CCitadel_Ability_Bull_Leap : CCitadelBaseAbility
 
     internal new static SendNodeDecoder<CCitadel_Ability_Bull_Leap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_bBraceParamTriggered")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Bull_Leap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BraceParamTriggered = decoder(ref buffer);
+            };
+        }
         if (field.VarName == "m_flBoostYaw")
         {
             var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
@@ -7745,9 +8187,6 @@ public partial class CCitadel_Ability_Climb_Rope : CCitadelBaseAbility
     public bool RequestJumpToRoof { get; private set; }
 
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
-    public GameTime LastMoveTime { get; private set; } = new();
-
-    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public GameTime MoveDownStartTime { get; private set; } = new();
 
     public EClimbRopeState ClimbState { get; private set; }
@@ -7784,14 +8223,6 @@ public partial class CCitadel_Ability_Climb_Rope : CCitadelBaseAbility
             return (CCitadel_Ability_Climb_Rope @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.RequestJumpToRoof = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_flLastMoveTime")
-        {
-            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
-            return (CCitadel_Ability_Climb_Rope @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.LastMoveTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flMoveDownStartTime")
@@ -8164,6 +8595,320 @@ public partial class CCitadel_Ability_Disruptive_Charge : CCitadelBaseAbility
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Ability_Disruptive_Charge.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Doorman_Ability03 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Doorman_Ability03(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Doorman_Ability03> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability03.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability03.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability03.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability03.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Doorman_Ability04 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Doorman_Ability04(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Doorman_Ability04> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability04.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability04.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability04.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Ability04.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Doorman_Doorway : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Doorman_Doorway(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public bool HasPendingDoor { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Doorman_Doorway> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_bHasPendingDoor")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Doorman_Doorway @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.HasPendingDoor = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Doorway.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Doorway.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Doorway.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Doorway.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Doorman_Wall : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Doorman_Wall(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Doorman_Wall> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Wall.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Wall.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Wall.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Doorman_Wall.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Drifter_Ability01 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Drifter_Ability01(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Drifter_Ability01> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability01.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability01.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability01.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability01.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Drifter_Ability02 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Drifter_Ability02(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Drifter_Ability02> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability02.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability02.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability02.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability02.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Drifter_Ability04 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Drifter_Ability04(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Drifter_Ability04> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability04.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability04.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability04.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Ability04.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Drifter_Hunger : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Drifter_Hunger(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Drifter_Hunger> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Hunger.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Hunger.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Hunger.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Drifter_Hunger.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -8925,6 +9670,236 @@ public partial class CCitadel_Ability_FlyingStrike : CCitadelBaseYamatoAbility
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Ability_FlyingStrike.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Frank_PainAura : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Frank_PainAura(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Frank_PainAura> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PainAura.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PainAura.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PainAura.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PainAura.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Frank_PrimaryWeapon : CCitadel_Ability_PrimaryWeapon
+{
+    internal CCitadel_Ability_Frank_PrimaryWeapon(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Frank_PrimaryWeapon> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Ability_PrimaryWeapon.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PrimaryWeapon.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PrimaryWeapon.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PrimaryWeapon.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_PrimaryWeapon.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Frank_Revive : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Frank_Revive(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public bool ReviveIsActive { get; private set; }
+
+    public GameTime TimeOfDeath { get; private set; } = new();
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Frank_Revive> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_bReviveIsActive")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Frank_Revive @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ReviveIsActive = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_TimeOfDeath")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Frank_Revive @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TimeOfDeath = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_Revive.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_Revive.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_Revive.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_Revive.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Frank_SelfZap : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Frank_SelfZap(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Frank_SelfZap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_SelfZap.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_SelfZap.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_SelfZap.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_SelfZap.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Frank_ShockTarget : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Frank_ShockTarget(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public float BonusDamage { get; private set; }
+
+    public GameTime NextBonusDamageDecayTime { get; private set; } = new();
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Frank_ShockTarget> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_flBonusDamage")
+        {
+            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Frank_ShockTarget @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BonusDamage = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_NextBonusDamageDecayTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Frank_ShockTarget @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextBonusDamageDecayTime = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_ShockTarget.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_ShockTarget.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_ShockTarget.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Frank_ShockTarget.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -10112,11 +11087,14 @@ public partial class CCitadel_Ability_Hook : CCitadelBaseAbility
     public CHandle<CBaseEntity, DeadlockDemoParser> HookVictimHandle { get; private set; }
     public CBaseEntity? HookVictim => HookVictimHandle.Get(Demo);
 
-    public CHandle<CBaseEntity, DeadlockDemoParser> ProjectileHandle { get; private set; }
-    public CBaseEntity? Projectile => ProjectileHandle.Get(Demo);
-
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public Vector HookTargetStartPos { get; private set; }
+
+    public GameTime CancelHookTime { get; private set; } = new();
+
+    public GameTime BeginReelHookTime { get; private set; } = new();
+
+    public GameTime BulletShouldExpireTime { get; private set; } = new();
 
     internal new static SendNodeDecoder<CCitadel_Ability_Hook> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -10128,20 +11106,36 @@ public partial class CCitadel_Ability_Hook : CCitadelBaseAbility
                 @this.HookVictimHandle = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_hProjectile")
-        {
-            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseEntity, DeadlockDemoParser>(field.FieldEncodingInfo);
-            return (CCitadel_Ability_Hook @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.ProjectileHandle = decoder(ref buffer);
-            };
-        }
         if (field.VarName == "m_vecHookTargetStartPos")
         {
             var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CCitadel_Ability_Hook @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.HookTargetStartPos = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flCancelHookTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Hook @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.CancelHookTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flBeginReelHookTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Hook @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BeginReelHookTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flBulletShouldExpireTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Hook @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BulletShouldExpireTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -10825,6 +11819,9 @@ public partial class CCitadel_Ability_Jump : CCitadelBaseAbility
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public sbyte ConsecutiveWallJumps { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public GameTime LateralInputSuppressEndTime { get; private set; } = new();
+
     internal new static SendNodeDecoder<CCitadel_Ability_Jump> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_flGroundDashJumpStartTime")
@@ -10897,6 +11894,14 @@ public partial class CCitadel_Ability_Jump : CCitadelBaseAbility
             return (CCitadel_Ability_Jump @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ConsecutiveWallJumps = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLateralInputSuppressEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Jump @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LateralInputSuppressEndTime = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -12949,12 +13954,225 @@ public partial class CCitadel_Ability_PowerSurge : CCitadelBaseAbility
     }
 }
 
+public partial class CCitadel_Ability_Priest_Barrage : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Priest_Barrage(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Priest_Barrage> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Barrage.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Barrage.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Barrage.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Barrage.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Priest_Knockback : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Priest_Knockback(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Priest_Knockback> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Knockback.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Knockback.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Knockback.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_Knockback.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Priest_SelfHeal : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Priest_SelfHeal(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Priest_SelfHeal> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_SelfHeal.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_SelfHeal.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_SelfHeal.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_SelfHeal.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Priest_StackingDefense : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Priest_StackingDefense(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Priest_StackingDefense> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_StackingDefense.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_StackingDefense.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_StackingDefense.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_StackingDefense.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Priest_WeaponSwap : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Priest_WeaponSwap(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public GameTime SwapFinishTime { get; private set; } = new();
+
+    public EWeaponSwapState WeaponSwapState { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Priest_WeaponSwap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_SwapFinishTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Priest_WeaponSwap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SwapFinishTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_eWeaponSwapState")
+        {
+            var decoder = FieldDecode.CreateDecoder_enum<EWeaponSwapState>(field.FieldEncodingInfo);
+            return (CCitadel_Ability_Priest_WeaponSwap @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.WeaponSwapState = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_WeaponSwap.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_WeaponSwap.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_WeaponSwap.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Priest_WeaponSwap.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
 {
     internal CCitadel_Ability_PrimaryWeapon(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public GameTime NextPrimaryAttack { get; private set; } = new();
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public GameTime NextPrimaryAttackStartTime { get; private set; } = new();
 
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     // MNetworkSerializer "minusone"
@@ -13047,6 +14265,14 @@ public partial class CCitadel_Ability_PrimaryWeapon : CCitadelBaseAbility
             return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.NextPrimaryAttack = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextPrimaryAttackStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_PrimaryWeapon @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextPrimaryAttackStartTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iClip")
@@ -13782,6 +15008,158 @@ public partial class CCitadel_Ability_Puddle : CCitadelBaseAbility
     }
 }
 
+public partial class CCitadel_Ability_PunkGoat_Ability01 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_PunkGoat_Ability01(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_PunkGoat_Ability01> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability01.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability01.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability01.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability01.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_PunkGoat_Ability02 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_PunkGoat_Ability02(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_PunkGoat_Ability02> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability02.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability02.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability02.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability02.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_PunkGoat_Ability03 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_PunkGoat_Ability03(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_PunkGoat_Ability03> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability03.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability03.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability03.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability03.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_PunkGoat_Ability04 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_PunkGoat_Ability04(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_PunkGoat_Ability04> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability04.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability04.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability04.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_PunkGoat_Ability04.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_RapidFire : CCitadelBaseAbility
 {
     internal CCitadel_Ability_RapidFire(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -13922,8 +15300,18 @@ public partial class CCitadel_Ability_RocketBarrage : CCitadelBaseAbility
 {
     internal CCitadel_Ability_RocketBarrage(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
+    public CCitadelAutoScaledTime BarrageEndTime { get; private set; } = new();
+
     internal new static SendNodeDecoder<CCitadel_Ability_RocketBarrage> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_flBarrageEndTime")
+        {
+            var innerDecoder = CCitadelAutoScaledTime.CreateFieldDecoder(field with {SendNode = field.SendNode[1..]}, decoderSet);
+            return (CCitadel_Ability_RocketBarrage @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                innerDecoder(@this.BarrageEndTime, path, ref buffer);
+            };
+        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -14880,6 +16268,246 @@ public partial class CCitadel_Ability_Shotgun_Astro_Backwards : CCitadel_Ability
     }
 }
 
+public partial class CCitadel_Ability_SkyRunner_Ability04 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_SkyRunner_Ability04(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_SkyRunner_Ability04> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_Ability04.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_Ability04.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_Ability04.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_Ability04.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_SkyRunner_FlakShot : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_SkyRunner_FlakShot(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_SkyRunner_FlakShot> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_FlakShot.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_FlakShot.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_FlakShot.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_FlakShot.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Skyrunner_MagicBeam : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Skyrunner_MagicBeam(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Skyrunner_MagicBeam> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Skyrunner_MagicBeam.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Skyrunner_MagicBeam.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Skyrunner_MagicBeam.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Skyrunner_MagicBeam.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_SkyRunner_PrimaryWeapon : CCitadel_Ability_PrimaryWeapon
+{
+    internal CCitadel_Ability_SkyRunner_PrimaryWeapon(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_SkyRunner_PrimaryWeapon> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Ability_PrimaryWeapon.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_PrimaryWeapon.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_PrimaryWeapon.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_PrimaryWeapon.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_PrimaryWeapon.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_SkyRunner_SwingLine : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_SkyRunner_SwingLine(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public ESwingState SwingState { get; private set; }
+
+    public GameTime SwingStartTime { get; private set; } = new();
+
+    public GameTime SwingEndTime { get; private set; } = new();
+
+    public Vector SwingPoint { get; private set; }
+
+    public float IdealSpringLength { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_Ability_SkyRunner_SwingLine> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_eSwingState")
+        {
+            var decoder = FieldDecode.CreateDecoder_enum<ESwingState>(field.FieldEncodingInfo);
+            return (CCitadel_Ability_SkyRunner_SwingLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SwingState = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_SwingStartTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_SkyRunner_SwingLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SwingStartTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_SwingEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_SkyRunner_SwingLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SwingEndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_vecSwingPoint")
+        {
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
+            return (CCitadel_Ability_SkyRunner_SwingLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SwingPoint = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flIdealSpringLength")
+        {
+            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
+            return (CCitadel_Ability_SkyRunner_SwingLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.IdealSpringLength = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_SwingLine.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_SwingLine.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_SwingLine.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_SkyRunner_SwingLine.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_SleepBomb : CCitadelBaseAbility
 {
     internal CCitadel_Ability_SleepBomb(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -15782,6 +17410,158 @@ public partial class CCitadel_Ability_SuperNeutralShield : CCitadelBaseAbilitySe
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Ability_SuperNeutralShield.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Swan_Ability04 : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Swan_Ability04(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Swan_Ability04> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Ability04.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Ability04.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Ability04.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Ability04.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Swan_Acrobat : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Swan_Acrobat(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Swan_Acrobat> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Acrobat.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Acrobat.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Acrobat.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Acrobat.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Swan_FeatherBoomerang : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Swan_FeatherBoomerang(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Swan_FeatherBoomerang> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_FeatherBoomerang.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_FeatherBoomerang.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_FeatherBoomerang.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_FeatherBoomerang.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_Swan_Leap : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Swan_Leap(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Swan_Leap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Leap.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Leap.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Leap.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Swan_Leap.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -17846,6 +19626,256 @@ public partial class CCitadel_Ability_Uppercut : CCitadel_Ability_Melee_Base
     }
 }
 
+public partial class CCitadel_Ability_VampireBat_BatBlink : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_VampireBat_BatBlink(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public Int32 RemainingCasts { get; private set; }
+
+    public bool IsBlinking { get; private set; }
+
+    public GameTime RecastEndTime { get; private set; } = new();
+
+    public GameTime BlinkEndTime { get; private set; } = new();
+
+    internal new static SendNodeDecoder<CCitadel_Ability_VampireBat_BatBlink> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_iRemainingCasts")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_Ability_VampireBat_BatBlink @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RemainingCasts = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bIsBlinking")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadel_Ability_VampireBat_BatBlink @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.IsBlinking = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_RecastEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_VampireBat_BatBlink @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RecastEndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_BlinkEndTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Ability_VampireBat_BatBlink @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BlinkEndTime = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatBlink.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatBlink.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatBlink.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatBlink.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_VampireBat_BatCloud : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_VampireBat_BatCloud(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_VampireBat_BatCloud> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatCloud.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatCloud.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatCloud.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatCloud.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_VampireBat_BatSwarm : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_VampireBat_BatSwarm(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public Int32 BonusBats { get; private set; }
+
+    public Int32 BatCountOnCast { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_Ability_VampireBat_BatSwarm> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_iBonusBats")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_Ability_VampireBat_BatSwarm @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BonusBats = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_iBatCountOnCast")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_Ability_VampireBat_BatSwarm @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.BatCountOnCast = decoder(ref buffer);
+            };
+        }
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatSwarm.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatSwarm.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatSwarm.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_BatSwarm.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_VampireBat_DoubleDagger : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_VampireBat_DoubleDagger(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_VampireBat_DoubleDagger> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_DoubleDagger.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_DoubleDagger.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_DoubleDagger.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_DoubleDagger.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Ability_VampireBat_LoveBites : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_VampireBat_LoveBites(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_VampireBat_LoveBites> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_LoveBites.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_LoveBites.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_LoveBites.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_VampireBat_LoveBites.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_Vandal_Ability03 : CCitadelBaseAbility
 {
     internal CCitadel_Ability_Vandal_Ability03(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -18962,7 +20992,6 @@ public partial class CCitadel_Ability_ZipLine : CCitadelBaseAbility
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public GameTime DamagedTime { get; private set; } = new();
 
-    // MNetworkChangeCallback "ZiplingAttachStateChanged"
     public EAttachState AttachState { get; private set; }
 
     public Int32 AttachedZipLineLane { get; private set; }
@@ -18975,6 +21004,18 @@ public partial class CCitadel_Ability_ZipLine : CCitadelBaseAbility
 
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public float ZiplineAirDrag { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Vector PendulumVelocity { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Vector PendulumPosition { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Vector VelocityHistory1 { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Vector VelocityHistory2 { get; private set; }
 
     internal new static SendNodeDecoder<CCitadel_Ability_ZipLine> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -19104,6 +21145,38 @@ public partial class CCitadel_Ability_ZipLine : CCitadelBaseAbility
             return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.ZiplineAirDrag = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_vPendulumVelocity")
+        {
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PendulumVelocity = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_vPendulumPosition")
+        {
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PendulumPosition = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_vVelocityHistory1")
+        {
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.VelocityHistory1 = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_vVelocityHistory2")
+        {
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
+            return (CCitadel_Ability_ZipLine @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.VelocityHistory2 = decoder(ref buffer);
             };
         }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
@@ -19946,6 +22019,44 @@ public partial class CCitadel_ArmorUpgrade_SpellShield : CCitadel_Item
     }
 }
 
+public partial class CCitadel_ArmorUpgrade_SpiritBubble : CCitadel_Item
+{
+    internal CCitadel_ArmorUpgrade_SpiritBubble(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_ArmorUpgrade_SpiritBubble> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_SpiritBubble.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_SpiritBubble.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_SpiritBubble.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_SpiritBubble.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_ArmorUpgrade_Stimpak : CCitadel_Item
 {
     internal CCitadel_ArmorUpgrade_Stimpak(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -20022,6 +22133,44 @@ public partial class CCitadel_ArmorUpgrade_VexBarrier : CCitadel_Item
     }
 }
 
+public partial class CCitadel_ArmorUpgrade_WeaponShielding : CCitadel_Item
+{
+    internal CCitadel_ArmorUpgrade_WeaponShielding(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_ArmorUpgrade_WeaponShielding> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_WeaponShielding.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_WeaponShielding.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_WeaponShielding.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_ArmorUpgrade_WeaponShielding.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_BaseProp_MidStairs : CPointEntity
 {
     internal CCitadel_BaseProp_MidStairs(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -20091,6 +22240,8 @@ public partial class CCitadel_Bounce_Pad : CCitadelAnimatingModelEntity
 
     public float BounceVelocity { get; private set; }
 
+    public GameTime DeactivationTime { get; private set; } = new();
+
     internal new static SendNodeDecoder<CCitadel_Bounce_Pad> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_flUpFactor")
@@ -20107,6 +22258,14 @@ public partial class CCitadel_Bounce_Pad : CCitadelAnimatingModelEntity
             return (CCitadel_Bounce_Pad @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.BounceVelocity = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_tDeactivationTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Bounce_Pad @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DeactivationTime = decoder(ref buffer);
             };
         }
         return CCitadelAnimatingModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -20602,6 +22761,82 @@ public partial class CCitadel_Destroyable_Building : CCitadelAnimatingModelEntit
     }
 }
 
+public partial class CCitadel_Doorman_Wall_Section : CBaseAnimGraph
+{
+    internal CCitadel_Doorman_Wall_Section(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Doorman_Wall_Section> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Doorman_Wall_Section.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Doorman_Wall_Section.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Doorman_Wall_Section.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Doorman_Wall_Section.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_DoorwayPortal : CBaseAnimGraph
+{
+    internal CCitadel_DoorwayPortal(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_DoorwayPortal> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_DoorwayPortal.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_DoorwayPortal.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_DoorwayPortal.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_DoorwayPortal.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_DynamicProp : CDynamicProp
 {
     internal CCitadel_DynamicProp(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -20895,6 +23130,8 @@ public partial class CCitadel_Ice_Path_Shard_Physics : CBaseModelEntity
     // MNetworkChangeCallback "OnEndTimeChanged"
     public GameTime EndTime { get; private set; } = new();
 
+    public float ShardWidth { get; private set; }
+
     internal new static SendNodeDecoder<CCitadel_Ice_Path_Shard_Physics> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_ShardDesc")
@@ -20927,6 +23164,14 @@ public partial class CCitadel_Ice_Path_Shard_Physics : CBaseModelEntity
             return (CCitadel_Ice_Path_Shard_Physics @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EndTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flShardWidth")
+        {
+            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
+            return (CCitadel_Ice_Path_Shard_Physics @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ShardWidth = decoder(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -20965,31 +23210,8 @@ public partial class CCitadel_Item : CCitadelBaseAbility
 {
     internal CCitadel_Item(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
-    public NetworkedVector<CUtlStringToken> ComponentsConsumed { get; private set; } = new NetworkedVector<CUtlStringToken>();
-
     internal new static SendNodeDecoder<CCitadel_Item> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (field.VarName == "m_vecComponentsConsumed")
-        {
-            var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
-            return (CCitadel_Item @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var newSize = (int)buffer.ReadUVarInt32();
-                    @this.ComponentsConsumed.Resize(newSize);
-                }
-                else
-                {
-                    Debug.Assert(path.Length == 2);
-                    var index = path[1];
-                    @this.ComponentsConsumed.EnsureSize(index + 1);
-                    var element = decoder(ref buffer);
-                    @this.ComponentsConsumed[index] = element;
-                }
-            };
-        }
         return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
     }
 
@@ -21132,6 +23354,44 @@ public partial class CCitadel_Item_AOERoot : CCitadel_Item
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Item_AOERoot.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Item_ArcticBlast : CCitadel_Item
+{
+    internal CCitadel_Item_ArcticBlast(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Item_ArcticBlast> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_ArcticBlast.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_ArcticBlast.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_ArcticBlast.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_ArcticBlast.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -21527,6 +23787,44 @@ public partial class CCitadel_Item_Disarm : CCitadel_Item_TrackingProjectileAppl
     }
 }
 
+public partial class CCitadel_Item_DivineBarrier : CCitadel_Item
+{
+    internal CCitadel_Item_DivineBarrier(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Item_DivineBarrier> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_DivineBarrier.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_DivineBarrier.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_DivineBarrier.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_DivineBarrier.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Item_DivinersKevlar : CCitadel_Item
 {
     internal CCitadel_Item_DivinersKevlar(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -21637,6 +23935,82 @@ public partial class CCitadel_Item_Empty : CCitadel_Item
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Item_Empty.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Item_FocusLens : CCitadel_Item_TrackingProjectileApplyModifier
+{
+    internal CCitadel_Item_FocusLens(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Item_FocusLens> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item_TrackingProjectileApplyModifier.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_FocusLens.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_FocusLens.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_FocusLens.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_FocusLens.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Item_GuardianWard : CCitadel_Item
+{
+    internal CCitadel_Item_GuardianWard(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Item_GuardianWard> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_GuardianWard.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_GuardianWard.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_GuardianWard.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_GuardianWard.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -21755,6 +24129,55 @@ public partial class CCitadel_Item_ModDisruptor : CCitadel_Item
     }
 }
 
+public partial class CCitadel_Item_Mystic_Regeneration : CCitadel_Item
+{
+    internal CCitadel_Item_Mystic_Regeneration(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Int32 RegenStacks { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_Item_Mystic_Regeneration> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_iRegenStacks")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_Item_Mystic_Regeneration @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RegenStacks = decoder(ref buffer);
+            };
+        }
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_Mystic_Regeneration.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_Mystic_Regeneration.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_Mystic_Regeneration.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_Mystic_Regeneration.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Item_PhantomStrike : CCitadel_Item
 {
     internal CCitadel_Item_PhantomStrike(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -21827,44 +24250,6 @@ public partial class CCitadel_Item_PowerShard : CCitadel_Item
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Item_PowerShard.PostUpdate?.Invoke(this);
-        base.FirePostUpdateEvent();
-    }
-}
-
-public partial class CCitadel_Item_QuickSilver : CCitadel_Item
-{
-    internal CCitadel_Item_QuickSilver(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
-
-    internal new static SendNodeDecoder<CCitadel_Item_QuickSilver> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireCreateEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_QuickSilver.Create?.Invoke(this);
-        base.FireCreateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireDeleteEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_QuickSilver.Delete?.Invoke(this);
-        base.FireDeleteEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePreUpdateEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_QuickSilver.PreUpdate?.Invoke(this);
-        base.FirePreUpdateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePostUpdateEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_QuickSilver.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -21993,44 +24378,6 @@ public partial class CCitadel_Item_RescueBeam : CCitadel_Item
     }
 }
 
-public partial class CCitadel_Item_Savior : CCitadel_Item
-{
-    internal CCitadel_Item_Savior(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
-
-    internal new static SendNodeDecoder<CCitadel_Item_Savior> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireCreateEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_Savior.Create?.Invoke(this);
-        base.FireCreateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireDeleteEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_Savior.Delete?.Invoke(this);
-        base.FireDeleteEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePreUpdateEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_Savior.PreUpdate?.Invoke(this);
-        base.FirePreUpdateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePostUpdateEvent()
-    {
-        Demo.EntityEvents.CCitadel_Item_Savior.PostUpdate?.Invoke(this);
-        base.FirePostUpdateEvent();
-    }
-}
-
 public partial class CCitadel_Item_SelfBuffModifier : CCitadel_Item
 {
     internal CCitadel_Item_SelfBuffModifier(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -22103,6 +24450,44 @@ public partial class CCitadel_Item_SingleTargetStun : CCitadel_Item
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Item_SingleTargetStun.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Item_SpiritSap : CCitadel_Item_TrackingProjectileApplyModifier
+{
+    internal CCitadel_Item_SpiritSap(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Item_SpiritSap> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item_TrackingProjectileApplyModifier.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_SpiritSap.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_SpiritSap.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_SpiritSap.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_SpiritSap.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -22259,6 +24644,54 @@ public partial class CCitadel_Item_TrackingProjectileApplyModifier : CCitadel_It
     }
 }
 
+public partial class CCitadel_Item_TrophyCollector : CCitadel_Item
+{
+    internal CCitadel_Item_TrophyCollector(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public Int32 TrophyCount { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_Item_TrophyCollector> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_iTrophyCount")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_Item_TrophyCollector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TrophyCount = decoder(ref buffer);
+            };
+        }
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_TrophyCollector.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_TrophyCollector.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_TrophyCollector.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Item_TrophyCollector.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Item_WarpStone : CCitadel_Item
 {
     internal CCitadel_Item_WarpStone(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -22293,6 +24726,54 @@ public partial class CCitadel_Item_WarpStone : CCitadel_Item
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Item_WarpStone.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Magic_Beam_Blocker : CBaseAnimGraph
+{
+    internal CCitadel_Magic_Beam_Blocker(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public GameTime TurnSolidTime { get; private set; } = new();
+
+    internal new static SendNodeDecoder<CCitadel_Magic_Beam_Blocker> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_flTurnSolidTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_Magic_Beam_Blocker @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.TurnSolidTime = decoder(ref buffer);
+            };
+        }
+        return CBaseAnimGraph.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Magic_Beam_Blocker.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Magic_Beam_Blocker.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Magic_Beam_Blocker.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Magic_Beam_Blocker.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -22568,6 +25049,44 @@ public partial class CCitadel_Projectile_Archer_ChargedShot : CCitadelProjectile
     }
 }
 
+public partial class CCitadel_Projectile_BatSwarmProjectile : CCitadelProjectile
+{
+    internal CCitadel_Projectile_BatSwarmProjectile(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Projectile_BatSwarmProjectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_BatSwarmProjectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_BatSwarmProjectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_BatSwarmProjectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_BatSwarmProjectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Projectile_Bebop_Hook : CCitadelProjectile
 {
     internal CCitadel_Projectile_Bebop_Hook(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -22716,6 +25235,44 @@ public partial class CCitadel_Projectile_DustStorm : CCitadelProjectile
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_Projectile_DustStorm.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_Projectile_FeatherBoomerang : CCitadelProjectile
+{
+    internal CCitadel_Projectile_FeatherBoomerang(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Projectile_FeatherBoomerang> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_FeatherBoomerang.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_FeatherBoomerang.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_FeatherBoomerang.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Projectile_FeatherBoomerang.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -24091,11 +26648,11 @@ public partial class CCitadel_UtilityUpgrade_RocketBoots : CCitadel_Item
     }
 }
 
-public partial class CCitadel_WeaponUpgrade_BansheeSlugs : CCitadel_Item
+public partial class CCitadel_WeaponUpgrade_BloodTribute : CCitadel_Item
 {
-    internal CCitadel_WeaponUpgrade_BansheeSlugs(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCitadel_WeaponUpgrade_BloodTribute(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_BansheeSlugs> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_BloodTribute> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
     }
@@ -24103,28 +26660,28 @@ public partial class CCitadel_WeaponUpgrade_BansheeSlugs : CCitadel_Item
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FireCreateEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_BansheeSlugs.Create?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_BloodTribute.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FireDeleteEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_BansheeSlugs.Delete?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_BloodTribute.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FirePreUpdateEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_BansheeSlugs.PreUpdate?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_BloodTribute.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FirePostUpdateEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_BansheeSlugs.PostUpdate?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_BloodTribute.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -24177,6 +26734,140 @@ public partial class CCitadel_WeaponUpgrade_BurstFire : CCitadel_Item
     }
 }
 
+public partial class CCitadel_WeaponUpgrade_CooldownOnMiss : CCitadel_Item
+{
+    internal CCitadel_WeaponUpgrade_CooldownOnMiss(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_CooldownOnMiss> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CooldownOnMiss.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CooldownOnMiss.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CooldownOnMiss.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CooldownOnMiss.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_WeaponUpgrade_CultistSacrifice : CCitadel_Item
+{
+    internal CCitadel_WeaponUpgrade_CultistSacrifice(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_CultistSacrifice> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CultistSacrifice.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CultistSacrifice.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CultistSacrifice.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_CultistSacrifice.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_WeaponUpgrade_ExpressShot : CCitadel_Item
+{
+    internal CCitadel_WeaponUpgrade_ExpressShot(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public Int32 ShotsToCreate { get; private set; }
+
+    public bool IsInExpressShot { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_ExpressShot> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_iShotsToCreate")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_WeaponUpgrade_ExpressShot @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ShotsToCreate = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bIsInExpressShot")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadel_WeaponUpgrade_ExpressShot @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.IsInExpressShot = decoder(ref buffer);
+            };
+        }
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_ExpressShot.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_ExpressShot.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_ExpressShot.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_ExpressShot.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_WeaponUpgrade_FireRateAura : CCitadel_Item
 {
     internal CCitadel_WeaponUpgrade_FireRateAura(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -24211,6 +26902,44 @@ public partial class CCitadel_WeaponUpgrade_FireRateAura : CCitadel_Item
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadel_WeaponUpgrade_FireRateAura.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_WeaponUpgrade_FuryTrance : CCitadel_Item
+{
+    internal CCitadel_WeaponUpgrade_FuryTrance(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_FuryTrance> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_FuryTrance.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_FuryTrance.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_FuryTrance.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_FuryTrance.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -24263,49 +26992,11 @@ public partial class CCitadel_WeaponUpgrade_GlassCannon : CCitadel_Item
     }
 }
 
-public partial class CCitadel_WeaponUpgrade_Headhunter : CCitadel_WeaponUpgrade_HeadshotBooster
+public partial class CCitadel_WeaponUpgrade_HeadshotDamage : CCitadel_Item
 {
-    internal CCitadel_WeaponUpgrade_Headhunter(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+    internal CCitadel_WeaponUpgrade_HeadshotDamage(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_Headhunter> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        return CCitadel_WeaponUpgrade_HeadshotBooster.CreateFieldDecoder(field, decoderSet);
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireCreateEvent()
-    {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_Headhunter.Create?.Invoke(this);
-        base.FireCreateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireDeleteEvent()
-    {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_Headhunter.Delete?.Invoke(this);
-        base.FireDeleteEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePreUpdateEvent()
-    {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_Headhunter.PreUpdate?.Invoke(this);
-        base.FirePreUpdateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePostUpdateEvent()
-    {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_Headhunter.PostUpdate?.Invoke(this);
-        base.FirePostUpdateEvent();
-    }
-}
-
-public partial class CCitadel_WeaponUpgrade_HeadshotBooster : CCitadel_Item
-{
-    internal CCitadel_WeaponUpgrade_HeadshotBooster(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
-
-    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_HeadshotBooster> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_HeadshotDamage> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
     }
@@ -24313,28 +27004,66 @@ public partial class CCitadel_WeaponUpgrade_HeadshotBooster : CCitadel_Item
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FireCreateEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotBooster.Create?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotDamage.Create?.Invoke(this);
         base.FireCreateEvent();
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FireDeleteEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotBooster.Delete?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotDamage.Delete?.Invoke(this);
         base.FireDeleteEvent();
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FirePreUpdateEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotBooster.PreUpdate?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotDamage.PreUpdate?.Invoke(this);
         base.FirePreUpdateEvent();
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     public override void FirePostUpdateEvent()
     {
-        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotBooster.PostUpdate?.Invoke(this);
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_HeadshotDamage.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadel_WeaponUpgrade_InfiniteMagazine : CCitadel_Item
+{
+    internal CCitadel_WeaponUpgrade_InfiniteMagazine(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_InfiniteMagazine> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_InfiniteMagazine.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_InfiniteMagazine.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_InfiniteMagazine.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_InfiniteMagazine.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -24501,6 +27230,54 @@ public partial class CCitadel_WeaponUpgrade_SpellslingerHeadshots : CCitadel_Ite
     }
 }
 
+public partial class CCitadel_WeaponUpgrade_SplitShot : CCitadel_Item
+{
+    internal CCitadel_WeaponUpgrade_SplitShot(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public bool SplitShotActive { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_WeaponUpgrade_SplitShot> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_bSplitShotActive")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadel_WeaponUpgrade_SplitShot @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.SplitShotActive = decoder(ref buffer);
+            };
+        }
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_SplitShot.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_SplitShot.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_SplitShot.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_WeaponUpgrade_SplitShot.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_WeaponUpgrade_SurgingPower : CCitadel_Item
 {
     internal CCitadel_WeaponUpgrade_SurgingPower(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -24640,13 +27417,8 @@ public partial class CCitadelAbilityBeam
 public partial class CCitadelAbilityComponent : CEntityComponent
 {
     // MNetworkUserGroup "Abilities"
-    // MNetworkChangeCallback "abilitiesChanged"
     // MNetworkPriority 32
     public NetworkedVector<CHandle<CCitadelBaseAbility, DeadlockDemoParser>> Abilities { get; private set; } = new NetworkedVector<CHandle<CCitadelBaseAbility, DeadlockDemoParser>>();
-
-    // MNetworkUserGroup "Abilities"
-    // MNetworkPriority 32
-    public NetworkedVector<CUtlStringToken> UniversalItems { get; private set; } = new NetworkedVector<CUtlStringToken>();
 
     // MNetworkUserGroup "Abilities"
     // MNetworkPriority 32
@@ -24680,6 +27452,9 @@ public partial class CCitadelAbilityComponent : CEntityComponent
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public AbilityResource ResourceAbility { get; private set; } = new();
 
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public NetworkedVector<ConsumedComponentState> ConsumedComponents { get; private set; } = new NetworkedVector<ConsumedComponentState>();
+
     internal new static SendNodeDecoder<CCitadelAbilityComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_vecAbilities")
@@ -24699,26 +27474,6 @@ public partial class CCitadelAbilityComponent : CEntityComponent
                     @this.Abilities.EnsureSize(index + 1);
                     var element = decoder(ref buffer);
                     @this.Abilities[index] = element;
-                }
-            };
-        }
-        if (field.VarName == "m_vecUniversalItems")
-        {
-            var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
-            return (CCitadelAbilityComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var newSize = (int)buffer.ReadUVarInt32();
-                    @this.UniversalItems.Resize(newSize);
-                }
-                else
-                {
-                    Debug.Assert(path.Length == 2);
-                    var index = path[1];
-                    @this.UniversalItems.EnsureSize(index + 1);
-                    var element = decoder(ref buffer);
-                    @this.UniversalItems[index] = element;
                 }
             };
         }
@@ -24824,6 +27579,26 @@ public partial class CCitadelAbilityComponent : CEntityComponent
             return (CCitadelAbilityComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 innerDecoder(@this.ResourceAbility, path, ref buffer);
+            };
+        }
+        if (field.VarName == "m_vecConsumedComponents")
+        {
+            var innerDecoder = decoderSet.GetDecoder<ConsumedComponentState>(field.FieldSerializerKey!.Value);
+            return (CCitadelAbilityComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.ConsumedComponents.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length > 2);
+                    var index = path[1];
+                    @this.ConsumedComponents.EnsureSize(index + 1);
+                    var element = @this.ConsumedComponents[index] ??= new ConsumedComponentState();
+                    innerDecoder(element, path[2..], ref buffer);
+                }
             };
         }
         return CEntityComponent.CreateFieldDecoder(field, decoderSet);
@@ -27131,6 +29906,7 @@ public partial class CCitadelPlayerController : CBasePlayerController
 
     public NetworkedVector<Int32> MutedPlayers { get; private set; } = new NetworkedVector<Int32>();
 
+    // MNetworkChangeCallback "OnHeroPawnChanged"
     public CHandle<CCitadelPlayerPawn, DeadlockDemoParser> HeroPawnHandle { get; private set; }
     public CCitadelPlayerPawn? HeroPawn => HeroPawnHandle.Get(Demo);
 
@@ -27498,6 +30274,9 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
     // MNetworkUserGroup "LocalPlayerExclusive"
     public bool InItemShopZone { get; private set; }
 
+    // MNetworkUserGroup "LocalPlayerExclusive"
+    public bool InHideoutZone { get; private set; }
+
     // MNetworkUserGroup "LocalPlayerAndObserversExclusive"
     public GameTime TimeRevealedOnMinimapByNPC { get; private set; } = new();
 
@@ -27551,6 +30330,9 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
     // MNetworkAlias "CCitadelMinimapComponent"
     // MNetworkTypeAlias "CCitadelMinimapComponent"
     public CCitadelMinimapComponent CCitadelMinimapComponent { get; private set; } = new();
+
+    // MNetworkUserGroup "LocalPlayerExclusive"
+    public GameTime LastCombatTime { get; private set; } = new();
 
     // MNetworkUserGroup "LocalPlayerExclusive"
     public CMsgLaneColor ZipLineLaneColor { get; private set; }
@@ -27675,6 +30457,14 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
             return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.InItemShopZone = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bInHideoutZone")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.InHideoutZone = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_timeRevealedOnMinimapByNPC")
@@ -27843,6 +30633,14 @@ public partial class CCitadelPlayerPawn : CCitadelPlayerPawnBase
             return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 innerDecoder(@this.CCitadelMinimapComponent, path, ref buffer);
+            };
+        }
+        if (field.VarName == "m_flLastCombatTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadelPlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LastCombatTime = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_eZipLineLaneColor")
@@ -28021,6 +30819,55 @@ public partial class CCitadelPlayerPawnBase : CBasePlayerPawn
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CCitadelPlayerPawnBase.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CCitadelPortalTrigger : CBaseTrigger
+{
+    internal CCitadelPortalTrigger(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public CHandle<CCitadelPortalTrigger, DeadlockDemoParser> OtherPortalHandle { get; private set; }
+    public CCitadelPortalTrigger? OtherPortal => OtherPortalHandle.Get(Demo);
+
+    internal new static SendNodeDecoder<CCitadelPortalTrigger> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_hOtherPortal")
+        {
+            var decoder = FieldDecode.CreateDecoder_CHandle<CCitadelPortalTrigger, DeadlockDemoParser>(field.FieldEncodingInfo);
+            return (CCitadelPortalTrigger @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.OtherPortalHandle = decoder(ref buffer);
+            };
+        }
+        return CBaseTrigger.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadelPortalTrigger.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadelPortalTrigger.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadelPortalTrigger.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadelPortalTrigger.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -29611,6 +32458,76 @@ public partial class CConditionalCollidable : CBaseModelEntity
     }
 }
 
+public partial class CDestructiblePartsSystemComponent
+{
+    internal static SendNodeDecoder<CDestructiblePartsSystemComponent> CreateDowncastDecoder(SerializerKey serializerKey, DecoderSet decoderSet, out Func<CDestructiblePartsSystemComponent> factory)
+    {
+        if (serializerKey.Name == "CDestructiblePartsSystemComponent")
+        {
+            factory = () => new CDestructiblePartsSystemComponent();
+            return decoderSet.GetDecoder<CDestructiblePartsSystemComponent>(serializerKey);
+        }
+        throw new NotImplementedException($"Unknown derived class of CDestructiblePartsSystemComponent: {serializerKey}");
+    }
+
+    public NetworkedVector<UInt16> DamageLevelTakenByHitGroup { get; private set; } = new NetworkedVector<UInt16>();
+
+    public CHandle<CBaseModelEntity, DeadlockDemoParser> OwnerHandle { get; private set; }
+
+    public Int32 LastHitDamageLevel { get; private set; }
+
+    internal static SendNodeDecoder<CDestructiblePartsSystemComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_DamageLevelTakenByHitGroup")
+        {
+            var decoder = FieldDecode.CreateDecoder_UInt16(field.FieldEncodingInfo);
+            return (CDestructiblePartsSystemComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.DamageLevelTakenByHitGroup.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.DamageLevelTakenByHitGroup.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.DamageLevelTakenByHitGroup[index] = element;
+                }
+            };
+        }
+        if (field.VarName == "m_hOwner")
+        {
+            var decoder = FieldDecode.CreateDecoder_CHandle<CBaseModelEntity, DeadlockDemoParser>(field.FieldEncodingInfo);
+            return (CDestructiblePartsSystemComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.OwnerHandle = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_nLastHitDamageLevel")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CDestructiblePartsSystemComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LastHitDamageLevel = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (CDestructiblePartsSystemComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
+        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+    }
+}
+
 public partial class CDynamicLight : CBaseModelEntity
 {
     internal CDynamicLight(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -30216,7 +33133,15 @@ public partial class CEnvCombinedLightProbeVolume : CBaseEntity
 
     public bool CustomCubemapTexture { get; private set; }
 
-    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture { get; private set; }
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_AmbientCube { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_DC { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_R { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_G { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_B { get; private set; }
 
     public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeDirectLightIndicesTexture { get; private set; }
 
@@ -30290,12 +33215,44 @@ public partial class CEnvCombinedLightProbeVolume : CBaseEntity
                 @this.CustomCubemapTexture = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_Entity_hLightProbeTexture")
+        if (field.VarName == "m_Entity_hLightProbeTexture_AmbientCube")
         {
             var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
             return (CEnvCombinedLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.LightProbeTexture = decoder(ref buffer);
+                @this.LightProbeTexture_AmbientCube = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_DC")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvCombinedLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_DC = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_R")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvCombinedLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_R = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_G")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvCombinedLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_G = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_B")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvCombinedLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_B = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_Entity_hLightProbeDirectLightIndicesTexture")
@@ -31103,7 +34060,15 @@ public partial class CEnvLightProbeVolume : CBaseEntity
 {
     internal CEnvLightProbeVolume(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture { get; private set; }
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_AmbientCube { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_DC { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_R { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_G { get; private set; }
+
+    public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeTexture_SH2_B { get; private set; }
 
     public CStrongHandle<InfoForResourceTypeCTextureBase> LightProbeDirectLightIndicesTexture { get; private set; }
 
@@ -31139,12 +34104,44 @@ public partial class CEnvLightProbeVolume : CBaseEntity
 
     internal new static SendNodeDecoder<CEnvLightProbeVolume> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (field.VarName == "m_Entity_hLightProbeTexture")
+        if (field.VarName == "m_Entity_hLightProbeTexture_AmbientCube")
         {
             var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
             return (CEnvLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.LightProbeTexture = decoder(ref buffer);
+                @this.LightProbeTexture_AmbientCube = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_DC")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_DC = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_R")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_R = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_G")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_G = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_Entity_hLightProbeTexture_SH2_B")
+        {
+            var decoder = FieldDecode.CreateDecoder_CStrongHandle<InfoForResourceTypeCTextureBase>(field.FieldEncodingInfo);
+            return (CEnvLightProbeVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LightProbeTexture_SH2_B = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_Entity_hLightProbeDirectLightIndicesTexture")
@@ -31972,8 +34969,6 @@ public partial class CEnvVolumetricFogController : CBaseEntity
 
     public bool EnableIndirect { get; private set; }
 
-    public bool IndirectUseLPVs { get; private set; }
-
     public bool IsMaster { get; private set; }
 
     public CStrongHandle<InfoForResourceTypeCTextureBase> FogIndirectTexture { get; private set; }
@@ -32208,14 +35203,6 @@ public partial class CEnvVolumetricFogController : CBaseEntity
                 @this.EnableIndirect = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_bIndirectUseLPVs")
-        {
-            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
-            return (CEnvVolumetricFogController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.IndirectUseLPVs = decoder(ref buffer);
-            };
-        }
         if (field.VarName == "m_bIsMaster")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
@@ -32325,6 +35312,8 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
 
     public bool StartDisabled { get; private set; }
 
+    public bool IndirectUseLPVs { get; private set; }
+
     public float Strength { get; private set; }
 
     public Int32 FalloffShape { get; private set; }
@@ -32350,8 +35339,6 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
     public bool OverrideSunLightStrength { get; private set; }
 
     public bool OverrideNoiseStrength { get; private set; }
-
-    public bool AllowLPVIndirect { get; private set; }
 
     internal new static SendNodeDecoder<CEnvVolumetricFogVolume> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -32385,6 +35372,14 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
             return (CEnvVolumetricFogVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.StartDisabled = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bIndirectUseLPVs")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CEnvVolumetricFogVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.IndirectUseLPVs = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flStrength")
@@ -32489,14 +35484,6 @@ public partial class CEnvVolumetricFogVolume : CBaseEntity
             return (CEnvVolumetricFogVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.OverrideNoiseStrength = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_bAllowLPVIndirect")
-        {
-            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
-            return (CEnvVolumetricFogVolume @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.AllowLPVIndirect = decoder(ref buffer);
             };
         }
         return CBaseEntity.CreateFieldDecoder(field, decoderSet);
@@ -34526,6 +37513,93 @@ public partial class CItem_FleetfootBoots : CCitadel_Item
     }
 }
 
+public partial class CItem_GreaterWitheringWhip : CCitadel_Item_TrackingProjectileApplyModifier
+{
+    internal CItem_GreaterWitheringWhip(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CItem_GreaterWitheringWhip> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item_TrackingProjectileApplyModifier.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CItem_GreaterWitheringWhip.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CItem_GreaterWitheringWhip.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CItem_GreaterWitheringWhip.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CItem_GreaterWitheringWhip.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CItem_ResonantHealing : CCitadel_Item
+{
+    internal CItem_ResonantHealing(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Int32 RegenStacks { get; private set; }
+
+    internal new static SendNodeDecoder<CItem_ResonantHealing> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_iRegenStacks")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CItem_ResonantHealing @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RegenStacks = decoder(ref buffer);
+            };
+        }
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CItem_ResonantHealing.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CItem_ResonantHealing.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CItem_ResonantHealing.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CItem_ResonantHealing.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CItem_RestorativeLocket : CCitadel_Item
 {
     internal CItem_RestorativeLocket(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -34608,6 +37682,44 @@ public partial class CItem_WitheringWhip : CCitadel_Item_TrackingProjectileApply
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CItem_WitheringWhip.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CItemCapacitor : CCitadel_Item
+{
+    internal CItemCapacitor(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CItemCapacitor> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CItemCapacitor.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CItemCapacitor.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CItemCapacitor.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CItemCapacitor.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -34869,10 +37981,13 @@ public partial class CItemXP : CBaseModelEntity
 {
     internal CItemXP(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    // MNetworkChangeCallback "OnLaunchTimeChanged"
     public GameTime TimeLaunch { get; private set; } = new();
 
     public GameTime AttackableTime { get; private set; } = new();
+
+    public GameTime EndAttackableTime { get; private set; } = new();
+
+    public Int32 LaunchNum { get; private set; }
 
     internal new static SendNodeDecoder<CItemXP> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -34890,6 +38005,22 @@ public partial class CItemXP : CBaseModelEntity
             return (CItemXP @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AttackableTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flEndAttackableTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CItemXP @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.EndAttackableTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_nLaunchNum")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CItemXP @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.LaunchNum = decoder(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -34920,44 +38051,6 @@ public partial class CItemXP : CBaseModelEntity
     public override void FirePostUpdateEvent()
     {
         Demo.EntityEvents.CItemXP.PostUpdate?.Invoke(this);
-        base.FirePostUpdateEvent();
-    }
-}
-
-public partial class CLaneNode : CCitadelModelEntity
-{
-    internal CLaneNode(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
-
-    internal new static SendNodeDecoder<CLaneNode> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
-    {
-        return CCitadelModelEntity.CreateFieldDecoder(field, decoderSet);
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireCreateEvent()
-    {
-        Demo.EntityEvents.CLaneNode.Create?.Invoke(this);
-        base.FireCreateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FireDeleteEvent()
-    {
-        Demo.EntityEvents.CLaneNode.Delete?.Invoke(this);
-        base.FireDeleteEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePreUpdateEvent()
-    {
-        Demo.EntityEvents.CLaneNode.PreUpdate?.Invoke(this);
-        base.FirePreUpdateEvent();
-    }
-
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public override void FirePostUpdateEvent()
-    {
-        Demo.EntityEvents.CLaneNode.PostUpdate?.Invoke(this);
         base.FirePostUpdateEvent();
     }
 }
@@ -37822,6 +40915,57 @@ public partial class COmniLight : CBarnLight
     }
 }
 
+public partial class ConsumedComponentState
+{
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public CUtlStringToken ComponentID { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public Int32 RefCount { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
+    public bool Purchased { get; private set; }
+
+    internal static SendNodeDecoder<ConsumedComponentState> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_unComponentID")
+        {
+            var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
+            return (ConsumedComponentState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ComponentID = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_nRefCount")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (ConsumedComponentState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.RefCount = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bPurchased")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (ConsumedComponentState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Purchased = decoder(ref buffer);
+            };
+        }
+        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (ConsumedComponentState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
+        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+    }
+}
+
 public partial class CountdownTimer
 {
     public float Duration { get; private set; }
@@ -40678,6 +43822,102 @@ public partial class CPrecipitationBlocker : CBaseModelEntity
     }
 }
 
+public partial class CProjectile_Doorman_Wall_Projectile : CCitadelProjectile
+{
+    internal CProjectile_Doorman_Wall_Projectile(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CProjectile_Doorman_Wall_Projectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CProjectile_Doorman_Wall_Projectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CProjectile_Doorman_Wall_Projectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CProjectile_Doorman_Wall_Projectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CProjectile_Doorman_Wall_Projectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
+public partial class CProjectile_KnightCharge_Projectile : CCitadelProjectile
+{
+    internal CProjectile_KnightCharge_Projectile(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public float Width { get; private set; }
+
+    public GameTime DieTime { get; private set; } = new();
+
+    internal new static SendNodeDecoder<CProjectile_KnightCharge_Projectile> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_flWidth")
+        {
+            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
+            return (CProjectile_KnightCharge_Projectile @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Width = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_tDieTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CProjectile_KnightCharge_Projectile @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.DieTime = decoder(ref buffer);
+            };
+        }
+        return CCitadelProjectile.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CProjectile_KnightCharge_Projectile.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CProjectile_KnightCharge_Projectile.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CProjectile_KnightCharge_Projectile.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CProjectile_KnightCharge_Projectile.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CProjectile_Mirage_Tornado : CCitadelProjectile
 {
     internal CProjectile_Mirage_Tornado(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -41102,6 +44342,8 @@ public partial class CRagdollProp : CBaseAnimGraph
 {
     internal CRagdollProp(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
+    public NetworkedVector<bool> RagEnabled { get; private set; } = new NetworkedVector<bool>();
+
     // MNetworkEncoder "coord"
     public NetworkedVector<Vector> RagPos { get; private set; } = new NetworkedVector<Vector>();
 
@@ -41120,6 +44362,26 @@ public partial class CRagdollProp : CBaseAnimGraph
 
     internal new static SendNodeDecoder<CRagdollProp> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
+        if (field.VarName == "m_ragEnabled")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CRagdollProp @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.RagEnabled.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.RagEnabled.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.RagEnabled[index] = element;
+                }
+            };
+        }
         if (field.VarName == "m_ragPos")
         {
             var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
@@ -43214,12 +46476,6 @@ public partial class CTonemapController2 : CBaseEntity
 
     public float AutoExposureMax { get; private set; }
 
-    public float TonemapPercentTarget { get; private set; }
-
-    public float TonemapPercentBrightPixels { get; private set; }
-
-    public float TonemapMinAvgLum { get; private set; }
-
     public float ExposureAdaptationSpeedUp { get; private set; }
 
     public float ExposureAdaptationSpeedDown { get; private set; }
@@ -43242,30 +46498,6 @@ public partial class CTonemapController2 : CBaseEntity
             return (CTonemapController2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.AutoExposureMax = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_flTonemapPercentTarget")
-        {
-            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
-            return (CTonemapController2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.TonemapPercentTarget = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_flTonemapPercentBrightPixels")
-        {
-            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
-            return (CTonemapController2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.TonemapPercentBrightPixels = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_flTonemapMinAvgLum")
-        {
-            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
-            return (CTonemapController2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.TonemapMinAvgLum = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flExposureAdaptationSpeedUp")
@@ -43338,7 +46570,9 @@ public partial class CTriggerFan : CBaseTrigger
 
     public Vector Direction { get; private set; }
 
-    public bool PushTowardsEntity { get; private set; }
+    public bool PushTowardsInfoTarget { get; private set; }
+
+    public bool PushAwayFromInfoTarget { get; private set; }
 
     public Quaternion NoiseDelta { get; private set; }
 
@@ -43393,12 +46627,20 @@ public partial class CTriggerFan : CBaseTrigger
                 @this.Direction = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_bPushTowardsEntity")
+        if (field.VarName == "m_bPushTowardsInfoTarget")
         {
             var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
             return (CTriggerFan @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PushTowardsEntity = decoder(ref buffer);
+                @this.PushTowardsInfoTarget = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bPushAwayFromInfoTarget")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CTriggerFan @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.PushAwayFromInfoTarget = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_qNoiseDelta")
@@ -44448,6 +47690,25 @@ public partial class InfoForResourceTypeCModel
 }
 
 // MResourceTypeForInfoType
+public partial class InfoForResourceTypeCNmGraphDefinition
+{
+    internal static SendNodeDecoder<InfoForResourceTypeCNmGraphDefinition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        {
+            return (InfoForResourceTypeCNmGraphDefinition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#if DEBUG
+                var _field = field;
+#endif
+                fallback(default, path, ref buffer);
+            };
+        }
+        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+    }
+}
+
+// MResourceTypeForInfoType
 public partial class InfoForResourceTypeCPostProcessingResource
 {
     internal static SendNodeDecoder<InfoForResourceTypeCPostProcessingResource> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
@@ -44821,6 +48082,12 @@ public partial class PlayerDataGlobal
     // MNetworkChangeCallback "pdgBonusCounterChanged"
     public NetworkedVector<Int32> BonusCounterValues { get; private set; } = new NetworkedVector<Int32>();
 
+    public NetworkedVector<CUtlStringToken> BonusCounterModifiers { get; private set; } = new NetworkedVector<CUtlStringToken>();
+
+    // MNetworkUserGroup "Abilities"
+    // MNetworkChangeCallback "pdgBonusCounterChanged"
+    public NetworkedVector<Int32> ModifierBonusCounterValues { get; private set; } = new NetworkedVector<Int32>();
+
     // MNetworkUserGroup "Abilities"
     // MNetworkChangeCallback "pdgUpgradesChanged"
     public CUtlStringToken HeldItem { get; private set; }
@@ -45175,6 +48442,46 @@ public partial class PlayerDataGlobal
                     @this.BonusCounterValues.EnsureSize(index + 1);
                     var element = decoder(ref buffer);
                     @this.BonusCounterValues[index] = element;
+                }
+            };
+        }
+        if (field.VarName == "m_vecBonusCounterModifiers")
+        {
+            var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
+            return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.BonusCounterModifiers.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.BonusCounterModifiers.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.BonusCounterModifiers[index] = element;
+                }
+            };
+        }
+        if (field.VarName == "m_vecModifierBonusCounterValues")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.ModifierBonusCounterValues.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.ModifierBonusCounterValues.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.ModifierBonusCounterValues[index] = element;
                 }
             };
         }
@@ -46770,6 +50077,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Ability_Bebop_StickyBomb2":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Bebop_StickyBomb2>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Bebop_StickyBomb2);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Bebop_StickyBomb2);
+                var @this = Unsafe.As<CCitadel_Ability_Bebop_StickyBomb2>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Ability_BloodBomb":
         {
             var innerDecoder = GetDecoder<CCitadel_Ability_BloodBomb>(new SerializerKey(className, 0));
@@ -46778,6 +50097,54 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Ability_BloodBomb);
                 var @this = Unsafe.As<CCitadel_Ability_BloodBomb>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Boho_Ability01":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Boho_Ability01>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Boho_Ability01);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Boho_Ability01);
+                var @this = Unsafe.As<CCitadel_Ability_Boho_Ability01>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Boho_Ability02":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Boho_Ability02>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Boho_Ability02);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Boho_Ability02);
+                var @this = Unsafe.As<CCitadel_Ability_Boho_Ability02>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Boho_Ability03":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Boho_Ability03>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Boho_Ability03);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Boho_Ability03);
+                var @this = Unsafe.As<CCitadel_Ability_Boho_Ability03>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Boho_Ability04":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Boho_Ability04>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Boho_Ability04);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Boho_Ability04);
+                var @this = Unsafe.As<CCitadel_Ability_Boho_Ability04>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -46814,6 +50181,54 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Ability_Bomber_ULT);
                 var @this = Unsafe.As<CCitadel_Ability_Bomber_ULT>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Bookworm_Ability01":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Bookworm_Ability01>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Bookworm_Ability01);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Bookworm_Ability01);
+                var @this = Unsafe.As<CCitadel_Ability_Bookworm_Ability01>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Bookworm_AOEMagic":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Bookworm_AOEMagic>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Bookworm_AOEMagic);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Bookworm_AOEMagic);
+                var @this = Unsafe.As<CCitadel_Ability_Bookworm_AOEMagic>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Bookworm_KnightBarrier":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Bookworm_KnightBarrier>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Bookworm_KnightBarrier);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Bookworm_KnightBarrier);
+                var @this = Unsafe.As<CCitadel_Ability_Bookworm_KnightBarrier>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Bookworm_KnightCharge":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Bookworm_KnightCharge>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Bookworm_KnightCharge);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Bookworm_KnightCharge);
+                var @this = Unsafe.As<CCitadel_Ability_Bookworm_KnightCharge>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -47130,6 +50545,102 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Ability_Doorman_Ability03":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Doorman_Ability03>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Doorman_Ability03);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Doorman_Ability03);
+                var @this = Unsafe.As<CCitadel_Ability_Doorman_Ability03>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Doorman_Ability04":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Doorman_Ability04>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Doorman_Ability04);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Doorman_Ability04);
+                var @this = Unsafe.As<CCitadel_Ability_Doorman_Ability04>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Doorman_Doorway":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Doorman_Doorway>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Doorman_Doorway);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Doorman_Doorway);
+                var @this = Unsafe.As<CCitadel_Ability_Doorman_Doorway>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Doorman_Wall":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Doorman_Wall>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Doorman_Wall);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Doorman_Wall);
+                var @this = Unsafe.As<CCitadel_Ability_Doorman_Wall>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Drifter_Ability01":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Drifter_Ability01>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Drifter_Ability01);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Drifter_Ability01);
+                var @this = Unsafe.As<CCitadel_Ability_Drifter_Ability01>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Drifter_Ability02":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Drifter_Ability02>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Drifter_Ability02);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Drifter_Ability02);
+                var @this = Unsafe.As<CCitadel_Ability_Drifter_Ability02>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Drifter_Ability04":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Drifter_Ability04>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Drifter_Ability04);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Drifter_Ability04);
+                var @this = Unsafe.As<CCitadel_Ability_Drifter_Ability04>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Drifter_Hunger":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Drifter_Hunger>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Drifter_Hunger);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Drifter_Hunger);
+                var @this = Unsafe.As<CCitadel_Ability_Drifter_Hunger>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Ability_Dust_Storm":
         {
             var innerDecoder = GetDecoder<CCitadel_Ability_Dust_Storm>(new SerializerKey(className, 0));
@@ -47258,6 +50769,66 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Ability_FlyingStrike);
                 var @this = Unsafe.As<CCitadel_Ability_FlyingStrike>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Frank_PainAura":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Frank_PainAura>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Frank_PainAura);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Frank_PainAura);
+                var @this = Unsafe.As<CCitadel_Ability_Frank_PainAura>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Frank_PrimaryWeapon":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Frank_PrimaryWeapon>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Frank_PrimaryWeapon);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Frank_PrimaryWeapon);
+                var @this = Unsafe.As<CCitadel_Ability_Frank_PrimaryWeapon>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Frank_Revive":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Frank_Revive>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Frank_Revive);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Frank_Revive);
+                var @this = Unsafe.As<CCitadel_Ability_Frank_Revive>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Frank_SelfZap":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Frank_SelfZap>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Frank_SelfZap);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Frank_SelfZap);
+                var @this = Unsafe.As<CCitadel_Ability_Frank_SelfZap>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Frank_ShockTarget":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Frank_ShockTarget>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Frank_ShockTarget);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Frank_ShockTarget);
+                var @this = Unsafe.As<CCitadel_Ability_Frank_ShockTarget>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -48150,6 +51721,66 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Ability_Priest_Barrage":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Priest_Barrage>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Priest_Barrage);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Priest_Barrage);
+                var @this = Unsafe.As<CCitadel_Ability_Priest_Barrage>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Priest_Knockback":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Priest_Knockback>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Priest_Knockback);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Priest_Knockback);
+                var @this = Unsafe.As<CCitadel_Ability_Priest_Knockback>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Priest_SelfHeal":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Priest_SelfHeal>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Priest_SelfHeal);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Priest_SelfHeal);
+                var @this = Unsafe.As<CCitadel_Ability_Priest_SelfHeal>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Priest_StackingDefense":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Priest_StackingDefense>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Priest_StackingDefense);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Priest_StackingDefense);
+                var @this = Unsafe.As<CCitadel_Ability_Priest_StackingDefense>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Priest_WeaponSwap":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Priest_WeaponSwap>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Priest_WeaponSwap);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Priest_WeaponSwap);
+                var @this = Unsafe.As<CCitadel_Ability_Priest_WeaponSwap>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Ability_PrimaryWeapon":
         {
             var innerDecoder = GetDecoder<CCitadel_Ability_PrimaryWeapon>(new SerializerKey(className, 0));
@@ -48290,6 +51921,54 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Ability_Puddle);
                 var @this = Unsafe.As<CCitadel_Ability_Puddle>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_PunkGoat_Ability01":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_PunkGoat_Ability01>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_PunkGoat_Ability01);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_PunkGoat_Ability01);
+                var @this = Unsafe.As<CCitadel_Ability_PunkGoat_Ability01>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_PunkGoat_Ability02":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_PunkGoat_Ability02>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_PunkGoat_Ability02);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_PunkGoat_Ability02);
+                var @this = Unsafe.As<CCitadel_Ability_PunkGoat_Ability02>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_PunkGoat_Ability03":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_PunkGoat_Ability03>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_PunkGoat_Ability03);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_PunkGoat_Ability03);
+                var @this = Unsafe.As<CCitadel_Ability_PunkGoat_Ability03>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_PunkGoat_Ability04":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_PunkGoat_Ability04>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_PunkGoat_Ability04);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_PunkGoat_Ability04);
+                var @this = Unsafe.As<CCitadel_Ability_PunkGoat_Ability04>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -48594,6 +52273,66 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Ability_SkyRunner_Ability04":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_SkyRunner_Ability04>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_SkyRunner_Ability04);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_SkyRunner_Ability04);
+                var @this = Unsafe.As<CCitadel_Ability_SkyRunner_Ability04>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_SkyRunner_FlakShot":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_SkyRunner_FlakShot>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_SkyRunner_FlakShot);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_SkyRunner_FlakShot);
+                var @this = Unsafe.As<CCitadel_Ability_SkyRunner_FlakShot>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Skyrunner_MagicBeam":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Skyrunner_MagicBeam>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Skyrunner_MagicBeam);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Skyrunner_MagicBeam);
+                var @this = Unsafe.As<CCitadel_Ability_Skyrunner_MagicBeam>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_SkyRunner_PrimaryWeapon":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_SkyRunner_PrimaryWeapon>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_SkyRunner_PrimaryWeapon);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_SkyRunner_PrimaryWeapon);
+                var @this = Unsafe.As<CCitadel_Ability_SkyRunner_PrimaryWeapon>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_SkyRunner_SwingLine":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_SkyRunner_SwingLine>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_SkyRunner_SwingLine);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_SkyRunner_SwingLine);
+                var @this = Unsafe.As<CCitadel_Ability_SkyRunner_SwingLine>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Ability_SleepBomb":
         {
             var innerDecoder = GetDecoder<CCitadel_Ability_SleepBomb>(new SerializerKey(className, 0));
@@ -48782,6 +52521,54 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Ability_SuperNeutralShield);
                 var @this = Unsafe.As<CCitadel_Ability_SuperNeutralShield>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Swan_Ability04":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Swan_Ability04>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Swan_Ability04);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Swan_Ability04);
+                var @this = Unsafe.As<CCitadel_Ability_Swan_Ability04>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Swan_Acrobat":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Swan_Acrobat>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Swan_Acrobat);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Swan_Acrobat);
+                var @this = Unsafe.As<CCitadel_Ability_Swan_Acrobat>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Swan_FeatherBoomerang":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Swan_FeatherBoomerang>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Swan_FeatherBoomerang);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Swan_FeatherBoomerang);
+                var @this = Unsafe.As<CCitadel_Ability_Swan_FeatherBoomerang>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_Swan_Leap":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Swan_Leap>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Swan_Leap);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Swan_Leap);
+                var @this = Unsafe.As<CCitadel_Ability_Swan_Leap>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -49310,6 +53097,66 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Ability_Uppercut);
                 var @this = Unsafe.As<CCitadel_Ability_Uppercut>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_VampireBat_BatBlink":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_VampireBat_BatBlink>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_VampireBat_BatBlink);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_VampireBat_BatBlink);
+                var @this = Unsafe.As<CCitadel_Ability_VampireBat_BatBlink>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_VampireBat_BatCloud":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_VampireBat_BatCloud>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_VampireBat_BatCloud);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_VampireBat_BatCloud);
+                var @this = Unsafe.As<CCitadel_Ability_VampireBat_BatCloud>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_VampireBat_BatSwarm":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_VampireBat_BatSwarm>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_VampireBat_BatSwarm);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_VampireBat_BatSwarm);
+                var @this = Unsafe.As<CCitadel_Ability_VampireBat_BatSwarm>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_VampireBat_DoubleDagger":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_VampireBat_DoubleDagger>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_VampireBat_DoubleDagger);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_VampireBat_DoubleDagger);
+                var @this = Unsafe.As<CCitadel_Ability_VampireBat_DoubleDagger>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Ability_VampireBat_LoveBites":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_VampireBat_LoveBites>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_VampireBat_LoveBites);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_VampireBat_LoveBites);
+                var @this = Unsafe.As<CCitadel_Ability_VampireBat_LoveBites>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -49878,6 +53725,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_ArmorUpgrade_SpiritBubble":
+        {
+            var innerDecoder = GetDecoder<CCitadel_ArmorUpgrade_SpiritBubble>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_ArmorUpgrade_SpiritBubble);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_ArmorUpgrade_SpiritBubble);
+                var @this = Unsafe.As<CCitadel_ArmorUpgrade_SpiritBubble>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_ArmorUpgrade_Stimpak":
         {
             var innerDecoder = GetDecoder<CCitadel_ArmorUpgrade_Stimpak>(new SerializerKey(className, 0));
@@ -49898,6 +53757,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_ArmorUpgrade_VexBarrier);
                 var @this = Unsafe.As<CCitadel_ArmorUpgrade_VexBarrier>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_ArmorUpgrade_WeaponShielding":
+        {
+            var innerDecoder = GetDecoder<CCitadel_ArmorUpgrade_WeaponShielding>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_ArmorUpgrade_WeaponShielding);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_ArmorUpgrade_WeaponShielding);
+                var @this = Unsafe.As<CCitadel_ArmorUpgrade_WeaponShielding>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -50018,6 +53889,30 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Destroyable_Building);
                 var @this = Unsafe.As<CCitadel_Destroyable_Building>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Doorman_Wall_Section":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Doorman_Wall_Section>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Doorman_Wall_Section);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Doorman_Wall_Section);
+                var @this = Unsafe.As<CCitadel_Doorman_Wall_Section>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_DoorwayPortal":
+        {
+            var innerDecoder = GetDecoder<CCitadel_DoorwayPortal>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_DoorwayPortal);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_DoorwayPortal);
+                var @this = Unsafe.As<CCitadel_DoorwayPortal>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -50154,6 +54049,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Item_ArcticBlast":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_ArcticBlast>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_ArcticBlast);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_ArcticBlast);
+                var @this = Unsafe.As<CCitadel_Item_ArcticBlast>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Item_Aura_Base":
         {
             var innerDecoder = GetDecoder<CCitadel_Item_Aura_Base>(new SerializerKey(className, 0));
@@ -50274,6 +54181,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Item_DivineBarrier":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_DivineBarrier>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_DivineBarrier);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_DivineBarrier);
+                var @this = Unsafe.As<CCitadel_Item_DivineBarrier>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Item_DivinersKevlar":
         {
             var innerDecoder = GetDecoder<CCitadel_Item_DivinersKevlar>(new SerializerKey(className, 0));
@@ -50306,6 +54225,30 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Item_Empty);
                 var @this = Unsafe.As<CCitadel_Item_Empty>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Item_FocusLens":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_FocusLens>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_FocusLens);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_FocusLens);
+                var @this = Unsafe.As<CCitadel_Item_FocusLens>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Item_GuardianWard":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_GuardianWard>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_GuardianWard);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_GuardianWard);
+                var @this = Unsafe.As<CCitadel_Item_GuardianWard>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -50346,6 +54289,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Item_Mystic_Regeneration":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_Mystic_Regeneration>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_Mystic_Regeneration);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_Mystic_Regeneration);
+                var @this = Unsafe.As<CCitadel_Item_Mystic_Regeneration>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Item_PhantomStrike":
         {
             var innerDecoder = GetDecoder<CCitadel_Item_PhantomStrike>(new SerializerKey(className, 0));
@@ -50366,18 +54321,6 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Item_PowerShard);
                 var @this = Unsafe.As<CCitadel_Item_PowerShard>(instance);
-                innerDecoder(@this, path, ref buffer);
-            };
-            return true;
-        }
-        case "CCitadel_Item_QuickSilver":
-        {
-            var innerDecoder = GetDecoder<CCitadel_Item_QuickSilver>(new SerializerKey(className, 0));
-            classType = typeof(CCitadel_Item_QuickSilver);
-            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                Debug.Assert(instance is CCitadel_Item_QuickSilver);
-                var @this = Unsafe.As<CCitadel_Item_QuickSilver>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -50418,18 +54361,6 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
-        case "CCitadel_Item_Savior":
-        {
-            var innerDecoder = GetDecoder<CCitadel_Item_Savior>(new SerializerKey(className, 0));
-            classType = typeof(CCitadel_Item_Savior);
-            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                Debug.Assert(instance is CCitadel_Item_Savior);
-                var @this = Unsafe.As<CCitadel_Item_Savior>(instance);
-                innerDecoder(@this, path, ref buffer);
-            };
-            return true;
-        }
         case "CCitadel_Item_SelfBuffModifier":
         {
             var innerDecoder = GetDecoder<CCitadel_Item_SelfBuffModifier>(new SerializerKey(className, 0));
@@ -50450,6 +54381,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Item_SingleTargetStun);
                 var @this = Unsafe.As<CCitadel_Item_SingleTargetStun>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Item_SpiritSap":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_SpiritSap>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_SpiritSap);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_SpiritSap);
+                var @this = Unsafe.As<CCitadel_Item_SpiritSap>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -50502,6 +54445,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Item_TrophyCollector":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Item_TrophyCollector>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Item_TrophyCollector);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Item_TrophyCollector);
+                var @this = Unsafe.As<CCitadel_Item_TrophyCollector>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Item_WarpStone":
         {
             var innerDecoder = GetDecoder<CCitadel_Item_WarpStone>(new SerializerKey(className, 0));
@@ -50510,6 +54465,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Item_WarpStone);
                 var @this = Unsafe.As<CCitadel_Item_WarpStone>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Magic_Beam_Blocker":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Magic_Beam_Blocker>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Magic_Beam_Blocker);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Magic_Beam_Blocker);
+                var @this = Unsafe.As<CCitadel_Magic_Beam_Blocker>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -50586,6 +54553,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Projectile_BatSwarmProjectile":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Projectile_BatSwarmProjectile>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Projectile_BatSwarmProjectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Projectile_BatSwarmProjectile);
+                var @this = Unsafe.As<CCitadel_Projectile_BatSwarmProjectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Projectile_Bebop_Hook":
         {
             var innerDecoder = GetDecoder<CCitadel_Projectile_Bebop_Hook>(new SerializerKey(className, 0));
@@ -50630,6 +54609,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_Projectile_DustStorm);
                 var @this = Unsafe.As<CCitadel_Projectile_DustStorm>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_Projectile_FeatherBoomerang":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Projectile_FeatherBoomerang>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Projectile_FeatherBoomerang);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Projectile_FeatherBoomerang);
+                var @this = Unsafe.As<CCitadel_Projectile_FeatherBoomerang>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -51018,14 +55009,14 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
-        case "CCitadel_WeaponUpgrade_BansheeSlugs":
+        case "CCitadel_WeaponUpgrade_BloodTribute":
         {
-            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_BansheeSlugs>(new SerializerKey(className, 0));
-            classType = typeof(CCitadel_WeaponUpgrade_BansheeSlugs);
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_BloodTribute>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_BloodTribute);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                Debug.Assert(instance is CCitadel_WeaponUpgrade_BansheeSlugs);
-                var @this = Unsafe.As<CCitadel_WeaponUpgrade_BansheeSlugs>(instance);
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_BloodTribute);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_BloodTribute>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -51042,6 +55033,42 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_WeaponUpgrade_CooldownOnMiss":
+        {
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_CooldownOnMiss>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_CooldownOnMiss);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_CooldownOnMiss);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_CooldownOnMiss>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_WeaponUpgrade_CultistSacrifice":
+        {
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_CultistSacrifice>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_CultistSacrifice);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_CultistSacrifice);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_CultistSacrifice>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_WeaponUpgrade_ExpressShot":
+        {
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_ExpressShot>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_ExpressShot);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_ExpressShot);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_ExpressShot>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_WeaponUpgrade_FireRateAura":
         {
             var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_FireRateAura>(new SerializerKey(className, 0));
@@ -51050,6 +55077,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_WeaponUpgrade_FireRateAura);
                 var @this = Unsafe.As<CCitadel_WeaponUpgrade_FireRateAura>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_WeaponUpgrade_FuryTrance":
+        {
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_FuryTrance>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_FuryTrance);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_FuryTrance);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_FuryTrance>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -51066,26 +55105,26 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
-        case "CCitadel_WeaponUpgrade_Headhunter":
+        case "CCitadel_WeaponUpgrade_HeadshotDamage":
         {
-            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_Headhunter>(new SerializerKey(className, 0));
-            classType = typeof(CCitadel_WeaponUpgrade_Headhunter);
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_HeadshotDamage>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_HeadshotDamage);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                Debug.Assert(instance is CCitadel_WeaponUpgrade_Headhunter);
-                var @this = Unsafe.As<CCitadel_WeaponUpgrade_Headhunter>(instance);
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_HeadshotDamage);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_HeadshotDamage>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
         }
-        case "CCitadel_WeaponUpgrade_HeadshotBooster":
+        case "CCitadel_WeaponUpgrade_InfiniteMagazine":
         {
-            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_HeadshotBooster>(new SerializerKey(className, 0));
-            classType = typeof(CCitadel_WeaponUpgrade_HeadshotBooster);
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_InfiniteMagazine>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_InfiniteMagazine);
             decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                Debug.Assert(instance is CCitadel_WeaponUpgrade_HeadshotBooster);
-                var @this = Unsafe.As<CCitadel_WeaponUpgrade_HeadshotBooster>(instance);
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_InfiniteMagazine);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_InfiniteMagazine>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -51134,6 +55173,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_WeaponUpgrade_SpellslingerHeadshots);
                 var @this = Unsafe.As<CCitadel_WeaponUpgrade_SpellslingerHeadshots>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_WeaponUpgrade_SplitShot":
+        {
+            var innerDecoder = GetDecoder<CCitadel_WeaponUpgrade_SplitShot>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_WeaponUpgrade_SplitShot);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_WeaponUpgrade_SplitShot);
+                var @this = Unsafe.As<CCitadel_WeaponUpgrade_SplitShot>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -51618,6 +55669,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadelPortalTrigger":
+        {
+            var innerDecoder = GetDecoder<CCitadelPortalTrigger>(new SerializerKey(className, 0));
+            classType = typeof(CCitadelPortalTrigger);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadelPortalTrigger);
+                var @this = Unsafe.As<CCitadelPortalTrigger>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadelPositionHomingProjectile":
         {
             var innerDecoder = GetDecoder<CCitadelPositionHomingProjectile>(new SerializerKey(className, 0));
@@ -51854,6 +55917,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CConditionalCollidable);
                 var @this = Unsafe.As<CConditionalCollidable>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CDestructiblePartsSystemComponent":
+        {
+            var innerDecoder = GetDecoder<CDestructiblePartsSystemComponent>(new SerializerKey(className, 0));
+            classType = typeof(CDestructiblePartsSystemComponent);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CDestructiblePartsSystemComponent);
+                var @this = Unsafe.As<CDestructiblePartsSystemComponent>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -52458,6 +56533,30 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CItem_GreaterWitheringWhip":
+        {
+            var innerDecoder = GetDecoder<CItem_GreaterWitheringWhip>(new SerializerKey(className, 0));
+            classType = typeof(CItem_GreaterWitheringWhip);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CItem_GreaterWitheringWhip);
+                var @this = Unsafe.As<CItem_GreaterWitheringWhip>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CItem_ResonantHealing":
+        {
+            var innerDecoder = GetDecoder<CItem_ResonantHealing>(new SerializerKey(className, 0));
+            classType = typeof(CItem_ResonantHealing);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CItem_ResonantHealing);
+                var @this = Unsafe.As<CItem_ResonantHealing>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CItem_RestorativeLocket":
         {
             var innerDecoder = GetDecoder<CItem_RestorativeLocket>(new SerializerKey(className, 0));
@@ -52478,6 +56577,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CItem_WitheringWhip);
                 var @this = Unsafe.As<CItem_WitheringWhip>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CItemCapacitor":
+        {
+            var innerDecoder = GetDecoder<CItemCapacitor>(new SerializerKey(className, 0));
+            classType = typeof(CItemCapacitor);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CItemCapacitor);
+                var @this = Unsafe.As<CItemCapacitor>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -52562,18 +56673,6 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CItemXP);
                 var @this = Unsafe.As<CItemXP>(instance);
-                innerDecoder(@this, path, ref buffer);
-            };
-            return true;
-        }
-        case "CLaneNode":
-        {
-            var innerDecoder = GetDecoder<CLaneNode>(new SerializerKey(className, 0));
-            classType = typeof(CLaneNode);
-            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                Debug.Assert(instance is CLaneNode);
-                var @this = Unsafe.As<CLaneNode>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -53058,6 +57157,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "ConsumedComponentState_t":
+        {
+            var innerDecoder = GetDecoder<ConsumedComponentState>(new SerializerKey(className, 0));
+            classType = typeof(ConsumedComponentState);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is ConsumedComponentState);
+                var @this = Unsafe.As<ConsumedComponentState>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CountdownTimer":
         {
             var innerDecoder = GetDecoder<CountdownTimer>(new SerializerKey(className, 0));
@@ -53438,6 +57549,30 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CPrecipitationBlocker);
                 var @this = Unsafe.As<CPrecipitationBlocker>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CProjectile_Doorman_Wall_Projectile":
+        {
+            var innerDecoder = GetDecoder<CProjectile_Doorman_Wall_Projectile>(new SerializerKey(className, 0));
+            classType = typeof(CProjectile_Doorman_Wall_Projectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CProjectile_Doorman_Wall_Projectile);
+                var @this = Unsafe.As<CProjectile_Doorman_Wall_Projectile>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CProjectile_KnightCharge_Projectile":
+        {
+            var innerDecoder = GetDecoder<CProjectile_KnightCharge_Projectile>(new SerializerKey(className, 0));
+            classType = typeof(CProjectile_KnightCharge_Projectile);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CProjectile_KnightCharge_Projectile);
+                var @this = Unsafe.As<CProjectile_KnightCharge_Projectile>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -54186,6 +58321,18 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "InfoForResourceTypeCNmGraphDefinition":
+        {
+            var innerDecoder = GetDecoder<InfoForResourceTypeCNmGraphDefinition>(new SerializerKey(className, 0));
+            classType = typeof(InfoForResourceTypeCNmGraphDefinition);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is InfoForResourceTypeCNmGraphDefinition);
+                var @this = Unsafe.As<InfoForResourceTypeCNmGraphDefinition>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "InfoForResourceTypeCPostProcessingResource":
         {
             var innerDecoder = GetDecoder<InfoForResourceTypeCPostProcessingResource>(new SerializerKey(className, 0));
@@ -54643,9 +58790,29 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bebop_LaserBeam>(CCitadel_Ability_Bebop_LaserBeam.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Ability_Bebop_StickyBomb2))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bebop_StickyBomb2>(CCitadel_Ability_Bebop_StickyBomb2.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Ability_BloodBomb))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_BloodBomb>(CCitadel_Ability_BloodBomb.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Boho_Ability01))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Boho_Ability01>(CCitadel_Ability_Boho_Ability01.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Boho_Ability02))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Boho_Ability02>(CCitadel_Ability_Boho_Ability02.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Boho_Ability03))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Boho_Ability03>(CCitadel_Ability_Boho_Ability03.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Boho_Ability04))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Boho_Ability04>(CCitadel_Ability_Boho_Ability04.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Ability_Bomber_Ability02))
         {
@@ -54658,6 +58825,22 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Ability_Bomber_ULT))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bomber_ULT>(CCitadel_Ability_Bomber_ULT.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Bookworm_Ability01))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bookworm_Ability01>(CCitadel_Ability_Bookworm_Ability01.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Bookworm_AOEMagic))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bookworm_AOEMagic>(CCitadel_Ability_Bookworm_AOEMagic.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Bookworm_KnightBarrier))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bookworm_KnightBarrier>(CCitadel_Ability_Bookworm_KnightBarrier.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Bookworm_KnightCharge))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Bookworm_KnightCharge>(CCitadel_Ability_Bookworm_KnightCharge.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Ability_Bounce_Pad))
         {
@@ -54763,6 +58946,38 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Disruptive_Charge>(CCitadel_Ability_Disruptive_Charge.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Ability_Doorman_Ability03))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Doorman_Ability03>(CCitadel_Ability_Doorman_Ability03.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Doorman_Ability04))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Doorman_Ability04>(CCitadel_Ability_Doorman_Ability04.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Doorman_Doorway))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Doorman_Doorway>(CCitadel_Ability_Doorman_Doorway.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Doorman_Wall))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Doorman_Wall>(CCitadel_Ability_Doorman_Wall.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Drifter_Ability01))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Drifter_Ability01>(CCitadel_Ability_Drifter_Ability01.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Drifter_Ability02))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Drifter_Ability02>(CCitadel_Ability_Drifter_Ability02.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Drifter_Ability04))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Drifter_Ability04>(CCitadel_Ability_Drifter_Ability04.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Drifter_Hunger))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Drifter_Hunger>(CCitadel_Ability_Drifter_Hunger.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Ability_Dust_Storm))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Dust_Storm>(CCitadel_Ability_Dust_Storm.CreateFieldDecoder);
@@ -54806,6 +59021,26 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Ability_FlyingStrike))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_FlyingStrike>(CCitadel_Ability_FlyingStrike.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Frank_PainAura))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Frank_PainAura>(CCitadel_Ability_Frank_PainAura.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Frank_PrimaryWeapon))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Frank_PrimaryWeapon>(CCitadel_Ability_Frank_PrimaryWeapon.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Frank_Revive))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Frank_Revive>(CCitadel_Ability_Frank_Revive.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Frank_SelfZap))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Frank_SelfZap>(CCitadel_Ability_Frank_SelfZap.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Frank_ShockTarget))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Frank_ShockTarget>(CCitadel_Ability_Frank_ShockTarget.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Ability_GangActivity))
         {
@@ -55103,6 +59338,26 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_PowerSurge>(CCitadel_Ability_PowerSurge.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Ability_Priest_Barrage))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Priest_Barrage>(CCitadel_Ability_Priest_Barrage.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Priest_Knockback))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Priest_Knockback>(CCitadel_Ability_Priest_Knockback.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Priest_SelfHeal))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Priest_SelfHeal>(CCitadel_Ability_Priest_SelfHeal.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Priest_StackingDefense))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Priest_StackingDefense>(CCitadel_Ability_Priest_StackingDefense.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Priest_WeaponSwap))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Priest_WeaponSwap>(CCitadel_Ability_Priest_WeaponSwap.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Ability_PrimaryWeapon))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_PrimaryWeapon>(CCitadel_Ability_PrimaryWeapon.CreateFieldDecoder);
@@ -55150,6 +59405,22 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Ability_Puddle))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Puddle>(CCitadel_Ability_Puddle.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_PunkGoat_Ability01))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_PunkGoat_Ability01>(CCitadel_Ability_PunkGoat_Ability01.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_PunkGoat_Ability02))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_PunkGoat_Ability02>(CCitadel_Ability_PunkGoat_Ability02.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_PunkGoat_Ability03))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_PunkGoat_Ability03>(CCitadel_Ability_PunkGoat_Ability03.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_PunkGoat_Ability04))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_PunkGoat_Ability04>(CCitadel_Ability_PunkGoat_Ability04.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Ability_RapidFire))
         {
@@ -55251,6 +59522,26 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Shotgun_Astro_Backwards>(CCitadel_Ability_Shotgun_Astro_Backwards.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Ability_SkyRunner_Ability04))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_SkyRunner_Ability04>(CCitadel_Ability_SkyRunner_Ability04.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_SkyRunner_FlakShot))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_SkyRunner_FlakShot>(CCitadel_Ability_SkyRunner_FlakShot.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Skyrunner_MagicBeam))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Skyrunner_MagicBeam>(CCitadel_Ability_Skyrunner_MagicBeam.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_SkyRunner_PrimaryWeapon))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_SkyRunner_PrimaryWeapon>(CCitadel_Ability_SkyRunner_PrimaryWeapon.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_SkyRunner_SwingLine))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_SkyRunner_SwingLine>(CCitadel_Ability_SkyRunner_SwingLine.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Ability_SleepBomb))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_SleepBomb>(CCitadel_Ability_SleepBomb.CreateFieldDecoder);
@@ -55314,6 +59605,22 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Ability_SuperNeutralShield))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_SuperNeutralShield>(CCitadel_Ability_SuperNeutralShield.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Swan_Ability04))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Swan_Ability04>(CCitadel_Ability_Swan_Ability04.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Swan_Acrobat))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Swan_Acrobat>(CCitadel_Ability_Swan_Acrobat.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Swan_FeatherBoomerang))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Swan_FeatherBoomerang>(CCitadel_Ability_Swan_FeatherBoomerang.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_Swan_Leap))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Swan_Leap>(CCitadel_Ability_Swan_Leap.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Ability_TangoTether))
         {
@@ -55490,6 +59797,26 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Ability_Uppercut))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Uppercut>(CCitadel_Ability_Uppercut.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_VampireBat_BatBlink))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_VampireBat_BatBlink>(CCitadel_Ability_VampireBat_BatBlink.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_VampireBat_BatCloud))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_VampireBat_BatCloud>(CCitadel_Ability_VampireBat_BatCloud.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_VampireBat_BatSwarm))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_VampireBat_BatSwarm>(CCitadel_Ability_VampireBat_BatSwarm.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_VampireBat_DoubleDagger))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_VampireBat_DoubleDagger>(CCitadel_Ability_VampireBat_DoubleDagger.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Ability_VampireBat_LoveBites))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_VampireBat_LoveBites>(CCitadel_Ability_VampireBat_LoveBites.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Ability_Vandal_Ability03))
         {
@@ -55679,6 +60006,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_ArmorUpgrade_SpellShield>(CCitadel_ArmorUpgrade_SpellShield.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_ArmorUpgrade_SpiritBubble))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_ArmorUpgrade_SpiritBubble>(CCitadel_ArmorUpgrade_SpiritBubble.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_ArmorUpgrade_Stimpak))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_ArmorUpgrade_Stimpak>(CCitadel_ArmorUpgrade_Stimpak.CreateFieldDecoder);
@@ -55686,6 +60017,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_ArmorUpgrade_VexBarrier))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_ArmorUpgrade_VexBarrier>(CCitadel_ArmorUpgrade_VexBarrier.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_ArmorUpgrade_WeaponShielding))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_ArmorUpgrade_WeaponShielding>(CCitadel_ArmorUpgrade_WeaponShielding.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_BaseProp_MidStairs))
         {
@@ -55726,6 +60061,14 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Destroyable_Building))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Destroyable_Building>(CCitadel_Destroyable_Building.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Doorman_Wall_Section))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Doorman_Wall_Section>(CCitadel_Doorman_Wall_Section.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_DoorwayPortal))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_DoorwayPortal>(CCitadel_DoorwayPortal.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_DynamicProp))
         {
@@ -55771,6 +60114,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_AOERoot>(CCitadel_Item_AOERoot.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Item_ArcticBlast))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_ArcticBlast>(CCitadel_Item_ArcticBlast.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Item_Aura_Base))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_Aura_Base>(CCitadel_Item_Aura_Base.CreateFieldDecoder);
@@ -55811,6 +60158,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_Disarm>(CCitadel_Item_Disarm.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Item_DivineBarrier))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_DivineBarrier>(CCitadel_Item_DivineBarrier.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Item_DivinersKevlar))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_DivinersKevlar>(CCitadel_Item_DivinersKevlar.CreateFieldDecoder);
@@ -55822,6 +60173,14 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Item_Empty))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_Empty>(CCitadel_Item_Empty.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Item_FocusLens))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_FocusLens>(CCitadel_Item_FocusLens.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Item_GuardianWard))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_GuardianWard>(CCitadel_Item_GuardianWard.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Item_HealthRegenAura))
         {
@@ -55835,6 +60194,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_ModDisruptor>(CCitadel_Item_ModDisruptor.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Item_Mystic_Regeneration))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_Mystic_Regeneration>(CCitadel_Item_Mystic_Regeneration.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Item_PhantomStrike))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_PhantomStrike>(CCitadel_Item_PhantomStrike.CreateFieldDecoder);
@@ -55842,10 +60205,6 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Item_PowerShard))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_PowerShard>(CCitadel_Item_PowerShard.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CCitadel_Item_QuickSilver))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_QuickSilver>(CCitadel_Item_QuickSilver.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Item_Refresher))
         {
@@ -55859,10 +60218,6 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_RescueBeam>(CCitadel_Item_RescueBeam.CreateFieldDecoder);
         }
-        if (typeof(T) == typeof(CCitadel_Item_Savior))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_Savior>(CCitadel_Item_Savior.CreateFieldDecoder);
-        }
         if (typeof(T) == typeof(CCitadel_Item_SelfBuffModifier))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_SelfBuffModifier>(CCitadel_Item_SelfBuffModifier.CreateFieldDecoder);
@@ -55870,6 +60225,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Item_SingleTargetStun))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_SingleTargetStun>(CCitadel_Item_SingleTargetStun.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Item_SpiritSap))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_SpiritSap>(CCitadel_Item_SpiritSap.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Item_Stasis_Bomb))
         {
@@ -55887,9 +60246,17 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_TrackingProjectileApplyModifier>(CCitadel_Item_TrackingProjectileApplyModifier.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Item_TrophyCollector))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_TrophyCollector>(CCitadel_Item_TrophyCollector.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Item_WarpStone))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Item_WarpStone>(CCitadel_Item_WarpStone.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Magic_Beam_Blocker))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Magic_Beam_Blocker>(CCitadel_Magic_Beam_Blocker.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_MagicianTurret))
         {
@@ -55915,6 +60282,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Projectile_Archer_ChargedShot>(CCitadel_Projectile_Archer_ChargedShot.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Projectile_BatSwarmProjectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Projectile_BatSwarmProjectile>(CCitadel_Projectile_BatSwarmProjectile.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Projectile_Bebop_Hook))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Projectile_Bebop_Hook>(CCitadel_Projectile_Bebop_Hook.CreateFieldDecoder);
@@ -55930,6 +60301,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_Projectile_DustStorm))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Projectile_DustStorm>(CCitadel_Projectile_DustStorm.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_Projectile_FeatherBoomerang))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Projectile_FeatherBoomerang>(CCitadel_Projectile_FeatherBoomerang.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_Projectile_Guided_Arrow))
         {
@@ -56059,29 +60434,45 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_UtilityUpgrade_RocketBoots>(CCitadel_UtilityUpgrade_RocketBoots.CreateFieldDecoder);
         }
-        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_BansheeSlugs))
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_BloodTribute))
         {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_BansheeSlugs>(CCitadel_WeaponUpgrade_BansheeSlugs.CreateFieldDecoder);
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_BloodTribute>(CCitadel_WeaponUpgrade_BloodTribute.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_WeaponUpgrade_BurstFire))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_BurstFire>(CCitadel_WeaponUpgrade_BurstFire.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_CooldownOnMiss))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_CooldownOnMiss>(CCitadel_WeaponUpgrade_CooldownOnMiss.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_CultistSacrifice))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_CultistSacrifice>(CCitadel_WeaponUpgrade_CultistSacrifice.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_ExpressShot))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_ExpressShot>(CCitadel_WeaponUpgrade_ExpressShot.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_WeaponUpgrade_FireRateAura))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_FireRateAura>(CCitadel_WeaponUpgrade_FireRateAura.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_FuryTrance))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_FuryTrance>(CCitadel_WeaponUpgrade_FuryTrance.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_WeaponUpgrade_GlassCannon))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_GlassCannon>(CCitadel_WeaponUpgrade_GlassCannon.CreateFieldDecoder);
         }
-        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_Headhunter))
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_HeadshotDamage))
         {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_Headhunter>(CCitadel_WeaponUpgrade_Headhunter.CreateFieldDecoder);
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_HeadshotDamage>(CCitadel_WeaponUpgrade_HeadshotDamage.CreateFieldDecoder);
         }
-        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_HeadshotBooster))
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_InfiniteMagazine))
         {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_HeadshotBooster>(CCitadel_WeaponUpgrade_HeadshotBooster.CreateFieldDecoder);
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_InfiniteMagazine>(CCitadel_WeaponUpgrade_InfiniteMagazine.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_WeaponUpgrade_InstantReload))
         {
@@ -56098,6 +60489,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CCitadel_WeaponUpgrade_SpellslingerHeadshots))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_SpellslingerHeadshots>(CCitadel_WeaponUpgrade_SpellslingerHeadshots.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CCitadel_WeaponUpgrade_SplitShot))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_WeaponUpgrade_SplitShot>(CCitadel_WeaponUpgrade_SplitShot.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CCitadel_WeaponUpgrade_SurgingPower))
         {
@@ -56259,6 +60654,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadelPlayerPawnBase>(CCitadelPlayerPawnBase.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadelPortalTrigger))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadelPortalTrigger>(CCitadelPortalTrigger.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadelPositionHomingProjectile))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadelPositionHomingProjectile>(CCitadelPositionHomingProjectile.CreateFieldDecoder);
@@ -56338,6 +60737,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CConditionalCollidable))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CConditionalCollidable>(CConditionalCollidable.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CDestructiblePartsSystemComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDestructiblePartsSystemComponent>(CDestructiblePartsSystemComponent.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CDynamicLight))
         {
@@ -56539,6 +60942,14 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_FleetfootBoots>(CItem_FleetfootBoots.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CItem_GreaterWitheringWhip))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_GreaterWitheringWhip>(CItem_GreaterWitheringWhip.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CItem_ResonantHealing))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_ResonantHealing>(CItem_ResonantHealing.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CItem_RestorativeLocket))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_RestorativeLocket>(CItem_RestorativeLocket.CreateFieldDecoder);
@@ -56546,6 +60957,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CItem_WitheringWhip))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItem_WitheringWhip>(CItem_WitheringWhip.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CItemCapacitor))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItemCapacitor>(CItemCapacitor.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CItemCrate))
         {
@@ -56574,10 +60989,6 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CItemXP))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CItemXP>(CItemXP.CreateFieldDecoder);
-        }
-        if (typeof(T) == typeof(CLaneNode))
-        {
-            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CLaneNode>(CLaneNode.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CLightCapsuleEntity))
         {
@@ -56739,6 +61150,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<COmniLight>(COmniLight.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(ConsumedComponentState))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<ConsumedComponentState>(ConsumedComponentState.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CountdownTimer))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CountdownTimer>(CountdownTimer.CreateFieldDecoder);
@@ -56866,6 +61281,14 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         if (typeof(T) == typeof(CPrecipitationBlocker))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CPrecipitationBlocker>(CPrecipitationBlocker.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CProjectile_Doorman_Wall_Projectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CProjectile_Doorman_Wall_Projectile>(CProjectile_Doorman_Wall_Projectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CProjectile_KnightCharge_Projectile))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CProjectile_KnightCharge_Projectile>(CProjectile_KnightCharge_Projectile.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CProjectile_Mirage_Tornado))
         {
@@ -57115,6 +61538,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCModel>(InfoForResourceTypeCModel.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(InfoForResourceTypeCNmGraphDefinition))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCNmGraphDefinition>(InfoForResourceTypeCNmGraphDefinition.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(InfoForResourceTypeCPostProcessingResource))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<InfoForResourceTypeCPostProcessingResource>(InfoForResourceTypeCPostProcessingResource.CreateFieldDecoder);
@@ -57243,10 +61670,19 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_Astro_Shotgun_Toggle", (context, decoder) => new CCitadel_Ability_Astro_Shotgun_Toggle(context, decoder)},
         {"CCitadel_Ability_BaseHeldItem", (context, decoder) => new CCitadel_Ability_BaseHeldItem(context, decoder)},
         {"CCitadel_Ability_Bebop_LaserBeam", (context, decoder) => new CCitadel_Ability_Bebop_LaserBeam(context, decoder)},
+        {"CCitadel_Ability_Bebop_StickyBomb2", (context, decoder) => new CCitadel_Ability_Bebop_StickyBomb2(context, decoder)},
         {"CCitadel_Ability_BloodBomb", (context, decoder) => new CCitadel_Ability_BloodBomb(context, decoder)},
+        {"CCitadel_Ability_Boho_Ability01", (context, decoder) => new CCitadel_Ability_Boho_Ability01(context, decoder)},
+        {"CCitadel_Ability_Boho_Ability02", (context, decoder) => new CCitadel_Ability_Boho_Ability02(context, decoder)},
+        {"CCitadel_Ability_Boho_Ability03", (context, decoder) => new CCitadel_Ability_Boho_Ability03(context, decoder)},
+        {"CCitadel_Ability_Boho_Ability04", (context, decoder) => new CCitadel_Ability_Boho_Ability04(context, decoder)},
         {"CCitadel_Ability_Bomber_Ability02", (context, decoder) => new CCitadel_Ability_Bomber_Ability02(context, decoder)},
         {"CCitadel_Ability_Bomber_Ability03", (context, decoder) => new CCitadel_Ability_Bomber_Ability03(context, decoder)},
         {"CCitadel_Ability_Bomber_ULT", (context, decoder) => new CCitadel_Ability_Bomber_ULT(context, decoder)},
+        {"CCitadel_Ability_Bookworm_Ability01", (context, decoder) => new CCitadel_Ability_Bookworm_Ability01(context, decoder)},
+        {"CCitadel_Ability_Bookworm_AOEMagic", (context, decoder) => new CCitadel_Ability_Bookworm_AOEMagic(context, decoder)},
+        {"CCitadel_Ability_Bookworm_KnightBarrier", (context, decoder) => new CCitadel_Ability_Bookworm_KnightBarrier(context, decoder)},
+        {"CCitadel_Ability_Bookworm_KnightCharge", (context, decoder) => new CCitadel_Ability_Bookworm_KnightCharge(context, decoder)},
         {"CCitadel_Ability_Bounce_Pad", (context, decoder) => new CCitadel_Ability_Bounce_Pad(context, decoder)},
         {"CCitadel_Ability_Bull_Charge", (context, decoder) => new CCitadel_Ability_Bull_Charge(context, decoder)},
         {"CCitadel_Ability_Bull_Heal", (context, decoder) => new CCitadel_Ability_Bull_Heal(context, decoder)},
@@ -57273,6 +61709,14 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_DeathTax", (context, decoder) => new CCitadel_Ability_DeathTax(context, decoder)},
         {"CCitadel_Ability_Digger_MudShield", (context, decoder) => new CCitadel_Ability_Digger_MudShield(context, decoder)},
         {"CCitadel_Ability_Disruptive_Charge", (context, decoder) => new CCitadel_Ability_Disruptive_Charge(context, decoder)},
+        {"CCitadel_Ability_Doorman_Ability03", (context, decoder) => new CCitadel_Ability_Doorman_Ability03(context, decoder)},
+        {"CCitadel_Ability_Doorman_Ability04", (context, decoder) => new CCitadel_Ability_Doorman_Ability04(context, decoder)},
+        {"CCitadel_Ability_Doorman_Doorway", (context, decoder) => new CCitadel_Ability_Doorman_Doorway(context, decoder)},
+        {"CCitadel_Ability_Doorman_Wall", (context, decoder) => new CCitadel_Ability_Doorman_Wall(context, decoder)},
+        {"CCitadel_Ability_Drifter_Ability01", (context, decoder) => new CCitadel_Ability_Drifter_Ability01(context, decoder)},
+        {"CCitadel_Ability_Drifter_Ability02", (context, decoder) => new CCitadel_Ability_Drifter_Ability02(context, decoder)},
+        {"CCitadel_Ability_Drifter_Ability04", (context, decoder) => new CCitadel_Ability_Drifter_Ability04(context, decoder)},
+        {"CCitadel_Ability_Drifter_Hunger", (context, decoder) => new CCitadel_Ability_Drifter_Hunger(context, decoder)},
         {"CCitadel_Ability_Dust_Storm", (context, decoder) => new CCitadel_Ability_Dust_Storm(context, decoder)},
         {"CCitadel_Ability_EmpowerBullet", (context, decoder) => new CCitadel_Ability_EmpowerBullet(context, decoder)},
         {"CCitadel_Ability_Empty", (context, decoder) => new CCitadel_Ability_Empty(context, decoder)},
@@ -57284,6 +61728,11 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_FissureWall", (context, decoder) => new CCitadel_Ability_FissureWall(context, decoder)},
         {"CCitadel_Ability_FlameDash", (context, decoder) => new CCitadel_Ability_FlameDash(context, decoder)},
         {"CCitadel_Ability_FlyingStrike", (context, decoder) => new CCitadel_Ability_FlyingStrike(context, decoder)},
+        {"CCitadel_Ability_Frank_PainAura", (context, decoder) => new CCitadel_Ability_Frank_PainAura(context, decoder)},
+        {"CCitadel_Ability_Frank_PrimaryWeapon", (context, decoder) => new CCitadel_Ability_Frank_PrimaryWeapon(context, decoder)},
+        {"CCitadel_Ability_Frank_Revive", (context, decoder) => new CCitadel_Ability_Frank_Revive(context, decoder)},
+        {"CCitadel_Ability_Frank_SelfZap", (context, decoder) => new CCitadel_Ability_Frank_SelfZap(context, decoder)},
+        {"CCitadel_Ability_Frank_ShockTarget", (context, decoder) => new CCitadel_Ability_Frank_ShockTarget(context, decoder)},
         {"CCitadel_Ability_GangActivity", (context, decoder) => new CCitadel_Ability_GangActivity(context, decoder)},
         {"CCitadel_Ability_GangActivity_Cancel", (context, decoder) => new CCitadel_Ability_GangActivity_Cancel(context, decoder)},
         {"CCitadel_Ability_GenericPerson_1", (context, decoder) => new CCitadel_Ability_GenericPerson_1(context, decoder)},
@@ -57358,6 +61807,11 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_PowerJump", (context, decoder) => new CCitadel_Ability_PowerJump(context, decoder)},
         {"CCitadel_Ability_PowerSlash", (context, decoder) => new CCitadel_Ability_PowerSlash(context, decoder)},
         {"CCitadel_Ability_PowerSurge", (context, decoder) => new CCitadel_Ability_PowerSurge(context, decoder)},
+        {"CCitadel_Ability_Priest_Barrage", (context, decoder) => new CCitadel_Ability_Priest_Barrage(context, decoder)},
+        {"CCitadel_Ability_Priest_Knockback", (context, decoder) => new CCitadel_Ability_Priest_Knockback(context, decoder)},
+        {"CCitadel_Ability_Priest_SelfHeal", (context, decoder) => new CCitadel_Ability_Priest_SelfHeal(context, decoder)},
+        {"CCitadel_Ability_Priest_StackingDefense", (context, decoder) => new CCitadel_Ability_Priest_StackingDefense(context, decoder)},
+        {"CCitadel_Ability_Priest_WeaponSwap", (context, decoder) => new CCitadel_Ability_Priest_WeaponSwap(context, decoder)},
         {"CCitadel_Ability_PrimaryWeapon", (context, decoder) => new CCitadel_Ability_PrimaryWeapon(context, decoder)},
         {"CCitadel_Ability_PrimaryWeapon_BeamWeapon", (context, decoder) => new CCitadel_Ability_PrimaryWeapon_BeamWeapon(context, decoder)},
         {"CCitadel_Ability_PrimaryWeapon_Bebop", (context, decoder) => new CCitadel_Ability_PrimaryWeapon_Bebop(context, decoder)},
@@ -57370,6 +61824,10 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_PsychicLift", (context, decoder) => new CCitadel_Ability_PsychicLift(context, decoder)},
         {"CCitadel_Ability_PsychicPulse", (context, decoder) => new CCitadel_Ability_PsychicPulse(context, decoder)},
         {"CCitadel_Ability_Puddle", (context, decoder) => new CCitadel_Ability_Puddle(context, decoder)},
+        {"CCitadel_Ability_PunkGoat_Ability01", (context, decoder) => new CCitadel_Ability_PunkGoat_Ability01(context, decoder)},
+        {"CCitadel_Ability_PunkGoat_Ability02", (context, decoder) => new CCitadel_Ability_PunkGoat_Ability02(context, decoder)},
+        {"CCitadel_Ability_PunkGoat_Ability03", (context, decoder) => new CCitadel_Ability_PunkGoat_Ability03(context, decoder)},
+        {"CCitadel_Ability_PunkGoat_Ability04", (context, decoder) => new CCitadel_Ability_PunkGoat_Ability04(context, decoder)},
         {"CCitadel_Ability_RapidFire", (context, decoder) => new CCitadel_Ability_RapidFire(context, decoder)},
         {"CCitadel_Ability_RestorativeGoo", (context, decoder) => new CCitadel_Ability_RestorativeGoo(context, decoder)},
         {"CCitadel_Ability_RiotProtocol", (context, decoder) => new CCitadel_Ability_RiotProtocol(context, decoder)},
@@ -57395,6 +61853,11 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_ShivWeapon", (context, decoder) => new CCitadel_Ability_ShivWeapon(context, decoder)},
         {"CCitadel_Ability_Shotgun_Astro", (context, decoder) => new CCitadel_Ability_Shotgun_Astro(context, decoder)},
         {"CCitadel_Ability_Shotgun_Astro_Backwards", (context, decoder) => new CCitadel_Ability_Shotgun_Astro_Backwards(context, decoder)},
+        {"CCitadel_Ability_SkyRunner_Ability04", (context, decoder) => new CCitadel_Ability_SkyRunner_Ability04(context, decoder)},
+        {"CCitadel_Ability_SkyRunner_FlakShot", (context, decoder) => new CCitadel_Ability_SkyRunner_FlakShot(context, decoder)},
+        {"CCitadel_Ability_Skyrunner_MagicBeam", (context, decoder) => new CCitadel_Ability_Skyrunner_MagicBeam(context, decoder)},
+        {"CCitadel_Ability_SkyRunner_PrimaryWeapon", (context, decoder) => new CCitadel_Ability_SkyRunner_PrimaryWeapon(context, decoder)},
+        {"CCitadel_Ability_SkyRunner_SwingLine", (context, decoder) => new CCitadel_Ability_SkyRunner_SwingLine(context, decoder)},
         {"CCitadel_Ability_SleepBomb", (context, decoder) => new CCitadel_Ability_SleepBomb(context, decoder)},
         {"CCitadel_Ability_SleepDagger", (context, decoder) => new CCitadel_Ability_SleepDagger(context, decoder)},
         {"CCitadel_Ability_Slide", (context, decoder) => new CCitadel_Ability_Slide(context, decoder)},
@@ -57411,6 +61874,10 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_SuperNeutralCharge", (context, decoder) => new CCitadel_Ability_SuperNeutralCharge(context, decoder)},
         {"CCitadel_Ability_SuperNeutralIncendiary", (context, decoder) => new CCitadel_Ability_SuperNeutralIncendiary(context, decoder)},
         {"CCitadel_Ability_SuperNeutralShield", (context, decoder) => new CCitadel_Ability_SuperNeutralShield(context, decoder)},
+        {"CCitadel_Ability_Swan_Ability04", (context, decoder) => new CCitadel_Ability_Swan_Ability04(context, decoder)},
+        {"CCitadel_Ability_Swan_Acrobat", (context, decoder) => new CCitadel_Ability_Swan_Acrobat(context, decoder)},
+        {"CCitadel_Ability_Swan_FeatherBoomerang", (context, decoder) => new CCitadel_Ability_Swan_FeatherBoomerang(context, decoder)},
+        {"CCitadel_Ability_Swan_Leap", (context, decoder) => new CCitadel_Ability_Swan_Leap(context, decoder)},
         {"CCitadel_Ability_TangoTether", (context, decoder) => new CCitadel_Ability_TangoTether(context, decoder)},
         {"CCitadel_Ability_TangoTether_Trigger", (context, decoder) => new CCitadel_Ability_TangoTether_Trigger(context, decoder)},
         {"CCitadel_Ability_Targetdummy_1", (context, decoder) => new CCitadel_Ability_Targetdummy_1(context, decoder)},
@@ -57455,6 +61922,11 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Ability_TurretClone", (context, decoder) => new CCitadel_Ability_TurretClone(context, decoder)},
         {"CCitadel_Ability_UltCombo", (context, decoder) => new CCitadel_Ability_UltCombo(context, decoder)},
         {"CCitadel_Ability_Uppercut", (context, decoder) => new CCitadel_Ability_Uppercut(context, decoder)},
+        {"CCitadel_Ability_VampireBat_BatBlink", (context, decoder) => new CCitadel_Ability_VampireBat_BatBlink(context, decoder)},
+        {"CCitadel_Ability_VampireBat_BatCloud", (context, decoder) => new CCitadel_Ability_VampireBat_BatCloud(context, decoder)},
+        {"CCitadel_Ability_VampireBat_BatSwarm", (context, decoder) => new CCitadel_Ability_VampireBat_BatSwarm(context, decoder)},
+        {"CCitadel_Ability_VampireBat_DoubleDagger", (context, decoder) => new CCitadel_Ability_VampireBat_DoubleDagger(context, decoder)},
+        {"CCitadel_Ability_VampireBat_LoveBites", (context, decoder) => new CCitadel_Ability_VampireBat_LoveBites(context, decoder)},
         {"CCitadel_Ability_Vandal_Ability03", (context, decoder) => new CCitadel_Ability_Vandal_Ability03(context, decoder)},
         {"CCitadel_Ability_Vandal_Pillar", (context, decoder) => new CCitadel_Ability_Vandal_Pillar(context, decoder)},
         {"CCitadel_Ability_VandalOverflow", (context, decoder) => new CCitadel_Ability_VandalOverflow(context, decoder)},
@@ -57502,8 +61974,10 @@ internal static class DeadlockEntityFactories
         {"CCitadel_ArmorUpgrade_ReturnFire", (context, decoder) => new CCitadel_ArmorUpgrade_ReturnFire(context, decoder)},
         {"CCitadel_ArmorUpgrade_SlowImmunity", (context, decoder) => new CCitadel_ArmorUpgrade_SlowImmunity(context, decoder)},
         {"CCitadel_ArmorUpgrade_SpellShield", (context, decoder) => new CCitadel_ArmorUpgrade_SpellShield(context, decoder)},
+        {"CCitadel_ArmorUpgrade_SpiritBubble", (context, decoder) => new CCitadel_ArmorUpgrade_SpiritBubble(context, decoder)},
         {"CCitadel_ArmorUpgrade_Stimpak", (context, decoder) => new CCitadel_ArmorUpgrade_Stimpak(context, decoder)},
         {"CCitadel_ArmorUpgrade_VexBarrier", (context, decoder) => new CCitadel_ArmorUpgrade_VexBarrier(context, decoder)},
+        {"CCitadel_ArmorUpgrade_WeaponShielding", (context, decoder) => new CCitadel_ArmorUpgrade_WeaponShielding(context, decoder)},
         {"CCitadel_BaseProp_MidStairs", (context, decoder) => new CCitadel_BaseProp_MidStairs(context, decoder)},
         {"CCitadel_Bounce_Pad", (context, decoder) => new CCitadel_Bounce_Pad(context, decoder)},
         {"CCitadel_BreakableProp", (context, decoder) => new CCitadel_BreakableProp(context, decoder)},
@@ -57514,6 +61988,8 @@ internal static class DeadlockEntityFactories
         {"CCitadel_CatAnimating", (context, decoder) => new CCitadel_CatAnimating(context, decoder)},
         {"CCitadel_DeployablePreview", (context, decoder) => new CCitadel_DeployablePreview(context, decoder)},
         {"CCitadel_Destroyable_Building", (context, decoder) => new CCitadel_Destroyable_Building(context, decoder)},
+        {"CCitadel_Doorman_Wall_Section", (context, decoder) => new CCitadel_Doorman_Wall_Section(context, decoder)},
+        {"CCitadel_DoorwayPortal", (context, decoder) => new CCitadel_DoorwayPortal(context, decoder)},
         {"CCitadel_DynamicProp", (context, decoder) => new CCitadel_DynamicProp(context, decoder)},
         {"CCitadel_FissureWall", (context, decoder) => new CCitadel_FissureWall(context, decoder)},
         {"CCitadel_GrandFinaleStage", (context, decoder) => new CCitadel_GrandFinaleStage(context, decoder)},
@@ -57525,6 +62001,7 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Item_ActiveReload", (context, decoder) => new CCitadel_Item_ActiveReload(context, decoder)},
         {"CCitadel_Item_AOE_Tech_Shield", (context, decoder) => new CCitadel_Item_AOE_Tech_Shield(context, decoder)},
         {"CCitadel_Item_AOERoot", (context, decoder) => new CCitadel_Item_AOERoot(context, decoder)},
+        {"CCitadel_Item_ArcticBlast", (context, decoder) => new CCitadel_Item_ArcticBlast(context, decoder)},
         {"CCitadel_Item_Aura_Base", (context, decoder) => new CCitadel_Item_Aura_Base(context, decoder)},
         {"CCitadel_Item_BaseProjectileAOEModifier", (context, decoder) => new CCitadel_Item_BaseProjectileAOEModifier(context, decoder)},
         {"CCitadel_Item_Bubble", (context, decoder) => new CCitadel_Item_Bubble(context, decoder)},
@@ -57535,36 +62012,43 @@ internal static class DeadlockEntityFactories
         {"CCitadel_Item_ComboBreaker", (context, decoder) => new CCitadel_Item_ComboBreaker(context, decoder)},
         {"CCitadel_Item_Containment", (context, decoder) => new CCitadel_Item_Containment(context, decoder)},
         {"CCitadel_Item_Disarm", (context, decoder) => new CCitadel_Item_Disarm(context, decoder)},
+        {"CCitadel_Item_DivineBarrier", (context, decoder) => new CCitadel_Item_DivineBarrier(context, decoder)},
         {"CCitadel_Item_DivinersKevlar", (context, decoder) => new CCitadel_Item_DivinersKevlar(context, decoder)},
         {"CCitadel_Item_DPS_Aura", (context, decoder) => new CCitadel_Item_DPS_Aura(context, decoder)},
         {"CCitadel_Item_Empty", (context, decoder) => new CCitadel_Item_Empty(context, decoder)},
+        {"CCitadel_Item_FocusLens", (context, decoder) => new CCitadel_Item_FocusLens(context, decoder)},
+        {"CCitadel_Item_GuardianWard", (context, decoder) => new CCitadel_Item_GuardianWard(context, decoder)},
         {"CCitadel_Item_HealthRegenAura", (context, decoder) => new CCitadel_Item_HealthRegenAura(context, decoder)},
         {"CCitadel_Item_Intensifying_Clip", (context, decoder) => new CCitadel_Item_Intensifying_Clip(context, decoder)},
         {"CCitadel_Item_ModDisruptor", (context, decoder) => new CCitadel_Item_ModDisruptor(context, decoder)},
+        {"CCitadel_Item_Mystic_Regeneration", (context, decoder) => new CCitadel_Item_Mystic_Regeneration(context, decoder)},
         {"CCitadel_Item_PhantomStrike", (context, decoder) => new CCitadel_Item_PhantomStrike(context, decoder)},
         {"CCitadel_Item_PowerShard", (context, decoder) => new CCitadel_Item_PowerShard(context, decoder)},
-        {"CCitadel_Item_QuickSilver", (context, decoder) => new CCitadel_Item_QuickSilver(context, decoder)},
         {"CCitadel_Item_Refresher", (context, decoder) => new CCitadel_Item_Refresher(context, decoder)},
         {"CCitadel_Item_RejuvTrackingProjectile", (context, decoder) => new CCitadel_Item_RejuvTrackingProjectile(context, decoder)},
         {"CCitadel_Item_RescueBeam", (context, decoder) => new CCitadel_Item_RescueBeam(context, decoder)},
-        {"CCitadel_Item_Savior", (context, decoder) => new CCitadel_Item_Savior(context, decoder)},
         {"CCitadel_Item_SelfBuffModifier", (context, decoder) => new CCitadel_Item_SelfBuffModifier(context, decoder)},
         {"CCitadel_Item_SingleTargetStun", (context, decoder) => new CCitadel_Item_SingleTargetStun(context, decoder)},
+        {"CCitadel_Item_SpiritSap", (context, decoder) => new CCitadel_Item_SpiritSap(context, decoder)},
         {"CCitadel_Item_Stasis_Bomb", (context, decoder) => new CCitadel_Item_Stasis_Bomb(context, decoder)},
         {"CCitadel_Item_TechCleave", (context, decoder) => new CCitadel_Item_TechCleave(context, decoder)},
         {"CCitadel_Item_TechDamagePulse", (context, decoder) => new CCitadel_Item_TechDamagePulse(context, decoder)},
         {"CCitadel_Item_TrackingProjectileApplyModifier", (context, decoder) => new CCitadel_Item_TrackingProjectileApplyModifier(context, decoder)},
+        {"CCitadel_Item_TrophyCollector", (context, decoder) => new CCitadel_Item_TrophyCollector(context, decoder)},
         {"CCitadel_Item_WarpStone", (context, decoder) => new CCitadel_Item_WarpStone(context, decoder)},
+        {"CCitadel_Magic_Beam_Blocker", (context, decoder) => new CCitadel_Magic_Beam_Blocker(context, decoder)},
         {"CCitadel_MagicianTurret", (context, decoder) => new CCitadel_MagicianTurret(context, decoder)},
         {"CCitadel_MobileResupply", (context, decoder) => new CCitadel_MobileResupply(context, decoder)},
         {"CCitadel_Nano_Predatory_Statue", (context, decoder) => new CCitadel_Nano_Predatory_Statue(context, decoder)},
         {"CCitadel_PestilenceDroneDispenser", (context, decoder) => new CCitadel_PestilenceDroneDispenser(context, decoder)},
         {"CCitadel_PickupItemSpawner", (context, decoder) => new CCitadel_PickupItemSpawner(context, decoder)},
         {"CCitadel_Projectile_Archer_ChargedShot", (context, decoder) => new CCitadel_Projectile_Archer_ChargedShot(context, decoder)},
+        {"CCitadel_Projectile_BatSwarmProjectile", (context, decoder) => new CCitadel_Projectile_BatSwarmProjectile(context, decoder)},
         {"CCitadel_Projectile_Bebop_Hook", (context, decoder) => new CCitadel_Projectile_Bebop_Hook(context, decoder)},
         {"CCitadel_Projectile_BloodBomb", (context, decoder) => new CCitadel_Projectile_BloodBomb(context, decoder)},
         {"CCitadel_Projectile_Cyclone", (context, decoder) => new CCitadel_Projectile_Cyclone(context, decoder)},
         {"CCitadel_Projectile_DustStorm", (context, decoder) => new CCitadel_Projectile_DustStorm(context, decoder)},
+        {"CCitadel_Projectile_FeatherBoomerang", (context, decoder) => new CCitadel_Projectile_FeatherBoomerang(context, decoder)},
         {"CCitadel_Projectile_Guided_Arrow", (context, decoder) => new CCitadel_Projectile_Guided_Arrow(context, decoder)},
         {"CCitadel_Projectile_HookBlade", (context, decoder) => new CCitadel_Projectile_HookBlade(context, decoder)},
         {"CCitadel_Projectile_MagicBolt", (context, decoder) => new CCitadel_Projectile_MagicBolt(context, decoder)},
@@ -57597,16 +62081,21 @@ internal static class DeadlockEntityFactories
         {"CCitadel_UtilityUpgrade_HealthNova", (context, decoder) => new CCitadel_UtilityUpgrade_HealthNova(context, decoder)},
         {"CCitadel_UtilityUpgrade_RocketBooster", (context, decoder) => new CCitadel_UtilityUpgrade_RocketBooster(context, decoder)},
         {"CCitadel_UtilityUpgrade_RocketBoots", (context, decoder) => new CCitadel_UtilityUpgrade_RocketBoots(context, decoder)},
-        {"CCitadel_WeaponUpgrade_BansheeSlugs", (context, decoder) => new CCitadel_WeaponUpgrade_BansheeSlugs(context, decoder)},
+        {"CCitadel_WeaponUpgrade_BloodTribute", (context, decoder) => new CCitadel_WeaponUpgrade_BloodTribute(context, decoder)},
         {"CCitadel_WeaponUpgrade_BurstFire", (context, decoder) => new CCitadel_WeaponUpgrade_BurstFire(context, decoder)},
+        {"CCitadel_WeaponUpgrade_CooldownOnMiss", (context, decoder) => new CCitadel_WeaponUpgrade_CooldownOnMiss(context, decoder)},
+        {"CCitadel_WeaponUpgrade_CultistSacrifice", (context, decoder) => new CCitadel_WeaponUpgrade_CultistSacrifice(context, decoder)},
+        {"CCitadel_WeaponUpgrade_ExpressShot", (context, decoder) => new CCitadel_WeaponUpgrade_ExpressShot(context, decoder)},
         {"CCitadel_WeaponUpgrade_FireRateAura", (context, decoder) => new CCitadel_WeaponUpgrade_FireRateAura(context, decoder)},
+        {"CCitadel_WeaponUpgrade_FuryTrance", (context, decoder) => new CCitadel_WeaponUpgrade_FuryTrance(context, decoder)},
         {"CCitadel_WeaponUpgrade_GlassCannon", (context, decoder) => new CCitadel_WeaponUpgrade_GlassCannon(context, decoder)},
-        {"CCitadel_WeaponUpgrade_Headhunter", (context, decoder) => new CCitadel_WeaponUpgrade_Headhunter(context, decoder)},
-        {"CCitadel_WeaponUpgrade_HeadshotBooster", (context, decoder) => new CCitadel_WeaponUpgrade_HeadshotBooster(context, decoder)},
+        {"CCitadel_WeaponUpgrade_HeadshotDamage", (context, decoder) => new CCitadel_WeaponUpgrade_HeadshotDamage(context, decoder)},
+        {"CCitadel_WeaponUpgrade_InfiniteMagazine", (context, decoder) => new CCitadel_WeaponUpgrade_InfiniteMagazine(context, decoder)},
         {"CCitadel_WeaponUpgrade_InstantReload", (context, decoder) => new CCitadel_WeaponUpgrade_InstantReload(context, decoder)},
         {"CCitadel_WeaponUpgrade_Ricochet", (context, decoder) => new CCitadel_WeaponUpgrade_Ricochet(context, decoder)},
         {"CCitadel_WeaponUpgrade_SiphonBullets", (context, decoder) => new CCitadel_WeaponUpgrade_SiphonBullets(context, decoder)},
         {"CCitadel_WeaponUpgrade_SpellslingerHeadshots", (context, decoder) => new CCitadel_WeaponUpgrade_SpellslingerHeadshots(context, decoder)},
+        {"CCitadel_WeaponUpgrade_SplitShot", (context, decoder) => new CCitadel_WeaponUpgrade_SplitShot(context, decoder)},
         {"CCitadel_WeaponUpgrade_SurgingPower", (context, decoder) => new CCitadel_WeaponUpgrade_SurgingPower(context, decoder)},
         {"CCitadel_WeaponUpgrade_WeaponEater", (context, decoder) => new CCitadel_WeaponUpgrade_WeaponEater(context, decoder)},
         {"CCitadelAnimatingModelEntity", (context, decoder) => new CCitadelAnimatingModelEntity(context, decoder)},
@@ -57636,6 +62125,7 @@ internal static class DeadlockEntityFactories
         {"CCitadelPlayerController", (context, decoder) => new CCitadelPlayerController(context, decoder)},
         {"CCitadelPlayerPawn", (context, decoder) => new CCitadelPlayerPawn(context, decoder)},
         {"CCitadelPlayerPawnBase", (context, decoder) => new CCitadelPlayerPawnBase(context, decoder)},
+        {"CCitadelPortalTrigger", (context, decoder) => new CCitadelPortalTrigger(context, decoder)},
         {"CCitadelPositionHomingProjectile", (context, decoder) => new CCitadelPositionHomingProjectile(context, decoder)},
         {"CCitadelPreviewPlayerController", (context, decoder) => new CCitadelPreviewPlayerController(context, decoder)},
         {"CCitadelProjectile", (context, decoder) => new CCitadelProjectile(context, decoder)},
@@ -57694,8 +62184,11 @@ internal static class DeadlockEntityFactories
         {"CInWorldKeyBindPanel", (context, decoder) => new CInWorldKeyBindPanel(context, decoder)},
         {"CItem", (context, decoder) => new CItem(context, decoder)},
         {"CItem_FleetfootBoots", (context, decoder) => new CItem_FleetfootBoots(context, decoder)},
+        {"CItem_GreaterWitheringWhip", (context, decoder) => new CItem_GreaterWitheringWhip(context, decoder)},
+        {"CItem_ResonantHealing", (context, decoder) => new CItem_ResonantHealing(context, decoder)},
         {"CItem_RestorativeLocket", (context, decoder) => new CItem_RestorativeLocket(context, decoder)},
         {"CItem_WitheringWhip", (context, decoder) => new CItem_WitheringWhip(context, decoder)},
+        {"CItemCapacitor", (context, decoder) => new CItemCapacitor(context, decoder)},
         {"CItemCrate", (context, decoder) => new CItemCrate(context, decoder)},
         {"CItemExplosiveBarrel", (context, decoder) => new CItemExplosiveBarrel(context, decoder)},
         {"CItemFlare", (context, decoder) => new CItemFlare(context, decoder)},
@@ -57703,7 +62196,6 @@ internal static class DeadlockEntityFactories
         {"CItemParachute", (context, decoder) => new CItemParachute(context, decoder)},
         {"CItemSilenceGlyph", (context, decoder) => new CItemSilenceGlyph(context, decoder)},
         {"CItemXP", (context, decoder) => new CItemXP(context, decoder)},
-        {"CLaneNode", (context, decoder) => new CLaneNode(context, decoder)},
         {"CLightCapsuleEntity", (context, decoder) => new CLightCapsuleEntity(context, decoder)},
         {"CLightDirectionalEntity", (context, decoder) => new CLightDirectionalEntity(context, decoder)},
         {"CLightEntity", (context, decoder) => new CLightEntity(context, decoder)},
@@ -57755,6 +62247,8 @@ internal static class DeadlockEntityFactories
         {"CPostProcessingVolume", (context, decoder) => new CPostProcessingVolume(context, decoder)},
         {"CPrecipitation", (context, decoder) => new CPrecipitation(context, decoder)},
         {"CPrecipitationBlocker", (context, decoder) => new CPrecipitationBlocker(context, decoder)},
+        {"CProjectile_Doorman_Wall_Projectile", (context, decoder) => new CProjectile_Doorman_Wall_Projectile(context, decoder)},
+        {"CProjectile_KnightCharge_Projectile", (context, decoder) => new CProjectile_KnightCharge_Projectile(context, decoder)},
         {"CProjectile_Mirage_Tornado", (context, decoder) => new CProjectile_Mirage_Tornado(context, decoder)},
         {"CProjectile_Perched_Predator", (context, decoder) => new CProjectile_Perched_Predator(context, decoder)},
         {"CProjectile_Rolling_FireBall", (context, decoder) => new CProjectile_Rolling_FireBall(context, decoder)},

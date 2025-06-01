@@ -38,7 +38,7 @@ public partial class DemoFileReader<TGameParser>
     }
 
     /// Full packets occur every 60 seconds
-    private const int FullPacketInterval = 64 * 60; // todo: fix hardcoded tickrate
+    private const int FullPacketInterval = 64 * 60;
 
     private readonly List<FullPacketRecord> _fullPackets = new(64);
     private DemoTick _readFullPacketTick = DemoTick.PreRecord;

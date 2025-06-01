@@ -31,10 +31,23 @@ Easy discoverability of available data through your IDE's inbuilt autocompletion
 | Entity updates (player positions, grenades, etc.) | ✅ Full support |
 | Seeking forwards/backwards through the demo       | ✅ Full support |
 
-## Examples
+## Getting Started
 
-> [!WARNING]
-> This library is still under development and the API is liable to change until v1.0
+### Installation
+
+Add the appropriate NuGet package to your project:
+
+```bash
+# For Counter-Strike 2
+dotnet add package DemoFile.Game.Cs
+
+# For Deadlock
+dotnet add package DemoFile.Game.Deadlock
+```
+
+### Basic Usage
+
+Here's a simple example that prints kill feed information from a CS2 demo:
 
 ```c#
 using DemoFile;
@@ -59,10 +72,90 @@ internal class Program
 }
 ```
 
-See also the [examples/](https://github.com/saul/demofile-net/tree/main/examples) folder.
+## Advanced Examples
 
-For maximum performance, a given demo file can be parsed in sections in parallel.
-This utilises all available CPU cores. For example usage, take a look at [DemoFile.Example.MultiThreaded](./examples/DemoFile.Example.MultiThreaded/Program.cs).  
+### Tracking Player Positions
+
+You can track player positions and other entity data throughout the demo:
+
+```c#
+var demo = new CsDemoParser();
+
+// Subscribe to tick events to get data at specific points in time
+demo.TickEnd += (_, tick) =>
+{
+    // Get all active players
+    foreach (var player in demo.Entities.Players)
+    {
+        if (player.Pawn is { } pawn)
+        {
+            Console.WriteLine($"Player {player.PlayerName} is at position {pawn.CBodyComponent?.Position}");
+        }
+    }
+};
+
+var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
+await reader.ReadAllAsync();
+```
+
+### Working with Game Events
+
+DemoFile.Net provides strongly-typed access to game events:
+
+```c#
+var demo = new CsDemoParser();
+
+// Track round wins
+demo.Source1GameEvents.RoundEnd += e => 
+{
+    Console.WriteLine($"Round ended. Winner: {e.Winner}. Reason: {e.Reason}");
+};
+
+// Track bomb events
+demo.Source1GameEvents.BombPlanted += e => 
+{
+    Console.WriteLine($"Bomb planted by {e.Player?.PlayerName} at site {e.Site}");
+};
+
+demo.Source1GameEvents.BombDefused += e => 
+{
+    Console.WriteLine($"Bomb defused by {e.Player?.PlayerName}");
+};
+
+var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
+await reader.ReadAllAsync();
+```
+
+### Parallel Processing for Maximum Performance
+
+For maximum performance, parse demos in parallel using multiple CPU cores:
+
+```c#
+var demo = new CsDemoParser();
+// Set up your event handlers...
+
+var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
+await reader.ReadAllParallelAsync();  // Uses all available CPU cores
+```
+
+### HTTP Broadcast Support
+
+DemoFile.Net can parse live HTTP broadcasts:
+
+```c#
+var demo = new CsDemoParser();
+// Set up your event handlers...
+
+var reader = HttpBroadcastReader.Create(demo, "http://localhost:8080/broadcast");
+await reader.ReadAllAsync();
+```
+
+See the [examples/](https://github.com/saul/demofile-net/tree/main/examples) folder for more complete examples:
+
+- [Basic](./examples/DemoFile.Example.Basic/Program.cs) - Simple demo parsing
+- [MultiThreaded](./examples/DemoFile.Example.MultiThreaded/Program.cs) - Parallel processing for maximum performance
+- [PlayerPositions](./examples/DemoFile.Example.PlayerPositions/Program.cs) - Tracking player positions and movements
+- [HttpBroadcast](./examples/DemoFile.Example.HttpBroadcast/Program.cs) - Parsing live HTTP broadcasts
 
 ## Benchmarks
 
