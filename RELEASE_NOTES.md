@@ -1,3 +1,7 @@
+### 0.30.2 (2025-07-29)
+
+- Temporary workaround to read latest CS2 demos after 2025-07-28 update
+
 ### 0.30.1 (2025-06-01)
 
 - Update to latest Deadlock schema (v10423.dem)

@@ -39,6 +39,27 @@ public static class FallbackDecoder
             return true;
         }
 
+        // Fallback pointer
+        if (fieldType.IsPointer)
+        {
+            decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var isSet = buffer.ReadOneBit();
+                    if (isSet)
+                    {
+                        throw new NotImplementedException($"Cannot decode pointer field ({fieldType} {fieldName}) set to a non-null value");
+                    }
+                }
+                else
+                {
+                    throw new NotImplementedException($"Cannot decode inner field for fallback pointer ({fieldType} {fieldName})");
+                }
+            };
+            return true;
+        }
+
         if (fieldType.Name is "CNetworkUtlVectorBase" or "CUtlVectorEmbeddedNetworkVar" or "CUtlVector")
         {
             if (!TryCreate(fieldName, fieldType.GenericParameter!, encodingInfo, decoderSet, out var innerDecoder))
@@ -110,7 +131,7 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle" or "ShatterPanelMode":
+            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle" or "ShatterPanelMode" or "WeaponGameplayAnimState":
             {
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     buffer.ReadUVarInt64();
