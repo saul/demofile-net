@@ -968,7 +968,7 @@ public partial class AbilityResource
                 @this.LatchValue = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (AbilityResource @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -978,7 +978,7 @@ public partial class AbilityResource
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -1051,7 +1051,7 @@ public partial class AudioParams
                 @this.SoundEventHash = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (AudioParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -1061,7 +1061,7 @@ public partial class AudioParams
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -2591,7 +2591,7 @@ public partial class CAnimGraphNetworkedVariables
                 @this.LastTeleportTime = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CAnimGraphNetworkedVariables @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -2601,7 +2601,7 @@ public partial class CAnimGraphNetworkedVariables
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -2703,7 +2703,7 @@ public partial class CAttributeList
                 }
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CAttributeList @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -2713,7 +2713,7 @@ public partial class CAttributeList
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -2751,7 +2751,7 @@ public partial class CAttributeManager
                 @this.ProviderType = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CAttributeManager @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -2761,7 +2761,7 @@ public partial class CAttributeManager
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -27400,7 +27400,7 @@ public partial class CCitadelAbilityBeam
                 @this.BeamAimPos = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CCitadelAbilityBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -27410,7 +27410,7 @@ public partial class CCitadelAbilityBeam
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -27672,7 +27672,7 @@ public partial class CCitadelAutoScaledTime
                 @this.Time = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CCitadelAutoScaledTime @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -27682,7 +27682,7 @@ public partial class CCitadelAutoScaledTime
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -32179,7 +32179,7 @@ public partial class CCollisionProperty
                 @this.CapsuleRadius = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CCollisionProperty @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -32189,7 +32189,7 @@ public partial class CCollisionProperty
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -32514,7 +32514,7 @@ public partial class CDestructiblePartsSystemComponent
                 @this.LastHitDamageLevel = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CDestructiblePartsSystemComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -32524,7 +32524,7 @@ public partial class CDestructiblePartsSystemComponent
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -32773,7 +32773,7 @@ public partial class CEconItemAttribute
                 @this.Value = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CEconItemAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -32783,7 +32783,7 @@ public partial class CEconItemAttribute
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -35711,7 +35711,7 @@ public partial class CEnvWindShared
                 @this.InitialWindSpeed = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CEnvWindShared @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -35721,7 +35721,7 @@ public partial class CEnvWindShared
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -36428,7 +36428,7 @@ public partial class CGameRules
                 @this.GamePaused = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CGameRules @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -36438,7 +36438,7 @@ public partial class CGameRules
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -36558,7 +36558,7 @@ public partial class CGameSceneNode
                 @this.HierarchyAttachName = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CGameSceneNode @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -36568,7 +36568,7 @@ public partial class CGameSceneNode
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -36658,7 +36658,7 @@ public partial class CGlowProperty
                 @this.GlowStartTime = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CGlowProperty @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -36668,7 +36668,7 @@ public partial class CGlowProperty
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -37423,7 +37423,7 @@ public partial class CitadelStolenAbilitySlot
                 @this.IsActivelyStolen = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CitadelStolenAbilitySlot @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -37433,7 +37433,7 @@ public partial class CitadelStolenAbilitySlot
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -39194,7 +39194,7 @@ public partial class CModelState
                 @this.IdealMotionType = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CModelState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -39204,7 +39204,7 @@ public partial class CModelState
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -39281,7 +39281,7 @@ public partial class CModifierProperty
                 @this.EnabledPredictedStateMask[path[1]] = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CModifierProperty @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -39291,7 +39291,7 @@ public partial class CModifierProperty
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -39408,7 +39408,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
                 @this.Z = decoder(@this, ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CNetworkOriginCellCoordQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -39418,7 +39418,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -39472,7 +39472,7 @@ public partial class CNetworkOriginQuantizedVector
                 @this.Z = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CNetworkOriginQuantizedVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -39482,7 +39482,7 @@ public partial class CNetworkOriginQuantizedVector
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -39536,7 +39536,7 @@ public partial class CNetworkVelocityVector
                 @this.Z = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CNetworkVelocityVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -39546,7 +39546,7 @@ public partial class CNetworkVelocityVector
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -39600,7 +39600,7 @@ public partial class CNetworkViewOffsetVector
                 @this.Z = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CNetworkViewOffsetVector @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -39610,7 +39610,7 @@ public partial class CNetworkViewOffsetVector
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -40952,7 +40952,7 @@ public partial class ConsumedComponentState
                 @this.Purchased = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (ConsumedComponentState @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -40962,7 +40962,7 @@ public partial class ConsumedComponentState
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -41010,7 +41010,7 @@ public partial class CountdownTimer
                 @this.WorldGroupId = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CountdownTimer @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -41020,7 +41020,7 @@ public partial class CountdownTimer
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -42197,7 +42197,7 @@ public partial class CPlayerPawnComponent
 {
     internal static SendNodeDecoder<CPlayerPawnComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (CPlayerPawnComponent @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -42207,7 +42207,7 @@ public partial class CPlayerPawnComponent
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47178,7 +47178,7 @@ public partial class DynamicAbilityValues
                 @this.Value = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (DynamicAbilityValues @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47188,7 +47188,7 @@ public partial class DynamicAbilityValues
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47216,7 +47216,7 @@ public partial class EntityRenderAttribute
                 @this.Values = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (EntityRenderAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47226,7 +47226,7 @@ public partial class EntityRenderAttribute
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47478,7 +47478,7 @@ public partial class FogParams
                 @this.Blend = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (FogParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47488,7 +47488,7 @@ public partial class FogParams
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47507,7 +47507,7 @@ public partial class FogPlayerParams
                 @this.CtrlHandle = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (FogPlayerParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47517,7 +47517,7 @@ public partial class FogPlayerParams
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47546,7 +47546,7 @@ public partial class FullSellPriceAbilityUpgrades
                 @this.GameTimePurchased = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (FullSellPriceAbilityUpgrades @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47556,7 +47556,7 @@ public partial class FullSellPriceAbilityUpgrades
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47638,7 +47638,7 @@ public partial class ice_path_shard_model_desc
                 @this.SurfacePropStringToken = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (ice_path_shard_model_desc @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47648,7 +47648,7 @@ public partial class ice_path_shard_model_desc
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47656,7 +47656,7 @@ public partial class IEconItemInterface
 {
     internal static SendNodeDecoder<IEconItemInterface> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (IEconItemInterface @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47666,7 +47666,7 @@ public partial class IEconItemInterface
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47675,7 +47675,7 @@ public partial class InfoForResourceTypeCModel
 {
     internal static SendNodeDecoder<InfoForResourceTypeCModel> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (InfoForResourceTypeCModel @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47685,7 +47685,7 @@ public partial class InfoForResourceTypeCModel
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47694,7 +47694,7 @@ public partial class InfoForResourceTypeCNmGraphDefinition
 {
     internal static SendNodeDecoder<InfoForResourceTypeCNmGraphDefinition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (InfoForResourceTypeCNmGraphDefinition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47704,7 +47704,7 @@ public partial class InfoForResourceTypeCNmGraphDefinition
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47713,7 +47713,7 @@ public partial class InfoForResourceTypeCPostProcessingResource
 {
     internal static SendNodeDecoder<InfoForResourceTypeCPostProcessingResource> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (InfoForResourceTypeCPostProcessingResource @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47723,7 +47723,7 @@ public partial class InfoForResourceTypeCPostProcessingResource
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47732,7 +47732,7 @@ public partial class InfoForResourceTypeCTextureBase
 {
     internal static SendNodeDecoder<InfoForResourceTypeCTextureBase> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (InfoForResourceTypeCTextureBase @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47742,7 +47742,7 @@ public partial class InfoForResourceTypeCTextureBase
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47751,7 +47751,7 @@ public partial class InfoForResourceTypeIMaterial2
 {
     internal static SendNodeDecoder<InfoForResourceTypeIMaterial2> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (InfoForResourceTypeIMaterial2 @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47761,7 +47761,7 @@ public partial class InfoForResourceTypeIMaterial2
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47770,7 +47770,7 @@ public partial class InfoForResourceTypeIParticleSystemDefinition
 {
     internal static SendNodeDecoder<InfoForResourceTypeIParticleSystemDefinition> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (InfoForResourceTypeIParticleSystemDefinition @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47780,7 +47780,7 @@ public partial class InfoForResourceTypeIParticleSystemDefinition
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47788,7 +47788,7 @@ public partial class ISkeletonAnimationController
 {
     internal static SendNodeDecoder<ISkeletonAnimationController> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (ISkeletonAnimationController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47798,7 +47798,7 @@ public partial class ISkeletonAnimationController
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47838,7 +47838,7 @@ public partial class ItemImbuementPair
                 @this.TargetAbilityID = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (ItemImbuementPair @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47848,7 +47848,7 @@ public partial class ItemImbuementPair
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47926,7 +47926,7 @@ public partial class LockonTarget
                 @this.TargetHandle = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (LockonTarget @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47936,7 +47936,7 @@ public partial class LockonTarget
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -47983,7 +47983,7 @@ public partial class PhysicsRagdollPose
                 @this.OwnerHandle = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (PhysicsRagdollPose @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -47993,7 +47993,7 @@ public partial class PhysicsRagdollPose
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -48573,7 +48573,7 @@ public partial class PlayerDataGlobal
                 }
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (PlayerDataGlobal @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -48583,7 +48583,7 @@ public partial class PlayerDataGlobal
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -48745,7 +48745,7 @@ public partial class SharedModelDesc
                 @this.SurfacePropStringToken = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (SharedModelDesc @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -48755,7 +48755,7 @@ public partial class SharedModelDesc
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -48824,7 +48824,7 @@ public partial class Sky3DParams
                 @this.WorldGroupID = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (Sky3DParams @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -48834,7 +48834,7 @@ public partial class Sky3DParams
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -48892,7 +48892,7 @@ public partial class SoundeventPathCornerPairNetworked
                 @this.P2Pct = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (SoundeventPathCornerPairNetworked @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -48902,7 +48902,7 @@ public partial class SoundeventPathCornerPairNetworked
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -48940,7 +48940,7 @@ public partial class StatViewerModifierValues
                 @this.Value = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (StatViewerModifierValues @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -48950,7 +48950,7 @@ public partial class StatViewerModifierValues
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -49080,7 +49080,7 @@ public partial class STeamFOWEntity
                 @this.PositionY = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (STeamFOWEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -49090,7 +49090,7 @@ public partial class STeamFOWEntity
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -49118,7 +49118,7 @@ public partial class StolenAbilityPair
                 @this.StolenAbilityID = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (StolenAbilityPair @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -49128,7 +49128,7 @@ public partial class StolenAbilityPair
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -49168,7 +49168,7 @@ public partial class STrooperFOWEntity
                 @this.PositionXY = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (STrooperFOWEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -49178,7 +49178,7 @@ public partial class STrooperFOWEntity
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -49223,7 +49223,7 @@ public partial class ViewAngleServerChange
                 @this.Index = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (ViewAngleServerChange @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -49233,7 +49233,7 @@ public partial class ViewAngleServerChange
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -49321,7 +49321,7 @@ public partial class VPhysicsCollisionAttribute
                 @this.CollisionFunctionMask = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (VPhysicsCollisionAttribute @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -49331,7 +49331,7 @@ public partial class VPhysicsCollisionAttribute
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
@@ -49393,7 +49393,7 @@ public partial class WeakPoint
                 @this.BrokenBodygroupIndex = decoder(ref buffer);
             };
         }
-        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))
+        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
         {
             return (WeakPoint @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
@@ -49403,11 +49403,11 @@ public partial class WeakPoint
                 fallback(default, path, ref buffer);
             };
         }
-        throw new NotSupportedException($"Unrecognised serializer field: {field.VarName}");
+        throw new NotSupportedException($"Unrecognised serializer field: {field}");
     }
 }
 
-internal sealed class DeadlockDecoderSet : DecoderSet
+internal sealed partial class DeadlockDecoderSet : DecoderSet
 {
     internal DeadlockDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers) : base(serializers)
     {

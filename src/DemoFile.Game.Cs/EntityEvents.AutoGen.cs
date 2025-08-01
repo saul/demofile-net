@@ -14,7 +14,6 @@ public struct EntityEvents
     public EntityEvents<CBaseCSGrenadeProjectile, CsDemoParser> CBaseCSGrenadeProjectile;
     public EntityEvents<CBaseDoor, CsDemoParser> CBaseDoor;
     public EntityEvents<CBaseEntity, CsDemoParser> CBaseEntity;
-    public EntityEvents<CBaseFire, CsDemoParser> CBaseFire;
     public EntityEvents<CBaseFlex, CsDemoParser> CBaseFlex;
     public EntityEvents<CBaseGrenade, CsDemoParser> CBaseGrenade;
     public EntityEvents<CBaseModelEntity, CsDemoParser> CBaseModelEntity;
@@ -28,12 +27,8 @@ public struct EntityEvents
     public EntityEvents<CBaseViewModel, CsDemoParser> CBaseViewModel;
     public EntityEvents<CBeam, CsDemoParser> CBeam;
     public EntityEvents<CBombTarget, CsDemoParser> CBombTarget;
-    public EntityEvents<CBreachCharge, CsDemoParser> CBreachCharge;
-    public EntityEvents<CBreachChargeProjectile, CsDemoParser> CBreachChargeProjectile;
     public EntityEvents<CBreakable, CsDemoParser> CBreakable;
     public EntityEvents<CBreakableProp, CsDemoParser> CBreakableProp;
-    public EntityEvents<CBumpMine, CsDemoParser> CBumpMine;
-    public EntityEvents<CBumpMineProjectile, CsDemoParser> CBumpMineProjectile;
     public EntityEvents<CC4, CsDemoParser> CC4;
     public EntityEvents<CChicken, CsDemoParser> CChicken;
     public EntityEvents<CCitadelSoundOpvarSetOBB, CsDemoParser> CCitadelSoundOpvarSetOBB;
@@ -53,6 +48,7 @@ public struct EntityEvents
     public EntityEvents<CCSGOViewModel, CsDemoParser> CCSGOViewModel;
     public EntityEvents<CCSMinimapBoundary, CsDemoParser> CCSMinimapBoundary;
     public EntityEvents<CCSObserverPawn, CsDemoParser> CCSObserverPawn;
+    public EntityEvents<CCSPetPlacement, CsDemoParser> CCSPetPlacement;
     public EntityEvents<CCSPlayerController, CsDemoParser> CCSPlayerController;
     public EntityEvents<CCSPlayerPawn, CsDemoParser> CCSPlayerPawn;
     public EntityEvents<CCSPlayerPawnBase, CsDemoParser> CCSPlayerPawnBase;
@@ -79,15 +75,14 @@ public struct EntityEvents
     public EntityEvents<CEnvLightProbeVolume, CsDemoParser> CEnvLightProbeVolume;
     public EntityEvents<CEnvParticleGlow, CsDemoParser> CEnvParticleGlow;
     public EntityEvents<CEnvProjectedTexture, CsDemoParser> CEnvProjectedTexture;
-    public EntityEvents<CEnvScreenOverlay, CsDemoParser> CEnvScreenOverlay;
     public EntityEvents<CEnvSky, CsDemoParser> CEnvSky;
     public EntityEvents<CEnvVolumetricFogController, CsDemoParser> CEnvVolumetricFogController;
     public EntityEvents<CEnvVolumetricFogVolume, CsDemoParser> CEnvVolumetricFogVolume;
     public EntityEvents<CEnvWind, CsDemoParser> CEnvWind;
+    public EntityEvents<CEnvWindController, CsDemoParser> CEnvWindController;
+    public EntityEvents<CEnvWindVolume, CsDemoParser> CEnvWindVolume;
     public EntityEvents<CFireCrackerBlast, CsDemoParser> CFireCrackerBlast;
-    public EntityEvents<CFireSmoke, CsDemoParser> CFireSmoke;
     public EntityEvents<CFish, CsDemoParser> CFish;
-    public EntityEvents<CFists, CsDemoParser> CFists;
     public EntityEvents<CFlashbang, CsDemoParser> CFlashbang;
     public EntityEvents<CFlashbangProjectile, CsDemoParser> CFlashbangProjectile;
     public EntityEvents<CFogController, CsDemoParser> CFogController;
@@ -114,6 +109,7 @@ public struct EntityEvents
     public EntityEvents<CHostageRescueZoneShim, CsDemoParser> CHostageRescueZoneShim;
     public EntityEvents<CIncendiaryGrenade, CsDemoParser> CIncendiaryGrenade;
     public EntityEvents<CInferno, CsDemoParser> CInferno;
+    public EntityEvents<CInfoFan, CsDemoParser> CInfoFan;
     public EntityEvents<CInfoInstructorHintHostageRescueZone, CsDemoParser> CInfoInstructorHintHostageRescueZone;
     public EntityEvents<CInfoLadderDismount, CsDemoParser> CInfoLadderDismount;
     public EntityEvents<CInfoOffscreenPanoramaTexture, CsDemoParser> CInfoOffscreenPanoramaTexture;
@@ -126,11 +122,9 @@ public struct EntityEvents
     public EntityEvents<CLightDirectionalEntity, CsDemoParser> CLightDirectionalEntity;
     public EntityEvents<CLightEntity, CsDemoParser> CLightEntity;
     public EntityEvents<CLightEnvironmentEntity, CsDemoParser> CLightEnvironmentEntity;
-    public EntityEvents<CLightGlow, CsDemoParser> CLightGlow;
     public EntityEvents<CLightOrthoEntity, CsDemoParser> CLightOrthoEntity;
     public EntityEvents<CLightSpotEntity, CsDemoParser> CLightSpotEntity;
     public EntityEvents<CMapVetoPickController, CsDemoParser> CMapVetoPickController;
-    public EntityEvents<CMelee, CsDemoParser> CMelee;
     public EntityEvents<CModelPointEntity, CsDemoParser> CModelPointEntity;
     public EntityEvents<CMolotovGrenade, CsDemoParser> CMolotovGrenade;
     public EntityEvents<CMolotovProjectile, CsDemoParser> CMolotovProjectile;
@@ -152,6 +146,7 @@ public struct EntityEvents
     public EntityEvents<CPointClientUIWorldTextPanel, CsDemoParser> CPointClientUIWorldTextPanel;
     public EntityEvents<CPointCommentaryNode, CsDemoParser> CPointCommentaryNode;
     public EntityEvents<CPointEntity, CsDemoParser> CPointEntity;
+    public EntityEvents<CPointOrient, CsDemoParser> CPointOrient;
     public EntityEvents<CPointValueRemapper, CsDemoParser> CPointValueRemapper;
     public EntityEvents<CPointWorldText, CsDemoParser> CPointWorldText;
     public EntityEvents<CPostProcessingVolume, CsDemoParser> CPostProcessingVolume;
@@ -165,8 +160,6 @@ public struct EntityEvents
     public EntityEvents<CRectLight, CsDemoParser> CRectLight;
     public EntityEvents<CRopeKeyframe, CsDemoParser> CRopeKeyframe;
     public EntityEvents<CSceneEntity, CsDemoParser> CSceneEntity;
-    public EntityEvents<CSensorGrenade, CsDemoParser> CSensorGrenade;
-    public EntityEvents<CSensorGrenadeProjectile, CsDemoParser> CSensorGrenadeProjectile;
     public EntityEvents<CShatterGlassShardPhysics, CsDemoParser> CShatterGlassShardPhysics;
     public EntityEvents<CSkyCamera, CsDemoParser> CSkyCamera;
     public EntityEvents<CSmokeGrenade, CsDemoParser> CSmokeGrenade;
@@ -189,17 +182,13 @@ public struct EntityEvents
     public EntityEvents<CSpotlightEnd, CsDemoParser> CSpotlightEnd;
     public EntityEvents<CSprite, CsDemoParser> CSprite;
     public EntityEvents<CSpriteOriented, CsDemoParser> CSpriteOriented;
-    public EntityEvents<CSun, CsDemoParser> CSun;
-    public EntityEvents<CTablet, CsDemoParser> CTablet;
     public EntityEvents<CTeam, CsDemoParser> CTeam;
     public EntityEvents<CTextureBasedAnimatable, CsDemoParser> CTextureBasedAnimatable;
     public EntityEvents<CTonemapController2, CsDemoParser> CTonemapController2;
     public EntityEvents<CTriggerBuoyancy, CsDemoParser> CTriggerBuoyancy;
+    public EntityEvents<CTriggerFan, CsDemoParser> CTriggerFan;
     public EntityEvents<CTriggerPhysics, CsDemoParser> CTriggerPhysics;
-    public EntityEvents<CTriggerTripWire, CsDemoParser> CTriggerTripWire;
     public EntityEvents<CTriggerVolume, CsDemoParser> CTriggerVolume;
-    public EntityEvents<CTripWireFire, CsDemoParser> CTripWireFire;
-    public EntityEvents<CTripWireFireProjectile, CsDemoParser> CTripWireFireProjectile;
     public EntityEvents<CVoteController, CsDemoParser> CVoteController;
     public EntityEvents<CWaterBullet, CsDemoParser> CWaterBullet;
     public EntityEvents<CWeaponAug, CsDemoParser> CWeaponAug;
@@ -230,13 +219,11 @@ public struct EntityEvents
     public EntityEvents<CWeaponSawedoff, CsDemoParser> CWeaponSawedoff;
     public EntityEvents<CWeaponSCAR20, CsDemoParser> CWeaponSCAR20;
     public EntityEvents<CWeaponSG556, CsDemoParser> CWeaponSG556;
-    public EntityEvents<CWeaponShield, CsDemoParser> CWeaponShield;
     public EntityEvents<CWeaponSSG08, CsDemoParser> CWeaponSSG08;
     public EntityEvents<CWeaponTaser, CsDemoParser> CWeaponTaser;
     public EntityEvents<CWeaponTec9, CsDemoParser> CWeaponTec9;
     public EntityEvents<CWeaponUMP45, CsDemoParser> CWeaponUMP45;
     public EntityEvents<CWeaponUSPSilencer, CsDemoParser> CWeaponUSPSilencer;
     public EntityEvents<CWeaponXM1014, CsDemoParser> CWeaponXM1014;
-    public EntityEvents<CWeaponZoneRepulsor, CsDemoParser> CWeaponZoneRepulsor;
     public EntityEvents<CWorld, CsDemoParser> CWorld;
 }

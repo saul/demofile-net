@@ -2,38 +2,6 @@
   "enums": {
   },
   "classes": {
-    "CEntityComponent": {
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CScriptComponent": {
-      "parent": "CEntityComponent",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CEntityIdentity": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_nameStringableIndex",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "entityIdentityNameChanged"
-            }
-          ]
-        }
-      ]
-    },
     "CEntityInstance": {
       "metadata": [
       ],
@@ -66,8 +34,37 @@
             }
           },
           "metadata": [
+          ]
+        }
+      ]
+    },
+    "CEntityComponent": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CScriptComponent": {
+      "parent": "CEntityComponent",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
+    "CEntityIdentity": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_nameStringableIndex",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
             {
-              "name": "MNetworkDisable"
+              "name": "MNetworkChangeCallback",
+              "value": "entityIdentityNameChanged"
             }
           ]
         }

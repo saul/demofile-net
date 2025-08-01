@@ -8,8 +8,9 @@
     <RootNamespace>DemoFile</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
-    <!-- Missing XML comment for publicly visible type or member -->
-    <WarningsNotAsErrors>$(WarningsNotAsErrors);CS1591</WarningsNotAsErrors>
+    <!-- CS1591: Missing XML comment for publicly visible type or member -->
+    <!-- CS1591: CS0618 : 'x' is obsolete -->
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);CS1591;CS0618</WarningsNotAsErrors>
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
