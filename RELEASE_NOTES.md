@@ -1,3 +1,7 @@
+### 0.31.1 (2025-08-01)
+
+- Update to latest CS2 schema after 2025-07-28 update
+
 ### 0.30.2 (2025-07-29)
 
 - Temporary workaround to read latest CS2 demos after 2025-07-28 update

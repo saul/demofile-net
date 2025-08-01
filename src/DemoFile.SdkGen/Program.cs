@@ -173,7 +173,19 @@ internal static class Program
         }
 
         var visitedClassNames = new HashSet<string>();
+        foreach (var hardcodedEntity in gameSdkInfo.HardcodedClasses)
+        {
+            visitedClassNames.Add(hardcodedEntity);
+        }
+
         var visitedEntityClasses = new HashSet<string>();
+
+        foreach (var hardcodedEntity in gameSdkInfo.HardcodedEntities)
+        {
+            visitedClassNames.Add(hardcodedEntity);
+            visitedEntityClasses.Add(hardcodedEntity);
+        }
+
         foreach (var (className, schemaClass) in allClasses)
         {
             if (!visited.Contains(className))
@@ -294,7 +306,7 @@ internal static class Program
         SortedDictionary<string, SchemaClass> classMap)
     {
         builder.AppendLine();
-        builder.AppendLine($"internal sealed class {gameSdkInfo.GameName}DecoderSet : DecoderSet");
+        builder.AppendLine($"internal sealed partial class {gameSdkInfo.GameName}DecoderSet : DecoderSet");
         builder.AppendLine("{");
         builder.AppendLine($"    internal {gameSdkInfo.GameName}DecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers) : base(serializers)");
         builder.AppendLine("    {");
@@ -757,7 +769,7 @@ internal static class Program
 
         if (parentType == null)
         {
-            builder.AppendLine($"        if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var fallback))");
+            builder.AppendLine($"        if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))");
             builder.AppendLine($"        {{");
             builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
             builder.AppendLine($"            {{");
@@ -767,7 +779,7 @@ internal static class Program
             builder.AppendLine($"                fallback(default, path, ref buffer);");
             builder.AppendLine($"            }};");
             builder.AppendLine($"        }}");
-            builder.AppendLine($"        throw new NotSupportedException($\"Unrecognised serializer field: {{field.VarName}}\");");
+            builder.AppendLine($"        throw new NotSupportedException($\"Unrecognised serializer field: {{field}}\");");
         }
         else
         {

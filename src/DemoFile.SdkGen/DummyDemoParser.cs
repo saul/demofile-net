@@ -27,6 +27,14 @@ public class DummyDecoderSet : DecoderSet
         throw new NotImplementedException();
     }
 
+    public override bool TryCreateFallbackDecoder(
+        SerializableField field,
+        DecoderSet decoderSet,
+        [NotNullWhen(true)] out SendNodeDecoder<FallbackDecoder.Unit>? decoder)
+    {
+        throw new NotImplementedException();
+    }
+
     protected override SendNodeDecoderFactory<T> GetFactory<T>()
     {
         throw new NotImplementedException();

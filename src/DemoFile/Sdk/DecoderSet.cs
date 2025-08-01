@@ -17,6 +17,11 @@ public abstract class DecoderSet
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor), NotNullWhen(true)] out Type? classType,
         [NotNullWhen(true)] out SendNodeDecoder<object>? decoder);
 
+    public abstract bool TryCreateFallbackDecoder(
+        SerializableField field,
+        DecoderSet decoderSet,
+        [NotNullWhen(true)] out SendNodeDecoder<FallbackDecoder.Unit>? decoder);
+
     protected abstract SendNodeDecoderFactory<T> GetFactory<T>();
 
     public SendNodeDecoder<object> GetDecoder(string className)
