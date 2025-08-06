@@ -20,7 +20,7 @@ public abstract class DecoderSet
     public abstract bool TryCreateFallbackDecoder(
         SerializableField field,
         DecoderSet decoderSet,
-        [NotNullWhen(true)] out SendNodeDecoder<FallbackDecoder.Unit>? decoder);
+        [NotNullWhen(true)] out SendNodeDecoder<object>? decoder);
 
     protected abstract SendNodeDecoderFactory<T> GetFactory<T>();
 

@@ -975,7 +975,7 @@ public partial class AbilityResource
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -1058,7 +1058,7 @@ public partial class AudioParams
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -2598,7 +2598,7 @@ public partial class CAnimGraphNetworkedVariables
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -2710,7 +2710,7 @@ public partial class CAttributeList
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -2758,7 +2758,7 @@ public partial class CAttributeManager
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -27407,7 +27407,7 @@ public partial class CCitadelAbilityBeam
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -27679,7 +27679,7 @@ public partial class CCitadelAutoScaledTime
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -32186,7 +32186,7 @@ public partial class CCollisionProperty
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -32521,7 +32521,7 @@ public partial class CDestructiblePartsSystemComponent
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -32780,7 +32780,7 @@ public partial class CEconItemAttribute
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -35718,7 +35718,7 @@ public partial class CEnvWindShared
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -36435,7 +36435,7 @@ public partial class CGameRules
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -36565,7 +36565,7 @@ public partial class CGameSceneNode
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -36665,7 +36665,7 @@ public partial class CGlowProperty
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -37430,7 +37430,7 @@ public partial class CitadelStolenAbilitySlot
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -39201,7 +39201,7 @@ public partial class CModelState
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -39288,7 +39288,7 @@ public partial class CModifierProperty
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -39415,7 +39415,7 @@ public partial class CNetworkOriginCellCoordQuantizedVector
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -39479,7 +39479,7 @@ public partial class CNetworkOriginQuantizedVector
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -39543,7 +39543,7 @@ public partial class CNetworkVelocityVector
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -39607,7 +39607,7 @@ public partial class CNetworkViewOffsetVector
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -40959,7 +40959,7 @@ public partial class ConsumedComponentState
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -41017,7 +41017,7 @@ public partial class CountdownTimer
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -42204,7 +42204,7 @@ public partial class CPlayerPawnComponent
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47185,7 +47185,7 @@ public partial class DynamicAbilityValues
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47223,7 +47223,7 @@ public partial class EntityRenderAttribute
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47485,7 +47485,7 @@ public partial class FogParams
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47514,7 +47514,7 @@ public partial class FogPlayerParams
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47553,7 +47553,7 @@ public partial class FullSellPriceAbilityUpgrades
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47645,7 +47645,7 @@ public partial class ice_path_shard_model_desc
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47663,7 +47663,7 @@ public partial class IEconItemInterface
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47682,7 +47682,7 @@ public partial class InfoForResourceTypeCModel
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47701,7 +47701,7 @@ public partial class InfoForResourceTypeCNmGraphDefinition
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47720,7 +47720,7 @@ public partial class InfoForResourceTypeCPostProcessingResource
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47739,7 +47739,7 @@ public partial class InfoForResourceTypeCTextureBase
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47758,7 +47758,7 @@ public partial class InfoForResourceTypeIMaterial2
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47777,7 +47777,7 @@ public partial class InfoForResourceTypeIParticleSystemDefinition
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47795,7 +47795,7 @@ public partial class ISkeletonAnimationController
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47845,7 +47845,7 @@ public partial class ItemImbuementPair
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47933,7 +47933,7 @@ public partial class LockonTarget
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -47990,7 +47990,7 @@ public partial class PhysicsRagdollPose
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -48580,7 +48580,7 @@ public partial class PlayerDataGlobal
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -48752,7 +48752,7 @@ public partial class SharedModelDesc
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -48831,7 +48831,7 @@ public partial class Sky3DParams
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -48899,7 +48899,7 @@ public partial class SoundeventPathCornerPairNetworked
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -48947,7 +48947,7 @@ public partial class StatViewerModifierValues
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -49087,7 +49087,7 @@ public partial class STeamFOWEntity
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -49125,7 +49125,7 @@ public partial class StolenAbilityPair
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -49175,7 +49175,7 @@ public partial class STrooperFOWEntity
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -49230,7 +49230,7 @@ public partial class ViewAngleServerChange
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -49328,7 +49328,7 @@ public partial class VPhysicsCollisionAttribute
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -49400,7 +49400,7 @@ public partial class WeakPoint
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");

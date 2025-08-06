@@ -30,7 +30,7 @@ public class DummyDecoderSet : DecoderSet
     public override bool TryCreateFallbackDecoder(
         SerializableField field,
         DecoderSet decoderSet,
-        [NotNullWhen(true)] out SendNodeDecoder<FallbackDecoder.Unit>? decoder)
+        [NotNullWhen(true)] out SendNodeDecoder<object>? decoder)
     {
         throw new NotImplementedException();
     }

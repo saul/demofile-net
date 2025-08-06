@@ -1,3 +1,7 @@
+### 0.31.2 (2025-08-06)
+
+- Add compatibility shims for `CCSWeaponBase.State` and `CCSWeaponBase.PlayerAnimState` fields for pre 2025-07-28 demos
+
 ### 0.31.1 (2025-08-01)
 
 - Update to latest CS2 schema after 2025-07-28 update

@@ -14,7 +14,7 @@ public partial class CEntityComponent
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -71,7 +71,7 @@ public partial class CEntityIdentity
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");
@@ -133,7 +133,7 @@ public partial class CEntityInstance<TGameParser>
 #if DEBUG
                 var _field = field;
 #endif
-                fallback(default, path, ref buffer);
+                fallback(@this, path, ref buffer);
             };
         }
         throw new NotSupportedException($"Unrecognised serializer field: {field}");

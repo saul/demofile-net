@@ -776,7 +776,7 @@ internal static class Program
             builder.AppendLine($"#if DEBUG");
             builder.AppendLine($"                var _field = field;");
             builder.AppendLine($"#endif");
-            builder.AppendLine($"                fallback(default, path, ref buffer);");
+            builder.AppendLine($"                fallback(@this, path, ref buffer);");
             builder.AppendLine($"            }};");
             builder.AppendLine($"        }}");
             builder.AppendLine($"        throw new NotSupportedException($\"Unrecognised serializer field: {{field}}\");");
