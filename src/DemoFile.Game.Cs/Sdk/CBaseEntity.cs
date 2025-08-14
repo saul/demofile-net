@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace DemoFile.Game.Cs;
 
 public partial class CBaseEntity
@@ -20,4 +22,20 @@ public partial class CBaseEntity
     public QAngle Rotation => CBodyComponent is CBodyComponentSkeletonInstance body
         ? body.SkeletonInstance.Rotation
         : default;
+
+    /// <summary>
+    /// Checks whether this entity has a model matching <paramref name="modelPath" />.
+    /// </summary>
+    /// <param name="modelPath">Path to the model, e.g. <c>weapons/models/defuser/defuser.vmdl</c></param>
+    /// <returns><c>true</c> if this entity has the given model.</returns>
+    public bool HasModel(string modelPath)
+    {
+        if (CBodyComponent is not CBodyComponentSkeletonInstance body)
+            return false;
+
+        Span<byte> bytes = stackalloc byte[Encoding.ASCII.GetByteCount(modelPath)];
+        var len = Encoding.ASCII.GetBytes(modelPath, bytes);
+        var expectedHash = MurmurHash.MurmurHash64(bytes[..len], MurmurHash.ResourceIdSeed);
+        return body.SkeletonInstance.ModelState.Model.Value == expectedHash;
+    }
 }

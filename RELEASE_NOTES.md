@@ -1,3 +1,7 @@
+### 0.32.1 (2025-08-14)
+
+- Add `CBaseEntity.HasModel(..)` to check if an entity has a specific model
+
 ### 0.31.2 (2025-08-06)
 
 - Add compatibility shims for `CCSWeaponBase.State` and `CCSWeaponBase.PlayerAnimState` fields for pre 2025-07-28 demos
