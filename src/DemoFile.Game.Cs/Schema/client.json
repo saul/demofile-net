@@ -2641,6 +2641,24 @@
           ]
         },
         {
+          "name": "m_nDecalMode",
+          "type": {
+            "name": "DecalMode_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nRequiredDecalMode",
+          "type": {
+            "name": "DecalMode_t",
+            "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_ConfigEntitiesToPropagateMaterialDecalsTo",
           "type": {
             "name": "C_NetworkUtlVectorBase< CHandle< C_BaseModelEntity > >",
