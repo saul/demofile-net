@@ -1,3 +1,7 @@
+### 0.33.1 (2025-08-18)
+
+- Update to latest CS2 schema (v14095) - thanks @BoneTM
+
 ### 0.32.1 (2025-08-14)
 
 - Add `CBaseEntity.HasModel(..)` to check if an entity has a specific model
