@@ -36,7 +36,7 @@ jobs:
       - name: Run DumpSource2
         run: |
           echo "Running DumpSource2..."
-          pushd ./cs2/game/bin
+          pushd ./cs2/game/bin/linuxsteamrt64
           LD_LIBRARY_PATH="$(pwd):$LD_LIBRARY_PATH" LOGLEVEL=debug ../../../DumpSource2-CS2 ../../../src/DemoFile.Game.Cs/Schema
           popd
 
