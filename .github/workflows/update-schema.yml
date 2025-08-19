@@ -38,7 +38,7 @@ jobs:
           echo "Running DumpSource2..."
           REPO_ROOT=$(pwd)
           pushd ./cs2/game/bin/linuxsteamrt64
-          LD_LIBRARY_PATH="$(pwd):$LD_LIBRARY_PATH" LOGLEVEL=debug $(REPO_ROOT)/DumpSource2-CS2 $(REPO_ROOT)/src/DemoFile.Game.Cs/Schema
+          LD_LIBRARY_PATH="$(pwd):$LD_LIBRARY_PATH" LOGLEVEL=debug "${REPO_ROOT}/DumpSource2-CS2" "${REPO_ROOT}/src/DemoFile.Game.Cs/Schema"
           popd
 
       - name: Check for changes
