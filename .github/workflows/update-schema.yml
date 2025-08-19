@@ -1,0 +1,68 @@
+name: Update game schemas
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-schema:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Download latest DepotDownloader app
+        run: |
+          echo "Downloading DepotDownloader..."
+          curl -L -o DepotDownloader-linux-x64.zip "https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip"
+          
+          echo "Extracting DepotDownloader..."
+          unzip -q DepotDownloader-linux-x64.zip
+
+      - name: Download CS2 binaries
+        run: |
+          echo 'regex:.*\.so.*' >filelist.txt
+          ./DepotDownloader -app 730 -filelist filelist.txt -dir ./cs2 -os linux
+
+      - name: Download latest DumpSource2
+        run: |
+          echo "Downloading DumpSource2..."
+          curl -L -o DumpSource2-CS2 "https://github.com/saul/DumpSource2/releases/latest/download/DumpSource2-CS2"
+          chmod +x DumpSource2-CS2
+
+      - name: Run DumpSource2
+        run: |
+          echo "Running DumpSource2..."
+          pushd ./cs2/game/bin
+          ../../../DumpSource2-CS2 ../../../src/DemoFile.Game.Cs/Schema
+          popd
+          
+          echo "DumpSource2 completed"
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes detected"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changed files:"
+            git diff --staged --name-only
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git commit -m "Update schema files with DumpSource2"
+          git push origin ${{ github.ref_name }}
+          
+          echo "Changes committed and pushed successfully"
