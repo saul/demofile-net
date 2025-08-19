@@ -20,12 +20,12 @@ jobs:
           curl -L -o DepotDownloader-linux-x64.zip "https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip"
           
           echo "Extracting DepotDownloader..."
-          unzip -q DepotDownloader-linux-x64.zip
+          unzip -q DepotDownloader-linux-x64.zip -d depot_downloader/
 
       - name: Download CS2 binaries
         run: |
           echo 'regex:.*\.so.*' >filelist.txt
-          ./DepotDownloader -app 730 -filelist filelist.txt -dir ./cs2 -os linux
+          ./depot_downloader/DepotDownloader -app 730 -filelist filelist.txt -dir ./cs2 -os linux
 
       - name: Download latest DumpSource2
         run: |
@@ -39,8 +39,6 @@ jobs:
           pushd ./cs2/game/bin
           ../../../DumpSource2-CS2 ../../../src/DemoFile.Game.Cs/Schema
           popd
-          
-          echo "DumpSource2 completed"
 
       - name: Check for changes
         id: check_changes
