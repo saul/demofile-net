@@ -18,7 +18,7 @@ public partial class CBaseEntity
         : default;
 
     /// The rotation of this entity.
-    /// Note for players, use <see cref="CCSPlayerPawnBase.EyeAngles"/> for exact viewing angle.
+    /// Note for players, use <see cref="CCSPlayerPawn.EyeAngles"/> for exact viewing angle.
     public QAngle Rotation => CBodyComponent is CBodyComponentSkeletonInstance body
         ? body.SkeletonInstance.Rotation
         : default;
