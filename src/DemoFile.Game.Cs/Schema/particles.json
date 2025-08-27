@@ -49,48 +49,46 @@
     }
   },
   "classes": {
+    "CPulseCell_WaitForCursorsWithTag": {
+      "parent": "CPulseCell_WaitForCursorsWithTagBase",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Wait For Cursors With Tag"
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting."
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/cursor_tag.png"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CPulseCell_Base": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_BaseFlow": {
-      "parent": "CPulseCell_Base",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulse_OutflowConnection": {
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_BaseYieldingInflow": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CBasePulseGraphInstance": {
-      "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo"
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -103,10 +101,127 @@
       "fields": [
       ]
     },
+    "CPulseCell_PickBestOutflowSelector": {
+      "parent": "CPulseCell_BaseFlow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Select Best Exit"
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Evaluate the requirements of each connected node"
+        },
+        {
+          "name": "MPulseCell_WithNoDefaultOutflow"
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/requirements.png"
+        },
+        {
+          "name": "MPulseEditorCanvasItemSpecKV3",
+          "value": "{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"
+        },
+        {
+          "name": "MPulseSelectorHasSpecificity"
+        },
+        {
+          "name": "MPulseSelectorAllowRequirementCriteria",
+          "value": "CPulseCell_IsRequirementValid"
+        },
+        {
+          "name": "MPulseSelectorAllowRequirementCriteria",
+          "value": "CPulseCell_LimitCount"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CParticleBindingRealPulse": {
+      "parent": "CParticleCollectionBindingInstance",
+      "metadata": [
+        {
+          "name": "MPulseInstanceDomainInfo",
+          "value": null
+        },
+        {
+          "name": "MPulseDomainHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPulseDomainScopeInfo",
+          "value": null
+        },
+        {
+          "name": "MPulseLibraryBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseDomainHiddenInTool"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CPulseCell_WaitForObservable": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/observable_variable_listener.png"
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Wait For Observable Condition"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CPulse_OutflowConnection": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CPulseGraphDef": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -116,16 +231,20 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -137,7 +256,8 @@
     "CPulseCell_Timeline::TimelineEvent_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -146,7 +266,8 @@
     "CPulseCell_IntervalTimer::CursorState_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -156,7 +277,8 @@
       "parent": "CPulseCell_Base",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -166,10 +288,12 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MPulseEditorHeaderIcon"
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/inflow_statecell.png"
         },
         {
           "name": "MPulseCell_WithNoDefaultOutflow"
@@ -181,7 +305,8 @@
     "OutflowWithRequirements_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -191,16 +316,20 @@
       "parent": "CPulseCell_BaseRequirement",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -209,11 +338,28 @@
       "fields": [
       ]
     },
-    "CPulseCell_BaseValue": {
-      "parent": "CPulseCell_Base",
+    "CPulseCell_Value_Gradient": {
+      "parent": "CPulseCell_BaseValue",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Gradient"
         }
       ],
       "fields": [
@@ -222,7 +368,8 @@
     "CPulseCursorFuncs": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseLibraryBindings",
+          "value": null
         },
         {
           "name": "MPropertyDescription",
@@ -235,45 +382,47 @@
     "PulseNodeDynamicOutflows_t::DynamicOutflow_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
       ]
     },
-    "CParticleCollectionBindingInstance": {
-      "parent": "CBasePulseGraphInstance",
+    "CBasePulseGraphInstance": {
       "metadata": [
         {
-          "name": "MPulseInstanceDomainInfo"
-        },
-        {
-          "name": "MPulseDomainHookInfo"
-        },
-        {
-          "name": "MPulseDomainScopeInfo"
-        },
-        {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseInstanceDomainInfo",
+          "value": null
         },
         {
           "name": "MPulseDomainHiddenInTool"
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag"
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag"
         }
       ],
       "fields": [
       ]
     },
-    "CPulseCell_Inflow_BaseEntrypoint": {
-      "parent": "CPulseCell_BaseFlow",
+    "CPulseCell_Inflow_GraphHook": {
+      "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -286,23 +435,12 @@
       "fields": [
       ]
     },
-    "CPulseCell_Inflow_GraphHook": {
-      "parent": "CPulseCell_Inflow_BaseEntrypoint",
+    "CPulseCell_Inflow_BaseEntrypoint": {
+      "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
-        },
-        {
-          "name": "MCellForDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings"
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo"
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -312,10 +450,12 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MPulseEditorCanvasItemSpecKV3"
+          "name": "MPulseEditorCanvasItemSpecKV3",
+          "value": "{ className = 'IsControlFlowNode' }"
         }
       ],
       "fields": [
@@ -324,15 +464,44 @@
     "CPulse_InvokeBinding": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
       ]
     },
-    "SignatureOutflow_Continue": {
-      "parent": "CPulse_OutflowConnection",
+    "CPulseCell_IntervalTimer": {
+      "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Interval Timer"
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Wait for a duration, firing a child cursor at regular (or randomized) intervals"
+        },
+        {
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/node_timer.png"
+        }
       ],
       "fields": [
       ]
@@ -340,7 +509,8 @@
     "CPulseTestScriptLib": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseLibraryBindings",
+          "value": null
         },
         {
           "name": "MPropertyDescription",
@@ -354,7 +524,8 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -364,16 +535,20 @@
       "parent": "CPulseCell_BaseValue",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPropertyFriendlyName",
@@ -387,16 +562,20 @@
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -405,10 +584,12 @@
       "fields": [
       ]
     },
-    "PulseSelectorOutflowList_t": {
+    "CPulseCell_BaseFlow": {
+      "parent": "CPulseCell_Base",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -417,7 +598,8 @@
     "CPulseCell_Outflow_CycleShuffled::InstanceState_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -426,7 +608,8 @@
     "CPulseCell_BaseLerp::CursorState_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -441,7 +624,8 @@
     "CPulseArraylib": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseLibraryBindings",
+          "value": null
         },
         {
           "name": "MPropertyDescription",
@@ -451,32 +635,9 @@
       "fields": [
       ]
     },
-    "CPulseCell_IntervalTimer": {
-      "parent": "CPulseCell_BaseYieldingInflow",
+    "SignatureOutflow_Continue": {
+      "parent": "CPulse_OutflowConnection",
       "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults"
-        },
-        {
-          "name": "MCellForDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings"
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo"
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Interval Timer"
-        },
-        {
-          "name": "MPropertyDescription",
-          "value": "Wait for a duration, firing a child cursor at regular (or randomized) intervals"
-        },
-        {
-          "name": "MPulseEditorHeaderIcon"
-        }
       ],
       "fields": [
       ]
@@ -485,16 +646,20 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -507,16 +672,20 @@
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -528,29 +697,42 @@
     "CPulseCell_Outflow_CycleOrdered::InstanceState_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
       ]
     },
-    "CParticleBindingRealPulse": {
-      "parent": "CParticleCollectionBindingInstance",
+    "CParticleCollectionBindingInstance": {
+      "parent": "CBasePulseGraphInstance",
       "metadata": [
         {
-          "name": "MPulseInstanceDomainInfo"
+          "name": "MPulseInstanceDomainInfo",
+          "value": null
         },
         {
-          "name": "MPulseDomainHookInfo"
+          "name": "MPulseDomainHookInfo",
+          "value": null
         },
         {
-          "name": "MPulseDomainScopeInfo"
+          "name": "MPulseDomainScopeInfo",
+          "value": null
         },
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseLibraryBindings",
+          "value": null
         },
         {
           "name": "MPulseDomainHiddenInTool"
+        },
+        {
+          "name": "MPulseDomainOptInFeatureTag",
+          "value": null
+        },
+        {
+          "name": "MPulseDomainOptInFeatureTag",
+          "value": null
         }
       ],
       "fields": [
@@ -560,16 +742,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -581,7 +767,8 @@
     "CPulseCell_LimitCount::InstanceState_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -591,16 +778,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -609,31 +800,12 @@
       "fields": [
       ]
     },
-    "CPulseCell_WaitForCursorsWithTag": {
-      "parent": "CPulseCell_WaitForCursorsWithTagBase",
+    "CPulseCell_BaseYieldingInflow": {
+      "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
-        },
-        {
-          "name": "MCellForDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings"
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo"
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Wait For Cursors With Tag"
-        },
-        {
-          "name": "MPropertyDescription",
-          "value": "Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting."
-        },
-        {
-          "name": "MPulseEditorHeaderIcon"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -642,7 +814,8 @@
     "PulseNodeDynamicOutflows_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -658,16 +831,20 @@
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -680,16 +857,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -698,55 +879,11 @@
       "fields": [
       ]
     },
-    "CPulseCell_PickBestOutflowSelector": {
-      "parent": "CPulseCell_BaseFlow",
+    "PulseSelectorOutflowList_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
-        },
-        {
-          "name": "MCellForDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings"
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo"
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Select Best Exit"
-        },
-        {
-          "name": "MPropertyDescription",
-          "value": "Evaluate the requirements of each connected node"
-        },
-        {
-          "name": "MPulseCell_WithNoDefaultOutflow"
-        },
-        {
-          "name": "MPulseEditorHeaderIcon"
-        },
-        {
-          "name": "MPulseEditorCanvasItemSpecKV3"
-        },
-        {
-          "name": "MPulseSelectorHasSpecificity"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseRuntimeLibModuleLocalTypeQueryRegistration": {
-      "metadata": [
-        {
-          "name": "MPulseTypeQueriesForScopeSingleton"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -756,16 +893,20 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPropertyFriendlyName",
@@ -776,10 +917,12 @@
           "value": "Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken."
         },
         {
-          "name": "MPulseEditorHeaderIcon"
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/inflow_wait.png"
         },
         {
-          "name": "MPulseEditorCanvasItemSpecKV3"
+          "name": "MPulseEditorCanvasItemSpecKV3",
+          "value": "{ className = 'IsWaitNode IsControlFlowNode' }"
         }
       ],
       "fields": [
@@ -789,16 +932,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -811,16 +958,20 @@
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -829,33 +980,47 @@
       "fields": [
       ]
     },
-    "CPulseCell_Value_Gradient": {
-      "parent": "CPulseCell_BaseValue",
+    "CPulseCell_BaseValue": {
+      "parent": "CPulseCell_Base",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
-        },
-        {
-          "name": "MCellForDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings"
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo"
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Gradient"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
       ]
     },
-    "PulseObservableBoolExpression_t": {
+    "CPulseCell_BooleanSwitchState": {
+      "parent": "CPulseCell_BaseState",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
+        },
+        {
+          "name": "MPulseCellMethodBindings",
+          "value": null
+        },
+        {
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
+        },
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Boolean Switch State"
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "While active, activate a child state based on the results of a boolean condition. Any referenced variables must be marked as observable."
+        },
+        {
+          "name": "MPulseEditorCanvasItemSpecKV3",
+          "value": "{ className = 'IsStateNode' item_factory = 'BooleanSwitchState' }"
         }
       ],
       "fields": [
@@ -865,16 +1030,20 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -886,7 +1055,8 @@
     "CPulseMathlib": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings"
+          "name": "MPulseLibraryBindings",
+          "value": null
         },
         {
           "name": "MPropertyDescription",
@@ -907,16 +1077,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -929,16 +1103,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -950,7 +1128,8 @@
     "CPulse_BlackboardReference": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -960,16 +1139,20 @@
       "parent": "CPulseCell_BaseValue",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPropertyFriendlyName",
@@ -980,7 +1163,8 @@
           "value": "Generate a random integer between min and max (inclusive)"
         },
         {
-          "name": "MPulseEditorHeaderIcon"
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/exit_cycle_random.png"
         }
       ],
       "fields": [
@@ -990,16 +1174,20 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -1011,7 +1199,8 @@
     "CPulse_CallInfo": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -1021,25 +1210,31 @@
       "parent": "CPulseCell_BaseFlow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseFunctionHiddenInTool"
         },
         {
-          "name": "MPulseSelectorAllowRequirementCriteria"
+          "name": "MPulseSelectorAllowRequirementCriteria",
+          "value": "CPulseCell_IsRequirementValid"
         },
         {
-          "name": "MPulseSelectorAllowRequirementCriteria"
+          "name": "MPulseSelectorAllowRequirementCriteria",
+          "value": "CPulseCell_LimitCount"
         }
       ],
       "fields": [
@@ -1049,16 +1244,20 @@
       "parent": "CPulseCell_BaseRequirement",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPropertyFriendlyName",
@@ -1069,10 +1268,12 @@
           "value": "Skip this node after the limit. Check Type does not apply, the limit will always be checked."
         },
         {
-          "name": "MPulseRequirementPass"
+          "name": "MPulseRequirementPass",
+          "value": null
         },
         {
-          "name": "MPulseRequirementSummaryExpr"
+          "name": "MPulseRequirementSummaryExpr",
+          "value": "\"Limit Count: \" + m_nLimitCount"
         }
       ],
       "fields": [
@@ -1082,16 +1283,20 @@
       "parent": "CPulseCell_BaseYieldingInflow",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPulseCellWithCustomDocNode"
@@ -1100,31 +1305,11 @@
       "fields": [
       ]
     },
-    "CPulseCell_BooleanSwitchState": {
-      "parent": "CPulseCell_BaseState",
+    "PulseObservableBoolExpression_t": {
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
-        },
-        {
-          "name": "MCellForDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings"
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo"
-        },
-        {
-          "name": "MPropertyFriendlyName",
-          "value": "Boolean Switch State"
-        },
-        {
-          "name": "MPropertyDescription",
-          "value": "While active, activate a child state based on the results of a boolean condition. Any referenced variables must be marked as observable."
-        },
-        {
-          "name": "MPulseEditorCanvasItemSpecKV3"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         }
       ],
       "fields": [
@@ -1140,16 +1325,20 @@
       "parent": "CPulseCell_WaitForCursorsWithTagBase",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPropertyFriendlyName",
@@ -1160,7 +1349,8 @@
           "value": "Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete."
         },
         {
-          "name": "MPulseEditorHeaderIcon"
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/cursor_wait_zone.png"
         }
       ],
       "fields": [
@@ -1170,16 +1360,20 @@
       "parent": "CPulseCell_BaseValue",
       "metadata": [
         {
-          "name": "MGetKV3ClassDefaults"
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain"
+          "name": "MCellForDomain",
+          "value": "BaseDomain"
         },
         {
-          "name": "MPulseCellMethodBindings"
+          "name": "MPulseCellMethodBindings",
+          "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo"
+          "name": "MPulseCellOutflowHookInfo",
+          "value": null
         },
         {
           "name": "MPropertyFriendlyName",
@@ -1190,7 +1384,8 @@
           "value": "Generate a random float between min and max (inclusive)"
         },
         {
-          "name": "MPulseEditorHeaderIcon"
+          "name": "MPulseEditorHeaderIcon",
+          "value": "tools/images/pulse_editor/exit_cycle_random.png"
         }
       ],
       "fields": [
