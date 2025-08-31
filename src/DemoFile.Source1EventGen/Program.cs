@@ -27,7 +27,7 @@ internal static class Program
             WriteDescriptors(gameSdkInfo, builder, events.Descriptors);
             cts.Cancel();
 
-            var outputPath = Path.Combine(outputDir, "Source1GameEvents.Autogen.cs");
+            var outputPath = Path.Combine(outputDir, "Source1GameEvents.AutoGen.cs");
             File.WriteAllText(outputPath, builder.ToString());
         };
 
