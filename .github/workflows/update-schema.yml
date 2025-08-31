@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       demo_file_curl:
-        description: "[Optional] cURL command to download a demo for SDK generation (.rar). Start at https://www.hltv.org/results?gameType=CS2"
+        description: "[Optional] DevTools generated cURL command to download a demo for SDK generation (.rar). REMOVE BACKSLASHES FIRST. Start at https://www.hltv.org/results?gameType=CS2"
         required: false
         type: string
 
@@ -28,6 +28,24 @@ jobs:
         run: |
           curl https://raw.githubusercontent.com/SteamDatabase/GameTracking-CS2/refs/heads/master/game/csgo/pak01_dir/scripts/items/items_game.txt -o items_game.txt
           dotnet run --project src/DemoFile.GameStaticGen/DemoFile.GameStaticGen.csproj -- items_game.txt ./src/DemoFile.Game.Cs/GameStatic
+
+      - name: Download demo file
+        if: ${{ github.event.inputs.demo_file_curl != '' }}
+        run: |
+          echo "Downloading demo file..."
+          ${{ github.event.inputs.demo_file_curl }} -o archive.rar
+
+          echo "Installing unrar and extracting first .dem file..."
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unrar
+
+          # Find and extract only the first .dem file
+          DEM_FILE=$(unrar lb archive.rar | grep -i '\.dem$' | head -1)
+          if [ -z "$DEM_FILE" ]; then
+            echo "Error: No .dem file found in .rar archive"
+            exit 1
+          fi
+          unrar e archive.rar "$DEM_FILE"
+          mv "$DEM_FILE" downloaded.dem
 
       - name: Download latest DepotDownloader app
         run: |
@@ -55,24 +73,6 @@ jobs:
           pushd ./cs2/game/bin/linuxsteamrt64
           LD_LIBRARY_PATH="$(pwd):$LD_LIBRARY_PATH" LOGLEVEL=debug "${REPO_ROOT}/DumpSource2-CS2" "${REPO_ROOT}/src/DemoFile.Game.Cs/Schema"
           popd
-
-      - name: Download demo file
-        if: ${{ github.event.inputs.demo_file_curl != '' }}
-        run: |
-          echo "Downloading demo file..."
-          ${{ github.event.inputs.demo_file_curl }} -o archive.rar
-          
-          echo "Installing unrar and extracting first .dem file..."
-          sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unrar
-          
-          # Find and extract only the first .dem file
-          DEM_FILE=$(unrar lb archive.rar | grep -i '\.dem$' | head -1)
-          if [ -z "$DEM_FILE" ]; then
-            echo "Error: No .dem file found in .rar archive"
-            exit 1
-          fi
-          unrar e archive.rar "$DEM_FILE"
-          mv "$DEM_FILE" downloaded.dem
 
       - name: Regenerate SDK from demo file
         if: ${{ github.event.inputs.demo_file_curl != '' }}
