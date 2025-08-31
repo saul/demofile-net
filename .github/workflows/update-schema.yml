@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       demo_file_url:
-        description: "Optional URL to a .dem file to download and use for SDK regeneration"
+        description: |
+          [Optional] URL to a demo to use for SDK regeneration (.dem or .rar)
+          See https://www.hltv.org/results?gameType=CS2
         required: false
         type: string
 
@@ -18,6 +20,31 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
+      - name: Download demo file
+        if: ${{ github.event.inputs.demo_file_url != '' }}
+        run: |
+          echo "Downloading demo file from ${{ github.event.inputs.demo_file_url }}..."
+
+          URL="${{ github.event.inputs.demo_file_url }}"
+          if [[ "$URL" == *.rar ]]; then
+            curl -L -o archive.rar "$URL"
+            echo "Installing unrar and extracting first .dem file..."
+            sudo apt-get update && sudo apt-get install -y unrar
+            # Extract only the first .dem file found
+            DEM_FILE=$(unrar lb archive.rar | grep -i '\.dem$' | head -1)
+            if [ -z "$DEM_FILE" ]; then
+              echo "Error: No .dem file found in .rar archive"
+              exit 1
+            fi
+            unrar e archive.rar "$DEM_FILE"
+            mv "$DEM_FILE" downloaded.dem
+          elif [[ "$URL" == *.dem ]]; then
+            curl -L -o downloaded.dem "$URL"
+          else
+            echo "Error: Unsupported file format. Only .rar and .dem files are supported."
+            exit 1
+          fi
 
       - name: Update items
         run: |
@@ -54,9 +81,6 @@ jobs:
       - name: Regenerate SDK from demo file
         if: ${{ github.event.inputs.demo_file_url != '' }}
         run: |
-          echo "Downloading demo file from ${{ github.event.inputs.demo_file_url }}..."
-          curl -L -o downloaded.dem "${{ github.event.inputs.demo_file_url }}"
-
           dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
           dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
 
