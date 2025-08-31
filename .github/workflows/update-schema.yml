@@ -2,6 +2,11 @@ name: Update schemas
 
 on:
   workflow_dispatch:
+    inputs:
+      demo_file_url:
+        description: "Optional URL to a .dem file to download and use for SDK regeneration"
+        required: false
+        type: string
 
 jobs:
   update-schema:
@@ -14,11 +19,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Update items
+        run: |
+          curl https://raw.githubusercontent.com/SteamDatabase/GameTracking-CS2/refs/heads/master/game/csgo/pak01_dir/scripts/items/items_game.txt -o items_game.txt
+          dotnet run --project src/DemoFile.GameStaticGen/DemoFile.GameStaticGen.csproj -- items_game.txt ./src/DemoFile.Game.Cs/GameStatic
+
       - name: Download latest DepotDownloader app
         run: |
           echo "Downloading DepotDownloader..."
           curl -L -o DepotDownloader-linux-x64.zip "https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip"
-          
+
           echo "Extracting DepotDownloader..."
           unzip -q DepotDownloader-linux-x64.zip -d depot_downloader/
 
@@ -41,6 +51,15 @@ jobs:
           LD_LIBRARY_PATH="$(pwd):$LD_LIBRARY_PATH" LOGLEVEL=debug "${REPO_ROOT}/DumpSource2-CS2" "${REPO_ROOT}/src/DemoFile.Game.Cs/Schema"
           popd
 
+      - name: Regenerate SDK from demo file
+        if: ${{ github.event.inputs.demo_file_url != '' }}
+        run: |
+          echo "Downloading demo file from ${{ github.event.inputs.demo_file_url }}..."
+          curl -L -o downloaded.dem "${{ github.event.inputs.demo_file_url }}"
+
+          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+
       - name: Check for changes
         id: check_changes
         run: |
@@ -60,8 +79,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           git commit -m "Update schema files with DumpSource2"
           git push origin ${{ github.ref_name }}
-          
+
           echo "Changes committed and pushed successfully"
