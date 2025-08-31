@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash -ex
+        shell: bash -ex {0}
 
     steps:
       - name: Checkout repository
