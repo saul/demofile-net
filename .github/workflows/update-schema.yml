@@ -2,6 +2,11 @@ name: Update schemas
 
 on:
   workflow_dispatch:
+    inputs:
+      demo_file_curl:
+        description: "[Optional] cURL command to download a demo for SDK generation (.rar). Start at https://www.hltv.org/results?gameType=CS2"
+        required: false
+        type: string
 
 jobs:
   update-schema:
@@ -50,6 +55,30 @@ jobs:
           pushd ./cs2/game/bin/linuxsteamrt64
           LD_LIBRARY_PATH="$(pwd):$LD_LIBRARY_PATH" LOGLEVEL=debug "${REPO_ROOT}/DumpSource2-CS2" "${REPO_ROOT}/src/DemoFile.Game.Cs/Schema"
           popd
+
+      - name: Download demo file
+        if: ${{ github.event.inputs.demo_file_curl != '' }}
+        run: |
+          echo "Downloading demo file..."
+          ${{ github.event.inputs.demo_file_curl }} -o archive.rar
+          
+          echo "Installing unrar and extracting first .dem file..."
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unrar
+          
+          # Find and extract only the first .dem file
+          DEM_FILE=$(unrar lb archive.rar | grep -i '\.dem$' | head -1)
+          if [ -z "$DEM_FILE" ]; then
+            echo "Error: No .dem file found in .rar archive"
+            exit 1
+          fi
+          unrar e archive.rar "$DEM_FILE"
+          mv "$DEM_FILE" downloaded.dem
+
+      - name: Regenerate SDK from demo file
+        if: ${{ github.event.inputs.demo_file_curl != '' }}
+        run: |
+          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
 
       - name: Check for changes
         id: check_changes
