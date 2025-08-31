@@ -35,13 +35,13 @@ jobs:
         if: ${{ github.event.inputs.demo_file_curl != '' }}
         run: |
           echo "Setting exit node..."
-          tailscale set --exit-node=homeassistant
+          sudo tailscale set --exit-node=homeassistant
 
           echo "Downloading demo archive..."
           ${{ github.event.inputs.demo_file_curl }} -o archive.rar
 
           echo "Removing exit node..."
-          tailscale set --exit-node=
+          sudo tailscale set --exit-node=
 
           echo "Installing unrar and extracting first .dem file..."
           sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unrar
