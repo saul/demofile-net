@@ -22,6 +22,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      # Cloudflare bot protection(?) on https://r2-demos.hltv.org stops us from downloading archives
+      # from GitHub Actions.  It's janky but routing this through my home connection avoids the issue.
       - name: Connect to Tailscale
         if: ${{ github.event.inputs.demo_file_curl != '' }}
         uses: tailscale/github-action@v3
