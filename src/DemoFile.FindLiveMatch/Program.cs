@@ -41,6 +41,6 @@ class Program
         }
 
         Console.WriteLine($"Match URL: {url}");
-        await File.AppendAllLinesAsync(githubOutput, [$"url={url}"]);
+        await File.AppendAllLinesAsync(githubOutput, new[] {$"url={url}"});
     }
 }
