@@ -31,13 +31,31 @@ internal static class Program
             File.WriteAllText(outputPath, builder.ToString());
         };
 
-        var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
-        try
+        if (demoPath.StartsWith("https://"))
         {
-            await reader.ReadAllAsync(cts.Token);
+            var broadcastReader = HttpBroadcastReader.Create(demo, new Uri(demoPath));
+
+            try
+            {
+                await broadcastReader.StartReadingAsync(cts.Token);
+                while (await broadcastReader.MoveNextAsync(cts.Token))
+                {
+                }
+            }
+            catch (OperationCanceledException) when (cts.IsCancellationRequested)
+            {
+            }
         }
-        catch (OperationCanceledException) when (cts.IsCancellationRequested)
+        else
         {
+            var reader = DemoFileReader.Create(demo, File.OpenRead(Path.GetFullPath(demoPath)));
+            try
+            {
+                await reader.ReadAllAsync(cts.Token);
+            }
+            catch (OperationCanceledException) when (cts.IsCancellationRequested)
+            {
+            }
         }
     }
 

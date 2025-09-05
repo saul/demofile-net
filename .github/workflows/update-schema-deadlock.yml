@@ -47,8 +47,8 @@ jobs:
 
       - name: Regenerate SDK from demo file
         run: |
-          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
-          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- "https://dist1-ord1.steamcontent.com/tv/41161726/sync" ./src/DemoFile.Game.Deadlock
+          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- "https://dist1-ord1.steamcontent.com/tv/41161726/sync" ./src/DemoFile.Game.Deadlock
 
       - name: Check for changes
         id: check_changes
