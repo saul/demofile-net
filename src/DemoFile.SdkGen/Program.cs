@@ -29,7 +29,7 @@ internal static class Program
     {
         var (demoPath, outputPath) = args switch
         {
-            [var fst, var snd] => (Path.GetFullPath(fst), Path.GetFullPath(snd)),
+            [var fst, var snd] => (fst, Path.GetFullPath(snd)),
             _ => throw new Exception("Expected arguments: <path to .dem> <output dir for .cs files>")
         };
 
@@ -227,9 +227,9 @@ internal static class Program
         var protocolVersion = 0;
         var networkClasses = new List<string>();
 
-        demo.DemoEvents.DemoFileHeader += msg =>
+        demo.PacketEvents.SvcServerInfo += msg =>
         {
-            protocolVersion = msg.NetworkProtocol;
+            protocolVersion = msg.Protocol;
         };
 
         demo.DemoEvents.DemoClassInfo += msg =>
@@ -240,13 +240,33 @@ internal static class Program
 
         Console.WriteLine($"Reading class information from: {demoPath}");
 
-        var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
-        try
+        if (demoPath.StartsWith("https://"))
         {
-            await reader.ReadAllAsync(cts.Token);
+            var broadcastReader = HttpBroadcastReader.Create(demo, new Uri(demoPath));
+
+            try
+            {
+                await broadcastReader.StartReadingAsync(cts.Token);
+                protocolVersion = broadcastReader.BroadcastSyncDto!.Protocol;
+
+                while (await broadcastReader.MoveNextAsync(cts.Token))
+                {
+                }
+            }
+            catch (OperationCanceledException) when (cts.IsCancellationRequested)
+            {
+            }
         }
-        catch (OperationCanceledException) when (cts.IsCancellationRequested)
+        else
         {
+            var reader = DemoFileReader.Create(demo, File.OpenRead(Path.GetFullPath(demoPath)));
+            try
+            {
+                await reader.ReadAllAsync(cts.Token);
+            }
+            catch (OperationCanceledException) when (cts.IsCancellationRequested)
+            {
+            }
         }
 
         Console.WriteLine($"Protocol version: {protocolVersion}");
