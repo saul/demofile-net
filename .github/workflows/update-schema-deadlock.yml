@@ -19,6 +19,20 @@ jobs:
         with:
           dotnet-version: 7.0.x
 
+      - name: Find live Deadlock match URL
+        id: live_match
+        run: |
+          dotnet run --project src/DemoFile.FindLiveMatch/DemoFile.FindLiveMatch.csproj -- deadlock
+
+      # Steam deems the connection suspicious as it's coming from GitHub
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:demofile-net-gh-runner
+          use-cache: "true"
+
       - name: Download latest DepotDownloader app
         run: |
           Write-Output "Downloading DepotDownloader..."
@@ -29,7 +43,14 @@ jobs:
 
       - name: Download Deadlock binaries
         run: |
-          & ".\depot_downloader\DepotDownloader.exe" -app 1422450 -depot 1422452 -dir ./deadlock -username "${{ secrets.STEAM_USERNAME }}" -password "${{ secrets.STEAM_PASSWORD }}" 
+          Write-Output "Setting exit node..."
+          tailscale set --exit-node=homeassistant
+
+          Write-Output "Downloading Deadlock binaries..."
+          & ".\depot_downloader\DepotDownloader.exe" -app 1422450 -depot 1422452 -dir ./deadlock -username "${{ secrets.STEAM_USERNAME }}" -password "${{ secrets.STEAM_PASSWORD }}"
+
+          Write-Output "Removing exit node..."
+          tailscale set --exit-node= 
 
       - name: Download latest DumpSource2
         run: |
@@ -47,8 +68,8 @@ jobs:
 
       - name: Regenerate SDK from demo file
         run: |
-          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
-          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- ${{ steps.live_match.outputs.url }} ./src/DemoFile.Game.Deadlock
+          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- ${{ steps.live_match.outputs.url }} ./src/DemoFile.Game.Deadlock
 
       - name: Check for changes
         id: check_changes

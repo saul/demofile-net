@@ -44,7 +44,7 @@ jobs:
               dotnet build -v quiet -c Release "$dir"
             elif [[ "$dir" == *.Deadlock ]]; then
               echo "Running Deadlock example: $dir..."
-              dotnet run -v quiet -c Release --project "$dir" -- ../demos/deadlock_47.dem
+              dotnet run -v quiet -c Release --project "$dir" -- ../demos/deadlock_hltv_10524.dem
             else
               echo "Running CS2 example: $dir..."
               dotnet run -v quiet -c Release --project "$dir" -- ../demos/navi-javelins-vs-9-pandas-fearless-m1-mirage.dem

@@ -1,3 +1,7 @@
+### 0.35.1 (2025-09-05)
+
+- Update to latest Deadlock schema
+
 ### 0.34.1 (2025-08-27)
 
 - Update to latest CS2 schema (v14097)
