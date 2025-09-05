@@ -14,10 +14,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      # Steam deems the connection suspicious as it's coming from GitHub
+      - name: Connect to Tailscale
+        if: ${{ github.event.inputs.demo_file_curl != '' }}
+        uses: tailscale/github-action@v3
         with:
-          dotnet-version: 7.0.x
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:demofile-net-gh-runner
+          use-cache: "true"
 
       - name: Download latest DepotDownloader app
         run: |
@@ -29,7 +34,14 @@ jobs:
 
       - name: Download Deadlock binaries
         run: |
-          & ".\depot_downloader\DepotDownloader.exe" -app 1422450 -depot 1422452 -dir ./deadlock -username "${{ secrets.STEAM_USERNAME }}" -password "${{ secrets.STEAM_PASSWORD }}" 
+          Write-Output "Setting exit node..."
+          tailscale set --exit-node=homeassistant
+
+          Write-Output "Downloading Deadlock binaries..."
+          & ".\depot_downloader\DepotDownloader.exe" -app 1422450 -depot 1422452 -dir ./deadlock -username "${{ secrets.STEAM_USERNAME }}" -password "${{ secrets.STEAM_PASSWORD }}"
+
+          Write-Output "Removing exit node..."
+          tailscale set --exit-node= 
 
       - name: Download latest DumpSource2
         run: |
@@ -44,6 +56,11 @@ jobs:
           $env:LOGLEVEL = "debug"
           & "$repoRoot\DumpSource2-DEADLOCK.exe" "$repoRoot\src\DemoFile.Game.Deadlock\Schema"
           Pop-Location
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
 
       - name: Regenerate SDK from demo file
         run: |
