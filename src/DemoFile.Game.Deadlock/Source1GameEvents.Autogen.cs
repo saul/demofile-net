@@ -140,15 +140,19 @@ public partial class Source1GameEvents
     public Action<Source1LocalPlayerAbilityCooldownEndChangedEvent>? LocalPlayerAbilityCooldownEndChanged;
     public Action<Source1PlayerDataAbilitiesChangedEvent>? PlayerDataAbilitiesChanged;
     public Action<Source1PlayerDataAbilitySlotChangedEvent>? PlayerDataAbilitySlotChanged;
+    public Action<Source1PlayerQuickbuyItemsChangedEvent>? PlayerQuickbuyItemsChanged;
     public Action<Source1PlayerAbilityBonusCounterChangedEvent>? PlayerAbilityBonusCounterChanged;
     public Action<Source1PlayerModifiersChangedEvent>? PlayerModifiersChanged;
     public Action<Source1PlayerOpenedItemShopEvent>? PlayerOpenedItemShop;
     public Action<Source1ToolsContentChangedEvent>? ToolsContentChanged;
     public Action<Source1PlayerShopZoneChangedEvent>? PlayerShopZoneChanged;
     public Action<Source1PlayerHideoutZoneChangedEvent>? PlayerHideoutZoneChanged;
+    public Action<Source1PlayerBallJuggleEvent>? PlayerBallJuggle;
     public Action<Source1PlayerHealedEvent>? PlayerHealed;
     public Action<Source1PlayerHealPreventedEvent>? PlayerHealPrevented;
     public Action<Source1PlayerGivenShieldEvent>? PlayerGivenShield;
+    public Action<Source1PlayerGivenBarrierEvent>? PlayerGivenBarrier;
+    public Action<Source1PlayerBlindedByDarknessEvent>? PlayerBlindedByDarkness;
     public Action<Source1PlayerWeaponSwitchedEvent>? PlayerWeaponSwitched;
     public Action<Source1PlayerHeroChangedEvent>? PlayerHeroChanged;
     public Action<Source1PlayerDraftingChangedEvent>? PlayerDraftingChanged;
@@ -163,6 +167,7 @@ public partial class Source1GameEvents
     public Action<Source1PartyUpdatedEvent>? PartyUpdated;
     public Action<Source1AbilityCastSucceededEvent>? AbilityCastSucceeded;
     public Action<Source1AbilityCastFailedEvent>? AbilityCastFailed;
+    public Action<Source1AbilityCooldownEndChangedEvent>? AbilityCooldownEndChanged;
     public Action<Source1ReloadFailedNoAmmoEvent>? ReloadFailedNoAmmo;
     public Action<Source1BrokeEnemyShieldEvent>? BrokeEnemyShield;
     public Action<Source1AbilityAddedEvent>? AbilityAdded;
@@ -3552,6 +3557,29 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
+            if (descriptor.Name == "player_quickbuy_items_changed")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1PlayerQuickbuyItemsChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "userid_pawn")
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && PlayerQuickbuyItemsChanged == null)
+                        return;
+                    var @this = new Source1PlayerQuickbuyItemsChangedEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    PlayerQuickbuyItemsChanged?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
             if (descriptor.Name == "player_ability_bonus_counter_changed")
             {
                 var keys = descriptor.Keys.Select(Action<Source1PlayerAbilityBonusCounterChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -3686,6 +3714,35 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
+            if (descriptor.Name == "player_ball_juggle")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1PlayerBallJuggleEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "entindex_last_juggler")
+                            return (@this, x) => @this.EntindexLastJuggler = x.ValLong;
+                        if (key.Name == "entindex_ball")
+                            return (@this, x) => @this.EntindexBall = x.ValLong;
+                        if (key.Name == "num_juggles")
+                            return (@this, x) => @this.NumJuggles = x.ValLong;
+                        if (key.Name == "juggle_event_type")
+                            return (@this, x) => @this.JuggleEventType = x.ValLong;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && PlayerBallJuggle == null)
+                        return;
+                    var @this = new Source1PlayerBallJuggleEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    PlayerBallJuggle?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
             if (descriptor.Name == "player_healed")
             {
                 var keys = descriptor.Keys.Select(Action<Source1PlayerHealedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -3780,6 +3837,62 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     PlayerGivenShield?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "player_given_barrier")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1PlayerGivenBarrierEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "entindex_provider")
+                            return (@this, x) => @this.EntindexProvider = x.ValLong;
+                        if (key.Name == "entindex_target")
+                            return (@this, x) => @this.EntindexTarget = x.ValLong;
+                        if (key.Name == "barrier_amount")
+                            return (@this, x) => @this.BarrierAmount = x.ValLong;
+                        if (key.Name == "abilityid_source")
+                            return (@this, x) => @this.AbilityidSource = x.ValLong;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && PlayerGivenBarrier == null)
+                        return;
+                    var @this = new Source1PlayerGivenBarrierEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    PlayerGivenBarrier?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "player_blinded_by_darkness")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1PlayerBlindedByDarknessEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "entindex_provider")
+                            return (@this, x) => @this.EntindexProvider = x.ValLong;
+                        if (key.Name == "entindex_target")
+                            return (@this, x) => @this.EntindexTarget = x.ValLong;
+                        if (key.Name == "abilityid_source")
+                            return (@this, x) => @this.AbilityidSource = x.ValLong;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && PlayerBlindedByDarkness == null)
+                        return;
+                    var @this = new Source1PlayerBlindedByDarknessEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    PlayerBlindedByDarkness?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -4094,6 +4207,33 @@ public partial class Source1GameEvents
                         keys[i](@this, @event.Keys[i]);
                     }
                     AbilityCastFailed?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
+            if (descriptor.Name == "ability_cooldown_end_changed")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1AbilityCooldownEndChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "entindex_ability")
+                            return (@this, x) => @this.EntindexAbility = x.ValLong;
+                        if (key.Name == "old_value")
+                            return (@this, x) => @this.OldValue = x.ValFloat;
+                        if (key.Name == "new_value")
+                            return (@this, x) => @this.NewValue = x.ValFloat;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && AbilityCooldownEndChanged == null)
+                        return;
+                    var @this = new Source1AbilityCooldownEndChangedEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    AbilityCooldownEndChanged?.Invoke(@this);
                     Source1GameEvent?.Invoke(@this);
                 };
             }
@@ -6411,6 +6551,16 @@ public partial class Source1PlayerDataAbilitySlotChangedEvent : Source1GameEvent
     public CCitadelPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCitadelPlayerPawn;
 }
 
+public partial class Source1PlayerQuickbuyItemsChangedEvent : Source1GameEventBase
+{
+    internal Source1PlayerQuickbuyItemsChangedEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "player_quickbuy_items_changed";
+
+    public CHandle<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser> PlayerPawnHandle { get; set; }
+    public CCitadelPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCitadelPlayerPawn;
+}
+
 public partial class Source1PlayerAbilityBonusCounterChangedEvent : Source1GameEventBase
 {
     internal Source1PlayerAbilityBonusCounterChangedEvent(DeadlockDemoParser demo) : base(demo) {}
@@ -6461,6 +6611,21 @@ public partial class Source1PlayerHideoutZoneChangedEvent : Source1GameEventBase
     internal Source1PlayerHideoutZoneChangedEvent(DeadlockDemoParser demo) : base(demo) {}
 
     public override string GameEventName => "player_hideout_zone_changed";
+}
+
+public partial class Source1PlayerBallJuggleEvent : Source1GameEventBase
+{
+    internal Source1PlayerBallJuggleEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "player_ball_juggle";
+
+    public int EntindexLastJuggler { get; set; }
+
+    public int EntindexBall { get; set; }
+
+    public int NumJuggles { get; set; }
+
+    public int JuggleEventType { get; set; }
 }
 
 public partial class Source1PlayerHealedEvent : Source1GameEventBase
@@ -6514,6 +6679,34 @@ public partial class Source1PlayerGivenShieldEvent : Source1GameEventBase
     public int TechShieldHealth { get; set; }
 
     public int TechShieldHealthMax { get; set; }
+
+    public int AbilityidSource { get; set; }
+}
+
+public partial class Source1PlayerGivenBarrierEvent : Source1GameEventBase
+{
+    internal Source1PlayerGivenBarrierEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "player_given_barrier";
+
+    public int EntindexProvider { get; set; }
+
+    public int EntindexTarget { get; set; }
+
+    public int BarrierAmount { get; set; }
+
+    public int AbilityidSource { get; set; }
+}
+
+public partial class Source1PlayerBlindedByDarknessEvent : Source1GameEventBase
+{
+    internal Source1PlayerBlindedByDarknessEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "player_blinded_by_darkness";
+
+    public int EntindexProvider { get; set; }
+
+    public int EntindexTarget { get; set; }
 
     public int AbilityidSource { get; set; }
 }
@@ -6635,6 +6828,19 @@ public partial class Source1AbilityCastFailedEvent : Source1GameEventBase
     public int EntindexAbility { get; set; }
 
     public int Reason { get; set; }
+}
+
+public partial class Source1AbilityCooldownEndChangedEvent : Source1GameEventBase
+{
+    internal Source1AbilityCooldownEndChangedEvent(DeadlockDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "ability_cooldown_end_changed";
+
+    public int EntindexAbility { get; set; }
+
+    public float OldValue { get; set; }
+
+    public float NewValue { get; set; }
 }
 
 public partial class Source1ReloadFailedNoAmmoEvent : Source1GameEventBase
@@ -7090,15 +7296,19 @@ public partial class Source1MidbossRespawnedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1LocalPlayerAbilityCooldownEndChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerDataAbilitiesChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerDataAbilitySlotChangedEvent))]
+[JsonDerivedType(typeof(Source1PlayerQuickbuyItemsChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerAbilityBonusCounterChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerModifiersChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerOpenedItemShopEvent))]
 [JsonDerivedType(typeof(Source1ToolsContentChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerShopZoneChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerHideoutZoneChangedEvent))]
+[JsonDerivedType(typeof(Source1PlayerBallJuggleEvent))]
 [JsonDerivedType(typeof(Source1PlayerHealedEvent))]
 [JsonDerivedType(typeof(Source1PlayerHealPreventedEvent))]
 [JsonDerivedType(typeof(Source1PlayerGivenShieldEvent))]
+[JsonDerivedType(typeof(Source1PlayerGivenBarrierEvent))]
+[JsonDerivedType(typeof(Source1PlayerBlindedByDarknessEvent))]
 [JsonDerivedType(typeof(Source1PlayerWeaponSwitchedEvent))]
 [JsonDerivedType(typeof(Source1PlayerHeroChangedEvent))]
 [JsonDerivedType(typeof(Source1PlayerDraftingChangedEvent))]
@@ -7113,6 +7323,7 @@ public partial class Source1MidbossRespawnedEvent : Source1GameEventBase
 [JsonDerivedType(typeof(Source1PartyUpdatedEvent))]
 [JsonDerivedType(typeof(Source1AbilityCastSucceededEvent))]
 [JsonDerivedType(typeof(Source1AbilityCastFailedEvent))]
+[JsonDerivedType(typeof(Source1AbilityCooldownEndChangedEvent))]
 [JsonDerivedType(typeof(Source1ReloadFailedNoAmmoEvent))]
 [JsonDerivedType(typeof(Source1BrokeEnemyShieldEvent))]
 [JsonDerivedType(typeof(Source1AbilityAddedEvent))]
