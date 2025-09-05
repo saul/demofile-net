@@ -59,7 +59,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Workflows", "GitHub 
 		.github\workflows\update-schema-deadlock.yml = .github\workflows\update-schema-deadlock.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.FindLiveMatch", "DemoFile.FindLiveMatch\DemoFile.FindLiveMatch.csproj", "{FF91106C-D32E-4F9F-AFDE-A50A017536E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.FindLiveMatch", "src\DemoFile.FindLiveMatch\DemoFile.FindLiveMatch.csproj", "{D3CFF12F-0C91-4DD2-8D34-6B07631ADCEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,10 +139,10 @@ Global
 		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3CFF12F-0C91-4DD2-8D34-6B07631ADCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CFF12F-0C91-4DD2-8D34-6B07631ADCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CFF12F-0C91-4DD2-8D34-6B07631ADCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CFF12F-0C91-4DD2-8D34-6B07631ADCEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
