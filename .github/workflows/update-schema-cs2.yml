@@ -1,4 +1,4 @@
-name: Update schemas
+name: Update schemas (CS2)
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
         type: string
 
 jobs:
-  update-schema:
+  update-schema-cs2:
     runs-on: ubuntu-latest
     defaults:
       run:

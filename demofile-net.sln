@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		ACKNOWLEDGEMENTS = ACKNOWLEDGEMENTS
 		Directory.Build.props = Directory.Build.props
-		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		RELEASE_NOTES.md = RELEASE_NOTES.md
 		demos\download.sh = demos\download.sh
 		version.json = version.json
@@ -53,6 +52,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.MultiThreaded", "examples\DemoFile.Example.MultiThreaded\DemoFile.Example.MultiThreaded.csproj", "{014CF79F-F046-407D-8A20-DC5634633188}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.Example.VoiceExtraction", "examples\DemoFile.Example.VoiceExtraction\DemoFile.Example.VoiceExtraction.csproj", "{462546EB-6090-4585-A641-2FCEC22A3BD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Workflows", "GitHub Workflows", "{D0F1E52E-5A4E-49F1-9043-6EFDF06A780C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\workflows\update-schema-cs2.yml = .github\workflows\update-schema-cs2.yml
+		.github\workflows\update-schema-deadlock.yml = .github\workflows\update-schema-deadlock.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

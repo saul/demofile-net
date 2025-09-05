@@ -1,0 +1,77 @@
+name: Update schemas (Deadlock)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-schema-deadlock:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Download latest DepotDownloader app
+        run: |
+          Write-Output "Downloading DepotDownloader..."
+          curl.exe -L -o DepotDownloader-windows-x64.zip "https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-windows-x64.zip"
+
+          Write-Output "Extracting DepotDownloader..."
+          Expand-Archive -Path DepotDownloader-windows-x64.zip -DestinationPath depot_downloader -Force
+
+      - name: Download Deadlock binaries
+        run: |
+          & ".\depot_downloader\DepotDownloader.exe" -app 1422450 -depot 1422452 -dir ./deadlock -username "${{ secrets.STEAM_USERNAME }}" -password "${{ secrets.STEAM_PASSWORD }}" 
+
+      - name: Download latest DumpSource2
+        run: |
+          Write-Output "Downloading DumpSource2..."
+          curl.exe -L -o DumpSource2-DEADLOCK.exe "https://github.com/saul/DumpSource2/releases/latest/download/DumpSource2-DEADLOCK.exe"
+
+      - name: Run DumpSource2
+        run: |
+          Write-Output "Running DumpSource2..."
+          $repoRoot = Get-Location
+          Push-Location "./deadlock/game/bin/win64"
+          $env:LOGLEVEL = "debug"
+          & "$repoRoot\DumpSource2-DEADLOCK.exe" "$repoRoot\src\DemoFile.Game.Deadlock\Schema"
+          Pop-Location
+
+      - name: Regenerate SDK from demo file
+        run: |
+          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- downloaded.dem ./src/DemoFile.Game.Cs
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add src/DemoFile.Game.Deadlock/**
+          $gitDiff = git diff --staged --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Output "No changes detected"
+            "has_changes=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          } else {
+            Write-Output "Changes detected"
+            "has_changes=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+            Write-Output "Changed files:"
+            git diff --staged --name-only
+          }
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git commit -m "Update schema files with DumpSource2"
+          git push origin ${{ github.ref_name }}
+
+          Write-Output "Changes committed and pushed successfully"
