@@ -16,7 +16,6 @@ jobs:
 
       # Steam deems the connection suspicious as it's coming from GitHub
       - name: Connect to Tailscale
-        if: ${{ github.event.inputs.demo_file_curl != '' }}
         uses: tailscale/github-action@v3
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
