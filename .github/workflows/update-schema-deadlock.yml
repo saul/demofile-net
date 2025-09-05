@@ -14,6 +14,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Find live Deadlock match URL
+        id: live_match
+        run: |
+          dotnet run --project src/DemoFile.FindLiveMatch/DemoFile.FindLiveMatch.csproj -- deadlock
+
       # Steam deems the connection suspicious as it's coming from GitHub
       - name: Connect to Tailscale
         uses: tailscale/github-action@v3
@@ -63,8 +73,8 @@ jobs:
 
       - name: Regenerate SDK from demo file
         run: |
-          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- "https://dist1-ord1.steamcontent.com/tv/41161726/sync" ./src/DemoFile.Game.Deadlock
-          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- "https://dist1-ord1.steamcontent.com/tv/41161726/sync" ./src/DemoFile.Game.Deadlock
+          dotnet run --project src/DemoFile.SdkGen/DemoFile.SdkGen.csproj -- ${{ steps.live_match.outputs.url }} ./src/DemoFile.Game.Deadlock
+          dotnet run --project src/DemoFile.Source1EventGen/DemoFile.Source1EventGen.csproj -- ${{ steps.live_match.outputs.url }} ./src/DemoFile.Game.Deadlock
 
       - name: Check for changes
         id: check_changes

@@ -12,7 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		demos\download.sh = demos\download.sh
 		version.json = version.json
 		UPDATING_SCHEMA.md = UPDATING_SCHEMA.md
-		.github\workflows\update-schema.yml = .github\workflows\update-schema.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{20EAA685-6916-4B0C-8D0C-E407B072E28F}"
@@ -59,6 +58,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Workflows", "GitHub 
 		.github\workflows\update-schema-cs2.yml = .github\workflows\update-schema-cs2.yml
 		.github\workflows\update-schema-deadlock.yml = .github\workflows\update-schema-deadlock.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFile.FindLiveMatch", "DemoFile.FindLiveMatch\DemoFile.FindLiveMatch.csproj", "{FF91106C-D32E-4F9F-AFDE-A50A017536E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -138,6 +139,10 @@ Global
 		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462546EB-6090-4585-A641-2FCEC22A3BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF91106C-D32E-4F9F-AFDE-A50A017536E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2452138-91E4-4160-B051-A201080C1953} = {20EAA685-6916-4B0C-8D0C-E407B072E28F}
