@@ -32863,6 +32863,10 @@ internal sealed partial class CsDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDestructiblePartsComponent>(CDestructiblePartsComponent.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CDestructiblePartsSystemComponent))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDestructiblePartsSystemComponent>(CDestructiblePartsSystemComponent.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CDynamicLight))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CDynamicLight>(CDynamicLight.CreateFieldDecoder);
