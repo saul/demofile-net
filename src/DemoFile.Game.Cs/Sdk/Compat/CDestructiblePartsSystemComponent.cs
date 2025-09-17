@@ -9,11 +9,7 @@ public class CDestructiblePartsSystemComponent : CDestructiblePartsComponent
     // MNetworkChangeCallback "OnDamageLevelTakenByHitGroupChanged"
     public NetworkedVector<UInt16> DamageLevelTakenByHitGroup { get; private set; } = new NetworkedVector<UInt16>();
 
-    public CHandle<CBaseModelEntity, CsDemoParser> OwnerHandle { get; private set; }
-
-    public Int32 LastHitDamageLevel { get; private set; }
-
-    internal static SendNodeDecoder<CDestructiblePartsSystemComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    internal new static SendNodeDecoder<CDestructiblePartsSystemComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
         if (field.VarName == "m_DamageLevelTakenByHitGroup")
         {
