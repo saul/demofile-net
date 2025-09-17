@@ -4888,7 +4888,7 @@ public partial class CBeam : CBaseModelEntity
     public bool TurnedOff { get; private set; }
 
     // MNetworkEncoder "coord"
-    public VectorWS EndPos { get; private set; }
+    public Vector EndPos { get; private set; }
 
     internal new static SendNodeDecoder<CBeam> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -5049,7 +5049,7 @@ public partial class CBeam : CBaseModelEntity
         }
         if (field.VarName == "m_vecEndPos")
         {
-            var decoder = FieldDecode.CreateDecoder_VectorWS(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.EndPos = decoder(ref buffer);
@@ -15260,10 +15260,10 @@ public partial class CFuncLadder : CBaseModelEntity
     public Vector LadderDir { get; private set; }
 
     // MNetworkEncoder "coord"
-    public VectorWS PlayerMountPositionTop { get; private set; }
+    public Vector PlayerMountPositionTop { get; private set; }
 
     // MNetworkEncoder "coord"
-    public VectorWS PlayerMountPositionBottom { get; private set; }
+    public Vector PlayerMountPositionBottom { get; private set; }
 
     public float AutoRideSpeed { get; private set; }
 
@@ -15281,7 +15281,7 @@ public partial class CFuncLadder : CBaseModelEntity
         }
         if (field.VarName == "m_vecPlayerMountPositionTop")
         {
-            var decoder = FieldDecode.CreateDecoder_VectorWS(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CFuncLadder @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerMountPositionTop = decoder(ref buffer);
@@ -15289,7 +15289,7 @@ public partial class CFuncLadder : CBaseModelEntity
         }
         if (field.VarName == "m_vecPlayerMountPositionBottom")
         {
-            var decoder = FieldDecode.CreateDecoder_VectorWS(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CFuncLadder @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.PlayerMountPositionBottom = decoder(ref buffer);
@@ -25395,7 +25395,7 @@ public partial class CTriggerFan : CBaseTrigger
 {
     internal CTriggerFan(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public VectorWS FanOrigin { get; private set; }
+    public Vector FanOrigin { get; private set; }
 
     public Vector FanOriginOffset { get; private set; }
 
@@ -25424,7 +25424,7 @@ public partial class CTriggerFan : CBaseTrigger
     {
         if (field.VarName == "m_vFanOrigin")
         {
-            var decoder = FieldDecode.CreateDecoder_VectorWS(field.FieldEncodingInfo);
+            var decoder = FieldDecode.CreateDecoder_Vector(field.FieldEncodingInfo);
             return (CTriggerFan @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.FanOrigin = decoder(ref buffer);
