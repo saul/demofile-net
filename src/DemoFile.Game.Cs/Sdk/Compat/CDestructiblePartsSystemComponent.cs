@@ -1,9 +1,10 @@
+using System.Diagnostics;
 using DemoFile.Sdk;
 
 namespace DemoFile.Game.Cs;
 
 [Obsolete("Removed in v14104")]
-public class CDestructiblePartsSystemComponent
+public class CDestructiblePartsSystemComponent : CDestructiblePartsComponent
 {
     // MNetworkChangeCallback "OnDamageLevelTakenByHitGroupChanged"
     public NetworkedVector<UInt16> DamageLevelTakenByHitGroup { get; private set; } = new NetworkedVector<UInt16>();
