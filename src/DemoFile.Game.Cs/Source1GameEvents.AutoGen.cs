@@ -98,6 +98,7 @@ public partial class Source1GameEvents
     public Action<Source1SetInstructorGroupEnabledEvent>? SetInstructorGroupEnabled;
     public Action<Source1ClientsideLessonClosedEvent>? ClientsideLessonClosed;
     public Action<Source1DynamicShadowLightChangedEvent>? DynamicShadowLightChanged;
+    public Action<Source1BotTakeoverEvent>? BotTakeover;
     public Action<Source1GameuiHiddenEvent>? GameuiHidden;
     public Action<Source1PlayerScoreEvent>? PlayerScore;
     public Action<Source1PlayerShootEvent>? PlayerShoot;
@@ -242,7 +243,6 @@ public partial class Source1GameEvents
     public Action<Source1SfuieventEvent>? Sfuievent;
     public Action<Source1StartVoteEvent>? StartVote;
     public Action<Source1PlayerGivenC4Event>? PlayerGivenC4;
-    public Action<Source1BotTakeoverEvent>? BotTakeover;
     public Action<Source1JointeamFailedEvent>? JointeamFailed;
     public Action<Source1TeamchangePendingEvent>? TeamchangePending;
     public Action<Source1MaterialDefaultCompleteEvent>? MaterialDefaultComplete;
@@ -503,8 +503,6 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.Networkid = x.ValString;
                         if (key.Name == "xuid")
                             return (@this, x) => @this.SteamId = x.ValUint64;
-                        if (key.Name == "address")
-                            return (@this, x) => @this.Address = x.ValString;
                         if (key.Name == "bot")
                             return (@this, x) => @this.Bot = x.ValBool;
                         return (@this, x) => { };
@@ -2658,6 +2656,39 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
+            if (descriptor.Name == "bot_takeover")
+            {
+                var keys = descriptor.Keys.Select(Action<Source1BotTakeoverEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
+                    {
+                        if (key.Name == "userid")
+                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
+                        if (key.Name == "userid_pawn")
+                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
+                        if (key.Name == "botid")
+                            return (@this, x) => @this.BotidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
+                        if (key.Name == "p")
+                            return (@this, x) => @this.P = x.ValFloat;
+                        if (key.Name == "y")
+                            return (@this, x) => @this.Y = x.ValFloat;
+                        if (key.Name == "r")
+                            return (@this, x) => @this.R = x.ValFloat;
+                        return (@this, x) => { };
+                    })
+                    .ToArray();
+
+                _handlers[descriptor.Eventid] = (demo, @event) =>
+                {
+                    if (Source1GameEvent == null && BotTakeover == null)
+                        return;
+                    var @this = new Source1BotTakeoverEvent(demo);
+                    for (var i = 0; i < @event.Keys.Count; i++)
+                    {
+                        keys[i](@this, @event.Keys[i]);
+                    }
+                    BotTakeover?.Invoke(@this);
+                    Source1GameEvent?.Invoke(@this);
+                };
+            }
             if (descriptor.Name == "gameui_hidden")
             {
                 var keys = descriptor.Keys.Select(Action<Source1GameuiHiddenEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -3694,6 +3725,36 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.NoScope = x.ValBool;
                         if (key.Name == "in_air")
                             return (@this, x) => @this.InAir = x.ValBool;
+                        if (key.Name == "shoot_ang_x")
+                            return (@this, x) => @this.ShootAngX = x.ValFloat;
+                        if (key.Name == "shoot_ang_y")
+                            return (@this, x) => @this.ShootAngY = x.ValFloat;
+                        if (key.Name == "shoot_ang_z")
+                            return (@this, x) => @this.ShootAngZ = x.ValFloat;
+                        if (key.Name == "aim_punch_x")
+                            return (@this, x) => @this.AimPunchX = x.ValFloat;
+                        if (key.Name == "aim_punch_y")
+                            return (@this, x) => @this.AimPunchY = x.ValFloat;
+                        if (key.Name == "aim_punch_z")
+                            return (@this, x) => @this.AimPunchZ = x.ValFloat;
+                        if (key.Name == "attack_tick_count")
+                            return (@this, x) => @this.AttackTickCount = x.ValLong;
+                        if (key.Name == "attack_tick_frac")
+                            return (@this, x) => @this.AttackTickFrac = x.ValFloat;
+                        if (key.Name == "render_tick_count")
+                            return (@this, x) => @this.RenderTickCount = x.ValLong;
+                        if (key.Name == "render_tick_frac")
+                            return (@this, x) => @this.RenderTickFrac = x.ValFloat;
+                        if (key.Name == "inaccuracy_total")
+                            return (@this, x) => @this.InaccuracyTotal = x.ValFloat;
+                        if (key.Name == "inaccuracy_move")
+                            return (@this, x) => @this.InaccuracyMove = x.ValFloat;
+                        if (key.Name == "inaccuracy_air")
+                            return (@this, x) => @this.InaccuracyAir = x.ValFloat;
+                        if (key.Name == "recoil_index")
+                            return (@this, x) => @this.RecoilIndex = x.ValFloat;
+                        if (key.Name == "type")
+                            return (@this, x) => @this.Type = x.ValLong;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -6400,39 +6461,6 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
-            if (descriptor.Name == "bot_takeover")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1BotTakeoverEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
-                        if (key.Name == "botid")
-                            return (@this, x) => @this.BotidIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        if (key.Name == "p")
-                            return (@this, x) => @this.P = x.ValFloat;
-                        if (key.Name == "y")
-                            return (@this, x) => @this.Y = x.ValFloat;
-                        if (key.Name == "r")
-                            return (@this, x) => @this.R = x.ValFloat;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && BotTakeover == null)
-                        return;
-                    var @this = new Source1BotTakeoverEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    BotTakeover?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
             if (descriptor.Name == "jointeam_failed")
             {
                 var keys = descriptor.Keys.Select(Action<Source1JointeamFailedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -7450,8 +7478,6 @@ public partial class Source1PlayerConnectEvent : Source1GameEventBase
     public string Networkid { get; set; } = "";
 
     public ulong SteamId { get; set; }
-
-    public string Address { get; set; } = "";
 
     public bool Bot { get; set; }
 }
@@ -8481,6 +8507,28 @@ public partial class Source1DynamicShadowLightChangedEvent : Source1GameEventBas
     public override string GameEventName => "dynamic_shadow_light_changed";
 }
 
+public partial class Source1BotTakeoverEvent : Source1GameEventBase
+{
+    internal Source1BotTakeoverEvent(CsDemoParser demo) : base(demo) {}
+
+    public override string GameEventName => "bot_takeover";
+
+    public CEntityIndex PlayerIndex { get; set; }
+    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
+
+    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
+    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
+
+    public CEntityIndex BotidIndex { get; set; }
+    public CCSPlayerController? Botid => _demo.GetEntityByIndex<CCSPlayerController>(BotidIndex);
+
+    public float P { get; set; }
+
+    public float Y { get; set; }
+
+    public float R { get; set; }
+}
+
 public partial class Source1GameuiHiddenEvent : Source1GameEventBase
 {
     internal Source1GameuiHiddenEvent(CsDemoParser demo) : base(demo) {}
@@ -8973,6 +9021,36 @@ public partial class Source1BulletDamageEvent : Source1GameEventBase
     public bool NoScope { get; set; }
 
     public bool InAir { get; set; }
+
+    public float ShootAngX { get; set; }
+
+    public float ShootAngY { get; set; }
+
+    public float ShootAngZ { get; set; }
+
+    public float AimPunchX { get; set; }
+
+    public float AimPunchY { get; set; }
+
+    public float AimPunchZ { get; set; }
+
+    public int AttackTickCount { get; set; }
+
+    public float AttackTickFrac { get; set; }
+
+    public int RenderTickCount { get; set; }
+
+    public float RenderTickFrac { get; set; }
+
+    public float InaccuracyTotal { get; set; }
+
+    public float InaccuracyMove { get; set; }
+
+    public float InaccuracyAir { get; set; }
+
+    public float RecoilIndex { get; set; }
+
+    public int Type { get; set; }
 }
 
 public partial class Source1ItemPurchaseEvent : Source1GameEventBase
@@ -10332,28 +10410,6 @@ public partial class Source1PlayerGivenC4Event : Source1GameEventBase
     public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
 }
 
-public partial class Source1BotTakeoverEvent : Source1GameEventBase
-{
-    internal Source1BotTakeoverEvent(CsDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "bot_takeover";
-
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
-
-    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
-    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
-
-    public CEntityIndex BotidIndex { get; set; }
-    public CCSPlayerController? Botid => _demo.GetEntityByIndex<CCSPlayerController>(BotidIndex);
-
-    public float P { get; set; }
-
-    public float Y { get; set; }
-
-    public float R { get; set; }
-}
-
 public partial class Source1JointeamFailedEvent : Source1GameEventBase
 {
     internal Source1JointeamFailedEvent(CsDemoParser demo) : base(demo) {}
@@ -10867,6 +10923,7 @@ public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBa
 [JsonDerivedType(typeof(Source1SetInstructorGroupEnabledEvent))]
 [JsonDerivedType(typeof(Source1ClientsideLessonClosedEvent))]
 [JsonDerivedType(typeof(Source1DynamicShadowLightChangedEvent))]
+[JsonDerivedType(typeof(Source1BotTakeoverEvent))]
 [JsonDerivedType(typeof(Source1GameuiHiddenEvent))]
 [JsonDerivedType(typeof(Source1PlayerScoreEvent))]
 [JsonDerivedType(typeof(Source1PlayerShootEvent))]
@@ -11011,7 +11068,6 @@ public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBa
 [JsonDerivedType(typeof(Source1SfuieventEvent))]
 [JsonDerivedType(typeof(Source1StartVoteEvent))]
 [JsonDerivedType(typeof(Source1PlayerGivenC4Event))]
-[JsonDerivedType(typeof(Source1BotTakeoverEvent))]
 [JsonDerivedType(typeof(Source1JointeamFailedEvent))]
 [JsonDerivedType(typeof(Source1TeamchangePendingEvent))]
 [JsonDerivedType(typeof(Source1MaterialDefaultCompleteEvent))]

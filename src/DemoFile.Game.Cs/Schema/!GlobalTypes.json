@@ -1242,12 +1242,16 @@
           "value": 0
         },
         {
-          "name": "OBSERVER_INTERP_TRAVELING",
+          "name": "OBSERVER_INTERP_STARTING",
           "value": 1
         },
         {
-          "name": "OBSERVER_INTERP_SETTLING",
+          "name": "OBSERVER_INTERP_TRAVELING",
           "value": 2
+        },
+        {
+          "name": "OBSERVER_INTERP_SETTLING",
+          "value": 3
         }
       ]
     },
@@ -2140,7 +2144,7 @@
       ]
     },
     "NavAttributeEnum": {
-      "align": 4,
+      "align": 8,
       "items": [
         {
           "name": "NAV_MESH_AVOID",
@@ -2173,10 +2177,6 @@
         {
           "name": "NAV_MESH_JUMP",
           "value": 2
-        },
-        {
-          "name": "NAV_MESH_PRECISE",
-          "value": 4
         },
         {
           "name": "NAV_MESH_NO_JUMP",
@@ -2224,7 +2224,7 @@
         },
         {
           "name": "NAV_ATTR_LAST_INDEX",
-          "value": 31
+          "value": 63
         }
       ]
     },
@@ -2303,6 +2303,23 @@
         }
       ]
     },
+    "ParticleLiquidContents_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "PARTICLE_LIQUID_NONE",
+          "value": 0
+        },
+        {
+          "name": "PARTICLE_LIQUID_OIL",
+          "value": 1
+        },
+        {
+          "name": "PARTICLE_LIQUID_WATER",
+          "value": 2
+        }
+      ]
+    },
     "LifeState_t": {
       "align": 4,
       "items": [
@@ -2362,19 +2379,6 @@
         {
           "name": "k_CSPlayerBlockingUseAction_MaxCount",
           "value": 7
-        }
-      ]
-    },
-    "CNmSoundEvent::Type_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "Play",
-          "value": 0
-        },
-        {
-          "name": "Stop",
-          "value": 1
         }
       ]
     },
@@ -3251,6 +3255,43 @@
         }
       ]
     },
+    "RsComparison_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "RS_CMP_NEVER",
+          "value": 0
+        },
+        {
+          "name": "RS_CMP_LESS",
+          "value": 1
+        },
+        {
+          "name": "RS_CMP_EQUAL",
+          "value": 2
+        },
+        {
+          "name": "RS_CMP_LESS_EQUAL",
+          "value": 3
+        },
+        {
+          "name": "RS_CMP_GREATER",
+          "value": 4
+        },
+        {
+          "name": "RS_CMP_NOT_EQUAL",
+          "value": 5
+        },
+        {
+          "name": "RS_CMP_GREATER_EQUAL",
+          "value": 6
+        },
+        {
+          "name": "RS_CMP_ALWAYS",
+          "value": 7
+        }
+      ]
+    },
     "PermModelInfo_t::FlagEnum": {
       "align": 4,
       "items": [
@@ -3924,51 +3965,6 @@
         {
           "name": "ENTITY_DISSOLVE_CORE",
           "value": 3
-        }
-      ]
-    },
-    "ActionType_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "SOS_ACTION_NONE",
-          "value": 0
-        },
-        {
-          "name": "SOS_ACTION_LIMITER",
-          "value": 1
-        },
-        {
-          "name": "SOS_ACTION_TIME_LIMIT",
-          "value": 2
-        },
-        {
-          "name": "SOS_ACTION_TIME_BLOCK_LIMITER",
-          "value": 3
-        },
-        {
-          "name": "SOS_ACTION_SET_SOUNDEVENT_PARAM",
-          "value": 4
-        },
-        {
-          "name": "SOS_ACTION_SOUNDEVENT_CLUSTER",
-          "value": 5
-        },
-        {
-          "name": "SOS_ACTION_SOUNDEVENT_PRIORITY",
-          "value": 6
-        },
-        {
-          "name": "SOS_ACTION_COUNT_ENVELOPE",
-          "value": 7
-        },
-        {
-          "name": "SOS_ACTION_SOUNDEVENT_COUNT",
-          "value": 8
-        },
-        {
-          "name": "SOS_ACTION_SOUNDEVENT_MIN_MAX_VALUES",
-          "value": 9
         }
       ]
     },
@@ -5246,16 +5242,16 @@
         {
           "name": "Create_CFG",
           "value": 1
-        },
-        {
-          "name": "Stop",
-          "value": 2
         }
       ]
     },
     "EDestructibleParts_DestroyParameterFlags": {
       "align": 4,
       "items": [
+        {
+          "name": "None",
+          "value": 0
+        },
         {
           "name": "GenerateBreakpieces",
           "value": 1
@@ -5367,6 +5363,19 @@
         {
           "name": "eAttachment",
           "value": 3
+        }
+      ]
+    },
+    "RsFillMode_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "RS_FILL_SOLID",
+          "value": 0
+        },
+        {
+          "name": "RS_FILL_WIREFRAME",
+          "value": 1
         }
       ]
     },
@@ -5909,23 +5918,6 @@
         {
           "name": "FOOTLOCKSUBVISUALIZATION_IKSolve",
           "value": 1
-        }
-      ]
-    },
-    "PulseTestEnumShape_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "CIRCLE",
-          "value": 100
-        },
-        {
-          "name": "SQUARE",
-          "value": 200
-        },
-        {
-          "name": "TRIANGLE",
-          "value": 300
         }
       ]
     },
@@ -6699,6 +6691,23 @@
         }
       ]
     },
+    "RsCullMode_t": {
+      "align": 1,
+      "items": [
+        {
+          "name": "RS_CULL_NONE",
+          "value": 0
+        },
+        {
+          "name": "RS_CULL_BACK",
+          "value": 1
+        },
+        {
+          "name": "RS_CULL_FRONT",
+          "value": 2
+        }
+      ]
+    },
     "ParticleOmni2LightTypeChoiceList_t": {
       "align": 4,
       "items": [
@@ -7193,6 +7202,23 @@
         {
           "name": "BoneAndChildren",
           "value": 1
+        }
+      ]
+    },
+    "ParticleFanType_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "PARTICLE_FAN_TYPE_FAN",
+          "value": 0
+        },
+        {
+          "name": "PARTICLE_FAN_TYPE_ROTOR_WASH",
+          "value": 1
+        },
+        {
+          "name": "PARTICLE_FAN_TYPE_RADIAL",
+          "value": 2
         }
       ]
     },
@@ -7974,16 +8000,12 @@
           "value": 1024
         },
         {
-          "name": "RENDER_BUFFER_PER_FRAME_WRITE_ONCE",
+          "name": "RENDER_BUFFER_POOL_ALLOCATED",
           "value": 2048
         },
         {
-          "name": "RENDER_BUFFER_POOL_ALLOCATED",
-          "value": 4096
-        },
-        {
           "name": "RENDER_BUFFER_USAGE_CONDITIONAL_RENDERING",
-          "value": 8192
+          "value": 4096
         }
       ]
     },
@@ -9410,6 +9432,35 @@
         }
       ]
     },
+    "PulseApiFeature_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "AF_NONE",
+          "value": 0
+        },
+        {
+          "name": "AF_ENTITIES",
+          "value": 1
+        },
+        {
+          "name": "AF_PANORAMA",
+          "value": 2
+        },
+        {
+          "name": "AF_PARTICLES",
+          "value": 8
+        },
+        {
+          "name": "AF_FAKE_ENTITIES",
+          "value": 16
+        },
+        {
+          "name": "AF_SELECTORS_WITHOUT_REQUIREMENTS",
+          "value": 32
+        }
+      ]
+    },
     "ParticleModelType_t": {
       "align": 4,
       "items": [
@@ -9890,16 +9941,24 @@
           "value": 24
         },
         {
-          "name": "PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DISTANCE",
+          "name": "PF_TYPE_PARTICLE_ROPE_SEGMENT",
           "value": 25
         },
         {
-          "name": "PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DOT_PRODUCT",
+          "name": "PF_TYPE_PARTICLE_ROPE_SEGMENT_NORMALIZED",
           "value": 26
         },
         {
-          "name": "PF_TYPE_COUNT",
+          "name": "PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DISTANCE",
           "value": 27
+        },
+        {
+          "name": "PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DOT_PRODUCT",
+          "value": 28
+        },
+        {
+          "name": "PF_TYPE_COUNT",
+          "value": 29
         }
       ]
     },
@@ -9960,31 +10019,6 @@
         {
           "name": "OngoingNotify",
           "value": 3
-        }
-      ]
-    },
-    "DecalVBType_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "eInvalid",
-          "value": -1
-        },
-        {
-          "name": "eStatic",
-          "value": 0
-        },
-        {
-          "name": "eDynamic",
-          "value": 1
-        },
-        {
-          "name": "eCount",
-          "value": 2
-        },
-        {
-          "name": "eFirst",
-          "value": 0
         }
       ]
     },
@@ -10985,31 +11019,6 @@
         {
           "name": "SUBCLASS_SCOPE_COUNT",
           "value": 2
-        }
-      ]
-    },
-    "PulseTestEnumColor_t": {
-      "align": 4,
-      "items": [
-        {
-          "name": "BLACK",
-          "value": 0
-        },
-        {
-          "name": "WHITE",
-          "value": 1
-        },
-        {
-          "name": "RED",
-          "value": 2
-        },
-        {
-          "name": "GREEN",
-          "value": 3
-        },
-        {
-          "name": "BLUE",
-          "value": 4
         }
       ]
     },
@@ -12029,6 +12038,23 @@
         }
       ]
     },
+    "SosGroupFieldBehavior_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "kIgnore",
+          "value": 0
+        },
+        {
+          "name": "kBranch",
+          "value": 1
+        },
+        {
+          "name": "kMatch",
+          "value": 2
+        }
+      ]
+    },
     "ParticleSequenceCropOverride_t": {
       "align": 4,
       "items": [
@@ -12232,16 +12258,20 @@
           "value": 8192
         },
         {
-          "name": "DMG_LASTDFLAG",
-          "value": 8192
-        },
-        {
-          "name": "DFLAG_IGNORE_ARMOR",
+          "name": "DFLAG_SUPPRESS_BREAKABLES",
           "value": 16384
         },
         {
-          "name": "DFLAG_SUPPRESS_UTILREMOVE",
+          "name": "DMG_LASTDFLAG",
+          "value": 16384
+        },
+        {
+          "name": "DFLAG_IGNORE_ARMOR",
           "value": 32768
+        },
+        {
+          "name": "DFLAG_SUPPRESS_UTILREMOVE",
+          "value": 65536
         }
       ]
     },
@@ -12591,12 +12621,20 @@
       "align": 4,
       "items": [
         {
+          "name": "PARTICLE_ORIENTATION_SET_NONE",
+          "value": -1
+        },
+        {
           "name": "PARTICLE_ORIENTATION_SET_FROM_VELOCITY",
           "value": 0
         },
         {
-          "name": "PARTICLE_ORIENTATION_SET_FROM_ROTATIONS",
+          "name": "PARTICLE_ORIENTATION_SET_FROM_NORMAL",
           "value": 1
+        },
+        {
+          "name": "PARTICLE_ORIENTATION_SET_FROM_ROTATIONS",
+          "value": 2
         }
       ]
     },
@@ -13088,9 +13126,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -13179,11 +13214,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MPropertyElementNameFn",
-          "value": null
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MVDataRoot"
         }
       ],
       "fields": [
@@ -13593,10 +13624,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -13856,6 +13883,23 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CDestructiblePart": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MModelGameData"
+        },
+        {
+          "name": "MFgdHelper",
+          "value": "game_data_list{ key = 'CDestructiblePart' }"
         }
       ],
       "fields": [
@@ -14185,9 +14229,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -14357,9 +14398,6 @@
         {
           "name": "MPropertyElementNameFn",
           "value": null
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -14384,6 +14422,16 @@
     },
     "CNmFloatCurveEvent": {
       "parent": "CNmEvent",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "NmFloatCurveCompressionSettings_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -14508,7 +14556,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Limiter"
         }
       ],
       "fields": [
@@ -14560,7 +14609,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Count Envelope"
         }
       ],
       "fields": [
@@ -14777,20 +14827,6 @@
       "fields": [
       ]
     },
-    "CSosGroupMatchPattern": {
-      "parent": "CSosGroupBranchPattern",
-      "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "C_OP_SelectivelyEnableChildren": {
       "parent": "CParticleFunctionPreEmission",
       "metadata": [
@@ -14809,16 +14845,6 @@
       ]
     },
     "PulseGraphExecutionHistoryCursorDesc_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CDestructiblePartsSystemData_DamageLevel": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -14908,7 +14934,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Set Sound Event Parameter"
         }
       ],
       "fields": [
@@ -14982,10 +15009,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -15043,9 +15066,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -15219,11 +15239,10 @@
           "value": "<kv3>"
         },
         {
-          "name": "MPropertyElementNameFn",
-          "value": null
+          "name": "MPropertyAutoExpandSelf"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyPolymorphicClass"
         }
       ],
       "fields": [
@@ -15440,11 +15459,8 @@
           "value": "ModelInput()"
         },
         {
-          "name": "MClassIsParticleModel"
-        },
-        {
-          "name": "MParticleCustomFieldDefaultValue",
-          "value": null
+          "name": "MCustomFGDMetadata",
+          "value": "{ KV3DefaultTestFnName = 'CParticleModelInputDefaultTestFunc' }"
         }
       ],
       "fields": [
@@ -15477,16 +15493,6 @@
       ]
     },
     "CNmIKEffector": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "InfoOverlayData_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -15788,9 +15794,6 @@
       "parent": "CConcreteAnimParameter",
       "metadata": [
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
-        {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
         },
@@ -15873,10 +15876,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -16231,10 +16230,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -16415,9 +16410,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Material Attribute Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -16684,20 +16676,18 @@
       "fields": [
       ]
     },
-    "CSosSoundEventGroupListSchema": {
+    "VMixVocoderDesc_t": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
       ]
     },
-    "VMixVocoderDesc_t": {
+    "C_OP_CreateParticleSystemRenderer": {
+      "parent": "CParticleFunctionRenderer",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -17386,9 +17376,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -17704,9 +17691,6 @@
     "CBoolAnimParameter": {
       "parent": "CConcreteAnimParameter",
       "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
@@ -18339,9 +18323,6 @@
       "parent": "CConcreteAnimParameter",
       "metadata": [
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
-        {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
         },
@@ -18569,11 +18550,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MClassIsParticleFloat"
-        },
-        {
-          "name": "MParticleCustomFieldDefaultValue",
-          "value": null
+          "name": "MCustomFGDMetadata",
+          "value": "{ SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleFloatInputDefaultTestFunc' }"
         }
       ],
       "fields": [
@@ -18819,7 +18797,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Soundevent Count"
         }
       ],
       "fields": [
@@ -19181,10 +19160,6 @@
     },
     "CAnimEnum": {
       "metadata": [
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -19459,7 +19434,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Soundevent Priority"
         }
       ],
       "fields": [
@@ -20033,9 +20009,6 @@
       "parent": "CConcreteAnimParameter",
       "metadata": [
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
-        {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
         },
@@ -20370,6 +20343,16 @@
       "fields": [
       ]
     },
+    "CPAssignment_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "C_INIT_RemapParticleCountToNamedModelMeshGroupScalar": {
       "parent": "C_INIT_RemapParticleCountToNamedModelElementScalar",
       "metadata": [
@@ -20429,6 +20412,17 @@
       "fields": [
       ]
     },
+    "C_INIT_CreateWithinCapsuleTransform": {
+      "parent": "CParticleFunctionInitializer",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "C_OP_RemapNamedModelSequenceEndCap": {
       "parent": "C_OP_RemapNamedModelElementEndCap",
       "metadata": [
@@ -20450,9 +20444,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Cloth Settings Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -20707,7 +20698,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Soundevent Min/Max Values"
         }
       ],
       "fields": [
@@ -21407,7 +21399,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Timed Block Limiter"
         }
       ],
       "fields": [
@@ -21496,9 +21489,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Warp Section Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -21524,9 +21514,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -21550,19 +21537,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CSosGroupBranchPattern": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -21598,11 +21572,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MClassIsParticleVec"
-        },
-        {
-          "name": "MParticleCustomFieldDefaultValue",
-          "value": null
+          "name": "MCustomFGDMetadata",
+          "value": "{ SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleVecInputDefaultTestFunc' }"
         }
       ],
       "fields": [
@@ -21619,6 +21590,17 @@
       ]
     },
     "CExampleSchemaVData_PolymorphicBase": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "C_OP_GameLiquidSpill": {
+      "parent": "CParticleFunctionRenderer",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -22452,23 +22434,6 @@
       "fields": [
       ]
     },
-    "CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        },
-        {
-          "name": "MModelGameData"
-        },
-        {
-          "name": "MFgdHelper",
-          "value": "game_data_list{ key = 'CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels' }"
-        }
-      ],
-      "fields": [
-      ]
-    },
     "ExtraVertexStreamOverride_t": {
       "parent": "BaseSceneObjectOverride_t",
       "metadata": [
@@ -22532,9 +22497,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Particle Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -22655,9 +22617,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Damping"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -22975,9 +22934,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -23043,9 +22999,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "FootFall Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -23063,9 +23016,6 @@
     },
     "IKTargetSettings_t": {
       "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        }
       ],
       "fields": [
       ]
@@ -23291,9 +23241,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "FootstepLanded Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -23475,6 +23422,12 @@
       "fields": [
       ]
     },
+    "RsDepthStencilStateDesc_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_OP_SetControlPointToHand": {
       "parent": "CParticleFunctionPreEmission",
       "metadata": [
@@ -23489,9 +23442,6 @@
     "CIntAnimParameter": {
       "parent": "CConcreteAnimParameter",
       "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
@@ -23692,9 +23642,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Status Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -23760,6 +23707,12 @@
       "fields": [
       ]
     },
+    "RsRasterizerStateDesc_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_OP_PlaneCull": {
       "parent": "CParticleFunctionOperator",
       "metadata": [
@@ -23813,9 +23766,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Movement Handshake Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -24437,7 +24387,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Time Limiter"
         }
       ],
       "fields": [
@@ -24519,9 +24470,6 @@
     },
     "IKBoneNameAndIndex_t": {
       "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        }
       ],
       "fields": [
       ]
@@ -24621,10 +24569,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -24693,9 +24637,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Task Handshake Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -24959,10 +24900,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -25330,9 +25267,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -25595,9 +25529,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -25615,11 +25546,8 @@
           "value": "TransformInput()"
         },
         {
-          "name": "MClassIsParticleTransform"
-        },
-        {
-          "name": "MParticleCustomFieldDefaultValue",
-          "value": null
+          "name": "MCustomFGDMetadata",
+          "value": "{ KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc' }"
         }
       ],
       "fields": [
@@ -25628,9 +25556,6 @@
     "CFloatAnimParameter": {
       "parent": "CConcreteAnimParameter",
       "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
@@ -26095,6 +26020,12 @@
       "fields": [
       ]
     },
+    "RsStencilStateDesc_t": {
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "C_OP_RemapDistanceToLineSegmentToScalar": {
       "parent": "C_OP_RemapDistanceToLineSegmentBase",
       "metadata": [
@@ -26194,6 +26125,17 @@
     },
     "CNmEventConsumerLegacy": {
       "parent": "CNmEventConsumer",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "C_OP_PinRopeSegmentParticleToParent": {
+      "parent": "CParticleFunctionOperator",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -26678,9 +26620,6 @@
       "parent": "CConcreteAnimParameter",
       "metadata": [
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        },
-        {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
         },
@@ -26725,10 +26664,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "MPropertyEditClassAsString",
-          "value": null
         }
       ],
       "fields": [
@@ -26816,6 +26751,12 @@
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
         }
+      ],
+      "fields": [
+      ]
+    },
+    "RsBlendStateDesc_t": {
+      "metadata": [
       ],
       "fields": [
       ]
@@ -27470,9 +27411,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Audio Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -27659,9 +27597,6 @@
     },
     "IKSolverSettings_t": {
       "metadata": [
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
-        }
       ],
       "fields": [
       ]
@@ -27705,6 +27640,17 @@
     },
     "C_OP_RemapSpeedtoCP": {
       "parent": "CParticleFunctionPreEmission",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "C_INIT_CheckParticleForWater": {
+      "parent": "CParticleFunctionInitializer",
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
@@ -28193,9 +28139,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -28457,9 +28400,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Sequence Finished Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -28604,6 +28544,16 @@
       "fields": [
       ]
     },
+    "CDestructiblePart_DamageLevel": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "FeSimdRodConstraint_t": {
       "metadata": [
         {
@@ -28728,9 +28678,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Internal Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -28746,9 +28693,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Ragdoll Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -28801,9 +28745,6 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -28829,9 +28770,6 @@
         {
           "name": "MPropertyFriendlyName",
           "value": "Body Group Tag"
-        },
-        {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
         }
       ],
       "fields": [
@@ -28880,7 +28818,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "M_LEGACY_OptInToSchemaPropertyDomain"
+          "name": "MPropertyFriendlyName",
+          "value": "Soundevent Cluster"
         }
       ],
       "fields": [

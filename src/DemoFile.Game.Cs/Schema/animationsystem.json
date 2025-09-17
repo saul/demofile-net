@@ -57,15 +57,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -109,15 +101,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -129,26 +113,12 @@
           "value": "Evaluate the requirements of each connected node"
         },
         {
-          "name": "MPulseCell_WithNoDefaultOutflow"
-        },
-        {
           "name": "MPulseEditorHeaderIcon",
           "value": "tools/images/pulse_editor/requirements.png"
         },
         {
           "name": "MPulseEditorCanvasItemSpecKV3",
           "value": "{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"
-        },
-        {
-          "name": "MPulseSelectorHasSpecificity"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_IsRequirementValid"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_LimitCount"
         }
       ],
       "fields": [
@@ -157,25 +127,6 @@
     "CParticleBindingRealPulse": {
       "parent": "CParticleCollectionBindingInstance",
       "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainScopeInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
-        }
       ],
       "fields": [
       ]
@@ -188,15 +139,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -235,19 +178,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -294,9 +226,6 @@
         {
           "name": "MPulseEditorHeaderIcon",
           "value": "tools/images/pulse_editor/inflow_statecell.png"
-        },
-        {
-          "name": "MPulseCell_WithNoDefaultOutflow"
         }
       ],
       "fields": [
@@ -320,19 +249,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -346,15 +264,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -367,10 +277,6 @@
     },
     "CPulseCursorFuncs": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
         {
           "name": "MPropertyDescription",
           "value": "Library for interacting with pulse cursors."
@@ -391,13 +297,6 @@
     },
     "CBasePulseGraphInstance": {
       "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
-        }
       ],
       "fields": [
       ]
@@ -410,19 +309,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -479,15 +367,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -508,10 +388,6 @@
     },
     "CPulseTestScriptLib": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
         {
           "name": "MPropertyDescription",
           "value": "Testing script helpers."
@@ -539,15 +415,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -566,19 +434,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -624,10 +481,6 @@
     "CPulseArraylib": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
           "name": "MPropertyDescription",
           "value": "Array support."
         }
@@ -650,19 +503,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -676,19 +518,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -707,59 +538,6 @@
     "CParticleCollectionBindingInstance": {
       "parent": "CBasePulseGraphInstance",
       "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainScopeInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag",
-          "value": null
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_Outflow_StringSwitch": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        },
-        {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
-        }
       ],
       "fields": [
       ]
@@ -782,19 +560,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -835,19 +602,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -861,19 +617,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -897,15 +642,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -936,19 +673,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -962,19 +688,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -999,15 +714,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1034,19 +741,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -1054,10 +750,6 @@
     },
     "CPulseMathlib": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
         {
           "name": "MPropertyDescription",
           "value": "Basic math support."
@@ -1081,19 +773,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -1107,19 +788,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -1143,15 +813,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1165,32 +827,6 @@
         {
           "name": "MPulseEditorHeaderIcon",
           "value": "tools/images/pulse_editor/exit_cycle_random.png"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_Outflow_IntSwitch": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        },
-        {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -1214,27 +850,11 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
           "name": "MPulseFunctionHiddenInTool"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_IsRequirementValid"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_LimitCount"
         }
       ],
       "fields": [
@@ -1248,15 +868,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1266,14 +878,6 @@
         {
           "name": "MPropertyDescription",
           "value": "Skip this node after the limit. Check Type does not apply, the limit will always be checked."
-        },
-        {
-          "name": "MPulseRequirementPass",
-          "value": null
-        },
-        {
-          "name": "MPulseRequirementSummaryExpr",
-          "value": "\"Limit Count: \" + m_nLimitCount"
         }
       ],
       "fields": [
@@ -1287,19 +891,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -1329,15 +922,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1364,15 +949,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1393,9 +970,6 @@
     },
     "CPulseExecCursor": {
       "metadata": [
-        {
-          "name": "MPulseInternal_IsCursor"
-        }
       ],
       "fields": [
       ]

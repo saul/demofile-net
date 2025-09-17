@@ -74,7 +74,6 @@ public struct EntityEvents
     public EntityEvents<CEnvDetailController, CsDemoParser> CEnvDetailController;
     public EntityEvents<CEnvLightProbeVolume, CsDemoParser> CEnvLightProbeVolume;
     public EntityEvents<CEnvParticleGlow, CsDemoParser> CEnvParticleGlow;
-    public EntityEvents<CEnvProjectedTexture, CsDemoParser> CEnvProjectedTexture;
     public EntityEvents<CEnvSky, CsDemoParser> CEnvSky;
     public EntityEvents<CEnvVolumetricFogController, CsDemoParser> CEnvVolumetricFogController;
     public EntityEvents<CEnvVolumetricFogVolume, CsDemoParser> CEnvVolumetricFogVolume;
@@ -154,6 +153,7 @@ public struct EntityEvents
     public EntityEvents<CPrecipitationBlocker, CsDemoParser> CPrecipitationBlocker;
     public EntityEvents<CPredictedViewModel, CsDemoParser> CPredictedViewModel;
     public EntityEvents<CPropDoorRotating, CsDemoParser> CPropDoorRotating;
+    public EntityEvents<CPulseGameBlackboard, CsDemoParser> CPulseGameBlackboard;
     public EntityEvents<CRagdollManager, CsDemoParser> CRagdollManager;
     public EntityEvents<CRagdollProp, CsDemoParser> CRagdollProp;
     public EntityEvents<CRagdollPropAttached, CsDemoParser> CRagdollPropAttached;
