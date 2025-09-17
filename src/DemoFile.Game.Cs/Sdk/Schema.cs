@@ -11393,6 +11393,17 @@ public partial class CDestructiblePartsComponent
             factory = () => new CDestructiblePartsComponent();
             return decoderSet.GetDecoder<CDestructiblePartsComponent>(serializerKey);
         }
+        else if (serializerKey.Name == "CDestructiblePartsSystemComponent")
+        {
+            factory = () => new CDestructiblePartsSystemComponent();
+            var childClassDecoder = decoderSet.GetDecoder<CDestructiblePartsSystemComponent>(serializerKey);
+            return (CDestructiblePartsComponent instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CDestructiblePartsSystemComponent);
+                var downcastInstance = Unsafe.As<CDestructiblePartsSystemComponent>(instance);
+                childClassDecoder(downcastInstance, path, ref buffer);
+            };
+        }
         throw new NotImplementedException($"Unknown derived class of CDestructiblePartsComponent: {serializerKey}");
     }
 
