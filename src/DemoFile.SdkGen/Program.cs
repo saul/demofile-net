@@ -464,37 +464,36 @@ internal static class Program
             builder.AppendLine($"            return decoderSet.GetDecoder<{classNameCs}>(serializerKey);");
             builder.AppendLine($"        }}");
 
-            if (parentToChildMap.TryGetValue(schemaClassName, out var directChildren))
+            var directChildren = parentToChildMap.GetValueOrDefault(schemaClassName);
+
+            var hardcodedChildren = gameSdkInfo.HardcodedChildClasses.GetValueOrDefault(
+                schemaClassName,
+                ArraySegment<string>.Empty);
+
+            var childClasses = new Queue<string>((directChildren?.Select(x => x.Key) ?? ArraySegment<string>.Empty).Concat(hardcodedChildren));
+
+            while (childClasses.Count > 0)
             {
-                var hardcodedChildren = gameSdkInfo.HardcodedChildClasses.GetValueOrDefault(
-                    schemaClassName,
-                    ArraySegment<string>.Empty);
+                var childClass = childClasses.Dequeue();
 
-                var childClasses = new Queue<string>(directChildren.Select(x => x.Key).Concat(hardcodedChildren));
+                builder.AppendLine($"        else if (serializerKey.Name == \"{childClass}\")");
+                builder.AppendLine($"        {{");
+                builder.AppendLine($"            factory = () => new {childClass}();");
+                builder.AppendLine($"            var childClassDecoder = decoderSet.GetDecoder<{childClass}>(serializerKey);");
+                builder.AppendLine($"            return ({classNameCs} instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                builder.AppendLine($"            {{");
+                builder.AppendLine($"                Debug.Assert(instance is {childClass});");
+                builder.AppendLine($"                var downcastInstance = Unsafe.As<{childClass}>(instance);");
+                builder.AppendLine($"                childClassDecoder(downcastInstance, path, ref buffer);");
+                builder.AppendLine($"            }};");
+                builder.AppendLine($"        }}");
 
-                while (childClasses.Count > 0)
+                var myChildren = parentToChildMap.GetValueOrDefault(
+                    childClass,
+                    ImmutableList<KeyValuePair<string, SchemaClass>>.Empty);
+                foreach (var (toAdd, _) in myChildren)
                 {
-                    var childClass = childClasses.Dequeue();
-
-                    builder.AppendLine($"        else if (serializerKey.Name == \"{childClass}\")");
-                    builder.AppendLine($"        {{");
-                    builder.AppendLine($"            factory = () => new {childClass}();");
-                    builder.AppendLine($"            var childClassDecoder = decoderSet.GetDecoder<{childClass}>(serializerKey);");
-                    builder.AppendLine($"            return ({classNameCs} instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-                    builder.AppendLine($"            {{");
-                    builder.AppendLine($"                Debug.Assert(instance is {childClass});");
-                    builder.AppendLine($"                var downcastInstance = Unsafe.As<{childClass}>(instance);");
-                    builder.AppendLine($"                childClassDecoder(downcastInstance, path, ref buffer);");
-                    builder.AppendLine($"            }};");
-                    builder.AppendLine($"        }}");
-
-                    var myChildren = parentToChildMap.GetValueOrDefault(
-                        childClass,
-                        ImmutableList<KeyValuePair<string, SchemaClass>>.Empty);
-                    foreach (var (toAdd, _) in myChildren)
-                    {
-                        childClasses.Enqueue(toAdd);
-                    }
+                    childClasses.Enqueue(toAdd);
                 }
             }
 
