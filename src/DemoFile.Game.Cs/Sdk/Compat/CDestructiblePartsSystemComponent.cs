@@ -1,3 +1,5 @@
+namespace DemoFile.Game.Cs;
+
 [Obsolete("Removed in v14104")]
 public class CDestructiblePartsSystemComponent
 {
