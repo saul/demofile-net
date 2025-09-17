@@ -392,39 +392,16 @@
       "fields": [
       ]
     },
-    "CPointEntity": {
-      "parent": "CBaseEntity",
+    "CPulseGraphInstance_GameBlackboard": {
+      "parent": "CPulseGraphInstance_ServerEntity",
       "metadata": [
       ],
       "fields": [
       ]
     },
-    "CPulseGraphInstance_GameBlackboard": {
-      "parent": "CPulseGraphInstance_ServerEntity",
+    "CPointEntity": {
+      "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainScopeInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainIsGameBlackboard"
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -451,15 +428,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -612,18 +581,6 @@
     },
     "CBaseTriggerAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -875,7 +832,7 @@
             },
             {
               "name": "MNetworkUserGroup",
-              "value": "LocalPlayerOwnerAndObserversExclusive"
+              "value": "SpectatorsAndObserversExclusive"
             }
           ]
         }
@@ -956,7 +913,7 @@
         {
           "name": "m_vFanOrigin",
           "type": {
-            "name": "Vector",
+            "name": "VectorWS",
             "category": 4,
             "atomic": 0
           },
@@ -1119,13 +1076,6 @@
     "CPulseServerCursor": {
       "parent": "CPulseExecCursor",
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseInternal_IsCursor"
-        }
       ],
       "fields": [
       ]
@@ -1138,19 +1088,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
           "value": null
         },
         {
@@ -1302,15 +1240,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         }
       ],
@@ -1336,9 +1266,9 @@
       ],
       "fields": [
         {
-          "name": "m_Item",
+          "name": "m_ItemAttributeContainer",
           "type": {
-            "name": "CEconItemView",
+            "name": "CAttributeContainer",
             "category": 5
           },
           "metadata": [
@@ -1400,15 +1330,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1420,26 +1342,12 @@
           "value": "Evaluate the requirements of each connected node"
         },
         {
-          "name": "MPulseCell_WithNoDefaultOutflow"
-        },
-        {
           "name": "MPulseEditorHeaderIcon",
           "value": "tools/images/pulse_editor/requirements.png"
         },
         {
           "name": "MPulseEditorCanvasItemSpecKV3",
           "value": "{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"
-        },
-        {
-          "name": "MPulseSelectorHasSpecificity"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_IsRequirementValid"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_LimitCount"
         }
       ],
       "fields": [
@@ -1737,18 +1645,6 @@
     },
     "CTestPulseIOAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -1788,18 +1684,6 @@
     },
     "CPhysMotorAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -1812,15 +1696,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -1865,6 +1741,10 @@
             "category": 0
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnNetworkedDisableChanged"
+            }
           ]
         }
       ]
@@ -1884,19 +1764,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -1981,20 +1850,6 @@
       "metadata": [
       ],
       "fields": [
-        {
-          "name": "m_bvDisabledHitGroups",
-          "type": {
-            "name": "uint32[1]",
-            "category": 3,
-            "arraySize": 1,
-            "inner": {
-              "name": "uint32",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "CRopeKeyframe": {
@@ -2343,18 +2198,6 @@
     },
     "CBasePlayerControllerAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -2438,18 +2281,6 @@
     },
     "CPointTeleportAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -3002,6 +2833,15 @@
           ]
         },
         {
+          "name": "m_nSerializePoseRecipeVersionAG2",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_nGraphCreationFlagsAG2",
           "type": {
             "name": "uint8",
@@ -3204,19 +3044,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -3415,9 +3244,6 @@
         {
           "name": "MPulseEditorHeaderIcon",
           "value": "tools/images/pulse_editor/inflow_statecell.png"
-        },
-        {
-          "name": "MPulseCell_WithNoDefaultOutflow"
         }
       ],
       "fields": [
@@ -3441,19 +3267,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -3519,15 +3334,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -3957,10 +3764,6 @@
     "CPulseCursorFuncs": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
           "name": "MPropertyDescription",
           "value": "Library for interacting with pulse cursors."
         }
@@ -4374,7 +4177,7 @@
         {
           "name": "m_vecEndPos",
           "type": {
-            "name": "Vector",
+            "name": "VectorWS",
             "category": 4,
             "atomic": 0
           },
@@ -4738,13 +4541,6 @@
     },
     "CBasePulseGraphInstance": {
       "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
-        }
       ],
       "fields": [
       ]
@@ -4785,19 +4581,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -4833,18 +4618,6 @@
     },
     "CPathSimpleAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -4919,326 +4692,6 @@
       "metadata": [
       ],
       "fields": [
-      ]
-    },
-    "CEnvProjectedTexture": {
-      "parent": "CModelPointEntity",
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_hTargetEntity",
-          "type": {
-            "name": "CHandle< CBaseEntity >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "CBaseEntity",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bState",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bAlwaysUpdate",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flLightFOV",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bEnableShadows",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bSimpleProjection",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bLightOnlyTarget",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bLightWorld",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bCameraSpace",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flBrightnessScale",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_LightColor",
-          "type": {
-            "name": "Color",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flIntensity",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flLinearAttenuation",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flQuadraticAttenuation",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bVolumetric",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flNoiseStrength",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flFlashlightTime",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nNumPlanes",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flPlaneOffset",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flVolumetricIntensity",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flColorTransitionTime",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flAmbient",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_SpotlightTextureName",
-          "type": {
-            "name": "char[512]",
-            "category": 3,
-            "arraySize": 512,
-            "inner": {
-              "name": "char",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nSpotlightTextureFrame",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nShadowQuality",
-          "type": {
-            "name": "uint32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flNearZ",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkBitCount",
-              "value": 16
-            },
-            {
-              "name": "MNetworkMinValue",
-              "value": 0
-            },
-            {
-              "name": "MNetworkMaxValue",
-              "value": 500
-            },
-            {
-              "name": "MNetworkEncodeFlags",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "name": "m_flFarZ",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-            {
-              "name": "MNetworkBitCount",
-              "value": 18
-            },
-            {
-              "name": "MNetworkMinValue",
-              "value": 0
-            },
-            {
-              "name": "MNetworkMaxValue",
-              "value": 1500
-            },
-            {
-              "name": "MNetworkEncodeFlags",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "name": "m_flProjectionSize",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flRotation",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bFlipHorizontal",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "CPointServerCommand": {
@@ -6045,19 +5498,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -6493,8 +5935,8 @@
         {
           "name": "m_aimPunchTickBase",
           "type": {
-            "name": "int32",
-            "category": 0
+            "name": "GameTick_t",
+            "category": 5
           },
           "metadata": [
           ]
@@ -7317,24 +6759,6 @@
         }
       ]
     },
-    "CCSPointScriptExtensions_entity": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
-      ],
-      "fields": [
-      ]
-    },
     "SpawnPoint": {
       "parent": "CServerOnlyPointEntity",
       "metadata": [
@@ -7344,18 +6768,6 @@
     },
     "CFuncMoverAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -7496,16 +6908,26 @@
     "CPulseServerFuncs_Sounds": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
           "name": "MPropertyFriendlyName",
           "value": "Server Sound"
         },
         {
           "name": "MPropertyDescription",
           "value": "Server sound helpers."
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CPulsePhysicsConstraintsFuncs": {
+      "metadata": [
+        {
+          "name": "MPropertyFriendlyName",
+          "value": "Physics Constraints"
+        },
+        {
+          "name": "MPropertyDescription",
+          "value": "Physics constraints related methods"
         }
       ],
       "fields": [
@@ -7565,37 +6987,6 @@
     "CPulseGraphInstance_ServerEntity": {
       "parent": "CBasePulseGraphInstance",
       "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainScopeInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainOptInValueType",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainOptInGameBlackboard",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
-        }
       ],
       "fields": [
       ]
@@ -7796,19 +7187,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -8014,24 +7394,6 @@
       "fields": [
       ]
     },
-    "CCSPointScriptExtensions_observer": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CCSGO_TeamSelectCounterTerroristPosition": {
       "parent": "CCSGO_TeamSelectCharacterPosition",
       "metadata": [
@@ -8077,15 +7439,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -8135,30 +7489,8 @@
     "CPulseTestScriptLib": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
           "name": "MPropertyDescription",
           "value": "Testing script helpers."
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCSPointScriptExtensions_player_controller": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
         }
       ],
       "fields": [
@@ -8936,15 +8268,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -9035,24 +8359,6 @@
       "fields": [
       ]
     },
-    "CCSPointScriptExtensions_weapon_cs_base": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CBaseFlexAlias_funCBaseFlex": {
       "parent": "CBaseFlex",
       "metadata": [
@@ -9094,18 +8400,6 @@
     },
     "CTakeDamageInfoAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -9250,19 +8544,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -9481,24 +8764,6 @@
       "fields": [
       ]
     },
-    "CCSPointScriptExtensions_player": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CPulseCell_Outflow_CycleShuffled::InstanceState_t": {
       "metadata": [
         {
@@ -9549,18 +8814,6 @@
     },
     "CPulseAnimFuncs": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -9580,10 +8833,6 @@
     },
     "CPulseArraylib": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
         {
           "name": "MPropertyDescription",
           "value": "Array support."
@@ -9621,7 +8870,7 @@
         {
           "name": "m_vecPlayerMountPositionTop",
           "type": {
-            "name": "Vector",
+            "name": "VectorWS",
             "category": 4,
             "atomic": 0
           },
@@ -9635,7 +8884,7 @@
         {
           "name": "m_vecPlayerMountPositionBottom",
           "type": {
-            "name": "Vector",
+            "name": "VectorWS",
             "category": 4,
             "atomic": 0
           },
@@ -9687,18 +8936,6 @@
     },
     "CPointTemplateAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -9913,19 +9150,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -10296,19 +9522,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -10322,19 +9537,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -10342,10 +9546,6 @@
     },
     "CPulseFuncs_GameParticleManager": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
         {
           "name": "MPropertyFriendlyName",
           "value": "GameParticleManager"
@@ -10724,19 +9924,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -10752,6 +9941,10 @@
     "CCSPlayerController": {
       "parent": "CBasePlayerController",
       "metadata": [
+        {
+          "name": "MNetworkUserGroupProxy",
+          "value": "CCSPlayerController"
+        },
         {
           "name": "MNetworkUserGroupProxy",
           "value": "CCSPlayerController"
@@ -11805,20 +10998,12 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
           "name": "MPropertyFriendlyName",
-          "value": "Listen for Entity Output"
+          "value": "Wait for Entity Output"
         },
         {
           "name": "MPropertyDescription",
@@ -11830,7 +11015,7 @@
         },
         {
           "name": "MPulseEditorHeaderIcon",
-          "value": "tools/images/pulse_editor/eio_output_link.png"
+          "value": "tools/images/pulse_editor/inflow_wait.png"
         }
       ],
       "fields": [
@@ -11956,32 +11141,6 @@
     "CSoundOpvarSetOBBWindEntity": {
       "parent": "CSoundOpvarSetPointBase",
       "metadata": [
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_Outflow_StringSwitch": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        },
-        {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
-        }
       ],
       "fields": [
       ]
@@ -12181,10 +11340,6 @@
     "CPulseServerFuncs": {
       "metadata": [
         {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
           "name": "MPropertyFriendlyName",
           "value": "Server General"
         },
@@ -12245,18 +11400,6 @@
     },
     "CBaseModelEntityAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -12424,6 +11567,10 @@
     "CCSPlayerController_DamageServices": {
       "parent": "CPlayerControllerComponent",
       "metadata": [
+        {
+          "name": "MNetworkReplayCompatField",
+          "value": "m_DamageList.*"
+        }
       ],
       "fields": [
         {
@@ -12482,39 +11629,6 @@
       "metadata": [
         {
           "name": "MEntityAllowsPortraitWorldSpawn"
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CCSPointScript": {
-      "parent": "CBasePulseGraphInstance",
-      "metadata": [
-        {
-          "name": "MPulseInstanceDomainInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainScopeInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MSourceTSDomain"
-        },
-        {
-          "name": "MPulseDomainHiddenInTool"
-        },
-        {
-          "name": "MPulseDomainOptInFeatureTag",
-          "value": null
         }
       ],
       "fields": [
@@ -12593,6 +11707,35 @@
       "fields": [
       ]
     },
+    "CDestructiblePartsComponent": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_hOwner",
+          "type": {
+            "name": "CHandle< CBaseModelEntity >",
+            "category": 4,
+            "atomic": 1,
+            "inner": {
+              "name": "CBaseModelEntity",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nLastHitDamageLevel",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
     "CChangeLevel": {
       "parent": "CBaseTrigger",
       "metadata": [
@@ -12648,15 +11791,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -12679,19 +11814,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -12932,9 +12056,9 @@
           ]
         },
         {
-          "name": "m_unTotalRoundDamageDealt",
+          "name": "m_flTotalRoundDamageDealt",
           "type": {
-            "name": "uint32",
+            "name": "float32",
             "category": 0
           },
           "metadata": [
@@ -13133,18 +12257,6 @@
     },
     "CBaseEntityAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -13255,19 +12367,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -13410,18 +12511,6 @@
     },
     "CFilterMultipleAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -13573,19 +12662,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -14670,18 +13748,6 @@
     },
     "CLogicRelayAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -15000,15 +14066,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -15045,7 +14103,7 @@
         {
           "name": "m_vOrigin",
           "type": {
-            "name": "Vector",
+            "name": "VectorWS",
             "category": 4,
             "atomic": 0
           },
@@ -15059,7 +14117,7 @@
         {
           "name": "m_vStart",
           "type": {
-            "name": "Vector",
+            "name": "VectorWS",
             "category": 4,
             "atomic": 0
           },
@@ -16346,19 +15404,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -17549,6 +16596,15 @@
           },
           "metadata": [
           ]
+        },
+        {
+          "name": "m_flLastShakeTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
         }
       ]
     },
@@ -17690,15 +16746,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -17732,19 +16780,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -17936,14 +16973,18 @@
         {
           "name": "m_pDestructiblePartsSystemComponent",
           "type": {
-            "name": "CDestructiblePartsSystemComponent*",
+            "name": "CDestructiblePartsComponent*",
             "category": 1,
             "inner": {
-              "name": "CDestructiblePartsSystemComponent",
+              "name": "CDestructiblePartsComponent",
               "category": 5
             }
           },
           "metadata": [
+            {
+              "name": "MNetworkTypeAlias",
+              "value": "CDestructiblePartsSystemComponent*"
+            }
           ]
         },
         {
@@ -18184,6 +17225,24 @@
             {
               "name": "MNetworkUserGroup",
               "value": "Player"
+            }
+          ]
+        },
+        {
+          "name": "m_bvDisabledHitGroups",
+          "type": {
+            "name": "uint32[1]",
+            "category": 3,
+            "arraySize": 1,
+            "inner": {
+              "name": "uint32",
+              "category": 0
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnDisabledHitgroupsChanged"
             }
           ]
         }
@@ -18435,15 +17494,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -18478,6 +17529,14 @@
     },
     "CDamageRecord": {
       "metadata": [
+        {
+          "name": "MNetworkReplayCompatField",
+          "value": "m_iDamage"
+        },
+        {
+          "name": "MNetworkReplayCompatField",
+          "value": "m_iActualHealthRemoved"
+        }
       ],
       "fields": [
         {
@@ -18575,18 +17634,18 @@
           ]
         },
         {
-          "name": "m_iDamage",
+          "name": "m_flDamage",
           "type": {
-            "name": "int32",
+            "name": "float32",
             "category": 0
           },
           "metadata": [
           ]
         },
         {
-          "name": "m_iActualHealthRemoved",
+          "name": "m_flActualHealthRemoved",
           "type": {
-            "name": "int32",
+            "name": "float32",
             "category": 0
           },
           "metadata": [
@@ -18939,19 +17998,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -18959,10 +18007,6 @@
     },
     "CPulseMathlib": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
         {
           "name": "MPropertyDescription",
           "value": "Basic math support."
@@ -20103,19 +19147,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -20129,19 +19162,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -20173,53 +19195,6 @@
       "metadata": [
       ],
       "fields": [
-      ]
-    },
-    "CDestructiblePartsSystemComponent": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_DamageLevelTakenByHitGroup",
-          "type": {
-            "name": "CNetworkUtlVectorBase< uint16 >",
-            "category": 4,
-            "atomic": 2,
-            "inner": {
-              "name": "uint16",
-              "category": 0
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnDamageLevelTakenByHitGroupChanged"
-            }
-          ]
-        },
-        {
-          "name": "m_hOwner",
-          "type": {
-            "name": "CHandle< CBaseModelEntity >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "CBaseModelEntity",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_nLastHitDamageLevel",
-          "type": {
-            "name": "int32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        }
       ]
     },
     "CLogicGameEvent": {
@@ -21434,6 +20409,37 @@
       "fields": [
       ]
     },
+    "CPulseGameBlackboard": {
+      "parent": "CBaseEntity",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_strGraphName",
+          "type": {
+            "name": "CUtlString",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_strStateBlob",
+          "type": {
+            "name": "CUtlString",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnStateChanged"
+            }
+          ]
+        }
+      ]
+    },
     "CSoundEventEntityAlias_snd_event_point": {
       "parent": "CSoundEventEntity",
       "metadata": [
@@ -21449,15 +20455,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -21960,36 +20958,6 @@
     },
     "CCSPointPulseAPI": {
       "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_Outflow_IntSwitch": {
-      "parent": "CPulseCell_BaseFlow",
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        },
-        {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
-          "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
-        }
       ],
       "fields": [
       ]
@@ -22085,24 +21053,6 @@
           "metadata": [
           ]
         }
-      ]
-    },
-    "CCSPointScriptExtensions_CCSWeaponBaseVData": {
-      "metadata": [
-        {
-          "name": "MPulseLibraryBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseProvideFeatureTag",
-          "value": null
-        },
-        {
-          "name": "MPulseDomainHookInfo",
-          "value": null
-        }
-      ],
-      "fields": [
       ]
     },
     "CFuncElectrifiedVolume": {
@@ -23086,13 +22036,6 @@
         }
       ]
     },
-    "CInfoProjectedDecal": {
-      "parent": "CPointEntity",
-      "metadata": [
-      ],
-      "fields": [
-      ]
-    },
     "CEnvCubemapFog": {
       "parent": "CBaseEntity",
       "metadata": [
@@ -23272,27 +22215,11 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
         },
         {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
           "name": "MPulseFunctionHiddenInTool"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_IsRequirementValid"
-        },
-        {
-          "name": "MPulseSelectorAllowRequirementCriteria",
-          "value": "CPulseCell_LimitCount"
         }
       ],
       "fields": [
@@ -23403,6 +22330,10 @@
             }
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnActiveWeaponChanged"
+            }
           ]
         },
         {
@@ -23435,6 +22366,10 @@
             }
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnReserveAmmoChanged"
+            }
           ]
         }
       ]
@@ -24595,15 +23530,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -24613,14 +23540,6 @@
         {
           "name": "MPropertyDescription",
           "value": "Skip this node after the limit. Check Type does not apply, the limit will always be checked."
-        },
-        {
-          "name": "MPulseRequirementPass",
-          "value": null
-        },
-        {
-          "name": "MPulseRequirementSummaryExpr",
-          "value": "\"Limit Count: \" + m_nLimitCount"
         }
       ],
       "fields": [
@@ -24634,19 +23553,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -24856,10 +23764,6 @@
     "CPointPulse": {
       "parent": "CBaseEntity",
       "metadata": [
-        {
-          "name": "MPulseDomainOptInVariableKeysSource",
-          "value": null
-        }
       ],
       "fields": [
       ]
@@ -25369,19 +24273,8 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "ServerEntity"
-        },
-        {
           "name": "MPulseCellMethodBindings",
           "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
-          "value": null
-        },
-        {
-          "name": "MPulseCellWithCustomDocNode"
         }
       ],
       "fields": [
@@ -25532,15 +24425,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -25567,15 +24452,7 @@
           "value": "<kv3>"
         },
         {
-          "name": "MCellForDomain",
-          "value": "BaseDomain"
-        },
-        {
           "name": "MPulseCellMethodBindings",
-          "value": null
-        },
-        {
-          "name": "MPulseCellOutflowHookInfo",
           "value": null
         },
         {
@@ -25596,9 +24473,6 @@
     },
     "CPulseExecCursor": {
       "metadata": [
-        {
-          "name": "MPulseInternal_IsCursor"
-        }
       ],
       "fields": [
       ]

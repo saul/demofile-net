@@ -80,6 +80,7 @@ public record SchemaFieldType(
             "CUtlString" or "CUtlSymbolLarge" => "NetworkedString",
             "CEntityHandle" => $"CHandle<CEntityInstance<{gameSdkInfo.DemoParserClass}>, {gameSdkInfo.DemoParserClass}>",
             "CNetworkedQuantizedFloat" => "float",
+            "VectorWS" => "Vector",
             _ => SanitiseTypeName(gameSdkInfo, name)
         },
         SchemaAtomicCategory.T when name.StartsWith("CHandle<") => $"CHandle<{inner!.GetCsTypeName(gameSdkInfo)}, {gameSdkInfo.DemoParserClass}>",

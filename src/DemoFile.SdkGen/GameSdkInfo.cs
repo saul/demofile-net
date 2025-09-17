@@ -20,6 +20,7 @@ public class GameSdkInfo
                     }
                 },
                 { "PhysicsRagdollPose_t", new[] { "PhysicsRagdollPose_t" } },
+                { "CDestructiblePartsComponent", new[] { "CDestructiblePartsSystemComponent" } },
             };
 
             HardcodedEntities = new[]
