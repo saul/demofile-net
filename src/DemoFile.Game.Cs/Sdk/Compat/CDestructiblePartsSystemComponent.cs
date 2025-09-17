@@ -1,3 +1,5 @@
+using DemoFile.Sdk;
+
 namespace DemoFile.Game.Cs;
 
 [Obsolete("Removed in v14104")]
