@@ -1,3 +1,7 @@
+### 0.36.2 (2025-09-22)
+
+- No code changes. Re-release of 0.36.1
+
 ### 0.36.1 (2025-09-18)
 
 - Update to latest CS2 schema (2025-09-17)
