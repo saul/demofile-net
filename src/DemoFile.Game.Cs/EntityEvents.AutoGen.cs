@@ -56,6 +56,7 @@ public struct EntityEvents
     public EntityEvents<CCSTeam, CsDemoParser> CCSTeam;
     public EntityEvents<CCSWeaponBase, CsDemoParser> CCSWeaponBase;
     public EntityEvents<CCSWeaponBaseGun, CsDemoParser> CCSWeaponBaseGun;
+    public EntityEvents<CCSWeaponBaseShotgun, CsDemoParser> CCSWeaponBaseShotgun;
     public EntityEvents<CDEagle, CsDemoParser> CDEagle;
     public EntityEvents<CDecoyGrenade, CsDemoParser> CDecoyGrenade;
     public EntityEvents<CDecoyProjectile, CsDemoParser> CDecoyProjectile;

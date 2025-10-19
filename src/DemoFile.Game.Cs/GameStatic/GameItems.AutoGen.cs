@@ -1581,6 +1581,10 @@ public static class GameItems
         { 5174, new("premier season coin s=3 c=7 b=4") },
         { 5175, new("premier season coin s=3 c=7 b=5") },
         { 5176, new("crate_community_36") },
+        { 5177, new("Map Token Golden") },
+        { 5178, new("Map Token Rooftop") },
+        { 5179, new("Map Token Palacio") },
+        { 5180, new("Map Token Transit") },
         { 5200, new("customplayer_tm_phoenix") },
         { 5201, new("customplayer_tm_phoenix_varianta") },
         { 5202, new("customplayer_tm_phoenix_variantb") },
@@ -1931,9 +1935,9 @@ public static class GameItems
         { 20205, new("coupon - masterminds2_stattrak_musickit_capsule") },
         { 20206, new("coupon - perfectworld_02") },
         { 20207, new("coupon - perfectworld_02_stattrak") },
-        { 30050, new("crate_key_community_30 - Item Contest Winner") },
-        { 30092, new("set_anubis_storepromo_key - Item Contest Winner") },
-        { 30115, new("set_train_2025_storepromo_key - Item Contest Winner") },
+        { 30050, new("crate_key_community_30_contestwinner - Item Contest Winner") },
+        { 30092, new("set_anubis_storepromo_key_contestwinner - Item Contest Winner") },
+        { 30115, new("set_train_2025_storepromo_key_contestwinner - Item Contest Winner") },
     };
 
     public static readonly IReadOnlyDictionary<int, PaintKit> PaintKits = new Dictionary<int, PaintKit>()
