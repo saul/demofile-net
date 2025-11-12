@@ -56,6 +56,7 @@ public struct EntityEvents
     public EntityEvents<CCSTeam, CsDemoParser> CCSTeam;
     public EntityEvents<CCSWeaponBase, CsDemoParser> CCSWeaponBase;
     public EntityEvents<CCSWeaponBaseGun, CsDemoParser> CCSWeaponBaseGun;
+    public EntityEvents<CCSWeaponBaseShotgun, CsDemoParser> CCSWeaponBaseShotgun;
     public EntityEvents<CDEagle, CsDemoParser> CDEagle;
     public EntityEvents<CDecoyGrenade, CsDemoParser> CDecoyGrenade;
     public EntityEvents<CDecoyProjectile, CsDemoParser> CDecoyProjectile;
@@ -93,6 +94,7 @@ public struct EntityEvents
     public EntityEvents<CFuncMonitor, CsDemoParser> CFuncMonitor;
     public EntityEvents<CFuncMoveLinear, CsDemoParser> CFuncMoveLinear;
     public EntityEvents<CFuncMover, CsDemoParser> CFuncMover;
+    public EntityEvents<CFuncRetakeBarrier, CsDemoParser> CFuncRetakeBarrier;
     public EntityEvents<CFuncRotating, CsDemoParser> CFuncRotating;
     public EntityEvents<CFuncTrackTrain, CsDemoParser> CFuncTrackTrain;
     public EntityEvents<CFuncWater, CsDemoParser> CFuncWater;
