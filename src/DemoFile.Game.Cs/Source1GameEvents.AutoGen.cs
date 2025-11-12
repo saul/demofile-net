@@ -276,7 +276,6 @@ public partial class Source1GameEvents
     public Action<Source1GuardianWaveRestartEvent>? GuardianWaveRestart;
     public Action<Source1TeamIntroStartEvent>? TeamIntroStart;
     public Action<Source1TeamIntroEndEvent>? TeamIntroEnd;
-    public Action<Source1BulletFlightResolutionEvent>? BulletFlightResolution;
     public Action<Source1GamePhaseChangedEvent>? GamePhaseChanged;
     public Action<Source1ClientsideReloadCustomEconEvent>? ClientsideReloadCustomEcon;
 
@@ -7274,49 +7273,6 @@ public partial class Source1GameEvents
                     Source1GameEvent?.Invoke(@this);
                 };
             }
-            if (descriptor.Name == "bullet_flight_resolution")
-            {
-                var keys = descriptor.Keys.Select(Action<Source1BulletFlightResolutionEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
-                    {
-                        if (key.Name == "userid")
-                            return (@this, x) => @this.PlayerIndex = x.ValShort == ushort.MaxValue ? CEntityIndex.Invalid : new CEntityIndex((uint) (x.ValShort & 0xFF) + 1);
-                        if (key.Name == "userid_pawn")
-                            return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
-                        if (key.Name == "pos_x")
-                            return (@this, x) => @this.PosX = x.ValShort;
-                        if (key.Name == "pos_y")
-                            return (@this, x) => @this.PosY = x.ValShort;
-                        if (key.Name == "pos_z")
-                            return (@this, x) => @this.PosZ = x.ValShort;
-                        if (key.Name == "ang_x")
-                            return (@this, x) => @this.AngX = x.ValShort;
-                        if (key.Name == "ang_y")
-                            return (@this, x) => @this.AngY = x.ValShort;
-                        if (key.Name == "ang_z")
-                            return (@this, x) => @this.AngZ = x.ValShort;
-                        if (key.Name == "start_x")
-                            return (@this, x) => @this.StartX = x.ValShort;
-                        if (key.Name == "start_y")
-                            return (@this, x) => @this.StartY = x.ValShort;
-                        if (key.Name == "start_z")
-                            return (@this, x) => @this.StartZ = x.ValShort;
-                        return (@this, x) => { };
-                    })
-                    .ToArray();
-
-                _handlers[descriptor.Eventid] = (demo, @event) =>
-                {
-                    if (Source1GameEvent == null && BulletFlightResolution == null)
-                        return;
-                    var @this = new Source1BulletFlightResolutionEvent(demo);
-                    for (var i = 0; i < @event.Keys.Count; i++)
-                    {
-                        keys[i](@this, @event.Keys[i]);
-                    }
-                    BulletFlightResolution?.Invoke(@this);
-                    Source1GameEvent?.Invoke(@this);
-                };
-            }
             if (descriptor.Name == "game_phase_changed")
             {
                 var keys = descriptor.Keys.Select(Action<Source1GamePhaseChangedEvent, CMsgSource1LegacyGameEvent.Types.key_t> (key) =>
@@ -10783,37 +10739,6 @@ public partial class Source1TeamIntroEndEvent : Source1GameEventBase
     public override string GameEventName => "team_intro_end";
 }
 
-public partial class Source1BulletFlightResolutionEvent : Source1GameEventBase
-{
-    internal Source1BulletFlightResolutionEvent(CsDemoParser demo) : base(demo) {}
-
-    public override string GameEventName => "bullet_flight_resolution";
-
-    public CEntityIndex PlayerIndex { get; set; }
-    public CCSPlayerController? Player => _demo.GetEntityByIndex<CCSPlayerController>(PlayerIndex);
-
-    public CHandle<CEntityInstance<CsDemoParser>, CsDemoParser> PlayerPawnHandle { get; set; }
-    public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
-
-    public int PosX { get; set; }
-
-    public int PosY { get; set; }
-
-    public int PosZ { get; set; }
-
-    public int AngX { get; set; }
-
-    public int AngY { get; set; }
-
-    public int AngZ { get; set; }
-
-    public int StartX { get; set; }
-
-    public int StartY { get; set; }
-
-    public int StartZ { get; set; }
-}
-
 public partial class Source1GamePhaseChangedEvent : Source1GameEventBase
 {
     internal Source1GamePhaseChangedEvent(CsDemoParser demo) : base(demo) {}
@@ -11101,7 +11026,6 @@ public partial class Source1ClientsideReloadCustomEconEvent : Source1GameEventBa
 [JsonDerivedType(typeof(Source1GuardianWaveRestartEvent))]
 [JsonDerivedType(typeof(Source1TeamIntroStartEvent))]
 [JsonDerivedType(typeof(Source1TeamIntroEndEvent))]
-[JsonDerivedType(typeof(Source1BulletFlightResolutionEvent))]
 [JsonDerivedType(typeof(Source1GamePhaseChangedEvent))]
 [JsonDerivedType(typeof(Source1ClientsideReloadCustomEconEvent))]
 public partial class Source1GameEventBase
