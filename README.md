@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=saul&project=demofile-net&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # DemoFile.Net ![NuGet](https://img.shields.io/nuget/v/DemoFile) ![Build status](https://github.com/saul/demofile-net/actions/workflows/dotnet.yml/badge.svg)
 
 [![Join our Discord server](https://discord.com/api/guilds/1429428126361981040/widget.png?style=banner3)](https://discord.com/invite/esEWpcwhc3)
