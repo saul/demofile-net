@@ -1,3 +1,7 @@
+### 0.37.1 (2025-11-12)
+
+- Update to latest CS2 schema (v14121)
+
 ### 0.36.2 (2025-09-22)
 
 - No code changes. Re-release of 0.36.1
