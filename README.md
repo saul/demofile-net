@@ -1,6 +1,6 @@
 # DemoFile.Net ![NuGet](https://img.shields.io/nuget/v/DemoFile) ![Build status](https://github.com/saul/demofile-net/actions/workflows/dotnet.yml/badge.svg)
 
-[![Join our Discord server](https://discord.com/api/guilds/1429428126361981040/widget.png?style=banner3)](https://discord.com/invite/t7aspEnM)
+[![Join our Discord server](https://discord.com/api/guilds/1429428126361981040/widget.png?style=banner3)](https://discord.com/invite/esEWpcwhc3)
 
 DemoFile.Net is a blazing fast demo parser library for Source 2 games, written in C#. It is cross-platform, and can be
 used on Windows, Mac or Linux. This parser currently supports:
