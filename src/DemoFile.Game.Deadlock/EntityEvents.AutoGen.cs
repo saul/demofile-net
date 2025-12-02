@@ -341,7 +341,6 @@ public struct EntityEvents
     public EntityEvents<CCitadel_Ability_ViperHookblade, DeadlockDemoParser> CCitadel_Ability_ViperHookblade;
     public EntityEvents<CCitadel_Ability_ViperVenom, DeadlockDemoParser> CCitadel_Ability_ViperVenom;
     public EntityEvents<CCitadel_Ability_Viscous_Telepunch, DeadlockDemoParser> CCitadel_Ability_Viscous_Telepunch;
-    public EntityEvents<CCitadel_Ability_ViscousWeapon_Alt, DeadlockDemoParser> CCitadel_Ability_ViscousWeapon_Alt;
     public EntityEvents<CCitadel_Ability_VoidSphere, DeadlockDemoParser> CCitadel_Ability_VoidSphere;
     public EntityEvents<CCitadel_Ability_Weapon_BossTier2, DeadlockDemoParser> CCitadel_Ability_Weapon_BossTier2;
     public EntityEvents<CCitadel_Ability_Weapon_BossTier3, DeadlockDemoParser> CCitadel_Ability_Weapon_BossTier3;
@@ -384,6 +383,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_ArmorUpgrade_WeaponShielding, DeadlockDemoParser> CCitadel_ArmorUpgrade_WeaponShielding;
     public EntityEvents<CCitadel_BaseProp_MidStairs, DeadlockDemoParser> CCitadel_BaseProp_MidStairs;
     public EntityEvents<CCitadel_Bounce_Pad, DeadlockDemoParser> CCitadel_Bounce_Pad;
+    public EntityEvents<CCitadel_BreakableDroppedGoldPickup, DeadlockDemoParser> CCitadel_BreakableDroppedGoldPickup;
     public EntityEvents<CCitadel_BreakableProp, DeadlockDemoParser> CCitadel_BreakableProp;
     public EntityEvents<CCitadel_BreakablePropGoldPickup, DeadlockDemoParser> CCitadel_BreakablePropGoldPickup;
     public EntityEvents<CCitadel_BreakablePropHealthPickup, DeadlockDemoParser> CCitadel_BreakablePropHealthPickup;
@@ -547,6 +547,7 @@ public struct EntityEvents
     public EntityEvents<CCitadelItemPickupIdol, DeadlockDemoParser> CCitadelItemPickupIdol;
     public EntityEvents<CCitadelItemPickupRejuv, DeadlockDemoParser> CCitadelItemPickupRejuv;
     public EntityEvents<CCitadelItemPickupRejuvHeroTest, DeadlockDemoParser> CCitadelItemPickupRejuvHeroTest;
+    public EntityEvents<CCitadelItemPunchableNeutralGold, DeadlockDemoParser> CCitadelItemPunchableNeutralGold;
     public EntityEvents<CCitadelMatchmakingStatusInfo, DeadlockDemoParser> CCitadelMatchmakingStatusInfo;
     public EntityEvents<CCitadelMinimapBoundary, DeadlockDemoParser> CCitadelMinimapBoundary;
     public EntityEvents<CCitadelModelEntity, DeadlockDemoParser> CCitadelModelEntity;
@@ -570,6 +571,7 @@ public struct EntityEvents
     public EntityEvents<CCitadelTrackedProjectile, DeadlockDemoParser> CCitadelTrackedProjectile;
     public EntityEvents<CCitadelTriggerCapturePoint, DeadlockDemoParser> CCitadelTriggerCapturePoint;
     public EntityEvents<CCitadelTriggerHideout, DeadlockDemoParser> CCitadelTriggerHideout;
+    public EntityEvents<CCitadelTriggerNoPortals, DeadlockDemoParser> CCitadelTriggerNoPortals;
     public EntityEvents<CCitadelTrooperMinimap, DeadlockDemoParser> CCitadelTrooperMinimap;
     public EntityEvents<CCitadelViscousBall, DeadlockDemoParser> CCitadelViscousBall;
     public EntityEvents<CCitadelZipLineNode, DeadlockDemoParser> CCitadelZipLineNode;
