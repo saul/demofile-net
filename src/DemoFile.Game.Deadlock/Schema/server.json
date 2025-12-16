@@ -2896,6 +2896,17 @@
       "fields": [
       ]
     },
+    "CCitadel_CosmeticItem_Snowball_VData": {
+      "parent": "CitadelItemVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CNPC_FieldSentryVData": {
       "parent": "CNPC_SimpleAnimatingAIVData",
       "metadata": [
@@ -4431,6 +4442,57 @@
       "metadata": [
       ],
       "fields": [
+      ]
+    },
+    "CCitadel_CosmeticItem_Snowball": {
+      "parent": "CCitadel_Item",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_nSeasonal2025Level",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flSeasonal2025LevelFrac",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flNextShotTime",
+          "type": {
+            "name": "GameTime_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerExclusive"
+            }
+          ]
+        },
+        {
+          "name": "m_nShotsRemaining",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNetworkUserGroup",
+              "value": "LocalPlayerOwnerExclusive"
+            }
+          ]
+        }
       ]
     },
     "CCitadel_Modifier_GoatCharging": {
@@ -15056,6 +15118,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Modifier_NeutralDamageGrowth": {
+      "parent": "CCitadelModifier",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CInfoHeroTestingPoint": {
       "parent": "CPointEntity",
       "metadata": [
@@ -18749,11 +18818,16 @@
           ]
         },
         {
-          "name": "m_TargetAbilityID",
+          "name": "m_vecImbuedAbilities",
           "type": {
-            "name": "CUtlStringToken",
+            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
             "category": 4,
-            "atomic": 0
+            "atomic": 2,
+            "inner": {
+              "name": "CUtlStringToken",
+              "category": 4,
+              "atomic": 0
+            }
           },
           "metadata": [
           ]
@@ -25165,11 +25239,16 @@
           ]
         },
         {
-          "name": "m_TargetAbilityID",
+          "name": "m_vecImbuedAbilities",
           "type": {
-            "name": "CUtlStringToken",
+            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
             "category": 4,
-            "atomic": 0
+            "atomic": 2,
+            "inner": {
+              "name": "CUtlStringToken",
+              "category": 4,
+              "atomic": 0
+            }
           },
           "metadata": [
           ]
@@ -38374,25 +38453,6 @@
           ]
         },
         {
-          "name": "m_vecImbuedByAbilitiyIDs",
-          "type": {
-            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
-            "category": 4,
-            "atomic": 2,
-            "inner": {
-              "name": "CUtlStringToken",
-              "category": 4,
-              "atomic": 0
-            }
-          },
-          "metadata": [
-            {
-              "name": "MNetworkChangeCallback",
-              "value": "OnAbilityImbuedChanged"
-            }
-          ]
-        },
-        {
           "name": "m_bCanBeUpgraded",
           "type": {
             "name": "bool",
@@ -38625,13 +38685,22 @@
           ]
         },
         {
-          "name": "m_nImbuedAbilityID",
+          "name": "m_vecImbuedAbilities",
           "type": {
-            "name": "CUtlStringToken",
+            "name": "CNetworkUtlVectorBase< CUtlStringToken >",
             "category": 4,
-            "atomic": 0
+            "atomic": 2,
+            "inner": {
+              "name": "CUtlStringToken",
+              "category": 4,
+              "atomic": 0
+            }
           },
           "metadata": [
+            {
+              "name": "MNetworkChangeCallback",
+              "value": "OnAbilityImbuedChanged"
+            }
           ]
         },
         {
@@ -48786,6 +48855,17 @@
             }
           ]
         }
+      ]
+    },
+    "CCitadel_Modifier_NeutralDamageGrowthVData": {
+      "parent": "CCitadelModifierVData",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
       ]
     },
     "CHandleTest": {

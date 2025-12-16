@@ -390,6 +390,7 @@ public struct EntityEvents
     public EntityEvents<CCitadel_BreakablePropModifierPickup, DeadlockDemoParser> CCitadel_BreakablePropModifierPickup;
     public EntityEvents<CCitadel_BreakablePropPickup, DeadlockDemoParser> CCitadel_BreakablePropPickup;
     public EntityEvents<CCitadel_CatAnimating, DeadlockDemoParser> CCitadel_CatAnimating;
+    public EntityEvents<CCitadel_CosmeticItem_Snowball, DeadlockDemoParser> CCitadel_CosmeticItem_Snowball;
     public EntityEvents<CCitadel_DeployablePreview, DeadlockDemoParser> CCitadel_DeployablePreview;
     public EntityEvents<CCitadel_Destroyable_Building, DeadlockDemoParser> CCitadel_Destroyable_Building;
     public EntityEvents<CCitadel_DoorwayPortal, DeadlockDemoParser> CCitadel_DoorwayPortal;

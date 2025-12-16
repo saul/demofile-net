@@ -210,8 +210,9 @@ public enum EAbilitySlots : short
     ESlot_Weapon_Secondary = 0x13,
     ESlot_Weapon_Primary = 0x14,
     ESlot_Weapon_Melee = 0x15,
-    ESlot_None = 0x16,
-    EMaxAbilitySlots = 0x16,
+    ESlot_Cosmetic_1 = 0x16,
+    ESlot_None = 0x17,
+    EMaxAbilitySlots = 0x17,
 }
 
 public enum EAttachState : int
@@ -317,6 +318,7 @@ public enum EHideoutButtonAction : int
     k_eNews = 0x7,
     k_eHeroReleaseVote = 0x8,
     k_eFireEntityOutput = 0x9,
+    k_eSeasonalEvent = 0xA,
 }
 
 public enum EHideoutButtonInteractStyle : int
@@ -23935,6 +23937,86 @@ public partial class CCitadel_CatAnimating : CCitadelAnimatingModelEntity
     }
 }
 
+public partial class CCitadel_CosmeticItem_Snowball : CCitadel_Item
+{
+    internal CCitadel_CosmeticItem_Snowball(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    public Int32 Seasonal2025Level { get; private set; }
+
+    public float Seasonal2025LevelFrac { get; private set; }
+
+    // MNetworkUserGroup "LocalPlayerOwnerExclusive"
+    public GameTime NextShotTime { get; private set; } = new();
+
+    // MNetworkUserGroup "LocalPlayerOwnerExclusive"
+    public Int32 ShotsRemaining { get; private set; }
+
+    internal new static SendNodeDecoder<CCitadel_CosmeticItem_Snowball> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        if (field.VarName == "m_nSeasonal2025Level")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_CosmeticItem_Snowball @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Seasonal2025Level = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flSeasonal2025LevelFrac")
+        {
+            var decoder = FieldDecode.CreateDecoder_float(field.FieldEncodingInfo);
+            return (CCitadel_CosmeticItem_Snowball @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.Seasonal2025LevelFrac = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_flNextShotTime")
+        {
+            var decoder = FieldDecode.CreateDecoder_GameTime(field.FieldEncodingInfo);
+            return (CCitadel_CosmeticItem_Snowball @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.NextShotTime = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_nShotsRemaining")
+        {
+            var decoder = FieldDecode.CreateDecoder_Int32(field.FieldEncodingInfo);
+            return (CCitadel_CosmeticItem_Snowball @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ShotsRemaining = decoder(ref buffer);
+            };
+        }
+        return CCitadel_Item.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_CosmeticItem_Snowball.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_CosmeticItem_Snowball.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_CosmeticItem_Snowball.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_CosmeticItem_Snowball.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_DeployablePreview : CBaseAnimGraph
 {
     internal CCitadel_DeployablePreview(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -29916,9 +29998,6 @@ public partial class CCitadelBaseAbility : CBaseEntity
     // MNetworkChangeCallback "OnInCastDelayChanged"
     public bool InCastDelay { get; private set; }
 
-    // MNetworkChangeCallback "OnAbilityImbuedChanged"
-    public NetworkedVector<CUtlStringToken> ImbuedByAbilitiyIDs { get; private set; } = new NetworkedVector<CUtlStringToken>();
-
     public bool CanBeUpgraded { get; private set; }
 
     public CitadelStolenAbilitySlot StolenInSlot { get; private set; } = new();
@@ -29972,7 +30051,8 @@ public partial class CCitadelBaseAbility : CBaseEntity
 
     public bool CanBeImbued { get; private set; }
 
-    public CUtlStringToken ImbuedAbilityID { get; private set; }
+    // MNetworkChangeCallback "OnAbilityImbuedChanged"
+    public NetworkedVector<CUtlStringToken> ImbuedAbilities { get; private set; } = new NetworkedVector<CUtlStringToken>();
 
     // MNetworkUserGroup "LocalPlayerOwnerAndObserversExclusive"
     public bool SelectionModeIsAltMode { get; private set; }
@@ -29993,26 +30073,6 @@ public partial class CCitadelBaseAbility : CBaseEntity
             return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.InCastDelay = decoder(ref buffer);
-            };
-        }
-        if (field.VarName == "m_vecImbuedByAbilitiyIDs")
-        {
-            var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
-            return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var newSize = (int)buffer.ReadUVarInt32();
-                    @this.ImbuedByAbilitiyIDs.Resize(newSize);
-                }
-                else
-                {
-                    Debug.Assert(path.Length == 2);
-                    var index = path[1];
-                    @this.ImbuedByAbilitiyIDs.EnsureSize(index + 1);
-                    var element = decoder(ref buffer);
-                    @this.ImbuedByAbilitiyIDs[index] = element;
-                }
             };
         }
         if (field.VarName == "m_bCanBeUpgraded")
@@ -30175,12 +30235,24 @@ public partial class CCitadelBaseAbility : CBaseEntity
                 @this.CanBeImbued = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_nImbuedAbilityID")
+        if (field.VarName == "m_vecImbuedAbilities")
         {
             var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
             return (CCitadelBaseAbility @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.ImbuedAbilityID = decoder(ref buffer);
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.ImbuedAbilities.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.ImbuedAbilities.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.ImbuedAbilities[index] = element;
+                }
             };
         }
         if (field.VarName == "m_bSelectionModeIsAltMode")
@@ -50681,7 +50753,7 @@ public partial class DynamicAbilityValues
 {
     public CUtlStringToken SourceAbilityID { get; private set; }
 
-    public CUtlStringToken TargetAbilityID { get; private set; }
+    public NetworkedVector<CUtlStringToken> ImbuedAbilities { get; private set; } = new NetworkedVector<CUtlStringToken>();
 
     public EModifierValue ValType { get; private set; }
 
@@ -50697,12 +50769,24 @@ public partial class DynamicAbilityValues
                 @this.SourceAbilityID = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_TargetAbilityID")
+        if (field.VarName == "m_vecImbuedAbilities")
         {
             var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
             return (DynamicAbilityValues @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.TargetAbilityID = decoder(ref buffer);
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.ImbuedAbilities.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.ImbuedAbilities.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.ImbuedAbilities[index] = element;
+                }
             };
         }
         if (field.VarName == "m_eValType")
@@ -51367,7 +51451,7 @@ public partial class ItemImbuementPair
 {
     public CUtlStringToken SourceItemID { get; private set; }
 
-    public CUtlStringToken TargetAbilityID { get; private set; }
+    public NetworkedVector<CUtlStringToken> ImbuedAbilities { get; private set; } = new NetworkedVector<CUtlStringToken>();
 
     internal static SendNodeDecoder<ItemImbuementPair> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
@@ -51379,12 +51463,24 @@ public partial class ItemImbuementPair
                 @this.SourceItemID = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_TargetAbilityID")
+        if (field.VarName == "m_vecImbuedAbilities")
         {
             var decoder = FieldDecode.CreateDecoder_CUtlStringToken(field.FieldEncodingInfo);
             return (ItemImbuementPair @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.TargetAbilityID = decoder(ref buffer);
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    @this.ImbuedAbilities.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length == 2);
+                    var index = path[1];
+                    @this.ImbuedAbilities.EnsureSize(index + 1);
+                    var element = decoder(ref buffer);
+                    @this.ImbuedAbilities[index] = element;
+                }
             };
         }
         if (decoderSet.TryCreateFallbackDecoder(field, decoderSet, out var fallback))
@@ -57747,6 +57843,18 @@ internal sealed partial class DeadlockDecoderSet : DecoderSet
             {
                 Debug.Assert(instance is CCitadel_CatAnimating);
                 var @this = Unsafe.As<CCitadel_CatAnimating>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "CCitadel_CosmeticItem_Snowball":
+        {
+            var innerDecoder = GetDecoder<CCitadel_CosmeticItem_Snowball>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_CosmeticItem_Snowball);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_CosmeticItem_Snowball);
+                var @this = Unsafe.As<CCitadel_CosmeticItem_Snowball>(instance);
                 innerDecoder(@this, path, ref buffer);
             };
             return true;
@@ -64596,6 +64704,10 @@ internal sealed partial class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_CatAnimating>(CCitadel_CatAnimating.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_CosmeticItem_Snowball))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_CosmeticItem_Snowball>(CCitadel_CosmeticItem_Snowball.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_DeployablePreview))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_DeployablePreview>(CCitadel_DeployablePreview.CreateFieldDecoder);
@@ -66739,6 +66851,7 @@ internal static class DeadlockEntityFactories
         {"CCitadel_BreakablePropModifierPickup", (context, decoder) => new CCitadel_BreakablePropModifierPickup(context, decoder)},
         {"CCitadel_BreakablePropPickup", (context, decoder) => new CCitadel_BreakablePropPickup(context, decoder)},
         {"CCitadel_CatAnimating", (context, decoder) => new CCitadel_CatAnimating(context, decoder)},
+        {"CCitadel_CosmeticItem_Snowball", (context, decoder) => new CCitadel_CosmeticItem_Snowball(context, decoder)},
         {"CCitadel_DeployablePreview", (context, decoder) => new CCitadel_DeployablePreview(context, decoder)},
         {"CCitadel_Destroyable_Building", (context, decoder) => new CCitadel_Destroyable_Building(context, decoder)},
         {"CCitadel_DoorwayPortal", (context, decoder) => new CCitadel_DoorwayPortal(context, decoder)},

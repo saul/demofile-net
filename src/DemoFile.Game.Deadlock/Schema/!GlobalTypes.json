@@ -5472,6 +5472,10 @@
         {
           "name": "k_eFireEntityOutput",
           "value": 9
+        },
+        {
+          "name": "k_eSeasonalEvent",
+          "value": 10
         }
       ]
     },
@@ -9285,12 +9289,16 @@
           "value": 21
         },
         {
-          "name": "ESlot_None",
+          "name": "ESlot_Cosmetic_1",
           "value": 22
         },
         {
+          "name": "ESlot_None",
+          "value": 23
+        },
+        {
           "name": "EMaxAbilitySlots",
-          "value": 22
+          "value": 23
         }
       ]
     },
@@ -12201,6 +12209,10 @@
         {
           "name": "IN_CANCEL_ABILITY",
           "value": 1152921504606846976
+        },
+        {
+          "name": "IN_COSMETIC_1",
+          "value": 2305843009213693952
         }
       ]
     },
@@ -12850,7 +12862,7 @@
           "value": 356
         },
         {
-          "name": "k_EUserMsg_SeasonalAchievementUnlocked",
+          "name": "k_EUserMsg_SeasonalKill",
           "value": 357
         },
         {
@@ -20420,8 +20432,12 @@
           "value": 4
         },
         {
-          "name": "EAbilityType_Melee",
+          "name": "EAbilityType_Cosmetic",
           "value": 5
+        },
+        {
+          "name": "EAbilityType_Melee",
+          "value": 6
         }
       ]
     },
@@ -25039,8 +25055,12 @@
           "value": 242
         },
         {
-          "name": "MODIFIER_STATE_COUNT",
+          "name": "MODIFIER_STATE_IGNORE_OUT_OF_PLAY_AREA_CHECK",
           "value": 243
+        },
+        {
+          "name": "MODIFIER_STATE_COUNT",
+          "value": 244
         },
         {
           "name": "MODIFIER_STATE_INVALID",
@@ -25124,6 +25144,19 @@
         {
           "name": "Default",
           "value": 3
+        }
+      ]
+    },
+    "EBetweenValueBehavior": {
+      "align": 4,
+      "items": [
+        {
+          "name": "Lerp",
+          "value": 0
+        },
+        {
+          "name": "UsePrevious",
+          "value": 1
         }
       ]
     },
@@ -38025,6 +38058,19 @@
       "fields": [
       ]
     },
+    "AbilityCosmeticInfo_t": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        },
+        {
+          "name": "MPropertyAutoExpandSelf"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CStopwatchBase": {
       "parent": "CSimpleSimTimer",
       "metadata": [
@@ -43845,6 +43891,16 @@
       ]
     },
     "ConfigIndex": {
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
+    "CLevelProgressionDefinition": {
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
