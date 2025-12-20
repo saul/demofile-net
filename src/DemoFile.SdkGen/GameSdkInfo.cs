@@ -35,6 +35,7 @@ public class GameSdkInfo
                 "CCSObserver_ViewModelServices",
                 "CCSPlayer_ViewModelServices",
                 "CPlayer_ViewModelServices",
+                "CSNetworkableLoadout_t"
             }.ToImmutableArray();
         }
     }

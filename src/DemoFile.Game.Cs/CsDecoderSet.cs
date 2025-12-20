@@ -54,6 +54,30 @@ internal partial class CsDecoderSet
             };
             return true;
         }
+        if (field.VarName == "m_vecNetworkableLoadout")
+        {
+            var dummyLoadout = new NetworkedVector<CSNetworkableLoadout>();
+            var innerDecoder = decoderSet.GetDecoder<CSNetworkableLoadout>(field.FieldSerializerKey!.Value);
+            decoder = (object @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                //@this = CCSPlayerController_InventoryServices
+
+                if (path.Length == 1)
+                {
+                    var newSize = (int)buffer.ReadUVarInt32();
+                    dummyLoadout.Resize(newSize);
+                }
+                else
+                {
+                    Debug.Assert(path.Length > 2);
+                    var index = path[1];
+                    dummyLoadout.EnsureSize(index + 1);
+                    var element = dummyLoadout[index] ??= new CSNetworkableLoadout();
+                    innerDecoder(element, path[2..], ref buffer);
+                }
+            };
+            return true;
+        }
 
         if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var engineFallbackDecoder))
         {

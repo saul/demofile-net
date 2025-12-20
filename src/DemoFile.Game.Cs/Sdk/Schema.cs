@@ -28587,6 +28587,18 @@ internal sealed partial class CsDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CSNetworkableLoadout_t":
+        {
+            var innerDecoder = GetDecoder<CSNetworkableLoadout>(new SerializerKey(className, 0));
+            classType = typeof(CSNetworkableLoadout);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CSNetworkableLoadout);
+                var @this = Unsafe.As<CSNetworkableLoadout>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CBaseViewModel":
         {
             var innerDecoder = GetDecoder<CBaseViewModel>(new SerializerKey(className, 0));
@@ -33447,6 +33459,10 @@ internal sealed partial class CsDecoderSet : DecoderSet
         if (typeof(T) == typeof(CSmokeGrenadeProjectile))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSmokeGrenadeProjectile>(CSmokeGrenadeProjectile.CreateFieldDecoder);
+        }
+        if (typeof(T) == typeof(CSNetworkableLoadout))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CSNetworkableLoadout>(CSNetworkableLoadout.CreateFieldDecoder);
         }
         if (typeof(T) == typeof(CSoundAreaEntityBase))
         {

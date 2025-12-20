@@ -1,3 +1,7 @@
+### 0.40.1 (2025-12-20)
+
+- Fix compatibility with older CS2 demos after recent game updates
+
 ### 0.39.1 (2025-12-16)
 
 - Update to latest Deadlock schema
