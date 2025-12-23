@@ -1,4 +1,5 @@
 ﻿using System.Buffers;
+using System.Collections.Frozen;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -154,7 +155,7 @@ public partial class DemoParser<TGameParser>
         var otherBaselineIdx = msg.Baseline == 0 ? 1 : 0;
 
         IReadOnlyDictionary<int, int> alternateBaselines = msg.AlternateBaselines.Count == 0
-            ? ImmutableDictionary<int, int>.Empty
+            ? FrozenDictionary<int, int>.Empty
             : msg.AlternateBaselines.ToDictionary(x => x.EntityIndex, x => x.BaselineIndex);
 
         var entitiesToDelete = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(_entities.Length);
@@ -416,27 +417,32 @@ public partial class DemoParser<TGameParser>
     [SkipLocalsInit]
     private static void ReadNewEntity(ref BitBuffer entityBitBuffer, CEntityInstance<TGameParser> entity)
     {
+        // perf: 512 covers ~100% of cases
+        // benchmarking 16/32/48/64/128/512 buffer sizes has no impact on runtime, but smaller buffer size increases allocations/GC pressure significantly
         Span<FieldPath> fieldPaths = stackalloc FieldPath[512];
 
         var fp = FieldPath.Default;
 
-        // Keep reading field paths until we reach an op with a null reader.
-        // The null reader signifies `FieldPathEncodeFinish`.
-        var index = 0;
-        while (FieldPathEncoding.ReadFieldPathOp(ref entityBitBuffer) is { Reader: { } reader })
+        // perf: implementing peek on BitBuffer and build a lookup table of symbols
+        // was noticeably slower than reading one bit at a time
+        // | Method    | Job        | Arguments        | Mean    | Error    | StdDev   | Ratio | RatioSD | Gen0       | Gen1       | Gen2      | Allocated | Alloc Ratio |
+        // |---------- |----------- |----------------- |--------:|---------:|---------:|------:|--------:|-----------:|-----------:|----------:|----------:|------------:|
+        // | ParseDemo | Job-KLQGNY | /p:Baseline=true | 2.256 s | 0.0336 s | 0.0314 s |  1.00 |    0.00 | 73000.0000 | 17000.0000 | 2000.0000 | 671.65 MB |        1.00 |
+        // | ParseDemo | Job-LTNMPJ | Default          | 2.387 s | 0.0267 s | 0.0236 s |  1.06 |    0.02 | 75000.0000 | 17000.0000 | 3000.0000 | 683.36 MB |        1.02 |
+        var written = 0;
+        while (FieldPathEncoding.ReadFieldPathOp(ref entityBitBuffer, ref fp))
         {
-            if (index == fieldPaths.Length)
+            if (written == fieldPaths.Length)
             {
                 var newArray = new FieldPath[fieldPaths.Length * 2];
                 fieldPaths.CopyTo(newArray);
                 fieldPaths = newArray;
             }
 
-            reader.Invoke(ref entityBitBuffer, ref fp);
-            fieldPaths[index++] = fp;
+            fieldPaths[written++] = fp;
         }
 
-        fieldPaths = fieldPaths[..index];
+        fieldPaths = fieldPaths[..written];
 
         for (var idx = 0; idx < fieldPaths.Length; idx++)
         {

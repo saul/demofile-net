@@ -1,3 +1,8 @@
+### 0.41.1
+
+- Upgraded library to .NET 9
+- Further optimised stream reading (~40% faster demo parsing)
+
 ### 0.40.1 (2025-12-20)
 
 - Fix compatibility with older CS2 demos after recent game updates

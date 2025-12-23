@@ -1,4 +1,6 @@
-﻿import "networkbasetypes.proto";
+﻿syntax = "proto2";
+
+import "networkbasetypes.proto";
 import "usercmd.proto";
 
 message CSGOInterpolationInfoPB {

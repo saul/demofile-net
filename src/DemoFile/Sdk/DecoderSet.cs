@@ -64,7 +64,9 @@ public abstract class DecoderSet
         var decoderFactory = GetFactory<T>();
         var fieldDecodersByIndex = serializer.Fields.Select(field => decoderFactory(field, this)).ToArray();
 
-        return (T instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+        return DecodeField;
+
+        void DecodeField(T instance, ReadOnlySpan<int> path, ref BitBuffer buffer)
         {
 #if DEBUG
             var _serializer = serializer;
@@ -72,6 +74,6 @@ public abstract class DecoderSet
 
             var fieldDecoder = fieldDecodersByIndex[path[0]];
             fieldDecoder(instance, path, ref buffer);
-        };
+        }
     }
 }
