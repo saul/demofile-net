@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Numerics;
 using System.Text;
 using System.Text.Json;
 using QuickGraph;
@@ -577,9 +578,20 @@ internal static class Program
             field.TryGetMetadata("MNetworkSerializer", out var serializer);
             field.TryGetMetadata("MNetworkAlias", out var alias);
 
+            var compatibilityAlias = gameSdkInfo.FieldCompatibilityAliases.GetValueOrDefault(field.Name);
+
+            var fieldNames =
+                new[] { alias?.StringValue, field.Name, compatibilityAlias }.Where(x => x != null).ToArray();
+
+            var fieldNameMatch = fieldNames switch
+            {
+                [var singleName] => $"== \"{singleName}\"",
+                _ => "is " + string.Join(" or ", fieldNames.Select(x => $"\"{x}\""))
+            };
+
             if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.BoxedPrimitive.HasValue != true && !IgnoreClasses.Contains(field.Type.Name))
             {
-                builder.AppendLine($"        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == \"{field.Name}\")");
+                builder.AppendLine($"        if (field.SendNode.Length >= 1 && field.SendNode.Span[0] {fieldNameMatch})");
                 builder.AppendLine($"        {{");
                 builder.AppendLine($"            var innerDecoder = {fieldCsTypeName}.CreateFieldDecoder(field with {{SendNode = field.SendNode[1..]}}, decoderSet);");
                 builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
@@ -590,7 +602,7 @@ internal static class Program
             }
             else
             {
-                builder.AppendLine($"        if (field.VarName == \"{alias?.StringValue ?? field.Name}\")");
+                builder.AppendLine($"        if (field.VarName {fieldNameMatch})");
                 builder.AppendLine($"        {{");
 
                 if (field.Type.Atomic == SchemaAtomicCategory.Collection && field.Type.Inner!.Category == SchemaTypeCategory.DeclaredClass)
@@ -600,23 +612,44 @@ internal static class Program
                     // This field is a variable array for a declared class
                     // (i.e. we'll need to delegate deserialisation of the child elements)
 
-                    builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{inner.GetCsTypeName(gameSdkInfo)}>(field.FieldSerializerKey!.Value);");
-                    builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
-                    builder.AppendLine($"            {{");
-                    builder.AppendLine($"                if (path.Length == 1)");
-                    builder.AppendLine($"                {{");
-                    builder.AppendLine($"                    var newSize = (int)buffer.ReadUVarInt32();");
-                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.Resize(newSize);");
-                    builder.AppendLine($"                }}");
-                    builder.AppendLine($"                else");
-                    builder.AppendLine($"                {{");
-                    builder.AppendLine($"                    Debug.Assert(path.Length > 2);");
-                    builder.AppendLine($"                    var index = path[1];");
-                    builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
-                    builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[index] ??= new {inner.GetCsTypeName(gameSdkInfo)}();");
-                    builder.AppendLine($"                    innerDecoder(element, path[2..], ref buffer);");
-                    builder.AppendLine($"                }}");
-                    builder.AppendLine($"            }};");
+                    if (classMap[inner.Name].BoxedPrimitive.HasValue)
+                    {
+                        builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                        builder.AppendLine($"            {{");
+                        builder.AppendLine($"                if (path.Length == 1)");
+                        builder.AppendLine($"                {{");
+                        builder.AppendLine($"                    var newSize = (int)buffer.ReadUVarInt32();");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}.Resize(newSize);");
+                        builder.AppendLine($"                }}");
+                        builder.AppendLine($"                else");
+                        builder.AppendLine($"                {{");
+                        builder.AppendLine($"                    Debug.Assert(path.Length == 2);");
+                        builder.AppendLine($"                    var index = path[1];");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}[index] = {inner.GetCsTypeName(gameSdkInfo)}.Decode(ref buffer);");
+                        builder.AppendLine($"                }}");
+                        builder.AppendLine($"            }};");
+                    }
+                    else
+                    {
+                        builder.AppendLine($"            var innerDecoder = decoderSet.GetDecoder<{inner.GetCsTypeName(gameSdkInfo)}>(field.FieldSerializerKey!.Value);");
+                        builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
+                        builder.AppendLine($"            {{");
+                        builder.AppendLine($"                if (path.Length == 1)");
+                        builder.AppendLine($"                {{");
+                        builder.AppendLine($"                    var newSize = (int)buffer.ReadUVarInt32();");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}.Resize(newSize);");
+                        builder.AppendLine($"                }}");
+                        builder.AppendLine($"                else");
+                        builder.AppendLine($"                {{");
+                        builder.AppendLine($"                    Debug.Assert(path.Length > 2);");
+                        builder.AppendLine($"                    var index = path[1];");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
+                        builder.AppendLine($"                    var element = @this.{fieldCsPropertyName}[index] ??= new {inner.GetCsTypeName(gameSdkInfo)}();");
+                        builder.AppendLine($"                    innerDecoder(element, path[2..], ref buffer);");
+                        builder.AppendLine($"                }}");
+                        builder.AppendLine($"            }};");
+                    }
                 }
                 else if (field.Type.Atomic == SchemaAtomicCategory.Collection)
                 {
@@ -846,29 +879,42 @@ internal static class Program
     {
         var enumType = SchemaFieldType.FromDeclaredClass(enumName);
 
+        var enumValues = schemaEnum.Items.Select(enumItem => KeyValuePair.Create(
+            enumItem.Name,
+            schemaEnum.Align switch
+            {
+                // to e.g. cast -1 on a byte enum to 255
+                1 => (byte)enumItem.Value,
+                2 => (short)enumItem.Value,
+                4 => (int)enumItem.Value,
+                8 => enumItem.Value,
+                _ => throw new ArgumentOutOfRangeException()
+            })).ToArray();
+
+        // don't treat an enum only consisting of 0, 1, 2 as flags
+        var bitsSet = enumValues.Aggregate(0UL, (agg, kvp) => agg | (ulong)kvp.Value);
+        var isFlagsEnum = bitsSet > 3 && enumValues.All(kvp => kvp.Value == 0 || BitOperations.IsPow2(kvp.Value));
+
         builder.AppendLine();
+        if (isFlagsEnum)
+            builder.AppendLine("[Flags]");
         builder.AppendLine($"public enum {enumType.GetCsTypeName(gameSdkInfo)} : {EnumType(schemaEnum.Align)}");
         builder.AppendLine("{");
 
-        var maxValue = schemaEnum.Align switch
-        {
-            1 => byte.MaxValue,
-            2 => short.MaxValue,
-            4 => int.MaxValue,
-            8 => long.MaxValue,
-            _ => throw new ArgumentOutOfRangeException()
-        };
-
         // Write enum items
-        foreach (var enumItem in schemaEnum.Items)
+        foreach (var (name, value) in enumValues)
         {
-            if (enumItem.Value < 0)
+            if (value <= 0)
             {
-                builder.AppendLine($"    {enumItem.Name} = {enumItem.Value},");
+                builder.AppendLine($"    {name} = {value},");
+            }
+            else if (isFlagsEnum)
+            {
+                builder.AppendLine($"    {name} = (1 << {BitOperations.Log2((ulong) value)}),");
             }
             else
             {
-                builder.AppendLine($"    {enumItem.Name} = 0x{enumItem.Value:X},");
+                builder.AppendLine($"    {name} = 0x{value:X},");
             }
         }
 

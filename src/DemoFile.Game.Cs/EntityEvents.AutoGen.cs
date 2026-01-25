@@ -131,8 +131,10 @@ public struct EntityEvents
     public EntityEvents<CMolotovProjectile, CsDemoParser> CMolotovProjectile;
     public EntityEvents<COmniLight, CsDemoParser> COmniLight;
     public EntityEvents<CParticleSystem, CsDemoParser> CParticleSystem;
+    public EntityEvents<CPathNode, CsDemoParser> CPathNode;
     public EntityEvents<CPathParticleRope, CsDemoParser> CPathParticleRope;
     public EntityEvents<CPathSimple, CsDemoParser> CPathSimple;
+    public EntityEvents<CPathWithDynamicNodes, CsDemoParser> CPathWithDynamicNodes;
     public EntityEvents<CPhysBox, CsDemoParser> CPhysBox;
     public EntityEvents<CPhysicsProp, CsDemoParser> CPhysicsProp;
     public EntityEvents<CPhysicsPropMultiplayer, CsDemoParser> CPhysicsPropMultiplayer;
@@ -170,6 +172,7 @@ public struct EntityEvents
     public EntityEvents<CSoundAreaEntityOrientedBox, CsDemoParser> CSoundAreaEntityOrientedBox;
     public EntityEvents<CSoundAreaEntitySphere, CsDemoParser> CSoundAreaEntitySphere;
     public EntityEvents<CSoundEventAABBEntity, CsDemoParser> CSoundEventAABBEntity;
+    public EntityEvents<CSoundEventConeEntity, CsDemoParser> CSoundEventConeEntity;
     public EntityEvents<CSoundEventEntity, CsDemoParser> CSoundEventEntity;
     public EntityEvents<CSoundEventOBBEntity, CsDemoParser> CSoundEventOBBEntity;
     public EntityEvents<CSoundEventPathCornerEntity, CsDemoParser> CSoundEventPathCornerEntity;

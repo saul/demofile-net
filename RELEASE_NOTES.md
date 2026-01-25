@@ -1,3 +1,8 @@
+### 0.41.1 (2026-01-25)
+
+- Update to latest CS2 schema (v14132)
+- Add support for parsing demos in parallel with `ReadOnlyMemory<byte>` (thanks @benjaminmeysner)
+
 ### 0.40.1 (2025-12-20)
 
 - Fix compatibility with older CS2 demos after recent game updates

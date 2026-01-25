@@ -37,6 +37,11 @@ public class GameSdkInfo
                 "CPlayer_ViewModelServices",
                 "CSNetworkableLoadout_t"
             }.ToImmutableArray();
+
+            FieldCompatibilityAliases = new Dictionary<string, string>
+            {
+                {"m_CRenderComponent", "CRenderComponent"}
+            };
         }
     }
 
@@ -49,4 +54,6 @@ public class GameSdkInfo
     public ImmutableArray<string> HardcodedEntities { get; } = ImmutableArray<string>.Empty;
 
     public ImmutableArray<string> HardcodedClasses { get; } = ImmutableArray<string>.Empty;
+
+    public IReadOnlyDictionary<string, string> FieldCompatibilityAliases { get; } = ImmutableDictionary<string, string>.Empty;
 }

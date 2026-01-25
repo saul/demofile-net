@@ -11,7 +11,7 @@ public class CDestructiblePartsSystemComponent : CDestructiblePartsComponent
 
     public new CHandle<CBaseModelEntity, CsDemoParser> OwnerHandle { get; private set; }
 
-    public new Int32 LastHitDamageLevel { get; private set; }
+    public Int32 LastHitDamageLevel { get; private set; }
 
     internal new static SendNodeDecoder<CDestructiblePartsSystemComponent> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {

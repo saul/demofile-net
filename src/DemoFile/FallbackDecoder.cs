@@ -49,7 +49,7 @@ public static class FallbackDecoder
                     var isSet = buffer.ReadOneBit();
                     if (isSet)
                     {
-                        throw new NotImplementedException($"Cannot decode pointer field ({fieldType} {fieldName}) set to a non-null value");
+                        throw new NotImplementedException($"Cannot decode fallback pointer field ({fieldType} {fieldName}) set to a non-null value");
                     }
                 }
                 else
