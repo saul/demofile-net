@@ -1,3 +1,7 @@
+### 0.41.2 (2026-01-25)
+
+- Fix compatibility with older CS2 demos after recent update
+
 ### 0.41.1 (2026-01-25)
 
 - Update to latest CS2 schema (v14132)
