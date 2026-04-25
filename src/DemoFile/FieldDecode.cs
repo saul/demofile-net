@@ -287,4 +287,16 @@ public static class FieldDecode
             // equivalent to Vector4D
             throw new NotImplementedException("Quaternion decoding is not implemented");
         };
+
+    public static FieldDecoder<CUtlBinaryBlock> CreateDecoder_CUtlBinaryBlock(FieldEncodingInfo fieldFieldEncodingInfo) =>
+        (ref BitBuffer buffer) =>
+        {
+            var byteCount = buffer.ReadUVarInt32();
+
+            // Avoid allocating opaque binary blob - just skip over
+            for (var i = 0; i < byteCount; i++)
+                buffer.ReadByte();
+
+            return new CUtlBinaryBlock(Array.Empty<byte>());
+        };
 }

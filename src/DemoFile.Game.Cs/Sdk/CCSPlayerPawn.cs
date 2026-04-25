@@ -4,6 +4,18 @@ namespace DemoFile.Game.Cs;
 
 public partial class CCSPlayerPawn
 {
+    public new CCSPlayer_WeaponServices? WeaponServices => (CCSPlayer_WeaponServices?) base.WeaponServices;
+
+    public new CCSPlayer_ItemServices? ItemServices => (CCSPlayer_ItemServices?) base.ItemServices;
+
+    public new CCSPlayer_UseServices? UseServices => (CCSPlayer_UseServices?) base.UseServices;
+
+    public new CCSPlayer_WaterServices? WaterServices => (CCSPlayer_WaterServices?) base.WaterServices;
+
+    public new CCSPlayer_MovementServices? MovementServices => (CCSPlayer_MovementServices?) base.MovementServices;
+
+    public new CCSPlayer_CameraServices? CameraServices => (CCSPlayer_CameraServices?) base.CameraServices;
+
     public override string ToString() =>
         $"{(IsActive ? "[PAWN]" : "[INACTIVE PAWN]")} {Controller?.PlayerName ?? "<no controller>"}";
 
