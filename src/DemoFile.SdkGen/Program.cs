@@ -26,6 +26,91 @@ internal static class Program
         "CScriptComponent"
     };
 
+    public readonly record struct NetworkedField(
+        string SchemaFieldName,
+        string NetworkFieldName,
+        IReadOnlyList<SerializerKey> PolymorphicTypes);
+
+    private static bool TryGetField(
+        IReadOnlyDictionary<string, SchemaClass> schemaClasses,
+        SchemaClass schemaClass,
+        string fieldName,
+        out (SchemaClass SchemaClass, SchemaField Field) result)
+    {
+        var currentClass = schemaClass;
+        while (true)
+        {
+            if (fieldName == "CBodyComponent" && currentClass.Fields.SingleOrDefault(f => f.Name == "m_CBodyComponent") is { } aliasedField)
+            {
+                result = (currentClass, aliasedField);
+                return true;
+            }
+
+            if (currentClass.Fields.SingleOrDefault(f => f.Name == fieldName) is { } field)
+            {
+                result = (currentClass, field);
+                return true;
+            }
+
+            if (currentClass.Parent is not { } parentClass)
+            {
+                result = default;
+                return false;
+            }
+
+            currentClass = schemaClasses[parentClass];
+        }
+    }
+
+    private static (SchemaClass SchemaClass, SchemaField Field) GetField(
+        IReadOnlyDictionary<string, SchemaClass> schemaClasses,
+        SchemaClass schemaClass,
+        string fieldName)
+    {
+        if (!TryGetField(schemaClasses, schemaClass, fieldName, out var result))
+        {
+            throw new Exception($"Could not find field {schemaClass.Name}.{fieldName}");
+        }
+
+        return result;
+    }
+
+    private static IReadOnlyDictionary<string, IReadOnlySet<string>> BuildNetworkedFieldMap(
+        IReadOnlyDictionary<string, SchemaClass> schemaClasses,
+        IReadOnlyDictionary<SerializerKey, Serializer> serializers)
+    {
+        var acc = new Dictionary<string, HashSet<string>>();
+
+        foreach (var (serializerKey, serializer) in serializers)
+        {
+            var schemaClass = schemaClasses[serializerKey.Name];
+
+            foreach (var networkField in serializer.Fields)
+            {
+                // Walk the nodes until we get to the class
+                var fieldClass = schemaClass;
+                foreach (var node in networkField.SendNode.Span)
+                {
+                    var (_, nodeField) = GetField(schemaClasses, fieldClass, node);
+                    fieldClass = schemaClasses[nodeField.Type.Name];
+                }
+
+                if (!TryGetField(schemaClasses, fieldClass, networkField.VarName, out var result))
+                {
+                    continue;
+                }
+
+                var (schemaFieldClass, schemaField) = result;
+                if (acc.TryGetValue(schemaFieldClass.Name, out var set))
+                    set.Add(networkField.VarName);
+                else
+                    acc[schemaFieldClass.Name] = new HashSet<string> { networkField.VarName };
+            }
+        }
+
+        return acc.ToDictionary(kvp => kvp.Key, IReadOnlySet<string> (kvp) => kvp.Value);
+    }
+
     public static async Task Main(string[] args)
     {
         var (demoPath, outputPath) = args switch
@@ -39,7 +124,7 @@ internal static class Program
         Console.WriteLine($"Using game name: {gameName}");
         var gameSdkInfo = new GameSdkInfo(gameName);
 
-        var (protocolVersion, networkClasses) = await ReadNetworkClasses(demoPath);
+        var (protocolVersion, networkClasses, serializers) = await ReadNetworkClasses(demoPath);
 
         // Concat together all enums and classes
         var allEnums = new SortedDictionary<string, SchemaEnum>();
@@ -75,21 +160,33 @@ internal static class Program
 
         // Generate graph of classes -> fields
         var graph = new AdjacencyGraph<string, Edge<string>>();
+        var typeHierarchyGraph = new AdjacencyGraph<string, Edge<string>>();
         var parentToChildGraph = new AdjacencyGraph<string, Edge<string>>();
 
         // Types used as pointers
         var pointeeTypes = new HashSet<string>();
+
+        // Map of schema class => list of fields that are networked
+        var networkedFieldMap = BuildNetworkedFieldMap(allClasses, serializers);
 
         foreach (var (className, schemaClass) in allClasses)
         {
             if (schemaClass.Parent != null)
             {
                 graph.AddVerticesAndEdge(new Edge<string>(className, schemaClass.Parent));
+                typeHierarchyGraph.AddVerticesAndEdge(new Edge<string>(className, schemaClass.Parent));
                 parentToChildGraph.AddVerticesAndEdge(new Edge<string>(schemaClass.Parent, className));
             }
 
+            var networkedFields = networkedFieldMap.GetValueOrDefault(className, new HashSet<string>(0));
+
             foreach (var field in schemaClass.Fields)
             {
+                // is this field ever networked?
+                var isNetworked = networkedFields.Contains(field.Name);
+                if (!isNetworked)
+                    continue;
+
                 var currentType = field.Type;
                 while (currentType != null)
                 {
@@ -130,11 +227,13 @@ internal static class Program
             }
         }
 
-        // Build a list of all classes that implement CEntityInstance
-        var entityClasses = new HashSet<string>();
-        var networkClassSearch = new BreadthFirstSearchAlgorithm<string, Edge<string>>(parentToChildGraph);
-        networkClassSearch.FinishVertex += node => { entityClasses.Add(node); };
-        networkClassSearch.Compute("CEntityInstance");
+        var serializedEntities = new HashSet<string>();
+        var serializedEntitySearch = new BreadthFirstSearchAlgorithm<string, Edge<string>>(typeHierarchyGraph);
+        serializedEntitySearch.FinishVertex += node => { serializedEntities.Add(node); };
+        foreach (var networkClass in networkClasses)
+        {
+            serializedEntitySearch.Compute(networkClass);
+        }
 
         // Do a search from all entity classes
         var visited = new HashSet<string>();
@@ -180,12 +279,9 @@ internal static class Program
             visitedClassNames.Add(hardcodedEntity);
         }
 
-        var visitedEntityClasses = new HashSet<string>();
-
         foreach (var hardcodedEntity in gameSdkInfo.HardcodedEntities)
         {
             visitedClassNames.Add(hardcodedEntity);
-            visitedEntityClasses.Add(hardcodedEntity);
         }
 
         foreach (var (className, schemaClass) in allClasses)
@@ -194,21 +290,19 @@ internal static class Program
                 continue;
 
             var isPointeeType = pointeeTypes.Contains(className);
-            var isEntityClass = entityClasses.Contains(className);
+            var isEntityClass = serializedEntities.Contains(className);
 
             if (!EngineSchemaClasses.Contains(className))
             {
-                WriteClass(gameSdkInfo, builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass, allClasses);
+                WriteClass(gameSdkInfo, builder, className, schemaClass, parentToChildMap, isPointeeType, isEntityClass, allClasses, serializers);
             }
 
             visitedClassNames.Add(className);
-            if (isEntityClass)
-                visitedEntityClasses.Add(className);
         }
 
         WriteDecoderSet(gameSdkInfo, builder, visitedClassNames, allClasses);
 
-        WriteEntityFactoriesLookup(gameSdkInfo, visitedEntityClasses, builder);
+        WriteEntityFactoriesLookup(gameSdkInfo, networkClasses, builder);
 
         Console.WriteLine("Saving Schema.cs...");
         var schemaPathCs = Path.Combine(outputPath, "Sdk", "Schema.cs");
@@ -216,12 +310,13 @@ internal static class Program
 
         Console.WriteLine("Saving EntityEvents.AutoGen.cs...");
         var entityEventsCs = Path.Combine(outputPath, "EntityEvents.AutoGen.cs");
-        File.WriteAllText(entityEventsCs, WriteEntityEvents(gameSdkInfo, visitedEntityClasses));
+
+        File.WriteAllText(entityEventsCs, WriteEntityEvents(gameSdkInfo, serializedEntities));
 
         Console.WriteLine("Done!");
     }
 
-    private static async Task<(int ProtocolVersion, IReadOnlyList<string> NetworkClasses)> ReadNetworkClasses(string demoPath)
+    private static async Task<(int ProtocolVersion, IReadOnlyList<string> NetworkClasses, IReadOnlyDictionary<SerializerKey, Serializer> Serializers)> ReadNetworkClasses(string demoPath)
     {
         var cts = new CancellationTokenSource();
         var demo = new DummyDemoParser();
@@ -273,7 +368,7 @@ internal static class Program
 
         Console.WriteLine($"Protocol version: {protocolVersion}");
         Console.WriteLine($"Network classes: {networkClasses.Count} classes");
-        return (protocolVersion, networkClasses);
+        return (protocolVersion, networkClasses, demo.Serializers);
     }
 
     private static string WriteEntityEvents(GameSdkInfo gameSdkInfo, IEnumerable<string> entityClassNames)
@@ -405,20 +500,20 @@ internal static class Program
         IReadOnlyDictionary<string, ImmutableList<KeyValuePair<string, SchemaClass>>> parentToChildMap,
         bool isPointeeType,
         bool isEntityClass,
-        IReadOnlyDictionary<string, SchemaClass> classMap)
+        IReadOnlyDictionary<string, SchemaClass> classMap,
+        IReadOnlySet<string> networkedFields)
     {
-        var isCEntityInstance = schemaClassName == "CEntityInstance";
         var classType = SchemaFieldType.FromDeclaredClass(schemaClassName);
         var classNameCs = classType.GetCsTypeName(gameSdkInfo);
 
-        builder.AppendLine();
-        foreach (var metadata in schemaClass.Metadata)
-        {
-            builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
-        }
-
         if (schemaClass.BoxedPrimitive is {} boxedPrimitiveType)
         {
+            builder.AppendLine();
+            foreach (var metadata in schemaClass.Metadata)
+            {
+                builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
+            }
+
             var (csType, decoder) = boxedPrimitiveType switch
             {
                 BoxedPrimitiveType.Integer => ("int", "buffer.ReadVarInt32()"),
@@ -433,6 +528,19 @@ internal static class Program
             return;
         }
 
+        var netSerializer = serializers.GetValueOrDefault(new SerializerKey(schemaClassName, 0));
+
+        // No networked fields
+        if (netSerializer == null && !parentToChildMap.ContainsKey(schemaClassName))
+            return;
+
+        var isCEntityInstance = schemaClassName == "CEntityInstance";
+
+        builder.AppendLine();
+        foreach (var metadata in schemaClass.Metadata)
+        {
+            builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
+        }
         builder.Append($"public partial class {classType.GetCsTypeName(gameSdkInfo)}");
 
         var parentType = schemaClass.Parent == null
@@ -536,6 +644,12 @@ internal static class Program
 
         foreach (var field in schemaClass.Fields)
         {
+            var serializer = netSerializer?.Fields.FirstOrDefault(f => f.VarName == field.Name);
+
+            // Not networked
+            if (serializer == null && netSerializer?.Fields.Any(f => f.SendNode.Span is [var varName, ..] && varName == field.Name) != true)
+                continue;
+
             var defaultValue = field.Type.Category switch
             {
                 SchemaTypeCategory.DeclaredClass =>
@@ -571,17 +685,20 @@ internal static class Program
 
         foreach (var field in schemaClass.Fields)
         {
+            var serializer = netSerializer?.Fields.FirstOrDefault(f => f.VarName == field.Name);
+
+            // Not networked
+            if (serializer == null && netSerializer?.Fields.Any(f => f.SendNode.Span is [var varName, ..] && varName == field.Name) != true)
+                continue;
+
             var fieldCsTypeName = field.Type.GetCsTypeName(gameSdkInfo);
             var fieldCsPropertyName = schemaClass.CsPropertyNameForField(gameSdkInfo, schemaClassName, field);
             var fieldClass = classMap.GetValueOrDefault(field.Type.Name);
-            
-            field.TryGetMetadata("MNetworkSerializer", out var serializer);
-            field.TryGetMetadata("MNetworkAlias", out var alias);
 
             var compatibilityAlias = gameSdkInfo.FieldCompatibilityAliases.GetValueOrDefault(field.Name);
 
             var fieldNames =
-                new[] { alias?.StringValue, field.Name, compatibilityAlias }.Where(x => x != null).ToArray();
+                new[] { field.Name, compatibilityAlias }.Where(x => x != null).ToArray();
 
             var fieldNameMatch = fieldNames switch
             {
@@ -683,7 +800,7 @@ internal static class Program
                 }
                 else if (field.Type.TryGetArrayElementType(out var elementType))
                 {
-                    Debug.Assert(serializer == null, "Unexpected serializer on fixed array type");
+                    //Debug.Assert(serializer.VarSerializer == null, "Unexpected serializer on fixed array type");
 
                     // This field is a fixed array
 
@@ -724,7 +841,7 @@ internal static class Program
                     // Fields marked as polymorphic are encoded differently.
                     // Rather than a boolean indicating whether the pointer is null,
                     // the field describes which child class the pointer is an instance of.
-                    var isPolymorphic = field.TryGetMetadata("MNetworkPolymorphic", out _);
+                    var isPolymorphic = serializer?.PolymorphicTypes.Count > 0;
 
                     if (isPolymorphic)
                     {
@@ -796,15 +913,15 @@ internal static class Program
                     var decoderMethod =
                         field.Type.Category == SchemaTypeCategory.DeclaredEnum
                             ? $"FieldDecode.CreateDecoder_enum<{fieldCsTypeName}>"
-                            : serializer == null
+                            : serializer?.VarSerializer is not {} serializerName
                                 ? $"FieldDecode.CreateDecoder_{fieldCsTypeName}"
-                                : $"CreateDecoder_{serializer.StringValue}";
+                                : $"CreateDecoder_{serializerName}";
 
                     builder.AppendLine($"            var decoder = {decoderMethod}(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
 
-                    if (serializer == null)
+                    if (serializer?.VarSerializer == null)
                     {
                         builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(ref buffer);");
                     }

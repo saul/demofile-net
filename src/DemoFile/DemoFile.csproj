@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="DemoFile.SdkGen" />
     <InternalsVisibleTo Include="DemoFile.Test" />
     <InternalsVisibleTo Include="DemoFile.Benchmark" />
   </ItemGroup>
