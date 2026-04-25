@@ -4,9 +4,9 @@
   #2: { "name": "reLazffs", "xuid": "76561197982907430", "userid": 2, "steamid": "76561197982907430", "fakeplayer": false, "ishltv": false }
 [1] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
   #211: Unassigned { Active = True, Index = 211, Serial = 515 }
   #212: Spectator { Active = True, Index = 212, Serial = 857 }
   #213: TERRORIST (Virtus.pro) { Active = True, Index = 213, Serial = 395 }
@@ -155,19 +155,19 @@
   #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
 [38394] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
-  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
-  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
-  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
-  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
-  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
-  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
-  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
-  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
-  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
-  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (Connected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (Connected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (Connected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (Connected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (Connected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (Connected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (Connected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (Connected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (Connected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (Connected) { Active = True, Index = 13, Serial = 618 }
   #65: CWeaponM4A1 (Index = 65, Serial = 649) { Active = True, Index = 65, Serial = 649 }
   #66: CDEagle (Index = 66, Serial = 687) { Active = True, Index = 66, Serial = 687 }
   #67: CKnife (Index = 67, Serial = 734) { Active = True, Index = 67, Serial = 734 }
@@ -419,19 +419,19 @@
   #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
 [76787] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
-  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
-  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
-  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
-  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
-  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
-  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
-  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
-  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
-  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
-  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (Connected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (Connected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (Connected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (Connected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (Connected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (Connected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (Connected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (Connected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (Connected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (Connected) { Active = True, Index = 13, Serial = 618 }
   #65: CKnife (Index = 65, Serial = 651) { Active = True, Index = 65, Serial = 651 }
   #67: CPhysicsPropMultiplayer (Index = 67, Serial = 737) { Active = True, Index = 67, Serial = 737 }
   #68: CBaseModelEntity (Index = 68, Serial = 599) { Active = True, Index = 68, Serial = 599 }
@@ -635,19 +635,19 @@
   #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
 [115180] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
-  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
-  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
-  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
-  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
-  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
-  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
-  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
-  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
-  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
-  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (Connected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (Connected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (Connected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (Connected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (Connected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (Connected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (Connected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (Connected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (Connected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (Connected) { Active = True, Index = 13, Serial = 618 }
   #66: CDynamicProp (Index = 66, Serial = 692) { Active = True, Index = 66, Serial = 692 }
   #67: CPointEntity (Index = 67, Serial = 740) { Active = True, Index = 67, Serial = 740 }
   #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
@@ -867,19 +867,19 @@
   #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
 [153573] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
-  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
-  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
-  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
-  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
-  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
-  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
-  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
-  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
-  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
-  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (Connected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (Connected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (Connected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (Connected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (Connected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (Connected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (Connected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (Connected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (Connected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (Connected) { Active = True, Index = 13, Serial = 618 }
   #66: CWeaponGlock (Index = 66, Serial = 694) { Active = True, Index = 66, Serial = 694 }
   #67: CDynamicProp (Index = 67, Serial = 742) { Active = True, Index = 67, Serial = 742 }
   #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
@@ -1098,19 +1098,19 @@
   #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
 [191966] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
-  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
-  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
-  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
-  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
-  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
-  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
-  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
-  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
-  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
-  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (Connected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (Connected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (Connected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (Connected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (Connected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (Connected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (Connected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (Connected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (Connected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (Connected) { Active = True, Index = 13, Serial = 618 }
   #66: CBaseModelEntity (Index = 66, Serial = 696) { Active = True, Index = 66, Serial = 696 }
   #67: CParticleSystem (Index = 67, Serial = 744) { Active = True, Index = 67, Serial = 744 }
   #69: [PAWN] Jame { Active = True, Index = 69, Serial = 233 }
@@ -1336,19 +1336,19 @@
   #12: { "name": "fame", "xuid": "76561198080114546", "userid": 12, "steamid": "76561198080114546", "fakeplayer": false, "ishltv": false }
 [230359] Entities:
   #0: CWorld (Index = 0, Serial = 1) { Active = True, Index = 0, Serial = 1 }
-  #1: CSTV (PlayerConnected) { Active = True, Index = 1, Serial = 688 }
-  #2: CSTV (PlayerConnected) { Active = True, Index = 2, Serial = 439 }
-  #3: reLazffs (PlayerConnected) { Active = True, Index = 3, Serial = 1012 }
-  #4: Aleksib (PlayerConnected) { Active = True, Index = 4, Serial = 303 }
-  #5: n0rb3r7 (PlayerConnected) { Active = True, Index = 5, Serial = 558 }
-  #6: Jame (PlayerConnected) { Active = True, Index = 6, Serial = 906 }
-  #7: w0nderful (PlayerConnected) { Active = True, Index = 7, Serial = 436 }
-  #8: FL1T (PlayerConnected) { Active = True, Index = 8, Serial = 888 }
-  #9: jL (PlayerConnected) { Active = True, Index = 9, Serial = 119 }
-  #10: mir (PlayerConnected) { Active = True, Index = 10, Serial = 710 }
-  #11: b1t (PlayerConnected) { Active = True, Index = 11, Serial = 197 }
-  #12: iM (PlayerConnected) { Active = True, Index = 12, Serial = 399 }
-  #13: fame (PlayerConnected) { Active = True, Index = 13, Serial = 618 }
+  #1: CSTV (Connected) { Active = True, Index = 1, Serial = 688 }
+  #2: CSTV (Connected) { Active = True, Index = 2, Serial = 439 }
+  #3: reLazffs (Connected) { Active = True, Index = 3, Serial = 1012 }
+  #4: Aleksib (Connected) { Active = True, Index = 4, Serial = 303 }
+  #5: n0rb3r7 (Connected) { Active = True, Index = 5, Serial = 558 }
+  #6: Jame (Connected) { Active = True, Index = 6, Serial = 906 }
+  #7: w0nderful (Connected) { Active = True, Index = 7, Serial = 436 }
+  #8: FL1T (Connected) { Active = True, Index = 8, Serial = 888 }
+  #9: jL (Connected) { Active = True, Index = 9, Serial = 119 }
+  #10: mir (Connected) { Active = True, Index = 10, Serial = 710 }
+  #11: b1t (Connected) { Active = True, Index = 11, Serial = 197 }
+  #12: iM (Connected) { Active = True, Index = 12, Serial = 399 }
+  #13: fame (Connected) { Active = True, Index = 13, Serial = 618 }
   #65: CIncendiaryGrenade (Index = 65, Serial = 662) { Active = True, Index = 65, Serial = 662 }
   #67: CDynamicProp (Index = 67, Serial = 747) { Active = True, Index = 67, Serial = 747 }
   #68: CInferno (Index = 68, Serial = 609) { Active = True, Index = 68, Serial = 609 }

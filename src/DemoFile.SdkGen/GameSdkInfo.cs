@@ -35,7 +35,8 @@ public class GameSdkInfo
                 "CCSObserver_ViewModelServices",
                 "CCSPlayer_ViewModelServices",
                 "CPlayer_ViewModelServices",
-                "CSNetworkableLoadout_t"
+                "CSNetworkableLoadout_t",
+                "PredictedDamageTag_t"
             }.ToImmutableArray();
 
             NetworkAliases = new Dictionary<string, string>

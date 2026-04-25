@@ -27600,6 +27600,18 @@ internal sealed partial class CsDecoderSet : DecoderSet
             };
             return true;
         }
+        case "PredictedDamageTag_t":
+        {
+            var innerDecoder = GetDecoder<PredictedDamageTag>(new SerializerKey(className, 0));
+            classType = typeof(PredictedDamageTag);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is PredictedDamageTag);
+                var @this = Unsafe.As<PredictedDamageTag>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CBaseViewModel":
         {
             var innerDecoder = GetDecoder<CBaseViewModel>(new SerializerKey(className, 0));
@@ -32785,6 +32797,10 @@ internal sealed partial class CsDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<PhysicsRagdollPose>(PhysicsRagdollPose.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(PredictedDamageTag))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<PredictedDamageTag>(PredictedDamageTag.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(SellbackPurchaseEntry))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<SellbackPurchaseEntry>(SellbackPurchaseEntry.CreateFieldDecoder);
@@ -32834,7 +32850,9 @@ internal static class CsEntityFactories
         {"CBarnLight", (context, decoder) => new CBarnLight(context, decoder)},
         {"CBaseAnimGraph", (context, decoder) => new CBaseAnimGraph(context, decoder)},
         {"CBaseButton", (context, decoder) => new CBaseButton(context, decoder)},
+        {"CBaseClientUIEntity", (context, decoder) => new CBaseClientUIEntity(context, decoder)},
         {"CBaseCombatCharacter", (context, decoder) => new CBaseCombatCharacter(context, decoder)},
+        {"CBaseCSGrenade", (context, decoder) => new CBaseCSGrenade(context, decoder)},
         {"CBaseCSGrenadeProjectile", (context, decoder) => new CBaseCSGrenadeProjectile(context, decoder)},
         {"CBaseDoor", (context, decoder) => new CBaseDoor(context, decoder)},
         {"CBaseEntity", (context, decoder) => new CBaseEntity(context, decoder)},
@@ -32843,8 +32861,11 @@ internal static class CsEntityFactories
         {"CBasePlayerController", (context, decoder) => new CBasePlayerController(context, decoder)},
         {"CBasePlayerPawn", (context, decoder) => new CBasePlayerPawn(context, decoder)},
         {"CBasePlayerWeapon", (context, decoder) => new CBasePlayerWeapon(context, decoder)},
+        {"CBaseProp", (context, decoder) => new CBaseProp(context, decoder)},
+        {"CBasePropDoor", (context, decoder) => new CBasePropDoor(context, decoder)},
         {"CBaseToggle", (context, decoder) => new CBaseToggle(context, decoder)},
         {"CBaseTrigger", (context, decoder) => new CBaseTrigger(context, decoder)},
+        {"CBaseViewModel", (context, decoder) => new CBaseViewModel(context, decoder)},
         {"CBeam", (context, decoder) => new CBeam(context, decoder)},
         {"CBombTarget", (context, decoder) => new CBombTarget(context, decoder)},
         {"CBreakable", (context, decoder) => new CBreakable(context, decoder)},
@@ -32857,13 +32878,19 @@ internal static class CsEntityFactories
         {"CColorCorrectionVolume", (context, decoder) => new CColorCorrectionVolume(context, decoder)},
         {"CCSGameRulesProxy", (context, decoder) => new CCSGameRulesProxy(context, decoder)},
         {"CCSGO_EndOfMatchLineupEnd", (context, decoder) => new CCSGO_EndOfMatchLineupEnd(context, decoder)},
+        {"CCSGO_EndOfMatchLineupEndpoint", (context, decoder) => new CCSGO_EndOfMatchLineupEndpoint(context, decoder)},
         {"CCSGO_EndOfMatchLineupStart", (context, decoder) => new CCSGO_EndOfMatchLineupStart(context, decoder)},
+        {"CCSGO_TeamIntroCharacterPosition", (context, decoder) => new CCSGO_TeamIntroCharacterPosition(context, decoder)},
         {"CCSGO_TeamIntroCounterTerroristPosition", (context, decoder) => new CCSGO_TeamIntroCounterTerroristPosition(context, decoder)},
         {"CCSGO_TeamIntroTerroristPosition", (context, decoder) => new CCSGO_TeamIntroTerroristPosition(context, decoder)},
+        {"CCSGO_TeamPreviewCharacterPosition", (context, decoder) => new CCSGO_TeamPreviewCharacterPosition(context, decoder)},
+        {"CCSGO_TeamSelectCharacterPosition", (context, decoder) => new CCSGO_TeamSelectCharacterPosition(context, decoder)},
         {"CCSGO_TeamSelectCounterTerroristPosition", (context, decoder) => new CCSGO_TeamSelectCounterTerroristPosition(context, decoder)},
         {"CCSGO_TeamSelectTerroristPosition", (context, decoder) => new CCSGO_TeamSelectTerroristPosition(context, decoder)},
+        {"CCSGO_WingmanIntroCharacterPosition", (context, decoder) => new CCSGO_WingmanIntroCharacterPosition(context, decoder)},
         {"CCSGO_WingmanIntroCounterTerroristPosition", (context, decoder) => new CCSGO_WingmanIntroCounterTerroristPosition(context, decoder)},
         {"CCSGO_WingmanIntroTerroristPosition", (context, decoder) => new CCSGO_WingmanIntroTerroristPosition(context, decoder)},
+        {"CCSGOViewModel", (context, decoder) => new CCSGOViewModel(context, decoder)},
         {"CCSMinimapBoundary", (context, decoder) => new CCSMinimapBoundary(context, decoder)},
         {"CCSObserverPawn", (context, decoder) => new CCSObserverPawn(context, decoder)},
         {"CCSPetPlacement", (context, decoder) => new CCSPetPlacement(context, decoder)},
@@ -32872,6 +32899,7 @@ internal static class CsEntityFactories
         {"CCSPlayerPawnBase", (context, decoder) => new CCSPlayerPawnBase(context, decoder)},
         {"CCSPlayerResource", (context, decoder) => new CCSPlayerResource(context, decoder)},
         {"CCSTeam", (context, decoder) => new CCSTeam(context, decoder)},
+        {"CCSWeaponBase", (context, decoder) => new CCSWeaponBase(context, decoder)},
         {"CCSWeaponBaseGun", (context, decoder) => new CCSWeaponBaseGun(context, decoder)},
         {"CCSWeaponBaseShotgun", (context, decoder) => new CCSWeaponBaseShotgun(context, decoder)},
         {"CDEagle", (context, decoder) => new CDEagle(context, decoder)},
@@ -32921,7 +32949,9 @@ internal static class CsEntityFactories
         {"CHEGrenadeProjectile", (context, decoder) => new CHEGrenadeProjectile(context, decoder)},
         {"CHostage", (context, decoder) => new CHostage(context, decoder)},
         {"CHostageCarriableProp", (context, decoder) => new CHostageCarriableProp(context, decoder)},
+        {"CHostageExpresserShim", (context, decoder) => new CHostageExpresserShim(context, decoder)},
         {"CHostageRescueZone", (context, decoder) => new CHostageRescueZone(context, decoder)},
+        {"CHostageRescueZoneShim", (context, decoder) => new CHostageRescueZoneShim(context, decoder)},
         {"CIncendiaryGrenade", (context, decoder) => new CIncendiaryGrenade(context, decoder)},
         {"CInferno", (context, decoder) => new CInferno(context, decoder)},
         {"CInfoFan", (context, decoder) => new CInfoFan(context, decoder)},
@@ -32930,6 +32960,7 @@ internal static class CsEntityFactories
         {"CInfoOffscreenPanoramaTexture", (context, decoder) => new CInfoOffscreenPanoramaTexture(context, decoder)},
         {"CInfoVisibilityBox", (context, decoder) => new CInfoVisibilityBox(context, decoder)},
         {"CInfoWorldLayer", (context, decoder) => new CInfoWorldLayer(context, decoder)},
+        {"CItem", (context, decoder) => new CItem(context, decoder)},
         {"CItem_Healthshot", (context, decoder) => new CItem_Healthshot(context, decoder)},
         {"CItemDogtags", (context, decoder) => new CItemDogtags(context, decoder)},
         {"CKnife", (context, decoder) => new CKnife(context, decoder)},
@@ -32968,6 +32999,7 @@ internal static class CsEntityFactories
         {"CPostProcessingVolume", (context, decoder) => new CPostProcessingVolume(context, decoder)},
         {"CPrecipitation", (context, decoder) => new CPrecipitation(context, decoder)},
         {"CPrecipitationBlocker", (context, decoder) => new CPrecipitationBlocker(context, decoder)},
+        {"CPredictedViewModel", (context, decoder) => new CPredictedViewModel(context, decoder)},
         {"CPropDoorRotating", (context, decoder) => new CPropDoorRotating(context, decoder)},
         {"CPulseGameBlackboard", (context, decoder) => new CPulseGameBlackboard(context, decoder)},
         {"CRagdollManager", (context, decoder) => new CRagdollManager(context, decoder)},
@@ -32980,6 +33012,7 @@ internal static class CsEntityFactories
         {"CSkyCamera", (context, decoder) => new CSkyCamera(context, decoder)},
         {"CSmokeGrenade", (context, decoder) => new CSmokeGrenade(context, decoder)},
         {"CSmokeGrenadeProjectile", (context, decoder) => new CSmokeGrenadeProjectile(context, decoder)},
+        {"CSoundAreaEntityBase", (context, decoder) => new CSoundAreaEntityBase(context, decoder)},
         {"CSoundAreaEntityOrientedBox", (context, decoder) => new CSoundAreaEntityOrientedBox(context, decoder)},
         {"CSoundAreaEntitySphere", (context, decoder) => new CSoundAreaEntitySphere(context, decoder)},
         {"CSoundEventAABBEntity", (context, decoder) => new CSoundEventAABBEntity(context, decoder)},
@@ -33009,6 +33042,7 @@ internal static class CsEntityFactories
         {"CWaterBullet", (context, decoder) => new CWaterBullet(context, decoder)},
         {"CWeaponAug", (context, decoder) => new CWeaponAug(context, decoder)},
         {"CWeaponAWP", (context, decoder) => new CWeaponAWP(context, decoder)},
+        {"CWeaponBaseItem", (context, decoder) => new CWeaponBaseItem(context, decoder)},
         {"CWeaponBizon", (context, decoder) => new CWeaponBizon(context, decoder)},
         {"CWeaponCZ75a", (context, decoder) => new CWeaponCZ75a(context, decoder)},
         {"CWeaponElite", (context, decoder) => new CWeaponElite(context, decoder)},

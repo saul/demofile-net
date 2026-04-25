@@ -264,6 +264,11 @@ internal static class Program
         }
 
         var serializedEntities = new HashSet<string>();
+        foreach (var hardcodedEntity in gameSdkInfo.HardcodedEntities)
+        {
+            serializedEntities.Add(hardcodedEntity);
+        }
+
         var serializedEntitySearch = new BreadthFirstSearchAlgorithm<string, Edge<string>>(typeHierarchyGraph);
         serializedEntitySearch.FinishVertex += node => { serializedEntities.Add(node); };
         foreach (var networkClass in networkClasses)
@@ -340,7 +345,7 @@ internal static class Program
 
         WriteDecoderSet(gameSdkInfo, builder, visitedClassNames, allClasses);
 
-        WriteEntityFactoriesLookup(gameSdkInfo, networkClasses, builder);
+        WriteEntityFactoriesLookup(gameSdkInfo, serializedEntities, builder);
 
         Console.WriteLine("Saving Schema.cs...");
         var schemaPathCs = Path.Combine(outputPath, "Sdk", "Schema.cs");
@@ -349,7 +354,7 @@ internal static class Program
         Console.WriteLine("Saving EntityEvents.AutoGen.cs...");
         var entityEventsCs = Path.Combine(outputPath, "EntityEvents.AutoGen.cs");
 
-        File.WriteAllText(entityEventsCs, WriteEntityEvents(gameSdkInfo, serializedEntities.Concat(gameSdkInfo.HardcodedEntities)));
+        File.WriteAllText(entityEventsCs, WriteEntityEvents(gameSdkInfo, serializedEntities));
 
         Console.WriteLine("Done!");
     }
