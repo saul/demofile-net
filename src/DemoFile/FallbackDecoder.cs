@@ -90,6 +90,13 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
+            case "Quaternion":
+            {
+                var fieldDecoder = FieldDecode.CreateDecoder_Quaternion(encodingInfo);
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                    fieldDecoder(ref buffer);
+                return true;
+            }
             case "Vector2D":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_Vector2D(encodingInfo);
@@ -189,6 +196,26 @@ public static class FallbackDecoder
                 var fieldDecoder = FieldDecode.CreateDecoder_CTransform(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
                     fieldDecoder(ref buffer);
+                return true;
+            }
+            case "CRenderComponent":
+            {
+
+                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+                {
+                    if (path.Length == 1)
+                    {
+                        var isSet = buffer.ReadOneBit();
+                        if (isSet)
+                        {
+                            //throw new NotImplementedException($"Cannot decode fallback pointer field ({fieldType} {fieldName}) set to a non-null value");
+                        }
+                    }
+                    else
+                    {
+                        throw new NotImplementedException($"Cannot decode inner field for fallback pointer ({fieldType} {fieldName})");
+                    }
+                };
                 return true;
             }
             default:

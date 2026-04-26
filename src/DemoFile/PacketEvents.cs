@@ -16,6 +16,7 @@ public struct PacketEvents
     public Action<CNETMsg_SpawnGroup_LoadCompleted>? NetSpawnGroupLoadCompleted;
     public Action<CNETMsg_DebugOverlay>? NetDebugOverlay;
     public Action<CSVCMsg_ServerInfo>? SvcServerInfo;
+    [Obsolete("Use DemoSendTables instead")]
     public Action<CSVCMsg_FlattenedSerializer>? SvcFlattenedSerializer;
     public Action<CSVCMsg_ClassInfo>? SvcClassInfo;
     public Action<CSVCMsg_SetPause>? SvcSetPause;

@@ -78,7 +78,7 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
         {
             for (var i = 1; i <= MaxPlayers; ++i)
             {
-                if (_entities[i] is CCSPlayerController { Connected: PlayerConnectedState.PlayerConnected } controller)
+                if (_entities[i] is CCSPlayerController { Connected: PlayerConnectedState.Connected } controller)
                     yield return controller;
             }
         }

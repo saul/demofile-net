@@ -7,6 +7,7 @@ public static class SchemaJson
     public static readonly JsonSerializerOptions SerializerOptions = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        AllowTrailingCommas = true
+        AllowTrailingCommas = true,
+        Converters = { new SchemaModuleConverter() }
     };
 }

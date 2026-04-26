@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace DemoFile.SdkGen;
 
@@ -9,6 +10,7 @@ public enum BoxedPrimitiveType
 }
 
 public partial record SchemaClass(
+    string Name,
     string? Parent,
     IReadOnlyList<SchemaMetadata> Metadata,
     IReadOnlyList<SchemaField> Fields)
@@ -29,7 +31,7 @@ public partial record SchemaClass(
         }
     }
 
-    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|ar|bv|e|s|t|rg)(?<firstChar>[A-Z])")]
+    [GeneratedRegex("^(m_)?(fl|a|n|i|isz|vec|us|u|ub|un|sz|b|f|clr|h|ang|af|ch|q|p|v|arr|ar|bv|e|s|t|rg|gt)(?<firstChar>[A-Z])")]
     private static partial Regex HungarianNotationRegex();
 
     private static string RemoveMemberPrefix(string fieldName)
