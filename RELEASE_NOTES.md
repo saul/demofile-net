@@ -1,4 +1,4 @@
-### 0.42.1 (2026-04-25)
+### 0.42.1 (2026-04-26)
 
 - Add support for CS2 demos recorded after AnimGraph2 update
 
