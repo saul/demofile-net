@@ -3,6 +3,36 @@
 - Upgraded library to .NET 9
 - Further optimised stream reading (~40% faster demo parsing)
 
+#### net10.0 with QueuedPacketArray=32
+
+| Method    | Job        | BuildConfiguration | Mean    | Error    | StdDev   | Ratio | Gen0        | Gen1      | Gen2      | Allocated | Alloc Ratio |
+|---------- |----------- |------------------- |--------:|---------:|---------:|------:|------------:|----------:|----------:|----------:|------------:|
+| ParseDemo | Job-KJUGDZ | Baseline           | 3.186 s | 0.0374 s | 0.0312 s |  1.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.95 MB |        1.00 |
+| ParseDemo | Job-LJVEST | Default            | 2.211 s | 0.0335 s | 0.0279 s |  0.69 | 132000.0000 | 4000.0000 | 1000.0000 | 806.07 MB |        1.00 |
+
+#### net10.0 hardcoded field path deserialization
+
+| Method    | Job        | BuildConfiguration | Mean    | Error    | StdDev   | Ratio | RatioSD | Gen0        | Gen1      | Gen2      | Allocated | Alloc Ratio |
+|---------- |----------- |------------------- |--------:|---------:|---------:|------:|--------:|------------:|----------:|----------:|----------:|------------:|
+| ParseDemo | Job-LZNTKM | Baseline           | 3.146 s | 0.0742 s | 0.0694 s |  1.00 |    0.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.94 MB |        1.00 |
+| ParseDemo | Job-LOWFOU | Default            | 1.877 s | 0.0305 s | 0.0285 s |  0.60 |    0.02 | 132000.0000 | 4000.0000 | 1000.0000 | 806.02 MB |        1.00 |
+
+
+#### net10.0
+
+| Method    | Job        | BuildConfiguration | Mean    | Error    | StdDev   | Ratio | RatioSD | Gen0        | Gen1      | Gen2      | Allocated | Alloc Ratio |
+|---------- |----------- |------------------- |--------:|---------:|---------:|------:|--------:|------------:|----------:|----------:|----------:|------------:|
+| ParseDemo | Job-JMSGNM | Baseline           | 3.283 s | 0.1058 s | 0.0989 s |  1.00 |    0.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.94 MB |        1.00 |
+| ParseDemo | Job-BFZDXJ | Default            | 1.901 s | 0.0216 s | 0.0191 s |  0.58 |    0.02 | 132000.0000 | 4000.0000 | 1000.0000 | 806.02 MB |        1.00 |
+
+
+#### net9.0
+
+| Method    | Job        | BuildConfiguration | Mean    | Error    | StdDev   | Ratio | RatioSD | Gen0        | Gen1      | Gen2      | Allocated | Alloc Ratio |
+|---------- |----------- |------------------- |--------:|---------:|---------:|------:|--------:|------------:|----------:|----------:|----------:|------------:|
+| ParseDemo | Job-NNANGO | Baseline           | 3.466 s | 0.1074 s | 0.1055 s |  1.00 |    0.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.95 MB |        1.00 |
+| ParseDemo | Job-LADWAW | Default            | 2.198 s | 0.0332 s | 0.0311 s |  0.63 |    0.03 | 132000.0000 | 4000.0000 | 1000.0000 | 806.03 MB |        1.00 |
+
 ### 0.40.1 (2025-12-20)
 
 - Fix compatibility with older CS2 demos after recent game updates
