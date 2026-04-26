@@ -8699,24 +8699,6 @@
           ]
         },
         {
-          "name": "m_bIsLookingAtWeapon",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bIsHoldingLookAtWeapon",
-          "type": {
-            "name": "bool",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_hSavedWeapon",
           "type": {
             "name": "CHandle< CBasePlayerWeapon >",
@@ -13072,6 +13054,25 @@
         }
       ]
     },
+    "AnimGraph2SerializedPoseRecipeSlot_t": {
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_topology",
+          "type": {
+            "name": "CUtlBinaryBlock",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        }
+      ]
+    },
     "CDynamicPropAlias_prop_dynamic_override": {
       "parent": "CDynamicProp",
       "metadata": [
@@ -14115,34 +14116,6 @@
       ],
       "fields": [
         {
-          "name": "m_bIsDead",
-          "type": {
-            "name": "CAnimGraph2ParamOptionalRef< bool >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "bool",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bIsCT",
-          "type": {
-            "name": "CAnimGraph2ParamOptionalRef< bool >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "bool",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_bIsDefusing",
           "type": {
             "name": "CAnimGraph2ParamOptionalRef< bool >",
@@ -14237,49 +14210,6 @@
             "inner": {
               "name": "float32",
               "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flMoveSpeedVertical",
-          "type": {
-            "name": "CAnimGraph2ParamOptionalRef< float32 >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "float32",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_flMoveDirectionAngle",
-          "type": {
-            "name": "CAnimGraph2ParamOptionalRef< float32 >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "float32",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_vMoveDirection",
-          "type": {
-            "name": "CAnimGraph2ParamOptionalRef< Vector >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "Vector",
-              "category": 4,
-              "atomic": 0
             }
           },
           "metadata": [
@@ -20086,6 +20016,15 @@
           ]
         },
         {
+          "name": "m_nDeployTick",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_flDroppedAtTime",
           "type": {
             "name": "GameTime_t",
@@ -21040,6 +20979,13 @@
           "metadata": [
           ]
         }
+      ]
+    },
+    "CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume": {
+      "parent": "CEnvCombinedLightProbeVolume",
+      "metadata": [
+      ],
+      "fields": [
       ]
     },
     "CPlayer_MovementServices_Humanoid": {
@@ -25921,6 +25867,24 @@
           ]
         },
         {
+          "name": "m_flCycleTimeWhenInBurstMode",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flTimeBetweenBurstShots",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_flMaxSpeed",
           "type": {
             "name": "CFiringModeFloat",
@@ -30199,6 +30163,15 @@
           "type": {
             "name": "GameTime_t",
             "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bHasEverProcessedCommand",
+          "type": {
+            "name": "bool",
+            "category": 0
           },
           "metadata": [
           ]
@@ -34773,6 +34746,70 @@
           "type": {
             "name": "float32",
             "category": 0
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "CCSPlayer_AimPunchServices": {
+      "parent": "CPlayerPawnComponent",
+      "metadata": [
+      ],
+      "fields": [
+        {
+          "name": "m_predictableBaseTick",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_predictableBaseTickInterpAmount",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_predictableBaseAngle",
+          "type": {
+            "name": "QAngle",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_predictableBaseAngleVel",
+          "type": {
+            "name": "QAngle",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_unpredictableBaseTick",
+          "type": {
+            "name": "GameTick_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_unpredictableBaseAngle",
+          "type": {
+            "name": "QAngle",
+            "category": 4,
+            "atomic": 0
           },
           "metadata": [
           ]
@@ -39666,9 +39703,9 @@
           ]
         },
         {
-          "name": "m_vecSecondarySkeletonNames",
+          "name": "m_vecSecondarySkeletonSlotIDs",
           "type": {
-            "name": "CUtlVector< CGlobalSymbol >",
+            "name": "CNetworkUtlVectorBase< CGlobalSymbol >",
             "category": 4,
             "atomic": 2,
             "inner": {
@@ -39843,11 +39880,11 @@
         {
           "name": "m_SerializePoseRecipeAG2Slots",
           "type": {
-            "name": "CUtlVectorEmbeddedNetworkVar< AnimGraph2SerializedPoseRecipe_t >",
+            "name": "CUtlVectorEmbeddedNetworkVar< AnimGraph2SerializedPoseRecipeSlot_t >",
             "category": 4,
             "atomic": 2,
             "inner": {
-              "name": "AnimGraph2SerializedPoseRecipe_t",
+              "name": "AnimGraph2SerializedPoseRecipeSlot_t",
               "category": 5
             }
           },
@@ -39877,7 +39914,7 @@
         {
           "name": "m_nSerializePoseRecipeAG2ActiveSlot",
           "type": {
-            "name": "uint16",
+            "name": "uint32",
             "category": 0
           },
           "metadata": [
@@ -43887,6 +43924,19 @@
           ]
         },
         {
+          "name": "m_pAimPunchServices",
+          "type": {
+            "name": "CCSPlayer_AimPunchServices*",
+            "category": 1,
+            "inner": {
+              "name": "CCSPlayer_AimPunchServices",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_pRadioServices",
           "type": {
             "name": "CCSPlayer_RadioServices*",
@@ -44095,59 +44145,6 @@
           "type": {
             "name": "float32",
             "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_aimPunchAngle",
-          "type": {
-            "name": "QAngle",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_aimPunchAngleVel",
-          "type": {
-            "name": "QAngle",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_aimPunchTickBase",
-          "type": {
-            "name": "GameTick_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_aimPunchTickFraction",
-          "type": {
-            "name": "float32",
-            "category": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_aimPunchCache",
-          "type": {
-            "name": "CUtlVector< QAngle >",
-            "category": 4,
-            "atomic": 2,
-            "inner": {
-              "name": "QAngle",
-              "category": 4,
-              "atomic": 0
-            }
           },
           "metadata": [
           ]
@@ -51413,25 +51410,6 @@
             "category": 0
           },
           "metadata": [
-          ]
-        }
-      ]
-    },
-    "AnimGraph2SerializedPoseRecipe_t": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_serializedStatic",
-          "type": {
-            "name": "CUtlBinaryBlock",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-            {
-              "name": "MNotSaved"
-            }
           ]
         }
       ]

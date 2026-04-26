@@ -35657,7 +35657,7 @@
           ]
         },
         {
-          "name": "m_flReferencePoseTwistWeight",
+          "name": "m_flChainRotationWeight",
           "type": {
             "name": "float32",
             "category": 0
@@ -37397,7 +37397,7 @@
           ]
         },
         {
-          "name": "m_nIsWeaponActionActiveNodeIdx",
+          "name": "m_nWeaponActionNodeIdx",
           "type": {
             "name": "int16",
             "category": 0
@@ -37415,7 +37415,7 @@
           ]
         },
         {
-          "name": "m_nDisableHandIKNodeIdx",
+          "name": "m_nIsDefusingNodeIdx",
           "type": {
             "name": "int16",
             "category": 0
@@ -37443,6 +37443,15 @@
         },
         {
           "name": "m_flActionBlendTimeSeconds",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flPlantingBlendTimeSeconds",
           "type": {
             "name": "float32",
             "category": 0
@@ -42410,7 +42419,7 @@
           ]
         },
         {
-          "name": "m_flReferencePoseTwistWeight",
+          "name": "m_flChainRotationWeight",
           "type": {
             "name": "float32",
             "category": 0
