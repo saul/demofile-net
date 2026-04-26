@@ -162,7 +162,7 @@ public static class FieldDecode
     public static FieldDecoder<CGlobalSymbol> CreateDecoder_CGlobalSymbol(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {
-            return new CGlobalSymbol(buffer.ReadUVarInt32());
+            return new CGlobalSymbol(buffer.ReadStringUtf8());
         };
 
     public static FieldDecoder<CPlayerSlot> CreateDecoder_CPlayerSlot(FieldEncodingInfo fieldEncodingInfo) =>

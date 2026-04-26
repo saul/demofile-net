@@ -26,18 +26,6 @@ internal static class Program
         "CScriptComponent"
     };
 
-    public readonly record struct NetworkedField(
-        SchemaClass SchemaClass,
-        SchemaField SchemaField,
-        string NetworkFieldName,
-        IReadOnlyList<SerializerKey> PolymorphicTypes,
-        string? VarSerializer)
-    {
-        public override string ToString() => SchemaField.Name != NetworkFieldName
-            ? $"{SchemaField.Name} (as {NetworkFieldName})"
-            : SchemaField.Name;
-    }
-
     private static bool TryGetNetworkedField(
         GameSdkInfo gameSdkInfo,
         IReadOnlyDictionary<string, SchemaClass> schemaClasses,
@@ -125,6 +113,8 @@ internal static class Program
                     continue;
                 }
 
+                // N.B. there may be multiple serializers for this schema field, but we only care about
+                // the polymorphic types and VarSerializer (and that should always be the same)
                 AddSchemaField(matched with
                 {
                     PolymorphicTypes = serializerField.PolymorphicTypes,
@@ -144,8 +134,6 @@ internal static class Program
                 fields = acc[field.SchemaClass.Name] = new OrderedDictionary<string, NetworkedField>();
             }
 
-            // N.B. there may be multiple serializers for this schema field, but we only care about the polymorphic fields
-            // and that should always be the same.
             fields.TryAdd(field.SchemaField.Name, field);
         }
     }
@@ -648,37 +636,6 @@ internal static class Program
             builder.AppendLine();
         }
 
-        foreach (var metadata in schemaClass.Metadata)
-        {
-            if (metadata.Name != "MNetworkVarTypeOverride")
-                continue;
-
-            var typeOverride = metadata.ClassValue;
-
-            SchemaField? ancestorField = null;
-            var searchType = classMap[schemaClass.Parent!];
-            while (ancestorField == null)
-            {
-                ancestorField = searchType.Fields.FirstOrDefault(x => x.Name == typeOverride.Name);
-                if (ancestorField == null)
-                    searchType = classMap[searchType.Parent!];
-            }
-
-            Debug.Assert(searchType != null && ancestorField != null);
-
-            var csPropertyName = searchType.CsPropertyNameForField(gameSdkInfo, schemaClassName, ancestorField);
-
-            var overrideType = ancestorField.Type.Inner != null
-                ? ancestorField.Type with { Inner = ancestorField.Type.Inner with { Name = typeOverride.Type } }
-                : ancestorField.Type with { Name = typeOverride.Type };
-
-            builder.AppendLine($"    public new {overrideType.GetCsTypeName(gameSdkInfo)} {csPropertyName}");
-            builder.AppendLine($"    {{");
-            builder.AppendLine($"        get => ({overrideType.GetCsTypeName(gameSdkInfo)}) base.{csPropertyName};");
-            builder.AppendLine($"    }}");
-            builder.AppendLine();
-        }
-
         foreach (var networkedField in networkedFields)
         {
             var field = networkedField.SchemaField;
@@ -1058,5 +1015,17 @@ internal static class Program
         }
 
         builder.AppendLine("}");
+    }
+
+    public readonly record struct NetworkedField(
+        SchemaClass SchemaClass,
+        SchemaField SchemaField,
+        string NetworkFieldName,
+        IReadOnlyList<SerializerKey> PolymorphicTypes,
+        string? VarSerializer)
+    {
+        public override string ToString() => SchemaField.Name != NetworkFieldName
+            ? $"{SchemaField.Name} (as {NetworkFieldName})"
+            : SchemaField.Name;
     }
 }
