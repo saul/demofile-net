@@ -7,15 +7,163 @@
       ],
       "fields": [
         {
-          "name": "m_nameStringableIndex",
+          "name": "m_nameStringTableIndex",
           "type": {
             "name": "int32",
             "category": 0
           },
           "metadata": [
             {
-              "name": "MNetworkChangeCallback",
-              "value": "entityIdentityNameChanged"
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_name",
+          "type": {
+            "name": "CUtlSymbolLarge",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_designerName",
+          "type": {
+            "name": "CUtlSymbolLarge",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_flags",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_worldGroupId",
+          "type": {
+            "name": "WorldGroupId_t",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_fDataObjectTypes",
+          "type": {
+            "name": "uint32",
+            "category": 0
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_PathIndex",
+          "type": {
+            "name": "ChangeAccessorFieldPathIndex_t",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_pAttributes",
+          "type": {
+            "name": "CEntityAttributeTable*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityAttributeTable",
+              "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_pPrev",
+          "type": {
+            "name": "CEntityIdentity*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityIdentity",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_pNext",
+          "type": {
+            "name": "CEntityIdentity*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityIdentity",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_pPrevByClass",
+          "type": {
+            "name": "CEntityIdentity*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityIdentity",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
+          "name": "m_pNextByClass",
+          "type": {
+            "name": "CEntityIdentity*",
+            "category": 1,
+            "inner": {
+              "name": "CEntityIdentity",
+              "category": 5
+            }
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
             }
           ]
         }
@@ -25,6 +173,16 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_iszPrivateVScripts",
+          "type": {
+            "name": "CUtlSymbolLarge",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+          ]
+        },
         {
           "name": "m_pEntity",
           "type": {
@@ -36,10 +194,6 @@
             }
           },
           "metadata": [
-            {
-              "name": "MNetworkPriority",
-              "value": 56
-            }
           ]
         },
         {
@@ -68,6 +222,19 @@
       "metadata": [
       ],
       "fields": [
+        {
+          "name": "m_scriptClassName",
+          "type": {
+            "name": "CUtlSymbolLarge",
+            "category": 4,
+            "atomic": 0
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        }
       ]
     }
   }

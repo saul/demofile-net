@@ -14,7 +14,6 @@ public struct EntityEvents
     public EntityEvents<CBaseCSGrenadeProjectile, CsDemoParser> CBaseCSGrenadeProjectile;
     public EntityEvents<CBaseDoor, CsDemoParser> CBaseDoor;
     public EntityEvents<CBaseEntity, CsDemoParser> CBaseEntity;
-    public EntityEvents<CBaseFlex, CsDemoParser> CBaseFlex;
     public EntityEvents<CBaseGrenade, CsDemoParser> CBaseGrenade;
     public EntityEvents<CBaseModelEntity, CsDemoParser> CBaseModelEntity;
     public EntityEvents<CBasePlayerController, CsDemoParser> CBasePlayerController;
@@ -30,11 +29,15 @@ public struct EntityEvents
     public EntityEvents<CBreakable, CsDemoParser> CBreakable;
     public EntityEvents<CBreakableProp, CsDemoParser> CBreakableProp;
     public EntityEvents<CC4, CsDemoParser> CC4;
+    public EntityEvents<CCashStack, CsDemoParser> CCashStack;
     public EntityEvents<CChicken, CsDemoParser> CChicken;
     public EntityEvents<CCitadelSoundOpvarSetOBB, CsDemoParser> CCitadelSoundOpvarSetOBB;
     public EntityEvents<CColorCorrection, CsDemoParser> CColorCorrection;
     public EntityEvents<CColorCorrectionVolume, CsDemoParser> CColorCorrectionVolume;
     public EntityEvents<CCSGameRulesProxy, CsDemoParser> CCSGameRulesProxy;
+    public EntityEvents<CCSGO_EndOfMatchLineupEnd, CsDemoParser> CCSGO_EndOfMatchLineupEnd;
+    public EntityEvents<CCSGO_EndOfMatchLineupEndpoint, CsDemoParser> CCSGO_EndOfMatchLineupEndpoint;
+    public EntityEvents<CCSGO_EndOfMatchLineupStart, CsDemoParser> CCSGO_EndOfMatchLineupStart;
     public EntityEvents<CCSGO_TeamIntroCharacterPosition, CsDemoParser> CCSGO_TeamIntroCharacterPosition;
     public EntityEvents<CCSGO_TeamIntroCounterTerroristPosition, CsDemoParser> CCSGO_TeamIntroCounterTerroristPosition;
     public EntityEvents<CCSGO_TeamIntroTerroristPosition, CsDemoParser> CCSGO_TeamIntroTerroristPosition;
@@ -131,8 +134,10 @@ public struct EntityEvents
     public EntityEvents<CMolotovProjectile, CsDemoParser> CMolotovProjectile;
     public EntityEvents<COmniLight, CsDemoParser> COmniLight;
     public EntityEvents<CParticleSystem, CsDemoParser> CParticleSystem;
+    public EntityEvents<CPathNode, CsDemoParser> CPathNode;
     public EntityEvents<CPathParticleRope, CsDemoParser> CPathParticleRope;
     public EntityEvents<CPathSimple, CsDemoParser> CPathSimple;
+    public EntityEvents<CPathWithDynamicNodes, CsDemoParser> CPathWithDynamicNodes;
     public EntityEvents<CPhysBox, CsDemoParser> CPhysBox;
     public EntityEvents<CPhysicsProp, CsDemoParser> CPhysicsProp;
     public EntityEvents<CPhysicsPropMultiplayer, CsDemoParser> CPhysicsPropMultiplayer;
@@ -170,6 +175,7 @@ public struct EntityEvents
     public EntityEvents<CSoundAreaEntityOrientedBox, CsDemoParser> CSoundAreaEntityOrientedBox;
     public EntityEvents<CSoundAreaEntitySphere, CsDemoParser> CSoundAreaEntitySphere;
     public EntityEvents<CSoundEventAABBEntity, CsDemoParser> CSoundEventAABBEntity;
+    public EntityEvents<CSoundEventConeEntity, CsDemoParser> CSoundEventConeEntity;
     public EntityEvents<CSoundEventEntity, CsDemoParser> CSoundEventEntity;
     public EntityEvents<CSoundEventOBBEntity, CsDemoParser> CSoundEventOBBEntity;
     public EntityEvents<CSoundEventPathCornerEntity, CsDemoParser> CSoundEventPathCornerEntity;

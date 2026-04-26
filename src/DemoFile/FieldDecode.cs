@@ -162,7 +162,7 @@ public static class FieldDecode
     public static FieldDecoder<CGlobalSymbol> CreateDecoder_CGlobalSymbol(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) =>
         {
-            return new CGlobalSymbol(buffer.ReadUVarInt32());
+            return new CGlobalSymbol(buffer.ReadStringUtf8());
         };
 
     public static FieldDecoder<CPlayerSlot> CreateDecoder_CPlayerSlot(FieldEncodingInfo fieldEncodingInfo) =>
@@ -286,5 +286,17 @@ public static class FieldDecode
             // not seen in CS2 demos
             // equivalent to Vector4D
             throw new NotImplementedException("Quaternion decoding is not implemented");
+        };
+
+    public static FieldDecoder<CUtlBinaryBlock> CreateDecoder_CUtlBinaryBlock(FieldEncodingInfo fieldFieldEncodingInfo) =>
+        (ref BitBuffer buffer) =>
+        {
+            var byteCount = buffer.ReadUVarInt32();
+
+            // Avoid allocating opaque binary blob - just skip over
+            for (var i = 0; i < byteCount; i++)
+                buffer.ReadByte();
+
+            return new CUtlBinaryBlock(Array.Empty<byte>());
         };
 }

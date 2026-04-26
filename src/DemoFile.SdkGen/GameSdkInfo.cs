@@ -35,8 +35,24 @@ public class GameSdkInfo
                 "CCSObserver_ViewModelServices",
                 "CCSPlayer_ViewModelServices",
                 "CPlayer_ViewModelServices",
-                "CSNetworkableLoadout_t"
+                "CSNetworkableLoadout_t",
+                "PredictedDamageTag_t"
             }.ToImmutableArray();
+
+            NetworkAliases = new Dictionary<string, string>
+            {
+                {"CRenderComponent", "m_CRenderComponent"},
+                {"m_bUsesIndexedBakedLighting", "m_bUsesBakedShadowing"},
+                {"m_aPlayers", "m_aPlayerControllers"},
+                {"m_aPawns", "m_aPlayers"},
+                {"m_iRawValue32", "m_flValue"},
+                {"CPropDataComponent", "m_CPropDataComponent"},
+                {"CBodyComponent", "m_CBodyComponent"},
+                {"CPathQueryComponent", "m_CPathQueryComponent"},
+                {"CTouchExpansionComponent", "m_CTouchExpansionComponent"},
+                {"CLightComponent", "m_CLightComponent"},
+                {"CHitboxComponent", "m_CHitboxComponent"},
+            };
         }
     }
 
@@ -49,4 +65,7 @@ public class GameSdkInfo
     public ImmutableArray<string> HardcodedEntities { get; } = ImmutableArray<string>.Empty;
 
     public ImmutableArray<string> HardcodedClasses { get; } = ImmutableArray<string>.Empty;
+
+    /// Map of network field => schema field name
+    public IReadOnlyDictionary<string, string> NetworkAliases { get; } = ImmutableDictionary<string, string>.Empty;
 }

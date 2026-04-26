@@ -8,7 +8,7 @@ public class DummyDemoParser : DemoParser<DummyDemoParser>
     protected override IReadOnlyDictionary<string, EntityFactory<DummyDemoParser>>
         EntityFactories => new Dictionary<string, EntityFactory<DummyDemoParser>>();
 
-    protected override ref EntityEvents<CEntityInstance<DummyDemoParser>, DummyDemoParser> EntityInstanceEvents => throw new NotImplementedException();
+    protected internal override ref EntityEvents<CEntityInstance<DummyDemoParser>, DummyDemoParser> EntityInstanceEvents => throw new NotImplementedException();
 
     protected override DecoderSet CreateDecoderSet(IReadOnlyDictionary<SerializerKey, Serializer> serializers) =>
         new DummyDecoderSet(serializers);

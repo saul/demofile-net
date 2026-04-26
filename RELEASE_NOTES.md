@@ -1,14 +1,7 @@
-### 0.41.1
+### 0.43.1
 
 - Upgraded library to .NET 9
 - Further optimised stream reading (~40% faster demo parsing)
-
-#### net10.0 with QueuedPacketArray=32
-
-| Method    | Job        | BuildConfiguration | Mean    | Error    | StdDev   | Ratio | Gen0        | Gen1      | Gen2      | Allocated | Alloc Ratio |
-|---------- |----------- |------------------- |--------:|---------:|---------:|------:|------------:|----------:|----------:|----------:|------------:|
-| ParseDemo | Job-KJUGDZ | Baseline           | 3.186 s | 0.0374 s | 0.0312 s |  1.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.95 MB |        1.00 |
-| ParseDemo | Job-LJVEST | Default            | 2.211 s | 0.0335 s | 0.0279 s |  0.69 | 132000.0000 | 4000.0000 | 1000.0000 | 806.07 MB |        1.00 |
 
 #### net10.0 hardcoded field path deserialization
 
@@ -32,6 +25,19 @@
 |---------- |----------- |------------------- |--------:|---------:|---------:|------:|--------:|------------:|----------:|----------:|----------:|------------:|
 | ParseDemo | Job-NNANGO | Baseline           | 3.466 s | 0.1074 s | 0.1055 s |  1.00 |    0.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.95 MB |        1.00 |
 | ParseDemo | Job-LADWAW | Default            | 2.198 s | 0.0332 s | 0.0311 s |  0.63 |    0.03 | 132000.0000 | 4000.0000 | 1000.0000 | 806.03 MB |        1.00 |
+
+### 0.42.1 (2026-04-25)
+
+- Add support for CS2 demos recorded after AnimGraph2 update
+
+### 0.41.2 (2026-01-25)
+
+- Fix compatibility with older CS2 demos after recent update
+
+### 0.41.1 (2026-01-25)
+
+- Update to latest CS2 schema (v14132)
+- Add support for parsing demos in parallel with `ReadOnlyMemory<byte>` (thanks @benjaminmeysner)
 
 ### 0.40.1 (2025-12-20)
 

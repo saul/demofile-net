@@ -33,7 +33,7 @@ public partial class DemoParser<TGameParser>
     };
 
     // todo(net8): use a frozen dictionary here
-    private Dictionary<SerializerKey, Serializer> _serializers = new();
+    internal Dictionary<SerializerKey, Serializer> Serializers = new();
 
     private int _serverClassBits;
     private ServerClass<TGameParser>?[] _serverClasses = Array.Empty<ServerClass<TGameParser>>();
@@ -102,7 +102,7 @@ public partial class DemoParser<TGameParser>
             .Select(field => SerializableField.FromProto(field, msg.Symbols))
             .ToArray();
 
-        _serializers = msg.Serializers
+        Serializers = msg.Serializers
             .Select(sz =>
             {
                 var key = new SerializerKey(msg.Symbols[sz.SerializerNameSym], sz.SerializerVersion);
@@ -121,7 +121,7 @@ public partial class DemoParser<TGameParser>
         var maxClassIds = msg.Classes.Max(x => x.ClassId) + 1;
         _serverClasses = new ServerClass<TGameParser>[maxClassIds];
 
-        var decoderSet = CreateDecoderSet(_serializers);
+        var decoderSet = CreateDecoderSet(Serializers);
 
         foreach (var @class in msg.Classes)
         {
@@ -149,7 +149,7 @@ public partial class DemoParser<TGameParser>
     private void OnPacketEntities(CSVCMsg_PacketEntities msg)
     {
         Debug.Assert(
-            _serverClasses.Length > 0 && _serializers.Count > 0,
+            _serverClasses.Length > 0 && Serializers.Count > 0,
             $"{nameof(CSVCMsg_PacketEntities)} message before class/serializer info!");
 
         var otherBaselineIdx = msg.Baseline == 0 ? 1 : 0;
