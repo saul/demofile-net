@@ -1,4 +1,4 @@
-### 0.43.1
+### 0.43.1 (2026-04-27)
 
 - Upgraded library to .NET 9
 - Further optimised stream reading (~40% faster demo parsing)
@@ -26,7 +26,7 @@
 | ParseDemo | Job-NNANGO | Baseline           | 3.466 s | 0.1074 s | 0.1055 s |  1.00 |    0.00 | 132000.0000 | 4000.0000 | 1000.0000 | 805.95 MB |        1.00 |
 | ParseDemo | Job-LADWAW | Default            | 2.198 s | 0.0332 s | 0.0311 s |  0.63 |    0.03 | 132000.0000 | 4000.0000 | 1000.0000 | 806.03 MB |        1.00 |
 
-### 0.42.1 (2026-04-25)
+### 0.42.1 (2026-04-26)
 
 - Add support for CS2 demos recorded after AnimGraph2 update
 
