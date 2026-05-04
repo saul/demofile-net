@@ -33,6 +33,10 @@ jobs:
           tags: tag:demofile-net-gh-runner
           use-cache: "true"
 
+      - name: Configure Tailscale
+        run: |
+          tailscale set --accept-dns=false
+
       - name: Download latest DepotDownloader app
         run: |
           Write-Output "Downloading DepotDownloader..."
