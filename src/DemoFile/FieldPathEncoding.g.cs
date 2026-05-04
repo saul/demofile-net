@@ -6,6 +6,13 @@ internal static class FieldPathEncoding
 {
     public static bool ReadFieldPathOp(ref BitBuffer buffer, ref FieldPath path)
     {
+        // Hot path: top-2 cases handle 63.5% of all calls. By inlining only
+        // these and deferring the rest of the Huffman tree to a NoInlining
+        // cold method, the inlined footprint of this method at every call
+        // site shrinks dramatically (Tier1 size: 7,516 → ~400 bytes), which
+        // matters because this method is called ~28M times per parse and
+        // is itself inlined into the per-tick entity-update hot path.
+        // Algorithm and frequencies are unchanged from the generated tree.
         if (!buffer.ReadOneBit())
         {
             // Frequency: 36271
@@ -13,79 +20,87 @@ internal static class FieldPathEncoding
             PlusOne(ref buffer, ref path);
             return true;
         }
-        else
+        if (!buffer.ReadOneBit())
+        {
+            // Frequency: 25474
+            // Bit string: 10
+            return false;
+        }
+        // Bit string: 11... — defer the remaining ~37% of calls to the cold
+        // method, which contains the rest of the Huffman tree unchanged.
+        return ReadFieldPathOpCold(ref buffer, ref path);
+    }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private static bool ReadFieldPathOpCold(ref BitBuffer buffer, ref FieldPath path)
+    {
+        if (!buffer.ReadOneBit())
         {
             if (!buffer.ReadOneBit())
             {
-                // Frequency: 25474
-                // Bit string: 10
-                return false;
+                if (!buffer.ReadOneBit())
+                {
+                    // Frequency: 2942
+                    // Bit string: 11000
+                    PushOneLeftDeltaOneRightNonZero(ref buffer, ref path);
+                    return true;
+                }
+                else
+                {
+                    if (!buffer.ReadOneBit())
+                    {
+                        // Frequency: 1375
+                        // Bit string: 110010
+                        PlusThree(ref buffer, ref path);
+                        return true;
+                    }
+                    else
+                    {
+                        // Frequency: 1837
+                        // Bit string: 110011
+                        PopAllButOnePlusOne(ref buffer, ref path);
+                        return true;
+                    }
+                }
             }
             else
             {
                 if (!buffer.ReadOneBit())
                 {
+                    // Frequency: 4128
+                    // Bit string: 11010
+                    PlusN(ref buffer, ref path);
+                    return true;
+                }
+                else
+                {
                     if (!buffer.ReadOneBit())
                     {
                         if (!buffer.ReadOneBit())
-                        {
-                            // Frequency: 2942
-                            // Bit string: 11000
-                            PushOneLeftDeltaOneRightNonZero(ref buffer, ref path);
-                            return true;
-                        }
-                        else
-                        {
-                            if (!buffer.ReadOneBit())
-                            {
-                                // Frequency: 1375
-                                // Bit string: 110010
-                                PlusThree(ref buffer, ref path);
-                                return true;
-                            }
-                            else
-                            {
-                                // Frequency: 1837
-                                // Bit string: 110011
-                                PopAllButOnePlusOne(ref buffer, ref path);
-                                return true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (!buffer.ReadOneBit())
-                        {
-                            // Frequency: 4128
-                            // Bit string: 11010
-                            PlusN(ref buffer, ref path);
-                            return true;
-                        }
-                        else
                         {
                             if (!buffer.ReadOneBit())
                             {
                                 if (!buffer.ReadOneBit())
                                 {
+                                    // Frequency: 149
+                                    // Bit string: 110110000
+                                    PopAllButOnePlusN(ref buffer, ref path);
+                                    return true;
+                                }
+                                else
+                                {
                                     if (!buffer.ReadOneBit())
+                                    {
+                                        // Frequency: 99
+                                        // Bit string: 1101100010
+                                        NonTopoComplexPack4Bits(ref buffer, ref path);
+                                        return true;
+                                    }
+                                    else
                                     {
                                         if (!buffer.ReadOneBit())
                                         {
-                                            // Frequency: 149
-                                            // Bit string: 110110000
-                                            PopAllButOnePlusN(ref buffer, ref path);
-                                            return true;
-                                        }
-                                        else
-                                        {
                                             if (!buffer.ReadOneBit())
-                                            {
-                                                // Frequency: 99
-                                                // Bit string: 1101100010
-                                                NonTopoComplexPack4Bits(ref buffer, ref path);
-                                                return true;
-                                            }
-                                            else
                                             {
                                                 if (!buffer.ReadOneBit())
                                                 {
@@ -95,28 +110,122 @@ internal static class FieldPathEncoding
                                                         {
                                                             if (!buffer.ReadOneBit())
                                                             {
+                                                                // Frequency: 1
+                                                                // Bit string: 1101100011000000
+                                                                PopNAndNonTopographical(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                            else
+                                                            {
+                                                                // Frequency: 0
+                                                                // Bit string: 1101100011000001
+                                                                PopNPlusN(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            // Frequency: 2
+                                                            // Bit string: 110110001100001
+                                                            PopOnePlusOne(ref buffer, ref path);
+                                                            return true;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (!buffer.ReadOneBit())
+                                                        {
+                                                            if (!buffer.ReadOneBit())
+                                                            {
+                                                                // Frequency: 0
+                                                                // Bit string: 1101100011000100
+                                                                PushN(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                            else
+                                                            {
+                                                                // Frequency: 0
+                                                                // Bit string: 1101100011000101
+                                                                PushThreePack5LeftDeltaN(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if (!buffer.ReadOneBit())
+                                                            {
+                                                                // Frequency: 0
+                                                                // Bit string: 1101100011000110
+                                                                PopNPlusOne(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                            else
+                                                            {
+                                                                // Frequency: 0
+                                                                // Bit string: 1101100011000111
+                                                                PopOnePlusN(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if (!buffer.ReadOneBit())
+                                                    {
+                                                        if (!buffer.ReadOneBit())
+                                                        {
+                                                            if (!buffer.ReadOneBit())
+                                                            {
+                                                                // Frequency: 0
+                                                                // Bit string: 1101100011001000
+                                                                PushTwoLeftDeltaZero(ref buffer, ref path);
+                                                                return true;
+                                                            }
+                                                            else
+                                                            {
                                                                 if (!buffer.ReadOneBit())
                                                                 {
-                                                                    if (!buffer.ReadOneBit())
-                                                                    {
-                                                                        // Frequency: 1
-                                                                        // Bit string: 1101100011000000
-                                                                        PopNAndNonTopographical(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        // Frequency: 0
-                                                                        // Bit string: 1101100011000001
-                                                                        PopNPlusN(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110010010
+                                                                    PushThreeLeftDeltaZero(ref buffer, ref path);
+                                                                    return true;
                                                                 }
                                                                 else
                                                                 {
-                                                                    // Frequency: 2
-                                                                    // Bit string: 110110001100001
-                                                                    PopOnePlusOne(ref buffer, ref path);
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110010011
+                                                                    PushTwoPack5LeftDeltaZero(ref buffer, ref path);
+                                                                    return true;
+                                                                }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            // Frequency: 3
+                                                            // Bit string: 110110001100101
+                                                            PushOneLeftDeltaZeroRightNonZero(ref buffer, ref path);
+                                                            return true;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (!buffer.ReadOneBit())
+                                                        {
+                                                            if (!buffer.ReadOneBit())
+                                                            {
+                                                                if (!buffer.ReadOneBit())
+                                                                {
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011000
+                                                                    PushTwoLeftDeltaN(ref buffer, ref path);
+                                                                    return true;
+                                                                }
+                                                                else
+                                                                {
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011001
+                                                                    PushThreePack5LeftDeltaOne(ref buffer, ref path);
                                                                     return true;
                                                                 }
                                                             }
@@ -124,37 +233,17 @@ internal static class FieldPathEncoding
                                                             {
                                                                 if (!buffer.ReadOneBit())
                                                                 {
-                                                                    if (!buffer.ReadOneBit())
-                                                                    {
-                                                                        // Frequency: 0
-                                                                        // Bit string: 1101100011000100
-                                                                        PushN(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        // Frequency: 0
-                                                                        // Bit string: 1101100011000101
-                                                                        PushThreePack5LeftDeltaN(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011010
+                                                                    PushThreeLeftDeltaN(ref buffer, ref path);
+                                                                    return true;
                                                                 }
                                                                 else
                                                                 {
-                                                                    if (!buffer.ReadOneBit())
-                                                                    {
-                                                                        // Frequency: 0
-                                                                        // Bit string: 1101100011000110
-                                                                        PopNPlusOne(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        // Frequency: 0
-                                                                        // Bit string: 1101100011000111
-                                                                        PopOnePlusN(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011011
+                                                                    PushTwoPack5LeftDeltaN(ref buffer, ref path);
+                                                                    return true;
                                                                 }
                                                             }
                                                         }
@@ -164,36 +253,16 @@ internal static class FieldPathEncoding
                                                             {
                                                                 if (!buffer.ReadOneBit())
                                                                 {
-                                                                    if (!buffer.ReadOneBit())
-                                                                    {
-                                                                        // Frequency: 0
-                                                                        // Bit string: 1101100011001000
-                                                                        PushTwoLeftDeltaZero(ref buffer, ref path);
-                                                                        return true;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if (!buffer.ReadOneBit())
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110010010
-                                                                            PushThreeLeftDeltaZero(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110010011
-                                                                            PushTwoPack5LeftDeltaZero(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                    }
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011100
+                                                                    PushTwoLeftDeltaOne(ref buffer, ref path);
+                                                                    return true;
                                                                 }
                                                                 else
                                                                 {
-                                                                    // Frequency: 3
-                                                                    // Bit string: 110110001100101
-                                                                    PushOneLeftDeltaZeroRightNonZero(ref buffer, ref path);
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011101
+                                                                    PushThreePack5LeftDeltaZero(ref buffer, ref path);
                                                                     return true;
                                                                 }
                                                             }
@@ -201,130 +270,36 @@ internal static class FieldPathEncoding
                                                             {
                                                                 if (!buffer.ReadOneBit())
                                                                 {
-                                                                    if (!buffer.ReadOneBit())
-                                                                    {
-                                                                        if (!buffer.ReadOneBit())
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011000
-                                                                            PushTwoLeftDeltaN(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011001
-                                                                            PushThreePack5LeftDeltaOne(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if (!buffer.ReadOneBit())
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011010
-                                                                            PushThreeLeftDeltaN(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011011
-                                                                            PushTwoPack5LeftDeltaN(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                    }
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011110
+                                                                    PushThreeLeftDeltaOne(ref buffer, ref path);
+                                                                    return true;
                                                                 }
                                                                 else
                                                                 {
-                                                                    if (!buffer.ReadOneBit())
-                                                                    {
-                                                                        if (!buffer.ReadOneBit())
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011100
-                                                                            PushTwoLeftDeltaOne(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011101
-                                                                            PushThreePack5LeftDeltaZero(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if (!buffer.ReadOneBit())
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011110
-                                                                            PushThreeLeftDeltaOne(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            // Frequency: 0
-                                                                            // Bit string: 11011000110011111
-                                                                            PushTwoPack5LeftDeltaOne(ref buffer, ref path);
-                                                                            return true;
-                                                                        }
-                                                                    }
+                                                                    // Frequency: 0
+                                                                    // Bit string: 11011000110011111
+                                                                    PushTwoPack5LeftDeltaOne(ref buffer, ref path);
+                                                                    return true;
                                                                 }
                                                             }
                                                         }
                                                     }
-                                                    else
-                                                    {
-                                                        // Frequency: 35
-                                                        // Bit string: 110110001101
-                                                        PushOneLeftDeltaZeroRightZero(ref buffer, ref path);
-                                                        return true;
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    // Frequency: 76
-                                                    // Bit string: 11011000111
-                                                    NonTopoComplex(ref buffer, ref path);
-                                                    return true;
                                                 }
                                             }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        // Frequency: 471
-                                        // Bit string: 11011001
-                                        PushOneLeftDeltaNRightNonZero(ref buffer, ref path);
-                                        return true;
-                                    }
-                                }
-                                else
-                                {
-                                    if (!buffer.ReadOneBit())
-                                    {
-                                        // Frequency: 521
-                                        // Bit string: 11011010
-                                        PushOneLeftDeltaOneRightZero(ref buffer, ref path);
-                                        return true;
-                                    }
-                                    else
-                                    {
-                                        if (!buffer.ReadOneBit())
-                                        {
-                                            // Frequency: 251
-                                            // Bit string: 110110110
-                                            PushOneLeftDeltaNRightNonZeroPack8Bits(ref buffer, ref path);
-                                            return true;
+                                            else
+                                            {
+                                                // Frequency: 35
+                                                // Bit string: 110110001101
+                                                PushOneLeftDeltaZeroRightZero(ref buffer, ref path);
+                                                return true;
+                                            }
                                         }
                                         else
                                         {
-                                            // Frequency: 271
-                                            // Bit string: 110110111
-                                            NonTopoPenultimatePlusOne(ref buffer, ref path);
+                                            // Frequency: 76
+                                            // Bit string: 11011000111
+                                            NonTopoComplex(ref buffer, ref path);
                                             return true;
                                         }
                                     }
@@ -332,71 +307,105 @@ internal static class FieldPathEncoding
                             }
                             else
                             {
+                                // Frequency: 471
+                                // Bit string: 11011001
+                                PushOneLeftDeltaNRightNonZero(ref buffer, ref path);
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            if (!buffer.ReadOneBit())
+                            {
+                                // Frequency: 521
+                                // Bit string: 11011010
+                                PushOneLeftDeltaOneRightZero(ref buffer, ref path);
+                                return true;
+                            }
+                            else
+                            {
                                 if (!buffer.ReadOneBit())
                                 {
-                                    if (!buffer.ReadOneBit())
-                                    {
-                                        // Frequency: 560
-                                        // Bit string: 11011100
-                                        PushOneLeftDeltaNRightZero(ref buffer, ref path);
-                                        return true;
-                                    }
-                                    else
-                                    {
-                                        if (!buffer.ReadOneBit())
-                                        {
-                                            // Frequency: 300
-                                            // Bit string: 110111010
-                                            PopAllButOnePlusNPack3Bits(ref buffer, ref path);
-                                            return true;
-                                        }
-                                        else
-                                        {
-                                            // Frequency: 310
-                                            // Bit string: 110111011
-                                            PushNAndNonTopological(ref buffer, ref path);
-                                            return true;
-                                        }
-                                    }
+                                    // Frequency: 251
+                                    // Bit string: 110110110
+                                    PushOneLeftDeltaNRightNonZeroPack8Bits(ref buffer, ref path);
+                                    return true;
                                 }
                                 else
                                 {
-                                    if (!buffer.ReadOneBit())
-                                    {
-                                        // Frequency: 634
-                                        // Bit string: 11011110
-                                        PopAllButOnePlusNPack6Bits(ref buffer, ref path);
-                                        return true;
-                                    }
-                                    else
-                                    {
-                                        // Frequency: 646
-                                        // Bit string: 11011111
-                                        PlusFour(ref buffer, ref path);
-                                        return true;
-                                    }
+                                    // Frequency: 271
+                                    // Bit string: 110110111
+                                    NonTopoPenultimatePlusOne(ref buffer, ref path);
+                                    return true;
                                 }
                             }
                         }
                     }
-                }
-                else
-                {
-                    if (!buffer.ReadOneBit())
-                    {
-                        // Frequency: 10334
-                        // Bit string: 1110
-                        PlusTwo(ref buffer, ref path);
-                        return true;
-                    }
                     else
                     {
-                        // Frequency: 10530
-                        // Bit string: 1111
-                        PushOneLeftDeltaNRightNonZeroPack6Bits(ref buffer, ref path);
-                        return true;
+                        if (!buffer.ReadOneBit())
+                        {
+                            if (!buffer.ReadOneBit())
+                            {
+                                // Frequency: 560
+                                // Bit string: 11011100
+                                PushOneLeftDeltaNRightZero(ref buffer, ref path);
+                                return true;
+                            }
+                            else
+                            {
+                                if (!buffer.ReadOneBit())
+                                {
+                                    // Frequency: 300
+                                    // Bit string: 110111010
+                                    PopAllButOnePlusNPack3Bits(ref buffer, ref path);
+                                    return true;
+                                }
+                                else
+                                {
+                                    // Frequency: 310
+                                    // Bit string: 110111011
+                                    PushNAndNonTopological(ref buffer, ref path);
+                                    return true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (!buffer.ReadOneBit())
+                            {
+                                // Frequency: 634
+                                // Bit string: 11011110
+                                PopAllButOnePlusNPack6Bits(ref buffer, ref path);
+                                return true;
+                            }
+                            else
+                            {
+                                // Frequency: 646
+                                // Bit string: 11011111
+                                PlusFour(ref buffer, ref path);
+                                return true;
+                            }
+                        }
                     }
                 }
+            }
+        }
+        else
+        {
+            if (!buffer.ReadOneBit())
+            {
+                // Frequency: 10334
+                // Bit string: 1110
+                PlusTwo(ref buffer, ref path);
+                return true;
+            }
+            else
+            {
+                // Frequency: 10530
+                // Bit string: 1111
+                PushOneLeftDeltaNRightNonZeroPack6Bits(ref buffer, ref path);
+                return true;
             }
         }
     }
@@ -428,12 +437,14 @@ internal static class FieldPathEncoding
         path[^1] += buffer.ReadUBitVarFieldPath() + 5;
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PopAllButOnePlusN(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Pop(path.Count - 1);
         path[0] += buffer.ReadUBitVarFieldPath() + 1;
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void NonTopoComplexPack4Bits(ref BitBuffer buffer, ref FieldPath path)
     {
         for (var i = 0; i < path.Count; ++i)
@@ -445,6 +456,7 @@ internal static class FieldPathEncoding
         }
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PopNAndNonTopographical(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Pop(buffer.ReadUBitVarFieldPath());
@@ -457,18 +469,21 @@ internal static class FieldPathEncoding
         }
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PopNPlusN(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Pop(buffer.ReadUBitVarFieldPath());
         path[^1] += buffer.ReadVarInt32();
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PopOnePlusOne(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Pop(1);
         path[^1] += 1;
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushN(ref BitBuffer buffer, ref FieldPath path)
     {
         var count = (int) buffer.ReadUBitVar();
@@ -479,6 +494,7 @@ internal static class FieldPathEncoding
         }
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushThreePack5LeftDeltaN(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += (int) buffer.ReadUBitVar() + 2;
@@ -487,24 +503,28 @@ internal static class FieldPathEncoding
         path.Add((int) buffer.ReadUBits(5));
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PopNPlusOne(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Pop(buffer.ReadUBitVarFieldPath());
         path[^1] += 1;
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PopOnePlusN(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Pop(1);
         path[^1] += buffer.ReadUBitVarFieldPath() + 1;
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushTwoLeftDeltaZero(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Add(buffer.ReadUBitVarFieldPath());
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushThreeLeftDeltaZero(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Add(buffer.ReadUBitVarFieldPath());
@@ -512,17 +532,20 @@ internal static class FieldPathEncoding
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushTwoPack5LeftDeltaZero(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Add((int) buffer.ReadUBits(5));
         path.Add((int) buffer.ReadUBits(5));
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushOneLeftDeltaZeroRightNonZero(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushTwoLeftDeltaN(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += (int) buffer.ReadUBitVar() + 2;
@@ -530,6 +553,7 @@ internal static class FieldPathEncoding
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushThreePack5LeftDeltaOne(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += 1;
@@ -538,6 +562,7 @@ internal static class FieldPathEncoding
         path.Add((int) buffer.ReadUBits(5));
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushThreeLeftDeltaN(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += (int) buffer.ReadUBitVar() + 2;
@@ -546,6 +571,7 @@ internal static class FieldPathEncoding
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushTwoPack5LeftDeltaN(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += (int) buffer.ReadUBitVar() + 2;
@@ -553,6 +579,7 @@ internal static class FieldPathEncoding
         path.Add((int) buffer.ReadUBits(5));
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushTwoLeftDeltaOne(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += 1;
@@ -560,6 +587,7 @@ internal static class FieldPathEncoding
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushThreePack5LeftDeltaZero(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Add((int) buffer.ReadUBits(5));
@@ -567,6 +595,7 @@ internal static class FieldPathEncoding
         path.Add((int) buffer.ReadUBits(5));
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushThreeLeftDeltaOne(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += 1;
@@ -575,6 +604,7 @@ internal static class FieldPathEncoding
         path.Add(buffer.ReadUBitVarFieldPath());
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushTwoPack5LeftDeltaOne(ref BitBuffer buffer, ref FieldPath path)
     {
         path[^1] += 1;
@@ -582,11 +612,13 @@ internal static class FieldPathEncoding
         path.Add((int) buffer.ReadUBits(5));
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void PushOneLeftDeltaZeroRightZero(ref BitBuffer buffer, ref FieldPath path)
     {
         path.Add(0);
     }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     private static void NonTopoComplex(ref BitBuffer buffer, ref FieldPath path)
     {
         for (var i = 0; i < path.Count; ++i)

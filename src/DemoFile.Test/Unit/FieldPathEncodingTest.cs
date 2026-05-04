@@ -65,6 +65,7 @@ public class FieldPathEncodingTest
     public void Decode(string expectedName, byte[] encodedBytes)
     {
         var buffer = new BitBuffer(encodedBytes);
+        var fieldPath = FieldPath.Default;
         Assert.That(FieldPathEncoding.ReadFieldPathOp(ref buffer, ref fieldPath));
         Assert.That(buffer.RemainingBytes, Is.EqualTo(0));
         // Assert.That(encodingOp.Name, Is.EqualTo(expectedName));

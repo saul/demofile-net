@@ -6,23 +6,10 @@ namespace DemoFile;
 
 public ref struct BitBuffer
 {
-    private static readonly ulong[] BitMask64;
-
-    private int _bitsRead = 0;
     private int _bitsAvail = 0;
     private ulong _buf = 0;
     private ReadOnlySpan<byte> _original;
     private ReadOnlySpan<byte> _pointer;
-
-    static BitBuffer()
-    {
-        BitMask64 = new ulong[65];
-        for (var i = 1; i < 64; ++i)
-        {
-            BitMask64[i] = (1UL << i) - 1;
-        }
-        BitMask64[64] = ulong.MaxValue;
-    }
 
     public BitBuffer(ReadOnlySpan<byte> pointer)
     {
@@ -31,16 +18,43 @@ public ref struct BitBuffer
         FetchNext();
     }
 
+    // Mask for the low `numBits` bits. `numBits` is in [0, 32] for all in-tree
+    // callers (ReadUBits' return type is uint, so >32 is meaningless).
+    //
+    // We use `(1UL << n) - 1` instead of a static `BitMask64[n]` table because
+    // JIT codegen for the table case is suboptimal: the JIT emits a runtime
+    // memory load with bounds check even when AggressiveInlining places the
+    // call site in a method with a *constant* `numBits` (e.g. ReadFloat →
+    // ReadUBits(32), ReadCoordPrecise → ReadUBits(20)). The static-array
+    // access is opaque to the optimiser, so `BitMask64[20]` is not folded to
+    // the constant `0xFFFFF`. With `(1UL << n) - 1`, when `n` is a compile-
+    // time constant, the whole expression is constant-folded; when it isn't,
+    // x86 BMI2 typically emits `bzhi`, which is also faster than a memory
+    // load + bounds check.
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static ulong MaskLow(int numBits) => (1UL << numBits) - 1;
+
     public BitBuffer Clone()
     {
-        var (fromByte, skipBits) = Math.DivRem(_bitsRead, 8);
+        var (fromByte, skipBits) = Math.DivRem(TellBits, 8);
         var cloned = new BitBuffer(_original[fromByte..]);
         if (skipBits > 0)
             cloned.ReadUBits(skipBits);
         return cloned;
     }
 
-    public int TellBits => _bitsRead;
+    // Computed lazily from the span lengths + _bitsAvail. Removing the
+    // dedicated `_bitsRead` field eliminates a memory store from every
+    // ReadOneBit / ReadUBits call (260M+ stores per benchmark parse), since
+    // the only consumers are this getter and Clone — both cold paths.
+    //
+    // _original.Length is fixed at construction. _pointer.Length is the
+    // bytes not yet loaded into _buf. So:
+    //   bytes_loaded   = _original.Length - _pointer.Length
+    //   bits_loaded    = 8 * bytes_loaded
+    //   bits_remaining = _bitsAvail (still in _buf)
+    //   bits_consumed  = bits_loaded - bits_remaining
+    public int TellBits => (_original.Length - _pointer.Length) * 8 - _bitsAvail;
 
     public int RemainingBytes => _pointer.Length + _bitsAvail / 8;
 
@@ -55,11 +69,9 @@ public ref struct BitBuffer
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public uint ReadUBits(int numBits)
     {
-        _bitsRead += numBits;
-
         if (_bitsAvail >= numBits)
         {
-            var ret = (uint)(_buf & BitMask64[numBits]);
+            var ret = (uint)(_buf & MaskLow(numBits));
             _bitsAvail -= numBits;
             _buf >>= numBits;
 
@@ -75,7 +87,7 @@ public ref struct BitBuffer
 
             UpdateBuffer();
 
-            ret |= (uint)(_buf & BitMask64[numBits]) << _bitsAvail;
+            ret |= (uint)(_buf & MaskLow(numBits)) << _bitsAvail;
             _bitsAvail = 64 - numBits;
             _buf >>= numBits;
 
@@ -118,7 +130,6 @@ public ref struct BitBuffer
     {
         bool ret = (_buf & 1) != 0;
         _buf >>= 1;
-        unchecked {_bitsRead++;}
 
         if (--_bitsAvail == 0)
             FetchNext();

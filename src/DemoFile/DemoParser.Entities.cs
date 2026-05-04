@@ -32,8 +32,7 @@ public partial class DemoParser<TGameParser>
         new EntityBaseline[MaxEdicts],
     };
 
-    // todo(net8): use a frozen dictionary here
-    internal Dictionary<SerializerKey, Serializer> Serializers = new();
+    internal FrozenDictionary<SerializerKey, Serializer> Serializers = FrozenDictionary<SerializerKey, Serializer>.Empty;
 
     private int _serverClassBits;
     private ServerClass<TGameParser>?[] _serverClasses = Array.Empty<ServerClass<TGameParser>>();
@@ -113,7 +112,7 @@ public partial class DemoParser<TGameParser>
 
                 return KeyValuePair.Create(key, serializer);
             })
-            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            .ToFrozenDictionary(kvp => kvp.Key, kvp => kvp.Value);
     }
 
     private void OnDemoClassInfo(CDemoClassInfo msg)
