@@ -14244,20 +14244,6 @@
           ]
         },
         {
-          "name": "m_bIsStutterStep",
-          "type": {
-            "name": "CAnimGraph2ParamOptionalRef< bool >",
-            "category": 4,
-            "atomic": 1,
-            "inner": {
-              "name": "bool",
-              "category": 0
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_flWeaponDropAmount",
           "type": {
             "name": "CAnimGraph2ParamOptionalRef< float32 >",
@@ -22205,6 +22191,18 @@
           ]
         },
         {
+          "name": "m_iMostConnected",
+          "type": {
+            "name": "PlayerConnectedState",
+            "category": 6
+          },
+          "metadata": [
+            {
+              "name": "MNotSaved"
+            }
+          ]
+        },
+        {
           "name": "m_iszPlayerName",
           "type": {
             "name": "char[128]",
@@ -29712,6 +29710,24 @@
           ]
         },
         {
+          "name": "m_bUsingGroundTopologyOffset",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_flUsingGroundTopologyOffsetTransitionSmoothing",
+          "type": {
+            "name": "float32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
           "name": "m_vecLadderNormal",
           "type": {
             "name": "Vector",
@@ -30145,24 +30161,6 @@
             "name": "Vector2D",
             "category": 4,
             "atomic": 0
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_gtLastTimeOnStaticWorldGround",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_gtLastTimeInAir",
-          "type": {
-            "name": "GameTime_t",
-            "category": 5
           },
           "metadata": [
           ]
@@ -46819,6 +46817,15 @@
         },
         {
           "name": "m_bRainTraceToSkyEnabled",
+          "type": {
+            "name": "bool",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_bGPUCullSkybox",
           "type": {
             "name": "bool",
             "category": 0
