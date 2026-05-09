@@ -16892,28 +16892,10 @@
           ]
         },
         {
-          "name": "m_stutterStepStartTick",
-          "type": {
-            "name": "GameTick_t",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
           "name": "m_plantAndTurnStartTick",
           "type": {
             "name": "GameTick_t",
             "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_bIsStutterStep",
-          "type": {
-            "name": "bool",
-            "category": 0
           },
           "metadata": [
           ]

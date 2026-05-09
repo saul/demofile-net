@@ -1,3 +1,7 @@
+### 0.43.1 (2026-05-09)
+
+- Update to latest CS2 schema (v14160)
+
 ### 0.42.1 (2026-04-26)
 
 - Add support for CS2 demos recorded after AnimGraph2 update
