@@ -1,4 +1,4 @@
-### 0.43.1 (2026-04-27)
+### 0.44.1 (2026-04-27)
 
 - Upgraded library to .NET 9
 - Further optimised stream reading (~40% faster demo parsing)
@@ -10,6 +10,10 @@
 |                   |                    |            |          |          |       |         |             |            |           |           |             |
 | ParseDemoParallel | Baseline           |   464.1 ms | 22.75 ms | 18.99 ms |  1.00 |    0.00 | 104000.0000 | 13000.0000 | 1000.0000 | 691.88 MB |        1.00 |
 | ParseDemoParallel | Default            |   353.2 ms | 18.42 ms | 17.23 ms |  0.76 |    0.03 | 104000.0000 | 15000.0000 | 1000.0000 | 690.59 MB |        1.00 |
+
+### 0.43.1 (2026-05-09)
+
+- Update to latest CS2 schema (v14160)
 
 ### 0.42.1 (2026-04-26)
 
