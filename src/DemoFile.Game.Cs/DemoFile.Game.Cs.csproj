@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -39,6 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protobufs/usercmd.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/cs_usercmd.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/cs_gameevents.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/cstrike15_usermessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/cstrike15_gcmessages.proto" ProtoRoot="Protobufs" />

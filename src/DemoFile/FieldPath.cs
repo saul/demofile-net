@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace DemoFile;
@@ -9,82 +9,65 @@ namespace DemoFile;
 /// </summary>
 internal struct FieldPath : IReadOnlyList<int>
 {
-    public static readonly FieldPath Default = new() {-1};
-    
-    private int _path0;
-    private int _path1;
-    private int _path2;
-    private int _path3;
-    private int _path4;
-    private int _path5;
-    private int _path6;
-    private int _size;
+    public static readonly FieldPath Default = new() { _size = 1, _storage = new InlineStorage { _element0 = -1 } };
 
-    public void Add(int item)
+    private InlineStorage _storage;
+    private byte _size; // byte is sufficient for max size 7
+
+    [InlineArray(7)]
+    private struct InlineStorage
     {
-        switch (_size)
-        {
-            case 0: _path0 = item; break;
-            case 1: _path1 = item; break;
-            case 2: _path2 = item; break;
-            case 3: _path3 = item; break;
-            case 4: _path4 = item; break;
-            case 5: _path5 = item; break;
-            case 6: _path6 = item; break;
-            default: throw new InvalidOperationException("FieldPath is full");
-        }
-
-        _size += 1;
+        internal int _element0;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void Add(int item)
+    {
+        if (_size >= 7)
+            ThrowPathFull();
+
+        _storage[_size++] = item;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Pop(int count)
     {
         if (count > _size)
-        {
-            throw new InvalidOperationException($"Cannot pop {count} items from a path of length {_size}");
-        }
+            ThrowInvalidPop(count);
 
-        _size -= count;
+        _size -= (byte)count;
     }
 
     public int this[int index]
     {
-        readonly get => index >= 0 && index < _size
-            ? index switch
-            {
-                0 => _path0,
-                1 => _path1,
-                2 => _path2,
-                3 => _path3,
-                4 => _path4,
-                5 => _path5,
-                6 => _path6,
-                _ => throw new UnreachableException()
-            }
-            : throw new ArgumentOutOfRangeException(nameof(index), $"Cannot get item at index {index}, must be < {_size}");
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            if ((uint)index >= (uint)_size)
+                ThrowIndexOutOfRange(index);
+
+            return Unsafe.Add(ref Unsafe.AsRef(in _storage._element0), index);
+        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            if (index < 0 || index >= _size)
-                throw new ArgumentOutOfRangeException(nameof(index),
-                    $"Cannot set item at index {index}, must be < {_size}");
-            
-            switch (index)
-            {
-                case 0: _path0 = value; break;
-                case 1: _path1 = value; break;
-                case 2: _path2 = value; break;
-                case 3: _path3 = value; break;
-                case 4: _path4 = value; break;
-                case 5: _path5 = value; break;
-                case 6: _path6 = value; break;
-                default: throw new UnreachableException();
-            };
+            if ((uint)index >= (uint)_size)
+                ThrowIndexOutOfRange(index);
+
+            Unsafe.Add(ref _storage._element0, index) = value;
         }
     }
 
-    public readonly int Count => _size;
-    
-    public override string ToString() => _size == 0
+    public readonly int Count
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => _size;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public readonly ReadOnlySpan<int> AsSpan() => MemoryMarshal.CreateReadOnlySpan(ref Unsafe.AsRef(in _storage._element0), _size);
+
+    public readonly override string ToString() => _size == 0
         ? "(empty)"
         : "/" + string.Join('/', this);
 
@@ -117,5 +100,15 @@ internal struct FieldPath : IReadOnlyList<int>
         public void Reset() => _index = -1;
     }
 
-    public ReadOnlySpan<int> AsSpan() => MemoryMarshal.CreateReadOnlySpan(ref _path0, _size);
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private static void ThrowPathFull() =>
+        throw new InvalidOperationException("FieldPath is full");
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private void ThrowInvalidPop(int count) =>
+        throw new InvalidOperationException($"Cannot pop {count} items from a path of length {_size}");
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private readonly void ThrowIndexOutOfRange(int index) =>
+        throw new ArgumentOutOfRangeException(nameof(index), $"Cannot access item at index {index}, must be < {_size}");
 }

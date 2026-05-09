@@ -1,4 +1,4 @@
-﻿namespace DemoFile;
+namespace DemoFile.Test;
 
 internal readonly record struct NodePriority(int Weight, int Value) : IComparable<NodePriority>
 {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <DefineConstants Condition=" '$(Configuration)' == 'Baseline' ">$(DefineConstants);BASELINE</DefineConstants>
@@ -16,7 +16,7 @@
     <ProjectReference Include="..\DemoFile.Game.Cs\DemoFile.Game.Cs.csproj" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Baseline' ">
-    <PackageReference Include="DemoFile.Game.Cs" Version="*" />
+    <PackageReference Include="DemoFile.Game.Cs" Version="0.42.1" />
   </ItemGroup>
 
   <ItemGroup>

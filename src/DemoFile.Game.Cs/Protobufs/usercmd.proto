@@ -1,4 +1,6 @@
-﻿import "networkbasetypes.proto";
+﻿syntax = "proto2";
+
+import "networkbasetypes.proto";
 
 message CInButtonStatePB {
 	optional uint64 buttonstate1 = 1;
