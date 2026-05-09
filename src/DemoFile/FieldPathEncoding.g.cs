@@ -12,7 +12,7 @@ internal static class FieldPathEncoding
         // site shrinks dramatically (Tier1 size: 7,516 → ~400 bytes), which
         // matters because this method is called ~28M times per parse and
         // is itself inlined into the per-tick entity-update hot path.
-        // Algorithm and frequencies are unchanged from the generated tree.
+
         if (!buffer.ReadOneBit())
         {
             // Frequency: 36271
@@ -20,19 +20,21 @@ internal static class FieldPathEncoding
             PlusOne(ref buffer, ref path);
             return true;
         }
+
         if (!buffer.ReadOneBit())
         {
             // Frequency: 25474
             // Bit string: 10
             return false;
         }
-        // Bit string: 11... — defer the remaining ~37% of calls to the cold
-        // method, which contains the rest of the Huffman tree unchanged.
-        return ReadFieldPathOpCold(ref buffer, ref path);
+
+        // Bit string: 11... — defer the remaining ~37% of calls to the cold method.
+        ReadFieldPathOpCold(ref buffer, ref path);
+        return true;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    private static bool ReadFieldPathOpCold(ref BitBuffer buffer, ref FieldPath path)
+    private static void ReadFieldPathOpCold(ref BitBuffer buffer, ref FieldPath path)
     {
         if (!buffer.ReadOneBit())
         {
@@ -43,7 +45,7 @@ internal static class FieldPathEncoding
                     // Frequency: 2942
                     // Bit string: 11000
                     PushOneLeftDeltaOneRightNonZero(ref buffer, ref path);
-                    return true;
+                    return;
                 }
                 else
                 {
@@ -52,14 +54,14 @@ internal static class FieldPathEncoding
                         // Frequency: 1375
                         // Bit string: 110010
                         PlusThree(ref buffer, ref path);
-                        return true;
+                        return;
                     }
                     else
                     {
                         // Frequency: 1837
                         // Bit string: 110011
                         PopAllButOnePlusOne(ref buffer, ref path);
-                        return true;
+                        return;
                     }
                 }
             }
@@ -70,7 +72,7 @@ internal static class FieldPathEncoding
                     // Frequency: 4128
                     // Bit string: 11010
                     PlusN(ref buffer, ref path);
-                    return true;
+                    return;
                 }
                 else
                 {
@@ -85,7 +87,7 @@ internal static class FieldPathEncoding
                                     // Frequency: 149
                                     // Bit string: 110110000
                                     PopAllButOnePlusN(ref buffer, ref path);
-                                    return true;
+                                    return;
                                 }
                                 else
                                 {
@@ -94,7 +96,7 @@ internal static class FieldPathEncoding
                                         // Frequency: 99
                                         // Bit string: 1101100010
                                         NonTopoComplexPack4Bits(ref buffer, ref path);
-                                        return true;
+                                        return;
                                     }
                                     else
                                     {
@@ -113,14 +115,14 @@ internal static class FieldPathEncoding
                                                                 // Frequency: 1
                                                                 // Bit string: 1101100011000000
                                                                 PopNAndNonTopographical(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                             else
                                                             {
                                                                 // Frequency: 0
                                                                 // Bit string: 1101100011000001
                                                                 PopNPlusN(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                         }
                                                         else
@@ -128,7 +130,7 @@ internal static class FieldPathEncoding
                                                             // Frequency: 2
                                                             // Bit string: 110110001100001
                                                             PopOnePlusOne(ref buffer, ref path);
-                                                            return true;
+                                                            return;
                                                         }
                                                     }
                                                     else
@@ -140,14 +142,14 @@ internal static class FieldPathEncoding
                                                                 // Frequency: 0
                                                                 // Bit string: 1101100011000100
                                                                 PushN(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                             else
                                                             {
                                                                 // Frequency: 0
                                                                 // Bit string: 1101100011000101
                                                                 PushThreePack5LeftDeltaN(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                         }
                                                         else
@@ -157,14 +159,14 @@ internal static class FieldPathEncoding
                                                                 // Frequency: 0
                                                                 // Bit string: 1101100011000110
                                                                 PopNPlusOne(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                             else
                                                             {
                                                                 // Frequency: 0
                                                                 // Bit string: 1101100011000111
                                                                 PopOnePlusN(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                         }
                                                     }
@@ -180,7 +182,7 @@ internal static class FieldPathEncoding
                                                                 // Frequency: 0
                                                                 // Bit string: 1101100011001000
                                                                 PushTwoLeftDeltaZero(ref buffer, ref path);
-                                                                return true;
+                                                                return;
                                                             }
                                                             else
                                                             {
@@ -189,14 +191,14 @@ internal static class FieldPathEncoding
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110010010
                                                                     PushThreeLeftDeltaZero(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                                 else
                                                                 {
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110010011
                                                                     PushTwoPack5LeftDeltaZero(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                             }
                                                         }
@@ -205,7 +207,7 @@ internal static class FieldPathEncoding
                                                             // Frequency: 3
                                                             // Bit string: 110110001100101
                                                             PushOneLeftDeltaZeroRightNonZero(ref buffer, ref path);
-                                                            return true;
+                                                            return;
                                                         }
                                                     }
                                                     else
@@ -219,14 +221,14 @@ internal static class FieldPathEncoding
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011000
                                                                     PushTwoLeftDeltaN(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                                 else
                                                                 {
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011001
                                                                     PushThreePack5LeftDeltaOne(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                             }
                                                             else
@@ -236,14 +238,14 @@ internal static class FieldPathEncoding
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011010
                                                                     PushThreeLeftDeltaN(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                                 else
                                                                 {
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011011
                                                                     PushTwoPack5LeftDeltaN(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                             }
                                                         }
@@ -256,14 +258,14 @@ internal static class FieldPathEncoding
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011100
                                                                     PushTwoLeftDeltaOne(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                                 else
                                                                 {
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011101
                                                                     PushThreePack5LeftDeltaZero(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                             }
                                                             else
@@ -273,14 +275,14 @@ internal static class FieldPathEncoding
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011110
                                                                     PushThreeLeftDeltaOne(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                                 else
                                                                 {
                                                                     // Frequency: 0
                                                                     // Bit string: 11011000110011111
                                                                     PushTwoPack5LeftDeltaOne(ref buffer, ref path);
-                                                                    return true;
+                                                                    return;
                                                                 }
                                                             }
                                                         }
@@ -292,7 +294,7 @@ internal static class FieldPathEncoding
                                                 // Frequency: 35
                                                 // Bit string: 110110001101
                                                 PushOneLeftDeltaZeroRightZero(ref buffer, ref path);
-                                                return true;
+                                                return;
                                             }
                                         }
                                         else
@@ -300,7 +302,7 @@ internal static class FieldPathEncoding
                                             // Frequency: 76
                                             // Bit string: 11011000111
                                             NonTopoComplex(ref buffer, ref path);
-                                            return true;
+                                            return;
                                         }
                                     }
                                 }
@@ -310,7 +312,7 @@ internal static class FieldPathEncoding
                                 // Frequency: 471
                                 // Bit string: 11011001
                                 PushOneLeftDeltaNRightNonZero(ref buffer, ref path);
-                                return true;
+                                return;
                             }
                         }
                         else
@@ -320,7 +322,7 @@ internal static class FieldPathEncoding
                                 // Frequency: 521
                                 // Bit string: 11011010
                                 PushOneLeftDeltaOneRightZero(ref buffer, ref path);
-                                return true;
+                                return;
                             }
                             else
                             {
@@ -329,14 +331,14 @@ internal static class FieldPathEncoding
                                     // Frequency: 251
                                     // Bit string: 110110110
                                     PushOneLeftDeltaNRightNonZeroPack8Bits(ref buffer, ref path);
-                                    return true;
+                                    return;
                                 }
                                 else
                                 {
                                     // Frequency: 271
                                     // Bit string: 110110111
                                     NonTopoPenultimatePlusOne(ref buffer, ref path);
-                                    return true;
+                                    return;
                                 }
                             }
                         }
@@ -350,7 +352,7 @@ internal static class FieldPathEncoding
                                 // Frequency: 560
                                 // Bit string: 11011100
                                 PushOneLeftDeltaNRightZero(ref buffer, ref path);
-                                return true;
+                                return;
                             }
                             else
                             {
@@ -359,14 +361,14 @@ internal static class FieldPathEncoding
                                     // Frequency: 300
                                     // Bit string: 110111010
                                     PopAllButOnePlusNPack3Bits(ref buffer, ref path);
-                                    return true;
+                                    return;
                                 }
                                 else
                                 {
                                     // Frequency: 310
                                     // Bit string: 110111011
                                     PushNAndNonTopological(ref buffer, ref path);
-                                    return true;
+                                    return;
                                 }
                             }
                         }
@@ -377,14 +379,14 @@ internal static class FieldPathEncoding
                                 // Frequency: 634
                                 // Bit string: 11011110
                                 PopAllButOnePlusNPack6Bits(ref buffer, ref path);
-                                return true;
+                                return;
                             }
                             else
                             {
                                 // Frequency: 646
                                 // Bit string: 11011111
                                 PlusFour(ref buffer, ref path);
-                                return true;
+                                return;
                             }
                         }
                     }
@@ -398,14 +400,14 @@ internal static class FieldPathEncoding
                 // Frequency: 10334
                 // Bit string: 1110
                 PlusTwo(ref buffer, ref path);
-                return true;
+                return;
             }
             else
             {
                 // Frequency: 10530
                 // Bit string: 1111
                 PushOneLeftDeltaNRightNonZeroPack6Bits(ref buffer, ref path);
-                return true;
+                return;
             }
         }
     }
