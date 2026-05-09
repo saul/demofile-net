@@ -1,7 +1,7 @@
-### 0.44.1 (2026-04-27)
+### 0.44.1 (2026-05-09)
 
 - Upgraded library to .NET 9
-- Further optimised stream reading (~40% faster demo parsing)
+- Further optimised stream reading (30-40% faster demo parsing)
 
 | Method            | BuildConfiguration |       Mean |    Error |   StdDev | Ratio | RatioSD |        Gen0 |       Gen1 |      Gen2 | Allocated | Alloc Ratio |
 |-------------------|--------------------|-----------:|---------:|---------:|------:|--------:|------------:|-----------:|----------:|----------:|------------:|
