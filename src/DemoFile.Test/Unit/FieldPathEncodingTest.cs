@@ -10,65 +10,79 @@ internal record FieldPathEncodingOp(string Name, int Frequency, string? Reader)
 [TestFixture]
 public class FieldPathEncodingTest
 {
-    // From: https://github.com/jordanorelli/hyperstone/blob/1ac40a344457a0adc3a297edd52cf47a25edc584/ent/huff_test.go#L7-L51
-    // thanks to @spheenik and @invokr for the expected huffman codes. these are
-    // ripped from the huffman trees that are known to be working in clarity and
-    // manta.
-
-    private static readonly TestCaseData[] DecodeCases = new TestCaseData[]
-    {
+    // Huffman codes from: https://github.com/jordanorelli/hyperstone/blob/1ac40a344457a0adc3a297edd52cf47a25edc584/ent/huff_test.go#L7-L51
+    // Columns: huffman bit string | extra elements to append to FieldPath.Default before the call (null = none) | expected return | expected path after the op
+    // Data reads in the op body consume zeros from the padding added by PaddedBitStream.
+    private static readonly TestCaseData[] DecodeCases =
+    [
         // @formatter:off
-        new("PlusOne",                                  ToBitStream("0")),
-        new("FieldPathEncodeFinish",                    ToBitStream("10")),
-        new("PlusTwo",                                  ToBitStream("1110")),
-        new("PushOneLeftDeltaNRightNonZeroPack6Bits",   ToBitStream("1111")),
-        new("PushOneLeftDeltaOneRightNonZero",          ToBitStream("11000")),
-        new("PlusN",                                    ToBitStream("11010")),
-        new("PlusThree",                                ToBitStream("110010")),
-        new("PopAllButOnePlusOne",                      ToBitStream("110011")),
-        new("PushOneLeftDeltaNRightNonZero",            ToBitStream("11011001")),
-        new("PushOneLeftDeltaOneRightZero",             ToBitStream("11011010")),
-        new("PushOneLeftDeltaNRightZero",               ToBitStream("11011100")),
-        new("PopAllButOnePlusNPack6Bits",               ToBitStream("11011110")),
-        new("PlusFour",                                 ToBitStream("11011111")),
-        new("PopAllButOnePlusN",                        ToBitStream("110110000")),
-        new("PushOneLeftDeltaNRightNonZeroPack8Bits",   ToBitStream("110110110")),
-        new("NonTopoPenultimatePlusOne",                ToBitStream("110110111")),
-        new("PopAllButOnePlusNPack3Bits",               ToBitStream("110111010")),
-        new("PushNAndNonTopological",                   ToBitStream("110111011")),
-        new("NonTopoComplexPack4Bits",                  ToBitStream("1101100010")),
-        new("NonTopoComplex",                           ToBitStream("11011000111")),
-        new("PushOneLeftDeltaZeroRightZero",            ToBitStream("110110001101")),
-        new("PopOnePlusOne",                            ToBitStream("110110001100001")),
-        new("PushOneLeftDeltaZeroRightNonZero",         ToBitStream("110110001100101")),
-        new("PopNAndNonTopographical",                  ToBitStream("1101100011000000")),
-        new("PopNPlusN",                                ToBitStream("1101100011000001")),
-        new("PushN",                                    ToBitStream("1101100011000100")),
-        new("PushThreePack5LeftDeltaN",                 ToBitStream("1101100011000101")),
-        new("PopNPlusOne",                              ToBitStream("1101100011000110")),
-        new("PopOnePlusN",                              ToBitStream("1101100011000111")),
-        new("PushTwoLeftDeltaZero",                     ToBitStream("1101100011001000")),
-        new("PushThreeLeftDeltaZero",                   ToBitStream("11011000110010010")),
-        new("PushTwoPack5LeftDeltaZero",                ToBitStream("11011000110010011")),
-        new("PushTwoLeftDeltaN",                        ToBitStream("11011000110011000")),
-        new("PushThreePack5LeftDeltaOne",               ToBitStream("11011000110011001")),
-        new("PushThreeLeftDeltaN",                      ToBitStream("11011000110011010")),
-        new("PushTwoPack5LeftDeltaN",                   ToBitStream("11011000110011011")),
-        new("PushTwoLeftDeltaOne",                      ToBitStream("11011000110011100")),
-        new("PushThreePack5LeftDeltaZero",              ToBitStream("11011000110011101")),
-        new("PushThreeLeftDeltaOne",                    ToBitStream("11011000110011110")),
-        new("PushTwoPack5LeftDeltaOne",                 ToBitStream("11011000110011111")),
+        new TestCaseData("0",                    null,          true,  new[] { 0 })            .SetName("PlusOne"),
+        new TestCaseData("10",                   null,          false, new[] { -1 })           .SetName("FieldPathEncodeFinish"),
+        new TestCaseData("1110",                 null,          true,  new[] { 1 })            .SetName("PlusTwo"),
+        new TestCaseData("1111",                 null,          true,  new[] { 1, 1 })         .SetName("PushOneLeftDeltaNRightNonZeroPack6Bits"),
+        new TestCaseData("11000",                null,          true,  new[] { 0, 0 })         .SetName("PushOneLeftDeltaOneRightNonZero"),
+        new TestCaseData("11010",                null,          true,  new[] { 4 })            .SetName("PlusN"),
+        new TestCaseData("110010",               null,          true,  new[] { 2 })            .SetName("PlusThree"),
+        new TestCaseData("110011",               null,          true,  new[] { 0 })            .SetName("PopAllButOnePlusOne"),
+        new TestCaseData("11011001",             null,          true,  new[] { 1, 1 })         .SetName("PushOneLeftDeltaNRightNonZero"),
+        new TestCaseData("11011010",             null,          true,  new[] { 0, 0 })         .SetName("PushOneLeftDeltaOneRightZero"),
+        new TestCaseData("11011100",             null,          true,  new[] { -1, 0 })        .SetName("PushOneLeftDeltaNRightZero"),
+        new TestCaseData("11011110",             null,          true,  new[] { 0 })            .SetName("PopAllButOnePlusNPack6Bits"),
+        new TestCaseData("11011111",             null,          true,  new[] { 3 })            .SetName("PlusFour"),
+        new TestCaseData("110110000",            null,          true,  new[] { 0 })            .SetName("PopAllButOnePlusN"),
+        new TestCaseData("110110110",            null,          true,  new[] { 1, 1 })         .SetName("PushOneLeftDeltaNRightNonZeroPack8Bits"),
+        new TestCaseData("110110111",            new[] { 0 },   true,  new[] { 0, 0 })         .SetName("NonTopoPenultimatePlusOne"),
+        new TestCaseData("110111010",            null,          true,  new[] { 0 })            .SetName("PopAllButOnePlusNPack3Bits"),
+        new TestCaseData("110111011",            null,          true,  new[] { -1 })           .SetName("PushNAndNonTopological"),
+        new TestCaseData("1101100010",           null,          true,  new[] { -1 })           .SetName("NonTopoComplexPack4Bits"),
+        new TestCaseData("11011000111",          null,          true,  new[] { -1 })           .SetName("NonTopoComplex"),
+        new TestCaseData("110110001101",         null,          true,  new[] { -1, 0 })        .SetName("PushOneLeftDeltaZeroRightZero"),
+        new TestCaseData("110110001100001",      new[] { 0 },   true,  new[] { 0 })            .SetName("PopOnePlusOne"),
+        new TestCaseData("110110001100101",      null,          true,  new[] { -1, 0 })        .SetName("PushOneLeftDeltaZeroRightNonZero"),
+        new TestCaseData("1101100011000000",     null,          true,  new[] { -1 })           .SetName("PopNAndNonTopographical"),
+        new TestCaseData("1101100011000001",     null,          true,  new[] { -1 })           .SetName("PopNPlusN"),
+        new TestCaseData("1101100011000100",     null,          true,  new[] { -1 })           .SetName("PushN"),
+        new TestCaseData("1101100011000101",     null,          true,  new[] { 1, 0, 0, 0 })   .SetName("PushThreePack5LeftDeltaN"),
+        new TestCaseData("1101100011000110",     null,          true,  new[] { 0 })            .SetName("PopNPlusOne"),
+        new TestCaseData("1101100011000111",     new[] { 0 },   true,  new[] { 0 })            .SetName("PopOnePlusN"),
+        new TestCaseData("1101100011001000",     null,          true,  new[] { -1, 0, 0 })     .SetName("PushTwoLeftDeltaZero"),
+        new TestCaseData("11011000110010010",    null,          true,  new[] { -1, 0, 0, 0 })  .SetName("PushThreeLeftDeltaZero"),
+        new TestCaseData("11011000110010011",    null,          true,  new[] { -1, 0, 0 })     .SetName("PushTwoPack5LeftDeltaZero"),
+        new TestCaseData("11011000110011000",    null,          true,  new[] { 1, 0, 0 })      .SetName("PushTwoLeftDeltaN"),
+        new TestCaseData("11011000110011001",    null,          true,  new[] { 0, 0, 0, 0 })   .SetName("PushThreePack5LeftDeltaOne"),
+        new TestCaseData("11011000110011010",    null,          true,  new[] { 1, 0, 0, 0 })   .SetName("PushThreeLeftDeltaN"),
+        new TestCaseData("11011000110011011",    null,          true,  new[] { 1, 0, 0 })      .SetName("PushTwoPack5LeftDeltaN"),
+        new TestCaseData("11011000110011100",    null,          true,  new[] { 0, 0, 0 })      .SetName("PushTwoLeftDeltaOne"),
+        new TestCaseData("11011000110011101",    null,          true,  new[] { -1, 0, 0, 0 })  .SetName("PushThreePack5LeftDeltaZero"),
+        new TestCaseData("11011000110011110",    null,          true,  new[] { 0, 0, 0, 0 })   .SetName("PushThreeLeftDeltaOne"),
+        new TestCaseData("11011000110011111",    null,          true,  new[] { 0, 0, 0 })      .SetName("PushTwoPack5LeftDeltaOne"),
         // @formatter:on
-    };
+    ];
 
     [TestCaseSource(nameof(DecodeCases))]
-    public void Decode(string expectedName, byte[] encodedBytes)
+    public void Decode(string huffmanBits, int[]? extraInitialElements, bool expectedReturn, int[] expectedPath)
     {
-        var buffer = new BitBuffer(encodedBytes);
+        var buffer = new BitBuffer(PaddedBitStream(huffmanBits));
         var fieldPath = FieldPath.Default;
-        Assert.That(FieldPathEncoding.ReadFieldPathOp(ref buffer, ref fieldPath));
-        Assert.That(buffer.RemainingBytes, Is.EqualTo(0));
-        // Assert.That(encodingOp.Name, Is.EqualTo(expectedName));
+        if (extraInitialElements != null)
+            foreach (var e in extraInitialElements)
+                fieldPath.Add(e);
+
+        var result = FieldPathEncoding.ReadFieldPathOp(ref buffer, ref fieldPath);
+
+        Assert.That(result, Is.EqualTo(expectedReturn));
+        Assert.That(PathToArray(fieldPath), Is.EqualTo(expectedPath));
+    }
+
+    private static byte[] PaddedBitStream(string bits) =>
+        ToBitStream(bits).Concat(new byte[16]).ToArray();
+
+    private static int[] PathToArray(FieldPath path)
+    {
+        var result = new int[path.Count];
+        for (var i = 0; i < path.Count; i++)
+            result[i] = path[i];
+        return result;
     }
 
     internal static readonly HuffmanNode<FieldPathEncodingOp> HuffmanTree;
