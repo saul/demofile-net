@@ -85,10 +85,12 @@ public ref struct BitBuffer
             var ret = (uint)_buf;
             numBits -= _bitsAvail;
 
+            var newBits = int.Min(_pointer.Length, 8) * 8;
+
             UpdateBuffer();
 
             ret |= (uint)(_buf & MaskLow(numBits)) << _bitsAvail;
-            _bitsAvail = 64 - numBits;
+            _bitsAvail  = int.Max(0, newBits - numBits);
             _buf >>= numBits;
 
             return ret;
