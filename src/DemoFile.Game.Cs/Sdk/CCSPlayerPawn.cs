@@ -28,8 +28,14 @@ public partial class CCSPlayerPawn
 
     public new CCSPlayerController? Controller => (CCSPlayerController?) base.Controller;
 
+    // m_nButtonDownMaskPrev stopped being networked in CS2 build 14197 (2026-11-11), and GOTV
+    // demos from that build onwards no longer carry user command payloads either.
+    // Still populated for older demos.
+    [Obsolete("Removed in v14197")]
     public InputButtons InputButtons => MovementServices is {} csMovement
+#pragma warning disable CS0618 // Type or member is obsolete
         ? (InputButtons) csMovement.ButtonDownMaskPrev
+#pragma warning restore CS0618
         : default;
 
     public CCSWeaponBase? ActiveWeapon => WeaponServices?.ActiveWeaponHandle.Get<CCSWeaponBase>(Demo);

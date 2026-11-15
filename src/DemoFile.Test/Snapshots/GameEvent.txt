@@ -7061,7 +7061,8 @@
       "index": 209,
       "serial": 269
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [4214] Event item_equip@123750:
   {
@@ -21997,7 +21998,8 @@
       "index": 240,
       "serial": 425
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [10427] Event item_equip@129963:
   {
@@ -39545,7 +39547,8 @@
       "index": 274,
       "serial": 562
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [17027] Event item_equip@136563:
   {
@@ -42001,7 +42004,8 @@
       "index": 204,
       "serial": 668
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [18154] Event round_mvp@137690:
   {
@@ -56955,7 +56959,8 @@
       "index": 274,
       "serial": 562
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [23221] Event item_equip@142757:
   {
@@ -60223,7 +60228,8 @@
       "index": 144,
       "serial": 781
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [24965] Event round_mvp@144501:
   {
@@ -76013,7 +76019,8 @@
       "index": 209,
       "serial": 269
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [32220] Event item_equip@151756:
   {
@@ -91076,7 +91083,8 @@
       "index": 209,
       "serial": 269
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [38439] Event item_equip@157975:
   {
@@ -93502,7 +93510,8 @@
       "index": 209,
       "serial": 269
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [41063] Event round_mvp@160599:
   {
@@ -107980,7 +107989,8 @@
       "index": 274,
       "serial": 562
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [46973] Event item_equip@166509:
   {
@@ -110644,7 +110654,8 @@
       "index": 274,
       "serial": 562
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [49597] Event player_hurt@169133:
   {
@@ -125821,7 +125832,8 @@
       "index": 240,
       "serial": 425
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [57460] Event item_equip@176996:
   {
@@ -128560,7 +128572,8 @@
       "index": 240,
       "serial": 425
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [60084] Event round_mvp@179620:
   {
@@ -149413,7 +149426,8 @@
       "index": 209,
       "serial": 269
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [70996] Event item_equip@190532:
   {
@@ -189073,7 +189087,8 @@
       "index": 209,
       "serial": 269
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [89234] Event item_equip@208770:
   {
@@ -190791,7 +190806,8 @@
       "index": 134,
       "serial": 444
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [91201] Event round_mvp@210737:
   {
@@ -268612,7 +268628,8 @@
       "index": 144,
       "serial": 781
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [129735] Event item_equip@249271:
   {
@@ -307571,7 +307588,8 @@
       "index": 204,
       "serial": 668
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [149975] Event item_equip@269511:
   {
@@ -325022,7 +325040,8 @@
       "index": 204,
       "serial": 668
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [156998] Event item_equip@276534:
   {
@@ -341367,7 +341386,8 @@
       "index": 204,
       "serial": 668
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [164332] Event item_equip@283868:
   {
@@ -361580,7 +361600,8 @@
       "index": 134,
       "serial": 444
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [171183] Event item_equip@290719:
   {
@@ -380445,7 +380466,8 @@
       "index": 204,
       "serial": 668
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [179927] Event item_equip@299463:
   {
@@ -396298,7 +396320,8 @@
       "index": 137,
       "serial": 901
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [188046] Event item_equip@307582:
   {
@@ -397624,7 +397647,8 @@
       "index": 137,
       "serial": 901
     },
-    "Site": 236
+    "Site": 236,
+    "C4": 0
   }
 [190670] Event round_mvp@310206:
   {
@@ -422541,7 +422565,8 @@
       "index": 144,
       "serial": 781
     },
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [201636] Event item_equip@321172:
   {
@@ -423362,7 +423387,8 @@
     "Name": "Ksu",
     "Networkid": "[U:1:28744718]",
     "SteamId": 76561197989010446,
-    "PlayerID": 0
+    "PlayerID": 0,
+    "EverFullyConnected": false
   }
 [202341] Event smokegrenade_expired@321877:
   {
@@ -423444,7 +423470,8 @@
     "Name": "t4tty",
     "Networkid": "[U:1:1534095]",
     "SteamId": 76561197961799823,
-    "PlayerID": 0
+    "PlayerID": 0,
+    "EverFullyConnected": false
   }
 [203061] Event player_disconnect@322597:
   {
@@ -423461,7 +423488,8 @@
     "Name": "vicu",
     "Networkid": "[U:1:306024702]",
     "SteamId": 76561198266290430,
-    "PlayerID": 0
+    "PlayerID": 0,
+    "EverFullyConnected": false
   }
 [203103] Event hltv_chase@322639:
   {
@@ -423540,7 +423568,8 @@
     "GameEventName": "bomb_exploded",
     "PlayerIndex": null,
     "PlayerPawnHandle": null,
-    "Site": 235
+    "Site": 235,
+    "C4": 0
   }
 [204260] Event player_hurt@323796:
   {

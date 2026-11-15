@@ -138,10 +138,12 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle" or "ShatterPanelMode" or "CSWeaponState_t" or "WorldGroupId_t" or "attributeprovidertypes_t" or "DecalMode_t":
+            case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle" or "ShatterPanelMode" or "CSWeaponState_t" or "WorldGroupId_t" or "attributeprovidertypes_t" or "DecalMode_t" or "AttachmentHandle_t" or "BeamClipStyle_t":
             {
+                // Value is discarded, so reading signed types as unsigned is fine - only the bit count matters
+                var fieldDecoder = FieldDecode.CreateDecoder_UnsignedInteger(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                    buffer.ReadUVarInt64();
+                    fieldDecoder(ref buffer);
                 return true;
             }
             case "CUtlString" or "CUtlSymbolLarge":
@@ -220,13 +222,14 @@ public static class FallbackDecoder
             }
             default:
                 return TryCreateFallbackClassDecoder(fieldType, decoderSet, out decoder)
-                       || TryCreateHeuristicDecoder(fieldName, fieldType, out decoder);
+                       || TryCreateHeuristicDecoder(fieldName, fieldType, encodingInfo, out decoder);
         }
     }
 
     private static bool TryCreateHeuristicDecoder(
         string fieldName,
         FieldType fieldType,
+        FieldEncodingInfo encodingInfo,
         out SendNodeDecoder<Unit>? decoder)
     {
         // Heuristic: enum types. Example: EGrenadeThrowState, EFoo
@@ -235,8 +238,9 @@ public static class FallbackDecoder
             && char.IsUpper(fieldType.Name[1]))
         {
             // See also FieldDecode.CreateDecoder_enum
+            var enumDecoder = FieldDecode.CreateDecoder_UnsignedInteger(encodingInfo);
             decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                buffer.ReadUVarInt64();
+                enumDecoder(ref buffer);
             return true;
         }
 
@@ -245,8 +249,9 @@ public static class FallbackDecoder
             && fieldName.StartsWith("m_e")
             && char.IsUpper(fieldName[3]))
         {
+            var enumDecoder = FieldDecode.CreateDecoder_UnsignedInteger(encodingInfo);
             decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                buffer.ReadUVarInt64();
+                enumDecoder(ref buffer);
             return true;
         }
 

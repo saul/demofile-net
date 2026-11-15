@@ -79,6 +79,19 @@ internal partial class CsDecoderSet
             return true;
         }
 
+        // Compatibility for pre-v14197 demos
+        if (field.VarName == "m_nButtonDownMaskPrev")
+        {
+            var fieldDecoder = FieldDecode.CreateDecoder_UInt64(field.FieldEncodingInfo);
+            decoder = (object @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+#pragma warning disable CS0618 // Type or member is obsolete
+                ((CCSPlayer_MovementServices)@this).ButtonDownMaskPrev = fieldDecoder(ref buffer);
+#pragma warning restore CS0618
+            };
+            return true;
+        }
+
         if (FallbackDecoder.TryCreate(field.VarName, field.VarType, field.FieldEncodingInfo, decoderSet, out var engineFallbackDecoder))
         {
             decoder = (object _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>

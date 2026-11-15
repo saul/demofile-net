@@ -1,0 +1,9379 @@
+[320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward, Score
+  Hanka-: None
+  Angelka: Score
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward, Score
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[1280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward
+  f6tal: Forward
+[1600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: MoveRight
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Forward
+  f6tal: MoveRight
+[1920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, Walk
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Forward, Walk
+  Angelka: Duck
+  Ksu: Forward, Walk
+  victoria: Walk
+  Elizabeth-: Forward, Walk
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: MoveRight
+[2240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft, Walk
+  vicu: Forward, Walk
+  Hanka-: None
+  Angelka: Duck
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Forward, Walk
+  f6tal: MoveRight
+[2560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Walk
+  vicu: MoveRight, Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: Duck, Back
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Forward, Walk
+  f6tal: MoveRight
+[2880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Walk
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: None
+  Ksu: Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Walk
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: Forward
+[3200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Forward, Walk
+  Hanka-: Back, MoveRight, Walk
+  Angelka: None
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: Forward, MoveRight
+[3520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveRight, LookAtWeapon
+  vicu: None
+  Hanka-: Duck, Forward, MoveRight
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: MoveRight
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[3840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveLeft, Walk
+  vicu: None
+  Hanka-: Back, MoveRight, Walk
+  Angelka: None
+  Ksu: Forward
+  victoria: Back
+  Elizabeth-: MoveRight
+  t4tty: Duck, Back, MoveLeft, Walk
+  f6tal: Forward
+[4160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft
+  vicu: None
+  Hanka-: MoveRight
+  Angelka: None
+  Ksu: MoveRight
+  victoria: Attack
+  Elizabeth-: MoveLeft
+  t4tty: Attack, MoveLeft
+  f6tal: Walk
+[4480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveLeft
+  vicu: None
+  Hanka-: Back, MoveRight
+  Angelka: None
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Forward, MoveLeft, Walk
+[4800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveRight
+  vicu: None
+  Hanka-: Forward
+  Angelka: None
+  Ksu: MoveRight, Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: MoveLeft
+[5120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft, Walk
+  vicu: None
+  Hanka-: Forward, MoveRight
+  Angelka: None
+  Ksu: MoveRight, Walk
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: MoveRight
+[5440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Attack
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: None
+  Ksu: Forward, Walk
+  victoria: MoveLeft
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: Attack, MoveRight
+[5760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Attack
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Forward
+[6080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Score
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[6400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[6720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Score, LookAtWeapon
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: LookAtWeapon
+  f6tal: Duck
+[7040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Attack, Duck
+[7360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: MoveLeft
+  vicu: Duck, Forward
+  Hanka-: Forward
+  Angelka: Duck, Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward
+  f6tal: Forward
+[7680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight, Walk
+  vicu: MoveLeft
+  Hanka-: Attack, MoveRight
+  Angelka: Attack, Duck, MoveLeft
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Attack, MoveLeft
+  Elizabeth-: Forward, AttackSecondary
+  t4tty: MoveRight
+  f6tal: Back
+[8000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveRight
+  vicu: Duck, MoveRight
+  Hanka-: Attack, Duck, MoveRight
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Back, MoveRight
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: Forward
+[8320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: None
+  vicu: Duck, MoveLeft
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: MoveLeft
+  Elizabeth-: Jump, MoveRight
+  t4tty: None
+  f6tal: MoveLeft
+[8640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight
+  Liina: Forward
+  vicu: Duck, Back, MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: Forward, MoveLeft
+[8960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Walk
+  vicu: Forward, MoveLeft
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveRight
+  victoria: Forward
+  Elizabeth-: Attack, MoveRight
+  t4tty: None
+  f6tal: Forward
+[9280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft, Walk
+  vicu: Duck, Forward, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Back, MoveRight
+  victoria: Forward
+  Elizabeth-: Back, Walk
+  t4tty: None
+  f6tal: Forward, MoveLeft
+[9600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Walk
+  vicu: Back, MoveLeft, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveRight
+  victoria: Forward
+  Elizabeth-: Forward, Walk
+  t4tty: None
+  f6tal: Forward
+[9920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft, Walk
+  vicu: Duck, MoveLeft, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: Forward, MoveLeft
+[10240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Walk
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Back, Walk
+  t4tty: None
+  f6tal: Attack, Duck
+[10560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Walk
+  vicu: Forward, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: MoveLeft, Walk
+  t4tty: None
+  f6tal: MoveRight
+[10880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[11200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score, LookAtWeapon
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward, Score
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[11520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack, LookAtWeapon
+  vicu: None
+  Hanka-: None
+  Angelka: Forward
+  Ksu: None
+  victoria: Duck, Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[11840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[12160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[12480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: MoveLeft
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[12800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Duck, Forward
+  Hanka-: Attack
+  Angelka: MoveLeft
+  Ksu: Forward
+  victoria: MoveRight
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft
+  f6tal: Forward, LookAtWeapon
+[13120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: Forward, AttackSecondary
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: MoveRight
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: Forward
+  f6tal: Attack, MoveLeft
+[13440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Attack, Duck, MoveLeft
+  vicu: Forward
+  Hanka-: Back, MoveLeft, Walk
+  Angelka: Attack, Duck, MoveRight, AttackSecondary
+  Ksu: Forward, Walk
+  victoria: Back
+  Elizabeth-: Forward
+  t4tty: Attack, Forward, MoveLeft
+  f6tal: Forward, MoveLeft
+[13760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveLeft
+  Liina: MoveLeft, Reload
+  vicu: Duck, Forward
+  Hanka-: Back
+  Angelka: Attack, AttackSecondary
+  Ksu: Forward, MoveRight
+  victoria: Forward, MoveLeft
+  Elizabeth-: Attack, MoveRight
+  t4tty: Attack
+  f6tal: Forward, Walk
+[14080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Duck, Forward
+  vicu: Duck, MoveLeft
+  Hanka-: Attack, Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Forward, MoveRight
+  victoria: MoveLeft, MoveRight
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Walk
+[14400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: MoveLeft, Walk
+  vicu: Duck
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Back, MoveRight, Walk
+[14720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: MoveRight, Walk
+  vicu: Duck, Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Jump, Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Forward, MoveRight, Walk
+[15040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Back, Walk
+  Liina: Walk
+  vicu: Duck, MoveLeft
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Jump, Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Jump, Duck, MoveLeft
+[15360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Walk
+  vicu: MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Forward, MoveLeft
+  victoria: Forward, MoveRight
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Forward, MoveRight, Walk
+[15680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Walk
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Forward
+  victoria: MoveLeft
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: AttackSecondary
+[16000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward
+  vicu: Forward, MoveRight, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Forward
+  victoria: Forward, MoveLeft
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Forward, Walk
+[16320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight
+  Liina: Walk
+  vicu: Duck, Back, MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveRight
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: Forward, Walk
+[16640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, Walk
+  Liina: MoveLeft, Walk
+  vicu: Duck, Back, MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Back
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: MoveRight
+[16960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward, MoveRight
+  vicu: Back, MoveRight
+  Hanka-: Forward
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: None
+[17280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, MoveRight
+  vicu: Duck, MoveLeft, Walk
+  Hanka-: MoveRight
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: MoveLeft
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: MoveRight, Walk
+[17600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, LookAtWeapon
+  vicu: MoveLeft
+  Hanka-: Use
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: None
+[17920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Duck, Forward, MoveLeft, AttackSecondary
+  Hanka-: Use
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: None
+[18240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: None
+[18560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[18880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: AttackSecondary
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Score
+  f6tal: None
+[19200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward
+  victoria: Score, LookAtWeapon
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[19520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward, LookAtWeapon
+  Ksu: None
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: MoveRight
+[19840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, Score
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward, Score
+  Ksu: Forward
+  victoria: Back, MoveRight
+  Elizabeth-: Forward
+  t4tty: Score
+  f6tal: Back, MoveRight
+[20160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Forward
+  Liina: Forward, MoveLeft
+  vicu: Forward
+  Hanka-: None
+  Angelka: MoveLeft
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[20480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Forward
+  Liina: MoveRight
+  vicu: MoveLeft
+  Hanka-: Forward
+  Angelka: Forward, MoveRight
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: Forward, MoveLeft, Walk
+  t4tty: Back, MoveLeft, Walk
+  f6tal: Forward, MoveRight
+[20800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, MoveLeft
+  Liina: Back, MoveLeft, Walk
+  vicu: MoveRight
+  Hanka-: MoveRight, Walk
+  Angelka: MoveLeft
+  Ksu: Back
+  victoria: Forward
+  Elizabeth-: Duck
+  t4tty: Forward
+  f6tal: MoveRight
+[21120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight
+  Liina: Forward, MoveLeft
+  vicu: Forward
+  Hanka-: Back, Walk
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: Forward, MoveRight
+  Elizabeth-: Forward, MoveRight
+  t4tty: MoveLeft
+  f6tal: Back
+[21440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, MoveRight
+  Liina: Forward
+  vicu: Forward, MoveLeft, AttackSecondary
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: MoveLeft
+  Ksu: Forward, MoveLeft
+  victoria: MoveRight
+  Elizabeth-: Attack, Duck, MoveRight
+  t4tty: MoveRight
+  f6tal: Forward, Walk
+[21760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: MoveLeft, Walk
+  Angelka: None
+  Ksu: Forward, Walk
+  victoria: Forward
+  Elizabeth-: Back
+  t4tty: Attack
+  f6tal: Forward
+[22080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck, MoveRight
+  Liina: Forward
+  vicu: Forward, MoveRight
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Duck
+  victoria: Forward
+  Elizabeth-: MoveLeft
+  t4tty: Attack
+  f6tal: Forward
+[22400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Walk
+  vicu: None
+  Hanka-: MoveRight
+  Angelka: Jump, Forward
+  Ksu: Duck
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: MoveRight
+[22720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Back, Walk
+  vicu: Duck, MoveLeft, Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: Jump, Forward
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: Forward, MoveRight
+[23040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, MoveRight
+  Liina: Forward, MoveRight, Walk
+  vicu: MoveRight
+  Hanka-: Walk
+  Angelka: Jump, Forward
+  Ksu: Attack, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward, MoveLeft, Walk
+  t4tty: Attack
+  f6tal: MoveRight, Walk
+[23360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Forward, Walk
+  vicu: MoveLeft
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Jump, Forward
+  Ksu: MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Forward, MoveLeft, Walk
+[23680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Forward, Walk
+  vicu: Walk
+  Hanka-: MoveRight, Walk
+  Angelka: Jump, Forward
+  Ksu: MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: Back, Walk
+  t4tty: Attack
+  f6tal: MoveRight, Walk
+[24000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack, Duck
+  vicu: None
+  Hanka-: Attack, Duck
+  Angelka: Jump, Forward
+  Ksu: Forward, MoveLeft
+  victoria: Forward
+  Elizabeth-: Duck, MoveRight
+  t4tty: Attack
+  f6tal: None
+[24320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Use
+  Hanka-: Forward
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[24640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: Forward, Score, LookAtWeapon
+  vicu: Use
+  Hanka-: MoveRight
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[24960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Use
+  Hanka-: MoveRight
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[25280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, Score
+  vicu: Forward
+  Hanka-: Duck
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[25600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: LookAtWeapon
+  vicu: Score
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[25920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, Score
+  vicu: Forward
+  Hanka-: Forward, Score
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Duck
+  f6tal: Forward
+[26240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Attack
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: Forward
+[26560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward, Score
+  Ksu: Attack
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward, Score
+  f6tal: Forward
+[26880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Duck, Forward
+  vicu: MoveRight
+  Hanka-: Jump, Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[27200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: AttackSecondary, Walk
+  vicu: Attack, Back, MoveLeft
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Back, MoveRight
+[27520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveLeft
+  vicu: MoveRight
+  Hanka-: Walk
+  Angelka: None
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Walk
+  f6tal: MoveLeft
+[27840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveRight
+  vicu: MoveLeft, Walk
+  Hanka-: MoveRight, Walk
+  Angelka: Walk
+  Ksu: Duck, Forward, MoveRight
+  victoria: Duck, MoveLeft
+  Elizabeth-: Forward, Walk
+  t4tty: MoveRight
+  f6tal: MoveRight
+[28160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveLeft, Walk
+  vicu: Walk
+  Hanka-: Walk
+  Angelka: Walk
+  Ksu: Duck, MoveLeft
+  victoria: Duck
+  Elizabeth-: Forward, Walk
+  t4tty: Duck, Forward, MoveRight, Walk
+  f6tal: MoveRight
+[28480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Duck
+  victoria: Duck
+  Elizabeth-: Back, MoveLeft, Walk
+  t4tty: Duck, Walk
+  f6tal: Jump
+[28800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft
+  Liina: MoveRight, Walk
+  vicu: Back
+  Hanka-: MoveLeft, Walk
+  Angelka: MoveRight
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Duck, Forward, Walk
+  t4tty: Forward, MoveRight, Walk
+  f6tal: MoveLeft
+[29120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, Walk
+  vicu: Attack, Forward
+  Hanka-: None
+  Angelka: Attack, Duck, Back, AttackSecondary
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: None
+  f6tal: Attack, Duck, MoveLeft
+[29440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: MoveLeft, LookAtWeapon
+  vicu: MoveRight
+  Hanka-: MoveRight, Walk
+  Angelka: Jump, Forward
+  Ksu: MoveRight
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Back
+  f6tal: Jump
+[29760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Forward, MoveRight, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Forward, LookAtWeapon
+  f6tal: Jump
+[30080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward, MoveRight, Walk
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Duck, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck, Back, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Forward, MoveLeft
+  f6tal: Jump
+[30400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveLeft, LookAtWeapon
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck
+  Elizabeth-: Jump
+  t4tty: MoveLeft
+  f6tal: Jump
+[30720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft, Walk
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck
+  Elizabeth-: Jump
+  t4tty: Forward
+  f6tal: Jump
+[31040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: MoveLeft, LookAtWeapon
+  vicu: MoveRight, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck, Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: Forward, MoveLeft
+  f6tal: Jump
+[31360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Duck, Back, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Forward, Walk
+  f6tal: Jump
+[31680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck, Forward
+  Elizabeth-: Jump
+  t4tty: Duck, MoveRight
+  f6tal: Jump
+[32000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Duck, Forward, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Attack, Duck, MoveRight
+  Elizabeth-: Jump
+  t4tty: Duck, Walk
+  f6tal: Jump
+[32320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: MoveLeft, LookAtWeapon
+  vicu: MoveLeft
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck, Back
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[32640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: MoveLeft, LookAtWeapon
+  vicu: MoveRight, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: MoveLeft
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[32960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Duck, MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: MoveRight
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[33280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Score
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[33600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: Score, LookAtWeapon
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[33920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[34240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Attack
+  vicu: Forward, Use
+  Hanka-: None
+  Angelka: Forward, LookAtWeapon
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[34560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: MoveLeft
+[34880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveLeft, LookAtWeapon
+  vicu: Forward
+  Hanka-: Attack, Forward, MoveRight
+  Angelka: Forward
+  Ksu: Forward, MoveLeft
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[35200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Walk
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward, MoveRight, Walk
+  t4tty: Forward
+  f6tal: MoveRight
+[35520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back
+  Liina: MoveRight
+  vicu: MoveRight
+  Hanka-: MoveRight, Walk
+  Angelka: None
+  Ksu: MoveLeft, Walk
+  victoria: Attack
+  Elizabeth-: MoveRight, Walk
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: Back, MoveRight, Walk
+[35840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveRight, Walk
+  Liina: MoveRight, Walk
+  vicu: Walk
+  Hanka-: Duck, MoveRight
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Duck, Forward, MoveLeft
+  t4tty: Forward, MoveRight, Walk
+  f6tal: Forward, Walk
+[36160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: MoveRight, Walk
+  vicu: MoveRight
+  Hanka-: MoveLeft, Walk
+  Angelka: MoveRight, Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: Duck
+  t4tty: Forward, Walk
+  f6tal: Attack, Forward
+[36480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: MoveLeft
+  Hanka-: Back, MoveRight, Walk
+  Angelka: MoveRight, Walk
+  Ksu: MoveLeft, Walk
+  victoria: Attack
+  Elizabeth-: Duck
+  t4tty: Walk
+  f6tal: MoveLeft
+[36800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward, MoveLeft, Walk
+  vicu: Forward, MoveLeft
+  Hanka-: MoveLeft, Walk
+  Angelka: Walk
+  Ksu: Duck
+  victoria: Forward, MoveLeft
+  Elizabeth-: MoveRight, Walk
+  t4tty: MoveLeft
+  f6tal: Back, MoveRight
+[37120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Back, MoveRight
+  Hanka-: Attack, Duck, MoveRight
+  Angelka: MoveLeft, Walk
+  Ksu: Walk
+  victoria: MoveRight
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: Forward, MoveRight, Walk
+[37440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack
+  vicu: Forward, MoveLeft
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Forward, MoveRight
+  victoria: Attack, Forward
+  Elizabeth-: Attack, MoveRight
+  t4tty: Back, MoveRight, Walk
+  f6tal: Forward, MoveLeft, Walk
+[37760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveLeft
+  Ksu: Duck, MoveLeft
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: Forward, MoveRight
+  f6tal: None
+[38080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft, Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: MoveRight
+  Ksu: Forward
+  victoria: Duck
+  Elizabeth-: Forward
+  t4tty: MoveRight, Walk
+  f6tal: Attack
+[38400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: MoveLeft
+  Ksu: Forward, MoveRight
+  victoria: Attack, Duck
+  Elizabeth-: None
+  t4tty: MoveRight
+  f6tal: Attack
+[38720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveRight, Walk
+  Ksu: MoveRight, Walk
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: MoveRight
+  f6tal: Attack
+[39040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: None
+  Ksu: Walk
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: Walk
+  f6tal: Attack
+[39360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, Walk
+  Ksu: MoveLeft, Walk
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: Forward, Walk
+  f6tal: Attack
+[39680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight, Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, Walk
+  Ksu: Forward, Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Duck
+  t4tty: Forward, Walk
+  f6tal: Attack
+[40000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Walk
+  Ksu: MoveRight
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: Attack
+[40320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Back, MoveRight
+  victoria: Forward, MoveRight
+  Elizabeth-: Forward, MoveLeft
+  t4tty: MoveRight
+  f6tal: Attack
+[40640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward, MoveLeft
+  Elizabeth-: Back, MoveLeft
+  t4tty: Forward, MoveRight
+  f6tal: Attack
+[40960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Duck
+  victoria: Forward, MoveLeft
+  Elizabeth-: None
+  t4tty: Walk
+  f6tal: Attack
+[41280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Attack
+[41600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward, Score
+  f6tal: Forward
+[41920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: Duck
+  Hanka-: Score
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[42240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Duck
+  t4tty: Forward
+  f6tal: Forward
+[42560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Score
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[42880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward, Score
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[43200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Score, LookAtWeapon
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft
+  f6tal: Forward
+[43520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, LookAtWeapon
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[43840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: None
+  Ksu: MoveRight
+  victoria: LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[44160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, LookAtWeapon
+  vicu: Forward, Score
+  Hanka-: Forward
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[44480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward, Score
+  Ksu: MoveRight
+  victoria: LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[44800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: Forward, MoveLeft
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward, Score
+  Ksu: Back, MoveRight
+  victoria: None
+  Elizabeth-: Back
+  t4tty: Forward
+  f6tal: MoveRight
+[45120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveRight
+  vicu: MoveRight
+  Hanka-: Duck, Back, MoveRight
+  Angelka: Forward
+  Ksu: Back, MoveRight
+  victoria: Forward
+  Elizabeth-: MoveLeft
+  t4tty: Forward, MoveLeft
+  f6tal: Forward, MoveRight
+[45440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Duck
+  vicu: Forward, Walk
+  Hanka-: Walk
+  Angelka: Forward, MoveLeft
+  Ksu: Forward, MoveRight
+  victoria: Attack
+  Elizabeth-: Walk
+  t4tty: MoveRight
+  f6tal: None
+[45760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveRight, Walk
+  vicu: Walk
+  Hanka-: Duck, Forward
+  Angelka: MoveRight
+  Ksu: Forward, MoveLeft
+  victoria: Attack
+  Elizabeth-: MoveLeft, Walk
+  t4tty: MoveLeft
+  f6tal: MoveLeft
+[46080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Walk
+  vicu: Walk
+  Hanka-: Duck
+  Angelka: MoveRight
+  Ksu: MoveRight
+  victoria: MoveLeft, AttackSecondary
+  Elizabeth-: MoveLeft
+  t4tty: Attack
+  f6tal: MoveLeft
+[46400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveRight, Walk
+  vicu: Back, MoveRight, Walk
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Duck
+  Elizabeth-: MoveLeft, MoveRight
+  t4tty: Attack
+  f6tal: Back
+[46720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: Back, Walk
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Duck, MoveRight
+  victoria: MoveLeft
+  Elizabeth-: Back, MoveLeft
+  t4tty: Attack
+  f6tal: Back, MoveLeft
+[47040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Duck
+  Elizabeth-: MoveLeft
+  t4tty: Attack
+  f6tal: Duck, Back
+[47360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Back
+  vicu: MoveLeft
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: MoveRight
+  victoria: MoveRight
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Forward, MoveLeft
+[47680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Duck, Back, MoveLeft
+  vicu: MoveRight
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Duck, MoveLeft, MoveRight
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward, Walk
+  t4tty: Attack
+  f6tal: Forward, MoveRight, Walk
+[48000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Back, MoveLeft
+  Elizabeth-: Back
+  t4tty: Attack
+  f6tal: MoveLeft
+[48320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: Duck, Forward, MoveRight, Walk
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Duck, MoveRight
+  victoria: MoveLeft
+  Elizabeth-: Duck
+  t4tty: Attack
+  f6tal: Forward, Walk
+[48640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: Duck, Walk
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Duck, MoveLeft
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: Forward
+[48960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward
+  t4tty: Attack
+  f6tal: MoveLeft
+[49280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: MoveRight
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Forward, MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Forward, MoveLeft
+[49600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: None
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Attack
+  f6tal: Forward
+[49920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[50240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[50560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Forward
+  f6tal: Forward
+[50880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Duck
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Forward, MoveRight
+  f6tal: Forward
+[51200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward, MoveLeft
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[51520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Attack, MoveRight
+  Angelka: Attack, Forward
+  Ksu: Forward, Score, LookAtWeapon
+  victoria: MoveLeft
+  Elizabeth-: Back
+  t4tty: Forward
+  f6tal: Forward
+[51840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveLeft
+  vicu: MoveRight
+  Hanka-: Duck, MoveRight
+  Angelka: Duck, Forward, MoveRight
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: None
+[52160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck
+  Liina: Back, Walk
+  vicu: MoveRight, Walk
+  Hanka-: Duck, MoveRight
+  Angelka: Duck, Forward
+  Ksu: Duck
+  victoria: Back, MoveRight
+  Elizabeth-: MoveRight
+  t4tty: Duck, MoveRight
+  f6tal: None
+[52480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Forward
+  Liina: Forward
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Back, MoveLeft
+  Angelka: None
+  Ksu: Duck
+  victoria: Back, MoveRight
+  Elizabeth-: Walk
+  t4tty: Walk
+  f6tal: MoveLeft, Walk
+[52800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Back, Walk
+  vicu: Forward, MoveLeft
+  Hanka-: MoveRight
+  Angelka: Forward, MoveRight
+  Ksu: MoveRight, Walk
+  victoria: Back
+  Elizabeth-: Back, MoveRight
+  t4tty: MoveLeft
+  f6tal: Back
+[53120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, Walk
+  vicu: Duck, MoveLeft
+  Hanka-: MoveRight
+  Angelka: None
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward
+  t4tty: Back, Walk
+  f6tal: MoveRight
+[53440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, Walk
+  vicu: Duck, MoveRight, Walk
+  Hanka-: MoveLeft
+  Angelka: Walk
+  Ksu: Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward
+  t4tty: MoveRight, Walk
+  f6tal: MoveLeft
+[53760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft
+  Liina: Walk
+  vicu: Back, MoveLeft, Walk
+  Hanka-: MoveRight
+  Angelka: MoveRight
+  Ksu: Walk
+  victoria: Forward, Walk
+  Elizabeth-: Forward, MoveLeft, Walk
+  t4tty: Walk
+  f6tal: None
+[54080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Walk
+  vicu: MoveRight, Walk
+  Hanka-: MoveLeft
+  Angelka: Duck, MoveRight
+  Ksu: Walk
+  victoria: Forward, MoveLeft, Walk
+  Elizabeth-: MoveLeft, Walk
+  t4tty: Forward, MoveRight, Walk
+  f6tal: MoveLeft, Walk
+[54400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, Walk
+  vicu: MoveRight, Walk
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: Forward, MoveRight, Walk
+  Ksu: Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward, Walk
+  t4tty: Forward, MoveRight, Walk
+  f6tal: MoveLeft
+[54720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Back, Walk
+  vicu: MoveRight, Walk
+  Hanka-: Forward, Walk
+  Angelka: Forward, Walk
+  Ksu: Walk
+  victoria: Forward
+  Elizabeth-: Forward, Walk
+  t4tty: Attack, Walk
+  f6tal: Forward
+[55040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, Walk
+  vicu: Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: MoveLeft
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: None
+  f6tal: Duck, Forward
+[55360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, Walk
+  Liina: MoveLeft
+  vicu: Back, MoveRight, Walk
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: MoveLeft
+  Ksu: MoveLeft
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Forward, MoveRight, Walk
+  f6tal: MoveLeft
+[55680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, Walk
+  vicu: Forward, Walk
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: Forward, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: MoveRight, Walk
+  f6tal: Attack, MoveLeft
+[56000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveLeft, Walk
+  Liina: Back, Walk
+  vicu: MoveLeft
+  Hanka-: MoveRight, Walk
+  Angelka: Forward, MoveRight, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: MoveRight, Walk
+  f6tal: Forward, MoveLeft, Walk
+[56320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: Forward, Walk
+  Hanka-: Duck, Forward, MoveLeft
+  Angelka: Forward, Walk
+  Ksu: Forward
+  victoria: MoveRight
+  Elizabeth-: MoveRight
+  t4tty: MoveLeft
+  f6tal: MoveLeft
+[56640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveRight
+  vicu: None
+  Hanka-: Attack
+  Angelka: Forward, Walk
+  Ksu: Score
+  victoria: None
+  Elizabeth-: Forward, MoveLeft
+  t4tty: MoveLeft
+  f6tal: MoveLeft, MoveRight
+[56960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Forward, Walk
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Forward, Walk
+  Ksu: Score
+  victoria: MoveRight
+  Elizabeth-: Walk
+  t4tty: Forward, MoveRight
+  f6tal: MoveRight
+[57280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward, Walk
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: None
+  Elizabeth-: Forward, Walk
+  t4tty: Walk
+  f6tal: Attack, Duck
+[57600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward, MoveLeft
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward, MoveRight
+  Elizabeth-: Forward
+  t4tty: MoveLeft, Walk
+  f6tal: MoveLeft, Walk
+[57920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, Walk
+  Liina: Forward, MoveRight
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: MoveLeft, Walk
+  f6tal: MoveLeft, Walk
+[58240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: Forward, Walk
+  f6tal: MoveRight
+[58560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, MoveLeft
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Forward, Walk
+  f6tal: MoveLeft
+[58880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward, Walk
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: MoveRight
+  Elizabeth-: MoveLeft
+  t4tty: MoveRight, Walk
+  f6tal: None
+[59200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck
+  Liina: None
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: MoveRight
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Attack
+  f6tal: MoveLeft
+[59520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: None
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward, Score
+  Elizabeth-: Jump, MoveRight
+  t4tty: Attack
+  f6tal: Forward, MoveRight
+[59840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: None
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward
+  Elizabeth-: Jump, Forward
+  t4tty: Attack
+  f6tal: Forward
+[60160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: None
+  vicu: AttackSecondary
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Score
+  victoria: Forward
+  Elizabeth-: Attack, Forward, MoveLeft
+  t4tty: Attack
+  f6tal: Jump, Duck, MoveRight
+[60480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[60800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[61120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Score
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: None
+  t4tty: Duck, Forward
+  f6tal: None
+[61440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward
+  victoria: Duck, Forward
+  Elizabeth-: Forward
+  t4tty: Duck, Forward
+  f6tal: None
+[61760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward, Score
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[62080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack
+  vicu: Score
+  Hanka-: Forward
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: None
+[62400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Score
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward
+  victoria: Duck, Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: None
+[62720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: None
+  Hanka-: Score
+  Angelka: Score
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[63040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: LookAtWeapon
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward, MoveLeft
+[63360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Back
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[63680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: LookAtWeapon
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[64000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[64320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack
+  vicu: Forward
+  Hanka-: Forward, Score
+  Angelka: Score
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[64640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, Score
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[64960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Score, LookAtWeapon
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[65280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: Forward, Score
+  vicu: None
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward, LookAtWeapon
+  f6tal: Forward
+[65600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: Forward, MoveLeft
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveLeft
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward, AttackSecondary
+  t4tty: Attack, Forward, MoveRight
+  f6tal: Forward, MoveRight
+[65920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Duck, Forward
+  vicu: MoveRight, Score
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: Forward
+  f6tal: Attack, MoveLeft
+[66240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: MoveLeft
+  vicu: Back, MoveLeft, Walk
+  Hanka-: Forward, Walk
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Forward
+  victoria: Attack
+  Elizabeth-: MoveLeft, MoveRight
+  t4tty: Walk
+  f6tal: Back
+[66560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: MoveRight, Walk
+  vicu: Duck, MoveRight, Walk
+  Hanka-: Back, MoveRight, Walk
+  Angelka: Walk
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Forward
+  Elizabeth-: Forward, Walk
+  t4tty: MoveRight
+  f6tal: MoveLeft, Walk
+[66880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: MoveLeft, Walk
+  vicu: Walk
+  Hanka-: None
+  Angelka: Duck
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Duck, Forward, MoveRight
+  t4tty: Forward
+  f6tal: Duck
+[67200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Walk
+  Hanka-: None
+  Angelka: Duck, Back
+  Ksu: Duck
+  victoria: Forward, AttackSecondary
+  Elizabeth-: Forward, Walk
+  t4tty: MoveLeft
+  f6tal: MoveRight, Walk
+[67520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Attack, Forward, MoveLeft
+  vicu: Back, Walk
+  Hanka-: None
+  Angelka: Duck
+  Ksu: Duck, MoveLeft, MoveRight
+  victoria: MoveRight, Walk
+  Elizabeth-: Back, MoveLeft, Walk
+  t4tty: MoveRight
+  f6tal: Forward, MoveLeft, Walk
+[67840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Walk
+  vicu: Walk
+  Hanka-: None
+  Angelka: Duck, MoveLeft
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Forward, Walk
+  t4tty: Back, MoveRight, Walk
+  f6tal: MoveRight, Walk
+[68160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Back, Walk
+  vicu: Back, Walk
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: MoveLeft, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Back, MoveRight, Walk
+  f6tal: None
+[68480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, Score
+  vicu: MoveRight
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Attack, MoveLeft
+  victoria: Forward, Walk
+  Elizabeth-: Duck, Forward, MoveRight
+  t4tty: Walk
+  f6tal: None
+[68800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward
+  vicu: Duck, MoveRight, Walk
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: MoveRight, Walk
+  victoria: Forward, Score
+  Elizabeth-: Forward
+  t4tty: Walk
+  f6tal: None
+[69120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft
+  vicu: MoveLeft, Walk
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Back, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight, Walk
+  f6tal: None
+[69440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, Walk
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Duck
+  victoria: Forward, MoveLeft
+  Elizabeth-: Jump
+  t4tty: MoveLeft, Walk
+  f6tal: None
+[69760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft, MoveRight
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: MoveRight, Walk
+  f6tal: None
+[70080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: None
+[70400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveLeft, Walk
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight, Walk
+  f6tal: None
+[70720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: MoveLeft
+  Elizabeth-: Jump
+  t4tty: Attack
+  f6tal: None
+[71040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveLeft, Walk
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Back, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Attack
+  f6tal: None
+[71360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Walk
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: Attack
+  f6tal: None
+[71680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: None
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Attack
+  f6tal: None
+[72000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[72320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveRight
+  victoria: Duck, Forward, Score
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: None
+[72640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack, Forward, MoveRight, Score, LookAtWeapon
+  vicu: Forward, Score
+  Hanka-: Forward, Score
+  Angelka: Forward, LookAtWeapon
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[72960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward, Score
+  Hanka-: Forward
+  Angelka: Score
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[73280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, LookAtWeapon
+  vicu: Forward, Score
+  Hanka-: Forward
+  Angelka: Forward, MoveLeft
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward
+  f6tal: Forward
+[73600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward, MoveRight
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight
+  f6tal: Forward
+[73920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, MoveLeft
+  Liina: Back, MoveRight
+  vicu: Forward
+  Hanka-: Forward, Walk
+  Angelka: Walk
+  Ksu: Forward
+  victoria: Attack
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Walk
+[74240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Forward, Walk
+  vicu: None
+  Hanka-: Walk
+  Angelka: None
+  Ksu: Forward, Walk
+  victoria: Forward, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Back, MoveLeft
+  f6tal: MoveLeft
+[74560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward, MoveLeft, Walk
+  vicu: Walk
+  Hanka-: Walk
+  Angelka: MoveLeft
+  Ksu: Forward, Walk
+  victoria: MoveLeft
+  Elizabeth-: Jump
+  t4tty: Walk
+  f6tal: MoveLeft, Walk
+[74880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Walk
+  vicu: MoveRight, Walk
+  Hanka-: MoveRight, Walk
+  Angelka: Forward, MoveRight
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Duck, Forward, MoveLeft
+  f6tal: MoveLeft
+[75200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: MoveLeft
+  vicu: Duck, Back, Walk
+  Hanka-: Forward, Walk
+  Angelka: Forward, Walk
+  Ksu: MoveLeft, Walk
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight, Walk
+  f6tal: Forward, Walk
+[75520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft
+  Liina: Forward, MoveRight
+  vicu: Score
+  Hanka-: MoveLeft, Walk
+  Angelka: MoveRight
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: MoveLeft
+  f6tal: None
+[75840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, Walk
+  Liina: Back
+  vicu: AttackSecondary
+  Hanka-: Forward, Walk
+  Angelka: Duck
+  Ksu: None
+  victoria: Forward, Score
+  Elizabeth-: Jump
+  t4tty: Forward, LookAtWeapon
+  f6tal: Jump
+[76160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: MoveRight, Walk
+  Angelka: Duck, Back, MoveRight, Walk
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: MoveLeft, Walk
+  f6tal: Jump
+[76480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward, MoveLeft, Walk
+  vicu: AttackSecondary
+  Hanka-: Walk
+  Angelka: Duck
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight, Walk
+  f6tal: Jump
+[76800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward, Walk
+  vicu: AttackSecondary
+  Hanka-: Back, MoveLeft, Walk
+  Angelka: Walk
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Duck, Forward, Walk
+  f6tal: Jump
+[77120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveLeft, Walk
+  vicu: AttackSecondary
+  Hanka-: Walk
+  Angelka: Duck, MoveLeft, Walk
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Duck, Forward, MoveLeft, Walk
+  f6tal: Jump
+[77440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Duck, MoveLeft
+  vicu: AttackSecondary
+  Hanka-: Forward, Walk
+  Angelka: Duck, MoveRight
+  Ksu: None
+  victoria: MoveLeft
+  Elizabeth-: Jump
+  t4tty: MoveLeft, Walk
+  f6tal: Jump
+[77760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Duck, MoveLeft
+  vicu: AttackSecondary
+  Hanka-: Duck
+  Angelka: Duck, MoveLeft
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: MoveRight, Walk
+  f6tal: Jump
+[78080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Duck
+  vicu: AttackSecondary
+  Hanka-: MoveRight, Walk
+  Angelka: Duck, MoveRight
+  Ksu: None
+  victoria: Forward, MoveLeft, Walk
+  Elizabeth-: Jump
+  t4tty: Walk
+  f6tal: Jump
+[78400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Duck
+  vicu: AttackSecondary
+  Hanka-: MoveRight, Walk
+  Angelka: Walk
+  Ksu: None
+  victoria: Back, MoveRight, Walk
+  Elizabeth-: Jump
+  t4tty: MoveLeft, Walk
+  f6tal: Jump
+[78720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: MoveRight, Walk
+  vicu: AttackSecondary
+  Hanka-: Duck, Back, MoveLeft
+  Angelka: None
+  Ksu: None
+  victoria: Duck, Back, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight
+  f6tal: Jump
+[79040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward, MoveLeft, Walk
+  vicu: AttackSecondary
+  Hanka-: Duck
+  Angelka: None
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: MoveRight
+  f6tal: Jump
+[79360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: MoveLeft
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: MoveLeft
+  f6tal: Jump
+[79680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: MoveLeft, MoveRight
+  f6tal: Jump
+[80000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Walk
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Forward, MoveLeft
+  f6tal: Jump
+[80320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[80640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: Score
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Duck
+[80960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[81280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[81600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward, Score
+  Hanka-: MoveLeft, LookAtWeapon
+  Angelka: Score
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[81920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: Forward
+  Hanka-: Forward, LookAtWeapon
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[82240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: Score
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[82560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: Forward, LookAtWeapon
+  Hanka-: Score
+  Angelka: Score
+  Ksu: MoveRight
+  victoria: Back
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[82880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[83200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward, Score
+  Angelka: Score
+  Ksu: MoveRight
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward, MoveLeft
+[83520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveRight, LookAtWeapon
+  vicu: Forward
+  Hanka-: Forward, Score, LookAtWeapon
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[83840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[84160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[84480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveLeft
+  vicu: MoveLeft
+  Hanka-: Forward
+  Angelka: Duck
+  Ksu: Forward, Score
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[84800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack, Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: None
+  Ksu: Forward, MoveLeft
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Back
+  f6tal: None
+[85120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Back, MoveRight, Walk
+  vicu: MoveRight
+  Hanka-: Back, Walk
+  Angelka: MoveLeft
+  Ksu: Forward, MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: Back, MoveLeft, Walk
+  t4tty: Back, Walk
+  f6tal: MoveLeft, Walk
+[85440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: MoveRight
+  vicu: Back, MoveLeft
+  Hanka-: MoveRight, Walk
+  Angelka: Duck, MoveRight
+  Ksu: Duck
+  victoria: Attack
+  Elizabeth-: Walk
+  t4tty: MoveRight
+  f6tal: Walk
+[85760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveLeft, Walk
+  Liina: MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Walk
+  Angelka: MoveRight, Walk
+  Ksu: Duck
+  victoria: Attack
+  Elizabeth-: Duck, MoveRight
+  t4tty: MoveLeft
+  f6tal: Walk
+[86080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: MoveRight
+  vicu: Back, Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: MoveLeft
+  Ksu: Duck
+  victoria: MoveRight
+  Elizabeth-: Duck
+  t4tty: Duck, Forward, MoveLeft, Walk
+  f6tal: Attack
+[86400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveRight, Walk
+  vicu: MoveLeft
+  Hanka-: None
+  Angelka: Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: None
+  f6tal: Duck, Forward
+[86720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Walk
+  vicu: MoveLeft
+  Hanka-: None
+  Angelka: Forward, MoveLeft, AttackSecondary
+  Ksu: Duck
+  victoria: Back
+  Elizabeth-: Duck
+  t4tty: None
+  f6tal: Duck
+[87040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Attack, Forward
+  vicu: None
+  Hanka-: MoveRight
+  Angelka: Back, Walk
+  Ksu: Duck
+  victoria: Back, MoveLeft
+  Elizabeth-: Duck
+  t4tty: MoveLeft
+  f6tal: Forward, MoveRight, Walk
+[87360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveRight, Walk
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Back, Walk
+  Ksu: MoveLeft, Walk
+  victoria: MoveLeft
+  Elizabeth-: Duck
+  t4tty: Forward, MoveLeft
+  f6tal: MoveLeft
+[87680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Back
+  Liina: MoveRight, Walk
+  vicu: MoveLeft, Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: Forward, Walk
+  victoria: Forward
+  Elizabeth-: MoveLeft
+  t4tty: Duck, MoveRight, Walk
+  f6tal: None
+[88000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: MoveLeft
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: MoveRight, Walk
+  Ksu: Duck, Forward, MoveLeft
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: MoveLeft
+  f6tal: None
+[88320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Forward
+  Liina: None
+  vicu: MoveLeft
+  Hanka-: MoveRight
+  Angelka: Attack, Duck, MoveLeft
+  Ksu: Back, MoveLeft
+  victoria: Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight
+  f6tal: None
+[88640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward
+  vicu: Duck, Back, MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Duck, MoveRight
+  Elizabeth-: Jump
+  t4tty: Forward, AttackSecondary
+  f6tal: None
+[88960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward
+  vicu: Forward, MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Back, MoveRight, Walk
+  f6tal: None
+[89280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward, Walk
+  Liina: Forward
+  vicu: Forward, MoveLeft
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Back
+  Elizabeth-: Jump
+  t4tty: Walk
+  f6tal: None
+[89600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward
+  vicu: MoveLeft
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: MoveLeft, AttackSecondary
+  Elizabeth-: Jump
+  t4tty: Forward, Walk
+  f6tal: None
+[89920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Back, MoveRight, Walk
+  f6tal: None
+[90240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight
+  Liina: Forward
+  vicu: MoveLeft
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Forward, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Walk
+  f6tal: None
+[90560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Walk
+  f6tal: None
+[90880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward, Use
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: Forward, MoveRight, Walk
+  f6tal: None
+[91200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Use
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Attack, Duck, Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[91520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward, Walk
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: MoveLeft
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: None
+[91840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: LookAtWeapon
+[92160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: Score
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[92480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: None
+  Hanka-: Duck, Forward
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[92800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[93120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft, LookAtWeapon
+  vicu: Forward
+  Hanka-: Attack, Forward
+  Angelka: Forward
+  Ksu: Back
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[93440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack, Duck, MoveLeft
+  vicu: Forward, LookAtWeapon
+  Hanka-: Back
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward
+  t4tty: Back, Walk
+  f6tal: Attack, MoveLeft
+[93760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Attack, MoveRight
+  vicu: MoveRight
+  Hanka-: MoveLeft
+  Angelka: Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: None
+  Elizabeth-: Forward, MoveRight
+  t4tty: MoveLeft, Walk
+  f6tal: Back
+[94080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward
+  vicu: Back, Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: Forward, Walk
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Forward, Walk
+  f6tal: None
+[94400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward
+  vicu: Duck, Forward
+  Hanka-: MoveRight, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: Walk
+  victoria: MoveLeft
+  Elizabeth-: Attack
+  t4tty: Duck, Forward, Walk
+  f6tal: Forward, MoveRight
+[94720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward
+  vicu: Duck, Back
+  Hanka-: Back, MoveLeft, MoveRight
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Back, MoveRight, Walk
+  t4tty: Walk
+  f6tal: Forward, Walk
+[95040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward
+  vicu: Duck, MoveRight
+  Hanka-: Forward, Walk
+  Angelka: MoveRight, Walk
+  Ksu: Walk
+  victoria: Duck
+  Elizabeth-: Back, Walk
+  t4tty: Duck, Back, MoveRight, Walk
+  f6tal: Back, MoveLeft, Walk
+[95360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Forward
+  vicu: Duck
+  Hanka-: Forward, Walk
+  Angelka: MoveRight, Walk
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Forward, MoveLeft, Walk
+  t4tty: Walk
+  f6tal: MoveLeft
+[95680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Forward
+  vicu: MoveRight
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Walk
+  Ksu: MoveRight, Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Walk
+  f6tal: MoveLeft
+[96000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: MoveLeft
+  Hanka-: None
+  Angelka: MoveRight, Walk
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Back, MoveLeft, Walk
+  t4tty: Duck, Forward, MoveRight, Walk
+  f6tal: None
+[96320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Forward, Walk
+  victoria: MoveLeft
+  Elizabeth-: Forward, Walk
+  t4tty: Attack, Walk
+  f6tal: Attack
+[96640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: Attack
+  Ksu: Back, MoveLeft, Walk
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight, Walk
+  f6tal: Attack, MoveRight
+[96960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Forward
+  vicu: MoveLeft
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: Duck, MoveRight
+  t4tty: Forward
+  f6tal: Jump
+[97280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Duck
+  victoria: MoveRight
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Jump
+[97600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Attack
+  victoria: Forward
+  Elizabeth-: Jump
+  t4tty: Attack, Duck, MoveRight
+  f6tal: Jump
+[97920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[98240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: Forward, Walk
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Back, MoveLeft
+  victoria: Back
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[98560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Duck
+  victoria: MoveRight
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[98880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Forward
+  vicu: MoveRight
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Attack, Duck
+  victoria: Duck, Back, MoveRight
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[99200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Forward
+  vicu: Duck, Forward, MoveRight, Walk
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: Duck, MoveRight
+  victoria: MoveRight
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[99520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Forward
+  vicu: MoveLeft, Walk
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: MoveRight
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[99840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: Jump
+[100160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[100480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[100800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[101120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: None
+[101440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: LookAtWeapon
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[101760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[102080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: LookAtWeapon
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward, Score
+  f6tal: Duck, Forward, MoveLeft
+[102400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[102720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[103040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward, Score
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[103360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[103680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, Score
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[104000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[104320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[104640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[104960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Duck, Forward, Score
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: Forward
+  f6tal: None
+[105280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward, MoveLeft
+[105600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Duck, Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[105920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward, MoveLeft
+[106240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: None
+  f6tal: Forward
+[106560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[106880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward, Score
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[107200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: LookAtWeapon
+[107520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, AttackSecondary, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: LookAtWeapon
+[107840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Duck, Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[108160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack, Forward
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[108480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: LookAtWeapon
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Attack, Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[108800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[109120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: None
+  Hanka-: None
+  Angelka: Score
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[109440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[109760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Duck
+  Angelka: None
+  Ksu: Duck, Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[110080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Duck
+  Angelka: None
+  Ksu: Forward
+  victoria: Attack, Forward
+  Elizabeth-: Score
+  t4tty: None
+  f6tal: None
+[110400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveRight, Score
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[110720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[111040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[111360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: MoveLeft
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, AttackSecondary
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[111680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[112000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, LookAtWeapon
+  vicu: Forward
+  Hanka-: None
+  Angelka: Score
+  Ksu: Duck, Forward
+  victoria: Duck, Forward
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: None
+  f6tal: None
+[112320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, LookAtWeapon
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Duck, Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[112640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, LookAtWeapon
+  vicu: Forward, Score
+  Hanka-: MoveLeft
+  Angelka: Forward, MoveRight
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Duck, Forward
+  t4tty: Forward
+  f6tal: Duck, Forward
+[112960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, LookAtWeapon
+  vicu: Forward
+  Hanka-: Score
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, LookAtWeapon
+  f6tal: Duck, Forward
+[113280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: MoveLeft
+  Angelka: Forward
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Duck, Forward
+[113600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveRight
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Attack
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[113920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Jump
+  Liina: Forward
+  vicu: Forward, Walk
+  Hanka-: Forward
+  Angelka: Forward, AttackSecondary
+  Ksu: Duck, Back, MoveLeft
+  victoria: None
+  Elizabeth-: Jump, Forward, MoveRight
+  t4tty: Forward
+  f6tal: Forward
+[114240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward, MoveRight
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveLeft
+  Ksu: MoveLeft
+  victoria: MoveRight
+  Elizabeth-: MoveLeft
+  t4tty: Forward, MoveLeft
+  f6tal: Forward, MoveLeft, Walk
+[114560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward
+  vicu: MoveRight
+  Hanka-: Forward, MoveRight
+  Angelka: Forward, Walk
+  Ksu: MoveRight
+  victoria: MoveRight
+  Elizabeth-: None
+  t4tty: Back, MoveLeft, Walk
+  f6tal: MoveLeft
+[114880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Duck, Forward
+  vicu: Duck, Back
+  Hanka-: Forward, Walk
+  Angelka: Walk
+  Ksu: Duck, Back, MoveRight
+  victoria: Walk
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: MoveRight, Walk
+[115200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Walk
+  vicu: MoveRight, Walk
+  Hanka-: Back, MoveRight, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: Walk
+  f6tal: Duck, Forward
+[115520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: MoveRight
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Forward, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: Duck, MoveRight
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: Walk
+  f6tal: Duck
+[115840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Forward, MoveLeft, Walk
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Forward
+  Angelka: Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Duck
+[116160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: LookAtWeapon
+  vicu: Walk
+  Hanka-: None
+  Angelka: MoveRight, Walk
+  Ksu: Duck, Back, MoveLeft
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Duck, MoveLeft
+[116480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: LookAtWeapon
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: None
+  Angelka: Back, MoveRight, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Back, MoveRight, Walk
+  f6tal: Duck
+[116800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: LookAtWeapon
+  vicu: Forward
+  Hanka-: None
+  Angelka: MoveLeft
+  Ksu: MoveLeft, MoveRight, Walk
+  victoria: MoveLeft, Walk
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Duck
+[117120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: LookAtWeapon
+  vicu: Forward, Walk
+  Hanka-: None
+  Angelka: Attack, MoveLeft
+  Ksu: Walk
+  victoria: Forward, MoveRight
+  Elizabeth-: None
+  t4tty: Walk
+  f6tal: Duck
+[117440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, MoveRight
+  Liina: LookAtWeapon
+  vicu: Back, MoveLeft, Walk
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveLeft, Walk
+  victoria: None
+  Elizabeth-: None
+  t4tty: Walk
+  f6tal: MoveRight
+[117760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: LookAtWeapon
+  vicu: Duck, MoveLeft
+  Hanka-: None
+  Angelka: MoveRight
+  Ksu: MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: None
+  t4tty: Walk
+  f6tal: MoveLeft, Walk
+[118080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: LookAtWeapon
+  vicu: Forward
+  Hanka-: None
+  Angelka: MoveLeft
+  Ksu: Walk
+  victoria: MoveRight
+  Elizabeth-: Forward
+  t4tty: MoveRight
+  f6tal: MoveRight, Walk
+[118400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: LookAtWeapon
+  vicu: Duck, MoveLeft
+  Hanka-: None
+  Angelka: Attack, MoveLeft
+  Ksu: Attack, Forward
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight
+  f6tal: Attack, MoveLeft
+[118720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: LookAtWeapon
+  vicu: None
+  Hanka-: None
+  Angelka: Score
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: Forward, AttackSecondary
+  f6tal: None
+[119040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Score
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[119360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Score
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[119680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: None
+  Hanka-: Forward, Score
+  Angelka: Score
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward, MoveLeft
+  f6tal: Forward
+[120000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward, Score
+  Angelka: Score
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward, MoveLeft
+[120320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Back, MoveRight
+  victoria: Forward
+  Elizabeth-: Back
+  t4tty: Forward, MoveLeft
+  f6tal: Forward, MoveLeft
+[120640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: Forward, Walk
+  Angelka: MoveRight, Walk
+  Ksu: Forward, MoveRight
+  victoria: Duck, Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: MoveLeft
+  f6tal: Forward, MoveRight
+[120960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, MoveLeft
+  Liina: Forward
+  vicu: Forward, MoveRight
+  Hanka-: MoveLeft
+  Angelka: MoveLeft
+  Ksu: Forward, Walk
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Forward
+  f6tal: Attack, MoveLeft
+[121280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Attack, MoveRight
+  vicu: Duck, Forward
+  Hanka-: MoveRight
+  Angelka: Attack, MoveRight
+  Ksu: MoveRight, Walk
+  victoria: MoveRight
+  Elizabeth-: MoveLeft
+  t4tty: Attack, MoveLeft
+  f6tal: Jump
+[121600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack, MoveRight
+  vicu: Forward, MoveRight
+  Hanka-: Attack
+  Angelka: MoveRight
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Attack, MoveRight
+  t4tty: Forward
+  f6tal: Jump
+[121920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Attack
+  Angelka: Forward, MoveLeft
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: Jump
+[122240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Back, MoveLeft, Walk
+  Hanka-: Attack
+  Angelka: MoveRight
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Duck, Back
+  t4tty: Walk
+  f6tal: Jump
+[122560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Attack
+  Angelka: MoveRight, Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Walk
+  f6tal: Jump
+[122880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Attack
+  Angelka: Back, MoveRight, Walk
+  Ksu: Back, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: Duck
+  t4tty: Walk
+  f6tal: Jump
+[123200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Back, MoveLeft, Walk
+  Hanka-: Attack
+  Angelka: MoveRight, Walk
+  Ksu: Duck
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Jump
+[123520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Attack
+  Angelka: None
+  Ksu: MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight, Walk
+  t4tty: Walk
+  f6tal: Jump
+[123840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Attack
+  Angelka: Duck, MoveRight
+  Ksu: Forward, Walk
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Jump
+[124160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Attack
+  Angelka: Duck, Back, MoveRight
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: Back, Walk
+  t4tty: Walk
+  f6tal: Jump
+[124480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: Attack, Duck, MoveRight
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Duck, MoveLeft
+  victoria: Forward
+  Elizabeth-: Duck
+  t4tty: Walk
+  f6tal: Jump
+[124800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: None
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Walk
+  f6tal: Jump
+[125120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[125440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward, LookAtWeapon
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, Score
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Back, MoveLeft
+  f6tal: None
+[125760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: None
+[126080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: None
+  vicu: Forward, Score
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[126400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveRight, Score
+  vicu: None
+  Hanka-: Forward
+  Angelka: Forward, MoveLeft
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[126720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveLeft
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward
+  Ksu: Forward, MoveLeft
+  victoria: Back, MoveLeft
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft
+  f6tal: Forward
+[127040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Duck, MoveLeft
+  vicu: Back
+  Hanka-: Forward, Walk
+  Angelka: Forward, Walk
+  Ksu: Forward, MoveLeft, Walk
+  victoria: MoveLeft
+  Elizabeth-: None
+  t4tty: Walk
+  f6tal: Forward
+[127360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Back, MoveLeft, Walk
+  vicu: Attack, Back
+  Hanka-: MoveRight, Walk
+  Angelka: Forward, MoveRight, Walk
+  Ksu: Duck, Back, MoveRight
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: Forward, Walk
+  f6tal: Attack, Forward
+[127680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Forward
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: Forward, MoveRight
+  t4tty: Walk
+  f6tal: Forward
+[128000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck, MoveLeft
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: Jump, Forward
+  Angelka: MoveRight
+  Ksu: MoveLeft
+  victoria: Attack, Forward
+  Elizabeth-: None
+  t4tty: Back, MoveLeft
+  f6tal: Duck, MoveRight
+[128320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveRight, Walk
+  vicu: MoveRight
+  Hanka-: Jump, Forward
+  Angelka: Attack, MoveLeft
+  Ksu: Attack, Forward, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: MoveLeft
+[128640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Back, MoveRight, Walk
+  vicu: MoveRight
+  Hanka-: Jump, Forward
+  Angelka: MoveRight
+  Ksu: Forward, MoveLeft
+  victoria: None
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[128960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Duck, Forward, MoveRight
+  vicu: Duck, MoveRight
+  Hanka-: Jump, Forward
+  Angelka: None
+  Ksu: None
+  victoria: MoveLeft
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[129280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: MoveLeft, Walk
+  vicu: Forward
+  Hanka-: Jump, Forward
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: MoveRight
+  victoria: None
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[129600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Back, Walk
+  vicu: Attack, Back, MoveRight, Score
+  Hanka-: Jump, Forward
+  Angelka: MoveLeft
+  Ksu: MoveLeft, Walk
+  victoria: None
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[129920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveLeft, Walk
+  vicu: Back, MoveRight
+  Hanka-: Jump, Forward
+  Angelka: MoveLeft, Walk
+  Ksu: MoveLeft
+  victoria: Attack
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[130240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, Walk
+  vicu: Back, MoveRight, Walk
+  Hanka-: Jump, Forward
+  Angelka: None
+  Ksu: Duck, Forward, MoveLeft
+  victoria: Attack
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[130560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, LookAtWeapon
+  vicu: Forward
+  Hanka-: Jump, Forward
+  Angelka: Forward
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Jump
+[130880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: Score
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward, Score, LookAtWeapon
+  Elizabeth-: None
+  t4tty: None
+  f6tal: LookAtWeapon
+[131200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Forward, Score
+  Angelka: None
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft
+  f6tal: Forward
+[131520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Forward
+  Angelka: Duck
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Back
+  t4tty: Forward
+  f6tal: Forward
+[131840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: Forward, MoveRight
+  vicu: Forward, Score, LookAtWeapon
+  Hanka-: Forward
+  Angelka: Attack, Duck
+  Ksu: Back
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: Forward
+[132160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: Forward, MoveRight
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft, Reload
+  f6tal: Forward, MoveLeft
+[132480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, LookAtWeapon
+  Liina: Forward, MoveLeft
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Forward
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: MoveRight, Walk
+  victoria: Back
+  Elizabeth-: Forward
+  t4tty: MoveRight
+  f6tal: None
+[132800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Duck, Back
+  vicu: Forward, Walk
+  Hanka-: Forward, Walk
+  Angelka: Back
+  Ksu: Walk
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: Forward, MoveLeft
+  f6tal: MoveLeft
+[133120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Duck, Forward, MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: MoveRight
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Back, MoveLeft, Walk, LookAtWeapon
+  Elizabeth-: Jump, MoveLeft
+  t4tty: Duck, Walk
+  f6tal: Forward, MoveLeft
+[133440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Back, Walk
+  vicu: Forward, Walk
+  Hanka-: Walk
+  Angelka: Walk
+  Ksu: Walk
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: MoveRight
+  t4tty: Duck, MoveLeft
+  f6tal: MoveLeft
+[133760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Back, MoveRight, Walk
+  vicu: Forward, Walk
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveRight, Walk
+  victoria: Back, MoveLeft
+  Elizabeth-: MoveLeft, MoveRight
+  t4tty: MoveRight
+  f6tal: MoveLeft
+[134080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Walk
+  vicu: Walk
+  Hanka-: None
+  Angelka: MoveLeft
+  Ksu: MoveLeft, MoveRight, Walk
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: None
+  f6tal: Jump, MoveLeft
+[134400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft, Walk
+  Liina: Forward, Walk
+  vicu: Duck, Back
+  Hanka-: None
+  Angelka: MoveRight
+  Ksu: Walk
+  victoria: MoveLeft, Walk
+  Elizabeth-: Jump, Back
+  t4tty: Duck, Walk
+  f6tal: None
+[134720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Forward, MoveLeft, Walk
+  vicu: Forward, Walk
+  Hanka-: None
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: Walk
+  victoria: Duck, Forward, MoveRight
+  Elizabeth-: Forward, Walk
+  t4tty: Duck, Walk
+  f6tal: None
+[135040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveLeft
+  Liina: Attack
+  vicu: Duck, Forward
+  Hanka-: None
+  Angelka: Forward, Walk
+  Ksu: Walk
+  victoria: MoveLeft
+  Elizabeth-: Duck, MoveLeft
+  t4tty: None
+  f6tal: Walk
+[135360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: Forward, Walk
+  Angelka: Back, MoveLeft, Walk
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward, MoveRight, Walk
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[135680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: Walk
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward, Walk
+  t4tty: Forward
+  f6tal: Forward, Walk
+[136000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: MoveRight, Walk
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Back
+  f6tal: Walk
+[136320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight, Walk
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: Walk
+  Ksu: None
+  victoria: Back, MoveLeft, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward, Walk
+  f6tal: MoveRight, Walk
+[136640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: Back, MoveLeft, Walk
+  Angelka: Forward, Walk
+  Ksu: None
+  victoria: Duck, MoveRight
+  Elizabeth-: Forward, Walk
+  t4tty: Back, Walk
+  f6tal: None
+[136960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward, MoveRight, Walk
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: Back, Walk
+  Angelka: Forward, MoveRight, Walk
+  Ksu: None
+  victoria: Duck, Back
+  Elizabeth-: Forward, Walk
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: None
+[137280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: None
+  Ksu: None
+  victoria: Duck
+  Elizabeth-: Back, MoveRight
+  t4tty: Walk
+  f6tal: MoveLeft, Walk
+[137600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: Forward
+  Angelka: None
+  Ksu: None
+  victoria: Duck
+  Elizabeth-: AttackSecondary
+  t4tty: Walk
+  f6tal: Walk
+[137920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: Forward, MoveLeft
+  Angelka: None
+  Ksu: None
+  victoria: Back, MoveLeft
+  Elizabeth-: AttackSecondary
+  t4tty: MoveRight
+  f6tal: Forward, MoveLeft
+[138240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: MoveLeft, MoveRight
+  Angelka: None
+  Ksu: None
+  victoria: MoveRight
+  Elizabeth-: AttackSecondary
+  t4tty: Duck, Forward, Walk
+  f6tal: Back, MoveLeft, Walk
+[138560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: MoveRight
+  Angelka: None
+  Ksu: None
+  victoria: MoveRight
+  Elizabeth-: AttackSecondary
+  t4tty: Duck, Back
+  f6tal: Forward
+[138880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: MoveRight
+  Angelka: None
+  Ksu: None
+  victoria: MoveLeft
+  Elizabeth-: AttackSecondary
+  t4tty: None
+  f6tal: Forward
+[139200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Attack, Duck, Forward, MoveRight
+  Elizabeth-: AttackSecondary
+  t4tty: None
+  f6tal: Forward, MoveLeft
+[139520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Score
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[139840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score, LookAtWeapon
+  vicu: Score
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[140160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Score
+  Ksu: Attack, MoveLeft
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: None
+[140480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: Score
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[140800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: Score
+  Hanka-: Score
+  Angelka: Score
+  Ksu: MoveLeft
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[141120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: Score
+  vicu: Score
+  Hanka-: Score
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: None
+[141440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[141760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: LookAtWeapon
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveLeft
+  victoria: MoveRight
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[142080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: None
+[142400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight, LookAtWeapon
+  vicu: Forward, MoveLeft
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[142720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveRight
+  vicu: Back, MoveLeft
+  Hanka-: Back, MoveRight
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[143040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Attack, Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[143360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: MoveLeft, MoveRight
+  vicu: None
+  Hanka-: Walk
+  Angelka: Forward, MoveLeft
+  Ksu: MoveLeft, Walk
+  victoria: Forward, MoveLeft, Walk
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: Duck
+[143680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Back, MoveRight, Walk
+  vicu: Walk
+  Hanka-: None
+  Angelka: Forward
+  Ksu: MoveLeft, Walk
+  victoria: MoveRight
+  Elizabeth-: Back
+  t4tty: Forward
+  f6tal: MoveRight
+[144000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Forward, MoveRight, Walk
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Attack, Duck, Forward
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: Forward, MoveLeft
+[144320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Duck
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: Forward, Walk
+  Ksu: MoveLeft, Walk
+  victoria: MoveRight
+  Elizabeth-: MoveRight
+  t4tty: MoveRight, Walk
+  f6tal: MoveRight
+[144640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Duck, Back, MoveLeft
+  vicu: MoveLeft
+  Hanka-: MoveRight, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: MoveLeft, Walk
+  victoria: MoveRight
+  Elizabeth-: Duck, Forward
+  t4tty: Walk
+  f6tal: Back
+[144960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: MoveRight
+  vicu: MoveRight
+  Hanka-: Forward
+  Angelka: MoveLeft, Walk
+  Ksu: None
+  victoria: None
+  Elizabeth-: Back, MoveRight
+  t4tty: Walk
+  f6tal: MoveLeft, Walk
+[145280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Walk
+  vicu: Walk
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward
+  Elizabeth-: MoveLeft
+  t4tty: Walk
+  f6tal: Forward, MoveRight, Walk
+[145600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, MoveLeft
+  vicu: MoveLeft
+  Hanka-: Forward, Walk
+  Angelka: Walk
+  Ksu: Forward, MoveLeft, Walk
+  victoria: MoveRight
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Forward, MoveLeft, Walk
+[145920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Walk
+  vicu: Forward, MoveRight, Walk
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: MoveRight, Walk
+  Ksu: Duck, MoveRight
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: Walk
+  f6tal: Forward, Walk
+[146240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: MoveLeft, Walk
+  vicu: Attack, Back, MoveRight
+  Hanka-: Forward, Walk
+  Angelka: Forward, Walk
+  Ksu: MoveRight, Walk
+  victoria: MoveRight
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: Forward, Walk
+[146560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward, Walk
+  vicu: Forward, Walk
+  Hanka-: Forward, Walk
+  Angelka: None
+  Ksu: MoveLeft
+  victoria: Back
+  Elizabeth-: Forward, MoveRight
+  t4tty: MoveLeft, Walk
+  f6tal: MoveRight
+[146880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Walk
+  Liina: Forward
+  vicu: Forward, MoveRight
+  Hanka-: Forward, MoveRight
+  Angelka: None
+  Ksu: Duck, MoveLeft
+  victoria: Forward
+  Elizabeth-: Back
+  t4tty: Forward, MoveLeft
+  f6tal: MoveLeft
+[147200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Duck, MoveRight
+  vicu: Forward, MoveRight
+  Hanka-: MoveLeft
+  Angelka: None
+  Ksu: Forward, MoveLeft
+  victoria: Forward
+  Elizabeth-: Walk
+  t4tty: MoveRight
+  f6tal: Forward, MoveLeft
+[147520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Attack, Walk
+  vicu: AttackSecondary
+  Hanka-: Forward, MoveRight
+  Angelka: None
+  Ksu: Forward
+  victoria: Duck, MoveLeft
+  Elizabeth-: Jump
+  t4tty: Forward
+  f6tal: None
+[147840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, MoveRight, Walk
+  vicu: AttackSecondary
+  Hanka-: MoveLeft, Walk
+  Angelka: None
+  Ksu: MoveRight
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Back, Walk
+  f6tal: None
+[148160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: MoveLeft, Walk
+  vicu: AttackSecondary
+  Hanka-: Forward, MoveLeft
+  Angelka: None
+  Ksu: Forward, Walk
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: MoveLeft, Walk
+  f6tal: None
+[148480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, MoveRight
+  vicu: AttackSecondary
+  Hanka-: Back
+  Angelka: None
+  Ksu: Forward, Walk
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: Walk
+  f6tal: None
+[148800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Back, MoveLeft, Walk
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: Walk
+  f6tal: None
+[149120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: Forward
+  Angelka: None
+  Ksu: MoveLeft, MoveRight
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: None
+  f6tal: None
+[149440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Back, MoveLeft, LookAtWeapon
+  vicu: AttackSecondary
+  Hanka-: Forward
+  Angelka: None
+  Ksu: MoveRight
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: None
+  f6tal: None
+[149760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Back, MoveLeft, LookAtWeapon
+  vicu: AttackSecondary
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: None
+  f6tal: None
+[150080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight
+  Liina: Back, MoveLeft, LookAtWeapon
+  vicu: AttackSecondary
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: None
+  Ksu: MoveLeft
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: None
+  f6tal: None
+[150400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck, MoveRight
+  Liina: Back, MoveLeft, LookAtWeapon
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveRight
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: None
+  f6tal: None
+[150720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Back, MoveLeft, LookAtWeapon
+  vicu: AttackSecondary
+  Hanka-: Score
+  Angelka: None
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Attack
+  t4tty: None
+  f6tal: None
+[151040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: Score
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[151360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: Score
+  Ksu: Attack, Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[151680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: LookAtWeapon
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[152000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Forward
+  Ksu: Back, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[152320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Attack
+  Hanka-: Forward
+  Angelka: Forward, Score
+  Ksu: Forward, MoveRight
+  victoria: None
+  Elizabeth-: Forward
+  t4tty: Duck, Forward
+  f6tal: Forward, MoveRight
+[152640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack
+  Liina: Duck, MoveLeft
+  vicu: Forward
+  Hanka-: Forward, Walk
+  Angelka: Forward, MoveLeft
+  Ksu: MoveLeft, Walk
+  victoria: None
+  Elizabeth-: Forward, MoveLeft, AttackSecondary
+  t4tty: Duck, Back, MoveRight
+  f6tal: Forward
+[152960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: Walk
+  vicu: Walk
+  Hanka-: Back, Walk
+  Angelka: Duck
+  Ksu: Forward, Walk
+  victoria: MoveLeft
+  Elizabeth-: MoveRight
+  t4tty: Walk
+  f6tal: None
+[153280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveRight
+  Liina: Back, MoveRight
+  vicu: Forward, Walk
+  Hanka-: MoveRight, Walk
+  Angelka: Duck
+  Ksu: Forward, MoveLeft, MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: Jump, MoveLeft
+  t4tty: MoveRight, Walk
+  f6tal: None
+[153600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft
+  Liina: Walk
+  vicu: MoveRight
+  Hanka-: Forward, MoveLeft
+  Angelka: MoveLeft, Walk
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: MoveLeft
+  t4tty: Forward, MoveRight, Walk
+  f6tal: Forward, MoveRight, Walk
+[153920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Attack, Duck, MoveRight
+  vicu: MoveLeft
+  Hanka-: MoveLeft
+  Angelka: Walk
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Attack
+  Elizabeth-: MoveRight
+  t4tty: Back, MoveLeft
+  f6tal: Forward, MoveRight
+[154240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Back, MoveRight, Walk
+  vicu: None
+  Hanka-: MoveRight
+  Angelka: Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: Forward
+  t4tty: Forward, Walk
+  f6tal: None
+[154560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Walk
+  vicu: Back, MoveLeft, Walk
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Attack
+  Elizabeth-: Forward, Walk
+  t4tty: Duck, MoveLeft, MoveRight
+  f6tal: None
+[154880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck, Forward, MoveRight
+  Liina: MoveLeft
+  vicu: Back, Walk
+  Hanka-: MoveLeft
+  Angelka: Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight
+  f6tal: None
+[155200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Back, Walk
+  Hanka-: Forward
+  Angelka: None
+  Ksu: Back, Walk
+  victoria: Attack
+  Elizabeth-: Forward, Walk
+  t4tty: Forward, Walk
+  f6tal: None
+[155520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, MoveRight, Walk
+  Liina: Walk
+  vicu: Attack, Back
+  Hanka-: Forward, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: Duck, Forward, MoveRight
+  t4tty: Walk
+  f6tal: None
+[155840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Back, Walk
+  vicu: Attack, Back
+  Hanka-: Walk
+  Angelka: MoveRight, Walk
+  Ksu: Forward, Walk
+  victoria: Attack
+  Elizabeth-: MoveLeft
+  t4tty: Back, MoveRight, Walk
+  f6tal: None
+[156160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Forward, Walk
+  Ksu: Forward, Walk
+  victoria: Attack
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[156480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveLeft
+  vicu: Attack
+  Hanka-: Forward
+  Angelka: MoveRight
+  Ksu: Forward, MoveRight, Walk
+  victoria: Attack
+  Elizabeth-: None
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[156800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, MoveLeft, Reload
+  vicu: Forward
+  Hanka-: Duck, Use
+  Angelka: Forward
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Attack
+  Elizabeth-: MoveLeft, MoveRight
+  t4tty: None
+  f6tal: None
+[157120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Duck, Forward, MoveLeft
+  vicu: MoveRight
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: Forward, MoveRight
+  victoria: Attack
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: None
+[157440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward, Walk
+  vicu: Back, MoveRight, Walk
+  Hanka-: None
+  Angelka: Duck, Back
+  Ksu: MoveRight
+  victoria: Attack
+  Elizabeth-: Forward
+  t4tty: Attack
+  f6tal: None
+[157760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Reload
+  Liina: Forward
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: None
+[158080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: Score
+  t4tty: Score
+  f6tal: Forward
+[158400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: LookAtWeapon
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[158720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Score
+  vicu: Score
+  Hanka-: Attack, Duck
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[159040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Attack, Duck, Forward
+  Angelka: Forward
+  Ksu: Attack, MoveLeft, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Jump, Duck, Forward, MoveRight
+[159360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward, LookAtWeapon
+  Hanka-: Forward, MoveRight
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[159680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: MoveLeft
+  vicu: Forward, LookAtWeapon
+  Hanka-: Forward
+  Angelka: Forward, Score
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: Forward, MoveLeft, LookAtWeapon
+[160000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, MoveLeft
+  vicu: None
+  Hanka-: MoveLeft
+  Angelka: Walk
+  Ksu: Forward, MoveLeft, Walk
+  victoria: Duck, Forward
+  Elizabeth-: Back, MoveLeft, Walk
+  t4tty: Forward, Walk
+  f6tal: None
+[160320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: MoveLeft, Walk
+  vicu: None
+  Hanka-: Forward, MoveLeft
+  Angelka: Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Duck
+  Elizabeth-: Walk
+  t4tty: MoveRight, Walk
+  f6tal: MoveRight, Walk
+[160640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: MoveRight, Walk
+  vicu: AttackSecondary, Walk
+  Hanka-: Back
+  Angelka: MoveLeft, Walk
+  Ksu: None
+  victoria: Duck
+  Elizabeth-: Walk
+  t4tty: Walk
+  f6tal: None
+[160960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Walk
+  vicu: MoveRight, Walk
+  Hanka-: Back
+  Angelka: Walk
+  Ksu: Walk
+  victoria: Duck
+  Elizabeth-: Walk
+  t4tty: Walk
+  f6tal: None
+[161280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Duck, Back, MoveRight
+  vicu: MoveLeft, Walk
+  Hanka-: Back, MoveRight
+  Angelka: Walk
+  Ksu: Duck
+  victoria: Duck
+  Elizabeth-: Walk
+  t4tty: Duck, Walk
+  f6tal: Walk
+[161600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Forward, Walk
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Forward
+  Angelka: Walk
+  Ksu: Duck, Back
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: Duck, Walk
+  f6tal: None
+[161920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveRight, Walk
+  Liina: Forward
+  vicu: Back
+  Hanka-: Forward, Walk
+  Angelka: Walk
+  Ksu: Duck
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: Duck, Walk
+  f6tal: MoveRight, Walk
+[162240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Forward
+  vicu: Attack, Back
+  Hanka-: Forward, Walk
+  Angelka: Back, MoveRight, Walk
+  Ksu: Duck
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: Duck, Walk
+  f6tal: None
+[162560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Back, Walk
+  Hanka-: Forward, Walk
+  Angelka: Back, Walk
+  Ksu: Duck
+  victoria: Duck
+  Elizabeth-: Duck
+  t4tty: Duck, MoveRight, Walk
+  f6tal: Walk
+[162880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, MoveRight
+  vicu: Forward, LookAtWeapon
+  Hanka-: Back
+  Angelka: Back, MoveLeft, Walk
+  Ksu: Duck
+  victoria: Duck
+  Elizabeth-: Walk
+  t4tty: None
+  f6tal: Forward, MoveLeft, Walk
+[163200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, MoveLeft
+  vicu: MoveRight
+  Hanka-: Forward, MoveLeft
+  Angelka: MoveLeft
+  Ksu: Duck, MoveLeft
+  victoria: MoveRight
+  Elizabeth-: MoveRight, Walk
+  t4tty: None
+  f6tal: Forward, MoveLeft, Walk
+[163520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: Forward, MoveRight
+  Hanka-: Forward
+  Angelka: Forward, MoveLeft
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: MoveLeft
+  t4tty: None
+  f6tal: MoveLeft
+[163840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveRight
+  vicu: Forward, MoveRight
+  Hanka-: MoveRight
+  Angelka: Attack, Duck, MoveLeft, MoveRight
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Duck, Back
+  t4tty: None
+  f6tal: Attack, Duck, MoveRight
+[164160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, Walk
+  vicu: Duck
+  Hanka-: Duck, Forward, Use
+  Angelka: Duck, Back
+  Ksu: Forward, MoveRight
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: AttackSecondary
+  t4tty: None
+  f6tal: Jump
+[164480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, MoveRight, Walk
+  vicu: MoveLeft
+  Hanka-: Duck, MoveLeft, MoveRight
+  Angelka: MoveRight
+  Ksu: MoveRight
+  victoria: Back, MoveLeft
+  Elizabeth-: AttackSecondary
+  t4tty: None
+  f6tal: Jump
+[164800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: None
+  Hanka-: Attack, Duck
+  Angelka: MoveLeft
+  Ksu: None
+  victoria: Attack, MoveLeft
+  Elizabeth-: AttackSecondary
+  t4tty: None
+  f6tal: Jump
+[165120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: Attack
+  Hanka-: Forward
+  Angelka: MoveLeft
+  Ksu: Score
+  victoria: None
+  Elizabeth-: AttackSecondary
+  t4tty: None
+  f6tal: Jump
+[165440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[165760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: LookAtWeapon
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[166080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[166400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: Score
+  Ksu: LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: None
+[166720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: Score
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: Forward
+  f6tal: Forward
+[167040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[167360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: AttackSecondary
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, Score
+  victoria: Forward, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward
+[167680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Back
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[168000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Attack, Duck
+  Angelka: None
+  Ksu: Forward
+  victoria: MoveLeft
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[168320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: Attack, Duck, Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Forward
+[168640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, Score
+  vicu: None
+  Hanka-: Attack, Duck, Forward
+  Angelka: Forward, Score
+  Ksu: Forward, MoveRight
+  victoria: Forward, MoveLeft
+  Elizabeth-: Forward, MoveRight
+  t4tty: Forward
+  f6tal: Forward
+[168960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Duck, Forward, MoveRight
+  f6tal: Forward, LookAtWeapon
+[169280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Attack, MoveRight
+  vicu: Forward, LookAtWeapon
+  Hanka-: Back
+  Angelka: Forward
+  Ksu: MoveLeft
+  victoria: Duck, Forward
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Duck
+  f6tal: Forward, MoveRight
+[169600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, MoveLeft, Walk
+  Liina: MoveLeft
+  vicu: Attack, Back
+  Hanka-: Back, MoveRight, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: None
+  victoria: Duck, MoveRight
+  Elizabeth-: MoveRight
+  t4tty: Forward
+  f6tal: Duck, MoveLeft
+[169920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Walk
+  vicu: MoveLeft
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Forward, Walk
+  Ksu: Walk
+  victoria: MoveLeft, MoveRight
+  Elizabeth-: MoveLeft
+  t4tty: Back, MoveRight
+  f6tal: Forward
+[170240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight
+  Liina: Forward, Walk
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: MoveRight
+  Ksu: Forward, MoveLeft
+  victoria: MoveRight
+  Elizabeth-: MoveRight
+  t4tty: Forward
+  f6tal: Forward
+[170560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Walk
+  vicu: MoveRight
+  Hanka-: Forward
+  Angelka: Forward, MoveLeft
+  Ksu: Forward, MoveRight
+  victoria: Attack
+  Elizabeth-: None
+  t4tty: Attack
+  f6tal: Forward
+[170880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, MoveLeft, Walk
+  vicu: None
+  Hanka-: Attack, Forward
+  Angelka: Walk
+  Ksu: MoveLeft, Walk
+  victoria: Forward, MoveRight
+  Elizabeth-: Attack
+  t4tty: Forward, MoveRight, Walk
+  f6tal: MoveRight
+[171200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Back
+  Liina: Attack, Duck, MoveRight
+  vicu: None
+  Hanka-: Duck
+  Angelka: MoveLeft
+  Ksu: Attack, Duck, MoveRight
+  victoria: Duck, Forward
+  Elizabeth-: Attack
+  t4tty: Walk
+  f6tal: Forward
+[171520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, MoveLeft
+  vicu: None
+  Hanka-: Duck
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: None
+  victoria: Duck
+  Elizabeth-: Attack
+  t4tty: Walk
+  f6tal: Forward, MoveRight, Walk
+[171840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward, MoveRight
+  vicu: None
+  Hanka-: Duck
+  Angelka: Duck, MoveRight
+  Ksu: None
+  victoria: MoveRight
+  Elizabeth-: Attack
+  t4tty: MoveLeft
+  f6tal: MoveRight
+[172160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Duck, Forward, MoveLeft
+  vicu: None
+  Hanka-: Duck
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: Attack
+  t4tty: MoveRight
+  f6tal: MoveRight
+[172480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, Walk
+  vicu: None
+  Hanka-: Duck
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: Attack
+  t4tty: Forward, MoveRight
+  f6tal: None
+[172800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: None
+  Hanka-: MoveLeft, AttackSecondary
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Attack
+  t4tty: Attack
+  f6tal: None
+[173120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: None
+[173440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: MoveRight
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Score
+  f6tal: Forward
+[173760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: Duck
+  Ksu: MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Score
+  f6tal: Forward
+[174080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Duck
+  Ksu: Forward
+  victoria: Forward, Score
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward, MoveLeft
+[174400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Back, MoveRight
+  Angelka: Duck, Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: None
+  f6tal: Forward, MoveRight
+[174720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: Forward, MoveLeft
+  vicu: Forward
+  Hanka-: Forward, MoveRight
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight, Walk
+  f6tal: MoveLeft, LookAtWeapon
+[175040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: MoveLeft
+  vicu: MoveRight
+  Hanka-: Forward, Walk
+  Angelka: Forward
+  Ksu: MoveRight, Walk
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: Back, MoveLeft
+  t4tty: AttackSecondary, Walk
+  f6tal: MoveRight
+[175360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, MoveRight
+  vicu: Walk
+  Hanka-: Forward, Walk
+  Angelka: Walk
+  Ksu: None
+  victoria: Duck
+  Elizabeth-: Walk
+  t4tty: Walk
+  f6tal: Forward, Walk
+[175680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight
+  Liina: Attack, Duck, MoveLeft
+  vicu: None
+  Hanka-: Duck, Forward
+  Angelka: Walk
+  Ksu: Walk
+  victoria: Duck, MoveLeft
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: Attack, MoveLeft
+[176000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveLeft
+  vicu: Duck, Back
+  Hanka-: MoveRight
+  Angelka: Walk
+  Ksu: Back, MoveRight, Walk
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: None
+  f6tal: Forward
+[176320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: MoveRight
+  Hanka-: Duck, MoveLeft
+  Angelka: MoveLeft
+  Ksu: Forward, MoveRight, Walk
+  victoria: MoveLeft, MoveRight
+  Elizabeth-: MoveLeft
+  t4tty: None
+  f6tal: Forward, MoveLeft, Walk
+[176640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: MoveLeft
+  vicu: Back, Walk
+  Hanka-: MoveLeft
+  Angelka: MoveRight, Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward, Walk
+[176960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: MoveLeft, Walk
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: MoveLeft, MoveRight
+  Ksu: MoveLeft, Walk
+  victoria: Forward, Walk
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: Back, MoveLeft, Walk
+[177280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: MoveLeft
+  vicu: MoveLeft, Walk
+  Hanka-: MoveRight, Walk
+  Angelka: None
+  Ksu: Back, MoveLeft, Walk
+  victoria: Walk
+  Elizabeth-: MoveLeft, Walk
+  t4tty: None
+  f6tal: Forward, MoveLeft, Walk
+[177600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: None
+  Ksu: Forward, MoveLeft
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: None
+  f6tal: Forward, Walk
+[177920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: MoveLeft
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Forward, Walk
+  Angelka: None
+  Ksu: Forward, Walk, Score
+  victoria: Walk
+  Elizabeth-: Back, MoveRight
+  t4tty: None
+  f6tal: None
+[178240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: Back
+  Hanka-: Back, MoveLeft, Walk
+  Angelka: MoveRight
+  Ksu: MoveLeft, Walk
+  victoria: None
+  Elizabeth-: MoveLeft
+  t4tty: None
+  f6tal: Duck
+[178560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: MoveLeft
+  vicu: Attack, Back
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: None
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: None
+[178880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: Forward
+  Hanka-: MoveRight
+  Angelka: Forward, MoveRight
+  Ksu: Forward, MoveLeft
+  victoria: Forward, Walk
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[179200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: MoveLeft
+  vicu: MoveRight
+  Hanka-: MoveLeft
+  Angelka: Forward
+  Ksu: Walk
+  victoria: Forward, AttackSecondary
+  Elizabeth-: MoveRight
+  t4tty: None
+  f6tal: MoveRight, Walk
+[179520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft
+  Liina: MoveLeft
+  vicu: MoveRight
+  Hanka-: Attack
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward, MoveLeft
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Attack
+[179840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: MoveLeft
+  vicu: MoveRight
+  Hanka-: Duck, Use
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: None
+[180160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: MoveRight
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Duck, Forward, MoveRight
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: None
+[180480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: MoveLeft
+  vicu: None
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: Duck, MoveLeft
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: None
+[180800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: Forward, Score
+  Hanka-: None
+  Angelka: Jump, Forward
+  Ksu: None
+  victoria: None
+  Elizabeth-: Jump
+  t4tty: None
+  f6tal: None
+[181120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: None
+  Elizabeth-: None
+  t4tty: None
+  f6tal: None
+[181440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Score
+  f6tal: MoveRight
+[181760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Score
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: None
+  f6tal: Forward
+[182080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Score
+  Liina: None
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Forward, MoveRight
+  Ksu: Forward, Score
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: MoveLeft
+  f6tal: Forward
+[182400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Forward, AttackSecondary, LookAtWeapon
+  Angelka: Forward
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: MoveRight
+  t4tty: MoveLeft
+  f6tal: Forward
+[182720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: MoveLeft
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Duck
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight
+  t4tty: Back, MoveRight
+  f6tal: Forward
+[183040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Duck, Forward, MoveLeft
+  vicu: Walk
+  Hanka-: MoveLeft, Walk
+  Angelka: Attack, Back
+  Ksu: Forward, MoveRight
+  victoria: Forward
+  Elizabeth-: Forward, MoveRight, Walk
+  t4tty: Walk
+  f6tal: MoveRight
+[183360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Walk
+  vicu: Walk
+  Hanka-: Walk
+  Angelka: Forward, Walk
+  Ksu: Back, MoveLeft, Walk
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Back, Walk
+  f6tal: Back, MoveLeft, Walk
+[183680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Back, MoveLeft
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward, MoveRight, Walk
+  Ksu: MoveLeft, Walk
+  victoria: MoveLeft
+  Elizabeth-: Walk
+  t4tty: Walk
+  f6tal: MoveRight
+[184000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward, MoveLeft, Walk
+  Liina: MoveLeft, Walk
+  vicu: Forward
+  Hanka-: None
+  Angelka: Forward, Walk
+  Ksu: MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: MoveLeft, Walk
+  t4tty: Jump, Walk
+  f6tal: None
+[184320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Back, Walk
+  vicu: Forward, MoveLeft
+  Hanka-: None
+  Angelka: MoveRight, Walk
+  Ksu: MoveLeft
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[184640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Back, MoveLeft, Walk
+  vicu: Forward
+  Hanka-: Forward, Walk
+  Angelka: Forward, MoveLeft, Walk
+  Ksu: MoveLeft
+  victoria: Forward
+  Elizabeth-: Duck, Back
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: None
+[184960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: MoveRight, Walk
+  vicu: Duck, MoveLeft
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Forward, Walk
+  Ksu: MoveLeft, Walk
+  victoria: None
+  Elizabeth-: Forward, Walk
+  t4tty: Forward, Walk
+  f6tal: None
+[185280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Walk
+  vicu: Duck, Forward
+  Hanka-: MoveRight, Walk
+  Angelka: MoveRight, Walk
+  Ksu: MoveLeft
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: Forward, MoveLeft, Walk
+  f6tal: None
+[185600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Forward
+  Hanka-: Back, MoveRight
+  Angelka: Walk
+  Ksu: Duck, Back, MoveLeft, MoveRight
+  victoria: MoveRight
+  Elizabeth-: Duck
+  t4tty: MoveLeft, Walk
+  f6tal: None
+[185920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward, MoveRight, Walk
+  vicu: Forward
+  Hanka-: Forward
+  Angelka: Walk
+  Ksu: None
+  victoria: None
+  Elizabeth-: Duck, Back
+  t4tty: Back, MoveRight
+  f6tal: None
+[186240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: MoveRight
+  Hanka-: Forward
+  Angelka: Walk
+  Ksu: MoveLeft
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: None
+  f6tal: None
+[186560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Walk
+  vicu: MoveLeft
+  Hanka-: MoveLeft, Walk
+  Angelka: Forward
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Duck
+  t4tty: Attack
+  f6tal: None
+[186880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward
+  Angelka: Forward, MoveLeft
+  Ksu: MoveLeft
+  victoria: MoveLeft
+  Elizabeth-: MoveLeft
+  t4tty: Attack
+  f6tal: None
+[187200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Reload, Walk
+  vicu: AttackSecondary
+  Hanka-: MoveRight
+  Angelka: Forward, MoveRight
+  Ksu: Forward
+  victoria: Attack
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Attack
+  f6tal: None
+[187520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward, MoveLeft, MoveRight
+  vicu: AttackSecondary
+  Hanka-: Duck, Forward, MoveRight
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: Attack
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: None
+[187840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Attack, Walk
+  vicu: AttackSecondary
+  Hanka-: MoveLeft, MoveRight
+  Angelka: None
+  Ksu: Forward, MoveRight
+  victoria: Attack
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: None
+[188160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: AttackSecondary
+  Hanka-: Walk
+  Angelka: Forward, Walk
+  Ksu: Duck
+  victoria: Attack
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Attack
+  f6tal: None
+[188480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft, Walk
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: Duck
+  Ksu: Duck
+  victoria: Attack
+  Elizabeth-: MoveRight
+  t4tty: Attack
+  f6tal: None
+[188800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward, MoveRight, Walk
+  vicu: AttackSecondary
+  Hanka-: Score
+  Angelka: Duck
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Forward, Walk
+  t4tty: Attack
+  f6tal: None
+[189120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Walk
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: Score
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Forward, Walk
+  t4tty: Attack
+  f6tal: None
+[189440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveLeft
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: Forward, MoveRight, Walk
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Forward, Walk
+  t4tty: Attack
+  f6tal: None
+[189760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: Forward, Score
+  Angelka: Forward
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[190080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: AttackSecondary
+  Hanka-: MoveLeft
+  Angelka: MoveLeft
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[190400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: MoveRight, Walk
+  vicu: AttackSecondary
+  Hanka-: Duck, Forward
+  Angelka: Forward, MoveRight
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[190720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Back, Walk
+  vicu: AttackSecondary
+  Hanka-: None
+  Angelka: Forward, Walk
+  Ksu: None
+  victoria: Attack
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[191040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Score
+  victoria: Score
+  Elizabeth-: Walk
+  t4tty: Forward
+  f6tal: None
+[191360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: Forward
+  f6tal: None
+[191680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: None
+  Hanka-: None
+  Angelka: Score
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Attack, Forward
+[192000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Score
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Forward
+[192320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: Score
+  Ksu: Forward, Score
+  victoria: Forward
+  Elizabeth-: None
+  t4tty: Forward
+  f6tal: Attack, Forward
+[192640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: AttackSecondary
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[192960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: None
+  vicu: Forward
+  Hanka-: None
+  Angelka: None
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight
+  f6tal: Forward
+[193280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: None
+  Ksu: Forward, MoveLeft
+  victoria: None
+  Elizabeth-: None
+  t4tty: MoveRight
+  f6tal: Forward
+[193600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Attack, Forward, LookAtWeapon
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Forward
+  Ksu: Forward, Score
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, Score
+  f6tal: Score
+[193920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Forward, Score
+  vicu: Forward, Score
+  Hanka-: Attack, Score
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward, LookAtWeapon
+  t4tty: Forward
+  f6tal: Forward
+[194240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward, MoveRight
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward, MoveRight
+  f6tal: Forward
+[194560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward
+  Hanka-: Attack
+  Angelka: Forward
+  Ksu: Forward, LookAtWeapon
+  victoria: Forward
+  Elizabeth-: Forward
+  t4tty: Forward
+  f6tal: Forward
+[194880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward
+  Liina: Forward
+  vicu: Forward, MoveRight
+  Hanka-: Forward
+  Angelka: Forward
+  Ksu: Forward
+  victoria: Forward, MoveLeft, LookAtWeapon
+  Elizabeth-: Forward
+  t4tty: Attack, Forward
+  f6tal: Forward, MoveRight
+[195200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward
+  vicu: MoveLeft
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward
+  Ksu: Attack, MoveRight
+  victoria: MoveRight
+  Elizabeth-: Attack, Forward
+  t4tty: Forward
+  f6tal: Forward, MoveRight
+[195520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, Walk
+  Liina: Duck
+  vicu: MoveRight
+  Hanka-: MoveRight
+  Angelka: Forward, MoveLeft
+  Ksu: Attack, Walk
+  victoria: Back
+  Elizabeth-: Jump, Forward
+  t4tty: MoveLeft
+  f6tal: Duck, Forward
+[195840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Attack, Duck, MoveRight
+  Liina: Back
+  vicu: Forward
+  Hanka-: MoveLeft
+  Angelka: None
+  Ksu: Back, MoveLeft, Walk
+  victoria: MoveRight
+  Elizabeth-: Jump, MoveLeft
+  t4tty: None
+  f6tal: Forward, MoveRight
+[196160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Attack
+  vicu: MoveLeft
+  Hanka-: Forward, MoveLeft
+  Angelka: Forward, MoveRight, Walk
+  Ksu: None
+  victoria: Duck, MoveRight
+  Elizabeth-: MoveRight
+  t4tty: Duck, Back, MoveRight
+  f6tal: None
+[196480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: MoveLeft
+  vicu: MoveLeft, AttackSecondary
+  Hanka-: Duck, Back
+  Angelka: MoveLeft, Walk
+  Ksu: MoveLeft, Walk
+  victoria: Forward
+  Elizabeth-: MoveRight, Walk
+  t4tty: Forward, MoveRight
+  f6tal: None
+[196800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: Forward
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Duck
+  Angelka: Walk
+  Ksu: MoveLeft, Walk
+  victoria: MoveLeft
+  Elizabeth-: Forward, MoveLeft, Walk
+  t4tty: Forward, Walk
+  f6tal: None
+[197120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Forward
+  Liina: Forward, MoveLeft
+  vicu: Forward, Walk
+  Hanka-: Forward, MoveRight
+  Angelka: Walk
+  Ksu: MoveRight, Walk
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: Back, MoveLeft, Walk
+  t4tty: MoveLeft, Walk
+  f6tal: None
+[197440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: None
+  Liina: Duck, MoveLeft
+  vicu: Walk
+  Hanka-: MoveRight
+  Angelka: Walk
+  Ksu: Walk
+  victoria: Forward, Walk
+  Elizabeth-: Forward, Walk
+  t4tty: Duck, Walk
+  f6tal: None
+[197760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, Walk
+  Liina: Walk
+  vicu: Back, MoveLeft, Walk
+  Hanka-: Forward, Walk
+  Angelka: Walk
+  Ksu: Walk
+  victoria: None
+  Elizabeth-: Forward, MoveLeft, Walk
+  t4tty: Back, Walk
+  f6tal: None
+[198080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck, Walk
+  Liina: MoveLeft
+  vicu: Forward, MoveLeft, LookAtWeapon
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: Walk
+  Ksu: Forward, MoveRight, Walk
+  victoria: None
+  Elizabeth-: MoveRight
+  t4tty: MoveLeft
+  f6tal: None
+[198400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Duck
+  Liina: None
+  vicu: Forward, MoveLeft, Walk
+  Hanka-: Forward, Walk
+  Angelka: Forward, Walk
+  Ksu: Forward, MoveRight
+  victoria: Walk
+  Elizabeth-: Forward, Walk
+  t4tty: Forward, MoveRight
+  f6tal: None
+[198720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveRight, Walk
+  Liina: Forward
+  vicu: None
+  Hanka-: Forward, MoveRight, Walk
+  Angelka: Forward, Walk
+  Ksu: Forward
+  victoria: MoveRight, Walk
+  Elizabeth-: Walk
+  t4tty: Forward, MoveLeft
+  f6tal: None
+[199040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Back, Walk
+  Liina: Forward
+  vicu: Forward, MoveLeft, AttackSecondary, Walk
+  Hanka-: Forward, MoveLeft, Walk
+  Angelka: None
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: MoveLeft, Walk
+  t4tty: Attack
+  f6tal: None
+[199360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft
+  Liina: Forward
+  vicu: Duck, Forward, MoveRight, Walk
+  Hanka-: MoveRight, Walk
+  Angelka: Back, Walk
+  Ksu: Duck
+  victoria: Forward, MoveRight, Walk
+  Elizabeth-: MoveLeft
+  t4tty: Attack
+  f6tal: None
+[199680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveLeft, Walk
+  Liina: Forward
+  vicu: Forward, Walk
+  Hanka-: None
+  Angelka: MoveRight
+  Ksu: Duck
+  victoria: MoveRight, Walk
+  Elizabeth-: Forward, MoveLeft
+  t4tty: Attack
+  f6tal: None
+[200000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Forward
+  vicu: Duck, Forward
+  Hanka-: None
+  Angelka: Back, MoveRight, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: MoveLeft, Walk
+  t4tty: Attack
+  f6tal: None
+[200320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: Forward, MoveLeft, Walk
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: Forward, Walk
+  Ksu: Duck, MoveLeft
+  victoria: Walk
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[200640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight, Walk
+  Liina: Forward
+  vicu: Forward, Walk
+  Hanka-: Forward, Walk
+  Angelka: MoveLeft, Walk
+  Ksu: Duck
+  victoria: None
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[200960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: MoveRight
+  Liina: Forward
+  vicu: MoveRight
+  Hanka-: None
+  Angelka: MoveLeft
+  Ksu: Duck
+  victoria: Forward, Walk
+  Elizabeth-: Walk
+  t4tty: Attack
+  f6tal: None
+[201280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: Forward
+  Hanka-: MoveLeft
+  Angelka: Duck, MoveLeft
+  Ksu: Duck
+  victoria: Forward
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[201600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: Attack, MoveLeft
+  Hanka-: Forward, MoveLeft
+  Angelka: Back, MoveLeft, Walk
+  Ksu: None
+  victoria: Attack, Back, MoveLeft
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[201920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: Back, Walk
+  Hanka-: Duck, MoveLeft
+  Angelka: Back, MoveLeft, Walk
+  Ksu: None
+  victoria: Forward, MoveRight
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[202240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  Ksu: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[202560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  t4tty: Attack
+  f6tal: None
+[202880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  vicu: None
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[203200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[203520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[203840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[204160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[204480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[204800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[205120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[205440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[205760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[206080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[206400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[206720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[207040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[207360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[207680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[208000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[208320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[208640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[208960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[209280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[209600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[209920] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[210240] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[210560] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[210880] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[211200] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[211520] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[211840] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[212160] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[212480] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[212800] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[213120] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[213440] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[213760] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[214080] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[214400] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[214720] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[215040] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[215360] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[215680] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[216000] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[216320] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[216640] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[216960] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[217280] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None
+[217600] Input buttons:
+  ESL GOTV: 
+  ESL GOTV: 
+  Referee | @JanicKa953: None
+  LETi-: LookAtWeapon
+  Liina: Forward
+  Hanka-: None
+  Angelka: None
+  victoria: None
+  Elizabeth-: AttackSecondary
+  f6tal: None

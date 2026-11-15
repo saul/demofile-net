@@ -102,4 +102,49 @@ public class PlayerPropsIntegrationTest
         // Assert
         Snapshot.Assert(snapshot);
     }
+
+    [Test]
+    public async Task InputButtons()
+    {
+        // m_nButtonDownMaskPrev was removed in v14197, but must still be decoded for older demos
+
+        // Arrange
+        DemoSnapshot ParseSection(CsDemoParser demo)
+        {
+            var snapshot = new DemoSnapshot();
+
+            var snapshotInterval = TimeSpan.FromSeconds(5);
+            var snapshotIntervalTicks = DemoTick.Zero + snapshotInterval;
+
+            void OnSnapshotTimer()
+            {
+                var sb = new StringBuilder();
+                foreach (var player in demo.Players)
+                {
+#pragma warning disable CS0618 // Type or member is obsolete
+                    var buttons = player.PlayerPawn?.InputButtons;
+#pragma warning restore CS0618
+                    sb.AppendLine($"  {player.PlayerName}: {buttons}");
+                }
+
+                snapshot.Add(demo.CurrentDemoTick, $"Input buttons:{Environment.NewLine}{sb}");
+
+                demo.CreateTimer(
+                    demo.CurrentDemoTick + snapshotIntervalTicks,
+                    OnSnapshotTimer);
+            }
+
+            var startTick = demo.CurrentDemoTick == DemoTick.PreRecord ? DemoTick.Zero : demo.CurrentDemoTick;
+            var clampedStartTick = new DemoTick(startTick.Value / snapshotIntervalTicks.Value * snapshotIntervalTicks.Value);
+            demo.CreateTimer(clampedStartTick + snapshotInterval, OnSnapshotTimer);
+
+            return snapshot;
+        }
+
+        // Act
+        var snapshot = await Parse(_mode, GotvCompetitiveProtocol13963, ParseSection);
+
+        // Assert
+        Snapshot.Assert(snapshot);
+    }
 }

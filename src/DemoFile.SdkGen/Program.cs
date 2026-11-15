@@ -555,6 +555,20 @@ internal static class Program
             builder.AppendLine($"public readonly record struct {classNameCs}({csType} Value)");
             builder.AppendLine("{");
             builder.AppendLine($"    public static {classNameCs} Decode(ref BitBuffer buffer) => new {classNameCs}({decoder});");
+            builder.AppendLine();
+            builder.AppendLine($"    public static FieldDecode.FieldDecoder<{classNameCs}> CreateDecoder(FieldEncodingInfo fieldEncodingInfo) =>");
+            builder.AppendLine("        fieldEncodingInfo.VarEncoder switch");
+            builder.AppendLine("        {");
+            builder.AppendLine("            null => Decode,");
+            if (boxedPrimitiveType == BoxedPrimitiveType.Integer)
+            {
+                // 8-bit fields are sent as a raw byte with the `fixed8` encoder (CS2 build 14197+)
+                var isUnsigned = schemaClass.Fields.FirstOrDefault(f => f.Name == "m_Value")?.Type.Name.StartsWith("uint") == true;
+                var fixed8 = isUnsigned ? "buffer.ReadByte()" : "(sbyte)buffer.ReadByte()";
+                builder.AppendLine($"            \"fixed8\" => (ref BitBuffer buffer) => new {classNameCs}({fixed8}),");
+            }
+            builder.AppendLine($"            _ => throw new Exception($\"Unknown {classNameCs} encoder: {{fieldEncodingInfo.VarEncoder}}\")");
+            builder.AppendLine("        };");
             builder.AppendLine("}");
             return;
         }
@@ -706,6 +720,7 @@ internal static class Program
 
                     if (classMap[inner.Name].BoxedPrimitive.HasValue)
                     {
+                        builder.AppendLine($"            var decoder = {inner.GetCsTypeName(gameSdkInfo)}.CreateDecoder(field.FieldEncodingInfo);");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");
                         builder.AppendLine($"                if (path.Length == 1)");
@@ -718,7 +733,7 @@ internal static class Program
                         builder.AppendLine($"                    Debug.Assert(path.Length == 2);");
                         builder.AppendLine($"                    var index = path[1];");
                         builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
-                        builder.AppendLine($"                    @this.{fieldCsPropertyName}[index] = {inner.GetCsTypeName(gameSdkInfo)}.Decode(ref buffer);");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}[index] = decoder(ref buffer);");
                         builder.AppendLine($"                }}");
                         builder.AppendLine($"            }};");
                     }
@@ -785,10 +800,11 @@ internal static class Program
                     if (elementClass?.BoxedPrimitive.HasValue == true)
                     {
                         builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
+                        builder.AppendLine($"            var decoder = {elementCsTypeName}.CreateDecoder(field.FieldEncodingInfo);");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");
                         builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
-                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = {elementCsTypeName}.Decode(ref buffer);");
+                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = decoder(ref buffer);");
                         builder.AppendLine($"            }};");
                     }
                     else
@@ -876,9 +892,10 @@ internal static class Program
                 }
                 else if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.BoxedPrimitive.HasValue == true)
                 {
+                    builder.AppendLine($"            var decoder = {fieldCsTypeName}.CreateDecoder(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                @this.{fieldCsPropertyName} = {fieldCsTypeName}.Decode(ref buffer);");
+                    builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(ref buffer);");
                     builder.AppendLine($"            }};");
                 }
                 else
