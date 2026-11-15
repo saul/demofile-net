@@ -472,6 +472,12 @@ public partial class AnimGraph2SerializedPoseRecipeSlot
 public readonly record struct AttachmentHandle(int Value)
 {
     public static AttachmentHandle Decode(ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadVarInt32());
+
+    public static FieldDecode.FieldDecoder<AttachmentHandle> CreateDecoder(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var decoder = FieldDecode.CreateDecoder_Int32(fieldEncodingInfo);
+        return (ref BitBuffer buffer) => new AttachmentHandle(decoder(ref buffer));
+    }
 }
 
 public partial class AudioParams
@@ -1830,13 +1836,15 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
         }
         if (field.VarName == "m_primaryGraphId")
         {
+            var decoder = ResourceId.CreateDecoder(field.FieldEncodingInfo);
             return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PrimaryGraphId = ResourceId.Decode(ref buffer);
+                @this.PrimaryGraphId = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_vecExternalGraphIds")
         {
+            var decoder = ResourceId.CreateDecoder(field.FieldEncodingInfo);
             return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -1849,12 +1857,13 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
                     Debug.Assert(path.Length == 2);
                     var index = path[1];
                     @this.ExternalGraphIds.EnsureSize(index + 1);
-                    @this.ExternalGraphIds[index] = ResourceId.Decode(ref buffer);
+                    @this.ExternalGraphIds[index] = decoder(ref buffer);
                 }
             };
         }
         if (field.VarName == "m_vecExternalClipIds")
         {
+            var decoder = ResourceId.CreateDecoder(field.FieldEncodingInfo);
             return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -1867,7 +1876,7 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
                     Debug.Assert(path.Length == 2);
                     var index = path[1];
                     @this.ExternalClipIds.EnsureSize(index + 1);
-                    @this.ExternalClipIds[index] = ResourceId.Decode(ref buffer);
+                    @this.ExternalClipIds[index] = decoder(ref buffer);
                 }
             };
         }
@@ -4001,10 +4010,11 @@ public partial class CBeam : CBaseModelEntity
         if (field.VarName == "m_nAttachIndex")
         {
             var fixedArraySize = field.VarType.ArrayLength;
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (@this.AttachIndex.Length == 0) @this.AttachIndex = new AttachmentHandle[fixedArraySize];
-                @this.AttachIndex[path[1]] = AttachmentHandle.Decode(ref buffer);
+                @this.AttachIndex[path[1]] = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_fWidth")
@@ -22408,16 +22418,18 @@ public partial class CRopeKeyframe : CBaseModelEntity
         }
         if (field.VarName == "m_iStartAttachment")
         {
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.StartAttachment = AttachmentHandle.Decode(ref buffer);
+                @this.StartAttachment = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iEndAttachment")
         {
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EndAttachment = AttachmentHandle.Decode(ref buffer);
+                @this.EndAttachment = decoder(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -24029,9 +24041,10 @@ public partial class CSprite : CBaseModelEntity
         }
         if (field.VarName == "m_nAttachment")
         {
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CSprite @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Attachment = AttachmentHandle.Decode(ref buffer);
+                @this.Attachment = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flSpriteFramerate")
@@ -26941,6 +26954,12 @@ public partial class PhysicsRagdollPose
 public readonly record struct ResourceId(int Value)
 {
     public static ResourceId Decode(ref BitBuffer buffer) => new ResourceId(buffer.ReadVarInt32());
+
+    public static FieldDecode.FieldDecoder<ResourceId> CreateDecoder(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var decoder = FieldDecode.CreateDecoder_Int32(fieldEncodingInfo);
+        return (ref BitBuffer buffer) => new ResourceId(decoder(ref buffer));
+    }
 }
 
 public partial class SellbackPurchaseEntry

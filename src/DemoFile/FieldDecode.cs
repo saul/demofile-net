@@ -14,10 +14,40 @@ public static class FieldDecode
 
     public delegate TValue CustomDeserializer<TType, TValue>(TType @this, ref BitBuffer buffer);
 
+    /// <summary>
+    /// Width in bits of a fixed-width integer encoding, or 0 when the field uses its type's usual varint.
+    /// Since the CS2 update of 2026-11-11 (build 14197), 8-bit fields (uint8, int8, 8-bit enums and
+    /// arrays/vectors of them) are networked with the <c>fixed8</c> var encoder: one raw byte, not a varint.
+    /// Reading them as varints desyncs the entity stream on the first value >= 128.
+    /// </summary>
+    public static int FixedWidthBits(FieldEncodingInfo fieldEncodingInfo) =>
+        fieldEncodingInfo.VarEncoder switch
+        {
+            "fixed8" => 8,
+            "fixed16" => 16,
+            "fixed32" => 32,
+            _ => 0,
+        };
+
+    /// <summary>Sign-extends the low <paramref name="bits"/> bits of <paramref name="value"/>.</summary>
+    public static int SignExtend(uint value, int bits) =>
+        bits >= 32 ? (int)value : (int)(value << (32 - bits)) >> (32 - bits);
+
     public static FieldDecoder<T> CreateDecoder_enum<T>(
         FieldEncodingInfo fieldEncodingInfo)
         where T : struct
     {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+        {
+            var underlying = Enum.GetUnderlyingType(typeof(T));
+            var isSigned = underlying == typeof(sbyte) || underlying == typeof(short)
+                || underlying == typeof(int) || underlying == typeof(long);
+            return isSigned
+                ? (ref BitBuffer buffer) => (T)Enum.ToObject(typeof(T), (long)SignExtend(buffer.ReadUBits(fixedBits), fixedBits))
+                : (ref BitBuffer buffer) => (T)Enum.ToObject(typeof(T), (ulong)buffer.ReadUBits(fixedBits));
+        }
+
         // Note that some enums are NOT encoded as unsigned 64-bit,
         // which is what we assume here.
         // One example is TakeDamageFlags_t, which is supposedly
@@ -98,9 +128,14 @@ public static class FieldDecode
 
     public static FieldDecoder<ulong> CreateDecoder_UInt64(FieldEncodingInfo fieldEncodingInfo)
     {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
         if (fieldEncodingInfo.VarEncoder == "fixed64")
         {
             return (ref BitBuffer buffer) => DecodeFixed64(ref buffer);
+        }
+        else if (fixedBits > 0)
+        {
+            return (ref BitBuffer buffer) => buffer.ReadUBits(fixedBits);
         }
         else if (fieldEncodingInfo.VarEncoder != null)
         {
@@ -248,26 +283,63 @@ public static class FieldDecode
 
     public static float DecodeFloatNoscale(ref BitBuffer buffer) => buffer.ReadFloat();
 
-    public static FieldDecoder<bool> CreateDecoder_bool(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => buffer.ReadOneBit();
+    // The fixedN branches below keep the type (and signedness) of each decoder's varint path; see FixedWidthBits.
 
-    public static FieldDecoder<byte> CreateDecoder_byte(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => (byte)buffer.ReadUVarInt32();
+    public static FieldDecoder<bool> CreateDecoder_bool(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => buffer.ReadUBits(fixedBits) != 0;
+        return (ref BitBuffer buffer) => buffer.ReadOneBit();
+    }
 
-    public static FieldDecoder<sbyte> CreateDecoder_sbyte(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => (sbyte)buffer.ReadVarInt32();
+    public static FieldDecoder<byte> CreateDecoder_byte(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => (byte)buffer.ReadUBits(fixedBits);
+        return (ref BitBuffer buffer) => (byte)buffer.ReadUVarInt32();
+    }
 
-    public static FieldDecoder<int> CreateDecoder_Int32(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => buffer.ReadVarInt32();
+    public static FieldDecoder<sbyte> CreateDecoder_sbyte(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => (sbyte)SignExtend(buffer.ReadUBits(fixedBits), fixedBits);
+        return (ref BitBuffer buffer) => (sbyte)buffer.ReadVarInt32();
+    }
 
-    public static FieldDecoder<uint> CreateDecoder_UInt32(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => buffer.ReadUVarInt32();
+    public static FieldDecoder<int> CreateDecoder_Int32(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => SignExtend(buffer.ReadUBits(fixedBits), fixedBits);
+        return (ref BitBuffer buffer) => buffer.ReadVarInt32();
+    }
 
-    public static FieldDecoder<short> CreateDecoder_Int16(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => (short)buffer.ReadVarInt32();
+    public static FieldDecoder<uint> CreateDecoder_UInt32(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => buffer.ReadUBits(fixedBits);
+        return (ref BitBuffer buffer) => buffer.ReadUVarInt32();
+    }
 
-    public static FieldDecoder<ushort> CreateDecoder_UInt16(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => (ushort)buffer.ReadUVarInt32();
+    public static FieldDecoder<short> CreateDecoder_Int16(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => (short)SignExtend(buffer.ReadUBits(fixedBits), fixedBits);
+        return (ref BitBuffer buffer) => (short)buffer.ReadVarInt32();
+    }
+
+    public static FieldDecoder<ushort> CreateDecoder_UInt16(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var fixedBits = FixedWidthBits(fieldEncodingInfo);
+        if (fixedBits > 0)
+            return (ref BitBuffer buffer) => (ushort)buffer.ReadUBits(fixedBits);
+        return (ref BitBuffer buffer) => (ushort)buffer.ReadUVarInt32();
+    }
 
     public static FieldDecoder<WorldGroupId> CreateDecoder_WorldGroupId(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => new WorldGroupId(buffer.ReadUVarInt32());

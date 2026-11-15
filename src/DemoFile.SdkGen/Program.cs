@@ -545,16 +545,22 @@ internal static class Program
                 builder.AppendLine($"// {metadata.Name}{(metadata.HasValue ? $" {metadata}" : "")}");
             }
 
-            var (csType, decoder) = boxedPrimitiveType switch
+            var (csType, decoder, decoderFactory) = boxedPrimitiveType switch
             {
-                BoxedPrimitiveType.Integer => ("int", "buffer.ReadVarInt32()"),
-                BoxedPrimitiveType.Float => ("float", "buffer.ReadFloat()"),
+                BoxedPrimitiveType.Integer => ("int", "buffer.ReadVarInt32()", "CreateDecoder_Int32"),
+                BoxedPrimitiveType.Float => ("float", "buffer.ReadFloat()", "CreateDecoder_float"),
                 _ => throw new ArgumentOutOfRangeException()
             };
 
             builder.AppendLine($"public readonly record struct {classNameCs}({csType} Value)");
             builder.AppendLine("{");
             builder.AppendLine($"    public static {classNameCs} Decode(ref BitBuffer buffer) => new {classNameCs}({decoder});");
+            builder.AppendLine();
+            builder.AppendLine($"    public static FieldDecode.FieldDecoder<{classNameCs}> CreateDecoder(FieldEncodingInfo fieldEncodingInfo)");
+            builder.AppendLine("    {");
+            builder.AppendLine($"        var decoder = FieldDecode.{decoderFactory}(fieldEncodingInfo);");
+            builder.AppendLine($"        return (ref BitBuffer buffer) => new {classNameCs}(decoder(ref buffer));");
+            builder.AppendLine("    }");
             builder.AppendLine("}");
             return;
         }
@@ -706,6 +712,7 @@ internal static class Program
 
                     if (classMap[inner.Name].BoxedPrimitive.HasValue)
                     {
+                        builder.AppendLine($"            var decoder = {inner.GetCsTypeName(gameSdkInfo)}.CreateDecoder(field.FieldEncodingInfo);");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");
                         builder.AppendLine($"                if (path.Length == 1)");
@@ -718,7 +725,7 @@ internal static class Program
                         builder.AppendLine($"                    Debug.Assert(path.Length == 2);");
                         builder.AppendLine($"                    var index = path[1];");
                         builder.AppendLine($"                    @this.{fieldCsPropertyName}.EnsureSize(index + 1);");
-                        builder.AppendLine($"                    @this.{fieldCsPropertyName}[index] = {inner.GetCsTypeName(gameSdkInfo)}.Decode(ref buffer);");
+                        builder.AppendLine($"                    @this.{fieldCsPropertyName}[index] = decoder(ref buffer);");
                         builder.AppendLine($"                }}");
                         builder.AppendLine($"            }};");
                     }
@@ -785,10 +792,11 @@ internal static class Program
                     if (elementClass?.BoxedPrimitive.HasValue == true)
                     {
                         builder.AppendLine($"            var fixedArraySize = field.VarType.ArrayLength;");
+                        builder.AppendLine($"            var decoder = {elementCsTypeName}.CreateDecoder(field.FieldEncodingInfo);");
                         builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                         builder.AppendLine($"            {{");
                         builder.AppendLine($"                if (@this.{fieldCsPropertyName}.Length == 0) @this.{fieldCsPropertyName} = new {elementCsTypeName}[fixedArraySize];");
-                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = {elementCsTypeName}.Decode(ref buffer);");
+                        builder.AppendLine($"                @this.{fieldCsPropertyName}[path[1]] = decoder(ref buffer);");
                         builder.AppendLine($"            }};");
                     }
                     else
@@ -876,9 +884,10 @@ internal static class Program
                 }
                 else if (field.Type.Category == SchemaTypeCategory.DeclaredClass && fieldClass?.BoxedPrimitive.HasValue == true)
                 {
+                    builder.AppendLine($"            var decoder = {fieldCsTypeName}.CreateDecoder(field.FieldEncodingInfo);");
                     builder.AppendLine($"            return ({classNameCs} @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>");
                     builder.AppendLine($"            {{");
-                    builder.AppendLine($"                @this.{fieldCsPropertyName} = {fieldCsTypeName}.Decode(ref buffer);");
+                    builder.AppendLine($"                @this.{fieldCsPropertyName} = decoder(ref buffer);");
                     builder.AppendLine($"            }};");
                 }
                 else

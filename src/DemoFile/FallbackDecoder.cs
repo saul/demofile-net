@@ -127,8 +127,9 @@ public static class FallbackDecoder
             }
             case "bool":
             {
+                var fieldDecoder = FieldDecode.CreateDecoder_bool(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                    buffer.ReadOneBit();
+                    fieldDecoder(ref buffer);
                 return true;
             }
             case "Color":
@@ -140,8 +141,11 @@ public static class FallbackDecoder
             }
             case "uint8" or "int8" or "int16" or "uint16" or "int32" or "uint32" or "int64" or "uint64" or "CStrongHandle" or "CEntityHandle" or "CHandle" or "HSequence" or "CSPlayerBlockingUseAction_t" or "BloodType" or "CGameSceneNodeHandle" or "ShatterPanelMode" or "CSWeaponState_t" or "WorldGroupId_t" or "attributeprovidertypes_t" or "DecalMode_t":
             {
-                decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                    buffer.ReadUVarInt64();
+                // fixed8/16/32 (CS2 build 14197+): N raw bits instead of a varint, see FieldDecode.FixedWidthBits
+                var fixedBits = FieldDecode.FixedWidthBits(encodingInfo);
+                decoder = fixedBits > 0
+                    ? (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) => buffer.ReadUBits(fixedBits)
+                    : (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) => buffer.ReadUVarInt64();
                 return true;
             }
             case "CUtlString" or "CUtlSymbolLarge":
