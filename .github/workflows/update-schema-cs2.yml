@@ -22,6 +22,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      # Install before connecting to Tailscale so apt doesn't depend on the tailnet's DNS
+      - name: Install unrar
+        if: ${{ github.event.inputs.demo_file_curl != '' }}
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unrar
+
       # Cloudflare bot protection(?) on https://r2-demos.hltv.org stops us from downloading archives
       # from GitHub Actions.  It's janky but routing this through my home connection avoids the issue.
       - name: Connect to Tailscale
@@ -42,12 +49,12 @@ jobs:
           echo "Downloading demo archive..."
           ${{ github.event.inputs.demo_file_curl }} -o archive.rar
 
-          echo "Removing exit node..."
-          sudo tailscale set --exit-node=
+          # Fully disconnect rather than just clearing the exit node: `tailscale down` restores the
+          # runner's original DNS config, otherwise lookups keep going to the tailnet's resolvers.
+          echo "Disconnecting from Tailscale..."
+          sudo tailscale down
 
-          echo "Installing unrar and extracting first .dem file..."
-          sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unrar
-
+          echo "Extracting first .dem file..."
           # Find and extract only the first .dem file
           DEM_FILE=$(unrar lb archive.rar | grep -i '\.dem$' | head -1)
           if [ -z "$DEM_FILE" ]; then
