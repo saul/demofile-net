@@ -537,6 +537,8 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.SteamId = x.ValUint64;
                         if (key.Name == "PlayerID")
                             return (@this, x) => @this.PlayerID = x.ValShort;
+                        if (key.Name == "ever_fully_connected")
+                            return (@this, x) => @this.EverFullyConnected = x.ValBool;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3864,6 +3866,8 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
+                        if (key.Name == "c4")
+                            return (@this, x) => @this.C4 = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3891,6 +3895,8 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
+                        if (key.Name == "c4")
+                            return (@this, x) => @this.C4 = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -3918,6 +3924,8 @@ public partial class Source1GameEvents
                             return (@this, x) => @this.PlayerPawnHandle = CHandle<CEntityInstance<CsDemoParser>, CsDemoParser>.FromEventStrictEHandle((uint) x.ValLong);
                         if (key.Name == "site")
                             return (@this, x) => @this.Site = x.ValShort;
+                        if (key.Name == "c4")
+                            return (@this, x) => @this.C4 = x.ValShort;
                         return (@this, x) => { };
                     })
                     .ToArray();
@@ -7456,6 +7464,8 @@ public partial class Source1PlayerDisconnectEvent : Source1GameEventBase
     public ulong SteamId { get; set; }
 
     public int PlayerID { get; set; }
+
+    public bool EverFullyConnected { get; set; }
 }
 
 public partial class Source1PlayerInfoEvent : Source1GameEventBase
@@ -9068,6 +9078,8 @@ public partial class Source1BombPlantedEvent : Source1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
+
+    public int C4 { get; set; }
 }
 
 public partial class Source1BombDefusedEvent : Source1GameEventBase
@@ -9083,6 +9095,8 @@ public partial class Source1BombDefusedEvent : Source1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
+
+    public int C4 { get; set; }
 }
 
 public partial class Source1BombExplodedEvent : Source1GameEventBase
@@ -9098,6 +9112,8 @@ public partial class Source1BombExplodedEvent : Source1GameEventBase
     public CCSPlayerPawn? PlayerPawn => _demo.GetEntityByHandle(PlayerPawnHandle) as CCSPlayerPawn;
 
     public int Site { get; set; }
+
+    public int C4 { get; set; }
 }
 
 public partial class Source1BombDroppedEvent : Source1GameEventBase

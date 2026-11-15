@@ -46,6 +46,19 @@
           "value": 1
         }
       ]
+    },
+    "PulseCursorWakePriority_t": {
+      "align": 4,
+      "items": [
+        {
+          "name": "WakeElegantly",
+          "value": 0
+        },
+        {
+          "name": "WakeImmediate",
+          "value": 1
+        }
+      ]
     }
   },
   "classes": {
@@ -122,6 +135,10 @@
         {
           "name": "MPulseEditorHeaderIcon",
           "value": "tools/images/pulse_editor/node_timer.png"
+        },
+        {
+          "name": "MPulseEditorCanvasItemSpecKV3",
+          "value": "{ item_factory = 'IntervalTimer' }"
         }
       ],
       "fields": [
@@ -193,53 +210,6 @@
             "atomic": 2,
             "inner": {
               "name": "CPulse_OutflowConnection",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
-    "PulseObservableBoolExpression_t": {
-      "metadata": [
-        {
-          "name": "MGetKV3ClassDefaults",
-          "value": "<kv3>"
-        }
-      ],
-      "fields": [
-        {
-          "name": "m_EvaluateConnection",
-          "type": {
-            "name": "CPulse_OutflowConnection",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_DependentObservableVars",
-          "type": {
-            "name": "CUtlVector< PulseRuntimeVarIndex_t >",
-            "category": 4,
-            "atomic": 2,
-            "inner": {
-              "name": "PulseRuntimeVarIndex_t",
-              "category": 5
-            }
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_DependentObservableBlackboardReferences",
-          "type": {
-            "name": "CUtlVector< PulseRuntimeBlackboardReferenceIndex_t >",
-            "category": 4,
-            "atomic": 2,
-            "inner": {
-              "name": "PulseRuntimeBlackboardReferenceIndex_t",
               "category": 5
             }
           },
@@ -356,8 +326,13 @@
         {
           "name": "m_Condition",
           "type": {
-            "name": "PulseObservableBoolExpression_t",
-            "category": 5
+            "name": "CPulseObservableExpression< bool >",
+            "category": 4,
+            "atomic": 1,
+            "inner": {
+              "name": "bool",
+              "category": 0
+            }
           },
           "metadata": [
             {
@@ -523,6 +498,24 @@
             "inner": {
               "name": "CPulse_Variable",
               "category": 5
+            }
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_TempVarBanks",
+          "type": {
+            "name": "CUtlVector< CPulse_TempVarBankDefinition* >",
+            "category": 4,
+            "atomic": 2,
+            "inner": {
+              "name": "CPulse_TempVarBankDefinition*",
+              "category": 1,
+              "inner": {
+                "name": "CPulse_TempVarBankDefinition",
+                "category": 5
+              }
             }
           },
           "metadata": [
@@ -775,6 +768,17 @@
         }
       ]
     },
+    "CPulseCell_ReturnValues": {
+      "parent": "CPulseCell_BaseFlow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+      ]
+    },
     "CPulseCell_Value_RandomFloat": {
       "parent": "CPulseCell_BaseValue",
       "metadata": [
@@ -854,6 +858,24 @@
         },
         {
           "name": "m_nSrcInstruction",
+          "type": {
+            "name": "int32",
+            "category": 0
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nBreakDestChunk",
+          "type": {
+            "name": "PulseRuntimeChunkIndex_t",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_nBreakDestInstruction",
           "type": {
             "name": "int32",
             "category": 0
@@ -983,32 +1005,6 @@
       "fields": [
       ]
     },
-    "CPulseMathlib": {
-      "metadata": [
-        {
-          "name": "MPropertyDescription",
-          "value": "Basic math support."
-        }
-      ],
-      "fields": [
-      ]
-    },
-    "CPulseCell_WaitForCursorsWithTagBase::CursorState_t": {
-      "metadata": [
-      ],
-      "fields": [
-        {
-          "name": "m_TagName",
-          "type": {
-            "name": "PulseSymbol_t",
-            "category": 4,
-            "atomic": 0
-          },
-          "metadata": [
-          ]
-        }
-      ]
-    },
     "CPulseCell_Value_Curve": {
       "parent": "CPulseCell_BaseValue",
       "metadata": [
@@ -1091,16 +1087,6 @@
         }
       ]
     },
-    "CPulseArraylib": {
-      "metadata": [
-        {
-          "name": "MPropertyDescription",
-          "value": "Array support."
-        }
-      ],
-      "fields": [
-      ]
-    },
     "CPulseCell_Inflow_Method": {
       "parent": "CPulseCell_Inflow_BaseEntrypoint",
       "metadata": [
@@ -1140,17 +1126,21 @@
           ]
         },
         {
-          "name": "m_ReturnType",
+          "name": "m_Args",
           "type": {
-            "name": "CPulseValueFullType",
+            "name": "CUtlLeanVector< CPulseRuntimeMethodArg >",
             "category": 4,
-            "atomic": 0
+            "atomic": 2,
+            "inner": {
+              "name": "CPulseRuntimeMethodArg",
+              "category": 5
+            }
           },
           "metadata": [
           ]
         },
         {
-          "name": "m_Args",
+          "name": "m_ReturnValues",
           "type": {
             "name": "CUtlLeanVector< CPulseRuntimeMethodArg >",
             "category": 4,
@@ -1245,8 +1235,13 @@
         {
           "name": "m_Condition",
           "type": {
-            "name": "PulseObservableBoolExpression_t",
-            "category": 5
+            "name": "CPulseObservableExpression< bool >",
+            "category": 4,
+            "atomic": 1,
+            "inner": {
+              "name": "bool",
+              "category": 0
+            }
           },
           "metadata": [
             {
@@ -1260,19 +1255,6 @@
           ]
         },
         {
-          "name": "m_Always",
-          "type": {
-            "name": "CPulse_OutflowConnection",
-            "category": 5
-          },
-          "metadata": [
-            {
-              "name": "MPropertyDescription",
-              "value": "Fired immediately when this node begins for chaining purposes."
-            }
-          ]
-        },
-        {
           "name": "m_WhenTrue",
           "type": {
             "name": "CPulse_OutflowConnection",
@@ -1282,6 +1264,10 @@
             {
               "name": "MPropertyDescription",
               "value": "Fired when the observable boolean is true, and killed when false."
+            },
+            {
+              "name": "MPropertyFriendlyName",
+              "value": "While True"
             }
           ]
         },
@@ -1295,6 +1281,10 @@
             {
               "name": "MPropertyDescription",
               "value": "Fired when the observable boolean is false, and killed when true."
+            },
+            {
+              "name": "MPropertyFriendlyName",
+              "value": "While False"
             }
           ]
         }
@@ -1306,9 +1296,37 @@
         {
           "name": "MGetKV3ClassDefaults",
           "value": "<kv3>"
+        },
+        {
+          "name": "MCustomFGDMetadata",
+          "value": "{ standard_yielding_flow = true }"
         }
       ],
       "fields": [
+        {
+          "name": "m_BaseFlow_OnAfterCancel",
+          "type": {
+            "name": "CPulse_ResumePoint",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MPulseFGDSkipField"
+            }
+          ]
+        },
+        {
+          "name": "m_BaseFlow_WhileActive",
+          "type": {
+            "name": "CPulse_ResumePoint",
+            "category": 5
+          },
+          "metadata": [
+            {
+              "name": "MPulseFGDSkipField"
+            }
+          ]
+        }
       ]
     },
     "CPulseCell_Inflow_ObservableVariableListener": {
@@ -1398,6 +1416,40 @@
           "type": {
             "name": "PulseMethodCallMode_t",
             "category": 6
+          },
+          "metadata": [
+          ]
+        },
+        {
+          "name": "m_OnFinished",
+          "type": {
+            "name": "CPulse_ResumePoint",
+            "category": 5
+          },
+          "metadata": [
+          ]
+        }
+      ]
+    },
+    "CPulseCell_RaceCursors": {
+      "parent": "CPulseCell_BaseYieldingInflow",
+      "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
+      ],
+      "fields": [
+        {
+          "name": "m_Outflows",
+          "type": {
+            "name": "CUtlVector< CPulse_OutflowConnection >",
+            "category": 4,
+            "atomic": 2,
+            "inner": {
+              "name": "CPulse_OutflowConnection",
+              "category": 5
+            }
           },
           "metadata": [
           ]
@@ -1506,26 +1558,7 @@
           },
           "metadata": [
           ]
-        },
-        {
-          "name": "m_OnCanceled",
-          "type": {
-            "name": "CPulse_ResumePoint",
-            "category": 5
-          },
-          "metadata": [
-          ]
         }
-      ]
-    },
-    "CPulseCursorFuncs": {
-      "metadata": [
-        {
-          "name": "MPropertyDescription",
-          "value": "Library for interacting with pulse cursors."
-        }
-      ],
-      "fields": [
       ]
     },
     "CPulseCell_BaseLerp::CursorState_t": {
@@ -1752,15 +1785,6 @@
         },
         {
           "name": "m_OnFinished",
-          "type": {
-            "name": "CPulse_ResumePoint",
-            "category": 5
-          },
-          "metadata": [
-          ]
-        },
-        {
-          "name": "m_OnCanceled",
           "type": {
             "name": "CPulse_ResumePoint",
             "category": 5
@@ -2090,16 +2114,6 @@
           "metadata": [
           ]
         }
-      ]
-    },
-    "CPulseTestScriptLib": {
-      "metadata": [
-        {
-          "name": "MPropertyDescription",
-          "value": "Testing script helpers."
-        }
-      ],
-      "fields": [
       ]
     },
     "CPulseCell_WaitForCursorsWithTagBase": {

@@ -4,6 +4,10 @@
   "classes": {
     "CEntityIdentity": {
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
       ],
       "fields": [
         {
@@ -220,6 +224,10 @@
     "CScriptComponent": {
       "parent": "CEntityComponent",
       "metadata": [
+        {
+          "name": "MGetKV3ClassDefaults",
+          "value": "<kv3>"
+        }
       ],
       "fields": [
         {
