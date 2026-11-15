@@ -1,4 +1,6 @@
-﻿import "steammessages_unified_base.steamworkssdk.proto";
+﻿syntax = "proto2";
+
+import "steammessages_unified_base.steamworkssdk.proto";
 
 enum ESteamLearnDataType {
 	STEAMLEARN_DATATYPE_INVALID = 0;

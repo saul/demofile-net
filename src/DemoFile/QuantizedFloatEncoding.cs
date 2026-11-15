@@ -19,6 +19,11 @@ internal readonly record struct QuantizedFloatEncoding(
     int BitCount,
     QuantizedFloatFlags Flags)
 {
+    // The engine keeps the decode multiplier as a double (1.0 / (steps - 1)) and does the
+    // decode arithmetic in double precision (networksystem CQuantizedFloatEncoder).
+    // Derived purely from BitCount, so it doesn't affect record equality semantics.
+    private readonly double _decMulDouble = 1.0 / ((1L << BitCount) - 1);
+
     public static QuantizedFloatEncoding Create(FieldEncodingInfo fieldEncodingInfo)
     {
         // Set common properties
@@ -60,15 +65,25 @@ internal readonly record struct QuantizedFloatEncoding(
             low += offset;
         }
 
-        // Handle integer encoding flag
+        // Handle integer encoding flag.
+        // Mirrors the engine (networksystem FUN_1800e39c0, "QFE_ENCODE_INTEGERS_EXACTLY"):
+        // the range is the power of two *above* floor(log2((int)high - (int)low)), or 2 if that
+        // difference is <= 1. e.g. [0, 1] -> 2, [0, 64] -> 128, [0, 100] -> 128.
         if (flags.HasFlag(QuantizedFloatFlags.EncodeIntegers))
         {
-            var delta = Math.Max(1.0f, high - low);
+            var intDelta = (int)high - (int)low;
+            var deltaLog2 = 0;
+            if (intDelta > 1)
+            {
+                for (var remaining = (uint)intDelta >> 1; remaining != 0; remaining >>= 1)
+                    deltaLog2++;
+            }
 
-            var deltaLog2 = (int)Math.Ceiling(Math.Log2(delta));
-            var range = 1 << deltaLog2;
+            var range = 1 << (deltaLog2 + 1);
 
-            bitCount = Math.Max(bitCount, deltaLog2);
+            while ((1 << bitCount) < range)
+                bitCount++;
+
             steps = 1 << bitCount;
             offset = range / (float)steps;
             high = low + range - offset;
@@ -161,11 +176,8 @@ internal readonly record struct QuantizedFloatEncoding(
             flags = QuantizedFloatFlags.EncodeIntegers;
         }
 
-        if (flags.HasFlag(QuantizedFloatFlags.RoundDown)
-            && flags.HasFlag(QuantizedFloatFlags.RoundUp))
-        {
-            throw new Exception("RoundUp / RoundDown are mutually exclusive");
-        }
+        // RoundUp + RoundDown together is invalid, but the engine only warns and carries on
+        // (RoundDown takes precedence when adjusting the range, both flag bits are still read).
 
         return flags;
     }
@@ -206,6 +218,8 @@ internal readonly record struct QuantizedFloatEncoding(
         if (Flags.HasFlag(QuantizedFloatFlags.EncodeZero) && buffer.ReadOneBit())
             return 0.0f;
 
-        return Low + (High - Low) * buffer.ReadUBits(BitCount) * DecMul;
+        // Engine: (float)((double)u * decMul * (double)(high - low) + (double)low), clamped to high
+        var value = (float)(buffer.ReadUBits(BitCount) * _decMulDouble * (High - Low) + Low);
+        return value >= High ? High : value;
     }
 }

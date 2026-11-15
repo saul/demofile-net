@@ -1,11 +1,10 @@
 ﻿syntax = "proto2";
 
 import "networkbasetypes.proto";
+import "google/protobuf/descriptor.proto";
 
 enum EBaseUserMessages {
 	UM_AchievementEvent = 101;
-	UM_CloseCaption = 102;
-	UM_CloseCaptionDirect = 103;
 	UM_CurrentTimescale = 104;
 	UM_DesiredTimescale = 105;
 	UM_Fade = 106;
@@ -39,7 +38,6 @@ enum EBaseUserMessages {
 	UM_AnimGraphUpdate = 149;
 	UM_HapticsManagerPulse = 150;
 	UM_HapticsManagerEffect = 151;
-	UM_CommandQueueState = 152;
 	UM_UpdateCssClasses = 153;
 	UM_ServerFrameTime = 154;
 	UM_LagCompensationError = 155;
@@ -54,13 +52,16 @@ enum EBaseUserMessages {
 	UM_ExtraUserData = 164;
 	UM_NotifyResponseFound = 165;
 	UM_PlayResponseConditional = 166;
+	UM_UserSentBugBug = 167;
+	UM_UsageReport = 168;
+	UM_RemoteServerCommand = 169;
+	UM_RemoteServerResponse = 170;
 	UM_MAX_BASE = 200;
 }
 
 enum EBaseEntityMessages {
 	EM_PlayJingle = 136;
 	EM_ScreenOverlay = 137;
-	EM_RemoveAllDecals = 138;
 	EM_PropagateForce = 139;
 	EM_DoSpark = 140;
 	EM_FixAngle = 141;
@@ -111,6 +112,12 @@ enum PARTICLE_MESSAGE {
 	GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM = 33;
 	GAME_PARTICLE_MANAGER_EVENT_SET_VDATA = 34;
 	GAME_PARTICLE_MANAGER_EVENT_SET_MATERIAL_OVERRIDE = 35;
+	GAME_PARTICLE_MANAGER_EVENT_ADD_FAN = 36;
+	GAME_PARTICLE_MANAGER_EVENT_UPDATE_FAN = 37;
+	GAME_PARTICLE_MANAGER_EVENT_SET_CLUSTER_GROWTH = 38;
+	GAME_PARTICLE_MANAGER_EVENT_REMOVE_FAN = 39;
+	GAME_PARTICLE_MANAGER_EVENT_CREATE_SMOKE_GRID = 40;
+	GAME_PARTICLE_MANAGER_EVENT_SET_OVERRIDE_TEXTURE = 41;
 }
 
 enum EHapticPulseType {
@@ -121,20 +128,6 @@ enum EHapticPulseType {
 
 message CUserMessageAchievementEvent {
 	optional uint32 achievement = 1;
-}
-
-message CUserMessageCloseCaption {
-	optional fixed32 hash = 1;
-	optional float duration = 2;
-	optional bool from_player = 3;
-	optional int32 ent_index = 4 [default = -1];
-}
-
-message CUserMessageCloseCaptionDirect {
-	optional fixed32 hash = 1;
-	optional float duration = 2;
-	optional bool from_player = 3;
-	optional int32 ent_index = 4 [default = -1];
 }
 
 message CUserMessageCloseCaptionPlaceholder {
@@ -193,6 +186,7 @@ message CUserMessageSayText {
 	optional int32 playerindex = 1 [default = -1];
 	optional string text = 2;
 	optional bool chat = 3;
+	optional bool textallchat = 4;
 }
 
 message CUserMessageSayText2 {
@@ -203,6 +197,7 @@ message CUserMessageSayText2 {
 	optional string param2 = 5;
 	optional string param3 = 6;
 	optional string param4 = 7;
+	optional bool textallchat = 8;
 }
 
 message CUserMessageHudMsg {
@@ -301,11 +296,6 @@ message CEntityMessageScreenOverlay {
 	optional .CEntityMsg entity_msg = 2;
 }
 
-message CEntityMessageRemoveAllDecals {
-	optional bool remove_decals = 1;
-	optional .CEntityMsg entity_msg = 2;
-}
-
 message CEntityMessagePropagateForce {
 	optional .CMsgVector impulse = 1;
 	optional .CEntityMsg entity_msg = 2;
@@ -341,6 +331,8 @@ message CUserMessageCameraTransition {
 }
 
 message CUserMsg_ParticleManager {
+	option (maximum_size_bytes) = 4096;
+
 	message ReleaseParticleIndex {
 	}
 
@@ -462,11 +454,16 @@ message CUserMsg_ParticleManager {
 
 	message SetParticleText {
 		optional string text = 1;
+		optional bool localize = 2;
 	}
 
 	message SetTextureAttribute {
 		optional string attribute_name = 1;
 		optional string texture_name = 2;
+	}
+
+	message SetOverrideTexture {
+		optional string texture_name = 1;
 	}
 
 	message SetSceneObjectGenericFlag {
@@ -543,6 +540,10 @@ message CUserMsg_ParticleManager {
 	message DestroyPhysicsSim {
 	}
 
+	message CreateSmokeGrid {
+		optional string vdata_name = 1;
+	}
+
 	message SetVData {
 		optional string vdata_name = 1;
 	}
@@ -552,8 +553,47 @@ message CUserMsg_ParticleManager {
 		optional bool include_children = 2;
 	}
 
-	required .PARTICLE_MESSAGE type = 1 [default = GAME_PARTICLE_MANAGER_EVENT_CREATE];
-	required uint32 index = 2;
+	message AddFan {
+		optional bool active = 1;
+		optional .CMsgVector bounds_mins = 2;
+		optional .CMsgVector bounds_maxs = 3;
+		optional .CMsgVector fan_origin = 4;
+		optional .CMsgVector fan_origin_offset = 5;
+		optional .CMsgVector fan_direction = 6;
+		optional float force = 7;
+		optional string fan_force_curve = 8;
+		optional bool falloff = 9;
+		optional bool pull_towards_point = 10;
+		optional float curve_min_dist = 11;
+		optional float curve_max_dist = 12;
+		optional uint32 fan_type = 13;
+		optional float cone_start_radius = 14;
+		optional float cone_end_radius = 15;
+		optional float cone_length = 16;
+		optional uint32 entity_handle = 17 [default = 16777215];
+		optional string attachment_name = 18;
+	}
+
+	message UpdateFan {
+		optional bool active = 1;
+		optional .CMsgVector fan_origin = 2;
+		optional .CMsgVector fan_origin_offset = 3;
+		optional .CMsgVector fan_direction = 4;
+		optional float fan_ramp_ratio = 7;
+		optional .CMsgVector bounds_mins = 5;
+		optional .CMsgVector bounds_maxs = 6;
+	}
+
+	message RemoveFan {
+	}
+
+	message SetParticleClusterGrowth {
+		optional float duration = 1;
+		optional .CMsgVector origin = 2;
+	}
+
+	optional .PARTICLE_MESSAGE type = 1 [default = GAME_PARTICLE_MANAGER_EVENT_CREATE];
+	optional uint32 index = 2;
 	optional .CUserMsg_ParticleManager.ReleaseParticleIndex release_particle_index = 3;
 	optional .CUserMsg_ParticleManager.CreateParticle create_particle = 4;
 	optional .CUserMsg_ParticleManager.DestroyParticle destroy_particle = 5;
@@ -589,8 +629,14 @@ message CUserMsg_ParticleManager {
 	optional .CUserMsg_ParticleManager.DestroyPhysicsSim destroy_physics_sim = 36;
 	optional .CUserMsg_ParticleManager.SetVData set_vdata = 37;
 	optional .CUserMsg_ParticleManager.SetMaterialOverride set_material_override = 38;
+	optional .CUserMsg_ParticleManager.AddFan add_fan = 39;
+	optional .CUserMsg_ParticleManager.UpdateFan update_fan = 40;
+	optional .CUserMsg_ParticleManager.SetParticleClusterGrowth set_particle_cluster_growth = 41;
+	optional .CUserMsg_ParticleManager.RemoveFan remove_fan = 42;
+	optional .CUserMsg_ParticleManager.CreateSmokeGrid create_smoke_grid = 43;
+	optional .CUserMsg_ParticleManager.SetOverrideTexture set_override_texture = 44;
 
-	extensions 100 to 201;
+	extensions 100 to 200;
 }
 
 message CUserMsg_HudError {
@@ -811,4 +857,32 @@ message CUserMessage_PlayResponseConditional {
 	optional .CMsgVector ent_origin = 4;
 	optional float pre_delay = 5;
 	optional int32 mix_priority = 6;
+}
+
+message CUserMessage_UsageReport {
+	optional string usage = 1;
+}
+
+message CUserMessage_RemoteServerCommand {
+	enum ECommand {
+		ECommandChangeConVar = 1;
+	}
+
+	optional .CUserMessage_RemoteServerCommand.ECommand command = 1 [default = ECommandChangeConVar];
+	optional string convar = 2;
+	optional string value = 3;
+}
+
+message CUserMessageRemoteServerResponse {
+	enum ECommandResult {
+		EResultSuccess = 1;
+		EResultServerDoesntAllow = 2;
+		EResultClientNotAuthenticated = 3;
+		EResultClientNotAllowed = 4;
+		EResultCommandNotAllowed = 5;
+	}
+
+	optional .CUserMessageRemoteServerResponse.ECommandResult command_result = 1 [default = EResultSuccess];
+	optional string convar = 2;
+	optional string results = 3;
 }

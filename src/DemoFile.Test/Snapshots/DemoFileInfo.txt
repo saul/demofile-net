@@ -37,7 +37,9 @@
     "NoSteamServer": false,
     "IsTransition": false,
     "Previouslevel": "",
-    "Landmarkname": ""
+    "Landmarkname": "",
+    "QuantizedFloatEncoderAliases": [],
+    "MaxCoord": 0
   },
   "GameSessionManifest": "\u003C7073 bytes\u003E"
 }

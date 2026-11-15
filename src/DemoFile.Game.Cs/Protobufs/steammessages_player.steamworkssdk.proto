@@ -1,4 +1,6 @@
-﻿import "steammessages_unified_base.steamworkssdk.proto";
+﻿syntax = "proto2";
+
+import "steammessages_unified_base.steamworkssdk.proto";
 
 option cc_generic_services = true;
 

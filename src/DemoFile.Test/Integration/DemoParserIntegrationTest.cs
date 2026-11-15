@@ -58,7 +58,8 @@ public class DemoParserIntegrationTest
         new("v14090", GotvProtocol14090, new DemoTick(572)),
         new("v14132", GotvProtocol14132, new DemoTick(125)),
         new("v14155", GotvProtocol14155, new DemoTick(161)),
-        new("v14160", GotvProtocol14155, new DemoTick(161)),
+        new("v14160", GotvProtocol14160, new DemoTick(156)),
+        new("v14197", GotvProtocol14197, new DemoTick(354)),
     };
 
     [Test]
@@ -174,7 +175,7 @@ public class DemoParserIntegrationTest
             {
                 var sb = new StringBuilder();
                 demo.DemoEvents.DemoFileInfo += e => sb.Append(e.PlaybackTicks + " ");
-                demo.DemoEvents.DemoFileHeader += e => sb.Append(e.NetworkProtocol + " ");
+                demo.DemoEvents.DemoFileHeader += e => sb.Append(e.PatchVersion + " ");
                 demo.PacketEvents.SvcServerInfo += e => sb.Append(e.MapName + " ");
                 return sb;
             },

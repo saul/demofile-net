@@ -1,0 +1,17 @@
+﻿syntax = "proto2";
+
+// CS2 user messages that Valve has removed from cstrike15_usermessages.proto but which
+// still appear in demos recorded by older builds. Kept (verbatim from the previous protos)
+// so that old demos continue to decode. Hand-maintained: NOT synced from GameTracking-CS2.
+//
+// Removed message IDs (no longer present in ECstrike15UserMessages):
+//   CS_UM_WarmupHasEnded = 338
+//   CS_UM_GlowPropTurnOff = 360
+
+message CCSUsrMsg_WarmupHasEnded {
+	optional int32 dummy = 1;
+}
+
+message CCSUsrMsg_GlowPropTurnOff {
+	optional int32 entidx = 1 [default = -1];
+}

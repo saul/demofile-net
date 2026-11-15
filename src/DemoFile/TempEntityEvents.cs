@@ -10,7 +10,6 @@ public struct TempEntityEvents
     public Action<CMsgTEBeamEnts>? BeamEnts;
     public Action<CMsgTEBeamPoints>? BeamPoints;
     public Action<CMsgTEBeamRing>? BeamRing;
-    public Action<CMsgTEBSPDecal>? BSPDecal;
     public Action<CMsgTEBubbles>? Bubbles;
     public Action<CMsgTEBubbleTrail>? BubbleTrail;
     public Action<CMsgTEDecal>? Decal;
@@ -27,8 +26,6 @@ public struct TempEntityEvents
     public Action<CMsgTELargeFunnel>? LargeFunnel;
     public Action<CMsgTESparks>? Sparks;
     public Action<CMsgTEPhysicsProp>? PhysicsProp;
-    public Action<CMsgTEPlayerDecal>? PlayerDecal;
-    public Action<CMsgTEProjectedDecal>? ProjectedDecal;
     public Action<CMsgTESmoke>? Smoke;
 
     internal bool ParseNetMessage(int msgType, ReadOnlySpan<byte> buf)
@@ -53,9 +50,6 @@ public struct TempEntityEvents
                 return true;
             case (int) ETEProtobufIds.TeBeamRingId:
                 BeamRing?.Invoke(CMsgTEBeamRing.Parser.ParseFrom(buf));
-                return true;
-            case (int) ETEProtobufIds.TeBspdecalId:
-                BSPDecal?.Invoke(CMsgTEBSPDecal.Parser.ParseFrom(buf));
                 return true;
             case (int) ETEProtobufIds.TeBubblesId:
                 Bubbles?.Invoke(CMsgTEBubbles.Parser.ParseFrom(buf));
@@ -111,12 +105,6 @@ public struct TempEntityEvents
                 PhysicsProp?.Invoke(CMsgTEPhysicsProp.Parser.ParseFrom(buf));
                 return true;
             /*
-            case (int) ETEProtobufIds.TePlayerDecalId:
-                PlayerDecal?.Invoke(CMsgTEPlayerDecal.Parser.ParseFrom(buf));
-                return true;
-            case (int) ETEProtobufIds.TeProjectedDecalId:
-                ProjectedDecal?.Invoke(CMsgTEProjectedDecal.Parser.ParseFrom(buf));
-                return true;
             case (int) ETEProtobufIds.TeSmokeId:
                 Smoke?.Invoke(CMsgTESmoke.Parser.ParseFrom(buf));
                 return true;

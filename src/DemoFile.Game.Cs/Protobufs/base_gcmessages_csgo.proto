@@ -1,4 +1,6 @@
-﻿import "steammessages.proto";
+﻿syntax = "proto2";
+
+import "steammessages.proto";
 
 enum EGCBaseMsg {
 	k_EMsgGCSystemMessage = 4001;

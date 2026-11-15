@@ -41,6 +41,8 @@
     <Protobuf Include="Protobufs/gameevents.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/usermessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/te.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/valveextensions.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/source2_steam_stats.proto" ProtoRoot="Protobufs" />
   </ItemGroup>
 
 </Project>

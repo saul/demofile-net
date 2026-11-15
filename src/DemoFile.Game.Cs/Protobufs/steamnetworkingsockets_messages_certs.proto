@@ -1,4 +1,6 @@
-﻿option optimize_for = SPEED;
+﻿syntax = "proto2";
+
+option optimize_for = SPEED;
 option cc_generic_services = false;
 
 message CMsgSteamNetworkingIdentityLegacyBinary {

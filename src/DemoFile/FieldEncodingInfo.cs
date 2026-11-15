@@ -9,6 +9,23 @@ public readonly record struct FieldEncodingInfo(
     float? LowValue,
     float? HighValue)
 {
+    /// <summary>
+    /// Whether the server reported this field's enum type as signed (zig-zag encoded).
+    /// Only sent by newer servers (<c>ProtoFlattenedSerializerField_t.var_enum_info</c>); <c>null</c> otherwise.
+    /// </summary>
+    public bool? IsSignedEnum { get; init; }
+
+    /// <summary>
+    /// Coord/normal/angle bit widths for the serializers this field belongs to.
+    /// <c>null</c> means <see cref="DemoFile.CoordSizeParams.Legacy"/>.
+    /// </summary>
+    public CoordSizeParams? CoordSizeParams { get; init; }
+
+    /// <summary>
+    /// Coord/normal/angle bit widths to decode this field with.
+    /// </summary>
+    public CoordSizeParams CoordParams => CoordSizeParams ?? DemoFile.CoordSizeParams.Legacy;
+
     public override string ToString()
     {
         var builder = new StringBuilder();
@@ -23,6 +40,8 @@ public readonly record struct FieldEncodingInfo(
             AppendField(nameof(LowValue), LowValue.Value);
         if (HighValue.HasValue)
             AppendField(nameof(HighValue), HighValue.Value);
+        if (IsSignedEnum.HasValue)
+            AppendField(nameof(IsSignedEnum), IsSignedEnum.Value);
 
         return builder.Length == 0 ? "(none)" : builder.ToString();
 

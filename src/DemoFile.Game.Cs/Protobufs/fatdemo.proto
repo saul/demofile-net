@@ -1,4 +1,7 @@
-﻿import "networkbasetypes.proto";
+﻿syntax = "proto2";
+
+import "networkbasetypes.proto";
+import "google/protobuf/descriptor.proto";
 
 enum EHitGroup {
 	EHG_Generic = 0;
