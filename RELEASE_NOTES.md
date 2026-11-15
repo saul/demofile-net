@@ -1,3 +1,9 @@
+### 0.45.1 (2026-11-15)
+
+- Update to latest CS2 schema (v14197)
+- Fix parsing of CS2 demos recorded after the 2026-11-11 update, which failed with "Delta on non-existent entity" ([#175](https://github.com/saul/demofile-net/issues/175))
+- `CCSPlayerPawn.InputButtons` is marked obsolete: button state is no longer networked from v14197 onwards, but it's still populated for older demos
+
 ### 0.44.1 (2026-05-09)
 
 - Upgraded library to .NET 9
