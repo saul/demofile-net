@@ -69,6 +69,9 @@ jobs:
     if: github.ref == 'refs/heads/main'
     name: Deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the release tag
+      id-token: write # NuGet Trusted Publishing (OIDC)
 
     steps:
       - uses: actions/checkout@v3
@@ -101,9 +104,18 @@ jobs:
           git config --global user.email 'github-actions@users.noreply.github.com'
           git tag $TAG
           git push origin $TAG
+      # Exchanges the GitHub OIDC token for a short-lived NuGet API key (Trusted Publishing)
+      - name: NuGet login
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: saulren
       - name: Publish to NuGet
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
           dotnet pack -c Release
-          dotnet nuget push src/DemoFile/bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_APIKEY}}
-          dotnet nuget push src/DemoFile.Game.*/bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_APIKEY}}
+          dotnet nuget push src/DemoFile/bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key "$NUGET_API_KEY"
+          dotnet nuget push src/DemoFile.Game.*/bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key "$NUGET_API_KEY"
