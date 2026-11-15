@@ -483,6 +483,14 @@ public partial class AnimGraph2SerializedPoseRecipeSlot
 public readonly record struct AttachmentHandle(int Value)
 {
     public static AttachmentHandle Decode(ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadVarInt32());
+
+    public static FieldDecode.FieldDecoder<AttachmentHandle> CreateDecoder(FieldEncodingInfo fieldEncodingInfo) =>
+        fieldEncodingInfo.VarEncoder switch
+        {
+            null => Decode,
+            "fixed8" => (ref BitBuffer buffer) => new AttachmentHandle(buffer.ReadByte()),
+            _ => throw new Exception($"Unknown AttachmentHandle encoder: {fieldEncodingInfo.VarEncoder}")
+        };
 }
 
 // MGetKV3ClassDefaults "<kv3>"
@@ -1853,13 +1861,15 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
         }
         if (field.VarName == "m_primaryGraphId")
         {
+            var decoder = ResourceId.CreateDecoder(field.FieldEncodingInfo);
             return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.PrimaryGraphId = ResourceId.Decode(ref buffer);
+                @this.PrimaryGraphId = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_vecExternalGraphIds")
         {
+            var decoder = ResourceId.CreateDecoder(field.FieldEncodingInfo);
             return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -1872,12 +1882,13 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
                     Debug.Assert(path.Length == 2);
                     var index = path[1];
                     @this.ExternalGraphIds.EnsureSize(index + 1);
-                    @this.ExternalGraphIds[index] = ResourceId.Decode(ref buffer);
+                    @this.ExternalGraphIds[index] = decoder(ref buffer);
                 }
             };
         }
         if (field.VarName == "m_vecExternalClipIds")
         {
+            var decoder = ResourceId.CreateDecoder(field.FieldEncodingInfo);
             return (CBaseAnimGraphController @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
@@ -1890,7 +1901,7 @@ public partial class CBaseAnimGraphController : CSkeletonAnimationController
                     Debug.Assert(path.Length == 2);
                     var index = path[1];
                     @this.ExternalClipIds.EnsureSize(index + 1);
-                    @this.ExternalClipIds[index] = ResourceId.Decode(ref buffer);
+                    @this.ExternalClipIds[index] = decoder(ref buffer);
                 }
             };
         }
@@ -2490,9 +2501,9 @@ public partial class CBaseEntity : CEntityInstance<CsDemoParser>
 
     public BloodType BloodType { get; private set; }
 
-    public bool ClientSideRagdoll { get; private set; }
-
     public UInt32 Flags { get; private set; }
+
+    public bool ClientSideRagdoll { get; private set; }
 
     public CNetworkVelocityVector Velocity { get; private set; } = new();
 
@@ -2684,20 +2695,20 @@ public partial class CBaseEntity : CEntityInstance<CsDemoParser>
                 @this.BloodType = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_bClientSideRagdoll")
-        {
-            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
-            return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                @this.ClientSideRagdoll = decoder(ref buffer);
-            };
-        }
         if (field.VarName == "m_fFlags")
         {
             var decoder = FieldDecode.CreateDecoder_UInt32(field.FieldEncodingInfo);
             return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 @this.Flags = decoder(ref buffer);
+            };
+        }
+        if (field.VarName == "m_bClientSideRagdoll")
+        {
+            var decoder = FieldDecode.CreateDecoder_bool(field.FieldEncodingInfo);
+            return (CBaseEntity @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                @this.ClientSideRagdoll = decoder(ref buffer);
             };
         }
         if (field.SendNode.Length >= 1 && field.SendNode.Span[0] == "m_vecVelocity")
@@ -3320,7 +3331,11 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
 {
     internal CBasePlayerPawn(CsDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
 
-    public CPlayer_ObserverServices? ObserverServices { get; private set; }
+    public CPlayer_WeaponServices? WeaponServices { get; private set; }
+
+    public CPlayer_ItemServices? ItemServices { get; private set; }
+
+    public CPlayer_WaterServices? WaterServices { get; private set; }
 
     public CPlayer_UseServices? UseServices { get; private set; }
 
@@ -3343,29 +3358,63 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
 
     public UInt32 HideHUD { get; private set; }
 
-    public CPlayer_WeaponServices? WeaponServices { get; private set; }
-
-    public CPlayer_ItemServices? ItemServices { get; private set; }
-
-    public CPlayer_WaterServices? WaterServices { get; private set; }
+    public CPlayer_ObserverServices? ObserverServices { get; private set; }
 
     internal new static SendNodeDecoder<CBasePlayerPawn> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
     {
-        if (field.VarName == "m_pObserverServices")
+        if (field.VarName == "m_pWeaponServices")
         {
             Debug.Assert(field.FieldSerializerKey.HasValue);
             var serializerKey = field.FieldSerializerKey.Value;
-            var innerDecoder = CPlayer_ObserverServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
+            var innerDecoder = CPlayer_WeaponServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
             return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
                 {
                     var isSet = buffer.ReadOneBit();
-                    @this.ObserverServices = isSet ? factory() : null;
+                    @this.WeaponServices = isSet ? factory() : null;
                 }
                 else
                 {
-                    var inner = @this.ObserverServices ??= factory();
+                    var inner = @this.WeaponServices ??= factory();
+                    innerDecoder(inner, path[1..], ref buffer);
+                }
+            };
+        }
+        if (field.VarName == "m_pItemServices")
+        {
+            Debug.Assert(field.FieldSerializerKey.HasValue);
+            var serializerKey = field.FieldSerializerKey.Value;
+            var innerDecoder = CPlayer_ItemServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
+            return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var isSet = buffer.ReadOneBit();
+                    @this.ItemServices = isSet ? factory() : null;
+                }
+                else
+                {
+                    var inner = @this.ItemServices ??= factory();
+                    innerDecoder(inner, path[1..], ref buffer);
+                }
+            };
+        }
+        if (field.VarName == "m_pWaterServices")
+        {
+            Debug.Assert(field.FieldSerializerKey.HasValue);
+            var serializerKey = field.FieldSerializerKey.Value;
+            var innerDecoder = CPlayer_WaterServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
+            return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                if (path.Length == 1)
+                {
+                    var isSet = buffer.ReadOneBit();
+                    @this.WaterServices = isSet ? factory() : null;
+                }
+                else
+                {
+                    var inner = @this.WaterServices ??= factory();
                     innerDecoder(inner, path[1..], ref buffer);
                 }
             };
@@ -3487,59 +3536,21 @@ public partial class CBasePlayerPawn : CBaseCombatCharacter
                 @this.HideHUD = decoder(ref buffer);
             };
         }
-        if (field.VarName == "m_pWeaponServices")
+        if (field.VarName == "m_pObserverServices")
         {
             Debug.Assert(field.FieldSerializerKey.HasValue);
             var serializerKey = field.FieldSerializerKey.Value;
-            var innerDecoder = CPlayer_WeaponServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
+            var innerDecoder = CPlayer_ObserverServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
             return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (path.Length == 1)
                 {
                     var isSet = buffer.ReadOneBit();
-                    @this.WeaponServices = isSet ? factory() : null;
+                    @this.ObserverServices = isSet ? factory() : null;
                 }
                 else
                 {
-                    var inner = @this.WeaponServices ??= factory();
-                    innerDecoder(inner, path[1..], ref buffer);
-                }
-            };
-        }
-        if (field.VarName == "m_pItemServices")
-        {
-            Debug.Assert(field.FieldSerializerKey.HasValue);
-            var serializerKey = field.FieldSerializerKey.Value;
-            var innerDecoder = CPlayer_ItemServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
-            return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var isSet = buffer.ReadOneBit();
-                    @this.ItemServices = isSet ? factory() : null;
-                }
-                else
-                {
-                    var inner = @this.ItemServices ??= factory();
-                    innerDecoder(inner, path[1..], ref buffer);
-                }
-            };
-        }
-        if (field.VarName == "m_pWaterServices")
-        {
-            Debug.Assert(field.FieldSerializerKey.HasValue);
-            var serializerKey = field.FieldSerializerKey.Value;
-            var innerDecoder = CPlayer_WaterServices.CreateDowncastDecoder(serializerKey, decoderSet, out var factory);
-            return (CBasePlayerPawn @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-            {
-                if (path.Length == 1)
-                {
-                    var isSet = buffer.ReadOneBit();
-                    @this.WaterServices = isSet ? factory() : null;
-                }
-                else
-                {
-                    var inner = @this.WaterServices ??= factory();
+                    var inner = @this.ObserverServices ??= factory();
                     innerDecoder(inner, path[1..], ref buffer);
                 }
             };
@@ -4030,10 +4041,11 @@ public partial class CBeam : CBaseModelEntity
         if (field.VarName == "m_nAttachIndex")
         {
             var fixedArraySize = field.VarType.ArrayLength;
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CBeam @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
                 if (@this.AttachIndex.Length == 0) @this.AttachIndex = new AttachmentHandle[fixedArraySize];
-                @this.AttachIndex[path[1]] = AttachmentHandle.Decode(ref buffer);
+                @this.AttachIndex[path[1]] = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_fWidth")
@@ -22965,16 +22977,18 @@ public partial class CRopeKeyframe : CBaseModelEntity
         }
         if (field.VarName == "m_iStartAttachment")
         {
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.StartAttachment = AttachmentHandle.Decode(ref buffer);
+                @this.StartAttachment = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_iEndAttachment")
         {
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CRopeKeyframe @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.EndAttachment = AttachmentHandle.Decode(ref buffer);
+                @this.EndAttachment = decoder(ref buffer);
             };
         }
         return CBaseModelEntity.CreateFieldDecoder(field, decoderSet);
@@ -25008,9 +25022,10 @@ public partial class CSprite : CBaseModelEntity
         }
         if (field.VarName == "m_nAttachment")
         {
+            var decoder = AttachmentHandle.CreateDecoder(field.FieldEncodingInfo);
             return (CSprite @this, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
             {
-                @this.Attachment = AttachmentHandle.Decode(ref buffer);
+                @this.Attachment = decoder(ref buffer);
             };
         }
         if (field.VarName == "m_flSpriteFramerate")
@@ -28042,6 +28057,14 @@ public partial class PhysicsRagdollPose
 public readonly record struct ResourceId(int Value)
 {
     public static ResourceId Decode(ref BitBuffer buffer) => new ResourceId(buffer.ReadVarInt32());
+
+    public static FieldDecode.FieldDecoder<ResourceId> CreateDecoder(FieldEncodingInfo fieldEncodingInfo) =>
+        fieldEncodingInfo.VarEncoder switch
+        {
+            null => Decode,
+            "fixed8" => (ref BitBuffer buffer) => new ResourceId(buffer.ReadByte()),
+            _ => throw new Exception($"Unknown ResourceId encoder: {fieldEncodingInfo.VarEncoder}")
+        };
 }
 
 public partial class SellbackPurchaseEntry

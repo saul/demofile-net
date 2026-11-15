@@ -14,6 +14,32 @@ public static class FieldDecode
 
     public delegate TValue CustomDeserializer<TType, TValue>(TType @this, ref BitBuffer buffer);
 
+    /// <summary>
+    /// Read an unsigned integer, respecting the field's var encoder.
+    /// Varint by default; <c>fixed8</c> (8-bit fields since CS2 build 14197) and <c>fixed64</c> are raw bits.
+    /// </summary>
+    public static FieldDecoder<ulong> CreateDecoder_UnsignedInteger(FieldEncodingInfo fieldEncodingInfo) =>
+        fieldEncodingInfo.VarEncoder switch
+        {
+            null => (ref BitBuffer buffer) => buffer.ReadUVarInt64(),
+            "fixed8" => (ref BitBuffer buffer) => buffer.ReadByte(),
+            "fixed64" => (ref BitBuffer buffer) => DecodeFixed64(ref buffer),
+            _ => throw new Exception($"Unknown integer encoder: {fieldEncodingInfo.VarEncoder}")
+        };
+
+    /// <summary>
+    /// Read a signed integer, respecting the field's var encoder.
+    /// Zig-zag varint by default; <c>fixed8</c> is a raw byte reinterpreted as two's complement.
+    /// </summary>
+    public static FieldDecoder<long> CreateDecoder_SignedInteger(FieldEncodingInfo fieldEncodingInfo) =>
+        fieldEncodingInfo.VarEncoder switch
+        {
+            null => (ref BitBuffer buffer) => buffer.ReadVarInt64(),
+            "fixed8" => (ref BitBuffer buffer) => (sbyte)buffer.ReadByte(),
+            "fixed64" => (ref BitBuffer buffer) => (long)DecodeFixed64(ref buffer),
+            _ => throw new Exception($"Unknown integer encoder: {fieldEncodingInfo.VarEncoder}")
+        };
+
     public static FieldDecoder<T> CreateDecoder_enum<T>(
         FieldEncodingInfo fieldEncodingInfo)
         where T : struct
@@ -23,7 +49,8 @@ public static class FieldDecode
         // One example is TakeDamageFlags_t, which is supposedly
         // NET_DATA_TYPE_INT64. I haven't seen it set in CS2 demos
         // (even though it exists on CBaseEntity)
-        return (ref BitBuffer buffer) => (T)Enum.ToObject(typeof(T), buffer.ReadUVarInt64());
+        var decoder = CreateDecoder_UnsignedInteger(fieldEncodingInfo);
+        return (ref BitBuffer buffer) => (T)Enum.ToObject(typeof(T), decoder(ref buffer));
     }
 
     public static FieldDecoder<Vector> CreateDecoder_Vector(FieldEncodingInfo fieldEncodingInfo)
@@ -96,19 +123,8 @@ public static class FieldDecode
         return (ref BitBuffer buffer) => encoding.Decode(ref buffer);
     }
 
-    public static FieldDecoder<ulong> CreateDecoder_UInt64(FieldEncodingInfo fieldEncodingInfo)
-    {
-        if (fieldEncodingInfo.VarEncoder == "fixed64")
-        {
-            return (ref BitBuffer buffer) => DecodeFixed64(ref buffer);
-        }
-        else if (fieldEncodingInfo.VarEncoder != null)
-        {
-            throw new Exception($"Unknown uint64 encoder: {fieldEncodingInfo.VarEncoder}");
-        }
-
-        return (ref BitBuffer buffer) => buffer.ReadUVarInt64();
-    }
+    public static FieldDecoder<ulong> CreateDecoder_UInt64(FieldEncodingInfo fieldEncodingInfo) =>
+        CreateDecoder_UnsignedInteger(fieldEncodingInfo);
 
     public static FieldDecoder<CStrongHandle<T>> CreateDecoder_CStrongHandle<T>(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => new CStrongHandle<T>(buffer.ReadUVarInt64());
@@ -251,11 +267,17 @@ public static class FieldDecode
     public static FieldDecoder<bool> CreateDecoder_bool(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => buffer.ReadOneBit();
 
-    public static FieldDecoder<byte> CreateDecoder_byte(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => (byte)buffer.ReadUVarInt32();
+    public static FieldDecoder<byte> CreateDecoder_byte(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var decoder = CreateDecoder_UnsignedInteger(fieldEncodingInfo);
+        return (ref BitBuffer buffer) => (byte)decoder(ref buffer);
+    }
 
-    public static FieldDecoder<sbyte> CreateDecoder_sbyte(FieldEncodingInfo fieldEncodingInfo) =>
-        (ref BitBuffer buffer) => (sbyte)buffer.ReadVarInt32();
+    public static FieldDecoder<sbyte> CreateDecoder_sbyte(FieldEncodingInfo fieldEncodingInfo)
+    {
+        var decoder = CreateDecoder_SignedInteger(fieldEncodingInfo);
+        return (ref BitBuffer buffer) => (sbyte)decoder(ref buffer);
+    }
 
     public static FieldDecoder<int> CreateDecoder_Int32(FieldEncodingInfo fieldEncodingInfo) =>
         (ref BitBuffer buffer) => buffer.ReadVarInt32();

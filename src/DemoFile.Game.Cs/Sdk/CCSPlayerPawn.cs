@@ -28,9 +28,10 @@ public partial class CCSPlayerPawn
 
     public new CCSPlayerController? Controller => (CCSPlayerController?) base.Controller;
 
-    public InputButtons InputButtons => MovementServices is {} csMovement
-        ? (InputButtons) csMovement.ButtonDownMaskPrev
-        : default;
+    // m_nButtonDownMaskPrev stopped being networked in CS2 build 14197 (2026-11-11), and GOTV
+    // demos from that build onwards no longer carry user command payloads either.
+    [Obsolete("Button state is no longer networked as of CS2 build 14197 (2026-11-11). Always returns no buttons.")]
+    public InputButtons InputButtons => default;
 
     public CCSWeaponBase? ActiveWeapon => WeaponServices?.ActiveWeaponHandle.Get<CCSWeaponBase>(Demo);
 
