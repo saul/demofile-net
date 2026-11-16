@@ -1,4 +1,6 @@
-﻿import "steamnetworkingsockets_messages_certs.proto";
+﻿syntax = "proto2";
+
+import "steamnetworkingsockets_messages_certs.proto";
 import "steamnetworkingsockets_messages.proto";
 
 option optimize_for = SPEED;

@@ -1,13 +1,14 @@
 ﻿syntax = "proto2";
 
 import "networkbasetypes.proto";
+import "google/protobuf/descriptor.proto";
 
 enum EBaseGameEvents {
 	GE_VDebugGameSessionIDEvent = 200;
 	GE_PlaceDecalEvent = 201;
 	GE_ClearWorldDecalsEvent = 202;
 	GE_ClearEntityDecalsEvent = 203;
-	GE_ClearDecalsForSkeletonInstanceEvent = 204;
+	GE_ClearDecalsForEntityEvent = 204;
 	GE_Source1LegacyGameEventList = 205;
 	GE_Source1LegacyListenEvents = 206;
 	GE_Source1LegacyGameEvent = 207;
@@ -16,6 +17,8 @@ enum EBaseGameEvents {
 	GE_SosSetSoundEventParams = 210;
 	GE_SosSetLibraryStackFields = 211;
 	GE_SosStopSoundEventHash = 212;
+	GE_ClothStiffenAnimEvent = 213;
+	GE_ClothEffectAnimEvent = 214;
 }
 
 message CMsgVDebugGameSessionIDEvent {
@@ -27,17 +30,18 @@ message CMsgPlaceDecalEvent {
 	optional .CMsgVector position = 1;
 	optional .CMsgVector normal = 2;
 	optional .CMsgVector saxis = 3;
-	optional uint32 decalmaterialindex = 4;
+	optional int32 boneindex = 4;
+	optional int32 triangleindex = 13;
 	optional uint32 flags = 5;
 	optional fixed32 color = 6;
-	optional float width = 7;
-	optional float height = 8;
-	optional float depth = 9;
-	optional uint32 entityhandleindex = 10;
-	optional fixed32 skeletoninstancehash = 11;
-	optional int32 boneindex = 12;
-	optional bool translucenthit = 13;
-	optional bool is_adjacent = 14;
+	optional int32 random_seed = 7;
+	optional uint32 decal_group_name = 8;
+	optional float size_override = 9;
+	optional uint32 entityhandle = 10 [default = 16777215];
+	optional uint64 material_id = 11;
+	optional uint32 sequence_name = 12;
+	optional .CMsgVector position_objectspace = 14;
+	optional .CMsgVector normal_objectspace = 15;
 }
 
 message CMsgClearWorldDecalsEvent {
@@ -48,13 +52,14 @@ message CMsgClearEntityDecalsEvent {
 	optional uint32 flagstoclear = 1;
 }
 
-message CMsgClearDecalsForSkeletonInstanceEvent {
+message CMsgClearDecalsForEntityEvent {
 	optional uint32 flagstoclear = 1;
-	optional uint32 entityhandleindex = 2;
-	optional uint32 skeletoninstancehash = 3;
+	optional uint32 entityhandle = 2 [default = 16777215];
 }
 
 message CMsgSource1LegacyGameEventList {
+	option (maximum_size_bytes) = 32768;
+
 	message key_t {
 		optional int32 type = 1;
 		optional string name = 2;
@@ -119,4 +124,22 @@ message CMsgSosSetSoundEventParams {
 message CMsgSosSetLibraryStackFields {
 	optional fixed32 stack_hash = 1;
 	optional bytes packed_fields = 5;
+}
+
+message CMsgClothStiffenAnimEvent {
+	optional int32 source_entity_index = 1 [default = -1];
+	optional int32 vertex_set_hash = 2;
+	optional float intensity = 3;
+	optional float length = 4;
+	optional float speed_in = 5;
+	optional float speed_out = 6;
+}
+
+message CMsgClothEffectAnimEvent {
+	optional int32 source_entity_index = 1 [default = -1];
+	optional int32 effect_name_hash = 2;
+	optional int32 operation = 3;
+	optional int32 flags = 4;
+	optional string tags = 5;
+	optional .CMsgVector pte = 6;
 }

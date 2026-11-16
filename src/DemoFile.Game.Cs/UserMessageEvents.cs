@@ -172,7 +172,7 @@ public struct UserMessageEvents
             case (int)ECstrike15UserMessages.CsUmPlayerStatsUpdate:
                 PlayerStatsUpdate?.Invoke(CCSUsrMsg_PlayerStatsUpdate.Parser.ParseFrom(buf));
                 return true;
-            case (int)ECstrike15UserMessages.CsUmWarmupHasEnded:
+            case 338: // CS_UM_WarmupHasEnded (removed upstream; older demos only)
                 WarmupHasEnded?.Invoke(CCSUsrMsg_WarmupHasEnded.Parser.ParseFrom(buf));
                 return true;
             case (int)ECstrike15UserMessages.CsUmClientInfo:
@@ -229,7 +229,7 @@ public struct UserMessageEvents
             case (int)ECstrike15UserMessages.CsUmItemDrop:
                 ItemDrop?.Invoke(CCSUsrMsg_ItemDrop.Parser.ParseFrom(buf));
                 return true;
-            case (int)ECstrike15UserMessages.CsUmGlowPropTurnOff:
+            case 360: // CS_UM_GlowPropTurnOff (removed upstream; older demos only)
                 GlowPropTurnOff?.Invoke(CCSUsrMsg_GlowPropTurnOff.Parser.ParseFrom(buf));
                 return true;
             case (int)ECstrike15UserMessages.CsUmSendPlayerItemDrops:

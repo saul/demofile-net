@@ -47,6 +47,8 @@
     <Protobuf Include="Protobufs/steammessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/engine_gcmessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/gcsdk_gcmessages.proto" ProtoRoot="Protobufs" />
+    <!-- Hand-maintained: messages removed upstream that still appear in older demos -->
+    <Protobuf Include="Protobufs/cs_legacy.proto" ProtoRoot="Protobufs" />
   </ItemGroup>
 
 </Project>

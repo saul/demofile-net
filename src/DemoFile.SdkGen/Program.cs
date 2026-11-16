@@ -357,7 +357,8 @@ internal static class Program
 
         demo.DemoEvents.DemoFileHeader += msg =>
         {
-            protocolVersion = msg.NetworkProtocol;
+            // Field 2 was renamed network_protocol -> patch_version upstream
+            protocolVersion = msg.PatchVersion;
         };
 
         demo.DemoEvents.DemoClassInfo += msg =>

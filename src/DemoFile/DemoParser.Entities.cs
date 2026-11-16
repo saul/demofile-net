@@ -1,4 +1,5 @@
 ﻿using System.Buffers;
+using System.Collections;
 using System.Collections.Frozen;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -31,6 +32,14 @@ public partial class DemoParser<TGameParser>
         new EntityBaseline[MaxEdicts],
         new EntityBaseline[MaxEdicts],
     };
+
+    // Entities that still exist on the client but aren't currently being transmitted (e.g. outside the PVS).
+    // Maintained from CSVCMsg_PacketEntities.non_transmitted_entities (CS2 ~14030+), reset on full updates.
+    private readonly BitArray _nonTransmittedEntities = new(MaxEdicts);
+
+    // Indices of entities that have left the PVS without being deleted (may be stale; checked lazily).
+    private readonly HashSet<int> _dormantEntityIndices = new();
+    private readonly List<int> _dormantEntityScratch = new();
 
     internal FrozenDictionary<SerializerKey, Serializer> Serializers = FrozenDictionary<SerializerKey, Serializer>.Empty;
 
@@ -97,8 +106,12 @@ public partial class DemoParser<TGameParser>
 
         var msg = CSVCMsg_FlattenedSerializer.Parser.ParseFrom(byteBuffer.ReadBytes((int)size));
 
+        // Coord/normal/angle bit widths are sent by the server since CS2 patch 14197.
+        // Older demos fall back to the legacy values, as the engine does.
+        var coordSizeParams = CoordSizeParams.FromProto(msg.CoordSizeParams);
+
         var fields = msg.Fields
-            .Select(field => SerializableField.FromProto(field, msg.Symbols))
+            .Select(field => SerializableField.FromProto(field, msg.Symbols, coordSizeParams))
             .ToArray();
 
         Serializers = msg.Serializers
@@ -164,6 +177,10 @@ public partial class DemoParser<TGameParser>
         {
             ((Span<EntityBaseline>)_entityBaselines[0]).Clear();
             ((Span<EntityBaseline>)_entityBaselines[1]).Clear();
+
+            // The engine starts a fresh non-transmitted set when there's no frame to delta from
+            _nonTransmittedEntities.SetAll(false);
+            _dormantEntityIndices.Clear();
         }
 
         var entityBitBuffer = new BitBuffer(msg.EntityData.Span);
@@ -172,10 +189,11 @@ public partial class DemoParser<TGameParser>
         // Fire create/post update events after all entities have been read.
         // Otherwise things like handle props may refer to entities that
         // haven't been created yet.
-        var createEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(msg.UpdatedEntries);
+        var maxEntityEvents = msg.UpdatedEntries + (msg.OutofpvsEntityUpdates?.Count ?? 0);
+        var createEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(maxEntityEvents);
         var createEventIdx = 0;
 
-        var postUpdateEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(msg.UpdatedEntries);
+        var postUpdateEvents = ArrayPool<CEntityInstance<TGameParser>>.Shared.Rent(maxEntityEvents);
         var postEventIdx = 0;
 
         for (var i = 0; i < msg.UpdatedEntries; ++i)
@@ -213,120 +231,24 @@ public partial class DemoParser<TGameParser>
                         entity.FireDeleteEvent();
                         entitiesToDelete[entityDeleteIdx++] = entity;
                     }
+                    else
+                    {
+                        // Left the PVS but still exists. Newer demos delete it at the end of this
+                        // packet unless it's listed as non-transmitted (see DeleteUnreferencedDormantEntities).
+                        _dormantEntityIndices.Add(entityIndex);
+                    }
                 }
             }
             else if (updateType == 0b10)
             {
                 // FHDR_ENTERPVS
-
-                Debug.Assert(!alternateBaselines.ContainsKey(entityIndex));
-
-                var classId = entityBitBuffer.ReadUBits(_serverClassBits);
-                var serialNum = entityBitBuffer.ReadUBits(NumEHandleSerialNumberBits);
-
-                // maybe spawngroup handle?
-                var _unknown = entityBitBuffer.ReadUVarInt32();
-
-                var serverClass = _serverClasses[classId];
-                Debug.Assert(serverClass != null, $"Missing server class {classId}");
-
-                var context = new EntityContext((TGameParser) this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
-                var entity = serverClass.EntityFactory(context);
-
-                EntityBaseline existingEntityBaseline = default;
-                var instanceBaselineBytes = ReadOnlyMemory<byte>.Empty;
-
-                // Entity baselines are preferred over instance baselines
-                if (msg.LegacyIsDelta
-                    && _entityBaselines[msg.Baseline][entityIndex] is { ServerClassId: var baselineClassId } entityBaseline
-                    && baselineClassId == classId
-                    && classId > 0)
-                {
-                    Debug.Assert(entityBaseline.Baselines != null);
-
-                    foreach (var baseline in entityBaseline.Baselines)
-                    {
-                        var baselineBuf = new BitBuffer(baseline.Span);
-                        ReadNewEntity(ref baselineBuf, entity);
-                    }
-
-                    existingEntityBaseline = entityBaseline;
-                }
-
-                // Grab the server class baseline and populate the entity with it
-                else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
-                {
-                    instanceBaselineBytes = _instanceBaselines[baselineIndex].Value;
-                    var baselineBuf = new BitBuffer(instanceBaselineBytes.Span);
-                    ReadNewEntity(ref baselineBuf, entity);
-                }
-
-                if (msg.UpdateBaseline)
-                {
-                    // Take a copy of just the bits that represent the delta on this entity
-                    var cloned = entityBitBuffer.Clone();
-                    var prevBitsRead = entityBitBuffer.TellBits;
-                    ReadNewEntity(ref entityBitBuffer, entity);
-                    var bitsRead = entityBitBuffer.TellBits - prevBitsRead;
-
-                    var newBaseline = new byte[(bitsRead + 7) / 8];
-                    cloned.ReadBitsAsBytes(newBaseline, bitsRead);
-
-                    Debug.Assert(existingEntityBaseline != default || !instanceBaselineBytes.IsEmpty);
-
-                    // Over the course of a sample 35 min POV demo, the histogram of `Baselines.Count` is:
-                    // [2] = {int} 7365
-                    // [3] = {int} 2177
-                    // [4] = {int} 1053
-                    // [5] = {int} 853
-                    // [6] = {int} 394
-                    // [7] = {int} 262
-                    // [8] = {int} 37
-                    // [9] = {int} 13
-                    // [10] = {int} 15
-                    // [11] = {int} 5
-                    // [12] = {int} 8
-
-                    _entityBaselines[otherBaselineIdx][entityIndex] = instanceBaselineBytes.IsEmpty
-                        ? existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines.Add(newBaseline)}
-                        : new EntityBaseline(classId, ImmutableList.Create(instanceBaselineBytes, newBaseline));
-                }
-                else
-                {
-                    ReadNewEntity(ref entityBitBuffer, entity);
-                }
-
-                entity.IsActive = true;
-
-                // If this entity already exists with the same serial number,
-                // treat it as an entity update. This allows AddChangeCallback
-                // to track changes on snapshot.
-                var previousEnt = _entities[entityIndex];
-                if (previousEnt?.SerialNumber == entity.SerialNumber
-                    && previousEnt.ServerClass.ServerClassId == entity.ServerClass.ServerClassId)
-                {
-                    previousEnt.IsActive = false;
-                    previousEnt.FirePreUpdateEvent();
-                    postUpdateEvents[postEventIdx++] = entity;
-                }
-                else
-                {
-                    // Delete any existing entity - the slot is being reused, but it's a new entity
-                    if (previousEnt != null)
-                    {
-                        previousEnt.IsActive = false;
-                        previousEnt.FireDeleteEvent();
-                        entitiesToDelete[entityDeleteIdx++] = previousEnt;
-                    }
-
-                    createEvents[createEventIdx++] = entity;
-                }
-
-                _entities[entityIndex] = entity;
+                ReadEnterPvsEntity(ref entityBitBuffer, entityIndex, outOfPvs: false);
             }
             else
             {
-                if (msg.HasPvsVisBits > 0)
+                // Field 16 was renamed has_pvs_vis_bits -> has_pvs_vis_bits_deprecated upstream.
+                // Still set by older demos, so keep honouring it.
+                if (msg.HasPvsVisBitsDeprecated > 0)
                 {
                     var deltaCmd = entityBitBuffer.ReadUBits(2);
                     if ((deltaCmd & 0x1) == 1)
@@ -364,6 +286,32 @@ public partial class DemoParser<TGameParser>
         }
 
         DeleteEntityFullUpdateRange(_entities.AsSpan(entityIndex + 1));
+
+        // Out-of-PVS entity updates (POV demos from servers with sv_outofpvsentityupdates, see ENGINE_PARITY.md §7.3):
+        // a second stream of creates/deltas for entities outside the recipient's PVS, read after the main records.
+        if (msg.OutofpvsEntityUpdates is { } outOfPvsUpdates)
+        {
+            var outOfPvsBuffer = new BitBuffer(outOfPvsUpdates.Data.Span);
+            ReadOutOfPvsEntities(ref outOfPvsBuffer, outOfPvsUpdates.Count);
+
+            // The engine re-points its entity reader at this stream, so anything read afterwards
+            // (the trailing deletions list below) comes from the end of the out-of-PVS data.
+            entityBitBuffer = outOfPvsBuffer;
+        }
+
+        // Deletions that aren't part of the entity records (engine2 ReadPacketEntities, see ENGINE_PARITY.md §7.2):
+        //  - Newer demos (CS2 ~14030+) send non_transmitted_entities: entities that still exist on the client but
+        //    aren't being transmitted. Any entity that has left the PVS and isn't in that set is deleted.
+        //  - Older demos instead append a list of deleted entity indices to the entity data of delta packets.
+        if (msg.NonTransmittedEntities is { } nonTransmitted)
+        {
+            ReadNonTransmittedEntities(nonTransmitted);
+            DeleteUnreferencedDormantEntities();
+        }
+        else if (msg.LegacyIsDelta)
+        {
+            ReadTrailingEntityDeletions(ref entityBitBuffer);
+        }
 
         for (var idx = 0; idx < entityDeleteIdx; ++idx)
         {
@@ -409,6 +357,245 @@ public partial class DemoParser<TGameParser>
                 entity.IsActive = false;
                 entity.FireDeleteEvent();
                 entitiesToDelete[entityDeleteIdx++] = entity;
+            }
+        }
+
+        // FHDR_ENTERPVS / out-of-PVS create (both are CopyNewEntity in the engine): class id, serial,
+        // a varint (opaque; passed to entity creation), then the fields as a delta from a baseline.
+        void ReadEnterPvsEntity(ref BitBuffer buffer, int entityIndex, bool outOfPvs)
+        {
+            Debug.Assert(!alternateBaselines.ContainsKey(entityIndex));
+
+            var classId = buffer.ReadUBits(_serverClassBits);
+            var serialNum = buffer.ReadUBits(NumEHandleSerialNumberBits);
+
+            // maybe spawngroup handle?
+            var _unknown = buffer.ReadUVarInt32();
+
+            var serverClass = _serverClasses[classId];
+            Debug.Assert(serverClass != null, $"Missing server class {classId}");
+
+            var context = new EntityContext((TGameParser) this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
+            var entity = serverClass.EntityFactory(context);
+
+            EntityBaseline existingEntityBaseline = default;
+            var instanceBaselineBytes = ReadOnlyMemory<byte>.Empty;
+
+            // Entity baselines are preferred over instance baselines
+            if (msg.LegacyIsDelta
+                && _entityBaselines[msg.Baseline][entityIndex] is { ServerClassId: var baselineClassId } entityBaseline
+                && baselineClassId == classId
+                && classId > 0)
+            {
+                Debug.Assert(entityBaseline.Baselines != null);
+
+                foreach (var baseline in entityBaseline.Baselines)
+                {
+                    var baselineBuf = new BitBuffer(baseline.Span);
+                    ReadNewEntity(ref baselineBuf, entity);
+                }
+
+                existingEntityBaseline = entityBaseline;
+            }
+
+            // Grab the server class baseline and populate the entity with it
+            else if (_instanceBaselineLookup.TryGetValue(new BaselineKey(classId, 0), out var baselineIndex))
+            {
+                instanceBaselineBytes = _instanceBaselines[baselineIndex].Value;
+                var baselineBuf = new BitBuffer(instanceBaselineBytes.Span);
+                ReadNewEntity(ref baselineBuf, entity);
+            }
+
+            if (msg.UpdateBaseline)
+            {
+                // Take a copy of just the bits that represent the delta on this entity
+                var cloned = buffer.Clone();
+                var prevBitsRead = buffer.TellBits;
+                ReadNewEntity(ref buffer, entity);
+                var bitsRead = buffer.TellBits - prevBitsRead;
+
+                var newBaseline = new byte[(bitsRead + 7) / 8];
+                cloned.ReadBitsAsBytes(newBaseline, bitsRead);
+
+                Debug.Assert(existingEntityBaseline != default || !instanceBaselineBytes.IsEmpty);
+
+                // Over the course of a sample 35 min POV demo, the histogram of `Baselines.Count` is:
+                // [2] = {int} 7365
+                // [3] = {int} 2177
+                // [4] = {int} 1053
+                // [5] = {int} 853
+                // [6] = {int} 394
+                // [7] = {int} 262
+                // [8] = {int} 37
+                // [9] = {int} 13
+                // [10] = {int} 15
+                // [11] = {int} 5
+                // [12] = {int} 8
+
+                _entityBaselines[otherBaselineIdx][entityIndex] = instanceBaselineBytes.IsEmpty
+                    ? existingEntityBaseline with {Baselines = existingEntityBaseline.Baselines.Add(newBaseline)}
+                    : new EntityBaseline(classId, ImmutableList.Create(instanceBaselineBytes, newBaseline));
+            }
+            else
+            {
+                ReadNewEntity(ref buffer, entity);
+            }
+
+            // Entities created via outofpvs_entity_updates exist but aren't in the PVS
+            entity.IsActive = !outOfPvs;
+
+            // If this entity already exists with the same serial number,
+            // treat it as an entity update. This allows AddChangeCallback
+            // to track changes on snapshot.
+            var previousEnt = _entities[entityIndex];
+            if (previousEnt?.SerialNumber == entity.SerialNumber
+                && previousEnt.ServerClass.ServerClassId == entity.ServerClass.ServerClassId)
+            {
+                previousEnt.IsActive = false;
+                previousEnt.FirePreUpdateEvent();
+                postUpdateEvents[postEventIdx++] = entity;
+            }
+            else
+            {
+                // Delete any existing entity - the slot is being reused, but it's a new entity
+                if (previousEnt != null)
+                {
+                    previousEnt.IsActive = false;
+                    previousEnt.FireDeleteEvent();
+                    entitiesToDelete[entityDeleteIdx++] = previousEnt;
+                }
+
+                createEvents[createEventIdx++] = entity;
+            }
+
+            _entities[entityIndex] = entity;
+
+            if (outOfPvs)
+                _dormantEntityIndices.Add(entityIndex);
+        }
+
+        // Each record: `UBitVar delta` (index = previous + 1 + delta, starting at -1), then 1 bit:
+        // 1 = create (as FHDR_ENTERPVS), 0 = delta on an existing entity. Either way the entity is outside the
+        // PVS: it isn't part of the frame, so it only survives the non-transmitted reconcile if it's listed there.
+        void ReadOutOfPvsEntities(ref BitBuffer buffer, int count)
+        {
+            var index = -1;
+            for (var j = 0; j < count; ++j)
+            {
+                index += 1 + (int)buffer.ReadUBitVar();
+                if (index >= MaxEdicts)
+                {
+                    Debug.Fail($"Invalid out-of-PVS entity index {index}");
+                    return;
+                }
+
+                if (buffer.ReadOneBit())
+                {
+                    ReadEnterPvsEntity(ref buffer, index, outOfPvs: true);
+                    continue;
+                }
+
+                var entity = _entities[index] ?? throw new Exception($"Out-of-PVS delta on non-existent entity {index}");
+                entity.IsActive = false;
+                entity.FirePreUpdateEvent();
+
+                if (alternateBaselines.TryGetValue(index, out var alternateBaseline))
+                {
+                    var (savedBaseline, baselineBytes) = _instanceBaselines[alternateBaseline];
+                    Debug.Assert(savedBaseline.ServerClassId == entity.ServerClass.ServerClassId);
+
+                    var baselineBuf = new BitBuffer(baselineBytes.Span);
+                    ReadNewEntity(ref baselineBuf, entity);
+                }
+
+                ReadNewEntity(ref buffer, entity);
+
+                postUpdateEvents[postEventIdx++] = entity;
+                _dormantEntityIndices.Add(index);
+            }
+        }
+
+        void DeleteEntityAtIndex(int index)
+        {
+            if (_entities[index] is not { } entity)
+                return;
+
+            // Already being deleted by this packet (e.g. FHDR_LEAVEPVS | FHDR_DELETE)
+            for (var idx = 0; idx < entityDeleteIdx; ++idx)
+            {
+                if (ReferenceEquals(entitiesToDelete[idx], entity))
+                    return;
+            }
+
+            entity.IsActive = false;
+            entity.FireDeleteEvent();
+            entitiesToDelete[entityDeleteIdx++] = entity;
+            _dormantEntityIndices.Remove(index);
+        }
+
+        // Older demos: `UBitVar count`, then `count` x `UBitVar delta` (index starts at -1, each delta >= 1),
+        // written by the server for entities deleted since the delta frame that weren't reported with FHDR_DELETE.
+        void ReadTrailingEntityDeletions(ref BitBuffer buffer)
+        {
+            var count = buffer.ReadUBitVar();
+            var index = -1;
+            for (var j = 0; j < count; ++j)
+            {
+                var delta = (int)buffer.ReadUBitVar();
+                if (delta == 0 || index + delta >= MaxEdicts)
+                {
+                    Debug.Fail($"Invalid entity deletion delta {delta} after index {index}");
+                    return;
+                }
+
+                index += delta;
+                DeleteEntityAtIndex(index);
+            }
+        }
+
+        // Each record: `UBitVar delta` (index = previous + 1 + delta, starting at -1), then 1 bit:
+        // 1 = add to the non-transmitted set, 0 = remove from it. The set persists between delta packets.
+        void ReadNonTransmittedEntities(CSVCMsg_PacketEntities.Types.non_transmitted_entities_t nonTransmitted)
+        {
+            var buffer = new BitBuffer(nonTransmitted.Data.Span);
+            var index = -1;
+            for (var j = 0; j < nonTransmitted.HeaderCount; ++j)
+            {
+                index += 1 + (int)buffer.ReadUBitVar();
+                if (index >= MaxEdicts)
+                {
+                    Debug.Fail($"Invalid non-transmitted entity index {index}");
+                    return;
+                }
+
+                _nonTransmittedEntities[index] = buffer.ReadOneBit();
+            }
+        }
+
+        // The engine deletes every client entity that is neither in this frame, being deleted, nor non-transmitted
+        // ("CL:  deleting entity %d %s due to reconcile issue!"). For us, entities not in the frame are the dormant
+        // ones (left the PVS without being deleted).
+        void DeleteUnreferencedDormantEntities()
+        {
+            if (_dormantEntityIndices.Count == 0)
+                return;
+
+            _dormantEntityScratch.Clear();
+            _dormantEntityScratch.AddRange(_dormantEntityIndices);
+
+            foreach (var index in _dormantEntityScratch)
+            {
+                if (_entities[index] is not { IsActive: false })
+                {
+                    // Stale: re-entered the PVS, or the slot was emptied/reused
+                    _dormantEntityIndices.Remove(index);
+                    continue;
+                }
+
+                if (!_nonTransmittedEntities[index])
+                {
+                    DeleteEntityAtIndex(index);
+                }
             }
         }
     }

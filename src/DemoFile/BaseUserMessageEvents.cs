@@ -5,8 +5,6 @@ namespace DemoFile;
 public struct BaseUserMessageEvents
 {
     public Action<CUserMessageAchievementEvent>? UserMessageAchievementEvent;
-    public Action<CUserMessageCloseCaption>? UserMessageCloseCaption;
-    public Action<CUserMessageCloseCaptionDirect>? UserMessageCloseCaptionDirect;
     public Action<CUserMessageCurrentTimescale>? UserMessageCurrentTimescale;
     public Action<CUserMessageDesiredTimescale>? UserMessageDesiredTimescale;
     public Action<CUserMessageFade>? UserMessageFade;
@@ -60,12 +58,6 @@ public struct BaseUserMessageEvents
             /*
             case (int)EBaseUserMessages.UmAchievementEvent:
                 UserMessageAchievementEvent?.Invoke(CUserMessageAchievementEvent.Parser.ParseFrom(buf));
-                return true;
-            case (int)EBaseUserMessages.UmCloseCaption:
-                UserMessageCloseCaption?.Invoke(CUserMessageCloseCaption.Parser.ParseFrom(buf));
-                return true;
-            case (int)EBaseUserMessages.UmCloseCaptionDirect:
-                UserMessageCloseCaptionDirect?.Invoke(CUserMessageCloseCaptionDirect.Parser.ParseFrom(buf));
                 return true;
             case (int)EBaseUserMessages.UmCurrentTimescale:
                 UserMessageCurrentTimescale?.Invoke(CUserMessageCurrentTimescale.Parser.ParseFrom(buf));

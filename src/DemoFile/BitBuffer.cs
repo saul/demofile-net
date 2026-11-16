@@ -61,9 +61,7 @@ public ref struct BitBuffer
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private void FetchNext()
     {
-        var len = _pointer.Length;
-        _bitsAvail = len >= 8 ? 64 : len * 8;
-        UpdateBuffer();
+        _bitsAvail = UpdateBuffer();
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,10 +83,13 @@ public ref struct BitBuffer
             var ret = (uint)_buf;
             numBits -= _bitsAvail;
 
-            UpdateBuffer();
+            // Near the end of the buffer fewer than 64 bits are loaded, so track how many
+            // actually were. (Previously this assumed 64, which made TellBits/RemainingBytes
+            // wrong in the last 8 bytes of every buffer.) Reading past the end yields zeros.
+            var bitsLoaded = UpdateBuffer();
 
             ret |= (uint)(_buf & MaskLow(numBits)) << _bitsAvail;
-            _bitsAvail = 64 - numBits;
+            _bitsAvail = Math.Max(bitsLoaded - numBits, 0);
             _buf >>= numBits;
 
             return ret;
@@ -98,8 +99,9 @@ public ref struct BitBuffer
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public byte ReadByte() => (byte) ReadUBits(8);
 
+    /// <returns>The number of bits loaded into <see cref="_buf"/>.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void UpdateBuffer()
+    private int UpdateBuffer()
     {
         var len = _pointer.Length;
 
@@ -107,6 +109,7 @@ public ref struct BitBuffer
         {
             _buf = MemoryMarshal.Read<ulong>(_pointer);
             _pointer = _pointer[8..];
+            return 64;
         }
         else if (len > 0)
         {
@@ -117,11 +120,13 @@ public ref struct BitBuffer
                 _buf |= (ulong)_pointer[i] << (i * 8);
             }
             _pointer = default;
+            return len * 8;
         }
         else
         {
             _buf = 0;
             _pointer = default;
+            return 0;
         }
     }
 
@@ -245,18 +250,29 @@ public ref struct BitBuffer
         return (long)(result >> 1) ^ -(long)(result & 1);
     }
 
+    /// <summary>
+    /// Read a bit-packed angle in degrees.
+    /// Engine (networksystem <c>ReadBitAngle</c>): <c>(float)(value * (360.0 / (1 &lt;&lt; bits)))</c>, where the
+    /// shift is a 32-bit shift (so 32 bits wraps to a divisor of 1) and the value is converted as a signed int.
+    /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public float ReadAngle(int bits)
     {
-        var max = (1UL << bits) - 1;
-        return 360.0f * ReadUBits(bits) / max;
+        var value = (int)ReadUBits(bits);
+        var shift = (float)(1u << bits);
+        return (float)(value * (360.0 / shift));
     }
 
-    public float ReadCoord()
-    {
-        const int FRACT_BITS = 5;
-        const float FRACT_SCALE = 1.0f / (1 << FRACT_BITS);
+    /// <summary>
+    /// Read a coord with the legacy bit widths (14 integer bits, 5 fractional bits).
+    /// </summary>
+    public float ReadCoord() => ReadCoord(14, 5);
 
+    /// <summary>
+    /// Read a coord (Source <c>ReadBitCoord</c>): has-int bit, has-fraction bit, then sign, <c>int + 1</c>, fraction.
+    /// </summary>
+    public float ReadCoord(int integerBits, int fractionalBits)
+    {
         var hasInt = ReadOneBit();
         var hasFract = ReadOneBit();
 
@@ -264,21 +280,47 @@ public ref struct BitBuffer
         {
             var signBit = ReadOneBit();
 
-            var intval = hasInt ? ReadUBits(14) + 1.0f : 0.0f;
-            var fractval = hasFract ? ReadUBits(FRACT_BITS) : 0.0f;
+            var intval = hasInt ? ReadUBits(integerBits) + 1.0f : 0.0f;
+            var fractval = hasFract ? ReadUBits(fractionalBits) : 0.0f;
 
-            var value = intval + fractval * FRACT_SCALE;
+            var value = intval + fractval * (1.0f / (1 << fractionalBits));
             return signBit ? -value : value;
         }
 
         return 0.0f;
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public float ReadCoordPrecise()
+    /// <summary>
+    /// Read a <c>coord_integral</c> component (CS2 patch 14197+): 2 bits, where bit 1 means a value is present
+    /// and bit 0 selects <paramref name="integerBitsMp"/> over <paramref name="integerBits"/>. The value is
+    /// then read with one extra bit, whose low bit is the sign: <c>±((v &gt;&gt; 1) + 1)</c>.
+    /// </summary>
+    public float ReadCoordIntegral(int integerBits, int integerBitsMp)
     {
-        const float SCALE = 360.0f / (1 << 20);
-        return ReadUBits(20) * SCALE - 180.0f;
+        var header = ReadUBits(2);
+        if ((header & 2) == 0)
+            return 0.0f;
+
+        var bits = (header & 1) != 0 ? integerBitsMp : integerBits;
+        var value = ReadUBits(bits + 1);
+        var magnitude = (int)(value >> 1) + 1;
+        return (value & 1) != 0 ? -magnitude : magnitude;
+    }
+
+    /// <summary>
+    /// Read a precise angle with the legacy bit width (20 bits).
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public float ReadCoordPrecise() => ReadCoordPrecise(20);
+
+    /// <summary>
+    /// Read a precise angle: <c>value * (360.0 / (1 &lt;&lt; angleBits)) - 180</c>.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public float ReadCoordPrecise(int angleBits)
+    {
+        var scale = 360.0 / (1L << angleBits);
+        return (float)((float)(ReadUBits(angleBits) * scale) - 180.0);
     }
 
     public string ReadStringUtf8()
@@ -305,22 +347,27 @@ public ref struct BitBuffer
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public float ReadNormal()
+    public float ReadNormal() => ReadNormal(11);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public float ReadNormal(int fractionalBits)
     {
-        const float SCALE = 1.0f / ((1 << 11) - 1);
+        var scale = 1.0f / ((1 << fractionalBits) - 1);
         var isNeg = ReadOneBit();
-        var len = ReadUBits(11);
-        var ret = len * SCALE;
+        var len = ReadUBits(fractionalBits);
+        var ret = len * scale;
         return isNeg ? -ret : ret;
     }
 
-    public Vector Read3BitNormal()
+    public Vector Read3BitNormal() => Read3BitNormal(11);
+
+    public Vector Read3BitNormal(int fractionalBits)
     {
         var hasX = ReadOneBit();
         var hasY = ReadOneBit();
 
-        var x = hasX ? ReadNormal() : 0.0f;
-        var y = hasY ? ReadNormal() : 0.0f;
+        var x = hasX ? ReadNormal(fractionalBits) : 0.0f;
+        var y = hasY ? ReadNormal(fractionalBits) : 0.0f;
 
         var negZ = ReadOneBit();
         var sumSqr = x * x + y * y;

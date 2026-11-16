@@ -90,7 +90,7 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "Quaternion":
+            case "Quaternion" or "QuaternionStorage":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_Quaternion(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
@@ -111,7 +111,7 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "QAngle":
+            case "QAngle" or "RadianEuler" or "DegreeEuler":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_QAngle(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
@@ -182,8 +182,9 @@ public static class FallbackDecoder
             }
             case "GameTick_t":
             {
+                var fieldDecoder = FieldDecode.CreateDecoder_GameTick(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
-                    buffer.ReadUVarInt32();
+                    fieldDecoder(ref buffer);
                 return true;
             }
             case "CEntityIndex":
@@ -193,7 +194,7 @@ public static class FallbackDecoder
                     fieldDecoder(ref buffer);
                 return true;
             }
-            case "CTransform":
+            case "CTransform" or "CTransformWS":
             {
                 var fieldDecoder = FieldDecode.CreateDecoder_CTransform(encodingInfo);
                 decoder = (Unit _, ReadOnlySpan<int> path, ref BitBuffer buffer) =>

@@ -1,4 +1,6 @@
-﻿message NetMessageSplitscreenUserChanged {
+﻿syntax = "proto2";
+
+message NetMessageSplitscreenUserChanged {
 	optional uint32 slot = 1;
 }
 

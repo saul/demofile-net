@@ -1,6 +1,12 @@
 ﻿syntax = "proto2";
 
+import "valveextensions.proto";
+import "google/protobuf/descriptor.proto";
 import "network_connection.proto";
+
+extend .google.protobuf.MessageOptions {
+	optional int32 maximum_size_bytes = 50000;
+}
 
 enum SignonState_t {
 	SIGNONSTATE_NONE = 0;
@@ -41,6 +47,8 @@ enum SpawnGroupFlags_t {
 }
 
 message CMsgVector {
+	option (codegen_delta_encoder) = true;
+
 	optional float x = 1;
 	optional float y = 2;
 	optional float z = 3;
@@ -48,17 +56,23 @@ message CMsgVector {
 }
 
 message CMsgVector2D {
+	option (codegen_delta_encoder) = true;
+
 	optional float x = 1;
 	optional float y = 2;
 }
 
 message CMsgQAngle {
+	option (codegen_delta_encoder) = true;
+
 	optional float x = 1;
 	optional float y = 2;
 	optional float z = 3;
 }
 
 message CMsgQuaternion {
+	option (codegen_delta_encoder) = true;
+
 	optional float x = 1;
 	optional float y = 2;
 	optional float z = 3;
@@ -66,12 +80,16 @@ message CMsgQuaternion {
 }
 
 message CMsgTransform {
+	option (codegen_delta_encoder) = true;
+
 	optional .CMsgVector position = 1;
 	optional float scale = 2;
 	optional .CMsgQuaternion orientation = 3;
 }
 
 message CMsgRGBA {
+	option (codegen_delta_encoder) = true;
+
 	optional int32 r = 1;
 	optional int32 g = 2;
 	optional int32 b = 3;
@@ -85,6 +103,8 @@ message CMsgPlayerInfo {
 	optional fixed64 steamid = 4;
 	optional bool fakeplayer = 5;
 	optional bool ishltv = 6;
+	optional bool clan_member = 9;
+	optional bool clan_officer = 10;
 }
 
 message CEntityMsg {
@@ -126,6 +146,8 @@ message CNETMsg_StringCmd {
 }
 
 message CNETMsg_SetConVar {
+	option (maximum_size_bytes) = 4096;
+
 	optional .CMsg_CVars convars = 1;
 }
 
@@ -165,6 +187,8 @@ message CSVCMsgList_GameEvents {
 }
 
 message CNETMsg_SpawnGroup_Load {
+	option (maximum_size_bytes) = 131072;
+
 	optional string worldname = 1;
 	optional string entitylumpname = 2;
 	optional string entityfiltername = 3;
@@ -188,6 +212,8 @@ message CNETMsg_SpawnGroup_Load {
 }
 
 message CNETMsg_SpawnGroup_ManifestUpdate {
+	option (maximum_size_bytes) = 2048;
+
 	optional uint32 spawngrouphandle = 1;
 	optional bytes spawngroupmanifest = 2;
 	optional bool manifestincomplete = 3;
@@ -207,6 +233,15 @@ message CNETMsg_SpawnGroup_Unload {
 
 message CNETMsg_SpawnGroup_LoadCompleted {
 	optional uint32 spawngrouphandle = 1;
+}
+
+message QuantizedFloatEncoderAlias_t {
+	optional string name = 1;
+	optional int32 bit_count = 2;
+	optional int32 encode_flags = 3;
+	optional float min_value = 4;
+	optional float max_value = 5;
+	optional bool validate = 6;
 }
 
 message CSVCMsg_GameSessionConfiguration {
@@ -229,6 +264,8 @@ message CSVCMsg_GameSessionConfiguration {
 	optional bool is_transition = 16;
 	optional string previouslevel = 17;
 	optional string landmarkname = 18;
+	repeated .QuantizedFloatEncoderAlias_t quantized_float_encoder_aliases = 20;
+	optional float max_coord = 21;
 }
 
 message CNETMsg_DebugOverlay {

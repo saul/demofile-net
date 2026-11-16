@@ -8,7 +8,6 @@ public struct BaseGameEvents
     public Action<CMsgPlaceDecalEvent>? PlaceDecalEvent;
     public Action<CMsgClearWorldDecalsEvent>? ClearWorldDecalsEvent;
     public Action<CMsgClearEntityDecalsEvent>? ClearEntityDecalsEvent;
-    public Action<CMsgClearDecalsForSkeletonInstanceEvent>? ClearDecalsForSkeletonInstanceEvent;
     public Action<CMsgSource1LegacyGameEventList>? Source1LegacyGameEventList;
     public Action<CMsgSource1LegacyListenEvents>? Source1LegacyListenEvents;
     public Action<CMsgSource1LegacyGameEvent>? Source1LegacyGameEvent;
@@ -34,10 +33,6 @@ public struct BaseGameEvents
                 return true;
             case (int)EBaseGameEvents.GeClearEntityDecalsEvent:
                 ClearEntityDecalsEvent?.Invoke(CMsgClearEntityDecalsEvent.Parser.ParseFrom(buf));
-                return true;
-            case (int)EBaseGameEvents.GeClearDecalsForSkeletonInstanceEvent:
-                ClearDecalsForSkeletonInstanceEvent?.Invoke(CMsgClearDecalsForSkeletonInstanceEvent.Parser
-                    .ParseFrom(buf));
                 return true;
             */
             case (int)EBaseGameEvents.GeSource1LegacyGameEventList:

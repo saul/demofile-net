@@ -1,3 +1,19 @@
+### 0.46.1 (2026-11-16)
+
+- Support for out-of-view entity updates in POV demos (`outofpvs_entity_updates`)
+- `CEntityInstance.SpawnGroupHandle`: the spawn group an entity was created in (e.g. the map, its skybox, or the team intro/select and end-of-match prefabs; 0 for players, teams and the world)
+- Honour the coord/normal/angle bit widths and signed enum info that CS2 servers now send
+- Networked `GameTick` values were doubled in all demos (e.g. `CBasePlayerWeapon.NextPrimaryAttackTick`, `CCSWeaponBase.DeployTick`). They're now correct, so any code that compensated will need updating. Negative ticks (e.g. -1) wrap to large `uint` values
+- `CPlayerSlot` values (e.g. `CCSGameRules.RoundEndFunFactPlayerSlot`) were doubled; -1 ("no player") is now `uint.MaxValue` instead of 1
+- Updated protobufs to the latest CS2 definitions. Renamed fields: `CDemoFileHeader.NetworkProtocol` → `PatchVersion`, `CSVCMsg_PacketEntities.HasPvsVisBits` → `HasPvsVisBitsDeprecated`
+- Fix aim punch angles (`CCSPlayer_AimPunchServices.PredictableBaseAngle`, `PredictableBaseAngleVel`, `UnpredictableBaseAngle`), which decoded as garbage
+- Fix enums with negative values decoding incorrectly (e.g. `AnimLoopMode`)
+- Fix bit-packed angles being slightly too large (e.g. ragdoll angles), and `qangle_precise`/`qangle_pitch_yaw` fields with explicit bit counts
+- Quantized floats now decode bit-for-bit like the engine and fields using integer encoding such as `m_flWaterLevel` are no longer halved
+- Fix spurious messages (e.g. extra `NetTick`, `NetSpawnGroupLoad`, `NetSetConVar`) being raised at the end of most packets
+- Fix occasional entity corruption in POV demos when the server updates entity baselines
+- Fix entities never being deleted when the engine deletes them: dropped weapons and other entities removed while out of view (older demos), and entities leaving the POV player's view (POV demos)
+
 ### 0.45.1 (2026-11-15)
 
 - Update to latest CS2 schema (v14197)
