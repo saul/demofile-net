@@ -53,6 +53,7 @@ public abstract partial class DemoParser<TGameParser>
         };
         _packetEvents.NetTick += OnNetTick;
         _packetEvents.SvcClearAllStringTables += OnClearStringTables;
+        _packetEvents.SvcEncryptedData += OnEncryptedData;
     }
 
     /// <summary>
@@ -122,15 +123,21 @@ public abstract partial class DemoParser<TGameParser>
         {
             var msgBuf = queued.MsgBuffer;
 
-            if (!_packetEvents.ParseNetMessage(queued.MsgType, msgBuf)
-                && !_baseGameEvents.ParseGameEvent(queued.MsgType, msgBuf)
-                && !_baseUserMessageEvents.ParseUserMessage(queued.MsgType, msgBuf)
-                && !_tempEntityEvents.ParseNetMessage(queued.MsgType, msgBuf)
-                && !ParseNetMessage(queued.MsgType, msgBuf))
-            {
-            }
+            DispatchNetMessage(queued.MsgType, msgBuf);
 
             _bytePool.Return(queued.RentedBuf);
+        }
+    }
+
+    /// <summary>Raise the event for a single net message (also used for messages embedded in <c>svc_EncryptedData</c>).</summary>
+    private void DispatchNetMessage(int msgType, ReadOnlySpan<byte> msgBuf)
+    {
+        if (!_packetEvents.ParseNetMessage(msgType, msgBuf)
+            && !_baseGameEvents.ParseGameEvent(msgType, msgBuf)
+            && !_baseUserMessageEvents.ParseUserMessage(msgType, msgBuf)
+            && !_tempEntityEvents.ParseNetMessage(msgType, msgBuf)
+            && !ParseNetMessage(msgType, msgBuf))
+        {
         }
     }
 

@@ -238,6 +238,7 @@ public partial class DemoFileReader<TGameParser>
 
         (_demo.CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
         _demo.RestoreStringTables(stringTables);
+        _demo.OnFullPacketRestored();
         _readFullPacketTick = _demo.CurrentDemoTick;
 
         var cmd = ReadCommandHeader();

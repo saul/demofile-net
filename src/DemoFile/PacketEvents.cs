@@ -2,6 +2,11 @@
 
 namespace DemoFile;
 
+/// <summary>
+/// Callback for an unparsed net message. <paramref name="msgBuf"/> is only valid for the duration of the call.
+/// </summary>
+public delegate void RawMessageHandler(ReadOnlySpan<byte> msgBuf);
+
 public struct PacketEvents
 {
     public Action<CNETMsg_SplitScreenUser>? NetSplitScreenUser;
@@ -47,6 +52,25 @@ public struct PacketEvents
     public Action<CSVCMsg_Broadcast_Command>? SvcBroadcastCommand;
     public Action<CSVCMsg_HltvFixupOperatorStatus>? SvcHltvFixupOperatorStatus;
     public Action<CSVCMsg_UserCommands>? SvcUserCmds;
+
+    /// <summary>
+    /// The unparsed <c>svc_UserCmds</c> message (a serialized <see cref="CSVCMsg_UserCommands"/>), invoked before
+    /// <see cref="SvcUserCmds"/>. The buffer is only valid for the duration of the callback.
+    /// </summary>
+    /// <remarks>
+    /// User commands are by far the largest message type in recent demos (two thirds of the bytes in a 14197 GOTV
+    /// demo, one message per player per tick). Parsing them into <see cref="CSVCMsg_UserCommands"/> copies every
+    /// command payload into a new <c>ByteString</c>, which costs ~650 MB of allocations on a full match.
+    /// This lets decoders (e.g. the CS user command decoder) read the payloads in place instead.
+    /// </remarks>
+    public RawMessageHandler? SvcUserCmdsRaw;
+
+    /// <summary>
+    /// Messages encrypted by the server (<c>tv_encryptdata_key</c> / <c>tv_encryptdata_key_pub</c>), e.g. player chat.
+    /// When <see cref="DemoParser{TGameParser}.DecryptionKey"/> or <see cref="DemoParser{TGameParser}.PublicDecryptionKey"/>
+    /// is set, the embedded message is decrypted and raised through its own event as well.
+    /// </summary>
+    public Action<CSVCMsg_EncryptedData>? SvcEncryptedData;
 
     internal bool ParseNetMessage(int msgType, ReadOnlySpan<byte> buf)
     {
@@ -186,7 +210,11 @@ public struct PacketEvents
                 return true;
             */
             case (int)SVC_Messages.SvcUserCmds:
+                SvcUserCmdsRaw?.Invoke(buf);
                 SvcUserCmds?.Invoke(CSVCMsg_UserCommands.Parser.ParseFrom(buf));
+                return true;
+            case (int)SVC_Messages.SvcEncryptedData:
+                SvcEncryptedData?.Invoke(CSVCMsg_EncryptedData.Parser.ParseFrom(buf));
                 return true;
         }
 
