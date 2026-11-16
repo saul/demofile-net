@@ -151,6 +151,7 @@ public partial class DemoFileReader<TGameParser>
         _readFullPacketTick = fullPacket.Tick;
         (_demo.CurrentDemoTick, _stream.Position, var stringTables) = fullPacket;
         _demo.RestoreStringTables(stringTables);
+        _demo.OnFullPacketRestored();
     }
 
     private async ValueTask SkipToFullPacketTickAsync(CancellationToken cancellationToken)

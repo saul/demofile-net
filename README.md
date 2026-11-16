@@ -128,6 +128,29 @@ var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
 await reader.ReadAllAsync();
 ```
 
+### Player Input (User Commands)
+
+Every command a player sends (buttons, view angles, subtick moves, input history) is available through
+`UserCmdEvents`. This works for GOTV demos (including delta-encoded commands from the 2026-11-11 update onwards)
+and for POV demos (the recording player's commands). Commands are only decoded while you're subscribed.
+
+```c#
+var demo = new CsDemoParser();
+
+demo.UserCmdEvents.UserCmd += cmd =>
+{
+    var player = cmd.GetController(demo);
+    var view = cmd.Command.Base?.Viewangles;
+    Console.WriteLine($"{player?.PlayerName}: buttons={cmd.Buttons} pitch={view?.X} yaw={view?.Y}");
+
+    // `cmd.Command` is reused for the player's next command: use `cmd.Command.Clone()` to keep it.
+    // `cmd.IsComplete` is false until every field is known (e.g. right after the start of a recording).
+};
+
+var reader = DemoFileReader.Create(demo, File.OpenRead(demoPath));
+await reader.ReadAllAsync();
+```
+
 ### Parallel Processing for Maximum Performance
 
 For maximum performance, parse demos in parallel using multiple CPU cores:
@@ -151,6 +174,26 @@ var demo = new CsDemoParser();
 var reader = HttpBroadcastReader.Create(demo, "http://localhost:8080/broadcast");
 await reader.ReadAllAsync();
 ```
+
+### Encrypted Messages
+
+Servers can encrypt some messages for GOTV, such as player chat, with `tv_encryptdata_key` (private) and
+`tv_encryptdata_key_pub` (public). If you have the keys, set them on the parser and those messages are raised through
+their usual events (e.g. `BaseUserMessageEvents.UserMessageSayText2`):
+
+```c#
+var demo = new CsDemoParser
+{
+    // A server's tv_encryptdata_key: a 16-character string
+    DecryptionKey = new DemoDecryptionKey("0123456789ABCDEF"),
+    // Keys from the Game Coordinator are 64-bit numbers, e.g. WatchableMatchInfo.ClDecryptdataKeyPub
+    PublicDecryptionKey = 0x0123456789ABCDEFUL,
+};
+```
+
+Keys are never recorded in demos or HTTP broadcasts. For Valve matchmaking demos they're in the `.dem.info` file next to
+the demo (`CDataGCCStrike15_v2_MatchInfo.Parser.ParseFrom(...).Watchablematchinfo`). Without a key, encrypted messages
+are only available as raw `PacketEvents.SvcEncryptedData`.
 
 See the [examples/](https://github.com/saul/demofile-net/tree/main/examples) folder for more complete examples:
 

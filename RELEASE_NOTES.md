@@ -1,7 +1,12 @@
+### 0.47.1 (2026-11-16)
+
+- Decode player commands: `CsDemoParser.UserCmdEvents.UserCmd` is raised with the buttons held (`UserCmd.Buttons`), view angles, subtick moves and input history (`UserCmd.Command`). Commands are only decoded while you're subscribed, so there's no cost otherwise (decoding every command adds ~15% to the parse time of a full match)
+- Decrypt encrypted messages (`svc_EncryptedData`, e.g. GOTV chat) when given the server's keys with `DemoParser.DecryptionKey` / `PublicDecryptionKey`. The raw messages are available as `PacketEvents.SvcEncryptedData`
+- `CEntityInstance.SpawnGroupHandle`: the spawn group an entity was created in (e.g. the map, its skybox, or the team intro/select and end-of-match prefabs; 0 for players, teams and the world)
+
 ### 0.46.1 (2026-11-16)
 
 - Support for out-of-view entity updates in POV demos (`outofpvs_entity_updates`)
-- `CEntityInstance.SpawnGroupHandle`: the spawn group an entity was created in (e.g. the map, its skybox, or the team intro/select and end-of-match prefabs; 0 for players, teams and the world)
 - Honour the coord/normal/angle bit widths and signed enum info that CS2 servers now send
 - Networked `GameTick` values were doubled in all demos (e.g. `CBasePlayerWeapon.NextPrimaryAttackTick`, `CCSWeaponBase.DeployTick`). They're now correct, so any code that compensated will need updating. Negative ticks (e.g. -1) wrap to large `uint` values
 - `CPlayerSlot` values (e.g. `CCSGameRules.RoundEndFunFactPlayerSlot`) were doubled; -1 ("no player") is now `uint.MaxValue` instead of 1

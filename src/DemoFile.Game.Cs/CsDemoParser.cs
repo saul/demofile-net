@@ -15,6 +15,7 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
     public CsDemoParser()
     {
         Source1GameEvents = new Source1GameEvents(this);
+        UserCmdEvents = new UserCmdEvents(this);
         BaseGameEvents.Source1LegacyGameEventList += Source1GameEvents.ParseSource1GameEventList;
         BaseGameEvents.Source1LegacyGameEvent += @event => Source1GameEvents.ParseSource1GameEvent(this, @event);
 
@@ -25,12 +26,25 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
             {
                 throw new InvalidDemoException($"Cannot use {nameof(CsDemoParser)} to read a '{gameDirParts[^1]}' demo (expected 'csgo').");
             }
+
+            LocalPlayerSlot = e.PlayerSlot;
         };
     }
 
     public Source1GameEvents Source1GameEvents { get; }
 
     public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
+
+    /// <summary>
+    /// Decoded player commands (<c>svc_UserCmds</c>), including delta-encoded commands (CS2 patch 14197+).
+    /// </summary>
+    public UserCmdEvents UserCmdEvents { get; }
+
+    /// <summary>
+    /// Player slot of the player who recorded the demo (from <see cref="CSVCMsg_ServerInfo"/>).
+    /// For GOTV demos this is the GOTV client's slot.
+    /// </summary>
+    internal int LocalPlayerSlot { get; private set; } = -1;
     public ref EntityEvents EntityEvents => ref _entityEvents;
     public ref GameEvents GameEvents => ref _gameEvents;
 
@@ -151,4 +165,6 @@ public sealed class CsDemoParser : DemoParser<CsDemoParser>
         return _gameEvents.ParseNetMessage(msgType, msgBuf)
                || _userMessageEvents.ParseUserMessage(msgType, msgBuf);
     }
+
+    protected override void OnFullPacketRestored() => UserCmdEvents.Reset();
 }

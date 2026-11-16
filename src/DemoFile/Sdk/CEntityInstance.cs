@@ -13,6 +13,7 @@ public partial class CEntityInstance<TGameParser>
         EntityIndex = context.EntityIndex;
         ServerClass = context.ServerClass;
         SerialNumber = context.SerialNumber;
+        SpawnGroupHandle = context.SpawnGroupHandle;
     }
 
     public CEntityIndex EntityIndex { get; }
@@ -27,6 +28,18 @@ public partial class CEntityInstance<TGameParser>
 
     public ServerClass<TGameParser> ServerClass { get; }
     public uint SerialNumber { get; }
+
+    /// <summary>
+    /// Handle of the spawn group this entity was created in, as sent when the entity was created.
+    /// </summary>
+    /// <remarks>
+    /// A spawn group is a unit of loaded world content: in CS2, the map (normally handle 1), its skybox and
+    /// the UI prefabs placed in the map (team select, team intro, end-of-match lineup). Entities that aren't
+    /// part of any spawn group, such as players, pawns, teams and the world, have handle 0.
+    /// Handles are assigned per demo, so look up what a handle refers to with the demo's spawn group messages
+    /// (e.g. <see cref="PacketEvents.NetSpawnGroupLoad"/>) rather than relying on fixed numbers.
+    /// </remarks>
+    public uint SpawnGroupHandle { get; }
 
     internal void ReadField(ReadOnlySpan<int> fieldPath, ref BitBuffer buffer)
     {

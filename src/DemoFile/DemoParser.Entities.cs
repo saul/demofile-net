@@ -15,7 +15,8 @@ public partial class DemoParser<TGameParser>
         TGameParser Demo,
         CEntityIndex EntityIndex,
         uint SerialNumber,
-        ServerClass<TGameParser> ServerClass);
+        ServerClass<TGameParser> ServerClass,
+        uint SpawnGroupHandle);
 
     private readonly record struct EntityBaseline(
         uint ServerClassId,
@@ -369,13 +370,13 @@ public partial class DemoParser<TGameParser>
             var classId = buffer.ReadUBits(_serverClassBits);
             var serialNum = buffer.ReadUBits(NumEHandleSerialNumberBits);
 
-            // maybe spawngroup handle?
-            var _unknown = buffer.ReadUVarInt32();
+            // The spawn group the entity is created in (0 = none)
+            var spawnGroupHandle = buffer.ReadUVarInt32();
 
             var serverClass = _serverClasses[classId];
             Debug.Assert(serverClass != null, $"Missing server class {classId}");
 
-            var context = new EntityContext((TGameParser) this, new CEntityIndex((uint) entityIndex), serialNum, serverClass);
+            var context = new EntityContext((TGameParser) this, new CEntityIndex((uint) entityIndex), serialNum, serverClass, spawnGroupHandle);
             var entity = serverClass.EntityFactory(context);
 
             EntityBaseline existingEntityBaseline = default;
